@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Tim McCracken (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Global Defines -->
+<Civ4Defines xmlns="x-schema:CIV4GlobalDefinesSchema.xml">
+	<!--Flunky for PAE: River ford-->
+	<Define>
+		<DefineName>RIVER_FORD_TERRAIN</DefineName>
+		<DefineTextVal>TERRAIN_RIVER_FORD</DefineTextVal>
+	</Define>
+	<Define>
+		<DefineName>LAKE_TERRAIN</DefineName>
+		<DefineTextVal>TERRAIN_LAKE</DefineTextVal>
+	</Define>
+	<Define>
+		<DefineName>RIVER_TERRAIN</DefineName>
+		<DefineTextVal>TERRAIN_RIVER</DefineTextVal>
+	</Define>
+</Civ4Defines>

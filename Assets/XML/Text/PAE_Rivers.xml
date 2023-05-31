@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Civ4GameText xmlns="http://www.firaxis.com">
+  <TEXT>
+    <Tag>TXT_KEY_WB_RIVER_BRANCH</Tag>
+    <English>Changes of the right column will be automatically set to all river plots of this branch.</English>
+    <French>Les modifications de la colonne de droite seront automatiquement appliqu&#233;es &#224; toutes les cases de rivi&#232;re de ce cours d'eau.</French>
+    <German>&#196;nderungen aus der rechten Spalte werden automatisch auf alle Flussfelder dieses Astes &#252;bertragen.</German>
+    <Italian>Changes of the right column will be automatically set to all river plots of this branch.</Italian>
+    <Spanish>Los cambios dde la columna derecha ser&#225;n autom&#225;ticamente aplicados a todos las casillas de r&#237;o de esta ramificaci&#243;n.</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_WB_RIVER_COMPLETE</Tag>
+    <English>Changes of the right column will be automatically set to all connected river plots.</English>
+    <French>Les modifications de la colonne de droite seront automatiquement appliqu&#233;es &#224; toutes les cases de rivi&#232;re connect&#233;es.</French>
+    <German>&#196;nderungen aus der rechten Spalte werden automatisch auf alle verbundenen Flussfelder &#252;bertragen.</German>
+    <Italian>Changes of the right column will be automatically set to all connected river plots.</Italian>
+    <Spanish>Los cambios de la columna derecha ser&#225;n autom&#225;ticamente aplicados a todas las casillas de r&#237;o conectadas.</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_WB_RIVER_AUTOMATIC</Tag>
+    <English>A suitable variety of the feature will be set automatically on this plot and its surrounding plots.</English>
+    <French>Une variante adapt&#233;e de cette fonction sera automatiquement plac&#233;e sur la case et les cases adjacentes.</French>
+    <German>Auf diesem Feld und den Nachbarfeldern wird automatisch eine passende Variante des Features gew&#228;hlt.</German>
+    <Italian>A suitable variety of the feature will be set automatically on this plot and its surrounding plots.</Italian>
+    <Spanish>Una variedad adecuada de esta caracter&#237;stica ser&#225; aplicada autom&#225;ticamente en esta casilla y adyacentes.</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_YELLOW</Tag>
+    <English>Yellow</English>
+    <French>Jaune</French>
+    <German>Gelb</German>
+    <Italian>Giallo</Italian>
+    <Spanish>Amarillo</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WHITE</Tag>
+    <English>White</English>
+    <French>Blanc</French>
+    <German>Wei&#223;</German>
+    <Italian>Bianco</Italian>
+    <Spanish>Blanco</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_BROWN</Tag>
+    <English>Brown</English>
+    <French>Marron</French>
+    <German>Braun</German>
+    <Italian>Marrone</Italian>
+    <Spanish>Marr&#243;n</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WATER_NORTH</Tag>
+    <English>North is %s1</English>
+    <French>Nord vers %s1</French>
+    <German>Nordseite %s1</German>
+    <Italian>Lato nord %s1</Italian>
+    <Spanish>Norte es %s1</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WATER_EAST</Tag>
+    <English>East is %s1</English>
+    <French>Est vers %s1</French>
+    <German>Ostseite %s1.</German>
+    <Italian>Lato est %s1</Italian>
+    <Spanish>Este es %s1</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SENSIBILITY_CHECK</Tag>
+    <English>Lock changes of land plots</English>
+    <French>Emp&#234;che modifications des cases de terre</French>
+    <German>Verhindere Umwandlung von Landfeldern</German>
+    <Italian>Lock changes of land plots</Italian>
+    <Spanish>Bloquear cambio de casillas terrestres</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_TERRAIN_RIVER</Tag>
+    <English>River</English>
+    <French>
+<Text>Rivi&#232;re</Text><Gender>Female</Gender><Plural>0</Plural>
+    </French>
+    <German>
+<Text>Fluss</Text><Gender>Neuter</Gender><Plural>0</Plural>
+    </German>
+    <Italian>
+<Text>Fiume</Text><Gender>Male</Gender><Plural>0</Plural>
+    </Italian>
+    <Spanish>
+<Text>R&#237;o</Text><Gender>Male</Gender><Plural>0</Plural>
+    </Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_TERRAIN_RIVER_FORD</Tag>
+    <English>Ford</English>
+    <French>Gu&#233;</French>
+    <German>
+<Text>Furt</Text><Gender>Female</Gender><Plural>0</Plural>
+    </German>
+    <Italian>Guado</Italian>
+    <Spanish>Vado</Spanish>
+  </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LAKE</Tag>
+        <English>Fresh Water Lake</English>
+        <French>Lac d'eau douce</French>
+        <German>S&#252;ßwassersee</German>
+        <Italian>Lago d'acqua dolce</Italian>
+        <Spanish>Lago de agua dulce</Spanish>
+    </TEXT>
+    <TEXT>
+        <Tag>TXT_KEY_LAKE_PEDIA</Tag>
+        <English>[TAB]Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system.[NEWLINE]Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young.[NEWLINE]Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean.[NEWLINE]Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.[NEWLINE]</English>
+        <French>[TAB]Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system.[NEWLINE]Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young.[NEWLINE]Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean.[NEWLINE]Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.[NEWLINE]</French>
+        <German>[TAB]Seen finden sich typischerweise in Gebirgsketten oder dort, wo ihr Bett am Ende der letzten Eiszeit von Gletschern ausgeschliffen wurde. Sie sind S&#252;&#223;wassergew&#228;sser, gr&#246;&#223;er als Teiche und oft Teil eines Flusssystems. [NEWLINE]Meist bieten S&#252;&#223;wasserseen hervorragende Fischfanggr&#252;nde und die Fahrt &#252;ber die Seen ist im Vergleich zu den Str&#246;mungen der Fl&#252;sse ruhig, auch wenn es in gro&#223;en Seen so st&#252;rmisch zugehen kann wie im Ozean. [NEWLINE]Da gr&#246;&#223;ere Seen genug Wasser enthalten, um das lokale Klima zu mildern, waren sie schon immer ein begehrter Lebensraum.[NEWLINE]</German>
+        <Italian>[TAB]Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system.[NEWLINE]Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young.[NEWLINE]Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean.[NEWLINE]Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.[NEWLINE]</Italian>
+        <Spanish>[TAB]Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system.[NEWLINE]Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young.[NEWLINE]Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean.[NEWLINE]Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.[NEWLINE]</Spanish>
+    </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_FEATURE_RIVER</Tag>
+    <English>Stream</English>
+    <French>Courant</French>
+    <German>Strom</German>
+    <Italian>Fiume</Italian>
+    <Spanish>Corriente</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_FEATURE_RIVER_FORD</Tag>
+    <English>Shallow river</English>
+    <French>Haut-fonds</French>
+    <German>Flacher Fluss</German>
+    <Italian>Fiume poco profondo</Italian>
+    <Spanish>Corriente de poca profundidad</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DEST_E</Tag>
+    <English>Estuary to west</English>
+    <French>Estuaire occidental</French>
+    <German>M&#252;ndung nach Westen</German>
+    <Italian>Estuario ad ovest</Italian>
+    <Spanish>Estuario al Oeste</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DEST_N</Tag>
+    <English>Estuary to south</English>
+    <French>Estuaire m&#233;ridional</French>
+    <German>M&#252;ndung nach S&#252;den</German>
+    <Italian>Estuario a sud</Italian>
+    <Spanish>Estuario al Sur</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DEST_S</Tag>
+    <English>Estuary to north</English>
+    <French>Estuaire septentrional</French>
+    <German>M&#252;ndung nach Norden</German>
+    <Italian>Estuario ad nord</Italian>
+    <Spanish>Estuario al Norte</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DEST_W</Tag>
+    <English>Estuary to east</English>
+    <French>Estuaire oriental</French>
+    <German>M&#252;ndung nach Osten</German>
+    <Italian>Estuario ad est</Italian>
+    <Spanish>Estuario al Este</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_EMPTY</Tag>
+    <English>Without banks</English>
+    <French>Sans rivage</French>
+    <German>Ohne Ufer</German>
+    <Italian>Senza una spiaggia</Italian>
+    <Spanish>Sin una orilla</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_NE</Tag>
+    <English>North to east course</English>
+    <French>Trac&#233; Est-Nord</French>
+    <German>Nord-Ost-Verlauf</German>
+    <Italian>Corso da nord a est</Italian>
+    <Spanish>Curso Norte-Este</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_NS</Tag>
+    <English>Vertical course</English>
+    <French>Trac&#233; vertical</French>
+    <German>Vertikaler Verlauf</German>
+    <Italian>Corso verticale</Italian>
+    <Spanish>Curso vertical</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_NW</Tag>
+    <English>North to west course</English>
+    <French>Trac&#233; Ouest-Nord</French>
+    <German>Nord-West-Verlauf</German>
+    <Italian>Corso da nord a ovest</Italian>
+    <Spanish>Curso Norte-Oeste</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SE</Tag>
+    <English>South to east course</English>
+    <French>Trac&#233; Est-Sud</French>
+    <German>S&#252;d-Ost-Verlauf</German>
+    <Italian>Corso da sud a est</Italian>
+    <Spanish>Curso Sur-Este</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SOURCE_E</Tag>
+    <English>Source to east</English>
+    <French>Source Est</French>
+    <German>Quellfluss nach Osten</German>
+    <Italian>Sorgente ad est</Italian>
+    <Spanish>Origen al Este</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SOURCE_N</Tag>
+    <English>Source to north</English>
+    <French>Source Nord</French>
+    <German>Quellfluss nach Norden</German>
+    <Italian>Sorgente a nord</Italian>
+    <Spanish>Origen al Norte</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SOURCE_S</Tag>
+    <English>Source to south</English>
+    <French>Source Sud</French>
+    <German>Quellfluss nach S&#252;den</German>
+    <Italian>Sorgente a sud</Italian>
+    <Spanish>Origen al Sur</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SOURCE_W</Tag>
+    <English>Source to west</English>
+    <French>Source Ouest</French>
+    <German>Quellfluss nach Westen</German>
+    <Italian>Sorgente a ovest</Italian>
+    <Spanish>Origen al Oeste</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SUBTILE</Tag>
+    <English>Subtile selection</English>
+    <French>Cases de terrain de base</French>
+    <German>Modellteile</German>
+    <Italian>Selezione sottile</Italian>
+    <Spanish>Selecci&#243;n fina</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_SW</Tag>
+    <English>South to west course</English>
+    <French>Trac&#233; Ouest-Sud</French>
+    <German>S&#252;d-West-Verlauf</German>
+    <Italian>Corso da sud a ovest</Italian>
+    <Spanish>Curso Sur-Oeste</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WE</Tag>
+    <English>Horizontal course</English>
+    <French>Trac&#233; horizontal</French>
+    <German>Horizontaler Verlauf</German>
+    <Italian>Corso orizzontale</Italian>
+    <Spanish>Curso horizontal</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_BRANCH_N</Tag>
+    <English>Norhtern estuary</English>
+    <French>Estuaire nord</French>
+    <German>N&#246;rdliche Flussm&#252;ndung</German>
+    <Italian>Estuario nord</Italian>
+    <Spanish>Estuario norte</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_BRANCH_W</Tag>
+    <English>Western estuary</English>
+    <French>Estuaire ouest</French>
+    <German>Westliche Flussm&#252;ndung</German>
+    <Italian>Estuario ovest</Italian>
+    <Spanish>Estuario oeste</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_BRANCH_S</Tag>
+    <English>Southern estuary</English>
+    <French>Estuaire sud</French>
+    <German>S&#252;dliche Flussm&#252;ndung</German>
+    <Italian>Estuario sud</Italian>
+    <Spanish>Estuario del sur</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_BRANCH_E</Tag>
+    <English>Eastern estuary</English>
+    <French>Estuaire d'est</French>
+    <German>&#214;stliche Flussm&#252;ndung</German>
+    <Italian>Estuario est</Italian>
+    <Spanish>Estuario este</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_WB_RIVER_DATA</Tag>
+    <English>River tiles data</English>
+    <French>River tiles data</French>
+    <German>Flussfeldinfos</German>
+    <Italian>River tiles data</Italian>
+    <Spanish>River tiles data</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_WB_RIVER_FORD</Tag>
+    <English>Ford fields are accessible by land units.</English>
+    <French>Les unit&#233;s terrestres peuvent parcourir les gu&#233;s.</French>
+    <German>Flussfelder mit Furt k&#246;nnen von Landeinheiten betreten werden.</German>
+    <Italian>Le unit&#224; fluviali con guado possono essere inserite dalle unit&#224; di terra.</Italian>
+    <Spanish>Los vados son accesibles para unidades terrestres.</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_WB_RIVER_PLACEMENT</Tag>
+    <English>Big river placement</English>
+    <French>Big river placement</French>
+    <German>Flussfeld-Konfiguration</German>
+    <Italian>Big river placement</Italian>
+    <Spanish>Big river placement</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_WITH_RIVER_FORD</Tag>
+    <English>with ford</English>
+    <French>gu&#233; franchissable</French>
+    <German>mit Furt</German>
+    <Italian>con guado</Italian>
+    <Spanish>con vado</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DESERT_TEXTURE</Tag>
+    <English>Desert</English>
+    <French>D&#233;sert</French>
+    <German>W&#252;ste</German>
+    <Italian>Deserto</Italian>
+    <Spanish>Desierto</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_GREEN_TEXTURE</Tag>
+    <English>Grassland</English>
+    <French>Prairie</French>
+    <German>Grasland</German>
+    <Italian>Prateria</Italian>
+    <Spanish>Pradera</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_TRANSPARENT_TEXTURE</Tag>
+    <English>Transparent</English>
+    <French>Transparent</French>
+    <German>Transparent</German>
+    <Italian>Trasparente</Italian>
+    <Spanish>Transparente</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DECORATION</Tag>
+    <English>Decoration</English>
+    <French>D&#233;cor</French>
+    <German>Dekoration</German>
+    <Italian>Decorazione</Italian>
+    <Spanish>Decoraci&#243;n</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_DECO_EVERGREEN</Tag>
+    <English>Evergreen</English>
+    <French>Conif&#232;res</French>
+    <German>Nadelb&#228;ume</German>
+    <Italian>Conifera</Italian>
+    <Spanish>Hojas perennes</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_DECO_SAVANNA</Tag>
+    <English>Palms</English>
+    <French>Brousses</French>
+    <German>Palmen</German>
+    <Italian>Palme</Italian>
+    <Spanish>Palmeras</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_DECO_SNOWY</Tag>
+    <English>Snowy</English>
+    <French>Enneigement</French>
+    <German>Schneebedeckt</German>
+    <Italian>Nevosa</Italian>
+    <Spanish>Nevado</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_TRANSPARENT</Tag>
+    <English>No overlay color</English>
+    <French>No overlay color</French>
+    <German>Standard / Kein Overlay</German>
+    <Italian>No overlay color</Italian>
+    <Spanish>No overlay color</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_BLUE</Tag>
+    <English>Blue</English>
+    <French>Bleu</French>
+    <German>Blau</German>
+    <Italian>Blu</Italian>
+    <Spanish>Azul</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_GREEN</Tag>
+    <English>Green</English>
+    <French>Vert</French>
+    <German>Gr&#252;n</German>
+    <Italian>Verde</Italian>
+    <Spanish>Verde</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WATER_FULL</Tag>
+    <English>%s1 at all sides</English>
+    <French>%s1 at all sides</French>
+    <German>%s1 an allen Seiten</German>
+    <Italian>%s1 at all sides</Italian>
+    <Spanish>%s1 at all sides</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WATER_SOUTH</Tag>
+    <English>South is %s1</English>
+    <French>Sud vers %s1</French>
+    <German>S&#252;dseite %s1</German>
+    <Italian>Il sud &#232; %s1</Italian>
+    <Spanish>Sur es %s1</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WATER_WEST</Tag>
+    <English>West is %s1</English>
+    <French>Ouest vers %s1</French>
+    <German>Westseite %s1</German>
+    <Italian>Ovest &#232; %s1</Italian>
+    <Spanish>Oeste es %s1</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_RAPIDS</Tag>
+    <English>Wave fronts</English>
+    <French>Cr&#234;tes de vagues</French>
+    <German>Wellenkr&#228;useln</German>
+    <Italian>Fronti d'onda</Italian>
+    <Spanish>Frentes de onda</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WATER_COLOR</Tag>
+    <English>Water color overlay</English>
+    <French>Water color overlay</French>
+    <German>Wasserfarbe</German>
+    <Italian>Water color overlay</Italian>
+    <Spanish>Water color overlay</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_WATER_BLENDING</Tag>
+    <English>Water color blending</English>
+    <French>D&#233;grad&#233; de couleur d'eau</French>
+    <German>Farb&#252;berg&#228;nge</German>
+    <Italian>Miscela di colori ad acqua</Italian>
+    <Spanish>Transici&#243;n crom&#225;tica</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_VARIANT</Tag>
+    <English>Coastline variant</English>
+    <French>Mod&#232;le de c&#244;te</French>
+    <German>Modellvariante</German>
+    <Italian>Variante della costa</Italian>
+    <Spanish>Variante costa</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_TEXTURE</Tag>
+    <English>Bank Texture</English>
+    <French>Texture de rive</French>
+    <German>Flussbanktextur</German>
+    <Italian>Textura di riva</Italian>
+    <Spanish>Textura de orilla</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_FORD_CHECK</Tag>
+    <English>Made plot passable for land units</English>
+    <French>Case franchissable par unit&#233;s terrestres</French>
+    <German>Feld ist passierbar</German>
+    <Italian>Il campo &#232; passabile</Italian>
+    <Spanish>Casilla transitable para unidades terrestres</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_BRANCH_CHECK</Tag>
+    <English>Edit river branch</English>
+    <French>Modifier portion de rivi&#232;re</French>
+    <German>Flussabschnitt beeinflussen</German>
+    <Italian>Modifica il ramo del fiume</Italian>
+    <Spanish>Editar orilla del r&#237;o</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_COMPLETE_CHECK</Tag>
+    <English>Edit whole river</English>
+    <French>Modifier toute la rivi&#232;re</French>
+    <German>Gesamten Flussverlauf beeinflussen</German>
+    <Italian>Modifica l'intero fiume</Italian>
+    <Spanish>Editar r&#237;o entero</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_AUTOMATIC_CHECK</Tag>
+    <English>(Todo) Select river course by environment</English>
+    <French>(Todo) Select river course by environment</French>
+    <German>(Todo) Flussverlauf automatisch anpassen</German>
+    <Italian>(Todo) Select river course by environment</Italian>
+    <Spanish>(Todo) Select river course by environment</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DIRECTION</Tag>
+    <English>Wave direction %d1</English>
+    <French>Sens des vagues %d1</French>
+    <German>Wellenrichtung %d1</German>
+    <Italian>Direzione dell'onda %d1</Italian>
+    <Spanish>Direcci&#243;n de las ondas %d1</Spanish>
+  </TEXT>
+  <TEXT>
+    <Tag>TXT_KEY_RIVER_DIRECTION_REVERSE</Tag>
+    <English>Wave direction %d1 (rev.)</English>
+    <French>Sens des vagues %d1 (inv.)</French>
+    <German>Wellenrichtung %d1 (r&#252;ckw.)</German>
+    <Italian>Direzione dell'onda %d1 (giro)</Italian>
+    <Spanish>Direcci&#243;n de las ondas %d1 (contr.)</Spanish>
+  </TEXT>
+</Civ4GameText>
