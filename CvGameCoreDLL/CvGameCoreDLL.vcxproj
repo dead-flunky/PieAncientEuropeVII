@@ -84,9 +84,9 @@
     <NMakeCleanCommandLine>nmake clean</NMakeCleanCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <NMakeBuildCommandLine>Release</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>Release_clean</NMakeReBuildCommandLine>
-    <NMakeCleanCommandLine>clean</NMakeCleanCommandLine>
+    <NMakeBuildCommandLine>nmake Release</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake Release_clean</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>nmake clean</NMakeCleanCommandLine>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
