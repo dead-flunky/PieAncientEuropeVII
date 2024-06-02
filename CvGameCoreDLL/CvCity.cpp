@@ -5194,7 +5194,8 @@ void CvCity::changePopulation(int iChange)
 
 long CvCity::getRealPopulation() const
 {
-	return (((long)(pow((float)getPopulation(), 2.8f))) * 1000);
+	// PAE: * 200, BTS: * 1000
+	return (((long)(pow((float)getPopulation(), 2.8f))) * 200);
 }
 
 int CvCity::getHighestPopulation() const

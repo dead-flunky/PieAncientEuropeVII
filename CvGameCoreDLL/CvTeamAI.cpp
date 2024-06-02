@@ -465,7 +465,7 @@ AreaAITypes CvTeamAI::AI_calculateAreaAIType(CvArea* pArea, bool bPreparingTotal
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
-				
+
 				if (kPlayer.isAlive())
 				{
 					if (kPlayer.getTeam() == getID())

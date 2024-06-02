@@ -1529,7 +1529,7 @@ void CvCityAI::AI_chooseProduction()
 			case AREAAI_NEUTRAL:
 				break;
 			default:
-				FAssert(false, "No AreaAI found for City");
+				FAssert(false);
 		}
 	}
     
@@ -7390,42 +7390,42 @@ int CvCityAI::AI_yieldValue(short* piYields, short* piCommerceYields, bool bAvoi
 		
 	if( iProductionValue > 0 )
 	{
-	if (isFoodProduction())
-	{
-		iProductionValue *= 100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_PRODUCTION));
-		iProductionValue /= 100;		
-	}
-	else
-	{
-		iProductionValue *= iBaseProductionModifier;
-		iProductionValue /= (iBaseProductionModifier + iExtraProductionModifier);
-		
-		iProductionValue += iSlaveryValue;
-		iProductionValue *= (100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_PRODUCTION)));
-		
-		iProductionValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION);
-	}
+		if (isFoodProduction())
+		{
+			iProductionValue *= 100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_PRODUCTION));
+			iProductionValue /= 100;		
+		}
+		else
+		{
+			iProductionValue *= iBaseProductionModifier;
+			iProductionValue /= (iBaseProductionModifier + iExtraProductionModifier);
+			
+			iProductionValue += iSlaveryValue;
+			iProductionValue *= (100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_PRODUCTION)));
+			
+			iProductionValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_PRODUCTION);
+		}
 	
 		iValue += std::max(1,iProductionValue);
 	}
 	
 	if( iCommerceValue > 0 )
 	{
-	iCommerceValue *= (100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_COMMERCE)));
-	iCommerceValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE);
+		iCommerceValue *= (100 + (bWorkerOptimization ? 0 : AI_specialYieldMultiplier(YIELD_COMMERCE)));
+		iCommerceValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_COMMERCE);
 		iValue += std::max(1, iCommerceValue);
 	}
-//	
+
 	if( iFoodValue > 0 )
 	{
-	iFoodValue *= 100;
-	iFoodValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD);
+		iFoodValue *= 100;
+		iFoodValue /= GET_PLAYER(getOwnerINLINE()).AI_averageYieldMultiplier(YIELD_FOOD);
 		iValue += std::max(1, iFoodValue);
 	}
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
-	
+
 	return iValue;
 }
 

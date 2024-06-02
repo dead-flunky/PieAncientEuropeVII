@@ -2300,7 +2300,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	}
 
 	const FeatureTypes eFeature = pPlot->getFeatureType();
-	TerrainTypes eTerrainFord = (TerrainTypes)(GC.getDefineINT("RIVER_FORD_TERRAIN"));
+	TerrainTypes eTerrainFord = (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD"));
 
 	// Cannot move around in unrevealed land freely
 	if (m_pUnitInfo->isNoRevealMap() && willRevealByMove(pPlot))
@@ -2420,7 +2420,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 				{
 					//WTP, ray, Large Rivers - START
 					// allowing all Land Units to enter Large Rivers
-					if (pPlot->getTerrainType() != eTerrainFord)
+					if (eTerrainFord && pPlot->getTerrainType() != eTerrainFord)
 					{
 						return false;
 					}
@@ -2439,15 +2439,20 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		break;
 	}
 
-	if (isAnimal())
+	if (isAnimal() && isBarbarian())
 	{
+		// PAE changes (animals ignore cultural borders)
+		/*
 		if (pPlot->isOwned())
 		{
 			return false;
 		}
+		*/
 
 		if (!bAttack)
 		{
+			// PAE changes
+			/*
 			if (pPlot->getBonusType() != NO_BONUS)
 			{
 				return false;
@@ -2457,10 +2462,35 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			{
 				return false;
 			}
+			*/
 
 			if (pPlot->getNumUnits() > 0)
 			{
-				return false;
+				CvUnit* pLoopUnit;
+				pLoopUnit = pPlot->getUnitByIndex(0);
+				if (pLoopUnit->getUnitType() != getUnitType()) {
+					return false;
+				}
+			}
+		}
+		else
+		{
+			if (pPlot->getFeatureType() != NO_FEATURE) {
+				// PAE: Pferde und Kamele laufen nicht in Wälder
+				UnitTypes Horse = (UnitTypes)(GC.getDefineINT("UNIT_HORSE"));
+				UnitTypes Camel = (UnitTypes)(GC.getDefineINT("UNIT_CAMEL"));
+				if (getUnitType() == Horse || getUnitType() == Camel) {
+					return false;
+				}
+			}
+			else
+			{
+				// PAE: Bären verlassen keine Wälder
+				UnitTypes Bear = (UnitTypes)(GC.getDefineINT("UNIT_BEAR"));
+				UnitTypes Boar = (UnitTypes)(GC.getDefineINT("UNIT_BOAR"));
+				if (getUnitType() == Bear || getUnitType() == Boar) {
+					return false;
+				}
 			}
 		}
 	}
@@ -3215,7 +3245,7 @@ bool CvUnit::shouldLoadOnMove(const CvPlot* pPlot) const
 		// Flunky for PAE: river ford
 		if (pPlot->isWater() && !canMoveAllTerrain())
 		{
-			if (pPlot->getTerrainType() != (TerrainTypes)(GC.getDefineINT("RIVER_FORD_TERRAIN")))
+			if (pPlot->getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD")))
 			{
 				return true;
 			}
@@ -3720,6 +3750,10 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 void CvUnit::doHeal()
 {
 	changeDamage(-(healRate(plot())));
+	// PAE: avoid dying units (without warning)
+	if (getDamage() > 100) {
+		setDamage(99);
+	}
 }
 
 
@@ -4603,6 +4637,17 @@ bool CvUnit::canPillage(const CvPlot* pPlot) const
 	else
 	{
 		if (GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent())
+		{
+			return false;
+		}
+	}
+
+	// PAE: Roman and Persian Roads
+	if (pPlot->isRoute())
+	{
+		RouteTypes eRomanRoad = (RouteTypes)(GC.getDefineINT("ROUTE_RAILROAD"));
+		RouteTypes ePersianRoad = (RouteTypes)(GC.getDefineINT("ROUTE_PERSIAN_ROAD"));
+		if (pPlot->getRouteType() == eRomanRoad || pPlot->getRouteType() == ePersianRoad)
 		{
 			return false;
 		}

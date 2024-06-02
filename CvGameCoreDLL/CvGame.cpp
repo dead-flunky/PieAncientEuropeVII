@@ -3880,29 +3880,11 @@ void CvGame::setAIAutoPlay(int iNewValue)
 	{
 		m_iAIAutoPlay = std::max(0, iNewValue);
 
-/************************************************************************************************/
-/* AI_AUTO_PLAY_MOD                           07/09/08                            jdog5000      */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
-// Multiplayer compatibility idea from Jeckel
-/* original code
 		if ((iOldValue == 0) && (getAIAutoPlay() > 0))
 		{
 			GET_PLAYER(getActivePlayer()).killUnits();
 			GET_PLAYER(getActivePlayer()).killCities();
 		}
-*/
-		for( int iI = 0; iI < MAX_CIV_PLAYERS; iI++ )
-		{
-			if( GET_PLAYER((PlayerTypes)iI).isHuman() || GET_PLAYER((PlayerTypes)iI).isHumanDisabled() )
-			{
-				GET_PLAYER(getActivePlayer()).setHumanDisabled((getAIAutoPlay() != 0));
-			}
-		}
-/************************************************************************************************/
-/* AI_AUTO_PLAY_MOD                            END                                              */
-/************************************************************************************************/
 	}
 }
 
@@ -4656,16 +4638,6 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 		m_eWinner = eNewWinner;
 		m_eVictory = eNewVictory;
 
-/************************************************************************************************/
-/* AI_AUTO_PLAY_MOD                        07/09/08                                jdog5000      */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
-		CvEventReporter::getInstance().victory(eNewWinner, eNewVictory);
-/************************************************************************************************/
-/* AI_AUTO_PLAY_MOD                        END                                                  */
-/************************************************************************************************/
-
 		if (getVictory() != NO_VICTORY)
 		{
 			if (getWinner() != NO_TEAM)
@@ -4685,19 +4657,7 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 		}
 
 		gDLL->getInterfaceIFace()->setDirty(Center_DIRTY_BIT, true);
-
-/************************************************************************************************/
-/* AI_AUTO_PLAY_MOD                        07/09/08                                jdog5000      */
-/*                                                                                              */
-/*                                                                                              */
-/************************************************************************************************/
-/* original code
 		CvEventReporter::getInstance().victory(eNewWinner, eNewVictory);
-*/
-/************************************************************************************************/
-/* AI_AUTO_PLAY_MOD                        END                                                  */
-/************************************************************************************************/
-
 		gDLL->getInterfaceIFace()->setDirty(Soundtrack_DIRTY_BIT, true);
 	}
 }
@@ -5684,22 +5644,9 @@ void CvGame::doTurn()
 			{
 				kTeam.setTurnActive(true);
 				FAssert(getNumGameTurnActive() == kTeam.getAliveCount());
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                       06/10/10                       snarko & jdog5000       */
-/*                                                                                               */
-/* Bugfix                                                                                        */
-/*************************************************************************************************/
-/* original bts code
 			}
 
 			break;
-*/
-				// Break only after first found alive player
-				break;
-			}
-/*************************************************************************************************/
-/* UNOFFICIAL_PATCH                         END                                                  */
-/*************************************************************************************************/
 		}
 	}
 	else

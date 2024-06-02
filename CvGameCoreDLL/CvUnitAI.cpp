@@ -2764,6 +2764,7 @@ void CvUnitAI::AI_reserveMove()
 			return;
 		}
 	}
+
 	if (AI_retreatToCity())
 	{
 		return;
@@ -4865,6 +4866,7 @@ void CvUnitAI::AI_assaultSeaMove()
 					//Release any Warships to finish the job.
 					getGroup()->AI_seperateAI(UNITAI_ATTACK_SEA);
 					getGroup()->AI_seperateAI(UNITAI_RESERVE_SEA);
+					
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       05/11/09                                jdog5000      */
 /*                                                                                              */
@@ -4894,7 +4896,6 @@ void CvUnitAI::AI_assaultSeaMove()
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
-
 
 					if (bMissionPushed)
 					{
@@ -8645,7 +8646,7 @@ bool CvUnitAI::AI_spreadCorporation()
 	{
 		return false;
 	}
-	bool bHasHQ = (GET_TEAM(getTeam()).hasHeadquarters((CorporationTypes)iI));
+	bool bHasHQ = (GET_TEAM(getTeam()).hasHeadquarters((CorporationTypes)eCorporation));
 
 	int iBestValue = 0;
 	CvPlot* pBestPlot = NULL;

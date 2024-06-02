@@ -1,446 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Assert-fast|Win32">
+      <Configuration>Assert-fast</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Assert|Win32">
+      <Configuration>Assert</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Final Debug|Win32">
-      <Configuration>Final Debug</Configuration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Final Release|Win32">
-      <Configuration>Final Release</Configuration>
+    <ProjectConfiguration Include="Release-fast|Win32">
+      <Configuration>Release-fast</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-  </ItemGroup>
-  <PropertyGroup Label="Globals">
-    <ProjectGuid>{E323AF8E-688B-4ED7-BA84-269D8F3AAE2D}</ProjectGuid>
-    <RootNamespace>CvGameCoreDLL</RootNamespace>
-    <SccProjectName>
-    </SccProjectName>
-    <SccAuxPath />
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccProvider>
-    </SccProvider>
-    <Keyword>Win32Proj</Keyword>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Makefile</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Makefile</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
-  <PropertyGroup>
-    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">$(Configuration)\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">false</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">$(Configuration)\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeBuildCommandLine>nmake Debug</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>nmake Debug_clean</NMakeReBuildCommandLine>
-    <NMakeCleanCommandLine>nmake clean</NMakeCleanCommandLine>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <NMakeBuildCommandLine>Release</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>Release_clean</NMakeReBuildCommandLine>
-    <NMakeCleanCommandLine>clean</NMakeCleanCommandLine>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\Civ4\Beyond the Sword\Mods\PAE_BasisDLL\CvGameCoreDLL\Boost-1.32.0\include;C:\Civ4\Beyond the Sword\Mods\PAE_BasisDLL\CvGameCoreDLL\Python24\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CVGAMECOREDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>CvGameCoreDLL.h</PrecompiledHeaderFile>
-      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <CallingConvention>Cdecl</CallingConvention>
-      <ShowIncludes>false</ShowIncludes>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>boost_python-vc71-mt-gd-1_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../Beyond the Sword/Assets/CvGameCoreDLL_DEBUG.dll</OutputFile>
-      <AdditionalLibraryDirectories>Python24\libs;boost-1.32.0\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)CvGameCoreDLL_DEBUG.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <LargeAddressAware>true</LargeAddressAware>
-      <ImportLibrary>$(OutDir)CvGameCoreDLL.lib</ImportLibrary>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>Boost-1.32.0\include;Python24\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CVGAMECOREDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>CvGameCoreDLL.h</PrecompiledHeaderFile>
-      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <CallingConvention>Cdecl</CallingConvention>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>boost_python-vc71-mt-1_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../Beyond the Sword/Assets/CvGameCoreDLL_RELEASE.dll</OutputFile>
-      <AdditionalLibraryDirectories>Python24\libs;boost-1.32.0\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)CvGameCoreDLL_RELEASE.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <LargeAddressAware>true</LargeAddressAware>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary>$(OutDir)CvGameCoreDLL.lib</ImportLibrary>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">
-    <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <OmitFramePointers>true</OmitFramePointers>
-      <AdditionalIncludeDirectories>Boost-1.32.0\include;Python24\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CVGAMECOREDLL_EXPORTS;FINAL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>CvGameCoreDLL.h</PrecompiledHeaderFile>
-      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <CallingConvention>Cdecl</CallingConvention>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>boost_python-vc71-mt-1_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../Beyond the Sword/Assets/CvGameCoreDLL.dll</OutputFile>
-      <AdditionalLibraryDirectories>Python24\libs;boost-1.32.0\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)CvGameCoreDLL.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <LargeAddressAware>true</LargeAddressAware>
-      <OptimizeReferences>true</OptimizeReferences>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary>$(OutDir)CvGameCoreDLL.lib</ImportLibrary>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">
-    <ClCompile>
-      <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>Boost-1.32.0\include;Python24\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CVGAMECOREDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>false</MinimalRebuild>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>CvGameCoreDLL.h</PrecompiledHeaderFile>
-      <ProgramDataBaseFileName>$(IntDir)vc70.pdb</ProgramDataBaseFileName>
-      <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <CallingConvention>Cdecl</CallingConvention>
-      <ShowIncludes>false</ShowIncludes>
-    </ClCompile>
-    <Link>
-      <AdditionalDependencies>boost_python-vc71-mt-1_32.lib;winmm.lib;msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../Beyond the Sword/Assets/CvGameCoreDLL.dll</OutputFile>
-      <AdditionalLibraryDirectories>Python24\libs;boost-1.32.0\libs\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreSpecificDefaultLibraries>msvcprtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(OutDir)CvGameCoreDLL_DEBUG.pdb</ProgramDatabaseFile>
-      <SubSystem>Windows</SubSystem>
-      <LargeAddressAware>true</LargeAddressAware>
-      <ImportLibrary>$(OutDir)CvGameCoreDLL.lib</ImportLibrary>
-      <TargetMachine>MachineX86</TargetMachine>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="_precompile.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvArea.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvArtFileMgr.cpp" />
-    <ClCompile Include="CvCity.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvCityAI.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvDeal.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvDiploParameters.cpp" />
-    <ClCompile Include="CvDLLButtonPopup.cpp" />
-    <ClCompile Include="CvDLLEntity.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvDLLPython.cpp" />
-    <ClCompile Include="CvDllPythonEvents.cpp" />
-    <ClCompile Include="CvDllTranslator.cpp" />
-    <ClCompile Include="CvDLLWidgetData.cpp" />
-    <ClCompile Include="CvEventReporter.cpp" />
-    <ClCompile Include="CvFractal.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvGame.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvGameAI.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvGameCoreDLL.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvGameCoreUtils.cpp" />
-    <ClCompile Include="CvGameInterface.cpp" />
-    <ClCompile Include="CvGameTextMgr.cpp" />
-    <ClCompile Include="CvGlobals.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvHallOfFameInfo.cpp" />
-    <ClCompile Include="CvInfos.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvInfoWater.cpp" />
-    <ClCompile Include="CvInitCore.cpp" />
-    <ClCompile Include="CvMap.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvMapGenerator.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvMessageControl.cpp" />
-    <ClCompile Include="CvMessageData.cpp" />
-    <ClCompile Include="CvPlayer.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvPlayerAI.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvPlot.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvPlotGroup.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvPopupInfo.cpp" />
-    <ClCompile Include="CvPopupReturn.cpp" />
-    <ClCompile Include="CvRandom.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvReplayInfo.cpp" />
-    <ClCompile Include="CvReplayMessage.cpp" />
-    <ClCompile Include="CvSelectionGroup.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvSelectionGroupAI.cpp" />
-    <ClCompile Include="CvStatistics.cpp" />
-    <ClCompile Include="CvStructs.cpp" />
-    <ClCompile Include="CvTalkingHeadMessage.cpp" />
-    <ClCompile Include="CvTeam.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvTeamAI.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvUnit.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvUnitAI.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Debug|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Final Release|Win32'">Use</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="CvXMLLoadUtility.cpp" />
-    <ClCompile Include="CvXMLLoadUtilityGet.cpp" />
-    <ClCompile Include="CvXMLLoadUtilityInit.cpp" />
-    <ClCompile Include="CvXMLLoadUtilitySet.cpp" />
-    <ClCompile Include="FAssert.cpp" />
-    <ClCompile Include="FDialogTemplate.cpp" />
-    <ClCompile Include="CyArgsList.cpp" />
-    <ClCompile Include="CyArea.cpp" />
-    <ClCompile Include="CyAreaInterface.cpp" />
-    <ClCompile Include="CyArtFileMgr.cpp" />
-    <ClCompile Include="CyArtFileMgrInterface.cpp" />
-    <ClCompile Include="CyCityInterface1.cpp" />
-    <ClCompile Include="CyEnumsInterface.cpp" />
-    <ClCompile Include="CyGameCoreUtils.cpp" />
-    <ClCompile Include="CyGameCoreUtilsInterface.cpp" />
-    <ClCompile Include="CyGameInterface.cpp" />
-    <ClCompile Include="CyGameTextMgr.cpp" />
-    <ClCompile Include="CyGameTextMgrInterface.cpp" />
-    <ClCompile Include="CyGlobalContext.cpp" />
-    <ClCompile Include="CyGlobalContextInterface1.cpp" />
-    <ClCompile Include="CyGlobalContextInterface2.cpp" />
-    <ClCompile Include="CyGlobalContextInterface3.cpp" />
-    <ClCompile Include="CyGlobalContextInterface4.cpp" />
-    <ClCompile Include="CyHallOfFameInfo.cpp" />
-    <ClCompile Include="CyHallOfFameInterface.cpp" />
-    <ClCompile Include="CyInfoInterface1.cpp" />
-    <ClCompile Include="CyInfoInterface2.cpp" />
-    <ClCompile Include="CyInfoInterface3.cpp" />
-    <ClCompile Include="CyMap.cpp" />
-    <ClCompile Include="CyMapGenerator.cpp" />
-    <ClCompile Include="CyMapGeneratorInterface.cpp" />
-    <ClCompile Include="CyMapInterface.cpp" />
-    <ClCompile Include="CyMessageControl.cpp" />
-    <ClCompile Include="CyMessageControlInterface.cpp" />
-    <ClCompile Include="CyPlayer.cpp" />
-    <ClCompile Include="CyPlayerInterface1.cpp" />
-    <ClCompile Include="CyPlayerInterface2.cpp" />
-    <ClCompile Include="CyPlot.cpp" />
-    <ClCompile Include="CyPlotInterface1.cpp" />
-    <ClCompile Include="CyRandomInterface.cpp" />
-    <ClCompile Include="CyReplayInfo.cpp" />
-    <ClCompile Include="CySelectionGroup.cpp" />
-    <ClCompile Include="CySelectionGroupInterface.cpp" />
-    <ClCompile Include="CyStructsInterface1.cpp" />
-    <ClCompile Include="CyTeam.cpp" />
-    <ClCompile Include="CyTeamInterface.cpp" />
-    <ClCompile Include="CyUnit.cpp" />
-    <ClCompile Include="CyUnitInterface1.cpp" />
-    <ClCompile Include="CyCity.cpp" />
-    <ClCompile Include="CyDeal.cpp" />
-    <ClCompile Include="CyGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AI_Defines.h" />
@@ -456,6 +40,7 @@
     <ClInclude Include="CvDLLEngineIFaceBase.h" />
     <ClInclude Include="CvDLLEntity.h" />
     <ClInclude Include="CvDLLEntityIFaceBase.h" />
+    <ClInclude Include="CvDLLEventReporterIFaceBase.h" />
     <ClInclude Include="CvDLLFAStarIFaceBase.h" />
     <ClInclude Include="CvDLLFlagEntityIFaceBase.h" />
     <ClInclude Include="CvDLLIniParserIFaceBase.h" />
@@ -507,13 +92,8 @@
     <ClInclude Include="CvUnit.h" />
     <ClInclude Include="CvUnitAI.h" />
     <ClInclude Include="CvXMLLoadUtility.h" />
-    <ClInclude Include="FAssert.h" />
-    <ClInclude Include="FDialogTemplate.h" />
-    <CustomBuildStep Include="FProfiler.h" />
-    <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="CyArgsList.h" />
     <ClInclude Include="CyArea.h" />
+    <ClInclude Include="CyArgsList.h" />
     <ClInclude Include="CyArtFileMgr.h" />
     <ClInclude Include="CyCity.h" />
     <ClInclude Include="CyDeal.h" />
@@ -531,10 +111,280 @@
     <ClInclude Include="CySelectionGroup.h" />
     <ClInclude Include="CyTeam.h" />
     <ClInclude Include="CyUnit.h" />
+    <ClInclude Include="FAssert.h" />
+    <ClInclude Include="FAStarNode.h" />
+    <ClInclude Include="FDataStreamBase.h" />
+    <ClInclude Include="FDialogTemplate.h" />
+    <ClInclude Include="FFreeListArray.h" />
+    <ClInclude Include="FFreeListArrayBase.h" />
+    <ClInclude Include="FFreeListTrashArray.h" />
+    <ClInclude Include="FInputDevice.h" />
+    <ClInclude Include="FProfiler.h" />
+    <ClInclude Include="FVariableSystem.h" />
+    <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="CvGameCoreDLL.rc" />
+    <ClCompile Include="CvArea.cpp" />
+    <ClCompile Include="CvArtFileMgr.cpp" />
+    <ClCompile Include="CvCity.cpp" />
+    <ClCompile Include="CvCityAI.cpp" />
+    <ClCompile Include="CvDeal.cpp" />
+    <ClCompile Include="CvDiploParameters.cpp" />
+    <ClCompile Include="CvDLLButtonPopup.cpp" />
+    <ClCompile Include="CvDLLEntity.cpp" />
+    <ClCompile Include="CvDLLPython.cpp" />
+    <ClCompile Include="CvDllPythonEvents.cpp" />
+    <ClCompile Include="CvDllTranslator.cpp" />
+    <ClCompile Include="CvDLLWidgetData.cpp" />
+    <ClCompile Include="CvEventReporter.cpp" />
+    <ClCompile Include="CvFractal.cpp" />
+    <ClCompile Include="CvGame.cpp" />
+    <ClCompile Include="CvGameAI.cpp" />
+    <ClCompile Include="CvGameCoreDLL.cpp" />
+    <ClCompile Include="CvGameCoreUtils.cpp" />
+    <ClCompile Include="CvGameInterface.cpp" />
+    <ClCompile Include="CvGameTextMgr.cpp" />
+    <ClCompile Include="CvGlobals.cpp" />
+    <ClCompile Include="CvHallOfFameInfo.cpp" />
+    <ClCompile Include="CvInfos.cpp" />
+    <ClCompile Include="CvInfoWater.cpp" />
+    <ClCompile Include="CvInitCore.cpp" />
+    <ClCompile Include="CvMap.cpp" />
+    <ClCompile Include="CvMapGenerator.cpp" />
+    <ClCompile Include="CvMessageControl.cpp" />
+    <ClCompile Include="CvMessageData.cpp" />
+    <ClCompile Include="CvPlayer.cpp" />
+    <ClCompile Include="CvPlayerAI.cpp" />
+    <ClCompile Include="CvPlot.cpp" />
+    <ClCompile Include="CvPlotGroup.cpp" />
+    <ClCompile Include="CvPopupInfo.cpp" />
+    <ClCompile Include="CvPopupReturn.cpp" />
+    <ClCompile Include="CvRandom.cpp" />
+    <ClCompile Include="CvReplayInfo.cpp" />
+    <ClCompile Include="CvReplayMessage.cpp" />
+    <ClCompile Include="CvSelectionGroup.cpp" />
+    <ClCompile Include="CvSelectionGroupAI.cpp" />
+    <ClCompile Include="CvStatistics.cpp" />
+    <ClCompile Include="CvStructs.cpp" />
+    <ClCompile Include="CvTalkingHeadMessage.cpp" />
+    <ClCompile Include="CvTeam.cpp" />
+    <ClCompile Include="CvTeamAI.cpp" />
+    <ClCompile Include="CvUnit.cpp" />
+    <ClCompile Include="CvUnitAI.cpp" />
+    <ClCompile Include="CvXMLLoadUtility.cpp" />
+    <ClCompile Include="CvXMLLoadUtilityGet.cpp" />
+    <ClCompile Include="CvXMLLoadUtilityInit.cpp" />
+    <ClCompile Include="CvXMLLoadUtilitySet.cpp" />
+    <ClCompile Include="CyArea.cpp" />
+    <ClCompile Include="CyAreaInterface.cpp" />
+    <ClCompile Include="CyArgsList.cpp" />
+    <ClCompile Include="CyArtFileMgr.cpp" />
+    <ClCompile Include="CyArtFileMgrInterface.cpp" />
+    <ClCompile Include="CyCity.cpp" />
+    <ClCompile Include="CyCityInterface1.cpp" />
+    <ClCompile Include="CyDeal.cpp" />
+    <ClCompile Include="CyEnumsInterface.cpp" />
+    <ClCompile Include="CyGame.cpp" />
+    <ClCompile Include="CyGameCoreUtils.cpp" />
+    <ClCompile Include="CyGameCoreUtilsInterface.cpp" />
+    <ClCompile Include="CyGameInterface.cpp" />
+    <ClCompile Include="CyGameTextMgr.cpp" />
+    <ClCompile Include="CyGameTextMgrInterface.cpp" />
+    <ClCompile Include="CyGlobalContext.cpp" />
+    <ClCompile Include="CyGlobalContextInterface1.cpp" />
+    <ClCompile Include="CyGlobalContextInterface2.cpp" />
+    <ClCompile Include="CyGlobalContextInterface3.cpp" />
+    <ClCompile Include="CyGlobalContextInterface4.cpp" />
+    <ClCompile Include="CyHallOfFameInfo.cpp" />
+    <ClCompile Include="CyHallOfFameInterface.cpp" />
+    <ClCompile Include="CyInfoInterface1.cpp" />
+    <ClCompile Include="CyInfoInterface2.cpp" />
+    <ClCompile Include="CyInfoInterface3.cpp" />
+    <ClCompile Include="CyMap.cpp" />
+    <ClCompile Include="CyMapGenerator.cpp" />
+    <ClCompile Include="CyMapGeneratorInterface.cpp" />
+    <ClCompile Include="CyMapInterface.cpp" />
+    <ClCompile Include="CyMessageControl.cpp" />
+    <ClCompile Include="CyMessageControlInterface.cpp" />
+    <ClCompile Include="CyPlayer.cpp" />
+    <ClCompile Include="CyPlayerInterface1.cpp" />
+    <ClCompile Include="CyPlayerInterface2.cpp" />
+    <ClCompile Include="CyPlot.cpp" />
+    <ClCompile Include="CyPlotInterface1.cpp" />
+    <ClCompile Include="CyRandomInterface.cpp" />
+    <ClCompile Include="CyReplayInfo.cpp" />
+    <ClCompile Include="CySelectionGroup.cpp" />
+    <ClCompile Include="CySelectionGroupInterface.cpp" />
+    <ClCompile Include="CyStructsInterface1.cpp" />
+    <ClCompile Include="CyTeam.cpp" />
+    <ClCompile Include="CyTeamInterface.cpp" />
+    <ClCompile Include="CyUnit.cpp" />
+    <ClCompile Include="CyUnitInterface1.cpp" />
+    <ClCompile Include="FAssert.cpp" />
+    <ClCompile Include="FDialogTemplate.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="FVariableSystem.inl" />
+    <None Include="interfaceDirtyBits.inl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3021AF0E-699D-4232-86F6-FC374A0C9957}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-fast|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Assert-fast|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-fast|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Assert-fast|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>set TARGET=Debug
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll  /NOLOGO</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>set TARGET=Debug
+nmake clean  /NOLOGO
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll /NOLOGO</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>set TARGET=Debug
+nmake clean  /NOLOGO</NMakeCleanCommandLine>
+    <AdditionalOptions>/DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /D_DEBUG /DUSE_DATA_DIR</AdditionalOptions>
+    <NMakeIncludeSearchPath>..\..\sourceMOD</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>set TARGET=Profile
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll /NOLOGO</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>set TARGET=Profile
+nmake clean /NOLOGO
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll /NOLOGO</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>set TARGET=Profile
+nmake clean  /NOLOGO</NMakeCleanCommandLine>
+    <AdditionalOptions>/DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /DNDEBUG /DFINAL_RELEASE /DUSE_DATA_DIR</AdditionalOptions>
+    <NMakeIncludeSearchPath>..\..\sourceMOD</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>set TARGET=Release
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll /NOLOGO</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>set TARGET=Release
+nmake clean /NOLOGO
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll /NOLOGO</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>set TARGET=Release
+nmake clean /NOLOGO</NMakeCleanCommandLine>
+    <AdditionalOptions>/DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /DNDEBUG /DFINAL_RELEASE /DUSE_DATA_DIR</AdditionalOptions>
+    <NMakeIncludeSearchPath>..\sourceMOD</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Assert|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>set TARGET=Assert
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll /NOLOGO</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>set TARGET=Assert
+nmake clean /NOLOGO
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake dll /NOLOGO</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>set TARGET=Assert
+nmake clean /NOLOGO</NMakeCleanCommandLine>
+    <AdditionalOptions>/DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /DNDEBUG /DFINAL_RELEASE /DFASSERT_ENABLE /DUSE_DATA_DIR</AdditionalOptions>
+    <NMakeIncludeSearchPath>..\sourceMOD</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-fast|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>set TARGET=Release
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake precompile  /NOLOGO
+bin\jom build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>set TARGET=Release
+nmake clean /NOLOGO
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake precompile  /NOLOGO
+bin\jom build</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>set TARGET=Release
+nmake clean /NOLOGO</NMakeCleanCommandLine>
+    <AdditionalOptions>/DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /DNDEBUG /DFINAL_RELEASE /DUSE_DATA_DIR</AdditionalOptions>
+    <NMakeIncludeSearchPath>..\sourceMOD</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Assert-fast|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeBuildCommandLine>set TARGET=Assert
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake precompile  /NOLOGO
+bin\jom build</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>set TARGET=Assert
+nmake clean  /NOLOGO
+nmake source_list /NOLOGO
+nmake fastdep /NOLOGO
+nmake precompile  /NOLOGO
+bin\jom build</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>set TARGET=Assert
+nmake clean /NOLOGO</NMakeCleanCommandLine>
+    <AdditionalOptions>/DWIN32 /D_WINDOWS /D_USRDLL /DCVGAMECOREDLL_EXPORTS /DNDEBUG /DFINAL_RELEASE /DFASSERT_ENABLE /DUSE_DATA_DIR</AdditionalOptions>
+    <NMakeIncludeSearchPath>..\sourceMOD</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

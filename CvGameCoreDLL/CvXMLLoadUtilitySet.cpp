@@ -259,15 +259,15 @@ bool CvXMLLoadUtility::SetPostGlobalsGlobalDefines()
 		GC.getDefinesVarSystem()->SetValue("SHALLOW_WATER_TERRAIN", idx);
 
 		// Flunky for PAE: river ford
-		SetGlobalDefine("RIVER_FORD_TERRAIN", szVal);
+		SetGlobalDefine("TERRAIN_RIVER_FORD", szVal);
 		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("RIVER_FORD_TERRAIN", idx);
-		SetGlobalDefine("RIVER_TERRAIN", szVal);
+		GC.getDefinesVarSystem()->SetValue("TERRAIN_RIVER_FORD", idx);
+		SetGlobalDefine("TERRAIN_RIVER", szVal);
 		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("RIVER_TERRAIN", idx);
-		SetGlobalDefine("LAKE_TERRAIN", szVal);
+		GC.getDefinesVarSystem()->SetValue("TERRAIN_RIVER", idx);
+		SetGlobalDefine("TERRAIN_LAKE", szVal);
 		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("LAKE_TERRAIN", idx);
+		GC.getDefinesVarSystem()->SetValue("TERRAIN_LAKE", idx);
 
 		SetGlobalDefine("LAND_IMPROVEMENT", szVal);
 		idx = FindInInfoClass(szVal);

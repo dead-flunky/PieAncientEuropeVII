@@ -71,8 +71,8 @@ public:
 	void verifyUnitValidPlot();
 
 	// Flunky for PAE from WtP
-	bool isAdjacentToPlot(CvPlot* pPlot) const;
-
+	//bool isAdjacentToPlot(CvPlot* pPlot) const;
+	
 	void nukeExplosion(int iRange, CvUnit* pNukeUnit = NULL);																							// Exposed to Python
 
 	bool isConnectedTo( const CvCity* pCity) const;																												// Exposed to Python
@@ -89,8 +89,8 @@ public:
 	bool isCoastalLand(int iMinWaterSize = -1) const;																																	// Exposed to Python
 	
 	// Flunky for PAE from WtP
-	bool hasAnyOtherWaterPlotsThanJustLargeRivers() const;
-	bool isAdjacentWaterPassable(CvPlot* pPlot) const;
+	//bool hasAnyOtherWaterPlotsThanJustLargeRivers() const;
+	//bool isAdjacentWaterPassable(CvPlot* pPlot) const;
 
 	bool isVisibleWorked() const;
 	bool isWithinTeamCityRadius(TeamTypes eTeam, PlayerTypes eIgnorePlayer = NO_PLAYER) const;	// Exposed to Python
@@ -198,8 +198,7 @@ public:
 	bool isRiverNetwork(TeamTypes eTeam) const;
 
 	bool isValidDomainForLocation(const CvUnit& unit) const;																					// Exposed to Python
-	bool isValidDomainForAction(const CvUnit& unit) const;																						// Exposed to Python
-	bool isValidDomainForAction(UnitTypes eUnit) const;
+	bool isValidDomainForAction(const CvUnit& unit) const;																							// Exposed to Python
 	bool isImpassable() const;																															// Exposed to Python
 
 	DllExport int getX() const;																																				// Exposed to Python
@@ -216,8 +215,8 @@ public:
 		return m_iY;
 	}
 #endif
-	bool at(int iX, int iY) const;																																		// Exposed to Python
-	int getIndex() const;
+	bool at(int iX, int iY) const;																																	// Exposed to Python
+	int getIndex() const;																																		// Exposed to Python
 	int getLatitude() const;																																					// Exposed to Python  
 	int getFOWIndex() const;
 
@@ -227,6 +226,7 @@ public:
 	int getArea() const;																																		// Exposed to Python
 	void setArea(int iNewValue);			
 
+	/*
 	//WTP, ray, Large Rivers - Nightinggale addition - start
 	CvArea* area(DomainTypes eDomain) const;
 	int getArea(DomainTypes eDomain) const;
@@ -234,7 +234,7 @@ public:
 	CvPlot* getAdjacentLandPlot(bool bReturnSelfFallback);
 	CvArea* CvPlot::getAdjacentSeaArea() const;
 	//WTP, ray, Large Rivers - Nightinggale addition - end
-
+	*/
 	/*
 	//WTP, Nightinggale - Terrain locator - start
 	template <typename T>
@@ -319,6 +319,7 @@ public:
 
 	DllExport TerrainTypes getTerrainType() const;																																	// Exposed to Python
 	void setTerrainType(TerrainTypes eNewValue, bool bRecalculate = true, bool bRebuildGraphics = true);	// Exposed to Python
+
 	DllExport FeatureTypes getFeatureType() const;																																	// Exposed to Python
 	DllExport void setFeatureType(FeatureTypes eNewValue, int iVariety = -1);																				// Exposed to Python
 	DllExport void setFeatureDummyVisibility(const char *dummyTag, bool show);																				// Exposed to Python
