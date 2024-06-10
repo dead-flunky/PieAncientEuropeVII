@@ -3488,10 +3488,13 @@ int CvGlobals::getInfoTypeForString(const char* szType, bool hideAssert) const
 
 	if(!hideAssert)
 	{
-		CvString szError;
-		szError.Format("info type %s not found, Current XML file is: %s", szType, GC.getCurrentXMLFile().GetCString());
-		FAssertMsg(strcmp(szType, "NONE")==0 || strcmp(szType, "")==0, szError.c_str());
-		gDLL->logMsg("xml.log", szError);
+		if (strcmp(szType, "NONE")==0 && strcmp(szType, "")==0)
+		{
+			CvString szError;
+			szError.Format("info type %s not found, Current XML file is: %s", szType, GC.getCurrentXMLFile().GetCString());
+			FAssertMsg(strcmp(szType, "NONE")==0 || strcmp(szType, "")==0, szError.c_str());
+			gDLL->logMsg("xml.log", szError);
+		}
 	}
 
 	return -1;
