@@ -1571,7 +1571,7 @@ int CvPlayerAI::AI_commerceWeight(CommerceTypes eCommerce, CvCity* pCity) const
 			
 			if (pCity->getCultureLevel() <= (CultureLevelTypes) 1)
 			{
-				iWeight = std::max(iWeight, 800);				
+				iWeight = std::max(iWeight, 800);
 			}
 		}
 		// pCity == NULL
@@ -1653,7 +1653,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	int iRange;
 	int iDX, iDY;
 	int iI;
-	bool bIsCoastal;
+	bool bIsCoastal, bIsFreshWater; // PAE bIsFreshWater
 	int iResourceValue = 0;
 	int iSpecialFood = 0;
 	int iSpecialFoodPlus = 0;
@@ -1672,7 +1672,10 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	{
 		return 0;
 	}
-	
+
+/* PAE freshWater */
+	bIsFreshWater = pPlot->isFreshWater();
+/*++++++++++++++++*/
 	bIsCoastal = pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN());
 	pArea = pPlot->area();
 	iNumAreaCities = pArea->getCitiesPerPlayer(getID());
@@ -1820,16 +1823,16 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 					iBadTile++;
 				}
 			}
-            else if (pLoopPlot->isOwned())
-            {
-                if (pLoopPlot->getTeam() == getTeam())
-                {
-                    if (pLoopPlot->isCityRadius() || abCitySiteRadius[iI])
-                    {
-                        iBadTile += bAdvancedStart ? 2 : 1;
-                    }
-                }
-            }
+			else if (pLoopPlot->isOwned())
+			{
+					if (pLoopPlot->getTeam() == getTeam())
+					{
+							if (pLoopPlot->isCityRadius() || abCitySiteRadius[iI])
+							{
+									iBadTile += bAdvancedStart ? 2 : 1;
+							}
+					}
+			}
 		}
 	}
 
@@ -1943,7 +1946,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			int iCultureMultiplier;
             if (!pLoopPlot->isOwned() || (pLoopPlot->getOwnerINLINE() == getID()))
             {	
-                iCultureMultiplier = 100;    
+                iCultureMultiplier = 100;
             }
             else
             {
@@ -2059,10 +2062,13 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			{
 				if (aiYield[YIELD_COMMERCE] > 1)
 				{
+					/* PAE */
+					iTempValue += bIsFreshWater ? 20 : 0;
+					/*******/
 					iTempValue += bIsCoastal ? 30 : -20;
 					if (bIsCoastal && (aiYield[YIELD_FOOD] >= GC.getFOOD_CONSUMPTION_PER_POPULATION()))
 					{
-						iSpecialFoodPlus += 1;                    	
+						iSpecialFoodPlus += 1;
 					}
 					if (bStartingLoc && !pPlot->isStartingPlot())
 					{
@@ -2159,11 +2165,15 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 							}
 						}
 
-                        if (pLoopPlot->isWater())
-                        {
-                            iValue += (bIsCoastal ? 100 : -800);
-                        }
-                    }
+						if (pLoopPlot->isWater())
+						{
+								iValue += (bIsCoastal ? 100 : -800);
+						}
+
+						/* PAE */
+						iValue += bIsFreshWater ? 100 : 0;
+						/*******/
+					}
 				}
 			}
 		}
@@ -2191,7 +2201,8 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	iValue += (iHealth / 5);
 
-	if (bIsCoastal)
+	/* PAE mit bFeshWater */
+	if (bIsCoastal || bIsFreshWater)
 	{
 		if (!bStartingLoc)
 		{
@@ -2209,14 +2220,14 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 		}
 		else
 		{
-		    //let other penalties bring this down.
-		    iValue += 600;
-		    if (!pPlot->isStartingPlot())
-		    {
-                if (pArea->getNumStartingPlots() == 0)
-                {
-                    iValue += 1000;                    
-                }
+			//let other penalties bring this down.
+			iValue += 600;
+			if (!pPlot->isStartingPlot())
+			{
+				if (pArea->getNumStartingPlots() == 0)
+				{
+						iValue += 1000;
+				}
 			}
 		}
 	}
@@ -2510,7 +2521,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 	    else if (iUniqueBonusCount > 2)
 	    {
 	        iValue *= 5;
-	        iValue /= (3 + iUniqueBonusCount);	        
+	        iValue /= (3 + iUniqueBonusCount);
 	    }
 	}
 	
@@ -16650,7 +16661,7 @@ void CvPlayerAI::AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) 
 				{
 					if (!AI_isPlotCitySite(pLoopPlot))
 					{
-						iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());					
+						iValue *= std::min(NUM_CITY_PLOTS * 2, pLoopPlot->area()->getNumUnownedTiles());
 
 						if (iValue > iBestFoundValue)
 						{

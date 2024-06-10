@@ -179,7 +179,7 @@ void CvCityAI::AI_doTurn()
 	{
 	    if (isProductionAutomated())
 	    {
-	        AI_doHurry();	        
+	        AI_doHurry();
 	    }
 		return;
 	}
@@ -4961,10 +4961,9 @@ void CvCityAI::AI_updateBestBuild()
 {
 	PROFILE_FUNC();
 	
-	
 	CvPlot* pLoopPlot;
 	int iI, iJ;
-    int aiFinalYields[NUM_YIELD_TYPES];
+	int aiFinalYields[NUM_YIELD_TYPES];
 
 	int iBonusFoodSurplus = 0;
 	int iBonusFoodDeficit = 0;
@@ -4977,22 +4976,22 @@ void CvCityAI::AI_updateBestBuild()
 	int iCommerceMultiplier = 100;
 	int iProductionMultiplier = 100;
 	int iWorkerCount = 0;
-	
+
 	int iWorkedFood = 0;
 	int iWorkableFood = 0;
 	int iWorkableFoodPlotCount = 0;
-	
+
 	CvPlayerAI& kPlayer = GET_PLAYER(getOwnerINLINE());
 
 	bool bChop = false;
 
 	int iGoodTileCount = 0;
-	
+
 	int iSpecialistCount = getSpecialistPopulation() - totalFreeSpecialists();
 
 	int iHappyAdjust = 0;
 	int iHealthAdjust = 0;
-	
+
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
 	{
 		if (iI != CITY_HOME_PLOT)
@@ -5056,7 +5055,7 @@ void CvCityAI::AI_updateBestBuild()
 				
 				if (pLoopPlot->isBeingWorked())
 				{
-					iWorkedFood += aiFinalYields[YIELD_FOOD];					
+					iWorkedFood += aiFinalYields[YIELD_FOOD];
 				}
 				else
 				{
@@ -5281,7 +5280,7 @@ void CvCityAI::AI_updateBestBuild()
 		iFoodMultiplier /= 2;
 	}
 
-    if (!bChop)
+	if (!bChop)
 	{
 		ProjectTypes eProductionProject = getProductionProject();
 		bChop = (eProductionProject != NO_PROJECT && AI_projectValue(eProductionProject) > 0);
@@ -5304,7 +5303,7 @@ void CvCityAI::AI_updateBestBuild()
     if (getProductionBuilding() != NO_BUILDING)
     {
     	iHappyAdjust += getBuildingHappiness(getProductionBuilding());
-    	iHealthAdjust += getBuildingHealth(getProductionBuilding());    	
+    	iHealthAdjust += getBuildingHealth(getProductionBuilding());
     }
 
 	for (iI = 0; iI < NUM_CITY_PLOTS; iI++)
@@ -5458,48 +5457,48 @@ void CvCityAI::AI_doDraft(bool bForce)
 
 	if (canConscript())
 	{
-	    if (GC.getUnitInfo(getConscriptUnit()).getCombat() > 5)
-        {
-			if (bForce)
-			{
-				conscript();
-				return;
-        	}
-        	
-            bool bLandWar = ((area()->getAreaAIType(getTeam()) == AREAAI_OFFENSIVE) || (area()->getAreaAIType(getTeam()) == AREAAI_DEFENSIVE) || (area()->getAreaAIType(getTeam()) == AREAAI_MASSING));
-            bool bDanger = (!AI_isDefended() && AI_isDanger());
-            int iConscriptPop = getConscriptPopulation();
-            int iHappyDiff = GC.getDefineINT("CONSCRIPT_POP_ANGER") - iConscriptPop;
+		if (GC.getUnitInfo(getConscriptUnit()).getCombat() > 5)
+		{
+				if (bForce)
+				{
+					conscript();
+					return;
+				}
 
-            if (bLandWar && 0 == angryPopulation(iHappyDiff))
-            {
-                bool bWait = false;
+				bool bLandWar = ((area()->getAreaAIType(getTeam()) == AREAAI_OFFENSIVE) || (area()->getAreaAIType(getTeam()) == AREAAI_DEFENSIVE) || (area()->getAreaAIType(getTeam()) == AREAAI_MASSING));
+				bool bDanger = (!AI_isDefended() && AI_isDanger());
+				int iConscriptPop = getConscriptPopulation();
+				int iHappyDiff = GC.getDefineINT("CONSCRIPT_POP_ANGER") - iConscriptPop;
 
-                if (!bDanger)
-                {
-                    if (!bWait)
-                    {
-                        if (getConscriptAngerTimer() > 0)
-                        {
-                            bWait = true;
-                        }
-                    }
+				if (bLandWar && 0 == angryPopulation(iHappyDiff))
+				{
+						bool bWait = false;
 
-                    if (!bWait)
-                    {
-                        if (3 * (getPopulation() - iConscriptPop) < getHighestPopulation() * 2)
-                        {
-                            bWait = true;
-                        }
-                    }
-                }
+						if (!bDanger)
+						{
+								if (!bWait)
+								{
+										if (getConscriptAngerTimer() > 0)
+										{
+												bWait = true;
+										}
+								}
 
-                if (!bWait)
-                {
-                    conscript();
-                }
-            }
-        }
+								if (!bWait)
+								{
+										if (3 * (getPopulation() - iConscriptPop) < getHighestPopulation() * 2)
+										{
+												bWait = true;
+										}
+								}
+						}
+
+						if (!bWait)
+						{
+								conscript();
+						}
+				}
+		}
 	}
 }
 

@@ -2300,7 +2300,6 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	}
 
 	const FeatureTypes eFeature = pPlot->getFeatureType();
-	TerrainTypes eTerrainFord = (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD"));
 
 	// Cannot move around in unrevealed land freely
 	if (m_pUnitInfo->isNoRevealMap() && willRevealByMove(pPlot))
@@ -2328,6 +2327,10 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		{
 			if (m_pUnitInfo->getFeatureImpassable(eFeature))
 			{
+				// PAE: Roads can make it (zB Chariots, Waggons -> Forests / Streitwagen, Karren -> Wald)
+				if (pPlot->isRoute()) {
+					return true;
+				}
 				TechTypes eTech = (TechTypes)m_pUnitInfo->getFeaturePassableTech(eFeature);
 				if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 				{
@@ -2353,6 +2356,10 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		
 		if (m_pUnitInfo->getTerrainImpassable(pPlot->getTerrainType()))
 		{
+			// PAE: Roads can make it (zB Chariots, Waggons -> Forests / Streitwagen, Karren -> Wald)
+			if (pPlot->isRoute()) {
+				return true;
+			}
 			TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
 			if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 			{
@@ -2411,20 +2418,18 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		break;
 
 	case DOMAIN_LAND:
-		// Flunky for PAE: river ford. allow land units to pass through water plots, if ford
+		// PAE: Rivers
+		if (pPlot->isWater() && pPlot->getTerrainType() == (TerrainTypes)(11))
+		{
+			break;
+		}
 		if (pPlot->isWater() && !canMoveAllTerrain())
 		{
 			if (!pPlot->isCity() || 0 == GC.getDefineINT("LAND_UNITS_CAN_ATTACK_WATER_CITIES"))
 			{
 				if (bIgnoreLoad || !isHuman() || plot()->isWater() || !canLoad(pPlot))
 				{
-					//WTP, ray, Large Rivers - START
-					// allowing all Land Units to enter Large Rivers
-					if (eTerrainFord && pPlot->getTerrainType() != eTerrainFord)
-					{
-						return false;
-					}
-					//WTP, ray, Large Rivers - END
+					return false;
 				}
 			}
 		}
@@ -2449,6 +2454,44 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 		*/
 
+		if (pPlot->getFeatureType() != NO_FEATURE) {
+			// PAE: Pferde und Kamele meiden Wälder
+			//UnitTypes typ1 = (UnitTypes) GC.getInfoTypeForString("UNIT_HORSE");
+			//UnitTypes typ2 = (UnitTypes)(GC.getInfoTypeForString("UNIT_CAMEL"));
+			int typ1 = (UnitTypes)(GC.getInfoTypeForString("UNIT_HORSE"));
+			int typ2 = (UnitTypes)(GC.getInfoTypeForString("UNIT_CAMEL"));
+			if (getUnitType() == typ1 || getUnitType() == typ2) {
+				return false;
+			}
+		}
+		else
+		{
+			// PAE: Bären und Wildschweine verlassen keine Wälder
+			int typ1 = (UnitTypes)(GC.getInfoTypeForString("UNIT_BEAR"));
+			int typ2 = (UnitTypes)(GC.getInfoTypeForString("UNIT_BEAR2"));
+			int typ3 = (UnitTypes)(GC.getInfoTypeForString("UNIT_BOAR"));
+			if (getUnitType() == typ1 || getUnitType() == typ2 || getUnitType() == typ3) {
+				return false;
+			}
+		}
+		
+		// PAE Goody huts, villages, towers, forts, limes walls (int > 35)
+		int iImp = pPlot->getImprovementType();
+		int typ1 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT"));
+		int typ2 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE_HILL"));
+		int typ3 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE"));
+		int typ4 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TOWN"));
+		int typ5 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM"));
+		int typ6 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2"));
+		int typ7 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT"));
+		int typ8 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT"));
+		if (iImp == typ1 || iImp == typ2 || iImp == typ3 || iImp == typ4 ||
+				iImp == typ5 || iImp == typ6 || iImp == typ7 || iImp == typ8 ||
+				iImp > 35)
+		{
+			return false;
+		}
+
 		if (!bAttack)
 		{
 			// PAE changes
@@ -2464,6 +2507,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			}
 			*/
 
+			// PAE: only same type of units may share a plot
 			if (pPlot->getNumUnits() > 0)
 			{
 				CvUnit* pLoopUnit;
@@ -2472,27 +2516,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 					return false;
 				}
 			}
+
 		}
-		else
-		{
-			if (pPlot->getFeatureType() != NO_FEATURE) {
-				// PAE: Pferde und Kamele laufen nicht in Wälder
-				UnitTypes Horse = (UnitTypes)(GC.getDefineINT("UNIT_HORSE"));
-				UnitTypes Camel = (UnitTypes)(GC.getDefineINT("UNIT_CAMEL"));
-				if (getUnitType() == Horse || getUnitType() == Camel) {
-					return false;
-				}
-			}
-			else
-			{
-				// PAE: Bären verlassen keine Wälder
-				UnitTypes Bear = (UnitTypes)(GC.getDefineINT("UNIT_BEAR"));
-				UnitTypes Boar = (UnitTypes)(GC.getDefineINT("UNIT_BOAR"));
-				if (getUnitType() == Bear || getUnitType() == Boar) {
-					return false;
-				}
-			}
-		}
+
 	}
 
 	if (isNoCapture())
@@ -3245,7 +3271,7 @@ bool CvUnit::shouldLoadOnMove(const CvPlot* pPlot) const
 		// Flunky for PAE: river ford
 		if (pPlot->isWater() && !canMoveAllTerrain())
 		{
-			if (pPlot->getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD")))
+			if (pPlot->getTerrainType() != (TerrainTypes)(11))
 			{
 				return true;
 			}
@@ -4645,9 +4671,9 @@ bool CvUnit::canPillage(const CvPlot* pPlot) const
 	// PAE: Roman and Persian Roads
 	if (pPlot->isRoute())
 	{
-		RouteTypes eRomanRoad = (RouteTypes)(GC.getDefineINT("ROUTE_RAILROAD"));
-		RouteTypes ePersianRoad = (RouteTypes)(GC.getDefineINT("ROUTE_PERSIAN_ROAD"));
-		if (pPlot->getRouteType() == eRomanRoad || pPlot->getRouteType() == ePersianRoad)
+		int typ1 = (RouteTypes)(GC.getInfoTypeForString("ROUTE_PERSIAN_ROAD"));
+		int typ2 = (RouteTypes)(GC.getInfoTypeForString("ROUTE_ROMAN_ROAD"));
+		if (pPlot->getRouteType() == typ1 || pPlot->getRouteType() == typ2)
 		{
 			return false;
 		}

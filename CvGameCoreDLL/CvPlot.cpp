@@ -544,8 +544,8 @@ void CvPlot::updateFog()
 
 void CvPlot::updateVisibility()
 {
-	//PROFILE("CvPlot::updateVisibility");
-	PROFILE_FUNC();
+	PROFILE("CvPlot::updateVisibility");
+	//PROFILE_FUNC();
 
 	if (!GC.IsGraphicsInitialized())
 	{
@@ -1328,8 +1328,13 @@ bool CvPlot::isLake() const
 	CvArea* pArea = area();
 	if (pArea != NULL)
 	{
-		//WTP, ray, Lakes - mod. by Flunky for PAE
-		return pArea->isLake() || (getTerrainType() == (TerrainTypes)(GC.getDefineINT("TERRAIN_LAKE")));
+		//PAE: Lakes and Rivers
+		int typ1 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_LAKE"));
+		int typ2 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER"));
+		int typ3 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"));
+		if (getTerrainType() == typ1) return true;
+		if (getTerrainType() == typ2 || getTerrainType() == typ3) return false;
+		return pArea->isLake();
 	}
 
 	return false;
@@ -1343,12 +1348,17 @@ bool CvPlot::isFreshWater() const
 	CvPlot* pLoopPlot;
 	int iDX, iDY;
 	// PAE: lake and rivers
-	TerrainTypes e1 = (TerrainTypes)(GC.getDefineINT("TERRAIN_LAKE"));
-	TerrainTypes e2 = (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER"));
-	TerrainTypes e3 = (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD"));
+	int e1 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_LAKE"));
+	int e2 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER"));
+	int e3 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"));
 
 	if (isWater())
 	{
+		// PAE: lake and rivers
+		if (getTerrainType() == e1 || getTerrainType() == e2 || getTerrainType() == e3)
+		{
+			return true;
+		}
 		return false;
 	}
 
@@ -2433,8 +2443,8 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 				return false;
 			}
 			
-			// PAE River ford
-			if (getTerrainType() == (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD")))
+			// PAE: TERRAIN_RIVER_FORD
+			if (getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
 			{
 				return false;
 			}
@@ -2816,7 +2826,17 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	}
 	else
 	{
-		iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
+
+/* BTS *******************/
+		//iRegularCost = ((getFeatureType() == NO_FEATURE) ? GC.getTerrainInfo(getTerrainType()).getMovementCost() : GC.getFeatureInfo(getFeatureType()).getMovementCost());
+/*************************/
+/* PAE *******************/
+		iRegularCost = GC.getTerrainInfo(getTerrainType()).getMovementCost();
+
+		if (getFeatureType() != NO_FEATURE) {
+			iRegularCost += GC.getFeatureInfo(getFeatureType()).getMovementCost();
+		}
+/*************************/
 
 		if (isHills())
 		{
@@ -2829,7 +2849,7 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		}
 	}
 
-	bool bHasTerrainCost = (iRegularCost > 1); // BTS: 1
+	bool bHasTerrainCost = (iRegularCost > 1);
 
 	iRegularCost = std::min(iRegularCost, pUnit->baseMoves());
 
@@ -3626,6 +3646,14 @@ bool CvPlot::isTradeNetworkImpassable(TeamTypes eTeam) const
 
 bool CvPlot::isRiverNetwork(TeamTypes eTeam) const
 {
+	// PAE: Lakes and Rivers
+	if (getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_LAKE")) ||
+			getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER")) ||
+			getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+	{
+		return true;
+	}
+
 	if (!isRiver())
 	{
 		return false;
@@ -3826,7 +3854,7 @@ bool CvPlot::isValidDomainForAction(const CvUnit& unit) const
 	case DOMAIN_LAND:
 	case DOMAIN_IMMOBILE:
 		// PAE: river ford
-		return (!isWater() || unit.canMoveAllTerrain() || getTerrainType() == (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD")));
+		return (!isWater() || unit.canMoveAllTerrain() || getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")));
 		break;
 
 	default:
@@ -3962,7 +3990,7 @@ CvArea* CvPlot::waterArea() const
 
 		if (pAdjacentPlot != NULL)
 		{
-			if (pAdjacentPlot->isWater())
+			if (pAdjacentPlot->isWater())		
 			{
 				iValue = pAdjacentPlot->area()->getNumTiles();
 
@@ -5105,9 +5133,11 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 					//setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
 					//WTP, ray, Lakes
 					//we do not want to change Lakes to Coast either
-					if (getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER")) &&
-						getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD")) &&
-						getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_LAKE")))
+					if (
+							getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_LAKE")) &&
+							getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER")) &&
+							getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))
+						)
 					{
 						setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
 					}
@@ -5142,10 +5172,12 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 							{
 								//WTP, ray, Large Rivers - START
 								//we do not want to change Large Rivers to Coast, only Ocean
-								// pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
-								if (pLoopPlot->getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER")) &&
-									pLoopPlot->getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_RIVER_FORD")) &&
-									pLoopPlot->getTerrainType() != (TerrainTypes)(GC.getDefineINT("TERRAIN_LAKE")))
+								//pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
+								if (
+										getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_LAKE")) &&
+										getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER")) &&
+										getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))
+									)
 								{
 									pLoopPlot->setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
 								}
@@ -6879,7 +6911,7 @@ void CvPlot::updatePlotGroup()
 
 void CvPlot::updatePlotGroup(PlayerTypes ePlayer, bool bRecalculate)
 {
-	PROFILE("CvPlot::updatePlotGroup(Player)");
+	//PROFILE("CvPlot::updatePlotGroup(Player)");
 
 	CvPlotGroup* pPlotGroup;
 	CvPlotGroup* pAdjacentPlotGroup;
