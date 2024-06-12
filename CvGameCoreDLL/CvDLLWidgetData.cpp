@@ -1274,7 +1274,21 @@ void CvDLLWidgetData::doContactCiv(CvWidgetDataStruct &widgetDataStruct)
 	{
 		if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).canDeclareWar(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam()))
 		{
-			CvMessageControl::getInstance().sendChangeWar(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam(), true);
+			/** BTS **/
+			//CvMessageControl::getInstance().sendChangeWar(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam(), true);
+			/** PBMod **/
+			
+			CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_DECLAREWARMOVE);
+			if (NULL != pInfo)
+			{
+				pInfo->setData1(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam());
+				pInfo->setData2(0);
+				pInfo->setData3(0);
+				pInfo->setOption1(false);
+				pInfo->setOption2(true);
+				pInfo->setFlags(1);
+				gDLL->getInterfaceIFace()->addPopup(pInfo);
+			}
 		}
 		else if (GET_TEAM(GET_PLAYER((PlayerTypes)widgetDataStruct.m_iData1).getTeam()).isVassal(GC.getGameINLINE().getActiveTeam()))
 		{

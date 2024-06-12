@@ -15,6 +15,9 @@ CvMessageData* CvMessageData::createMessage(GameMessageTypes eType)
 		return new CvNetAutoMoves();
 	case GAMEMESSAGE_TURN_COMPLETE:
 		return new CvNetTurnComplete();
+	// PBMod
+	case GAMEMESSAGE_TURN_INCOMPLETE:
+		return new CvNetTurnIncomplete();
 	case GAMEMESSAGE_PUSH_ORDER:
 		return new CvNetPushOrder();
 	case GAMEMESSAGE_POP_ORDER: 
@@ -160,6 +163,37 @@ void CvNetTurnComplete::SetFromBuffer(FDataStreamBase* pStream)
 {
 	pStream->Read((int*)&m_ePlayer);
 }
+
+// PBMod
+CvNetTurnIncomplete::CvNetTurnIncomplete(PlayerTypes ePlayer) : CvMessageData(GAMEMESSAGE_TURN_INCOMPLETE), m_ePlayer(ePlayer) 
+{ 
+}
+
+void CvNetTurnIncomplete::Debug(char* szAddendum)
+{
+	sprintf(szAddendum, "Turn Incomplete, %d", m_ePlayer);
+}
+
+void CvNetTurnIncomplete::Execute()
+{
+	if (m_ePlayer != NO_PLAYER)
+	{
+		// 2023, Ramk: Second argument needed to avoid double spending
+		// of player income (e.g. production in cities).
+		GET_PLAYER(m_ePlayer).setTurnActive(true, false);
+	}
+}
+
+void CvNetTurnIncomplete::PutInBuffer(FDataStreamBase* pStream)
+{
+	pStream->Write(m_ePlayer);
+}
+
+void CvNetTurnIncomplete::SetFromBuffer(FDataStreamBase* pStream)
+{
+	pStream->Read((int*)&m_ePlayer);
+}
+// PBMod end
 
 CvNetPushOrder::CvNetPushOrder() : CvMessageData(GAMEMESSAGE_PUSH_ORDER), m_ePlayer(NO_PLAYER), m_iCityID(-1), m_eOrder(NO_ORDER), m_iData(-1), m_bAlt(false), m_bShift(false), m_bCtrl(false)
 {

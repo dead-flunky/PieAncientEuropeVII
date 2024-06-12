@@ -2201,7 +2201,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 
 	iValue += (iHealth / 5);
 
-	/* PAE mit bFeshWater */
+	/* PAE mit bFreshWater */
 	if (bIsCoastal || bIsFreshWater)
 	{
 		if (!bStartingLoc)

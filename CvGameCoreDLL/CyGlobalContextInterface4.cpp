@@ -170,5 +170,8 @@ void CyGlobalContextPythonInterface4(python::class_<CyGlobalContext>& x)
 		.def("getContactTypes", &CyGlobalContext::getContactTypes, "string () - Returns enum string")
 
 		.def("getDiplomacyPowerTypes", &CyGlobalContext::getDiplomacyPowerTypes, "string () - Returns enum string")
+		.def("getAltrootDir", &CyGlobalContext::getAltrootDir, "string ( )" )
+		.def("sendChat", &CyGlobalContext::sendChat, "void (wstring szString, int targetType)")
+		.def("sendPause", &CyGlobalContext::sendPause, "void (int iPauseID = -1)")
 		;
 }

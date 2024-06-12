@@ -2323,7 +2323,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	bool bCanEnterArea = canEnterArea(ePlotTeam, pPlotArea);
 	if (bCanEnterArea)
 	{
-		if (pPlot->getFeatureType() != NO_FEATURE)
+		if (eFeature != NO_FEATURE)
 		{
 			if (m_pUnitInfo->getFeatureImpassable(eFeature))
 			{

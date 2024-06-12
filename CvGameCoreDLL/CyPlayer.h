@@ -42,6 +42,7 @@ public:
 	bool isHuman();
 	bool isBarbarian();
 	std::wstring getName();
+	void setName(std::wstring szNewValue);
 	std::wstring getNameForm(int iForm);
 	std::wstring getNameKey();
 	std::wstring getCivilizationDescription(int iForm);
@@ -301,6 +302,7 @@ public:
 	int getTradeRoutes();
 	int getConversionTimer();
 	int getRevolutionTimer();
+	void changeRevolutionTimer(int iChange);
 
 	bool isStateReligion();
 	bool isNoNonStateReligionSpread();
@@ -325,6 +327,8 @@ public:
 	int getTechScore();
 	int getTotalTimePlayed();
 	bool isMinorCiv();
+	bool isWatchingCiv();
+	void setWatchingCiv(bool bNewValue);
 	bool isAlive();
 	bool isEverAlive();
 	bool isExtendedGame();
@@ -351,6 +355,7 @@ public:
 	int getPlayerTextColorG();
 	int getPlayerTextColorB();
 	int getPlayerTextColorA();
+	void setPlayerColor(int /*PlayerColorTypes*/ eColor);
 
 	int getSeaPlotYield(YieldTypes eIndex);
 	int getYieldRateModifier(YieldTypes eIndex);
@@ -498,6 +503,7 @@ public:
 	bool canHaveTradeRoutesWith(int iPlayer);
 
 	void forcePeace(int iPlayer);
+	void setTurnActive(bool bNewValue);
 
 private:
 	CvPlayer* m_pPlayer;

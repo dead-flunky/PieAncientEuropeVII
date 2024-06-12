@@ -373,8 +373,8 @@ void CvGame::uninit()
 	//PBMod
 	SAFE_DELETE_ARRAY(m_aiPlayerPermutationInTurnOrder);
 	SAFE_DELETE_ARRAY(m_aiTeamPermutationInTurnOrder);
-  	SAFE_DELETE_ARRAY(m_piCorpNumAlivePlayers);
-  	//PBMod
+	SAFE_DELETE_ARRAY(m_piCorpNumAlivePlayers);
+	//PBMod
 
 	SAFE_DELETE_ARRAY(m_aiShrineBuilding);
 	SAFE_DELETE_ARRAY(m_aiShrineReligion);
@@ -4559,6 +4559,7 @@ PlayerTypes CvGame::getActivePlayer() const
 {
 	return GC.getInitCore().getActivePlayer();
 }
+
 
 // PBMod
 PlayerTypes CvGame::getActivePlayerExternal() const

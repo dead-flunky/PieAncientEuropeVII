@@ -9931,7 +9931,7 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 			}
 
 			// PBMod
-			// Immideatly end turn for watcher civ
+			// Immediately end turn for watcher civ
 			// In sequential mode you has to end the turn by hand ATM.
 			if (GC.getGameINLINE().isNetworkMultiPlayer()){
 				if (isWatchingCiv()){

@@ -18,7 +18,22 @@ void CyMessageControl::sendTurnComplete()
 {
 	CvMessageControl::getInstance().sendTurnComplete();
 }
+// PBMod
+void CyMessageControl::sendTurnCompleteAll()
+{
+	CvMessageControl::getInstance().sendTurnCompleteAll();
+}
 
+void CyMessageControl::sendTurnCompletePB(int iPlayer)
+{
+	CvMessageControl::getInstance().sendTurnCompletePB((PlayerTypes) iPlayer);
+}
+
+void CyMessageControl::sendTurnIncompletePB(int iPlayer)
+{
+	CvMessageControl::getInstance().sendTurnIncompletePB((PlayerTypes) iPlayer);
+}
+// PBMod end
 void CyMessageControl::sendUpdateCivics(boost::python::list& iCivics)
 {
 	int *PYiCivics = NULL;		//	do not delete this memory

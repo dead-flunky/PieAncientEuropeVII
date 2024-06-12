@@ -604,8 +604,7 @@ public:
 	DllExport void setStartTime(uint uiStartTime);
 	DllExport uint getTotalTimePlayed() const;																																// Exposed to Python			  
 																																																			
-	bool isMinorCiv() const;
-																																									// Exposed to Python			
+	bool isMinorCiv() const;																																									// Exposed to Python
 	// PBMod
 	bool isWatchingCiv() const;		// Exposed to Python
 	void CvPlayer::setWatchingCiv(bool bNewValue);
@@ -670,7 +669,7 @@ public:
 	DllExport int getPlayerTextColorG() const;																												// Exposed to Python									
 	DllExport int getPlayerTextColorB() const;																												// Exposed to Python									
 	DllExport int getPlayerTextColorA() const;																												// Exposed to Python									
-	void setPlayerColor(PlayerColorTypes color);																											// Exposed to Python									
+	void setPlayerColor(PlayerColorTypes color);																								// Exposed to Python									
 	int getSeaPlotYield(YieldTypes eIndex) const;																											// Exposed to Python
 	void changeSeaPlotYield(YieldTypes eIndex, int iChange);
 

@@ -33,6 +33,41 @@ void CvMessageControl::sendTurnComplete()
 	}
 }
 
+// PBMod
+void CvMessageControl::sendTurnCompleteAll()
+{
+	//Finish turn for all players
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive()){
+			gDLL->sendMessageData(new CvNetTurnComplete((PlayerTypes)iI));
+		}
+	}
+}
+
+void CvMessageControl::sendTurnCompletePB(PlayerTypes ePlayer)
+{
+	if( GC.getGameINLINE().isPitboss() )
+	{
+		if (GET_PLAYER(ePlayer).isAlive())
+		{
+			gDLL->sendMessageData(new CvNetTurnComplete(ePlayer));
+		}
+	}
+}
+
+void CvMessageControl::sendTurnIncompletePB(PlayerTypes ePlayer)
+{
+	if( GC.getGameINLINE().isPitboss() )
+	{
+		if (GET_PLAYER(ePlayer).isAlive())
+		{
+			gDLL->sendMessageData(new CvNetTurnIncomplete(ePlayer));
+		}
+	}
+}
+// PBMod end
+
 void CvMessageControl::sendPushOrder(int iCityID, OrderTypes eOrder, int iData, bool bAlt, bool bShift, bool bCtrl)
 {
 	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())

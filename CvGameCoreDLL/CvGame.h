@@ -571,7 +571,6 @@ public:
 	DllExport void handleMiddleMouse(bool bCtrl, bool bAlt, bool bShift);
 
 	DllExport void handleDiplomacySetAIComment(DiploCommentTypes eComment) const;
-	
 	// PBMod
 	DllExport bool isDiploScreenUp() const;
 	void doControlWithoutWidget(ControlTypes eControl) const;

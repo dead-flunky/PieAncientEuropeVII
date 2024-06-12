@@ -106,6 +106,14 @@ std::wstring CyPlayer::getName()
 	return m_pPlayer ? m_pPlayer->getName() : std::wstring();
 }
 
+// PBMod
+void CyPlayer::setName(std::wstring szNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setName(CvWString(szNewValue));
+}
+// PBMod end
+
 std::wstring CyPlayer::getNameForm(int iForm)
 {
 	return m_pPlayer ? m_pPlayer->getName((uint)iForm) : std::wstring();
@@ -1273,6 +1281,13 @@ int CyPlayer::getRevolutionTimer()
 	return m_pPlayer ? m_pPlayer->getRevolutionTimer() : -1;
 }
 
+//PBMod
+void CyPlayer::changeRevolutionTimer(int iChange)
+{
+	if (m_pPlayer) 
+		m_pPlayer->changeRevolutionTimer(iChange);
+}
+//PBMod end
 bool CyPlayer::isStateReligion()
 {
 	return m_pPlayer ? m_pPlayer->isStateReligion() : false;
@@ -1381,6 +1396,18 @@ bool CyPlayer::isMinorCiv()
 	return m_pPlayer ? m_pPlayer->isMinorCiv() : false;
 }
 
+//PBMod
+bool CyPlayer::isWatchingCiv()
+{
+	return m_pPlayer ? m_pPlayer->isWatchingCiv() : false;
+}
+
+void CyPlayer::setWatchingCiv(bool bNewValue)
+{
+	if (m_pPlayer)
+		m_pPlayer->setWatchingCiv(bNewValue);
+}
+//PBMod end
 bool CyPlayer::isAlive() 
 {
 	return m_pPlayer ? m_pPlayer->isAlive() : false;
@@ -1488,6 +1515,15 @@ int CyPlayer::getPlayerTextColorA()
 {
 	return m_pPlayer ? m_pPlayer->getPlayerTextColorA() : -1;
 }
+//PBMod
+void CyPlayer::setPlayerColor(int /*PlayerColorTypes*/ eColor)
+{
+	if( m_pPlayer){
+		m_pPlayer->setPlayerColor((PlayerColorTypes)eColor);
+	}
+}
+//PBMod end
+
 
 int CyPlayer::getSeaPlotYield(YieldTypes eIndex)
 {
@@ -2227,3 +2263,10 @@ void  CyPlayer::forcePeace(int iPlayer)
 	if (m_pPlayer)
 		m_pPlayer->forcePeace((PlayerTypes)iPlayer);
 }
+//PBMod
+void CyPlayer::setTurnActive(bool bNewValue){
+	if (m_pPlayer)
+		m_pPlayer->setTurnActive(bNewValue, false);
+}
+//PBMod end
+

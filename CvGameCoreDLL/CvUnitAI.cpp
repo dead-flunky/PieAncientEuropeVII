@@ -1618,7 +1618,7 @@ void CvUnitAI::AI_barbAttackMove()
 			}
 		}
 	}
-	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive() * 3))
+	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive(true) * 3))
 	{
 		if (AI_cityAttack(1, 15))
 		{
@@ -1643,7 +1643,7 @@ void CvUnitAI::AI_barbAttackMove()
 			}
 		}
 	}
-	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive() * 2))
+	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive(true) * 2))
 	{
 		if (AI_pillageRange(2))
 		{
@@ -8646,7 +8646,7 @@ bool CvUnitAI::AI_spreadCorporation()
 	{
 		return false;
 	}
-	bool bHasHQ = (GET_TEAM(getTeam()).hasHeadquarters((CorporationTypes)eCorporation));
+	bool bHasHQ = (GET_TEAM(getTeam()).hasHeadquarters(eCorporation));
 
 	int iBestValue = 0;
 	CvPlot* pBestPlot = NULL;

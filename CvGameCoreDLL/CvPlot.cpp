@@ -545,7 +545,6 @@ void CvPlot::updateFog()
 void CvPlot::updateVisibility()
 {
 	PROFILE("CvPlot::updateVisibility");
-	//PROFILE_FUNC();
 
 	if (!GC.IsGraphicsInitialized())
 	{

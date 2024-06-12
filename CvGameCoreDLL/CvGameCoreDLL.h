@@ -14,16 +14,11 @@
 #pragma warning( disable: 4530 )	// C++ exception handler used, but unwind semantics are not enabled
 
 /* BTS */
-/*
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-*/
-
-/* PBMod */
 #if 0
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
+/* PBMod */
 #else 
 #define WIN32_LEAN_AND_MEAN
 #define _WIN32_WINNT 0x0501
