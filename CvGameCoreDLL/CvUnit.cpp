@@ -6385,6 +6385,11 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 		CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_DOESPIONAGE);
 		if (NULL != pInfo)
 		{
+			/* PBMod
+			 * Espionage popup bugfix: Store turn slice + activation flag
+			 */
+			pInfo->setFlags( PBMOD_ADD_POPUP_FLAG(GC.getGameINLINE().getTurnSlice()));
+			/* PBMod end */
 			gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE(), true);
 		}
 	}
@@ -6394,6 +6399,11 @@ bool CvUnit::espionage(EspionageMissionTypes eMission, int iData)
 		CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_DOESPIONAGE_TARGET);
 		if (NULL != pInfo)
 		{
+			/* PBMod
+			 * Espionage popup bugfix: Store turn slice + activation flag
+			 */
+			pInfo->setFlags( PBMOD_ADD_POPUP_FLAG(GC.getGameINLINE().getTurnSlice()));
+			/* PBMod end */
 			pInfo->setData1(eMission);
 			gDLL->getInterfaceIFace()->addPopup(pInfo, getOwnerINLINE(), true);
 		}

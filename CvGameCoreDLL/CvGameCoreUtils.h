@@ -353,4 +353,12 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType);
 void getMissionAIString(CvWString& szString, MissionAITypes eMissionAI);
 void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI);
 
+// PBMod
+#ifdef CHECK_MOD_VERSION_ON_LOGIN
+void update(unsigned char *out, const unsigned char *in, size_t len);
+void gen_modname_checksum(unsigned char *checksum, bool bPasswordProtected = true); // requires METADATA_MIN_LEN bytes
+void gen_modversion_checksum(unsigned char *checksum); // requires METADATA_MIN_LEN bytes
+#endif
+// PBMod End
+
 #endif

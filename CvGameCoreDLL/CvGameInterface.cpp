@@ -2466,6 +2466,8 @@ void CvGame::nextActivePlayer(bool bForward)
 	int iNewPlayer = getActivePlayer();
 	for (int i = 1; i < MAX_PLAYERS; ++i)
 	{
+		/* BTS */
+		/*
 		if (bForward)
 		{
 			iNewPlayer += 1;
@@ -2475,6 +2477,24 @@ void CvGame::nextActivePlayer(bool bForward)
 			iNewPlayer += MAX_PLAYERS - 1;
 		}
 		iNewPlayer %= MAX_PLAYERS;
+		*/
+		//PBMod Begin
+		if (bForward)
+		{
+			iNewPlayer = getNextPlayerInTurnOrder(iNewPlayer);
+			if (iNewPlayer == MAX_PLAYERS){
+				iNewPlayer = getNextPlayerInTurnOrder(iNewPlayer);
+			}
+		}
+		else
+		{
+			iNewPlayer = getPrevPlayerInTurnOrder(iNewPlayer);
+			if (iNewPlayer == MAX_PLAYERS){
+				iNewPlayer = getPrevPlayerInTurnOrder(iNewPlayer);
+			}
+		}
+		//PBMod End
+ 
 
 		PlayerTypes eNewPlayer = (PlayerTypes) iNewPlayer;
 		if (GET_PLAYER(eNewPlayer).isAlive() && !(GET_PLAYER(eNewPlayer).isBarbarian()))
@@ -2832,3 +2852,68 @@ void CvGame::handleDiplomacySetAIComment(DiploCommentTypes eComment) const
 		}
 	}
 }
+
+// PBMod
+bool CvGame::isDiploScreenUp() const
+{
+	return (gDLL->isDiplomacy() || gDLL->isMPDiplomacyScreenUp());
+}
+
+/* To invoke some controls where CyGame().doControl() not work.
+ *
+ * Some controls requires widgets to be called (otherwise 
+ *  gDLL->getInterfaceIFace()->isFocusedWidget() is false)
+ *
+ * This allowing to call them directy over Python without widget.
+ */
+void CvGame::doControlWithoutWidget(ControlTypes eControl) const
+{
+		switch (eControl){
+				case CONTROL_PING:
+						gDLL->getInterfaceIFace()->setInterfaceMode(INTERFACEMODE_PING);
+						break;
+
+				case CONTROL_SIGN:
+						gDLL->getInterfaceIFace()->setInterfaceMode(INTERFACEMODE_SIGN);
+						break;
+
+				case CONTROL_GRID:
+						gDLL->getEngineIFace()->SetGridMode(!(gDLL->getEngineIFace()->GetGridMode()));
+						break;
+
+				case CONTROL_BARE_MAP:
+						gDLL->getInterfaceIFace()->toggleBareMapMode();
+						break;
+
+				case CONTROL_YIELDS:
+						gDLL->getInterfaceIFace()->toggleYieldVisibleMode();
+						break;
+
+				case CONTROL_RESOURCE_ALL:
+						gDLL->getEngineIFace()->toggleResourceLayer();
+						break;
+
+                #define CONTROL_RESOURCE_TRUE CONTROL_RESOURCE_ALL + 1001
+                #define CONTROL_RESOURCE_FALSE CONTROL_RESOURCE_ALL + 1000
+                case CONTROL_RESOURCE_TRUE:
+						gDLL->getEngineIFace()->setResourceLayer(1);
+						break;
+
+                case CONTROL_RESOURCE_FALSE:
+						gDLL->getEngineIFace()->setResourceLayer(0);
+						break;
+
+				case CONTROL_UNIT_ICONS:
+						gDLL->getEngineIFace()->toggleUnitLayer();
+						break;
+
+				case CONTROL_GLOBELAYER:
+						gDLL->getEngineIFace()->toggleGlobeview();
+						break;
+
+				case CONTROL_SCORES:
+						gDLL->getInterfaceIFace()->toggleScoresVisible();
+						break;
+		}
+}
+// PBMod end

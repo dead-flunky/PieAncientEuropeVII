@@ -9,8 +9,47 @@
 #include "CvDLLUtilityIFaceBase.h"
 #include "CvGameAI.h"
 #include "CvGameCoreUtils.h"
+#include "CvMessageControl.h"
 
 // Public Functions...
+
+//PBMod, to fix crash in BASE use static variables instead of member variables in CvInitCore.
+struct pbmod_t {
+	bool bShortNames;
+	size_t iMaxLenName;
+	size_t iMaxLenDesc;
+};
+static pbmod_t pbmod = {false, 1, 4};
+
+#ifdef PBMOD_FRAME_POINTER_ENABLED
+// Pointers for PB Server
+static const void * const CriticalParent_LeaderNamePB = (void*) 0x0046aba8;
+static const void * const CriticalParent_CivDescPB = (void*) 0x0046ab8e;
+
+// Pointers for Player executable (to handle normal MP)
+static const void * const CriticalParent_LeaderNameMP = (void*) 0x0049d058;
+static const void * const CriticalParent_CivDescMP = (void*) 0x0049d03e;
+#endif
+
+#ifdef CHECK_MOD_VERSION_ON_LOGIN
+/* The metadata allows the client side to decide if the mod (and mod version)
+ * of server and client are the same.
+ *
+ * Data we be added to first player displayed in login screen (may not be player 0)
+ *
+ * TODO
+ * Moreover, a flag is send, if the upcomming save will be password protected.
+ */
+static int metadata_state = -1;          // cycles between -1, eID of a player and -2.
+/* State is used at two places: Metadata generation, part I and II
+ * part I: We do generate new metadata if state is -1 and set state to eID
+ * part II: We skip generation of metadata if state is != eID
+ * => Metadata will be generated one time at each call of the login screen.
+ *
+ * State will be set back to -1 by other calls of the hooked function(s).
+ */
+#endif
+//PBMod End
 
 CvInitCore::CvInitCore()
 {
@@ -95,12 +134,26 @@ void CvInitCore::init(GameMode eMode)
 	//--------------------------------
 	// Init saved data
 	reset(eMode);
+
+	// PBMod 2021: Use short names in normal MP games, too.
+	// We use more characters for both fields because normal MP games will not
+	// start with as much as players as PB games.
+	// 10 chars give the meta data bytes enough space.
+	if( !gDLL->IsPitbossHost() ){
+		setPitbossShortNames(true, 10, 10);
+	}
 }
 
 void CvInitCore::uninit()
 {
 	clearCustomMapOptions();
 	clearVictories();
+	// PBMod
+	pbmod.bShortNames = false;
+#ifdef DISALLOW_LOCAL_LOADING_OF_PB
+	m_bPitbossSave = false;
+	m_bPbemOrHotseatSave = false;
+#endif
 }
 
 
@@ -603,6 +656,19 @@ void CvInitCore::resetGame(CvInitCore * pSource, bool bClear, bool bSaveGameType
 
 		setSyncRandSeed(pSource->getSyncRandSeed());
 		setMapRandSeed(pSource->getMapRandSeed());
+
+		//PBMod
+#ifdef DISALLOW_LOCAL_LOADING_OF_PB
+		m_bPitbossSave = pSource->m_bPitbossSave;
+		m_bPbemOrHotseatSave = pSource->m_bPbemOrHotseatSave;
+		if( m_bPitbossSave ){
+			/* Made loading of pitboss saves in Hotseat and PBEM-Mode impossible. */
+			if( getHotseat() || getPbem() ){
+				resetGame();
+			}
+		}
+#endif
+		//PBMod
 	}
 }
 
@@ -723,7 +789,7 @@ void CvInitCore::resetPlayer(PlayerTypes eID, CvInitCore * pSource, bool bClear,
 
 
 CvWString CvInitCore::getMapScriptName() const
-{ 
+{
 	if (gDLL->getTransferredMap())
 	{
 		if (!getWBMapScript())
@@ -732,7 +798,7 @@ CvWString CvInitCore::getMapScriptName() const
 			return ( m_szMapScriptName + CvWString(MAP_TRANSFER_EXT) );
 		}
 	}
-	return m_szMapScriptName; 
+	return m_szMapScriptName;
 }	
 
 void CvInitCore::setMapScriptName(const CvWString & szMapScriptName)
@@ -1207,6 +1273,67 @@ const CvWString & CvInitCore::getLeaderName(PlayerTypes eID, uint uiForm) const
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
 		m_szTemp = gDLL->getObjectText(CvString(m_aszLeaderName[eID]).GetCString(), uiForm, true);
+//PBMod
+#ifdef PBMOD_FRAME_POINTER_ENABLED
+		void ** volatile puEBP = NULL;
+		__asm { mov puEBP, ebp };
+		void * pvReturn1 = puEBP[1]; // this is the caller of my function
+
+		if( pvReturn1 == CriticalParent_LeaderNamePB || pvReturn1 == CriticalParent_LeaderNameMP ){
+			if (isPitbossShortNames() ){
+
+				if( !getSlotVacant(eID) ){ m_szTemp.resize(0); }
+				if( m_szTemp.length() == 0 ) { ; }
+				if( pbmod.iMaxLenName == 1 /*|| m_szTemp.length() == 0*/ ){
+					unsigned short lKey = 65U;
+					lKey += eID;
+					if( lKey > 90U ) lKey += 6U;
+					m_szTemp.resize(1);
+					m_szTemp[0] = (wchar)lKey;
+				}else{
+					if( m_szTemp.length() > pbmod.iMaxLenName){
+						m_szTemp.resize(pbmod.iMaxLenName, ' ');
+					}
+				}
+			}
+
+#ifdef CHECK_MOD_VERSION_ON_LOGIN
+			// Metadata generation, part I
+			if( (int) eID == metadata_state){
+				//metadata_state = -1;
+				metadata_state = -2 ;
+
+				// Guarantee enough space for metadata to append
+				if (m_szTemp.length() + METADATA_MIN_LEN > METADATA_MAX_LEN){
+					m_szTemp.resize(METADATA_MAX_LEN - METADATA_MIN_LEN);
+				}
+				const int start_pos = m_szTemp.length();
+
+				// Prepend wchars, prefilled with '\b'
+				// Do not use '\0'. Otherwise wstrlen() prevents copy of full string.
+				// breaks if (wchar) 0 is hit.
+				// '\b' will be convertet to ' ' on client's output.
+				for( int pos=start_pos;pos<METADATA_MAX_LEN; ++pos) {
+					m_szTemp.insert(0, '\b');
+				}
+
+				// Gen checksum bytes
+				unsigned char checksum[METADATA_MIN_LEN] = { 0 };
+				gen_modversion_checksum(checksum);
+
+				// Fill in metadata in second byte of wchars
+				// \b H \b E \b R \b E … \b P \0 L \0 A \0 Y \0 E \0 R \0 …
+				for( int pos=0;pos<METADATA_MAX_LEN-start_pos; ++pos) {
+					const wchar_t tmp = m_szTemp[pos];
+					m_szTemp[pos] = ((checksum[pos] << 8) | (tmp & 0x00FF));
+				}
+			}
+#endif
+			}else{
+					metadata_state = -1;
+			}
+#endif
+//PBMod
 	}
 	else
 	{
@@ -1249,6 +1376,79 @@ const CvWString & CvInitCore::getCivDescription(PlayerTypes eID, uint uiForm) co
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
 		m_szTemp = gDLL->getObjectText(CvString(m_aszCivDescription[eID]).GetCString(), uiForm, true);
+
+//PBMod
+#ifdef PBMOD_FRAME_POINTER_ENABLED
+		void ** volatile puEBP = NULL;
+		__asm { mov puEBP, ebp }; //current frame pointer
+		//__asm { mov puEBP, esp }; //current stack pointer
+		void * pvReturn1 = puEBP[1]; // this is the caller of my function
+
+		if( pvReturn1 == CriticalParent_CivDescPB || pvReturn1 == CriticalParent_CivDescMP ){
+
+			if( !getSlotVacant(eID) ){
+				m_szTemp.resize(0);
+
+				/* The return of "" forces a lookup into the local Civ decription. Unfortunealy, there
+				 * is a bug(?) and not the civ decription, but the leader name will be readed. */
+				//m_szTemp.resize(1, ' '); // 2021, test override of empty string
+			}
+
+			if( isPitbossShortNames())
+			{
+				/* It's not possible to send the empty string because for "" the default civ desc will be send.
+				 * Thus, the first connection for a fresh(!) game could fail. Second attempt will work.
+				 */
+				if( m_szTemp.length() == 0 ) {
+					;
+				}else if( pbmod.iMaxLenDesc == 1 /*|| m_szTemp.length() == 0*/ ){
+					// Enummerate entries from A-Za-z
+					unsigned short lKey = 65U;
+					lKey += eID;
+					if( lKey > 90U ) lKey += 6U;
+					m_szTemp.resize(1);
+					m_szTemp[0] = (wchar)lKey;
+				}else{
+					// Shorten string
+					if( m_szTemp.length() > pbmod.iMaxLenDesc){
+						m_szTemp.resize(pbmod.iMaxLenDesc, ' ');
+					}
+				}
+			}
+
+#ifdef CHECK_MOD_VERSION_ON_LOGIN
+			// Metadata generation, part II
+			if( metadata_state == -1 ){
+				metadata_state = (int) eID;
+
+				// Guarantee enough space for metadata to append
+				if (m_szTemp.length() + METADATA_MIN_LEN > METADATA_MAX_LEN){
+					m_szTemp.resize(METADATA_MAX_LEN - METADATA_MIN_LEN);
+				}
+				const int start_pos = m_szTemp.length();
+
+				// Append wchars, prefilled with '\b'
+				// Do not use '\0'. Otherwise wstrlen() prevents copy of full string.
+				// '\b' will be convertet to ' ' on client's output.
+				m_szTemp.resize(METADATA_MAX_LEN, '\b'); // do not use '\0'.
+
+				// Gen checksum bytes
+				unsigned char checksum[METADATA_MIN_LEN] = { 0 };
+				gen_modname_checksum(checksum, !getAdminPassword().empty());
+
+				// Fill in metadata in second byte of wchars
+				// C \0 I \0 V \0 N \0 N \0 A \0 M \0 E \0 … \b H \b E \b R \b E …
+				for( int pos=0; pos<METADATA_MIN_LEN; ++pos)
+				{
+					const wchar_t tmp = m_szTemp[pos+start_pos];
+					m_szTemp[pos+start_pos] = ((checksum[pos] << 8) | (tmp & 0x00FF));
+				}
+
+			}
+#endif
+		}
+#endif
+//PBMod
 	}
 	else
 	{
@@ -1702,6 +1902,23 @@ bool CvInitCore::getReady(PlayerTypes eID) const
 
 void CvInitCore::setReady(PlayerTypes eID, bool bReady)
 {
+	//PBMod
+#ifdef DISALLOW_LOCAL_LOADING_OF_PB
+	/* PBMOD
+	 * Note/Bug: If multiplayer save is loaded by Main Menu>Direct IP>Load Game
+	 * mode is not GAMEMODE_PITBOSS as you might expect.
+	 * Moreover, m_eType is GAME_MP_LOAD and get[Pbem|Hotseat] is false.
+	 * Thus, you can not use mode or type to blockade loading of PB/PBEM Saves.
+	 */
+	if( bReady && m_bPitbossSave && !gDLL->IsPitbossHost() ){
+		//Hey, the user try to load a PB game locally...
+		return;
+	}else if( bReady && m_bPbemOrHotseatSave ){
+		//Hey, the user try to load a PBEM/Hotseat game over Direct IP...
+		return;
+	}
+#endif
+	//PBMod
 	FASSERT_BOUNDS(0, MAX_PLAYERS, eID, "CvInitCore::setReady");
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
@@ -1935,6 +2152,22 @@ void CvInitCore::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iMaxCityElimination);
 	pStream->Read(&m_iNumAdvancedStartPoints);
 
+	//PBMod
+#ifdef DISALLOW_LOCAL_LOADING_OF_PB
+	/* PBMod change. Check if further data is given. */
+	if( m_iNumAdvancedStartPoints & (1<<30)
+			&& !getAdminPassword().empty()  /* Not. ness. if (**)-Line
+																				 resets the above value, but
+																				 to be on the save side we check the
+																				 password, too. */
+		){
+		m_iNumAdvancedStartPoints &= ~(1<<30);
+		pStream->Read(&m_bPitbossSave);
+		pStream->Read(&m_bPbemOrHotseatSave);
+	}
+#endif
+	//PBMod
+
 	// PLAYER DATA
 	pStream->ReadString(MAX_PLAYERS, m_aszLeaderName);
 	pStream->ReadString(MAX_PLAYERS, m_aszCivDescription);
@@ -2021,7 +2254,24 @@ void CvInitCore::write(FDataStreamBase* pStream)
 	pStream->Write(m_iTargetScore);
 
 	pStream->Write(m_iMaxCityElimination);
-	pStream->Write(m_iNumAdvancedStartPoints);
+
+	//PBMod
+#ifdef DISALLOW_LOCAL_LOADING_OF_PB
+	/* PBMod: Add flag to m_iNumAdvancedStartPoints and attach extra data.
+	 * If no admin password is set the security fix will omitted, but the default mode used.
+	 */
+	if( getAdminPassword().empty() ){
+		m_iNumAdvancedStartPoints &= ~(1<<30);  //If pw removed during game.. (**)
+		pStream->Write( m_iNumAdvancedStartPoints );
+	}else{
+		pStream->Write( m_iNumAdvancedStartPoints | (1<<30) );
+		pStream->Write( (getMode() == GAMEMODE_PITBOSS) );
+		pStream->Write( (getPbem() || getHotseat()) );
+	}
+#else
+		pStream->Write( m_iNumAdvancedStartPoints );
+#endif
+	//PBMod
 
 	// PLAYER DATA
 	pStream->WriteString(MAX_PLAYERS, m_aszLeaderName);
@@ -2048,3 +2298,19 @@ void CvInitCore::write(FDataStreamBase* pStream)
 	pStream->Write(MAX_PLAYERS, m_abPlayableCiv);
 	pStream->Write(MAX_PLAYERS, m_abMinorNationCiv);
 }
+
+//PBMod
+//bool CvInitCore::isPitbossShortNames() const
+bool CvInitCore::isPitbossShortNames()
+{
+	return pbmod.bShortNames;
+}
+
+//void CvInitCore::setPitbossShortNames( bool bShort, int maxLenName, int maxLenDesc )
+void CvInitCore::setPitbossShortNames( bool bShort, int maxLenName, int maxLenDesc )
+{
+		pbmod.bShortNames = bShort;
+		pbmod.iMaxLenName = maxLenName>0?maxLenName:0;
+		pbmod.iMaxLenDesc = maxLenDesc>0?maxLenDesc:0;
+}
+//PBMod

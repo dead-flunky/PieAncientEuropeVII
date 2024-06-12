@@ -35,6 +35,7 @@
 // Public Functions...
 
 CvPlayer::CvPlayer()
+	:m_bConfirmAdvancedStartEnd(false) // PBMod
 {
 	m_aiSeaPlotYield = new int[NUM_YIELD_TYPES];
 	m_aiYieldRateModifier = new int[NUM_YIELD_TYPES];
@@ -159,7 +160,10 @@ void CvPlayer::init(PlayerTypes eID)
 
 		if (GC.getGameINLINE().isOption(GAMEOPTION_RANDOM_PERSONALITIES))
 		{
-			if (!isBarbarian() && !isMinorCiv())
+			/* BTS */
+			//if (!isBarbarian() && !isMinorCiv())
+			/* PBMod */
+			if (!isBarbarian() && !isMinorCiv() && !isWatchingCiv())
 			{
 				iBestValue = 0;
 				eBestPersonality = NO_LEADER;
@@ -381,6 +385,8 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	// Uninit class
 	uninit();
 
+	m_bConfirmAdvancedStartEnd = false; // PBMod
+
 	m_iStartingX = INVALID_PLOT_COORD;
 	m_iStartingY = INVALID_PLOT_COORD;
 	m_iTotalPopulation = 0;
@@ -478,6 +484,7 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	m_uiStartTime = 0;
 
 	m_bAlive = false;
+	m_bWatchingCiv = false; // PBMod
 	m_bEverAlive = false;
 	m_bTurnActive = false;
 	m_bAutoMoves = false;
@@ -1042,7 +1049,7 @@ int CvPlayer::startingPlotRange() const
 
 bool CvPlayer::startingPlotWithinRange(CvPlot* pPlot, PlayerTypes ePlayer, int iRange, int iPass) const
 {
-	//PROFILE_FUNC();
+	PROFILE_FUNC();
 
 	//XXX changes to AI_foundValue (which are far more flexible) make this function 
 	//    redundant but it is still called from Python. 
@@ -1833,16 +1840,34 @@ CvWString CvPlayer::getNewCityName() const
 		}
 	}
 
+	/* OOS-Fix: Role dice regardless if szName is empty or not. The emptyness of the string depends on the language!
+	PBMod */
 	if (szName.empty())
 	{
 		getCivilizationCityName(szName, getCivilizationType());
+	}else{
+		if (isBarbarian() || isMinorCiv())
+		{
+			GC.getGameINLINE().getSorenRandNum(GC.getCivilizationInfo(getCivilizationType()).getNumCityNames(), "getNewCityName 1 (Player)");
+		}
 	}
 
+	/* OOS-Fix: The following code free's the number of getSorenRandNum calls from the emptyness-condition of szName, too.
+	 * Thus, it will be languange independent.
+	 * numCityNameCalls defines the (maximal) number of getCivilizationCityName calls and exact number of getSorenRandNum
+	 * calls (in the isBarbarian() case).
+	 */
+	int numCityNameCalls = std::min(5, GC.getNumCivilizationInfos());
+
+	int iRandOffset = GC.getGameINLINE().getSorenRandNum(GC.getNumCivilizationInfos(), "getNewCityName 2 (Player)");
 	if (szName.empty())
 	{
 		// Pick a name from another random civ
-		int iRandOffset = GC.getGameINLINE().getSorenRandNum(GC.getNumCivilizationInfos(), "Place Units (Player)");
-		for (iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
+		/* BTS */
+		//int iRandOffset = GC.getGameINLINE().getSorenRandNum(GC.getNumCivilizationInfos(), "Place Units (Player)");
+		//for (iI = 0; iI < GC.getNumCivilizationInfos(); iI++)
+		/* PBMod */
+		for (iI = 0; iI < numCityNameCalls; iI++)
 		{
 			int iLoopName = ((iI + iRandOffset) % GC.getNumCivilizationInfos());
 
@@ -1850,9 +1875,25 @@ CvWString CvPlayer::getNewCityName() const
 
 			if (!szName.empty())
 			{
+				++iI; // PBMod
 				break;
 			}
 		}
+	/* PBMod */
+		for (iI; iI < numCityNameCalls; iI++){
+			if(isBarbarian() || isMinorCiv()){
+				int iLoopName = ((iI + iRandOffset) % GC.getNumCivilizationInfos());
+				GC.getGameINLINE().getSorenRandNum(GC.getCivilizationInfo(((CivilizationTypes)iLoopName)).getNumCityNames(), "getNewCityName 3A (Player)");
+			}
+		}
+	}else{
+		for (iI = 0; iI < numCityNameCalls; iI++){
+			if(isBarbarian() || isMinorCiv()){
+				int iLoopName = ((iI + iRandOffset) % GC.getNumCivilizationInfos());
+				GC.getGameINLINE().getSorenRandNum(GC.getCivilizationInfo(((CivilizationTypes)iLoopName)).getNumCityNames(), "getNewCityName 3B (Player)");
+			}
+		}
+	/* PBMod End */
 	}
 
 	if (szName.empty())
@@ -2317,6 +2358,11 @@ const wchar* CvPlayer::getName(uint uiForm) const
 	}
 }
 
+// PBMod
+void CvPlayer::setName(const wchar* szNewValue)
+{
+	GC.getInitCore().setLeaderName(getID(), szNewValue);
+}
 
 const wchar* CvPlayer::getNameKey() const
 {
@@ -3048,8 +3094,8 @@ bool CvPlayer::hasBusyUnit() const
 		{
 		    if (pLoopSelectionGroup->getNumUnits() == 0)
 		    {
-		        pLoopSelectionGroup->kill();
-		        return false;
+					pLoopSelectionGroup->kill();
+					return false;
 		    }
 
 			return true;
@@ -3065,6 +3111,12 @@ void CvPlayer::chooseTech(int iDiscover, CvWString szText, bool bFront)
 	CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHOOSETECH);
 	if (NULL != pInfo)
 	{
+		//PBMod
+		//For Oracle double tech bugfix. Store if this player is logged in.
+		if ( gDLL->IsPitbossHost() && isConnected() ){
+			pInfo->setFlags(PBMOD_ADD_POPUP_FLAG(1));
+		}
+
 		pInfo->setData1(iDiscover);
 		pInfo->setText(szText);
 		gDLL->getInterfaceIFace()->addPopup(pInfo, getID(), false, bFront);
@@ -3254,13 +3306,13 @@ int CvPlayer::countTotalCulture() const
 int CvPlayer::countOwnedBonuses(BonusTypes eBonus) const
 {
 	PROFILE("CvPlayer::countOwnedBonuses");
-    CvCity* pLoopCity;
+	CvCity* pLoopCity;
 	CvPlot* pLoopPlot;
 	int iCount;
 	int iI;
-    int iLoop;
-    
-    bool bAdvancedStart = (getAdvancedStartPoints() >= 0) && (getCurrentEra() < 3);
+	int iLoop;
+
+	bool bAdvancedStart = (getAdvancedStartPoints() >= 0) && (getCurrentEra() < 3);
 
 	iCount = 0;
 
@@ -3527,6 +3579,12 @@ bool CvPlayer::canContact(PlayerTypes ePlayer) const
 	}
 
 	if (isMinorCiv() || GET_PLAYER(ePlayer).isMinorCiv())
+	{
+		return false;
+	}
+
+	// PBMod
+	if (isWatchingCiv() || GET_PLAYER(ePlayer).isWatchingCiv())
 	{
 		return false;
 	}
@@ -5216,7 +5274,7 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 
 	eUnitClass = ((UnitClassTypes)(GC.getUnitInfo(eUnit).getUnitClassType()));
 
-	//FAssert(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass) == eUnit);
+	FAssert(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass) == eUnit);
 	if (GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass) != eUnit)
 	{
 		return false;
@@ -6778,7 +6836,7 @@ int CvPlayer::getResearchTurnsLeft(TechTypes eTech, bool bOverflow) const
 
 int CvPlayer::getResearchTurnsLeftTimes100(TechTypes eTech, bool bOverflow) const
 {
-    int iResearchRate;
+	int iResearchRate;
 	int iOverflow;
 	int iResearchLeft;
 	int iTurnsLeft;
@@ -6824,8 +6882,8 @@ int CvPlayer::getResearchTurnsLeftTimes100(TechTypes eTech, bool bOverflow) cons
 	}
 
 	return std::max(1, iTurnsLeft);
-    
-    
+
+
 }
 
 
@@ -9593,12 +9651,39 @@ bool CvPlayer::isMinorCiv() const
 	return GC.getInitCore().getMinorNationCiv(m_eID);
 }
 
+// PBMod
+bool CvPlayer::isWatchingCiv() const
+{
+	return m_bWatchingCiv;
+}
+// PBMod End
 
 bool CvPlayer::isAlive() const
 {
 	return m_bAlive;
 }
 
+// PBMod
+void CvPlayer::setWatchingCiv(bool bNewValue)
+{
+	if (m_bWatchingCiv == bNewValue) return;
+
+	// Enable/Disable  War/Peace  pinning with each nation
+	TeamTypes eTeam = getTeam();
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if ((iI != eTeam))
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive())
+			{
+				GET_TEAM((TeamTypes)iI).setPermanentWarPeace(eTeam, bNewValue);
+			}
+		}
+	}
+
+	m_bWatchingCiv = bNewValue;
+}
+// PBMod End
 
 bool CvPlayer::isEverAlive() const
 {
@@ -9844,6 +9929,20 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 
 				gDLL->getInterfaceIFace()->setDirty(SelectionCamera_DIRTY_BIT, true);
 			}
+
+			// PBMod
+			// Immideatly end turn for watcher civ
+			// In sequential mode you has to end the turn by hand ATM.
+			if (GC.getGameINLINE().isNetworkMultiPlayer()){
+				if (isWatchingCiv()){
+					if (GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS)){
+						{
+							setTurnActive(false, bDoTurn);
+						}
+					}
+				}
+			}
+			// PBMod End
 		}
 		else
 		{
@@ -9890,7 +9989,10 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 					{
 						if (!GET_TEAM(getTeam()).isTurnActive())
 						{
-							for (iI = (getTeam() + 1); iI < MAX_TEAMS; iI++)
+							/* BTS */
+							//for (iI = (getTeam() + 1); iI < MAX_TEAMS; iI++)
+							/* PBMod */
+							for (iI = GC.getGameINLINE().getNextTeamInTurnOrder(getTeam()); iI < MAX_TEAMS; iI = GC.getGameINLINE().getNextTeamInTurnOrder(iI))
 							{
 								if (GET_TEAM((TeamTypes)iI).isAlive())
 								{
@@ -9902,7 +10004,10 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 					}
 					else
 					{
-						for (iI = (getID() + 1); iI < MAX_PLAYERS; iI++)
+						/* BTS */
+						//for (iI = (getID() + 1); iI < MAX_PLAYERS; iI++)
+						// PBMod
+						for (iI = GC.getGameINLINE().getNextPlayerInTurnOrder(getID()); iI < MAX_PLAYERS; iI = GC.getGameINLINE().getNextPlayerInTurnOrder(iI))
 						{
 							if (GET_PLAYER((PlayerTypes)iI).isAlive())
 							{
@@ -10339,6 +10444,15 @@ int CvPlayer::getPlayerTextColorA() const
 	return ((int)(GC.getColorInfo((ColorTypes) GC.getPlayerColorInfo(getPlayerColor()).getTextColorType()).getColor().a * 255));
 }
 
+// PBMod
+void CvPlayer::setPlayerColor(PlayerColorTypes eColor)
+{
+	FAssertMsg(eColor != NO_PLAYERCOLOR, "getPlayerColor() is not expected to be equal with NO_PLAYERCOLOR");
+	if( eColor < GC.getNumPlayerColorInfos() ){
+		GC.getInitCore().setColor(getID(), eColor);
+	}
+}
+// PBMod
 
 int CvPlayer::getSeaPlotYield(YieldTypes eIndex) const
 {
@@ -11418,8 +11532,19 @@ void CvPlayer::changeHasCorporationCount(CorporationTypes eIndex, int iChange)
 
 	if (iChange != 0)
 	{
+		const int prevVal = m_paiHasCorporationCount[eIndex]; // PBMod
+
 		m_paiHasCorporationCount[eIndex] += iChange;
 		FAssert(getHasCorporationCount(eIndex) >= 0);
+
+		// PBMod
+		const int curVal = m_paiHasCorporationCount[eIndex];
+		if ( (curVal > 0) && (prevVal == 0) ){
+			GC.getGameINLINE().changeCorporationCountPlayers(eIndex, m_eID, 1);
+		} else if ( (curVal == 0) && (prevVal > 0) ){
+			GC.getGameINLINE().changeCorporationCountPlayers(eIndex, m_eID, -1);
+		}
+		// PBMod END
 
 		GC.getGameINLINE().updateBuildingCommerce();
 
@@ -12846,7 +12971,9 @@ int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
 		{
 			if (GET_TEAM((TeamTypes)iLoop).isAlive())
 			{
-				if (GET_TEAM(getTeam()).isHasMet((TeamTypes)iLoop))
+				if (GET_TEAM(getTeam()).isHasMet((TeamTypes)iLoop)
+						&& !GET_TEAM((TeamTypes)iLoop).isWatchingCiv()) // PBMod
+
 				{
 					if (iLoop == int(eAgainstTeam))
 					{
@@ -12881,7 +13008,8 @@ int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
 			{
 				if (GET_TEAM((TeamTypes)iLoop).isAlive())
 				{
-					if (GET_TEAM(getTeam()).isHasMet((TeamTypes)iLoop))
+					if (GET_TEAM(getTeam()).isHasMet((TeamTypes)iLoop)
+						&& !GET_TEAM((TeamTypes)iLoop).isWatchingCiv()) // PBMod
 					{
 						int iChange = (iTotalPoints * getEspionageSpendingWeightAgainstTeam((TeamTypes)iLoop) / iTotalWeight);
 						iAvailablePoints -= iChange;
@@ -12903,7 +13031,8 @@ int CvPlayer::getEspionageSpending(TeamTypes eAgainstTeam) const
 		{
 			if (getTeam() != iLoop)
 			{
-				if (GET_TEAM((TeamTypes)iLoop).isAlive())
+				if (GET_TEAM((TeamTypes)iLoop).isAlive() 
+						&& !GET_TEAM((TeamTypes)iLoop).isWatchingCiv()) // PBMod
 				{
 					if (GET_TEAM(getTeam()).isHasMet((TeamTypes)iLoop))
 					{
@@ -13362,7 +13491,7 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 	}
 	else if (kMission.getCounterespionageMod() > 0)
 	{
-		if (GET_TEAM(getTeam()).getCounterespionageTurnsLeftAgainstTeam(GET_PLAYER(eTargetPlayer).getTeam()) <= 0)
+		if (GET_TEAM(getTeam()).getCounterespionageTurnsLeftAgainstTeam(GET_PLAYER(eTargetPlayer).getTeam()) <= 1 /*0 */) // PBMod: Allow Counterespionage in last running round
 		{
 			iMissionCost = (iBaseMissionCost * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent()) / 100;
 		}
@@ -13886,8 +14015,22 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 		if (NO_TEAM != eTargetTeam)
 		{
 			int iTurns = (kMission.getCounterespionageNumTurns() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent()) / 100;
+			/* BTS */
+			/*
 			GET_TEAM(getTeam()).changeCounterespionageTurnsLeftAgainstTeam(eTargetTeam, iTurns);
 			GET_TEAM(getTeam()).changeCounterespionageModAgainstTeam(eTargetTeam, kMission.getCounterespionageMod());
+			*/
+			/* PBMod */
+			if( GET_TEAM(getTeam()).getCounterespionageTurnsLeftAgainstTeam(eTargetTeam) == 0 ){
+				// Do not increase twice for multiple counter espionage.
+				GET_TEAM(getTeam()).changeCounterespionageModAgainstTeam(eTargetTeam, kMission.getCounterespionageMod());
+			}
+			GET_TEAM(getTeam()).changeCounterespionageTurnsLeftAgainstTeam(eTargetTeam, iTurns);
+			if( GET_TEAM(getTeam()).getCounterespionageTurnsLeftAgainstTeam(eTargetTeam) == 0 ){
+				// Do not increase twice for multiple counter espionage.
+				GET_TEAM(getTeam()).changeCounterespionageModAgainstTeam(eTargetTeam, kMission.getCounterespionageMod());
+			}
+			/* PBMod */
 	
 			bSomethingHappened = true;
 
@@ -14009,12 +14152,17 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 		switch (eAction)
 		{
 		case ADVANCEDSTARTACTION_EXIT:
+			// PBMod: Omit AI spending points at logoff.
+			if ((GC.getGameINLINE().isPitboss()) && isHuman()){
+				return; // Allows player to login again
+			}
+
 			//Try to build this player's empire
 			if (getID() == GC.getGameINLINE().getActivePlayer())
 			{
 				gDLL->getInterfaceIFace()->setBusy(true);
 			}
-			AI_doAdvancedStart(true);			
+			AI_doAdvancedStart(true);
 			if (getID() == GC.getGameINLINE().getActivePlayer())
 			{
 				gDLL->getInterfaceIFace()->setBusy(false);
@@ -14032,6 +14180,8 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 
 	switch (eAction)
 	{
+	/* BTS */
+	/*
 	case ADVANCEDSTARTACTION_EXIT:
 		changeGold(getAdvancedStartPoints());
 		setAdvancedStartPoints(-1);
@@ -14060,6 +14210,54 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 			}
 		}
 		break;
+	*/
+	/* BTS End */
+	
+	/* PBMod */
+	case ADVANCEDSTARTACTION_EXIT_CONFIRM:
+		m_bConfirmAdvancedStartEnd = true;
+		break;
+	case ADVANCEDSTARTACTION_EXIT:
+		{
+		if ((GC.getGameINLINE().isPitboss() || true) && isHuman()){
+
+			if (m_bConfirmAdvancedStartEnd){
+				; // Player had confirmed end manually.
+			}else{
+				break; // Skip automatic generated event at logoff
+			}
+		}
+
+		changeGold(getAdvancedStartPoints());
+		setAdvancedStartPoints(-1);
+		if (GC.getGameINLINE().getActivePlayer() == getID())
+		{
+			gDLL->getInterfaceIFace()->setInAdvancedStart(false);
+		}
+
+		if (isHuman())
+		{
+			int iLoop;
+			for (CvCity* pCity = firstCity(&iLoop); NULL != pCity; pCity = nextCity(&iLoop))
+			{
+				pCity->chooseProduction();
+			}
+
+			chooseTech();
+
+			if (canRevolution(NULL))
+			{
+				CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_CHANGECIVIC);
+				if (NULL != pInfo)
+				{
+					gDLL->getInterfaceIFace()->addPopup(pInfo, getID());
+				}
+			}
+		}
+		break;
+		}
+	/* PBMod End */
+
 	case ADVANCEDSTARTACTION_AUTOMATE:
 		if (getID() == GC.getGameINLINE().getActivePlayer())
 		{
@@ -15789,6 +15987,7 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bExtendedGame);
 	pStream->Read(&m_bFoundedFirstCity);
 	pStream->Read(&m_bStrike);
+	pStream->Read(&m_bWatchingCiv); // PBMod
 
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
@@ -16252,6 +16451,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bExtendedGame);
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
+	pStream->Write(m_bWatchingCiv); // PBMod
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);
@@ -18566,7 +18766,10 @@ void CvPlayer::doEvents()
 		return;
 	}
 
-	if (isBarbarian() || isMinorCiv())
+	/* BTS */
+	//if (isBarbarian() || isMinorCiv())
+	/* PBMod */
+	if (isBarbarian() || isMinorCiv() || isWatchingCiv())
 	{
 		return;
 	}
@@ -19708,7 +19911,12 @@ void CvPlayer::launch(VictoryTypes eVictory)
 	kTeam.finalizeProjectArtTypes();
 	kTeam.setVictoryCountdown(eVictory, kTeam.getVictoryDelay(eVictory));
 
-	gDLL->getEngineIFace()->AddLaunch(getID());
+	/* BTS */
+	//gDLL->getEngineIFace()->AddLaunch(getID());
+	/* PBMod */
+	if (GC.IsGraphicsInitialized()){
+		gDLL->getEngineIFace()->AddLaunch(getID());
+	}
 
 	kTeam.setCanLaunch(eVictory, false);
 

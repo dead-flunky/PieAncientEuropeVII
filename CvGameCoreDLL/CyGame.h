@@ -106,6 +106,9 @@ public:
 	int getEstimateEndTurn() const;
 	void setEstimateEndTurn(int iNewValue);
 	int getTurnSlice() const;
+	//PBMod, for increment and decrement
+	void incrementTurnTimer(int iNumTurnSlices);
+	//END PBMod
 	int getMinutesPlayed() const;
 	int getTargetScore() const;
 	void setTargetScore(int iNewValue);
@@ -155,6 +158,10 @@ public:
 	bool isHotSeat();
 	bool isPbem();
 	bool isPitboss();
+	/* PBMod */
+	bool isPitbossShortNames() const;
+	void setPitbossShortNames(bool bShort, int maxLenName, int maxLenDesc);
+	/* PBMod */
 	bool isSimultaneousTeamTurns();
 
 	bool isFinalInitialized();
@@ -162,6 +169,9 @@ public:
 	int /*PlayerTypes*/ getActivePlayer();
 	void setActivePlayer(int /*PlayerTypes*/ eNewValue, bool bForceHotSeat);
 	int getPausePlayer();
+	/* PBMod */
+	void setPausePlayer(int /*PlayerTypes*/ eNewValue);
+	/* PBMod */
 	bool isPaused();
 	int /*UnitTypes*/ getBestLandUnit();
 	int getBestLandUnitCombat();
@@ -183,6 +193,9 @@ public:
 	bool isOption(int /*GameOptionTypes*/ eIndex);
 	void setOption(int /*GameOptionTypes*/ eIndex, bool bEnabled);
 	bool isMPOption(int /*MultiplayerOptionTypes*/ eIndex);
+	/* PBMod */
+	void setMPOption(int /*MultiplayerOptionTypes*/ eIndex, bool bEnabled);
+	/* PBMod */
 	bool isForcedControl(int /*ForceControlTypes*/ eIndex);
 	int getUnitCreatedCount(int /*UnitTypes*/ eIndex);
 	int getUnitClassCreatedCount(int /*UnitClassTypes*/ eIndex);
@@ -206,6 +219,9 @@ public:
 	bool isCorporationFounded(int /*CorporationTypes*/ eIndex);
 	bool isVotePassed(int /*VoteTypes*/ eIndex) const;
 	bool isVictoryValid(int /*VictoryTypes*/ eIndex);
+	/* PBMod */
+	void setVictoryValid(int /*VictoryTypes*/ eIndex, bool bValid);
+	/* PBMod */
 	bool isSpecialUnitValid(int /*SpecialUnitTypes*/ eSpecialUnitType);
 	void makeSpecialUnitValid(int /*SpecialUnitTypes*/ eSpecialUnitType);
 	bool isSpecialBuildingValid(int /*SpecialBuildingTypes*/ eIndex);
@@ -270,6 +286,22 @@ public:
 
 	bool isEventActive(int /*EventTriggerTypes*/ eTrigger);
 	void doControl(int iControl);
+
+	/* PBMod */
+	int setCivPassword(int ePlayer, const char *pNewPw, const char *pAdminPw);
+	bool isDiploScreenUp() const;
+	void doControlWithoutWidget(int /*ControlTypes*/ eControl) const;
+	std::wstring getModPath();
+	int unzipModUpdate(std::wstring zipFilename);
+	int setAdminPassword(const char *pNewAdminPw, const char *pAdminPw);
+	void fixTradeRoutes();
+	int getCorporationFactor100_(int numCorpLocationsOfPlayer, int numPlayersWithCorp,
+				int /*CorporationTypes*/ eCorporation) const;
+	int swapPlayersInTurnOrder(int iPlayerA, int iPlayerB);
+	boost::python::list getPlayersInTurnOrder();
+	int swapTeamsInTurnOrder(int iTeamA, int iTeamB);
+	boost::python::list getTeamsInTurnOrder();
+	/* PBMod */
 
 protected:
 	CvGame* m_pGame;

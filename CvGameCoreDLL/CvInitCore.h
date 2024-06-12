@@ -21,6 +21,18 @@
 		FAssertMsg(index < upper, acOut);\
 	}
 
+/*
+//PBMod, to fix crash in BASE use static variables instead of member variables in CvInitCore.
+struct pbmod_t {
+	bool bShortNames;
+	size_t iMaxLenName;
+	size_t iMaxLenDesc;
+};
+extern pbmod_t pbmod; //defined in CvInitCore.cpp 
+*/
+
+//PBMod End
+	
 class CvInitCore
 {
 
@@ -280,6 +292,13 @@ public:
 	DllExport virtual void read(FDataStreamBase* pStream);
 	DllExport virtual void write(FDataStreamBase* pStream);
 
+	// PBMod
+	//bool isPitbossShortNames() const;
+	//void setPitbossShortNames( bool bShort, int maxLenName = 2, int maxLenDesc = 3  ); // Limit: 52*2*3 = MAX_PLAYERS*maxLenName*maxLenDesc
+	static bool isPitbossShortNames();
+	static void setPitbossShortNames( bool bShort, int maxLenName = 2, int maxLenDesc = 3  ); // Limit: 52*2*3 = MAX_PLAYERS*maxLenName*maxLenDesc
+	// PBMod
+
 protected:
 
 	void clearCustomMapOptions();
@@ -344,6 +363,11 @@ protected:
 	unsigned int m_uiMapRandSeed;
 	PlayerTypes m_eActivePlayer;
 	GameMode m_eMode;
+	
+	//PBMod
+	bool m_bPitbossSave;
+	bool m_bPbemOrHotseatSave;
+	//PBMod
 
 	// Temp var so we don't return locally scoped var
 	mutable CvWString m_szTemp;

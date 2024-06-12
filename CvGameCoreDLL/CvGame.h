@@ -9,6 +9,12 @@
 #include "CvDeal.h"
 #include "CvRandom.h"
 
+// PBMod-updater
+//#include <iostream>
+#include "CyArgsList.h"
+// PBMod-updater END
+
+
 class CvPlot;
 class CvCity;
 class CvReplayMessage;
@@ -39,6 +45,8 @@ public:
 	DllExport void initDiplomacy();
 	DllExport void initFreeState();
 	DllExport void initFreeUnits();
+	//PBMod
+	void initFreeUnitsMod(bool bIgnoreExistingUnits = false, bool bIgnoreExistingCities = false);
 
 	DllExport void assignStartingPlots();
 	DllExport void normalizeStartingPlots();
@@ -109,7 +117,7 @@ public:
 	void clearSecretaryGeneral(VoteSourceTypes eVoteSource);
 	void updateSecretaryGeneral();
 
-	DllExport int countCivPlayersAlive() const;																		// Exposed to Python
+	DllExport int countCivPlayersAlive(bool bSkipObservers = false) const;																		// Exposed to Python
 	DllExport int countCivPlayersEverAlive() const;																// Exposed to Python
 	DllExport int countCivTeamsAlive() const;																			// Exposed to Python
 	DllExport int countCivTeamsEverAlive() const;																	// Exposed to Python
@@ -231,7 +239,9 @@ public:
 	int getInitPopulation() const;																// Exposed to Python
 	int getInitLand() const;																			// Exposed to Python
 	int getInitTech() const;																			// Exposed to Python
-	int getInitWonders() const;																		// Exposed to Python
+	int getInitWonders() const;
+	//PBMod																	// Exposed to Python
+	void initMissingAdvancedStarts();
 	DllExport void initScoreCalculation();
 
 	int getAIAutoPlay();																				// Exposed to Python
@@ -278,7 +288,27 @@ public:
 	DllExport bool isPlayerOptionsSent() const;
 	DllExport void sendPlayerOptions(bool bForce = false);
 
-	DllExport PlayerTypes getActivePlayer() const;																				// Exposed to Python
+	/* BTS */
+	/*
+	DllExport PlayerTypes getActivePlayer() const; // Exposed to Python
+	*/
+	
+	// PBMod-updater
+	/* Split getActivePlayer into two cases. The default one for the internal calls
+	   and a second for calls from Civ4's Exe. This allows us to detecting the finishing of
+	   the main menu drawing with a small overhead.
+	   Suggestion from f1rpo, see https://forums.civfanatics.com/threads/replacing-the-custom-game-screen-proof-of-concept.670307/#post-16114837
+
+	   Add ?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ=?getActivePlayerExternal@CvGame@@QBE?AW4PlayerTypes@@XZ
+	   to CvGameCoreDLL.def
+	*/
+	/* DllExport */ 
+	PlayerTypes getActivePlayer() const; // Exposed to Python
+	/* DllExport as getActivePlayer() by Def-file */ 
+	PlayerTypes getActivePlayerExternal() const;
+	// PBMod-updater END
+	/*********************************/
+	
 	DllExport void setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat = false);		// Exposed to Python
 	DllExport void updateUnitEnemyGlow();
 
@@ -541,6 +571,25 @@ public:
 	DllExport void handleMiddleMouse(bool bCtrl, bool bAlt, bool bShift);
 
 	DllExport void handleDiplomacySetAIComment(DiploCommentTypes eComment) const;
+	
+	// PBMod
+	DllExport bool isDiploScreenUp() const;
+	void doControlWithoutWidget(ControlTypes eControl) const;
+	void fixTradeRoutes();
+	void changeCorporationCountPlayers(CorporationTypes eCorporation, PlayerTypes ePlayer, int iChange);
+	int getCorporationCountPlayers(CorporationTypes eCorporation) const;
+	int getCorporationFactor100(PlayerTypes ePlayer, CorporationTypes eCorporation,
+					bool valForNextLocation = false) const;
+	int getCorporationFactor100_(int numCorpLocationsOfPlayer, int numPlayersWithCorp, CorporationTypes eCorporation) const;
+	int 	getNextPlayerInTurnOrder(int iPlayer); // cyclic, but with critical value MAX_PLAYERS!
+	int 	getPrevPlayerInTurnOrder(int iPlayer); // cyclic, but with critical value MAX_PLAYERS!
+	int	swapPlayersInTurnOrder(int iPlayerA, int iPlayerB);
+
+	// PBMod: Like above for simultaneous team moves
+	int 	getNextTeamInTurnOrder(int iTeam); // cyclic, but with critical value MAX_TEAMS!
+	int 	getPrevTeamInTurnOrder(int iTeam);  // cyclic, but with critical value MAX_TEAMS!
+	int	swapTeamsInTurnOrder(int iTeamA, int iTeamB);
+	// PBMod END
 
 protected:
 	int m_iElapsedGameTurns;
@@ -643,6 +692,20 @@ protected:
 
 	int		m_iNumCultureVictoryCities;
 	int		m_eCultureVictoryCultureLevel;
+
+// PBMod
+	int* m_piCorpNumAlivePlayers; // Number of alive players for each corporation
+	// Array to change player order for !MPOPTION_SIMULTANEOUS_TURNS
+	int*	m_aiPlayerPermutationInTurnOrder; // MAX_PLAYERS+1 entries
+	// Note for start and abort conditions!!
+	// • Last player to move: MAX_PLAYERS == m_aiPlayerPermutationInTurnOrder[x]
+	// • First player to move: Array position MAX_PLAYERS
+	int*	m_aiTeamPermutationInTurnOrder;   // MAX_TEAMS+1 entries
+// PBMod END
+// PBmod-updater
+	mutable bool m_bUpdaterShown;
+	mutable int m_iMainMenuDrawnCounter;
+// PBmod-updater END
 
 	void doTurn();
 	void doDeals();

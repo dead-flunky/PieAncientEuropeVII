@@ -83,6 +83,7 @@ public:
 	DllExport bool isBarbarian() const;																																					// Exposed to Python						
 
 	DllExport const wchar* getName(uint uiForm = 0) const;																											// Exposed to Python
+	void setName(const wchar* szNewValue);		// Exposed to Python
 	DllExport const wchar* getNameKey() const;																																	// Exposed to Python
 	DllExport const wchar* getCivilizationDescription(uint uiForm = 0) const;																		// Exposed to Python
 	DllExport const wchar* getCivilizationDescriptionKey() const;																								// Exposed to Python
@@ -603,8 +604,13 @@ public:
 	DllExport void setStartTime(uint uiStartTime);
 	DllExport uint getTotalTimePlayed() const;																																// Exposed to Python			  
 																																																			
-	bool isMinorCiv() const;																																									// Exposed to Python			
-																																																			
+	bool isMinorCiv() const;
+																																									// Exposed to Python			
+	// PBMod
+	bool isWatchingCiv() const;		// Exposed to Python
+	void CvPlayer::setWatchingCiv(bool bNewValue);
+	// PBMod																																																		
+
 	DllExport bool isAlive() const;																																						// Exposed to Python			
 	DllExport bool isEverAlive() const;																																				// Exposed to Python			
 	void setAlive(bool bNewValue);
@@ -664,7 +670,7 @@ public:
 	DllExport int getPlayerTextColorG() const;																												// Exposed to Python									
 	DllExport int getPlayerTextColorB() const;																												// Exposed to Python									
 	DllExport int getPlayerTextColorA() const;																												// Exposed to Python									
-																																									
+	void setPlayerColor(PlayerColorTypes color);																											// Exposed to Python									
 	int getSeaPlotYield(YieldTypes eIndex) const;																											// Exposed to Python
 	void changeSeaPlotYield(YieldTypes eIndex, int iChange);
 
@@ -1150,6 +1156,7 @@ protected:
 	uint m_uiStartTime;  // XXX save these?
 
 	bool m_bAlive;
+	bool m_bWatchingCiv; // PBMod
 	bool m_bEverAlive;
 	bool m_bTurnActive;
 	bool m_bAutoMoves;
@@ -1177,6 +1184,8 @@ protected:
 	ReligionTypes m_eLastStateReligion;
 	PlayerTypes m_eParent;
 	TeamTypes m_eTeamType;
+
+	bool m_bConfirmAdvancedStartEnd; // PBMod
 
 	int* m_aiSeaPlotYield;
 	int* m_aiYieldRateModifier;
