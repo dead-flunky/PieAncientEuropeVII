@@ -602,9 +602,9 @@ public:
 
 	uint getStartTime() const;
 	DllExport void setStartTime(uint uiStartTime);
-	DllExport uint getTotalTimePlayed() const;																																// Exposed to Python			  
-																																																			
-	bool isMinorCiv() const;																																									// Exposed to Python
+	DllExport uint getTotalTimePlayed() const;																																// Exposed to Python
+
+	bool isMinorCiv() const;																																				// Exposed to Python
 	// PBMod
 	bool isWatchingCiv() const;		// Exposed to Python
 	void CvPlayer::setWatchingCiv(bool bNewValue);

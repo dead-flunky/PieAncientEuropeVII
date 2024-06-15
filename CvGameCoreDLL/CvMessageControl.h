@@ -8,6 +8,7 @@ public:
 	void sendExtendedGame();
 	void sendAutoMoves();
 	void sendTurnComplete();
+	// PBMod
 	void sendTurnCompleteAll();
 	void sendTurnCompletePB(PlayerTypes ePlayer);
 	void sendTurnIncompletePB(PlayerTypes ePlayer);

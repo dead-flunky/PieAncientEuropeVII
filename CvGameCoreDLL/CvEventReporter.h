@@ -130,6 +130,7 @@ public:
 private:
 	CvDllPythonEvents m_kPythonEventMgr;
 	CvStatistics m_kStatistics;
+	// PBMod
 	CvWString m_pauseString;
 };
 

@@ -633,7 +633,7 @@ CvTurnTimerInfo* CyGlobalContext::getTurnTimerInfo(int i) const
 {
 	return &(GC.getTurnTimerInfo((TurnTimerTypes) i));
 }
-
+// PBMod
 void CyGlobalContext::sendChat(std::wstring szString, int targetType){
 	gDLL->sendChat(szString, (ChatTargetTypes) targetType);
 }

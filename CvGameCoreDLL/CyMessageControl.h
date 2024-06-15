@@ -13,6 +13,7 @@ public:
 	void sendPushOrder(int iCityID, int eOrder, int iData, bool bAlt, bool bShift, bool bCtrl);
 	void sendDoTask(int iCity, int eTask, int iData1, int iData2, bool bOption, bool bAlt, bool bShift, bool bCtrl);
 	void sendTurnComplete();
+	// PBMod
 	void sendTurnCompleteAll();
 	void sendTurnCompletePB(int /*PlayerTypes*/ iPlayer);
 	void sendTurnIncompletePB(int /*PlayerTypes*/ iPlayer);

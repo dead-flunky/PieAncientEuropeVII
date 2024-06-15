@@ -4560,7 +4560,6 @@ PlayerTypes CvGame::getActivePlayer() const
 	return GC.getInitCore().getActivePlayer();
 }
 
-
 // PBMod
 PlayerTypes CvGame::getActivePlayerExternal() const
 {

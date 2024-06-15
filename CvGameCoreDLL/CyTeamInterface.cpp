@@ -64,7 +64,9 @@ void CyTeamPythonInterface()
 		.def("isHuman", &CyTeam::isHuman, "bool () - is human team?")
 		.def("isBarbarian", &CyTeam::isBarbarian, "bool () - is barbarian team?")
 		.def("isMinorCiv", &CyTeam::isMinorCiv)
+		// PBMod
 		.def("isWatchingCiv", &CyTeam::isWatchingCiv, "bool ()")
+		// PBMod end
 		.def("getLeaderID", &CyTeam::getLeaderID, "int (PlayerTypes) ()")
 		.def("getSecretaryID", &CyTeam::getSecretaryID, "int (PlayerTypes) ()")
 		.def("getHandicapType", &CyTeam::getHandicapType, "int (HandicapTypes) ()")

@@ -363,6 +363,7 @@ protected:
 	unsigned int m_uiMapRandSeed;
 	PlayerTypes m_eActivePlayer;
 	GameMode m_eMode;
+
 	//PBMod
 	bool m_bPitbossSave;
 	bool m_bPbemOrHotseatSave;

@@ -665,7 +665,6 @@ int CyGame::getPausePlayer()
 {
 	return m_pGame ? m_pGame->getPausePlayer() : -1;
 }
-
 //PBMod
 void CyGame::setPausePlayer(int /*PlayerTypes*/ eNewValue)
 {
@@ -1205,6 +1204,7 @@ void CyGame::doControl(int iControl)
 		m_pGame->doControl((ControlTypes) iControl);
 	}
 }
+
 //PBMod
 /* Set player password to new value. Requires correct admin password as second argument.
  * */

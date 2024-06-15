@@ -42,7 +42,9 @@ public:
 	bool isHuman();
 	bool isBarbarian();
 	std::wstring getName();
+	// PBMod
 	void setName(std::wstring szNewValue);
+	// PBMod end
 	std::wstring getNameForm(int iForm);
 	std::wstring getNameKey();
 	std::wstring getCivilizationDescription(int iForm);
@@ -302,8 +304,9 @@ public:
 	int getTradeRoutes();
 	int getConversionTimer();
 	int getRevolutionTimer();
+	// PBMod
 	void changeRevolutionTimer(int iChange);
-
+	// PBMod end
 	bool isStateReligion();
 	bool isNoNonStateReligionSpread();
 	int getStateReligionHappiness();
@@ -327,8 +330,10 @@ public:
 	int getTechScore();
 	int getTotalTimePlayed();
 	bool isMinorCiv();
+	// PBMod
 	bool isWatchingCiv();
 	void setWatchingCiv(bool bNewValue);
+	// PBMod end
 	bool isAlive();
 	bool isEverAlive();
 	bool isExtendedGame();
@@ -355,8 +360,9 @@ public:
 	int getPlayerTextColorG();
 	int getPlayerTextColorB();
 	int getPlayerTextColorA();
+	// PBMod
 	void setPlayerColor(int /*PlayerColorTypes*/ eColor);
-
+	// PBMod end
 	int getSeaPlotYield(YieldTypes eIndex);
 	int getYieldRateModifier(YieldTypes eIndex);
 	int getCapitalYieldRateModifier(YieldTypes eIndex);
@@ -503,7 +509,9 @@ public:
 	bool canHaveTradeRoutesWith(int iPlayer);
 
 	void forcePeace(int iPlayer);
+	// PBMod
 	void setTurnActive(bool bNewValue);
+	// PBMod end
 
 private:
 	CvPlayer* m_pPlayer;

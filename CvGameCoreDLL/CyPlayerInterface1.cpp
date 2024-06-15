@@ -40,7 +40,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("isHuman", &CyPlayer::isHuman, "bool ()")
 		.def("isBarbarian", &CyPlayer::isBarbarian, "bool () - returns True if player is a Barbarian")
 		.def("getName", &CyPlayer::getName, "str ()")
+		// PBMod
 		.def("setName", &CyPlayer::setName, "void (wstring szNewValue) - sets the name to szNewValue")
+		// PBMod end
 		.def("getNameForm", &CyPlayer::getNameForm, "str ()")
 		.def("getNameKey", &CyPlayer::getNameKey, "str ()")
 		.def("getCivilizationDescription", &CyPlayer::getCivilizationDescription, "str() - returns the Civilization Description String")
@@ -289,8 +291,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getTradeRoutes", &CyPlayer::getTradeRoutes, "int ()")
 		.def("getConversionTimer", &CyPlayer::getConversionTimer, "int ()")
 		.def("getRevolutionTimer", &CyPlayer::getRevolutionTimer, "int ()")
+		// PBMod
 		.def("changeRevolutionTimer", &CyPlayer::changeRevolutionTimer, "void (int iChange)")
-
+		// PBMod end
 		.def("isStateReligion", &CyPlayer::isStateReligion, "bool ()")
 		.def("isNoNonStateReligionSpread", &CyPlayer::isNoNonStateReligionSpread, "bool ()")
 		.def("getStateReligionHappiness", &CyPlayer::getStateReligionHappiness, "int ()")
@@ -314,8 +317,10 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getTechScore", &CyPlayer::getTechScore, "int ()")
 		.def("getTotalTimePlayed", &CyPlayer::getTotalTimePlayed, "int ()")
 		.def("isMinorCiv", &CyPlayer::isMinorCiv, "bool ()")
+		// PBMod
 		.def("isWatchingCiv", &CyPlayer::isWatchingCiv, "bool ()")
 		.def("setWatchingCiv", &CyPlayer::setWatchingCiv, "void (bool bNewValue)")
+		// PBMod end
 		.def("isAlive", &CyPlayer::isAlive, "bool ()")
 		.def("isEverAlive", &CyPlayer::isEverAlive, "bool ()")
 		.def("isExtendedGame", &CyPlayer::isExtendedGame, "bool ()")
@@ -341,8 +346,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getPlayerTextColorG", &CyPlayer::getPlayerTextColorG, "int ()")
 		.def("getPlayerTextColorB", &CyPlayer::getPlayerTextColorB, "int ()")
 		.def("getPlayerTextColorA", &CyPlayer::getPlayerTextColorA, "int ()")
+		// PBMod
 		.def("setPlayerColor", &CyPlayer::setPlayerColor, "void (int (PlayerColorTypes) eColor) - set the color ID of the player")
-
+		// PBMod end
 		.def("getSeaPlotYield", &CyPlayer::getSeaPlotYield, "int (YieldTypes eIndex)")
 		.def("getYieldRateModifier", &CyPlayer::getYieldRateModifier, "int (YieldTypes eIndex)")
 		.def("getCapitalYieldRateModifier", &CyPlayer::getCapitalYieldRateModifier, "int (YieldTypes eIndex)")

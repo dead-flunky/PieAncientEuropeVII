@@ -70,7 +70,9 @@ public:
 	bool isHuman();
 	bool isBarbarian();
 	bool isMinorCiv();
+	// PBMod
 	bool isWatchingCiv();
+	// PBMod end
 	int /*PlayerTypes*/ getLeaderID();
 	int /*PlayerTypes*/ getSecretaryID();
 	int /*HandicapTypes*/ getHandicapType();
