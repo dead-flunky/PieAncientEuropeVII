@@ -442,7 +442,7 @@ void CvSelectionGroup::pushMission(MissionTypes eMission, int iData1, int iData2
 
 	if (bManual)
 	{
-		if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+		if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			if (isBusy() && GC.getMissionInfo(eMission).isSound())
 			{
@@ -537,7 +537,7 @@ void CvSelectionGroup::updateMission()
 			}
 			else
 			{
-				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 				{
 					if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == NULL)
 					{
@@ -964,7 +964,7 @@ void CvSelectionGroup::startMission()
 	{
 		if (!GET_PLAYER(getOwnerINLINE()).isTurnActive())
 		{
-			if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+			if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				if (IsSelected())
 				{
@@ -1356,7 +1356,7 @@ void CvSelectionGroup::startMission()
 		{
 			if (bDelete)
 			{
-				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 				{
 					if (IsSelected())
 					{
@@ -1661,9 +1661,9 @@ void CvSelectionGroup::continueMission(int iSteps)
 
 					if (showMoves())
 					{
-						if (GC.getGameINLINE().getActivePlayer() != NO_PLAYER)
+						if (GC.getGameINLINE().getActivePlayerInternal() != NO_PLAYER)
 						{
-							if (getOwnerINLINE() != GC.getGameINLINE().getActivePlayer())
+							if (getOwnerINLINE() != GC.getGameINLINE().getActivePlayerInternal())
 							{
 								if (plot()->isActiveVisible(false) && !isInvisible(GC.getGameINLINE().getActiveTeam()))
 								{
@@ -1680,7 +1680,7 @@ void CvSelectionGroup::continueMission(int iSteps)
 		{
 			if (!isBusy())
 			{
-				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 				{
 					if (IsSelected())
 					{
@@ -1725,7 +1725,7 @@ void CvSelectionGroup::continueMission(int iSteps)
 			}
 			else if (!isBusy())
 			{
-				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 				{
 					if (IsSelected())
 					{
@@ -3555,7 +3555,7 @@ void CvSelectionGroup::updateMissionTimer(int iSteps)
 			}
 		}
 
-		if (isHuman() && (isAutomated() || (GET_PLAYER((GC.getGameINLINE().isNetworkMultiPlayer()) ? getOwnerINLINE() : GC.getGameINLINE().getActivePlayer()).isOption(PLAYEROPTION_QUICK_MOVES))))
+		if (isHuman() && (isAutomated() || (GET_PLAYER((GC.getGameINLINE().isNetworkMultiPlayer()) ? getOwnerINLINE() : GC.getGameINLINE().getActivePlayerInternal()).isOption(PLAYEROPTION_QUICK_MOVES))))
 		{
 			iTime = std::min(iTime, 1);
 		}
@@ -4275,7 +4275,7 @@ void CvSelectionGroup::clearMissionQueue()
 
 	m_missionQueue.clear();
 
-	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && IsSelected())
+	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && IsSelected())
 	{
 		gDLL->getInterfaceIFace()->setDirty(Waypoints_DIRTY_BIT, true);
 		gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
@@ -4318,7 +4318,7 @@ void CvSelectionGroup::insertAtEndMissionQueue(MissionData mission, bool bStart)
 		activateHeadMission();
 	}
 
-	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && IsSelected())
+	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && IsSelected())
 	{
 		gDLL->getInterfaceIFace()->setDirty(Waypoints_DIRTY_BIT, true);
 		gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
@@ -4346,7 +4346,7 @@ CLLNode<MissionData>* CvSelectionGroup::deleteMissionQueueNode(CLLNode<MissionDa
 		activateHeadMission();
 	}
 
-	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && IsSelected())
+	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && IsSelected())
 	{
 		gDLL->getInterfaceIFace()->setDirty(Waypoints_DIRTY_BIT, true);
 		gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
@@ -4519,7 +4519,7 @@ void CvSelectionGroup::deactivateHeadMission()
 
 		setMissionTimer(0);
 
-		if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+		if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			if (IsSelected())
 			{

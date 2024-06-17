@@ -1329,7 +1329,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 /*                                                                                              */
 /************************************************************************************************/
 /* original bts code
-		CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
+		CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayerInternal(), pCity);
 */
 		CvEventReporter::getInstance().cityAcquiredAndKept(getID(), pCity);
 /************************************************************************************************/

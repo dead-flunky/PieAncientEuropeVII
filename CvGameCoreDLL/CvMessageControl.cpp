@@ -11,25 +11,25 @@ CvMessageControl& CvMessageControl::getInstance()
 
 void CvMessageControl::sendExtendedGame()
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetExtendedGame(GC.getGameINLINE().getActivePlayer()));
+		gDLL->sendMessageData(new CvNetExtendedGame(GC.getGameINLINE().getActivePlayerInternal()));
 	}
 }
 
 void CvMessageControl::sendAutoMoves()
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetAutoMoves(GC.getGameINLINE().getActivePlayer()));
+		gDLL->sendMessageData(new CvNetAutoMoves(GC.getGameINLINE().getActivePlayerInternal()));
 	}
 }
 
 void CvMessageControl::sendTurnComplete()
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetTurnComplete(GC.getGameINLINE().getActivePlayer()));
+		gDLL->sendMessageData(new CvNetTurnComplete(GC.getGameINLINE().getActivePlayerInternal()));
 	}
 }
 
@@ -70,49 +70,49 @@ void CvMessageControl::sendTurnIncompletePB(PlayerTypes ePlayer)
 
 void CvMessageControl::sendPushOrder(int iCityID, OrderTypes eOrder, int iData, bool bAlt, bool bShift, bool bCtrl)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetPushOrder(GC.getGameINLINE().getActivePlayer(), iCityID, eOrder, iData, bAlt, bShift, bCtrl));
+		gDLL->sendMessageData(new CvNetPushOrder(GC.getGameINLINE().getActivePlayerInternal(), iCityID, eOrder, iData, bAlt, bShift, bCtrl));
 	}
 }
 
 void CvMessageControl::sendPopOrder(int iCity, int iNum)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetPopOrder(GC.getGameINLINE().getActivePlayer(), iCity, iNum));
+		gDLL->sendMessageData(new CvNetPopOrder(GC.getGameINLINE().getActivePlayerInternal(), iCity, iNum));
 	}
 }
 
 void CvMessageControl::sendDoTask(int iCity, TaskTypes eTask, int iData1, int iData2, bool bOption, bool bAlt, bool bShift, bool bCtrl)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetDoTask(GC.getGameINLINE().getActivePlayer(), iCity, eTask, iData1, iData2, bOption, bAlt, bShift, bCtrl));
+		gDLL->sendMessageData(new CvNetDoTask(GC.getGameINLINE().getActivePlayerInternal(), iCity, eTask, iData1, iData2, bOption, bAlt, bShift, bCtrl));
 	}
 }
 
 void CvMessageControl::sendUpdateCivics(const std::vector<CivicTypes>& aeCivics)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetUpdateCivics(GC.getGameINLINE().getActivePlayer(), aeCivics));
+		gDLL->sendMessageData(new CvNetUpdateCivics(GC.getGameINLINE().getActivePlayerInternal(), aeCivics));
 	}
 }
 
 void CvMessageControl::sendResearch(TechTypes eTech, int iDiscover, bool bShift)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetResearch(GC.getGameINLINE().getActivePlayer(), eTech, iDiscover, bShift));
+		gDLL->sendMessageData(new CvNetResearch(GC.getGameINLINE().getActivePlayerInternal(), eTech, iDiscover, bShift));
 	}
 }
 
 void CvMessageControl::sendEspionageSpendingWeightChange(TeamTypes eTargetTeam, int iChange)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetEspionageChange(GC.getGameINLINE().getActivePlayer(), eTargetTeam, iChange));
+		gDLL->sendMessageData(new CvNetEspionageChange(GC.getGameINLINE().getActivePlayerInternal(), eTargetTeam, iChange));
 	}
 }
 
@@ -128,9 +128,9 @@ void CvMessageControl::sendModNetMessage(int iData1, int iData2, int iData3, int
 
 void CvMessageControl::sendConvert(ReligionTypes eReligion)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetConvert(GC.getGameINLINE().getActivePlayer(), eReligion));
+		gDLL->sendMessageData(new CvNetConvert(GC.getGameINLINE().getActivePlayerInternal(), eReligion));
 	}
 }
 
@@ -156,81 +156,81 @@ void CvMessageControl::sendEventTriggered(PlayerTypes ePlayer, EventTypes eEvent
 
 void CvMessageControl::sendJoinGroup(int iUnitID, int iHeadID)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetJoinGroup(GC.getGameINLINE().getActivePlayer(), iUnitID, iHeadID));
+		gDLL->sendMessageData(new CvNetJoinGroup(GC.getGameINLINE().getActivePlayerInternal(), iUnitID, iHeadID));
 	}
 }
 
 void CvMessageControl::sendPushMission(int iUnitID, MissionTypes eMission, int iData1, int iData2, int iFlags, bool bShift)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetPushMission(GC.getGameINLINE().getActivePlayer(), iUnitID, eMission, iData1, iData2, iFlags, bShift));
+		gDLL->sendMessageData(new CvNetPushMission(GC.getGameINLINE().getActivePlayerInternal(), iUnitID, eMission, iData1, iData2, iFlags, bShift));
 	}
 }
 
 void CvMessageControl::sendAutoMission(int iUnitID)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetAutoMission(GC.getGameINLINE().getActivePlayer(), iUnitID));
+		gDLL->sendMessageData(new CvNetAutoMission(GC.getGameINLINE().getActivePlayerInternal(), iUnitID));
 	}
 }
 
 void CvMessageControl::sendDoCommand(int iUnitID, CommandTypes eCommand, int iData1, int iData2, bool bAlt)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetDoCommand(GC.getGameINLINE().getActivePlayer(), iUnitID, eCommand, iData1, iData2, bAlt));
+		gDLL->sendMessageData(new CvNetDoCommand(GC.getGameINLINE().getActivePlayerInternal(), iUnitID, eCommand, iData1, iData2, bAlt));
 	}
 }
 
 void CvMessageControl::sendPercentChange(CommerceTypes eCommerce, int iChange)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetPercentChange(GC.getGameINLINE().getActivePlayer(), eCommerce, iChange));
+		gDLL->sendMessageData(new CvNetPercentChange(GC.getGameINLINE().getActivePlayerInternal(), eCommerce, iChange));
 	}
 }
 
 void CvMessageControl::sendChangeVassal(TeamTypes eMasterTeam, bool bVassal, bool bCapitulated)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetChangeVassal(GC.getGameINLINE().getActivePlayer(), eMasterTeam, bVassal, bCapitulated));
+		gDLL->sendMessageData(new CvNetChangeVassal(GC.getGameINLINE().getActivePlayerInternal(), eMasterTeam, bVassal, bCapitulated));
 	}
 }
 
 void CvMessageControl::sendChooseElection(int iSelection, int iVoteId)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetChooseElection(GC.getGameINLINE().getActivePlayer(), iSelection, iVoteId));
+		gDLL->sendMessageData(new CvNetChooseElection(GC.getGameINLINE().getActivePlayerInternal(), iSelection, iVoteId));
 	}
 }
 
 void CvMessageControl::sendDiploVote(int iVoteId, PlayerVoteTypes eChoice)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetDiploVote(GC.getGameINLINE().getActivePlayer(), iVoteId, eChoice));
+		gDLL->sendMessageData(new CvNetDiploVote(GC.getGameINLINE().getActivePlayerInternal(), iVoteId, eChoice));
 	}
 }
 
 void CvMessageControl::sendChangeWar(TeamTypes eRivalTeam, bool bWar)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetChangeWar(GC.getGameINLINE().getActivePlayer(), eRivalTeam, bWar));
+		gDLL->sendMessageData(new CvNetChangeWar(GC.getGameINLINE().getActivePlayerInternal(), eRivalTeam, bWar));
 	}
 }
 
 void CvMessageControl::sendPing(int iX, int iY)
 {
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayer())
+	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal())
 	{
-		gDLL->sendMessageData(new CvNetPing(GC.getGameINLINE().getActivePlayer(), iX, iY));
+		gDLL->sendMessageData(new CvNetPing(GC.getGameINLINE().getActivePlayerInternal(), iX, iY));
 	}
 }
 

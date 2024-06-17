@@ -117,7 +117,8 @@ public:
 	void clearSecretaryGeneral(VoteSourceTypes eVoteSource);
 	void updateSecretaryGeneral();
 
-	DllExport int countCivPlayersAlive(bool bSkipObservers = false) const;																		// Exposed to Python
+	DllExport int countCivPlayersAlive() const;																		// Exposed to Python
+	int countCivPlayersAlive(bool bSkipObservers) const;
 	DllExport int countCivPlayersEverAlive() const;																// Exposed to Python
 	DllExport int countCivTeamsAlive() const;																			// Exposed to Python
 	DllExport int countCivTeamsEverAlive() const;																	// Exposed to Python
@@ -239,8 +240,8 @@ public:
 	int getInitPopulation() const;																// Exposed to Python
 	int getInitLand() const;																			// Exposed to Python
 	int getInitTech() const;																			// Exposed to Python
-	int getInitWonders() const;
-	//PBMod																	// Exposed to Python
+	int getInitWonders() const;																		// Exposed to Python
+	//PBMod
 	void initMissingAdvancedStarts();
 	DllExport void initScoreCalculation();
 
@@ -288,12 +289,10 @@ public:
 	DllExport bool isPlayerOptionsSent() const;
 	DllExport void sendPlayerOptions(bool bForce = false);
 
-	/* BTS */
-	/*
+
+#if 0	/* BTS */
 	DllExport PlayerTypes getActivePlayer() const; // Exposed to Python
-	*/
-	
-	// PBMod-updater
+#else // PBMod-updater
 	/* Split getActivePlayer into two cases. The default one for the internal calls
 	   and a second for calls from Civ4's Exe. This allows us to detecting the finishing of
 	   the main menu drawing with a small overhead.
@@ -303,12 +302,17 @@ public:
 	   to CvGameCoreDLL.def
 	*/
 	/* DllExport */ 
-	PlayerTypes getActivePlayer() const; // Exposed to Python
+	//PlayerTypes getActivePlayer() const; // Exposed to Python
 	/* DllExport as getActivePlayer() by Def-file */ 
-	PlayerTypes getActivePlayerExternal() const;
+	//PlayerTypes getActivePlayerExternal() const;
 	// PBMod-updater END
-	/*********************************/
-	
+	// Flunky: solution w/o editing def-file
+	/* DllExport */ 
+	PlayerTypes getActivePlayerInternal() const;
+	/* DllExport as getActivePlayer() by Def-file */ 
+	DllExport PlayerTypes getActivePlayer() const; // Exposed to Python
+#endif
+
 	DllExport void setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat = false);		// Exposed to Python
 	DllExport void updateUnitEnemyGlow();
 

@@ -716,27 +716,27 @@ void CvPlot::updateCenterUnit()
 
 	if (getCenterUnit() == NULL)
 	{
-		setCenterUnit(getBestDefender(GC.getGameINLINE().getActivePlayer(), NO_PLAYER, NULL, false, false, true));
+		setCenterUnit(getBestDefender(GC.getGameINLINE().getActivePlayerInternal(), NO_PLAYER, NULL, false, false, true));
 	}
 
 	if (getCenterUnit() == NULL)
 	{
-		setCenterUnit(getBestDefender(GC.getGameINLINE().getActivePlayer()));
+		setCenterUnit(getBestDefender(GC.getGameINLINE().getActivePlayerInternal()));
 	}
 
 	if (getCenterUnit() == NULL)
 	{
-		setCenterUnit(getBestDefender(NO_PLAYER, GC.getGameINLINE().getActivePlayer(), gDLL->getInterfaceIFace()->getHeadSelectedUnit(), true));
+		setCenterUnit(getBestDefender(NO_PLAYER, GC.getGameINLINE().getActivePlayerInternal(), gDLL->getInterfaceIFace()->getHeadSelectedUnit(), true));
 	}
 
 	if (getCenterUnit() == NULL)
 	{
-		setCenterUnit(getBestDefender(NO_PLAYER, GC.getGameINLINE().getActivePlayer(), gDLL->getInterfaceIFace()->getHeadSelectedUnit()));
+		setCenterUnit(getBestDefender(NO_PLAYER, GC.getGameINLINE().getActivePlayerInternal(), gDLL->getInterfaceIFace()->getHeadSelectedUnit()));
 	}
 
 	if (getCenterUnit() == NULL)
 	{
-		setCenterUnit(getBestDefender(NO_PLAYER, GC.getGameINLINE().getActivePlayer()));
+		setCenterUnit(getBestDefender(NO_PLAYER, GC.getGameINLINE().getActivePlayerInternal()));
 	}
 }
 
@@ -6028,7 +6028,7 @@ void CvPlot::updateWorkingCity()
 		updateFog();
 		updateShowCitySymbols();
 
-		if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+		if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			if (gDLL->getGraphicOption(GRAPHICOPTION_CITY_RADIUS))
 			{
@@ -6344,7 +6344,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 
 		if (ePlayer == NO_PLAYER)
 		{
-			ePlayer = GC.getGameINLINE().getActivePlayer();
+			ePlayer = GC.getGameINLINE().getActivePlayerInternal();
 		}
 	}
 	else
@@ -8115,11 +8115,11 @@ void CvPlot::updateFlagSymbol()
 	{
 		if (ePlayer == NO_PLAYER)
 		{
-			ePlayer = GC.getGameINLINE().getActivePlayer();
+			ePlayer = GC.getGameINLINE().getActivePlayerInternal();
 		}
 		else
 		{
-			ePlayerOffset = GC.getGameINLINE().getActivePlayer();
+			ePlayerOffset = GC.getGameINLINE().getActivePlayerInternal();
 		}
 	}
 
@@ -8863,7 +8863,7 @@ ColorTypes CvPlot::plotMinimapColor()
 {
 	CvUnit* pCenterUnit;
 
-	if (GC.getGameINLINE().getActivePlayer() != NO_PLAYER)
+	if (GC.getGameINLINE().getActivePlayerInternal() != NO_PLAYER)
 	{
 		CvCity* pCity;
 
@@ -10293,7 +10293,7 @@ bool CvPlot::checkLateEra() const
 	if (ePlayer == NO_PLAYER)
 	{
 		//find largest culture in this plot
-		ePlayer = GC.getGameINLINE().getActivePlayer();
+		ePlayer = GC.getGameINLINE().getActivePlayerInternal();
 		int maxCulture = getCulture(ePlayer);
 		for (int i = 0; i < MAX_PLAYERS; i++)
 		{

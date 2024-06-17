@@ -218,7 +218,7 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 		} 
 	}
 
-	if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+	if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 	{
 		gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 	}
@@ -1305,7 +1305,7 @@ void CvUnit::updateCombat(bool bQuick)
 				float plotSize = GC.getPLOT_SIZE();
 				NiPoint3 lookAtPoint(plot()->getPoint().x + plotSize / 2 * attackDirection.x, plot()->getPoint().y + plotSize / 2 * attackDirection.y, (plot()->getPoint().z + pPlot->getPoint().z) / 2);
 				attackDirection.Unitize();
-				gDLL->getInterfaceIFace()->lookAt(lookAtPoint, (((getOwnerINLINE() != GC.getGameINLINE().getActivePlayer()) || gDLL->getGraphicOption(GRAPHICOPTION_NO_COMBAT_ZOOM)) ? CAMERALOOKAT_BATTLE : CAMERALOOKAT_BATTLE_ZOOM_IN), attackDirection);
+				gDLL->getInterfaceIFace()->lookAt(lookAtPoint, (((getOwnerINLINE() != GC.getGameINLINE().getActivePlayerInternal()) || gDLL->getGraphicOption(GRAPHICOPTION_NO_COMBAT_ZOOM)) ? CAMERALOOKAT_BATTLE : CAMERALOOKAT_BATTLE_ZOOM_IN), attackDirection);
 			}
 			else
 			{
@@ -1406,7 +1406,7 @@ void CvUnit::updateCombat(bool bQuick)
 		{
 			if (isCombatFocus() && gDLL->getInterfaceIFace()->isCombatFocus())
 			{
-				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 				{
 					gDLL->getInterfaceIFace()->releaseLockedCamera();
 				}
@@ -1555,7 +1555,7 @@ bool CvUnit::isActionRecommended(int iAction)
 	BonusTypes eBonus;
 	int iIndex;
 
-	if (getOwnerINLINE() != GC.getGameINLINE().getActivePlayer())
+	if (getOwnerINLINE() != GC.getGameINLINE().getActivePlayerInternal())
 	{
 		return false;
 	}
@@ -2790,7 +2790,7 @@ void CvUnit::attackForDamage(CvUnit *pDefender, int attackerDamageChange, int de
 			float plotSize = GC.getPLOT_SIZE();
 			NiPoint3 lookAtPoint(plot()->getPoint().x + plotSize / 2 * attackDirection.x, plot()->getPoint().y + plotSize / 2 * attackDirection.y, (plot()->getPoint().z + pPlot->getPoint().z) / 2);
 			attackDirection.Unitize();
-			gDLL->getInterfaceIFace()->lookAt(lookAtPoint, (((getOwnerINLINE() != GC.getGameINLINE().getActivePlayer()) || gDLL->getGraphicOption(GRAPHICOPTION_NO_COMBAT_ZOOM)) ? CAMERALOOKAT_BATTLE : CAMERALOOKAT_BATTLE_ZOOM_IN), attackDirection);
+			gDLL->getInterfaceIFace()->lookAt(lookAtPoint, (((getOwnerINLINE() != GC.getGameINLINE().getActivePlayerInternal()) || gDLL->getGraphicOption(GRAPHICOPTION_NO_COMBAT_ZOOM)) ? CAMERALOOKAT_BATTLE : CAMERALOOKAT_BATTLE_ZOOM_IN), attackDirection);
 		}
 		else
 		{
@@ -2872,7 +2872,7 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 		}
 	}
 
-	if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+	if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
 	{
 		if (!(pPlot->isOwned()))
 		{
@@ -5437,7 +5437,7 @@ bool CvUnit::found()
 		return false;
 	}
 
-	if (GC.getGameINLINE().getActivePlayer() == getOwnerINLINE())
+	if (GC.getGameINLINE().getActivePlayerInternal() == getOwnerINLINE())
 	{
 		gDLL->getInterfaceIFace()->lookAt(plot()->getPoint(), CAMERALOOKAT_NORMAL);
 	}
@@ -10979,7 +10979,7 @@ void CvUnit::setCombatUnit(CvUnit* pCombatUnit, bool bAttacking)
 
 		FAssertMsg(getCombatUnit() == NULL, "Combat Unit is not expected to be assigned");
 		FAssertMsg(!(plot()->isFighting()), "(plot()->isFighting()) did not return false as expected");
-		m_bCombatFocus = (bAttacking && !(gDLL->getInterfaceIFace()->isFocusedWidget()) && ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) || ((pCombatUnit->getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && !(GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS)))));
+		m_bCombatFocus = (bAttacking && !(gDLL->getInterfaceIFace()->isFocusedWidget()) && ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) || ((pCombatUnit->getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && !(GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS)))));
 		m_combatUnit = pCombatUnit->getIDInfo();
 		setCombatFirstStrikes((pCombatUnit->immuneToFirstStrikes()) ? 0 : (firstStrikes() + GC.getGameINLINE().getSorenRandNum(chanceFirstStrikes() + 1, "First Strike")));
 	}

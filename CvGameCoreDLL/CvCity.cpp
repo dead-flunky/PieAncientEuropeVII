@@ -859,7 +859,7 @@ void CvCity::kill(bool bUpdatePlotGroups)
 		GC.getGameINLINE().updatePlotGroups();
 	}
 
-	if (eOwner == GC.getGameINLINE().getActivePlayer())
+	if (eOwner == GC.getGameINLINE().getActivePlayerInternal())
 	{
 		gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
 	}
@@ -1072,7 +1072,7 @@ bool CvCity::canBeSelected() const
 		if (GC.getEspionageMissionInfo((EspionageMissionTypes)iLoop).isPassive() && GC.getEspionageMissionInfo((EspionageMissionTypes)iLoop).isInvestigateCity())
 		{
 			// Is Mission good?
-			if (GET_PLAYER(GC.getGameINLINE().getActivePlayer()).canDoEspionageMission((EspionageMissionTypes)iLoop, getOwnerINLINE(), plot(), -1, NULL))
+			if (GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).canDoEspionageMission((EspionageMissionTypes)iLoop, getOwnerINLINE(), plot(), -1, NULL))
 			{
 				return true;
 			}
@@ -1096,7 +1096,7 @@ void CvCity::updateSelectedCity(bool bTestProduction)
 
 	if (bTestProduction)
 	{
-		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && !isProduction())
+		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && !isProduction())
 		{
 			chooseProduction(NO_UNIT, NO_BUILDING, NO_PROJECT, false, true);
 		}
@@ -3311,7 +3311,7 @@ void CvCity::hurry(HurryTypes eHurry)
 
 	changeHurryAngerTimer(iHurryAngerLength);
 
-	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
+	if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && isCitySelected())
 	{
 		gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
 	}
@@ -3517,7 +3517,7 @@ void CvCity::conscript()
 
 	if (NULL != pUnit)
 	{
-		if (GC.getGameINLINE().getActivePlayer() == getOwnerINLINE())
+		if (GC.getGameINLINE().getActivePlayerInternal() == getOwnerINLINE())
 		{
 			gDLL->getInterfaceIFace()->selectUnit(pUnit, true, false, true);
 		}
@@ -5180,7 +5180,7 @@ void CvCity::setPopulation(int iNewValue)
 
 		plot()->plotAction(PUF_makeInfoBarDirty);
 
-		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
+		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && isCitySelected())
 		{
 			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(CityScreen_DIRTY_BIT, true);
@@ -7321,7 +7321,7 @@ void CvCity::setCitizensAutomated(bool bNewValue)
 			}
 		}
 
-		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
+		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && isCitySelected())
 		{
 			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
 		}
@@ -7341,7 +7341,7 @@ void CvCity::setProductionAutomated(bool bNewValue, bool bClear)
 	{
 		m_bProductionAutomated = bNewValue;
 
-		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
+		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && isCitySelected())
 		{
 			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
 
@@ -9269,7 +9269,7 @@ void CvCity::setBuildingProduction(BuildingTypes eIndex, int iNewValue)
 			setInfoDirty(true);
 		}
 
-		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
+		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && isCitySelected())
 		{
 			gDLL->getInterfaceIFace()->setDirty(CityScreen_DIRTY_BIT, true);
 		}
@@ -9329,7 +9329,7 @@ void CvCity::setProjectProduction(ProjectTypes eIndex, int iNewValue)
 			setInfoDirty(true);
 		}
 
-		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
+		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && isCitySelected())
 		{
 			gDLL->getInterfaceIFace()->setDirty(CityScreen_DIRTY_BIT, true);
 		}
@@ -9384,7 +9384,7 @@ void CvCity::setUnitProduction(UnitTypes eIndex, int iNewValue)
 			setInfoDirty(true);
 		}
 
-		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayer()) && isCitySelected())
+		if ((getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal()) && isCitySelected())
 		{
 			gDLL->getInterfaceIFace()->setDirty(CityScreen_DIRTY_BIT, true);
 		}

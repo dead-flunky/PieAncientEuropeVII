@@ -33,6 +33,7 @@ Debug\CvGameCoreDLL.pch: CvGameCoreDLL.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -80,6 +81,7 @@ Debug\CvArea.obj: CvArea.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -126,6 +128,7 @@ Debug\CvArtFileMgr.obj: CvArtFileMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -172,6 +175,7 @@ Debug\CvCity.obj: CvCity.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -183,7 +187,6 @@ Debug\CvCity.obj: CvCity.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CvPopupInfo.h \
-	CyArgsList.h \
 	CvGameTextMgr.h \
 	CvDLLEngineIFaceBase.h \
 	CvDLLInterfaceIFaceBase.h \
@@ -225,6 +228,7 @@ Debug\CvCityAI.obj: CvCityAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -235,7 +239,6 @@ Debug\CvCityAI.obj: CvCityAI.cpp \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
-	CyArgsList.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLFAStarIFaceBase.h
 Debug\CvDeal.obj: CvDeal.cpp \
@@ -273,6 +276,7 @@ Debug\CvDeal.obj: CvDeal.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -323,6 +327,7 @@ Debug\CvDiploParameters.obj: CvDiploParameters.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -370,6 +375,7 @@ Debug\CvDLLButtonPopup.obj: CvDLLButtonPopup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -383,7 +389,6 @@ Debug\CvDLLButtonPopup.obj: CvDLLButtonPopup.cpp \
 	CvDLLButtonPopup.h \
 	CvPopupInfo.h \
 	CvPopupReturn.h \
-	CyArgsList.h \
 	CvInitCore.h \
 	CvGameTextMgr.h \
 	CvDLLInterfaceIFaceBase.h \
@@ -427,6 +432,7 @@ Debug\CvDLLEntity.obj: CvDLLEntity.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -472,6 +478,7 @@ Debug\CvDLLPython.obj: CvDLLPython.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -522,6 +529,7 @@ Debug\CvDllPythonEvents.obj: CvDllPythonEvents.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -535,7 +543,6 @@ Debug\CvDllPythonEvents.obj: CvDllPythonEvents.cpp \
 	CvDllPythonEvents.h \
 	CvDLLEngineIFaceBase.h \
 	CvDLLInterfaceIFaceBase.h \
-	CyArgsList.h \
 	CyUnit.h \
 	CyPlot.h
 Debug\CvDllTranslator.obj: CvDllTranslator.cpp \
@@ -573,6 +580,7 @@ Debug\CvDllTranslator.obj: CvDllTranslator.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -619,6 +627,7 @@ Debug\CvDLLWidgetData.obj: CvDLLWidgetData.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -629,7 +638,6 @@ Debug\CvDLLWidgetData.obj: CvDLLWidgetData.cpp \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
-	CyArgsList.h \
 	CvGameTextMgr.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
@@ -674,6 +682,7 @@ Debug\CvEventReporter.obj: CvEventReporter.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -723,6 +732,7 @@ Debug\CvFractal.obj: CvFractal.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -769,6 +779,7 @@ Debug\CvGame.obj: CvGame.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -784,7 +795,6 @@ Debug\CvGame.obj: CvGame.cpp \
 	CvDiploParameters.h \
 	FVariableSystem.h \
 	CvReplayMessage.h \
-	CyArgsList.h \
 	CvPopupInfo.h \
 	CvReplayInfo.h \
 	CvGameTextMgr.h \
@@ -829,6 +839,7 @@ Debug\CvGameAI.obj: CvGameAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -874,6 +885,7 @@ Debug\CvGameCoreDLL.obj: CvGameCoreDLL.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -921,6 +933,7 @@ Debug\CvGameCoreUtils.obj: CvGameCoreUtils.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -969,6 +982,7 @@ Debug\CvGameInterface.obj: CvGameInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -981,7 +995,6 @@ Debug\CvGameInterface.obj: CvGameInterface.cpp \
 	CvArtFileMgr.h \
 	CvInitCore.h \
 	CyPlot.h \
-	CyArgsList.h \
 	CvPopupInfo.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
@@ -1024,6 +1037,7 @@ Debug\CvGameTextMgr.obj: CvGameTextMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1038,8 +1052,7 @@ Debug\CvGameTextMgr.obj: CvGameTextMgr.cpp \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLSymbolIFaceBase.h \
 	CvXMLLoadUtility.h \
-	CvPopupInfo.h \
-	CyArgsList.h
+	CvPopupInfo.h
 Debug\CvGlobals.obj: CvGlobals.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -1075,6 +1088,7 @@ Debug\CvGlobals.obj: CvGlobals.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1126,6 +1140,7 @@ Debug\CvHallOfFameInfo.obj: CvHallOfFameInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1173,6 +1188,7 @@ Debug\CvInfos.obj: CvInfos.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1221,6 +1237,7 @@ Debug\CvInfoWater.obj: CvInfoWater.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1269,6 +1286,7 @@ Debug\CvInitCore.obj: CvInitCore.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1280,7 +1298,7 @@ Debug\CvInitCore.obj: CvInitCore.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CvInitCore.h \
-	CyArgsList.h
+	CvMessageControl.h
 Debug\CvMap.obj: CvMap.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -1316,6 +1334,7 @@ Debug\CvMap.obj: CvMap.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1330,7 +1349,6 @@ Debug\CvMap.obj: CvMap.cpp \
 	CvMapGenerator.h \
 	FAStarNode.h \
 	CvInitCore.h \
-	CyArgsList.h \
 	CvDLLEngineIFaceBase.h \
 	CvDLLIniParserIFaceBase.h \
 	CvDLLFAStarIFaceBase.h
@@ -1369,6 +1387,7 @@ Debug\CvMapGenerator.obj: CvMapGenerator.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1381,8 +1400,7 @@ Debug\CvMapGenerator.obj: CvMapGenerator.cpp \
 	CvArtFileMgr.h \
 	CvMapGenerator.h \
 	CvFractal.h \
-	CyPlot.h \
-	CyArgsList.h
+	CyPlot.h
 Debug\CvMessageControl.obj: CvMessageControl.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -1418,6 +1436,7 @@ Debug\CvMessageControl.obj: CvMessageControl.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1465,6 +1484,7 @@ Debug\CvMessageData.obj: CvMessageData.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1515,6 +1535,7 @@ Debug\CvPlayer.obj: CvPlayer.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1528,7 +1549,6 @@ Debug\CvPlayer.obj: CvPlayer.cpp \
 	CvDiploParameters.h \
 	FVariableSystem.h \
 	CvInitCore.h \
-	CyArgsList.h \
 	CvPopupInfo.h \
 	CvGameTextMgr.h \
 	CyPlot.h \
@@ -1574,6 +1594,7 @@ Debug\CvPlayerAI.obj: CvPlayerAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1587,7 +1608,6 @@ Debug\CvPlayerAI.obj: CvPlayerAI.cpp \
 	CvDiploParameters.h \
 	FVariableSystem.h \
 	CvInitCore.h \
-	CyArgsList.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
 	CvPopupInfo.h \
@@ -1631,6 +1651,7 @@ Debug\CvPlot.obj: CvPlot.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1647,7 +1668,6 @@ Debug\CvPlot.obj: CvPlot.cpp \
 	CvDLLEngineIFaceBase.h \
 	CvDLLFlagEntityIFaceBase.h \
 	CvDLLFAStarIFaceBase.h \
-	CyArgsList.h \
 	CvEventReporter.h \
 	CvStatistics.h \
 	CvDllPythonEvents.h
@@ -1686,6 +1706,7 @@ Debug\CvPlotGroup.obj: CvPlotGroup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1732,6 +1753,7 @@ Debug\CvPopupInfo.obj: CvPopupInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1778,6 +1800,7 @@ Debug\CvPopupReturn.obj: CvPopupReturn.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1824,6 +1847,7 @@ Debug\CvRandom.obj: CvRandom.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1833,8 +1857,7 @@ Debug\CvRandom.obj: CvRandom.cpp \
 	CvDllEntity.h \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
-	CvArtFileMgr.h \
-	CyArgsList.h
+	CvArtFileMgr.h
 Debug\CvReplayInfo.obj: CvReplayInfo.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -1870,6 +1893,7 @@ Debug\CvReplayInfo.obj: CvReplayInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1920,6 +1944,7 @@ Debug\CvReplayMessage.obj: CvReplayMessage.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1966,6 +1991,7 @@ Debug\CvSelectionGroup.obj: CvSelectionGroup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -1981,7 +2007,6 @@ Debug\CvSelectionGroup.obj: CvSelectionGroup.cpp \
 	FAStarNode.h \
 	CyPlot.h \
 	CySelectionGroup.h \
-	CyArgsList.h \
 	CvEventReporter.h \
 	CvStatistics.h \
 	CvDllPythonEvents.h
@@ -2020,6 +2045,7 @@ Debug\CvSelectionGroupAI.obj: CvSelectionGroupAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2066,6 +2092,7 @@ Debug\CvStatistics.obj: CvStatistics.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2112,6 +2139,7 @@ Debug\CvStructs.obj: CvStructs.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2157,6 +2185,7 @@ Debug\CvTalkingHeadMessage.obj: CvTalkingHeadMessage.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2202,6 +2231,7 @@ Debug\CvTeam.obj: CvTeam.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2219,8 +2249,7 @@ Debug\CvTeam.obj: CvTeam.cpp \
 	CvDLLEngineIFaceBase.h \
 	CvDiploParameters.h \
 	FVariableSystem.h \
-	CvPopupInfo.h \
-	CyArgsList.h
+	CvPopupInfo.h
 Debug\CvTeamAI.obj: CvTeamAI.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -2256,6 +2285,7 @@ Debug\CvTeamAI.obj: CvTeamAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2266,53 +2296,7 @@ Debug\CvTeamAI.obj: CvTeamAI.cpp \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
-	CvDLLInterfaceIFaceBase.h \
-	CyArgsList.h
-Debug\CvTextScreens.obj: CvTextScreens.cpp \
-	CvGameCoreDLL.h \
-	FAssert.h \
-	CvGameCoreDLLDefNew.h \
-	FDataStreamBase.h \
-	FFreeListArrayBase.h \
-	FFreeListTrashArray.h \
-	FFreeListArray.h \
-	CvString.h \
-	CvEnums.h \
-	CvDefines.h \
-	CvStructs.h \
-	CvDLLUtilityIFaceBase.h \
-	LinkedList.h \
-	CvPlayerAI.h \
-	CvPlayer.h \
-	CvCityAI.h \
-	CvCity.h \
-	CvDLLEntity.h \
-	CvUnitAI.h \
-	CvUnit.h \
-	CvSelectionGroupAI.h \
-	CvSelectionGroup.h \
-	CvPlotGroup.h \
-	CvTalkingHeadMessage.h \
-	AI_defines.h \
-	CvGameCoreUtils.h \
-	CvGlobals.h \
-	CvMap.h \
-	CvArea.h \
-	CvPlot.h \
-	CvGameAI.h \
-	CvGame.h \
-	CvDeal.h \
-	CvRandom.h \
-	FProfiler.h \
-	CyCity.h \
-	CvInfos.h \
-	CvTeamAI.h \
-	CvTeam.h \
-	CvDLLPythonIFaceBase.h \
-	CvDllEntity.h \
-	CvDLLEntityIFaceBase.h \
-	CyGlobalContext.h \
-	CvArtFileMgr.h
+	CvDLLInterfaceIFaceBase.h
 Debug\CvUnit.obj: CvUnit.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -2348,6 +2332,7 @@ Debug\CvUnit.obj: CvUnit.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2359,7 +2344,6 @@ Debug\CvUnit.obj: CvUnit.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CyUnit.h \
-	CyArgsList.h \
 	CyPlot.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
@@ -2403,6 +2387,7 @@ Debug\CvUnitAI.obj: CvUnitAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2414,7 +2399,6 @@ Debug\CvUnitAI.obj: CvUnitAI.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CyUnit.h \
-	CyArgsList.h \
 	FAStarNode.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLFAStarIFaceBase.h
@@ -2453,6 +2437,7 @@ Debug\CvXMLLoadUtility.obj: CvXMLLoadUtility.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2500,6 +2485,7 @@ Debug\CvXMLLoadUtilityGet.obj: CvXMLLoadUtilityGet.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2548,6 +2534,7 @@ Debug\CvXMLLoadUtilityInit.obj: CvXMLLoadUtilityInit.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2596,6 +2583,7 @@ Debug\CvXMLLoadUtilitySet.obj: CvXMLLoadUtilitySet.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2646,6 +2634,7 @@ Debug\CyArea.obj: CyArea.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2692,6 +2681,7 @@ Debug\CyAreaInterface.obj: CyAreaInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2738,6 +2728,7 @@ Debug\CyArgsList.obj: CyArgsList.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2747,8 +2738,7 @@ Debug\CyArgsList.obj: CyArgsList.cpp \
 	CvDllEntity.h \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
-	CvArtFileMgr.h \
-	CyArgsList.h
+	CvArtFileMgr.h
 Debug\CyArtFileMgr.obj: CyArtFileMgr.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -2784,6 +2774,7 @@ Debug\CyArtFileMgr.obj: CyArtFileMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2830,6 +2821,7 @@ Debug\CyArtFileMgrInterface.obj: CyArtFileMgrInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2876,6 +2868,7 @@ Debug\CyCity.obj: CyCity.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2924,6 +2917,7 @@ Debug\CyCityInterface1.obj: CyCityInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -2971,6 +2965,7 @@ Debug\CyDeal.obj: CyDeal.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3017,6 +3012,7 @@ Debug\CyEnumsInterface.obj: CyEnumsInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3063,6 +3059,7 @@ Debug\CyGame.obj: CyGame.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3074,6 +3071,7 @@ Debug\CyGame.obj: CyGame.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CyGame.h \
+	CvInitCore.h \
 	CyPlayer.h \
 	CyDeal.h \
 	CyReplayInfo.h \
@@ -3114,6 +3112,7 @@ Debug\CyGameCoreUtils.obj: CyGameCoreUtils.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3162,6 +3161,7 @@ Debug\CyGameCoreUtilsInterface.obj: CyGameCoreUtilsInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3210,6 +3210,7 @@ Debug\CyGameInterface.obj: CyGameInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3259,6 +3260,7 @@ Debug\CyGameTextMgr.obj: CyGameTextMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3308,6 +3310,7 @@ Debug\CyGameTextMgrInterface.obj: CyGameTextMgrInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3354,6 +3357,7 @@ Debug\CyGlobalContext.obj: CyGlobalContext.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3404,6 +3408,7 @@ Debug\CyGlobalContextInterface1.obj: CyGlobalContextInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3453,6 +3458,7 @@ Debug\CyGlobalContextInterface2.obj: CyGlobalContextInterface2.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3502,6 +3508,7 @@ Debug\CyGlobalContextInterface3.obj: CyGlobalContextInterface3.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3551,6 +3558,7 @@ Debug\CyGlobalContextInterface4.obj: CyGlobalContextInterface4.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3600,6 +3608,7 @@ Debug\CyHallOfFameInfo.obj: CyHallOfFameInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3649,6 +3658,7 @@ Debug\CyHallOfFameInterface.obj: CyHallOfFameInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3699,6 +3709,7 @@ Debug\CyInfoInterface1.obj: CyInfoInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3744,6 +3755,7 @@ Debug\CyInfoInterface2.obj: CyInfoInterface2.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3789,6 +3801,7 @@ Debug\CyInfoInterface3.obj: CyInfoInterface3.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3834,6 +3847,7 @@ Debug\CyMap.obj: CyMap.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3886,6 +3900,7 @@ Debug\CyMapGenerator.obj: CyMapGenerator.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3934,6 +3949,7 @@ Debug\CyMapGeneratorInterface.obj: CyMapGeneratorInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -3980,6 +3996,7 @@ Debug\CyMapInterface.obj: CyMapInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4030,6 +4047,7 @@ Debug\CyMessageControl.obj: CyMessageControl.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4077,6 +4095,7 @@ Debug\CyMessageControlInterface.obj: CyMessageControlInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4123,6 +4142,7 @@ Debug\CyPlayer.obj: CyPlayer.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4173,6 +4193,7 @@ Debug\CyPlayerInterface1.obj: CyPlayerInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4223,6 +4244,7 @@ Debug\CyPlayerInterface2.obj: CyPlayerInterface2.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4273,6 +4295,7 @@ Debug\CyPlot.obj: CyPlot.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4321,6 +4344,7 @@ Debug\CyPlotInterface1.obj: CyPlotInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4369,6 +4393,7 @@ Debug\CyRandomInterface.obj: CyRandomInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4414,6 +4439,7 @@ Debug\CyReplayInfo.obj: CyReplayInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4462,6 +4488,7 @@ Debug\CySelectionGroup.obj: CySelectionGroup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4511,6 +4538,7 @@ Debug\CySelectionGroupInterface.obj: CySelectionGroupInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4560,6 +4588,7 @@ Debug\CyStructsInterface1.obj: CyStructsInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4605,6 +4634,7 @@ Debug\CyTeam.obj: CyTeam.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4652,6 +4682,7 @@ Debug\CyTeamInterface.obj: CyTeamInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4699,6 +4730,7 @@ Debug\CyUnit.obj: CyUnit.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4749,6 +4781,7 @@ Debug\CyUnitInterface1.obj: CyUnitInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4799,6 +4832,7 @@ Debug\FAssert.obj: FAssert.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4844,6 +4878,7 @@ Debug\FDialogTemplate.obj: FDialogTemplate.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4891,6 +4926,7 @@ Debug\_precompile.obj: _precompile.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4936,6 +4972,7 @@ Release\CvGameCoreDLL.pch: CvGameCoreDLL.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -4983,6 +5020,7 @@ Release\CvArea.obj: CvArea.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5029,6 +5067,7 @@ Release\CvArtFileMgr.obj: CvArtFileMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5075,6 +5114,7 @@ Release\CvCity.obj: CvCity.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5086,7 +5126,6 @@ Release\CvCity.obj: CvCity.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CvPopupInfo.h \
-	CyArgsList.h \
 	CvGameTextMgr.h \
 	CvDLLEngineIFaceBase.h \
 	CvDLLInterfaceIFaceBase.h \
@@ -5128,6 +5167,7 @@ Release\CvCityAI.obj: CvCityAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5138,7 +5178,6 @@ Release\CvCityAI.obj: CvCityAI.cpp \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
-	CyArgsList.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLFAStarIFaceBase.h
 Release\CvDeal.obj: CvDeal.cpp \
@@ -5176,6 +5215,7 @@ Release\CvDeal.obj: CvDeal.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5226,6 +5266,7 @@ Release\CvDiploParameters.obj: CvDiploParameters.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5273,6 +5314,7 @@ Release\CvDLLButtonPopup.obj: CvDLLButtonPopup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5286,7 +5328,6 @@ Release\CvDLLButtonPopup.obj: CvDLLButtonPopup.cpp \
 	CvDLLButtonPopup.h \
 	CvPopupInfo.h \
 	CvPopupReturn.h \
-	CyArgsList.h \
 	CvInitCore.h \
 	CvGameTextMgr.h \
 	CvDLLInterfaceIFaceBase.h \
@@ -5330,6 +5371,7 @@ Release\CvDLLEntity.obj: CvDLLEntity.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5375,6 +5417,7 @@ Release\CvDLLPython.obj: CvDLLPython.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5425,6 +5468,7 @@ Release\CvDllPythonEvents.obj: CvDllPythonEvents.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5438,7 +5482,6 @@ Release\CvDllPythonEvents.obj: CvDllPythonEvents.cpp \
 	CvDllPythonEvents.h \
 	CvDLLEngineIFaceBase.h \
 	CvDLLInterfaceIFaceBase.h \
-	CyArgsList.h \
 	CyUnit.h \
 	CyPlot.h
 Release\CvDllTranslator.obj: CvDllTranslator.cpp \
@@ -5476,6 +5519,7 @@ Release\CvDllTranslator.obj: CvDllTranslator.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5522,6 +5566,7 @@ Release\CvDLLWidgetData.obj: CvDLLWidgetData.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5532,7 +5577,6 @@ Release\CvDLLWidgetData.obj: CvDLLWidgetData.cpp \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
-	CyArgsList.h \
 	CvGameTextMgr.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
@@ -5577,6 +5621,7 @@ Release\CvEventReporter.obj: CvEventReporter.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5626,6 +5671,7 @@ Release\CvFractal.obj: CvFractal.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5672,6 +5718,7 @@ Release\CvGame.obj: CvGame.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5687,7 +5734,6 @@ Release\CvGame.obj: CvGame.cpp \
 	CvDiploParameters.h \
 	FVariableSystem.h \
 	CvReplayMessage.h \
-	CyArgsList.h \
 	CvPopupInfo.h \
 	CvReplayInfo.h \
 	CvGameTextMgr.h \
@@ -5732,6 +5778,7 @@ Release\CvGameAI.obj: CvGameAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5777,6 +5824,7 @@ Release\CvGameCoreDLL.obj: CvGameCoreDLL.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5824,6 +5872,7 @@ Release\CvGameCoreUtils.obj: CvGameCoreUtils.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5872,6 +5921,7 @@ Release\CvGameInterface.obj: CvGameInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5884,7 +5934,6 @@ Release\CvGameInterface.obj: CvGameInterface.cpp \
 	CvArtFileMgr.h \
 	CvInitCore.h \
 	CyPlot.h \
-	CyArgsList.h \
 	CvPopupInfo.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
@@ -5927,6 +5976,7 @@ Release\CvGameTextMgr.obj: CvGameTextMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -5941,8 +5991,7 @@ Release\CvGameTextMgr.obj: CvGameTextMgr.cpp \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLSymbolIFaceBase.h \
 	CvXMLLoadUtility.h \
-	CvPopupInfo.h \
-	CyArgsList.h
+	CvPopupInfo.h
 Release\CvGlobals.obj: CvGlobals.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -5978,6 +6027,7 @@ Release\CvGlobals.obj: CvGlobals.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6029,6 +6079,7 @@ Release\CvHallOfFameInfo.obj: CvHallOfFameInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6076,6 +6127,7 @@ Release\CvInfos.obj: CvInfos.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6124,6 +6176,7 @@ Release\CvInfoWater.obj: CvInfoWater.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6172,6 +6225,7 @@ Release\CvInitCore.obj: CvInitCore.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6183,7 +6237,7 @@ Release\CvInitCore.obj: CvInitCore.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CvInitCore.h \
-	CyArgsList.h
+	CvMessageControl.h
 Release\CvMap.obj: CvMap.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -6219,6 +6273,7 @@ Release\CvMap.obj: CvMap.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6233,7 +6288,6 @@ Release\CvMap.obj: CvMap.cpp \
 	CvMapGenerator.h \
 	FAStarNode.h \
 	CvInitCore.h \
-	CyArgsList.h \
 	CvDLLEngineIFaceBase.h \
 	CvDLLIniParserIFaceBase.h \
 	CvDLLFAStarIFaceBase.h
@@ -6272,6 +6326,7 @@ Release\CvMapGenerator.obj: CvMapGenerator.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6284,8 +6339,7 @@ Release\CvMapGenerator.obj: CvMapGenerator.cpp \
 	CvArtFileMgr.h \
 	CvMapGenerator.h \
 	CvFractal.h \
-	CyPlot.h \
-	CyArgsList.h
+	CyPlot.h
 Release\CvMessageControl.obj: CvMessageControl.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -6321,6 +6375,7 @@ Release\CvMessageControl.obj: CvMessageControl.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6368,6 +6423,7 @@ Release\CvMessageData.obj: CvMessageData.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6418,6 +6474,7 @@ Release\CvPlayer.obj: CvPlayer.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6431,7 +6488,6 @@ Release\CvPlayer.obj: CvPlayer.cpp \
 	CvDiploParameters.h \
 	FVariableSystem.h \
 	CvInitCore.h \
-	CyArgsList.h \
 	CvPopupInfo.h \
 	CvGameTextMgr.h \
 	CyPlot.h \
@@ -6477,6 +6533,7 @@ Release\CvPlayerAI.obj: CvPlayerAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6490,7 +6547,6 @@ Release\CvPlayerAI.obj: CvPlayerAI.cpp \
 	CvDiploParameters.h \
 	FVariableSystem.h \
 	CvInitCore.h \
-	CyArgsList.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
 	CvPopupInfo.h \
@@ -6534,6 +6590,7 @@ Release\CvPlot.obj: CvPlot.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6550,7 +6607,6 @@ Release\CvPlot.obj: CvPlot.cpp \
 	CvDLLEngineIFaceBase.h \
 	CvDLLFlagEntityIFaceBase.h \
 	CvDLLFAStarIFaceBase.h \
-	CyArgsList.h \
 	CvEventReporter.h \
 	CvStatistics.h \
 	CvDllPythonEvents.h
@@ -6589,6 +6645,7 @@ Release\CvPlotGroup.obj: CvPlotGroup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6635,6 +6692,7 @@ Release\CvPopupInfo.obj: CvPopupInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6681,6 +6739,7 @@ Release\CvPopupReturn.obj: CvPopupReturn.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6727,6 +6786,7 @@ Release\CvRandom.obj: CvRandom.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6736,8 +6796,7 @@ Release\CvRandom.obj: CvRandom.cpp \
 	CvDllEntity.h \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
-	CvArtFileMgr.h \
-	CyArgsList.h
+	CvArtFileMgr.h
 Release\CvReplayInfo.obj: CvReplayInfo.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -6773,6 +6832,7 @@ Release\CvReplayInfo.obj: CvReplayInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6823,6 +6883,7 @@ Release\CvReplayMessage.obj: CvReplayMessage.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6869,6 +6930,7 @@ Release\CvSelectionGroup.obj: CvSelectionGroup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6884,7 +6946,6 @@ Release\CvSelectionGroup.obj: CvSelectionGroup.cpp \
 	FAStarNode.h \
 	CyPlot.h \
 	CySelectionGroup.h \
-	CyArgsList.h \
 	CvEventReporter.h \
 	CvStatistics.h \
 	CvDllPythonEvents.h
@@ -6923,6 +6984,7 @@ Release\CvSelectionGroupAI.obj: CvSelectionGroupAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -6969,6 +7031,7 @@ Release\CvStatistics.obj: CvStatistics.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7015,6 +7078,7 @@ Release\CvStructs.obj: CvStructs.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7060,6 +7124,7 @@ Release\CvTalkingHeadMessage.obj: CvTalkingHeadMessage.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7105,6 +7170,7 @@ Release\CvTeam.obj: CvTeam.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7122,8 +7188,7 @@ Release\CvTeam.obj: CvTeam.cpp \
 	CvDLLEngineIFaceBase.h \
 	CvDiploParameters.h \
 	FVariableSystem.h \
-	CvPopupInfo.h \
-	CyArgsList.h
+	CvPopupInfo.h
 Release\CvTeamAI.obj: CvTeamAI.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -7159,6 +7224,7 @@ Release\CvTeamAI.obj: CvTeamAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7169,53 +7235,7 @@ Release\CvTeamAI.obj: CvTeamAI.cpp \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
-	CvDLLInterfaceIFaceBase.h \
-	CyArgsList.h
-Release\CvTextScreens.obj: CvTextScreens.cpp \
-	CvGameCoreDLL.h \
-	FAssert.h \
-	CvGameCoreDLLDefNew.h \
-	FDataStreamBase.h \
-	FFreeListArrayBase.h \
-	FFreeListTrashArray.h \
-	FFreeListArray.h \
-	CvString.h \
-	CvEnums.h \
-	CvDefines.h \
-	CvStructs.h \
-	CvDLLUtilityIFaceBase.h \
-	LinkedList.h \
-	CvPlayerAI.h \
-	CvPlayer.h \
-	CvCityAI.h \
-	CvCity.h \
-	CvDLLEntity.h \
-	CvUnitAI.h \
-	CvUnit.h \
-	CvSelectionGroupAI.h \
-	CvSelectionGroup.h \
-	CvPlotGroup.h \
-	CvTalkingHeadMessage.h \
-	AI_defines.h \
-	CvGameCoreUtils.h \
-	CvGlobals.h \
-	CvMap.h \
-	CvArea.h \
-	CvPlot.h \
-	CvGameAI.h \
-	CvGame.h \
-	CvDeal.h \
-	CvRandom.h \
-	FProfiler.h \
-	CyCity.h \
-	CvInfos.h \
-	CvTeamAI.h \
-	CvTeam.h \
-	CvDLLPythonIFaceBase.h \
-	CvDllEntity.h \
-	CvDLLEntityIFaceBase.h \
-	CyGlobalContext.h \
-	CvArtFileMgr.h
+	CvDLLInterfaceIFaceBase.h
 Release\CvUnit.obj: CvUnit.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -7251,6 +7271,7 @@ Release\CvUnit.obj: CvUnit.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7262,7 +7283,6 @@ Release\CvUnit.obj: CvUnit.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CyUnit.h \
-	CyArgsList.h \
 	CyPlot.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLEngineIFaceBase.h \
@@ -7306,6 +7326,7 @@ Release\CvUnitAI.obj: CvUnitAI.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7317,7 +7338,6 @@ Release\CvUnitAI.obj: CvUnitAI.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CyUnit.h \
-	CyArgsList.h \
 	FAStarNode.h \
 	CvDLLInterfaceIFaceBase.h \
 	CvDLLFAStarIFaceBase.h
@@ -7356,6 +7376,7 @@ Release\CvXMLLoadUtility.obj: CvXMLLoadUtility.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7403,6 +7424,7 @@ Release\CvXMLLoadUtilityGet.obj: CvXMLLoadUtilityGet.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7451,6 +7473,7 @@ Release\CvXMLLoadUtilityInit.obj: CvXMLLoadUtilityInit.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7499,6 +7522,7 @@ Release\CvXMLLoadUtilitySet.obj: CvXMLLoadUtilitySet.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7549,6 +7573,7 @@ Release\CyArea.obj: CyArea.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7595,6 +7620,7 @@ Release\CyAreaInterface.obj: CyAreaInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7641,6 +7667,7 @@ Release\CyArgsList.obj: CyArgsList.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7650,8 +7677,7 @@ Release\CyArgsList.obj: CyArgsList.cpp \
 	CvDllEntity.h \
 	CvDLLEntityIFaceBase.h \
 	CyGlobalContext.h \
-	CvArtFileMgr.h \
-	CyArgsList.h
+	CvArtFileMgr.h
 Release\CyArtFileMgr.obj: CyArtFileMgr.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -7687,6 +7713,7 @@ Release\CyArtFileMgr.obj: CyArtFileMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7733,6 +7760,7 @@ Release\CyArtFileMgrInterface.obj: CyArtFileMgrInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7779,6 +7807,7 @@ Release\CyCity.obj: CyCity.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7827,6 +7856,7 @@ Release\CyCityInterface1.obj: CyCityInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7874,6 +7904,7 @@ Release\CyDeal.obj: CyDeal.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7920,6 +7951,7 @@ Release\CyEnumsInterface.obj: CyEnumsInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7966,6 +7998,7 @@ Release\CyGame.obj: CyGame.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -7977,6 +8010,7 @@ Release\CyGame.obj: CyGame.cpp \
 	CyGlobalContext.h \
 	CvArtFileMgr.h \
 	CyGame.h \
+	CvInitCore.h \
 	CyPlayer.h \
 	CyDeal.h \
 	CyReplayInfo.h \
@@ -8017,6 +8051,7 @@ Release\CyGameCoreUtils.obj: CyGameCoreUtils.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8065,6 +8100,7 @@ Release\CyGameCoreUtilsInterface.obj: CyGameCoreUtilsInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8113,6 +8149,7 @@ Release\CyGameInterface.obj: CyGameInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8162,6 +8199,7 @@ Release\CyGameTextMgr.obj: CyGameTextMgr.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8211,6 +8249,7 @@ Release\CyGameTextMgrInterface.obj: CyGameTextMgrInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8257,6 +8296,7 @@ Release\CyGlobalContext.obj: CyGlobalContext.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8307,6 +8347,7 @@ Release\CyGlobalContextInterface1.obj: CyGlobalContextInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8356,6 +8397,7 @@ Release\CyGlobalContextInterface2.obj: CyGlobalContextInterface2.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8405,6 +8447,7 @@ Release\CyGlobalContextInterface3.obj: CyGlobalContextInterface3.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8454,6 +8497,7 @@ Release\CyGlobalContextInterface4.obj: CyGlobalContextInterface4.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8503,6 +8547,7 @@ Release\CyHallOfFameInfo.obj: CyHallOfFameInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8552,6 +8597,7 @@ Release\CyHallOfFameInterface.obj: CyHallOfFameInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8602,6 +8648,7 @@ Release\CyInfoInterface1.obj: CyInfoInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8647,6 +8694,7 @@ Release\CyInfoInterface2.obj: CyInfoInterface2.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8692,6 +8740,7 @@ Release\CyInfoInterface3.obj: CyInfoInterface3.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8737,6 +8786,7 @@ Release\CyMap.obj: CyMap.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8789,6 +8839,7 @@ Release\CyMapGenerator.obj: CyMapGenerator.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8837,6 +8888,7 @@ Release\CyMapGeneratorInterface.obj: CyMapGeneratorInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8883,6 +8935,7 @@ Release\CyMapInterface.obj: CyMapInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8933,6 +8986,7 @@ Release\CyMessageControl.obj: CyMessageControl.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -8980,6 +9034,7 @@ Release\CyMessageControlInterface.obj: CyMessageControlInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9026,6 +9081,7 @@ Release\CyPlayer.obj: CyPlayer.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9076,6 +9132,7 @@ Release\CyPlayerInterface1.obj: CyPlayerInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9126,6 +9183,7 @@ Release\CyPlayerInterface2.obj: CyPlayerInterface2.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9176,6 +9234,7 @@ Release\CyPlot.obj: CyPlot.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9224,6 +9283,7 @@ Release\CyPlotInterface1.obj: CyPlotInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9272,6 +9332,7 @@ Release\CyRandomInterface.obj: CyRandomInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9317,6 +9378,7 @@ Release\CyReplayInfo.obj: CyReplayInfo.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9365,6 +9427,7 @@ Release\CySelectionGroup.obj: CySelectionGroup.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9414,6 +9477,7 @@ Release\CySelectionGroupInterface.obj: CySelectionGroupInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9463,6 +9527,7 @@ Release\CyStructsInterface1.obj: CyStructsInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9508,6 +9573,7 @@ Release\CyTeam.obj: CyTeam.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9555,6 +9621,7 @@ Release\CyTeamInterface.obj: CyTeamInterface.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9602,6 +9669,7 @@ Release\CyUnit.obj: CyUnit.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9652,6 +9720,7 @@ Release\CyUnitInterface1.obj: CyUnitInterface1.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9702,6 +9771,7 @@ Release\FAssert.obj: FAssert.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9747,6 +9817,7 @@ Release\FDialogTemplate.obj: FDialogTemplate.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \
@@ -9794,6 +9865,7 @@ Release\_precompile.obj: _precompile.cpp \
 	CvGame.h \
 	CvDeal.h \
 	CvRandom.h \
+	CyArgsList.h \
 	FProfiler.h \
 	CyCity.h \
 	CvInfos.h \

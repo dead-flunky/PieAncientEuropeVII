@@ -50,7 +50,7 @@ void CvReplayInfo::createInfo(PlayerTypes ePlayer)
 
 	if (ePlayer == NO_PLAYER)
 	{
-		ePlayer = game.getActivePlayer();
+		ePlayer = game.getActivePlayerInternal();
 	}
 	if (NO_PLAYER != ePlayer)
 	{
@@ -119,7 +119,7 @@ void CvReplayInfo::createInfo(PlayerTypes ePlayer)
 		if (player.isEverAlive())
 		{
 			mapPlayers[(PlayerTypes)iPlayer] = iPlayerIndex;
-			if ((PlayerTypes)iPlayer == game.getActivePlayer())
+			if ((PlayerTypes)iPlayer == game.getActivePlayerInternal())
 			{
 				m_iActivePlayer = iPlayerIndex;
 			}

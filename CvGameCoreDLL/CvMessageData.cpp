@@ -218,7 +218,7 @@ void CvNetPushOrder::Execute()
 			pCity->pushOrder(m_eOrder, m_iData, -1, m_bAlt, !(m_bShift || m_bCtrl), m_bShift);
 		}
 
-		if (GC.getGameINLINE().getActivePlayer() == m_ePlayer)
+		if (GC.getGameINLINE().getActivePlayerInternal() == m_ePlayer)
 		{
 			gDLL->getInterfaceIFace()->updatePythonScreens();
 		}
@@ -270,7 +270,7 @@ void CvNetPopOrder::Execute()
 			pCity->popOrder(m_iNum);
 		}
 
-		if (GC.getGameINLINE().getActivePlayer() == m_ePlayer)
+		if (GC.getGameINLINE().getActivePlayerInternal() == m_ePlayer)
 		{
 			gDLL->getInterfaceIFace()->updatePythonScreens();
 		}
@@ -406,7 +406,7 @@ void CvNetResearch::Execute()
 
 			if (m_iDiscover > 1)
 			{
-				if (m_ePlayer == GC.getGameINLINE().getActivePlayer())
+				if (m_ePlayer == GC.getGameINLINE().getActivePlayerInternal())
 				{
 					kPlayer.chooseTech(m_iDiscover - 1);
 				}
@@ -428,7 +428,7 @@ void CvNetResearch::Execute()
 			}
 		}
 
-		if (GC.getGameINLINE().getActivePlayer() == m_ePlayer)
+		if (GC.getGameINLINE().getActivePlayerInternal() == m_ePlayer)
 		{
 			gDLL->getInterfaceIFace()->updatePythonScreens();
 		}

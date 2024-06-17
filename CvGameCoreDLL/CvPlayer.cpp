@@ -2710,7 +2710,7 @@ void CvPlayer::doTurnUnits()
 		}
 	}
 
-	if (getID() == GC.getGameINLINE().getActivePlayer())
+	if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 	{
 		gDLL->getFAStarIFace()->ForceReset(&GC.getInterfacePathFinder());
 
@@ -3659,7 +3659,7 @@ void CvPlayer::contact(PlayerTypes ePlayer)
 		{
 			pDiplo->setDiploComment((DiploCommentTypes)GC.getInfoTypeForString("AI_DIPLOCOMMENT_TRADING"));
 		}
-		gDLL->getInterfaceIFace()->setDiploQueue(pDiplo, GC.getGameINLINE().getActivePlayer());
+		gDLL->getInterfaceIFace()->setDiploQueue(pDiplo, GC.getGameINLINE().getActivePlayerInternal());
 	}
 }
 
@@ -7043,7 +7043,7 @@ void CvPlayer::revolution(CivicTypes* paeNewCivics, bool bForce)
 
 	setRevolutionTimer(std::max(1, ((100 + getAnarchyModifier()) * GC.getDefineINT("MIN_REVOLUTION_TURNS")) / 100) + iAnarchyLength);
 
-	if (getID() == GC.getGameINLINE().getActivePlayer())
+	if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 	{
 		gDLL->getInterfaceIFace()->setDirty(Popup_DIRTY_BIT, true); // to force an update of the civic chooser popup
 	}
@@ -7816,7 +7816,7 @@ void CvPlayer::setGold(int iNewValue)
 	{
 		m_iGold = iNewValue;
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(MiscButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
@@ -7847,7 +7847,7 @@ void CvPlayer::setAdvancedStartPoints(int iNewValue)
 	{
 		m_iAdvancedStartPoints = iNewValue;
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(MiscButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
@@ -7929,7 +7929,7 @@ void CvPlayer::changeGoldenAgeTurns(int iChange)
 			}
 		}
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8008,7 +8008,7 @@ void CvPlayer::changeAnarchyTurns(int iChange)
 				gDLL->getInterfaceIFace()->addMessage(getID(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MISC_REVOLUTION_OVER").GetCString(), "AS2D_REVOLTEND", MESSAGE_TYPE_MINOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setDirty(MiscButtons_DIRTY_BIT, true);
 			}
@@ -8019,7 +8019,7 @@ void CvPlayer::changeAnarchyTurns(int iChange)
 			}
 		}
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8341,7 +8341,7 @@ void CvPlayer::changeNumOutsideUnits(int iChange)
 		m_iNumOutsideUnits += iChange;
 		FAssert(getNumOutsideUnits() >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8361,7 +8361,7 @@ void CvPlayer::changeBaseFreeUnits(int iChange)
 	{
 		m_iBaseFreeUnits = (m_iBaseFreeUnits + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8381,7 +8381,7 @@ void CvPlayer::changeBaseFreeMilitaryUnits(int iChange)
 	{
 		m_iBaseFreeMilitaryUnits = (m_iBaseFreeMilitaryUnits + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8401,7 +8401,7 @@ void CvPlayer::changeFreeUnitsPopulationPercent(int iChange)
 	{
 		m_iFreeUnitsPopulationPercent = (m_iFreeUnitsPopulationPercent + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8421,7 +8421,7 @@ void CvPlayer::changeFreeMilitaryUnitsPopulationPercent(int iChange)
 	{
 		m_iFreeMilitaryUnitsPopulationPercent = (m_iFreeMilitaryUnitsPopulationPercent + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8441,7 +8441,7 @@ void CvPlayer::changeGoldPerUnit(int iChange)
 	{
 		m_iGoldPerUnit = (m_iGoldPerUnit + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8461,7 +8461,7 @@ void CvPlayer::changeGoldPerMilitaryUnit(int iChange)
 	{
 		m_iGoldPerMilitaryUnit = (m_iGoldPerMilitaryUnit + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8481,7 +8481,7 @@ void CvPlayer::changeExtraUnitCost(int iChange)
 	{
 		m_iExtraUnitCost = (m_iExtraUnitCost + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -8502,7 +8502,7 @@ void CvPlayer::changeNumMilitaryUnits(int iChange)
 		m_iNumMilitaryUnits = (m_iNumMilitaryUnits + iChange);
 		FAssert(getNumMilitaryUnits() >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -9100,7 +9100,7 @@ void CvPlayer::setRevolutionTimer(int iNewValue)
 		m_iRevolutionTimer = iNewValue;
 		FAssert(getRevolutionTimer() >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(MiscButtons_DIRTY_BIT, true);
 		}
@@ -9127,7 +9127,7 @@ void CvPlayer::setConversionTimer(int iNewValue)
 		m_iConversionTimer = iNewValue;
 		FAssert(getConversionTimer() >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(MiscButtons_DIRTY_BIT, true);
 		}
@@ -9905,7 +9905,7 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 					}
 				}
 
-				if ((getID() == GC.getGameINLINE().getActivePlayer()) && (GC.getGameINLINE().getElapsedGameTurns() > 0))
+				if ((getID() == GC.getGameINLINE().getActivePlayerInternal()) && (GC.getGameINLINE().getElapsedGameTurns() > 0))
 				{
 					if (GC.getGameINLINE().isNetworkMultiPlayer())
 					{
@@ -9920,7 +9920,7 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 				doWarnings();
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				if (gDLL->getInterfaceIFace()->getLengthSelectionList() == 0)
 				{
@@ -9956,7 +9956,7 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 				}
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setForcePopup(false);
 				gDLL->getInterfaceIFace()->clearQueuedPopups();
@@ -9964,7 +9964,7 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 			}
 
 			// start profiling DLL if desired
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				startProfilingDLL();
 			}
@@ -10057,7 +10057,7 @@ void CvPlayer::setAutoMoves(bool bNewValue)
 			}
 			else
 			{
-				if (getID() == GC.getGameINLINE().getActivePlayer())
+				if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 				{
 					gDLL->getInterfaceIFace()->setCycleSelectionCounter(1);
 				}
@@ -10130,7 +10130,7 @@ void CvPlayer::setFoundedFirstCity(bool bNewValue)
 	{
 		m_bFoundedFirstCity = bNewValue;
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(PercentButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(ResearchButtons_DIRTY_BIT, true);
@@ -10153,7 +10153,7 @@ void CvPlayer::setStrike(bool bNewValue)
 
 		if (isStrike())
 		{
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->addMessage(getID(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_MISC_UNITS_ON_STRIKE").GetCString(), "AS2D_STRIKE", MESSAGE_TYPE_MINOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 
@@ -10228,7 +10228,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 
 				if (pLoopPlot->getRevealedImprovementType(GC.getGameINLINE().getActiveTeam(), true) != NO_IMPROVEMENT)
 				{
-					if ((pLoopPlot->getOwnerINLINE() == getID()) || (!(pLoopPlot->isOwned()) && (getID() == GC.getGameINLINE().getActivePlayer())))
+					if ((pLoopPlot->getOwnerINLINE() == getID()) || (!(pLoopPlot->isOwned()) && (getID() == GC.getGameINLINE().getActivePlayerInternal())))
 					{
 						pLoopPlot->setLayoutDirty(true);
 					}
@@ -10254,7 +10254,7 @@ void CvPlayer::setCurrentEra(EraTypes eNewValue)
 		//update flag eras
 		gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(Soundtrack_DIRTY_BIT, true);
 		}
@@ -10741,7 +10741,7 @@ void CvPlayer::changeCommerceRate(CommerceTypes eIndex, int iChange)
 		m_aiCommerceRate[eIndex] += iChange;
 		FAssert(getCommerceRate(eIndex) >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -10896,7 +10896,7 @@ void CvPlayer::changeCommerceFlexibleCount(CommerceTypes eIndex, int iChange)
 			setCommercePercent(eIndex, 0);
 		}
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(PercentButtons_DIRTY_BIT, true);
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
@@ -10923,7 +10923,7 @@ void CvPlayer::changeGoldPerTurnByPlayer(PlayerTypes eIndex, int iChange)
 		m_iGoldPerTurn = (m_iGoldPerTurn + iChange);
 		m_aiGoldPerTurnByPlayer[eIndex] = (m_aiGoldPerTurnByPlayer[eIndex] + iChange);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -11227,7 +11227,7 @@ void CvPlayer::changeUnitClassMaking(UnitClassTypes eIndex, int iChange)
 		m_paiUnitClassMaking[eIndex] = (m_paiUnitClassMaking[eIndex] + iChange);
 		FAssert(getUnitClassMaking(eIndex) >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(Help_DIRTY_BIT, true);
 		}
@@ -11292,7 +11292,7 @@ void CvPlayer::changeBuildingClassMaking(BuildingClassTypes eIndex, int iChange)
 		m_paiBuildingClassMaking[eIndex] = (m_paiBuildingClassMaking[eIndex] + iChange);
 		FAssert(getBuildingClassMaking(eIndex) >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(Help_DIRTY_BIT, true);
 		}
@@ -11416,7 +11416,7 @@ void CvPlayer::changeNoCivicUpkeepCount(CivicOptionTypes eIndex, int iChange)
 		m_paiNoCivicUpkeepCount[eIndex] = (m_paiNoCivicUpkeepCount[eIndex] + iChange);
 		FAssert(getNoCivicUpkeepCount(eIndex) >= 0);
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -11573,7 +11573,7 @@ void CvPlayer::changeUpkeepCount(UpkeepTypes eIndex, int iChange)
 		m_paiUpkeepCount[eIndex] = (m_paiUpkeepCount[eIndex] + iChange);
 		FAssertMsg(getUpkeepCount(eIndex) >= 0, "getUpkeepCount(eIndex) is expected to be non-negative (invalid Index)");
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
 		}
@@ -11629,7 +11629,7 @@ void CvPlayer::setResearchingTech(TechTypes eIndex, bool bNewValue)
 	{
 		m_pabResearchingTech[eIndex] = bNewValue;
 
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setDirty(Popup_DIRTY_BIT, true); // to check whether we still need the tech chooser popup
 		}
@@ -12887,7 +12887,7 @@ void CvPlayer::doResearch()
 
 		if (getCurrentResearch() == NO_TECH)
 		{
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				chooseTech();
 			}
@@ -14073,7 +14073,7 @@ bool CvPlayer::doEspionageMission(EspionageMissionTypes eMission, PlayerTypes eT
 
 		gDLL->getInterfaceIFace()->addMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_ESPIONAGE_MISSION_PERFORMED"), "AS2D_POSITIVE_DINK", MESSAGE_TYPE_INFO, ARTFILEMGR.getInterfaceArtInfo("ESPIONAGE_BUTTON")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), iX, iY, true, true);
 	}
-	else if (getID() == GC.getGameINLINE().getActivePlayer())
+	else if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 	{
 		CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_TEXT);
 		if (iHave < iMissionCost)
@@ -14158,12 +14158,12 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 			}
 
 			//Try to build this player's empire
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setBusy(true);
 			}
 			AI_doAdvancedStart(true);
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setBusy(false);
 			}
@@ -14185,7 +14185,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 	case ADVANCEDSTARTACTION_EXIT:
 		changeGold(getAdvancedStartPoints());
 		setAdvancedStartPoints(-1);
-		if (GC.getGameINLINE().getActivePlayer() == getID())
+		if (GC.getGameINLINE().getActivePlayerInternal() == getID())
 		{
 			gDLL->getInterfaceIFace()->setInAdvancedStart(false);
 		}
@@ -14230,7 +14230,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 
 		changeGold(getAdvancedStartPoints());
 		setAdvancedStartPoints(-1);
-		if (GC.getGameINLINE().getActivePlayer() == getID())
+		if (GC.getGameINLINE().getActivePlayerInternal() == getID())
 		{
 			gDLL->getInterfaceIFace()->setInAdvancedStart(false);
 		}
@@ -14259,12 +14259,12 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 	/* PBMod End */
 
 	case ADVANCEDSTARTACTION_AUTOMATE:
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setBusy(true);
 		}
 		AI_doAdvancedStart(true);			
-		if (getID() == GC.getGameINLINE().getActivePlayer())
+		if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 		{
 			gDLL->getInterfaceIFace()->setBusy(false);
 		}
@@ -14330,7 +14330,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 				}
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setDirty(Advanced_Start_DIRTY_BIT, true);
 			}
@@ -14408,7 +14408,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 				changeAdvancedStartPoints(iCost);
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setDirty(Advanced_Start_DIRTY_BIT, true);
 			}
@@ -14543,7 +14543,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 				}
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setDirty(Advanced_Start_DIRTY_BIT, true);
 			}
@@ -14590,7 +14590,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 				changeAdvancedStartPoints(iCost);
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setDirty(Advanced_Start_DIRTY_BIT, true);
 			}
@@ -14655,7 +14655,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 				changeAdvancedStartPoints(iCost);
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setDirty(Advanced_Start_DIRTY_BIT, true);
 			}
@@ -14688,7 +14688,7 @@ void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, i
 				changeAdvancedStartPoints(iCost);
 			}
 
-			if (getID() == GC.getGameINLINE().getActivePlayer())
+			if (getID() == GC.getGameINLINE().getActivePlayerInternal())
 			{
 				gDLL->getInterfaceIFace()->setDirty(Advanced_Start_DIRTY_BIT, true);
 			}

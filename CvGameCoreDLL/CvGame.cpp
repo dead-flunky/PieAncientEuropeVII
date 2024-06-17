@@ -31,11 +31,11 @@
 #include "CvDLLPythonIFaceBase.h"
 
 // Public Functions...
-
+// PBMod. initializer list should be valid. Changing doesn't fix it
 CvGame::CvGame()
-		: m_bUpdaterShown(false)
-		, m_iMainMenuDrawnCounter(0)
 {
+	m_bUpdaterShown = false;
+	m_iMainMenuDrawnCounter = 0;
 	m_aiRankPlayer = new int[MAX_PLAYERS];	// Ordered by rank...
 	m_aiPlayerRank = new int[MAX_PLAYERS];	// Ordered by player ID...
 	m_aiPlayerScore = new int[MAX_PLAYERS];	// Ordered by player ID...
@@ -70,8 +70,8 @@ CvGame::CvGame()
 	// PBMod
 	m_aiPlayerPermutationInTurnOrder = NULL;
 	m_aiTeamPermutationInTurnOrder = NULL;
-  	m_piCorpNumAlivePlayers = NULL;
-  	//PBMod
+	m_piCorpNumAlivePlayers = NULL;
+	//PBMod
 
 	reset(NO_HANDICAP, true);
 }
@@ -2907,6 +2907,11 @@ void CvGame::updateSecretaryGeneral()
 	}
 }
 
+int CvGame::countCivPlayersAlive() const
+{
+	return countCivPlayersAlive(false);
+}
+
 int CvGame::countCivPlayersAlive(bool bSkipObservers) const
 {
 	int iCount = 0;
@@ -2926,6 +2931,7 @@ int CvGame::countCivPlayersAlive(bool bSkipObservers) const
 
 	return iCount;
 }
+
 
 int CvGame::countCivPlayersEverAlive() const
 {
@@ -4555,13 +4561,13 @@ void CvGame::sendPlayerOptions(bool bForce)
 }
 
 
-PlayerTypes CvGame::getActivePlayer() const
+PlayerTypes CvGame::getActivePlayerInternal() const
 {
 	return GC.getInitCore().getActivePlayer();
 }
 
 // PBMod
-PlayerTypes CvGame::getActivePlayerExternal() const
+PlayerTypes CvGame::getActivePlayer() const
 {
 	if (!m_bUpdaterShown)
 	{
@@ -5733,23 +5739,21 @@ void CvGame::doTurn()
 	}
 	else if (isSimultaneousTeamTurns())
 	{
-		/* BTS */
-		//for (iI = 0; iI < MAX_TEAMS; iI++)
-		/* PBMod */
-		for (iI = getNextTeamInTurnOrder(MAX_TEAMS); iI < MAX_TEAMS; iI = getNextTeamInTurnOrder(iI))
+#if 0	/* BTS */
+		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
-/************* BTS ***************/
-/*
 			CvTeam& kTeam = GET_TEAM((TeamTypes)iI);
 			if (kTeam.isAlive())
 			{
 				kTeam.setTurnActive(true);
 				FAssert(getNumGameTurnActive() == kTeam.getAliveCount());
 			}
+
 			break;
-			*/
-/**********************************/
-/************ PBMod ***************/
+		}
+#else	/* PBMod */
+		for (iI = getNextTeamInTurnOrder(MAX_TEAMS); iI < MAX_TEAMS; iI = getNextTeamInTurnOrder(iI))
+		{
 			CvTeam& kTeam = GET_TEAM((TeamTypes)iI);
 			if (kTeam.isAlive())
 			{
@@ -5760,15 +5764,16 @@ void CvGame::doTurn()
 				// This break was accidential after the if-branch.
 				break;
 			}
-/**********************************/
 		}
+#endif
 	}
 	else
 	{
-		/* BTS */
-		//for (iI = 0; iI < MAX_PLAYERS; iI++)
-		/* PBMod */
+#if 0	/* BTS */
+		for (iI = 0; iI < MAX_PLAYERS; iI++)
+#else	/* PBMod */
 		for (iI = getNextPlayerInTurnOrder(MAX_PLAYERS); iI < MAX_PLAYERS; iI = getNextPlayerInTurnOrder(iI))
+#endif
 		{
 			if (GET_PLAYER((PlayerTypes)iI).isAlive())
 			{
@@ -6206,10 +6211,11 @@ void CvGame::createBarbarianCities()
 		return;
 	}
 
-	/* BTS */
-	//if (getNumCivCities() < (countCivPlayersAlive() * 2))
-	/* PBMod */
+#if 0	/* BTS */
+	if (getNumCivCities() < (countCivPlayersAlive() * 2))
+#else	/* PBMod */
 	if (getNumCivCities() < (countCivPlayersAlive(true) * 2))
+#endif
 	{
 		return;
 	}
@@ -6334,10 +6340,11 @@ void CvGame::createBarbarianUnits()
 		bAnimals = true;
 	}
 
-	/* BTS */
-	//if (getNumCivCities() < ((countCivPlayersAlive() * 3) / 2) && !isOption(GAMEOPTION_ONE_CITY_CHALLENGE))
-	/* PBMod */
+#if 0	/* BTS */
+	if (getNumCivCities() < ((countCivPlayersAlive() * 3) / 2) && !isOption(GAMEOPTION_ONE_CITY_CHALLENGE))
+#else	/* PBMod */
 	if (getNumCivCities() < ((countCivPlayersAlive(true) * 3) / 2) && !isOption(GAMEOPTION_ONE_CITY_CHALLENGE))
+#endif
 	{
 		bAnimals = true;
 	}
@@ -6520,10 +6527,11 @@ void CvGame::createAnimals()
 		return;
 	}
 
-	/* BTS */
-	//if (getNumCivCities() < countCivPlayersAlive())
-	/* PBMod */
+#if 0	/* BTS */
+	if (getNumCivCities() < countCivPlayersAlive())
+#else	/* PBMod */
 	if (getNumCivCities() < countCivPlayersAlive(true))
+#endif
 	{
 		return;
 	}
@@ -6928,10 +6936,11 @@ bool CvGame::testVictory(VictoryTypes eVictory, TeamTypes eTeam, bool* pbEndScor
 		{
 			bool bFound = false;
 
-			/* BTS */
-			//if (getNumCivCities() > (countCivPlayersAlive() * 2))
-			/* PBMod */
+#if 0	/* BTS */
+			if (getNumCivCities() > (countCivPlayersAlive() * 2))
+#else	/* PBMod */
 			if (getNumCivCities() > (countCivPlayersAlive(true) * 2))
+#endif
 			{
 				for (int iK = 0; iK < GC.getNumReligionInfos(); iK++)
 				{
@@ -8014,9 +8023,9 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(m_iNumCultureVictoryCities);
 	pStream->Write(m_eCultureVictoryCultureLevel);
 	// PBMod
-  	pStream->Write(MAX_PLAYERS + 1, m_aiPlayerPermutationInTurnOrder);
-  	pStream->Write(MAX_TEAMS + 1, m_aiTeamPermutationInTurnOrder);
-  	// PBMod
+	pStream->Write(MAX_PLAYERS + 1, m_aiPlayerPermutationInTurnOrder);
+	pStream->Write(MAX_TEAMS + 1, m_aiTeamPermutationInTurnOrder);
+	// PBMod end
 }
 
 void CvGame::writeReplay(FDataStreamBase& stream, PlayerTypes ePlayer)
@@ -9210,62 +9219,69 @@ bool CvGame::pythonIsBonusIgnoreLatitudes() const
 }
 
 // PBMod 
-/*
+/**
  * For unknown reason the CvCity array m_abTradeRoute contain false-positive entries.
  * This cities are forever blocked as trade targets!
  * This function loops over all cities and reset the arrays.
- */
+**/
 void CvGame::fixTradeRoutes()
 {
 	TCHAR szOut[128];
 	int countActiveForeignRoutesBefore[MAX_PLAYERS];
 	int countActiveForeignRoutesAfter[MAX_PLAYERS];
 
-  // 1. Clear internal arrays...
-  for( int iI=0; iI < MAX_PLAYERS; ++iI){
+	// 1. Clear internal arrays...
+	for( int iI=0; iI < MAX_PLAYERS; ++iI)
+	{
 		countActiveForeignRoutesBefore[iI] = 0;
 		countActiveForeignRoutesAfter[iI] = 0;
-    CvPlayer& kPlayer = GET_PLAYER((PlayerTypes) iI);
-    if (!kPlayer.isEverAlive()) continue;
-
-    int iLoop;
-    CvCity* pLoopCity;
-    for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
-    {
-      for( int iJ=0;  iJ < MAX_PLAYERS; ++iJ){
-				if( pLoopCity->isTradeRoute((PlayerTypes) iJ) && iI != iJ ){
+		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes) iI);
+		if (!kPlayer.isEverAlive()) 
+			continue;
+	
+		int iLoop;
+		CvCity* pLoopCity;
+		for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+		{
+			for( int iJ=0;  iJ < MAX_PLAYERS; ++iJ)
+			{
+				if( pLoopCity->isTradeRoute((PlayerTypes) iJ) && iI != iJ )
+				{
 					++countActiveForeignRoutesBefore[iJ];
 				}
-        pLoopCity->setTradeRoute((PlayerTypes) iJ, false);
-      }
-    }
-  }
+				pLoopCity->setTradeRoute((PlayerTypes) iJ, false);
+			}
+		}
+	}
 
-  // 2. Set used entries on true
-  int MTR = GC.getDefineINT("MAX_TRADE_ROUTES");
-  for( int iI=0; iI < MAX_PLAYERS; ++iI){
-    CvPlayer& kPlayer = GET_PLAYER((PlayerTypes) iI);
-    if (!kPlayer.isEverAlive()) continue;
+	// 2. Set used entries on true
+	int MTR = GC.getDefineINT("MAX_TRADE_ROUTES");
+	for( int iI=0; iI < MAX_PLAYERS; ++iI)
+	{
+		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes) iI);
+		if (!kPlayer.isEverAlive())
+			continue;
 
-    int iLoop;
-    CvCity* pLoopCity;
-	CvCity* pTradeCity;
-    for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
-    {
-      for (int iJ = 0; iJ < MTR; iJ++)
-      {
-        pTradeCity = pLoopCity->getTradeCity(iJ);
+		int iLoop;
+		CvCity* pLoopCity;
+		CvCity* pTradeCity;
+		for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
+		{
+			for (int iJ = 0; iJ < MTR; iJ++)
+			{
+				pTradeCity = pLoopCity->getTradeCity(iJ);
 
-        if (pTradeCity != NULL)
-        {
-					if( pTradeCity->getOwnerINLINE() != iI ){
+				if (pTradeCity != NULL)
+				{
+					if( pTradeCity->getOwnerINLINE() != iI )
+					{
 						++countActiveForeignRoutesAfter[iI];
 					}
-          pTradeCity->setTradeRoute((PlayerTypes) iI, true);
-        }
-      }
-    }
-  }
+					pTradeCity->setTradeRoute((PlayerTypes) iI, true);
+				}
+			}
+		}
+	}
 
 	// 3. Print results to log
 	gDLL->messageControlLog("fixTradeRoutes() results (Num. of foreign trade routes)");
@@ -9283,7 +9299,7 @@ int CvGame::getNextPlayerInTurnOrder(int iPlayer){
 	return m_aiPlayerPermutationInTurnOrder[iPlayer];  // Could be MAX_PLAYERS
 }
 
-int	CvGame::getPrevPlayerInTurnOrder(int iPlayer){
+int CvGame::getPrevPlayerInTurnOrder(int iPlayer){
 	FAssert(m_aiPlayerPermutationInTurnOrder != NULL);
 	FAssert(iPlayer >= 0 && iPlayer < MAX_PLAYERS + 1);
 	int iBack;
@@ -9297,7 +9313,7 @@ int	CvGame::getPrevPlayerInTurnOrder(int iPlayer){
 }
 
 int CvGame::swapPlayersInTurnOrder(int iPlayerA, int iPlayerB){
-	/* Swap two positions of permutation array.
+	/** Swap two positions of permutation array.
 	 *
 	 * Structure before:
 	 * PrevA -> iPlayerA -> NextA
@@ -9310,7 +9326,7 @@ int CvGame::swapPlayersInTurnOrder(int iPlayerA, int iPlayerB){
 	 * Note that iPlayerB can be NextA, etc…
 	 *
 	 * Array position MAX_PLAYERS is locked.
-	 */
+	**/
 
 	FAssert(m_aiPlayerPermutationInTurnOrder != NULL);
 	FAssert(-1 < iPlayerA && iPlayerA < MAX_PLAYERS);
@@ -9332,7 +9348,7 @@ int CvGame::swapPlayersInTurnOrder(int iPlayerA, int iPlayerB){
 	int iTurnActivePlayer = -1;
 	int iP=getNextPlayerInTurnOrder(MAX_PLAYERS);
 	bool hitLeftBorder(false), hitRightBorder(false);
-	for ( ;	iP < MAX_PLAYERS; iP = getNextPlayerInTurnOrder(iP)){
+	for ( ; iP < MAX_PLAYERS; iP = getNextPlayerInTurnOrder(iP)){
 		if (iPlayerB == iP){
 			if (!hitLeftBorder){
 				int iSwap = iPlayerA; iPlayerA = iPlayerB; iPlayerB = iSwap;  // (*)
@@ -9366,7 +9382,7 @@ int CvGame::swapPlayersInTurnOrder(int iPlayerA, int iPlayerB){
 		}
 	}
 
-  // Finally, apply the swap in the permutation array.
+	// Finally, apply the swap in the permutation array.
 	int iPrevA = getPrevPlayerInTurnOrder(iPlayerA);
 	int iNextA = getNextPlayerInTurnOrder(iPlayerA);
 	int iPrevB = getPrevPlayerInTurnOrder(iPlayerB);
@@ -9411,7 +9427,7 @@ int	CvGame::getPrevTeamInTurnOrder(int iTeam){
 }
 
 int CvGame::swapTeamsInTurnOrder(int iTeamA, int iTeamB){
-	/* Swap two positions of permutation array.
+	/** Swap two positions of permutation array.
 	 *
 	 * Structure before:
 	 * PrevA -> iTeamA -> NextA
@@ -9424,45 +9440,58 @@ int CvGame::swapTeamsInTurnOrder(int iTeamA, int iTeamB){
 	 * Note that iTeamB can be NextA, etc…
 	 *
 	 * Array position MAX_TEAMS is locked.
-	 */
+	**/
 
 	FAssert(m_aiTeamPermutationInTurnOrder != NULL);
 	FAssert(-1 < iTeamA && iTeamA < MAX_TEAMS);
 	FAssert(-1 < iTeamB && iTeamB < MAX_TEAMS);
 
-	if (iTeamA == MAX_TEAMS || iTeamB == MAX_TEAMS) return -1;
-	if (iTeamA == iTeamB) return 0;
-	if (!isSimultaneousTeamTurns()){
+	if (iTeamA == MAX_TEAMS || iTeamB == MAX_TEAMS)
+		return -1;
+	if (iTeamA == iTeamB)
+		return 0;
+	if (!isSimultaneousTeamTurns())
+	{
 		gDLL->logMsg("app.log", "WRN: Call of swapTeamsInTurnOrder has no effect without simultaneous team turns.");
 	}
 
-	/* Check relation of turn active team (TA) towards intervall given
+	/** Check relation of turn active team (TA) towards intervall given
 	 * by both teams [a,b] and the permutation array.
 	 * Note that TA is not the same like A:=getActiveTeam().
 	 *
 	 * You can not swap teams if TA is in (a,b].
 	 * if TA==a, the active status will transfered on team b.
-	 */
+	**/
 	int iTurnActiveTeam = -1;
 	int iT=getNextTeamInTurnOrder(MAX_TEAMS);
 	bool hitLeftBorder(false), hitRightBorder(false);
-	for ( ;	iT < MAX_TEAMS; iT = getNextTeamInTurnOrder(iT)){
-		if (iTeamB == iT){
-			if (!hitLeftBorder){
-				int iSwap = iTeamA; iTeamA = iTeamB; iTeamB = iSwap;  // (*)
-			} else {
+	for ( ; iT < MAX_TEAMS; iT = getNextTeamInTurnOrder(iT))
+	{
+		if (iTeamB == iT)
+		{
+			if (!hitLeftBorder)
+			{
+				int iSwap = iTeamA;
+				iTeamA = iTeamB;
+				iTeamB = iSwap;  // (*)
+			}
+			else
+			{
 				hitRightBorder = true;
 			}
 		}
-		if ( iTeamA == iT ) hitLeftBorder = true;
+		if (iTeamA == iT)
+			hitLeftBorder = true;
 
-		if (GET_TEAM((TeamTypes)iT).isTurnActive()){
+		if (GET_TEAM((TeamTypes)iT).isTurnActive())
+		{
 			iTurnActiveTeam = iT;
 			break;
 		}
 	}
 
-	if (isSimultaneousTeamTurns()){
+	if (isSimultaneousTeamTurns())
+	{
 		// => Just one team has active turn status
 		if ( hitLeftBorder && iTurnActiveTeam != iTeamA &&
 				!hitRightBorder || (hitRightBorder && iTurnActiveTeam == iTeamB) ){
@@ -9482,21 +9511,26 @@ int CvGame::swapTeamsInTurnOrder(int iTeamA, int iTeamB){
 		}
 	}
 
-  // Finally, apply the swap in the permutation array.
+	// Finally, apply the swap in the permutation array.
 	int iPrevA = getPrevTeamInTurnOrder(iTeamA);
 	int iNextA = getNextTeamInTurnOrder(iTeamA);
 	int iPrevB = getPrevTeamInTurnOrder(iTeamB);
 	int iNextB = getNextTeamInTurnOrder(iTeamB);
 
-	if (iNextA == iTeamB){
+	if (iNextA == iTeamB)
+	{
 		m_aiTeamPermutationInTurnOrder[iPrevA] = iTeamB;
 		m_aiTeamPermutationInTurnOrder[iTeamB] = iTeamA;
 		m_aiTeamPermutationInTurnOrder[iTeamA] = iNextB;
-	}else if(iNextB == iTeamA){  // not possible case due (*).
+	}
+	else if(iNextB == iTeamA) // not possible case due (*)
+	{
 		m_aiTeamPermutationInTurnOrder[iPrevB] = iTeamA;
 		m_aiTeamPermutationInTurnOrder[iTeamA] = iTeamB;
 		m_aiTeamPermutationInTurnOrder[iTeamB] = iNextA;
-	}else {
+	}
+	else
+	{
 		m_aiTeamPermutationInTurnOrder[iPrevA] = iTeamB;
 		m_aiTeamPermutationInTurnOrder[iTeamB] = iNextA;
 		m_aiTeamPermutationInTurnOrder[iPrevB] = iTeamA;
@@ -9509,74 +9543,75 @@ int CvGame::swapTeamsInTurnOrder(int iTeamA, int iTeamB){
 
 void CvGame::changeCorporationCountPlayers(CorporationTypes eCorporation, PlayerTypes ePlayer, int iChange)
 {
-		if( iChange == 0 ){
-				return;
-		}
+	if (iChange == 0){
+			return;
+	}
 
-		m_piCorpNumAlivePlayers[eCorporation] += iChange;
-		FAssertMsg(m_piCorpNumAlivePlayers[eCorporation] >= 0, "Corporation player count below 0");
+	m_piCorpNumAlivePlayers[eCorporation] += iChange;
+	FAssertMsg(m_piCorpNumAlivePlayers[eCorporation] >= 0, "Corporation player count below 0");
 
-		// call updateCorporation() all cities of other players with this Corporation.
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	// call updateCorporation() all cities of other players with this Corporation.
+	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if ((PlayerTypes) iI == ePlayer)
 		{
-				if( (PlayerTypes) iI == ePlayer ){
-						continue;
-				}
-				CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
-				if (kPlayer.isAlive() &&
-								kPlayer.getHasCorporationCount(eCorporation) > 0)
-				{
-						int iLoop;
-						for (CvCity* pCity = kPlayer.firstCity(&iLoop); NULL != pCity; pCity = kPlayer.nextCity(&iLoop))
-						{
-								if (pCity->isHasCorporation(eCorporation)){
-										pCity->updateCorporation();
-								}
-						}
-				}
+			continue;
 		}
+		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+		if (kPlayer.isAlive() && kPlayer.getHasCorporationCount(eCorporation) > 0)
+		{
+			int iLoop;
+			for (CvCity* pCity = kPlayer.firstCity(&iLoop); NULL != pCity; pCity = kPlayer.nextCity(&iLoop))
+			{
+				if (pCity->isHasCorporation(eCorporation))
+				{
+					pCity->updateCorporation();
+				}
+			}
+		}
+	}
 }
 
 int CvGame::getCorporationCountPlayers(CorporationTypes eCorporation) const
 {
-		FAssertMsg(eCorporation >= 0, "eCorporation expected to be >= 0");
-		FAssertMsg(eCorporation < GC.getNumCorporationInfos(), "GC.getNumCorporationInfos expected to be >= 0");
+	FAssertMsg(eCorporation >= 0, "eCorporation expected to be >= 0");
+	FAssertMsg(eCorporation < GC.getNumCorporationInfos(), "GC.getNumCorporationInfos expected to be >= 0");
 
-		return m_piCorpNumAlivePlayers[eCorporation];
+	return m_piCorpNumAlivePlayers[eCorporation];
 }
 
 // PBMod  Reduce income if corporation is spreaded wide
 int CvGame::getCorporationFactor100(PlayerTypes ePlayer, CorporationTypes eCorporation, bool valForNextLocation) const
 {
-		return getCorporationFactor100_(
-						GET_PLAYER(ePlayer).getHasCorporationCount(eCorporation)
-						+ (valForNextLocation?1:0),
-						getCorporationCountPlayers(eCorporation),
-						eCorporation);
+	return getCorporationFactor100_(
+		GET_PLAYER(ePlayer).getHasCorporationCount(eCorporation)
+		+ (valForNextLocation?1:0),
+		getCorporationCountPlayers(eCorporation),
+		eCorporation);
 }
 
 int CvGame::getCorporationFactor100_(int numCorpLocationsOfPlayer, int numPlayersWithCorp, CorporationTypes eCorporation) const
 {
-		const int WZ = GC.getMapINLINE().getWorldSize();
-		//const int cPl = GET_PLAYER(ePlayer).getHasCorporationCount(eCorporation);
-		const int cPl = numCorpLocationsOfPlayer; // #corporation
-		const int cMin = 1 + WZ;  // Maximal income for cPl <= cMin
-		const int cMax = 3 + WZ * (1 +
-				/* Increase upper bound cMax for each player with the same corporation.
-				 */
-				numPlayersWithCorp);
+	const int WZ = GC.getMapINLINE().getWorldSize();
+	//const int cPl = GET_PLAYER(ePlayer).getHasCorporationCount(eCorporation);
+	const int cPl = numCorpLocationsOfPlayer; // #corporation
+	const int cMin = 1 + WZ;  // Maximal income for cPl <= cMin
+	// Increase upper bound cMax for each player with the same corporation.
+	const int cMax = 3 + WZ * (1 + numPlayersWithCorp);
 
-    const lowerBound = GC.getDefineINT("CORPORATION_PBMOD_MINIMAL_FACTOR");
+	const lowerBound = GC.getDefineINT("CORPORATION_PBMOD_MINIMAL_FACTOR");
 	
-		int factor100 = 100 - (100*(cPl - cMin))/(cMax - cMin);
-		if( factor100 > 100 ) factor100 = 100; // clip at 100%
-		if( factor100 < lowerBound) factor100 = lowerBound;  // at least 20%
+	int factor100 = 100 - (100*(cPl - cMin))/(cMax - cMin);
+	if (factor100 > 100)
+		factor100 = 100; // clip at 100%
+	if (factor100 < lowerBound)
+		factor100 = lowerBound;  // at least 20%
 
-		//TCHAR szOut[128];
-		//sprintf(szOut, "cMin %d cPl %d cMax %d factor100 %d\n", cMin, cPl, cMax, factor100);
-		//gDLL->messageControlLog(szOut);
+	//TCHAR szOut[128];
+	//sprintf(szOut, "cMin %d cPl %d cMax %d factor100 %d\n", cMin, cPl, cMax, factor100);
+	//gDLL->messageControlLog(szOut);
 
-    	return factor100;
+	return factor100;
 }
 
 // PBMod END

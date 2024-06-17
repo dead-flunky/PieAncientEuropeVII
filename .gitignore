@@ -43,3 +43,13 @@
 /CvGameCoreDLL/CvGameCoreDLL.sln
 vc70.pdb
 /CvGameCoreDLL/CvGameCoreDLL.vcxproj.user
+/CvGameCoreDLL/.vs/CvGameCoreDLL/v16
+/CvGameCoreDLL/_UpgradeReport_Files
+/CvGameCoreDLL/DebugCache
+*.filters
+*.vspscc
+*.bak
+*.suo
+*.vcxproj
+*.vcproj
+CvGameCoreDLL/UpgradeLog.XML

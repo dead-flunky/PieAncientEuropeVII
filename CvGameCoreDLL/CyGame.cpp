@@ -652,7 +652,7 @@ bool CyGame::isFinalInitialized()
 
 int /*PlayerTypes*/ CyGame::getActivePlayer() 
 {
-	return m_pGame ? (int)m_pGame->getActivePlayer() : -1;
+	return m_pGame ? (int)m_pGame->getActivePlayerInternal() : -1;
 }
 
 void CyGame::setActivePlayer(int /*PlayerTypes*/ eNewValue, bool bForceHotSeat)
