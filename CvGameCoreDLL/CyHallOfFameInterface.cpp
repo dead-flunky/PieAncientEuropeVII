@@ -14,7 +14,7 @@ void CyHallOfFameInterface()
 	python::class_<CyReplayInfo>("CyReplayInfo")
 		.def("isNone", &CyReplayInfo::isNone, "bool () - Returns whether or not this is a valid object")
 
-		.def("createInfo", &CyReplayInfo::createInfo, "void ()")
+		.def("createInfo", &CyReplayInfo::createInfo, "void (int iPlayer)")
 
 		.def("getActivePlayer", &CyReplayInfo::getActivePlayer, "int ()")
 		.def("getLeader", &CyReplayInfo::getLeader, "int (int iPlayer)")
@@ -66,7 +66,7 @@ void CyHallOfFameInterface()
 		.def("getMapWidth", &CyReplayInfo::getMapWidth, "int ()")
 		.def("getMapHeight", &CyReplayInfo::getMapHeight, "int ()")
 
-		.def("getModName", &CyReplayInfo::getModName, "std::wstring ()")
+		.def("getModName", &CyReplayInfo::getModName, "const char* ()")
 		;
 		
 	python::class_<CyHallOfFameInfo>("CyHallOfFameInfo")
