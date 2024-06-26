@@ -2930,6 +2930,54 @@ Debug\CyCityInterface1.obj: CyCityInterface1.cpp \
 	CvArtFileMgr.h \
 	CyPlot.h \
 	CyArea.h
+Debug\CyCityInterface2.obj: CyCityInterface2.cpp \
+	CvGameCoreDLL.h \
+	FAssert.h \
+	CvGameCoreDLLDefNew.h \
+	FDataStreamBase.h \
+	FFreeListArrayBase.h \
+	FFreeListTrashArray.h \
+	FFreeListArray.h \
+	CvString.h \
+	CvEnums.h \
+	CvDefines.h \
+	CvStructs.h \
+	CvDLLUtilityIFaceBase.h \
+	LinkedList.h \
+	CvPlayerAI.h \
+	CvPlayer.h \
+	CvCityAI.h \
+	CvCity.h \
+	CvDLLEntity.h \
+	CvUnitAI.h \
+	CvUnit.h \
+	CvSelectionGroupAI.h \
+	CvSelectionGroup.h \
+	CvPlotGroup.h \
+	CvTalkingHeadMessage.h \
+	AI_defines.h \
+	CvGameCoreUtils.h \
+	CvGlobals.h \
+	CvMap.h \
+	CvArea.h \
+	CvPlot.h \
+	CvGameAI.h \
+	CvGame.h \
+	CvDeal.h \
+	CvRandom.h \
+	CyArgsList.h \
+	FProfiler.h \
+	CyCity.h \
+	CvInfos.h \
+	CvTeamAI.h \
+	CvTeam.h \
+	CvDLLPythonIFaceBase.h \
+	CvDllEntity.h \
+	CvDLLEntityIFaceBase.h \
+	CyGlobalContext.h \
+	CvArtFileMgr.h \
+	CyPlot.h \
+	CyArea.h
 Debug\CyDeal.obj: CyDeal.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
@@ -7822,6 +7870,54 @@ Release\CyCity.obj: CyCity.cpp \
 	CyArea.h \
 	CyUnit.h
 Release\CyCityInterface1.obj: CyCityInterface1.cpp \
+	CvGameCoreDLL.h \
+	FAssert.h \
+	CvGameCoreDLLDefNew.h \
+	FDataStreamBase.h \
+	FFreeListArrayBase.h \
+	FFreeListTrashArray.h \
+	FFreeListArray.h \
+	CvString.h \
+	CvEnums.h \
+	CvDefines.h \
+	CvStructs.h \
+	CvDLLUtilityIFaceBase.h \
+	LinkedList.h \
+	CvPlayerAI.h \
+	CvPlayer.h \
+	CvCityAI.h \
+	CvCity.h \
+	CvDLLEntity.h \
+	CvUnitAI.h \
+	CvUnit.h \
+	CvSelectionGroupAI.h \
+	CvSelectionGroup.h \
+	CvPlotGroup.h \
+	CvTalkingHeadMessage.h \
+	AI_defines.h \
+	CvGameCoreUtils.h \
+	CvGlobals.h \
+	CvMap.h \
+	CvArea.h \
+	CvPlot.h \
+	CvGameAI.h \
+	CvGame.h \
+	CvDeal.h \
+	CvRandom.h \
+	CyArgsList.h \
+	FProfiler.h \
+	CyCity.h \
+	CvInfos.h \
+	CvTeamAI.h \
+	CvTeam.h \
+	CvDLLPythonIFaceBase.h \
+	CvDllEntity.h \
+	CvDLLEntityIFaceBase.h \
+	CyGlobalContext.h \
+	CvArtFileMgr.h \
+	CyPlot.h \
+	CyArea.h
+Release\CyCityInterface2.obj: CyCityInterface2.cpp \
 	CvGameCoreDLL.h \
 	FAssert.h \
 	CvGameCoreDLLDefNew.h \

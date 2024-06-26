@@ -13,7 +13,7 @@ void CyAreaPythonInterface()
 		.def("isNone", &CyArea::isNone, "bool () - Returns whether the pointer points to a real Area")
 		
 		.def("calculateTotalBestNatureYield", &CyArea::calculateTotalBestNatureYield, "int () - Returns the total tile yield from the area")
-		.def("countCoastalLand", &CyArea::countCoastalLand)
+		.def("countCoastalLand", &CyArea::countCoastalLand, "int ()")
 		.def("countNumUniqueBonusTypes", &CyArea::countNumUniqueBonusTypes, "int () - Returns the number of unique bonus types in this area")
 		.def("countHasReligion", &CyArea::countHasReligion, "int (int /*ReligionTypes*/ eReligion, int /*PlayerTypes*/ eOwner)")
 		.def("countHasCorporation", &CyArea::countHasCorporation, "int (int /*CorporationTypes*/ eCorporation, int /*PlayerTypes*/ eOwner)")
@@ -48,12 +48,12 @@ void CyAreaPythonInterface()
 
 		.def("getAreaAIType", &CyArea::getAreaAIType, "int (AreaAITypes) (int (TeamTypes) eIndex) - Returns the AreaAIType for this team in this area")
 		.def("getTargetCity", &CyArea::getTargetCity, python::return_value_policy<python::reference_existing_object>(), "CyCity* (int (PlayerTypes) eIndex) - Returns ?")
-		.def("getYieldRateModifier", &CyArea::getYieldRateModifier, "int (int (PlayerTypes) iPlayer, int (YieldTypes) iIndex2 - Returns ?")
+		.def("getYieldRateModifier", &CyArea::getYieldRateModifier, "int (int (PlayerTypes) iPlayer, int (YieldTypes) iIndex2) - Returns ?")
 		.def("getNumTrainAIUnits", &CyArea::getNumTrainAIUnits, "int (int (PlayerTypes) iPlayer, int (UnitAITypes) iIndex2) - Returns ?")
 		.def("getNumAIUnits", &CyArea::getNumAIUnits, "int (int (PlayerTypes) iPlayer, int (UnitAITypes) iIndex2) - Returns the number of units for this AI which have this AI type")
 
-		.def("getNumBonuses", &CyArea::getNumBonuses, "int(BonusID) - total # of BonusID")
+		.def("getNumBonuses", &CyArea::getNumBonuses, "int (int /*BonusTypes*/ eBonus) - total # of BonusID")
 		.def("getNumTotalBonuses", &CyArea::getNumTotalBonuses, "int () - total number of bonuses, of all types")
-		.def("getNumImprovements", &CyArea::getNumImprovements, "int(ImprovementID) - total # of ImprovementID")
+		.def("getNumImprovements", &CyArea::getNumImprovements, "int (int /*ImprovementTypes*/ eImprovement) - total # of ImprovementID")
 	;
 }

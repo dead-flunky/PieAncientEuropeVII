@@ -290,9 +290,9 @@ public:
 	DllExport void sendPlayerOptions(bool bForce = false);
 
 
-#if 0	/* BTS */
+#if 0	// BTS
 	DllExport PlayerTypes getActivePlayer() const; // Exposed to Python
-#else // PBMod-updater
+#elif 0 // PBMod-updater
 	/* Split getActivePlayer into two cases. The default one for the internal calls
 	   and a second for calls from Civ4's Exe. This allows us to detecting the finishing of
 	   the main menu drawing with a small overhead.
@@ -302,14 +302,12 @@ public:
 	   to CvGameCoreDLL.def
 	*/
 	/* DllExport */ 
-	//PlayerTypes getActivePlayer() const; // Exposed to Python
+	PlayerTypes getActivePlayer() const; // Exposed to Python
 	/* DllExport as getActivePlayer() by Def-file */ 
-	//PlayerTypes getActivePlayerExternal() const;
+	PlayerTypes getActivePlayerExternal() const;
 	// PBMod-updater END
-	// Flunky: solution w/o editing def-file
-	/* DllExport */ 
+#else // Flunky: solution w/o editing def-file
 	PlayerTypes getActivePlayerInternal() const;
-	/* DllExport as getActivePlayer() by Def-file */ 
 	DllExport PlayerTypes getActivePlayer() const; // Exposed to Python
 #endif
 

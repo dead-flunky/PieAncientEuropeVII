@@ -31,11 +31,12 @@
 #include "CvDLLPythonIFaceBase.h"
 
 // Public Functions...
-// PBMod. initializer list should be valid. Changing doesn't fix it
+
 CvGame::CvGame()
+		/* PBMod: initializer list is valid C-code.*/
+		: m_bUpdaterShown(false)
+		, m_iMainMenuDrawnCounter(0)
 {
-	m_bUpdaterShown = false;
-	m_iMainMenuDrawnCounter = 0;
 	m_aiRankPlayer = new int[MAX_PLAYERS];	// Ordered by rank...
 	m_aiPlayerRank = new int[MAX_PLAYERS];	// Ordered by player ID...
 	m_aiPlayerScore = new int[MAX_PLAYERS];	// Ordered by player ID...

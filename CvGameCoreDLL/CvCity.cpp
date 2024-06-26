@@ -8117,7 +8117,8 @@ void CvCity::updateCommerce(CommerceTypes eIndex)
 	if (iOldCommerce != iNewCommerce)
 	{
 		m_aiCommerceRate[eIndex] = iNewCommerce;
-		FAssert(m_aiCommerceRate[eIndex] >= 0);
+		// PAE - building commerce can be negative
+		//FAssert(m_aiCommerceRate[eIndex] >= 0);
 
 		GET_PLAYER(getOwnerINLINE()).invalidateCommerceRankCache(eIndex);
 
@@ -8246,7 +8247,8 @@ void CvCity::updateBuildingCommerce()
 		if (getBuildingCommerce((CommerceTypes)iI) != iNewBuildingCommerce)
 		{
 			m_aiBuildingCommerce[iI] = iNewBuildingCommerce;
-			FAssert(getBuildingCommerce((CommerceTypes)iI) >= 0);
+			// PAE - building commerce can be negative
+			//FAssert(getBuildingCommerce((CommerceTypes)iI) >= 0);
 
 			updateCommerce((CommerceTypes)iI);
 		}

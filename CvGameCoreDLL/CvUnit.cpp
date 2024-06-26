@@ -3776,10 +3776,12 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 
 void CvUnit::doHeal()
 {
-	changeDamage(-(healRate(plot())));
 	// PAE: avoid dying units (without warning)
-	if (getDamage() > 100) {
+	if (getDamage()-healRate(plot()) >= 100) {
 		setDamage(99);
+	}
+	else {
+		changeDamage(-(healRate(plot())));
 	}
 }
 
