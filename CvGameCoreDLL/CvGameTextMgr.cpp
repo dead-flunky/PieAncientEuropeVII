@@ -3688,6 +3688,7 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 //
 void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadTypes eLeader, CivilizationTypes eCivilization, bool bDawnOfMan, bool bCivilopediaText)
 {
+#if 0
 	// PBMod
 #ifdef CHECK_MOD_VERSION_ON_LOGIN
 	void * volatile puSEARCH = NULL;
@@ -3715,6 +3716,7 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 	}
 #endif
 	// PBMod end
+#endif
 
 	PROFILE_FUNC();
 
