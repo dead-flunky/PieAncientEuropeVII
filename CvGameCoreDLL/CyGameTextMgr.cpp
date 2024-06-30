@@ -190,7 +190,7 @@ std::wstring CyGameTextMgr::parseCivInfos(int /*CivilizationTypes*/ iCivilizatio
 std::wstring CyGameTextMgr::parseLeaderTraits(int /*LeaderHeadTypes*/ iLeader, int /*CivilizationTypes*/ iCivilization, bool bDawnOfMan, bool bCivilopediaText)
 {
 	CvWStringBuffer szBuffer;
-	GAMETEXT.parseLeaderTraits(szBuffer, (LeaderHeadTypes)iLeader, (CivilizationTypes) iCivilization, bDawnOfMan, bCivilopediaText);
+	GAMETEXT.parseLeaderTraits(szBuffer, (LeaderHeadTypes) iLeader, (CivilizationTypes) iCivilization, bDawnOfMan, bCivilopediaText);
 	return szBuffer.getCString();
 }
 
