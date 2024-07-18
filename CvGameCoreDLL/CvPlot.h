@@ -85,8 +85,11 @@ public:
 	bool isAdjacentToArea(int iAreaID) const;
 	bool isAdjacentToArea(const CvArea* pArea) const;																						// Exposed to Python
 	bool shareAdjacentArea( const CvPlot* pPlot) const;																					// Exposed to Python
-	bool isAdjacentToLand() const;																															// Exposed to Python 
-	bool isCoastalLand(int iMinWaterSize = -1) const;																																	// Exposed to Python
+	bool isAdjacentToLand() const;																															// Exposed to Python
+	bool isCoastalLand(int iMinWaterSize = -1) const;																						// Exposed to Python
+	
+	// PAE
+	bool isAdjacentToWater() const;
 	
 	// Flunky for PAE from WtP
 	//bool hasAnyOtherWaterPlotsThanJustLargeRivers() const;

@@ -12623,6 +12623,8 @@ bool CvCity::isStarCity() const
 
 bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 {
+/***** BTS *********/
+	/*
 	// if both the river and water flags are set, we require one of the two conditions, not both
 	if (GC.getBuildingInfo(eBuilding).isWater())
 	{
@@ -12649,6 +12651,24 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 			}
 		}
 	}
+	*/
+/***** BTS *********/
+
+/***** PAE *********/
+	if (GC.getBuildingInfo(eBuilding).isWater())
+	{
+		if (!GC.getBuildingInfo(eBuilding).isRiver() || (!plot()->isRiver() && !plot()->isAdjacentToWater()))
+		{
+			if (!isCoastal(GC.getBuildingInfo(eBuilding).getMinAreaSize())) return false;
+		}
+	}
+	else
+	{
+		if (area()->getNumTiles() < GC.getBuildingInfo(eBuilding).getMinAreaSize()) return false;
+
+		if (GC.getBuildingInfo(eBuilding).isRiver() && !plot()->isRiver() && !plot()->isAdjacentToWater()) return false;
+	}
+/***** PAE *********/
 
 	return true;
 }

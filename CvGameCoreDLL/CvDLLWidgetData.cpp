@@ -3548,6 +3548,10 @@ void CvDLLWidgetData::parseFlagHelp(CvWidgetDataStruct &widgetDataStruct, CvWStr
 {
 	CvWString szTempBuffer;
 
+	// PAE Version
+	szBuffer.append(gDLL->getText("TXT_KEY_MISC_PAE_VERSION"));
+	szBuffer.append(NEWLINE);
+
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                      03/04/10                                jdog5000       */
 /*                                                                                              */

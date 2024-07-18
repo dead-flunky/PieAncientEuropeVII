@@ -1185,6 +1185,30 @@ bool CvPlot::isAdjacentToLand() const
 	return false;
 }
 
+/**** PAE *****/
+bool CvPlot::isAdjacentToWater() const
+{
+	PROFILE_FUNC();
+
+	CvPlot* pAdjacentPlot;
+	int iI;
+
+	for (iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+		pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+		if (pAdjacentPlot != NULL)
+		{
+			if (pAdjacentPlot->isWater())
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+/**** PAE *****/
 
 bool CvPlot::isCoastalLand(int iMinWaterSize) const
 {
@@ -1204,7 +1228,8 @@ bool CvPlot::isCoastalLand(int iMinWaterSize) const
 
 		if (pAdjacentPlot != NULL)
 		{
-			if (pAdjacentPlot->isWater())
+			// PAE: TERRAIN_RIVER is not a coast (for coastal buildings like lighthouse)
+			if (pAdjacentPlot->isWater() && !pAdjacentPlot->isFreshWater())
 			{
 				if (pAdjacentPlot->area()->getNumTiles() >= iMinWaterSize)
 				{
@@ -9962,9 +9987,9 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 		}
 	}
 
-	if (GC.getUnitInfo(eUnit).isPrereqBonuses())
+	if (pUnit.isPrereqBonuses())
 	{
-		if (GC.getUnitInfo(eUnit).getDomainType() == DOMAIN_SEA)
+		if (pUnit.getDomainType() == DOMAIN_SEA)
 		{
 			bool bValid = false;
 
@@ -10003,10 +10028,41 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 	{
 		if (pUnit.getDomainType() == DOMAIN_SEA)
 		{
+			/******* BTS ********/
+			/*
 			if (!isWater() && !isCoastalLand(pUnit.getMinAreaSize()))
 			{
 				return false;
 			}
+			*/
+			/********************/
+			/******** PAE *******/
+			if (!isAdjacentToWater()) return false;
+			else
+			{
+				bool bValid = false;
+
+				for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+				{
+					CvPlot* pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+
+					if (pLoopPlot != NULL)
+					{
+						if (pLoopPlot->isWater())
+						{
+							if (!pUnit.getTerrainImpassable(pLoopPlot->getTerrainType()))
+							{
+								bValid = true;
+								break;
+							}
+						}
+					}
+				}
+
+				if (!bValid) return false;
+
+			}
+			/********************/
 		}
 		else
 		{
