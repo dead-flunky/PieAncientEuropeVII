@@ -271,9 +271,20 @@ bool CvSelectionGroup::showMoves() const
 				{
 					if (pHeadUnit->isEnemy(kLoopPlayer.getTeam()))
 					{
-						if (kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES))
+						// PAE animal moves
+						if (pHeadUnit->AI_getUnitAIType() == UNITAI_ANIMAL)
 						{
-							return true;
+							// PAE (PlayerOption: show dangerous wild animals)
+							if (!pHeadUnit->isOnlyDefensive() && kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_AGGRESSIVE_ANIMALS)) {return true;}
+							// PAE (PlayerOption: show harmless wild animals)
+							if (pHeadUnit->isOnlyDefensive() && kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_FRIENDLY_ANIMALS)) {return true;}
+						}
+						else
+						{
+							if (kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES))
+							{
+								return true;
+							}
 						}
 					}
 					else
@@ -2232,13 +2243,13 @@ int CvSelectionGroup::baseMoves()
 
 bool CvSelectionGroup::isWaiting() const
 {
-	return ((getActivityType() == ACTIVITY_HOLD) ||
-		      (getActivityType() == ACTIVITY_SLEEP) ||
-					(getActivityType() == ACTIVITY_HEAL) ||
-					(getActivityType() == ACTIVITY_SENTRY) ||
-					(getActivityType() == ACTIVITY_PATROL) ||
-					(getActivityType() == ACTIVITY_PLUNDER) ||
-					(getActivityType() == ACTIVITY_INTERCEPT));
+	return ( (getActivityType() == ACTIVITY_HOLD) ||
+				(getActivityType() == ACTIVITY_SLEEP) ||
+				(getActivityType() == ACTIVITY_HEAL) ||
+				(getActivityType() == ACTIVITY_SENTRY) ||
+				(getActivityType() == ACTIVITY_PATROL) ||
+				(getActivityType() == ACTIVITY_PLUNDER) ||
+				(getActivityType() == ACTIVITY_INTERCEPT));
 }
 
 

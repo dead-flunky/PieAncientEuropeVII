@@ -1228,8 +1228,7 @@ bool CvPlot::isCoastalLand(int iMinWaterSize) const
 
 		if (pAdjacentPlot != NULL)
 		{
-			// PAE: TERRAIN_RIVER is not a coast (for coastal buildings like lighthouse)
-			if (pAdjacentPlot->isWater() && !pAdjacentPlot->isFreshWater())
+			if (pAdjacentPlot->isWater())
 			{
 				if (pAdjacentPlot->area()->getNumTiles() >= iMinWaterSize)
 				{
@@ -1352,7 +1351,7 @@ bool CvPlot::isLake() const
 	CvArea* pArea = area();
 	if (pArea != NULL)
 	{
-		//PAE: Lakes and Rivers
+		// PAE: Lakes and Rivers
 		int typ1 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_LAKE"));
 		int typ2 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER"));
 		int typ3 = (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"));
@@ -1580,6 +1579,11 @@ bool CvPlot::isRiverSide() const
 			{
 				return true;
 			}
+			// PAE
+			if (pLoopPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER")) || pLoopPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+			{
+				return true;
+			}
 		}
 	}
 
@@ -1711,17 +1715,21 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 			iLevel++;
 		}
 	}
-	
-	/*
-	// Watchtowers and forts
+
+	// PAE: Watchtowers and forts
 	if (getImprovementType() != NO_IMPROVEMENT)
 	{
-		if (getImprovementType() == (ImprovementTypes)(GC.getDefineINT("IMPROVEMENT_FORT")))
-		{
-			iLevel++;
-		}
+		std::list<int> lList;
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT2")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_LIMES9")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_LIMES2_9")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_KASTELL")));
+		if (std::find(lList.begin(), lList.end(), getImprovementType()) != lList.end()) iLevel++;
 	}
-	*/
+	// ---------------------------
 
 	return iLevel;
 }
@@ -2412,7 +2420,13 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 				{
 					if (getTeam() != NO_TEAM)
 					{
-						return false;
+						// PAE (forts can be built almost everywhere)
+						if (GC.getImprovementInfo(eImprovement).isActsAsCity())
+						{
+							if (getImprovementType() != NO_IMPROVEMENT && isCityRadius()) return false;
+						}
+						// BTS
+						else return false;
 					}
 				}
 				else //only buildable in own culture
@@ -2466,12 +2480,6 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 			{
 				return false;
 			}
-			
-			// PAE: TERRAIN_RIVER_FORD
-			if (getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
-			{
-				return false;
-			}
 
 		}
 
@@ -2482,13 +2490,20 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	{
 		if (GC.getBuildInfo(eBuild).isFeatureRemove(getFeatureType()))
 		{
-			if (isOwned() && (GET_PLAYER(ePlayer).getTeam() != getTeam()) && !atWar(GET_PLAYER(ePlayer).getTeam(), getTeam()))
+			// PAE: Kriegsgebiet oder beim Vasall soll es erlaubt sein
+			if (isOwned() && GET_PLAYER(ePlayer).getTeam() != getTeam() && !atWar(GET_PLAYER(ePlayer).getTeam(), getTeam()) && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(getTeam()))
 			{
 				return false;
 			}
 
 			bValid = true;
 		}
+	}
+
+
+	// PAE: TERRAIN_RIVER_FORD
+	if (getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) {
+		return false;
 	}
 
 	return bValid;
@@ -2809,6 +2824,68 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		return GC.getMOVE_DENOMINATOR();
 	}
 
+	// PAE: fair wind
+	/* endless loop
+	if (pUnit->getDomainType() == DOMAIN_SEA && getFeatureType() != NO_FEATURE)
+	{
+		int iUnitDirection = pUnit->getFacingDirection(true);
+		std::list<int> lFeatures;
+		
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_N")));
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_NE")));
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_E")));
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_SO")));
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_S")));
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_SW")));
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_W")));
+		lFeatures.push_back((FeatureTypes)(GC.getInfoTypeForString("FEATURE_WIND_NW")));
+		
+		if (std::find(lFeatures.begin(), lFeatures.end(), getFeatureType()) != lFeatures.end()) {
+
+			int element = getFeatureType();
+			int iWindIdx = -1;
+
+			std::list<int>::iterator it = std::find(lFeatures.begin(), lFeatures.end(), element);
+			if (it != lFeatures.end()) {
+				iWindIdx = std::distance(lFeatures.begin(), it);
+			}
+
+			if (iWindIdx != -1)
+			{
+				int iInWind = -120;
+				int iInSchraegWind = -60;
+				int iSeitenWind = 0;
+				int iGegenSchraegWind = 60;
+				int iGegenWind = 120;
+
+				
+				//if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_NAVIGATION1")):
+				//		iSeitenWind = -60
+				//		if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_NAVIGATION2")):
+				//				iGegenSchraegWind = 0
+				//				iGegenWind = 60
+				//				if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_NAVIGATION3")):
+				//						iInSchraegWind = -120
+				
+				std::list<int> lMoves;
+				lMoves.push_back(iGegenWind);
+				lMoves.push_back(iGegenSchraegWind);
+				lMoves.push_back(iSeitenWind);
+				lMoves.push_back(iInSchraegWind);
+				lMoves.push_back(iInWind);
+				lMoves.push_back(iInSchraegWind);
+				lMoves.push_back(iSeitenWind);
+				lMoves.push_back(iGegenSchraegWind);
+
+				std::list<int>::iterator it2 = lMoves.begin();
+				std::advance(it2, std::abs(iWindIdx-iUnitDirection));
+				return *it2;
+			}
+
+		}
+	}
+	*/
+
 /*
 // BTS -------------------------------
 	if (pUnit->isHuman())
@@ -2891,10 +2968,20 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	if (pFromPlot->isValidRoute(pUnit) && isValidRoute(pUnit) && ((GET_TEAM(pUnit->getTeam()).isBridgeBuilding() || !(pFromPlot->isRiverCrossing(directionXY(pFromPlot, this))))))
 	{
 		iRouteCost = std::max((GC.getRouteInfo(pFromPlot->getRouteType()).getMovementCost() + GET_TEAM(pUnit->getTeam()).getRouteChange(pFromPlot->getRouteType())),
-			               (GC.getRouteInfo(getRouteType()).getMovementCost() + GET_TEAM(pUnit->getTeam()).getRouteChange(getRouteType())));
+						(GC.getRouteInfo(getRouteType()).getMovementCost() + GET_TEAM(pUnit->getTeam()).getRouteChange(getRouteType())));
 		iRouteFlatCost = std::max((GC.getRouteInfo(pFromPlot->getRouteType()).getFlatMovementCost() * pUnit->baseMoves()),
-			                   (GC.getRouteInfo(getRouteType()).getFlatMovementCost() * pUnit->baseMoves()));
+						(GC.getRouteInfo(getRouteType()).getFlatMovementCost() * pUnit->baseMoves()));
 	}
+	// PAE: set moves to 0 when crossing rivers without roads and bridges
+	else if (pFromPlot->isRiverCrossing(directionXY(pFromPlot, this)))
+	{
+		return pUnit->maxMoves();
+	}
+	else if (pFromPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) && this->getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) && !this->isWater())
+	{
+		return pUnit->maxMoves();
+	}
+	// ----- PAE river crossing
 	else
 	{
 		iRouteCost = MAX_INT;
@@ -3868,7 +3955,8 @@ bool CvPlot::isValidDomainForAction(const CvUnit& unit) const
 	switch (unit.getDomainType())
 	{
 	case DOMAIN_SEA:
-		return (isWater() || unit.canMoveAllTerrain());
+		// PAE isRiverSide()
+		return (isWater() || unit.canMoveAllTerrain() || isRiverSide());
 		break;
 
 	case DOMAIN_AIR:
@@ -4014,7 +4102,7 @@ CvArea* CvPlot::waterArea() const
 
 		if (pAdjacentPlot != NULL)
 		{
-			if (pAdjacentPlot->isWater())		
+			if (pAdjacentPlot->isWater())
 			{
 				iValue = pAdjacentPlot->area()->getNumTiles();
 
@@ -4114,7 +4202,7 @@ void CvPlot::setArea(int iNewValue)
 
 CvArea* CvPlot::area(DomainTypes eDomain) const
 {
-	if (eDomain == DOMAIN_LAND && getTerrainType() == (TerrainTypes)(GC.getDefineINT("RIVER_FORD_TERRAIN")))
+	if (eDomain == DOMAIN_LAND && getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
 	{
 		return getAdjacentLandPlot(true)->area();
 	}
@@ -4127,7 +4215,7 @@ CvArea* CvPlot::area(DomainTypes eDomain) const
 }
 int CvPlot::getArea(DomainTypes eDomain) const
 {
-	if (eDomain == DOMAIN_LAND && getTerrainType() == (TerrainTypes)(GC.getDefineINT("RIVER_FORD_TERRAIN")))
+	if (eDomain == DOMAIN_LAND && getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
 	{
 		return getAdjacentLandPlot(true)->getArea();
 	}
@@ -4140,34 +4228,10 @@ int CvPlot::getArea(DomainTypes eDomain) const
 
 const CvPlot* CvPlot::getAdjacentLandPlot(bool bReturnSelfFallback) const
 {
-	CvMap& kMap = GC.getMapINLINE();
-	const int iPlotX = getX_INLINE();
-	const int iPlotY = getY_INLINE();
-	int iRange = 1;
-	LOOP_ADJACENT_PLOTS(iPlotX, iPlotY, 1)
+	CvPlot* pLoopPlot;
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 	{
-		CvPlot* pLoopPlot = kMap.plotINLINE(iLoopX, iLoopY);
-		if (pLoopPlot != NULL && !pLoopPlot->isWater())
-		{
-			return pLoopPlot;
-		}
-	}
-
-	// no land plots found
-	// this is unreachable (at the time of writing)
-	// as it requires a land unit on a large river surrounded by only water
-	// it's included for completeness (read: future stability)
-	return bReturnSelfFallback ? this : NULL;
-}
-
-CvPlot* CvPlot::getAdjacentLandPlot(bool bReturnSelfFallback)
-{
-	CvMap& kMap = GC.getMapINLINE();
-	const int iPlotX = getX_INLINE();
-	const int iPlotY = getY_INLINE();
-	LOOP_ADJACENT_PLOTS(iPlotX, iPlotY, 1)
-	{
-		CvPlot* pLoopPlot = kMap.plotINLINE(iLoopX, iLoopY);
+		pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
 		if (pLoopPlot != NULL && !pLoopPlot->isWater())
 		{
 			return pLoopPlot;
@@ -4189,16 +4253,12 @@ CvArea* CvPlot::getAdjacentSeaArea() const
 	// lake
 	// this plot
 
-	CvMap& kMap = GC.getMapINLINE();
-	const int iPlotX = getX_INLINE();
-	const int iPlotY = getY_INLINE();
-	int iRange = 1;
-
+	CvPlot* pLoopPlot;
 	CvArea* pArea = area();
 
-	LOOP_ADJACENT_PLOTS(iPlotX, iPlotY, 1)
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
 	{
-		CvPlot* pLoopPlot = kMap.plotINLINE(iLoopX, iLoopY);
+		pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
 		if (pLoopPlot != NULL && pLoopPlot->isWater())
 		{
 			pArea = pLoopPlot->area();
@@ -5165,7 +5225,7 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 					{
 						setTerrainType(((TerrainTypes)(GC.getDefineINT("SHALLOW_WATER_TERRAIN"))), bRecalculate, bRebuildGraphics);
 					}
-					//WTP, ray, Large Rivers - END
+					//WTP, ray, Large Rivers - END	
 				}
 				else
 				{
@@ -10060,6 +10120,8 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 				}
 
 				if (!bValid) return false;
+				// Ships not in lakes
+				if (GC.getUnitInfo(eUnit).getMinAreaSize() != -1 && !pCity->isCoastal(GC.getUnitInfo(eUnit).getMinAreaSize())) return false;
 
 			}
 			/********************/

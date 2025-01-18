@@ -227,7 +227,7 @@ public:
 	CvArea* waterArea() const;
 	CvArea* secondWaterArea() const;
 	int getArea() const;																																		// Exposed to Python
-	void setArea(int iNewValue);			
+	void setArea(int iNewValue);
 
 	/*
 	//WTP, ray, Large Rivers - Nightinggale addition - start
@@ -249,6 +249,7 @@ public:
 	bool hasNearbyPlotWith(T eVal, int iRange = 1) const;
 	//WTP, Nightinggale - Terrain locator - start
 	*/
+	
 
 	DllExport int getFeatureVariety() const;																													// Exposed to Python
 

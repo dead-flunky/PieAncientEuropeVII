@@ -605,6 +605,13 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 	bool bShift = gDLL->shiftKey();
 	bool bAlt = gDLL->altKey();
 
+	// PAE unit combattype symbol
+	if (pUnit->getUnitCombatType() != NO_UNITCOMBAT)
+	{
+		szString.append(CvWString::format(L"<img=%S size=16></img> ", GC.getUnitCombatInfo((UnitCombatTypes)pUnit->getUnitCombatType()).getButton()));
+	}
+	// --------------------------
+
 	szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), pUnit->getName().GetCString());
 	szString.append(szTempBuffer);
 
@@ -1352,6 +1359,14 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 				// is this unit the head of a group, not cargo, and visible?
 				if (pHeadUnit && pHeadUnit->isGroupHead() && !pHeadUnit->isCargo() && !pHeadUnit->isInvisible(GC.getGameINLINE().getActiveTeam(), GC.getGameINLINE().isDebugMode()))
 				{
+
+					// PAE unit combattype symbol
+					if (pHeadUnit->getUnitCombatType() != NO_UNITCOMBAT)
+					{
+						szString.append(CvWString::format(L"<img=%S size=16></img> ", GC.getUnitCombatInfo((UnitCombatTypes)pHeadUnit->getUnitCombatType()).getButton()));
+					}
+					// --------------------------
+
 					// head unit name and unitai
 					szString.append(CvWString::format(SETCOLR L"%s" ENDCOLR, 255,190,0,255, pHeadUnit->getName().GetCString()));
 					szString.append(CvWString::format(L" (%d)", shortenID(pHeadUnit->getID())));
@@ -1708,6 +1723,7 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 						{
 							szString.append(L", ");
 						}
+
 						szString.append(CvWString::format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR("COLOR_UNIT_TEXT"), GC.getUnitInfo((UnitTypes)iI).getDescription()));
 
 						szString.append(CvWString::format(L" (%d)", aiUnitNumbers[iIndex]));
@@ -1777,6 +1793,10 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 
 	bValid = false;
 
+	// BTS
+	// rucivfan_bug_fix rbf[
+	// old code[
+	/*
 	switch (gDLL->getInterfaceIFace()->getSelectionList()->getDomainType())
 	{
 	case DOMAIN_SEA:
@@ -1803,6 +1823,9 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 	{
 		return false;
 	}
+	*/
+	// ]old code
+	// ]rucivfan_bug_fix rbf
 	
 	int iOdds;
 	pAttacker = gDLL->getInterfaceIFace()->getSelectionList()->AI_getBestGroupAttacker(pPlot, false, iOdds);
@@ -1814,6 +1837,41 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 
 	if (pAttacker != NULL)
 	{
+
+		// PAE
+		// von Kathy:
+		// by rucivfan_bug_fix rbf[
+		// new code[
+		bValid = false;
+		switch (gDLL->getInterfaceIFace()->getSelectionList()->getDomainType())
+		{
+		case DOMAIN_SEA:
+			bValid = pPlot->isWater();
+			break;
+
+		case DOMAIN_AIR:
+			bValid = true;
+			break;
+
+		case DOMAIN_LAND:
+			bValid = !(pPlot->isWater()) || pAttacker->canMoveAllTerrain() || pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"));
+			break;
+
+		case DOMAIN_IMMOBILE:
+			break;
+
+		default:
+			FAssert(false);
+			break;
+		}
+
+		if (!bValid)
+		{
+			return false;
+		}
+		// ] new code
+		// ]rucivfan_bug_fix rbf
+
 		pDefender = pPlot->getBestDefender(NO_PLAYER, pAttacker->getOwnerINLINE(), pAttacker, false, NO_TEAM == pAttacker->getDeclareWarMove(pPlot));
 
 		if (pDefender != NULL && pDefender != pAttacker && pDefender->canDefend(pPlot) && pAttacker->canAttack(*pDefender))
@@ -1950,6 +2008,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getFeatureInfo(pPlot->getFeatureType()).getTextKeyWide()));
 				}
 			}
+			/* BTS
 			else
 			{
 				iModifier = pAttacker->terrainAttackModifier(pPlot->getTerrainType());
@@ -1959,7 +2018,16 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getTerrainInfo(pPlot->getTerrainType()).getTextKeyWide()));
 				}
+			} */
+			// PAE ----
+			iModifier = pAttacker->terrainAttackModifier(pPlot->getTerrainType());
+
+			if (iModifier != 0)
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getTerrainInfo(pPlot->getTerrainType()).getTextKeyWide()));
 			}
+			/* ---- */
 
 			iModifier = pAttacker->getKamikazePercent();
 			if (iModifier != 0)
@@ -2145,6 +2213,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getFeatureInfo(pPlot->getFeatureType()).getTextKeyWide()));
 				}
 			}
+			/* BTS
 			else
 			{
 				iModifier = pDefender->terrainDefenseModifier(pPlot->getTerrainType());
@@ -2154,7 +2223,16 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 					szString.append(NEWLINE);
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getTerrainInfo(pPlot->getTerrainType()).getTextKeyWide()));
 				}
+			} */
+			// PAE ----
+			iModifier = pDefender->terrainDefenseModifier(pPlot->getTerrainType());
+
+			if (iModifier != 0)
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_UNIT_MOD", iModifier, GC.getTerrainInfo(pPlot->getTerrainType()).getTextKeyWide()));
 			}
+			/* ---- */
 
 			if (!(pAttacker->immuneToFirstStrikes()))
 			{
@@ -3006,6 +3084,70 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			}
 		}
 
+		// PAE start (more plot infos on MouseOver)
+		RouteTypes eRoute = pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true);
+		int iMovementCost = 0;
+		if (eRoute != NO_ROUTE) {
+
+			float fMovementRoad = 0.0;
+			if (pPlot->isHills()) fMovementRoad = (float)GC.getRouteInfo(pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true)).getMovementCost() / 60.0f;
+			else fMovementRoad = (float)GC.getRouteInfo(pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true)).getFlatMovementCost() / 60.0f;
+
+			szString.append(NEWLINE);
+			szString.append(gDLL->getText("TXT_KEY_ROAD_MOVEMENT_COST"));
+			if (fMovementRoad == 1.0) szString.append(gDLL->getText("1[ICON_MOVES]"));
+			else {
+				szString.append(CvWString::format(L" %2.2f", fMovementRoad));
+				szString.append(gDLL->getText("[ICON_MOVES]"));
+			}
+
+			szTempBuffer.Format(L"(%s)", GC.getRouteInfo(eRoute).getDescription());
+			szString.append(szTempBuffer);
+
+		} else {
+
+			if (pPlot->getTerrainType() != NO_TERRAIN) {
+				iMovementCost = GC.getTerrainInfo(pPlot->getTerrainType()).getMovementCost();
+			}
+			if (pPlot->getFeatureType() != NO_FEATURE) {
+				iMovementCost += GC.getFeatureInfo(pPlot->getFeatureType()).getMovementCost();
+			}
+			if (pPlot->isHills()) {
+				iMovementCost += GC.getDefineINT("HILLS_EXTRA_MOVEMENT");
+			}
+
+			szString.append(gDLL->getText("TXT_KEY_TERRAIN_MOVEMENT_COST", iMovementCost));
+		}
+		// ----------
+
+		if (pPlot->getFeatureType() != NO_FEATURE)
+		{
+			// Feature City Health
+			int iCityHealth = GC.getFeatureInfo(pPlot->getFeatureType()).getHealthPercent();
+			if (iCityHealth > 0)
+			{
+				szString.append(NEWLINE);
+				//szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT")));
+				szString.append(gDLL->getText("TXT_KEY_MISC_FEAT_HEALTHPERCENT_GOOD", iCityHealth));
+				//szString.append(CvWString::format( ENDCOLR));
+			}
+			else if (iCityHealth < 0)
+			{
+				szString.append(NEWLINE);
+				//szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
+				szString.append(gDLL->getText("TXT_KEY_MISC_FEAT_HEALTHPERCENT_BAD", iCityHealth*(-1)));
+				//szString.append(CvWString::format( ENDCOLR));
+			}
+
+			int iGrowth = GC.getFeatureInfo(pPlot->getFeatureType()).getGrowthProbability();
+			if (iGrowth > 0)
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_MISC_FEAT_GROWTHPERCENT", iGrowth));
+			}
+		}
+		// PAE end
+
 		if (pPlot->isFreshWater())
 		{
 			szString.append(NEWLINE);
@@ -3167,10 +3309,22 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			}
 		}
 
-		if (pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true) != NO_ROUTE)
+		// PAE: eRoute defined above at movementCosts
+		if (eRoute != NO_ROUTE)
 		{
 			szString.append(NEWLINE);
-			szString.append(GC.getRouteInfo(pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true)).getDescription());
+			szString.append(GC.getRouteInfo(eRoute).getDescription());
+			
+			// PAE (more plot infos on MouseOver)
+			if (pPlot->isHills()) {
+				iMovementCost = 60 / GC.getRouteInfo(pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true)).getMovementCost();
+			} else {
+				iMovementCost = 60 / GC.getRouteInfo(pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true)).getFlatMovementCost();
+			}
+			//CvWString szTempBuffer;
+			szTempBuffer.Format(L" (%sx %d)", gDLL->getText("[ICON_MOVES]").c_str(), iMovementCost);
+			szString.append(szTempBuffer);
+			// PAE -----------------------
 		}
 
 		if (pPlot->getBlockadedCount(GC.getGameINLINE().getActiveTeam()) > 0)
@@ -9352,14 +9506,6 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 		szBuffer.append(CvWString::format(SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), kCorporation.getDescription()));
 	}
 
-	// PBMod
-	int factor100 = 100;
-	if (NO_PLAYER != GC.getGameINLINE().getActivePlayerInternal()){
-			factor100 = GC.getGameINLINE().getCorporationFactor100(
-							GC.getGameINLINE().getActivePlayerInternal(), eCorporation);
-	}
-	// PBMod
-
 	szTempBuffer.clear();
 	for (int iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
@@ -9372,12 +9518,6 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 
 		if (iYieldProduced != 0)
 		{
-			// PBMod
-			iYieldProduced *= factor100;
-			iYieldProduced /= 100;
-
-			//iYieldProduced = (iYieldProduced + 99) / 100;  // round up
-			// PBMod End
 
 			if (!szTempBuffer.empty())
 			{
@@ -9418,12 +9558,6 @@ void CvGameTextMgr::setCorporationHelp(CvWStringBuffer &szBuffer, CorporationTyp
 		}
 		if (iCommerceProduced != 0)
 		{
-			// PBMod
-			iCommerceProduced *= factor100;
-			iCommerceProduced /= 100;
-
-			//iCommerceProduced = (iCommerceProduced + 99) / 100;  // round up
-			// PBMod end
 			
 			if (!szTempBuffer.empty())
 			{
@@ -9587,13 +9721,14 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 		}
 	}
 
+	// PAE (maximal bonus maintenance)
+	if (GC.getDefineINT("CORPORATION_MAX_BONUS")) {
+		iNumResources = std::min(iNumResources, GC.getDefineINT("CORPORATION_MAX_BONUS"));
+	} // -------
+
 	bool bActive = (pCity->isActiveCorporation(eCorporation) || (bForceCorporation && iNumResources > 0));
 	
 	bool bHandled = false;
-	// PBMod
-	// Definition here because factor constant for all yields/commerce
-	int factor100 = GC.getGameINLINE().getCorporationFactor100(pCity->getOwner(), eCorporation, !bCityScreen);
-	//PBMod end
 
 	for (int i = 0; i < NUM_YIELD_TYPES; ++i)
 	{
@@ -9606,10 +9741,6 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 
 		if (iYield != 0)
 		{
-			// PBMod
-			iYield *= factor100;
-			iYield /= 100;
-			// PBMod end
 
 			if (bHandled)
 			{
@@ -9635,10 +9766,6 @@ void CvGameTextMgr::setCorporationHelpCity(CvWStringBuffer &szBuffer, Corporatio
 
 		if (iCommerce != 0)
 		{
-			// PBMod
-			iCommerce *= factor100;
-			iCommerce /= 100;
-			// PBMod end
 
 			if (bHandled)
 			{

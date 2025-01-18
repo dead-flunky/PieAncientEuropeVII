@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Civ4GameText xmlns="https://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_AMANTER</Tag>
+		<English>Amantans</English>
+		<French>Amantes</French>
+		<German>Amanter</German>
+		<Italian>Amanti</Italian>
+		<Spanish>Amantos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_DASKYLEION</Tag>
+		<English>Dascylion</English>
+		<French>Dascylion</French>
+		<German>Daskylion</German>
+		<Italian>Dascilio</Italian>
+		<Spanish>Dascilio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_NAME_TAULANTER</Tag>
+		<English>Taulantans</English>
+		<French>Taulantes</French>
+		<German>Taulanter</German>
+		<Italian>Taulanti</Italian>
+		<Spanish>Taulantos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGOS_ADJECTIVE</Tag>
+		<English>Argivian</English>
+		<French><Text>argien:argienne:argiens:argiennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
+		<German><Text>argivisch:argivischen:argivische</Text><Gender>Neuter:Neuter:Neuter</Gender><Plural>0:0:0</Plural></German>
+		<Italian>argivo</Italian>
+		<Spanish>argivo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGOS_DESC</Tag>
+		<English>Argives</English>
+		<French><Text>Argiens</Text><Gender>Male</Gender><Plural>1</Plural></French>
+		<German><Text>Argiver</Text><Gender>Female</Gender><Plural>1</Plural></German>
+		<Italian><Text>Argivi</Text><Gender>Male</Gender><Plural>0</Plural></Italian>
+		<Spanish><Text>Argivos</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ARGOS_SHORT_DESC</Tag>
+		<English>Argos</English>
+		<French>Argos</French>
+		<German>Argos</German>
+		<Italian>Argos</Italian>
+		<Spanish>Argos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CORINTHIANS_ADJECTIVE</Tag>
+		<English>Corinthian</English>
+		<French><Text>corinthien:corinthienne:corinthiens:corinthiennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
+		<German><Text>Korinthisch:korinthischen:korinthische:korinthischer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
+		<Italian><Text>corinzio:corinzia:corinzie:corinzi</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Italian>
+		<Spanish><Text>corintio:corintia:corintios:corintias</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CORINTHIANS_DESC</Tag>
+		<English>Corinthians</English>
+		<French>Corinthiens</French>
+		<German>Korinther</German>
+		<Italian>Corinzio</Italian>
+		<Spanish>Corintios</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_CORINTHIANS_SHORT_DESC</Tag>
+		<English>Corinth</English>
+		<French>Corinthe</French>
+		<German>Korinth</German>
+		<Italian>Corinto</Italian>
+		<Spanish>Corinto</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EPIDAMNOS_ADJECTIVE</Tag>
+		<English>Epidamnian</English>
+		<French><Text>&#201;pidamnien:&#201;pidamnienne:&#201;pidamniens:&#201;pidamniennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
+		<German><Text>epidamnisch:epidamnischen:epidamnisches:epidamnischer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
+		<Italian><Text>epidamno:epidamna:epidamni:epidamne</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Italian>
+		<Spanish><Text>epidamno:epidamna:epidamnos:epidamnas</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EPIDAMNOS_DESC</Tag>
+		<English>Epidamnos</English>
+		<French>&#201;pidamne</French>
+		<German>Epidamnos</German>
+		<Italian>Epidamno</Italian>
+		<Spanish>Epidamno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_EPIDAMNOS_SHORT_DESC</Tag>
+		<English>Epidamnians</English>
+		<French>&#201;pidamnes</French>
+		<German>Epidamner</German>
+		<Italian>Epidamni</Italian>
+		<Spanish><Text>Epidamnos</Text><Gender>Male</Gender><Plural>1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FREE_GREECE_DESC</Tag>
+		<English>Free Greece</English>
+		<French><Text>Gr&#232;ce libre</Text><Gender>Male</Gender><Plural>1</Plural></French>
+		<German><Text>Freies Griechenland</Text><Gender>Female</Gender><Plural>1</Plural></German>
+		<Italian>
+			<Text>La Grecia libera:la Grecia libera:della Grecia libera:di Grecia libera</Text>
+			 <Gender>Female</Gender>
+			 <Plural>0</Plural>
+		</Italian>
+		<Spanish><Text>Grecia</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FREE_GREECE_SHORT_DESC</Tag>
+		<English>Free Greeks</English>
+		<French>Grecs libres</French>
+		<German>Freie Griechen</German>
+		<Italian>Greci liberi</Italian>
+		<Spanish>Griegos libres</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KORKYRA_ADJECTIVE</Tag>
+		<English>Corcyran</English>
+		<French>corcyre</French>
+		<German><Text>korkyrisch:korkyrischen:korkyrische:korkyrischer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
+		<Italian>corcyro</Italian>
+		<Spanish>corciro</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KORKYRA_DESC</Tag>
+		<English>Corcyrans</English>
+		<French><Text>Corcyr&#233;ens</Text><Gender>Male</Gender><Plural>1</Plural></French>
+		<German><Text>Korkyr&#228;er</Text><Gender>Female</Gender><Plural>1</Plural></German>
+		<Italian><Text>Corciri</Text><Gender>Male</Gender><Plural>0</Plural></Italian>
+		<Spanish><Text>Corcyros</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KORKYRA_SHORT_DESC</Tag>
+		<English>Corcyra</English>
+		<French>Corcyre</French>
+		<German>Korkyra</German>
+		<Italian>Corcira</Italian>
+		<Spanish>Corcira</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POTEIDAIA_ADJECTIVE</Tag>
+		<English>Potidean</English>
+		<French><Text>bactrien:bactrienne:bactriens:bactriennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
+		<German><Text>potidaisch:potidaischen:potidaische:potidaischer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
+		<Italian><Text>battriana:battriana:battriani:battriane</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Italian>
+		<Spanish><Text>bactriano:bactriana:bactrianos:bactrianas</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_POTEIDAIA_SHORT_DESC</Tag>
+		<English>Potideans</English>
+		<French>Potidiens</French>
+		<German>Poteidajer</German>
+		<Italian>Potideani</Italian>
+		<Spanish>Potideanos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THESSALIEN_ADJECTIVE</Tag>
+		<English>Thessalian</English>
+		<French><Text>thessalien:thessalienne:thessaliens:thessaliennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
+		<German><Text>thessalisch:thessalischen:thessalische:thessalischer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
+		<Italian><Text>tessaglio:tessaglia:tessagli:tessagle</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Italian>
+		<Spanish><Text>tesalia:tesalia:tesalios:tesalias</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THESSALIEN_DESC</Tag>
+		<English>Thessaly</English>
+		<French>Thessalie</French>
+		<German>Thessalien</German>
+		<Italian>Tessaglia</Italian>
+		<Spanish>Tesalia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_THESSALIEN_SHORT_DESC</Tag>
+		<English>Thessalia</English>
+		<French>Thessalie</French>
+		<German>Thessalien</German>
+		<Italian>Tessaglia</Italian>
+		<Spanish>Tesalia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_PELOPONNESIAN_WAR_KEINPFERD</Tag>
+		<English>Vie for control of Greece! %s3_leader, your people have vested a certain trust in you. Don't disappoint them. May the gentle grace of the gods be with you!  Play safely with your generals! A general's death can rush your people into disaster. Never settle more slaves in a city than it has inhabitants. They might start a revolt otherwise. Have sufficient funds in reserve to sometimes avert strokes of fate by money payments. Don't stack too many military units on one spot, because parts of your army might defect to fight against you. Get aquainted with PAE's basic concepts before playing! Find all detailed explanations in the civilopedia, look for Pie's Mod concepts.</English>
+		<French>Luttez pour le contr&#244;le de la M&#233;diterran&#233;e ! %s3_leader, votre peuple vous a accord&#233; sa confiance, que la gr&#226;ce divine vous suive toujours ! 1) Nouvelle condition de victoire : conqu&#234;te de la capitale ennemie. 2) Etudiez la diplomatie le premier tour. V&#233;rifiez vos alli&#233;s, vassaux, et accords. 3) Commencez le commerce le premier, avant que d'autres n'acqui&#232;rent des ressources importantes. 4) Evitez les r&#233;voltes d'esclaves en laissant en garnison des unit&#233;s avec la promotion loyaut&#233; de garnison. 5) Gardez toujours assez d'or pour payer vos gouverneurs provinciaux, sinon ils pourraient comploter contre vous 6) Ne concentrez pas trop d'unit&#233;s au m&#234;me endroit, une partie de votre arm&#233;e pourrait se r&#233;volter. 7) Lisez les concepts de base de PAE avant de jouer ! Les explications d&#233;taill&#233;es sont dans la civilopedia, sous Pie's Mod concepts.</French>
+		<German>K&#228;mpft um die Vorherrschaft &#252;ber Griechenland! %s3_leader, die Volksversammlung hat ein gewisses Vertrauen in Euch gesetzt. Entt&#228;uscht sie nicht. Auf dass Euch die G&#246;tter wohlgesonnen sind! Schont das Leben eurer Gener&#228;le. Generalstode haben in PAE schlimme Auswirkungen! Siedelt nie mehr Sklaven in einer Stadt an, als die Stadt Einwohner hat, sonst k&#246;nnten sie einen Aufstand machen. Behaltet immer eine Geldreserve, um Nackenschl&#228;ge, wenn m&#246;glich, mit Geld abzuwenden. Vorsicht vor zu gro&#223;en Stacks von Milit&#228;reinheiten! Diese k&#246;nnen sich abspalten und gegen Euch k&#228;mpfen. Macht Euch mit den grundlegenden PAE-Konzepten vertraut, bevor ihr loslegt! Alle Features werden in der Zivilop&#228;die unter Pie's MOD Konzepte erkl&#228;rt.</German>
+		<Italian>Lotta per la supremazia sulla Grecia! %s3_leader, l'Assemblea popolare ha riposto in te una certa fiducia. Non deluderli. Che gli dei siano gentili con te! Risparmia la vita dei tuoi generali. Le morti generali hanno conseguenze disastrose nel PAE! Non collocare mai pi&#249; schiavi in &#8203;&#8203;una citt&#224; rispetto alla popolazione della citt&#224;, altrimenti potrebbero ribellarsi. Tenete sempre una riserva di denaro per parare, se possibile, i colpi al collo. Fai attenzione ai cumuli di unit&#224; militari troppo grandi! Questi possono separarsi e combattere contro di te. Acquisisci familiarit&#224; con i concetti PAE di base prima di iniziare! Tutte le funzionalit&#224; sono spiegate nella civilopedia sotto i concetti MOD di Pie.</Italian>
+		<Spanish>&#161;Compite por el control del Mediterr&#225;neo Occidental! %s3_leader, tu gente te ha conferido cierta confianza en ti, &#161;esperando que la noble gracia de los dioses nunca te abandone! 1) Nueva condici&#243;n de victoria: Conquista la capital del enemigo. 2) Revisa la diplomacia desde el primer turno. Busca aliados, pactos de vasallaje y acuerdos de aperturas de fronteras. 3) Trata en la primera ronda para hacer operaciones favorables antes de que alguien te arrebata recursos importantes. 4) Fortifica unidades con el ascenso lealtad en ciudades con esclavos asentados para prevenir revueltas de escalvos. 5) Ten suficientes fondos para pagar a tus gobernadores proviniciales y alejarlos de maquinaciones contra ti. 6) No apiles demasiadas unidades militares en un solo lugar, porque parte de tu ej&#233;rcito puede desertar para luchar contra ti. 7) &#161;Familiar&#237;zate con los conceptos b&#225;sicos de PAE antes de jugar! Encuentra todas las explicaciones detalladas en la civilopedia, busca por los conceptos del Mod Pie.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DAWN_OF_MAN_SCREEN_TITLE_PELOPONNESIAN_WAR_KEINPFERD</Tag>
+		<English>Pie's Ancient Europe &#8211; The Peloponnesian War</English>
+		<French>Pie's Ancient Europe &#8211; La Guerre du P&#233;loponn&#232;se</French>
+		<German>Pie's Ancient Europe &#8211; Der Peloponnesische Krieg</German>
+		<Italian>Pie's Ancient Europe &#8211; Il guerra pelopones</Italian>
+		<Spanish>Pie's Ancient Europe &#8211; La Guerra del Peloponeso</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EPIDAMNOS_PLAYER_ALL</Tag>
+		<English>[H1]436 BC[\H1]The citizens of Epidamnos, a city on the Illyrian cost, founded by the nearby city of Corcyra (today's Corfu), were being harassed by Illyrian barbarians and asked their mother city for support. But the Corcyrians sent them away. Hence, the Epidamians sailed on to Corinth to appeal for help there. They reminded the Corinthians, that despite their city was peopled by Corcyrian settlers, the original official who conducted the foundation, was Corinthian. This had an impact on the Corinthians, and they decided to help Epidamnos. However, the Corcyrans claim Epidamnos for themselves, now that Corinth has taken action. They are already laying siege on the city, while the Corinthians are getting ready for war.</English>
+		<French>[H1]436 avant JC[\H1]Les citoyens de la ville sicilienne de Messana en ont marre des pressions de Carthage, et craignent d'&#234;tre conquis par Hieron, tyran de Syracuse. Leur appel a l'aide a &#233;t&#233; entendu par le s&#233;nat et le peuple de Rome, qui prot&#232;gent maintenant la ville. Les augures l'ont aussi recommand&#233;. Le consul Appius Claidus Caudex a garanti la libert&#233; de Messana par tous les moyens n&#233;cessaires.</French>
+		<German>[H1]436 v.Chr.[\H1]Die B&#252;rger von Epidamnos, einer von Korkyra gegr&#252;ndeten Stadt an der illyrischen K&#252;ste, haben ihre Mutterstadt um Hilfe gegen illyrische Barbaren ersucht, die ihr Umland verw&#252;sten. Sie sassen im Heratempel flehend auf dem Boden, aber Korkyra hat sie unverrichteter Dinge weggeschickt. Daraufhin sind sie nach Korinth weitergesegelt, um die Korinther um Unterst&#252;tzung zu bitten. Dort haben die Epidamnier daran erinnert, dass ihre Stadt zwar von Korkyra aus besiedelt wurde, der eigentliche Gr&#252;nder aber Korinther gewesen sei. Damit haben sie die Korinther &#252;berzeugt, ihr Hilfegesuch anzunehmen. Die Volksversammlung von Korkyra hat diese Einmischung scharf verurteilt. Die Korkyrer haben beschlossen, die Dinge in Epidamnos mit Waffengewalt zu regeln. M&#246;gen die G&#246;tter in diesem Krieg den Tapferen gn&#228;dig sein!</German>
+		<Italian>[H1]436 a.C.[\H1]I cittadini di Epidamnos, citt&#224; sulla costa illirica, fondata dalla vicina citt&#224; di Corcira (l'odierna Corf&#249;), venivano perseguitati dai barbari illirici e chiedevano aiuto alla loro citt&#224; madre. Ma i Corcyriani li mandarono via. Quindi gli Epidami salparono per Corinto per chiedere aiuto l&#236;. Ricordarono ai Corinzi che, nonostante la loro citt&#224; fosse popolata da coloni di Corciria, il funzionario originale che condusse la fondazione, era corinzio. Ci&#242; ebbe un impatto sui Corinzi e decisero di aiutare Epidamno. Tuttavia, i Corcyran rivendicano Epidamnos per se stessi, ora che Corinto ha agito. Stanno gi&#224; assediando la citt&#224;, mentre i Corinzi si preparano alla guerra.</Italian>
+		<Spanish>[H1]436 a.C.[\H1]Los ciudadanos de la ciudad siciliana de Messana est&#225;n cansandos de ser intimidados por los P&#250;nicos y adem&#225;s tienen miedo de perder su libertad a Hier&#243;n, tirano de Siracusa. Su solictud de ayuda ha sido aprobada por el pueblo y senado de Roma. Esta ciudad est&#225; ahora bajo la protecci&#243;n de Roma. Los augures dieron luz verde tambi&#233;n. El C&#243;nsul Apio Claudio C&#225;udice est&#225; autorizado para asegurar la libertad de Messana por todos los medios necesarios.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EPIDAMNOS_PLAYER_KERKYRA</Tag>
+		<English>[H1]265 BC[\H1]Our former colony Epidamnos has ceded their political autonomy to Corinth. This is obviously a Corinthian plot against us. We won't let this provocation pass silently, will we? By decision of the assemly, we are at war with the Corinthians, now!</English>
+		<French>[H1]265 avant JC[\H1]La ville de Messana a renonc&#233; a notre protection, pr&#233;f&#233;rant se tourner vers Rome. Les romains n'auraient jamais d&#251; s'en m&#234;ler et trahir leur engagement de ne pas interf&#233;rer dans les affaires siciliennes comme nous leur laissons l'Italie. Par d&#233;cision du s&#233;nat carthaginois toutes nos flottes et arm&#233;es peuvent utiliser tous les moyens pour emp&#234;cher l'expansion romaine en Sicile.</French>
+		<German>[H1]265 v.Chr.[\H1]Die einst von uns Korkyreern gegr&#252;ndete Stadt Epidamnos verzichtet k&#252;nftig auf unser Schutzversprechen und hat sich statt dessen Korinth angeschlossen. Das lassen wir uns nicht gefallen!</German>
+		<Italian>[H1]265 aC[\H1]La citt&#224; di Epidamno, un tempo fondata da noi Corciresi, rinuncia alla nostra promessa di protezione e si unisce invece a Corinto. Non lo sopporteremo!</Italian>
+		<Spanish>[H1]265 a.C.[\H1]La ciudad siciliana de Messana ha renunciado a nuestra promesa de protecci&#243;n contra sus enemigos, inclin&#225;ndose hacia Roma en vez de eso. Roma nunca debi&#243; de estar de acuerdo con eso, tambi&#233;n se perjuran ellos mismos, porque ten&#237;amos un acuerdo, que ellos se mantendr&#237;an alejados de los asuntos sicilianos, mientras no interfiri&#233;ramos en Italia. Por decisi&#243;n del senado cartagin&#233;s todos nuestros generales pueden tomar las acciones apropiadas para defender Sicilia de la expansi&#243;n romana.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_DESC</Tag>
+		<English>Megara supports our enemies in Corinth with ships and funds. We can't let that happen right before our eyes. Pericles proposes trade sanctions.</English>
+		<French>M&#233;gare offre ses vaisseaux et son or &#224; nos ennemis de Corinthe. Nous ne serons pas les t&#233;moins passifs d'un tel acte. P&#233;ricl&#232;s appelle &#224; des repr&#233;sailles sur leurs revenus commerciaux.</French>
+		<German>Megara stellt unsern Feinden aus Korinth Geld und Schiffe. Da k&#246;nnen wir nicht zuschauen. Zur Strafe hat Perikles Handelssanktionen vorgeschlagen.</German>
+		<Italian>Megara supporta i nostri nemici a Corinto con denaro e navi. Non possiamo permettere che ci&#242; accada davanti ai nostri occhi. Pericle propone sanzioni commerciali.</Italian>
+		<Spanish>Megara apoya a nuestros enemigos en Corinto con dinero y barcos. No podemos permitir que eso ocurra delante de nuestros ojos. Pericles propone sanciones comerciales.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_1</Tag>
+		<English>Ban Megaran trading ships from calling at our ports and those of our allies.</English>
+		<French>Interdisez l'acc&#232;s de nos ports et ceux de nos conf&#233;d&#233;r&#233;s aux navires marchands de M&#233;gare.</French>
+		<German>Verbietet den Handelsschiffen aus Megara, unsere H&#228;fen und die unserer Bundesgenossen anzulaufen.</German>
+		<Italian>Proibisci alle navi mercantili di Megara di chiamare nei nostri porti e in quelli dei nostri alleati.</Italian>
+		<Spanish>Proh&#237;be a los barcos mercantes de Megara arribar a nuestros puertos y los de nuestros aliados.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_1_OUTCOME</Tag>
+		<English>The merchants in Megara are unhappy. But so are ours! Negotiators from Megara brought the case to the citizens of Sparta and Thebes to make them join the war.</English>
+		<French>Les marchands de M&#233;gare sont m&#233;contents. Les n&#244;tres ne le sont pas moins ! Des &#233;missaires de M&#233;gare parlementent d&#233;j&#224; avec Sparte et Th&#232;bes quant &#224; leur participation &#224; la guerre.</French>
+		<German>Die H&#228;ndler in Megara sind unzufrieden. Aber unsere auch! Unterh&#228;ndler aus Megara verhandeln bereits in Sparta und Theben &#252;ber einen Kriegseintritt dieser St&#228;dte.</German>
+		<Italian>I commercianti di Megara sono insoddisfatti. Ma anche il nostro! I negoziatori di Megara stanno gi&#224; negoziando a Sparta e Tebe sull'entrata in guerra di queste citt&#224;.</Italian>
+		<Spanish>Los mercaderes de Megara est&#225;n infelices. &#161;Pero tambi&#233;n nosotros! Los negociadores de Megara trajeron la cuesti&#243;n a los ciudadanos de Esparta y Tebas para hacerlos unirse a la guerra.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_1_OUTCOME_LOWER_IONIEN</Tag>
+		<English>On the advice of Pericles, the Athenians have imposed an embargo against their neighbour city Megara, because the Megarans are supporting the enemies in Corinth with ships and funds. The Megarian merchant ships must not call at our ports anymore. Once again, we pay the price for the aggressive Athenian policy. (Temporary fallen reveue from buildings Harbour and Market.)</English>
+		<French>Sur l'avis de P&#233;ricl&#232;s, les ath&#233;niens ont mis leurs voisins de M&#233;gare sous embargo pour contrecarrer leurs adversaires de Corinthe qui b&#233;n&#233;ficiaient du soutien mon&#233;taire et naval m&#233;garien. Les navires marchands de M&#233;gare ne sont plus autoris&#233;s &#224; faire escale dans nos ports. Encore une fois, nous payons le prix de la politique agressive d'Ath&#232;nes. (Les b&#226;timents March&#233; et Port produisent provisoirement moins de recettes et les relations avec Ath&#232;nes diminuent de -2)</French>
+		<German>Die Athener haben auf Betreiben von Perikles ein Embargo gegen ihre Nachbarstadt Megara verh&#228;ngt, weil die Megarer die Feinde in Korinth mit Geld und Schiffen unterst&#252;tzen. Die megarischen Schiffe d&#252;rfen nicht mehr unsere H&#228;fen anlaufen. Wieder einmal zahlen wir die Zeche f&#252;r Athens aggressive Politik. (Vor&#252;bergehend gesunkene Einnahmen der Geb&#228;ude Markt und Hafen und Verschlechterung der Beziehung zu Athen um -2 und gesunkene Einnahmen aus den Geb&#228;uden Markt und Hafen.)</German>
+		<Italian>Su istigazione di Pericle, gli Ateniesi imposero un embargo contro la loro vicina citt&#224; di Megara perch&#233; i Megaresi sostenevano i nemici a Corinto con denaro e navi. Le navi megaresi non possono pi&#249; entrare nei nostri porti. Ancora una volta stiamo pagando il prezzo delle politiche aggressive di Atene. (Diminuzione temporanea delle entrate dagli edifici del Mercato e del Porto e deterioramento del rapporto con Atene di -2 e diminuzione delle entrate dagli edifici del Mercato e del Porto.)</Italian>
+		<Spanish>Por consejo de Pericles, los atenienses han impuesto un embargo contra la ciudad vecina de Megara, debido a que los megarenses est&#225;n apoyando a los enemigos en Corintio con barcos y fondos. Los barcos mercantes megarenses no deben arribar m&#225;s a nuestros puertos. Una vez m&#225;s, pagamos el precio por la agresiva pol&#237;tica ateniense. (Caen los ingresos temporalmente de los edificios Puerto y Mercado)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_1_OUTCOME_UPPER_IONIEN</Tag>
+		<English>On the advice of Pericles, the Athenians have imposed an embargo against their neighbour city Megara, because the Megarans are supporting the enemies in Corinth with ships and funds. The Megarian merchant ships must not call at our ports anymore. Once again, we pay the price for the aggressive Athenian policy. (Temporary fallen reveue from buildings Harbour and Market.)</English>
+		<French>Sur l'avis de P&#233;ricl&#232;s, les ath&#233;niens ont mis leurs voisins de M&#233;gare sous embargo pour contrecarrer leurs adversaires de Corinthe qui b&#233;n&#233;ficiaient du soutien mon&#233;taire et naval m&#233;garien. Les navires marchands de M&#233;gare ne sont plus autoris&#233;s &#224; faire escale dans nos ports. Encore une fois, nous payons le prix de la politique agressive d'Ath&#232;nes. (Les b&#226;timents March&#233; et Port produisent provisoirement moins de recettes et les relations avec Ath&#232;nes diminuent de -2)</French>
+		<German>Die Athener haben auf Betreiben von Perikles ein Embargo gegen ihre Nachbarstadt Megara verh&#228;ngt, weil die Megarer die Feinde in Korinth mit Geld und Schiffen unterst&#252;tzen. Die megarischen Schiffe d&#252;rfen nicht mehr unsere H&#228;fen anlaufen. Wieder einmal zahlen wir die Zeche f&#252;r Athens aggressive Politik. (Vor&#252;bergehend gesunkene Einnahmen der Geb&#228;ude Markt und Hafen und Verschlechterung der Beziehung zu Athen um -2 und gesunkene Einnahmen aus den Geb&#228;uden Markt und Hafen.)</German>
+		<Italian>Su istigazione di Pericle, gli Ateniesi imposero un embargo contro la loro vicina citt&#224; di Megara perch&#233; i Megaresi sostenevano i nemici a Corinto con denaro e navi. Le navi megaresi non possono pi&#249; entrare nei nostri porti. Ancora una volta stiamo pagando il prezzo delle politiche aggressive di Atene. (Diminuzione temporanea delle entrate dagli edifici del Mercato e del Porto e deterioramento del rapporto con Atene di -2 e diminuzione delle entrate dagli edifici del Mercato e del Porto.)</Italian>
+		<Spanish>Por consejo de Pericles, los atenienses han impuesto un embargo contra la ciudad vecina de Megara, debido a que los megarenses est&#225;n apoyando a los enemigos en Corintio con barcos y fondos. Los barcos mercantes megarenses no deben arribar m&#225;s a nuestros puertos. Una vez m&#225;s, pagamos el precio por la agresiva pol&#237;tica ateniense.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_2</Tag>
+		<English>Our economy is dependent on the Megaris as a sales market. Increase tariffs on black-figure pottery and stop the import of Megaran goat cheese. Let the Proxenos in Megara exert some pressure that the aid to Corinth gradually and quietly will end.</English>
+		<French>Notre force &#233;conomique repr&#233;sente un march&#233; que les m&#233;gariens ne peuvent ignorer. Augmentez les taxes sur la c&#233;ramique &#224; figure noire et arr&#234;tez l'importation de leur fromage de ch&#232;vre. Laissons les prox&#232;nes travailler subtilement sur la question de l'arr&#234;t du soutien de M&#233;gare &#224; Corinthe.</French>
+		<German>Unsere Wirtschaft ist auf die Megaris als Absatzmarkt angewiesen. Erh&#246;ht die Z&#246;lle auf schwarzfig&#252;rige Keramik und stoppt die Einfuhr von megarischem Ziegenk&#228;se. Lasst den Proxenos in Megara Druck aus&#252;ben, dass die Hilfeleistungen an Korinth nach und nach ganz leise eingestellt werden.</German>
+		<Italian>La nostra economia dipende da Megaris come mercato di vendita. Aumenta le tariffe sulla ceramica a figure nere e blocca le importazioni di formaggio di capra megariano. Prosseno a Megara faccia pressione affinch&#233; gli aiuti a Corinto vengano gradualmente e silenziosamente sospesi.</Italian>
+		<Spanish>Nuestra econom&#237;a depende del mercado de ventas en Megara. Incrementa las tarifas a las figuras cer&#225;micas y para la importaci&#243;n del queso de cabra de Megara. Deja que los Proxenos en Megara ejerzan cierta presi&#243;n que ayudar&#225; a Corinto gradualmente y su final ser&#225; en silencio.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_2_OUTCOME</Tag>
+		<English>The merchants of Megara are frowning, but they know, our war with Corinth does no good for them. They did send appelants to Sparta and Thebes, but with the limitation to not further extent the conflict.</English>
+		<French>Les marchands &#224; M&#233;gare grommellent, mais ils savent bien que notre guerre contre Corinthe leur porte pr&#233;judice. Leurs envoy&#233;s &#224; Ath&#232;nes et Sparte ont pour instruction de ne pas chercher &#224; prolonger le conflit.</French>
+		<German>Die H&#228;ndler in Megara runzeln die Stirn, aber sie wissen auch, dass ihnen unser Krieg mit Korinth nur schadet. Sie haben zwar Beschwerdef&#252;hrer nach Sparta und Theben geschickt, aber mit der Ma&#223;gabe, den Konflikt nicht noch weiter auszuweiten.</German>
+		<Italian>I commercianti di Megara sono accigliati, ma sanno anche che la nostra guerra con Corinto non fa altro che danneggiarli. Inviarono denuncianti a Sparta e Tebe, ma con la clausola di non espandere ulteriormente il conflitto.</Italian>
+		<Spanish>Los mercaderes de Megara fruncen el ce&#241;o, pero ellos saben, que nuestra guerra con Corinto no es buena para ellos. Enviaron apelaciones a Esparta y Tebas, pero con la limitaci&#243;n de no extender m&#225;s el conflicto.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_2_OUTCOME_KORINTH</Tag>
+		<English>There you are! After it seemed, the Athenians had the decision already made to impose an embargo on our friends in Megara, they now confined themselves to a moderate tariff increase on Megaran goods. Our Athens experts value that as a sign of de-escalation on the part of Pericles. However, the splinter party of pro-Athenians is a little more on the upswing, now. (Increases attitude towards Athens by +2)</English>
+		<French>Vous voil&#224; ! L'embargo commercial d'Ath&#232;nes envers nos amis de M&#233;gare semblait fait accompli, pourtant les ath&#233;niens n'ont rien d&#233;clar&#233; d'autre qu'une l&#233;g&#232;re augmentation des droits de douane sur les denr&#233;es m&#233;gariennes. Nos experts en politique ath&#233;nienne attribuent cette annonce &#224; un signe d'apaisement en provenance de P&#233;ricl&#232;s. Comme de juste, le petit groupe de m&#233;gariens favorables envers Ath&#232;nes conna&#238;t un renouveau de popularit&#233;. (am&#233;lioration de +2 des relations avec Ath&#232;nes)</French>
+		<German>Na also! Nachdem in Athen ein Handelsembargo gegen unsere Freunde in Megara schon beschlossene Sache schien, haben sich die Athener nun doch mit einer leichten Zollerh&#246;hung auf megarische Produkte begn&#252;gt. Unsere Athen-Kenner werten das als Zeichen der Deeskalation seitens Perikles. Allerdings hat die kleine Schar der proathenischen Megarer jetzt wieder mehr Zulauf. (Beziehung zu Athen um +2 verbessert.)</German>
+		<Italian>E allora! Dopo che ad Atene l'embargo commerciale contro i nostri amici di Megara sembrava gi&#224; cosa fatta, gli Ateniesi si sono accontentati di un leggero aumento delle tariffe sui prodotti megaresi. I nostri esperti di Atene vedono questo come un segno di allentamento della tensione da parte di Pericle. Tuttavia, il piccolo gruppo di megaresi filo-ateniesi &#232; ora di nuovo pi&#249; popolare. (Il rapporto con Atene &#232; migliorato di +2.)</Italian>
+		<Spanish>&#161;Ah&#237; lo llevas! Despu&#233;s de todo, los atenienses ten&#237;an tomada la decisi&#243;n de imponer un embargo a nuestros amigos en Megara, aunque ahora se han limitado ellos mismos con un moderado incremento de las tarifas a los productos de Megara. Nuestros expertos atenienses indican que es un intento de Pericles por reducir la tensi&#243;n. Sin embargo ahora, el partido escindido de los pro-atenienses est&#225; teniendo un ligero aumento. (Aumenta la actitud hacia Atenas en +2)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_3</Tag>
+		<English>Build a road block between Eleusis and Megara. If Megarian merchants show up, goods will be confiscated. Importing Megaran goods overland is prohibited until further notice.</English>
+		<French>&#201;rigez un barrage sur la route d'Eleusis &#224; M&#233;gare. Les biens de tout marchand de M&#233;gare qui se montrera seront saisis. L'importation de marchandises m&#233;gariennes par voie de terre est proscrit jusqu'&#224; nouvel ordre.</French>
+		<German>Errichtet eine Wegsperre zwischen Eleusis und Megara. Sollten megarische H&#228;ndler auftauchen, wird die Ware konfisziert. Die Einfuhr megarischer Waren auf dem Landweg ist bis auf weiteres untersagt.</German>
+		<Italian>Crea una barriera tra Eleusi e Megara. Se si presentano commercianti megaresi, la merce verr&#224; confiscata. L'importazione di mega-beni via terra &#232; vietata fino a nuovo avviso.</Italian>
+		<Spanish>Construye un bloqueo en la carretera de Eleusis y Megara. Si los comerciantes de Megara aparecen, sus bienes ser&#225;n confiscados. Las importaciones de bienes desde Megara est&#225;n prohibidas hasta nuevo aviso.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_ATHEN_OPTION_3_OUTCOME</Tag>
+		<English>Well, the rich merchants in Megara are said to have procured a large sum of money to win over some influential politicians in Sparta and Thebes for siding with Megara and Corinth. (Worse relations with Sparta and Thebes by -6)</English>
+		<French>On dit que les riches n&#233;gociants de M&#233;gare ont rassembl&#233;s un grosse somme d'or dans leurs efforts pour convaincre les politiciens de Sparte et Th&#232;bes de faire alliance avec Corinthe et M&#233;gare. (d&#233;t&#233;rioration de -6 des relations avec Sparte et Th&#232;bes)</French>
+		<German>Tja, die reichen Kaufleute in Megara sollen eine gro&#223;e Geldsumme zusammengebracht haben, um einflussreiche Politiker in Sparta und Theben f&#252;r eine Allianz an der Seite Megaras und Korinths zu gewinnen. (Verschlechterungen der Beziehung zu Sparta und Theben um -6)</German>
+		<Italian>Ebbene, si dice che i ricchi mercanti di Megara abbiano messo insieme una grossa somma di denaro per convincere politici influenti a Sparta e Tebe ad un'alleanza dalla parte di Megara e Corinto. (I rapporti con Sparta e Tebe peggiorano di -6)</Italian>
+		<Spanish>Bien, los ricos mercaderes de Megara est&#225;n diciendo que tienen una gran cantidad de dinero para ganarse el apoyo de algunos influyentes pol&#237;ticos en Esparta y Tebas para ponerse del lado de Megara y Corinto. (Deterioro de las relaciones con Esparta y Tebas en -6)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_KRIEG_WORLDNEWS</Tag>
+		<English>Athens has imposed a trade embargo against Megara. Megarian messengers are on &#8203;&#8203;their way to Thebes and Sparta to promote a declaration of war against the Athenians.</English>
+		<French>Ath&#232;nes a prononc&#233; un embargo contre le commerce de M&#233;gare. Des &#233;missaires m&#233;gariens sont partis pour Th&#232;bes et Sparte afin de les inciter &#224; la guerre contre Ath&#232;nes.</French>
+		<German>Athen hat ein Handelsembargo gegen Megara verh&#228;ngt. Megarische Gesandte haben sich auf den Weg nach Theben und Sparta gemacht, um f&#252;r einen Kriegseintritt gegen die Athener zu werben.</German>
+		<Italian>Atene ha imposto un embargo commerciale a Megara. Gli inviati megaresi si recarono a Tebe e Sparta per fare pressioni per l'entrata in guerra contro gli Ateniesi.</Italian>
+		<Spanish>Atenas ha impuesto un embargo comercial contra Megara. Mensajeros de Megara est&#225;n de camino a Tebas y Esparta para promover una declaraci&#243;n de guerra contra los atenienses.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_DESC</Tag>
+		<English>Undefeated Spartans! The trade embargo imposed by the Athenians against us is unacceptable! You, as protectors of the Peloponnese and all freedom loving Greeks, answer the question: How long will you tolerate the arrogance of the Athenians yet? We rather give you all our savings than consuming it over the next couple of years, because due to the Athenian embargo we wouldn't be making any money anymore.</English>
+		<French>Invincibles Spartiates ! Ath&#232;nes a os&#233; d&#233;cr&#233;ter l'embargo contre nos marchands ! Vous, protecteur du P&#233;loponn&#232;se et de tous les Grecs libres dont les intentions sont honorables, r&#233;pondez-nous : tol&#233;rerez-vous encore longtemps les pr&#233;tentions inacceptables des ath&#233;niens ? Nous sommes pr&#234;ts &#224; vous verser les richesses qu'il nous reste, au lieu de les voir s'&#233;tioler en quelques ann&#233;es &#224; peine.</French>
+		<German>Unbesiegte Spartiaten! Das Handelsembargo der Athener gegen uns ist inakzeptabel! Als Schutzmacht der Peloponnes und aller freiheitlich gesinnter Griechen lasst euch fragen: Wie lange wollt ihr die &#220;berheblichkeit der Athener noch dulden? Wir geben euch lieber alle unsere Ersparnisse als sie in den n&#228;chsten Jahren aufzuzehren, weil wir keine Einnahmen mehr haben.</German>
+		<Italian>Spartani imbattuti! L'embargo commerciale ateniese nei nostri confronti &#232; inaccettabile! In qualit&#224; di potenza protettrice del Peloponneso e di tutti i Greci orientati alla libert&#224;, chiediamoci: per quanto tempo vuoi tollerare l'arroganza degli Ateniesi? Preferiamo darti tutti i nostri risparmi piuttosto che consumarli nei prossimi anni perch&#233; non abbiamo pi&#249; alcun reddito.</Italian>
+		<Spanish>&#161;Invictos espartanos! &#161;El embargo comercial impuesto por Atenas contra nosotros es inaceptable! Vosotros, como protectores del Peloponeso y de todos los amantes de la libertad griegos, responded la siguiente pregunta: &#191;Durante cu&#225;nto tiempo tolerar&#233;is la arrogancia ateniense? Os daremos todos nuestros ahorros que que consumir&#237;amos en los siguientes a&#241;os, porque con el embargo de Atenas, no podremos conseguir m&#225;s dinero.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_1</Tag>
+		<English>The Athenian embargo clearly violates the peace treaty of 446. Thus, the former state of war between Sparta and Athens from before the treaty is reinstated. How much you pay in our war chest is up to you, o citizens of Megara.</English>
+		<French>L'embargo ath&#233;nien d&#233;roge manifestement aux termes du trait&#233; de paix de 446. La guerre est ouverte entre Sparte et Ath&#232;nes, comme autrefois. Il vous appartient , &#244; citoyens de M&#233;gare, de d&#233;cider quels fonds seront allou&#233;s &#224; la guerre.</French>
+		<German>Das Athener Embargo verletzt den Friedensvertrag von 446. Damit ist ohnehin der Kriegszustand zwischen Sparta und Athen von vor dem Friedensvertrag wiedereingesetzt. Wieviel ihr in unsere Kriegskasse zahlt, bleibt euch &#252;berlassen, oh B&#252;rger aus Megara.</German>
+		<Italian>L'embargo di Atene viola il trattato di pace del 446. Ci&#242; ripristina lo stato di guerra tra Sparta e Atene che esisteva prima del trattato di pace. Dipende da voi quanto contribuire al nostro bottino di guerra, o cittadini di Megara.</Italian>
+		<Spanish>El embargo ateniense viola claramente el acuerdo de paz del 446. Por lo tanto, el estado de guerra entre Esparta y Atenas antes del acuerdo, ha sido reintegrado. Lo que est&#233;n dispuestos a pagar como fondo de guerra depende de vosotros, o de los ciudadanos de Megara.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_1_NO_WAR_POSSIBLE</Tag>
+		<English>There is a peace treaty with Athens, that can't be canceled at this time.</English>
+		<French>Le trait&#233; de paix avec Ath&#232;nes subsiste pour l'instant, et ne peut &#234;tre d&#233;nonc&#233;.</French>
+		<German>Es besteht noch ein Friedensvertrag mit Athen, der zur Zeit nicht aufgek&#252;ndigt werden kann.</German>
+		<Italian>Esiste ancora un trattato di pace con Atene che al momento non pu&#242; essere rescisso.</Italian>
+		<Spanish>Hay un acuerdo de paz con Atenas, no puede ser cancelado en este momento.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_1_OUTCOME_BRONZE</Tag>
+		<English>The Megarans have molten down the bronze votive offerings from their Apollo temple to provide resources for our weapons production.</English>
+		<French>Les offrandes et les statues de bronze du temple d'Apollon de M&#233;gare ont &#233;t&#233; fondues par les habitants, afin de fournir de la mati&#232;re premi&#232;re &#224; nos fabriques d'armes.</French>
+		<German>Die Megarer haben die bronzenen Weihegeschenke aus ihrem Apollontempel eingeschmolzen, um unsere Waffenproduktion mit Rohstoffen zu unterst&#252;tzen.</German>
+		<Italian>I Megaresi fondevano i doni di consacrazione in bronzo del loro Tempio di Apollo per sostenere con materie prime la nostra produzione di armi.</Italian>
+		<Spanish>Los megarenses han fundido el bronce de las ofrendas del templo de Apolo para proveer de recursos nuestra producci&#243;n de armas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_1_OUTCOME_HIGH</Tag>
+		<English>The Megarans have hoarded treasures mad! Endless wagonloads of gold! This makes building up arms fun!</English>
+		<French>M&#233;gare a amass&#233; un tr&#233;sor sans pareil ! On n'en finit plus de charger les chariots de butin ! Quelle motivation pour garnir nos arsenaux !</French>
+		<German>Die Megarer haben ja wahre Sch&#228;tze gehortet! Die Wagenladungen mit Gold rei&#223;en nicht ab. So macht Aufr&#252;stung Spa&#223;!</German>
+		<Italian>Megara ha accumulato un tesoro senza pari! I carri pieni d'oro non finiscono pi&#249;! Questo rende divertente la fatica di recuperarli!</Italian>
+		<Spanish>&#161;Los megarenses hab&#237;an acumulado tesoros! &#161;Interminables carretas llenas de oro! &#161;Esto lo hace divertido!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_1_OUTCOME_LOW</Tag>
+		<English>The Megarans are apparently not as wealthy as they led everyone to think.</English>
+		<French>Les Megarans ne sont apparemment pas aussi riches qu'ils ont laiss&#233; penser tout le monde.</French>
+		<German>Die Megarer sind anscheinend doch nicht so wohlhabend, wie sie immer tun.</German>
+		<Italian>I Megarani non sono apparentemente ricchi come hanno indotto tutti a pensare.</Italian>
+		<Spanish>Aparentemente, los megarenses no son tan ricos como hab&#237;an hecho creer a todos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_2</Tag>
+		<English>The embargo is clearly illegal. If you, o Megarians, persuade the Thebans to join our coalition, we will declare war on Athens.</English>
+		<French>L'ill&#233;galit&#233; de cet embargo ne fait aucun doute. Si vous, habitants de M&#233;gare, obtenez l'entr&#233;e de Th&#232;bes dans notre coalition, nous d&#233;clarerons la guerre &#224; Ath&#232;nes.</French>
+		<German>Das Embargo ist ganz klar rechtswidrig. Wenn ihr, oh Megarer, die Thebaner dazu bewegt, in unsere Koalition einzutreten, erkl&#228;ren wir Athen den Krieg.</German>
+		<Italian>L'embargo &#232; chiaramente illegale. Se voi, o Megaresi, convincerete i Tebani ad unirsi alla nostra coalizione, dichiareremo guerra ad Atene.</Italian>
+		<Spanish>El embargo es claramente ilegal. Si vosotros, o los megarenses, persuaden a los tebanos para unirse a nuestra coalici&#243;n, nosotros declararemos la guerra a Atenas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_2_NO_WAR_POSSIBLE</Tag>
+		<English>There is a peace treaty with Athens that can't be cancelled at the moment.</English>
+		<French>Le trait&#233; de paix avec Ath&#232;nes ne peut &#234;tre r&#233;voqu&#233; pour le moment.</French>
+		<German>Es besteht noch ein Friedensvertrag mit Athen, der zur zeit nicht aufgek&#252;ndigt werden kann.</German>
+		<Italian>C'&#232; un trattato di pace con Atene che non pu&#242; essere annullato in questo momento.</Italian>
+		<Spanish>Hay un acuerdo de paz con Atenas, que no puede ser cancelado en este momento.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_2_OUTCOME_FAILED</Tag>
+		<English>The Thebans are still hesitating. Our king Archidamos advises against going to war, too. Yet.</English>
+		<French>Les Th&#233;bains h&#233;sitent encore. Notre roi Archidamos recommande &#233;galement de ne pas entrer en guerre. Pour l'instant.</French>
+		<German>Theben z&#246;gert noch. Unser K&#246;nig Archidamos r&#228;t ebenfalls vom Krieg ab. Noch.</German>
+		<Italian>I Tebani esitano ancora. Anche il nostro re Archidamo sconsiglia di andare in guerra. Per ora.</Italian>
+		<Spanish>Los tebanos est&#225;n dudando. Nuestro rey Arqu&#237;damo tambi&#233;n desaconseja ir a la guerra. De momento.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_2_OUTCOME_SUCCESS</Tag>
+		<English>Our Theban friends are in the game. Now the Athenians are in for it!</English>
+		<French>Nos amis th&#233;bains sont de la partie. La fin approche pour Ath&#232;nes !</French>
+		<German>Unsere thebanischen Freunde sind einverstanden. Jetzt sind die Athener reif!</German>
+		<Italian>I nostri amici tebani sono d'accordo. Ora gli Ateniesi sono pronti!</Italian>
+		<Spanish>Nuestros amigos tebanos est&#225;n conformes. &#161;Ahora los atenienses est&#225;n completos!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_2_OUTCOME_SUCCESS_THEBEN</Tag>
+		<English>The Spartans think, the Athenian embargo against Megara violates the peace treaty of 446. This reinstates the former state of war. Our People's Assembly shares this view. They voted war. Now the Athenians are in for it!</English>
+		<French>Les spartiates consid&#232;rent que l'embargo d'Ath&#232;nes contre M&#233;gare invalide le trait&#233; de paix de 446. La guerre reprend donc. L'assembl&#233;e des citoyens est du m&#234;me avis et a &#233;dict&#233; cette d&#233;cision. Les ath&#233;niens n'ont qu'&#224; bien se tenir!</French>
+		<German>Die Spartaner sind der Meinung, das Athener Handelsembargo gegen Megara verletze den Friedensvertrag von 446. Damit sei der Kriegszustand wieder eingesetzt! Unsere Volksversammlung hat sich dieser Sichtweise angeschlossen. Die Athener k&#246;nnen sich warm anziehen!</German>
+		<Italian>Gli Spartani pensano che l'embargo ateniese contro Megara viola il trattato di pace del 446. Questo ripristina il precedente stato di guerra. La nostra assemblea popolare condivide questa opinione. Hanno votato la guerra. Ora gli Ateniesi ci sono!</Italian>
+		<Spanish>Los espartanos creen que el embargo ateniense viola el acuerdo de paz del 446. Esto restablece el estado de guerra. Nuestro Consejo del Pueblo comparte este punto de vista. Votaron por la guerra. Los atenienses lo lamentar&#225;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_3</Tag>
+		<English>All Peloponnesians want this war. What are you knavish Megarians driveling of your savings? Think, you can buy us? Throw them in the well. This is Sparta!</English>
+		<French>Chacun dans le P&#233;loponn&#232;se appelle la guerre de ses voeux. Qu'imaginez-vous en nous montrant votre p&#233;cule, M&#233;gariens ? On ne peut nous acheter. Jetez-les au fond d'un puits ! Voil&#224; ce qu'est Sparte !</French>
+		<German>Alle Peloponnesier wollen diesen Krieg. Was faselt ihr Megarer da noch von ihren Ersparnissen? Uns kann man nicht kaufen. Werft sie in den Brunnen. Wir sind hier in Sparta!</German>
+		<Italian>Tutti i Peloponnesi vogliono questa guerra. Di cosa blaterate ancora voi megaresi sui vostri risparmi? Non puoi comprarci. Gettateli nel pozzo. Siamo qui a Sparta!</Italian>
+		<Spanish>Todos los peloponesios quieren esta guerra. &#191;Qu&#233; hac&#233;is aqu&#237; con los ahorros de los megarenses? A nosotros no nos pod&#233;is comprar. Tiradlos al pozo. &#161;Esto es Esparta!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_3_NO_WAR_POSSIBLE</Tag>
+		<English>There is yet a peace treaty with Athens in force, which can not be terminated at the time.</English>
+		<French>Il existe un trait&#233; de paix avec Ath&#232;nes encore, qui ne peut &#234;tre r&#233;sili&#233; pour le moment.</French>
+		<German>Es besteht noch ein Friedensvertrag mit Athen, der zur Zeit nicht aufgek&#252;ndigt werden kann.</German>
+		<Italian>C'&#232; ancora un trattato di pace con Atene, che non pu&#242; essere risolto in quel momento.</Italian>
+		<Spanish>Hay todav&#237;a un acuerdo de paz con Atenas, no podemos romperlo en este momento.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_3_OUTCOME_KORINTH</Tag>
+		<English>Well then! The Spartans are in the opinion that the Athenians trade embargo against Megara violates the peace treaty of 446, thus the former state of war is used again, and they sent convocation notices into all Peloponnesian cities. Even the nuts in Thebes are fighting on our side now!</English>
+		<French>Les spartiates ont enfin d&#233;cid&#233; que l'embargo commercial d'Ath&#232;nes contre M&#233;gare enfreint le trait&#233; de paix de 446. La guerre reprend donc pour eux et toutes les cit&#233;s du P&#233;loponn&#232;se dont ils n'ont pas manqu&#233; de convoquer les troupes. M&#234;me ces olibrius de Th&#232;bes prendront part &#224; la guerre &#224; nos c&#244;t&#233;s !</French>
+		<German>Endlich! Die Spartaner sind der Meinung, das Athener Handelsembargo gegen Megara verletze den Friedensvertrag von 446, somit sei der vormalige Kriegszustand wieder eingesetzt, und sie haben Einberufungsbescheide in alle peloponnesischen St&#228;dte geschickt. Sogar die Spinner in Theben k&#228;mpfen nun an unserer Seite!</German>
+		<Italian>Finalmente! Gli Spartani ritengono che l'embargo commerciale ateniese contro Megara violi il trattato di pace del 446, quindi &#232; stato ripristinato il precedente stato di guerra, e hanno inviato avvisi di coscrizione a tutte le citt&#224; del Peloponneso. Anche i tipi strani di Tebe ora combattono al nostro fianco!</Italian>
+		<Spanish>&#161;Por fin! Los espartanos opinan que el embargo ateniense contra Megara viol&#243; el tratado de paz del 446, por lo tanto el estado de guerra anterior se ha restablecido, enviando adem&#225;s comunicados de convocatoria a todas las ciudades del Peloponeso. &#161;Incluso los hilanderos tebanos est&#225;n ahora luchando de nuestro lado!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_3_OUTCOME_KORINTH_NO_THEBEN</Tag>
+		<English>Finally! The Spartans think, the Athenian embargo against Megara violates the peace treaty of 446. This would reinstate the former state of war. They have called to arms in all Peloponnesian cities. Meanwhile the loonies in Thebes say they have yet a peace treaty with Athens, which can not be terminated at the moment.</English>
+		<French>Finalement ! Les spartiates pensent que l'embargo ath&#233;nien contre M&#233;gare viole le trait&#233; de paix de 446. Cela r&#233;tablirait l'ancien &#233;tat de guerre. Ils ont appel&#233; aux armes dans toutes les villes du P&#233;loponn&#232;se. Pendant ce temps, ces farfelus &#224; Th&#232;bes disent avoir sign&#233; un trait&#233; de paix avec Ath&#232;nes, qui ne peut pas encore &#234;tre rompu.</French>
+		<German>Endlich! Die Spartaner sind der Meinung, das Athener Handelsembargo gegen Megara verletze den Friedensvertrag von 446, somit sei der vormalige Kriegszustand wieder eingesetzt. Sie haben in allen peloponnesischen St&#228;dten zu den Waffen gerufen. Die Spinner in Theben sagen, sie h&#228;tten noch einen Friedensvertrag mit Athen, der zur Zeit nicht aufgek&#252;ndigt werden k&#246;nne.</German>
+		<Italian>Finalmente! Gli Spartani pensano che l'embargo ateniese contro Megara viola il trattato di pace del 446. Ci&#242; ripristinerebbe il precedente stato di guerra. Hanno chiamato alle armi in tutte le citt&#224; del Peloponneso. Nel frattempo i pazzi di Tebe dicono che hanno ancora un trattato di pace con Atene, che al momento non pu&#242; essere risolto.</Italian>
+		<Spanish>&#161;Por fin! Los espartanos piensan que el embargo de Atenas contra Megara transgrede el acuerdo de paz del 446. Esto restablecer&#237;a el anterior estado de guerra. Han llamado a tomar las armas a todas las ciudades del Peloponeso. Mientras tanto, los locos tebanos dicen que mantienen un acuerdo de paz con Atenas que no puede ser roto todav&#237;a.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_3_OUTCOME_SPARTA</Tag>
+		<English>The Corinthians ask whether it was really necessary to throw the Megarian minister down a well.</English>
+		<French>Les pusillanimes corinthiens questionnent la n&#233;cessit&#233; d'avoir fait jet&#233; les &#233;missaires de M&#233;gare dans un puits.</French>
+		<German>Die Korinther lassen fragen, ob es wirklich sein mu&#223;te, die megarischen Gesandten in den Brunnen zu schmei&#223;en. Ts.</German>
+		<Italian>I corinzi si chiedono se fosse davvero necessario gettare il ministro Megariano in un pozzo.</Italian>
+		<Spanish>Los corintios preguntan si es realmente necesario arrojar al ministro de Megara al pozo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_3_OUTCOME_SPARTA_NO_THEBEN</Tag>
+		<English>The Thebans have yet a peace treaty with Athens, which can not be terminated at the moment.</English>
+		<French>Les th&#233;bains ont sign&#233; un trait&#233; de paix avec les ath&#233;niens, qui ne sera pas d&#233;nonc&#233; pour l'instant.</French>
+		<German>Die Thebaner haben noch einen Friedensvertrag mit den Athenern, der zur Zeit nicht aufgek&#252;ndigt werden kann.</German>
+		<Italian>I Tebani hanno ancora un trattato di pace con Atene, che al momento non pu&#242; essere chiuso.</Italian>
+		<Spanish>Los tebanos mantienen un tratado de paz con Atenas, que no puede ser roto en este momento.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_MEGARA_SPARTA_OPTION_3_OUTCOME_THEBEN</Tag>
+		<English>The Spartans think, the Athenian embargo against Megara violates the peace treaty of 446. This reinstates the former state of war. Our People's Assembly shares this view. They voted war. Now the Athenians are in for it!</English>
+		<French>Les spartiates consid&#232;rent que l'embargo commercial d'Ath&#232;nes contre M&#233;gare transgresse le trait&#233; de paix de 446. L'appel aux armes r&#233;sonne et les soldats s'appr&#234;tent. L'assembl&#233;e de nos citoyens est arriv&#233;e aux m&#234;mes conclusions. Les ath&#233;niens devront s'attendre &#224; un avenir difficile !</French>
+		<German>Die Spartaner sind der Meinung, das Athener Handelsembargo gegen Megara verletze den Friedensvertrag von 446. Damit sei der Kriegszustand wieder eingesetzt! Unsere Volksversammlung hat sich dieser Sichtweise angeschlossen. Die Athener k&#246;nnen sich warm anziehen!</German>
+		<Italian>Gli Spartani sono dell'opinione che l'embargo commerciale di Atene contro Megara violi il trattato di pace del 446. Ci&#242; significa che &#232; stato ripristinato lo stato di guerra! La nostra Assemblea popolare ha adottato questo punto di vista. Gli ateniesi possono vestirsi calorosamente!</Italian>
+		<Spanish>Los espartanos creen que el embargo ateniense viola el acuerdo de paz del 446. Esto restablece el estado de guerra. Nuestro Consejo del Pueblo comparte este punto de vista. Votaron por la guerra. &#161;Los atenienses lo lamentar&#225;n!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_NO_WAR</Tag>
+		<English>There is a peace treaty between Thebes and Athens, that can't be canceled at this time.</English>
+		<French>Le trait&#233; de paix entre Th&#232;bes et Ath&#232;nes a toujours cours et ne peut encore &#234;tre d&#233;nonc&#233;.</French>
+		<German>Zwischen Theben und Athen besteht noch ein Friedensvertrag, der zur Zeit nicht aufgek&#252;ndigt werden kann.</German>
+		<Italian>C'&#232; un trattato di pace tra Tebe e Atene, che non pu&#242; essere annullato in questo momento.</Italian>
+		<Spanish>Hay un acuerdo de paz entre Tebas y Atenas, que no puede ser cancelado en este momento.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_HIGH</Tag>
+		<English>Great! Surprisingly many volunteers have come forward. Pythangelos and Diemporos now hold a council in the Bouleutherion of Plataea on further action against Attica.</English>
+		<French>Fantastique! A la surprise g&#233;n&#233;rale, beaucoup se sont port&#233;s volontaire. Pythang&#233;los et Diemperos d&#233;battent d&#233;sormais d'une m&#234;me voix au bouleut&#233;rion de Plat&#233;e quant &#224; la suite des op&#233;rations en Attique.</French>
+		<German>Gro&#223;artig! Erstaunlich viele Freiwillige haben sich gemeldet. Pythangelos und Diemporos beraten nun im Bouleutherion von Plataiai gemeinsam &#252;ber das weitere Vorgehen gegen Attika.</German>
+		<Italian>Grande! Si &#232; fatto avanti un numero sorprendente di volontari. Pitangelo e Diemporo discutono ora insieme nel Bouleutherion di Plataai come procedere contro l'Attica.</Italian>
+		<Spanish>&#161;Estupendo! Sorprendentemente, muchos voluntarios tomaron partido. Pythangelos y Diemporos controlan ahora el consejo en el Bouleuteri&#243;n de Platea sobre nuevas medidas contra el &#193;tica.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_HIGH_ATHEN</Tag>
+		<English>Oligarchic forces in the border town of Plataea have opened the gates at night to Theban forces. Plataea is now under Theban control. Based in Plataea, the Thebans could now show up in a day's march before our walls!</English>
+		<French>Les s&#233;ides des oligarques ont profit&#233; de la nuit pour ouvrir aux th&#233;bains les portes de la ville frontali&#232;re de Plat&#233;e. Plat&#233;e est maintenant sous leur contr&#244;le, ce qui signifie que les troupes de Th&#232;bes ne sont plus qu'&#224; une journ&#233;e de marche de nos murs !</French>
+		<German>Oligarchische Kr&#228;fte in der Grenzstadt Plataiai haben den Thebanern nachts die Tore ge&#246;ffnet. Plataiai ist nun unter Thebanischer Kontrolle. Von Plataiai aus k&#246;nnen die Thebaner in nur einem Tagesmarsch vor unsere Mauern marschieren!</German>
+		<Italian>Le forze oligarchiche nella citt&#224; di confine di Plataai aprirono di notte le porte ai tebani. Plataai &#232; ora sotto il controllo tebano. Da Plataai i Tebani possono marciare verso le nostre mura in appena un giorno di marcia!</Italian>
+		<Spanish>Los oligarcas de la ciudad fronteriza de Platea han abierto las puertas durante la noche al ej&#233;rcito tebano. Platea se encuentra ahora bajo el control de Tebas. Desde Platea, &#161;los tebanos podr&#237;an llegar a nuestras murallas en menos de un d&#237;a de marcha!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_LOW</Tag>
+		<English>Congratulations, the coup worked. Plataea has now joined the Boeotian Confederation under the leadership of Naukleides. The old leaders of the People's Party were sent into exile. Unfortunately, less volunteers have reported for the war against Athens than we thought.</English>
+		<French>Notre splendide coup de main a r&#233;ussi ! Sous la direction de Nauclide, Plat&#233;e a rejoint la conf&#233;d&#233;ration b&#233;otienne. Les chefs de file des d&#233;mocrates ont &#233;t&#233; exil&#233;s. Malheureusement, bien que sans surprise, leur d&#233;termination &#224; faire la guerre contre Ath&#232;nes a diminu&#233;e d'autant.</French>
+		<German>Gl&#252;ckwunsch, der Coup hat geklappt. Plataiai ist jetzt unter Leitung von Naukleides den b&#246;otischen Bund beigetreten. Die f&#252;hrenden K&#246;pfe der Volkspartei wurden in die Verbannung geschickt. Nur leider haben sich weniger Freiwillige f&#252;r den Krieg gegen Athen gemeldet, als wir dachten.</German>
+		<Italian>Congratulazioni, il colpo ha funzionato. Plataiai si &#232; ora unito alla Lega Beotica sotto la guida di Naukleides. Le figure di spicco del Partito popolare furono mandate in esilio. Sfortunatamente, si sono arruolati per la guerra contro Atene meno volontari di quanto pensassimo.</Italian>
+		<Spanish>Felicidades, el plan funcion&#243;. Platea se ha unido ahora a la confederaci&#243;n de Beocia bajo el liderazgo de Naukleides. Los viejos l&#237;deres del partido del pueblo fueron enviados al exilio. Desfortunadamente, menos voluntarios se han apuntado a la guerra contra Atenas de los que pens&#225;bamos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_LOW_ATHEN</Tag>
+		<English>In a cloak-and-dagger operation, the Thebes have seized the border town of Plataea. They will live to rue it! Rumors say, the enthusiasm for war in Thebes is pretty lame.</English>
+		<French>La ville frontali&#232;re de Plat&#233;e a &#233;t&#233; saisie lors d'un coup de main furtif par les soldats th&#233;bains. Voyons s'ils ne s'en mordent pas les doigts ! Certains affirment que le temp&#233;rament g&#233;n&#233;ral &#224; Th&#232;bes ne profite pas au bellicisme exalt&#233;.</French>
+		<German>In einer Nacht- und Nebelaktion haben sich die Theben der Grenzstadt Plataiai bem&#228;chtigt. Wenn sie das mal nicht bereuen werden! Laut Ger&#252;chten ist die Kriegsbegeisterung in Theben ziemlich mau.</German>
+		<Italian>Con un'operazione di cappa e spada, i Tebe presero il controllo della citt&#224; di confine di Plataai. Se non te ne pentirai! Secondo alcune indiscrezioni, l'entusiasmo per la guerra a Tebe &#232; piuttosto debole.</Italian>
+		<Spanish>En una operaci&#243;n encubierta, Tebas ha tomado el control de la ciudad fronteriza de Platea. &#161;Lo lamentar&#225;n! Seg&#250;n algunos rumores, el entusiasmo por la guerra en Tebas es bastante escaso.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_MEDIUM</Tag>
+		<English>Too bad! Our advance party had to take refuge under the volleys of roof tiles and cooking pots in a gatehouse that had unexpectedly no exit to the outside through the city wall. Oh, and torrential rain tore away a bridge across the Asopos, so that our main force could not come to help. Plataea is now occupied by the Athenians. Of the advance command no one survived.</English>
+		<French>La malchance nous afflige! L'avant-garde, ayant p&#233;n&#233;tr&#233; en ville sous les jets de tuiles et de pots en terre, a d&#251; se r&#233;fugier dans un corps de garde, h&#233;las sans issue vers l'ext&#233;rieur de la ville. De surcro&#238;t, des pluies torrentielles ont emport&#233; un pont sur l'Asopos, emp&#234;chant notre corps d'arm&#233;e principal de se porter &#224; leur secours. Plat&#233;e est donc tomb&#233;e aux mains des ath&#233;niens et l'avant-garde ne donne plus signe de vie.</French>
+		<German>So ein Pech! Unser Vorauskommando musste sich in der Stadt unter dem Hagel von Dachpfannen und Kocht&#246;pfen in ein Torhaus fl&#252;chten, das keinen Ausgang nach drau&#223;en durch die Mauer hatte. Ach, und sintflutartiger Dauerregen ri&#223; eine Br&#252;cke &#252;ber den Asopos weg, sodass unsere Hauptstreitmacht nicht zur Hilfe kommen konnte. Plataiai ist nun von den Athenern besetzt. Vom Vorauskommando ist keiner mehr am Leben.</German>
+		<Italian>Che sfortuna! Il nostro gruppo d'avanguardia dovette rifugiarsi in citt&#224;, sotto una pioggia di tegole e pentole, in una portineria senza uscita dal muro. Oh, e la pioggia torrenziale ha distrutto un ponte sull'Asopos, quindi la nostra forza principale non &#232; potuta venire in aiuto. Plataai &#232; ora occupata dagli Ateniesi. Nessuno della squadra d'avanguardia &#232; ancora vivo.</Italian>
+		<Spanish>&#161;Muy mal! Nuestro grupo de avanzada tuvo que guarecerse de la lluvia de tejas y ollas de cocina en una entrada que inesperadamente no ten&#237;a salida al exterior a trav&#233;s de los muros de la ciudad. Ah, y la lluvia torrencial derrumb&#243; el puente que cruzaba el Asopo, por lo que nuestra fuerza principal no pod&#237;a venir a ayudar. Platea est&#225; ocupada ahora por los atenienses. Ninguno de nuestra avanzadilla sobrevivi&#243;.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_MEDIUM_ATHEN</Tag>
+		<English>In the border town of Plataea traitors opened the gates at night to the Thebans. The small Theban detachment met strenuous opposition. Under volleys of roof tiles and cooking pots they had to take refuge in a gatehouse that had no exit to the outside through the city wall. Ha, and torrential rain tore away a bridge across the Asopos, so that their main force could not come to help to those trapped. Thanks to a tip of a Plataean we were able to install a garrison there still at night.</English>
+		<French>Des tra&#238;tres ouvrirent les portes de la ville frontali&#232;re de Plat&#233;e aux th&#233;bains pendant la nuit. La petite troupe de th&#233;bains se heurta &#224; une forte r&#233;sistance. Ils furent contraints de fuir sous une pluie de tuiles cass&#233;es et de pots de terre vers un corps de garde, sans issue vers l'ext&#233;rieur de la ville. Les pluies torrentielles avaient arrach&#233; le pont sur l'Asopos, de sorte que le gros de leur troupe ne put venir les sauver. Gr&#226;ce &#224; ce que nous rapporta un habitant, nous y envoy&#226;mes de nuit des troupes de garnison.</French>
+		<German>In der Grenzstadt Plataiai haben Verr&#228;ter nachts den Thebanern die Tore ge&#246;ffnet. Das kleine thebanische Kontingent stie&#223; aber auf heftige Gegenwehr. Unterm Hagel von Dachpfannen und Kocht&#246;pfen mussten sie sich in ein Torhaus fl&#252;chten, das keinen Ausgang nach drau&#223;en durch die Stadtmauer hatte. Ha, und sintflutartiger Dauerregen riss eine Br&#252;cke &#252;ber den Asopos weg, sodass ihre Hauptstreitmacht den Eingeschlossenen nicht zur Hilfe kommen konnte. Dank eines Tipps eines Plataiers konnten wir noch nachts eine Garnison dorthin schicken.</German>
+		<Italian>Nella citt&#224; di confine di Plataai, di notte i traditori aprirono le porte ai Tebani. Tuttavia, il piccolo contingente tebano incontr&#242; una feroce resistenza. Sotto una pioggia di tegole e pentole dovettero rifugiarsi in una portineria senza uscita dalle mura della citt&#224;. Ah, e una pioggia torrenziale ha strappato via un ponte sull'Asopos, cos&#236; che la loro forza principale non poteva venire in aiuto di coloro che erano intrappolati. Grazie al suggerimento di un Plataiano, quella notte riuscimmo a inviare l&#236; una guarnigione.</Italian>
+		<Spanish>Traidores de la ciudad fronteriza de Platea abrieron las puertas esta noche a los tebanos. El peque&#241;o destacamento tuvo una fuerte oposici&#243;n. Bajo la lluvia de tejas y ollas de cocina, tuvieron que guarnecerse en una entrada que no ten&#237;a salida al exterior a trav&#233;s de los muros de la ciudad. Ah, y la lluvia torrencial destruy&#243; el puente que cruzaba Asopos, as&#237; que nuestra fuerza principal no pudo ir en su ayuda. En cualquier caso, pudimos establecer una guarnici&#243;n por la noche.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_2_OUTCOME</Tag>
+		<English>The coup plan of Naukleides was betrayed. The owl hooted, but the doors did not open up. Instead 800 Athenian hoplites appeared around midnight and massacred our men. Only the moonless night saved Phyleides' life!</English>
+		<French>La conspiration de Nauclide a &#233;t&#233; trahie. On a ou&#239; le hululement de la chouette, mais l'huis ne s'ouvrait pas. A la place, 800 hoplites ath&#233;niens surgirent vers minuit et massacr&#232;rent nos hommes. L'absence de lune cette nuit-l&#224; fut la seule chose qui sauva la vie de Phyl&#233;ide.</French>
+		<German>Der Putschplan des Naukleides wurde verraten. Der Kauz schrie, aber die Tore &#246;ffneten sich nicht. Statt dessen erschienen um Mitternacht 800 Athener Hopliten und massakrierten unsere M&#228;nner. Nur die mondlose Nacht rettete dem Phyleides das Leben!</German>
+		<Italian>Il piano golpista di Naukleid &#232; stato tradito. Il gufo url&#242;, ma i cancelli non si aprirono. Invece, a mezzanotte si presentarono 800 opliti ateniesi e massacrarono i nostri uomini. Solo la notte senza luna ha salvato la vita di Fileide!</Italian>
+		<Spanish>El golpe de mano de Naukleides fue desbaratado. El b&#250;ho ulul&#243;, pero las puertas no se abrieron. En cambio, aparecieron 800 hoplitas atenienses en la medianoche que masacraron a nuestros hombres. &#161;Solo la luna nueva salv&#243; la vida de Phyleides!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_2_OUTCOME_ATHEN</Tag>
+		<English>In the Athenian-Theban border town of Plataea oligarchic forces under the leadership of Naukleides plotted a pro-Theban coup. Naukleides' plan was to open up the gates to the Thebans in a moonless night &#8211; when the owl hooted three times. Though his plan was betrayed. The owl hooted, but the doors did not open up. Thanks to a tip of a Plataean 800 Athenian hoplites of ours routed the Theban advance party. Ares seems to have taken our side in this war!</English>
+		<French>Les pouvoirs oligarchiques men&#233;s par Nauclide projetaient un coup de force pro-th&#233;bain &#224; Plat&#233;e, situ&#233;e &#224; la fronti&#232;re entre Ath&#232;nes et Th&#232;bes. Ils pensaient ouvrir les portes de la ville aux th&#233;bains, au signal d'une chouette hululant trois fois par une nuit sans lune. Mais la conspiration de Nauclide a &#233;t&#233; d&#233;voil&#233;e. Les portes ne s'ouvrirent pas au signal convenu. Gr&#226;ce aux indications d'un plat&#233;en, nos 800 hoplites ath&#233;niens purent frapper les troupes d'assaut th&#233;baines dans leur fuite. Ar&#232;s est forc&#233;ment &#224; nos c&#244;t&#233;s dans cette guerre !</French>
+		<German>Oligarchische Kr&#228;fte unter F&#252;hrung des Naukleides planten in der athenisch-thebanischen Grenzstadt Plataiai einen prothebanischen Umsturz. Sie wollten den Thebanern in mondloser Nacht, wenn der Kauz dreimal schrie, die Tore &#246;ffnen. Doch der Putschplan des Naukleides wurde verraten. Der Kauz schrie, aber die Tore &#246;ffneten sich nicht. Dank eines Tips eines Plataiers konnten wir mit 800 Athener Hopliten das thebanische Vorauskommando in die Flucht schlagen. Ares scheint in diesem Krieg auf unserer Seite zu stehen!</German>
+		<Italian>Le potenze oligarchiche guidate da Nauclide stavano pianificando un colpo di stato filotebano a Platea, situata al confine tra Atene e Tebe. Pensavano di aprire le porte della citt&#224; ai Tebani al segnale di un gufo che avrebbe ululato tre volte in una notte senza luna. Ma la cospirazione di Nauclide &#232; stata smascherata. Le porte non si sono aperte al segnale concordato. Grazie alle indicazioni di un Plateano, i nostri 800 opliti ateniesi sono riusciti a colpire le truppe d'assalto tebane in fuga. Ares dev'essere dalla nostra parte in questa guerra!</Italian>
+		<Spanish>En la ciudad fronteriza ateniense-tebana de Platea, oligarcas bajo el liderazgo de Naukleides trazaron un golpe pro-tebano. El plan de Naukleides era abrir las puertas a los tebanos en una noche de luna nueva, cuando el b&#250;ho ululase tres veces. Sin embargo su plan fue traicionado. El b&#250;ho ulul&#243;, pero las puertas no se abrieron. Gracias a que una punta de lanza de unos 800 hoplitas atenienses nuestros se encaminan hacia el grupo de avanzada tebano. &#161;Parece que Ares toma partido por nuestro lado en esta guerra!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_3_OUTCOME</Tag>
+		<English>The aristocratic party has deposed the democratically elected officials in Plataea. Almost all Plataean Democrats have fled to Athens. There are Athenian troops movements reported near the Kitheiron mountains.</English>
+		<French>Les partisans de l'aristocratie ont d&#233;pos&#233;e les magistrats &#233;lus &#224; Plat&#233;e. Presque tous les d&#233;mocrates plat&#233;ens ont fuit pour Ath&#232;nes. Des troupes ath&#233;niennes ont &#233;t&#233; observ&#233;es en manoeuvre non loin des monts Cith&#233;ron.</French>
+		<German>Die Adelspartei hat in Plataiai die demokratisch gew&#228;hlten Amtstr&#228;ger abgesetzt. Fast alle plat&#228;ische Demokraten sind nach Athen geflohen. Es werden athenische Truppenbewegungen beim Kitheirongebirge gemeldet.</German>
+		<Italian>Il partito nobile depose i funzionari democraticamente eletti a Plataiai. Quasi tutti i democratici plateesi fuggirono ad Atene. Movimenti di truppe ateniesi sono segnalati vicino ai Monti Kitheiron.</Italian>
+		<Spanish>El partido arist&#243;crata ha depuesto a las autoridades democr&#225;ticamente elegidas en Platea. Casi todos los dem&#243;cratas de Platea han huido a Atenas. Se han advertido movimientos de tropas atenienses cerca de las monta&#241;as de Kitheiron.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_3_OUTCOME_ATHEN</Tag>
+		<English>The aristocratic party has deposed the democratically elected officials in the Athenian-Theban border town of Plataea. Almost all Plataean Democrats have fled to Athens.</English>
+		<French>Les partisans de l'aristocratie ont destitu&#233; les magistrats d&#233;mocrates &#233;lus &#224; Plat&#233;e, ville &#224; la fronti&#232;re entre Ath&#232;nes et Th&#232;bes. Presque tous les d&#233;mocrates plat&#233;ens ont pris la fuite pour Ath&#232;nes.</French>
+		<German>Die Adelspartei hat in der athenisch-thebanischen Grenzstadt Plataiai die demokratisch gew&#228;hlten Amtstr&#228;ger abgesetzt. Fast alle plat&#228;ische Demokraten sind nach Athen geflohen.</German>
+		<Italian>I sostenitori dell'aristocrazia hanno deposto i magistrati eletti democraticamente a Platea, cittadina al confine tra Atene e Tebe. Quasi tutti i plateani democratici sono fuggiti ad Atene.</Italian>
+		<Spanish>El partido aristocr&#225;tico ha depuesto a las autoridades elegidas democr&#225;ticamente en la ciudad fronteriza ateniense-tebana de Platea. Casi todos los dem&#243;cratas de Platea han huido a Atenas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_3_OUTCOME_NO_ATHEN</Tag>
+		<English>The aristocratic party has deposed the democratically elected officials in Plataea. Almost all Plataean Democrats have fled to Attica. There are Athenian troops movements reported near the Kitheiron mountains.</English>
+		<French>A Plat&#233;e, les partisans de l'aristocratie ont d&#233;pos&#233; les magistrats &#233;lus. Presque tous les d&#233;mocrates plat&#233;ens ont fuit pour Ath&#232;nes. Des manoeuvres des troupes ath&#233;niennes auraient &#233;t&#233; observ&#233;es sur les versants du Cith&#233;ron.</French>
+		<German>Die Adelspartei hat in Plataiai die demokratisch gew&#228;hlten Amtstr&#228;ger abgesetzt. Fast alle plat&#228;ische Demokraten sind nach Attika geflohen. Es werden Athener Truppenbewegungen beim Kitheirongebirge gemeldet.</German>
+		<Italian>Il partito nobile depose i funzionari democraticamente eletti a Plataiai. Quasi tutti i democratici plateesi fuggirono in Attica. Vengono segnalati movimenti di truppe ateniesi vicino ai monti Kitheiron.</Italian>
+		<Spanish>El partido aristocr&#225;tico ha depuesto a las autoridades democr&#225;ticamente elegidas en la ciudad fronteriza ateniense-tebana de Platea. Casi todos los dem&#243;cratas de Platea han huido a &#193;tica. Se han reportado movimientos de tropas atenienses en las cercan&#237;as de las monta&#241;as de Kitheiron.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_PLATAIAI_OPTION_3_OUTCOME_NO_ATHEN_ATHEN</Tag>
+		<English>The aristocratic party has deposed the democratically elected officials in Plataea. Almost all Plataean Democrats have fled to Attica.</English>
+		<French>Les partisans de l'aristocratie ont destitu&#233; les magistrats &#233;lus &#224; Plat&#233;e, ville-fronti&#232;re entre Ath&#232;nes et Th&#232;bes. Presque tous les d&#233;mocrates de la ville ont pris la fuite vers l'Attique.</French>
+		<German>Die Adelspartei hat in der athenisch-thebanischen Grenzstadt Plataiai die demokratisch gew&#228;hlten Amtstr&#228;ger abgesetzt. Fast alle plat&#228;ische Demokraten sind nach Attika geflohen.</German>
+		<Italian>Il partito nobile depose i funzionari democraticamente eletti nella citt&#224; di confine ateniese-tebana di Plataiai. Quasi tutti i democratici plateesi fuggirono in Attica.</Italian>
+		<Spanish>El partido aristocr&#225;tico ha depuesto a las autoridades elegidas democr&#225;ticamente en la ciudad fronteriza ateniense-tebana de Platea. Casi todos los dem&#243;cratas de Platea han huido a &#193;tica.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_DESC</Tag>
+		<English>Poteiadaia formally declared its withdrawal from the Delian League. The ecclesia debates an immediate recapture. Else their example could set a precedent and other towns might leave as well.</English>
+		<French>Potid&#233;e proclame son retrait de la ligue de D&#233;los. L'Assembl&#233;e des citoyens en Ath&#232;nes d&#233;bat d'une reconqu&#234;te rapide, sans quoi la ruine menace toute ville qui suivrait son exemple.</French>
+		<German>Poteiadaia hat f&#246;rmlich den Austritt aus dem delischen Bund erkl&#228;rt. Die Volksversammlung von Athen ber&#228;t &#252;ber eine umgehende R&#252;ckeroberung. Sonst k&#246;nnte das Beispiel der Poteid&#228;er Schule machen und noch andere St&#228;dte zum Abfall bewegen.</German>
+		<Italian>Poteiadaia ha dichiarato formalmente il suo ritiro dalla Lega di Delo. L'assemblea popolare di Atene discute di una riconquista immediata. Altrimenti l'esempio dei Potideai potrebbe costituire un precedente e incoraggiare altre citt&#224; ad abbandonarsi.</Italian>
+		<Spanish>Potidea declara formalmente su retirada de la Liga de Delos. La ecclesia debate una inmediata recaptura. Esto podr&#237;a suponer sentar un precedente y otras ciudades podr&#237;an abandonar tambi&#233;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_KORINTH_1_OUTCOME_HIGH</Tag>
+		<English>An overwhelming number of volunteers enlisted in Corinth! Fortunately, we have the assets to pay all of them.</English>
+		<French>Un nombre &#233;crasant de volontaires ont contact&#233; &#224; Corinthe! Heureusement, nous avons les moyens de tous les payer.</French>
+		<German>Eine &#252;berw&#228;ltigende Zahl an Freiwilligen hat sich in Korinth gemeldet! Gl&#252;cklicherweise besitzen wir die Mittel, sie alle zu bezahlen.</German>
+		<Italian>Un numero schiacciante di volontari ha contattato a Corinto! Fortunatamente, abbiamo i mezzi per pagarli tutti.</Italian>
+		<Spanish>&#161;Un gran n&#250;mero de voluntarios se alistaron en Corintio! Afortunadamente, tenemos los bienes necesarios para pagar a todo el mundo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_1</Tag>
+		<English>Let Pausanias and Archestratos command a powerful fleet and an army of hoplites. We don't know how large the macedonian army is and how King Perdikkas might behave. We don't want to skimp at the wrong spot (cost: entire gold treasure up to 5000[ICON_GOLD]).</English>
+		<French>Pausanias et Archestrate commanderont la puissante flotte et les hoplites de la force d'assaut. Nous ignorons la taille de l'arm&#233;e mac&#233;donienne et les plans du roi Perdiccas, soyons prudent dans nos choix (co&#251;te la totalit&#233; du tr&#233;sor, maximum 5000 [ICON_GOLD]).</French>
+		<German>Gebt Pausanias und Archestratos das Kommando &#252;ber eine schlagkr&#228;ftige Flotte und Hoplitenstreitmacht. Wir wissen nicht, welche Gr&#246;&#223;e das makedonische Heer hat und wie sich K&#246;nig Perdikkas verh&#228;lt und wollen nicht an der falschen Stelle sparen (Kosten: gesamter Inhalt der Staatskasse, aber maximal 5000[ICON_GOLD]).</German>
+		<Italian>Dai a Pausania e Archestrato il comando di una potente flotta e di una forza oplita. Non sappiamo quanto sia grande l'esercito macedone n&#233; come si comporti il &#8203;&#8203;re Perdicca e non vogliamo risparmiare denaro nel posto sbagliato (costi: l'intero contenuto del tesoro, ma un massimo di 5000[ICON_GOLD]).</Italian>
+		<Spanish>Deja a Pausanias y Archestratos comandar una poderosa flota y un ej&#233;rcito de hoplitas. No sabemos como de grande es el ej&#233;rcito maced&#243;nico y como el rey P&#233;rdicas podr&#237;a comportarse. No queremos escatimar en el lugar equivocado (coste: todo el tesoro hasta 5000[ICON_GOLD]).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_1_OUTCOME_HIGH</Tag>
+		<English>Thanks to our riches our newly recruited force is mightier than we dared to dream of. They arrived safely outside of Poteidaia. We get reports of a Korinthian fleet on its way to Poteidaia-this would have been a bad time for penny-pinching.</English>
+		<French>Il est heureux que nos richesses nous aient permis d'engager une telle force. Les recrus sont arriv&#233;es devant Potid&#233;e sans encombre et y ont jet&#233; l'ancre. On rapporte que des navires ont quitt&#233; Corinthe et font voile vers Potid&#233;e. Nous avons fait le bon choix an payant ch&#232;rement cette arm&#233;e.</French>
+		<German>Unserem Reichtum sei Dank ist unsere neu ausgehobene Streitmacht, die sicher vor Poteidaia angelangt ist und Anker geworfen hat, m&#228;chtiger, als wir es je zu tr&#228;umen gewagt h&#228;tten. Es wird gemeldet, auch aus Korinth seien Schiffe nach Poteidaia unterwegs-ein Gl&#252;ck, dass wir nicht gerade knauserig waren.</German>
+		<Italian>Grazie alla nostra ricchezza, la nostra forza appena reclutata, arrivata sana e salva a Poteidaea e ancorata, &#232; pi&#249; potente di quanto avremmo mai potuto immaginare. Si dice che anche navi da Corinto siano dirette a Poteidaia &#8211; fortunatamente non siamo stati proprio avari.</Italian>
+		<Spanish>Gracias a nuestra riqueza, nuestro reci&#233;n contratado ej&#233;rcito es m&#225;s poderoso de lo que podr&#237;amos haber llegado a imaginar. Llegaron sin problemas a las afueras de Potidea. Recibimos informes sobre una flota corintia que est&#225; en camino hacia Potidea-Esto hubiese sido un mal momento para ahorrarse gastos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_1_OUTCOME_LOW</Tag>
+		<English>That's all our treasure? The newly recruited army did arrive safely outside of Poteidaia, but will these few men suffice to conquer it?</English>
+		<French>C'est tout ce que nous avons dans nos coffres ? Les troupes fra&#238;chement recrut&#233;es sont bien arriv&#233;es devant Potid&#233;e, mais la bravoure de ces quelques hommes conquerra-t-elle la ville &#224; elle seule ?</French>
+		<German>Ist das alles, was unsere Schatzkammern hergeben? Unsere neu ausgehobene Streitmacht ist zwar sicher vor Poteidaia angekommen, doch ob die paar M&#228;nner f&#252;r eine Eroberung reichen werden?</German>
+		<Italian>&#200; tutto quello che i nostri tesori hanno da offrire? La nostra forza appena radunata &#232; arrivata sana e salva davanti a Poteidaea, ma i pochi uomini saranno sufficienti per una conquista?</Italian>
+		<Spanish>&#191;Eso es todo nuestro tesoro? El recientemente reclutado ej&#233;rcito llego de forma segura a las afueras de Potidea, &#191;pero con tan pocos hombres ser&#225;n suficientes para conquistarla?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_1_OUTCOME_MEDIUM</Tag>
+		<English>Our newly recruited army did savely arrive outside of Poteidaia. That's all our treasury could pay for, but for these revolutionary it should be more than enough.</English>
+		<French>Nos troupes fra&#238;chement recrut&#233;es sont bien arriv&#233;es devant Potid&#233;e et y ont jet&#233; l'ancre. Nous n'avons rien pu tirer de plus de notre tr&#233;sorerie, cela conviendra pour vaincre deux ou trois r&#233;volt&#233;s.</French>
+		<German>Unsere neu ausgehobene Streitmacht ist sicher vor Poteidaia angelangt und hat Anker geworfen. Mehr gaben unsere Schatzkammern nicht her, doch f&#252;r die paar Revoluzzer wird es reichen.</German>
+		<Italian>La nostra forza appena reclutata &#232; arrivata sana e salva a Poteidaia e ha gettato l'ancora. Le nostre casse non hanno fornito di pi&#249;, ma sar&#224; sufficiente per i pochi rivoluzionari.</Italian>
+		<Spanish>Nuestro ej&#233;rcito reci&#233;n contratado lleg&#243; sin percances a las afueras de Potidea. Eso es todo lo que nuestro tesoro pudo pagar, pero para esta misi&#243;n deber&#237;a ser m&#225;s que suficiente.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_2</Tag>
+		<English>Sieges are longsome and expensive. Send just a small fleet for reconnaissance towards Poteidaia. We shall gift Sitalkes, king of the Thracians, six noble steeds from Alkibiades' stud and take on the salary for his skythian auxiliaries this year (costs: 250 gold).</English>
+		<French>Un si&#232;ge demande beaucoup de persistance et d'argent. Contentez-vous d'envoyer une petite flotte en observation &#224; Potid&#233;e. Nous offrirons au roi de Thrace Sitalc&#232;s six chevaux de bon lignage provenant du domaine d'Alcibiade et verserons le salaire des troupes auxiliaires scythes cette ann&#233;e (co&#251;te 250 or).</French>
+		<German>Belagerungen sind langwierig und teuer. Schickt nur eine kleine Flotte zur Beobachtung nach Poteidaia. Schenken wir Sitalkes, dem K&#246;nig der Thraker, sechs edle Rosse aus dem Gest&#252;t des Alkibiades und &#252;bernehmen in diesem Jahr den Sold f&#252;r seine skythischen Hilfstruppen (Kosten: 250 Gold).</German>
+		<Italian>Gli assedi sono lunghi e costosi. Basta inviare una piccola flotta a Poteidaia per osservare. Diamo a Sitalkes, il re dei Traci, sei nobili destrieri dell'allevamento di Alcibiade e paghiamo quest'anno le sue truppe ausiliarie scite (costo: 250 monete d'oro).</Italian>
+		<Spanish>Los asedios son grandes y costosos. Env&#237;a solo una peque&#241;a flota de reconocimiento hacia Potidea. Regala a Sitalkes, rey de los tracios, seis caballos nobles de Alkibiades y pagaremos el salario por sus auxiliares escitas de este a&#241;o (coste: 250 [ICON_GOLD]).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_2_OUTCOME_FAILED</Tag>
+		<English>Sitalkes is very happy about the horses and takes them every morning for a ride along the macedonian border. Perdikkas of Macedonia goes green with envy. Would he not have a defensive pact with Korinth, his attention might be focused on his feud with Sitalkes instead of the Greek differences-alas he stands by the treaty and his word.</English>
+		<French>Sitalc&#232;s est tr&#232;s satisfait des chevaux offerts, assez pour les chevaucher chaque matin le long de la fronti&#232;re mac&#233;donienne. Perdiccas de Mac&#233;doine en meurt de jalousie. S'il n'avait pas conclu un pacte de d&#233;fense avec Corinthe, son attention serait d&#233;sormais tourn&#233;e vers sa querelle avec Sitalc&#232;s au lieu de se consacrer aux litiges des grecs. H&#233;las, il se sent engag&#233; par le trait&#233;.</French>
+		<German>Sitalkes freut sich sehr &#252;ber die Pferde und reitet jeden Morgen mit ihnen an der makedonischen Grenze auf und ab. Perdikkas von Makedonien platzt vor Neid. H&#228;tte er keinen Verteidigungspakt mit Korinth geschlossen, g&#228;lte seine Aufmerksamkeit nun wohl wieder seiner Fehde mit Sitalkes statt den griechischen Streitigkeiten-doch Vertrag ist Vertrag.</German>
+		<Italian>Sitalkes &#232; molto contento dei cavalli e ogni mattina li cavalca su e gi&#249; per il confine macedone. Perdicca di Macedonia scoppia di invidia. Se non avesse concluso un patto di difesa con Corinto, la sua attenzione ora si sarebbe concentrata sulla faida con Sitalkes invece che sulle controversie greche-ma un trattato &#232; un trattato.</Italian>
+		<Spanish>Sitalkes est&#225; muy feliz con los caballos y los pasea cada ma&#241;ana a lo largo de la frontera de Macedonia. P&#233;rdicas de Macedonia est&#225; verde de envidia. Al no tener un pacto defensivo con Corinto, su atenci&#243;n se ha fijado en su feudo con Sitalkes en vez de las diferencias griegas-&#233;l destaca por su tratado y palabra.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_2_OUTCOME_SUCCESS</Tag>
+		<English>Sitalkes is happy about the horses and takes them every morning for a ride along the Macedonian border. Perdikkas of Macedonia goes green with envy. His attention is once again directed at his feud with Sitalkes instead of difference between the poleis. Supposedly he put the Korinthian emissaries off with stalling words.</English>
+		<French>Sitalc&#232;s est tr&#232;s satisfait des chevaux offerts, assez pour les chevaucher chaque matin le long de la fronti&#232;re mac&#233;donienne. Perdiccas de Mac&#233;doine en meurt de jalousie. Leur querelle ainsi raviv&#233;e d&#233;tourne son attention des dissensions grecques. Les soi-disant pl&#233;nipotentiaires corinthiens seraient laisser &#224; mariner dans les faux-fuyants qu'il leur aurait servi.</French>
+		<German>Sitalkes freut sich sehr &#252;ber die Pferde und reitet jeden Morgen mit ihnen an der makedonischen Grenze auf und ab. Perdikkas von Makedonien platzt vor Neid. Seine Aufmerksamkeit gilt nun wieder seiner Fehde mit Sitalkes statt den griechischen Streitigkeiten. So soll er angeblich korinthische Gesandte mit hinhaltenden Worten vertr&#246;stet haben.</German>
+		<Italian>Sitalkes &#232; molto contento dei cavalli e ogni mattina li cavalca su e gi&#249; per il confine macedone. Perdicca di Macedonia scoppia di invidia. La sua attenzione ora torna alla faida con Sitalce invece che alle controversie greche. Si dice che abbia scoraggiato gli inviati corinzi con parole temporeggianti.</Italian>
+		<Spanish>Sitalkes est&#225; contento con los caballos y los lleva cada ma&#241;ana a dar un paseo a lo largo de la frontera de Macedonia. P&#233;rdicas de Macedonia est&#225; verde de envidia. Su atenci&#243;n se dirige de nuevo hacia su feudo con Sitalkes en vez de las polis. Supuestamente el puso a los emisarios de Corinto con la palabras dilatorias.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_3</Tag>
+		<English>Poteidaia is located on a small headland. We will starve out the city. 1500 hoplites should suffice to seal the city off from the landside and 20 trieres are enough for a naval blockade. Kallias is the right man for the task (no cost).</English>
+		<French>Potid&#233;e est isol&#233;e sur une &#233;troite langue de terre. Nous allons l'affamer, ce &#224; quoi suffisent 1500 Hoplites pour l'encerclement des terres et 20 Tri&#232;res pour la mer. Callias est le mieux taill&#233; pour ce travail (co&#251;t nul).</French>
+		<German>Poteidaia liegt auf einer schmalen Landzunge. Wir werden die Stadt aushungern. Da gen&#252;gen 1500 Hopliten, um die Stadt von der Landseite her abzuriegeln, und 20 Trieren f&#252;r eine Seeblockade. Kallias ist der richtige Mann f&#252;r so eine Aufgabe (Keine Kosten).</German>
+		<Italian>Poteidaia si trova su uno stretto promontorio. Faremo morire di fame la citt&#224;. 1.500 opliti sono sufficienti per isolare la citt&#224; dal lato terra e 20 triremi sono sufficienti per un blocco navale. Kallias &#232; l'uomo giusto per questo compito (nessun costo).</Italian>
+		<Spanish>Potidea est&#225; localizada en un peque&#241;o cabo. Mataremos de hambre la ciudad. 1500 hoplitas deber&#237;an ser suficientes para sellar la ciudad del resto y 20 trirremes son suficientes para un bloqueo naval. Kallias es el hombre adecuado para esta tarea (sin coste).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_ATHEN_OPTION_3_OUTCOME</Tag>
+		<English>Our strategist Callias gave a rousing inaugural speech. The people pin high hopes on him.</English>
+		<French>Le dicours d'investiture de notre strat&#232;ge Callias a &#233;t&#233; on ne peut plus galvanisant ! Le peuple place de grands espoirs en lui.</French>
+		<German>Unser Stratege Kallias hat eine mitrei&#223;ende Antrittsrede gehalten. Das Volk setzt gro&#223;e Hoffungen in ihn.</German>
+		<Italian>Il nostro stratega Kallias ha tenuto un entusiasmante discorso inaugurale. La gente ripone grandi speranze in lui.</Italian>
+		<Spanish>Nuestro estratega Callias hizo un entusiasta discurso inicial. La gente tiene puestas muchas esperanzas en &#233;l.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_DESC</Tag>
+		<English>The Athenians try to increase their influence in the city of Potidaea, our old colony. They claim 20 instead of 16 talents for the membership of the Delian League every year. Moreover, Potidaea should provide hostages and grind the city walls. And then, the Athenians also order to expel our Corinthian magistrates![NEWLINE]The citizens of Potidaea declined this impudent postulation and left the Delian League. The Athenians will try to bring the city back in their possession. We should not allow that and strive for a Corinthian solution.</English>
+		<French>Ath&#232;nes exhorte les potid&#233;ens, nos fr&#232;res de longue date, &#224; payer 20 talents au tr&#233;sor de la Ligue de D&#233;los en lieu et place des 16 talents annuels convenus jusqu'alors. Ils devront en outre fournir des otages et raser les murs de leur ville. Mais l'orgueil des ath&#233;niens ne se limite pas &#224; cela ! Ils ordonnent l'expulsion de nos repr&#233;sentants ! Les citoyens de Potid&#233;e ont rejet&#233; ces exigences et quitt&#233; la thalassocratie attique. Ath&#232;nes tentera de ramener la ville sous son emprise. Nous ne devons pas laisser cela se produire, travaillons &#224; la cr&#233;ation d'une coalition corinthienne.</French>
+		<German>Die Athener wollten die Stadt Poteidaia, unsere alte Gr&#252;ndung, dazu zwingen, jedes Jahr 20 Talente statt bisher 16 in die Kasse des Delischen Bundes zu zahlen. Sie sollten au&#223;erdem Geiseln stellen und die Stadtmauern schleifen. Und dann verlangten die Athener auch noch, unsere korinthischen Beamten auszuweisen! Die B&#252;rger von Poteidaia haben das abgelehnt und den Attischen Seebund verlassen. Die Athener werden versuchen, die Stadt wieder in ihren Besitz zu bringen. Wir sollten das nicht zulassen und eine prokorinthische L&#246;sung anstreben.</German>
+		<Italian>Gli Ateniesi volevano costringere la citt&#224; di Poteidaia, la nostra antica fondazione, a versare ogni anno nelle casse della Lega di Delo 20 talenti invece dei 16 precedenti. Dovrebbero anche prendere ostaggi e demolire le mura della citt&#224;. E poi anche gli Ateniesi chiesero che i nostri funzionari corinzi fossero espulsi! I cittadini di Potidaia respinsero questa proposta e abbandonarono la Lega del Mare Attico. Gli Ateniesi cercheranno di riprendere possesso della citt&#224;. Non dovremmo permetterlo e lottare per una soluzione pro-Corinzia.</Italian>
+		<Spanish>Los atenienses tratan de aumentar su influencia en la ciudad de Potidea, nuestra antigua colonia. Reclaman 20 talentos en vez de los 16 a los miembros de la Liga de Delos cada a&#241;o. Por otra parte, debe proporcionar rehenes y demoler las murallas de la ciudad. Y luego, !los atenienses quieren expulsar a nuestros magistrados corintios![NEWLINE]Los ciudadanos de Potidea declinaron esta imprudente demanda y dejaron la Liga de Delos. Los atenienses tratar&#225;n de recuperar la ciudad y tenerla bajo su posesi&#243;n. No debemos permitir eso y lucharemos por una soluci&#243;n para los corintios.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_OPTION_1</Tag>
+		<English>We can not abandon our fellows in this situation. All volunteers receive a drachma and three obols a day for the first six weeks of the war (Cost: whole gold reserves, but at most 2000 [ICON_GOLD]).</English>
+		<French>Nos compatriotes ne doivent &#234;tre abandonn&#233; &#224; leur sort. Tous les volontaires recevront une drachme et trois oboles pour chaque jour des six premi&#232;res semaines de guerre (co&#251;te la totalit&#233; du tr&#233;sor, maximum 2000 [ICON_GOLD]).</French>
+		<German>In dieser Lage k&#246;nnen wir unsere Landsleute doch nicht im Stich lassen. Alle Freiwilligen erhalten eine Drachme und drei Obolen t&#228;glich f&#252;r die ersten sechs Kriegswochen (Kosten: gesamter Inhalt der Staatskasse, aber maximal 2000[ICON_GOLD]).</German>
+		<Italian>In questa situazione non possiamo abbandonare i nostri connazionali. Tutti i volontari ricevono una dracma e tre oboli al giorno per le prime sei settimane di guerra (costo: l'intero contenuto del tesoro, ma un massimo di 2000[ICON_GOLD]).</Italian>
+		<Spanish>No podemos abandonar a nuestros compa&#241;eros en esta situaci&#243;n. Todos los voluntarios recibir&#225;n un dracma y 3 &#243;bolos al d&#237;a las primeras seis semanas de guerra (Coste: todas las reservas de oro, pero solo hasta 2000 [ICON_GOLD]).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_OPTION_1_OUTCOME_LOW</Tag>
+		<English>There are enough volunteers, but our treasury is empty-we could only hire these few wimps in Corinth.</English>
+		<French>Les volontaires affluent, mais sont sans importance face au trou b&#233;ant qu'est notre tr&#233;sorerie. Nous n'avons pu recruter personne d'autre qu'une poign&#233;e de ces mollassons de Corinthe.</French>
+		<German>Freiwillige gibt es, doch in unseren Schatzkammern herrscht g&#228;hnende Leere-f&#252;r mehr als diese paar traurigen Waschlappen in Korinth hat es nicht gereicht.</German>
+		<Italian>Ci sono volontari, ma nelle nostre casse c'&#232; un vuoto enorme: non ce n'era abbastanza per pi&#249; di queste poche femminucce tristi a Corinto.</Italian>
+		<Spanish>Hay suficientes voluntarios, pero nuestro tesoro est&#225; vacio-s&#243;lo podr&#237;amos contratar a unos pocos debiluchos en Corinto.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_OPTION_1_OUTCOME_MEDIUM</Tag>
+		<English>There are plenty volunteers, but our treasurer reports we did not have the assets to pay out everyone. We will hire as many as possible.</English>
+		<French>Les volontaires abondent, mais nos tr&#233;soriers estiment ne pas avoir les fonds n&#233;cessaires pour tous les engager. Nous embaucherons selon nos moyens.</French>
+		<German>Freiwillige gibt es einige, doch unser Schatzmeister meldet, wir h&#228;tten gar nicht die Mittel, sie alle anzuheuern. Wir nehmen, was wir kriegen k&#246;nnen.</German>
+		<Italian>Ci sono alcuni volontari, ma il nostro tesoriere riferisce che non abbiamo le risorse per assumerli tutti. Prenderemo quello che possiamo ottenere.</Italian>
+		<Spanish>Hay un mont&#243;n de voluntarios, pero nuestros informes de tesorer&#237;a no tienen los bienes necesarios para pagar a todo el mundo. Contrataremos a cuantos podamos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_OPTION_2</Tag>
+		<English>We can not open another theater of war. Epidamnos binds our forces. Don't panic, the city of Poteidaia is impregnable anyway because of its location. We should rather strengthen our military presence in Apollonia (Cost: 150 [ICON_GOLD]).</English>
+		<French>Assez avec ces fronts de bataille successifs! Nos troupes sont retenues &#224; Epidamne. Ne vous en fa&#238;tes pas, la position de Potid&#233;e est imprenable. Nous allons plut&#244;t renforcer nos forces en Apollonie (co&#251;te 150 [ICON_GOLD]).</French>
+		<German>Nicht noch ein weiterer Kriegsschauplatz. Epidamnos bindet unsere Kr&#228;fte. Die Stadt Poteidaia ist wegen ihrer Lage sowieso uneinnehmbar. Keine Panik. Verst&#228;rken wir lieber unsere Milit&#228;rpr&#228;senz in Apollonia (Kosten: 150 Gold).</German>
+		<Italian>Non un altro teatro di guerra. Epidamnos vincola le nostre forze. La citt&#224; di Poteidaia &#232; comunque inespugnabile per la sua posizione. Niente panico. Rafforziamo la nostra presenza militare ad Apollonia (costo: 150 oro).</Italian>
+		<Spanish>No podemos abrir otro teatro de guerra. Epidamnos une nuestras fuerzas. Sin p&#225;nico, pues la ciudad de Potidea es inexpugnable por su localizaci&#243;n. M&#225;s bien deber&#237;amos reforzar nuestra presencia en Apollonia (Coste: 150 [ICON_GOLD]).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_OPTION_2_OUTCOME</Tag>
+		<English>We could hire some Gallian mercenaries at Apollonia.</English>
+		<French>Nous pourrions engager des mercenaires gaulois en Apollonie.</French>
+		<German>Wir konnten einige gallischen S&#246;ldner in Apollonia anheuern.</German>
+		<Italian>Potremmo assumere alcuni mercenari galliani ad Apollonia.</Italian>
+		<Spanish>Podr&#237;amos contratar algunos mercenarios galos en Apollonia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_OPTION_3</Tag>
+		<English>This is a task for our skilled strategist Iolaus. He should embark with 1,600 elite hoplites this very day! (Cost: 250 [ICON_GOLD])</English>
+		<French>Voici un exercice &#224; la hauteur des comp&#233;tences de notre strat&#232;ge Iolaos. Il devra s'embarquer aujourd'hui m&#234;me avec 1600 hoplites d'&#233;lite ! (Co&#251;t : 250 [ICON_GOLD])</French>
+		<German>Das ist eine Aufgabe f&#252;r unsern f&#228;higen Strategen Iolaos. Er soll sich heute noch mit 1.600 Elite-Hopliten einschiffen! (Kosten: 250 [ICON_GOLD])</German>
+		<Italian>Questo &#232; un compito del nostro abile stratega Iolaos. L'imbarco &#232; previsto per oggi con 1.600 opliti d'&#233;lite! (Costo: 250 [ICON_GOLD])</Italian>
+		<Spanish>Esta es una tarea para Iolaus, nuestro estratega m&#225;s experimentado. &#161;Deber&#237;amos embarcar con 1600 hoplitas este mismo d&#237;a! (Coste: 250 [ICON_GOLD])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_KRIEG_KORINTH_OPTION_3_OUTCOME</Tag>
+		<English>The prudent Iolaus has arrived unnoticed by the Athenian ships! Our newly excavated fleet is anchoring in Potidaea now.</English>
+		<French>L'arriv&#233;e discr&#232;te de Iolaos est pass&#233;e inaper&#231;ue, juste sous le nez des capitaines ath&#233;niens ! Il a accost&#233; avec sa nouvelle flotte &#224; Potid&#233;e.</French>
+		<German>Der umsichtige Iolaos ist unbemerkt von der athenischen Flotte mit unserer neu ausgehobenen Flotte in Poteidaia angekommen!</German>
+		<Italian>Il prudente Iolao &#232; arrivato a Poteidea con la nostra flotta appena costituita, inosservato dalla flotta ateniese!</Italian>
+		<Spanish>&#161;El prudente Iolaus ha llegado sin ser detectado por la flota ateniense! Nuestra flota est&#225; anclada en ahora en Potidea.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_TRIBUT_DESC</Tag>
+		<English>The city of Poteidaia whines about the 15 talents of silver it has to pay to the Delian League annually, demanding to reduce it to 6 talents. Otherwise, they threaten to leave the League and to join their mother city Corinth.</English>
+		<French>La petite ville de Potid&#233;e g&#233;mit sur la somme d&#233;mesur&#233;e de 15 talents d'argent qu'elle verse tous les ans &#224; la ligue de D&#233;los. Elle pr&#233;tend &#224; une participation r&#233;duite &#224; 6 talents, sans quoi elle renoncerait &#224; prendre part &#224; la Ligue et reviendrait vers sa m&#233;tropole Corinthe.</French>
+		<German>Die Stadt Poteidaia jammert, die 15 Talente Silber, die sie jedes Jahr in die Kasse des delischen Bundes zahlt, w&#228;ren ihnen zu viel. Sie verlangen eine Herunterstufung auf 6 Talente, sonst w&#252;rden sie aus dem Bund austreten und sich ihrer Mutterstadt Korinth anschlie&#223;en.</German>
+		<Italian>La citt&#224; di Poteidaia lamenta che i 15 talenti d'argento che versa ogni anno nelle casse della Lega di Delo sono troppi per loro. Chiedono un downgrade a 6 talenti, altrimenti lascerebbero il campionato e si unirebbero alla loro citt&#224; madre, Corinto.</Italian>
+		<Spanish>La ciudad de Potidea se queja de los 15 talentos de plata que tienen que pagar a la Liga de Delos anualmente, demandando reducirla a 6 talentos. En caso contrario, amenazan con abandonar la Liga y unirse a Corinto, su ciudad madre.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_TRIBUT_OPTION_1</Tag>
+		<English>They seem to have forgotten it was us who vanquished the Persians at Salamis! They would still be Persian slaves without us! We are the ones who make sure they are safe from Persians, Macedonians and Thracians, ensuring peace and wealth. From now on, the Poteidaians will pay 20 talents. Blithering idiots...</English>
+		<French>Potid&#233;e semble ne pas &#234;tre au fait de qui sont les vainqueurs de Salamine ! Sans nous, ils ne seraient rien d'autre &#224; ce jour que les laquais des Perses ! Nous maintenons leur paix et de leur prosp&#233;rit&#233; face aux Perses, aux Mac&#233;doniens et aux Thraces. Les potid&#233;ens s'acquitteront d&#232;s maintenant de 20 talents. Quelle folie...</French>
+		<German>Poteidaia hat wohl vergessen, da&#223; wir es waren, die die Perser bei Salamis besiegt haben! Ohne uns w&#228;ren sie noch immer Knechte der Perser! Wir sorgen daf&#252;r, da&#223; sie sicher vor den Persern, Makedonen und Thrakern in Frieden und Wohlstand leben. Ab sofort zahlen die Poteid&#228;er 20 Talente. Die spinnen wohl!</German>
+		<Italian>Poteidea deve aver dimenticato che siamo stati noi a sconfiggere i Persiani a Salamina! Senza di noi sarebbero ancora servi dei persiani! Ci assicuriamo che vivano in pace e prosperit&#224;, al sicuro da Persiani, Macedoni e Traci. D'ora in poi i Potideai pagheranno 20 talenti. Devono essere pazzi!</Italian>
+		<Spanish>&#161;Parecen haber olvidado que fuimos nosotros los que vencimos a los persas de Salamis! &#161;Ellos seguir&#237;an siendo esclavos persas sin nosotros! Nosotros somos los &#250;nicos que aseguramos que est&#233;n a salvo de los persas, macedonios o tracios, garantizando la paz y la riqueza. A partir de ahora, los poteidaianos pagar&#225;n 20 talentos. Idiotas...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_TRIBUT_OPTION_1_OUTCOME</Tag>
+		<English>Poteideia is once again an independent polis under protection of Korinth. The neighbouring town of Olynth and other surrounding communities joined the Poteidaians. The Makedonian king will do everything to take advantage of the situation.</English>
+		<French>Potid&#233;e est &#224; nouveau une polis ind&#233;pendante prot&#233;g&#233;e par Corinthe. Leurs voisins d'Olynthe et d'autres communaut&#233;s proches se sont ralli&#233;s &#224; elle. Le roi de Mac&#233;doine ne manquera pas de profiter du nouvel &#233;quilibre r&#233;gional.</French>
+		<German>Poteideia ist jetzt wieder eine unabh&#228;ngige Polis unter dem Schutze Korinths. Die Nachbargemeinde Olynth und andere umliegende Ortschaften haben sich den Poteidaiern angeschlossen. Der K&#246;nig der Makedonen wird alles daran setzen, die Lage f&#252;r sich auszunutzen.</German>
+		<Italian>Poteideia &#232; ora di nuovo una polis indipendente sotto la protezione di Corinto. La vicina comunit&#224; di Olinto e altre citt&#224; circostanti si unirono ai Poteidaiani. Il re dei Macedoni far&#224; tutto ci&#242; che &#232; in suo potere per approfittare della situazione.</Italian>
+		<Spanish>Potidea es de nuevo una ciudad independiente bajo la protecci&#243;n de Corinto. La ciudad vecina de Olynth y otras comunidades cercanas se unieron a los potedaianos. El reino macedonio har&#225; todo lo que pueda para tomar ventaja de la situaci&#243;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_TRIBUT_OPTION_2</Tag>
+		<English>Are they crazy? The tribute remains unchanged. As a sign of confidence, they shall provide 12 grand citizen as a hostage. We command the Poteidaians to expel the Corinthian functionary who are unnecessarily endured in their city. What are they doing there anyway?</English>
+		<French>Qu'est-ce qui leur prend ? Le d&#251; de la Ligue est de 15 talents, comme tous l'ont convenu. En contrepartie de ce manque d'implication flagrant, 12 otages de bonne famille seront livr&#233;s. Nous sommons les potid&#233;ens de mettre fin &#224; la pr&#233;sence importune pour leur ville de fonctionnaires corinthiens. Que sont-ils venus s'y perdre au fait ?</French>
+		<German>Geht's noch? Es bleibt bei den 15 Talenten. Vertrag ist Vertrag. Als Vertrauensbeweis verlangen wir, da&#223; Poteidaia uns 12 vornehme B&#252;rger als Geiseln stellt. Wir befehlen den Poteid&#228;ern, die korinthische Beamten auszuweisen, die sie &#252;berfl&#252;ssigerweise in ihrer Stadt dulden. Was haben die da &#252;berhaupt verloren?</German>
+		<Italian>Sei pazzo? Restano i 15 talenti. Un contratto &#232; un contratto. In segno di fiducia chiediamo a Poteidaia di darci in ostaggio 12 illustri cittadini. Ordiniamo ai Potideai di espellere i funzionari corinzi che tollerano inutilmente nella loro citt&#224;. Cosa hanno perso l&#236; comunque?</Italian>
+		<Spanish>&#191;Est&#225;n locos? El tributo se mantiene sin cambios. Y como muestra de confianza, proporcionar&#225;n 12 importantes ciudadanos como rehenes. Ordenamos a los potideatas a expulsar a los funcionarios corintios quienes est&#225;n innecesariamente en la ciudad. &#191;Qu&#233; estaban haciendo all&#237; en cualquier caso?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_TRIBUT_OPTION_2_OUTCOME</Tag>
+		<English>The Potidaians defected from us. Macedonia could try to take possession of the city. The ecclesia demands the immediate recapture of Poteidaia, before the Macedonians take over the city!</English>
+		<French>Potid&#233;e entre en dissidence. La Mac&#233;doine pourrait tenter de s'emparer de la ville. L'Assembl&#233;e des citoyens exige la conqu&#234;te imm&#233;diate de Potid&#233;e, avant qu'elle ne tombe aux mains des mac&#233;doniens !</French>
+		<German>Die Poteidaier sind abtr&#252;nnig geworden. Makedonien k&#246;nnte versuchen, sich der Stadt zu bem&#228;chtigen. Die Volksversammlung verlangt die unverz&#252;gliche R&#252;ckeroberung von Poteidaia, bevor die Makedonen sich die Stadt holen!</German>
+		<Italian>I Poteidaiani si sono ribellati. La Macedonia potrebbe tentare di prendere il controllo della citt&#224;. L'assemblea popolare chiede l'immediata riconquista di Poteidaia prima che i macedoni prendano la citt&#224;!</Italian>
+		<Spanish>&#161;Los potideatas han desertado! Macedonia podr&#237;a tratar de tomar posesi&#243;n de la ciudad. La ecclesia demanda la recaptura inmediata de Poteidaia, &#161;antes de que lo hagan los macedonios!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_TRIBUT_OPTION_3</Tag>
+		<English>We will henceforth exempt our Poteidaian friends from supplying us with these leaky, badly constructed triremes, but the 15 talents are due on time. Where would that get us? As a mark of confidence, we demand that the city tears down its walls.</English>
+		<French>La fid&#232;le ville de Potid&#233;e sera sur le champ d&#233;livr&#233;e de l'obligation de fournir leurs coques de noix qui prennent l'eau. Elle paiera toutefois sans d&#233;lai 15 talents d'argents. Rien de bon ne peut sortir de cela, c'est pourquoi nous demandons en signe de bonne foi que Potid&#233;e abatte ses murailles.</French>
+		<German>Wir erlassen es unseren poteid&#228;ischen Freunden fortan, uns diese undichten, schlecht zusammengezimmerten Trieren zu stellen. Aber die 15 Talente sind p&#252;nktlich zu zahlen. Wo kommen wir denn hin? Als Vertrauensbeweis verlangen wir, da&#223; die Stadt ihre Mauern schleift.</German>
+		<Italian>D'ora in poi esentiamo i nostri amici potideani dall'affrontare queste triremi traballanti e mal assemblate. Ma i 15 talenti devono essere pagati puntualmente. Dove stiamo andando? Come dimostrazione di fiducia, chiediamo che la citt&#224; abbatta le sue mura.</Italian>
+		<Spanish>De ahora en adelante eximiremos a nuestros amigos potideatas de suministrarnos con aquellos trirremes con fugas y mal construidos, pero los 15 talentos se mantienen. &#191;De d&#243;nde los conseguir&#237;amos? Como muestra de confianza, exigimos que la ciudad derribe sus murallas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_POTEIDAIA_TRIBUT_OPTION_3_OUTCOME</Tag>
+		<English>The Poteidaians left the Delian League. The ecclesia suggests to punish the Poteidaians, lest their example sets a precedent. Then other cities might leave as well.</English>
+		<French>Potid&#233;e a quitt&#233; la ligue de D&#233;los. L'Assembl&#233;e des citoyens recommande un ch&#226;timent pour les potid&#233;ens avant que leur exemple ne prenne racine. Nous devons extirper toute vell&#233;it&#233; de cit&#233;s courant &#224; leur ruine !</French>
+		<German>Die Poteidaier haben den delischen Bund verlassen. Die Volksversammlung r&#228;t zu einer Bestrafung der Poteidaier, sonst k&#246;nnte ihr Beispiel Schule machen und noch andere St&#228;dte zum Abfall bewegen!</German>
+		<Italian>I Poteidaiani hanno lasciato la Lega di Delo. L'assemblea popolare raccomanda che i Poteidai vengano puniti, altrimenti il &#8203;&#8203;loro esempio potrebbe costituire un precedente e incoraggiare altre citt&#224; ad abbandonarsi!</Italian>
+		<Spanish>Los potideatas dejaron la Liga de Delos. La ecclesia sugiere castigar a los potideatas, para que su ejemplo sirva como precedente. U otras ciudades podr&#237;an abandonar tambi&#233;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_DESC</Tag>
+		<English>Are you ready? The people of Athens want results. Syracuse must be conquered before the bad season! Be warned: It's not the first time, Athenian citizens executed unsuccessful generals!</English>
+		<French>Etes-vous pr&#233;par&#233;? Le peuple d'Ath&#232;nes a soif de r&#233;sultats. Avant le d&#233;but de la mauvaise saison, Syracuse devra &#234;tre conquise! M&#233;fiez-vous n&#233;anmoins, vous ne seriez pas le premier g&#233;n&#233;ral jug&#233; et condamn&#233; par les citoyens pour un trop grand nombre de d&#233;faites.</French>
+		<German>Seid ihr bereit? Das Volk von Athen m&#246;chte nun Ergebnisse sehen. Syrakus mu&#223; vor Beginn der schlechten Jahreszeit erobert sein! Seid auf der Hut, es w&#228;re nicht das erste Mal, da&#223; die Athener B&#252;rger einen erfolglosen Feldherren hinrichten lie&#223;en!</German>
+		<Italian>Siete pronti? Gli ateniesi ora vogliono vedere dei risultati. Siracusa va conquistata prima che inizi la brutta stagione! Attenzione, non sarebbe la prima volta che i cittadini di Atene fanno giustiziare un generale sconfitto!</Italian>
+		<Spanish>&#191;Est&#225;s preparado? El pueblo de Atenas quiere resultados. &#161;Siracusa debe ser conquistada antes de la mala temporada! Ten cuidado: &#161;Los ciudadanos de Atenas ejecutar&#225;n a los generales que fracasen!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_NO_WAR</Tag>
+		<English>The National Assembly must have forgotten that we have a peace treaty with Syracuse, and that it cannot be terminated now.</English>
+		<French>L'assembl&#233;e des citoyens a perdu de vue le trait&#233; de paix sign&#233; avec Syracuse, qui pourtant tient toujours.</French>
+		<German>Die Volksversammlung hat wohl vergessen, da&#223; wir noch einen Friedensvertrag mit Syrakus haben, der zur Zeit nicht aufgek&#252;ndigt werden kann.</German>
+		<Italian>L'assemblea popolare probabilmente ha dimenticato che abbiamo ancora un trattato di pace con Siracusa, al quale per il momento non &#232; possibile porre fine.</Italian>
+		<Spanish>La Asamblea del Pueblo debe haber olvidado que tenemos un tratado de paz con Siracusa, y &#233;ste no puede ser cancelado ahora.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_1</Tag>
+		<English>Nicias is one of the most persuasive critics of our Syracuse plan. When he says that a company of this size can only succeed with a tremendous force, including hoplites, horses, siege equipment and supply fleet, one can hardly disagree. Let's take him at his word, equip a fleet to his specifications, and give him the command!</English>
+		<French>Qu'il en soit ainsi. Pourquoi ne pr&#234;terions nous pas attention aux propos de Nicias, critique le plus clairvoyant du plan de Syracuse? S'il estime qu'il faut avoir pour cette entreprise titanesque une force tout aussi titanesque de hoplites, de chevaux, d'engins de si&#232;ge et de bateaux de ravitaillement, il est malais&#233; de le contredire. Prenons le au mot et armons une flotte &#224; la mesure de sa pens&#233;e, qu'il commandera lui-m&#234;me !</French>
+		<German>Schon klar. Warum schenken wir nicht dem gr&#246;&#223;ten Kritiker am Syrakusplan, Nikias, Geh&#246;r? Wenn er sagt, ein Unternehmen dieser Gr&#246;&#223;e k&#246;nne nur mit einer gewaltigen Streitmacht samt Hopliten, Pferden, Belagerungsger&#228;t und Versorgungsflotte gelingen, kann man dem kaum widersprechen. Nehmen wir ihn beim Wort, r&#252;sten eine Flotte nach seinen Gr&#246;&#223;envorstellungen aus und geben ihm selber das Kommando!</German>
+		<Italian>&#200; chiaro. Perch&#233; non ascoltiamo il pi&#249; grande critico del piano di Siracusa, Nikias? Quando afferma che un'operazione di queste dimensioni potrebbe avere successo solo con un'enorme forza militare che includa opliti, cavalli, attrezzature d'assedio e una flotta di rifornimenti, &#232; difficile non essere d'accordo. Prendiamolo in parola, equipaggiamo una flotta secondo le sue dimensioni e diamogli il comando lui stesso!</Italian>
+		<Spanish>Nicias es una de los cr&#237;ticos m&#225;s influyentes de nuestro plan de Siracusa. Cuando dice que una campa&#241;a de este tama&#241;o solo puede tener &#233;xito con una fuerza tremenda, incluyendo hoplitas, caballos, equipo de asedio y una flota de apoyo, uno dif&#237;cilmente estar&#225; en desacuerdo. &#161;Vamos a tomarle su palabra, equipa la flota con sus especificaciones y dale el mando del ej&#233;rcito!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_1_OUTCOME_HIGH</Tag>
+		<English>The tourists and the masses have come to Piraeus to see the largest fleet ever constructed by single Greek state. The trierarchs pay the crews from their own pockets and have spared no expense to decorate the vessels and raise the newest, shiniest sail designs. The hoplites' armor sparkles in the sunlight. The most impressive fleet in the world sets sail. Behold, citizens of Syracuse!</English>
+		<French>Les foules de curieux affluent sans discontinuer au Pir&#233;e pour venir contempler la plus grande flotte jamais construite par une cit&#233; grecque. Le compl&#233;ment de solde de l'&#233;quipage est pay&#233; par les tri&#233;rarques, qui n'ont &#233;pargn&#233; aucune d&#233;pense pour les ornementations et les fioritures, ni aucune outrance pour les couleurs &#233;clatantes des nouvelles insignes de voile. Les hoplites sont admir&#233;s : leur &#233;quipement rutile de mani&#232;re incomparable. Cette flotte sans &#233;gale dans le monde connu est pr&#234;te &#224; s'&#233;lancer. Elle vient pour vous, habitants de Syracuse !</French>
+		<German>Die Touristen und die Volksmasse sind zum Pir&#228;us hinabgepilgert, um die gr&#246;&#223;te Flotte zu bestaunen, die je ein einzelner griechischer Staat ausger&#252;stet hat. Die Trierarchen zahlen den Besatzungen aus eigener Tasche Zulagen und haben keine Kosten gescheut, die Schiffe mit teuren Beschl&#228;gen zu schm&#252;cken und die neusten, gl&#228;nzendsten Segeldesigns aufzuziehen. Man schaue sich die Hopliten an: Ihre R&#252;stungen funkeln um die Wette. Die beeindruckenste Flotte der Welt sticht in See. Erz&#228;hlt den B&#252;rgern von Syrakus von dieser Show!</German>
+		<Italian>I turisti e le masse hanno fatto un pellegrinaggio al Pireo per ammirare la pi&#249; grande flotta mai equipaggiata da un singolo stato greco. I Trierarchi pagano le indennit&#224; dell'equipaggio di tasca propria e non hanno badato a spese per rivestire le navi con accessori costosi e issare le vele pi&#249; recenti e brillanti. Basta guardare gli opliti: le loro armature scintillano. La flotta pi&#249; imponente del mondo salpa. Raccontate questo spettacolo ai cittadini di Siracusa!</Italian>
+		<Spanish>Los turistas y masas del pueblo han venido al Pireo a ver la m&#225;s grande flota nunca construida por una &#250;nica ciudad-estado griega. Los trierarcas pagan las tripulaciones de sus propios bolsillos y no han escatimado en gastos para decorar los barcos y elevar las m&#225;s nuevos y brillantes dise&#241;os de velas. Las armaduras de los hoplitas se reflejan con la luz del sol. La m&#225;s impresionante flota en el mundo zarpa. &#161;Mirad, ciudadanos de Siracusa!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_1_OUTCOME_LOW</Tag>
+		<English>The tourists and the masses have come to Piraeus to see the largest fleet ever constructed by single Greek state. The trierarchs pay the crews from their own pockets and have spared no expense to decorate the vessels and raise the newest, shiniest sail designs. The hoplites' armor sparkles in the sunlight. The most impressive fleet in the world sets sail. Behold, citizens of Syracuse!</English>
+		<French>Les foules de curieux affluent sans discontinuer au Pir&#233;e pour venir contempler la plus grande flotte jamais construite par une cit&#233; grecque. Le compl&#233;ment de solde de l'&#233;quipage est pay&#233; par les tri&#233;rarques, qui n'ont &#233;pargn&#233; aucune d&#233;pense pour les ornementations et les fioritures, ni aucune outrance pour les couleurs &#233;clatantes des nouvelles insignes de voile. Les hoplites sont admir&#233;s : leur &#233;quipement rutile de mani&#232;re incomparable. Cette flotte sans &#233;gale dans le monde connu est pr&#234;te &#224; s'&#233;lancer. Elle vient pour vous, habitants de Syracuse !</French>
+		<German>Die Touristen und die Volksmasse sind zum Pir&#228;us hinabgepilgert, um die gr&#246;&#223;te Flotte zu bestaunen, die je ein einzelner griechischer Staat ausger&#252;stet hat. Die Trierarchen zahlen den Besatzungen aus eigener Tasche Zulagen und haben keine Kosten gescheut, die Schiffe mit teuren Beschl&#228;gen zu schm&#252;cken und die neusten, gl&#228;nzendsten Segeldesigns aufzuziehen. Man schaue sich die Hopliten an: Ihre R&#252;stungen funkeln um die Wette. Die beeindruckenste Flotte der Welt sticht in See. Erz&#228;hlt den B&#252;rgern von Syrakus von dieser Show!</German>
+		<Italian>I turisti e le masse hanno fatto un pellegrinaggio al Pireo per ammirare la pi&#249; grande flotta mai equipaggiata da un singolo stato greco. I Trierarchi pagano le indennit&#224; dell'equipaggio di tasca propria e non hanno badato a spese per rivestire le navi con accessori costosi e issare le vele pi&#249; recenti e brillanti. Basta guardare gli opliti: le loro armature scintillano. La flotta pi&#249; imponente del mondo salpa. Raccontate questo spettacolo ai cittadini di Siracusa!</Italian>
+		<Spanish>Los turistas y las masas del pueblo han venido al Pireo a ver la m&#225;s grande flota nunca construida por una &#250;nica ciudad-estado griega. Los trierarcas pagan las tripulaciones de sus propios bolsillos y no han escatimado en gastos para decorar los barcos y elevar las m&#225;s nuevos y brillantes dise&#241;os de velas. Las armaduras de los hoplitas se reflejan con la luz del sol. La m&#225;s impresionante flota en el mundo zarpa. &#161;Mirad, ciudadanos de Siracusa!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_1_OUTCOME_MEDIUM</Tag>
+		<English>The tourists and the masses have come to Piraeus to see the largest fleet ever constructed by single Greek state. The trierarchs pay the crews from their own pockets and have spared no expense to decorate the vessels and raise the newest, shiniest sail designs. The hoplites' armor sparkles in the sunlight. The most impressive fleet in the world sets sail. Behold, citizens of Syracuse!</English>
+		<French>Les foules de curieux affluent sans discontinuer au Pir&#233;e pour venir contempler la plus grande flotte jamais construite par une cit&#233; grecque. Le compl&#233;ment de solde de l'&#233;quipage est pay&#233; par les tri&#233;rarques, qui n'ont &#233;parng&#233; aucune d&#233;pense pour les ornementations et les fioritures, ni aucune outrance pour les couleurs &#233;clatantes des nouvelles insignes de voile. Les hoplites sont admir&#233;s : leur &#233;quipement rutile de mani&#232;re incomparable. Cette flotte sans &#233;gale dans le monde connu est pr&#234;te &#224; s'&#233;lancer. Elle vient pour vous, habitants de Syracuse !</French>
+		<German>Die Touristen und die Volksmasse sind zum Pir&#228;us hinabgepilgert, um die gr&#246;&#223;te Flotte zu bestaunen, die je ein einzelner griechischer Staat ausger&#252;stet hat. Die Trierarchen zahlen den Besatzungen aus eigener Tasche Zulagen und haben keine Kosten gescheut, die Schiffe mit teuren Beschl&#228;gen zu schm&#252;cken und die neusten, gl&#228;nzendsten Segeldesigns aufzuziehen. Man schaue sich die Hopliten an: Ihre R&#252;stungen funkeln um die Wette. Die beeindruckenste Flotte der Welt sticht in See. Erz&#228;hlt den B&#252;rgern von Syrakus von dieser Show!</German>
+		<Italian>I turisti e le masse hanno fatto un pellegrinaggio al Pireo per ammirare la pi&#249; grande flotta mai equipaggiata da un singolo stato greco. I Trierarchi pagano le indennit&#224; dell'equipaggio di tasca propria e non hanno badato a spese per rivestire le navi con accessori costosi e issare le vele pi&#249; recenti e brillanti. Basta guardare gli opliti: le loro armature scintillano. La flotta pi&#249; imponente del mondo salpa. Raccontate questo spettacolo ai cittadini di Siracusa!</Italian>
+		<Spanish>Los turistas y masas del pueblo han venido al Pireo a ver la m&#225;s grande flota nunca construida por una &#250;nica ciudad-estado griega. Los trierarcas pagan las tripulaciones de sus propios bolsillos y no han escatimado en gastos para decorar los barcos y elevar los m&#225;s nuevos y brillantes dise&#241;os de velas. Las armaduras de los hoplitas se reflejan con la luz del sol. La m&#225;s impresionante flota en el mundo zarpa. &#161;Mirad, ciudadanos de Siracusa!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_2</Tag>
+		<English>All well and good. We should not do anything by halves-but the Sicilian Expedition will weaken us greatly should it fail. Let us support the many Sicilian cities who have long been oppressed by Syracusean rule! With their help, we will starve Syracuse out. A medium sized force under the command of Demosthenes should suffice for this purpose.</English>
+		<French>Parfait, sans vouloir faire les choses &#224; moiti&#233;, l'exp&#233;dition en Sicile ne doit pas trop nous affaiblir en cas d'&#233;chec. Notre soutien est indispensable &#224; beaucoup de villes siciliennes pour r&#233;sister &#224; l'oppression de Syracuse. Nous serons en mesure d'affamer Syracuse avec leur aide. Une force de taille moyenne command&#233;e par D&#233;mosth&#232;ne devrait &#234;tre de taille &#224; mener cette t&#226;che &#224; bien.</French>
+		<German>Alles gut und sch&#246;n. Wir wollen sicher keine halben Sachen machen &#8211; aber die Sizilienexpedition darf uns auch nicht zu sehr schw&#228;chen, sollte sie mi&#223;lingen. Sind wir doch der Unterst&#252;tzung vieler sizilianischer St&#228;dte sicher, die von Syrakus seit langem unterdr&#252;ckt werden! Mit ihrer Hilfe werden wir Syrakus aushungern. Eine mittelgro&#223;e Streitmacht unter F&#252;hrung des Demosthenes sollte zu diesem Zweck gen&#252;gen.</German>
+		<Italian>Tutto bene. Certamente non vogliamo fare le cose a met&#224;, ma la spedizione in Sicilia non deve indebolirci troppo se fallisce. Possiamo essere certi del sostegno di tante citt&#224; siciliane da tempo vessate da Siracusa! Con il loro aiuto faremo morire di fame Siracusa. A questo scopo dovrebbe essere sufficiente una forza di medie dimensioni guidata da Demostene.</Italian>
+		<Spanish>Todo bien y bueno. No hay que dejar nada a medias, pero la expedici&#243;n de Sicilia nos puede debilitar en gran medida si falla. &#161;Apoyemos a las muchas ciudades sicilianas que fueron oprimidas por el estado de Siracusa! Con su ayuda, dejaremos morir de hambre a Siracusa. A una fuerza de tama&#241;o medio bajo el mano de Dem&#243;stenes deber&#237;a ser suficiente para este prop&#243;sito.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_2_OUTCOME</Tag>
+		<English>So many ships after all. Have you thought to include enough supply units? But what may be missing, you can still reinforce-it is only four days sail to Sicily. The People's Assembly thinks that if you take Syracuse, Carthage could be conquered next ...</English>
+		<French>Tant de navires... Avez-vous pens&#233; &#224; leur allouer un ravitaillement suffisant? S'il en manque, nous pourrons toujours le leur exp&#233;dier. Il n'y &#224; que quatre jours de mer jusqu'&#224; la Sicile. Au fait, l'Assembl&#233;e des citoyens joue avec l'id&#233;e, apr&#232;s la prise de Syracuse, de diriger nos moyens vers Carthage...</French>
+		<German>Doch so viele Schiffe. Habt ihr auch an gen&#252;gend Versorgungseinheiten gedacht? Was noch fehlt, k&#246;nnt ihr immer noch nachschicken. Bis Sizilien sind es mit dem Schiff ja nur vier Tagesreisen. Die Volksversammlung meint &#252;brigens, wenn ihr Syrakus eingenommen habt, erobert Karthago doch gleich mit...</German>
+		<Italian>Ma cos&#236; tante navi. Hai pensato anche ad un numero sufficiente di unit&#224; di fornitura? Puoi sempre inviare ci&#242; che ancora manca. Il viaggio in nave per la Sicilia dura solo quattro giorni. A proposito, l'assemblea popolare ritiene che, una volta presa Siracusa, bisognerebbe conquistare contemporaneamente Cartagine...</Italian>
+		<Spanish>As&#237; que algunos barcos. &#191;Has pensado en incluir suficientes unidades de suministro? Por lo que puede hacer falta, aun puedes reforzarla-est&#225; a solo cuatro d&#237;as de viaje de Sicilia. La Asamblea del pueblo cree que si tu tomas Siracusa, Cartago podr&#237;a ser la siguiente conquistada...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_3</Tag>
+		<English>The idea is not bad, but the execution will be difficult. Syracuse is impregnable and has held against Carthage for two centuries. This city is not one to be conquered easily, but we will send an expeditionary force to ensure that the National Assembly is satisfied. The expedition members shall elect a leader from their own ranks.</English>
+		<French>Bon, l'Assembl&#233;e citoyenne. La proposition n'est pas mauvaise, mais son ex&#233;cution difficile. Syracuse est notoirement imprenable apr&#232;s deux cent ans de r&#233;sistance contre Carthage. Sa conqu&#234;te ne se fera pas d'un claquement de doigts. Envoyons un corps exp&#233;ditionnaire pour satisfaire les citoyens. Le commandant sera &#233;lu par les participants &#224; l'exp&#233;dition parmi leurs propres rangs.</French>
+		<German>Jaja, die Volksversammlung. Die Idee ist sicher nicht schlecht, doch die Ausf&#252;hrung schwierig. Syrakus ist uneinnehmbar, hat zwei Jahrhunderte den Karthagern standgehalten. Diese Stadt erobert man nicht so mit links. Wir schicken ein Expeditionskorps, damit die Volksversammlung zufrieden ist. Die Expeditionsteilnehmer sollen selber einen Anf&#252;hrer aus ihren eigenen Reihen per Abstimmung w&#228;hlen.</German>
+		<Italian>S&#236; si, l'assemblea popolare. L'idea non &#232; certamente male, ma la realizzazione &#232; difficile. Siracusa &#232; inespugnabile e ha resistito per due secoli ai Cartaginesi. Non puoi conquistare questa citt&#224; con la mano sinistra. Inviamo un corpo di spedizione per soddisfare l'assemblea popolare. I partecipanti alla spedizione dovrebbero eleggere un leader tra i propri ranghi mediante votazione.</Italian>
+		<Spanish>La idea no es mala, pero su ejecuci&#243;n ser&#225; complicada. Siracusa es inexpugnable y se ha mantenido contra Cartago por dos siglos. La ciudad no es una de las que pueden ser tomadas f&#225;cilmente, pero enviaremos una fuerza expedicionaria para asegurarnos que la Asamblea del Pueblo est&#225; satisfecha. La expedici&#243;n deber&#225; elegir&#225; a su l&#237;der de entre sus propios mandos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_OPTION_3_OUTCOME</Tag>
+		<English>It is a waste of youth, but at least not the whole generation! The People's Assembly will not even notice the difference: the expedition fleet is small, but the throng of families saying goodbye , livestock charging onto the transport ships and the decorated flagships distract them soundly. Ahoy.</English>
+		<French>Cela sape les forces de notre jeunesse, mais plut&#244;t un affaiblissement temporaire que l'an&#233;antissement de tous! L'assembl&#233;e des citoyens ne devrait m&#234;me pas voir la diff&#233;rence : malgr&#233; la flotte d'exp&#233;dition bien r&#233;duite, la confusion des adieux aux proches, l'embarquement des b&#234;tes sur les transports et les navires amiraux resplendissants concentrerons toutes les attentions. Larguez les amarres !</French>
+		<German>Verschwendet eure Jugend, aber wenigstens nicht die ganze Jugend! Die Volksversammlung wird den Unterschied gar nicht merken: Die Expeditionsflotte ist zwar klein, aber das Gewimmel der Abschied nehmenden Familien, die Viehladungen auf den Transportschiffen und die geschm&#252;ckten Flaggschiffe lenken gut ab davon. Ahoi.</German>
+		<Italian>&#200; uno spreco di giovani, ma almeno non di tutta la generazione! L'Assemblea Popolare non noter&#224; la differenza: la flotta di spedizione &#232; piccola, ma le molteplici famiglie che si salutano, il carico di bestiame sulle navi da trasporto e le bandiere decorate li distraggono.</Italian>
+		<Spanish>Es un desperdicio de juventud, &#161;pero al menos no lo es de la generaci&#243;n entera!. La Asamblea del Pueblo no notar&#225; la diferencia: la flota de expedici&#243;n es peque&#241;a, pero las m&#250;ltiples familias despidi&#233;ndose, el ganado carg&#225;ndose en los barcos de transporte y las banderas decoradas les distraer&#225;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SYRAKUS_ATHEN_SAVEMONEY</Tag>
+		<English>The National Assembly has determined that we must take dominion over Sicily. Sicily is abundant in cereals, and its grain shipments can make us independent from the friends who supply us with grain today. To master Sicily, we need to bring the most powerful city in Sicily, Syracuse, under our control. Save until next Spring to equip a fleet for an invasion of Syracuse. The exact date will be announced later.</English>
+		<French>L'assembl&#233;e des citoyens a d&#233;cr&#233;t&#233; que nous devons nous emparer de la Sicile. Les c&#233;r&#233;ales y sont abondants, et gr&#226;ce &#224; ces cargaisons, nous pourrons nous affranchir des caravanes d'approvisionnement de nos amis ioniens. Pour prendre le contr&#244;le de la Sicile, nous devons ma&#238;triser sa ville la plus puissante, Syracuse. Rassemblez des fonds jusqu'au prochain printemps pour armer une flotte d'invasion. La date exacte de la campagne sera alors choisie.</French>
+		<German>Die Volksversammlung hat beschlossen, da&#223; wir die Herrschaft &#252;ber Sizilien &#252;bernehmen. Sizilien ist &#252;berreich an Getreide. Getreidelieferungen von dort werden uns unabh&#228;ngig von den Karren unserer ionischen Freunde machen. Um Sizilien zu beherrschen, m&#252;ssen wir die m&#228;chtigste Stadt Siziliens, Syrakus, unter unsere Kontrolle bringen. Sammelt Ersparnisse bis zum n&#228;chsten Fr&#252;hjahr, um eine Flotte f&#252;r einen Feldzug gegen Syrakus auszur&#252;sten. Der genaue Kriegstermin wird noch bekannt gegeben.</German>
+		<Italian>L'assemblea popolare ha deciso che dobbiamo prendere il controllo della Sicilia. La Sicilia &#232; ricca di grano. Le consegne di grano da l&#236; ci renderanno indipendenti dai carri dei nostri amici ionici. Per governare la Sicilia, dobbiamo prendere il controllo della citt&#224; pi&#249; potente della Sicilia, Siracusa. Raccogli i risparmi fino alla prossima primavera per equipaggiare una flotta per una campagna contro Siracusa. La data esatta della guerra deve ancora essere annunciata.</Italian>
+		<Spanish>La Asamblea del Pueblo ha determinado que debemos hacernos con el dominio de Sicilia. Sicilia es abundante en cereales, y sus env&#237;os de cereales pueden hacernos independientes de los amigos que nos suministran cereales hoy d&#237;a. Para dominar Sicilia, necesitamos traer la ciudad m&#225;s poderosa de Sicilia, Siracusa, bajo nuestro control. Ahorre hasta la siguiente primavera para equipar una flota para la invasi&#243;n de Siracusa. La fecha exacta se anunciar&#225; m&#225;s adelante.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ARISTEAS</Tag>
+		<English>Xenokleides</English>
+		<French>X&#233;nocl&#232;de</French>
+		<German>Xenokleides</German>
+		<Italian>Xenokleides</Italian>
+		<Spanish>Xenocleides</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POTEIDAIA_DESC</Tag>
+		<English>Potidea</English>
+		<French>Pot&#233;e</French>
+		<German>Poteidaia</German>
+		<Italian>Potidea</Italian>
+		<Spanish>Potidea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCENARIO_PELOPONNESIAN_WAR_KEINPFERD</Tag>
+		<English>In the Peloponnesian War, Sparta and Athens vie for supremacy in Greece. After the joint victory over the Persians, Athens made large parts of eastern Greece tribute to the annoyance of Sparta. The poor Spartans, on the other hand, controlled the Peloponnese. Sparta's fighters are the cities of the Peloponnese, Thebes, temporarily Macedonia and Corinth. The rich Corinth, with the third largest, and Korkyrea (Corfu), with the second largest fleet, are fighting for supremacy in western Greece. All of southern Italy is in the hands of the coalition of Greek colonies known as Magna Graecia. In Sicily, Syracuse is flourishing as an important regional power. The hated Persians sit in the east. Each of these factions is playable. Spartans or Athenians are of course recommended. Thanks to an undefeated hoplite force, Sparta rules the country. The Athenians, on the other hand, have the largest fleet and sea sovereignty. Or be the laughing third party as Thebans or Corinthians![NEWLINE][NEWLINE]Turns correspond to months. Created by Keinpferd and Boggy.</English>
+		<French>Pendant les guerres du P&#233;loponn&#232;se les Ath&#233;niens et les Spartiates se livrent un combat sans merci. Amusez-vous bien ! Suite &#224; leur victoire commune contre les perses, Ath&#232;nes d&#233;clencha le courroux de Sparte par ses demandes de tribut aux villes de l'Est de L'&#201;g&#233;e. Malgr&#233; leur isolation, les spartiates contr&#244;laient le P&#233;loponn&#232;se. Leurs alli&#233;s dans ce combat sont les villes du P&#233;loponn&#232;se, Th&#232;bes et, pour l'instant, Corinthe et la Mac&#233;doine. Corinthe, troisi&#232;me ville de Gr&#232;ce, dispute &#224; Corfou et sa flotte presque sans &#233;gale la supr&#233;matie sur les r&#233;gions Ouest. Le Sud de l'Italie est aux mains de la coalition des colonies grecques de la Magna Gr&#230;cia. La Sicile voit l'&#233;mergence de Syracuse, tandis que &#224; l'est demeurent puissants les &#233;ternels ennemis perses.  Chaque faction peut &#234;tre jou&#233;e. Sparte ou Ath&#232;nes sont naturellement recommand&#233;es. La premi&#232;re domine les champs de batailles gr&#226;ce &#224; ses hoplites invaincus, mais la flotte de la seconde est la souveraine absolue des mers. Pour autant, ne n&#233;gligez pas le potentiel de Th&#232;bes ou de Corinthe![NEWLINE][NEWLINE]Les tours de jeu se comptent en mois. Sc&#233;nario cr&#233;&#233; par Keinpferd et Boggy.</French>
+		<German>Im Peloponnesischen Krieg ringen Sparta und Athen um die Vorherrschaft in Griechenland. Nach dem gemeinsamen Sieg &#252;ber die Perser machte sich Athen zum &#196;rger Spartas gro&#223;e Teile Ost-Griechenlands tributpflichtig. Die bettelarmen Spartaner kontrollierten dagegen die Peloponnes. Spartas Mitk&#228;mpfer sind die St&#228;dte auf der Peloponnes, Theben, zeitweilig Makedonien sowie Korinth. Das reiche Korinth, mit der drittgr&#246;&#223;ten, und Korkyrea (Korfu), mit der zweitgr&#246;&#223;ten Flotte, streiten um die Vormacht in Westgriechenland. Ganz S&#252;ditalien ist in der Hand der Magna Graecia genannten Koalition griechischer Kolonien. In Sizilien bl&#252;ht Syrakus als bedeutende Regionalmacht. Im Osten sitzen die verha&#223;ten Perser. Jede dieser Fraktionen ist spielbar. Empfohlen sind nat&#252;rlich Spartaner oder Athener. Dank einer unbesiegten Hoplitenstreitmacht beherrscht Sparta das Land. Die Athener haben dagegen die gr&#246;&#223;te Flotte und die Seehoheit. Oder sei als Thebaner oder Korinther der lachende Dritte![NEWLINE][NEWLINE]Runden entsprechen Monaten. Erstellt von Keinpferd und Boggy.</German>
+		<Italian>Nella guerra del Peloponneso, Atene e Sparta sono inconciliabili nella lotta per il potere. Nella guerra del Peloponneso, Sparta e Atene si contendono la supremazia in Grecia. Dopo la vittoria congiunta sui Persiani, Atene rese omaggio a gran parte della Grecia orientale per il fastidio di Sparta. I poveri spartani, invece, controllavano il Peloponneso. Combattenti di Sparta sono le citt&#224; del Peloponneso, Tebe, temporaneamente Macedonia e Corinto. La ricca Corinto, con la terza flotta pi&#249; grande, e Korkyrea (Corf&#249;), con la seconda flotta pi&#249; grande, stanno combattendo per la supremazia nella Grecia occidentale. Tutta l'Italia meridionale &#232; nelle mani della coalizione di colonie greche conosciuta come Magna Grecia. In Sicilia, Siracusa &#232; fiorente come importante potenza regionale. Gli odiati persiani siedono a est. Ognuna di queste fazioni &#232; giocabile. Gli spartani o gli ateniesi sono ovviamente raccomandati. Grazie a una forza oplitica imbattuta, Sparta governa il paese. Gli Ateniesi, d'altra parte, hanno la flotta pi&#249; grande e la sovranit&#224; marittima. O sii il terzo ridente come Tebani o Corinzi![NEWLINE][NEWLINE]I turni corrispondono ai mesi. Creato da Keinpferd e Boggy.</Italian>
+		<Spanish>En la Guerra del Peloponeso, Esparta y Atenas compiten por la supremac&#237;a en Grecia. Despu&#233;s de la victoria conjunta sobre los persas, Atenas hizo que gran parte del este de Grecia rindiera tributo al enfado de Esparta. Los pobres espartanos, por otro lado, controlaban el Peloponeso. Los combatientes de Esparta son las ciudades del Peloponeso, Tebas, temporalmente Macedonia y Corinto. La rica Corinto, con la tercera m&#225;s grande, y Korkyrea (Corf&#250;), con la segunda flota m&#225;s grande, luchan por la supremac&#237;a en el oeste de Grecia. Todo el sur de Italia est&#225; en manos de la coalici&#243;n de colonias griegas conocida como Magna Graecia. En Sicilia, Siracusa est&#225; floreciendo como una importante potencia regional. Los odiados persas se sientan en el este. Cada una de estas facciones se puede jugar. Por supuesto, se recomiendan espartanos o atenienses. Gracias a una fuerza hoplita invicta, Esparta gobierna el pa&#237;s. Los atenienses, en cambio, tienen la mayor flota y soberan&#237;a mar&#237;tima. &#161;O s&#233; el tercero que se r&#237;e como tebanos o corintios![NEWLINE][NEWLINE]Las rondas corresponden a meses. Creado por Keinpferd y Boggy.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WAR_PLAYER_KORINTH</Tag>
+		<English>[H1]WAR![\H1]The pathetic Corcyrans think, they can do whatever they like in Epidamnos. They did nothing to help them against the barbarians, and now they are surprised, that we support our friends in Epidamnos, which would have been their moral duty. They offer mediation by an independent court and accept the Oracle of Delphi as an arbiter, now that they are already besieging Epidamnos. First, they should withdraw their siege troops, then we think about arbitration. Since they refuse to do so, we call Ares as mediator!</English>
+		<French>[H1]LA GUERRE ![\H1]Le s&#233;nat et le peuple romain ont &#233;t&#233; insult&#233;s par la demande punique de retirer notre protection &#224; la ville de Messana. Rome honorera bien s&#251;r son engagement d'aider les citoyens de Messana contre leurs ennemis. L'ultimatum de Carthage a expir&#233; sans r&#233;ponse, les armes vont parler. Que Ares soit avec nous !</French>
+		<German>[H1]KRIEG![\H1]Die Korkyreer sind der Meinung, in Epidamnos das letzte Wort zu haben. Dabei war der Oikist ein Korinther! Sie belagern schon die Mauern von Epidamnos und wollen jetzt noch ein unparteiisches Schiedsgericht und das Orakel anrufen. So nicht! Sollen eben die Waffen sprechen. M&#246;ge Ares mit uns sein!</German>
+		<Italian>[H1]GUERRA![\H1]I Corcyreani credono di avere l'ultima parola su Epidamnos. L'Oikist era un corinzio! Stanno gi&#224; assediando le mura di Epidamnos e ora vogliono invocare un tribunale arbitrale imparziale e l'oracolo. Non come quello! Lasciamo parlare le armi. Che Ares sia con noi!</Italian>
+		<Spanish>[H1]&#161;GUERRA![\H1]El pueblo y senado de Roma fueron insultados por una delegaci&#243;n p&#250;nica con la demanda de retirar nuestra ya dada promesa de protecci&#243;n de la ciudad de Messana. Por supuesto, Roma se sigue sintiendo obligada a ayudar a los ciudadanos de Messana en su lucha contra sus enemigos. Por lo tanto, el ultim&#225;tum de los p&#250;nicos tiene que expirar sin respuesta. Dejemos que las armas hablen. &#161;Que Ares est&#233; con nosotros!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WAR_PLAYER_KORKYRA</Tag>
+		<English>[H1]WAR![\H1]The assemly has enacted to go to war about Epidamnos. After we have offered the Corinthians arbitration and even to let the Oracle at Delphi settle our issues, they refused to accept that. Negotiations are over. A libation and a lamb to Ares and Anteos!</English>
+		<French>[H1]LA GUERRE ![\H1]Le s&#233;nat de Carthage a d&#233;cid&#233; d'emp&#234;cher l'expansion romaine en Sicile par tous les moyens. Les romains ont laiss&#233; expirer notre ultimatum sans r&#233;ponse, ils vont maintenant assumer les cons&#233;quences de la guerre. Les n&#233;gociations sont termin&#233;es. Que Baal soit avec nous !</French>
+		<German>[H1]KRIEG![\H1]Die Volksversammlung hat beschlossen, der korinthischen Einflussnahme in Epidamnos entgegenzutreten. Nachdem wir einen unparteiischen Richterspruch und eine Entscheidung durchs Orakel in Delphi angeboten haben, sind die Korinther stur geblieben und wollen nichts davon wissen. Die Zeit des Verhandelns ist vorbei. Spenden wir dem Ares ein Trinkopfer!</German>
+		<Italian>[H1]GUERRA![\H1]L'assemblea popolare ha deciso di contrastare l'influenza corinzia a Epidamnos. Dopo che abbiamo offerto un verdetto imparziale e una decisione tramite l'oracolo di Delfi, i Corinzi sono rimasti ostinati e non ne hanno voluto sentire parlare. Il tempo delle trattative &#232; finito. Facciamo un'offerta da bere ad Ares!</Italian>
+		<Spanish>[H1]&#161;GUERRA![\H1]El senado de los P&#250;nicos ha decidido luchar contra los Romanos para frenar su expanxi&#243;n en Sicilia por todos los medios. Ya que han dejado expirar el ultim&#225;tum de nuestros emisarios senatoriales, sentir&#225;n ahora los efectos de llevarnos a la guerra. Las negociaciones se acabaron. &#161;Que Baal Merkart nos ayude!</Spanish>
+	</TEXT>
+</Civ4GameText>

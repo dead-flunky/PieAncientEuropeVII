@@ -1006,6 +1006,11 @@ int CvPlayerAI::AI_movementPriority(CvSelectionGroup* pGroup) const
 
 		if (pHeadUnit->canFight())
 		{
+			// PAE: Archers
+			if (pHeadUnit->isAirCombat())
+			{
+				return 7;
+			}
 			if (pHeadUnit->withdrawalProbability() > 20)
 			{
 				return 7;
@@ -3996,13 +4001,16 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 													{
 														if (pCapitalCity != NULL)
 														{
-															iUnitValue += (AI_neededExplorers(pCapitalCity->area()) * 400);
+															// PAE
+															iUnitValue += AI_neededExplorers(pCapitalCity->area());
+															// BTS
+															//iUnitValue += (AI_neededExplorers(pCapitalCity->area()) * 400);
 														}
 													}
 
 													if (kLoopUnit.getDefaultUnitAIType() == UNITAI_EXPLORE_SEA)
 													{
-														iUnitValue += 400;
+														// iUnitValue += 400; // BTS
 														iUnitValue += ((GC.getGameINLINE().countCivTeamsAlive() - iHasMetCount) * 200);
 													}
 												}

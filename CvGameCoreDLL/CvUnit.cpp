@@ -643,36 +643,43 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 	{
 		if (GET_PLAYER(eCapturingPlayer).isHuman() || GET_PLAYER(eCapturingPlayer).AI_captureUnit(eCaptureUnitType, pPlot) || 0 == GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
 		{
-			CvUnit* pkCapturedUnit = GET_PLAYER(eCapturingPlayer).initUnit(eCaptureUnitType, pPlot->getX_INLINE(), pPlot->getY_INLINE());
-
-			if (pkCapturedUnit != NULL)
+			// PAE only capture slaves when enslavement is researched
+			if (eCaptureUnitType != (UnitTypes)(GC.getInfoTypeForString("UNIT_SLAVE")) || GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getInfoTypeForString("TECH_ENSLAVEMENT"))))
 			{
-				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_CAPTURED_UNIT", GC.getUnitInfo(eCaptureUnitType).getTextKeyWide());
-				gDLL->getInterfaceIFace()->addMessage(eCapturingPlayer, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_UNITCAPTURE", MESSAGE_TYPE_INFO, pkCapturedUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			// ---
+				CvUnit* pkCapturedUnit = GET_PLAYER(eCapturingPlayer).initUnit(eCaptureUnitType, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
-				// Add a captured mission
-				CvMissionDefinition kMission;
-				kMission.setMissionTime(GC.getMissionInfo(MISSION_CAPTURED).getTime() * gDLL->getSecsPerTurn());
-				kMission.setUnit(BATTLE_UNIT_ATTACKER, pkCapturedUnit);
-				kMission.setUnit(BATTLE_UNIT_DEFENDER, NULL);
-				kMission.setPlot(pPlot);
-				kMission.setMissionType(MISSION_CAPTURED);
-				gDLL->getEntityIFace()->AddMission(&kMission);
-
-				pkCapturedUnit->finishMoves();
-
-				if (!GET_PLAYER(eCapturingPlayer).isHuman())
+				if (pkCapturedUnit != NULL)
 				{
-					CvPlot* pPlot = pkCapturedUnit->plot();
-					if (pPlot && !pPlot->isCity(false))
+					szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_CAPTURED_UNIT", GC.getUnitInfo(eCaptureUnitType).getTextKeyWide());
+					gDLL->getInterfaceIFace()->addMessage(eCapturingPlayer, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_UNITCAPTURE", MESSAGE_TYPE_INFO, pkCapturedUnit->getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), pPlot->getX_INLINE(), pPlot->getY_INLINE());
+
+					// Add a captured mission
+					CvMissionDefinition kMission;
+					kMission.setMissionTime(GC.getMissionInfo(MISSION_CAPTURED).getTime() * gDLL->getSecsPerTurn());
+					kMission.setUnit(BATTLE_UNIT_ATTACKER, pkCapturedUnit);
+					kMission.setUnit(BATTLE_UNIT_DEFENDER, NULL);
+					kMission.setPlot(pPlot);
+					kMission.setMissionType(MISSION_CAPTURED);
+					gDLL->getEntityIFace()->AddMission(&kMission);
+
+					pkCapturedUnit->finishMoves();
+
+					if (!GET_PLAYER(eCapturingPlayer).isHuman())
 					{
-						if (GET_PLAYER(eCapturingPlayer).AI_getPlotDanger(pPlot) && GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
+						CvPlot* pPlot = pkCapturedUnit->plot();
+						if (pPlot && !pPlot->isCity(false))
 						{
-							pkCapturedUnit->kill(false);
+							if (GET_PLAYER(eCapturingPlayer).AI_getPlotDanger(pPlot) && GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
+							{
+								pkCapturedUnit->kill(false);
+							}
 						}
 					}
 				}
+			// PAE
 			}
+			// ---
 		}
 	}
 }
@@ -726,9 +733,19 @@ void CvUnit::doTurn()
 		}
 	}
 
+	// PAE: damaged units and ships are slower, TEIL 1/4
+	// Bewegungspunkte der verletzten Einheit checken
+	int iBaseMoves = baseMoves();
+	int iMoveChange = 0;
+	if (isHurt() && iBaseMoves > 1) iMoveChange = getPAEmoveDamage();
+	// ----------------------------
+
 	if (hasMoved())
 	{
-		if (isAlwaysHeal())
+		// BTS
+		//if (isAlwaysHeal())
+		// PAE TEIL 2/4
+		if (isAlwaysHeal() || movesLeft()/60 + iMoveChange == iBaseMoves)
 		{
 			doHeal();
 		}
@@ -754,8 +771,47 @@ void CvUnit::doTurn()
 	setReconPlot(NULL);
 
 	setMoves(0);
+
+	// PAE: damaged units TEIL 3/4
+	// Bewegungspunkte der geheilten, aber immer noch verletzten Einheit anpassen
+	if (isHurt() && iBaseMoves > 1) {
+		iMoveChange = getPAEmoveDamage();
+		changeMoves(iMoveChange * 60);
+	} // -----------------------------
+
+	// PAE River Bug (unit keeps standing on a river ford
+	if (plot()->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) {
+		jumpToNearestValidPlot();
+	} // ------------------------
+
 }
 
+// PAE damaged units and ships are slower, TEIL 4/4
+int CvUnit::getPAEmoveDamage()
+{
+	int iBaseMoves = baseMoves();
+	int iMoveChange = 0;
+	int iDamage = getDamage();
+	if (getDomainType() == DOMAIN_SEA) {
+		iMoveChange = int(iBaseMoves * iDamage / 100);
+	}
+	else if (iDamage > 25) iMoveChange = 1;
+	else if (iDamage > 75) iMoveChange = 2;
+	if (iMoveChange >= iBaseMoves) iMoveChange = iBaseMoves - 1;
+
+	/*
+	std::stringstream testmsg_stream;
+	std::string testmsg_string;
+	const char*testmsg;
+	testmsg_stream << "Wert: " << iBaseMoves << ", Wert: " << iDamage << " , Wert: " << iMoveChange;
+	testmsg_string = testmsg_stream.str();
+	testmsg = testmsg_string.c_str();
+	FAssertMsg(iMoveChange > 0, testmsg);
+	*/
+
+	return iMoveChange;
+}
+// -------------------
 
 void CvUnit::updateAirStrike(CvPlot* pPlot, bool bQuick, bool bFinish)
 {
@@ -1261,7 +1317,7 @@ void CvUnit::updateCombat(bool bQuick)
 		bVisible = isCombatVisible(pDefender);
 	}
 
-	//FAssertMsg((pPlot == pDefender->plot()), "There is not expected to be a defender or the defender's plot is expected to be pPlot (the attack plot)");
+	FAssertMsg((pPlot == pDefender->plot()), "There is not expected to be a defender or the defender's plot is expected to be pPlot (the attack plot)");
 
 	//if not finished and not fighting yet, set up combat damage and mission
 	if (!bFinish)
@@ -2389,6 +2445,13 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	switch (getDomainType())
 	{
 	case DOMAIN_SEA:
+		// PAE: Rivers
+		if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+		{
+			//if (!isHuman() && movesLeft() < 2) return false;
+			
+			break;
+		}
 		if (!pPlot->isWater() && !canMoveAllTerrain())
 		{
 			if (!pPlot->isFriendlyCity(*this, true) || !pPlot->isCoastalLand()) 
@@ -2429,8 +2492,10 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 
 	case DOMAIN_LAND:
 		// PAE: Rivers
-		if (pPlot->isWater() && pPlot->getTerrainType() == (TerrainTypes)(11))
+		if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
 		{
+			//if (!isHuman() && baseMoves() > 1 && movesLeft() < 2) return false;
+
 			break;
 		}
 		if (pPlot->isWater() && !canMoveAllTerrain())
@@ -2454,9 +2519,19 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		break;
 	}
 
+	// PAE: units can't cross rivers without bridges, when already moved
+	// don't know if I should activate this
+	/*
+	if (hasMoved() && plot()->isRiverCrossing(directionXY(plot(), pPlot))) {
+		if (plot()->isValidRoute(this) && pPlot->isValidRoute(this) && GET_TEAM(GET_PLAYER(plot()->getOwner()).getTeam()).isBridgeBuilding()) {}
+		else return false;
+	} // -----------------
+	*/
+
+
 	if (isAnimal() && isBarbarian())
 	{
-		// PAE changes (animals ignore cultural borders)
+		// BTS -> PAE: animals ignore cultural borders
 		/*
 		if (pPlot->isOwned())
 		{
@@ -2464,15 +2539,16 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 		*/
 
+		// PAE: animals do not attack crossing rivers
+		if (bAttack && plot()->isRiverCrossing(directionXY(plot(), pPlot))) return false;
+
 		if (pPlot->getFeatureType() != NO_FEATURE) {
 			// PAE: Pferde und Kamele meiden Wälder
 			//UnitTypes typ1 = (UnitTypes) GC.getInfoTypeForString("UNIT_HORSE");
 			//UnitTypes typ2 = (UnitTypes)(GC.getInfoTypeForString("UNIT_CAMEL"));
 			int typ1 = (UnitTypes)(GC.getInfoTypeForString("UNIT_HORSE"));
 			int typ2 = (UnitTypes)(GC.getInfoTypeForString("UNIT_CAMEL"));
-			if (getUnitType() == typ1 || getUnitType() == typ2) {
-				return false;
-			}
+			if (getUnitType() == typ1 || getUnitType() == typ2) return false;
 		}
 		else
 		{
@@ -2480,13 +2556,12 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			int typ1 = (UnitTypes)(GC.getInfoTypeForString("UNIT_BEAR"));
 			int typ2 = (UnitTypes)(GC.getInfoTypeForString("UNIT_BEAR2"));
 			int typ3 = (UnitTypes)(GC.getInfoTypeForString("UNIT_BOAR"));
-			if (getUnitType() == typ1 || getUnitType() == typ2 || getUnitType() == typ3) {
-				return false;
-			}
+			if (getUnitType() == typ1 || getUnitType() == typ2 || getUnitType() == typ3) return false;
 		}
 		
 		// PAE Goody huts, villages, towers, forts, limes walls (int > 35)
 		int iImp = pPlot->getImprovementType();
+		/*
 		int typ1 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT"));
 		int typ2 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE_HILL"));
 		int typ3 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE"));
@@ -2497,34 +2572,38 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		int typ8 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT"));
 		if (iImp == typ1 || iImp == typ2 || iImp == typ3 || iImp == typ4 ||
 				iImp == typ5 || iImp == typ6 || iImp == typ7 || iImp == typ8 ||
-				iImp > 35)
-		{
-			return false;
-		}
+				iImp > 35) return false;
+		*/
+		std::list<int> lList;
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE_HILL")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TOWN")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
+		
+		if (std::find(lList.begin(), lList.end(), iImp) != lList.end()) return false;
+		// -----------
 
 		if (!bAttack)
 		{
 			// PAE changes
 			/*
-			if (pPlot->getBonusType() != NO_BONUS)
-			{
-				return false;
-			}
-
-			if (pPlot->getImprovementType() != NO_IMPROVEMENT)
-			{
-				return false;
-			}
+			if (pPlot->getBonusType() != NO_BONUS) return false;
+			if (pPlot->getImprovementType() != NO_IMPROVEMENT) return false;
 			*/
+
+			// PAE: animals don't move into cities (also not in Barbarian ones!)
+			if (pPlot->isCity()) return false;
 
 			// PAE: only same type of units may share a plot
 			if (pPlot->getNumUnits() > 0)
 			{
 				CvUnit* pLoopUnit;
 				pLoopUnit = pPlot->getUnitByIndex(0);
-				if (pLoopUnit->getUnitType() != getUnitType()) {
-					return false;
-				}
+				if (pLoopUnit->getUnitType() != getUnitType()) return false;
 			}
 
 		}
@@ -2599,6 +2678,12 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		{
 			if (bAttack || !canCoexistWithEnemyUnit(NO_TEAM))
 			{
+				//PAE animals cannot attack cities with city walls/palisades
+				if (AI_getUnitAIType() == UNITAI_ANIMAL && pPlot->isEnemyCity(*this)) {
+					if (pPlot->getPlotCity()->getNumRealBuilding((BuildingTypes)(GC.getInfoTypeForString("BUILDING_PALISADE")))) return false;
+					if (pPlot->getPlotCity()->getNumRealBuilding((BuildingTypes)(GC.getInfoTypeForString("BUILDING_WALLS")))) return false;
+				} // --------------
+
 				if (!isHuman() || (pPlot->isVisible(getTeam(), false)))
 				{
 					if (pPlot->isVisibleEnemyUnit(this) != bAttack)
@@ -3020,7 +3105,10 @@ bool CvUnit::canAutomate(AutomateTypes eAutomate) const
 		break;
 
 	case AUTOMATE_EXPLORE:
-		if ((!canFight() && (getDomainType() != DOMAIN_SEA)) || (getDomainType() == DOMAIN_AIR) || (getDomainType() == DOMAIN_IMMOBILE))
+		// BTS
+		//if ((!canFight() && (getDomainType() != DOMAIN_SEA)) || (getDomainType() == DOMAIN_AIR) || (getDomainType() == DOMAIN_IMMOBILE))
+		// PAE
+		if (!canFight() || getDomainType() == DOMAIN_AIR || getDomainType() == DOMAIN_IMMOBILE)
 		{
 			return false;
 		}
@@ -3474,6 +3562,9 @@ void CvUnit::unloadAll()
 
 bool CvUnit::canHold(const CvPlot* pPlot) const
 {
+	// PAE river ford
+	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
+
 	return true;
 }
 
@@ -3490,6 +3581,9 @@ bool CvUnit::canSleep(const CvPlot* pPlot) const
 		return false;
 	}
 
+	// PAE river ford
+	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
+
 	return true;
 }
 
@@ -3505,6 +3599,9 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 	{
 		return false;
 	}
+
+	// PAE river ford
+	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
 
 	return true;
 }
@@ -3633,6 +3730,9 @@ bool CvUnit::canSentry(const CvPlot* pPlot) const
 		return false;
 	}
 
+	// PAE river ford
+	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
+
 	return true;
 }
 
@@ -3733,9 +3833,9 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 
 	iTotalHeal += iBestHeal;
 	// XXX
-	
-	// PAE
-	iTotalHeal /= 2;
+
+	// PAE: slower healing than in BTS
+	//iTotalHeal = int(iTotalHeal * 0.5);
 
 	return iTotalHeal;
 }
@@ -3789,12 +3889,16 @@ int CvUnit::healTurns(const CvPlot* pPlot) const
 void CvUnit::doHeal()
 {
 	// PAE: avoid dying units (without warning)
-	if (getDamage()-healRate(plot()) >= 100) {
+	if (getDamage()-(healRate(plot())) >= maxHitPoints()) {
 		setDamage(99);
 	}
 	else {
 		changeDamage(-(healRate(plot())));
 	}
+	// -----------
+	// BTS
+	//changeDamage(-(healRate(plot())));
+
 }
 
 
@@ -4804,6 +4908,9 @@ bool CvUnit::pillage()
 	}
 
 	changeMoves(GC.getMOVE_DENOMINATOR());
+
+	// PAE
+	//setImmobileTimer(2);
 
 	if (pPlot->isActiveVisible(false))
 	{
@@ -9954,13 +10061,13 @@ void CvUnit::setMoves(int iNewValue)
 }
 
 
-void CvUnit::changeMoves(int iChange)														
+void CvUnit::changeMoves(int iChange)
 {
 	setMoves(getMoves() + iChange);
 }
 
 
-void CvUnit::finishMoves()																			
+void CvUnit::finishMoves()
 {
 	setMoves(maxMoves());
 }
@@ -10269,7 +10376,7 @@ void CvUnit::changeImmuneToFirstStrikesCount(int iChange)
 }
 
 
-int CvUnit::getExtraVisibilityRange() const																	
+int CvUnit::getExtraVisibilityRange() const
 {
 	return m_iExtraVisibilityRange;
 }
@@ -10287,13 +10394,13 @@ void CvUnit::changeExtraVisibilityRange(int iChange)
 	}
 }
 
-int CvUnit::getExtraMoves() const												
+int CvUnit::getExtraMoves() const
 {
 	return m_iExtraMoves;
 }
 
 
-void CvUnit::changeExtraMoves(int iChange)			
+void CvUnit::changeExtraMoves(int iChange)
 {
 	m_iExtraMoves += iChange;
 	FAssert(getExtraMoves() >= 0);
@@ -10306,38 +10413,38 @@ int CvUnit::getExtraMoveDiscount() const
 }
 
 
-void CvUnit::changeExtraMoveDiscount(int iChange)			
+void CvUnit::changeExtraMoveDiscount(int iChange)
 {
 	m_iExtraMoveDiscount += iChange;
 	FAssert(getExtraMoveDiscount() >= 0);
 }
 
-int CvUnit::getExtraAirRange() const												
+int CvUnit::getExtraAirRange() const
 {
 	return m_iExtraAirRange;
 }
 
-void CvUnit::changeExtraAirRange(int iChange)			
+void CvUnit::changeExtraAirRange(int iChange)
 {
 	m_iExtraAirRange += iChange;
 }
 
-int CvUnit::getExtraIntercept() const												
+int CvUnit::getExtraIntercept() const
 {
 	return m_iExtraIntercept;
 }
 
-void CvUnit::changeExtraIntercept(int iChange)			
+void CvUnit::changeExtraIntercept(int iChange)
 {
 	m_iExtraIntercept += iChange;
 }
 
-int CvUnit::getExtraEvasion() const												
+int CvUnit::getExtraEvasion() const
 {
 	return m_iExtraEvasion;
 }
 
-void CvUnit::changeExtraEvasion(int iChange)			
+void CvUnit::changeExtraEvasion(int iChange)
 {
 	m_iExtraEvasion += iChange;
 }
@@ -10347,7 +10454,7 @@ int CvUnit::getExtraFirstStrikes() const
 	return m_iExtraFirstStrikes;
 }
 
-void CvUnit::changeExtraFirstStrikes(int iChange)			
+void CvUnit::changeExtraFirstStrikes(int iChange)
 {
 	m_iExtraFirstStrikes += iChange;
 	FAssert(getExtraFirstStrikes() >= 0);
@@ -10358,7 +10465,7 @@ int CvUnit::getExtraChanceFirstStrikes() const
 	return m_iExtraChanceFirstStrikes;
 }
 
-void CvUnit::changeExtraChanceFirstStrikes(int iChange)			
+void CvUnit::changeExtraChanceFirstStrikes(int iChange)
 {
 	m_iExtraChanceFirstStrikes += iChange;
 	FAssert(getExtraChanceFirstStrikes() >= 0);
@@ -10371,7 +10478,7 @@ int CvUnit::getExtraWithdrawal() const
 }
 
 
-void CvUnit::changeExtraWithdrawal(int iChange)															
+void CvUnit::changeExtraWithdrawal(int iChange)
 {
 	m_iExtraWithdrawal += iChange;
 	FAssert(getExtraWithdrawal() >= 0);
@@ -10382,7 +10489,7 @@ int CvUnit::getExtraCollateralDamage() const
 	return m_iExtraCollateralDamage;
 }
 
-void CvUnit::changeExtraCollateralDamage(int iChange)													
+void CvUnit::changeExtraCollateralDamage(int iChange)
 {
 	m_iExtraCollateralDamage += iChange;
 	FAssert(getExtraCollateralDamage() >= 0);
@@ -10393,7 +10500,7 @@ int CvUnit::getExtraBombardRate() const
 	return m_iExtraBombardRate;
 }
 
-void CvUnit::changeExtraBombardRate(int iChange)													
+void CvUnit::changeExtraBombardRate(int iChange)
 {
 	m_iExtraBombardRate += iChange;
 	FAssert(getExtraBombardRate() >= 0);
@@ -10404,7 +10511,7 @@ int CvUnit::getExtraEnemyHeal() const
 	return m_iExtraEnemyHeal;
 }
 
-void CvUnit::changeExtraEnemyHeal(int iChange)						
+void CvUnit::changeExtraEnemyHeal(int iChange)
 {
 	m_iExtraEnemyHeal += iChange;
 	FAssert(getExtraEnemyHeal() >= 0);
@@ -10415,7 +10522,7 @@ int CvUnit::getExtraNeutralHeal() const
 	return m_iExtraNeutralHeal;
 }
 
-void CvUnit::changeExtraNeutralHeal(int iChange)			
+void CvUnit::changeExtraNeutralHeal(int iChange)
 {
 	m_iExtraNeutralHeal += iChange;
 	FAssert(getExtraNeutralHeal() >= 0);
@@ -10427,7 +10534,7 @@ int CvUnit::getExtraFriendlyHeal() const
 }
 
 
-void CvUnit::changeExtraFriendlyHeal(int iChange)			
+void CvUnit::changeExtraFriendlyHeal(int iChange)
 {
 	m_iExtraFriendlyHeal += iChange;
 	FAssert(getExtraFriendlyHeal() >= 0);

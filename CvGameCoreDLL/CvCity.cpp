@@ -5675,7 +5675,12 @@ int CvCity::calculateCorporationMaintenanceTimes100(CorporationTypes eCorporatio
 			iNumBonuses += getNumBonuses(eBonus);
 		}
 	}
-
+	
+	// PAE (maximal bonus maintenance)
+	if (GC.getDefineINT("CORPORATION_MAX_BONUS")) {
+		iNumBonuses = std::min(iNumBonuses, GC.getDefineINT("CORPORATION_MAX_BONUS"));
+	} // -------
+	
 	int iBonusMaintenance = GC.getCorporationInfo(eCorporation).getMaintenance() * iNumBonuses;
 	iBonusMaintenance *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent();
 	iBonusMaintenance /= 100;
@@ -5698,9 +5703,6 @@ int CvCity::calculateCorporationMaintenanceTimes100(CorporationTypes eCorporatio
 	}
 
 	FAssert(iMaintenance >= 0);
-
-	// PAE (maximal -10 Gold pro Stadt)
-	iMaintenance = std::max(iMaintenance, -10);
 
 	return iMaintenance;
 }
@@ -8460,6 +8462,7 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 
 	if (isActiveCorporation(eCorporation) && !isDisorder())
 	{
+		/* BTS
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
@@ -8467,7 +8470,26 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 			{
 				iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
 			}
+		} */
+
+		// PAE ------------
+		int iNumBonuses = 0;
+		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
+		{
+			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
+			if (NO_BONUS != eBonus)
+			{
+				iNumBonuses += getNumBonuses(eBonus);
+			}
 		}
+		if (iNumBonuses > 0) {
+			// PAE (maximal bonus maintenance)
+			if (GC.getDefineINT("CORPORATION_MAX_BONUS") > 0) {
+				iNumBonuses = std::min(iNumBonuses, GC.getDefineINT("CORPORATION_MAX_BONUS"));
+			}
+			iYield += (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
+		} // --------------
+
 		/* PBMod */
 		/* if( iYield ){
 			  int factor100 = GC.getGameINLINE().getCorporationFactor100(getOwnerINLINE(), eCorporation);
@@ -8477,11 +8499,8 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 		 /* PBMod */
 	}
 
-	// BTS
-	//return (iYield + 99) / 100;
+	return (iYield + 99) / 100;
 
-	// PAE (maximal +4 pro Stadt)
-	return std::min((iYield + 99) / 100, 4);
 }
 
 int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, CorporationTypes eCorporation) const
@@ -8495,6 +8514,7 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 
 	if (isActiveCorporation(eCorporation) && !isDisorder())
 	{
+		/* BTS
 		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
 		{
 			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
@@ -8502,7 +8522,25 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 			{
 				iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * getNumBonuses(eBonus) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
 			}
+		} */
+
+		// PAE ------------
+		int iNumBonuses = 0;
+		for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES(); ++i)
+		{
+			BonusTypes eBonus = (BonusTypes)GC.getCorporationInfo(eCorporation).getPrereqBonus(i);
+			if (NO_BONUS != eBonus)
+			{
+				iNumBonuses += getNumBonuses(eBonus);
+			}
 		}
+		if (iNumBonuses > 0) {
+			// PAE (maximal bonus maintenance)
+			if (GC.getDefineINT("CORPORATION_MAX_BONUS") > 0) {
+				iNumBonuses = std::min(iNumBonuses, GC.getDefineINT("CORPORATION_MAX_BONUS"));
+			}
+			iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
+		} // --------------
 
 		// PBMod  Reduce income if corporation is spreaded wide
 		/* if( iCommerce ){
@@ -8514,11 +8552,7 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 
 	}
 
-	// BTS
-	//return (iCommerce + 99) / 100;
-
-	// PAE (maximal +4 pro Stadt)
-	return std::min((iCommerce + 99) / 100, 4);
+	return (iCommerce + 99) / 100;
 }
 
 void CvCity::updateCorporationCommerce(CommerceTypes eIndex)
@@ -10897,7 +10931,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 	bool bMessage;
 	int iCount;
 	int iProductionNeeded;
-	//int iOverflow; //Multiple Production: Added by Denev 07/01/2009
+	int iOverflow; //Multiple Production: Added by Denev 07/01/2009
 
 	bWasFoodProduction = isFoodProduction();
 
@@ -10954,25 +10988,57 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			iProductionNeeded = getProductionNeeded(eTrainUnit);
 
 			// max overflow is the value of the item produced (to eliminate prebuild exploits)
-//Multiple Production: Modified by Denev 07/02/2009
-//			iOverflow = getUnitProduction(eTrainUnit) - iProductionNeeded;
-			int iUnlimitedOverflow = getUnitProduction(eTrainUnit) - iProductionNeeded;
-//Multiple Production: End Modify
-			int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
-			// UNOFFICIAL_PATCH Start
-//Multiple Production: Modified by Denev 07/02/2009
-//			int iLostProduction = std::max(0, iOverflow - iMaxOverflow);
-//			iOverflow = std::min(iMaxOverflow, iOverflow);
-			int iLostProduction = std::max(0, iUnlimitedOverflow - iMaxOverflow);
-			m_iLostProductionModified = iLostProduction;
-			m_iLostProductionBase = (100 * iLostProduction) / std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eTrainUnit)));
-			int iOverflow = std::min(iMaxOverflow, iUnlimitedOverflow);
-//Multiple Production: End Modify
-			if (iOverflow > 0)
+			// BTS ----
+			if (!GC.getGameINLINE().isOption(GAMEOPTION_MULTIPLE_PRODUCTION))
 			{
-				changeOverflowProduction(iOverflow, getProductionModifier(eTrainUnit));
+				iOverflow = getUnitProduction(eTrainUnit) - iProductionNeeded;
+				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
+				int iMaxOverflowForGold = std::max(iProductionNeeded, getProductionDifference(getProductionNeeded(), getProduction(), 0, isFoodProduction(), false));
+				iOverflow = std::min(iMaxOverflow, iOverflow);
+				if (iOverflow > 0)
+				{
+					changeOverflowProduction(iOverflow, getProductionModifier(eTrainUnit));
+				}
+				setUnitProduction(eTrainUnit, 0);
+
+				int iProductionGold = std::max(0, iOverflow - iMaxOverflowForGold) * GC.getDefineINT("MAXED_UNIT_GOLD_PERCENT") / 100;
+				if (iProductionGold > 0)
+				{
+					GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
+				}
 			}
-			setUnitProduction(eTrainUnit, 0);
+			else {
+
+	//Multiple Production: Modified by Denev 07/02/2009
+				int iUnlimitedOverflow = getUnitProduction(eTrainUnit) - iProductionNeeded;
+				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
+				int iLostProduction = std::max(0, iUnlimitedOverflow - iMaxOverflow);
+				m_iLostProductionModified = iLostProduction;
+				m_iLostProductionBase = (100 * iLostProduction) / std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eTrainUnit)));
+				int iOverflow = std::min(iMaxOverflow, iUnlimitedOverflow);
+				if (iOverflow > 0)
+				{
+					changeOverflowProduction(iOverflow, getProductionModifier(eTrainUnit));
+				}
+				setUnitProduction(eTrainUnit, 0);
+
+				// * Limited which production modifiers affect gold from production overflow. 1/3
+				iLostProduction *= getBaseYieldRateModifier(YIELD_PRODUCTION);
+				iLostProduction /= std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eTrainUnit)));
+
+				int iProductionGold = ((iLostProduction * GC.getDefineINT("MAXED_UNIT_GOLD_PERCENT")) / 100);
+
+				m_iGoldFromLostProduction = iProductionGold;
+	//Multiple Production: End Add
+	//Multiple Production: Deleted by Denev 07/01/2009
+	//			if (iProductionGold > 0)
+	//			{
+	//				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
+	//			}
+	//Multiple Production: End Delete
+					
+			}
+
 /*************************************************************************************************/
 /* UNOFFICIAL_PATCH                       06/10/10                           EmperorFool         */
 /*                                                                                               */
@@ -10982,30 +11048,6 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 /*************************************************************************************************/
 /* UNOFFICIAL_PATCH                         END                                                  */
 /*************************************************************************************************/
-
-/* ****** BTS ******
-			int iProductionGold = std::max(0, iOverflow - iMaxOverflowForGold) * GC.getDefineINT("MAXED_UNIT_GOLD_PERCENT") / 100;
-			if (iProductionGold > 0)
-			{
-				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
-			}
-******** BTS ******** */
-
-			// * Limited which production modifiers affect gold from production overflow. 1/3
-			iLostProduction *= getBaseYieldRateModifier(YIELD_PRODUCTION);
-			iLostProduction /= std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eTrainUnit)));
-
-			int iProductionGold = ((iLostProduction * GC.getDefineINT("MAXED_UNIT_GOLD_PERCENT")) / 100);
-			// UNOFFICIAL_PATCH End
-//Multiple Production: Added by Denev 07/02/2009
-			m_iGoldFromLostProduction = iProductionGold;
-//Multiple Production: End Add
-//Multiple Production: Deleted by Denev 07/01/2009
-//			if (iProductionGold > 0)
-//			{
-//				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
-//			}
-//Multiple Production: End Delete
 
 
 			pUnit = GET_PLAYER(getOwnerINLINE()).initUnit(eTrainUnit, getX_INLINE(), getY_INLINE(), eTrainAIUnit);
@@ -11073,26 +11115,56 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			setNumRealBuilding(eConstructBuilding, getNumRealBuilding(eConstructBuilding) + 1);
 
 			iProductionNeeded = getProductionNeeded(eConstructBuilding);
+
 			// max overflow is the value of the item produced (to eliminate prebuild exploits)
-//Multiple Production: Modified by Denev 07/02/2009
-//			int iOverflow = getBuildingProduction(eConstructBuilding) - iProductionNeeded;
-			int iUnlimitedOverflow = getBuildingProduction(eConstructBuilding) - iProductionNeeded;
-//Multiple Production: End Modify
-			int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
-			// UNOFFICIAL_PATCH Start
-//Multiple Production: Modified by Denev 07/02/2009
-//			int iLostProduction = std::max(0, iOverflow - iMaxOverflow);
-//			iOverflow = std::min(iMaxOverflow, iOverflow);
-			int iLostProduction = std::max(0, iUnlimitedOverflow - iMaxOverflow);
-			m_iLostProductionModified = iLostProduction;
-			m_iLostProductionBase = (100 * iLostProduction) / std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eConstructBuilding)));
-			int iOverflow = std::min(iMaxOverflow, iUnlimitedOverflow);
-//Multiple Production: End Modify
-			if (iOverflow > 0)
+			if (!GC.getGameINLINE().isOption(GAMEOPTION_MULTIPLE_PRODUCTION))
 			{
-				changeOverflowProduction(iOverflow, getProductionModifier(eConstructBuilding));
+				int iOverflow = getBuildingProduction(eConstructBuilding) - iProductionNeeded;
+				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
+				int iMaxOverflowForGold = std::max(iProductionNeeded, getProductionDifference(getProductionNeeded(), getProduction(), 0, isFoodProduction(), false));
+				iOverflow = std::min(iMaxOverflow, iOverflow);
+				if (iOverflow > 0)
+				{
+					changeOverflowProduction(iOverflow, getProductionModifier(eConstructBuilding));
+				}
+				setBuildingProduction(eConstructBuilding, 0);
+
+				int iProductionGold = std::max(0, iOverflow - iMaxOverflowForGold) * GC.getDefineINT("MAXED_BUILDING_GOLD_PERCENT") / 100;
+				if (iProductionGold > 0)
+				{
+					GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
+				}
+			} else {
+
+	//Multiple Production: Modified by Denev 07/02/2009
+				int iUnlimitedOverflow = getBuildingProduction(eConstructBuilding) - iProductionNeeded;
+				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
+				int iLostProduction = std::max(0, iUnlimitedOverflow - iMaxOverflow);
+				m_iLostProductionModified = iLostProduction;
+				m_iLostProductionBase = (100 * iLostProduction) / std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eConstructBuilding)));
+				int iOverflow = std::min(iMaxOverflow, iUnlimitedOverflow);
+				if (iOverflow > 0)
+				{
+					changeOverflowProduction(iOverflow, getProductionModifier(eConstructBuilding));
+				}
+				setBuildingProduction(eConstructBuilding, 0);
+
+				// * Limited which production modifiers affect gold from production overflow. 2/3
+				iLostProduction *= getBaseYieldRateModifier(YIELD_PRODUCTION);
+				iLostProduction /= std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eConstructBuilding)));
+
+				int iProductionGold = ((iLostProduction * GC.getDefineINT("MAXED_BUILDING_GOLD_PERCENT")) / 100);
+
+				m_iGoldFromLostProduction = iProductionGold;
+	//Multiple Production: End Add
+	//Multiple Production: Deleted by Denev 07/01/2009
+	//			if (iProductionGold > 0)
+	//			{
+	//				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
+	//			}
+	//Multiple Production: End Delete
 			}
-			setBuildingProduction(eConstructBuilding, 0);
+
 /*************************************************************************************************/
 /* UNOFFICIAL_PATCH                       06/10/10                           EmperorFool         */
 /*                                                                                               */
@@ -11103,28 +11175,6 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 /* UNOFFICIAL_PATCH                         END                                                  */
 /*************************************************************************************************/
 
-/* ****** BTS *******
-			int iProductionGold = std::max(0, iOverflow - iMaxOverflowForGold) * GC.getDefineINT("MAXED_BUILDING_GOLD_PERCENT") / 100;
-			if (iProductionGold > 0)
-			{
-				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
-			}
-******************* */
-			// * Limited which production modifiers affect gold from production overflow. 2/3
-			iLostProduction *= getBaseYieldRateModifier(YIELD_PRODUCTION);
-			iLostProduction /= std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eConstructBuilding)));
-
-			int iProductionGold = ((iLostProduction * GC.getDefineINT("MAXED_BUILDING_GOLD_PERCENT")) / 100);
-			// UNOFFICIAL_PATCH End
-//Multiple Production: Added by Denev 07/02/2009
-			m_iGoldFromLostProduction = iProductionGold;
-//Multiple Production: End Add
-//Multiple Production: Deleted by Denev 07/01/2009
-//			if (iProductionGold > 0)
-//			{
-//				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
-//			}
-//Multiple Production: End Delete
 
 			CvEventReporter::getInstance().buildingBuilt(this, eConstructBuilding);
 		}
@@ -11188,7 +11238,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 				if(needsArtType)
 				{
-                    int defaultArtType = GET_TEAM(getTeam()).getProjectDefaultArtType(eCreateProject);
+					int defaultArtType = GET_TEAM(getTeam()).getProjectDefaultArtType(eCreateProject);
 					int projectCount = GET_TEAM(getTeam()).getProjectCount(eCreateProject);
 					GET_TEAM(getTeam()).setProjectArtType(eCreateProject, projectCount - 1, defaultArtType);
 				}
@@ -11196,49 +11246,52 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 			iProductionNeeded = getProductionNeeded(eCreateProject);
 			// max overflow is the value of the item produced (to eliminate pre-build exploits)
-//Multiple Production: Modified by Denev 07/02/2009
-//			iOverflow = getProjectProduction(eCreateProject) - iProductionNeeded;
-			int iUnlimitedOverflow = getProjectProduction(eCreateProject) - iProductionNeeded;
-//Multiple Production: End Modify
-			int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
-			// UNOFFICIAL_PATCH Start
-//Multiple Production: Modified by Denev 07/02/2009
-//			int iLostProduction = std::max(0, iOverflow - iMaxOverflow);
-//			iOverflow = std::min(iMaxOverflow, iOverflow);
-			int iLostProduction = std::max(0, iUnlimitedOverflow - iMaxOverflow);
-			m_iLostProductionModified = iLostProduction;
-			m_iLostProductionBase = (100 * iLostProduction) / std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eCreateProject)));
-			int iOverflow = std::min(iMaxOverflow, iUnlimitedOverflow);
-//Multiple Production: End Modify
-			if (iOverflow > 0)
+			if (!GC.getGameINLINE().isOption(GAMEOPTION_MULTIPLE_PRODUCTION))
 			{
-				changeOverflowProduction(iOverflow, getProductionModifier(eCreateProject));
+				iOverflow = getProjectProduction(eCreateProject) - iProductionNeeded;
+				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
+				int iMaxOverflowForGold = std::max(iProductionNeeded, getProductionDifference(getProductionNeeded(), getProduction(), 0, isFoodProduction(), false));
+				iOverflow = std::min(iMaxOverflow, iOverflow);
+				if (iOverflow > 0)
+				{
+					changeOverflowProduction(iOverflow, getProductionModifier(eCreateProject));
+				}
+				setProjectProduction(eCreateProject, 0);
+
+				int iProductionGold = std::max(0, iOverflow - iMaxOverflowForGold) * GC.getDefineINT("MAXED_PROJECT_GOLD_PERCENT") / 100;
+				if (iProductionGold > 0)
+				{
+					GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
+				}
+			} else {
+
+	//Multiple Production: Modified by Denev 07/02/2009
+				int iUnlimitedOverflow = getProjectProduction(eCreateProject) - iProductionNeeded;
+				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
+				int iLostProduction = std::max(0, iUnlimitedOverflow - iMaxOverflow);
+				m_iLostProductionModified = iLostProduction;
+				m_iLostProductionBase = (100 * iLostProduction) / std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eCreateProject)));
+				int iOverflow = std::min(iMaxOverflow, iUnlimitedOverflow);
+				if (iOverflow > 0)
+				{
+					changeOverflowProduction(iOverflow, getProductionModifier(eCreateProject));
+				}
+				setProjectProduction(eCreateProject, 0);
+
+				// * Limited which production modifiers affect gold from production overflow. 3/3
+				iLostProduction *= getBaseYieldRateModifier(YIELD_PRODUCTION);
+				iLostProduction /= std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eCreateProject)));
+				int iProductionGold = ((iLostProduction * GC.getDefineINT("MAXED_PROJECT_GOLD_PERCENT")) / 100);
+
+				m_iGoldFromLostProduction = iProductionGold;
+	//Multiple Production: Deleted by Denev 07/01/2009
+	//			if (iProductionGold > 0)
+	//			{
+	//				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
+	//			}
+	//Multiple Production: End Delete
 			}
-			setProjectProduction(eCreateProject, 0);
 
-/* ******* BTS ******
-			int iProductionGold = std::max(0, iOverflow - iMaxOverflowForGold) * GC.getDefineINT("MAXED_PROJECT_GOLD_PERCENT") / 100;
-			if (iProductionGold > 0)
-			{
-				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
-			}
-******************* */
-
-			// * Limited which production modifiers affect gold from production overflow. 3/3
-			iLostProduction *= getBaseYieldRateModifier(YIELD_PRODUCTION);
-			iLostProduction /= std::max(1, getBaseYieldRateModifier(YIELD_PRODUCTION, getProductionModifier(eCreateProject)));
-
-			int iProductionGold = ((iLostProduction * GC.getDefineINT("MAXED_PROJECT_GOLD_PERCENT")) / 100);
-			// UNOFFICIAL_PATCH End
-//Multiple Production: Added by Denev 07/02/2009
-			m_iGoldFromLostProduction = iProductionGold;
-//Multiple Production: End Add
-//Multiple Production: Deleted by Denev 07/01/2009
-//			if (iProductionGold > 0)
-//			{
-//				GET_PLAYER(getOwnerINLINE()).changeGold(iProductionGold);
-//			}
-//Multiple Production: End Delete
 		}
 		break;
 
@@ -11835,7 +11888,8 @@ void CvCity::doProduction(bool bAllowNoProduction)
 			}
 		}
 
-		if (m_iGoldFromLostProduction > 0)
+		// adapted for PAE by Pie
+		if (m_iGoldFromLostProduction > 0 && GET_TEAM(getTeam()).isGoldTrading())
 		{
 			CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_LOST_PROD_CONVERTED", getNameKey(), m_iLostProductionModified, m_iGoldFromLostProduction);
 			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_WONDERGOLD", MESSAGE_TYPE_MINOR_EVENT, GC.getCommerceInfo(COMMERCE_GOLD).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
@@ -12878,16 +12932,13 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 /***** PAE *********/
 	if (GC.getBuildingInfo(eBuilding).isWater())
 	{
-		if (!GC.getBuildingInfo(eBuilding).isRiver() || (!plot()->isRiver() && !plot()->isAdjacentToWater()))
-		{
-			if (!isCoastal(GC.getBuildingInfo(eBuilding).getMinAreaSize())) return false;
-		}
+		if (!plot()->isAdjacentToWater()) return false;
+		if (!isCoastal(GC.getBuildingInfo(eBuilding).getMinAreaSize())) return false;
 	}
 	else
 	{
+		if (GC.getBuildingInfo(eBuilding).isRiver() && plot()->isRiverSide()) return true;
 		if (area()->getNumTiles() < GC.getBuildingInfo(eBuilding).getMinAreaSize()) return false;
-
-		if (GC.getBuildingInfo(eBuilding).isRiver() && !plot()->isRiver() && !plot()->isAdjacentToWater()) return false;
 	}
 /***** PAE *********/
 

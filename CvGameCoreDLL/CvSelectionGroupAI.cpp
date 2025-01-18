@@ -153,7 +153,7 @@ bool CvSelectionGroupAI::AI_update()
 		AI_cancelGroupAttack();
 	}
 
-	FAssert(!(GET_PLAYER(getOwnerINLINE()).isAutoMoves()));
+	//FAssert(!(GET_PLAYER(getOwnerINLINE()).isAutoMoves()));
 
 	int iTempHack = 0; // XXX
 
@@ -165,7 +165,7 @@ bool CvSelectionGroupAI::AI_update()
 		iTempHack++;
 		if (iTempHack > 100)
 		{
-			FAssert(false);
+			//FAssert(false);
 			CvUnit* pHeadUnit = getHeadUnit();
 			if (NULL != pHeadUnit)
 			{

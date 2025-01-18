@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_MOD_ALL</Tag>
+		<English>All contacts</English>
+		<French>Tous les contacts</French>
+		<German>Alle Kontakte</German>
+		<Italian>Tutti i contatti</Italian>
+		<Spanish>Todos los contactos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_TRADE</Tag>
+		<English>Trade partners</English>
+		<French>Partenaires commerciaux</French>
+		<German>Handelskontakte</German>
+		<Italian>Contatti commerciali</Italian>
+		<Spanish>Contactos comerciales</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_FRIENDLY</Tag>
+		<English>Friendly nations</English>
+		<French>Nations amies</French>
+		<German>Befreundete Nationen</German>
+		<Italian>Nazioni amichevoli</Italian>
+		<Spanish>Naciones amistosas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_NEUTRAL</Tag>
+		<English>Neutrale nations</English>
+		<French>Nations neutres</French>
+		<German>Neutrale Nationen</German>
+		<Italian>Nazioni neutrali</Italian>
+		<Spanish>Naciones neutrales</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_ENEMY</Tag>
+		<English>Hostile nations</English>
+		<French>Nations hostiles</French>
+		<German>Feindliche Nationen</German>
+		<Italian>Nazioni ostili</Italian>
+		<Spanish>Naciones hostiles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_SHOW_RELATION_LINES</Tag>
+		<English>Show contacts (white lines)</English>
+		<French>Montrer contacts (lignes blanches)</French>
+		<German>Zeige Kontakte (wei&#223;e Linien).</German>
+		<Italian>Mostra contatti (linee bianche)</Italian>
+		<Spanish>Mostrar contactos (l&#237;neas blancas)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_REDUCE_ON_SELECTED_LEADRES</Tag>
+		<English>Show selected nations only</English>
+		<French>Monter nations s&#233;lectionn&#233;es uniquement</French>
+		<German>Nur ausgew&#228;hlte Nationen anzeigen</German>
+		<Italian>Mostra solo le nazioni selezionate</Italian>
+		<Spanish>Mostrar solo naciones seleccionadas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_EXPAND</Tag>
+		<English>Expand selection</English>
+		<French>Agrandir la s&#233;lection</French>
+		<German>Auswahl erweitern</German>
+		<Italian>Espandi la selezione</Italian>
+		<Spanish>Expandir selecci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MOD_CLEAR_SELECTION</Tag>
+		<English>Clear selection</English>
+		<French>Effacer la s&#233;lection</French>
+		<German>Auswahl leeren</German>
+		<Italian>Cancella selezione</Italian>
+		<Spanish>Vaciar selecci&#243;n</Spanish>
+	</TEXT>
+</Civ4GameText>

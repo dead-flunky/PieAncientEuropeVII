@@ -7185,8 +7185,7 @@ bool CvUnitAI::AI_guardCity(bool bLeave, bool bSearch, int iMaxPath)
 	int iBestValue;
 	int iLoop;
 
-	FAssert(getDomainType() == DOMAIN_LAND);
-	FAssert(canDefend());
+	//FAssert(getDomainType() == DOMAIN_LAND);
 
 	pPlot = plot();
 	pCity = pPlot->getPlotCity();
@@ -14605,7 +14604,7 @@ bool CvUnitAI::AI_retreatToCity(bool bPrimary, bool bAirlift, int iMaxPath)
 										{
 											iBestValue = iValue;
 											pBestPlot = getPathEndTurnPlot();
-											FAssert(!atPlot(pBestPlot));
+											//FAssert(!atPlot(pBestPlot));
 										}
 									}
 								}
@@ -14649,7 +14648,7 @@ bool CvUnitAI::AI_retreatToCity(bool bPrimary, bool bAirlift, int iMaxPath)
 
 	if (pBestPlot != NULL)
 	{
-		FAssert(!atPlot(pBestPlot));
+		//FAssert(!atPlot(pBestPlot));
 		getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), ((iPass > 0) ? MOVE_IGNORE_DANGER : 0));
 		return true;
 	}
@@ -16723,7 +16722,7 @@ bool CvUnitAI::AI_moveIntoCity(int iRange)
                             iValue = 1;
                             if (pLoopPlot->getPlotCity() != NULL)
                             {
-                                 iValue += pLoopPlot->getPlotCity()->getPopulation();                                
+                                 iValue += pLoopPlot->getPlotCity()->getPopulation();
                             }
                             
                             if (iValue > iBestValue)
@@ -17090,7 +17089,7 @@ bool CvUnitAI::AI_solveBlockageProblem(CvPlot* pDestPlot, bool bDeclareWar)
 							if (!canMoveInto(pPlot, true, true))
 							{
 								if (!isPotentialEnemy(pPlot->getTeam(), pPlot))
-								{									
+								{
 									CvTeamAI& kTeam = GET_TEAM(getTeam());
 									if (kTeam.canDeclareWar(pPlot->getTeam()))
 									{

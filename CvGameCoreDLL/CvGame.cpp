@@ -6307,7 +6307,7 @@ void CvGame::createBarbarianCities()
 
 void CvGame::createBarbarianUnits()
 {
-	CvUnit* pLoopUnit;
+	// CvUnit* pLoopUnit; // PAE disabled, not necessary anymore
 	CvArea* pLoopArea;
 	CvPlot* pPlot;
 	UnitAITypes eBarbUnitAI;
@@ -6494,6 +6494,9 @@ void CvGame::createBarbarianUnits()
 			}
 		}
 
+		// PAE: animals forever!
+		createAnimals();
+		/*
 		for (pLoopUnit = GET_PLAYER(BARBARIAN_PLAYER).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER(BARBARIAN_PLAYER).nextUnit(&iLoop))
 		{
 			if (pLoopUnit->isAnimal())
@@ -6502,6 +6505,7 @@ void CvGame::createBarbarianUnits()
 				break;
 			}
 		}
+		// PAE: animals forever! */
 	}
 }
 

@@ -1405,7 +1405,8 @@ void CvCityAI::AI_chooseProduction()
             }
         }
 
-        if (!bLandWar && !bDanger)
+		// PAE scouts: && kPlayer.getCurrentEra() > 0
+        if (!bLandWar && !bDanger && kPlayer.getCurrentEra() > 0)
         {
 			if (kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_EXPLORE) < (kPlayer.AI_neededExplorers(pArea)))
 			{
@@ -5666,7 +5667,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 						    iMinTurns = std::min(iMinTurns, 5);
 						    if (AI_countNumBonuses(NO_BONUS, false, true, 2, true, true) > 0)
 						    {
-						    	bGrowth = true;						    	
+						    	bGrowth = true;
 						    }
 						}
 					}

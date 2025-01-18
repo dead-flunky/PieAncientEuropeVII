@@ -770,6 +770,8 @@ public:
 	virtual void AI_setUnitAIType(UnitAITypes eNewValue) = 0;
     virtual int AI_sacrificeValue(const CvPlot* pPlot) const = 0;
 
+	int getPAEmoveDamage(); // PAE damaged units and ships are slower
+
 protected:
 
 	int m_iID;

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Civ4GameText xmlns="https://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BLASEBALG</Tag>
+		<English>Blast furnace</English>
+		<French>Four &#224; air puls&#233;</French>
+		<German>Gebl&#228;seofen</German>
+		<Italian>Forno ad aria forzata</Italian>
+		<Spanish>Horno de aire forzado</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ISRAEL</Tag>
+		<English>Exodus</English>
+		<French>Exode</French>
+		<German>Exodus</German>
+		<Italian>Esodo</Italian>
+		<Spanish>&#201;xodo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ISRAEL_PEDIA</Tag>
+		<English>[H1]"Let my people go!"[\H1][NEWLINE]The Book of Exodus, also known as the 2nd Book of Moses, is a fundamental part of the Old Testament and tells the moving story of the Israelites' exodus from Egypt. The name "Exodus" is derived from the Greek word for "exodus" and aptly describes the core of the story. The Book of Exodus begins where the Book of Genesis ends and describes the situation of the Israelites living in exile in Egypt and forced to do unpaid work under the rule of the Pharaoh. The story is divided into three main parts: the liberation from Egypt, the beginning of the desert journey to Sinai and Israel at Sinai (covenant and law). A central event in the Book of Exodus is the appearance of God to Moses in a burning bush. Here Moses receives the divine order to free the Israelites from slavery and lead them to the "promised land of Canaan". The Exodus story does not end with the departure from Egypt. It also describes the 40-year journey through the desert during which only two of the original adults reach the promised land of Canaan. This long journey symbolizes the trials and challenges that the people of Israel had to overcome on their way to freedom and covenant with God.</English>
+		<French>[H1]"Laissez partir mon peuple !"[\H1][NEWLINE]Le Livre de l'Exode, &#233;galement connu sous le nom de 2e Livre de Mo&#239;se, est une partie fondamentale de l'Ancien Testament et raconte l'histoire &#233;mouvante de l'Exode des Isra&#233;lites d'&#201;gypte. Le nom "Exodus" est d&#233;riv&#233; du mot grec signifiant "exode" et d&#233;crit parfaitement le coeur de l'histoire. Le livre de l'Exode commence l&#224; o&#249; le livre de la Gen&#232;se se termine et d&#233;crit la situation des Isra&#233;lites vivant en exil en &#201;gypte et contraints au travail non r&#233;mun&#233;r&#233; sous le r&#232;gne de Pharaon. L'histoire est divis&#233;e en trois parties principales : la lib&#233;ration de l'&#201;gypte, le d&#233;but du voyage dans le d&#233;sert jusqu'au Sina&#239; et Isra&#235;l au Sina&#239; (alliance et loi). Un &#233;v&#233;nement central du livre de l'Exode est l'apparition de Dieu &#224; Mo&#239;se dans un buisson ardent. Ici, Mo&#239;se re&#231;oit la mission divine de lib&#233;rer les Isra&#233;lites de l'esclavage et de les conduire vers la "terre promise de Canaan". L'histoire de l'Exode ne s'arr&#234;te pas avec la sortie d'&#201;gypte. Il d&#233;crit &#233;galement le voyage de 40 ans &#224; travers le d&#233;sert au cours duquel seuls deux des adultes originels atteignent la terre promise de Canaan. Ce long voyage symbolise les &#233;preuves et les d&#233;fis que le peuple d'Isra&#235;l a d&#251; surmonter sur son chemin vers la libert&#233; et l'alliance avec Dieu.</French>
+		<German>[H1]"Lass mein Volk ziehen!"[\H1][NEWLINE]Das Buch Exodus, auch bekannt als das 2. Buch Moses, ist ein fundamentaler Teil des Alten Testaments und erz&#228;hlt die bewegende Geschichte des Auszugs der Israeliten aus &#196;gypten. Der Name "Exodus" leitet sich vom griechischen Wort f&#252;r "Auszug" ab und beschreibt treffend den Kern der Erz&#228;hlung. Das Buch Exodus setzt dort an, wo das Buch Genesis endet, und beschreibt die Situation der Israeliten, die in &#196;gypten im Exil leben und unter der Herrschaft des Pharaos zu unbezahlter Arbeit gezwungen werden. Die Erz&#228;hlung gliedert sich in drei Hauptteile: Die Befreiung aus &#196;gypten, der Beginn des W&#252;stenzuges zum Sinai und Israel am Sinai (Bund und Gesetz). Ein zentrales Ereignis im Buch Exodus ist die Erscheinung Gottes vor Mose in einem brennenden Dornbusch. Hier erh&#228;lt Mose den g&#246;ttlichen Auftrag, die Israeliten aus der Sklaverei zu befreien und sie in das "gelobte Land Kanaan" zu f&#252;hren. Die Exodus Geschichte endet nicht mit dem Verlassen &#196;gyptens. Sie beschreibt auch die 40-j&#228;hrige Wanderung durch die W&#252;ste, w&#228;hrend der nur zwei der urspr&#252;nglichen Erwachsenen das verhei&#223;ene Land Kanaan erreichen. Diese lange Reise symbolisiert die Pr&#252;fungen und Herausforderungen, die das Volk Israel auf seinem Weg zur Freiheit und zum Bund mit Gott bew&#228;ltigen musste.</German>
+		<Italian>[H1]"Lascia andare il mio popolo!"[\H1][NEWLINE]Il Libro dell'Esodo, noto anche come Secondo Libro di Mos&#232;, &#232; una parte fondamentale dell'Antico Testamento e racconta la commovente storia dell'Esodo degli Israeliti dall'Egitto. Il nome "Exodus" deriva dalla parola greca che significa "esodo" e descrive adeguatamente il nocciolo della storia. Il libro dell'Esodo inizia dove finisce il libro della Genesi e descrive la situazione degli Israeliti che vivevano in esilio in Egitto e costretti a svolgere lavori non retribuiti sotto il dominio del Faraone. La storia &#232; divisa in tre parti principali: la liberazione dall'Egitto, l'inizio del viaggio nel deserto verso il Sinai e Israele al Sinai (alleanza e legge). Un evento centrale nel libro dell'Esodo &#232; l'apparizione di Dio a Mos&#232; in un roveto ardente. Qui Mos&#232; riceve la missione divina di liberare gli Israeliti dalla schiavit&#249; e di condurli alla "terra promessa di Canaan". La storia dell'Esodo non finisce con la partenza dall'Egitto. Descrive anche il viaggio lungo 40 anni attraverso il deserto, durante il quale solo due degli adulti originari raggiungono la terra promessa di Canaan. Questo lungo viaggio simboleggia le prove e le sfide che il popolo d'Israele dovette superare nel suo cammino verso la libert&#224; e l'alleanza con Dio.</Italian>
+		<Spanish>[H1]"&#161;Deja ir a mi pueblo!"[\H1][NEWLINE]El Libro del &#201;xodo, tambi&#233;n conocido como el 2º Libro de Mois&#233;s, es parte fundamental del Antiguo Testamento y cuenta la conmovedora historia del &#201;xodo de los israelitas de Egipto. El nombre "&#201;xodo" se deriva de la palabra griega para "&#233;xodo" y describe acertadamente el n&#250;cleo de la historia. El libro del &#201;xodo comienza donde termina el libro de G&#233;nesis y describe la situaci&#243;n de los israelitas que viv&#237;an en el exilio en Egipto y eran obligados a realizar trabajos no remunerados bajo el gobierno del Fara&#243;n. La historia se divide en tres partes principales: la liberaci&#243;n de Egipto, el comienzo del viaje por el desierto hacia el Sina&#237; e Israel en el Sina&#237; (alianza y ley). Un acontecimiento central en el libro de &#201;xodo es la aparici&#243;n de Dios a Mois&#233;s en una zarza ardiente. Aqu&#237; Mois&#233;s recibe la misi&#243;n divina de liberar a los israelitas de la esclavitud y conducirlos a la "tierra prometida de Cana&#225;n". La historia del &#201;xodo no termina con la salida de Egipto. Tambi&#233;n describe el viaje de 40 a&#241;os a trav&#233;s del desierto durante el cual s&#243;lo dos de los adultos originales llegan a la tierra prometida de Cana&#225;n. Este largo viaje simboliza las pruebas y desaf&#237;os que el pueblo de Israel tuvo que superar en su camino hacia la libertad y la alianza con Dios.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WINDOFEN</Tag>
+		<English>Wind kiln</English>
+		<French>Four &#224; vent</French>
+		<German>Windofen</German>
+		<Italian>Forno eolico</Italian>
+		<Spanish>Horno de viento</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
+		<English>Build a [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</English>
+		<French>Construire une [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</French>
+		<German>[LINK=CONCEPT_MOVEMENT]Via Romana[\LINK] bauen</German>
+		<Italian>Costruire una [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</Italian>
+		<Spanish>Construir una [LINK=CONCEPT_MOVEMENT]V&#237;a Romana[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CITY_BAR_FOOD_GROWTH</Tag>
+		<English>%d1 [ICON_FOOD] per turnGrowth: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:Turn:Turns])</English>
+		<French>%d1 [ICON_FOOD] par tourCroissance : %d2/%d3 [ICON_FOOD] (%d4 [NUM4:tour:tours])</French>
+		<German>%d1 [ICON_FOOD] pro RundeWachstum: %d2/%d3 [ICON_FOOD] (%d4 [NUM3:Runde:Runden])</German>
+		<Italian>%d1 [ICON_FOOD] per turnoCrescita: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turni])</Italian>
+		<Spanish>%d1 [ICON_FOOD] por turnoCrecimiento: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turnos])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RESERVISTS</Tag>
+		<English>Units-Reservists</English>
+		<French>Unit&#233;s-R&#233;servistes</French>
+		<German>Einheiten-Reservisten</German>
+		<Italian>Unit&#224;-Riservisti</Italian>
+		<Spanish>Unidades-Reservistas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RESERVISTS_PEDIA</Tag>
+		<English>[H1]Reservists[\H1]
+
+Veteran units can join a city as reservists which provide +1[ICON_FOOD], +1[ICON_PRODUCTION] and +1[ICON_COMMERCE]. Reservists can always be drafted as veteran shield bearers or archers in case of need if you have already researched the required technologies (without the disadvantages of Conscripts civic). Veteran partisans arise when a city with local reservists is captured.
+
+Every fourth turn, there is a chance of 3% that a settled reservist dies (usually of old age).
+
+[H2]Available reservists[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Shield Bearer[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Greek peoples)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberians or Nordic peoples)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruscans or Romans)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Shortbowman[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Recurvebowman[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliary[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Mounted Auxiliary[\LINK]
+
+[H2]Settled Exhibition Fighters[\H2]
+[ICON_BULLET] Exhibition fighters can, with the civic "Civil Right", become reservists (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1[ICON_COMMERCE]) (chance of 2% every turn)
+[ICON_BULLET] Exhibition fighters can, with the civic "International law", become reservists (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (chance of 3% every turn)</English>
+		<French>
+[H1]R&#233;servistes[\H1]
+
+Les unit&#233;s de v&#233;t&#233;rans peuvent s'&#233;tablir en tant que r&#233;serviste dans les villes, ce qui apporte &#224; la ville 1 [ICON_FOOD], 1 [ICON_PRODUCTION] et 1 [ICON_COMMERCE]. Les r&#233;servistes peuvent en cas d'urgence &#234;tre mobilis&#233;s &#224; tout moment comme porteur de bouclier ou comme archer v&#233;t&#233;rans si vous avez les technologies n&#233;cessaires pour cela (sans les inconv&#233;nients du recrutement forc&#233;). Quand une ville est conquise, les r&#233;servistes locaux se joignent aux partisans et aux combattants libres.
+
+Tous les quatre tours, il y a une probabilit&#233; de 3 % qu'un r&#233;serviste install&#233; meurt (g&#233;n&#233;ralement de vieillesse).
+
+[H2]R&#233;servistes disponibles[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Porteur de bouclier[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (peuples grecs)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Ib&#232;res ou peuples nordiques)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (&#201;trusques ou Romains)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Archer[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Archer &#224; double courbure[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliaire[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Auxiliaire mont&#233;[\LINK]
+
+[H2]Gladiateurs install&#233;s[\H2]
+[ICON_BULLET] Les gladiateurs affect&#233;s dans une ville peuvent devenir des r&#233;servistes (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) si la doctrine Droit civil est active (Probabilit&#233; : 2% par tour)
+[ICON_BULLET] Les gladiateurs affect&#233;s dans une ville peuvent devenir des r&#233;servistes (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) si la doctrine Loi internationale est active (Probabilit&#233; : 3% par tour)
+		</French>
+		<German>
+[H1]Reservisten[\H1]
+
+Veteran-Einheiten k&#246;nnen sich als Reservist einer Stadt anschlie&#223;en, dies bringt der Stadt +1[ICON_FOOD], +1[ICON_PRODUCTION] und +1[ICON_COMMERCE]. Reservisten k&#246;nnen im Notfall jederzeit wieder als Veteran-Schildtr&#228;ger oder -Bogensch&#252;tzen eingezogen werden, wenn man die n&#246;tigen Technologien daf&#252;r besitzt (ohne die Nachteile einer Zwangsrekrutierung). Wird eine Stadt mit ans&#228;ssigen Reservisten erobert, entstehen Veteran-Partisanen.
+
+Alle vier Runden gibt es eine Wahrscheinlichkeit von 3%, dass ein angesiedelter Reservist (meist an Altersschw&#228;che) stirbt.
+
+[H2]Verf&#252;gbare Reservisten[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Schildtr&#228;ger[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Griechische V&#246;lker)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberer oder Nordische V&#246;lker)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etrusker oder R&#246;mer)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Kurzbogensch&#252;tze[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Reflexbogensch&#252;tze[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Hilfstrupp[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Berittener Hilfstrupp[\LINK]
+
+[H2]Angesiedelte Schauk&#228;mpfer[\H2]
+[ICON_BULLET] Schauk&#228;mpfer k&#246;nnen innerhalb der Staatsform "B&#252;rgerrecht" zu Reservisten werden (2% Wahrscheinlichkeit pro Runde)
+[ICON_BULLET] Schauk&#228;mpfer k&#246;nnen innerhalb der Staatsform "V&#246;lkerrecht" zu Reservisten werden (3% Wahrscheinlichkeit pro Runde)
+		</German>
+		<Italian>
+[H1]Riservisti[\H1]
+
+Unit&#224; veterane possono aderire come riservista di una citt&#224;, questo porta la citt&#224; +1 [ICON_FOOD], +1 [ICON_PRODUCTION] e +1 [ICON_COMMERCE]. Riservisti possono in caso di emergenza in qualsiasi momento, essere ritirata come supporto o arcieri veterano-label se avete le tecnologie necessarie per questo ( senza gli svantaggi di reclutamento forzato ). Quando una citt&#224; viene conquistata con riservisti locali sorgono partigiani veterani.
+
+Ogni quattro turni c'&#232; una probabilit&#224; del 3% che un riservista residente muoia (di solito di vecchiaia).
+
+[H2]Riservisti disponibili[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Guerriero con Scudo[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Popoli greci)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberici o popoli nordici)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruschi o Romani)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Arciere con Arco Corto[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Arciere con Arco Ricurvo[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Ausiliari[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Ausiliari a Cavallo[\LINK]
+
+[H2]Combattenti dell'arena/gladiatoridella stabilita[\H2]
+[ICON_BULLET] Con la forma di governo "Diritti Civili", i combattenti dell'arena/gladiatori di una citt&#224; possono diventare riservisti (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE], 2 % di possibilit&#224; per ogni turno )
+[ICON_BULLET] Con la forma di governo "Diritto Internazionale", i combattenti dell'arena/gladiatori di una citt&#224; possono diventare riservisti (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE], 3 % di possibilit&#224; per turno )
+		</Italian>
+		<Spanish>
+[H1]Reservistas[\H1]
+Las unidades veteranas pueden unirse a una ciudad como reservistas que proporcionan +1[ICON_FOOD], +1[ICON_PRODUCTION] y +1[ICON_COMMERCE]. Los reservistas pueden ser siempre reclutados como soldados con escudo o arqueros veteranos en caso de necesidad si has descubierto las tecnolog&#237;as requeridas (sin las desventajas del reclutamiento forzado). Los partisanos veteranos surgir&#225;n cuando una ciudad con reservistas locales es capturada.
+
+Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente muera (normalmente de vejez).
+
+[H2]Reservistas disponibles[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Soldado con Escudo[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (pueblos griegos)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (&#205;beros o pueblos n&#243;rdicos)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruscos o romanos)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Arquero con Arco Corto[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Arquero con Arco Recurvado[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliar[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Auxiliar Montado[\LINK]
+
+[H2]Luchadores de espect&#225;culo/gladiadores asentados[\H2]
+[ICON_BULLET] Los luchadores de espect&#225;culo/gladiadores asentados en una ciudad, con el principio "Derecho civil", pueden volverse reservistas (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (probabilidad del 2% cada turno)
+[ICON_BULLET] Los luchadores de espect&#225;culo/gladiadores asentados en una ciudad pueden, con el principio "Ley Internacional", volverse reservistas (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (probabilidad del 3% cada turno)
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_HIRES_TERRAIN</Tag>
+		<English>High Detail Terrain</English>
+		<French>D&#233;tail terrains haut</French>
+		<German>Hohe Gel&#228;ndedetails</German>
+		<Italian>Dettaglio alto del terreno</Italian>
+		<Spanish>Detalle del terreno alto</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GRAPHICOPTION_HIRES_TERRAIN_HELP</Tag>
+		<English>A high detail terrain will be used</English>
+		<French>Le niveau de d&#233;tail utilis&#233; pour les terrains sera plus haut.</French>
+		<German>Es werden hohe Gel&#228;ndedetails verwendet</German>
+		<Italian>Verr&#224; utilizzato un dettaglio alto del terreno</Italian>
+		<Spanish>Se usar&#225; un nivel de detalle del terreno m&#225;s alto</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_MERCHANT_ROBBERY_10</Tag>
+		<English>A botched robbery! Thanks to your escort. Robbers tried to steal your goods but decided to flee.</English>
+		<French>Un braquage rat&#233; ! Merci pour votre accompagnement. Lorsque des voleurs ont tent&#233; de voler vos biens, ils ont d&#233;cid&#233; de s'enfuir.</French>
+		<German>Ein verpatzter &#220;berfall! Eurem Begleitschutz sei Dank. R&#228;uber haben beim Versuch eure G&#252;ter zu stehlen dann doch lieber die Flucht ergriffen.</German>
+		<Italian>Una rapina fallita! Grazie per la tua scorta. Quando i ladri hanno cercato di rubare i tuoi beni, hanno deciso di scappare.</Italian>
+		<Spanish>&#161;Un atraco fallido! Gracias por tu escolta. Cuando los ladrones intentaron robar sus bienes, decidieron huir.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_UNIT_ESCAPE</Tag>
+		<English>Our %s1 barely escaped from combat with a %s2!</English>
+		<French>Notre unit&#233; (%s1) a pu s'&#233;chapper de justesse (contre %s2)!</French>
+		<German>Unsere Einheit %s1 konnte gegen die Einheit %s2 die Flucht ergreifen!</German>
+		<Italian>La nostra unit&#224; %s1 &#232; riuscita a scappare per un soffio (contro %s2)!</Italian>
+		<Spanish>&#161;Nuestra unidad %s1 escap&#243; por poco (contra %s2)!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_UNIT_ESCAPE_2</Tag>
+		<English>The enemy %s1 barely escaped our unit %s2!</English>
+		<French>L'unit&#233; ennemie (%s1) a pu s'&#233;chapper de justesse (contre %s2)!</French>
+		<German>Die gegnerische Einheit %s1 konnte gerade noch vor unserer Einheit %s2 fliehen!</German>
+		<Italian>L'unit&#224; nemica %s1 &#232; riuscita a scappare per un soffio (contro %s2)!</Italian>
+		<Spanish>&#161;La unidad enemiga %s1 escap&#243; por poco (contra %s2)!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_FEAT_GROWTHPERCENT</Tag>
+		<English>Spreads to neighboring fields: %d1%%</English>
+		<French>Se propage aux champs voisins : %d1%%</French>
+		<German>Verbreitet sich auf benachbarte Felder: %d1%%</German>
+		<Italian>Si diffonde ai campi vicini: %d1%%</Italian>
+		<Spanish>Se propaga a campos vecinos: %d1%%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_FEAT_HEALTHPERCENT_BAD</Tag>
+		<English>Harms a surrounding city with +%d1%%[ICON_UNHEALTHY]</English>
+		<French>Nuire &#224; une ville environnante avec +%d1%%[ICON_UNHEALTHY]</French>
+		<German>Schadet einer umliegenden Stadt mit +%d1%%[ICON_UNHEALTHY]</German>
+		<Italian>Danneggia una citt&#224; circostante con +%d1%%[ICON_UNHEALTHY]</Italian>
+		<Spanish>Da&#241;a a una ciudad circundante con +%d1%%[ICON_UNHEALTHY]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_FEAT_HEALTHPERCENT_GOOD</Tag>
+		<English>Delivers to a surrounding city +%d1%%[ICON_HEALTHY]</English>
+		<French>Livre dans une ville environnante +%d1%%[ICON_HEALTHY]</French>
+		<German>Liefert einer umliegenden Stadt +%d1%%[ICON_HEALTHY]</German>
+		<Italian>Consegna in una citt&#224; circostante +%d1%%[ICON_HEALTHY]</Italian>
+		<Spanish>Entrega a una ciudad circundante +%d1%%[ICON_HEALTHY]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_NEW_LAKE</Tag>
+		<English>A new lake was created by the massive impact.</English>
+		<French>Un nouveau lac a &#233;t&#233; cr&#233;&#233; par l'&#233;norme impact.</French>
+		<German>Ein neuer See ist durch den gewaltigen Einschlag entstanden.</German>
+		<Italian>Un nuovo lago &#232; stato creato dall'enorme impatto.</Italian>
+		<Spanish>El enorme impacto cre&#243; un nuevo lago.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_DAMAGED</Tag>
+		<English>[COLOR_NEGATIVE_TEXT](damaged)[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT](endommag&#233;)[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT](besch&#228;digt)[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT](danneggiato)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT](da&#241;ado)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_HURT</Tag>
+		<English>[COLOR_NEGATIVE_TEXT](hurt)[COLOR_REVERT]</English>
+		<French>[COLOR_NEGATIVE_TEXT](bless&#233;)[COLOR_REVERT]</French>
+		<German>[COLOR_NEGATIVE_TEXT](verletzt)[COLOR_REVERT]</German>
+		<Italian>[COLOR_NEGATIVE_TEXT](ferito)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_NEGATIVE_TEXT](herido)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_209</Tag>
+		<English>Only pessimists strike the iron while it is hot. Optimists trust that it will not run cold. Peter Bamm</English>
+		<French>Seuls les pessimistes forgent le fer lorsqu'il est chaud. Les optimistes croient qu'il ne fera pas froid. Peter Bamm</French>
+		<German>Nur Pessimisten schmieden das Eisen, solange es hei&#223; ist. Optimisten vertrauen darauf, da&#223; es nicht erkaltet. Peter Bamm</German>
+		<Italian>Solo i pessimisti forgiano il ferro mentre &#232; caldo. Gli ottimisti confidano che non far&#224; freddo. Peter Bamm</Italian>
+		<Spanish>S&#243;lo los pesimistas forjan el hierro mientras est&#225; caliente. Los optimistas conf&#237;an en que no har&#225; fr&#237;o. Peter Bam</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_210</Tag>
+		<English>War is the best merchant. It turns iron into gold. Friedrich Schiller</English>
+		<French>La guerre est le meilleur marchand. Il transforme le fer en or. Fr&#233;d&#233;ric Schiller</French>
+		<German>Krieg ist der beste Kaufmann. Er macht aus Eisen Gold. Friedrich Schiller</German>
+		<Italian>La guerra &#232; il miglior mercante. Trasforma il ferro in oro. Friedrich Schiller</Italian>
+		<Spanish>La guerra es el mejor comerciante. Convierte el hierro en oro. Friedrich Schiller</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_211</Tag>
+		<English>A good person is more reliable than a stone bridge. Marcus Aurelius</English>
+		<French>Une bonne personne est plus fiable qu'un pont de pierre. Marc Aur&#232;le</French>
+		<German>Ein guter Mensch ist zuverl&#228;ssiger als eine steinerne Br&#252;cke. Marc Aurel</German>
+		<Italian>Una brava persona &#232; pi&#249; affidabile di un ponte di pietra. Marco Aurelio</Italian>
+		<Spanish>Una buena persona es m&#225;s confiable que un puente de piedra. Marco Aurelio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PITBOSS_TEAM</Tag>
+		<English>Team</English>
+		<French>Equipe</French>
+		<German>Team</German>
+		<Italian>Squadra</Italian>
+		<Spanish>Equipo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_AGGRESSIVE_ANIMALS</Tag>
+		<English>Show movements of dangerous animals</English>
+		<French>Montrer les mouvements d'animaux dangereux</French>
+		<German>Zeige Bewegungen gef&#228;hrlicher Tiere</German>
+		<Italian>Mostra il movimento di animali pericolosi</Italian>
+		<Spanish>Mostrar movimiento de animales peligrosos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_AGGRESSIVE_ANIMALS_HELP</Tag>
+		<English>Show the moves of dangerous wild animals between turns</English>
+		<French>Montrez les mouvements des animaux sauvages dangereux entre les tours</French>
+		<German>Fortbewegung gef&#228;hrlicher wilder Tiere zwischen den Runden anzeigen</German>
+		<Italian>Mostra le mosse degli animali selvatici pericolosi tra un turno e l'altro</Italian>
+		<Spanish>Muestra los movimientos de animales salvajes peligrosos entre turnos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_FRIENDLY_ANIMALS</Tag>
+		<English>Show movements of harmless animals</English>
+		<French>Montrer les mouvements d'animaux inoffensifs</French>
+		<German>Zeige Bewegungen harmloser Tiere</German>
+		<Italian>Mostra i movimenti di animali innocui</Italian>
+		<Spanish>Mostrar movimientos de animales inofensivos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_FRIENDLY_ANIMALS_HELP</Tag>
+		<English>Show the moves of harmless wild animals between turns</English>
+		<French>Montrez les mouvements des animaux sauvages inoffensifs entre les tours</French>
+		<German>Fortbewegung harmloser wilder Tiere zwischen den Runden anzeigen</German>
+		<Italian>Mostra le mosse degli animali selvatici innocui tra un turno e l'altro</Italian>
+		<Spanish>Muestra los movimientos de animales salvajes inofensivos entre turnos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_MEDIC_HELP</Tag>
+		<English>[ICON_BULLET]Increases the capacity of a supply cart by 100.</English>
+		<French>[ICON_BULLET]Augmente la capacit&#233; d'un chariot de fournitures de 100.</French>
+		<German>[ICON_BULLET]Erh&#246;ht die Kapazit&#228;t eines Versorgungskarren um 100.</German>
+		<Italian>[ICON_BULLET]Aumenta la capacit&#224; di un carrello di rifornimenti di 100.</Italian>
+		<Spanish>[ICON_BULLET]Aumenta la capacidad de un carro de suministros en 100.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ROAD_MOVEMENT_COST</Tag>
+		<English>[ICON_BULLET]Movement Cost:</English>
+		<French>[ICON_BULLET]Co&#251;t du mouvement :</French>
+		<German>[ICON_BULLET]Fortbewegungskosten:</German>
+		<Italian>[ICON_BULLET]Costo movimento:</Italian>
+		<Spanish>[ICON_BULLET]Coste del movimiento:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ROUTE_ROMAN_ROAD</Tag>
+		<English>Via Romana</English>
+		<French>Via Romana</French>
+		<German>Via Romana</German>
+		<Italian>Via Romana</Italian>
+		<Spanish>V&#237;a Romana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SYSTEM_TEAM</Tag>
+		<English>Team</English>
+		<French><Text>&#233;quipe</Text><Gender>Female</Gender><Plural>1</Plural></French>
+		<German><Text>Team</Text><Gender>Neuter</Gender><Plural>0</Plural></German>
+		<Italian><Text>squadra</Text><Gender>Female</Gender><Plural>1</Plural></Italian>
+		<Spanish><Text>equipo</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BLASEBALG</Tag>
+		<English>Bellows</English>
+		<French>Soufflet</French>
+		<German>Blasebalg</German>
+		<Italian>Mantice</Italian>
+		<Spanish>Fuelle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BRIDGE_BUILDING</Tag>
+		<English>Bridge Building</English>
+		<French>Construction de ponts</French>
+		<German>Br&#252;ckenbau</German>
+		<Italian>Costruzione di ponti</Italian>
+		<Spanish>Construcci&#243;n de puentes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_BRIDGE_BUILDING_PEDIA</Tag>
+		<English>According to tradition, the oldest Roman wooden bridge was the Pons Sublicius over the Tiber, built in the 7th century BC.[NEWLINE][NEWLINE]In the 6th century BC, the Babylonians under Nebuchadnezzar II built bridges made of cypress and cedar wood. The Romans had already mastered the construction of arched bridges made of natural stone or concrete, as the bridge of Alc&#225;ntara impressively demonstrates.[NEWLINE][NEWLINE]Stone bridges with real round arches were first developed by the Romans and built in large numbers as part of the transport routes necessary for military and trade across the empire.[NEWLINE][NEWLINE]Ship bridges also existed early on. Herodotus reports that the Persian king Darius I reached Europe with his 70,000-strong army on a ship bridge over the Bosporus during his campaign against the Scythians (513/512 BC). Xerxes I had the ship bridges over the Hellespont built (ca. 480 BC), two bridges each consisting of over 300 ships, in order to cross the Dardanelles.</English>
+		<French>Selon la tradition, le plus ancien pont romain en bois serait celui construit au VIIe si&#232;cle avant JC. Pons Sublicius a construit un pont sur le Tibre au 4&#232;me si&#232;cle avant JC.[NEWLINE][NEWLINE]Au VIe si&#232;cle av. Au 4&#232;me si&#232;cle avant JC, les Babyloniens sous Nabuchodonosor II construisirent des ponts en bois de cypr&#232;s et de c&#232;dre. Les Romains ma&#238;trisaient d&#233;j&#224; la construction de ponts en arc en pierre naturelle ou en b&#233;ton, comme le d&#233;montre de mani&#232;re impressionnante le pont d'Alc&#225;ntara.[NEWLINE][NEWLINE]Les ponts en pierre avec de v&#233;ritables arcs ronds ont &#233;t&#233; d&#233;velopp&#233;s pour la premi&#232;re fois par les Romains et ont &#233;t&#233; construits en grand nombre dans tout l'empire dans le cadre des voies de transport n&#233;cessaires &#224; l'arm&#233;e et au commerce.[NEWLINE][NEWLINE]Les ponts maritimes exist&#232;rent &#233;galement tr&#232;s t&#244;t. H&#233;rodote rapporte que le roi perse Darius Ier a atteint l'Europe sur un pont maritime sur le Bosphore lors de sa campagne contre les Scythes (513/512 av. J.-C.) avec son arm&#233;e de 70 000 hommes. Xerx&#232;s Ier (environ 480 av. J.-C.) fit construire des ponts maritimes sur l'Hellespont, deux ponts compos&#233;s chacun de plus de 300 navires, afin de traverser les Dardanelles.</French>
+		<German>Die &#228;lteste r&#246;mische Holzbr&#252;cke war laut der &#220;berlieferung der im 7. Jahrhundert v. Chr. errichtete Pons Sublicius &#252;ber den Tiber.[NEWLINE][NEWLINE]Im 6. Jahrhundert v. Chr. bauten die Babylonier unter Nebukadnezar II. Br&#252;cken aus Zypressen- und Zedernholz. Den Bau von Bogenbr&#252;cken aus Natursteinen oder Beton beherrschten schon die R&#246;mer, wie die Br&#252;cke von Alc&#225;ntara noch eindrucksvoll belegt.[NEWLINE][NEWLINE]Steinbr&#252;cken mit echten Rundb&#246;gen wurden erst von den R&#246;mern entwickelt und im Zuge der f&#252;r Milit&#228;r und Handel notwendigen Verkehrswege quer durch das Reich in gro&#223;er Zahl errichtet.[NEWLINE][NEWLINE]Schiffbr&#252;cken hat es ebenfalls schon fr&#252;h gegeben. Herodot berichtet, der persische K&#246;nig Dareios I. sei bei seinem Feldzug gegen die Skythen (513/512 v. Chr.) mit seinem 70.000 Mann starken Heer auf einer Schiffbr&#252;cke &#252;ber den Bosporus nach Europa gelangt. Xerxes I. habe (ca. 480 v. Chr.) die Schiffbr&#252;cken &#252;ber den Hellespont, zwei aus jeweils &#252;ber 300 Schiffen bestehende Br&#252;cken, bauen lassen, um die Dardanellen zu &#252;berqueren.</German>
+		<Italian>Secondo la tradizione il pi&#249; antico ponte romano in legno fu quello costruito nel VII secolo a.C. Pons Sublicius costru&#236; un ponte sul Tevere nel IV secolo a.C.[NEWLINE][NEWLINE]Nel VI secolo a.C. Nel IV secolo a.C. i Babilonesi sotto Nabucodonosor II costruirono ponti in legno di cipresso e cedro. Gi&#224; i romani erano esperti nella costruzione di ponti ad arco in pietra naturale o cemento, come dimostra in modo impressionante il ponte dell'Alc&#225;ntara.[NEWLINE][NEWLINE]I ponti in pietra con veri archi a tutto sesto furono sviluppati per la prima volta dai romani e furono costruiti in gran numero in tutto l'impero come parte delle vie di trasporto necessarie per scopi militari e commerciali.[NEWLINE][NEWLINE]Molto presto esistevano anche i ponti navali. Erodoto riferisce che il re persiano Dario I raggiunse l'Europa su un ponte navale sul Bosforo durante la sua campagna contro gli Sciti (513/512 a.C.) con il suo esercito di 70.000 uomini. Serse I (intorno al 480 a.C.) fece costruire i ponti navali sull'Ellesponto, due ponti costituiti ciascuno da oltre 300 navi, per attraversare i Dardanelli.</Italian>
+		<Spanish>Seg&#250;n la tradici&#243;n, el puente romano de madera m&#225;s antiguo fue el construido en el siglo VII a.C. Pons Sublicius construy&#243; un puente sobre el T&#237;ber en el siglo IV a.C.[NEWLINE][NEWLINE]En el siglo VI a.C. En el siglo IV a. C., los babilonios bajo Nabucodonosor II construyeron puentes de madera de cipr&#233;s y cedro. Los romanos ya dominaban la construcci&#243;n de puentes arqueados de piedra natural u hormig&#243;n, como lo demuestra de manera impresionante el puente de Alc&#225;ntara.[NEWLINE][NEWLINE]Los puentes de piedra con verdaderos arcos de medio punto fueron desarrollados por primera vez por los romanos y se construyeron en gran n&#250;mero en todo el imperio como parte de las rutas de transporte necesarias para el ej&#233;rcito y el comercio.[NEWLINE][NEWLINE]Los puentes para barcos tambi&#233;n existieron desde el principio. Her&#243;doto informa que el rey persa Dar&#237;o I lleg&#243; a Europa a trav&#233;s de un puente de barcos sobre el B&#243;sforo durante su campa&#241;a contra los escitas (513/512 a. C.) con su ej&#233;rcito de 70.000 hombres. Jerjes I (alrededor del 480 a. C.) hizo construir puentes para barcos sobre el Helesponto, dos puentes con m&#225;s de 300 barcos cada uno, para cruzar los Dardanelos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MOND</Tag>
+		<English>Lunar Calendar</English>
+		<French>Calendrier lunaire</French>
+		<German>Mondkalender</German>
+		<Italian>Calendario lunare</Italian>
+		<Spanish>Calendario lunar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_PASSION</Tag>
+		<English>Passion of Christ</English>
+		<French>Passion du Christ</French>
+		<German>Passion Christi</German>
+		<Italian>Passione di Cristo</Italian>
+		<Spanish>Pasi&#243;n de Cristo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_RENNOFEN</Tag>
+		<English>Bloomery</English>
+		<French>Bas fourneau</French>
+		<German>Rennofen</German>
+		<Italian>Forno basso</Italian>
+		<Spanish>Horno bajo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE_HELP</Tag>
+		<English>[ICON_BULLET]Can be sold at a slave market[NEWLINE][ICON_BULLET]Can join huts/hamlets/villages[NEWLINE][ICON_BULLET]Can be deployed in cities[NEWLINE][ICON_BULLET]Can be assigned to buildings[NEWLINE][ICON_BULLET]Should be guarded by a military unit</English>
+		<French>[ICON_BULLET]Peut &#234;tre vendu sur un march&#233; aux esclaves[NEWLINE][ICON_BULLET]Peut rejoindre des cabanes/hameaux/villages[NEWLINE][ICON_BULLET]Peut &#234;tre utilis&#233; dans les villes[NEWLINE][ICON_BULLET]Peut &#234;tre attribu&#233; &#224; des b&#226;timents[NEWLINE][ICON_BULLET]Doit &#234;tre gard&#233; par une unit&#233; militaire</French>
+		<German>[ICON_BULLET]Kann auf einem Sklavenmarkt verkauft werden[NEWLINE][ICON_BULLET]Kann sich H&#252;tten/Weiler/D&#246;rfern anschlie&#223;en[NEWLINE][ICON_BULLET]Kann in St&#228;dten eingesetzt werden[NEWLINE][ICON_BULLET]Kann Geb&#228;uden zugewiesen werden[NEWLINE][ICON_BULLET]Sollte von einer Milit&#228;reinheit bewacht werden</German>
+		<Italian>[ICON_BULLET]Pu&#242; essere venduto al mercato degli schiavi[NEWLINE][ICON_BULLET]Pu&#242; unirsi a capanne/borgate/villaggi[NEWLINE][ICON_BULLET]Pu&#242; essere utilizzato nelle citt&#224;[NEWLINE][ICON_BULLET]Pu&#242; essere assegnato agli edifici[NEWLINE][ICON_BULLET]Dovrebbe essere sorvegliato da un'unit&#224; militare</Italian>
+		<Spanish>[ICON_BULLET]Se puede vender en un mercado de esclavos.[NEWLINE][ICON_BULLET]Puede unirse a caba&#241;as/aldeas/aldeas[NEWLINE][ICON_BULLET]Se puede usar en ciudades[NEWLINE][ICON_BULLET]Se puede asignar a edificios[NEWLINE][ICON_BULLET]Deber&#237;a estar custodiado por una unidad militar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TRADE_MERCHANT_MAN_HELP</Tag>
+		<English>[ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire (max 9 merchants)[NEWLINE][ICON_BULLET]Low inventory capacity and therefore low profit margin</English>
+		<French>[ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 9)[NEWLINE][ICON_BULLET]Faible capacit&#233; de marchandises et donc faible marge b&#233;n&#233;ficiaire</French>
+		<German>[ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer Einheiten entspricht der Anzahl der Handelsposten im Reich (max 9 H&#228;ndler)[NEWLINE][ICON_BULLET]Geringe Warenkapazit&#228;t und daher geringe Gewinnspanne</German>
+		<Italian>[ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 9 commercianti)[NEWLINE][ICON_BULLET]Scarsa capacit&#224; di merce e quindi basso margine di profitto</Italian>
+		<Spanish>[ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 9 comerciantes)[NEWLINE][ICON_BULLET]Baja capacidad de mercanc&#237;as y, por tanto, bajo margen de beneficio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TROJAN_HORSE_HELP</Tag>
+		<English>[ICON BULLET]Can instantly set the defense of cities to 0. The city must have over 50% defense strength.</English>
+		<French>[ICON_BULLET]Peut instantan&#233;ment d&#233;finir la d&#233;fense de la ville &#224; 0. La ville doit avoir plus de 50 % de force de d&#233;fense.</French>
+		<German>[ICON_BULLET]Kann die Verteidung von St&#228;dten sofort auf 0 setzen. Die Stadt muss &#252;ber 50% Verteidigungsst&#228;rke haben.</German>
+		<Italian>[ICON_BULLET]Pu&#242; impostare immediatamente la difesa della citt&#224; a 0. La citt&#224; deve avere una forza difensiva superiore al 50%.</Italian>
+		<Spanish>[ICON_BULLET]Puede establecer instant&#225;neamente la defensa de la ciudad a 0. La ciudad debe tener m&#225;s del 50% de fuerza de defensa.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_UNIT_INFO_NACH</Tag>
+		<English>to</English>
+		<French>&#224;</French>
+		<German>nach</German>
+		<Italian>a</Italian>
+		<Spanish>a</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -3,19 +3,11 @@
 <!-- Sid Meier's Civilization 4 -->
 <!-- Copyright Firaxis Games 2005 -->
 <!-- -->
-<!-- Global Defines -->
+<!-- Global Defines alternatives -->
 <Civ4Defines xmlns="x-schema:CIV4GlobalDefinesSchema.xml">
-	<!--Flunky for PAE: River ford-->
 	<Define>
-		<DefineName>RIVER_FORD_TERRAIN</DefineName>
-		<DefineTextVal>TERRAIN_RIVER_FORD</DefineTextVal>
-	</Define>
-	<Define>
-		<DefineName>LAKE_TERRAIN</DefineName>
-		<DefineTextVal>TERRAIN_LAKE</DefineTextVal>
-	</Define>
-	<Define>
-		<DefineName>RIVER_TERRAIN</DefineName>
-		<DefineTextVal>TERRAIN_RIVER</DefineTextVal>
+		<DefineName>CORPORATION_PBMOD_MINIMAL_FACTOR</DefineName>
+		<iDefineIntVal>100</iDefineIntVal>
+		<!-- 100 percent means disabling of feature -->
 	</Define>
 </Civ4Defines>
