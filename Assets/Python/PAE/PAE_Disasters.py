@@ -1794,15 +1794,14 @@ def doComet():
 										iRand = CvUtil.myRandom(len(bonus), "doComet5_ChooseBonus")
 										iNewBonus = bonus[iRand]
 										pPlot.setBonusType(iNewBonus)
-										iPlotOwner = pPlot.getOwner()
-										if iPlotOwner != -1 and gc.getPlayer(iPlotOwner).isHuman():
-											CyInterface().addMessage(iPlotOwner, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(),)),
+										if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
+											CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(),)),
 											None, 2, gc.getBonusInfo(iNewBonus).getButton(), ColorTypes(14), pPlot.getX(), pPlot.getY(), True, True)
 									# See
 									elif iRand == 1:
 										pPlot.setTerrainType(terr_lake, 1, 1)
-										if iPlotOwner != -1 and gc.getPlayer(iPlotOwner).isHuman():
-											CyInterface().addMessage(iPlotOwner, True, 10, CyTranslator().getText("TXT_KEY_NEW_LAKE", ("",)),
+										if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
+											CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_NEW_LAKE", ("",)),
 											None, 2, gc.getTerrainInfo(terr_lake).getButton(), ColorTypes(14), pPlot.getX(), pPlot.getY(), True, True)
 
 

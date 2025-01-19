@@ -441,7 +441,8 @@ def doMessageCityGrowing(pCity):
 						# iAddHappy = kBuildingDorf.getBonusHappinessChanges(iBonus)
 						# if iAddHappy != -1:
 						# iBonusHappy += iAddHappy
-				elif iPop == iPopStadt and pCity.getNumRealBuilding(iBuildingStadt) == 0:
+				#elif iPop == iPopStadt and pCity.getNumRealBuilding(iBuildingStadt) == 0:
+				elif iPop == iPopStadt and not pCity.isHasBuilding(iBuildingStadt):
 						iBonusHealth = kBuildingStadt.getHealth()
 						iBonusHappy = kBuildingStadt.getHappiness()
 				elif iPop == iPopProvinz:
@@ -561,7 +562,7 @@ def doCheckGlobalTraitBuildings(iPlayer, pCity=None, iOriginalOwner=-1):
 
 		for (iTrait, iBuilding) in lGlobal:
 				# es wurde ein Traitbuilding erobert
-				if pCity is not None and pCity.getNumRealBuilding(iBuilding) > 0:
+				if pCity is not None and pCity.isHasBuilding(iBuilding):
 						pCity.setNumRealBuilding(iBuilding, 0)
 						if iOriginalOwner != -1:
 								doCheckGlobalBuilding(iOriginalOwner, iBuilding)
@@ -2105,7 +2106,7 @@ def doJewRevolt(pCity):
 def provinceTribute(pCity):
 		if pCity is None or pCity.isNone():
 				return False
-		if not pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
+		if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
 				return False
 
 		iPlayer = pCity.getOwner()
@@ -4188,7 +4189,7 @@ def doCheckCivilWar(pCity):
 
 		# in capital, units count double. Maybe check for GovernmentCenter?
 		iUnitsExtraCalc = 0
-		if pCity.isCapital() or pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
+		if pCity.isCapital() or pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
 				iUnitsExtraCalc = iMilitaryUnits
 
 		iChance = CvUtil.myRandom(100, "iRandCityCivilWarChances")
@@ -4372,7 +4373,7 @@ def getHolyRelic(pCity, iPlayer):
 						if pPlayer.getStateReligion() == iReligion and pCity.isHasReligion(iReligion):
 
 								bRelic = False
-								if pCity.getNumRealBuilding(iBuilding):
+								if pCity.isHasBuilding(iBuilding):
 										pCity.setNumRealBuilding(iBuilding, 0)
 										bRelic = True
 								elif CvUtil.myRandom(10, "iRandCityRelic") == 1:

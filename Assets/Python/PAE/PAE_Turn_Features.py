@@ -71,6 +71,7 @@ def doPlotFeatures():
 		# bonus_dogs = gc.getInfoTypeForString("BONUS_HUNDE")
 		bonus_deer = gc.getInfoTypeForString("BONUS_DEER")
 		# bonus_pig = gc.getInfoTypeForString("BONUS_PIG")
+		bonus_esel = gc.getInfoTypeForString("BONUS_ESEL")
 		# features
 		iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
 		iFeatBurned = gc.getInfoTypeForString("FEATURE_FOREST_BURNT")
@@ -264,6 +265,21 @@ def doPlotFeatures():
 																				# Add Unit
 																				gc.getPlayer(iNewUnitOwner).initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				continue
+														# Esel
+														elif loopPlot.getBonusType(iPlotOwner) == bonus_esel:
+																iUnitType = gc.getInfoTypeForString("UNIT_ESEL")
+																iTechDom = gc.getInfoTypeForString("TECH_FENCES")
+																if loopPlot.getNumUnits() == 0:
+																		if CvUtil.myRandom(33, "esel") == 1:
+																				# Check Owner
+																				iNewUnitOwner = iBarbPlayer
+																				if iPlotOwner != -1 and iPlotOwner != iBarbPlayer:
+																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(iTechDom):
+																								iNewUnitOwner = iPlotOwner
+																				# Add Unit
+																				gc.getPlayer(iNewUnitOwner).initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																				continue
+
 
 														# Movement of wild animal bonus resources (nur auf neutralem Terrain)
 														if bMovingBonus and loopPlot.getBonusType(-1) in L.LMovingBonus and loopPlot.getNumUnits() == 0 and iPlotImprovement == -1 and iPlotOwner == -1:

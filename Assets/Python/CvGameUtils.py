@@ -2185,7 +2185,7 @@ class CvGameUtils:
 								if not pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER")):
 										if pPlot.getOwner() == iOwner:
 												pNewUnit = CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pUnit.plot(), pOwner)
-												GG_Name = PAE_Unit.getGGName(pPlayer)
+												GG_Name = PAE_Unit.getGGName(pOwner)
 												if GG_Name != "":
 														pNewUnit.setName(GG_Name)
 												lPromos = [
