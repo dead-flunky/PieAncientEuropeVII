@@ -4064,24 +4064,24 @@ def doSettleStatthalter(pUnit, pCity):
 		# Werte des Statthalters adden
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("StatthalterClass",pUnit.getUnitClassType())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		if pUnit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_STATTHALTER"):
-				iTyp = int(CvUtil.getScriptData(pUnit, ["typ", -1]))
+				iTyp = CvUtil.getScriptData(pUnit, ["typ", ""])
 				# Test Message
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Statthaltertyp",iTyp)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-				if iTyp == 0:
+				if iTyp == "0":
 						pCity.setBuildingCommerceChange(iBuildingClass, CommerceTypes.COMMERCE_RESEARCH, 5)
-				elif iTyp == 1:
+				elif iTyp == "1":
 						pCity.setBuildingCommerceChange(iBuildingClass, CommerceTypes.COMMERCE_CULTURE, 5)
-				elif iTyp == 2:
+				elif iTyp == "2":
 						pCity.setBuildingCommerceChange(iBuildingClass, CommerceTypes.COMMERCE_GOLD, 5)
-				elif iTyp == 3:
+				elif iTyp == "3":
 						pCity.setBuildingYieldChange(iBuildingClass, YieldTypes.YIELD_PRODUCTION, 5)
-				elif iTyp == 4:
+				elif iTyp == "4":
 						pCity.setBuildingYieldChange(iBuildingClass, YieldTypes.YIELD_COMMERCE, 5)
-				elif iTyp == 5:
+				elif iTyp == "5":
 						pCity.setBuildingCommerceChange(iBuildingClass, CommerceTypes.COMMERCE_ESPIONAGE, 5)
-				elif iTyp == 6:
+				elif iTyp == "6":
 						iHappy += 2
-				elif iTyp == 7:
+				elif iTyp == "7":
 						pCity.setBuildingHealthChange(iBuildingClass, 2)
 				pCity.setBuildingHappyChange(iBuildingClass, iHappy)
 		# Held / Feldherr ansiedeln

@@ -597,10 +597,10 @@ List of keys and their meanings:
 				tst - TradeSpecialTurns
 				tsb - TradeSpecialBonus
 				autX1, autX2, autY1, autY2 - Plots for automated TradeRoutes
+				typ - properties for city governor (Statthalter Unit)
 				rel - unit's religion: Emigrants & Settlers
 
 """
-
 
 def decode_script_data(sData):
 		try:
