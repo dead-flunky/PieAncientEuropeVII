@@ -952,6 +952,7 @@ def doVulkan(iX, iY, iSkala):
 						pPlot.setPlotType(PlotTypes.PLOT_LAND, True, True)
 						pPlot.setTerrainType(terr_tundra, 1, 1)
 
+				feat_vulkan = gc.getInfoTypeForString("FEATURE_VOLCANO")
 				pPlot.setFeatureType(feat_vulkan, 0)
 
 				# Meldungen -----

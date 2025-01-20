@@ -2064,7 +2064,7 @@ def doJewRevolt(pCity):
 				newPlayer.setGold(500)
 
 		# Rebells x 1.5 of city pop
-		iNumRebels = pCity.getPopulation() * 1.5
+		iNumRebels = int(pCity.getPopulation() * 1.5)
 
 		# City Revolt
 		# pCity.setOccupationTimer(iNumRebelx)
@@ -2106,7 +2106,9 @@ def doJewRevolt(pCity):
 def provinceTribute(pCity):
 		if pCity is None or pCity.isNone():
 				return False
-		if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
+		# getNumRealBuilding geht nicht
+		# isHasBuilding geht auch nicht
+		if pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")) == 0:
 				return False
 
 		iPlayer = pCity.getOwner()

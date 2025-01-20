@@ -3631,7 +3631,7 @@ def doNavalOnCombatResult(pWinner, pLoser, bWinnerIsDead):
 		return bUnitDone
 
 def getNearestValidPlot(pUnit):
-	pNearestCity = gc.getMap().findCity(pUnit.getX(), pUnit.getY(), pUnit.getOwner(),-1,True,False,-1,-1,None)
+	#pNearestCity = gc.getMap().findCity(pUnit.getX(), pUnit.getY(), pUnit.getOwner(),-1,True,False,-1,4,None)
 	iBestValue = MAX_INT
 	pBestPlot = None
 
@@ -3644,8 +3644,8 @@ def getNearestValidPlot(pUnit):
 					if (pUnit.getDomainType() != DOMAIN_AIR) or pLoopPlot.isFriendlyCity(pUnit, True):
 						if pLoopPlot.isRevealed(pUnit.getTeam(), False):
 							iValue = (plotDistance(pUnit.getX(), pUnit.getY(), pLoopPlot.getX(), pLoopPlot.getY()) * 2)
-							if pNearestCity:
-								iValue += plotDistance(pLoopPlot.getX(), pLoopPlot.getY(), pNearestCity.getX(), pNearestCity.getY())
+							#if pNearestCity:
+							#	iValue += plotDistance(pLoopPlot.getX(), pLoopPlot.getY(), pNearestCity.getX(), pNearestCity.getY())
 							if pUnit.getDomainType() == DOMAIN_SEA and not pUnit.plot().isWater():
 								if not pLoopPlot.isWater() or not pLoopPlot.isAdjacentToArea(pUnit.area()):
 									iValue *= 3
@@ -3755,7 +3755,7 @@ def huntingResult(pLoser, pWinner):
 						pHunterCity.changeFood(iFoodAdd)
 						if pWinnerPlayer.isHuman():
 								CyInterface().addMessage(iWinnerPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_ADD_FOOD", (pWinner.getName(),
-								pHunterCity.getName(), iFoodAdd)), None, 2, pLoser.getButton(), ColorTypes(13), pLoser.getX(), pLoser.getY(), True, True)
+								pHunterCity.getName(), iFoodAdd)), None, 2, pLoser.getButton(), ColorTypes(14), pLoser.getX(), pLoser.getY(), True, True)
 
 				# Irgendeine Stadt im Umkreis (bis PAE 6.18)
 				#CityArray = []
