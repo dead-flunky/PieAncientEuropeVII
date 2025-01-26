@@ -391,7 +391,7 @@ def isBonusCultivatable(pUnit):
 		if not pUnit.getUnitType() in L.LCultivationUnits + L.LTradeUnits:
 				return False
 
-		eBonus = int(CvUtil.getScriptData(pUnit, ["b"], -1))
+		eBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
 		if eBonus == -1:
 				return False
 

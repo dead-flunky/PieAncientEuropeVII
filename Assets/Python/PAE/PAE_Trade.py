@@ -169,7 +169,7 @@ def doSellBonus(pUnit, pCity):
 				if pBuyer.isHuman() and iBuyer != iSeller:
 						CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_BONUS_SOLD", (pSeller.getName(), pSeller.getCivilizationShortDescriptionKey(),
 																																																		 pCity.getName(), sBonusName, iGewinnWissen)), None, 2, None, ColorTypes(8), pUnit.getX(), pUnit.getY(), False, False)
-				elif pSeller.isHuman():
+				if pSeller.isHuman():
 						CyInterface().addMessage(iSeller, True, 10, CyTranslator().getText("TXT_KEY_BONUS_SOLD2", (pCity.getName(), pBuyer.getCivilizationShortDescriptionKey(),
 																																																			 sBonusName, iPrice, iGewinnWissen)), None, 2, None, ColorTypes(8), pUnit.getX(), pUnit.getY(), False, False)
 

@@ -3890,8 +3890,8 @@ class CvEventManager:
 
 								# Normaler Handel - Handelsstrasse bauen: Chance 2%
 								if CvUtil.myRandom(100, "Handelsstrasse bauen") < 2:
-										scriptCityId = CvUtil.getScriptData(pUnit, ["c", "t"])  # CityID
-										if scriptCityId != "":
+										scriptCityId = CvUtil.getScriptData(pUnit, ["c", "t"], -1)  # CityID
+										if scriptCityId != -1:
 												pSource = pPlayer.getCity(scriptCityId).plot()
 										else:
 												pSource = pPlayer.getCapitalCity().plot()

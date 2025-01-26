@@ -174,7 +174,7 @@ def doPlotFeatures():
 														#  doCheckFortCulture(loopPlot)
 
 												# Check nur alle x Runden (Tier-Spawn)
-												# Bonus movement
+												# + Bonus movement
 												if iGameTurn % 2 == 0:
 
 														# Lion
@@ -663,7 +663,7 @@ def doSeewind():
 												else:
 														break
 
-		"""++++++++++++++++++ Historische Texte ++++++++++++++++++++++++++++++++++++++++++++++"""
+# ++++++++++++++++++ Historische Texte ++++++++++++++++++
 def doHistory():
 		lNumHistoryTexts = {
 		-3480: 4,
