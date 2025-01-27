@@ -3632,7 +3632,7 @@ def doNavalOnCombatResult(pWinner, pLoser, bWinnerIsDead):
 
 def getNearestValidPlot(pUnit):
 	#pNearestCity = gc.getMap().findCity(pUnit.getX(), pUnit.getY(), pUnit.getOwner(),-1,True,False,-1,4,None)
-	iBestValue = MAX_INT
+	iBestValue = 999 #MAX_INT ? = welcher Wert war dafür gedacht?
 	pBestPlot = None
 
 	for iI in xrange(gc.getMap().numPlots()):
@@ -3643,7 +3643,7 @@ def getNearestValidPlot(pUnit):
 				if pUnit.canEnterArea(pLoopPlot.getTeam(), pLoopPlot.area(), False):  # and not pUnit.isEnemy(pLoopPlot.getTeam(), pLoopPlot):
 					if (pUnit.getDomainType() != DOMAIN_AIR) or pLoopPlot.isFriendlyCity(pUnit, True):
 						if pLoopPlot.isRevealed(pUnit.getTeam(), False):
-							iValue = (plotDistance(pUnit.getX(), pUnit.getY(), pLoopPlot.getX(), pLoopPlot.getY()) * 2)
+							iValue = plotDistance(pUnit.getX(), pUnit.getY(), pLoopPlot.getX(), pLoopPlot.getY())
 							#if pNearestCity:
 							#	iValue += plotDistance(pLoopPlot.getX(), pLoopPlot.getY(), pNearestCity.getX(), pNearestCity.getY())
 							if pUnit.getDomainType() == DOMAIN_SEA and not pUnit.plot().isWater():

@@ -5343,25 +5343,28 @@ class CvEventManager:
 					bRevolt = False
 					if iGameTurnYear > -200:
 							if pCity.isHolyCityByType(gc.getInfoTypeForString("RELIGION_JUDAISM")):
-									# kann Stadt nicht zerstören
+									# Stadt wird barbarisch (pCity Pointer weg!)
 									bRevolt = PAE_City.doJewRevolt(pCity)
 
-					# PAE Provinzcheck
-					if bCheckCityState:
-							PAE_City.doCheckCityState(pCity)
-
-					# PAE 6.14: Allgemeine Religionskonflikte
-					PAE_Christen.removePagans(pCity)
-
-					# CivilWar
-					# kann Pointer zu Stadt zerstören! 
-					PAE_City.doCheckCivilWar(pCity)
-
-					# -------- Provinz Tributzahlung Statthalter
-					# --- Ca 3% pro Runde = PAE IV
+					# Weiterführende Aktionen...
 					if not bRevolt:
-							# kann Pointer zu Stadt zerstören! Führt gegebenenfalls doCheckCityState aus.
-							bRevolt = PAE_City.provinceTribute(pCity)
+
+							# PAE 6.14: Allgemeine Religionskonflikte
+							PAE_Christen.removePagans(pCity)
+
+							# CivilWar, Stadt kann barbarisch werden (pCity pointer weg!)
+							bRevolt = PAE_City.doCheckCivilWar(pCity)
+
+							# --- Provinz Tributzahlung Statthalter
+							# --- Ca 3% pro Runde = PAE IV
+							# kann Pointer zu Stadt zerstören!
+							if not bRevolt:
+									bRevolt = PAE_City.provinceTribute(pCity)
+
+							# PAE Provinzcheck
+							if not bRevolt and bCheckCityState:
+									PAE_City.doCheckCityState(pCity)
+
 
 				# PAE Debug Mark 10 end
 

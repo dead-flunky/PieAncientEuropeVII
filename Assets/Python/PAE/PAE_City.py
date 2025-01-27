@@ -2107,8 +2107,8 @@ def provinceTribute(pCity):
 		if pCity is None or pCity.isNone():
 				return False
 		# getNumRealBuilding geht nicht
-		# isHasBuilding geht auch nicht
-		if pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")) == 0:
+		# getNumBuilding geht auch nicht
+		if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
 				return False
 
 		iPlayer = pCity.getOwner()
@@ -4163,6 +4163,7 @@ def getCityStatus(pCity, iPlayer, iCity, bReturnButton):
 				return 0
 
 # City Civil War
+# Return True: auch wenn Bürgerkrieg gerade im Gang ist oder soeben beendet wird
 def doCheckCivilWar(pCity):
 		# BTS Bug 10.2023: wo zufällig eine Stadt ohne Namen und falscher ID geschickt wird (im WB wird sie mit Namen und anderer ID angezeigt)
 		# getName() check verhindert somit einen python Fehler (c++ exception) auf großen Karten
@@ -4172,7 +4173,7 @@ def doCheckCivilWar(pCity):
 				return False
 		# check General oder Rhetoriker
 		if doCityCheckRevoltEnd(pCity):
-				return False
+				return True
 
 		# ***TEST***
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("CIVIL WAR",pCity.getX())), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -4210,7 +4211,7 @@ def doCheckCivilWar(pCity):
 						# popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						# popupInfo.setText(CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_1", (pCity.getName(),)))
 						# popupInfo.addPopup(iPlayer)
-				return False
+				return True
 
 		# In %s tobt immer noch ein Bürgerkrieg! Es steht/stehen x Einheit/en gegen y Bevölkerung!
 		if pPlayer.isHuman():
@@ -4272,10 +4273,9 @@ def doCheckCivilWar(pCity):
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 								popupInfo.setText(CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_4", (pCity.getName(),)))
 								popupInfo.addPopup(iPlayer)
-						return True
 						# ***TEST***
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("BarbarCity",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-		return False
+		return True
 
 def doStartCivilWar(pCity, iChance):
 		if pCity is None or pCity.isNone():

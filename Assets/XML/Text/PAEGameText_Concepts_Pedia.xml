@@ -10523,11 +10523,11 @@ La IA utiliza los inquisidores en sus ciudades cuando una ciudad tiene m&#225;s 
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_RESOURCES_PEDIA</Tag>
-		<English>All sites of resources are taken from historical maps.
+		<English>[H1]All sites of resources are taken from historical maps.[\H1]
 
 [ICON_BULLET] Sample (Where/Wh[ICON_BULLET]: Improvement / Technology
 
-[H1]resources that are won on the map:[\H1]
+[H2]resources that are won on the map:[\H2]
 
 [ICON_BULLET] Oat (North-Europe): Farm / Agriculture
 [ICON_BULLET] Rye (North/Middle-Europe): Farm / Agriculture
@@ -10554,7 +10554,8 @@ La IA utiliza los inquisidores en sus ciudades cuando una ciudad tiene m&#225;s 
 [ICON_BULLET] Zinc : Mine / Bronze Working
 [ICON_BULLET] Obisidian : Mine / Mining
 
-[H1]Resources, that are won with buildings:[\H1]
+
+[H2]Resources, that are won with buildings:[\H2]
 
 [ICON_BULLET] Copper: Copper Works / Metallurgy
 [ICON_BULLET] Bronze (Copper + (Lead oder Tin)): Bronze works / Bronze working
@@ -10565,41 +10566,68 @@ La IA utiliza los inquisidores en sus ciudades cuando una ciudad tiene m&#225;s 
 [ICON_BULLET] Beer : Brewery / Fermentation
 [ICON_BULLET] Brass : Brass smeltery (Copper + Zinc) / Bronze Working
 
-[H1]Buildings, that get removed from a city, when suddenly necessary resources disappear (chance of 10% per turn):[\H1]
 
-[ICON_BULLET] Bronzeworks
-[ICON_BULLET] Ironworks
-[ICON_BULLET] Brass smeltery
-[ICON_BULLET] Brewery
-[ICON_BULLET] Winery
-[ICON_BULLET] Papyrus export post
+[H2]Buildings that are removed due to a lack of resources[\H2]
 
-[H1]Resources, which are very rare on maps can be increased by trading:[\H1]
+The buildings [LINK=BUILDING_LAGERHAUS_ASSYRIA]Magazine[\LINK] or [LINK=BUILDING_LAGERHAUS]Warehouses[\LINK] increase the chance that the bonus good will remain available for another round.
+
+Chance 1:10 per round if the necessary resources are missing (with warehouses only 1:20):
+
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_BRONZE]Bronzeworks[\LINK]
+
+Chance 1:15 per round if the necessary resources are missing (with warehouses only 1:30):
+
+[ICON_BULLET] [LINK=BUILDING_GRANARY]Granary[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GRANARY2]Rice barn[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BRAUSTAETTE]Brewery[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BROTMANUFAKTUR]Bread manufactory[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GUSS_IRON]Ironworks[\LINK]
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_MESSING]Brass smeltery[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FORGE_WEAPONS]Weaponsmith[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GOLDSCHMIED]Goldsmith[\LINK]
+[ICON_BULLET] [LINK=BUILDING_JUWELIER]Jeweler[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BILDHAUER]Sculptor[\LINK]
+
+Chance 1:5 per round if the necessary resources are missing (with warehouses only 1:20):
+
+For these buildings, the resource must be widespread in the area around the city.
+
+[ICON_BULLET] All foundries
+[ICON_BULLET] All stables (horse, camel, elephant)
+[ICON_BULLET] [LINK=BUILDING_WINERY]Winery[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MUREX]Murex manufactory[\LINK]
+[ICON_BULLET] [LINK=BUILDING_PAPYRUSPOST]Papyrus export post[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FURRIER]Furrier[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MARMOR_WERKSTATT]Marble workshop[\LINK]
+[ICON_BULLET] [LINK=BUILDING_IVORY_MARKET]Ivory market[\LINK] (3x3 radius)
+
+
+[H2]Resources, which are very rare on maps can be increased by trading:[\H2]
 [ICON_BULLET] Grapes
 [ICON_BULLET] Horses
 [ICON_BULLET] War Dogs
 
 [H1]HISTORY:[\H1]
 
-[H1]Grapes and wine:[\H1]
+[H2]Grapes and wine:[\H2]
 Wine was spread from China to Persia in the Mediterranean. 
 9000 BC: China
 5000 BC: Persia
 700 BC: Greece
 100 AD: Danube, Rhine
 
-[H1]Horses:[\H1]
+[H2]Horses:[\H2]
 Horses were spread from the plains of Asia by the Assyrians to Mesopotamia and later brought from the Scythians to Europe.
 
-[H1]War Dogs:[\H1]
+[H2]War Dogs:[\H2]
 War dogs were brought from Alexander the Great from the Tibetan plateau to Europe.
 Distribution: If you get war dogs by trade, you can build the national wonder war dog breeding, which produces war dogs.</English>
 		<French>
-Les ressources sont dispos&#233;es sur la carte en se basant sur des donn&#233;es historiques.
+[H1]Les ressources sont dispos&#233;es sur la carte en se basant sur des donn&#233;es historiques.[\H1]
 
 L&#233;gende : [ICON_BULLET] Nom ressource (R&#233;gion): Am&#233;nagement / Technologie
 
-[H1]Ressources issues de la carte[\H1]
+[H2]Ressources issues de la carte[\H2]
 
 [ICON_BULLET] Avoine (Europe du nord) : Ferme / Agriculture
 [ICON_BULLET] Seigle (Europe du nord et centrale) : Ferme / Agriculture
@@ -10626,7 +10654,8 @@ L&#233;gende : [ICON_BULLET] Nom ressource (R&#233;gion): Am&#233;nagement / Tec
 [ICON_BULLET] Zinc : Mine / Travail du bronze
 [ICON_BULLET] Obsidienne : Mine / Minage
 
-[H1]Ressources fournies par les b&#226;timents[\H1]
+
+[H2]Ressources fournies par les b&#226;timents[\H2]
 
 [ICON_BULLET] Cuivre : Fonderie de cuivre / M&#233;tallurgie
 [ICON_BULLET] Bronze (Cuivre + (Plomb ou &#201;tain)) : Bronzeerie / Travail du bronze
@@ -10637,23 +10666,53 @@ L&#233;gende : [ICON_BULLET] Nom ressource (R&#233;gion): Am&#233;nagement / Tec
 [ICON_BULLET] Bi&#232;re : Brasserie / Fermentation
 [ICON_BULLET] Laiton : Fonderie de laiton (Cuivre + Zinc) / Travail du bronze
 
-[H1]B&#226;timents retir&#233;s des villes quand les ressources n&#233;cessaires disparaissent (10% de chance par tour) :[\H1]
 
-[ICON_BULLET] Bronzeerie
-[ICON_BULLET] Ferronnerie
-[ICON_BULLET] Fonderie de laiton
-[ICON_BULLET] Brasserie
-[ICON_BULLET] Exploitation viticole
-[ICON_BULLET] Comptoir d'export de papyrus
+[H2]B&#226;timents qui sont supprim&#233;s en raison de ressources manquantes[\H2]
 
-[H1]Ressources rares qui peuvent &#234;tre propag&#233;es par le commerce :[\H1]
+Les b&#226;timents [LINK=BUILDING_LAGERHAUS_ASSYRIA]Magazine[\LINK] ou [LINK=BUILDING_LAGERHAUS]Entrep&#244;ts[\LINK] augmentent les chances que le bien bonus reste disponible pour un autre tour.
+
+
+Chance 1:10 par tour si les ressources n&#233;cessaires manquent (avec les entrep&#244;ts seulement 1:20) :
+
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_BRONZE]Fonderie de bronze[\LINK]
+
+
+Chance 1:15 par tour si les ressources n&#233;cessaires manquent (avec les entrep&#244;ts seulement 1:30) :
+
+[ICON_BULLET] [LINK=BUILDING_GRANARY]Grenier[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GRANARY2]Grenier &#224; riz[\LINK]
+[ICON_BULLET] [LIEN=BUILDING_BRAUSTAETTE]Brasserie[\LINK]
+[ICON_BULLET] [LIEN=BUILDING_BROTMANUFAKTUR]Manufacture de pain[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GUSS_IRON]Ferronnerie[\LINK]
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_MESSING]Fonderie de laiton[\LIEN]
+[ICON_BULLET] [LINK=BUILDING_FORGE_WEAPONS]Forgeron d'armes[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GOLDSCHMIED]Orf&#232;vre[\LINK]
+[ICON_BULLET] [LINK=BUILDING_JUWELIER]Bijoutier[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BILDHAUER]Sculpteur[\LINK]
+
+
+Chance 1:5 par tour si les ressources n&#233;cessaires manquent (avec les entrep&#244;ts seulement 1:20) :
+
+Pour ces b&#226;timents, la ressource doit &#234;tre r&#233;partie dans les environs de la ville.
+
+[ICON_BULLET] Toutes les fonderies
+[ICON_BULLET] Toutes les &#233;curies (cheval, chameau, &#233;l&#233;phant)
+[ICON_BULLET] [LINK=BUILDING_WINERY]Exploitation viticole[\LIEN]
+[ICON_BULLET] [LINK=BUILDING_MUREX]Manufacture de murex[\LINK]
+[ICON_BULLET] [LINK=BUILDING_PAPYRUSPOST]Comptoir d'export de papyrus[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FURRIER]Fourreur[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MARMOR_WERKSTATT]Atelier de marbre[\LINK]
+[ICON_BULLET] [LINK=BUILDING_IVORY_MARKET]March&#233; de l'ivoire[\LINK] (rayon 3x3)
+
+
+[H2]Ressources rares qui peuvent &#234;tre propag&#233;es par le commerce :[\H2]
 [ICON_BULLET] Raisin
 [ICON_BULLET] Chevaux
 [ICON_BULLET] Chiens de guerre
 
 [H1]HISTORY:[\H1]
 
-[H1]Raisin et vin[\H1]
+[H2]Raisin et vin[\H2]
 Les techniques viticoles se sont propag&#233;es en M&#233;diterran&#233;e en provenance de Chine via la Perse.
 Frise:
 9000 av. J.-C. : Chine
@@ -10661,18 +10720,18 @@ Frise:
 700 av. J.-C. : Gr&#232;ce
 100 ap. J.-C. : Danube, Rhin
 
-[H1]Chevaux :[\H1]
+[H2]Chevaux :[\H2]
 Les chevaux ont &#233;t&#233; amen&#233;s des plaines d'Asie en M&#233;sopotamie par les Assyriens, puis par les Scythes en Europe..
 
-[H1]Chiens de guerre :[\H1]
+[H2]Chiens de guerre :[\H2]
 Les chiens de guerre ont &#233;t&#233; ramen&#233;s du plateau tib&#233;tain par Alexandre le Grand. Si vous obtenez des chiens de guerre par le commerce vous pouvez construire la merveille nationale d'&#233;levage des chiens.
 		</French>
 		<German>
-Alle Ressourcenstandorte wurden historischen Karten entnommen.
+[H1]Alle Ressourcenstandorte wurden historischen Karten entnommen.[\H1]
 
 [ICON_BULLET] Muster (Wo/Wer): Modernisierung / Technologie
 
-[H1]Ressourcen, die auf der Karte abbaubar sind:[\H1]
+[H2]Ressourcen, die auf der Karte abbaubar sind:[\H2]
 
 [ICON_BULLET] Hafer (Nord-Europa): Bew&#228;sserung / Landwirtschaft
 [ICON_BULLET] Roggen (Nord/Mittel-Europa): Bew&#228;sserung / Landwirtschaft
@@ -10699,7 +10758,8 @@ Alle Ressourcenstandorte wurden historischen Karten entnommen.
 [ICON_BULLET] Zink : Mine / Bronzeverarbeitung
 [ICON_BULLET] Obisidian : Mine / Bergbau
 
-[H1]Ressourcen, die nur durch ein Geb&#228;ude verf&#252;gbar werden:[\H1]
+
+[H2]Ressourcen, die nur durch ein Geb&#228;ude verf&#252;gbar werden:[\H2]
 
 [ICON_BULLET] Kupfer: Kupferh&#252;tte / Metallurgie
 [ICON_BULLET] Bronze (Kupfer + (Blei oder Zinn)): Bronzeh&#252;tte / Bronzeverarbeitung
@@ -10711,43 +10771,73 @@ Alle Ressourcenstandorte wurden historischen Karten entnommen.
 [ICON_BULLET] Messing : Messingh&#252;tte (Kupfer + Zink) / Bronzeverarbeitung
 [ICON_BULLET] Papyrus : Papyrusposten / Alphabet
 
-[H1]Geb&#228;ude, die durch pl&#246;tzlich fehlende Ressourcen in einer Stadt wieder entfernt werden (Chance 10% pro Runde, wenn die notwendigen Ressourcen fehlen):[\H1]
 
-[ICON_BULLET] Bronzeh&#252;tte
-[ICON_BULLET] Eisenh&#252;tte
-[ICON_BULLET] Messingh&#252;tte
-[ICON_BULLET] Braust&#228;tte
-[ICON_BULLET] Weingut
-[ICON_BULLET] Papyrus-Exportposten
+[H2]Geb&#228;ude, die durch fehlende Ressourcen wieder entfernt werden[\H2]
 
-[H1]Bonusressourcen, die nur einmal oder sehr selten auf der Karte vorkommen und sich erst durch Handel vermehren und verbreiten m&#252;ssen:[\H1]
+Mit den Geb&#228;uden [LINK=BUILDING_LAGERHAUS_ASSYRIA]Magazin[\LINK] oder [LINK=BUILDING_LAGERHAUS]Lagerh&#228;user[\LINK] wird die Chance erh&#246;ht, dass das Bonusgut eine weitere Runde verf&#252;gbar bleibt.
+ 
+
+Chance 1:10 pro Runde, wenn die notwendigen Ressourcen fehlen (mit Lagerh&#228;usern nur 1:20):
+
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_BRONZE]Bronzeh&#252;tte[\LINK]
+
+
+Chance 1:15 pro Runde, wenn die notwendigen Ressourcen fehlen (mit Lagerh&#228;usern nur 1:30):
+
+[ICON_BULLET] [LINK=BUILDING_GRANARY]Kornspeicher[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GRANARY2]Reisspeicher[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BRAUSTAETTE]Braust&#228;tte[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BROTMANUFAKTUR]Brotmanufaktur[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GUSS_IRON]Eisenh&#252;tte[\LINK]
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_MESSING]Messingh&#252;tte[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FORGE_WEAPONS]Waffenschmied[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GOLDSCHMIED]Goldschmied[\LINK]
+[ICON_BULLET] [LINK=BUILDING_JUWELIER]Juwelier[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BILDHAUER]Bildhauer[\LINK]
+
+
+Chance 1:5 pro Runde, wenn die notwendigen Ressourcen fehlen (mit Lagerh&#228;usern nur 1:20):
+
+F&#252;r diese Geb&#228;ude muss die Ressource im Umkreis der Stadt verbreitet sein.
+
+[ICON_BULLET] Alle Gie&#223;ereien
+[ICON_BULLET] Alle Stallungen (Pferd, Kamel, Elephant)
+[ICON_BULLET] [LINK=BUILDING_WINERY]Weingut[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MUREX]Murex-Manufaktur[\LINK]
+[ICON_BULLET] [LINK=BUILDING_PAPYRUSPOST]Papyrus-Exportposten[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FURRIER]K&#252;rschner[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MARMOR_WERKSTATT]Marmor-Werkstatt[\LINK]
+[ICON_BULLET] [LINK=BUILDING_IVORY_MARKET]Elfenbeinmarkt[\LINK] (3x3 Radius)
+
+
+[H2]Bonusressourcen, die nur einmal oder sehr selten auf der Karte vorkommen und sich erst durch Handel vermehren und verbreiten m&#252;ssen:[\H2]
 [ICON_BULLET] Trauben
 [ICON_BULLET] Pferde
 [ICON_BULLET] Kampfhunde
 
 [H1]GESCHICHTLICHES:[\H1]
 
-[H1]Trauben und Wein:[\H1]
+[H2]Trauben und Wein:[\H2]
 Der Wein wurde von China &#252;ber Persien in den Mittelmeerraum verbreitet. 
 9000 v.Chr.: China
 5000 v.Chr.: Persien
 700 v.Chr.: Griechenland
 100 n.Chr.: Donau, Rhein
 
-[H1]Pferde:[\H1]
+[H2]Pferde:[\H2]
 Pferde wurden aus den Steppen Asiens von den Assyrern in Mesopotamien verbreitet und sp&#228;ter von den Skythen nach 
 Europa gebracht.
 
-[H1]Kampfhunde:[\H1]
+[H2]Kampfhunde:[\H2]
 Kampfhunde wurden aus dem tibetischen Hochland von Alexander dem Gro&#223;en nach Europa gebracht.
 Verbreitung: Werden Kampfhunde erhandelt, kann das Nationalwunder Kampfhundezucht gebaut werden, welches das Bonusgut Kampfhunde produziert.
 		</German>
 		<Italian>
-Tutti i siti di risorse sono tratte da mappe storiche .
+[H1]Tutti i siti di risorse sono tratte da mappe storiche .[\H1]
 
 [ICON_BULLET] Sample (dove / Wh [ICON_BULLET] : Miglioramento / Tecnologia
 
-[H1] le risorse che si vincono sulla carta : [\H1]
+[H2] Le risorse che si vincono sulla carta : [\H2]
 
 [ICON_BULLET] Avena (Nord-Europa) : Fattoria / Agricoltura
 [ICON_BULLET] Rye (Nord / Medio-Europe ) : Fattoria / Agricoltura
@@ -10774,7 +10864,8 @@ Tutti i siti di risorse sono tratte da mappe storiche .
 [ICON_BULLET] Zinco : Miniera / Bronze lavoro
 [ICON_BULLET] Obisidian : Miniera / Mining
 
-[H1] Resources , che si vincono con le costruzioni : [\H1]
+
+[H2] Resources , che si vincono con le costruzioni : [\H2]
 
 [ICON_BULLET] Rame: Fonderia di rame / Metallurgia
 [ICON_BULLET] bronzo ( rame + ( oder Piombo Tin ) ) : Bronziera / Bronze lavoro
@@ -10785,42 +10876,72 @@ Tutti i siti di risorse sono tratte da mappe storiche .
 [ICON_BULLET] Birra : Birreria / Fermentazione
 [ICON_BULLET] Ottone : Ottone fonderia ( Rame + Zinco ) / Bronze lavoro
 
-[H1] Edifici, che vengono rimossi da una citt&#224; , quando all'improvviso risorse necessarie scompaiono ( probabilit&#224; del 10 % per turno ) : [\H1]
 
-[ICON_BULLET] Bronziera
-[ICON_BULLET] Ferriere
-[ICON_BULLET] Brass fonderia
-[ICON_BULLET] Brewery
-[ICON_BULLET] Azienda vinicola
-[ICON_BULLET] Papyrus esportazione postale
+[H2]Edifici rimossi a causa di risorse mancanti[\H2]
 
-[H1] Resources , che sono molto rari su mappe possono essere aumentate di negoziazione : [\H1]
+Gli edifici [LINK=BUILDING_LAGERHAUS_ASSYRIA]Magazzino[\LINK] o [LINK=BUILDING_LAGERHAUS]Magazzini[\LINK] aumentano la possibilit&#224; che il bene bonus rimanga disponibile per un altro round.
+
+
+Probabilit&#224; 1:10 per round se mancano le risorse necessarie (con i magazzini solo 1:20):
+
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_BRONZE]Lavori di bronzo[\LINK]
+
+
+Probabilit&#224; 1:15 per round se mancano le risorse necessarie (con i magazzini solo 1:30):
+
+[ICON_BULLET] [LINK=BUILDING_GRANARY]Granaio[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GRANARY2]Granaio del riso[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BRAUSTAETTE]Birrificio[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BROTMANUFAKTUR]Panificio[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GUSS_IRON]Lavori in ferro[\LINK]
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_MESSING]Fonderia d'ottone[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FORGE_WEAPONS]Armaiolo per armi[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GOLDSCHMIED]Orafo[\LINK]
+[ICON_BULLET] [LINK=BUILDING_JUWELIER]Gioielliere[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BILDHAUER]Scultore[\LINK]
+
+
+Probabilit&#224; 1:5 per round se mancano le risorse necessarie (con i magazzini solo 1:20):
+
+Per questi edifici, la risorsa deve essere distribuita nelle vicinanze della citt&#224;.
+
+[ICON_BULLET] Tutte le fonderie
+[ICON_BULLET] Tutte le stalle (cavallo, cammello, elefante)
+[ICON_BULLET] [LINK=BUILDING_WINERY]Azienda vinicola[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MUREX]Manifattura di murex[\LINK]
+[ICON_BULLET] [LINK=BUILDING_PAPYRUSPOST]Stazione d'esportazione del papiro[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FURRIER]Pellicciaio[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MARMOR_WERKSTATT]Laboratorio di marmo[\LINK]
+[ICON_BULLET] [LINK=BUILDING_IVORY_MARKET]Mercato dell'avorio[\LINK] (raggio 3x3)
+
+
+[H2] Resources , che sono molto rari su mappe possono essere aumentate di negoziazione : [\H2]
 [ICON_BULLET] Grapes
 [ICON_BULLET] Cavalli
 [ICON_BULLET] Wardogs
 
 [H1] STORIA : [\H1]
 
-[H1] Uva e vino : [\H1]
+[H2] Uva e vino : [\H2]
 Wine &#232; stata diffusa dalla Cina alla Persia nel Mediterraneo .
 9000 BC: Cina
 5000 aC : Persia
 700 aC : Grecia
 100 dC : Danubio, il Reno
 
-[H1] Horses : [\H1]
+[H2] Horses : [\H2]
 I cavalli sono state diffuse dalle steppe dell'Asia dagli Assiri in Mesopotamia e in seguito portati da Sciti in Europa.
 
-[H1] War Dogs : [\H1]
+[H2] War Dogs : [\H2]
 Cani da guerra sono stati portati da Alessandro Magno dall'altopiano tibetano in Europa .
 Distribuzione : Se si ottiene cani da guerra dalla contrattazione , &#232; possibile costruire la meraviglia di allevamento nazionale di cane da guerra , che produce cani da guerra .
 		</Italian>
 		<Spanish>
-Todos los lugares donde est&#225;n los recursos han sido tomados de mapas hist&#243;ricos.
+[H1]Todos los lugares donde est&#225;n los recursos han sido tomados de mapas hist&#243;ricos.[\H1]
 
 [ICON_BULLET] Ejemplo (Donde/Qui&#233;n): Mejora / Tecnolog&#237;a
 
-[H1]Recursos que se pueden ganar en el mapa:[\H1]
+[H2]Recursos que se ganan en el papel:[\H2]
 
 [ICON_BULLET] Avena (Europa del Norte): Granja / Agricultura
 [ICON_BULLET] Centeno (Europa del Norte/Central): Granja / Agricultura
@@ -10847,7 +10968,8 @@ Todos los lugares donde est&#225;n los recursos han sido tomados de mapas hist&#
 [ICON_BULLET] Cinc : Mina / Forja del bronce
 [ICON_BULLET] Obsidiana : Mina / Miner&#237;a
 
-[H1]Recursos que s&#243;lo se ganan mediante edificios:[\H1]
+
+[H2]Recursos que s&#243;lo se ganan mediante edificios:[\H2]
 
 [ICON_BULLET] Cobre: Fundici&#243;n de cobre / Metalurgia
 [ICON_BULLET] Bronce (Cobre + (Plomo o Esta&#241;o)): Broncer&#237;as / Forja del bronce
@@ -10858,33 +10980,63 @@ Todos los lugares donde est&#225;n los recursos han sido tomados de mapas hist&#
 [ICON_BULLET] Cerveza : Cervecer&#237;a / Fermentaci&#243;n
 [ICON_BULLET] Lat&#243;n : Fundici&#243;n de lat&#243;n (Cobre + Cinc) / Forja del bronce
 
-[H1]Edificios, que ser&#225;n eliminados de una ciudad, cuando el recurso necesario desaparece (posibilidad del 10% por turno):[\H1]
 
-[ICON_BULLET] Broncer&#237;as
-[ICON_BULLET] Herrajes
-[ICON_BULLET] Fundici&#243;n de lat&#243;n
-[ICON_BULLET] Cervecer&#237;a
-[ICON_BULLET] Lagar
-[ICON_BULLET] Puesto de exportaci&#243;n de papiros
+[H2]Edificios que se eliminan por falta de recursos[\H2]
 
-[H1]Recursos, que son muy raros en los mapas pueden ser aumentados por el comercio:[\H1]
+Los edificios [LINK=BUILDING_LAGERHAUS_ASSYRIA]Almac&#233;n[\LINK] o [LINK=BUILDING_LAGERHAUS]Almacenes[\LINK] aumentan la posibilidad de que el bien adicional permanezca disponible para otra ronda.
+
+
+Probabilidad 1:10 por ronda si faltan los recursos necesarios (con almacenes solo 1:20):
+
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_BRONZE]Fundici&#243;n de bronce[\LINK]
+
+
+Oportunidad 1:15 por ronda si faltan los recursos necesarios (con almacenes solo 1:30):
+
+[ICON_BULLET] [LINK=BUILDING_GRANARY]Granero[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GRANARY2]Almac&#233;n de arroz[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BRAUSTAETTE]Cervecer&#237;a[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BROTMANUFAKTUR]Panader&#237;as[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GUSS_IRON]Herrer&#237;a[\LINK]
+[ICON_BULLET] [LINK=BUILDING_SCHMIEDE_MESSING]Fundici&#243;n de lat&#243;n[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FORGE_WEAPONS]Armero de armas[\LINK]
+[ICON_BULLET] [LINK=BUILDING_GOLDSCHMIED]Orfebre[\LINK]
+[ICON_BULLET] [LINK=BUILDING_JUWELIER]Joyero[\LINK]
+[ICON_BULLET] [LINK=BUILDING_BILDHAUER]Escultor[\LINK]
+
+
+Probabilidad 1:5 por ronda si faltan los recursos necesarios (con almacenes solo 1:20):
+
+Para estos edificios, el recurso debe distribuirse dentro de las cercan&#237;as de la ciudad.
+
+[ICON_BULLET] Todas las fundici&#243;nes
+[ICON_BULLET] Todos los establos (caballo, camello, elefante)
+[ICON_BULLET] [LINK=BUILDING_WINERY]Lagar[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MUREX]Manufactura de murex[\LINK]
+[ICON_BULLET] [LINK=BUILDING_PAPYRUSPOST]Puesto de exportaci&#243;n de papiros[\LINK]
+[ICON_BULLET] [LINK=BUILDING_FURRIER]Peletero[\LINK]
+[ICON_BULLET] [LINK=BUILDING_MARMOR_WERKSTATT]Taller de m&#225;rmol[\LINK]
+[ICON_BULLET] [LINK=BUILDING_IVORY_MARKET]Mercado de marfil[\LINK] (radio 3x3)
+
+
+[H2]Recursos, que son muy raros en los mapas pueden ser aumentados por el comercio:[\H2]
 [ICON_BULLET] Uvas
 [ICON_BULLET] Caballos
 [ICON_BULLET] Perros de guerra
 
 [H1]HISTORIA:[\H1]
 
-[H1]Uvas y vino:[\H1]
+[H2]Uvas y vino:[\H2]
 El vino se propag&#243; desde China a Persia en el Mediterr&#225;neo. 
 9000 AC: China
 5000 AC: Persia
 700 AC: Grecia
 100 DC: El r&#237;o Danubio, el r&#237;o Rin
 
-[H1]Caballos:[\H1]
+[H2]Caballos:[\H2]
 Los caballos fueron difundidos desde las estepas de Asia por los Asirios a Mesopotamia y m&#225;s tarde tra&#237;dos por los Escitas a Europa.
 
-[H1]Perros de guerra:[\H1]
+[H2]Perros de guerra:[\H2]
 Los perros de guerra fueron tra&#237;dos por Alejandro Magno desde la meseta tibetana a Europa.
 Distribuci&#243;n: Si obtienes perros de guerra por intercambio, podr&#225;s construir la maravilla nacional criadero de perros de guerra, que produce perros de guerra.
 		</Spanish>
@@ -12109,7 +12261,9 @@ If you own fewer than 10 trading posts or play an OCC game, you can have more in
 [ICON_BULLET] Tech Cartography: +1
 
 [H1]Trading[\H1]
-In PAE goods can be bought and sold. These goods remain available 3 rounds in the trading network. The dealer is not dissolved. These trade routes can be automated.
+In PAE goods can be bought and sold. These goods remain available 3 turns in the trading network. The dealer is not dissolved. These trade routes can be automated.
+
+Note: It is possible that [LINK=CONCEPT_RESOURCES]certain buildings[\LINK] can be built with the resources traded. If the resource is no longer available after 3 turns, the building can be automatically [COLOR_UNIT_TEXT]dismantled[COLOR_REVERT] over time.
 
 [ICON_BULLET] Merchant (Spoked Wheels)
 [ICON_BULLET] Caravan (Camel domestication)
@@ -12201,6 +12355,8 @@ Si vous poss&#233;dez moins de 10 postes de traite ou jouez &#224; un jeu OCC, v
 
 [H1]Echange[\H1]
 Ce mod permet l'achat et la vente des ressources. Elles sont alors disponibles dans le r&#233;seau d'&#233;changes pour 3 tours. L'unit&#233; n'est pas consomm&#233;e par cette action, elle peut de plus recevoir des instructions pour &#233;changer automatiquement.
+
+Remarque : Il est possible que [LINK=CONCEPT_RESOURCES]certains b&#226;timents[\LINK] puissent &#234;tre construits avec les ressources &#233;chang&#233;es. Si la ressource n'est plus disponible apr&#232;s 3 tours, le b&#226;timent peut &#234;tre automatiquement [COLOR_UNIT_TEXT]d&#233;mantel&#233;[COLOR_REVERT] au fil du temps.
 
 [ICON_BULLET] Charrette commerciale (Roues &#224; rayons)
 [ICON_BULLET] Caravane (Domestication de chameaux)
@@ -12294,6 +12450,8 @@ Wer weniger als 10 Handelsposten besitzt oder ein OCC-Spiel spielt, erlangt mehr
 [H1]Handel[\H1]
 In PAE k&#246;nnen Waren eingekauft und verkauft werden. Diese Waren bleiben 3 Runden im Handelsnetz verf&#252;gbar. Dabei wird der H&#228;ndler nicht aufgel&#246;st. Diese Handelsrouten k&#246;nnen automatisiert werden.
 
+Hinweis: Es ist m&#246;glich, dass mit den erhandelten Ressource [LINK=CONCEPT_RESOURCES]bestimmte Geb&#228;ude[\LINK] gebaut werden k&#246;nnen. Sollte die Ressource nach 3 Runden nicht mehr verf&#252;gbar sein, kann das Geb&#228;ude im Laufe der Zeit wieder automatisch [COLOR_UNIT_TEXT]abgebaut[COLOR_REVERT] werden.
+
 [ICON_BULLET] Handelskarren (Speichenr&#228;der)
 [ICON_BULLET] Karawane (Kameldomestizierung)
 [ICON_BULLET] Keftion (Schiffsbau)
@@ -12386,6 +12544,8 @@ Se possiedi meno di 10 stazioni di scambio o giochi a un gioco OCC, puoi averne 
 [H1]Commercio[\H1]
 In PAE le risorse possono essere comprate e vendute. Questi beni rimangono disponibili 3 turni nella rete commerciale. L'unit&#224; non viene consumata da questa azione. Queste rotte commerciali possono essere automatizzate.
 
+Nota: &#232; possibile che [LINK=CONCEPT_RESOURCES]alcuni edifici[\LINK] possano essere costruiti con le risorse scambiate. Se la risorsa non &#232; pi&#249; disponibile dopo 3 turni, l'edificio pu&#242; essere automaticamente [COLOR_UNIT_TEXT]smantellato[COLOR_REVERT] nel tempo.
+
 [ICON_BULLET] Convoglio commerciale (ruote a raggi)
 [ICON_BULLET] Carovana (addomesticamento del cammello)
 [ICON_BULLET] Keftion (costruzione di navi)
@@ -12474,6 +12634,8 @@ Si posee menos de 10 puestos comerciales o juega un juego de OCC, puedes tener m
 
 [H1]Comercio[\H1]
 En PAE los bienes se pueden comprar y vender. Estos bienes permanecen disponibles durante 3 rondas en la red comercial. El comerciante no se disuelve. Estas rutas comerciales se pueden automatizar.
+
+Nota: Es posible que se puedan construir [LINK=CONCEPT_RESOURCES]ciertos edificios[\LINK] con los recursos intercambiados. Si el recurso ya no est&#225; disponible despu&#233;s de 3 turnos, el edificio puede [COLOR_UNIT_TEXT]desmantelarse[COLOR_REVERT] autom&#225;ticamente con el tiempo.
 
 [ICON_BULLET] Comerciante (ruedas con radios)
 [ICON_BULLET] Caravana (Domesticaci&#243;n de camellos)
