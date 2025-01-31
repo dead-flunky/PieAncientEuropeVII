@@ -274,6 +274,14 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<Spanish>Una buena persona es m&#225;s confiable que un puente de piedra. Marco Aurelio</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CAN_CONSTRUCT</Tag>
+		<English>Can construct following buildings</English>
+		<French>Peut construire les b&#226;timents suivants</French>
+		<German>Kann folgende Geb&#228;ude errichten</German>
+		<Italian>Pu&#242; costruire i seguenti edifici</Italian>
+		<Spanish>Puede construir los siguientes edificios</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PITBOSS_TEAM</Tag>
 		<English>Team</English>
 		<French>Equipe</French>
@@ -392,6 +400,22 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<German>Rennofen</German>
 		<Italian>Forno basso</Italian>
 		<Spanish>Horno bajo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1</Tag>
+		<English>Merchants</English>
+		<French>Marchands</French>
+		<German>H&#228;ndler</German>
+		<Italian>Mercanti</Italian>
+		<Spanish>Mercaderes</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB2</Tag>
+		<English>Neighboring cities</English>
+		<French>Villes voisines</French>
+		<German>Nachbarst&#228;dte</German>
+		<Italian>Citt&#224; vicine</Italian>
+		<Spanish>Ciudades vecinas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_HELP</Tag>

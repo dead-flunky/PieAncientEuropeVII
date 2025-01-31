@@ -4308,7 +4308,7 @@ Per alcuni tratti del leader ci sono prezzi ridotti (-25 % [ICON_GOLD]) a second
 		<English>In PAE, you have the chance to assign battle formations to your units. After having researched certain technologies and/or the use of the drill promotion, you can choose from various formations
 As long as a unit still has movement points, you can switch the formations at any time. Formations often complement one another, so it would be useful to have several units in a stack as you can only assign one formation to each one.
 
-Units who are fighting on their own ("Unreliable"-promotion) are excluded from these formations.
+[ICON_BULLET] Unreliable units ("Unreliable" promotion aka "Fights on their own feet") cannot perform formations.
 
 Content:
 [ICON_BULLET]Formations
@@ -4520,7 +4520,7 @@ The unit will get an offensive formation (more attack bonuses than defence bonus
 Dans PAE , vous avez l'opportunit&#233; d'utiliser certaines formations de bataille pour vos unit&#233;s . Apr&#232;s avoir &#233;tudi&#233; certaines technologies et / ou acquis la promotion Exercice, vous pouvez choisir parmi diff&#233;rentes formations.
 Tant qu'une unit&#233; a encore des points de mouvement , vous pouvez passer en formation &#224; tout moment . Les formations se compl&#232;tent souvent les uns les autres , de sorte qu'il serait utile d'avoir plusieurs unit&#233;s group&#233;es, chacune ne pouvant adopter qu'une formation &#224; la fois.
 
-Les unit&#233;s peu loyales (promotion "Peu fiable") ne sont pas concern&#233;es par les formations de combat.
+[ICON_BULLET] Les unit&#233;s non fiables (promotion "Non fiable" ou "Combattent sur leurs propres pieds") ne peuvent pas effectuer de formations.
 
 Contenu:
 [ICON_BULLET] Formations
@@ -4731,7 +4731,7 @@ L'unit&#233; recevra une formation offensive (plus de bonus d'attaque que bonus 
 In PAE ist es erstmals m&#246;glich einzelnen Einheiten eine Schlachtformation zuzuweisen. Nach Erforschung bestimmter Technologien und/oder dem Besitz der Drill-Bef&#246;rderung stehen diverse Formationen zur Auswahl.
 Solange eine Einheit noch Bewegungspunkte besitzt, kann man jederzeit zwischen den einzelnen Bef&#246;rderungen wechseln. Oft erg&#228;nzen sich Formationen, und da man einer Einheit immer nur eine Formationen geben kann, w&#228;re es besser mit mehreren Einheiten in den Krieg zu marschieren.
 
-Einheiten, die nur f&#252;r sich k&#228;mpfen ("Unzuverl&#228;ssig"-Bef&#246;rderung), sind von diesen Formationen ausgeschlossen.
+[ICON_BULLET] Unzuverl&#228;ssige Einheiten ("Unzuverl&#228;ssig"-Bef&#246;rderung aka "K&#228;mpft auf eigenen F&#252;&#223;en") k&#246;nnen keine Formationen ausf&#252;hren.
 
 Inhalt:
 [ICON_BULLET] Formationen
@@ -4949,7 +4949,7 @@ Beim Bau einer Einheit bekommt diese automatisch eine offensive Formation (mehr 
 In PAE , si ha la possibilit&#224; di assegnare formazioni di battaglia per le vostre unit&#224; . Dopo aver studiato alcune tecnologie e / o l'uso della promozione trapano , &#232; possibile scegliere tra diverse formazioni
 Finch&#233; un'unit&#224; ha ancora punti movimento , &#232; possibile cambiare le formazioni in qualsiasi momento . Formazioni spesso complementari tra loro , per cui sarebbe utile disporre di pi&#249; unit&#224; in una pila come si pu&#242; assegnare una sola formazione a ciascuno .
 
-Le unit&#224; che combattono solo per se stesse (promozione "Inaffidabile") sono escluse da queste formazioni.
+[ICON_BULLET] Le unit&#224; inaffidabili (promozione "Inaffidabile" ovvero "Combattono con le proprie gambe") non possono eseguire formazioni.
 
 contenuto :
 [ICON_BULLET] Formazioni
@@ -5162,7 +5162,7 @@ L'unit&#224; ottenere immediatamente una formazione offensiva ( pi&#249; bonus d
 En PAE, tienes la posibilidad de asignar formaciones de combate a tus unidades. Despu&#233;s de haber investigado ciertas tecnolog&#237;as y/o el uso del ascenso instrucci&#243;n, puedes elegir entre varias formaciones.
 Mientras una unidad tenga puntos de movimiento, puedes cambiar las formaciones en cualquier momento. Las formaciones a menudo se complementan unas con otras, as&#237; podr&#237;a ser &#250;til tener tantas unidades en una pila como puedas asignando cada una de las formaciones. 
 
-Las unidades que est&#233;n luchando por su cuenta (Ascenso "Poco confiable") son excluidos de estas formaciones.
+[ICON_BULLET] Las unidades no confiables (promoci&#243;n "No confiable" tambi&#233;n conocida como "Lucha por su propio pie") no pueden realizar formaciones.
 
 Contenido: 
 [ICON_BULLET]Formaciones
