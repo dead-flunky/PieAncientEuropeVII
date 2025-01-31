@@ -68,7 +68,7 @@ public:
 	int AI_yieldWeight(YieldTypes eYield) const;
 	int AI_commerceWeight(CommerceTypes eCommerce, CvCity* pCity = NULL) const;
 
-	int AI_foundValue(int iX, int iY, int iMinRivalRange = -1, bool bStartingLoc = false) const;
+	short AI_foundValue(int iX, int iY, int iMinRivalRange = -1, bool bStartingLoc = false) const;
 
 	bool AI_isAreaAlone(CvArea* pArea) const;
 	bool AI_isCapitalAreaAlone() const;

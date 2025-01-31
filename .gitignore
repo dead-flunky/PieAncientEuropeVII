@@ -54,3 +54,4 @@ vc70.pdb
 *.vcproj
 CvGameCoreDLL/UpgradeLog.XML
 *.opensdf
+/CvGameCoreDLL/Release

@@ -242,7 +242,7 @@ class CvForeignAdvisor:
 
 						# Player panel
 						playerPanelName = self.getNextWidgetName()
-						screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getName(), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
+						screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getName(), "", False, True, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 						screen.attachLabel(playerPanelName, "", "   ")
 
@@ -285,7 +285,7 @@ class CvForeignAdvisor:
 
 				# Put everything inside a main panel, so we get vertical scrolling
 				mainPanelName = self.getNextWidgetName()
-				screen.addPanel(mainPanelName, "", "", True, True, 50, 100, self.W_SCREEN - 100, self.H_SCREEN - 200, PanelStyles.PANEL_STYLE_MAIN)
+				screen.addPanel(mainPanelName, "", "", True, True, 50, 100, self.W_SCREEN - 100, self.H_SCREEN - 200, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 				# Active player panel
 				activePlayerPanelName = self.getNextWidgetName()

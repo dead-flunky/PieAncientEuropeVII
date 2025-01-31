@@ -120,7 +120,7 @@ class CvEspionageAdvisor:
 
         self.szLeftPaneWidget = "LeftPane"
         screen.addPanel(self.szLeftPaneWidget, "", "", True, True,
-                        self.X_LEFT_PANE, self.Y_LEFT_PANE, self.W_LEFT_PANE, self.H_LEFT_PANE, PanelStyles.PANEL_STYLE_MAIN)
+                        self.X_LEFT_PANE, self.Y_LEFT_PANE, self.W_LEFT_PANE, self.H_LEFT_PANE, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
         self.X_SCROLL = self.X_LEFT_PANE + 20
         self.Y_SCROLL = 90
@@ -162,7 +162,7 @@ class CvEspionageAdvisor:
 
         self.szTotalPaneWidget = "TotalPane"
         screen.addPanel(self.szTotalPaneWidget, "", "", True, True,
-                        self.X_TOTAL_PANE, self.Y_TOTAL_PANE, self.W_TOTAL_PANE, self.H_TOTAL_PANE, PanelStyles.PANEL_STYLE_MAIN)
+                        self.X_TOTAL_PANE, self.Y_TOTAL_PANE, self.W_TOTAL_PANE, self.H_TOTAL_PANE, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
         self.szMakingText = "MakingText"
         self.X_MAKING_TEXT = 490
@@ -182,7 +182,7 @@ class CvEspionageAdvisor:
 
         self.szRightPaneWidget = "RightPane"
         screen.addPanel(self.szRightPaneWidget, "", "", True, True,
-                        self.X_RIGHT_PANE, self.Y_RIGHT_PANE, self.W_RIGHT_PANE, self.H_RIGHT_PANE, PanelStyles.PANEL_STYLE_MAIN)
+                        self.X_RIGHT_PANE, self.Y_RIGHT_PANE, self.W_RIGHT_PANE, self.H_RIGHT_PANE, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
         self.X_CITY_LIST = self.X_RIGHT_PANE + 40
         self.Y_CITY_LIST = self.Y_RIGHT_PANE + 60
@@ -291,7 +291,7 @@ class CvEspionageAdvisor:
 
                 szName = "LeaderNamePanel%d" % (iPlayerID)
                 self.aszLeaderNamePanels.append(szName)
-                screen.attachPanelAt(attach, szName, "", "", True, False, PanelStyles.PANEL_STYLE_MAIN,
+                screen.attachPanelAt(attach, szName, "", "", True, False, PanelStyles.PANEL_STYLE_MAIN_BLACK25,
                                      iX + 5, iY-15, self.W_NAME_PANEL, self.H_NAME_PANEL, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
                 szName = "NameText%d" % (iPlayerID)

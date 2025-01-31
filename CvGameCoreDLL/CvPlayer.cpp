@@ -6862,8 +6862,15 @@ int CvPlayer::getResearchTurnsLeftTimes100(TechTypes eTech, bool bOverflow) cons
 
 	if (iResearchRate == 0)
 	{
+		return 100; // PAE, max_int looks strange
 		return MAX_INT;
 	}
+	
+	// PAE
+	int iLimit = 500 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent() / 100;
+	iResearchRate = std::min(iLimit, iResearchRate);
+	iOverflow = std::min(iLimit/2, iOverflow);
+	// --------
 	
 	iResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eTech);
 

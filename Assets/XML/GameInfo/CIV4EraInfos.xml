@@ -55,6 +55,7 @@
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_2</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_3</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_4</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_5</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_1</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_GOODYMUSIC</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_GOODYMUSIC2</EraInfoSoundtrack>
@@ -107,6 +108,7 @@
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
 			<EraInfoSoundtracks>
+				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_5</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X4</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X7</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X27</EraInfoSoundtrack>

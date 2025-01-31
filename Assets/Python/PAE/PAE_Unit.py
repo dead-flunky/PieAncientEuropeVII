@@ -3124,7 +3124,8 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 						pLoopUnit = pPlot.getUnit(i)
 						if pLoopUnit is not None and pLoopUnit.getOwner() == iPlayer:
 								#if i % iNumLeadersOnPlot == 0:
-								pLoopUnit.setHasPromotion(iPromoMercenary, True)
+								if pLoopUnit.isMilitaryHappiness():
+										pLoopUnit.setHasPromotion(iPromoMercenary, True)
 
 				# PopUp
 				if pPlayer.isHuman():
@@ -3641,12 +3642,12 @@ def getNearestValidPlot(pUnit):
 		if pLoopPlot.isValidDomainForLocation(pUnit):
 			if pUnit.canMoveInto(pLoopPlot, False, False, True):
 				if pUnit.canEnterArea(pLoopPlot.getTeam(), pLoopPlot.area(), False):  # and not pUnit.isEnemy(pLoopPlot.getTeam(), pLoopPlot):
-					if (pUnit.getDomainType() != DOMAIN_AIR) or pLoopPlot.isFriendlyCity(pUnit, True):
+					if (pUnit.getDomainType() != DomainTypes.DOMAIN_AIR) or pLoopPlot.isFriendlyCity(pUnit, True):
 						if pLoopPlot.isRevealed(pUnit.getTeam(), False):
 							iValue = plotDistance(pUnit.getX(), pUnit.getY(), pLoopPlot.getX(), pLoopPlot.getY())
 							#if pNearestCity:
 							#	iValue += plotDistance(pLoopPlot.getX(), pLoopPlot.getY(), pNearestCity.getX(), pNearestCity.getY())
-							if pUnit.getDomainType() == DOMAIN_SEA and not pUnit.plot().isWater():
+							if pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not pUnit.plot().isWater():
 								if not pLoopPlot.isWater() or not pLoopPlot.isAdjacentToArea(pUnit.area()):
 									iValue *= 3
 							elif pLoopPlot.area() != pUnit.area():

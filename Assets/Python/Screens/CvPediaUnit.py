@@ -57,12 +57,12 @@ class CvPediaUnit:
 				self.H_SPECIAL_PANE = 187
 
 				self.X_PREREQ_PANE = 10
-				self.Y_PREREQ_PANE = 232
+				self.Y_PREREQ_PANE = 234  # 232
 				self.W_PREREQ_PANE = 390  # 360
 				self.H_PREREQ_PANE = 115
 
 				self.X_UPGRADES_TO_PANE = 410  # 385
-				self.Y_UPGRADES_TO_PANE = 232
+				self.Y_UPGRADES_TO_PANE = 234  # 232
 				self.W_UPGRADES_TO_PANE = 370  # 390
 				self.H_UPGRADES_TO_PANE = 115
 
@@ -122,6 +122,7 @@ class CvPediaUnit:
 
 				self.placeStats()
 
+				# PAE: units, die Gebäude errichten können, bekommen primär: Kann folgendes Gebäude errichten
 				self.placeUpgradesTo()
 
 				self.placeRequires()
@@ -291,29 +292,102 @@ class CvPediaUnit:
 				if len(szRightDelimeter) > 0:
 						screen.attachLabel(panelName, "", szRightDelimeter)
 
-		# Place upgrades
 
+		# Place upgrades
+		# PAE: units, die Gebäude errichten können, bekommen primär: Kann folgendes Gebäude errichten
+		# Leider gibt es keine BuildingInfo oder UnitInfo Funktion, das auszulesen, deshalb muss es manuell gemacht werden
 		def placeUpgradesTo(self):
 
 				screen = self.top.getScreen()
 
 				panelName = self.top.getNextWidgetName()
-				screen.addPanel(panelName, localText.getText("TXT_KEY_PEDIA_UPGRADES_TO", ()), "", False, True, self.X_UPGRADES_TO_PANE,
-												self.Y_UPGRADES_TO_PANE, self.W_UPGRADES_TO_PANE, self.H_UPGRADES_TO_PANE, PanelStyles.PANEL_STYLE_BLUE50)
 
-				screen.attachLabel(panelName, "", "  ")
+				# PAE VII (7.2)
+				lList = {
+					gc.getInfoTypeForString("UNIT_GREAT_GENERAL"): [
+						gc.getInfoTypeForString("BUILDING_HEROIC_EPIC"),
+						gc.getInfoTypeForString("BUILDING_HEROIC_EPIC_SUMER"),
+						gc.getInfoTypeForString("BUILDING_HEROIC_EPIC_INDIA"),
+						gc.getInfoTypeForString("BUILDING_MILITARY_ACADEMY"),
+						gc.getInfoTypeForString("BUILDING_ROMAN_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_SIEGESSTATUE"),
+						gc.getInfoTypeForString("BUILDING_SIEGESSAEULE"),
+						gc.getInfoTypeForString("BUILDING_ELEPHANTMONUMENT"),
+						gc.getInfoTypeForString("BUILDING_TRIUMPH")
+						],
+					gc.getInfoTypeForString("UNIT_RELIC"): [gc.getInfoTypeForString("BUILDING_MARTYRION")],
+					gc.getInfoTypeForString("UNIT_SLAVE"): [gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")],
+					gc.getInfoTypeForString("UNIT_DRUIDE"): [gc.getInfoTypeForString("BUILDING_HERBARY")],
+					gc.getInfoTypeForString("UNIT_PRAETORIAN3"): [gc.getInfoTypeForString("BUILDING_CASTRA_PRAETORIA")],
+					gc.getInfoTypeForString("UNIT_KAMPFHUND"): [gc.getInfoTypeForString("BUILDING_HUNDEZUCHT")],
+					gc.getInfoTypeForString("UNIT_KAMPFHUND_TIBET"): [gc.getInfoTypeForString("BUILDING_HUNDEZUCHT")],
+					gc.getInfoTypeForString("UNIT_KAMPFHUND_MACEDON"): [gc.getInfoTypeForString("BUILDING_HUNDEZUCHT")],
+					gc.getInfoTypeForString("UNIT_KAMPFHUND_BRITEN"): [gc.getInfoTypeForString("BUILDING_HUNDEZUCHT")],
+					gc.getInfoTypeForString("UNIT_PROPHET"): [
+						gc.getInfoTypeForString("BUILDING_CORPORATION_4"),
+						gc.getInfoTypeForString("BUILDING_CORPORATION_9"),
+						gc.getInfoTypeForString("BUILDING_LUXOR"),
+						gc.getInfoTypeForString("BUILDING_SUMER_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_HINDU_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_BUDDHIST_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_CELTIC_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_NORDIC_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_PHOEN_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_ROMAN_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_JEWISH_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_CHRISTIAN_SHRINE"),
+						gc.getInfoTypeForString("BUILDING_ISLAMIC_SHRINE")
+					],
+					gc.getInfoTypeForString("UNIT_ARTIST"): [
+						gc.getInfoTypeForString("BUILDING_CORPORATION_8"),
+						gc.getInfoTypeForString("BUILDING_NATIONAL_EPIC"),
+						gc.getInfoTypeForString("BUILDING_NATIONAL_EPIC_ROME"),
+						gc.getInfoTypeForString("BUILDING_NATIONAL_EPIC_MESO"),
+						gc.getInfoTypeForString("BUILDING_NATIONAL_EPIC_INDIA")
+					],
+					gc.getInfoTypeForString("UNIT_SCIENTIST"): [
+						gc.getInfoTypeForString("BUILDING_CORPORATION_6"),
+						gc.getInfoTypeForString("BUILDING_ACADEMY_1"),
+						gc.getInfoTypeForString("BUILDING_ACADEMY_2"),
+						gc.getInfoTypeForString("BUILDING_ACADEMY_3"),
+						gc.getInfoTypeForString("BUILDING_ACADEMY_4"),
+						gc.getInfoTypeForString("BUILDING_ACADEMY_5"),
+						gc.getInfoTypeForString("BUILDING_ACADEMY_6")
+					],
+					gc.getInfoTypeForString("UNIT_ENGINEER"): [gc.getInfoTypeForString("BUILDING_CORPORATION_7")],
+				}
 
-				for k in range(gc.getNumUnitClassInfos()):
-						if self.top.iActivePlayer == -1:
-								eLoopUnit = gc.getUnitClassInfo(k).getDefaultUnitIndex()
-						else:
-								eLoopUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(k)
+				if self.iUnit in lList:
 
-						if (eLoopUnit >= 0 and gc.getUnitInfo(self.iUnit).getUpgradeUnitClass(k)):
-								szButton = gc.getUnitInfo(eLoopUnit).getButton()
-								if self.top.iActivePlayer != -1:
-										szButton = gc.getPlayer(self.top.iActivePlayer).getUnitButton(eLoopUnit)
-								screen.attachImageButton(panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, False)
+						screen.addPanel(panelName, localText.getText("TXT_KEY_PEDIA_CAN_CONSTRUCT", ()), "", False, True, self.X_UPGRADES_TO_PANE,
+											self.Y_UPGRADES_TO_PANE, self.W_UPGRADES_TO_PANE, self.H_UPGRADES_TO_PANE, PanelStyles.PANEL_STYLE_BLUE50)
+						screen.attachLabel(panelName, "", "  ")
+
+						lBuildings = lList[self.iUnit]
+						for iBuilding in lBuildings:
+								szButton = gc.getBuildingInfo(iBuilding).getButton()
+								screen.attachImageButton(panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, 1, False)
+
+				else:
+				# PAE changes end
+
+						# BTS
+						screen.addPanel(panelName, localText.getText("TXT_KEY_PEDIA_UPGRADES_TO", ()), "", False, True, self.X_UPGRADES_TO_PANE,
+											self.Y_UPGRADES_TO_PANE, self.W_UPGRADES_TO_PANE, self.H_UPGRADES_TO_PANE, PanelStyles.PANEL_STYLE_BLUE50)
+						screen.attachLabel(panelName, "", "  ")
+
+						for k in range(gc.getNumUnitClassInfos()):
+								if self.top.iActivePlayer == -1:
+										eLoopUnit = gc.getUnitClassInfo(k).getDefaultUnitIndex()
+								else:
+										eLoopUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(k)
+
+								if (eLoopUnit >= 0 and gc.getUnitInfo(self.iUnit).getUpgradeUnitClass(k)):
+										szButton = gc.getUnitInfo(eLoopUnit).getButton()
+										if self.top.iActivePlayer != -1:
+												szButton = gc.getPlayer(self.top.iActivePlayer).getUnitButton(eLoopUnit)
+										screen.attachImageButton(panelName, "", szButton, GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, eLoopUnit, 1, False)
+
 
 		# Place Special abilities
 		def placeSpecial(self):

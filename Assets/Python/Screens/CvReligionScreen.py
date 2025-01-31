@@ -199,7 +199,7 @@ class CvReligionScreen:
 				# Panels on the Top(name of screen) and bottom(Cancel, Exit, Revolution buttons)
 				screen.addPanel(self.TITLE_TOP_PANEL, u"", u"", True, False, 0, 0, self.W_SCREEN, self.PANEL_HEIGHT, PanelStyles.PANEL_STYLE_TOPBAR)
 				screen.addPanel(self.TITLE_BOTTOM_PANEL, u"", u"", True, False, 0, self.H_SCREEN - self.PANEL_HEIGHT, self.W_SCREEN, self.PANEL_HEIGHT, PanelStyles.PANEL_STYLE_BOTTOMBAR)
-				screen.addPanel(self.RELIGION_PANEL_ID, "", "", False, True, -10, 50, self.W_SCREEN + 20, self.H_RELIGION_AREA, PanelStyles.PANEL_STYLE_MAIN)
+				screen.addPanel(self.RELIGION_PANEL_ID, "", "", False, True, -10, 50, self.W_SCREEN + 20, self.H_RELIGION_AREA, PanelStyles.PANEL_STYLE_TOPBAR)
 				screen.showWindowBackground(False)
 
 				# Set the background and exit button, and show the screen
@@ -361,10 +361,10 @@ class CvReligionScreen:
 						iLinkReligion = iReligion
 
 				# szArea1 = self.AREA1_ID
-				screen.addPanel(self.AREA1_ID, "", "", True, True, self.X_CITY1_AREA, self.Y_CITY_AREA, self.W_CITY_AREA, self.H_CITY_AREA, PanelStyles.PANEL_STYLE_MAIN)
+				screen.addPanel(self.AREA1_ID, "", "", True, True, self.X_CITY1_AREA, self.Y_CITY_AREA, self.W_CITY_AREA, self.H_CITY_AREA, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 				# szArea2 = self.AREA2_ID
-				screen.addPanel(self.AREA2_ID, "", "", True, True, self.X_CITY2_AREA, self.Y_CITY_AREA, self.W_CITY_AREA, self.H_CITY_AREA, PanelStyles.PANEL_STYLE_MAIN)
+				screen.addPanel(self.AREA2_ID, "", "", True, True, self.X_CITY2_AREA, self.Y_CITY_AREA, self.W_CITY_AREA, self.H_CITY_AREA, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 				# szArea = self.RELIGION_PANEL_ID
 				for i in range(gc.getNumReligionInfos()):
@@ -449,6 +449,11 @@ class CvReligionScreen:
 				# Turns of Anarchy Text...
 				screen.setLabel(self.RELIGION_ANARCHY_WIDGET, "Background", u"<font=3>" + szAnarchyTime + u"</font>", CvUtil.FONT_LEFT_JUSTIFY,
 												self.X_ANARCHY, self.Y_ANARCHY, self.Z_TEXT, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+				# Header...
+				screen.setLabel(self.HEADER_NAME, "Background", u"<font=4b>" + localText.getText("TXT_KEY_RELIGION_SCREEN_TITLE", ()).upper() + u"</font>",
+						CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.Y_TITLE, self.Z_TEXT, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 
 		def getReligionButtonName(self, iReligion):
 				szName = self.BUTTON_NAME + str(iReligion)

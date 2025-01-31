@@ -1553,8 +1553,6 @@ class CvDomesticAdvisor:
 								gc.sendChat("RemovePause", ChatTargetTypes.CHATTARGET_ALL)
 								screen = CyGInterfaceScreen( "DomesticAdvisor", CvScreenEnums.DOMESTIC_ADVISOR )
 								screen.hideScreen()
-						
-						
 
 				return 0
 
@@ -1571,7 +1569,6 @@ class CvDomesticAdvisor:
 				if (CyInterface().isDirty(InterfaceDirtyBits.Domestic_Advisor_DIRTY_BIT) == True):
 						CyInterface().setDirty(InterfaceDirtyBits.Domestic_Advisor_DIRTY_BIT, False)
 
-						screen = self.getScreen() #noqa
 						player = gc.getPlayer(CyGame().getActivePlayer())
 
 						i = 0

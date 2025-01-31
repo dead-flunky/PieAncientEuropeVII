@@ -3659,10 +3659,9 @@ class CvGameUtils:
 				# 2,7,13,22,32
 				#iExperienceNeeded = iLevel * (iLevel+2) - iLevel/2
 				
-				# PAE 6.14: L * (L+2)
-				# Min, Max: 1, 3
-				# 3, 8, 15, 24, 35
-				iExperienceNeeded = iLevel * (iLevel+2)
+				# PAE 6.14: L * (L+2): 3,8,15,24,35
+				# PAE 7.2: L * (L*3): 4,10,18,28,40
+				iExperienceNeeded = iLevel * (iLevel+3)
 
 				iModifier = gc.getPlayer(iOwner).getLevelExperienceModifier()
 				if iModifier != 0:

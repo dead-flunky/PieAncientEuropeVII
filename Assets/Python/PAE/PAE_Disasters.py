@@ -785,6 +785,7 @@ def doErdbeben(iX, iY):
 
 																# Stadt
 																if loopPlot.isCity():
+																		bCityIsGone = False
 																		pCity = loopPlot.getPlotCity()
 																		iPopAlt = pCity.getPopulation()
 																		if iBetrag < 2:
@@ -792,6 +793,7 @@ def doErdbeben(iX, iY):
 																						doDestroyCityWonders(pCity, 100, feat_erdbeben)
 																						doKillUnits(loopPlot, 100)
 																						pCity.kill()
+																						bCityIsGone = True
 																						if gc.getPlayer(iPlayer).isHuman():
 																								# Message: Die Stadt %s und dessen Bevoelkerung wurde in ihren Truemmern begraben....
 																								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_CITY_DESTROYED", (pCity.getName(),)),
@@ -816,7 +818,7 @@ def doErdbeben(iX, iY):
 																				iPopNeu = max(iPopNeu, 1)
 																				pCity.setPopulation(iPopNeu)
 
-																		if pCity and not pCity.isNone():
+																		if not bCityIsGone and not pCity.isNone():
 																				pCity.setFood(0)
 																				PAE_City.doCheckCityState(pCity)
 																				if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():

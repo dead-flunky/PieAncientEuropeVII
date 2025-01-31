@@ -1224,7 +1224,7 @@ class CvInfoScreen:
 				# Background Panes
 				self.szLeftPaneWidget = self.getNextWidgetName()
 				screen.addPanel(self.szLeftPaneWidget, "", "", True, True,
-												self.X_LEFT_PANE, self.Y_LEFT_PANE, self.W_LEFT_PANE, self.H_LEFT_PANE, PanelStyles.PANEL_STYLE_MAIN)  # PanelStyles.PANEL_STYLE_DAWNTOP )
+												self.X_LEFT_PANE, self.Y_LEFT_PANE, self.W_LEFT_PANE, self.H_LEFT_PANE, PanelStyles.PANEL_STYLE_MAIN_BLACK25)  # PanelStyles.PANEL_STYLE_MAIN
 
 				self.drawTopCities()
 				self.drawWondersTab()
@@ -1244,7 +1244,7 @@ class CvInfoScreen:
 
 						szTextPanel = self.getNextWidgetName()
 						screen.addPanel(szTextPanel, "", "", False, True,
-														self.X_COL_1_CITIES_DESC, self.Y_ROWS_CITIES[iWidgetLoop] + self.Y_CITIES_DESC_BUFFER, self.W_CITIES_DESC, self.H_CITIES_DESC, PanelStyles.PANEL_STYLE_DAWNTOP)
+														self.X_COL_1_CITIES_DESC, self.Y_ROWS_CITIES[iWidgetLoop] + self.Y_CITIES_DESC_BUFFER, self.W_CITIES_DESC, self.H_CITIES_DESC, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 						self.szCityNameWidgets.append(self.getNextWidgetName())
 #                       szProjectDesc = u"<font=3b>" + pProjectInfo.getDescription().upper() + u"</font>"
 						szCityDesc = u"<font=4b>" + str(self.iCitySizes[iWidgetLoop]) + u"</font>" + " - " + u"<font=3b>" + self.szCityNames[iWidgetLoop] + u"</font>" + "\n"
@@ -1318,7 +1318,7 @@ class CvInfoScreen:
 
 						szIconPanel = self.szCityWonderScrollArea[iCityLoop]
 						screen.addPanel(szIconPanel, "", "", False, True,
-														self.X_COL_1_CITIES_DESC, self.Y_ROWS_CITIES[iCityLoop] + self.Y_CITIES_WONDER_BUFFER + self.Y_CITIES_DESC_BUFFER, self.W_CITIES_DESC, self.H_CITIES_DESC, PanelStyles.PANEL_STYLE_DAWNTOP)
+														self.X_COL_1_CITIES_DESC, self.Y_ROWS_CITIES[iCityLoop] + self.Y_CITIES_WONDER_BUFFER + self.Y_CITIES_DESC_BUFFER, self.W_CITIES_DESC, self.H_CITIES_DESC, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 						# Now place the wonder buttons
 						for iWonderLoop in range(aiTopCitiesNumWonders[iCityLoop]):
@@ -1423,7 +1423,7 @@ class CvInfoScreen:
 
 				self.szRightPaneWidget = self.getNextWidgetName()
 				screen.addPanel(self.szRightPaneWidget, "", "", True, True,
-												self.X_RIGHT_PANE, self.Y_RIGHT_PANE, self.W_RIGHT_PANE, self.H_RIGHT_PANE, PanelStyles.PANEL_STYLE_MAIN)  # PanelStyles.PANEL_STYLE_DAWNTOP )
+												self.X_RIGHT_PANE, self.Y_RIGHT_PANE, self.W_RIGHT_PANE, self.H_RIGHT_PANE, PanelStyles.PANEL_STYLE_MAIN_BLACK25)  # PanelStyles.PANEL_STYLE_MAIN
 
 				self.drawWondersDropdownBox()
 				self.calculateWondersList()
@@ -1952,7 +1952,7 @@ class CvInfoScreen:
 				# Add Panel
 				szTopPanelWidget = self.getNextWidgetName()
 				screen.addPanel(szTopPanelWidget, u"", u"", True, False, self.X_STATS_TOP_PANEL, self.Y_STATS_TOP_PANEL, self.W_STATS_TOP_PANEL, self.H_STATS_TOP_PANEL,
-												PanelStyles.PANEL_STYLE_DAWNTOP)
+												PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 				# Leaderhead graphic
 				player = gc.getPlayer(gc.getGame().getActivePlayer())

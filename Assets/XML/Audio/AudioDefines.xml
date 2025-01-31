@@ -497,6 +497,13 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
+			<SoundID>SONG_ANCIENT_SOUNDTRACK_5</SoundID>
+			<Filename>Sounds/Soundtrack/AncientSoundtrack5</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SONG_ALLEGRI_MISERERE</SoundID>
 			<Filename>Sounds/Soundtrack/Medieval/AllegriMiserere</Filename>
 			<LoadType>STREAMED</LoadType>

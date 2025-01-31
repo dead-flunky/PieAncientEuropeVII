@@ -3,7 +3,7 @@
 # Created by Pie, Austria
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 																FontTypes, CyGame, CyMap,
-																WidgetTypes, PanelStyles, PopupStates,
+																WidgetTypes, PanelStyles, ButtonStyles,
 																CyInterface, NotifyCode, CyMessageControl,
 																CyGInterfaceScreen, CyCamera)
 import CvUtil
@@ -35,11 +35,29 @@ class CvTradeRouteAdvisor2:
 				self.X_EXIT = 994
 				self.Y_EXIT = 726
 
+				self.iActiveTab = 1
 				self.nWidgetCount = 0
 
 				self.iTargetPlayer = -1
 				self.iActiveCityID = -1
 				self.iSelectedMission = -1
+				self.szTab1 = "TAB1"
+				self.szTab2 = "TAB2"
+
+				# for TAB 2
+				self.selectedPlayerList = []
+				self.X_TEXT = 625
+				self.Y_TEXT = 190
+				self.W_TEXT = 380
+				self.H_TEXT = 500
+				self.X_LEADERS = 20
+				self.Y_LEADERS = 80
+				self.W_LEADERS = 985
+				self.H_LEADERS = 90
+				self.LEADER_BUTTON_SIZE = 64
+				self.LEADER_MARGIN = 12
+
+				self.LEADER_COLUMNS = int(self.W_LEADERS / (self.LEADER_BUTTON_SIZE + self.LEADER_MARGIN))
 
 		def getScreen(self):
 				return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.TRADEROUTE_ADVISOR2)
@@ -54,8 +72,7 @@ class CvTradeRouteAdvisor2:
 				screen = self.getScreen()
 				if screen.isActive():
 						return
-				screen.setRenderInterfaceOnly(True)
-				screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
+				#screen.setRenderInterfaceOnly(True)
 
 				# Set the background and exit button, and show the screen
 				screen.setDimensions(screen.centerX(0), screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
@@ -69,18 +86,43 @@ class CvTradeRouteAdvisor2:
 											 CvUtil.FONT_RIGHT_JUSTIFY, self.X_EXIT, self.Y_EXIT, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1)
 
 				# Header...
-				screen.setLabel(self.WIDGET_HEADER, "Background", u"<font=4b>" + localText.getText("TXT_KEY_TRADE_ROUTE2_ADVISOR_SCREEN", ()).upper() + u"</font>",
+				screen.setLabel(self.WIDGET_HEADER, "Background", u"<font=4b>" + localText.getText("TXT_KEY_TRADE_ROUTE2_ADVISOR_SCREEN", ()).upper() + "</font>",
 												CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.Y_TITLE, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+				self.deleteAllWidgets()
+
+				# Bottom: TAB links
+				xTAB = 50
+				yTAB = 726
+				TEXT_TAB1 = u"<font=4>" + localText.getText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1", ()).upper() + "</font>"
+				TEXT_TAB1_YELLOW = u"<font=4>" + localText.getColorText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + "</font>"
+				TEXT_TAB2 = u"<font=4>" + localText.getText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB2", ()).upper() + "</font>"
+				TEXT_TAB2_YELLOW = u"<font=4>" + localText.getColorText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB2", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + "</font>"
+
+				#if (self.iActiveTab == 2):
+				#		screen.setText(self.szTab1, "", TEXT_TAB1, CvUtil.FONT_LEFT_JUSTIFY, xTAB, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				#		screen.setText(self.szTab2, "", TEXT_TAB2_YELLOW, CvUtil.FONT_LEFT_JUSTIFY, xTAB+220, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				#else:
+				#		screen.setText(self.szTab1, "", TEXT_TAB1_YELLOW, CvUtil.FONT_LEFT_JUSTIFY, xTAB, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+				#		screen.setText(self.szTab2, "", TEXT_TAB2, CvUtil.FONT_LEFT_JUSTIFY, xTAB+220, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
 
 				# draw the contents
 				self.drawContents()
 
-				self.refreshScreen()
 
 		def drawContents(self):
 
+				if (self.iActiveTab == 2):
+						self.drawCities()
+				else:
+						self.drawTraders()
+
+
+		##################### FIRST PAGE ###############################
+		def drawTraders(self):
+
 				screen = self.getScreen()
-				self.deleteAllWidgets()
 
 				BUTTON_SIZE = 48
 
@@ -242,11 +284,59 @@ class CvTradeRouteAdvisor2:
 								i += 1
 								iY += 60
 
-		def refreshScreen(self):
-				self.deleteAllWidgets()
-				if self.iTargetPlayer != -1:
-						screen = self.getScreen()  # noqa
-				return 0
+
+		##################### SECOND PAGE ###############################
+		def drawCities(self):
+
+				if (self.iActivePlayer < 0): return
+
+				screen = self.getScreen()
+
+				BUTTON_SIZE = 48
+
+				self.selectedUnitList = []
+				self.selectedPlayerList.append(self.iActivePlayer)
+
+				# Set scrollable area for leaders
+				screen.addPanel("LeaderPanel", "", "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_DAWNTOP)
+
+				# Set scrollable area for unit buttons
+				screen.addPanel("CityPanel", "", "", True, True, self.X_TEXT, self.Y_TEXT, self.W_TEXT, self.H_TEXT, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
+
+
+				listLeaders = []
+				for iLoopPlayer in range(gc.getMAX_PLAYERS()):
+						player = gc.getPlayer(iLoopPlayer)
+						if (player.isAlive() and (gc.getTeam(player.getTeam()).isHasMet(gc.getPlayer(self.iActivePlayer).getTeam()) or gc.getGame().isDebugMode())):
+								listLeaders.append(iLoopPlayer)
+
+				iNumLeaders = len(listLeaders)
+				if iNumLeaders >= self.LEADER_COLUMNS:
+						iButtonSize = self.LEADER_BUTTON_SIZE / 2
+				else:
+						iButtonSize = self.LEADER_BUTTON_SIZE
+
+				iColumns = int(self.W_LEADERS / (iButtonSize + self.LEADER_MARGIN))
+
+				# loop through all players and display leaderheads
+				for iIndex in range(iNumLeaders):
+						iLoopPlayer = listLeaders[iIndex]
+						player = gc.getPlayer(iLoopPlayer)
+
+						x = self.X_LEADERS + self.LEADER_MARGIN + (iIndex % iColumns) * (iButtonSize + self.LEADER_MARGIN)
+						y = self.Y_LEADERS + self.LEADER_MARGIN + (iIndex // iColumns) * (iButtonSize + self.LEADER_MARGIN)
+
+						if player.isBarbarian():
+								szButton = "Art/Interface/Buttons/Civilizations/Barbarian.dds"
+						else:
+								szButton = gc.getLeaderHeadInfo(gc.getPlayer(iLoopPlayer).getLeaderType()).getButton()
+						screen.addCheckBoxGFC("Leader"+str(iLoopPlayer), szButton, ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), x,
+																	y, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PEDIA_JUMP_TO_LEADER, iLoopPlayer, -1, ButtonStyles.BUTTON_STYLE_LABEL)
+						screen.setState("Leader"+str(iLoopPlayer), (iLoopPlayer in self.selectedPlayerList))
+
+
+
+
 
 		# returns a unique ID for a widget in this screen
 		def getNextWidgetName(self):
@@ -266,7 +356,16 @@ class CvTradeRouteAdvisor2:
 		# Will handle the input for this screen...
 		def handleInput(self, inputClass):
 				if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
-						if inputClass.getButtonType() == WidgetTypes.WIDGET_GENERAL and inputClass.getData2() != -1:
+
+						szWidgetName = inputClass.getFunctionName() + str(inputClass.getID())
+
+						if (szWidgetName == self.szTab1):
+								self.iActiveTab = 1
+								self.interfaceScreen()
+						elif (szWidgetName == self.szTab2):
+								self.iActiveTab = 2
+								self.interfaceScreen()
+						elif inputClass.getButtonType() == WidgetTypes.WIDGET_GENERAL and inputClass.getData2() != -1:
 								pPlayer = gc.getPlayer(CyGame().getActivePlayer())
 								pUnit = pPlayer.getUnit(inputClass.getData2())
 								if inputClass.getData1() == 1:

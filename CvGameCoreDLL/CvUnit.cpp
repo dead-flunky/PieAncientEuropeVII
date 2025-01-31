@@ -2388,21 +2388,18 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	bool bCanEnterArea = canEnterArea(ePlotTeam, pPlotArea);
 	if (bCanEnterArea)
 	{
-		// PAE
 		if (eFeature != NO_FEATURE)
 		{
 			if (m_pUnitInfo->getFeatureImpassable(eFeature))
 			{
-				// PAE: Roads can make it (zB Chariots, Waggons -> Forests / Streitwagen, Karren -> Wald)
-				if (pPlot->isRoute()) {
-					return true;
-				}
 				TechTypes eTech = (TechTypes)m_pUnitInfo->getFeaturePassableTech(eFeature);
 				if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 				{
 					if (DOMAIN_SEA != getDomainType() || ePlotTeam != getTeam())  // sea units can enter impassable in own cultural borders
 					{
-						return false;
+						// PAE: Roads can make it (zB Chariots, Waggons -> Forests / Streitwagen, Karren -> Wald)
+						if (!pPlot->isRoute())
+							return false;
 					}
 				}
 			}
@@ -2422,10 +2419,6 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		
 		if (m_pUnitInfo->getTerrainImpassable(pPlot->getTerrainType()))
 		{
-			// PAE: Roads can make it (zB Chariots, Waggons -> Forests / Streitwagen, Karren -> Wald)
-			if (pPlot->isRoute()) {
-				return true;
-			}
 			TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
 			if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 			{
@@ -2434,7 +2427,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 				{
 					if (bIgnoreLoad || !canLoad(pPlot)) 
 					{ 
-						return false;
+						// PAE: Roads can make it (zB Chariots, Waggons -> Forests / Streitwagen, Karren -> Wald)
+						if (!pPlot->isRoute())
+							return false;
 					}
 				}
 			}

@@ -76,7 +76,7 @@ class CvTradeRouteAdvisor:
 				# draw the contents
 				self.drawContents()
 
-				self.refreshScreen()
+				self.deleteAllWidgets()
 
 		def drawContents(self):
 				screen = self.getScreen()
@@ -268,12 +268,6 @@ class CvTradeRouteAdvisor:
 				szText = u"<font=3>" + localText.getText("TXT_KEY_TRADE_ADVISOR_BOTTOM4", (PAE_Trade.getCountTradeUnits(pPlayer),iAnz1,iAnz2,iAnz3,iAnz4)) + u"</font>"
 				screen.setLabel("TextBottom4", "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 50, self.H_SCREEN-78, -2.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
-		def refreshScreen(self):
-				self.deleteAllWidgets()
-				if self.iTargetPlayer != -1:
-						screen = self.getScreen() #noqa
-				return 0
-
 		# returns a unique ID for a widget in this screen
 		def getNextWidgetName(self):
 				szName = self.WIDGET_ID + str(self.nWidgetCount)
@@ -291,7 +285,6 @@ class CvTradeRouteAdvisor:
 
 		# Will handle the input for this screen...
 		def handleInput(self, inputClass):
-				screen = self.getScreen() #noqa
 				return 0
 
 		def update(self, fDelta):
