@@ -604,6 +604,7 @@ List of keys and their meanings:
 
 def decode_script_data(sData):
 		try:
+				sData = sData.replace("\\", "")
 				return json.loads(sData, object_hook=_decode_dict)
 		except ValueError:
 				if sData:
@@ -621,7 +622,9 @@ def encode_script_data(dData):
 				else:
 						dData = {}
 		if dData:
-				return json.dumps(dData)  # , ensure_ascii=True)
+				#return json.dumps(dData)  # , ensure_ascii=True)
+				temp = json.dumps(dData)
+				return temp.replace("\\","")
 		return ""
 
 # pOwner = CvPlot or CvUnit

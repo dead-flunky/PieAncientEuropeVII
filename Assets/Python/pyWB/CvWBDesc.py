@@ -1,14 +1,14 @@
 from CvPythonExtensions import (CyGlobalContext, CyTranslator,
-																CommerceTypes, CyMap, getWBSaveExtension,
-																TeamTypes, WarPlanTypes, PlayerTypes,
-																CyMapGenerator, BonusTypes,
-																SeaLevelTypes, WorldSizeTypes, ClimateTypes,
-																CyEngine, PlotTypes, CardinalDirectionTypes,
-																ActivityTypes, LeaderHeadTypes, UnitAITypes,
-																DomainTypes, YieldTypes, UnitTypes,
-																BuildingTypes, OrderTypes, ProjectTypes,
-																ProcessTypes, CivilizationTypes,
-																HandicapTypes, DirectionTypes)
+											CommerceTypes, CyMap, getWBSaveExtension,
+											TeamTypes, WarPlanTypes, PlayerTypes,
+											CyMapGenerator, BonusTypes,
+											SeaLevelTypes, WorldSizeTypes, ClimateTypes,
+											CyEngine, PlotTypes, CardinalDirectionTypes,
+											ActivityTypes, LeaderHeadTypes, UnitAITypes,
+											DomainTypes, YieldTypes, UnitTypes,
+											BuildingTypes, OrderTypes, ProjectTypes,
+											ProcessTypes, CivilizationTypes,
+											HandicapTypes, DirectionTypes)
 import os
 # import sys
 import CvUtil
@@ -1203,7 +1203,8 @@ class CvUnitDesc:
 
 				player = getPlayer(self.owner)
 				if (player):
-						# print("unit apply %d %d" %(self.plotX, self.plotY))
+						# TEST message (PythonDbg.log)
+						#print("unit apply %d %d" %(self.plotX, self.plotY))
 						CvUtil.pyAssert(self.plotX >= 0 and self.plotY >= 0, "invalid plot coords")
 						unitTypeNum = CvUtil.findInfoTypeNum(gc.getUnitInfo, gc.getNumUnitInfos(), self.unitType)
 						if (unitTypeNum < 0):
@@ -1214,6 +1215,8 @@ class CvUnitDesc:
 								else:
 										eUnitAI = UnitAITypes.NO_UNITAI
 
+								# TEST message (PythonDbg.log)
+								#print("initUnit: Owner:%d unitType:%d UnitAI:%d facingDirection:%d" %(player.getOwner(), unitTypeNum, eUnitAI, self.facingDirection))
 								unit = player.initUnit(unitTypeNum, self.plotX, self.plotY, UnitAITypes(eUnitAI), self.facingDirection)
 						if unit:
 								if (self.szName is not None):
@@ -1572,7 +1575,9 @@ class CvCityDesc:
 										self.city.setPopulation(self.population)
 
 								for item in self.lCulture:
-										self.city.setCulture(item[0], item[1], True)
+										# PAE Korrektur
+										if gc.getPlayer(item[0]).isAlive():
+												self.city.setCulture(item[0], item[1], True)
 
 								for bldg in (self.bldgType):
 										bldgTypeNum = CvUtil.findInfoTypeNum(gc.getBuildingInfo, gc.getNumBuildingInfos(), bldg)
@@ -2408,7 +2413,9 @@ class CvWBDesc:
 
 						pPlot = CyMap().plot(pWBPlot.iX, pWBPlot.iY)
 						for item in pWBPlot.lCulture:
-								pPlot.setCulture(item[0], item[1], True)
+								# PAE Korrektur
+								if (gc.getPlayer(item[0]).isAlive()):
+										pPlot.setCulture(item[0], item[1], True)
 
 				for iPlotLoop in range(self.mapDesc.numPlotsWritten):
 						pWBPlot = self.plotDesc[iPlotLoop]

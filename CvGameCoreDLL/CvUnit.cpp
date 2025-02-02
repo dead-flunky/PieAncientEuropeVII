@@ -779,7 +779,7 @@ void CvUnit::doTurn()
 		changeMoves(iMoveChange * 60);
 	} // -----------------------------
 
-	// PAE River Bug (unit keeps standing on a river ford
+	// PAE River Bug (unit keeps standing on a river ford)
 	if (plot()->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) {
 		jumpToNearestValidPlot();
 	} // ------------------------
@@ -3364,7 +3364,7 @@ bool CvUnit::shouldLoadOnMove(const CvPlot* pPlot) const
 		// Flunky for PAE: river ford
 		if (pPlot->isWater() && !canMoveAllTerrain())
 		{
-			if (pPlot->getTerrainType() != (TerrainTypes)(11))
+			if (pPlot->getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
 			{
 				return true;
 			}
