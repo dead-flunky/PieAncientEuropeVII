@@ -8544,6 +8544,8 @@ int CvPlayerAI::AI_neededExplorers(CvArea* pArea) const
 	FAssert(pArea != NULL);
 	int iNeeded = 0;
 
+	// PAE, cause AI shall not really explore
+	/*
 	if (pArea->isWater())
 	{
 		iNeeded = std::min(iNeeded + (pArea->getNumUnrevealedTiles(getTeam()) / 400), std::min(2, ((getNumCities() / 2) + 1)));
@@ -8552,6 +8554,7 @@ int CvPlayerAI::AI_neededExplorers(CvArea* pArea) const
 	{
 		iNeeded = std::min(iNeeded + (pArea->getNumUnrevealedTiles(getTeam()) / 150), std::min(3, ((getNumCities() / 3) + 2)));
 	}
+	*/
 
 	if (0 == iNeeded)
 	{
@@ -8566,24 +8569,24 @@ int CvPlayerAI::AI_neededExplorers(CvArea* pArea) const
 			}
 			else
 			{
-			    if (getCapitalCity() != NULL && pArea->getID() == getCapitalCity()->getArea())
-			    {
-                    for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
-                    {
-                        CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
-                        if (kPlayer.isAlive() && kPlayer.getTeam() != getTeam())
-                        {
-                            if (!GET_TEAM(getTeam()).isHasMet(kPlayer.getTeam()))
-                            {
-                                if (pArea->getCitiesPerPlayer(kPlayer.getID()) > 0)
-                                {
-                                    iNeeded++;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-			    }
+				if (getCapitalCity() != NULL && pArea->getID() == getCapitalCity()->getArea())
+				{
+					for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
+					{
+						CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+						if (kPlayer.isAlive() && kPlayer.getTeam() != getTeam())
+						{
+							if (!GET_TEAM(getTeam()).isHasMet(kPlayer.getTeam()))
+							{
+								if (pArea->getCitiesPerPlayer(kPlayer.getID()) > 0)
+								{
+									iNeeded++;
+									break;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

@@ -287,28 +287,15 @@ def endTurnFeats(iPlayer):
 
 		lRealPopulation = gc.getPlayer(iPlayer).getRealPopulation()
 
-		# BTS
-		#if (lRealPopulation > 500000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_HALF_MILLION, "TXT_KEY_FEAT_HALF_MILLION")
-		#if (lRealPopulation > 1000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_1_MILLION, "TXT_KEY_FEAT_1_MILLION")
-		#if (lRealPopulation > 2000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_2_MILLION, "TXT_KEY_FEAT_2_MILLION")
-		#if (lRealPopulation > 5000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_5_MILLION, "TXT_KEY_FEAT_5_MILLION")
-		#if (lRealPopulation > 10000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_10_MILLION, "TXT_KEY_FEAT_10_MILLION")
-		#if (lRealPopulation > 20000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_20_MILLION, "TXT_KEY_FEAT_20_MILLION")
-		#if (lRealPopulation > 50000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_50_MILLION, "TXT_KEY_FEAT_50_MILLION")
-		#if (lRealPopulation > 100000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_100_MILLION, "TXT_KEY_FEAT_100_MILLION")
-		#if (lRealPopulation > 200000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_200_MILLION, "TXT_KEY_FEAT_200_MILLION")
-		#if (lRealPopulation > 500000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_500_MILLION, "TXT_KEY_FEAT_500_MILLION")
-		#if (lRealPopulation > 1000000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_1_BILLION, "TXT_KEY_FEAT_1_BILLION")
-		#if (lRealPopulation > 2000000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_2_BILLION, "TXT_KEY_FEAT_2_BILLION")
-
 		# PAE
-		if (lRealPopulation > 1000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_1K, "TXT_KEY_FEAT_POPULATION_1K")
+		#if (lRealPopulation > 1000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_1K, "TXT_KEY_FEAT_POPULATION_1K")
 		if (lRealPopulation > 5000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_5K, "TXT_KEY_FEAT_POPULATION_5K")
 		if (lRealPopulation > 10000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_10K, "TXT_KEY_FEAT_POPULATION_10K")
 		if (lRealPopulation > 25000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_25K, "TXT_KEY_FEAT_POPULATION_25K")
-		if (lRealPopulation > 50000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_5K, "TXT_KEY_FEAT_POPULATION_50K")
+		if (lRealPopulation > 50000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_50K, "TXT_KEY_FEAT_POPULATION_50K")
 		if (lRealPopulation > 100000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_100K, "TXT_KEY_FEAT_POPULATION_100K")
 		if (lRealPopulation > 250000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_250K, "TXT_KEY_FEAT_POPULATION_250K")
+		# BTS
 		if (lRealPopulation > 500000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_HALF_MILLION, "TXT_KEY_FEAT_HALF_MILLION")
 		if (lRealPopulation > 1000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_1_MILLION, "TXT_KEY_FEAT_1_MILLION")
 		if (lRealPopulation > 2000000): populationFeat(iPlayer, FeatTypes.FEAT_POPULATION_2_MILLION, "TXT_KEY_FEAT_2_MILLION")

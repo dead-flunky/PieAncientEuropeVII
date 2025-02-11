@@ -2061,7 +2061,7 @@ void CvPlayer::disbandUnit(bool bAnnounce)
 							break;
 
 						case UNITAI_EXPLORE:
-							iValue *= 15;
+							//iValue *= 15; // PAE
 							break;
 
 						case UNITAI_MISSIONARY:
@@ -2094,7 +2094,7 @@ void CvPlayer::disbandUnit(bool bAnnounce)
 							break;
 
 						case UNITAI_EXPLORE_SEA:
-							iValue *= 25;
+							//iValue *= 25; // PAE
 							break;
 
 						case UNITAI_ASSAULT_SEA:
@@ -2108,6 +2108,7 @@ void CvPlayer::disbandUnit(bool bAnnounce)
 
 						case UNITAI_PIRATE_SEA:
 						case UNITAI_ATTACK_AIR:
+							iValue *= 15; // PAE
 							break;
 
 						case UNITAI_DEFENSE_AIR:

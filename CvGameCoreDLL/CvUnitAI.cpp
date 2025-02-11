@@ -578,7 +578,7 @@ int CvUnitAI::AI_groupFirstVal()
 		break;
 
 	case UNITAI_COLLATERAL:
-		return 7;
+		return 17; // PAE, BTS: 7
 		break;
 
 	case UNITAI_PILLAGE:
@@ -3143,7 +3143,10 @@ void CvUnitAI::AI_exploreMove()
 
 	if (getDamage() > 0)
 	{
-		if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
+		// BTS
+		//if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
+		// PAE
+		if (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0)
 		{
 			getGroup()->pushMission(MISSION_HEAL);
 			return;
@@ -4197,7 +4200,7 @@ void CvUnitAI::AI_pirateSeaMove()
 	{
 		if (AI_anyAttack(2, 30))
 		{
-			return;			
+			return;
 		}
 		
 		if (AI_protect(30))
@@ -5966,11 +5969,11 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 	{
 		if (AI_getUnitAIType() == UNITAI_EXPLORE)
 		{
-			iValue += 20;
+			iValue += 200; // PAE, BTS: 20
 		}
 		else
 		{
-			iValue += 10;
+			iValue += 100; // PAE, BTS: 10
 		}
 	}
 
@@ -5979,7 +5982,7 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 	{
 		if ((AI_getUnitAIType() == UNITAI_ATTACK_CITY))
 		{
-			iValue += 12;			
+			iValue += 12;
 		}
 		else if ((AI_getUnitAIType() == UNITAI_ATTACK))
 		{
@@ -6448,11 +6451,11 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 			}
 			else if ((AI_getUnitAIType() == UNITAI_ATTACK) || (AI_getUnitAIType() == UNITAI_PILLAGE))
 			{
-				iValue += 10;
+				iValue += 100; // PAE, BTS: 10
 			}
 			else
 			{
-			    iValue += 1;
+				iValue += 1;
 			}
 		}
 	}
@@ -6507,11 +6510,11 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 		{
 			if (AI_getUnitAIType() == UNITAI_EXPLORE)
 			{
-				iValue += 20;
+				iValue += 200; // PAE, BTS: 20
 			}
 			else if ((AI_getUnitAIType() == UNITAI_ATTACK) || (AI_getUnitAIType() == UNITAI_PILLAGE))
 			{
-				iValue += 10;
+				iValue += 100; // PAE, BTS: 10
 			}
 			else
 			{
@@ -10278,13 +10281,13 @@ bool CvUnitAI::AI_explore()
 	PROFILE_FUNC();
 
 	CvPlot* pLoopPlot;
-	CvPlot* pAdjacentPlot;
+	//CvPlot* pAdjacentPlot;
 	CvPlot* pBestPlot;
 	CvPlot* pBestExplorePlot;
 	int iPathTurns;
 	int iValue;
 	int iBestValue;
-	int iI, iJ;
+	//int iI, iJ;
 
 	iBestValue = 0;
 	pBestPlot = NULL;
@@ -10292,7 +10295,7 @@ bool CvUnitAI::AI_explore()
 	
 	bool bNoContact = (GC.getGameINLINE().countCivTeamsAlive() > GET_TEAM(getTeam()).getHasMetCivCount(true));
 
-	for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+	for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
 	{
 		PROFILE("AI_explore 1");
 
@@ -10307,34 +10310,43 @@ bool CvUnitAI::AI_explore()
 				iValue += 100000;
 			}
 
-			if (iValue > 0 || GC.getGameINLINE().getSorenRandNum(4, "AI make explore faster ;)") == 0)
+			// PAE, BTS getSorenRandNum 4
+			if (iValue > 0 || GC.getGameINLINE().getSorenRandNum(10, "AI make explore faster ;)") == 0)
 			{
+
 				if (!(pLoopPlot->isRevealed(getTeam(), false)))
 				{
 					iValue += 10000;
 				}
-				// XXX is this too slow?
-				for (iJ = 0; iJ < NUM_DIRECTION_TYPES; iJ++)
+
+				// PAE saves 15% turn time
+				/*
+				if (pLoopPlot->isRevealed(getTeam(), false))
 				{
-					PROFILE("AI_explore 2");
-
-					pAdjacentPlot = plotDirection(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), ((DirectionTypes)iJ));
-
-					if (pAdjacentPlot != NULL)
+					// XXX is this too slow?
+					for (int iJ = 0; iJ < NUM_DIRECTION_TYPES; iJ++)
 					{
-						if (!(pAdjacentPlot->isRevealed(getTeam(), false)))
+						PROFILE("AI_explore 2");
+
+						pAdjacentPlot = plotDirection(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), ((DirectionTypes)iJ));
+
+						if (pAdjacentPlot != NULL)
 						{
-							iValue += 1000;
-						}
-						else if (bNoContact)
-						{
-							if (pAdjacentPlot->getRevealedTeam(getTeam(), false) != pAdjacentPlot->getTeam())
+							if (!(pAdjacentPlot->isRevealed(getTeam(), false)))
 							{
-								iValue += 100;
+								iValue += 1000;
+							}
+							else if (bNoContact)
+							{
+								if (pAdjacentPlot->getRevealedTeam(getTeam(), false) != pAdjacentPlot->getTeam())
+								{
+									iValue += 100;
+								}
 							}
 						}
 					}
 				}
+				*/
 
 				if (iValue > 0)
 				{
@@ -10368,7 +10380,7 @@ bool CvUnitAI::AI_explore()
 						}
 					}
 				}
-			}		
+			}
 		}
 	}
 
@@ -10445,6 +10457,7 @@ bool CvUnitAI::AI_exploreRange(int iRange)
 							}
 						}
 					}
+
 
 					if (iValue > 0)
 					{
@@ -11008,7 +11021,7 @@ bool CvUnitAI::AI_rangeAttack(int iRange)
 
 	int iSearchRange = AI_searchRange(iRange);
 
-	int iBestValue = 0;
+	int iBestValue = 101; // BTS: 0, PAE: hit the strongest enemy from the distance, not the weakest!
 	CvPlot* pBestPlot = NULL;
 
 	for (int iDX = -(iSearchRange); iDX <= iSearchRange; iDX++)
@@ -11025,7 +11038,8 @@ bool CvUnitAI::AI_rangeAttack(int iRange)
 					{
 						int iValue = getGroup()->AI_attackOdds(pLoopPlot, true);
 
-						if (iValue > iBestValue)
+						 // BTS: iValue > iBestValue, PAE: hit the strongest enemy from the distance, not the weakest!
+						if (iValue < iBestValue)
 						{
 							iBestValue = iValue;
 							pBestPlot = pLoopPlot;
@@ -15127,7 +15141,7 @@ bool CvUnitAI::AI_airStrike()
 					iPotentialAttackers = GET_PLAYER(getOwnerINLINE()).AI_adjacentPotentialAttackers(pLoopPlot);
 					if (pLoopPlot->isCity())
 					{
-						iPotentialAttackers += GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_ASSAULT, getGroup(), 1) * 2;							
+						iPotentialAttackers += GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_ASSAULT, getGroup(), 1) * 2;
 					}
 					if (pLoopPlot->isWater() || (iPotentialAttackers > 0) || pLoopPlot->isAdjacentTeam(getTeam()))
 					{

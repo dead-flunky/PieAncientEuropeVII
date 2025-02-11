@@ -2490,7 +2490,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
 		{
 			//if (!isHuman() && baseMoves() > 1 && movesLeft() < 2) return false;
-
+			if (AI_getUnitAIType() == UNITAI_ANIMAL && isBarbarian()) return false;
 			break;
 		}
 		if (pPlot->isWater() && !canMoveAllTerrain())
@@ -2523,8 +2523,8 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	} // -----------------
 	*/
 
-
-	if (isAnimal() && isBarbarian())
+	// PAE (UNITAI_ANIMAL)
+	if ((isAnimal() || AI_getUnitAIType() == UNITAI_ANIMAL) && isBarbarian())
 	{
 		// BTS -> PAE: animals ignore cultural borders
 		/*
@@ -2556,30 +2556,19 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		
 		// PAE Goody huts, villages, towers, forts, limes walls (int > 35)
 		int iImp = pPlot->getImprovementType();
-		/*
-		int typ1 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT"));
-		int typ2 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE_HILL"));
-		int typ3 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE"));
-		int typ4 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TOWN"));
-		int typ5 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM"));
-		int typ6 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2"));
-		int typ7 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT"));
-		int typ8 = (ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT"));
-		if (iImp == typ1 || iImp == typ2 || iImp == typ3 || iImp == typ4 ||
-				iImp == typ5 || iImp == typ6 || iImp == typ7 || iImp == typ8 ||
-				iImp > 35) return false;
-		*/
-		std::list<int> lList;
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE_HILL")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TOWN")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
-		
-		if (std::find(lList.begin(), lList.end(), iImp) != lList.end()) return false;
+		if (iImp > -1) {
+			std::list<int> lList;
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_GOODY_HUT")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE_HILL")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_VILLAGE")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TOWN")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
+			
+			if (std::find(lList.begin(), lList.end(), iImp) != lList.end()) return false;
+		}
 		// -----------
 
 		if (!bAttack)
@@ -2590,7 +2579,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			if (pPlot->getImprovementType() != NO_IMPROVEMENT) return false;
 			*/
 
-			// PAE: animals don't move into cities (also not in Barbarian ones!)
+			// PAE: animals don't move into cities (even not in Barbarian ones!)
 			if (pPlot->isCity()) return false;
 
 			// PAE: only same type of units may share a plot

@@ -22,7 +22,7 @@
 			<iGridHeight>6</iGridHeight>
 			<iTerrainGrainChange>-1</iTerrainGrainChange>
 			<iFeatureGrainChange>-1</iFeatureGrainChange>
-			<iResearchPercent>90</iResearchPercent>
+			<iResearchPercent>150</iResearchPercent>
 			<iTradeProfitPercent>80</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>25</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>35</iNumCitiesMaintenancePercent>
@@ -46,7 +46,7 @@
 			<iGridHeight>8</iGridHeight>
 			<iTerrainGrainChange>-1</iTerrainGrainChange>
 			<iFeatureGrainChange>-1</iFeatureGrainChange>
-			<iResearchPercent>100</iResearchPercent>
+			<iResearchPercent>150</iResearchPercent>
 			<iTradeProfitPercent>70</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>50</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>30</iNumCitiesMaintenancePercent>
@@ -70,7 +70,7 @@
 			<iGridHeight>10</iGridHeight>
 			<iTerrainGrainChange>0</iTerrainGrainChange>
 			<iFeatureGrainChange>0</iFeatureGrainChange>
-			<iResearchPercent>120</iResearchPercent>
+			<iResearchPercent>150</iResearchPercent>
 			<iTradeProfitPercent>60</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>50</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>25</iNumCitiesMaintenancePercent>
@@ -94,7 +94,7 @@
 			<iGridHeight>13</iGridHeight>
 			<iTerrainGrainChange>0</iTerrainGrainChange>
 			<iFeatureGrainChange>0</iFeatureGrainChange>
-			<iResearchPercent>130</iResearchPercent>
+			<iResearchPercent>150</iResearchPercent>
 			<iTradeProfitPercent>50</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>75</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>20</iNumCitiesMaintenancePercent>

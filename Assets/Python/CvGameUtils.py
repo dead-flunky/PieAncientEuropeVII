@@ -2039,6 +2039,14 @@ class CvGameUtils:
 																		pUnit.kill(True, -1)
 																		return True
 
+						# Donkeys
+						elif iUnitType == gc.getInfoTypeForString("UNIT_ESEL"):
+								if pTeam.isHasTech(gc.getInfoTypeForString("TECH_FENCES")):
+										if self.doSpreadStrategicBonus_AI(pUnit, -1, gc.getInfoTypeForString("BONUS_ESEL")):
+												return True
+										else:
+												pUnit.setUnitAIType(UnitAITypes.UNITAI_ENGINEER)
+
 						# Horses - create stables
 						elif iUnitType == gc.getInfoTypeForString("UNIT_HORSE"):
 								if pTeam.isHasTech(gc.getInfoTypeForString("TECH_PFERDEZUCHT")):
@@ -3544,7 +3552,7 @@ class CvGameUtils:
 								(loopCity, pIter) = pPlayer.firstCity(False)
 								while loopCity:
 										# if loopCity.isHasBuilding(eCityStatus):
-										if not loopCity.isHasBuilding(eBuilding):
+										if eBuilding == -1 or eBuilding > -1 and not loopCity.isHasBuilding(eBuilding):
 												if pUnit.plot().getArea() == loopCity.plot().getArea():
 														#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"Schritt 3: CultivationCheck - " + loopCity.getName(), None, 2, None, ColorTypes(10), 0, 0, False, False)
 														lPlotsCheck = PAE_Cultivation.getCityCultivatablePlots(loopCity, eBonus)
@@ -3554,6 +3562,7 @@ class CvGameUtils:
 																		iDistance = iDistanceCheck
 																		pCity = loopCity
 																		lPlots = lPlotsCheck
+																		break
 										(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
 								if pCity is not None and lPlots:

@@ -2973,6 +2973,8 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 						(GC.getRouteInfo(getRouteType()).getFlatMovementCost() * pUnit->baseMoves()));
 	}
 	// PAE: set moves to 0 when crossing rivers without roads and bridges
+	// PAE: except barbarian animals
+	else if (pUnit->AI_getUnitAIType() == UNITAI_ANIMAL && pUnit->isBarbarian()) {}
 	else if (pFromPlot->isRiverCrossing(directionXY(pFromPlot, this)))
 	{
 		return pUnit->maxMoves();
