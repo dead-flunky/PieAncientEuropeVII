@@ -271,21 +271,21 @@ bool CvSelectionGroup::showMoves() const
 				{
 					if (pHeadUnit->isEnemy(kLoopPlayer.getTeam()))
 					{
-						// PAE animal moves
-						if (pHeadUnit->AI_getUnitAIType() == UNITAI_ANIMAL)
+						// PAE animal moves (deactivated because of unwanted screen error when mod loads, too bad!)
+						//if (pHeadUnit->AI_getUnitAIType() == UNITAI_ANIMAL)
+						//{
+						//	// PAE (PlayerOption: show dangerous wild animals)
+						//	if (!pHeadUnit->isOnlyDefensive() && kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_AGGRESSIVE_ANIMALS)) return true;
+						//	// PAE (PlayerOption: show harmless wild animals)
+						//	if (pHeadUnit->isOnlyDefensive() && kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_FRIENDLY_ANIMALS)) return true;
+						//}
+						//else
+						//{
+						if (kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES))
 						{
-							// PAE (PlayerOption: show dangerous wild animals)
-							if (!pHeadUnit->isOnlyDefensive() && kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_AGGRESSIVE_ANIMALS)) {return true;}
-							// PAE (PlayerOption: show harmless wild animals)
-							if (pHeadUnit->isOnlyDefensive() && kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_FRIENDLY_ANIMALS)) {return true;}
+							return true;
 						}
-						else
-						{
-							if (kLoopPlayer.isOption(PLAYEROPTION_SHOW_ENEMY_MOVES))
-							{
-								return true;
-							}
-						}
+						//}
 					}
 					else
 					{

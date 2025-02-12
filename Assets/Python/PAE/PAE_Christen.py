@@ -261,10 +261,11 @@ def removePagans(pCity):
 		if pCity is None or pCity.isNone() or pCity.getName() == "":
 				return
 
+		# Dogmatische Religionen
 		iChristentum = gc.getInfoTypeForString("RELIGION_CHRISTIANITY")
 		iIslam = gc.getInfoTypeForString("RELIGION_ISLAM")
-		iJudentum = gc.getInfoTypeForString("RELIGION_JUDAISM")
-		LReligions = [iChristentum, iIslam, iJudentum]
+		#iJudentum = gc.getInfoTypeForString("RELIGION_JUDAISM")
+		LReligions = [iChristentum, iIslam]
 		iPlayer = pCity.getOwner()
 		pPlayer = gc.getPlayer(iPlayer)
 		lCorp = []
@@ -276,16 +277,14 @@ def removePagans(pCity):
 						if pCity.isHasReligion(iReligion):
 
 								# Chance to abort
-								iRand = CvUtil.myRandom(100, "removePagans")
-								# 5 %
-								if iReligion == iChristentum and iRand > 4:
+								iRand = CvUtil.myRandom(10, "removePagans")
+								# 10 %
+								if iReligion == iChristentum and iRand > 0:
 										return False
-								# 10%
-								elif iReligion == iIslam and iRand > 9:
+								# 20%
+								elif iReligion == iIslam and iRand > 1:
 										return False
-								# 2%
-								elif iReligion == iJudentum and iRand > 1:
-										return False
+
 
 								# Kult
 								if len(lCorp) == 0:
@@ -313,7 +312,7 @@ def removePagans(pCity):
 										iRand = CvUtil.myRandom(len(lCorp), "removePaganCult")
 										iRange = gc.getNumBuildingInfos()
 										for iBuildingLoop in range(iRange):
-												if pCity.getNumBuilding(iBuildingLoop) > 0:
+												if pCity.isHasBuilding(iBuildingLoop):
 														pBuilding = gc.getBuildingInfo(iBuildingLoop)
 														if pBuilding.getPrereqCorporation() == lCorp[iRand]:
 																# Akademien (Corp7)
@@ -365,9 +364,9 @@ def removePagans(pCity):
 								# Meldung
 								if pPlayer.isHuman() and txtReligionOrKult != "":
 									iRand = 1 + CvUtil.myRandom(3, "TXT_KEY_MESSAGE_HERESY_CULTS_")
-									if iReligion == gc.getInfoTypeForString("RELIGION_JUDAISM"):
-										text = "TXT_KEY_MESSAGE_HERESY_CULTS2_"
-									elif iReligion == gc.getInfoTypeForString("RELIGION_CHRISTIANITY"):
+									#if iReligion == iJudentum:
+									#	text = "TXT_KEY_MESSAGE_HERESY_CULTS2_"
+									if iReligion == iChristentum:
 										text = "TXT_KEY_MESSAGE_HERESY_CULTS_"
 									else:
 										text = "TXT_KEY_MESSAGE_HERESY_CULTS3_"

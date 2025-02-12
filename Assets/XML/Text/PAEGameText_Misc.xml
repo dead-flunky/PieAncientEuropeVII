@@ -322,11 +322,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HUNTING_CAMP</Tag>
-		<English>Build a [LINK=IMPROVEMENT_CAMP]Hunting Camp[\LINK]</English>
-		<French>Construire un [LINK=IMPROVEMENT_CAMP]Camp de chasse[\LINK]</French>
+		<English>Build a [LINK=IMPROVEMENT_CAMP]hunting camp[\LINK]</English>
+		<French>Construire un [LINK=IMPROVEMENT_CAMP]camp de chasse[\LINK]</French>
 		<German>[LINK=IMPROVEMENT_CAMP]Jagdlager[\LINK] errichten</German>
-		<Italian>Costruire un [LINK=IMPROVEMENT_CAMP]Campo di caccia[\LINK]</Italian>
-		<Spanish>Construir un [LINK=IMPROVEMENT_CAMP]Campamento de caza[\LINK]</Spanish>
+		<Italian>Costruire un [LINK=IMPROVEMENT_CAMP]campo di caccia[\LINK]</Italian>
+		<Spanish>Construir un [LINK=IMPROVEMENT_CAMP]campamento de caza[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_LUMBERMILL</Tag>

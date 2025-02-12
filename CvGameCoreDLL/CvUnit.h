@@ -111,6 +111,7 @@ public:
 	void fightInterceptor(const CvPlot* pPlot, bool bQuick);
 	void move(CvPlot* pPlot, bool bShow);
 	bool jumpToNearestValidPlot();																																// Exposed to Python
+	bool jumpToNearestValidPlotFromRiver(); // PAE
 
 	bool canAutomate(AutomateTypes eAutomate) const;																							// Exposed to Python
 	void automate(AutomateTypes eAutomate);

@@ -219,7 +219,7 @@ def doPlotFeatures():
 																iTechDom = gc.getInfoTypeForString("TECH_PFERDEZUCHT")
 																sTextDom = "TXT_KEY_INFO_DOM_HORSE"
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(33, "horse") == 1:
+																		if CvUtil.myRandom(45, "horse") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1 and iPlotOwner != iBarbPlayer:
@@ -238,7 +238,7 @@ def doPlotFeatures():
 																iTechDom = gc.getInfoTypeForString("TECH_KAMELZUCHT")
 																sTextDom = "TXT_KEY_INFO_DOM_CAMEL"
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(25, "camel") == 1:
+																		if CvUtil.myRandom(40, "camel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1:
@@ -254,7 +254,7 @@ def doPlotFeatures():
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_ivory and pBarbPlayer.getCurrentEra() >= 2:
 																iUnitType = gc.getInfoTypeForString("UNIT_ELEFANT")
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(33, "ele") == 1:
+																		if CvUtil.myRandom(50, "ele") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1:
@@ -270,7 +270,7 @@ def doPlotFeatures():
 																iUnitType = gc.getInfoTypeForString("UNIT_ESEL")
 																iTechDom = gc.getInfoTypeForString("TECH_FENCES")
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(33, "esel") == 1:
+																		if CvUtil.myRandom(45, "esel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1 and iPlotOwner != iBarbPlayer:

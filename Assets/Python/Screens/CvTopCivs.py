@@ -130,7 +130,7 @@ class CvTopCivs:
 				# Main
 				szMainPanel = "TopCivsMainPanel"
 				self.screen.addPanel(szMainPanel, "", "", True, True,
-														self.X_MAIN_PANEL, self.Y_MAIN_PANEL, self.W_MAIN_PANEL, self.H_MAIN_PANEL, PanelStyles.PANEL_STYLE_DAWNTOP)
+														self.X_MAIN_PANEL, self.Y_MAIN_PANEL, self.W_MAIN_PANEL, self.H_MAIN_PANEL, PanelStyles.PANEL_STYLE_MAIN_BLACK50)
 
 				# Top
 				szHeaderPanel = "TopCivsHeaderPanel"

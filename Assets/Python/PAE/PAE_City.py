@@ -743,11 +743,11 @@ def doTurnCityRevolt(pCity):
 								bCityIsInRevolt = True
 								text = "TXT_KEY_MESSAGE_CITY_REVOLT_YEARNING"
 
-		# Nation is in anarchy (20%, AI 5%)
+		# Nation is in anarchy (10%, AI 5%)
 		if not bCityIsInRevolt:
 				if pPlayer.getAnarchyTurns() > 0:
 						if pPlayer.isHuman():
-								iTmp = 5
+								iTmp = 10
 						else:
 								iTmp = 20
 						if CvUtil.myRandom(iTmp, "doTurnCityRevolt2") == 0:
@@ -755,7 +755,7 @@ def doTurnCityRevolt(pCity):
 								iCityRevoltTurns = pPlayer.getAnarchyTurns()
 								text = "TXT_KEY_MESSAGE_CITY_REVOLT_ANARCHY"
 
-		# city has no state religion (3%, AI 1%)
+		# city has no state religion (2%, AI 1.33%)
 		if not bCityIsInRevolt:
 				iRel = pPlayer.getStateReligion()
 				if iRel != -1 and not pCity.isHasReligion(iRel) and not pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_HENOTHEISM")):
@@ -766,9 +766,9 @@ def doTurnCityRevolt(pCity):
 								if gc.getTeam(iTeam).getBuildingClassCount(gc.getInfoTypeForString("BUILDINGCLASS_GREAT_PANTHEON")) == 0:
 
 										if pPlayer.isHuman():
-												iTmp = 20
+												iTmp = 50
 										else:
-												iTmp = 60
+												iTmp = 75
 										if CvUtil.myRandom(iTmp, "doTurnCityRevolt3") == 0:
 												bCityIsInRevolt = True
 												text = "TXT_KEY_MESSAGE_CITY_REVOLT_RELIGION"
@@ -820,16 +820,16 @@ def doTurnCityRevolt(pCity):
 						popupInfo.addPopup(iPlayer)
 
 				# AI will pay (90%) if they have the money
-				elif CvUtil.myRandom(100, "doTurnCityRevolt6") < 90:
+				elif CvUtil.myRandom(100, "doTurnCityRevolt6") < 25:
 						if pPlayer.getGold() > pCity.getPopulation() * 10:
 								iBetrag = pCity.getPopulation() * 10
-								iChance = 20
+								iChance = 10
 						elif pPlayer.getGold() > pCity.getPopulation() * 5:
 								iBetrag = pCity.getPopulation() * 5
-								iChance = 50
+								iChance = 25
 						else:
 								iBetrag = 0
-								iChance = 100
+								iChance = 50
 						pPlayer.changeGold(iBetrag)
 						# even though, there is a chance of revolting
 						if CvUtil.myRandom(100, "doTurnCityRevolt7") < iChance:
@@ -4370,22 +4370,21 @@ def getHolyRelic(pCity, iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 		if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_MARTYRIUM")):
 				iBuilding = gc.getInfoTypeForString("BUILDING_MARTYRION")
-				for iReligion in L.LMonoReligions:
+				iReligion = gc.getInfoTypeForString("RELIGION_CHRISTIANITY")
+				if pPlayer.getStateReligion() == iReligion and pCity.isHasReligion(iReligion):
 
-						if pPlayer.getStateReligion() == iReligion and pCity.isHasReligion(iReligion):
+						bRelic = False
+						if pCity.isHasBuilding(iBuilding):
+								pCity.setNumRealBuilding(iBuilding, 0)
+								bRelic = True
+						elif CvUtil.myRandom(10, "iRandCityRelic") == 1:
+								bRelic = True
 
-								bRelic = False
-								if pCity.isHasBuilding(iBuilding):
-										pCity.setNumRealBuilding(iBuilding, 0)
-										bRelic = True
-								elif CvUtil.myRandom(10, "iRandCityRelic") == 1:
-										bRelic = True
-
-								if bRelic:
-										CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_RELIC"), pCity.plot(), pPlayer)
-										if pPlayer.isHuman():
-												CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_RELIC", (pCity.getName(),)), None, 2,
-																								 gc.getUnitInfo(gc.getInfoTypeForString("UNIT_RELIC")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+						if bRelic:
+								CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_RELIC"), pCity.plot(), pPlayer)
+								if pPlayer.isHuman():
+										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_RELIC", (pCity.getName(),)), None, 2,
+																						 gc.getUnitInfo(gc.getInfoTypeForString("UNIT_RELIC")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 
 # onCityRazed: Missionar erstellen
 def getCityMissionar(pCity, iPlayer):
@@ -4432,14 +4431,9 @@ def doRefuseUnitBuilt(pCity, pUnit):
 		if not pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_EXCLUSIVE")) and gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_TOLERANZ")):
 				return
 
-		LReligions = [
-				gc.getInfoTypeForString("RELIGION_JUDAISM"),
-				gc.getInfoTypeForString("RELIGION_CHRISTIANITY"),
-				gc.getInfoTypeForString("RELIGION_ISLAM")
-		]
 		LText = []
 		bRefuse = False
-		for i in LReligions:
+		for i in L.LMonoReligions:
 				if pCity.isHasReligion(i) and pPlayer.getStateReligion() != i:
 					bRefuse = True
 					if i == gc.getInfoTypeForString("RELIGION_JUDAISM"): LText.append("TXT_RELIGION_UNIT_BUILT_INFO_1")

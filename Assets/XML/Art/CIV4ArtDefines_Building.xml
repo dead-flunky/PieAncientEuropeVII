@@ -2402,12 +2402,13 @@
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MARTYRION</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>0.0</fScale>
-			<fInterfaceScale>0.0</fInterfaceScale>
-			<NIF/>
+			<bAnimated>1</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Temple/christian/christian temple.nif</NIF>
 			<KFM/>
-			<Button>Art/Interface/Buttons/Buildings/button_building_martyrion.dds</Button>
+			<!--<Button>Art/Interface/Buttons/Buildings/button_building_martyrion.dds</Button>-->
+			<Button>,Art/Interface/Buttons/Buildings/Temple_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,13</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ACADEMY</Type>
@@ -3010,10 +3011,10 @@
 			<Button>,Art/Interface/Buttons/Buildings/Temple_Christian.dds,Art/Interface/Buttons/Buildings_Atlas.dds,8,13</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_CHRISTIAN_CATHEDRAL</Type>
+			<Type>ART_DEF_BUILDING_CHRISTIAN_KIRCHE</Type>
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.49</fScale>
+			<fScale>1.24</fScale>
 			<fInterfaceScale>0.42</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Cathedrals/christian cathedral.nif</NIF>
 			<KFM/>

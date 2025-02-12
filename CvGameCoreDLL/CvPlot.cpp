@@ -2974,12 +2974,15 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 	}
 	// PAE: set moves to 0 when crossing rivers without roads and bridges
 	// PAE: except barbarian animals
-	else if (pUnit->AI_getUnitAIType() == UNITAI_ANIMAL && pUnit->isBarbarian()) {}
+	else if (pUnit->AI_getUnitAIType() == UNITAI_ANIMAL && pUnit->isBarbarian()) {
+		iRouteCost = MAX_INT;
+		iRouteFlatCost = MAX_INT;
+	}
 	else if (pFromPlot->isRiverCrossing(directionXY(pFromPlot, this)))
 	{
 		return pUnit->maxMoves();
 	}
-	else if (pFromPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) && this->getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) && !this->isWater())
+	else if (pFromPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) && !this->isWater())
 	{
 		return pUnit->maxMoves();
 	}

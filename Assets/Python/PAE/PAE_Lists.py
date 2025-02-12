@@ -101,7 +101,6 @@ DHorseUpMap = {}
 LGGStoneAge = []
 LGGStandard = []
 DGGNames = {}
-# LRelis = []
 LRelisRemapCapital = []
 LGreeks = []
 LNearEast = []
@@ -211,7 +210,6 @@ def init():
 		global LGGStoneAge
 		global LGGStandard
 		global DGGNames
-		#global  LRelis
 		global LRelisRemapCapital
 		global LGreeks
 		global LNearEast
@@ -934,7 +932,14 @@ def init():
 			"Spikie", "Spookie", "Stonie", "Marshie", "Creep",
 			"Elder", "Horn", "Groo", "Bear", "Loo", "Craa", "Samu",
 			"Lonar", "Conan", "Ara", "Woolv", "Sha", "Skeltar",
-			"Moss", "Beast", "Strongo", "Wildar", "Gewar"
+			"Moss", "Beast", "Strongo", "Wildar", "Gewar", "Flamma",
+			"Spicul", "Korob", "Leoch", "Oxyth", "Diokles", "Oibota",
+			"Macho", "Lyncho", "Hammer", "Axtill", "Jagga", "Fufun",
+			"Dasmon", "Hypos", "Orsippo", "Pullo", "Polos", "Tellis",
+			"Lampis", "Menos", "Atheradas", "Pantakles", "Ikaros",
+			"Phano", "Pagonda", "Kallistro", "Charmis", "Eleer", "Philome",
+			"Eury", "Cratin", "Komaio", "Chionis", "Myron", "Eutelid",
+			"Gelon", "Polymor", "Antikra", "Hetomo", "Epityl", "Hagnon"
 		]
 
 		LGGStandard = [
@@ -1171,15 +1176,6 @@ def init():
 				 "Andevoto", "Hilderich"]
 		}
 
-		# # Religionen
-		# LRelis = [
-		#     gc.getInfoTypeForString("RELIGION_HINDUISM"),
-		#     gc.getInfoTypeForString("RELIGION_BUDDHISM"),
-		#     gc.getInfoTypeForString("RELIGION_JUDAISM"),
-		#     gc.getInfoTypeForString("RELIGION_CHRISTIANITY"),
-		#     gc.getInfoTypeForString("RELIGION_JAINISMUS"),
-		# ]
-		
 		LRelisRemapCapital = [
 				gc.getInfoTypeForString("RELIGION_SUMER"),
 				gc.getInfoTypeForString("RELIGION_EGYPT"),

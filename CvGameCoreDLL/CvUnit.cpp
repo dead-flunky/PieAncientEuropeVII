@@ -781,7 +781,7 @@ void CvUnit::doTurn()
 
 	// PAE River Bug (unit keeps standing on a river ford)
 	if (plot()->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) {
-		jumpToNearestValidPlot();
+		jumpToNearestValidPlotFromRiver();
 	} // ------------------------
 
 }
@@ -3052,6 +3052,114 @@ bool CvUnit::jumpToNearestValidPlot()
 	return bValid;
 }
 
+// PAE
+bool CvUnit::jumpToNearestValidPlotFromRiver()
+{
+	CvCity* pNearestCity;
+	CvPlot* pLoopPlot;
+	CvPlot* pBestPlot;
+	int iValue;
+	int iBestValue;
+	int iI;
+	int facing = getFacingDirection(false);
+	bool ok;
+
+	FAssertMsg(!isAttacking(), "isAttacking did not return false as expected");
+	FAssertMsg(!isFighting(), "isFighting did not return false as expected");
+
+	pNearestCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE());
+
+	iBestValue = MAX_INT;
+	pBestPlot = NULL;
+
+	/*
+	0 = DIRECTION_NORTH
+	1 = DIRECTION_NORTHEAST
+	2 = DIRECTION_EAST
+	3 = DIRECTION_SOUTHEAST
+	4 = DIRECTION_SOUTH
+	5 = DIRECTION_SOUTHWEST
+	6 = DIRECTION_WEST
+	7 = DIRECTION_NORTHWEST
+	*/
+
+	for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+	{
+
+		ok = false;
+		if (facing == 0 && (iI == 0 || iI == 1 || iI == 7)) ok = true;
+		else if (facing == 1 && (iI == 0 || iI == 1 || iI == 2)) ok = true;
+		else if (facing == 2 && (iI == 1 || iI == 2 || iI == 3)) ok = true;
+		else if (facing == 3 && (iI == 2 || iI == 3 || iI == 4)) ok = true;
+		else if (facing == 4 && (iI == 3 || iI == 4 || iI == 5)) ok = true;
+		else if (facing == 5 && (iI == 4 || iI == 5 || iI == 6)) ok = true;
+		else if (facing == 6 && (iI == 5 || iI == 6 || iI == 7)) ok = true;
+		else if (facing == 7 && (iI == 6 || iI == 7 || iI == 0)) ok = true;
+		else ok = true;
+
+		if (!ok) continue;
+
+		pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
+
+		if (pLoopPlot->isValidDomainForLocation(*this))
+		{
+			if (canMoveInto(pLoopPlot))
+			{
+				if (canEnterArea(pLoopPlot->getTeam(), pLoopPlot->area()) && !isEnemy(pLoopPlot->getTeam(), pLoopPlot))
+				{
+					FAssertMsg(!atPlot(pLoopPlot), "atPlot(pLoopPlot) did not return false as expected");
+
+					if ((getDomainType() != DOMAIN_AIR) || pLoopPlot->isFriendlyCity(*this, true))
+					{
+						if (pLoopPlot->isRevealed(getTeam(), false))
+						{
+							iValue = (plotDistance(getX_INLINE(), getY_INLINE(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE()) * 2);
+
+							if (pNearestCity != NULL)
+							{
+								iValue += plotDistance(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), pNearestCity->getX_INLINE(), pNearestCity->getY_INLINE());
+							}
+
+							if (getDomainType() == DOMAIN_SEA && !plot()->isWater())
+							{
+								if (!pLoopPlot->isWater() || !pLoopPlot->isAdjacentToArea(area()))
+								{
+									iValue *= 3;
+								}
+							}
+							else
+							{
+								if (pLoopPlot->area() != area())
+								{
+									iValue *= 3;
+								}
+							}
+
+							if (iValue < iBestValue)
+							{
+								iBestValue = iValue;
+								pBestPlot = pLoopPlot;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	bool bValid = true;
+	if (pBestPlot != NULL)
+	{
+		setXY(pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
+	}
+	else
+	{
+		kill(false);
+		bValid = false;
+	}
+
+	return bValid;
+}
 
 bool CvUnit::canAutomate(AutomateTypes eAutomate) const
 {
@@ -3239,6 +3347,9 @@ void CvUnit::gift(bool bTestTransport)
 	FAssertMsg(pGiftUnit != NULL, "GiftUnit is not assigned a valid value");
 
 	eOwner = getOwnerINLINE();
+
+	// PAE
+	pGiftUnit->setFacingDirection(getFacingDirection(false));
 
 	pGiftUnit->convert(this);
 

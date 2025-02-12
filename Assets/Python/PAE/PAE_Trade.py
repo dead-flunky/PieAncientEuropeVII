@@ -2131,8 +2131,8 @@ def canCreateTradeUnit(pPlayer, pCity):
 		for iOrderCurrentCity in range(pCity.getOrderQueueLength()):
 				pOrder = pCity.getOrderFromQueue(iOrderCurrentCity)
 				if pOrder.eOrderType == OrderTypes.ORDER_TRAIN and pOrder.iData1 in L.LTradeUnits:
-						iAnz -= 1
+						iAnz += 1
 						break
 
-		if iAnz < getPossibleTradeUnits(pPlayer) - 1: return True
+		if iAnz < getPossibleTradeUnits(pPlayer): return True
 		return False

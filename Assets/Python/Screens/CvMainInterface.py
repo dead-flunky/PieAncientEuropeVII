@@ -2176,7 +2176,7 @@ class CvMainInterface:
 																eBonus = gc.getInfoTypeForString("BONUS_ESEL")
 																if PAE_Cultivation._isBonusCultivationChance(iUnitOwner, pPlot, eBonus, False, None):
 																		screen.appendMultiListButton(
-																				"BottomButtonContainer", "Art/Terrain/Resources/Esel/button_bonus_esel.dds", 0, WidgetTypes.WIDGET_GENERAL, 721, 20, False)
+																				"BottomButtonContainer", gc.getBonusInfo(eBonus).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 721, 20, False)
 																		screen.show("BottomButtonContainer")
 																		screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																		iCount += 1
@@ -2188,8 +2188,7 @@ class CvMainInterface:
 																# Check plot
 																eBonus = gc.getInfoTypeForString("BONUS_HORSE")
 																if PAE_Cultivation._isBonusCultivationChance(iUnitOwner, pPlot, eBonus, False, None):
-																		screen.appendMultiListButton(
-																				"BottomButtonContainer", ",Art/Interface/Buttons/Buildings/Barracks.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,1", 0, WidgetTypes.WIDGET_GENERAL, 721, 14, False)
+																		screen.appendMultiListButton("BottomButtonContainer", gc.getBonusInfo(eBonus).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 721, 14, False)
 																		screen.show("BottomButtonContainer")
 																		screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																		iCount += 1
@@ -2201,7 +2200,7 @@ class CvMainInterface:
 																# Check plot
 																eBonus = gc.getInfoTypeForString("BONUS_CAMEL")
 																if PAE_Cultivation._isBonusCultivationChance(iUnitOwner, pPlot, eBonus, False, None):
-																		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_camel_stable.dds", 0, WidgetTypes.WIDGET_GENERAL, 721, 4, False)
+																		screen.appendMultiListButton("BottomButtonContainer", gc.getBonusInfo(eBonus).getButton(), 0, WidgetTypes.WIDGET_GENERAL, 721, 4, False)
 																		screen.show("BottomButtonContainer")
 																		screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																		iCount += 1
