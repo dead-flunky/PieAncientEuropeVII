@@ -2321,9 +2321,9 @@ class CvGameUtils:
 										if pOwner.getGold() > iCost:
 												iPromo = gc.getInfoTypeForString("PROMOTION_BLESSED")
 												if not pUnit.isHasPromotion(iPromo):
-														iBuilding1 = gc.getInfoTypeForString("BUILDING_CHRISTIAN_CATHEDRAL")
+														#iBuilding1 = gc.getInfoTypeForString("BUILDING_CHRISTIAN_CATHEDRAL")
 														iBuilding2 = gc.getInfoTypeForString("BUILDING_HAGIA_SOPHIA")
-														if pCity.isHasBuilding(iBuilding1) or pCity.isHasBuilding(iBuilding2):
+														if pCity.isHasBuilding(iBuilding2):
 																pOwner.changeGold(-iCost)
 																pUnit.setHasPromotion(iPromo, True)
 																pUnit.finishMoves()

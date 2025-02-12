@@ -1770,11 +1770,11 @@ def doCityUnitPromotions(pCity, pUnit):
 										return
 
 		# Blessed Units
-		iBuilding = gc.getInfoTypeForString("BUILDING_CHRISTIAN_CATHEDRAL")
-		if pCity.isHasBuilding(iBuilding):
-				# Chance: 25% a unit gets blessed
-				if CvUtil.myRandom(4, "unit_gets_blessed") == 1:
-						pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_BLESSED"), True)
+		#iBuilding = gc.getInfoTypeForString("BUILDING_CHRISTIAN_CATHEDRAL")
+		#if pCity.isHasBuilding(iBuilding):
+		#		# Chance: 25% a unit gets blessed
+		#		if CvUtil.myRandom(4, "unit_gets_blessed") == 1:
+		#				pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_BLESSED"), True)
 		# PAE VI 6.12d
 		eMardukPriest = gc.getInfoTypeForString("UNIT_MARDUK_PRIEST")
 		pPlot = pCity.plot()

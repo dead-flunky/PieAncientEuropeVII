@@ -2958,9 +2958,9 @@ class CvMainInterface:
 
 																# Einheit segnen / bless unit (PAE V Patch 4)
 																# UnitOwner muss christlich sein
-																iBuilding1 = gc.getInfoTypeForString("BUILDING_CHRISTIAN_CATHEDRAL")
+																#iBuilding1 = gc.getInfoTypeForString("BUILDING_CHRISTIAN_CATHEDRAL")
 																iBuilding2 = gc.getInfoTypeForString("BUILDING_HAGIA_SOPHIA")
-																if pCity.isHasBuilding(iBuilding1) or pCity.isHasBuilding(iBuilding2):
+																if pCity.isHasBuilding(iBuilding2):
 																		iPromo = gc.getInfoTypeForString("PROMOTION_BLESSED")
 																		if not pUnit.isHasPromotion(iPromo):
 																				if pUnitOwner.getStateReligion() == gc.getInfoTypeForString("RELIGION_CHRISTIANITY"):
