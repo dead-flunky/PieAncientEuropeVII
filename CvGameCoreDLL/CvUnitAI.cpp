@@ -3143,10 +3143,7 @@ void CvUnitAI::AI_exploreMove()
 
 	if (getDamage() > 0)
 	{
-		// BTS
-		//if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
-		// PAE
-		if (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0)
+		if ((plot()->getFeatureType() == NO_FEATURE) || (GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() == 0))
 		{
 			getGroup()->pushMission(MISSION_HEAL);
 			return;

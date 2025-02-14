@@ -1063,10 +1063,13 @@ void CvCityAI::AI_chooseProduction()
 				}
 			}
 		}
-		if (NULL != pWaterArea)
+		// BTS
+		// if (NULL != pWaterArea)
+		// PAE
+		if (NULL != pWaterArea && kPlayer.getCurrentEra() > 1)
 		{
 			if (iAreaBestFoundValue == 0 || iWaterAreaBestFoundValue > iAreaBestFoundValue
-    			|| (iWaterPercent > 60 && GC.getGameINLINE().getSorenRandNum(4, "AI Train Early Sea Explore or Settler") == 0))
+				|| (iWaterPercent > 60 && GC.getGameINLINE().getSorenRandNum(4, "AI Train Early Sea Explore or Settler") == 0))
 			{
 				if (kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_EXPLORE_SEA) == 0)
 				{
@@ -1405,8 +1408,8 @@ void CvCityAI::AI_chooseProduction()
             }
         }
 
-		// PAE scouts: && kPlayer.getCurrentEra() > 0
-        if (!bLandWar && !bDanger && kPlayer.getCurrentEra() > 0)
+		// PAE scouts: && kPlayer.getCurrentEra() > 1
+        if (!bLandWar && !bDanger && kPlayer.getCurrentEra() > 1)
         {
 			if (kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_EXPLORE) < (kPlayer.AI_neededExplorers(pArea)))
 			{

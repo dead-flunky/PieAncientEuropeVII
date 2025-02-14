@@ -1119,10 +1119,10 @@ class CvMainInterface:
 						szString = "DecreasePercent" + str(iI)
 						screen.hide(szString)
 						# Min/Max Sliders - start
-						szString = "MaxPercent" + str(iI)
-						screen.hide(szString)
-						szString = "MinPercent" + str(iI)
-						screen.hide(szString)
+						#szString = "MaxPercent" + str(iI)
+						#screen.hide(szString)
+						#szString = "MinPercent" + str(iI)
+						#screen.hide(szString)
 						# Min/Max Sliders - end
 
 				pHeadSelectedCity = CyInterface().getHeadSelectedCity()
@@ -1140,21 +1140,23 @@ class CvMainInterface:
 										eCommerce = (iI + 1) % CommerceTypes.NUM_COMMERCE_TYPES
 
 										if gc.getActivePlayer().isCommerceFlexible(eCommerce) or (CyInterface().isCityScreenUp() and eCommerce == CommerceTypes.COMMERCE_GOLD):
+
+												# mit Min/Max Sliders x: 90 und 110 statt 70 und 90
 												szString1 = "IncreasePercent" + str(eCommerce)
-												screen.setButtonGFC(szString1, u"", "", 90, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce,
+												screen.setButtonGFC(szString1, u"", "", 70, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce,
 																						gc.getDefineINT("COMMERCE_PERCENT_CHANGE_INCREMENTS"), ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 												screen.show(szString1)
 												szString2 = "DecreasePercent" + str(eCommerce)
-												screen.setButtonGFC(szString2, u"", "", 110, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -
+												screen.setButtonGFC(szString2, u"", "", 90, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -
 																						gc.getDefineINT("COMMERCE_PERCENT_CHANGE_INCREMENTS"), ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 												screen.show(szString2)
 												# Min/Max Sliders - start
-												szString3 = "MaxPercent" + str(eCommerce)
-												screen.setButtonGFC(szString3, u"", "", 70, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, 50, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
-												screen.show(szString3)
-												szString4 = "MinPercent" + str(eCommerce)
-												screen.setButtonGFC(szString4, u"", "", 130, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -50, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-												screen.show(szString4)
+												#szString3 = "MaxPercent" + str(eCommerce)
+												#screen.setButtonGFC(szString3, u"", "", 70, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, 50, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+												#screen.show(szString3)
+												#szString4 = "MinPercent" + str(eCommerce)
+												#screen.setButtonGFC(szString4, u"", "", 130, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -50, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+												#screen.show(szString4)
 												# Min/Max Sliders - end
 
 												iCount += 1
@@ -1163,15 +1165,15 @@ class CvMainInterface:
 														screen.enable(szString1, True)
 														screen.enable(szString2, True)
 														# Min/Max Sliders - start
-														screen.enable(szString3, True)
-														screen.enable(szString4, True)
+														#screen.enable(szString3, True)
+														#screen.enable(szString4, True)
 														# Min/Max Sliders - end
 												else:
 														screen.enable(szString1, False)
 														screen.enable(szString2, False)
 														# Min/Max Sliders - start
-														screen.enable(szString3, False)
-														screen.enable(szString4, False)
+														#screen.enable(szString3, False)
+														#screen.enable(szString4, False)
 														# Min/Max Sliders - end
 
 				return 0
@@ -4179,7 +4181,7 @@ class CvMainInterface:
 														szOutText = u"<font=2>" + localText.getText("TXT_KEY_MISC_POS_GOLD_PER_TURN", (gc.getPlayer(ePlayer).getCommerceRate(CommerceTypes(eCommerce)), )) + u"</font>"
 														szString = "RateText" + str(iI)
 														# Min/Max Sliders - Alt: 112 Neu: 152
-														screen.setLabel(szString, "Background", szOutText, CvUtil.FONT_LEFT_JUSTIFY, 152, 52 + (iCount * 19), -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+														screen.setLabel(szString, "Background", szOutText, CvUtil.FONT_LEFT_JUSTIFY, 112, 52 + (iCount * 19), -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 														screen.show(szString)
 
 												iCount += 1
