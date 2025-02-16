@@ -1065,7 +1065,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 		// BTS
 		// if (NULL != pWaterArea)
-		// PAE
+		// PAE getCurrentEra > 1
 		if (NULL != pWaterArea && kPlayer.getCurrentEra() > 1)
 		{
 			if (iAreaBestFoundValue == 0 || iWaterAreaBestFoundValue > iAreaBestFoundValue
@@ -1086,7 +1086,7 @@ void CvCityAI::AI_chooseProduction()
 					}
 				}
 			}
-	}
+		}
 	}
     
     if ((getDomainFreeExperience(DOMAIN_LAND) == 0) && (getYieldRate(YIELD_PRODUCTION) > 4))
@@ -2036,7 +2036,8 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
-		if (pWaterArea != NULL)
+		// PAE getCurrentEra > 1
+		if (pWaterArea != NULL && kPlayer.getCurrentEra() > 1)
 		{
 			if (bPrimaryArea)
 			{
@@ -2206,7 +2207,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	}
 	else
 	{
-		if (!bLandWar)
+		// PAE getCurrentEra > 1
+		if (!bLandWar && GET_PLAYER(getOwnerINLINE()).getCurrentEra() > 1)
 		{
 			aiUnitAIVal[UNITAI_EXPLORE] += GET_PLAYER(getOwnerINLINE()).AI_neededExplorers(area());
 		}
@@ -2215,7 +2217,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		{
 			aiUnitAIVal[UNITAI_WORKER_SEA] += AI_neededSeaWorkers();
 
-			if ((GET_PLAYER(getOwnerINLINE()).getNumCities() > 3) || (area()->getNumUnownedTiles() < 10))
+			// PAE && getCurrentEra > 1
+			if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() > 1 && ((GET_PLAYER(getOwnerINLINE()).getNumCities() > 3) || (area()->getNumUnownedTiles() < 10)))
 			{
 				if (bPrimaryArea)
 				{

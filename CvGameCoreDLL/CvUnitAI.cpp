@@ -1271,7 +1271,7 @@ void CvUnitAI::AI_workerMove()
 		}
 	}
 
-    if (!(getGroup()->canDefend()))
+	if (!(getGroup()->canDefend()))
 	{
 		if (GET_PLAYER(getOwnerINLINE()).AI_isPlotThreatened(plot(), 2))
 		{
@@ -1303,12 +1303,12 @@ void CvUnitAI::AI_workerMove()
 			}
 		}
 	}
-	
+
 	CvPlot* pBestBonusPlot = NULL;
 	BuildTypes eBestBonusBuild = NO_BUILD;
 	int iBestBonusValue = 0; 
 
-    if (AI_improveBonus(25, &pBestBonusPlot, &eBestBonusBuild, &iBestBonusValue))
+	if (AI_improveBonus(25, &pBestBonusPlot, &eBestBonusBuild, &iBestBonusValue))
 	{
 		return;
 	}
@@ -1331,8 +1331,7 @@ void CvUnitAI::AI_workerMove()
 			pCity = plot()->getWorkingCity();
 		}
 	}
-	
-	
+
 //	if (pCity != NULL)
 //	{
 //		bool bMoreBuilds = false;
@@ -1381,14 +1380,14 @@ void CvUnitAI::AI_workerMove()
 			}
 		}
 	}
-	
+
 	if (AI_improveLocalPlot(2, pCity))
 	{
-		return;		
+		return;
 	}
-	
+
 	bool bBuildFort = false;
-	
+
 	if (GC.getGame().getSorenRandNum(5, "AI Worker build Fort with Priority"))
 	{
 		bool bCanal = ((100 * area()->getNumCities()) / std::max(1, GC.getGame().getNumCities()) < 85);
@@ -1406,7 +1405,7 @@ void CvUnitAI::AI_workerMove()
 		bBuildFort = true;
 	}
 
-	
+
 	if (bCanRoute && isBarbarian())
 	{
 		if (AI_connectCity())
@@ -1445,7 +1444,7 @@ void CvUnitAI::AI_workerMove()
 			return;
 		}
 	}
-		
+
 	if (pCity != NULL)
 	{
 		if (AI_improveCity(pCity))
@@ -1484,7 +1483,7 @@ void CvUnitAI::AI_workerMove()
 	{
 		return;
 	}
-	
+
 	if (!bBuildFort)
 	{
 		bool bCanal = ((100 * area()->getNumCities()) / std::max(1, GC.getGame().getNumCities()) < 85);
@@ -1526,14 +1525,14 @@ void CvUnitAI::AI_workerMove()
 			}
 		}
 	}
-	
+
 	if (AI_improveLocalPlot(3, NULL))
 	{
-		return;		
+		return;
 	}
 
 	if (!(isHuman()) && (AI_getUnitAIType() == UNITAI_WORKER))
-	{			
+	{
 		if (GC.getGameINLINE().getElapsedGameTurns() > 10)
 		{
 			if (GET_PLAYER(getOwnerINLINE()).AI_totalUnitAIs(UNITAI_WORKER) > GET_PLAYER(getOwnerINLINE()).getNumCities())
@@ -13968,7 +13967,7 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 			}
 		}
 	}
-	
+
 	if ((iBestValue < iMinValue) && (NULL != ppBestPlot))
 	{
 		FAssert(NULL != peBestBuild);
@@ -13985,23 +13984,26 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 		{
 			FAssertMsg(!bBestBuildIsRoute, "BestBuild should not be a route");
 			FAssertMsg(eBestBuild < GC.getNumBuildInfos(), "BestBuild is assigned a corrupt value");
-			
+
 
 			MissionTypes eBestMission = MISSION_MOVE_TO;
 			
-			if ((pBestPlot->getWorkingCity() == NULL) || !pBestPlot->getWorkingCity()->isConnectedToCapital())
-			{
-				eBestMission = MISSION_ROUTE_TO;
-			}
-			else
-			{
-				int iDistance = stepDistance(getX_INLINE(), getY_INLINE(), pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
-				int iPathTurns;
-				if (generatePath(pBestPlot, 0, false, &iPathTurns))
+			// PAE
+			if (bCanRoute) {
+				if ((pBestPlot->getWorkingCity() == NULL) || !pBestPlot->getWorkingCity()->isConnectedToCapital())
 				{
-					if (iPathTurns >= iDistance)
+					eBestMission = MISSION_ROUTE_TO;
+				}
+				else
+				{
+					int iDistance = stepDistance(getX_INLINE(), getY_INLINE(), pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
+					int iPathTurns;
+					if (generatePath(pBestPlot, 0, false, &iPathTurns))
 					{
-						eBestMission = MISSION_ROUTE_TO;
+						if (iPathTurns >= iDistance)
+						{
+							eBestMission = MISSION_ROUTE_TO;
+						}
 					}
 				}
 			}

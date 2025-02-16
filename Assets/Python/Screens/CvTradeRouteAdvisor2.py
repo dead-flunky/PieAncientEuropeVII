@@ -2,8 +2,8 @@
 # Copyright Firaxis Games 2005
 # Created by Pie, Austria
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
-																FontTypes, CyGame, CyMap, FontSymbols,
-																WidgetTypes, PanelStyles, ButtonStyles,
+																FontTypes, CyGame, CyMap,
+																WidgetTypes, PanelStyles, PopupStates,
 																CyInterface, NotifyCode, CyMessageControl,
 																CyGInterfaceScreen, CyCamera)
 import CvUtil
@@ -35,29 +35,11 @@ class CvTradeRouteAdvisor2:
 				self.X_EXIT = 994
 				self.Y_EXIT = 726
 
-				self.iActiveTab = 1
 				self.nWidgetCount = 0
 
 				self.iTargetPlayer = -1
 				self.iActiveCityID = -1
 				self.iSelectedMission = -1
-				self.szTab1 = "TAB1"
-				self.szTab2 = "TAB2"
-
-				# for TAB 2
-				self.X_LEADERS = 20
-				self.Y_LEADERS = 80
-				self.W_LEADERS = 985
-				self.H_LEADERS = 90
-				self.LEADER_BUTTON_SIZE = 64
-				self.LEADER_MARGIN = 12
-				self.X_CITIES = 20
-				self.Y_CITIES = 160
-				self.W_CITIES = 985
-				self.H_CITIES = 500
-
-				self.LEADER_COLUMNS = int(self.W_LEADERS / (self.LEADER_BUTTON_SIZE + self.LEADER_MARGIN))
-				self.iShiftKeyDown = 0
 
 		def getScreen(self):
 				return CyGInterfaceScreen(self.SCREEN_NAME, CvScreenEnums.TRADEROUTE_ADVISOR2)
@@ -72,7 +54,8 @@ class CvTradeRouteAdvisor2:
 				screen = self.getScreen()
 				if screen.isActive():
 						return
-				#screen.setRenderInterfaceOnly(True)
+				screen.setRenderInterfaceOnly(True)
+				screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
 
 				# Set the background and exit button, and show the screen
 				screen.setDimensions(screen.centerX(0), screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
@@ -86,42 +69,18 @@ class CvTradeRouteAdvisor2:
 											 CvUtil.FONT_RIGHT_JUSTIFY, self.X_EXIT, self.Y_EXIT, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1)
 
 				# Header...
-				screen.setLabel(self.WIDGET_HEADER, "Background", u"<font=4b>" + localText.getText("TXT_KEY_TRADE_ROUTE2_ADVISOR_SCREEN", ()).upper() + "</font>",
+				screen.setLabel(self.WIDGET_HEADER, "Background", u"<font=4b>" + localText.getText("TXT_KEY_TRADE_ROUTE2_ADVISOR_SCREEN", ()).upper() + u"</font>",
 												CvUtil.FONT_CENTER_JUSTIFY, self.X_SCREEN, self.Y_TITLE, self.Z_CONTROLS, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-
-				self.deleteAllWidgets()
-
-				# Bottom: TAB links
-				xTAB = 50
-				yTAB = 726
-				TEXT_TAB1 = u"<font=4>" + localText.getText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1", ()).upper() + "</font>"
-				TEXT_TAB1_YELLOW = u"<font=4>" + localText.getColorText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + "</font>"
-				TEXT_TAB2 = u"<font=4>" + localText.getText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB2", ()).upper() + "</font>"
-				TEXT_TAB2_YELLOW = u"<font=4>" + localText.getColorText("TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB2", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + "</font>"
-
-				#if (self.iActiveTab == 2):
-				#		screen.setText(self.szTab1, "", TEXT_TAB1, CvUtil.FONT_LEFT_JUSTIFY, xTAB, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				#		screen.setText(self.szTab2, "", TEXT_TAB2_YELLOW, CvUtil.FONT_LEFT_JUSTIFY, xTAB+220, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				#else:
-				#		screen.setText(self.szTab1, "", TEXT_TAB1_YELLOW, CvUtil.FONT_LEFT_JUSTIFY, xTAB, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				#		screen.setText(self.szTab2, "", TEXT_TAB2, CvUtil.FONT_LEFT_JUSTIFY, xTAB+220, yTAB, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 				# draw the contents
 				self.drawContents()
 
+				self.refreshScreen()
 
 		def drawContents(self):
 
-				if (self.iActiveTab == 2):
-						self.drawCities()
-				else:
-						self.drawTraders()
-
-
-		##################### FIRST PAGE ###############################
-		def drawTraders(self):
-
 				screen = self.getScreen()
+				self.deleteAllWidgets()
 
 				BUTTON_SIZE = 48
 
@@ -185,7 +144,7 @@ class CvTradeRouteAdvisor2:
 
 								# Unit name
 								szText = pUnit.getName()
-								screen.setLabel("L2_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, 100, iY+5, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, pUnit.getID(), -1)
+								screen.setLabel("L2_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, 100, iY+5, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 								# Unit load
 								szText = localText.getText("TXT_UNIT_INFO_BAR_5", ()) + u" "
@@ -283,154 +242,9 @@ class CvTradeRouteAdvisor2:
 								i += 1
 								iY += 60
 
-
-		##################### SECOND PAGE ###############################
-		def drawCities(self):
-
-				if (self.iActivePlayer < 0): return
-
-				screen = self.getScreen()
-
-				# Set scrollable area for leaders
-				screen.addPanel("LeaderPanel", "", "", False, True, self.X_LEADERS, self.Y_LEADERS, self.W_LEADERS, self.H_LEADERS, PanelStyles.PANEL_STYLE_DAWNTOP)
-
-				# Set scrollable area for unit buttons
-				screen.addPanel("CityPanel", "", "", True, True, self.X_CITIES, self.Y_CITIES, self.W_CITIES, self.H_CITIES, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
-
-
-				listLeaders = []
-				for iLoopPlayer in range(gc.getMAX_PLAYERS()):
-						player = gc.getPlayer(iLoopPlayer)
-						if player.isBarbarian(): continue
-						if (player.isAlive() and (gc.getTeam(player.getTeam()).isHasMet(gc.getPlayer(self.iActivePlayer).getTeam()) or gc.getGame().isDebugMode())):
-								listLeaders.append(iLoopPlayer)
-
-				if len(listLeaders) >= self.LEADER_COLUMNS: iButtonSize = self.LEADER_BUTTON_SIZE / 2
-				else: iButtonSize = self.LEADER_BUTTON_SIZE
-
-				iColumns = int(self.W_LEADERS / (iButtonSize + self.LEADER_MARGIN))
-
-				# loop through all players and display leaderheads
-				iIndex = -1
-				for iLoopPlayer in listLeaders:
-						iIndex += 1
-						x = self.X_LEADERS + self.LEADER_MARGIN + (iIndex % iColumns) * (iButtonSize + self.LEADER_MARGIN)
-						y = self.Y_LEADERS + self.LEADER_MARGIN + (iIndex // iColumns) * (iButtonSize + self.LEADER_MARGIN)
-
-						screen.addCheckBoxGFC("Leader"+str(iLoopPlayer), gc.getLeaderHeadInfo(gc.getPlayer(iLoopPlayer).getLeaderType()).getButton(), ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), x,
-																	y, iButtonSize, iButtonSize, WidgetTypes.WIDGET_PYTHON, iLoopPlayer, -1, ButtonStyles.BUTTON_STYLE_LABEL)
-
-				self.refreshCities(self.iActivePlayer)
-
-
-		def refreshCities(self, iPlayer):
-
-				screen = self.getScreen()
-				player = gc.getPlayer(iPlayer)
-				BUTTON_SIZE = 48
-				iY = 180
-				i = 0
-
-				(loopCity, iter) = player.firstCity(False)
-				while loopCity:
-						# if not loopCity.isNone() and loopCity.getOwner() == player.getID(): #only valid cities
-
-						# City status (button)
-						buttonCityStatus = self.getButtonCityStatus(loopCity)
-						screen.setImageButton("L1_"+str(i), buttonCityStatus, 30, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, 1, loopCity.getID())
-
-						# City name
-						szText = self.getCityName(loopCity)
-						screen.setLabel("L2_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, 80, iY+2, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, loopCity.getID(), -1)
-
-						# City properties
-						szText = self.getCityProperties(loopCity)
-						screen.setLabel("L3_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, 80, iY+21, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, loopCity.getID(), -1)
-
-
-						i += 1
-						iY += 60
-						(loopCity, iter) = player.nextCity(iter, False)
-
-
-		def getButtonCityStatus(self, pLoopCity):
-				iBuildingSiedlung = gc.getInfoTypeForString("BUILDING_SIEDLUNG")
-				iBuildingKolonie = gc.getInfoTypeForString("BUILDING_KOLONIE")
-				iBuildingCity = gc.getInfoTypeForString("BUILDING_STADT")
-				iBuildingProvinz = gc.getInfoTypeForString("BUILDING_PROVINZ")
-				iBuildingMetropole = gc.getInfoTypeForString("BUILDING_METROPOLE")
-				iCivilWar = gc.getInfoTypeForString("BUILDING_CIVIL_WAR")
-				if pLoopCity.getNumRealBuilding(iBuildingMetropole):
-						if pLoopCity.getOccupationTimer() or pLoopCity.getNumRealBuilding(iCivilWar):
-							return "Art/Interface/Buttons/General/button_riot_city_stufe5.dds"
-						else:
-							return gc.getBuildingInfo(iBuildingMetropole).getButton()
-				elif pLoopCity.getNumRealBuilding(iBuildingProvinz):
-						if pLoopCity.getOccupationTimer() or pLoopCity.getNumRealBuilding(iCivilWar):
-							return "Art/Interface/Buttons/General/button_riot_city_stufe4.dds"
-						else:
-							return gc.getBuildingInfo(iBuildingProvinz).getButton()
-				elif pLoopCity.getNumRealBuilding(iBuildingCity):
-						if pLoopCity.getOccupationTimer() or pLoopCity.getNumRealBuilding(iCivilWar):
-							return "Art/Interface/Buttons/General/button_riot_city_stufe3.dds"
-						else:
-							return gc.getBuildingInfo(iBuildingCity).getButton()
-				elif pLoopCity.getNumRealBuilding(iBuildingKolonie):
-						if pLoopCity.getOccupationTimer() or pLoopCity.getNumRealBuilding(iCivilWar):
-							return "Art/Interface/Buttons/General/button_riot_city_stufe2.dds"
-						else:
-							return gc.getBuildingInfo(iBuildingKolonie).getButton()
-				else:
-						if pLoopCity.getOccupationTimer() or pLoopCity.getNumRealBuilding(iCivilWar):
-							return "Art/Interface/Buttons/General/button_riot_city_stufe1.dds"
-						else:
-							return gc.getBuildingInfo(iBuildingSiedlung).getButton()
-
-		def getCityName(self, pLoopCity):
-				szName = u""
-
-				# City name: font-color: white (normal), red (riot/civil war)
-				if pLoopCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")) or pLoopCity.getOccupationTimer():
-						szName += localText.getText("TXT_KEY_COLOR_NEGATIVE", ()) + pLoopCity.getName() + localText.getText("TXT_KEY_COLOR_REVERT", ())
-				else:
-						szName += pLoopCity.getName()
-
-				# Symbol: Stern: Capital (gold) or provincial palace (silver)
-				if pLoopCity.isCapital():
-						szName += u"%c" % CyGame().getSymbolID(FontSymbols.STAR_CHAR)
-				elif pLoopCity.isGovernmentCenter():
-						szName += u"%c" % CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR)
-
-				return szName
-
-		def getCityProperties(self, pLoopCity):
-				szName = u""
-
-				# City name: font-color: white (normal), red (riot/civil war)
-				if pLoopCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")) or pLoopCity.getOccupationTimer():
-						szName += u"%c" % CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR)
-
-				# Symbol: Religion
-				for iReligion in range(gc.getNumReligionInfos()):
-						if pLoopCity.isHasReligion(iReligion):
-								if pLoopCity.isHolyCityByType(iReligion):
-										szName += u"%c" % gc.getReligionInfo(iReligion).getHolyCityChar()
-								else:
-										szName += u"%c" % gc.getReligionInfo(iReligion).getChar()
-
-				# Symbol: Kult
-				for iCorporation in range(gc.getNumCorporationInfos()):
-						if pLoopCity.isHeadquartersByType(iCorporation):
-								szName += u"%c" % gc.getCorporationInfo(iCorporation).getHeadquarterChar()
-						elif pLoopCity.isActiveCorporation(iCorporation):
-								szName += u"%c" % gc.getCorporationInfo(iCorporation).getChar()
-
-				return szName
-
-		# ---- END SECOND PAGE ------------------
-
-
-
+		def refreshScreen(self):
+				self.deleteAllWidgets()
+				return 0
 
 		# returns a unique ID for a widget in this screen
 		def getNextWidgetName(self):
@@ -450,19 +264,18 @@ class CvTradeRouteAdvisor2:
 		# Will handle the input for this screen...
 		def handleInput(self, inputClass):
 				if inputClass.getNotifyCode() == NotifyCode.NOTIFY_CLICKED:
-
-						szWidgetName = inputClass.getFunctionName() + str(inputClass.getID())
-
-						if (szWidgetName == self.szTab1):
-								self.iActiveTab = 1
-								self.interfaceScreen()
-						elif (szWidgetName == self.szTab2):
-								self.iActiveTab = 2
-								self.interfaceScreen()
-				elif (inputClass.getNotifyCode() == NotifyCode.NOTIFY_CHARACTER):
-						if (inputClass.getData() == int(InputTypes.KB_LSHIFT) or inputClass.getData() == int(InputTypes.KB_RSHIFT)):
-								self.iShiftKeyDown = inputClass.getID()
-
+						if inputClass.getButtonType() == WidgetTypes.WIDGET_GENERAL and inputClass.getData2() != -1:
+								pPlayer = gc.getPlayer(CyGame().getActivePlayer())
+								pUnit = pPlayer.getUnit(inputClass.getData2())
+								if inputClass.getData1() == 1:
+										CyCamera().JustLookAtPlot(pUnit.plot())
+										CyInterface().selectUnit(pUnit, True, True, True)
+										self.hideScreen()
+								elif inputClass.getData1() == 748:
+										CyMessageControl().sendModNetMessage(748, -1, -1, CyGame().getActivePlayer(), inputClass.getData2())
+										CyCamera().JustLookAtPlot(pUnit.plot())
+										CyInterface().selectUnit(pUnit, True, True, True)
+										self.hideScreen()
 				return 0
 
 		def update(self, fDelta):

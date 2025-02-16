@@ -8545,6 +8545,11 @@ int CvPlayerAI::AI_neededExplorers(CvArea* pArea) const
 	int iNeeded = 0;
 
 	// PAE, cause AI shall not really explore
+	if (getCurrentEra() > 1) {
+		if (pArea->isWater()) iNeeded = std::min(2, (pArea->getNumUnrevealedTiles(getTeam()) / 400));
+		else iNeeded = std::min(2, (pArea->getNumUnrevealedTiles(getTeam()) / 200));
+	}
+
 	/*
 	if (pArea->isWater())
 	{
