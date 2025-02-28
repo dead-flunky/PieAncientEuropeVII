@@ -2703,6 +2703,18 @@ def peloponnesianWarKeinpferd_Syra1(argsList):
 
 # --------------------
 
+def popupGo2City(argsList):
+		iButtonId = argsList[0]
+		iData1 = argsList[1]
+		iData2 = argsList[2]
+		#iData3 = argsList[3]
+		iData4 = argsList[4]
+
+		if iButtonId != -1 and iButtonId != iData4:
+				CyMessageControl().sendModNetMessage(773, iButtonId, -1, iData1, iData2)
+
+# --------------------
+
 #Ronnar (CIV COL): EventTriggerMenu START
 
 def selectOneEvent(argsList):

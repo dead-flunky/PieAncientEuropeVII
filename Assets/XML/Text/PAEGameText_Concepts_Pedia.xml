@@ -1370,7 +1370,17 @@ El cristianismo como religi&#243;n oficial previene estas revueltas.
 		<Tag>TXT_KEY_CONCEPT_CITIES_PEDIA</Tag>
 		<English>[H1]City sizes and their status: [LINK=CONCEPT_KOLONIE_PROVINZ]colonies and provinces[\LINK][\H1]
 
-[H1]Unhealty cities[\H1]
+[H2]Colors in the building list[\H2]
+
+The buildings that have been constructed are displayed in different colors according to their importance:
+
+[ICON_BULLET] Wonders: gold
+[ICON_BULLET] National wonders: orange
+[ICON_BULLET] Palace and provincial palace: green
+[ICON_BULLET] Buildings that cannot be conquered: light gray
+[ICON_BULLET] Normal buildings: white
+
+[H2]Unhealty cities[\H2]
 In unhealty cities diseases will emerge with a fairly high probability. These are
 [ICON_BULLET] Leprosy
 [TAB] Leprosy will infect 5 citizens. The city's population may fall by half. With a leper colony, the city only decreases by 1.
@@ -1380,13 +1390,13 @@ In unhealty cities diseases will emerge with a fairly high probability. These ar
 [ICON_BULLET] Plague
 [TAB] Plague will infect 9 citizens. Plague lasts 5 turns. The city's population falls per turn.
 
-[H1]Research bonus from city conquest[\H1]
+[H2]Research bonus from city conquest[\H2]
 A city conquest brings a research bonus and can even lead to a new technology, if the city has built an archive or a library.
 
-[H1] Building units in conquered cities [\H1]
+[H2] Building units in conquered cities [\H2]
 In conquered cities, new units will receive the status "Unreliable". See [LINK=CONCEPT_PROMOTIONS]Promotions[\LINK]
 
-[H1]Revolting cities[\H1]
+[H2]Revolting cities[\H2]
 If a city is taken during war, there is a possibility of 33% that its nearest neighbour city will go into revolt.
 When a city gets razed, another neighbour city will revolt.
 This excludes the capital and the second government city with the Basilica (forbidden palace).
@@ -1416,7 +1426,7 @@ When you have more unhappy citizens than happy ones, there is a chance of 3% to 
 
 [ICON_BULLET] For the effects of a city revolt, see [LINK=CONCEPT_CIVIL_WAR]Civil War[\LINK].
 
-[H1]City surrender[\H1]
+[H2]City surrender[\H2]
 Cities are able to deflect to the besieger. This does not apply to barbaric cities.
 
 Requirements:
@@ -1483,7 +1493,17 @@ Consquences of rebellion:
 [H1]Tailles des villes et leurs statuts[\H1]
 Voir le concept [LINK=CONCEPT_KOLONIE_PROVINZ]Colonies et provinces[\LINK]
 
-[H1]Insalubrit&#233;[\H1]
+[H2]Couleurs dans la liste des b&#226;timents[\H2]
+
+Les b&#226;timents construits sont affich&#233;s en diff&#233;rentes couleurs selon leur importance :
+
+[ICON_BULLET] Miracle : l'or
+[ICON_BULLET] Merveille nationale : orange
+[ICON_BULLET] Palais et Palais provincial : vert
+[ICON_BULLET] B&#226;timents qui ne peuvent pas &#234;tre conquis : gris clair
+[ICON_BULLET] B&#226;timents normaux : blancs
+
+[H2]Insalubrit&#233;[\H2]
 Des &#233;pid&#233;mies parmi les suivantes peuvent se d&#233;clarer dans les villes insalubres :
 [ICON_BULLET] L&#232;pre
 Se d&#233;clenche dans des villes avec une population de 5 ou plus. Population r&#233;duite de moiti&#233; (ou seulement de 1 avec un l&#233;proserie)
@@ -1492,13 +1512,13 @@ Se d&#233;clenche par &#233;v&#233;nement dans les villes avec une population de
 [ICON_BULLET] Peste
 Se d&#233;clenche dans les villes avec une population de 9 ou plus. L'&#233;pid&#233;mie dure 5 tours. La population diminue &#224; chaque tour.
 
-[H1]Bonus de recherche apr&#232;s conqu&#234;te[\H1]
+[H2]Bonus de recherche apr&#232;s conqu&#234;te[\H2]
 Une ville conquise apporte un bonus de recherche voire m&#234;me une nouvelle technologie si la ville poss&#232;de une archive ou une biblioth&#232;que.
 
-[H1] Construire des unit&#233;s dans les villes conquises [\H1]
+[H2] Construire des unit&#233;s dans les villes conquises [\H2]
 Dans les villes conquises, les nouvelles unit&#233;s recevront le statut "Peu fiable". Voir les [LINK=CONCEPT_PROMOTIONS]Promotions[\LINK]
 
-[H1]R&#233;voltes[\H1]
+[H2]R&#233;voltes[\H2]
 Quand une ville est captur&#233;e, il y a une chance de 33% que sa plus proche voisine se r&#233;volte.
 Quand une ville est d&#233;truite, une ville voisine suppl&#233;mentaire se r&#233;voltera.
 Les capitales et villes avec un palais provincial ne sont pas touch&#233;es par ce type de r&#233;volte.
@@ -1529,7 +1549,7 @@ Quand vous avez des citoyens malheureux dans une ville, celle-ci peut se r&#233;
 
 [ICON_BULLET] Effets d'une r&#233;volte urbaine, voir [LINK=CONCEPT_CIVIL_WAR]Guerre civile[\LINK].
 
-[H1]Capitulation de la ville[\H1]
+[H2]Capitulation de la ville[\H2]
 Les villes peuvent se rendre &#224; l'assi&#233;geant. Cela ne s'applique pas aux villes barbares.
 
 Requis :
@@ -1596,7 +1616,17 @@ Cons&#233;quences de la reddition :
 		<German>
 [H1]Stadtgr&#246;&#223;en und deren Status: [LINK=CONCEPT_KOLONIE_PROVINZ]Kolonien und Provinzen[\LINK][\H1]
 
-[H1]Ungesunde St&#228;dte[\H1]
+[H2]Farben in der Geb&#228;udeliste[\H2]
+
+Die erbauten Geb&#228;ude werden nach ihrer Bedeutung in unterschiedlichen Farben angezeigt:
+
+[ICON_BULLET] Wunder: gold
+[ICON_BULLET] Nationalwunder: orange
+[ICON_BULLET] Palast und Provinzpalast: gr&#252;n
+[ICON_BULLET] Geb&#228;ude, die nicht erobert werden k&#246;nnen: hellgrau
+[ICON_BULLET] Normale Geb&#228;ude: wei&#223;
+
+[H2]Ungesunde St&#228;dte[\H2]
 In ungesunden St&#228;dten tauchen mit ziemlich gro&#223;er Wahrscheinlichkeit Seuchen auf. Diese sind
 [ICON_BULLET] Lepra
 [TAB] Lepra ab 5 Einwohnerpunkte. Die Stadtbev&#246;lkerung kann bis auf die H&#228;lfte sinken. Mit einer Leprakolonie sinkt die Stadt immer nur um 1.
@@ -1606,13 +1636,13 @@ In ungesunden St&#228;dten tauchen mit ziemlich gro&#223;er Wahrscheinlichkeit S
 [ICON_BULLET] Pest
 [TAB] Pest ab 9 Einwohnerpunkte. Sie dauert 5 Runden. Die Stadtbev&#246;lkerung sinkt pro Runde.
 
-[H1]Forschungsbonus durch Stadteroberung[\H1]
+[H2]Forschungsbonus durch Stadteroberung[\H2]
 Eine Eroberung einer Stadt bringt einen Forschungsbonus und kann sogar zu einer neuen Technologie f&#252;hren, sofern in der Stadt ein Archiv oder eine Bibliothek steht.
 
-[H1]Einheitenbau in eroberten St&#228;dten[\H1]
+[H2]Einheitenbau in eroberten St&#228;dten[\H2]
 In eroberten St&#228;dten wird es vorkommen, dass neue Einheiten den Status "Unzuverl&#228;ssig" bekommen. Siehe [LINK=CONCEPT_PROMOTIONS]Bef&#246;rderungen[\LINK]
 
-[H1]Revoltierende St&#228;dte[\H1]
+[H2]Revoltierende St&#228;dte[\H2]
 
 [ICON_BULLET] Eine Stadt wird erobert
 Wird eine Stadt w&#228;hrend einem Krieg eingenommen, gibt es eine 33% Wahrscheinlichkeit, dass dessen n&#228;chste Nachbarstadt revoltiert.
@@ -1645,7 +1675,7 @@ Gibt es mehr ungl&#252;ckliche B&#252;rger als gl&#252;ckliche in der Stadt, so 
 
 [ICON_BULLET] Auswirkungen einer Stadtrevolte siehe [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK].
 
-[H1]Kapitulierende St&#228;dte[\H1]
+[H2]Kapitulierende St&#228;dte[\H2]
 St&#228;dte k&#246;nnen zum Belagerer &#252;berlaufen. Dies gilt nicht f&#252;r barbarische St&#228;dte.
 
 Voraussetzungen:
@@ -1713,7 +1743,17 @@ Auswirkung beim &#220;berlauf:
 		<Italian>
 [H1] dimensioni della citt&#224; e il loro stato : [LINK=CONCEPT_KOLONIE_PROVINZ] colonie e province [\LINK] [\H1]
 
-Citt&#224; [H1] salutare [\H1]
+[H2]Colori nell'elenco degli edifici[\H2]
+
+Gli edifici costruiti sono visualizzati in colori diversi a seconda della loro importanza:
+
+[ICON_BULLET] Miracolo: oro
+[ICON_BULLET] Meraviglia nazionale: arancione
+[ICON_BULLET] Palazzo e Palazzo Provinciale: verde
+[ICON_BULLET] Edifici che non possono essere conquistati: grigio chiaro
+[ICON_BULLET] Edifici normali: bianchi
+
+Citt&#224; [H2] salutare [\H2]
 Nelle citt&#224; malsane immergersi con abbastanza elevata probabilit&#224; di epidemie . questi sono
 [ICON_BULLET] lebbra
 [TAB] lebbra da 5 abitanti punti . La popolazione della citt&#224; potrebbe scendere alla met&#224; . Con un lebbrosario , la citt&#224; scende sempre di appena 1
@@ -1723,13 +1763,13 @@ Nelle citt&#224; malsane immergersi con abbastanza elevata probabilit&#224; di e
 [ICON_BULLET] Plague
 [TAB] piaga da 9 abitanti punti. Dura cinque turni . La popolazione della citt&#224; diminuisce per round.
 
-[H1] bonus ricerca dalla citt&#224; di conquista [\H1]
+[H2] bonus ricerca dalla citt&#224; di conquista [\H2]
 Una cattura di una citt&#224; porta un bonus di ricerca e pu&#242; anche portare ad una nuova tecnologia , se un archivio o biblioteca &#232; in citt&#224; .
 
-[H1] Unit&#224; di costruzione nelle citt&#224; conquistate [\H1]
+[H2] Unit&#224; di costruzione nelle citt&#224; conquistate [\H2]
 Nelle citt&#224; conquistate, le nuove unit&#224; riceveranno lo stato "Inaffidabile". Vedi le [LINK=CONCEPT_PROMOTIONS]Promozioni[\LINK]
 
-[H1] le citt&#224; ribelli [\H1]
+[H2] le citt&#224; ribelli [\H2]
 [ICON_BULLET] Una citt&#224; &#232; conquistata
 Quando una citt&#224; &#232; occupata durante la guerra , c'&#232; una probabilit&#224; del 33% che la citt&#224; vicina pi&#249; vicina si ribell&#242; .
 Se questa citt&#224; bruciata , non si ribellarono sicuramente ( ancora) una citt&#224; vicina .
@@ -1761,7 +1801,7 @@ Se ci sono cittadini pi&#249; infelici come felici in citt&#224; , per cui vi &#
 
 [ICON_BULLET] Effetti di una rivolta cittadina vedi [LINK=CONCEPT_CIVIL_WAR]Guerra civile[\LINK].
 
-[H1]La citt&#224; si arrende[\H1]
+[H2]La citt&#224; si arrende[\H2]
 Le citt&#224; possono superare un avversario. Questo non si applica alle citt&#224; barbare.
 
 requisiti:
@@ -1829,7 +1869,17 @@ Essere [ICON_BULLET] Standing schiavo di schiavi liberati
 		<Spanish>
 [H1]Tama&#241;o de ciudades y sus estatus: [LINK=CONCEPT_KOLONIE_PROVINZ]colonias y provincias[\LINK][\H1]
 
-[H1]Ciudades insalubres[\H1]
+[H2]Colores en la lista de edificios[\H2]
+
+Los edificios construidos se muestran en diferentes colores seg&#250;n su importancia:
+
+[ICON_BULLET] Milagro: oro
+[ICON_BULLET] Maravilla Nacional: naranja
+[ICON_BULLET] Palacio y Palacio Provincial: verde
+[ICON_BULLET] Edificios que no se pueden conquistar: gris claro
+[ICON_BULLET] Edificios normales: blancos
+
+[H2]Ciudades insalubres[\H2]
 En las ciudades insalubres es m&#225;s probable la aparici&#243;n de epidemias, tales como:
 [ICON_BULLET] Lepra
 [TAB] La lepra desde los 5 ciudadanos. Puede caer hasta la mitad de la poblaci&#243;n de la ciudad. Con una leproser&#237;a, solo se reduce en 1.
@@ -1839,13 +1889,13 @@ En las ciudades insalubres es m&#225;s probable la aparici&#243;n de epidemias, 
 [ICON_BULLET] Peste
 [TAB] La peste desde los 9 ciudadanos. La peste dura 5 turnos. La poblaci&#243;n de la ciudad decrece cada turno.
 
-[H1]Bonus de investigaci&#243;n por conquista de ciudad[\H1]
+[H2]Bonus de investigaci&#243;n por conquista de ciudad[\H2]
 La conquista de una ciudad conlleva un bonus de investigaci&#243;n e incluso puede llevar a una nueva tecnolog&#237;a, si la ciudad est&#225; provista de un archivo o una biblioteca.
 
-[H1] Construyendo unidades en ciudades conquistadas [\H1]
+[H2] Construyendo unidades en ciudades conquistadas [\H2]
 En las ciudades conquistadas, las nuevas unidades recibir&#225;n el estado "No fiable". Ver [LINK=CONCEPT_PROMOTIONS]Promociones[\LINK]
 
-[H1]Revuelta de ciudades[\H1]
+[H2]Revuelta de ciudades[\H2]
 Si una ciudad es conquistada durante la guerra, hay una probabilidad del 33% que una ciudad vecina entre en una revuelta.
 Cuando una ciudad es arrasada, una ciudad vecina entra en revuelta.
 Esto excluye a la capital y a la segunda ciudad gubernamental con la Bas&#237;lica (palacio prohibido).
@@ -1875,7 +1925,7 @@ Si tienes m&#225;s ciudadanos infelices que felices, hay una probabilidad del 3%
 
 [ICON_BULLET] Efectos de una revuelta en la ciudad ver [LINK=CONCEPT_CIVIL_WAR]Guerra Civil[\LINK].
 
-[H1]Ciudades que desertan[\H1]
+[H2]Ciudades que desertan[\H2]
 Las ciudades pueden desertar y pasarse al bando enemigo. Esto no se aplica a las ciudades b&#225;rbaras.
 
 Requisitos:

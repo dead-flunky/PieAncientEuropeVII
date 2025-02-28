@@ -971,15 +971,6 @@
 			<DefaultUnit>UNIT_HORSE_ARCHER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_HEAVY_HORSEMAN</Type>
-			<Description>TXT_KEY_UNIT_HEAVY_HORSEMAN</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>3</iInstanceCostModifier>
-			<DefaultUnit>UNIT_HEAVY_HORSEMAN</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_CATAPHRACT</Type>
 			<Description>TXT_KEY_UNIT_CATAPHRACT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -987,6 +978,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>5</iInstanceCostModifier>
 			<DefaultUnit>UNIT_CATAPHRACT</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_BYZANTINE_CATAPHRACT</Type>
+			<Description>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>5</iInstanceCostModifier>
+			<DefaultUnit>UNIT_BYZANTINE_CATAPHRACT</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CLIBANARII</Type>
@@ -1068,6 +1068,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>3</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HORSE_PERSIA_NOBLE2</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HEAVY_HORSEMAN</Type>
+			<Description>TXT_KEY_UNIT_HEAVY_HORSEMAN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>3</iInstanceCostModifier>
+			<DefaultUnit>UNIT_HEAVY_HORSEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CAMEL_ARCHER</Type>

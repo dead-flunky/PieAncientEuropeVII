@@ -7,21 +7,6 @@
 <Civ4SpecialBuildingInfos xmlns="x-schema:CIV4BuildingsSchema.xml">
 	<SpecialBuildingInfos>
 		<SpecialBuildingInfo>
-			<Type>SPECIALBUILDING_TEMPLE</Type>
-			<Description>TXT_KEY_SPECIALBUILDING_TEMPLE</Description>
-			<ObsoleteTech>NONE</ObsoleteTech>
-			<TechPrereq>TECH_TEMPELWIRTSCHAFT</TechPrereq>
-			<TechPrereqAnyone>NONE</TechPrereqAnyone>
-			<bValid>1</bValid>
-			<ProductionTraits>
-				<ProductionTrait>
-					<ProductionTraitType>TRAIT_SPIRITUAL</ProductionTraitType>
-					<iProductionTrait>100</iProductionTrait>
-				</ProductionTrait>
-			</ProductionTraits>
-			<Button>Art/Interface/Buttons/Buildings/Temple.dds</Button>
-		</SpecialBuildingInfo>
-		<SpecialBuildingInfo>
 			<Type>SPECIALBUILDING_CHRISTIAN_MONASTERY</Type>
 			<Description>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Description>
 			<ObsoleteTech>NONE</ObsoleteTech>

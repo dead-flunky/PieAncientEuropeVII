@@ -18,7 +18,8 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 								InterfaceDirtyBits, NotifyCode,
 								CyGlobeLayerManager, YieldTypes,
 								EndTurnButtonStates, getClockText,
-								CultureLevelTypes, CityTabTypes)
+								CultureLevelTypes, CityTabTypes,
+								isWorldWonderClass, isTeamWonderClass, isNationalWonderClass)
 
 import CvUtil
 # import ScreenInput
@@ -1119,10 +1120,10 @@ class CvMainInterface:
 						szString = "DecreasePercent" + str(iI)
 						screen.hide(szString)
 						# Min/Max Sliders - start
-						#szString = "MaxPercent" + str(iI)
-						#screen.hide(szString)
-						#szString = "MinPercent" + str(iI)
-						#screen.hide(szString)
+						szString = "MaxPercent" + str(iI)
+						screen.hide(szString)
+						szString = "MinPercent" + str(iI)
+						screen.hide(szString)
 						# Min/Max Sliders - end
 
 				pHeadSelectedCity = CyInterface().getHeadSelectedCity()
@@ -1143,20 +1144,20 @@ class CvMainInterface:
 
 												# mit Min/Max Sliders x: 90 und 110 statt 70 und 90
 												szString1 = "IncreasePercent" + str(eCommerce)
-												screen.setButtonGFC(szString1, u"", "", 70, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce,
+												screen.setButtonGFC(szString1, u"", "", 90, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce,
 																						gc.getDefineINT("COMMERCE_PERCENT_CHANGE_INCREMENTS"), ButtonStyles.BUTTON_STYLE_CITY_PLUS)
 												screen.show(szString1)
 												szString2 = "DecreasePercent" + str(eCommerce)
-												screen.setButtonGFC(szString2, u"", "", 90, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -
+												screen.setButtonGFC(szString2, u"", "", 110, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -
 																						gc.getDefineINT("COMMERCE_PERCENT_CHANGE_INCREMENTS"), ButtonStyles.BUTTON_STYLE_CITY_MINUS)
 												screen.show(szString2)
 												# Min/Max Sliders - start
-												#szString3 = "MaxPercent" + str(eCommerce)
-												#screen.setButtonGFC(szString3, u"", "", 70, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, 50, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
-												#screen.show(szString3)
-												#szString4 = "MinPercent" + str(eCommerce)
-												#screen.setButtonGFC(szString4, u"", "", 130, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -50, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
-												#screen.show(szString4)
+												szString3 = "MaxPercent" + str(eCommerce)
+												screen.setButtonGFC(szString3, u"", "", 70, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, 10, ButtonStyles.BUTTON_STYLE_CITY_PLUS)
+												screen.show(szString3)
+												szString4 = "MinPercent" + str(eCommerce)
+												screen.setButtonGFC(szString4, u"", "", 130, 52 + (19 * iCount), 20, 20, WidgetTypes.WIDGET_CHANGE_PERCENT, eCommerce, -10, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
+												screen.show(szString4)
 												# Min/Max Sliders - end
 
 												iCount += 1
@@ -1165,15 +1166,15 @@ class CvMainInterface:
 														screen.enable(szString1, True)
 														screen.enable(szString2, True)
 														# Min/Max Sliders - start
-														#screen.enable(szString3, True)
-														#screen.enable(szString4, True)
+														screen.enable(szString3, True)
+														screen.enable(szString4, True)
 														# Min/Max Sliders - end
 												else:
 														screen.enable(szString1, False)
 														screen.enable(szString2, False)
 														# Min/Max Sliders - start
-														#screen.enable(szString3, False)
-														#screen.enable(szString4, False)
+														screen.enable(szString3, False)
+														screen.enable(szString4, False)
 														# Min/Max Sliders - end
 
 				return 0
@@ -2077,6 +2078,13 @@ class CvMainInterface:
 																if (pCity.isCapital() or pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST"))
 																				or pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PRAEFECTUR"))):
 																		bCapital = True
+
+												# Go to city button
+												if pUnit.canMove() and pUnit.getDomainType() == DomainTypes.DOMAIN_LAND:
+														screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																"INTERFACE_BUTTON_GO2CITY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 773, -1, False)
+														screen.show("BottomButtonContainer")
+														iCount += 1
 
 												# ----------
 												# Missionar in eine eigene heidnische Stadt schicken
@@ -4181,7 +4189,7 @@ class CvMainInterface:
 														szOutText = u"<font=2>" + localText.getText("TXT_KEY_MISC_POS_GOLD_PER_TURN", (gc.getPlayer(ePlayer).getCommerceRate(CommerceTypes(eCommerce)), )) + u"</font>"
 														szString = "RateText" + str(iI)
 														# Min/Max Sliders - Alt: 112 Neu: 152
-														screen.setLabel(szString, "Background", szOutText, CvUtil.FONT_LEFT_JUSTIFY, 112, 52 + (iCount * 19), -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+														screen.setLabel(szString, "Background", szOutText, CvUtil.FONT_LEFT_JUSTIFY, 152, 52 + (iCount * 19), -0.1, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 														screen.show(szString)
 
 												iCount += 1
@@ -4758,7 +4766,8 @@ class CvMainInterface:
 								for i in range(gc.getNumBuildingInfos()):
 										if (pHeadSelectedCity.getNumBuilding(i) > 0) and gc.getBuildingInfo(i).getArtDefineTag() != "ART_DEF_BUILDING_FAKE":
 												for k in range(pHeadSelectedCity.getNumBuilding(i)):
-														szLeftBuffer = gc.getBuildingInfo(i).getDescription()
+														BuildingInfo = gc.getBuildingInfo(i)
+														szLeftBuffer = BuildingInfo.getDescription()
 														szRightBuffer = u""
 														bFirst = True
 
@@ -4766,7 +4775,7 @@ class CvMainInterface:
 														if pHeadSelectedCity.getNumActiveBuilding(i) > 0:
 
 																# Trade
-																iValue = gc.getBuildingInfo(i).getTradeRoutes()
+																iValue = BuildingInfo.getTradeRoutes()
 																if iValue > 0:
 																		if not bFirst:
 																				szRightBuffer = szRightBuffer + ", "
@@ -4775,7 +4784,7 @@ class CvMainInterface:
 																		szTempBuffer = u"+%d%c" % (iValue, CyGame().getSymbolID(FontSymbols.TRADE_CHAR))
 																		szRightBuffer = szRightBuffer + szTempBuffer
 																# Trade modifier in %
-																iValue = gc.getBuildingInfo(i).getTradeRouteModifier()
+																iValue = BuildingInfo.getTradeRouteModifier()
 																if iValue > 0:
 																		if not bFirst:
 																				szRightBuffer = szRightBuffer + ", "
@@ -4785,7 +4794,7 @@ class CvMainInterface:
 																		szRightBuffer = szRightBuffer + szTempBuffer
 
 																# XP
-																iValue = gc.getBuildingInfo(i).getFreeExperience()
+																iValue = BuildingInfo.getFreeExperience()
 																if iValue > 0:
 																		if not bFirst:
 																				szRightBuffer = szRightBuffer + ", "
@@ -4825,8 +4834,8 @@ class CvMainInterface:
 																# Yieldbonus (Food, Prod, Commerce)
 																for j in range(YieldTypes.NUM_YIELD_TYPES):
 																		# Fixwerte
-																		iYield = gc.getBuildingInfo(i).getYieldChange(j) + pHeadSelectedCity.getNumBuilding(i) * \
-																				pHeadSelectedCity.getBuildingYieldChange(gc.getBuildingInfo(i).getBuildingClassType(), j)
+																		iYield = BuildingInfo.getYieldChange(j) + pHeadSelectedCity.getNumBuilding(i) * \
+																				pHeadSelectedCity.getBuildingYieldChange(BuildingInfo.getBuildingClassType(), j)
 																		if iYield != 0:
 																				if not bFirst:
 																						szRightBuffer = szRightBuffer + ", "
@@ -4840,7 +4849,7 @@ class CvMainInterface:
 																				szRightBuffer = szRightBuffer + szTempBuffer
 
 																		# Prozent
-																		iYield = gc.getBuildingInfo(i).getYieldModifier(j)
+																		iYield = BuildingInfo.getYieldModifier(j)
 																		if iYield != 0:
 																				if not bFirst:
 																						szRightBuffer = szRightBuffer + ", "
@@ -4872,7 +4881,7 @@ class CvMainInterface:
 																		szRightBuffer = szRightBuffer + szTempBuffer
 
 																# in Prozent
-																iCommerce = gc.getBuildingInfo(i).getCommerceModifier(j)
+																iCommerce = BuildingInfo.getCommerceModifier(j)
 																if iCommerce != 0:
 																		if not bFirst:
 																				szRightBuffer = szRightBuffer + ", "
@@ -4887,6 +4896,17 @@ class CvMainInterface:
 
 														# Stadtansicht: Textausgabe
 														szBuffer = szLeftBuffer + "  " + szRightBuffer
+
+														# PAE different colors for special buildings
+														iBuildingClass = BuildingInfo.getBuildingClassType()
+														if BuildingInfo.isCapital() or BuildingInfo.isGovernmentCenter():
+																szLeftBuffer = "<color=0,200,80,100>" + szLeftBuffer + "</color>" # mittel gruen
+														elif BuildingInfo.isNeverCapture():
+																szLeftBuffer = "<color=200,200,200,100>" + szLeftBuffer + "</color>" # hellgrau
+														elif isWorldWonderClass(iBuildingClass) or  isTeamWonderClass(iBuildingClass):
+																szLeftBuffer = "<color=255,220,0,100>" + szLeftBuffer + "</color>" # gold
+														elif isNationalWonderClass(iBuildingClass):
+																szLeftBuffer = "<color=255,127,36,100>" + szLeftBuffer + "</color>" # orange
 
 														screen.appendTableRow("BuildingListTable")
 														screen.setTableText("BuildingListTable", 0, iNumBuildings, "<font=1>" + szLeftBuffer + "</font>", "", WidgetTypes.WIDGET_HELP_BUILDING, i, -1, CvUtil.FONT_LEFT_JUSTIFY)
@@ -7575,6 +7595,11 @@ class CvMainInterface:
 										elif iData1 == 772:
 												CyAudioGame().Play2DSound("AS2D_BUILD_COLOSSEUM")
 												CyMessageControl().sendModNetMessage(iData1, -1, pPlot.getPlotCity().getID(), iOwner, iUnitID)
+
+										# Go to city
+										if iData1 == 773:
+												CyMessageControl().sendModNetMessage(773, iData2, -1, iOwner, iUnitID)
+
 								# ID 718 Unit Formations
 								# Zusatz: Eigenes Widget for Formations!
 								elif inputClass.getButtonType() == WidgetTypes.WIDGET_HELP_PROMOTION:

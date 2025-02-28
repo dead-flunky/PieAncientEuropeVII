@@ -9,6 +9,38 @@
 		<Spanish>Horno de aire forzado</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BULE</Tag>
+		<English>Bouleuterion</English>
+		<French>Bouleut&#233;rion</French>
+		<German>Bouleuterion</German>
+		<Italian>Bouleuterion</Italian>
+		<Spanish>Buleuterio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COURTHOUSE</Tag>
+		<English>Court of Justice</English>
+		<French><Text>Cour de justice:Cours de justice</Text><Gender>Female</Gender><Plural>0:1</Plural></French>
+		<German><Text>Gerichtshof:Gerichtsh&#246;fe</Text><Gender>Male</Gender><Plural>0:1</Plural></German>
+		<Italian><Text>Corte di giustizia:Corti di giustizia</Text><Gender>Male</Gender><Plural>0:1</Plural></Italian>
+		<Spanish><Text>Corte de justicia:Cortes de justicia</Text><Gender>Female</Gender><Plural>0:1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COURTHOUSE_GREEK</Tag>
+		<English>Dicastery</English>
+		<French>Dicast&#232;re</French>
+		<German>Dikasterie</German>
+		<Italian>Dicastero</Italian>
+		<Spanish>Dicasterio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CURIA</Tag>
+		<English>Curia</English>
+		<French>Curia</French>
+		<German>Curia</German>
+		<Italian>Curia</Italian>
+		<Spanish>Curia</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ISRAEL</Tag>
 		<English>Exodus</English>
 		<French>Exode</French>
@@ -25,6 +57,30 @@
 		<Spanish>[H1]"&#161;Deja ir a mi pueblo!"[\H1][NEWLINE]El Libro del &#201;xodo, tambi&#233;n conocido como el 2º Libro de Mois&#233;s, es parte fundamental del Antiguo Testamento y cuenta la conmovedora historia del &#201;xodo de los israelitas de Egipto. El nombre "&#201;xodo" se deriva de la palabra griega para "&#233;xodo" y describe acertadamente el n&#250;cleo de la historia. El libro del &#201;xodo comienza donde termina el libro de G&#233;nesis y describe la situaci&#243;n de los israelitas que viv&#237;an en el exilio en Egipto y eran obligados a realizar trabajos no remunerados bajo el gobierno del Fara&#243;n. La historia se divide en tres partes principales: la liberaci&#243;n de Egipto, el comienzo del viaje por el desierto hacia el Sina&#237; e Israel en el Sina&#237; (alianza y ley). Un acontecimiento central en el libro de &#201;xodo es la aparici&#243;n de Dios a Mois&#233;s en una zarza ardiente. Aqu&#237; Mois&#233;s recibe la misi&#243;n divina de liberar a los israelitas de la esclavitud y conducirlos a la "tierra prometida de Cana&#225;n". La historia del &#201;xodo no termina con la salida de Egipto. Tambi&#233;n describe el viaje de 40 a&#241;os a trav&#233;s del desierto durante el cual s&#243;lo dos de los adultos originales llegan a la tierra prometida de Cana&#225;n. Este largo viaje simboliza las pruebas y desaf&#237;os que el pueblo de Israel tuvo que superar en su camino hacia la libertad y la alianza con Dios.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SKIAS</Tag>
+		<English>Ski&#225;s</English>
+		<French>Ski&#225;s</French>
+		<German>Ski&#225;s</German>
+		<Italian>Ski&#225;s</Italian>
+		<Spanish>Ski&#225;s</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERSAMMLUNG</Tag>
+		<English>Meeting Place</English>
+		<French>Lieu de r&#233;union</French>
+		<German>Versammlungsst&#228;tte</German>
+		<Italian>Luogo d'incontro</Italian>
+		<Spanish>Lugar de encuentro</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERSAMMLUNGSHALLE</Tag>
+		<English>Assembly hall</English>
+		<French>Salle de r&#233;union</French>
+		<German>Versammlungshalle</German>
+		<Italian>Sala riunioni</Italian>
+		<Spanish>Sal&#243;n de actos</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WINDOFEN</Tag>
 		<English>Wind kiln</English>
 		<French>Four &#224; vent</French>
@@ -39,6 +95,14 @@
 		<German>[LINK=CONCEPT_MOVEMENT]Via Romana[\LINK] bauen</German>
 		<Italian>Costruire una [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</Italian>
 		<Spanish>Construir una [LINK=CONCEPT_MOVEMENT]V&#237;a Romana[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_GO2CITY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Go To City[COLOR_REVERT][NEWLINE]Move the unit to one of your cities.</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Aller &#224; la ville[COLOR_REVERT][NEWLINE]Envoyez l'unit&#233; dans l'une de vos villes.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Gehe-zur-Stadt[COLOR_REVERT][NEWLINE]Schicke die Einheit in eine deiner St&#228;dte.</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Citt&#224; di riferimento[COLOR_REVERT][NEWLINE]Invia l'unit&#224; in una delle tue citt&#224;.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Ciudad de destino[COLOR_REVERT][NEWLINE]Env&#237;a la unidad a una de tus ciudades.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_BAR_FOOD_GROWTH</Tag>
@@ -322,6 +386,14 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<Spanish>Muestra los movimientos de animales salvajes inofensivos entre turnos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_GO2CITY</Tag>
+		<English>Which city should the unit be sent to?</English>
+		<French>Dans quelle ville l'unit&#233; doit-elle &#234;tre envoy&#233;e ?</French>
+		<German>In welche Stadt soll die Einheit geschickt werden?</German>
+		<Italian>In quale citt&#224; deve essere inviata l'unit&#224;?</Italian>
+		<Spanish>&#191;A qu&#233; ciudad se debe enviar la unidad?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MEDIC_HELP</Tag>
 		<English>[ICON_BULLET]Increases the capacity of a supply cart by 100.</English>
 		<French>[ICON_BULLET]Augmente la capacit&#233; d'un chariot de fournitures de 100.</French>
@@ -411,11 +483,19 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB2</Tag>
-		<English>Neighboring cities</English>
-		<French>Villes voisines</French>
-		<German>Nachbarst&#228;dte</German>
-		<Italian>Citt&#224; vicine</Italian>
-		<Spanish>Ciudades vecinas</Spanish>
+		<English>Trading cities</English>
+		<French>Villes commer&#231;antes</French>
+		<German>Handelsst&#228;dte</German>
+		<Italian>Citt&#224; commerciali</Italian>
+		<Spanish>Ciudades comerciales</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT</Tag>
+		<English>Kataphraktoi</English>
+		<French>Kataphraktoi</French>
+		<German>Kataphraktoi</German>
+		<Italian>Kataphraktoi</Italian>
+		<Spanish>Kataphraktoi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_HELP</Tag>

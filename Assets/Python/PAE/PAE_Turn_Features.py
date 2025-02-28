@@ -1092,7 +1092,8 @@ def doThing():
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST", ("doThing",gc.getGame().countKnownTechNumTeams(gc.getInfoTypeForString("TECH_CODE_OF_LAWS")))), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 		# kann es Things geben?
-		if gc.getGame().countKnownTechNumTeams(gc.getInfoTypeForString("TECH_CODE_OF_LAWS")) > 0:
+		iTechRequired = gc.getInfoTypeForString("TECH_DEMOCRACY")
+		if gc.getGame().countKnownTechNumTeams(iTechRequired) > 0:
 
 				# alle 3 Jahre
 				if gc.getGame().getCalendar() == gc.getInfoTypeForString("CALENDAR_MONTHS"):
@@ -1111,7 +1112,6 @@ def doThing():
 						lHumans = []
 						lPlayers = []
 
-						iTechRequired = gc.getInfoTypeForString("TECH_CODE_OF_LAWS")
 						iTechObsolete = gc.getInfoTypeForString("TECH_DIVINE_RIGHT")
 						iBuildingRequired = gc.getInfoTypeForString("BUILDING_THING")
 						iBuilding = gc.getInfoTypeForString("BUILDING_THING_CITY")

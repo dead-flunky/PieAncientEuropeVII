@@ -8734,11 +8734,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WONDER_HAGIA_HELP</Tag>
-		<English>[ICON_BULLET]City needs [COLOR_HIGHLIGHT_TEXT]Christianity[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilgrims can be blessed in this city (+25%[ICON_STRENGTH]). Christianity as state religion required.</English>
-		<French>[ICON_BULLET]La ville a besoin du [COLOR_HIGHLIGHT_TEXT]Christianisme[COLOR_REVERT][NEWLINE][ICON_BULLET]Les p&#232;lerins peuvent &#234;tre b&#233;nis dans cette ville (+25%[ICON_STRENGTH]). Christianisme requis comme religion d'&#201;tat.</French>
-		<German>[ICON_BULLET]Stadt ben&#246;tigt das [COLOR_HIGHLIGHT_TEXT]Christentum[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilger k&#246;nnen sich in dieser Stadt segnen lassen (+25%[ICON_STRENGTH]). Christentum als Staatsreligion notwendig.</German>
-		<Italian>[ICON_BULLET]La citt&#224; ha bisogno del [COLOR_HIGHLIGHT_TEXT]Cristianesimo[COLOR_REVERT][NEWLINE][ICON_BULLET]I pellegrini possono essere benedetti in questa citt&#224; (+25%[ICON_STRENGTH]). Cristianesimo richiesto come religione di stato.</Italian>
-		<Spanish>[ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]Cristianismo[COLOR_REVERT][NEWLINE][ICON_BULLET]Los peregrinos pueden ser bendecidos en esta ciudad (+25%[ICON_STRENGTH]). Se requiere el cristianismo como religi&#243;n de estado.</Spanish>
+		<English>[ICON_BULLET]City needs [COLOR_HIGHLIGHT_TEXT]Christianity[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilgrims can be blessed in this city (+25%[ICON_STRENGTH] in the first battle). Christianity as state religion required.</English>
+		<French>[ICON_BULLET]La ville a besoin du [COLOR_HIGHLIGHT_TEXT]Christianisme[COLOR_REVERT][NEWLINE][ICON_BULLET]Les p&#232;lerins peuvent &#234;tre b&#233;nis dans cette ville (+25%[ICON_STRENGTH] dans la premi&#232;re bataille). Christianisme requis comme religion d'&#201;tat.</French>
+		<German>[ICON_BULLET]Stadt ben&#246;tigt das [COLOR_HIGHLIGHT_TEXT]Christentum[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilger k&#246;nnen sich in dieser Stadt segnen lassen (+25%[ICON_STRENGTH] beim ersten Gefecht). Christentum als Staatsreligion notwendig.</German>
+		<Italian>[ICON_BULLET]La citt&#224; ha bisogno del [COLOR_HIGHLIGHT_TEXT]Cristianesimo[COLOR_REVERT][NEWLINE][ICON_BULLET]I pellegrini possono essere benedetti in questa citt&#224; (+25%[ICON_STRENGTH] nella prima battaglia). Cristianesimo richiesto come religione di stato.</Italian>
+		<Spanish>[ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]Cristianismo[COLOR_REVERT][NEWLINE][ICON_BULLET]Los peregrinos pueden ser bendecidos en esta ciudad (+25%[ICON_STRENGTH] en la primera batalla). Se requiere el cristianismo como religi&#243;n de estado.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WONDER_RAZED</Tag>

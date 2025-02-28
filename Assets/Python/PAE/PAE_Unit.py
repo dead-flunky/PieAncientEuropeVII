@@ -1,12 +1,12 @@
 # Imports
 import re
-from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap,
-																CyTranslator, DirectionTypes, CommerceTypes,
-																InterfaceMessageTypes, CommandTypes, YieldTypes,
-																ColorTypes, UnitAITypes, CyPopupInfo, GameOptionTypes,
-																ButtonPopupTypes, MissionTypes, MissionAITypes,
-																DomainTypes, plotXY, plotDirection,
-																plotDistance, directionXYFromPlot)
+from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap, CyGame,
+											CyTranslator, DirectionTypes, CommerceTypes,
+											InterfaceMessageTypes, CommandTypes, YieldTypes,
+											ColorTypes, UnitAITypes, CyPopupInfo, GameOptionTypes,
+											ButtonPopupTypes, MissionTypes, MissionAITypes,
+											DomainTypes, plotXY, plotDirection, FontSymbols,
+											plotDistance, directionXYFromPlot)
 
 import CvUtil
 import PyHelpers
@@ -4450,3 +4450,58 @@ def getGGName(pPlayer):
 						break
 
 	return GG_Name
+
+def onModNetMessage(argsList):
+	iData0, iData1, iData2, iData3, iData4 = argsList
+	iData5 = iData4
+	iData4 = iData3
+	iData3 = iData2
+	iData2 = iData1
+	iData1 = iData0
+
+	# Unit mission button: Go2City
+	# iData2: keine Stadt -1 oder StadtID
+	if iData1 == 773:
+		pPlayer = gc.getPlayer(iData4)
+		pUnit = pPlayer.getUnit(iData5)
+
+		lCities = []
+		(loopCity, pIter) = pPlayer.firstCity(False)
+		if loopCity is not None and not loopCity.isNone():
+			while loopCity:
+				if not loopCity.isNone():
+					if pUnit.plot().getArea() == loopCity.plot().getArea() and not pUnit.atPlot(loopCity.plot()):
+						lCities.append((loopCity.getName(),loopCity.getID()))
+				(loopCity, pIter) = pPlayer.nextCity(pIter, False)
+
+		lCities.sort()
+
+		# PopUp choose city
+		if iData2 == -1:
+
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+			popupInfo.setOnClickedPythonCallback("popupGo2City")
+			popupInfo.setData1(iData4) # iPlayer
+			popupInfo.setData2(iData5) # iUnitID
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_GO2CITY", ("", )))
+
+			for lCity in lCities:
+				loopCity = gc.getPlayer(iData4).getCity(lCity[1])
+				szText = lCity[0]
+				if loopCity.isCapital(): szText = szText + u" %c" % CyGame().getSymbolID(FontSymbols.STAR_CHAR)
+				elif loopCity.isGovernmentCenter(): szText = szText + u" %c" % CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR)
+
+				popupInfo.addPythonButton(szText, PAE_City.getCityStatus(loopCity, -1, -1, True))
+
+			popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
+			popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
+			popupInfo.addPopup(iData4)
+
+		# Move unit 2 city
+		else:
+			pCity = gc.getPlayer(iData4).getCity(lCities[iData2][1])
+			pUnit.getGroup().pushMoveToMission(pCity.getX(), pCity.getY())
+			#doGoToNextUnit(pUnit)
+
+# --- end onModNetMessage -----

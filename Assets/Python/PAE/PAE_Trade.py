@@ -271,11 +271,11 @@ def doBuildTradeRoad(pUnit, pCity):
 										if pBuyer.isHuman():
 												sMessage = CyTranslator().getText("TXT_KEY_TRADE_ROUTE_BUILT", (pSeller.getName(), pSeller.getCivilizationShortDescriptionKey(), pCity.getName(), pCity2.getName()))
 												CyInterface().addMessage(iBuyer, True, 10, sMessage, "AS2D_WELOVEKING", 2, "Art/Terrain/Routes/handelsstrasse/button_handelsstrasse.dds", ColorTypes(10), pPlotTradeRoad.getX(), pPlotTradeRoad.getY(), True, True)
-												CvUtil.pyPrint(sMessage)
+												#CvUtil.pyPrint(sMessage)
 										if pSeller.isHuman() and iBuyer != iSeller:
 												sMessage = CyTranslator().getText("TXT_KEY_TRADE_ROUTE_BUILT2", (pCity.getName(), pCity2.getName()))
 												CyInterface().addMessage(iSeller, True, 10, sMessage, "AS2D_WELOVEKING", 2, "Art/Terrain/Routes/handelsstrasse/button_handelsstrasse.dds", ColorTypes(10), pPlotTradeRoad.getX(), pPlotTradeRoad.getY(), True, True)
-												CvUtil.pyPrint(sMessage)
+												#CvUtil.pyPrint(sMessage)
 										if iBuyer != iSeller and iSeller == gc.getGame().getActivePlayer() or iBuyer == gc.getGame().getActivePlayer():
 												CyAudioGame().Play2DSound("AS2D_WELOVEKING")
 
@@ -301,7 +301,7 @@ def doBuildTradeRoad(pUnit, pCity):
 								if pCity.getOwner() == gc.getGame().getActivePlayer():
 										sMessage = CyTranslator().getText("TXT_KEY_TRADE_ROUTE_HANDELSZENTRUM", (pCity.getName(),))
 										CyInterface().addMessage(pCity.getOwner(), True, 10, sMessage, "AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(10), pCity.getX(), pCity.getY(), True, True)
-										CvUtil.pyPrint(sMessage)
+										#CvUtil.pyPrint(sMessage)
 
 
 # Gibt Plot zurueck, auf dem das naechste Handelsstrassen-Stueck entstehen soll bzw. ob die Strasse schon fertig ist. Von Pie.
@@ -1717,7 +1717,7 @@ def doUpdateCitiesWithSpecialBonus(iGameTurn):
 																# Die Stadt % verlangt nicht mehr nach % und hat den Auftrag zurueckgezogen
 																sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_1", (loopCity.getName(), gc.getBonusInfo(eBonus).getDescription()))
 																CyInterface().addMessage(iActivePlayer, True, 10, sMessage, None, 2, None, ColorTypes(13), 0, 0, False, False)
-																CvUtil.pyPrint(sMessage)
+																#CvUtil.pyPrint(sMessage)
 								(loopCity, pIter) = loopPlayer.nextCity(pIter, False)
 
 
@@ -1780,7 +1780,7 @@ def addCityWithSpecialBonus(iGameTurn):
 								# Die Stadt %s1 bietet einen Sonderauftrag an und verlangt nach %s2.
 								sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_2", (pCity.getName(), gc.getBonusInfo(eBonus).getDescription()))
 								CyInterface().addMessage(iActivePlayer, True, 10, sMessage, None, 2, None, ColorTypes(11), 0, 0, False, False)
-								CvUtil.pyPrint(sMessage)
+								#CvUtil.pyPrint(sMessage)
 						break
 				else:
 						iTry += 1
@@ -1804,12 +1804,12 @@ def _doCheckCitySpecialBonus(pUnit, pCity, eBonus):
 						# %s1 konnte einen Sonderauftrag einer Stadt abschließen.
 						sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_3", (pPlayer.getName(),))
 						CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, sMessage, None, 2, None, ColorTypes(13), 0, 0, False, False)
-						CvUtil.pyPrint(sMessage)
+						#CvUtil.pyPrint(sMessage)
 				else:
 						# Ihr konntet einen Spezialauftrag abschließen!
 						sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_4", ("",))
 						CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, sMessage, "AS2D_WELOVEKING", 2, None, ColorTypes(13), 0, 0, False, False)
-						CvUtil.pyPrint(sMessage)
+						#CvUtil.pyPrint(sMessage)
 
 				# Belohnungen
 				lGift = []
@@ -1917,7 +1917,7 @@ def _doCheckCitySpecialBonus(pUnit, pCity, eBonus):
 						if pPlayer.isHuman():
 								# Gratulation! Voller Dankbarkeit wurdet Ihr mit dem Wissen "[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]" belohnt!
 								sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_POPUP_GETTING_TECH_2", (gc.getTechInfo(iTech).getDescription(), ))
-								CvUtil.pyPrint(sMessage)
+								#CvUtil.pyPrint(sMessage)
 								popupInfo = CyPopupInfo()
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 								popupInfo.setText(sMessage)
@@ -1947,7 +1947,7 @@ def _doCheckCitySpecialBonus(pUnit, pCity, eBonus):
 										if pPlayer.isHuman():
 												# Hoch erfreut schließen sich einige abenteuerlustige Einwohner Eurem großzügigen Reich an.
 												sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_5", ("",))
-												CvUtil.pyPrint(sMessage)
+												#CvUtil.pyPrint(sMessage)
 												CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, sMessage, "AS2D_WELOVEKING", 2, None, ColorTypes(13), 0, 0, False, False)
 								else:
 										iNewUnitAIType = UnitAITypes.NO_UNITAI
@@ -1955,7 +1955,7 @@ def _doCheckCitySpecialBonus(pUnit, pCity, eBonus):
 										if pPlayer.isHuman():
 												# Voller Dankbarkeit übergibt Euch die Stadt % einige ihrer Kostbarkeiten.
 												sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_6", (pCity.getName(),))
-												CvUtil.pyPrint(sMessage)
+												#CvUtil.pyPrint(sMessage)
 												CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, sMessage, "AS2D_WELOVEKING", 2, None, ColorTypes(13), 0, 0, False, False)
 								# Create unit
 								pPlayer.initUnit(iNewUnit, pCity.getX(), pCity.getY(), iNewUnitAIType, DirectionTypes.DIRECTION_SOUTH)
@@ -2130,8 +2130,8 @@ def canCreateTradeUnit(pPlayer, pCity):
 		# check Order Queue in dieser Stadt
 		for iOrderCurrentCity in range(pCity.getOrderQueueLength()):
 				pOrder = pCity.getOrderFromQueue(iOrderCurrentCity)
-				if pOrder.eOrderType == OrderTypes.ORDER_TRAIN and pOrder.iData1 in L.LTradeUnits:
-						iAnz += 1
+				if pOrder.eOrderType == OrderTypes.ORDER_TRAIN and pOrder.iData1 in L.LTradeUnits and not pPlayer.isTurnActive():
+						iAnz -= 1
 						break
 
 		if iAnz < getPossibleTradeUnits(pPlayer): return True

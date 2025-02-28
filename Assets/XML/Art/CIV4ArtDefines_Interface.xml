@@ -1460,5 +1460,13 @@
 			<Type>INTERFACE_TRADE_COLLECT_SPY</Type>
 			<Path>Art/Interface/Buttons/Trade/button_trade_collect_spy.dds</Path>
 		</InterfaceArtInfo>
+		<InterfaceArtInfo>
+			<Type>INTERFACE_TRADE_ICON_ANKER</Type>
+			<Path>Art/Interface/Buttons/Trade/icon_anker.dds</Path>
+		</InterfaceArtInfo>
+		<InterfaceArtInfo>
+			<Type>INTERFACE_BUTTON_GO2CITY</Type>
+			<Path>Art/Interface/Buttons/Actions/button_action_go2city.dds</Path>
+		</InterfaceArtInfo>
 	</InterfaceArtInfos>
 </Civ4ArtDefines>

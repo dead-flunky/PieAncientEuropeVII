@@ -442,6 +442,17 @@ class CvEventManager:
 												CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_PAE_CIV_TURN_ACTIVATED", ("",)), None, 2, None, ColorTypes(14), 0, 0, False, False)
 										return 1
 
+# PAE Go To City Mode (geht nur sporadisch, keine Ahnung wieso)
+						#if theKey == int(InputTypes.KB_H):
+						#		iPlayer = gc.getGame().getActivePlayer()
+						#		if gc.getPlayer(iPlayer).isTurnActive():
+						#			iRange = CyMap().plot(px, py).getNumUnits()
+						#			for i in range(iRange):
+						#				unit = CyMap().plot(px, py).getUnit(i)
+						#				if not unit.isNone() and unit.IsSelected() and unit.getOwner() == iPlayer:
+						#						PAE_Unit.onModNetMessage((773, -1, -1, unit.getOwner(), unit.getID()))
+						#						return 1
+
 						CvCameraControls.g_CameraControls.handleInput(theKey)
 
 ## AI AutoPlay ##
@@ -2175,6 +2186,11 @@ class CvEventManager:
 						popupInfo.setText(u"showWonderMovie")
 						popupInfo.addPopup(iData4)
 
+				# Go 2 city button
+				elif iData1 == 773:
+						PAE_Unit.onModNetMessage(argsList)
+
+
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -2828,7 +2844,6 @@ class CvEventManager:
 				# ***TEST***
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pPlayer.getName(),pPlayer.calculateGoldRate())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Gold",pPlayer.getGold())), None, 2, None, ColorTypes(10), 0, 0, False, False)
-
 
 				# TEST PIE
 				#if pPlayer.isHuman():

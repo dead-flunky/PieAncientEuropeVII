@@ -112,65 +112,7 @@
 			<SoundMP/>
 			<Button>Art/Interface/Buttons/Civilizations/button_flag_rome.dds</Button>
 		</TechInfo>
-		<TechInfo>
-			<Type>TECH_MYSTICISM</Type>
-			<Description>TXT_KEY_TECH_MYSTICISM</Description>
-			<Civilopedia>TXT_KEY_TECH_MYSTICISM_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>16</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_ANCIENT</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>8</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>1</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>1</iGridX>
-			<iGridY>3</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs/>
-			<AndPreReqs/>
-			<Quote>TXT_KEY_TECH_MYSTICISM_QUOTE</Quote>
-			<Sound>AS2D_TECH_MYSTICISM</Sound>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_tech_mystik.dds</Button>
-		</TechInfo>
+
 		<TechInfo>
 			<Type>TECH_HUNTING</Type>
 			<Description>TXT_KEY_TECH_HUNTING</Description>
@@ -345,12 +287,12 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_SCHAMANISMUS</Type>
-			<Description>TXT_KEY_TECH_SCHAMANISMUS</Description>
-			<Civilopedia>TXT_KEY_TECH_SCHAMANISMUS_PEDIA</Civilopedia>
+			<Type>TECH_MYSTICISM</Type>
+			<Description>TXT_KEY_TECH_MYSTICISM</Description>
+			<Civilopedia>TXT_KEY_TECH_MYSTICISM_PEDIA</Civilopedia>
 			<Help/>
 			<Strategy/>
-			<Advisor>ADVISOR_RELIGION</Advisor>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iCost>18</iCost>
@@ -367,9 +309,9 @@
 			<iAsset>8</iAsset>
 			<iPower>0</iPower>
 			<bRepeat>0</bRepeat>
-			<bTrade>0</bTrade>
+			<bTrade>1</bTrade>
 			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
+			<bGoodyTech>1</bGoodyTech>
 			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
 			<bMapCentering>0</bMapCentering>
 			<bMapVisible>0</bMapVisible>
@@ -385,7 +327,7 @@
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
 			<iGridX>2</iGridX>
-			<iGridY>3</iGridY>
+			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
 			<TerrainTrades/>
@@ -397,13 +339,13 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MYSTICISM</PrereqTech>
+				<PrereqTech>TECH_HUNTING</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
+			<Quote>TXT_KEY_TECH_MYSTICISM_QUOTE</Quote>
+			<Sound>AS2D_TECH_MYSTICISM</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_schamanismus.dds</Button>
+			<Button>Art/Interface/Buttons/Techs/button_tech_mystik.dds</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_FISHING</Type>
@@ -591,10 +533,10 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_RELIGION_HINDU</Type>
-			<Description>TXT_KEY_TECH_HINDU</Description>
-			<Civilopedia>TXT_KEY_RELIGION_HINDUISM_PEDIA</Civilopedia>
-			<Help>TXT_KEY_MESSAGE_TECH_UNIT_2</Help>
+			<Type>TECH_SCHAMANISMUS</Type>
+			<Description>TXT_KEY_TECH_SCHAMANISMUS</Description>
+			<Civilopedia>TXT_KEY_TECH_SCHAMANISMUS_PEDIA</Civilopedia>
+			<Help/>
 			<Strategy/>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iAIWeight>0</iAIWeight>
@@ -631,75 +573,6 @@
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
 			<iGridX>3</iGridX>
-			<iGridY>2</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_SCHAMANISMUS</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_tech_mystik_hindu.dds</Button>
-		</TechInfo>
-		<TechInfo>
-			<Type>TECH_POLYTHEISM</Type>
-			<Description>TXT_KEY_TECH_POLYTHEISM</Description>
-			<Civilopedia>TXT_KEY_TECH_POLYTHEISM_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>20</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_ANCIENT</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>8</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>3</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -708,17 +581,17 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>3</iFlavor>
+					<iFlavor>2</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_SCHAMANISMUS</PrereqTech>
+				<PrereqTech>TECH_MYSTICISM</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
-			<Quote>TXT_KEY_TECH_POLYTHEISM_QUOTE</Quote>
-			<Sound>AS2D_TECH_POLYTHEISM</Sound>
+			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
 			<SoundMP/>
-			<Button>,Art/Interface/Buttons/TechTree/Polytheism.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,6</Button>
+			<Button>Art/Interface/Buttons/Techs/button_schamanismus.dds</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_BOOTSBAU</Type>
@@ -972,10 +845,10 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_RELIGION_SUMER</Type>
-			<Description>TXT_KEY_TECH_RELIGION_SUMER</Description>
-			<Civilopedia>TXT_KEY_TECH_RELIGION_SUMER_PEDIA</Civilopedia>
-			<Help>TXT_KEY_MESSAGE_TECH_UNIT_2</Help>
+			<Type>TECH_POLYTHEISM</Type>
+			<Description>TXT_KEY_TECH_POLYTHEISM</Description>
+			<Civilopedia>TXT_KEY_TECH_POLYTHEISM_PEDIA</Civilopedia>
+			<Help/>
 			<Strategy/>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iAIWeight>0</iAIWeight>
@@ -994,7 +867,7 @@
 			<iAsset>8</iAsset>
 			<iPower>0</iPower>
 			<bRepeat>0</bRepeat>
-			<bTrade>0</bTrade>
+			<bTrade>1</bTrade>
 			<bDisable>0</bDisable>
 			<bGoodyTech>0</bGoodyTech>
 			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
@@ -1012,102 +885,25 @@
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
 			<iGridX>4</iGridX>
-			<iGridY>3</iGridY>
+			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
 			<TerrainTrades/>
 			<bRiverTrade>0</bRiverTrade>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>4</iFlavor>
+					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_POLYTHEISM</PrereqTech>
+				<PrereqTech>TECH_SCHAMANISMUS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
+			<Quote>TXT_KEY_TECH_POLYTHEISM_QUOTE</Quote>
+			<Sound>AS2D_TECH_POLYTHEISM</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_poly_sumer.dds</Button>
-		</TechInfo>
-		<TechInfo>
-			<Type>TECH_RELIGION_EGYPT</Type>
-			<Description>TXT_KEY_TECH_RELIGION_EGYPT</Description>
-			<Civilopedia>TXT_KEY_RELIGION_EGYPT_PEDIA</Civilopedia>
-			<Help>TXT_KEY_MESSAGE_TECH_UNIT_2</Help>
-			<Strategy/>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>24</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_ANCIENT</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>8</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>0</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>4</iGridX>
-			<iGridY>5</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_POLYTHEISM</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_poly_egypt.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Polytheism.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,6</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_ARCHERY</Type>
@@ -1302,12 +1098,12 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_PRIESTHOOD</Type>
-			<Description>TXT_KEY_TECH_PRIESTHOOD</Description>
-			<Civilopedia>TXT_KEY_TECH_PRIESTHOOD_PEDIA</Civilopedia>
+			<Type>TECH_MOND</Type>
+			<Description>TXT_KEY_TECH_MOND</Description>
+			<Civilopedia>TXT_KEY_TECH_MOND_PEDIA</Civilopedia>
 			<Help/>
 			<Strategy/>
-			<Advisor>ADVISOR_RELIGION</Advisor>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iCost>30</iCost>
@@ -1342,29 +1138,112 @@
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
 			<iGridX>5</iGridX>
-			<iGridY>4</iGridY>
+			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
 			<TerrainTrades/>
 			<bRiverTrade>0</bRiverTrade>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>4</iFlavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>5</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_POLYTHEISM</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
-			<Quote>TXT_KEY_TECH_PRIESTHOOD_QUOTE</Quote>
-			<Sound>AS2D_TECH_PRIESTHOOD</Sound>
+			<Quote>TXT_KEY_PAE_QUOTE_100</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_100</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Civics/civic_hohepriester.dds</Button>
+			<Button>Art/Interface/Buttons/Techs/tech_mond.dds</Button>
+		</TechInfo>
+		<TechInfo>
+			<Type>TECH_LEADERSHIP</Type>
+			<Description>TXT_KEY_TECH_LEADERSHIP</Description>
+			<Civilopedia>TXT_KEY_TECH_LEADERSHIP_PEDIA</Civilopedia>
+			<Help>TXT_KEY_TECH_LEADERSHIP_HELP</Help>
+			<Strategy/>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>30</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_ANCIENT</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>10</iAsset>
+			<iPower>6</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>1</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>5</iGridX>
+			<iGridY>7</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_POLYTHEISM</PrereqTech>
+				<PrereqTech>TECH_ARCHERY</PrereqTech>
+				<PrereqTech>TECH_POTTERY</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_PAE_QUOTE_5</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_5</Sound>
+			<SoundMP/>
+			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_METAL_CASTING</Type>
@@ -1427,7 +1306,6 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_ARCHERY</PrereqTech>
 				<PrereqTech>TECH_POTTERY</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
@@ -1503,12 +1381,12 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_MOND</Type>
-			<Description>TXT_KEY_TECH_MOND</Description>
-			<Civilopedia>TXT_KEY_TECH_MOND_PEDIA</Civilopedia>
+			<Type>TECH_CEREMONIAL</Type>
+			<Description>TXT_KEY_TECH_CEREMONIAL</Description>
+			<Civilopedia>TXT_KEY_TECH_CEREMONIAL_PEDIA</Civilopedia>
 			<Help/>
 			<Strategy/>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iCost>40</iCost>
@@ -1550,24 +1428,29 @@
 			<bRiverTrade>0</bRiverTrade>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>5</iFlavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+				<PrereqTech>TECH_MOND</PrereqTech>
+				<PrereqTech>TECH_LEADERSHIP</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_100</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_100</Sound>
+			<Quote>TXT_KEY_PAE_QUOTE_116</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_116</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_mond.dds</Button>
+			<Button>Art/Interface/Buttons/Techs/button_ceremonial.dds</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_LEADERSHIP</Type>
-			<Description>TXT_KEY_TECH_LEADERSHIP</Description>
-			<Civilopedia>TXT_KEY_TECH_LEADERSHIP_PEDIA</Civilopedia>
-			<Help>TXT_KEY_TECH_LEADERSHIP_HELP</Help>
+			<Type>TECH_STAATENBILDUNG</Type>
+			<Description>TXT_KEY_TECH_STAATENBILDUNG</Description>
+			<Civilopedia>TXT_KEY_TECH_STAATENBILDUNG_PEDIA</Civilopedia>
+			<Help/>
 			<Strategy/>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iAIWeight>0</iAIWeight>
@@ -1583,8 +1466,8 @@
 			<iHealth>0</iHealth>
 			<iHappiness>0</iHappiness>
 			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>10</iAsset>
-			<iPower>6</iPower>
+			<iAsset>8</iAsset>
+			<iPower>0</iPower>
 			<bRepeat>0</bRepeat>
 			<bTrade>1</bTrade>
 			<bDisable>0</bDisable>
@@ -1595,7 +1478,7 @@
 			<bMapTrading>0</bMapTrading>
 			<bTechTrading>0</bTechTrading>
 			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bOpenBordersTrading>1</bOpenBordersTrading>
 			<bDefensivePactTrading>0</bDefensivePactTrading>
 			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
 			<bVassalTrading>0</bVassalTrading>
@@ -1607,48 +1490,37 @@
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
-			<TerrainTrades/>
+			<TerrainTrades>
+				<TerrainTrade>
+					<TerrainType>TERRAIN_RIVER</TerrainType>
+					<bTerrainTrade>1</bTerrainTrade>
+				</TerrainTrade>
+				<TerrainTrade>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<bTerrainTrade>1</bTerrainTrade>
+				</TerrainTrade>
+			</TerrainTrades>
 			<bRiverTrade>0</bRiverTrade>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-				<Flavor>
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>10</iFlavor>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>10</iFlavor>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
-				<PrereqTech>TECH_ARCHERY</PrereqTech>
-				<PrereqTech>TECH_METAL_CASTING</PrereqTech>
+				<PrereqTech>TECH_LEADERSHIP</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_5</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_5</Sound>
+			<AndPreReqs>
+				<PrereqTech>TECH_METAL_SMELTING</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_PAE_QUOTE_102</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_102</Sound>
 			<SoundMP/>
-			<Button>,Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10</Button>
+			<Button>Art/Interface/Buttons/Techs/button_tech_staaten.dds</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_METAL_SMELTING</Type>
@@ -1778,9 +1650,9 @@
 		</TechInfo>
 
 		<TechInfo>
-			<Type>TECH_CEREMONIAL</Type>
-			<Description>TXT_KEY_TECH_CEREMONIAL</Description>
-			<Civilopedia>TXT_KEY_TECH_CEREMONIAL_PEDIA</Civilopedia>
+			<Type>TECH_PRIESTHOOD</Type>
+			<Description>TXT_KEY_TECH_PRIESTHOOD</Description>
+			<Civilopedia>TXT_KEY_TECH_PRIESTHOOD_PEDIA</Civilopedia>
 			<Help/>
 			<Strategy/>
 			<Advisor>ADVISOR_RELIGION</Advisor>
@@ -1825,101 +1697,24 @@
 			<bRiverTrade>0</bRiverTrade>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>6</iFlavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>6</iFlavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_MOND</PrereqTech>
-				<PrereqTech>TECH_LEADERSHIP</PrereqTech>
+				<PrereqTech>TECH_CEREMONIAL</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
-				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+				<PrereqTech>TECH_POLYTHEISM</PrereqTech>
 			</AndPreReqs>
-			<Quote>TXT_KEY_PAE_QUOTE_116</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_116</Sound>
+			<Quote>TXT_KEY_TECH_PRIESTHOOD_QUOTE</Quote>
+			<Sound>AS2D_TECH_PRIESTHOOD</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_ceremonial.dds</Button>
-		</TechInfo>
-		<TechInfo>
-			<Type>TECH_STAATENBILDUNG</Type>
-			<Description>TXT_KEY_TECH_STAATENBILDUNG</Description>
-			<Civilopedia>TXT_KEY_TECH_STAATENBILDUNG_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>60</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_ANCIENT</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>8</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>1</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>1</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>7</iGridX>
-			<iGridY>7</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades>
-				<TerrainTrade>
-					<TerrainType>TERRAIN_RIVER</TerrainType>
-					<bTerrainTrade>1</bTerrainTrade>
-				</TerrainTrade>
-				<TerrainTrade>
-					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
-					<bTerrainTrade>1</bTerrainTrade>
-				</TerrainTrade>
-			</TerrainTrades>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>6</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>6</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_LEADERSHIP</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_METAL_SMELTING</PrereqTech>
-			</AndPreReqs>
-			<Quote>TXT_KEY_PAE_QUOTE_102</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_102</Sound>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_tech_staaten.dds</Button>
+			<Button>Art/Interface/Buttons/Civics/civic_hohepriester.dds</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_THE_WHEEL</Type>
@@ -2049,6 +1844,75 @@
 		</TechInfo>
 
 		<TechInfo>
+			<Type>TECH_RELIGION_SUMER</Type>
+			<Description>TXT_KEY_TECH_RELIGION_SUMER</Description>
+			<Civilopedia>TXT_KEY_TECH_RELIGION_SUMER_PEDIA</Civilopedia>
+			<Help>TXT_KEY_MESSAGE_TECH_UNIT_2</Help>
+			<Strategy/>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>80</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_ANCIENT</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>8</iAsset>
+			<iPower>0</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>0</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>8</iGridX>
+			<iGridY>1</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/button_poly_sumer.dds</Button>
+		</TechInfo>
+		<TechInfo>
 			<Type>TECH_ASTRONOMIE</Type>
 			<Description>TXT_KEY_TECH_ASTRONOMIE</Description>
 			<Civilopedia>TXT_KEY_TECH_ASTRONOMIE_PEDIA</Civilopedia>
@@ -2101,7 +1965,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_CEREMONIAL</PrereqTech>
+				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_MOND</PrereqTech>
@@ -2110,6 +1974,75 @@
 			<Sound>AS2D_TECH_PAE_QUOTE_8</Sound>
 			<SoundMP/>
 			<Button>,Art/Interface/Buttons/TechTree/Astronomy.dds,Art/Interface/Buttons/TechTree_Atlas.dds,7,1</Button>
+		</TechInfo>
+		<TechInfo>
+			<Type>TECH_RELIGION_EGYPT</Type>
+			<Description>TXT_KEY_TECH_RELIGION_EGYPT</Description>
+			<Civilopedia>TXT_KEY_RELIGION_EGYPT_PEDIA</Civilopedia>
+			<Help>TXT_KEY_MESSAGE_TECH_UNIT_2</Help>
+			<Strategy/>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>80</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_ANCIENT</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>8</iAsset>
+			<iPower>0</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>0</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>8</iGridX>
+			<iGridY>5</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_PRIESTHOOD</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/button_poly_egypt.dds</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_COLONIZATION</Type>
@@ -2189,6 +2122,7 @@
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_STAATENBILDUNG</PrereqTech>
+				<PrereqTech>TECH_THE_WHEEL</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<Quote>TXT_KEY_PAE_QUOTE_27</Quote>
@@ -2640,77 +2574,6 @@
 			<SoundMP/>
 			<Button>,Art/Interface/Buttons/Builds/BuildFarm.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,3,7</Button>
 		</TechInfo>
-		<TechInfo>
-			<Type>TECH_MINING</Type>
-			<Description>TXT_KEY_TECH_MINING</Description>
-			<Civilopedia>TXT_KEY_TECH_MINING_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>100</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_ANCIENT</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>16</iAsset>
-			<iPower>2</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>1</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>10</iGridX>
-			<iGridY>10</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_KULTIVIERUNG</PrereqTech>
-			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_MINING_QUOTE</Quote>
-			<Sound>AS2D_TECH_MINING</Sound>
-			<SoundMP/>
-			<Button>,Art/Interface/Buttons/TechTree/Mining.dds,Art/Interface/Buttons/TechTree_Atlas.dds,8,5</Button>
-		</TechInfo>
 
 		<TechInfo>
 			<Type>TECH_ZAHLENSYSTEME</Type>
@@ -2844,6 +2707,214 @@
 			<Button>Art/Interface/Buttons/Techs/tech_fruchtbarkeit.dds</Button>
 		</TechInfo>
 		<TechInfo>
+			<Type>TECH_MINING</Type>
+			<Description>TXT_KEY_TECH_MINING</Description>
+			<Civilopedia>TXT_KEY_TECH_MINING_PEDIA</Civilopedia>
+			<Help/>
+			<Strategy/>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_ANCIENT</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>16</iAsset>
+			<iPower>2</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>1</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>11</iGridX>
+			<iGridY>10</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_KULTIVIERUNG</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs>
+				<PrereqTech>TECH_METAL_SMELTING</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_TECH_MINING_QUOTE</Quote>
+			<Sound>AS2D_TECH_MINING</Sound>
+			<SoundMP/>
+			<Button>,Art/Interface/Buttons/TechTree/Mining.dds,Art/Interface/Buttons/TechTree_Atlas.dds,8,5</Button>
+		</TechInfo>
+
+		<TechInfo>
+			<Type>TECH_GEOMETRIE</Type>
+			<Description>TXT_KEY_TECH_GEOMETRIE</Description>
+			<Civilopedia>TXT_KEY_TECH_GEOMETRIE_PEDIA</Civilopedia>
+			<Help/>
+			<Strategy/>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_ANCIENT</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>8</iAsset>
+			<iPower>0</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>1</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>12</iGridX>
+			<iGridY>2</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_ZAHLENSYSTEME</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_PAE_QUOTE_48</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_48</Sound>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/button_tech_geometrie.dds</Button>
+		</TechInfo>
+		<TechInfo>
+			<Type>TECH_RELIGION_HINDU</Type>
+			<Description>TXT_KEY_TECH_HINDU</Description>
+			<Civilopedia>TXT_KEY_RELIGION_HINDUISM_PEDIA</Civilopedia>
+			<Help>TXT_KEY_MESSAGE_TECH_UNIT_2</Help>
+			<Strategy/>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_ANCIENT</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>8</iAsset>
+			<iPower>0</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>0</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>12</iGridX>
+			<iGridY>5</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_FRUCHTBARKEIT</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs>
+				<PrereqTech>TECH_SCHAMANISMUS</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_PAE_QUOTE_32</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_32</Sound>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/button_tech_mystik_hindu.dds</Button>
+		</TechInfo>
+		<TechInfo>
 			<Type>TECH_BRONZE_WORKING</Type>
 			<Description>TXT_KEY_TECH_BRONZE_WORKING</Description>
 			<Civilopedia>TXT_KEY_TECH_BRONZE_WORKING_PEDIA</Civilopedia>
@@ -2852,7 +2923,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>300</iCost>
+			<iCost>200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<Era>ERA_BRONZE</Era>
@@ -2883,7 +2954,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>11</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -2964,7 +3035,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>11</iGridX>
+			<iGridX>12</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -2979,71 +3050,6 @@
 			<Button>Art/Interface/Buttons/Techs/button_tech_info.dds</Button>
 		</TechInfo>
 
-		<TechInfo>
-			<Type>TECH_GEOMETRIE</Type>
-			<Description>TXT_KEY_TECH_GEOMETRIE</Description>
-			<Civilopedia>TXT_KEY_TECH_GEOMETRIE_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_GROWTH</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>120</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_ANCIENT</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>8</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>1</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>12</iGridX>
-			<iGridY>2</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_ZAHLENSYSTEME</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_48</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_48</Sound>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_tech_geometrie.dds</Button>
-		</TechInfo>
 		<TechInfo>
 			<Type>TECH_WARENHANDEL</Type>
 			<Description>TXT_KEY_TECH_WARENHANDEL</Description>
@@ -3084,7 +3090,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>12</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3155,7 +3161,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>12</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3226,7 +3232,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>12</iGridX>
+			<iGridX>13</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3288,7 +3294,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>13</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3351,7 +3357,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>13</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3414,7 +3420,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>13</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3485,7 +3491,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>13</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3546,7 +3552,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>13</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3607,7 +3613,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>13</iGridX>
+			<iGridX>14</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3674,7 +3680,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>14</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3743,7 +3749,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>14</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3804,7 +3810,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>14</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3870,7 +3876,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>14</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -3941,7 +3947,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>14</iGridX>
+			<iGridX>15</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4005,7 +4011,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>15</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4092,7 +4098,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>15</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4179,7 +4185,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>15</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4240,7 +4246,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>15</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4301,7 +4307,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>15</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4362,7 +4368,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>15</iGridX>
+			<iGridX>16</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4426,7 +4432,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>16</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4495,7 +4501,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>16</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4580,7 +4586,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>16</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4641,7 +4647,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>16</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4726,7 +4732,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>16</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4812,7 +4818,7 @@
 			<bIrrigation>1</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>16</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4885,7 +4891,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>16</iGridX>
+			<iGridX>17</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -4949,7 +4955,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>17</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5018,7 +5024,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>17</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5083,7 +5089,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>17</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5152,7 +5158,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>17</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5241,7 +5247,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>17</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5306,7 +5312,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>17</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5378,7 +5384,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>17</iGridX>
+			<iGridX>18</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5442,7 +5448,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>18</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5511,7 +5517,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>18</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5542,7 +5548,7 @@
 			<Quote>TXT_KEY_PAE_QUOTE_56</Quote>
 			<Sound>AS2D_TECH_PAE_QUOTE_56</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_gottesherrschaft.dds</Button>
+			<Button>,Art/Interface/Buttons/TechTree/Monotheism.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,11</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_TAUBENPOST</Type>
@@ -5584,7 +5590,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>18</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible>
@@ -5654,7 +5660,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>18</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5715,7 +5721,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>18</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5778,7 +5784,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>18</iGridX>
+			<iGridX>19</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5802,6 +5808,67 @@
 			<Button>Art/Interface/Buttons/Formations/button_form_closed.dds</Button>
 		</TechInfo>
 
+		<TechInfo>
+			<Type>TECH_MONOTHEISM</Type>
+			<Description>TXT_KEY_TECH_MONOTHEISM</Description>
+			<Civilopedia>TXT_KEY_TECH_MONOTHEISM_PEDIA</Civilopedia>
+			<Help/>
+			<Strategy/>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>800</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_IRON</Era>
+			<FirstFreeUnitClass>UNITCLASS_PROPHET</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>24</iAsset>
+			<iPower>0</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>20</iGridX>
+			<iGridY>3</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>1</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_THEOKRATIE</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_TECH_MONOTHEISM_QUOTE</Quote>
+			<Sound>AS2D_TECH_MONOTHEISM</Sound>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/button_tech_monotheism.dds</Button>
+		</TechInfo>
 		<TechInfo>
 			<Type>TECH_IRON_WORKING</Type>
 			<Description>TXT_KEY_TECH_IRON_WORKING</Description>
@@ -5842,7 +5909,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>19</iGridX>
+			<iGridX>20</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5930,7 +5997,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>19</iGridX>
+			<iGridX>20</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -5985,7 +6052,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>20</iGridX>
+			<iGridX>21</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6070,7 +6137,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>20</iGridX>
+			<iGridX>21</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6135,7 +6202,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>20</iGridX>
+			<iGridX>21</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6220,7 +6287,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>20</iGridX>
+			<iGridX>21</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6310,7 +6377,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>21</iGridX>
+			<iGridX>22</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6401,7 +6468,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>21</iGridX>
+			<iGridX>22</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6486,7 +6553,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>21</iGridX>
+			<iGridX>22</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6567,7 +6634,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>21</iGridX>
+			<iGridX>22</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6598,69 +6665,6 @@
 			<Button>Art/Interface/Buttons/Techs/button_tech_handelsschiffe.dds</Button>
 		</TechInfo>
 
-		<TechInfo>
-			<Type>TECH_MONOTHEISM</Type>
-			<Description>TXT_KEY_TECH_MONOTHEISM</Description>
-			<Civilopedia>TXT_KEY_TECH_MONOTHEISM_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>1000</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_IRON</Era>
-			<FirstFreeUnitClass>UNITCLASS_PROPHET</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>24</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>22</iGridX>
-			<iGridY>2</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>1</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_ALPHABET</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_THEOKRATIE</PrereqTech>
-			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_MONOTHEISM_QUOTE</Quote>
-			<Sound>AS2D_TECH_MONOTHEISM</Sound>
-			<SoundMP/>
-			<Button>,Art/Interface/Buttons/TechTree/Monotheism.dds,Art/Interface/Buttons/TechTree_Atlas.dds,2,11</Button>
-		</TechInfo>
 		<TechInfo>
 			<Type>TECH_GRAMMATIK</Type>
 			<Description>TXT_KEY_TECH_GRAMMATIK</Description>
@@ -6701,7 +6705,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>22</iGridX>
+			<iGridX>23</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6766,7 +6770,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>22</iGridX>
+			<iGridX>23</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6836,7 +6840,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>22</iGridX>
+			<iGridX>23</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6897,7 +6901,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>22</iGridX>
+			<iGridX>23</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -6958,7 +6962,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>22</iGridX>
+			<iGridX>23</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves>
 				<DomainExtraMove>
@@ -7030,7 +7034,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>23</iGridX>
+			<iGridX>24</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7091,7 +7095,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>23</iGridX>
+			<iGridX>24</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7164,7 +7168,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>23</iGridX>
+			<iGridX>24</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7229,7 +7233,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>23</iGridX>
+			<iGridX>24</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7290,7 +7294,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>23</iGridX>
+			<iGridX>24</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7345,7 +7349,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>24</iGridX>
+			<iGridX>25</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7431,7 +7435,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>24</iGridX>
+			<iGridX>25</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7518,7 +7522,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>24</iGridX>
+			<iGridX>25</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7603,7 +7607,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>24</iGridX>
+			<iGridX>25</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7686,7 +7690,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>24</iGridX>
+			<iGridX>25</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7753,7 +7757,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>24</iGridX>
+			<iGridX>25</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7839,7 +7843,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>25</iGridX>
+			<iGridX>26</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7906,7 +7910,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>25</iGridX>
+			<iGridX>26</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -7991,7 +7995,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>25</iGridX>
+			<iGridX>26</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8068,7 +8072,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>25</iGridX>
+			<iGridX>26</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8153,7 +8157,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>25</iGridX>
+			<iGridX>26</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8238,7 +8242,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>25</iGridX>
+			<iGridX>26</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8323,7 +8327,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>25</iGridX>
+			<iGridX>26</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8389,7 +8393,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>26</iGridX>
+			<iGridX>27</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8454,7 +8458,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>26</iGridX>
+			<iGridX>27</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8539,7 +8543,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>26</iGridX>
+			<iGridX>27</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8626,7 +8630,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>26</iGridX>
+			<iGridX>27</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8691,7 +8695,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>26</iGridX>
+			<iGridX>27</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8779,7 +8783,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>26</iGridX>
+			<iGridX>27</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8868,7 +8872,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>26</iGridX>
+			<iGridX>27</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -8954,7 +8958,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>27</iGridX>
+			<iGridX>28</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9039,7 +9043,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>27</iGridX>
+			<iGridX>28</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9126,7 +9130,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>27</iGridX>
+			<iGridX>28</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9213,7 +9217,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>27</iGridX>
+			<iGridX>28</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9282,7 +9286,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>27</iGridX>
+			<iGridX>28</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9369,7 +9373,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>27</iGridX>
+			<iGridX>28</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9455,7 +9459,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>28</iGridX>
+			<iGridX>29</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9540,7 +9544,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>28</iGridX>
+			<iGridX>29</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9625,7 +9629,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>28</iGridX>
+			<iGridX>29</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9712,7 +9716,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>28</iGridX>
+			<iGridX>29</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9776,7 +9780,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>28</iGridX>
+			<iGridX>29</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9842,7 +9846,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>28</iGridX>
+			<iGridX>29</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9904,7 +9908,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>29</iGridX>
+			<iGridX>30</iGridX>
 			<iGridY>2</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -9981,7 +9985,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>29</iGridX>
+			<iGridX>30</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10064,7 +10068,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>29</iGridX>
+			<iGridX>30</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10132,7 +10136,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>29</iGridX>
+			<iGridX>30</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10225,7 +10229,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>29</iGridX>
+			<iGridX>30</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10314,7 +10318,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>29</iGridX>
+			<iGridX>30</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10378,7 +10382,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>30</iGridX>
+			<iGridX>31</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10455,7 +10459,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>30</iGridX>
+			<iGridX>31</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10544,7 +10548,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>30</iGridX>
+			<iGridX>31</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10611,7 +10615,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>30</iGridX>
+			<iGridX>31</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10687,7 +10691,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>30</iGridX>
+			<iGridX>31</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10773,7 +10777,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>30</iGridX>
+			<iGridX>31</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10828,7 +10832,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>31</iGridX>
+			<iGridX>32</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -10905,7 +10909,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>31</iGridX>
+			<iGridX>32</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible>
@@ -10998,7 +11002,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>31</iGridX>
+			<iGridX>32</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11069,7 +11073,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>31</iGridX>
+			<iGridX>32</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11143,7 +11147,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>31</iGridX>
+			<iGridX>32</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11216,7 +11220,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>32</iGridX>
+			<iGridX>33</iGridX>
 			<iGridY>2</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11281,7 +11285,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>32</iGridX>
+			<iGridX>33</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11342,7 +11346,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>32</iGridX>
+			<iGridX>33</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11403,7 +11407,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>32</iGridX>
+			<iGridX>33</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11464,7 +11468,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>32</iGridX>
+			<iGridX>33</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11551,7 +11555,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>32</iGridX>
+			<iGridX>33</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11620,7 +11624,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>33</iGridX>
+			<iGridX>34</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11685,7 +11689,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>33</iGridX>
+			<iGridX>34</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11750,7 +11754,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>33</iGridX>
+			<iGridX>34</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11811,7 +11815,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>33</iGridX>
+			<iGridX>34</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11903,7 +11907,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>33</iGridX>
+			<iGridX>34</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -11977,7 +11981,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>33</iGridX>
+			<iGridX>34</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12045,7 +12049,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>34</iGridX>
+			<iGridX>35</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12110,7 +12114,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>34</iGridX>
+			<iGridX>35</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12171,7 +12175,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>34</iGridX>
+			<iGridX>35</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12238,7 +12242,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>34</iGridX>
+			<iGridX>35</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12302,7 +12306,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>34</iGridX>
+			<iGridX>35</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12366,7 +12370,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>35</iGridX>
+			<iGridX>36</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12453,7 +12457,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>35</iGridX>
+			<iGridX>36</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12538,7 +12542,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>35</iGridX>
+			<iGridX>36</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12603,7 +12607,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>35</iGridX>
+			<iGridX>36</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12672,7 +12676,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>35</iGridX>
+			<iGridX>36</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12735,7 +12739,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>35</iGridX>
+			<iGridX>36</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12790,7 +12794,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>36</iGridX>
+			<iGridX>37</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12854,7 +12858,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>36</iGridX>
+			<iGridX>37</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12925,7 +12929,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>36</iGridX>
+			<iGridX>37</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -12990,7 +12994,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>36</iGridX>
+			<iGridX>37</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13051,7 +13055,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>36</iGridX>
+			<iGridX>37</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13115,7 +13119,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>37</iGridX>
+			<iGridX>38</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13178,7 +13182,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>37</iGridX>
+			<iGridX>38</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13247,7 +13251,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>38</iGridX>
+			<iGridX>39</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13312,7 +13316,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>38</iGridX>
+			<iGridX>39</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13382,7 +13386,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>38</iGridX>
+			<iGridX>39</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13451,7 +13455,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>38</iGridX>
+			<iGridX>39</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13513,7 +13517,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>39</iGridX>
+			<iGridX>40</iGridX>
 			<iGridY>2</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13576,7 +13580,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>39</iGridX>
+			<iGridX>40</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13637,7 +13641,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>39</iGridX>
+			<iGridX>40</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13700,7 +13704,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>39</iGridX>
+			<iGridX>40</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13761,7 +13765,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>39</iGridX>
+			<iGridX>40</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13830,7 +13834,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>40</iGridX>
+			<iGridX>41</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13891,7 +13895,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>40</iGridX>
+			<iGridX>41</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -13957,7 +13961,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>40</iGridX>
+			<iGridX>41</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14020,7 +14024,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>40</iGridX>
+			<iGridX>41</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14088,7 +14092,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>40</iGridX>
+			<iGridX>41</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14150,7 +14154,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>40</iGridX>
+			<iGridX>41</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14212,7 +14216,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>41</iGridX>
+			<iGridX>42</iGridX>
 			<iGridY>2</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14280,7 +14284,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>41</iGridX>
+			<iGridX>42</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14341,7 +14345,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>41</iGridX>
+			<iGridX>42</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14405,7 +14409,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>41</iGridX>
+			<iGridX>42</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14468,7 +14472,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>41</iGridX>
+			<iGridX>42</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14559,7 +14563,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>41</iGridX>
+			<iGridX>42</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14621,7 +14625,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>42</iGridX>
+			<iGridX>43</iGridX>
 			<iGridY>2</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14686,7 +14690,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>42</iGridX>
+			<iGridX>43</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14755,7 +14759,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>42</iGridX>
+			<iGridX>43</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14828,7 +14832,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>43</iGridX>
+			<iGridX>44</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14895,7 +14899,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>43</iGridX>
+			<iGridX>44</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -14960,7 +14964,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>43</iGridX>
+			<iGridX>44</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15032,7 +15036,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>43</iGridX>
+			<iGridX>44</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15094,7 +15098,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>43</iGridX>
+			<iGridX>44</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15159,7 +15163,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>43</iGridX>
+			<iGridX>44</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15214,7 +15218,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>44</iGridX>
+			<iGridX>45</iGridX>
 			<iGridY>2</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15285,7 +15289,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>44</iGridX>
+			<iGridX>45</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15364,7 +15368,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>44</iGridX>
+			<iGridX>45</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15425,7 +15429,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>44</iGridX>
+			<iGridX>45</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15486,7 +15490,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>44</iGridX>
+			<iGridX>45</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15551,7 +15555,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>45</iGridX>
+			<iGridX>46</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15614,7 +15618,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>45</iGridX>
+			<iGridX>46</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15676,7 +15680,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>45</iGridX>
+			<iGridX>46</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15743,7 +15747,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>45</iGridX>
+			<iGridX>46</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15807,7 +15811,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>45</iGridX>
+			<iGridX>46</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15870,7 +15874,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>46</iGridX>
+			<iGridX>47</iGridX>
 			<iGridY>1</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -15935,7 +15939,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>46</iGridX>
+			<iGridX>47</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16004,7 +16008,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>46</iGridX>
+			<iGridX>47</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16068,7 +16072,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>47</iGridX>
+			<iGridX>48</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16129,7 +16133,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>47</iGridX>
+			<iGridX>48</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16214,7 +16218,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>47</iGridX>
+			<iGridX>48</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16275,7 +16279,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>47</iGridX>
+			<iGridX>48</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16330,7 +16334,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>48</iGridX>
+			<iGridX>49</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16395,7 +16399,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>48</iGridX>
+			<iGridX>49</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16456,7 +16460,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>48</iGridX>
+			<iGridX>49</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16522,7 +16526,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>48</iGridX>
+			<iGridX>49</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16588,7 +16592,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>49</iGridX>
+			<iGridX>50</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16649,7 +16653,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>49</iGridX>
+			<iGridX>50</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16719,7 +16723,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>49</iGridX>
+			<iGridX>50</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16780,7 +16784,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>49</iGridX>
+			<iGridX>50</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16841,7 +16845,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>49</iGridX>
+			<iGridX>50</iGridX>
 			<iGridY>12</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16905,7 +16909,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>50</iGridX>
+			<iGridX>51</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -16974,7 +16978,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>50</iGridX>
+			<iGridX>51</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17039,7 +17043,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>50</iGridX>
+			<iGridX>51</iGridX>
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17100,7 +17104,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>50</iGridX>
+			<iGridX>51</iGridX>
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17165,7 +17169,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>51</iGridX>
+			<iGridX>52</iGridX>
 			<iGridY>4</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17226,7 +17230,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>51</iGridX>
+			<iGridX>52</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17293,7 +17297,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>51</iGridX>
+			<iGridX>52</iGridX>
 			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17355,7 +17359,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>52</iGridX>
+			<iGridX>53</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17417,7 +17421,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>53</iGridX>
+			<iGridX>54</iGridX>
 			<iGridY>3</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17480,7 +17484,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>53</iGridX>
+			<iGridX>54</iGridX>
 			<iGridY>5</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17543,7 +17547,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>53</iGridX>
+			<iGridX>54</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17606,7 +17610,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>53</iGridX>
+			<iGridX>54</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17661,7 +17665,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>54</iGridX>
+			<iGridX>55</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17727,7 +17731,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>55</iGridX>
+			<iGridX>56</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17789,7 +17793,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>56</iGridX>
+			<iGridX>57</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17867,7 +17871,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>57</iGridX>
+			<iGridX>58</iGridX>
 			<iGridY>6</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17932,7 +17936,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>57</iGridX>
+			<iGridX>58</iGridX>
 			<iGridY>8</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -17996,7 +18000,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>58</iGridX>
+			<iGridX>59</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -18058,7 +18062,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>58</iGridX>
+			<iGridX>59</iGridX>
 			<iGridY>9</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -18120,7 +18124,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>59</iGridX>
+			<iGridX>60</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -18176,7 +18180,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>59</iGridX>
+			<iGridX>60</iGridX>
 			<iGridY>14</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
@@ -18231,7 +18235,7 @@
 			<bIrrigation>0</bIrrigation>
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
-			<iGridX>60</iGridX>
+			<iGridX>61</iGridX>
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>

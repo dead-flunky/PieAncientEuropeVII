@@ -1684,7 +1684,7 @@ class CvGameUtils:
 								# if iOwner != 0: return True
 								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "TradeUnit: " + pOwner.getName() + u"(%d)" % pOwner.getGold(), None, 2, None, ColorTypes(5), 0, 0, False, False)
 
-								if pOwner.getUnitClassCount(pUnit.getUnitClassType()) > 9:
+								if pOwner.getUnitClassCount(pUnit.getUnitClassType()) > PAE_Trade.getMaxTradeUnits():
 										pOwner.changeGold(25)
 										pUnit.kill(True, -1)
 										return True
@@ -3470,7 +3470,9 @@ class CvGameUtils:
 						# Gladiator: Gladiatorenschule bauen
 						elif iData1 == 772:
 								return CyTranslator().getText("TXT_KEY_BUILD_GLADIATORENSCHULE", ())
-
+						# Go to city
+						elif iData1 == 773:
+								return CyTranslator().getText("TXT_KEY_BUTTON_GO2CITY", ())
 
 
 						# CITY_TAB replacements

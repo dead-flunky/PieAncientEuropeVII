@@ -150,6 +150,10 @@
 					<BuildingType>BUILDING_QANAT</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
 					<BuildingType>BUILDING_FORT4</BuildingType>
 				</Building>
@@ -526,6 +530,14 @@
 					<BuildingType>BUILDING_THOLOS</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_COURTHOUSE_GREEK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_GREEK</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_AMPHITHEATER</BuildingType>
 				</Building>
@@ -829,6 +841,10 @@
 					<BuildingType>BUILDING_QANAT</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
 					<BuildingType>BUILDING_FORT4</BuildingType>
 				</Building>
@@ -1055,6 +1071,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_JURTE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
@@ -1308,7 +1328,7 @@
 					<BuildingType>BUILDING_LEVEE2</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_THING</BuildingType>
 				</Building>
 				<Building>
@@ -1921,7 +1941,7 @@
 					<BuildingType>BUILDING_LEVEE2</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_THING</BuildingType>
 				</Building>
 				<Building>
@@ -2198,7 +2218,7 @@
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_THING</BuildingType>
 				</Building>
 				<Building>
@@ -2484,6 +2504,10 @@
 					<BuildingType>BUILDING_MASTABA</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
 					<BuildingType>BUILDING_HEROIC_EPIC_EGYPT</BuildingType>
 				</Building>
@@ -2767,6 +2791,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_STEINGRAB</BuildingClassType>
 					<BuildingType>BUILDING_TUMULUS</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_ROME</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_BADEHAUS</BuildingClassType>
@@ -3110,7 +3138,7 @@
 					<BuildingType>BUILDING_LEVEE2</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_THING</BuildingType>
 				</Building>
 				<Building>
@@ -3468,7 +3496,7 @@
 					<BuildingType>BUILDING_LEVEE2</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_THING</BuildingType>
 				</Building>
 				<Building>
@@ -3924,6 +3952,14 @@
 					<BuildingType>BUILDING_THOLOS</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_COURTHOUSE_GREEK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_GREEK</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_AMPHITHEATER</BuildingType>
 				</Building>
@@ -4235,6 +4271,10 @@
 					<BuildingType>BUILDING_HITTI_CODE</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_STONEHENGE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -4496,6 +4536,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_JURTE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_HIGH_WALLS</BuildingClassType>
@@ -5805,6 +5849,10 @@
 					<BuildingType>BUILDING_JURTE</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
 					<BuildingType>BUILDING_FORT2</BuildingType>
 				</Building>
@@ -6696,6 +6744,10 @@
 					<BuildingType>BUILDING_MASTABA</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
 					<BuildingType>BUILDING_FORT3</BuildingType>
 				</Building>
@@ -6952,6 +7004,10 @@
 					<BuildingType>BUILDING_JURTE</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
 					<BuildingType>BUILDING_FORT2</BuildingType>
 				</Building>
@@ -7198,6 +7254,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_JURTE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_HIGH_WALLS</BuildingClassType>
@@ -7473,6 +7533,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_STEINGRAB</BuildingClassType>
 					<BuildingType>BUILDING_KOENIGSGRAB</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LEVEE</BuildingClassType>
@@ -8078,6 +8142,10 @@
 					<BuildingType>BUILDING_TUMULUS</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_ROME</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_BADEHAUS</BuildingClassType>
 					<BuildingType>BUILDING_THERME</BuildingType>
 				</Building>
@@ -8476,6 +8544,10 @@
 					<BuildingType>BUILDING_JURTE</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_HIGH_WALLS</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -8863,6 +8935,10 @@
 					<BuildingType>BUILDING_MILITARY_ACADEMY_SPARTA</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_SPARTA</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_AMPHITHEATER</BuildingType>
 				</Building>
@@ -9157,6 +9233,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_STEINGRAB</BuildingClassType>
 					<BuildingType>BUILDING_KOENIGSGRAB</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LEVEE</BuildingClassType>
@@ -9522,6 +9602,14 @@
 					<BuildingType>BUILDING_THOLOS</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingType>BUILDING_COURTHOUSE_GREEK</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_GREEK</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>BUILDING_AMPHITHEATER</BuildingType>
 				</Building>
@@ -9785,7 +9873,7 @@
 				<City>TXT_KEY_CITY_NAME_GERMANIA_50</City>
 				<City>TXT_KEY_CITY_NAME_GERMANIA_51</City>
 				<City>TXT_KEY_CITY_NAME_GERMANIA_52</City>
-				<City>TXT_KEY_CITY_NAME_GERMANIA_53</City>        
+				<City>TXT_KEY_CITY_NAME_GERMANIA_53</City>
 				<City>TXT_KEY_CITY_NAME_SAXON</City>
 				<City>TXT_KEY_CITY_NAME_ANGLE</City>
 				<City>TXT_KEY_CITY_NAME_BULGAR</City>
@@ -9864,7 +9952,7 @@
 					<BuildingType>BUILDING_LEVEE2</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_THING</BuildingType>
 				</Building>
 				<Building>
@@ -10136,6 +10224,10 @@
 					<BuildingType>BUILDING_JURTE</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_BADEHAUS</BuildingClassType>
 					<BuildingType>BUILDING_SAUNA</BuildingType>
 				</Building>
@@ -10154,7 +10246,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ARENA</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>        
+				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
@@ -10658,6 +10750,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType>
 					<BuildingType>BUILDING_JURTE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_BADEHAUS</BuildingClassType>
