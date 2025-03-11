@@ -730,12 +730,11 @@ def freeSlaves(pCity, pPlayer):
 								[gc.getInfoTypeForString('UNIT_GERMANNE'), UnitAITypes.UNITAI_ATTACK],
 								[gc.getInfoTypeForString('UNIT_UNSTERBLICH'), UnitAITypes.UNITAI_ATTACK],
 								[gc.getInfoTypeForString('UNIT_BALEAREN'), UnitAITypes.UNITAI_ATTACK],
-								[gc.getInfoTypeForString('UNIT_SOLDURII'), UnitAITypes.UNITAI_ATTACK]
+								[gc.getInfoTypeForString('UNIT_SWORDSMAN_LATENE'), UnitAITypes.UNITAI_ATTACK]
 						]
 
 				if pPlayer.getCurrentEra() > 3:
 						lUnits.append([gc.getInfoTypeForString('UNIT_WURFAXT'), UnitAITypes.UNITAI_ATTACK])
-						lUnits.append([gc.getInfoTypeForString('UNIT_SWORDSMAN'), UnitAITypes.UNITAI_ATTACK])
 						lUnits.append([gc.getInfoTypeForString('UNIT_WARBAND'), UnitAITypes.UNITAI_ATTACK])
 						lUnits.append([gc.getInfoTypeForString('UNIT_FOEDERATI'), UnitAITypes.UNITAI_ATTACK])
 

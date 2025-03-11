@@ -715,7 +715,6 @@ class CvGameUtils:
 
 				# city states / Stadtstaaten
 				if eTech == gc.getInfoTypeForString("TECH_COLONIZATION"):
-						# if gc.getPlayer(ePlayer).countNumBuildings(gc.getInfoTypeForString("BUILDING_CITY_STATE")) > 0:
 						if gc.getTeam(gc.getPlayer(ePlayer).getTeam()).isHasTech(gc.getInfoTypeForString("TECH_CITY_STATE")):
 								return True
 
@@ -788,6 +787,13 @@ class CvGameUtils:
 						iPlayer = pCity.getOwner()
 						pPlayer = gc.getPlayer(iPlayer)
 						if pPlayer.getUnitClassCountPlusMaking(gc.getUnitInfo(eUnit).getUnitClassType()) > 10:
+								return True
+
+				# Stadtstaaten sollen keine Siedler bauen dürfen / City States
+				if eUnit == gc.getInfoTypeForString("UNIT_SETTLER"):
+						iPlayer = pCity.getOwner()
+						pPlayer = gc.getPlayer(iPlayer)
+						if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_CITY_STATE")):
 								return True
 
 				return False
@@ -1027,40 +1033,16 @@ class CvGameUtils:
 
 						# 1. Jagd (Lager)
 						lTechs.append(gc.getInfoTypeForString('TECH_HUNTING'))
-						# 2. Mystik (Forschung)
-						lTechs.append(gc.getInfoTypeForString('TECH_MYSTICISM'))
-
-						# Religionsweg
-						# Egypt und Sumer
-						if (iCiv == gc.getInfoTypeForString('CIVILIZATION_EGYPT') or
-							 iCiv == gc.getInfoTypeForString('CIVILIZATION_SUMERIA') or
-							 iCiv == gc.getInfoTypeForString('CIVILIZATION_INDIA')
-							):
-								# 3. Schamanismus (Monolith)
-								lTechs.append(gc.getInfoTypeForString('TECH_SCHAMANISMUS'))
-								# Hindu
-								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_HINDU'))
-								# 4. Polytheismus (Kleines Orakel)
-								lTechs.append(gc.getInfoTypeForString('TECH_POLYTHEISM'))
-								# 5. Religion
-								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_EGYPT'))
-								# 5. Religion
-								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_SUMER'))
-								# 6. Priestertum (Civic)
-								lTechs.append(gc.getInfoTypeForString('TECH_PRIESTHOOD'))
-						# Wirtschaftsweg
+						# 2+3. Fischen oder Viehzucht
+						if pPlayer.countNumCoastalCities() > 0:
+								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 						else:
-								# 4+5. Fischen oder Viehzucht
-								if pPlayer.countNumCoastalCities() > 0:
-										lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
-										lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
-								else:
-										lTechs.append(gc.getInfoTypeForString('TECH_ANIMAL_HUSBANDRY'))
-										lTechs.append(gc.getInfoTypeForString('TECH_FENCES'))
-								# 6. Bogenschiessen
-								lTechs.append(gc.getInfoTypeForString('TECH_ARCHERY'))
-						# Wieder Alle
-						# 7. Fuehrerschaft
+								lTechs.append(gc.getInfoTypeForString('TECH_ANIMAL_HUSBANDRY'))
+								lTechs.append(gc.getInfoTypeForString('TECH_FENCES'))
+						# 4. Bogenschiessen
+						lTechs.append(gc.getInfoTypeForString('TECH_ARCHERY'))
+						# 5. Fuehrerschaft
 						lTechs.append(gc.getInfoTypeForString('TECH_LEADERSHIP'))
 
 				# vor Binnenkolonisierung
@@ -1079,44 +1061,46 @@ class CvGameUtils:
 								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
 								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 
-						# Polytheismus (Kleines Orakel)
+						# Staatenbildung (Civic Zentralisierung) und Metall
+						lTechs.append(gc.getInfoTypeForString('TECH_POTTERY'))
+						lTechs.append(gc.getInfoTypeForString('TECH_METAL_CASTING'))
+						lTechs.append(gc.getInfoTypeForString('TECH_METAL_SMELTING'))
+						lTechs.append(gc.getInfoTypeForString('TECH_STAATENBILDUNG'))
+
+						# Polytheismus (Monolith und Kleines Orakel)
+						lTechs.append(gc.getInfoTypeForString('TECH_MYSTICISM'))
 						lTechs.append(gc.getInfoTypeForString('TECH_SCHAMANISMUS'))
 						lTechs.append(gc.getInfoTypeForString('TECH_POLYTHEISM'))
 
-						# Those Civs shall get their neighbour religion at least after leadership
-						lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_EGYPT'))
-						lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_SUMER'))
-
-						# Bogenschiessen
-						lTechs.append(gc.getInfoTypeForString('TECH_ARCHERY'))
-
-						# Metallverarbeitung
-						lTechs.append(gc.getInfoTypeForString('TECH_POTTERY'))
-						lTechs.append(gc.getInfoTypeForString('TECH_METAL_CASTING'))
-						lTechs.append(gc.getInfoTypeForString('TECH_STEINABBAU'))
-						lTechs.append(gc.getInfoTypeForString('TECH_METAL_SMELTING'))
-
-						# Priestertum (Civic)
-						lTechs.append(gc.getInfoTypeForString('TECH_PRIESTHOOD'))
-
-						# Religious Civs (Civic)
-						if pPlayer.getStateReligion() != -1:
-								lTechs.append(gc.getInfoTypeForString('TECH_MOND'))
-								lTechs.append(gc.getInfoTypeForString('TECH_CEREMONIAL'))
-
-						# Staatenbildung
-						lTechs.append(gc.getInfoTypeForString('TECH_STAATENBILDUNG'))
 						# Binnenkolonisierung (Siedler)
 						lTechs.append(gc.getInfoTypeForString('TECH_COLONIZATION'))
 
+
 				# vor der BRONZEZEIT
 				if not pTeam.isHasTech(gc.getInfoTypeForString('TECH_BRONZE_WORKING')):
-						# Astronomie (Sternwarte)
-						lTechs.append(gc.getInfoTypeForString('TECH_ASTRONOMIE'))
-						# Spearmen
-						lTechs.append(gc.getInfoTypeForString('TECH_SPEERSPITZEN'))
+
+						# Egypt und Sumer
+						if (iCiv == gc.getInfoTypeForString('CIVILIZATION_EGYPT') or
+							 iCiv == gc.getInfoTypeForString('CIVILIZATION_SUMERIA')
+							):
+								lTechs.append(gc.getInfoTypeForString('TECH_CEREMONIAL'))
+								lTechs.append(gc.getInfoTypeForString('TECH_PRIESTHOOD'))
+								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_SUMER'))
+								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_EGYPT'))
+
 						# Food
 						lTechs.append(gc.getInfoTypeForString('TECH_TAUBENZUCHT'))
+						# Quarries
+						lTechs.append(gc.getInfoTypeForString('TECH_STEINABBAU'))
+						# Priestertum (Civic)
+						lTechs.append(gc.getInfoTypeForString('TECH_CEREMONIAL'))
+						lTechs.append(gc.getInfoTypeForString('TECH_PRIESTHOOD'))
+						# Spearmen und Axemen (+ Forest cut)
+						lTechs.append(gc.getInfoTypeForString('TECH_SPEERSPITZEN'))
+						lTechs.append(gc.getInfoTypeForString('TECH_BEWAFFNUNG'))
+						# Astronomie (Sternwarte)
+						lTechs.append(gc.getInfoTypeForString('TECH_MOND'))
+						lTechs.append(gc.getInfoTypeForString('TECH_ASTRONOMIE'))
 						# Wein, wenn Trauben vorhanden
 						if pPlayer.countOwnedBonuses(gc.getInfoTypeForString('BONUS_GRAPES')) > 0:
 								lTechs.append(gc.getInfoTypeForString('TECH_WEINBAU'))
@@ -1127,6 +1111,10 @@ class CvGameUtils:
 						lTechs.append(gc.getInfoTypeForString('TECH_CALENDAR'))
 						lTechs.append(gc.getInfoTypeForString('TECH_KULTIVIERUNG'))
 						lTechs.append(gc.getInfoTypeForString('TECH_FRUCHTBARKEIT'))
+
+						# Inder
+						if (iCiv == gc.getInfoTypeForString('CIVILIZATION_INDIA')):
+								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_HINDU'))
 
 						# Hochkulturen
 						lTechs.append(gc.getInfoTypeForString('TECH_WRITING'))
@@ -1139,6 +1127,9 @@ class CvGameUtils:
 				# vor der EISENZEIT
 				if not pTeam.isHasTech(gc.getInfoTypeForString('TECH_IRON_WORKING')):
 
+						# Civs shall get their neighbour religion at least in bronze age
+						lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_EGYPT'))
+						lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_SUMER'))
 						# Hochkulturen
 						lTechs.append(gc.getInfoTypeForString('TECH_ZAHLENSYSTEME'))
 						lTechs.append(gc.getInfoTypeForString('TECH_GEOMETRIE'))
@@ -1157,6 +1148,10 @@ class CvGameUtils:
 						lTechs.append(gc.getInfoTypeForString('TECH_CODEX'))
 						lTechs.append(gc.getInfoTypeForString('TECH_MASONRY2'))
 						lTechs.append(gc.getInfoTypeForString('TECH_SCHMIEDEKUNST'))
+
+						if pPlayer.countNumCoastalCities() > 0:
+								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 
 						# Streitwagen
 						if pPlayer.countOwnedBonuses(gc.getInfoTypeForString('BONUS_HORSE')) > 0:

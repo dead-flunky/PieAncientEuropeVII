@@ -12031,7 +12031,7 @@
 		</UnitArtInfo>
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_WAR_HORSE_SCYTHS</Type>
-			<Button>Art/Interface/Buttons/Units/button_unit_kataphrakt.dds</Button>
+			<Button>Art/Interface/Buttons/Units/button_unit_assyr_kataphrakt.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>

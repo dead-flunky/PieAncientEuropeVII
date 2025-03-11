@@ -12620,6 +12620,7 @@ void CvPlayerAI::AI_doDiplo()
 
 									if (!(GET_PLAYER((PlayerTypes)iI).isHuman()) || !(abContacted[GET_PLAYER((PlayerTypes)iI).getTeam()]))
 									{
+
 										int iDeclareWarTradeRand = GC.getLeaderHeadInfo(getPersonalityType()).getDeclareWarTradeRand();
 										int iMinAtWarCounter = MAX_INT;
 										for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
@@ -12651,6 +12652,7 @@ void CvPlayerAI::AI_doDiplo()
 											iDeclareWarTradeRand /= 4;
 											iDeclareWarTradeRand ++;
 										}
+
 
 										if (GC.getGameINLINE().getSorenRandNum(iDeclareWarTradeRand, "AI Diplo Declare War Trade") == 0)
 										{

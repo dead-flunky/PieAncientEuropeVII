@@ -15896,7 +15896,7 @@
 			<iAirRangeChange>0</iAirRangeChange>
 			<iInterceptChange>0</iInterceptChange>
 			<iEvasionChange>0</iEvasionChange>
-			<iWithdrawalChange>10</iWithdrawalChange>
+			<iWithdrawalChange>50</iWithdrawalChange>
 			<iCargoChange>0</iCargoChange>
 			<iCollateralDamageChange>0</iCollateralDamageChange>
 			<iBombardRateChange>0</iBombardRateChange>
@@ -15908,8 +15908,8 @@
 			<iSameTileHealChange>0</iSameTileHealChange>
 			<iAdjacentTileHealChange>0</iAdjacentTileHealChange>
 			<iCombatPercent>0</iCombatPercent>
-			<iCityAttack>-20</iCityAttack>
-			<iCityDefense>-20</iCityDefense>
+			<iCityAttack>0</iCityAttack>
+			<iCityDefense>0</iCityDefense>
 			<iHillsAttack>0</iHillsAttack>
 			<iHillsDefense>0</iHillsDefense>
 			<iKamikazePercent>0</iKamikazePercent>
@@ -15922,24 +15922,7 @@
 			<TerrainDefenses/>
 			<FeatureAttacks/>
 			<FeatureDefenses/>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
-					<iUnitCombatMod>20</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_SPEARMAN</UnitCombatType>
-					<iUnitCombatMod>20</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_AXEMAN</UnitCombatType>
-					<iUnitCombatMod>20</iUnitCombatMod>
-				</UnitCombatMod>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_SWORDSMAN</UnitCombatType>
-					<iUnitCombatMod>20</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
+			<UnitCombatMods/>
 			<DomainMods/>
 			<TerrainDoubleMoves/>
 			<FeatureDoubleMoves/>

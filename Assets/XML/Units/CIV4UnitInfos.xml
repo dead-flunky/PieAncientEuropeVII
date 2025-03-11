@@ -7932,9 +7932,9 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>BUILDING_FORGE_ARMOR</PrereqBuilding>
-			<PrereqTech>TECH_FOEDERATI</PrereqTech>
+			<PrereqTech>TECH_BEWAFFNUNG6</PrereqTech>
 			<TechTypes>
-				<PrereqTech>TECH_EISENWAFFEN</PrereqTech>
+				<PrereqTech>TECH_BEWAFFNUNG5</PrereqTech>
 			</TechTypes>
 			<BonusType>BONUS_IRON2</BonusType>
 			<PrereqBonuses/>
@@ -8010,11 +8010,11 @@
 				<iGroupSize>8</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
 				<fPadTime>1</fPadTime>
-				<iMeleeWaveSize>4</iMeleeWaveSize>
+				<iMeleeWaveSize>8</iMeleeWaveSize>
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_WARBAND</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_WARBAND_GERMAN</EarlyArtDefineTag>
 				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
@@ -8490,7 +8490,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -9844,7 +9844,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -10717,7 +10717,12 @@
 			<bSuicide>0</bSuicide>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bAlwaysHostile>0</bAlwaysHostile>
-			<UnitClassUpgrades/>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
 			<UnitClassTargets/>
 			<UnitCombatTargets/>
 			<UnitClassDefenders/>
@@ -15786,10 +15791,6 @@
 					<UnitClassUpgradeType>UNITCLASS_WURFAXT</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
-				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
-					<bUnitClassUpgrade>1</bUnitClassUpgrade>
-				</UnitClassUpgrade>
 			</UnitClassUpgrades>
 			<UnitClassTargets/>
 			<UnitCombatTargets/>
@@ -15995,10 +15996,6 @@
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
 					<UnitClassUpgradeType>UNITCLASS_WURFAXT</UnitClassUpgradeType>
-					<bUnitClassUpgrade>1</bUnitClassUpgrade>
-				</UnitClassUpgrade>
-				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -16221,7 +16218,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -16434,7 +16431,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -16647,7 +16644,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -16856,7 +16853,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -17883,7 +17880,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -19458,7 +19455,7 @@
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -19646,7 +19643,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -19834,7 +19831,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -20031,7 +20028,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -21124,7 +21121,7 @@
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<iCost>100</iCost>
+			<iCost>80</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -23142,7 +23139,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -23671,8 +23668,8 @@
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_SWORDSMAN</Class>
-			<Type>UNIT_SWORDSMAN</Type>
+			<Class>UNITCLASS_SWORDSMAN_LATENE</Class>
+			<Type>UNIT_SWORDSMAN_LATENE</Type>
 			<UniqueNames/>
 			<Special>SPECIALUNIT_FUSSTRUPPEN</Special>
 			<Capture>NONE</Capture>
@@ -23681,8 +23678,8 @@
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
-			<Description>TXT_KEY_UNIT_SWORDSMAN</Description>
-			<Civilopedia>TXT_KEY_UNIT_LANGSCHWERT_PEDIA</Civilopedia>
+			<Description>TXT_KEY_UNIT_SWORDSMAN_LATENE</Description>
+			<Civilopedia>TXT_KEY_TECH_BEWAFFNUNG5_PEDIA</Civilopedia>
 			<Strategy/>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bAnimal>0</bAnimal>
@@ -23719,7 +23716,12 @@
 			<bSuicide>0</bSuicide>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bAlwaysHostile>0</bAlwaysHostile>
-			<UnitClassUpgrades/>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
 			<UnitClassTargets/>
 			<UnitCombatTargets/>
 			<UnitClassDefenders/>
@@ -23755,15 +23757,15 @@
 			<StateReligion>NONE</StateReligion>
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
-			<PrereqBuilding>BUILDING_FORGE_WEAPONS</PrereqBuilding>
-			<PrereqTech>TECH_BEWAFFNUNG6</PrereqTech>
+			<PrereqBuilding>BUILDING_FORGE</PrereqBuilding>
+			<PrereqTech>TECH_BEWAFFNUNG5</PrereqTech>
 			<TechTypes/>
 			<BonusType>BONUS_IRON2</BonusType>
 			<PrereqBonuses/>
 			<ProductionTraits/>
 			<Flavors/>
 			<iAIWeight>0</iAIWeight>
-			<iCost>100</iCost>
+			<iCost>120</iCost>
 			<iHurryCostModifier>0</iHurryCostModifier>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
@@ -23787,7 +23789,7 @@
 			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
-			<iCombat>14</iCombat>
+			<iCombat>12</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iAirCombat>0</iAirCombat>
 			<iAirCombatLimit>0</iAirCombatLimit>
@@ -23834,11 +23836,19 @@
 			<iAsset>2</iAsset>
 			<iPower>8</iPower>
 			<UnitMeshGroups>
-				<iGroupSize>7</iGroupSize>
+				<iGroupSize>8</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
 				<fPadTime>1</fPadTime>
 				<iMeleeWaveSize>4</iMeleeWaveSize>
 				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>5</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_EUROPEAN</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>2</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_CELTIC</EarlyArtDefineTag>
+				</UnitMeshGroup>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
 					<EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN</EarlyArtDefineTag>
@@ -23977,7 +23987,7 @@
 			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
-			<iCombat>12</iCombat>
+			<iCombat>14</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iAirCombat>0</iAirCombat>
 			<iAirCombatLimit>0</iAirCombatLimit>
@@ -24045,7 +24055,7 @@
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
 		<UnitInfo>
-			<Class>UNITCLASS_SWORDSMAN</Class>
+			<Class>UNITCLASS_FOEDERATI</Class>
 			<Type>UNIT_FOEDERATI</Type>
 			<UniqueNames/>
 			<Special>SPECIALUNIT_FUSSTRUPPEN</Special>
@@ -24204,7 +24214,7 @@
 			<iCargo>0</iCargo>
 			<iConscription>1</iConscription>
 			<iCultureGarrison>5</iCultureGarrison>
-			<iExtraCost>1</iExtraCost>
+			<iExtraCost>2</iExtraCost>
 			<iAsset>2</iAsset>
 			<iPower>8</iPower>
 			<UnitMeshGroups>
@@ -24314,7 +24324,7 @@
 			<PrereqReligion>NONE</PrereqReligion>
 			<PrereqCorporation>NONE</PrereqCorporation>
 			<PrereqBuilding>BUILDING_PALACE</PrereqBuilding>
-			<PrereqTech>TECH_BEWAFFNUNG5</PrereqTech>
+			<PrereqTech>TECH_BEWAFFNUNG6</PrereqTech>
 			<TechTypes/>
 			<BonusType>BONUS_IRON2</BonusType>
 			<PrereqBonuses/>
@@ -29551,7 +29561,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -29736,7 +29746,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -30042,7 +30052,7 @@
 			<bAlwaysHostile>0</bAlwaysHostile>
 			<UnitClassUpgrades>
 				<UnitClassUpgrade>
-					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<UnitClassUpgradeType>UNITCLASS_FOEDERATI</UnitClassUpgradeType>
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
@@ -48663,7 +48673,7 @@
 			<iCargo>0</iCargo>
 			<iConscription>0</iConscription>
 			<iCultureGarrison>5</iCultureGarrison>
-			<iExtraCost>1</iExtraCost>
+			<iExtraCost>2</iExtraCost>
 			<iAsset>2</iAsset>
 			<iPower>8</iPower>
 			<UnitMeshGroups>

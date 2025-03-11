@@ -61,6 +61,7 @@ CvTeam::CvTeam()
 
 	m_pabHasTech = NULL;
 	m_pabNoTradeTech = NULL;
+	m_bHasTechChanged = true; // Ramk
 
 	m_ppaaiImprovementYieldChange = NULL;
 
@@ -309,6 +310,7 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 			m_pabHasTech[iI] = false;
 			m_pabNoTradeTech[iI] = false;
 		}
+		m_bHasTechChanged = true; // Ramk
 
 		FAssertMsg(m_ppaaiImprovementYieldChange==NULL, "about to leak memory, CvTeam::m_ppaaiImprovementYieldChange");
 		m_ppaaiImprovementYieldChange = new int*[GC.getNumImprovementInfos()];
@@ -4808,6 +4810,7 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 			}
 
 			m_pabHasTech[eIndex] = bNewValue;
+			m_bHasTechChanged = true; // Ramk
 
 			for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
 			{
@@ -6217,3 +6220,8 @@ bool CvTeam::hasLaunched() const
 	return false;
 }
 
+// Ramk
+bool CvTeam::techPathCostNeedsUpdate() const
+{
+	return m_bHasTechChanged;
+}

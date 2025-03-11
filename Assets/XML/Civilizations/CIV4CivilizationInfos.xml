@@ -196,10 +196,6 @@
 					<UnitType>UNIT_GEPANZERTER_ASSYRIA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_WAR_CHARIOT</UnitClassType>
 					<UnitType>UNIT_INDIAN_WARCHARIOT</UnitType>
 				</Unit>
@@ -588,10 +584,6 @@
 					<UnitType>UNIT_HOPLIT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_SKIRMISHER_MACEDON</UnitType>
 				</Unit>
@@ -887,10 +879,6 @@
 					<UnitType>UNIT_GEPANZERTER_ASSYRIA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
 					<UnitType>UNIT_HORSEMAN_LANCIER</UnitType>
 				</Unit>
@@ -1109,10 +1097,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_KURZSCHWERT</UnitClassType>
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
@@ -1690,10 +1674,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>UNIT_CARTH_SACRED_BAND_HOPLIT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_TRADE_MERCHANTMAN</UnitClassType>
@@ -2554,10 +2534,6 @@
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_CHARIOT</UnitClassType>
 					<UnitType>UNIT_EGYPT_WARCHARIOT</UnitType>
 				</Unit>
@@ -2859,17 +2835,13 @@
 					<UnitType>UNIT_HASTA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit> 
 				<Unit>
 					<UnitClassType>UNITCLASS_AUXILIAR</UnitClassType>
 					<UnitType>UNIT_AUXILIAR_ROME</UnitType>
-				</Unit>       
+				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_HORSE_ARCHER</UnitClassType>
 					<UnitType>UNIT_HORSE_ARCHER_ROMAN</UnitType>
@@ -4014,10 +3986,6 @@
 					<UnitType>UNIT_HOPLIT</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_SKIRMISHER_MACEDON</UnitType>
 				</Unit>        
@@ -4295,10 +4263,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_ELITE1</UnitClassType>
 					<UnitType>UNIT_AMAZONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_CHARIOT</UnitClassType>
@@ -4588,10 +4552,6 @@
 					<UnitType>UNIT_STATTHALTER_PERSIA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -4687,6 +4647,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_WRITING3</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_BEWAFFNUNG5</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 				<DisableTech>
@@ -4842,10 +4806,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SCHILDTRAEGER</UnitClassType>
 					<UnitType>UNIT_SCHILDTRAEGER_IBERIA</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
@@ -5344,10 +5304,6 @@
 					<UnitType>UNIT_BRAHMANE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_WAR_CHARIOT</UnitClassType>
 					<UnitType>UNIT_INDIAN_WARCHARIOT</UnitType>
 				</Unit>
@@ -5630,10 +5586,6 @@
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_STATTHALTER</UnitClassType>
 					<UnitType>UNIT_STATTHALTER_PHON</UnitType>
 				</Unit>
@@ -5877,10 +5829,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_KURZSCHWERT</UnitClassType>
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -6148,10 +6096,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>UNIT_HOPLIT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
@@ -6464,10 +6408,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<UnitType>UNIT_PEZHETAIROI</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
@@ -6794,10 +6734,6 @@
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
 					<UnitType>UNIT_HORSEMAN_LANCIER</UnitType>
 				</Unit>
@@ -7032,10 +6968,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_KURZSCHWERT</UnitClassType>
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
@@ -7284,10 +7216,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_KURZSCHWERT</UnitClassType>
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
@@ -7593,10 +7521,6 @@
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
 					<UnitType>UNIT_UNSTERBLICH</UnitType>
 				</Unit>
@@ -7867,10 +7791,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>UNIT_CARTH_SACRED_BAND_HOPLIT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_TRADE_MERCHANTMAN</UnitClassType>
@@ -8206,10 +8126,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SPEARMAN</UnitClassType>
 					<UnitType>UNIT_HASTA</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
@@ -8590,10 +8506,6 @@
 					<UnitType>UNIT_STATTHALTER_PERSIA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -8701,6 +8613,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_BEWAFFNUNG3</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_BEWAFFNUNG5</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 				<DisableTech>
@@ -8987,10 +8903,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>UNIT_HOPLIT_SPARTA</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>
@@ -9283,10 +9195,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_KURZSCHWERT</UnitClassType>
 					<UnitType>UNIT_KRUMMSAEBEL</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN</UnitClassType>
@@ -9654,10 +9562,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_AXEMAN2</UnitClassType>
 					<UnitType>UNIT_HOPLIT</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
-					<UnitType>UNIT_FOEDERATI</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_SKIRMISHER</UnitClassType>

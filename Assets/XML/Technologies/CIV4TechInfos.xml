@@ -13016,15 +13016,15 @@
 			<Button>Art/Interface/Buttons/Techs/tech_marktrecht.dds</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_PARTHERSCHUSS</Type>
-			<Description>TXT_KEY_TECH_PARTHERSCHUSS</Description>
-			<Civilopedia>TXT_KEY_TECH_PARTHERSCHUSS_PEDIA</Civilopedia>
+			<Type>TECH_BEWAFFNUNG5</Type>
+			<Description>TXT_KEY_TECH_BEWAFFNUNG5</Description>
+			<Civilopedia>TXT_KEY_TECH_BEWAFFNUNG5_PEDIA</Civilopedia>
 			<Help/>
-			<Strategy>TXT_KEY_TECH_FORM_STRATEGY</Strategy>
+			<Strategy/>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>10</iAITradeModifier>
-			<iCost>5000</iCost>
+			<iCost>5200</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<Era>ERA_CLASSICAL</Era>
@@ -13036,11 +13036,11 @@
 			<iHappiness>0</iHappiness>
 			<iFirstFreeTechs>0</iFirstFreeTechs>
 			<iAsset>32</iAsset>
-			<iPower>12</iPower>
+			<iPower>10</iPower>
 			<bRepeat>0</bRepeat>
 			<bTrade>1</bTrade>
 			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
+			<bGoodyTech>1</bGoodyTech>
 			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
 			<bMapCentering>0</bMapCentering>
 			<bMapVisible>0</bMapVisible>
@@ -13056,7 +13056,7 @@
 			<bIgnoreIrrigation>0</bIgnoreIrrigation>
 			<bWaterWork>0</bWaterWork>
 			<iGridX>37</iGridX>
-			<iGridY>11</iGridY>
+			<iGridY>10</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
 			<TerrainTrades/>
@@ -13064,19 +13064,17 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>8</iFlavor>
+					<iFlavor>6</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_HUFEISEN</PrereqTech>
+				<PrereqTech>TECH_EISENWAFFEN</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_HORSE_ARCHER</PrereqTech>
-			</AndPreReqs>
-			<Quote>TXT_KEY_TECH_HORSEBACK_RIDING_QUOTE</Quote>
-			<Sound>AS2D_TECH_HORSERIDING</Sound>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_PAE_QUOTE_82</Quote>
+			<Sound>AS2D_TECH_PAE_QUOTE_82</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_tech_partherschuss.dds</Button>
+			<Button>Art/Interface/Buttons/Techs/button_tech_la_tene.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -13209,6 +13207,69 @@
 			<Sound/>
 			<SoundMP/>
 			<Button>Art/Interface/Buttons/Techs/button_tech_reservisten.dds</Button>
+		</TechInfo>
+		<TechInfo>
+			<Type>TECH_PARTHERSCHUSS</Type>
+			<Description>TXT_KEY_TECH_PARTHERSCHUSS</Description>
+			<Civilopedia>TXT_KEY_TECH_PARTHERSCHUSS_PEDIA</Civilopedia>
+			<Help/>
+			<Strategy>TXT_KEY_TECH_FORM_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>10</iAITradeModifier>
+			<iCost>6000</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_CLASSICAL</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>32</iAsset>
+			<iPower>12</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>38</iGridX>
+			<iGridY>11</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>8</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_HUFEISEN</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs>
+				<PrereqTech>TECH_HORSE_ARCHER</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_TECH_HORSEBACK_RIDING_QUOTE</Quote>
+			<Sound>AS2D_TECH_HORSERIDING</Sound>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/button_tech_partherschuss.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -13922,69 +13983,6 @@
 			<Button>Art/Interface/Buttons/Techs/button_tech_prozession.dds</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_BEWAFFNUNG5</Type>
-			<Description>TXT_KEY_TECH_BEWAFFNUNG5</Description>
-			<Civilopedia>TXT_KEY_TECH_BEWAFFNUNG5_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>10</iAITradeModifier>
-			<iCost>8000</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_CLASSICAL</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>32</iAsset>
-			<iPower>10</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>1</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>41</iGridX>
-			<iGridY>5</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>6</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_DENKMAL</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_EISENWAFFEN</PrereqTech>
-			</AndPreReqs>
-			<Quote>TXT_KEY_PAE_QUOTE_82</Quote>
-			<Sound>AS2D_TECH_PAE_QUOTE_82</Sound>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/button_langschwert.dds</Button>
-		</TechInfo>
-		<TechInfo>
 			<Type>TECH_NATIONALISM</Type>
 			<Description>TXT_KEY_TECH_IMPERIALISM</Description>
 			<Civilopedia>TXT_KEY_TECH_IMPERIALISM_PEDIA</Civilopedia>
@@ -14247,7 +14245,7 @@
 		<TechInfo>
 			<Type>TECH_LANGSCHIFFE</Type>
 			<Description>TXT_KEY_TECH_LANGSCHIFFE</Description>
-			<Civilopedia>TXT_KEY_TECH_LANGSCHIFFE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_UNIT_LANGSCHIFF_PEDIA</Civilopedia>
 			<Help/>
 			<Strategy/>
 			<Advisor>ADVISOR_MILITARY</Advisor>
@@ -14297,7 +14295,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_BEWAFFNUNG5</PrereqTech>
+				<PrereqTech>TECH_PROZESSION</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<Quote>TXT_KEY_PAE_QUOTE_207</Quote>
@@ -14358,7 +14356,6 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_BEWAFFNUNG5</PrereqTech>
 				<PrereqTech>TECH_NATIONALISM</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
@@ -15772,12 +15769,12 @@
 			<Button>Art/Interface/Buttons/Techs/button_tech_seife.dds</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_BEWAFFNUNG6</Type>
-			<Description>TXT_KEY_TECH_BEWAFFNUNG6</Description>
-			<Civilopedia>TXT_KEY_TECH_BEWAFFNUNG6_PEDIA</Civilopedia>
+			<Type>TECH_PANZERREITER</Type>
+			<Description>TXT_KEY_TECH_PANZERREITER</Description>
+			<Civilopedia>TXT_KEY_TECH_PANZERREITER_PEDIA</Civilopedia>
 			<Help/>
 			<Strategy/>
-			<Advisor>ADVISOR_MILITARY</Advisor>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>0</iAITradeModifier>
 			<iCost>10000</iCost>
@@ -15820,18 +15817,19 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>6</iFlavor>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_WRITING3</PrereqTech>
 				<PrereqTech>TECH_MANUFAKTUREN2</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_164</Quote>
+			<AndPreReqs>
+				<PrereqTech>TECH_HORSE_ARMOR</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_PAE_QUOTE_160</Quote>
 			<Sound/>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_spatha.dds</Button>
+			<Button>Art/Interface/Buttons/Techs/tech_panzerreiter.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -15967,69 +15965,6 @@
 			<Sound/>
 			<SoundMP/>
 			<Button>Art/Interface/Buttons/Techs/tech_bischofstum.dds</Button>
-		</TechInfo>
-		<TechInfo>
-			<Type>TECH_PANZERREITER</Type>
-			<Description>TXT_KEY_TECH_PANZERREITER</Description>
-			<Civilopedia>TXT_KEY_TECH_PANZERREITER_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>11000</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_CLASSICAL</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>32</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>47</iGridX>
-			<iGridY>11</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>10</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_BEWAFFNUNG6</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_HORSE_ARMOR</PrereqTech>
-			</AndPreReqs>
-			<Quote>TXT_KEY_PAE_QUOTE_160</Quote>
-			<Sound/>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_panzerreiter.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -16797,6 +16732,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
+				<PrereqTech>TECH_POLYARCHY</PrereqTech>
 				<PrereqTech>TECH_DEFENCES_2</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
@@ -16939,9 +16875,9 @@
 			<Button>,Art/Interface/Buttons/Civics/State_Property.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,5,3</Button>
 		</TechInfo>
 		<TechInfo>
-			<Type>TECH_PREISEDIKT</Type>
-			<Description>TXT_KEY_TECH_PREISEDIKT</Description>
-			<Civilopedia>TXT_KEY_TECH_PREISEDIKT_PEDIA</Civilopedia>
+			<Type>TECH_BEWAFFNUNG6</Type>
+			<Description>TXT_KEY_TECH_BEWAFFNUNG6</Description>
+			<Civilopedia>TXT_KEY_TECH_BEWAFFNUNG6_PEDIA</Civilopedia>
 			<Help/>
 			<Strategy/>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
@@ -16961,72 +16897,7 @@
 			<iAsset>32</iAsset>
 			<iPower>0</iPower>
 			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>51</iGridX>
-			<iGridY>8</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>6</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>4</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_MUENZEN2</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_166</Quote>
-			<Sound/>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_preisedikt.dds</Button>
-		</TechInfo>
-		<TechInfo>
-			<Type>TECH_STAUROGRAMM</Type>
-			<Description>TXT_KEY_TECH_STAUROGRAMM</Description>
-			<Civilopedia>TXT_KEY_TECH_STAUROGRAMM_PEDIA</Civilopedia>
-			<Help>TXT_KEY_RANK_START_INFO_ROM_LATE</Help>
-			<Strategy/>
-			<Advisor>ADVISOR_SCIENCE</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>14000</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_LATE_ANTIQUITY</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>32</iAsset>
-			<iPower>0</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
+			<bTrade>0</bTrade>
 			<bDisable>0</bDisable>
 			<bGoodyTech>0</bGoodyTech>
 			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
@@ -17056,77 +16927,14 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
+				<PrereqTech>TECH_FOEDERATI</PrereqTech>
 				<PrereqTech>TECH_GRENZHEER</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_170</Quote>
+			<Quote>TXT_KEY_PAE_QUOTE_164</Quote>
 			<Sound/>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_staurogramm.dds</Button>
-		</TechInfo>
-		<TechInfo>
-			<Type>TECH_CROSSBOW</Type>
-			<Description>TXT_KEY_TECH_CROSSBOW</Description>
-			<Civilopedia>TXT_KEY_TECH_CROSSBOW_PEDIA</Civilopedia>
-			<Help/>
-			<Strategy/>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<iAIWeight>0</iAIWeight>
-			<iAITradeModifier>10</iAITradeModifier>
-			<iCost>14000</iCost>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
-			<Era>ERA_LATE_ANTIQUITY</Era>
-			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
-			<iFeatureProductionModifier>0</iFeatureProductionModifier>
-			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
-			<iTradeRoutes>0</iTradeRoutes>
-			<iHealth>0</iHealth>
-			<iHappiness>0</iHappiness>
-			<iFirstFreeTechs>0</iFirstFreeTechs>
-			<iAsset>32</iAsset>
-			<iPower>8</iPower>
-			<bRepeat>0</bRepeat>
-			<bTrade>1</bTrade>
-			<bDisable>0</bDisable>
-			<bGoodyTech>0</bGoodyTech>
-			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
-			<bMapCentering>0</bMapCentering>
-			<bMapVisible>0</bMapVisible>
-			<bMapTrading>0</bMapTrading>
-			<bTechTrading>0</bTechTrading>
-			<bGoldTrading>0</bGoldTrading>
-			<bOpenBordersTrading>0</bOpenBordersTrading>
-			<bDefensivePactTrading>0</bDefensivePactTrading>
-			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
-			<bVassalTrading>0</bVassalTrading>
-			<bBridgeBuilding>0</bBridgeBuilding>
-			<bIrrigation>0</bIrrigation>
-			<bIgnoreIrrigation>0</bIgnoreIrrigation>
-			<bWaterWork>0</bWaterWork>
-			<iGridX>51</iGridX>
-			<iGridY>13</iGridY>
-			<DomainExtraMoves/>
-			<CommerceFlexible/>
-			<TerrainTrades/>
-			<bRiverTrade>0</bRiverTrade>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_GRENZHEER</PrereqTech>
-			</OrPreReqs>
-			<AndPreReqs>
-				<PrereqTech>TECH_MANUFAKTUREN2</PrereqTech>
-				<PrereqTech>TECH_TORSION</PrereqTech>
-			</AndPreReqs>
-			<Quote>TXT_KEY_PAE_QUOTE_176</Quote>
-			<Sound/>
-			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_crossbow.dds</Button>
+			<Button>Art/Interface/Buttons/Techs/tech_spatha.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -17199,7 +17007,7 @@
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>0</iAITradeModifier>
-			<iCost>10000</iCost>
+			<iCost>15000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<Era>ERA_LATE_ANTIQUITY</Era>
@@ -17258,6 +17066,71 @@
 			<Button>Art/Interface/Buttons/Techs/tech_konzil1.dds</Button>
 		</TechInfo>
 		<TechInfo>
+			<Type>TECH_PREISEDIKT</Type>
+			<Description>TXT_KEY_TECH_PREISEDIKT</Description>
+			<Civilopedia>TXT_KEY_TECH_PREISEDIKT_PEDIA</Civilopedia>
+			<Help/>
+			<Strategy/>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>15000</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_LATE_ANTIQUITY</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>32</iAsset>
+			<iPower>0</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>52</iGridX>
+			<iGridY>8</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>6</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_MUENZEN2</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_PAE_QUOTE_166</Quote>
+			<Sound/>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/tech_preisedikt.dds</Button>
+		</TechInfo>
+		<TechInfo>
 			<Type>TECH_HORSEBACK_RIDING_3</Type>
 			<Description>TXT_KEY_TECH_HORSEBACK_RIDING_3</Description>
 			<Civilopedia>TXT_KEY_TECH_HORSEBACK_RIDING_3_PEDIA</Civilopedia>
@@ -17266,7 +17139,7 @@
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iAIWeight>0</iAIWeight>
 			<iAITradeModifier>10</iAITradeModifier>
-			<iCost>12000</iCost>
+			<iCost>15000</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<Era>ERA_LATE_ANTIQUITY</Era>
@@ -17310,13 +17183,78 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_FOEDERATI</PrereqTech>
+				<PrereqTech>TECH_BEWAFFNUNG6</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<Quote>TXT_KEY_PAE_QUOTE_177</Quote>
 			<Sound/>
 			<SoundMP/>
 			<Button>Art/Interface/Buttons/Techs/button_steigbuegel.dds</Button>
+		</TechInfo>
+		<TechInfo>
+			<Type>TECH_CROSSBOW</Type>
+			<Description>TXT_KEY_TECH_CROSSBOW</Description>
+			<Civilopedia>TXT_KEY_TECH_CROSSBOW_PEDIA</Civilopedia>
+			<Help/>
+			<Strategy/>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>10</iAITradeModifier>
+			<iCost>15000</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_LATE_ANTIQUITY</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>32</iAsset>
+			<iPower>8</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>52</iGridX>
+			<iGridY>12</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>3</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_BEWAFFNUNG6</PrereqTech>
+				<PrereqTech>TECH_GRENZHEER</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs>
+				<PrereqTech>TECH_MANUFAKTUREN2</PrereqTech>
+				<PrereqTech>TECH_TORSION</PrereqTech>
+			</AndPreReqs>
+			<Quote>TXT_KEY_PAE_QUOTE_176</Quote>
+			<Sound/>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/tech_crossbow.dds</Button>
 		</TechInfo>
 
 		<TechInfo>
@@ -17379,6 +17317,67 @@
 			<Sound>AS2D_TECH_DIVINE_RIGHT</Sound>
 			<SoundMP/>
 			<Button>,Art/Interface/Buttons/TechTree/DivineRight.dds,Art/Interface/Buttons/TechTree_Atlas.dds,1,3</Button>
+		</TechInfo>
+		<TechInfo>
+			<Type>TECH_STAUROGRAMM</Type>
+			<Description>TXT_KEY_TECH_STAUROGRAMM</Description>
+			<Civilopedia>TXT_KEY_TECH_STAUROGRAMM_PEDIA</Civilopedia>
+			<Help>TXT_KEY_RANK_START_INFO_ROM_LATE</Help>
+			<Strategy/>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<iAIWeight>0</iAIWeight>
+			<iAITradeModifier>0</iAITradeModifier>
+			<iCost>15000</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
+			<Era>ERA_LATE_ANTIQUITY</Era>
+			<FirstFreeUnitClass>NONE</FirstFreeUnitClass>
+			<iFeatureProductionModifier>0</iFeatureProductionModifier>
+			<iWorkerSpeedModifier>0</iWorkerSpeedModifier>
+			<iTradeRoutes>0</iTradeRoutes>
+			<iHealth>0</iHealth>
+			<iHappiness>0</iHappiness>
+			<iFirstFreeTechs>0</iFirstFreeTechs>
+			<iAsset>32</iAsset>
+			<iPower>0</iPower>
+			<bRepeat>0</bRepeat>
+			<bTrade>1</bTrade>
+			<bDisable>0</bDisable>
+			<bGoodyTech>0</bGoodyTech>
+			<bExtraWaterSeeFrom>0</bExtraWaterSeeFrom>
+			<bMapCentering>0</bMapCentering>
+			<bMapVisible>0</bMapVisible>
+			<bMapTrading>0</bMapTrading>
+			<bTechTrading>0</bTechTrading>
+			<bGoldTrading>0</bGoldTrading>
+			<bOpenBordersTrading>0</bOpenBordersTrading>
+			<bDefensivePactTrading>0</bDefensivePactTrading>
+			<bPermanentAllianceTrading>0</bPermanentAllianceTrading>
+			<bVassalTrading>0</bVassalTrading>
+			<bBridgeBuilding>0</bBridgeBuilding>
+			<bIrrigation>0</bIrrigation>
+			<bIgnoreIrrigation>0</bIgnoreIrrigation>
+			<bWaterWork>0</bWaterWork>
+			<iGridX>53</iGridX>
+			<iGridY>11</iGridY>
+			<DomainExtraMoves/>
+			<CommerceFlexible/>
+			<TerrainTrades/>
+			<bRiverTrade>0</bRiverTrade>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>4</iFlavor>
+				</Flavor>
+			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_BEWAFFNUNG6</PrereqTech>
+			</OrPreReqs>
+			<AndPreReqs/>
+			<Quote>TXT_KEY_PAE_QUOTE_170</Quote>
+			<Sound/>
+			<SoundMP/>
+			<Button>Art/Interface/Buttons/Techs/tech_staurogramm.dds</Button>
 		</TechInfo>
 
 		<TechInfo>

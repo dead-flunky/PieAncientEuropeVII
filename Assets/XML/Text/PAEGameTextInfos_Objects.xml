@@ -5578,11 +5578,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BEWAFFNUNG5</Tag>
-		<English>Longsword</English>
-		<French>Ep&#233;e longue</French>
-		<German>Langschwert</German>
-		<Italian>Spada Lunga</Italian>
-		<Spanish><Text>Espada Larga</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
+		<English>La T&#232;ne Swords</English>
+		<French>Les &#233;p&#233;es de La T&#232;ne</French>
+		<German>La-T&#232;ne-Schwerter</German>
+		<Italian>Spade di La T&#232;ne</Italian>
+		<Spanish>Espadas de La T&#232;ne</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BEWEIS</Tag>
@@ -7789,6 +7789,14 @@
 		<Spanish>Guerrero con Lanza:Guerreros con Lanza</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_LONGSWORD</Tag>
+		<English>Longswordsman</English>
+		<French>Spadassin</French>
+		<German>Langschwertk&#228;mpfer</German>
+		<Italian>Soldato con Spada Lunga</Italian>
+		<Spanish>Soldado con Espada Larga:Soldados con Espada Larga</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_MACCABEE</Tag>
 		<English>Maccabees</English>
 		<French>Maccab&#233;e</French>
@@ -8435,14 +8443,6 @@
 		<German>Versorgungskarren</German>
 		<Italian><Text>Carrello di Supporto:Carrelle di Supporto</Text><Gender>Male</Gender><Plural>0:1</Plural></Italian>
 		<Spanish><Text>Carro de Suministros:Carros de Suministros</Text><Gender>Male</Gender><Plural>0:1</Plural></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SWORDSMAN</Tag>
-		<English>Longswordsman</English>
-		<French>Spadassin</French>
-		<German>Langschwertk&#228;mpfer</German>
-		<Italian>Soldato con Spada Lunga</Italian>
-		<Spanish>Soldado con Espada Larga:Soldados con Espada Larga</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SYRIAN_GARDE</Tag>

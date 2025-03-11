@@ -242,6 +242,14 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<Spanish>Se usar&#225; un nivel de detalle del terreno m&#225;s alto</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS</Tag>
+		<English>Religious fanatics have destroyed a building in %s1: %s2</English>
+		<French>Des fanatiques religieux ont d&#233;truit un b&#226;timent &#224; %s1: %s2</French>
+		<German>Religi&#246;se Fanatiker haben in %s1 ein Geb&#228;ude zerst&#246;rt: %s2</German>
+		<Italian>I fanatici religiosi hanno distrutto un edificio in %s1: %s2</Italian>
+		<Spanish>Los fan&#225;ticos religiosos han destruido un edificio en %s1: %s2</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_MERCHANT_ROBBERY_10</Tag>
 		<English>A botched robbery! Thanks to your escort. Robbers tried to steal your goods but decided to flee.</English>
 		<French>Un braquage rat&#233; ! Merci pour votre accompagnement. Lorsque des voleurs ont tent&#233; de voler vos biens, ils ont d&#233;cid&#233; de s'enfuir.</French>
@@ -394,6 +402,14 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<Spanish>&#191;A qu&#233; ciudad se debe enviar la unidad?</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_RELIGION_CHRISTIANITY</Tag>
+		<English>A child named Jesus was born in %s1!</English>
+		<French>Un enfant nomm&#233; J&#233;sus est n&#233; en %s1 !</French>
+		<German>Ein Kind namens Jesus wurde in %s1 geboren!</German>
+		<Italian>Un bambino di nome Ges&#249; &#232; nato a %s1!</Italian>
+		<Spanish>&#161;Un ni&#241;o llamado Jes&#250;s naci&#243; en %s1!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MEDIC_HELP</Tag>
 		<English>[ICON_BULLET]Increases the capacity of a supply cart by 100.</English>
 		<French>[ICON_BULLET]Augmente la capacit&#233; d'un chariot de fournitures de 100.</French>
@@ -440,14 +456,6 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<German>Br&#252;ckenbau</German>
 		<Italian>Costruzione di ponti</Italian>
 		<Spanish>Construcci&#243;n de puentes</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_BRIDGE_BUILDING_PEDIA</Tag>
-		<English>According to tradition, the oldest Roman wooden bridge was the Pons Sublicius over the Tiber, built in the 7th century BC.[NEWLINE][NEWLINE]In the 6th century BC, the Babylonians under Nebuchadnezzar II built bridges made of cypress and cedar wood. The Romans had already mastered the construction of arched bridges made of natural stone or concrete, as the bridge of Alc&#225;ntara impressively demonstrates.[NEWLINE][NEWLINE]Stone bridges with real round arches were first developed by the Romans and built in large numbers as part of the transport routes necessary for military and trade across the empire.[NEWLINE][NEWLINE]Ship bridges also existed early on. Herodotus reports that the Persian king Darius I reached Europe with his 70,000-strong army on a ship bridge over the Bosporus during his campaign against the Scythians (513/512 BC). Xerxes I had the ship bridges over the Hellespont built (ca. 480 BC), two bridges each consisting of over 300 ships, in order to cross the Dardanelles.</English>
-		<French>Selon la tradition, le plus ancien pont romain en bois serait celui construit au VIIe si&#232;cle avant JC. Pons Sublicius a construit un pont sur le Tibre au 4&#232;me si&#232;cle avant JC.[NEWLINE][NEWLINE]Au VIe si&#232;cle av. Au 4&#232;me si&#232;cle avant JC, les Babyloniens sous Nabuchodonosor II construisirent des ponts en bois de cypr&#232;s et de c&#232;dre. Les Romains ma&#238;trisaient d&#233;j&#224; la construction de ponts en arc en pierre naturelle ou en b&#233;ton, comme le d&#233;montre de mani&#232;re impressionnante le pont d'Alc&#225;ntara.[NEWLINE][NEWLINE]Les ponts en pierre avec de v&#233;ritables arcs ronds ont &#233;t&#233; d&#233;velopp&#233;s pour la premi&#232;re fois par les Romains et ont &#233;t&#233; construits en grand nombre dans tout l'empire dans le cadre des voies de transport n&#233;cessaires &#224; l'arm&#233;e et au commerce.[NEWLINE][NEWLINE]Les ponts maritimes exist&#232;rent &#233;galement tr&#232;s t&#244;t. H&#233;rodote rapporte que le roi perse Darius Ier a atteint l'Europe sur un pont maritime sur le Bosphore lors de sa campagne contre les Scythes (513/512 av. J.-C.) avec son arm&#233;e de 70 000 hommes. Xerx&#232;s Ier (environ 480 av. J.-C.) fit construire des ponts maritimes sur l'Hellespont, deux ponts compos&#233;s chacun de plus de 300 navires, afin de traverser les Dardanelles.</French>
-		<German>Die &#228;lteste r&#246;mische Holzbr&#252;cke war laut der &#220;berlieferung der im 7. Jahrhundert v. Chr. errichtete Pons Sublicius &#252;ber den Tiber.[NEWLINE][NEWLINE]Im 6. Jahrhundert v. Chr. bauten die Babylonier unter Nebukadnezar II. Br&#252;cken aus Zypressen- und Zedernholz. Den Bau von Bogenbr&#252;cken aus Natursteinen oder Beton beherrschten schon die R&#246;mer, wie die Br&#252;cke von Alc&#225;ntara noch eindrucksvoll belegt.[NEWLINE][NEWLINE]Steinbr&#252;cken mit echten Rundb&#246;gen wurden erst von den R&#246;mern entwickelt und im Zuge der f&#252;r Milit&#228;r und Handel notwendigen Verkehrswege quer durch das Reich in gro&#223;er Zahl errichtet.[NEWLINE][NEWLINE]Schiffbr&#252;cken hat es ebenfalls schon fr&#252;h gegeben. Herodot berichtet, der persische K&#246;nig Dareios I. sei bei seinem Feldzug gegen die Skythen (513/512 v. Chr.) mit seinem 70.000 Mann starken Heer auf einer Schiffbr&#252;cke &#252;ber den Bosporus nach Europa gelangt. Xerxes I. habe (ca. 480 v. Chr.) die Schiffbr&#252;cken &#252;ber den Hellespont, zwei aus jeweils &#252;ber 300 Schiffen bestehende Br&#252;cken, bauen lassen, um die Dardanellen zu &#252;berqueren.</German>
-		<Italian>Secondo la tradizione il pi&#249; antico ponte romano in legno fu quello costruito nel VII secolo a.C. Pons Sublicius costru&#236; un ponte sul Tevere nel IV secolo a.C.[NEWLINE][NEWLINE]Nel VI secolo a.C. Nel IV secolo a.C. i Babilonesi sotto Nabucodonosor II costruirono ponti in legno di cipresso e cedro. Gi&#224; i romani erano esperti nella costruzione di ponti ad arco in pietra naturale o cemento, come dimostra in modo impressionante il ponte dell'Alc&#225;ntara.[NEWLINE][NEWLINE]I ponti in pietra con veri archi a tutto sesto furono sviluppati per la prima volta dai romani e furono costruiti in gran numero in tutto l'impero come parte delle vie di trasporto necessarie per scopi militari e commerciali.[NEWLINE][NEWLINE]Molto presto esistevano anche i ponti navali. Erodoto riferisce che il re persiano Dario I raggiunse l'Europa su un ponte navale sul Bosforo durante la sua campagna contro gli Sciti (513/512 a.C.) con il suo esercito di 70.000 uomini. Serse I (intorno al 480 a.C.) fece costruire i ponti navali sull'Ellesponto, due ponti costituiti ciascuno da oltre 300 navi, per attraversare i Dardanelli.</Italian>
-		<Spanish>Seg&#250;n la tradici&#243;n, el puente romano de madera m&#225;s antiguo fue el construido en el siglo VII a.C. Pons Sublicius construy&#243; un puente sobre el T&#237;ber en el siglo IV a.C.[NEWLINE][NEWLINE]En el siglo VI a.C. En el siglo IV a. C., los babilonios bajo Nabucodonosor II construyeron puentes de madera de cipr&#233;s y cedro. Los romanos ya dominaban la construcci&#243;n de puentes arqueados de piedra natural u hormig&#243;n, como lo demuestra de manera impresionante el puente de Alc&#225;ntara.[NEWLINE][NEWLINE]Los puentes de piedra con verdaderos arcos de medio punto fueron desarrollados por primera vez por los romanos y se construyeron en gran n&#250;mero en todo el imperio como parte de las rutas de transporte necesarias para el ej&#233;rcito y el comercio.[NEWLINE][NEWLINE]Los puentes para barcos tambi&#233;n existieron desde el principio. Her&#243;doto informa que el rey persa Dar&#237;o I lleg&#243; a Europa a trav&#233;s de un puente de barcos sobre el B&#243;sforo durante su campa&#241;a contra los escitas (513/512 a. C.) con su ej&#233;rcito de 70.000 hombres. Jerjes I (alrededor del 480 a. C.) hizo construir puentes para barcos sobre el Helesponto, dos puentes con m&#225;s de 300 barcos cada uno, para cruzar los Dardanelos.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MOND</Tag>
@@ -504,6 +512,14 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<German>[ICON_BULLET]Kann auf einem Sklavenmarkt verkauft werden[NEWLINE][ICON_BULLET]Kann sich H&#252;tten/Weiler/D&#246;rfern anschlie&#223;en[NEWLINE][ICON_BULLET]Kann in St&#228;dten eingesetzt werden[NEWLINE][ICON_BULLET]Kann Geb&#228;uden zugewiesen werden[NEWLINE][ICON_BULLET]Sollte von einer Milit&#228;reinheit bewacht werden</German>
 		<Italian>[ICON_BULLET]Pu&#242; essere venduto al mercato degli schiavi[NEWLINE][ICON_BULLET]Pu&#242; unirsi a capanne/borgate/villaggi[NEWLINE][ICON_BULLET]Pu&#242; essere utilizzato nelle citt&#224;[NEWLINE][ICON_BULLET]Pu&#242; essere assegnato agli edifici[NEWLINE][ICON_BULLET]Dovrebbe essere sorvegliato da un'unit&#224; militare</Italian>
 		<Spanish>[ICON_BULLET]Se puede vender en un mercado de esclavos.[NEWLINE][ICON_BULLET]Puede unirse a caba&#241;as/aldeas/aldeas[NEWLINE][ICON_BULLET]Se puede usar en ciudades[NEWLINE][ICON_BULLET]Se puede asignar a edificios[NEWLINE][ICON_BULLET]Deber&#237;a estar custodiado por una unidad militar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SWORDSMAN_LATENE</Tag>
+		<English>La-T&#232;ne-Warrior</English>
+		<French>Guerrier de La-T&#232;ne</French>
+		<German>La-T&#232;ne-Krieger</German>
+		<Italian>Guerriero di La-T&#232;ne</Italian>
+		<Spanish>Guerrero de La-T&#232;ne</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TRADE_MERCHANT_MAN_HELP</Tag>

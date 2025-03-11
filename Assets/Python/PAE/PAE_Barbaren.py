@@ -121,7 +121,8 @@ def createBarbUnit(pPlot):
 
 		# Schwert
 		lTempUnit = [
-				gc.getInfoTypeForString("UNIT_SWORDSMAN"),
+				gc.getInfoTypeForString("UNIT_WARBAND"),
+				gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE"),
 				gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"),
 				gc.getInfoTypeForString("UNIT_KURZSCHWERT")
 		]
@@ -152,9 +153,11 @@ def createBarbUnit(pPlot):
 
 		if iAnzUnits == 0:
 				if gc.getGame().getCurrentEra() > 3:
-						lUnits.append(gc.getInfoTypeForString("UNIT_SWORDSMAN"))
+						lUnits.append(gc.getInfoTypeForString("UNIT_WARBAND"))
 				elif gc.getGame().getCurrentEra() > 2:
 						lUnits.append(gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"))
+						lUnits.append(gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE"))
+						lUnits.append(gc.getInfoTypeForString("UNIT_SOLDURII"))
 				elif gc.getGame().getCurrentEra() > 1:
 						lUnits.append(gc.getInfoTypeForString("UNIT_SPEARMAN"))
 				elif gc.getGame().getCurrentEra() > 0:
@@ -254,8 +257,10 @@ def createCampUnit(iPlayer, iGameTurn):
 												if pPlayer.canTrain(gc.getInfoTypeForString("UNIT_AXEMAN2"), 0, 0):
 														lUnits.append(gc.getInfoTypeForString("UNIT_AXEMAN2"))
 
-												if pPlayer.canTrain(gc.getInfoTypeForString("UNIT_SWORDSMAN"), 0, 0):
-														lUnits.append(gc.getInfoTypeForString("UNIT_SWORDSMAN"))
+												if pPlayer.canTrain(gc.getInfoTypeForString("UNIT_WARBAND"), 0, 0):
+														lUnits.append(gc.getInfoTypeForString("UNIT_WARBAND"))
+												elif pPlayer.canTrain(gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE"), 0, 0):
+														lUnits.append(gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE"))
 												elif pPlayer.canTrain(gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"), 0, 0):
 														lUnits.append(gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"))
 												else:

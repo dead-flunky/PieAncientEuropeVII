@@ -4418,35 +4418,6 @@ def doCheckDyingGeneral(pCity, bOnCityAcquired):
 								else: iHappy -= 1
 								pCity.setBuildingHappyChange(eBuildingClass, iHappy)
 
-# Eventmanager onUnitBuilt
-# Wenn eine monotheistische Religionen in der Stadt ist, aber diese nicht als Staatsreligion deklariert ist, verweigert die Einheit den Kriegsdienst
-# Feature wird mit Toleranzedikt beendet (ausser bei Staatsform Exklusivismus)
-def doRefuseUnitBuilt(pCity, pUnit):
-		if not pUnit.isMilitaryHappiness():
-				return
-
-		iPlayer = pCity.getOwner()
-		pPlayer = gc.getPlayer(iPlayer)
-
-		if not pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_EXCLUSIVE")) and gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_TOLERANZ")):
-				return
-
-		LText = []
-		bRefuse = False
-		for i in L.LMonoReligions:
-				if pCity.isHasReligion(i) and pPlayer.getStateReligion() != i:
-					bRefuse = True
-					if i == gc.getInfoTypeForString("RELIGION_JUDAISM"): LText.append("TXT_RELIGION_UNIT_BUILT_INFO_1")
-					elif i == gc.getInfoTypeForString("RELIGION_CHRISTIANITY"): LText.append("TXT_RELIGION_UNIT_BUILT_INFO_2")
-					elif i == gc.getInfoTypeForString("RELIGION_ISLAM"): LText.append("TXT_RELIGION_UNIT_BUILT_INFO_3")
-
-		if bRefuse and CvUtil.myRandom(5, "iRandReligionUnitBuiltRefuse") == 1:
-				iRandText = CvUtil.myRandom(len(LText), "iRandReligionUnitBuiltRefuseText")
-				pUnit.kill(True, -1)
-				if pPlayer.isHuman():
-						szText = u"%s: " % (pCity.getName()) + CyTranslator().getText(LText[iRandText], ())
-						CyInterface().addMessage(iPlayer, True, 10, szText, None, 2, pUnit.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
-
 def getTaxesLimit(pPlayer):
 		if (pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_DEMOCRACY")) or
 				pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_ARISTOKRATIE")) or
@@ -4459,7 +4430,7 @@ def getTaxesLimit(pPlayer):
 def getCityReligion(pCity):
 		iPlayer = pCity.getOwner()
 		pPlayer = gc.getPlayer(iPlayer)
-		iPlayerReligion = -1
+		iPlayerReligion = -1 # keine Religion
 		lReligions = []
 		iStateReligion = pPlayer.getStateReligion()
 		iRange = gc.getNumReligionInfos()

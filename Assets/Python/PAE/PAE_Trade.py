@@ -1820,9 +1820,10 @@ def _doCheckCitySpecialBonus(pUnit, pCity, eBonus):
 				lUnits = [
 						gc.getInfoTypeForString("UNIT_WAR_ELEPHANT"),
 						gc.getInfoTypeForString("UNIT_CAMEL_ARCHER"),
-						gc.getInfoTypeForString("UNITCLASS_CAMEL_CATAPHRACT"),
+						gc.getInfoTypeForString("UNIT_CAMEL_CATAPHRACT"),
 						gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"),
-						gc.getInfoTypeForString("UNIT_SWORDSMAN"),
+						gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE"),
+						gc.getInfoTypeForString("UNIT_WARBAND"),
 						gc.getInfoTypeForString("UNIT_COMPOSITE_ARCHER")
 				]
 				iUnit = eCiv.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_SPECIAL1"))

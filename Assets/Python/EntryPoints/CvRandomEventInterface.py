@@ -2230,7 +2230,7 @@ def canTriggerEliteSwordsDone(argsList):
 		iNumUnits = gc.getMap().getWorldSize() + 8
 		iUnitClassType1 = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_KURZSCHWERT')
 		iUnitClassType2 = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_SCHILDTRAEGER')
-		iUnitClassType3 = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_SWORDSMAN')
+		iUnitClassType3 = CvUtil.findInfoTypeNum(gc.getUnitClassInfo, gc.getNumUnitClassInfos(), 'UNITCLASS_FOEDERATI')
 		iUnits = player.getUnitClassCount(iUnitClassType1) + player.getUnitClassCount(iUnitClassType2) + player.getUnitClassCount(iUnitClassType3)
 		if iUnits < iNumUnits:
 				return False

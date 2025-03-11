@@ -399,6 +399,8 @@ Example: Cities can share a horse resource to build a horse stable. The resource
 
 [ICON_BULLET] Animal resources can move around the map (only on neutral terrain, chance 1:16). These animal movements are prevented if the plot is cultivated or occupied by a unit.
 
+[ICON_BULLET] The distribution of marine resources takes place via the trading ship. The aquaculture technology must be researched for this.
+
 
 [H1]Stealing bonus goods[\H1]
 
@@ -503,6 +505,8 @@ Exemple : Les villes peuvent partager une ressource &#233;questre pour construi
 [ICON_BULLET] Les ressources sur les postes de traite peuvent &#234;tre ajout&#233;es mais pas supprim&#233;es.
 
 [ICON_BULLET] Les ressources animales peuvent se d&#233;placer sur la carte (uniquement sur terrain neutre, chance 1:16). Ces migrations animales sont emp&#234;ch&#233;es si le champ est cultiv&#233; ou occup&#233; par une unit&#233;.
+
+[ICON_BULLET] La distribution des ressources marines se fait via le navire marchand. &#192; cette fin, des recherches sur la technologie de l'aquaculture doivent &#234;tre men&#233;es.
 
 
 [H1]Voler des biens bonus[\H1]
@@ -611,6 +615,8 @@ Beispiel: St&#228;dte k&#246;nnen sich eine Pferderessource teilen, um einen Pfe
 
 [ICON_BULLET] Tier-Ressourcen k&#246;nnen auf der Karte wandern (nur auf neutralem Terrain, Chance 1:16). Diese Tierwanderungen werden verhindert, wenn das Feld bewirtschaftet ist oder von einer Einheit besetzt wird.
 
+[ICON_BULLET] Das Verbreiten von Meeresressourcen geht &#252;ber das Handelsschiff. Es muss daf&#252;r die Technologie Aquakultur erforscht sein.
+
 
 [H1]Bonusg&#252;ter stehlen[\H1]
 
@@ -717,6 +723,8 @@ Esempio: le citt&#224; possono condividere una risorsa cavallo per costruire una
 
 [ICON_BULLET] Le risorse animali possono spostarsi sulla mappa (solo su terreno neutro, probabilit&#224; 1:16). Queste migrazioni di animali vengono impedite se il campo viene coltivato o occupato da un'unit&#224;.
 
+[ICON_BULLET] La distribuzione delle risorse marine avviene tramite la nave commerciale. A tal fine &#232; necessario ricercare la tecnologia dell'acquacoltura.
+
 
 [H1]Ruba beni bonus[\H1]
 
@@ -822,6 +830,8 @@ Ejemplo: las ciudades pueden compartir un recurso de caballos para construir un 
 [ICON_BULLET] Los recursos en puesto de comercio se pueden agregar pero no eliminar.
 
 [ICON_BULLET] Los recursos animales pueden moverse por el mapa (solo en terreno neutral, probabilidad 1:16). Estas migraciones de animales se evitan si el campo es cultivado u ocupado por una unidad.
+
+[ICON_BULLET] La distribuci&#243;n de los recursos marinos se realiza a trav&#233;s del barco mercante. Para este prop&#243;sito es necesario investigar la tecnolog&#237;a de la acuicultura.
 
 
 [H1]Robar bienes de bonificaci&#243;n[\H1]

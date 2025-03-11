@@ -1040,14 +1040,14 @@ def doCommissionMercenaries(iTargetPlayer, iFaktor, iPlayer):
 				# UNITCLASS_KURZSCHWERT: TECH_BEWAFFNUNG3 + Bronze or Iron
 				# UNIT_SPEARMAN: TECH_ARMOR + Bronze or Iron
 				# UNIT_SCHILDTRAEGER: TECH_BEWAFFNUNG4 + Bronze or Iron
-				# UNIT_SWORDSMAN: TECH_BEWAFFNUNG5 + Iron
+				# UNIT_SWORDSMAN_LATENE: TECH_BEWAFFNUNG5 + Iron
+				# UNIT_WARBAND: TECH_BEWAFFNUNG6 + Iron
 
 				iUnitSpear = gc.getInfoTypeForString("UNIT_LIGHT_SPEARMAN")
 				iUnitAxe = gc.getInfoTypeForString("UNIT_AXEWARRIOR")
 				iUnitArcher = gc.getInfoTypeForString("UNIT_ARCHER")
 				iUnitSlinger = gc.getInfoTypeForString("UNIT_PELTIST")
 				iUnitSword = -1
-				bLongsword = False
 
 				iBonus1 = gc.getInfoTypeForString("BONUS_BRONZE")
 				iBonus2 = gc.getInfoTypeForString("BONUS_IRON")
@@ -1077,7 +1077,7 @@ def doCommissionMercenaries(iTargetPlayer, iFaktor, iPlayer):
 										lNeighborUnits = [
 												gc.getInfoTypeForString("UNIT_COMPOSITE_ARCHER"),
 												gc.getInfoTypeForString("UNIT_REFLEX_ARCHER"),
-												gc.getInfoTypeForString("UNIT_SWORDSMAN")
+												gc.getInfoTypeForString("UNIT_WARBAND")
 										]
 										iUnit = kNeighborCiv.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_SPECIAL1"))
 										if iUnit != -1:
@@ -1144,12 +1144,24 @@ def doCommissionMercenaries(iTargetPlayer, iFaktor, iPlayer):
 						# else:
 						#if gc.getTeam(pNeighbor.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_ARCHERY3")): iUnitArcher = gc.getInfoTypeForString("UNIT_COMPOSITE_ARCHER")
 						if pNeighbor.hasBonus(iBonus1) or pNeighbor.hasBonus(iBonus2):
+
+								# Speer
 								if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_ARMOR")):
 										iUnitSpear = gc.getInfoTypeForString("UNIT_SPEARMAN")
+
+								# Axt
 								if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BUERGERSOLDATEN")):
 										iUnitAxe = gc.getInfoTypeForString("UNIT_AXEMAN2")
 								elif pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG2")):
 										iUnitAxe = gc.getInfoTypeForString("UNIT_AXEMAN")
+
+								# Schwert
+								if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG5")):
+									if pNeighbor.hasBonus(iBonus2):
+										if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG6")):
+											iUnitSword = gc.getInfoTypeForString("UNIT_WARBAND")
+										else:
+											iUnitSword = gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE")
 								if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG4")):
 										iUnitSword = gc.getInfoTypeForString("UNIT_SCHILDTRAEGER")
 								if iUnitSword == -1:
@@ -1157,16 +1169,6 @@ def doCommissionMercenaries(iTargetPlayer, iFaktor, iPlayer):
 												iUnitSword = pPlayerCiv.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_KURZSCHWERT"))
 												if iUnitSword == -1:
 														iUnitSword = gc.getInfoTypeForString("UNIT_KURZSCHWERT")
-						if not bLongsword:
-								if pNeighbor.hasBonus(iBonus2):
-										if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG5")):
-												bLongsword = True
-
-				# for neighbors
-
-				# wenns schon langschwert gibt
-				if bLongsword:
-						iUnitSword = gc.getInfoTypeForString("UNIT_SWORDSMAN")
 
 				# wenns noch keine Schwerter gibt
 				if iUnitSword == -1:
@@ -1619,7 +1621,7 @@ def doHireMercenariesINIT(pPlayer, lNeighbors):
 				gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"),
 				gc.getInfoTypeForString("UNIT_SPEARMAN"),
 				gc.getInfoTypeForString("UNIT_AXEMAN2"),
-				gc.getInfoTypeForString("UNIT_SWORDSMAN"),
+				gc.getInfoTypeForString("UNIT_WARBAND"),
 				gc.getInfoTypeForString("UNIT_WURFAXT"),
 		]
 		lEarlyMounted = [

@@ -1401,7 +1401,7 @@
 		<Spanish>&#161;Felicitaciones! &#161;Con gratitud, fuiste recompensado con el conocimiento de "[COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]"!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_2</Tag>
+		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_1</Tag>
 		<English>Religious disagreements have enraged some citizens in %s1. A violent street fight ensues. (several religions in one city)</English>
 		<French>Des d&#233;saccords religieux ont enrag&#233; certains citoyens de %s1. Une violente bagarre de rue s'ensuit. (plusieurs religions dans une m&#234;me ville)</French>
 		<German>Religi&#246;se Meinungsverschiedenheiten brachten einige B&#252;rger in %s1 in Wut und Rage. Es kommt zu einer heftigen Stra&#223;enschlacht. (mehrere Religionen in einer Stadt)</German>
@@ -1409,12 +1409,20 @@
 		<Spanish>Los desacuerdos religiosos han enfurecido a algunos ciudadanos en %s1. Se produce una violenta pelea callejera. (varias religiones en una ciudad)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_2</Tag>
+		<English>The temple (%s2) in %s1 was destroyed.</English>
+		<French>Le temple (%s2) de %s1 a &#233;t&#233; d&#233;truit.</French>
+		<German>Der Tempel (%s2) in %s1 wurde zerst&#246;rt.</German>
+		<Italian>Il tempio (%s2) in %s1 &#232; stato distrutto.</Italian>
+		<Spanish>El templo (%s2) en %s1 fue destruido.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_3</Tag>
-		<English>The city of %s1 loses 1 population.</English>
-		<French>La ville %s1 perd 1 population.</French>
-		<German>Die Stadt %s1 verliert 1 Bev&#246;lkerung.</German>
-		<Italian>La citt&#224; %s1 perde 1 popolazione.</Italian>
-		<Spanish>La ciudad %s1 pierde 1 poblaci&#243;n.</Spanish>
+		<English>The city of %s1 loses %d2 population.</English>
+		<French>La ville %s1 perd %d2 population.</French>
+		<German>Die Stadt %s1 verliert %d2 Bev&#246;lkerung.</German>
+		<Italian>La citt&#224; %s1 perde %d2 popolazione.</Italian>
+		<Spanish>La ciudad %s1 pierde %d2 poblaci&#243;n.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_4</Tag>
@@ -3630,26 +3638,58 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_1</Tag>
-		<English>Your Jewish recruits refuse to serve the pagan ruler and leave the squad. The unit dissolves.</English>
-		<French>Vos recrues juives refusent de servir le dirigeant pa&#239;en et quittent l'&#233;quipe. L'unit&#233; se dissout.</French>
-		<German>Eure j&#252;dischen Rekruten verweigern den Dienst f&#252;r den paganen Herrscher und verlassen den Trupp. Die Einheit l&#246;st sich auf.</German>
-		<Italian>Le tue reclute ebree si rifiutano di servire il sovrano pagano e lasciano la squadra. L'unit&#224; si dissolve.</Italian>
-		<Spanish>Tus reclutas jud&#237;os se niegan a servir al gobernante pagano y abandonan el escuadr&#243;n. La unidad se disuelve.</Spanish>
+		<English>Your Jewish recruits refuse to serve the pagan ruler and leave the squad. The unit dissolves (ends with the technological Edict of Toleration or with Judaism as the state religion).</English>
+		<French>Vos recrues juives refusent de servir le dirigeant pa&#239;en et quittent l'&#233;quipe. L'unit&#233; se dissout (se termine avec la technologie de l'&#233;dit de tol&#233;rance ou avec le juda&#239;sme comme religion d'&#201;tat).</French>
+		<German>Eure j&#252;dischen Rekruten verweigern den Dienst f&#252;r den paganen Herrscher und verlassen den Trupp. Die Einheit l&#246;st sich auf (endet mit der Technologie Toleranzedikt oder mit Judentum als Staatsreligion).</German>
+		<Italian>Le tue reclute ebree si rifiutano di servire il sovrano pagano e lasciano la squadra. L'unit&#224; si dissolve (finisce con l'Editto tecnologico di Tolleranza o con l'Ebraismo come religione di Stato).</Italian>
+		<Spanish>Tus reclutas jud&#237;os se niegan a servir al gobernante pagano y abandonan el escuadr&#243;n. La unidad se disuelve (termina con el Edicto tecnol&#243;gico de Tolerancia o con el Juda&#237;smo como religi&#243;n de Estado).</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_2</Tag>
-		<English>Your Christian recruits refuse to serve the pagan ruler and leave the squad. The unit dissolves.</English>
-		<French>Vos recrues chr&#233;tiennes refusent de servir le dirigeant pa&#239;en et quittent l'&#233;quipe. L'unit&#233; se dissout.</French>
-		<German>Eure christlichen Rekruten verweigern den Dienst f&#252;r den paganen Herrscher und verlassen den Trupp. Die Einheit l&#246;st sich auf.</German>
-		<Italian>Le tue reclute cristiane si rifiutano di servire il sovrano pagano e lasciano la squadra. L'unit&#224; si dissolve.</Italian>
-		<Spanish>Tus reclutas cristianos se niegan a servir al gobernante pagano y abandonan el escuadr&#243;n. La unidad se disuelve.</Spanish>
+		<English>So-called "chosen ones" refuse military service because they do not want to serve a godless ruler. (ends with the technological Edict of Toleration or with Judaism as the state religion)</English>
+		<French>Les soi-disant "&#233;lus" refusent le service militaire parce qu'ils ne veulent pas servir un dirigeant impie. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le juda&#239;sme comme religion d'&#201;tat)</French>
+		<German>Sogenannte "Auserw&#228;hlte" verweigern den Kriegsdienst, weil sie keinem gottlosen Herrscher dienen wollen. (endet mit der Technologie Toleranzedikt oder mit Judentum als Staatsreligion)</German>
+		<Italian>I cosiddetti "eletti" rifiutano il servizio militare perch&#233; non vogliono servire un governante empio. (si conclude con l'editto tecnologico della tolleranza o con l'ebraismo come religione di Stato)</Italian>
+		<Spanish>Los llamados "escogidos" rechazan el servicio militar porque no quieren servir a un gobernante imp&#237;o. (termina con el edicto tecnol&#243;gico de tolerancia o con el juda&#237;smo como religi&#243;n de Estado)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_3</Tag>
-		<English>Your Islamist recruits refuse to serve the pagan ruler, kill their infidel colleagues and disband (ends with the Tolerance Edict technology).</English>
-		<French>Vos recrues islamistes refusent de servir le dirigeant pa&#239;en, tuent leurs coll&#232;gues infid&#232;les et se dissolvent (se termine par la technologie des &#233;dits de tol&#233;rance).</French>
-		<German>Eure islamistischen Rekruten verweigern den Dienst f&#252;r den paganen Herrscher, t&#246;ten ihre ungl&#228;ubigen Kollegen und l&#246;sen sich auf (endet mit der Toleranzedikt Technologie).</German>
-		<Italian>Le tue reclute islamiste si rifiutano di servire il sovrano pagano, uccidono i loro colleghi infedeli e si dissolvono (termina con la tecnologia dell'Editto di Tolleranza).</Italian>
-		<Spanish>Tus reclutas islamistas se niegan a servir al gobernante pagano, matan a sus colegas infieles y se disuelven (termina con la tecnolog&#237;a del Edicto de Tolerancia).</Spanish>
+		<English>The so-called "chosen ones" refuse military service due to their pacifist teachings. (Ends with the technological Edict of Toleration or with Judaism as the state religion)</English>
+		<French>Les soi-disant &#171; &#233;lus &#187; refusent le service militaire en raison de leurs enseignements pacifistes. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le juda&#239;sme comme religion d'&#201;tat)</French>
+		<German>Die sogenannten "Auserw&#228;hlten" verweigern den Kriegsdienst auf Grund ihrer pazifistischen Lehre. (endet mit der Technologie Toleranzedikt oder mit Judentum als Staatsreligion)</German>
+		<Italian>I cosiddetti "eletti" rifiutano il servizio militare a causa dei loro insegnamenti pacifisti. (si conclude con l'editto tecnologico della tolleranza o con l'ebraismo come religione di Stato)</Italian>
+		<Spanish>Los llamados "elegidos" rechazan el servicio militar debido a sus ense&#241;anzas pacifistas. (termina con el edicto tecnol&#243;gico de tolerancia o con el juda&#237;smo como religi&#243;n de Estado)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_4</Tag>
+		<English>Your Christian recruits refuse to serve the pagan ruler and leave the squad. The unit dissolves. (ends with the technology Edict of Tolerance or with Christianity as the state religion)</English>
+		<French>Vos recrues chr&#233;tiennes refusent de servir le dirigeant pa&#239;en et quittent l'&#233;quipe. L'unit&#233; se dissout. (se termine avec la technologie de l'&#233;dit de tol&#233;rance ou avec le christianisme comme religion d'&#201;tat)</French>
+		<German>Eure christlichen Rekruten verweigern den Dienst f&#252;r den paganen Herrscher und verlassen den Trupp. Die Einheit l&#246;st sich auf. (endet mit der Technologie Toleranzedikt oder mit Christentum als Staatsreligion)</German>
+		<Italian>Le tue reclute cristiane si rifiutano di servire il sovrano pagano e lasciano la squadra. L'unit&#224; si dissolve. (finisce con l'editto di tolleranza della tecnologia o con il cristianesimo come religione di stato)</Italian>
+		<Spanish>Tus reclutas cristianos se niegan a servir al gobernante pagano y abandonan el escuadr&#243;n. La unidad se disuelve. (termina con el edicto tecnol&#243;gico de tolerancia o con el cristianismo como religi&#243;n de Estado)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_5</Tag>
+		<English>So-called "saints" refuse military service because they do not want to serve a godless ruler. (ends with the technology Edict of Toleration or with Christianity as the state religion)</English>
+		<French>Les soi-disant "saints" refusent le service militaire parce qu'ils ne veulent pas servir un dirigeant impie. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le christianisme comme religion d'&#201;tat)</French>
+		<German>Sogenannte "Heilige" verweigern den Kriegsdienst, weil sie keinem gottlosen Herrscher dienen wollen. (endet mit der Technologie Toleranzedikt oder mit Christentum als Staatsreligion)</German>
+		<Italian>I cosiddetti "santi" rifiutano il servizio militare perch&#233; non vogliono servire un sovrano empio. (si conclude con l'editto di tolleranza della tecnologia o con il cristianesimo come religione di Stato)</Italian>
+		<Spanish>Los llamados "santos" rechazan el servicio militar porque no quieren servir a un gobernante imp&#237;o. (termina con el edicto tecnol&#243;gico de tolerancia o con el cristianismo como religi&#243;n de Estado)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_6</Tag>
+		<English>So-called "members of the way" refuse military service due to their pacifist teachings. (ends with the technological edict of tolerance or with Christianity as the state religion)</English>
+		<French>Les soi-disant &#171; membres de la Voie &#187; refusent le service militaire en raison de leurs enseignements pacifistes. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le christianisme comme religion d'&#201;tat)</French>
+		<German>Sogenannte "Angeh&#246;rige des rechten Weges" verweigern den Kriegsdienst auf Grund ihrer pazifistischen Lehre. (endet mit der Technologie Toleranzedikt oder mit Christentum als Staatsreligion)</German>
+		<Italian>I cosiddetti "membri della via" rifiutano il servizio militare a causa dei loro insegnamenti pacifisti. (si conclude con l'editto di tolleranza della tecnologia o con il cristianesimo come religione di Stato)</Italian>
+		<Spanish>Los llamados "miembros del camino" rechazan el servicio militar debido a sus ense&#241;anzas pacifistas. (termina con el edicto tecnol&#243;gico de tolerancia o con el cristianismo como religi&#243;n de Estado)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_7</Tag>
+		<English>Your Islamist recruits refuse to serve the pagan ruler, kill their infidel colleagues and disband (ends with the technology Tolerance Edict or with Islam as the state religion).</English>
+		<French>Vos recrues islamistes refusent de servir le dirigeant pa&#239;en, tuent leurs coll&#232;gues infid&#232;les et se dissolvent (se termine avec la technologie de l'&#233;dit de tol&#233;rance ou avec l'Islam comme religion d'&#201;tat).</French>
+		<German>Eure islamistischen Rekruten verweigern den Dienst f&#252;r den paganen Herrscher, t&#246;ten ihre ungl&#228;ubigen Kollegen und l&#246;sen sich auf (endet mit der Technologie Toleranzedikt oder mit Islam als Staatsreligion).</German>
+		<Italian>Le tue reclute islamiste si rifiutano di servire il sovrano pagano, uccidono i loro colleghi infedeli e si dissolvono (finisce con l'editto di tolleranza tecnologica o con l'Islam come religione di Stato).</Italian>
+		<Spanish>Tus reclutas islamistas se niegan a servir al gobernante pagano, matan a sus colegas infieles y se disuelven (termina con el edicto de tolerancia tecnol&#243;gica o con el Islam como religi&#243;n de Estado).</Spanish>
 	</TEXT>
 </Civ4GameText>

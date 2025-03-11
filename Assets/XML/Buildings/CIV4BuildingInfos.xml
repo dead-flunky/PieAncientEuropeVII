@@ -33645,7 +33645,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_HINDU_TEMPLE</BuildingClass>
 			<Type>BUILDING_HINDU_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_HINDU_MANDIR</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MANDIR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_HINDU_TEMPLE_STRATEGY</Strategy>
@@ -35164,7 +35164,7 @@
 		<BuildingInfo>
 												<BuildingClass>BUILDINGCLASS_BUDDHIST_TEMPLE</BuildingClass>
 												<Type>BUILDING_BUDDHIST_TEMPLE</Type>
-												<SpecialBuildingType/>
+												<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 												<Description>TXT_KEY_BUILDING_BUDDHIST_STUPA</Description>
 												<Civilopedia>TXT_KEY_BUILDING_BUDDHIST_TEMPLE_PEDIA</Civilopedia>
 												<Strategy>TXT_KEY_BUILDING_BUDDHIST_TEMPLE_STRATEGY</Strategy>
@@ -35730,7 +35730,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_JEWISH_TEMPLE</BuildingClass>
 			<Type>BUILDING_JEWISH_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_JEWISH_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
@@ -36321,9 +36321,9 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CHRISTIAN_TEMPLE</BuildingClass>
 			<Type>BUILDING_CHRISTIAN_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
+			<Civilopedia>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE_STRATEGY</Strategy>
 			<Help>TXT_KEY_WONDER_REL_CHRIST_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
@@ -36934,7 +36934,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ISLAMIC_TEMPLE</BuildingClass>
 			<Type>BUILDING_ISLAMIC_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ISLAMIC_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ISLAMIC_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_ISLAMIC_TEMPLE_STRATEGY</Strategy>
@@ -37293,7 +37293,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ZORO_TEMPLE</BuildingClass>
 			<Type>BUILDING_ZORO_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ZORO_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy/>
@@ -37487,7 +37487,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_PHOEN_TEMPLE</BuildingClass>
 			<Type>BUILDING_PHOEN_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_PHOEN_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
@@ -37682,7 +37682,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_SUMER_TEMPLE</BuildingClass>
 			<Type>BUILDING_SUMER_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_SUMER_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
@@ -37876,7 +37876,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_ROME_TEMPLE</BuildingClass>
 			<Type>BUILDING_ROME_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_ROME_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
@@ -38070,7 +38070,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_GREEK_TEMPLE</BuildingClass>
 			<Type>BUILDING_GREEK_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_GREEK_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
@@ -38264,7 +38264,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CELTIC_TEMPLE</BuildingClass>
 			<Type>BUILDING_CELTIC_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_CELTIC_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
@@ -38457,7 +38457,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_EGYPT_TEMPLE</BuildingClass>
 			<Type>BUILDING_EGYPT_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_EGYPT_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
@@ -38651,7 +38651,7 @@
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_NORDIC_TEMPLE</BuildingClass>
 			<Type>BUILDING_NORDIC_TEMPLE</Type>
-			<SpecialBuildingType/>
+			<SpecialBuildingType>SPECIALBUILDING_TEMPLE</SpecialBuildingType>
 			<Description>TXT_KEY_BUILDING_NORDIC_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>

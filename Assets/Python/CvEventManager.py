@@ -2638,8 +2638,8 @@ class CvEventManager:
 								# ***TEST***
 								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Seevoelker erstellt",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-							# Wikinger (790-1070) erschaffen: Langboot + Berserker | ab 500 AD
-							if gc.getGame().getGameTurnYear() >= 500:
+							# Wikinger (790-1070) erschaffen: Langboot + Berserker
+							if gc.getGame().getGameTurnYear() >= 600:
 								PAE_Barbaren.doVikings()
 								# ***TEST***
 								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Wikinger erstellt",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -4322,7 +4322,7 @@ class CvEventManager:
 							PAE_Unit.doDecreaseFoodOnUnitBuilt(city, unit)
 
 					# PAE 6.14: Religion: Einheiten verweigern Kriegsdienst
-					PAE_City.doRefuseUnitBuilt(city, unit)
+					PAE_Christen.doRefuseUnitBuilt(city, unit)
 
 				# PAE Debug Mark 7 end
 
@@ -5366,6 +5366,9 @@ class CvEventManager:
 
 							# PAE 6.14: Allgemeine Religionskonflikte
 							PAE_Christen.removePagans(pCity)
+							#if not PAE_Christen.removePagans(pCity):
+							#		# PAE 7.7
+							#		PAE_Christen.doReligionsKonflikt(pCity)
 
 							# CivilWar, Stadt kann barbarisch werden (pCity pointer weg!)
 							bRevolt = PAE_City.doCheckCivilWar(pCity)

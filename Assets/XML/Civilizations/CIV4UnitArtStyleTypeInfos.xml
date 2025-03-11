@@ -649,7 +649,7 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_CELTIC</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_SWORDSMAN</UnitType>
+					<UnitType>UNIT_SWORDSMAN_LATENE</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_CELTIC</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -778,7 +778,7 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_CELTIC</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_SWORDSMAN</UnitType>
+					<UnitType>UNIT_SWORDSMAN_LATENE</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_CELTIC</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -908,8 +908,8 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_CELTIC</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_SWORDSMAN</UnitType>
-					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_EUROPEAN</EarlyArtDefineTag></UnitMeshGroup>
+					<UnitType>UNIT_SWORDSMAN_LATENE</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_CELTIC</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_AUXILIAR</UnitType>
@@ -1036,14 +1036,6 @@
 				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_GERMAN</EarlyArtDefineTag></UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
-					<UnitType>UNIT_SWORDSMAN</UnitType>
-					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_GERMAN</EarlyArtDefineTag></UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
-					<UnitType>UNIT_WARBAND</UnitType>
-					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_WARBAND_GERMAN</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_AUXILIAR</UnitType>
@@ -2209,7 +2201,7 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_IBERIA_2</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_SWORDSMAN</UnitType>
+					<UnitType>UNIT_SWORDSMAN_LATENE</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_IBERIA</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
@@ -2411,10 +2403,6 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_SCYTHS</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
-					<UnitType>UNIT_SWORDSMAN</UnitType>
-					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_SCYTHS</EarlyArtDefineTag></UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
 					<UnitType>UNIT_ARCHER</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_ARCHER_ASIAN</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
@@ -2516,10 +2504,6 @@
 				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_INDIA</EarlyArtDefineTag></UnitMeshGroup>
-				</StyleUnit>
-				<StyleUnit>
-					<UnitType>UNIT_SWORDSMAN</UnitType>
-					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SWORDSMAN_INDIA</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_FOEDERATI</UnitType>

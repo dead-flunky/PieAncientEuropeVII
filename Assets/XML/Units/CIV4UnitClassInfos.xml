@@ -494,13 +494,13 @@
 			<DefaultUnit>UNIT_MOUNTED_SACRED_BAND_CARTHAGE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_SWORDSMAN</Type>
-			<Description>TXT_KEY_UNIT_SWORDSMAN</Description>
+			<Type>UNITCLASS_SWORDSMAN_LATENE</Type>
+			<Description>TXT_KEY_UNIT_SWORDSMAN_LATENE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>1</iInstanceCostModifier>
-			<DefaultUnit>UNIT_SWORDSMAN</DefaultUnit>
+			<DefaultUnit>UNIT_SWORDSMAN_LATENE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SOLDURII</Type>
@@ -510,6 +510,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SOLDURII</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_FOEDERATI</Type>
+			<Description>TXT_KEY_UNIT_FOEDERATI</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>1</iInstanceCostModifier>
+			<DefaultUnit>UNIT_FOEDERATI</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_PRINCIPES</Type>
@@ -562,7 +571,7 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>1</iInstanceCostModifier>
+			<iInstanceCostModifier>5</iInstanceCostModifier>
 			<DefaultUnit>UNIT_LEGION2</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>

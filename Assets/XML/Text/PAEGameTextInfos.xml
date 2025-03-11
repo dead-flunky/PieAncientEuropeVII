@@ -8678,11 +8678,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RESERVIST_HELP</Tag>
-		<English>[ICON_BULLET]Can only be mobilized from settled [COLOR_HIGHLIGHT_TEXT]reservists[COLOR_REVERT]</English>
-		<French>[ICON_BULLET]Ne peut &#234;tre mobilis&#233; que des [COLOR_HIGHLIGHT_TEXT]r&#233;servistes[COLOR_REVERT] r&#233;sidents</French>
-		<German>[ICON_BULLET]Kann nur aus angesiedelten [COLOR_HIGHLIGHT_TEXT]Reservisten[COLOR_REVERT] mobilisiert werden</German>
-		<Italian>[ICON_BULLET]Pu&#242; essere mobilitato solo da [COLOR_HIGHLIGHT_TEXT]riservisti[COLOR_REVERT] residenti</Italian>
-		<Spanish>[ICON_BULLET]Solo se puede movilizar desde [COLOR_HIGHLIGHT_TEXT]reservistas[COLOR_REVERT] residentes</Spanish>
+		<English>[ICON_BULLET]Can be mobilized from settled [COLOR_HIGHLIGHT_TEXT]reservists[COLOR_REVERT]</English>
+		<French>[ICON_BULLET]Peut &#234;tre mobilis&#233; que des [COLOR_HIGHLIGHT_TEXT]r&#233;servistes[COLOR_REVERT] r&#233;sidents</French>
+		<German>[ICON_BULLET]Kann aus angesiedelten [COLOR_HIGHLIGHT_TEXT]Reservisten[COLOR_REVERT] mobilisiert werden</German>
+		<Italian>[ICON_BULLET]Pu&#242; essere mobilitato da [COLOR_HIGHLIGHT_TEXT]riservisti[COLOR_REVERT] residenti</Italian>
+		<Spanish>[ICON_BULLET]Se puede movilizar desde [COLOR_HIGHLIGHT_TEXT]reservistas[COLOR_REVERT] residentes</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SEE_INVISIBLE</Tag>
