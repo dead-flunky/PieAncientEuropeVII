@@ -40,7 +40,7 @@
 			<iGreatPeoplePercent>100</iGreatPeoplePercent>
 			<iCulturePercent>100</iCulturePercent>
 			<iAnarchyPercent>50</iAnarchyPercent>
-			<iEventChancePerTurn>2</iEventChancePerTurn>
+			<iEventChancePerTurn>4</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
 			<EraInfoSoundtracks>
@@ -93,7 +93,7 @@
 			<iStartingExploreUnits>0</iStartingExploreUnits>
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
-			<iStartPercent>10</iStartPercent>
+			<iStartPercent>9</iStartPercent>
 			<iGrowthPercent>110</iGrowthPercent>
 			<iTrainPercent>110</iTrainPercent>
 			<iConstructPercent>110</iConstructPercent>
@@ -104,7 +104,7 @@
 			<iGreatPeoplePercent>110</iGreatPeoplePercent>
 			<iCulturePercent>110</iCulturePercent>
 			<iAnarchyPercent>75</iAnarchyPercent>
-			<iEventChancePerTurn>4</iEventChancePerTurn>
+			<iEventChancePerTurn>6</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
 			<EraInfoSoundtracks>
@@ -164,7 +164,7 @@
 			<iStartingExploreUnits>0</iStartingExploreUnits>
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
-			<iStartPercent>10</iStartPercent>
+			<iStartPercent>24</iStartPercent>
 			<iGrowthPercent>125</iGrowthPercent>
 			<iTrainPercent>125</iTrainPercent>
 			<iConstructPercent>125</iConstructPercent>
@@ -175,7 +175,7 @@
 			<iGreatPeoplePercent>125</iGreatPeoplePercent>
 			<iCulturePercent>125</iCulturePercent>
 			<iAnarchyPercent>100</iAnarchyPercent>
-			<iEventChancePerTurn>6</iEventChancePerTurn>
+			<iEventChancePerTurn>8</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
 			<EraInfoSoundtracks>
@@ -238,7 +238,7 @@
 			<iStartingExploreUnits>0</iStartingExploreUnits>
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
-			<iStartPercent>10</iStartPercent>
+			<iStartPercent>38</iStartPercent>
 			<iGrowthPercent>125</iGrowthPercent>
 			<iTrainPercent>125</iTrainPercent>
 			<iConstructPercent>125</iConstructPercent>
@@ -249,7 +249,7 @@
 			<iGreatPeoplePercent>125</iGreatPeoplePercent>
 			<iCulturePercent>125</iCulturePercent>
 			<iAnarchyPercent>125</iAnarchyPercent>
-			<iEventChancePerTurn>8</iEventChancePerTurn>
+			<iEventChancePerTurn>10</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
 			<EraInfoSoundtracks>
@@ -334,7 +334,7 @@
 			<iStartingExploreUnits>0</iStartingExploreUnits>
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
-			<iStartPercent>10</iStartPercent>
+			<iStartPercent>75</iStartPercent>
 			<iGrowthPercent>150</iGrowthPercent>
 			<iTrainPercent>150</iTrainPercent>
 			<iConstructPercent>150</iConstructPercent>
@@ -345,7 +345,7 @@
 			<iGreatPeoplePercent>150</iGreatPeoplePercent>
 			<iCulturePercent>150</iCulturePercent>
 			<iAnarchyPercent>150</iAnarchyPercent>
-			<iEventChancePerTurn>8</iEventChancePerTurn>
+			<iEventChancePerTurn>10</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
 			<EraInfoSoundtracks>
@@ -436,7 +436,7 @@
 			<iStartingExploreUnits>0</iStartingExploreUnits>
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
-			<iStartPercent>10</iStartPercent>
+			<iStartPercent>90</iStartPercent>
 			<iGrowthPercent>150</iGrowthPercent>
 			<iTrainPercent>150</iTrainPercent>
 			<iConstructPercent>150</iConstructPercent>

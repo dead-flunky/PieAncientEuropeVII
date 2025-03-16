@@ -1,7 +1,7 @@
 # Christian features and events
 
 # Imports
-from CvPythonExtensions import (CyGlobalContext, CyInterface, plotXY,
+from CvPythonExtensions import (CyGlobalContext, CyInterface, plotXY, CyPopupInfo, ButtonPopupTypes,
 											CyTranslator, ColorTypes, isWorldWonderClass,
 											isTeamWonderClass, isNationalWonderClass)
 # import CvEventInterface

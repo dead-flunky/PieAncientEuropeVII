@@ -2566,7 +2566,6 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
 			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
 			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
-			
 			if (std::find(lList.begin(), lList.end(), iImp) != lList.end()) return false;
 		}
 		// -----------

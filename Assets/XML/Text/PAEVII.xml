@@ -458,6 +458,22 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<Spanish>Construcci&#243;n de puentes</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_CITY_STATE_INFO</Tag>
+		<English>Civilizations with this technology cannot build settlers and therefore cannot found new cities.</English>
+		<French>Les civilisations dot&#233;es de cette technologie ne peuvent pas construire de colons et ne peuvent donc pas fonder de nouvelles villes.</French>
+		<German>Zivilisationen mit dieser Technologie k&#246;nnen keine Siedler bauen und daher keine neuen St&#228;dte gr&#252;nden.</German>
+		<Italian>Le civilt&#224; dotate di questa tecnologia non possono costruire coloni e quindi non possono fondare nuove citt&#224;.</Italian>
+		<Spanish>Las civilizaciones con esta tecnolog&#237;a no pueden construir colonos y, por lo tanto, no pueden fundar nuevas ciudades.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GREEK_INFO</Tag>
+		<English>This technology is exclusive to all Greek civilizations. It allows these civilizations to research specific technologies, create units, or establish military formations. Some technologies and their properties are even conquerable.</English>
+		<French>Cette technologie est r&#233;serv&#233;e &#224; toutes les civilisations grecques. Cela permet &#224; ces civilisations de rechercher des technologies sp&#233;cifiques, de cr&#233;er des unit&#233;s ou d'&#233;tablir des formations militaires. Certaines technologies et leurs propri&#233;t&#233;s peuvent m&#234;me &#234;tre conquises.</French>
+		<German>Diese Technologie ist allen griechischen Zivilisationen vorbehalten. Damit k&#246;nnen diese Zivilisationen ganz bestimmte Technologien erforschen, Einheiten erstellen oder milit&#228;rische Formationen durchf&#252;hren. Manche Technologien und deren Eigenschaften sind sogar eroberbar.</German>
+		<Italian>Questa tecnologia &#232; riservata a tutte le civilt&#224; greche. Ci&#242; consente a queste civilt&#224; di ricercare tecnologie specifiche, creare unit&#224; o istituire formazioni militari. Alcune tecnologie e le loro propriet&#224; possono addirittura essere conquistate.</Italian>
+		<Spanish>Esta tecnolog&#237;a est&#225; reservada a todas las civilizaciones griegas. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_MOND</Tag>
 		<English>Lunar Calendar</English>
 		<French>Calendrier lunaire</French>
@@ -480,6 +496,14 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<German>Rennofen</German>
 		<Italian>Forno basso</Italian>
 		<Spanish>Horno bajo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ROMAN_INFO</Tag>
+		<English>This technology is reserved for the Romans and Etruscans. It allows these civilizations to research specific technologies, create units, or establish military formations. Some technologies and their properties are even conquerable.</English>
+		<French>Cette technologie est r&#233;serv&#233;e aux Romains et aux &#201;trusques. Cela permet &#224; ces civilisations de rechercher des technologies sp&#233;cifiques, de cr&#233;er des unit&#233;s ou d'&#233;tablir des formations militaires. Certaines technologies et leurs propri&#233;t&#233;s peuvent m&#234;me &#234;tre conquises.</French>
+		<German>Diese Technologie ist R&#246;mern und Etruskern vorbehalten. Damit k&#246;nnen diese Zivilisationen ganz bestimmte Technologien erforschen, Einheiten erstellen oder milit&#228;rische Formationen durchf&#252;hren. Manche Technologien und deren Eigenschaften sind sogar eroberbar.</German>
+		<Italian>Questa tecnologia &#232; riservata ai Romani e agli Etruschi. Ci&#242; consente a queste civilt&#224; di ricercare tecnologie specifiche, creare unit&#224; o istituire formazioni militari. Alcune tecnologie e le loro propriet&#224; possono addirittura essere conquistate.</Italian>
+		<Spanish>Esta tecnolog&#237;a est&#225; reservada a los romanos y etruscos. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1</Tag>

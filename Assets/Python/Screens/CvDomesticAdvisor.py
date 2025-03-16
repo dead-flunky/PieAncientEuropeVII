@@ -686,8 +686,7 @@ class CvDomesticAdvisor:
 				screen.setTableColumnHeader("CityListBackground", 15, "<font=2>" + (u"+2%c" % gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar()) + "</font>", ColWidth)
 
 				# Temple slaves
-				iData = gc.getInfoTypeForString("SPECIALBUILDING_TEMPLE")
-				screen.setImageButton(self.getNextWidgetName(), gc.getSpecialBuildingInfo(iData).getButton(), ButtonX+MarginX*13, ButtonY, 46, 46, WidgetTypes.WIDGET_HELP_SPECIAL_BUILDING, -1, iData)
+				screen.setImageButton(self.getNextWidgetName(), "Art/Interface/Buttons/Buildings/Temple.dds", ButtonX+MarginX*13, ButtonY, 46, 46, WidgetTypes.WIDGET_GENERAL, -1, -1)
 				# Trait Creative: 3 Kultur pro Sklave / 3 culture per slave
 				if gc.getPlayer(CyGame().getActivePlayer()).hasTrait(gc.getInfoTypeForString("TRAIT_CREATIVE")):
 						screen.setTableColumnHeader("CityListBackground", 16, "<font=2>" + (u"+3%c" % gc.getCommerceInfo(CommerceTypes.COMMERCE_CULTURE).getChar()) + "</font>", ColWidth)
@@ -809,7 +808,6 @@ class CvDomesticAdvisor:
 				screen.setTableInt("CityListBackground", 15, i, szText, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 				# Temple slaves
-				eBuilding = gc.getInfoTypeForString("SPECIALBUILDING_TEMPLE")
 				iCulture = 0
 				bTemple = False
 				# Trait Creative: 3 Kultur pro Sklave / 3 culture per slave

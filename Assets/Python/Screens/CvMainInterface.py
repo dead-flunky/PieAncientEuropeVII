@@ -2081,6 +2081,7 @@ class CvMainInterface:
 
 												# Go to city button
 												if pUnit.canMove() and pUnit.getDomainType() == DomainTypes.DOMAIN_LAND:
+													if pUnitOwner.getNumCities() > 0:
 														screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
 																"INTERFACE_BUTTON_GO2CITY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 773, -1, False)
 														screen.show("BottomButtonContainer")
@@ -7596,7 +7597,7 @@ class CvMainInterface:
 												CyAudioGame().Play2DSound("AS2D_BUILD_COLOSSEUM")
 												CyMessageControl().sendModNetMessage(iData1, -1, pPlot.getPlotCity().getID(), iOwner, iUnitID)
 
-										# Go to city
+										# Go to city (go2city)
 										if iData1 == 773:
 												CyMessageControl().sendModNetMessage(773, iData2, -1, iOwner, iUnitID)
 

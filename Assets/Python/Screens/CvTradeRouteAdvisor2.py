@@ -335,59 +335,70 @@ class CvTradeRouteAdvisor2:
 				screen.addScrollPanel("ScrollPanelCities", u"", self.X_CITIES, self.Y_CITIES+4, self.W_CITIES, self.H_CITIES-40, PanelStyles.PANEL_STYLE_EXTERNAL)
 				screen.setActivation("ScrollPanelCities", ActivationTypes.ACTIVATE_NORMAL)
 
-				(loopCity, iter) = player.firstCity(False)
-				while loopCity:
-					if not loopCity.isNone() and loopCity.getOwner() == player.getID(): #only valid cities
+				pCapital = False
+				lCities = []
+				(loopCity, pIter) = player.firstCity(False)
+				if loopCity is not None and not loopCity.isNone():
+					while loopCity:
+						if not loopCity.isNone() and loopCity.getOwner() == iPlayer:
+							if loopCity.isRevealed(iTeam, 0):
+								if loopCity.isCapital():
+									pCapital = (loopCity.getName(),loopCity.getID())
+								else:
+									lCities.append((loopCity.getName(),loopCity.getID()))
+						(loopCity, pIter) = player.nextCity(pIter, False)
 
-						if loopCity.isRevealed(iTeam, 0):
+				lCities.sort()
+				if pCapital: lCities.insert(0,pCapital)
 
-							iX = self.X_CITIES
-							iY = 0+i*54
+				for lCity in lCities:
+					loopCity = player.getCity(lCity[1])
 
-
-							# Symbol: Stern: Capital (gold) or provincial palace (silver)
-							if loopCity.isCapital():
-								screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"%c" % CyGame().getSymbolID(FontSymbols.STAR_CHAR),
-								CvUtil.FONT_LEFT_JUSTIFY, iX+2, iY+4, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-							elif loopCity.isGovernmentCenter():
-								screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"%c" % CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR),
-								CvUtil.FONT_LEFT_JUSTIFY, iX+2, iY+4, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-
-							# Hafenstadt (Icons)
-							if loopCity.isCoastal(4):
-								screen.addDDSGFCAt(self.getNextWidgetName(), "ScrollPanelCities", ArtFileMgr.getInterfaceArtInfo("INTERFACE_TRADE_ICON_ANKER").getPath(),
-								iX, iY+20, 22, 22, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
-
-
-							# City status (button)
-							buttonCityStatus = self.getButtonCityStatus(loopCity)
-							screen.addCheckBoxGFCAt("ScrollPanelCities", self.getNextWidgetName(), buttonCityStatus, "",
-							iX+22, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, iPlayer, loopCity.getID(), ButtonStyles.BUTTON_STYLE_LABEL, False)
+					iX = self.X_CITIES
+					iY = 0+i*54
 
 
-							iX += 22 + BUTTON_SIZE + 4
-							# City name
-							szText = self.getCityName(loopCity)
-							screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, iX, iY+2, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					# Symbol: Stern: Capital (gold) or provincial palace (silver)
+					if loopCity.isCapital():
+						screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"%c" % CyGame().getSymbolID(FontSymbols.STAR_CHAR),
+						CvUtil.FONT_LEFT_JUSTIFY, iX+2, iY+4, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+					elif loopCity.isGovernmentCenter():
+						screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"%c" % CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR),
+						CvUtil.FONT_LEFT_JUSTIFY, iX+2, iY+4, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
-							# City properties
-							szText = self.getCityProperties(loopCity)
-							screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, iX, iY+22, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-
-
-							iX += 110
-							# Button Muster für Bonusresis
-							lGoods = PAE_Trade.getCitySaleableGoods(loopCity, self.iActivePlayer)
-							if len(lGoods):
-								for iBonus in lGoods:
-									iX += BUTTON_SIZE + 2
-									screen.addDDSGFCAt(self.getNextWidgetName(), "ScrollPanelCities", gc.getBonusInfo(iBonus).getButton(), iX, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus, -1, False)
+					# Hafenstadt (Icons)
+					if loopCity.isCoastal(4):
+						screen.addDDSGFCAt(self.getNextWidgetName(), "ScrollPanelCities", ArtFileMgr.getInterfaceArtInfo("INTERFACE_TRADE_ICON_ANKER").getPath(),
+						iX, iY+20, 22, 22, WidgetTypes.WIDGET_GENERAL, -1, -1, False)
 
 
-							i += 1
-							iY += 60
+					# City status (button)
+					buttonCityStatus = self.getButtonCityStatus(loopCity)
+					screen.addCheckBoxGFCAt("ScrollPanelCities", self.getNextWidgetName(), buttonCityStatus, "",
+					iX+22, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, iPlayer, loopCity.getID(), ButtonStyles.BUTTON_STYLE_LABEL, False)
 
-					(loopCity, iter) = player.nextCity(iter, False)
+
+					iX += 22 + BUTTON_SIZE + 4
+					# City name
+					szText = self.getCityName(loopCity)
+					screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, iX, iY+2, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+					# City properties
+					szText = self.getCityProperties(loopCity)
+					screen.setLabelAt(self.getNextWidgetName(), "ScrollPanelCities", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, iX, iY+22, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+
+
+					iX += 110
+					# Button Muster für Bonusresis
+					lGoods = PAE_Trade.getCitySaleableGoods(loopCity, self.iActivePlayer)
+					if len(lGoods):
+						for iBonus in lGoods:
+							iX += BUTTON_SIZE + 2
+							screen.addDDSGFCAt(self.getNextWidgetName(), "ScrollPanelCities", gc.getBonusInfo(iBonus).getButton(), iX, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus, -1, False)
+
+
+					i += 1
+					iY += 60
 
 
 		def getButtonCityStatus(self, pLoopCity):

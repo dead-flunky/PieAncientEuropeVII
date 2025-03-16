@@ -2186,7 +2186,7 @@ class CvEventManager:
 						popupInfo.setText(u"showWonderMovie")
 						popupInfo.addPopup(iData4)
 
-				# Go 2 city button
+				# Go2city button
 				elif iData1 == 773:
 						PAE_Unit.onModNetMessage(argsList)
 
@@ -2302,7 +2302,7 @@ class CvEventManager:
 												if pUnit is not None and not pUnit.isNone():
 														eUnitType = pUnit.getUnitType()
 														if (
-																 eUnitType == gc.getInfoTypeForString("UNIT_TRADE_MERCHANT")
+																eUnitType == gc.getInfoTypeForString("UNIT_TRADE_MERCHANT")
 															or eUnitType == gc.getInfoTypeForString("UNIT_TRADE_MERCHANTMAN")
 															or eUnitType == gc.getInfoTypeForString("UNIT_EMIGRANT")
 															or eUnitType == gc.getInfoTypeForString("UNIT_STRANDGUT")
@@ -2434,6 +2434,7 @@ class CvEventManager:
 						gc.getInfoTypeForString("TECH_TECH_INFO_8"),
 						gc.getInfoTypeForString("TECH_TECH_INFO_9"),
 						gc.getInfoTypeForString("TECH_TECH_INFO_10"),
+						gc.getInfoTypeForString("TECH_CITY_STATE"),
 				]
 				lTechsReli = [
 						gc.getInfoTypeForString("TECH_RELIGION_NORDIC"),
@@ -4067,10 +4068,10 @@ class CvEventManager:
 					if pUnit is not None and not pUnit.isNone() and not pUnit.isDead() and not pUnit.isBarbarian():
 
 							# Sentry2 bei Turm und Festung: +1 Sichtweite
-							#if pOldPlot.getImprovementType() in L.LImprFortSentry:
-							#		pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_SENTRY2"), False)
-							#if pPlot.getImprovementType() in L.LImprFortSentry:
-							#		pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_SENTRY2"), True)
+							if pOldPlot.getImprovementType() in L.LImprFortSentry:
+									pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_SENTRY2"), False)
+							if pPlot.getImprovementType() in L.LImprFortSentry:
+									pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_SENTRY2"), True)
 									# Kultur bei Forts
 									# PAE_Turn_Features.doCheckFortCulture(pPlot)
 							# ------
@@ -5367,7 +5368,7 @@ class CvEventManager:
 							# PAE 6.14: Allgemeine Religionskonflikte
 							PAE_Christen.removePagans(pCity)
 							#if not PAE_Christen.removePagans(pCity):
-							#		# PAE 7.7
+							#		# PAE 7.x
 							#		PAE_Christen.doReligionsKonflikt(pCity)
 
 							# CivilWar, Stadt kann barbarisch werden (pCity pointer weg!)

@@ -1717,18 +1717,20 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 	}
 
 	// PAE: Watchtowers and forts
+	/*
 	if (getImprovementType() != NO_IMPROVEMENT)
 	{
 		std::list<int> lList;
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT2")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_LIMES9")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_LIMES2_9")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_KASTELL")));
 		if (std::find(lList.begin(), lList.end(), getImprovementType()) != lList.end()) iLevel++;
 	}
+	*/
 	// ---------------------------
 
 	return iLevel;

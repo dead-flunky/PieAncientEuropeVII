@@ -41,11 +41,11 @@ def getHelpHolyMountain1(argsList):
 		iReligion = gc.getPlayer(kTriggeredData.ePlayer).getStateReligion()
 
 		if iReligion != -1:
-				for i in range(gc.getNumBuildingInfos()):
-						if gc.getBuildingInfo(i).getSpecialBuildingType() == CvUtil.findInfoTypeNum(gc.getSpecialBuildingInfo, gc.getNumSpecialBuildingInfos(), "SPECIALBUILDING_TEMPLE"):
-								if gc.getBuildingInfo(i).getReligionType() == iReligion:
-										iBuilding = i
-										break
+				Temples = self.getTemples()
+				for iTemple in Temples:
+						if gc.getBuildingInfo(iTemple).getReligionType() == iReligion:
+								iBuilding = iTemple
+								break
 
 				if iBuilding != -1:
 						szHelp = localText.getText("TXT_KEY_EVENT_HOLY_MOUNTAIN_HELP", (gc.getBuildingInfo(iBuilding).getTextKey(), gc.getBuildingInfo(iBuilding).getTextKey(), iMinPoints))
@@ -120,12 +120,10 @@ def canTriggerHolyMountainRevealed(argsList):
 
 		iNumPoints = 0
 
-		for i in range(gc.getNumBuildingInfos()):
-				if gc.getBuildingInfo(i).getReligionType() == kOrigTriggeredData.eReligion:
-						# if (gc.getBuildingInfo(i).getSpecialBuildingType() == CvUtil.findInfoTypeNum(gc.getSpecialBuildingInfo,gc.getNumSpecialBuildingInfos(),"SPECIALBUILDING_CHRISTIAN_MONASTERY")):
-						#  iNumPoints += 2 * player.countNumBuildings(i)
-						if gc.getBuildingInfo(i).getSpecialBuildingType() == CvUtil.findInfoTypeNum(gc.getSpecialBuildingInfo, gc.getNumSpecialBuildingInfos(), "SPECIALBUILDING_TEMPLE"):
-								iNumPoints += player.countNumBuildings(i)
+		Temples = self.getTemples()
+		for iTemple in Temples:
+				if gc.getBuildingInfo(iTemple).getReligionType() == kOrigTriggeredData.eReligion:
+						iNumPoints += player.countNumBuildings(i)
 
 		if player.countNumBuildings(gc.getInfoTypeForString("BUILDING_ORACLE2")) > 0:
 				iNumPoints = iNumPoints * 2
@@ -161,6 +159,19 @@ def doHolyMountainRevealed(argsList):
 				CyCamera().JustLookAtPlot(CyMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY))
 
 		return 1
+
+def getTemples(self):
+		Temples = [
+				gc.getInfoTypeForString("BUILDING_ZORO_TEMPLE"),
+				gc.getInfoTypeForString("BUILDING_PHOEN_TEMPLE"),
+				gc.getInfoTypeForString("BUILDING_SUMER_TEMPLE"),
+				gc.getInfoTypeForString("BUILDING_ROME_TEMPLE"),
+				gc.getInfoTypeForString("BUILDING_GREEK_TEMPLE"),
+				gc.getInfoTypeForString("BUILDING_CELTIC_TEMPLE"),
+				gc.getInfoTypeForString("BUILDING_EGYPT_TEMPLE"),
+				gc.getInfoTypeForString("BUILDING_NORDIC_TEMPLE")
+		]
+		return Temples
 
 ######## MARATHON ###########
 

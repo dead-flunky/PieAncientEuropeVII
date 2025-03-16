@@ -1,12 +1,12 @@
 # Imports
 import os
 from CvPythonExtensions import (CyGlobalContext, CyInterface,
-																CyTranslator, CyMap, DirectionTypes,
-																ColorTypes, UnitAITypes, CyPopupInfo,
-																ButtonPopupTypes, plotDirection, UnitTypes,
-																CyAudioGame, plotDistance, plotXY,
-																isWorldWonderClass, isTeamWonderClass,
-																isNationalWonderClass, InterfaceMessageTypes)
+											CyTranslator, CyMap, DirectionTypes,
+											ColorTypes, UnitAITypes, CyPopupInfo,
+											ButtonPopupTypes, plotDirection, UnitTypes,
+											CyAudioGame, plotDistance, plotXY,
+											isWorldWonderClass, isTeamWonderClass,
+											isNationalWonderClass, InterfaceMessageTypes)
 # import CvEventInterface
 import CvUtil
 
@@ -95,7 +95,7 @@ def onModNetMessage(argsList):
 
 				if bDoRebellion:
 						CyInterface().addMessage(iData2, True, 10, CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_REACTION_NEG",
-																																							(pCity.getName(),)), "AS2D_REVOLTSTART", 2, None, ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+														(pCity.getName(),)), "AS2D_REVOLTSTART", 2, None, ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 						# Dies soll doppelte Popups in PB-Spielen vermeiden.
 						if iData2 == gc.getGame().getActivePlayer():
 								popupInfo = CyPopupInfo()
@@ -105,7 +105,7 @@ def onModNetMessage(argsList):
 						doProvinceRebellion(pCity)
 				elif bPaid:
 						CyInterface().addMessage(iData2, True, 10, CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_REACTION_POS",
-																																							(pCity.getName(),)), "AS2D_BUILD_BANK", 2, None, ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+														(pCity.getName(),)), "AS2D_BUILD_BANK", 2, None, ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 						szBuffer = CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_THX_MAIN", (pCity.getName(), ))
 						iRand = 1 + CvUtil.myRandom(23, "provinz_thx")
 						szBuffer = szBuffer + CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_THX_"+str(iRand), ())
@@ -200,7 +200,7 @@ def onModNetMessage(argsList):
 								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_1", ()), "Art/Interface/Buttons/Actions/button_statthalter_einfluss.dds")
 								# Button 1: Tribut fordern
 								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_2", ()),
-																					",Art/Interface/Buttons/Civics/Decentralization.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,1")
+																	",Art/Interface/Buttons/Civics/Decentralization.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,1")
 								# Button 2: Statthalter entfernen
 								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_3", ()), "Art/Interface/Buttons/Buildings/button_city_provinz.dds")
 
@@ -326,17 +326,17 @@ def onModNetMessage(argsList):
 
 										# Button 0: Goldkarren
 										popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_TRIBUT1",
-																							(gc.getUnitInfo(iUnit1).getDescriptionForm(0), iUnhappy1)), gc.getUnitInfo(iUnit1).getButton())
+													(gc.getUnitInfo(iUnit1).getDescriptionForm(0), iUnhappy1)), gc.getUnitInfo(iUnit1).getButton())
 										# Button 1: Hilfstrupp
 										popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_TRIBUT2",
-																							(gc.getUnitInfo(iUnit2).getDescriptionForm(0), iUnhappy2)), gc.getUnitInfo(iUnit2).getButton())
+													(gc.getUnitInfo(iUnit2).getDescriptionForm(0), iUnhappy2)), gc.getUnitInfo(iUnit2).getButton())
 										# Button 2: Getreidekarren
 										popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_TRIBUT3",
-																							(gc.getUnitInfo(iUnit3).getDescriptionForm(0), iUnhappy3)), gc.getUnitInfo(iUnit3).getButton())
+													(gc.getUnitInfo(iUnit3).getDescriptionForm(0), iUnhappy3)), gc.getUnitInfo(iUnit3).getButton())
 										# Button 3: Sklave
 										if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")):
 												popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_TRIBUT4",
-																									(gc.getUnitInfo(iUnit4).getDescriptionForm(0), iUnhappy4)), gc.getUnitInfo(iUnit4).getButton())
+															(gc.getUnitInfo(iUnit4).getDescriptionForm(0), iUnhappy4)), gc.getUnitInfo(iUnit4).getButton())
 
 										# Cancel button
 										popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
@@ -455,19 +455,19 @@ def doMessageCityGrowing(pCity):
 				if pCity.happyLevel() - pCity.unhappyLevel(0) + iBonusHappy <= 0:
 						if pCity.happyLevel() - pCity.unhappyLevel(0) >= 0:
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GETS_UNHAPPY", (pCity.getName(),)),
-																				 None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 						else:
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_IS_UNHAPPY", (pCity.getName(),)), None,
-																				 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 				# MESSAGE: city gets/is unhealthy / Stadt wird/ist ungesund
 				if pCity.goodHealth() - pCity.badHealth(False) + iBonusHealth <= 0:
 						if pCity.goodHealth() - pCity.badHealth(False) >= 0:
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GETS_UNHEALTY", (pCity.getName(),)),
-																				 None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 						else:
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_IS_UNHEALTY", (pCity.getName(),)),
-																				 None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 				# -----------------
 
@@ -493,7 +493,7 @@ def doCheckCityState(pCity):
 				pCity.setNumRealBuilding(iBuildingKolonie, 1)
 				if gc.getPlayer(pCity.getOwner()).isHuman():
 						CyInterface().addMessage(pCity.getOwner(), True, 15, CyTranslator().getText("TXT_INFO_CITYSTATUS_1", (pCity.getName(), 0)),
-																		 "AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingKolonie).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+										"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingKolonie).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 				if pCity.getProductionProcess() != -1:
 						pCity.clearOrderQueue()
 
@@ -501,7 +501,7 @@ def doCheckCityState(pCity):
 				pCity.setNumRealBuilding(iBuildingCity, 1)
 				if gc.getPlayer(pCity.getOwner()).isHuman():
 						CyInterface().addMessage(pCity.getOwner(), True, 15, CyTranslator().getText("TXT_INFO_CITYSTATUS_2", (pCity.getName(), 0)),
-																		 "AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingCity).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+										"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingCity).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 				if pCity.getProductionProcess() != -1:
 						pCity.clearOrderQueue()
 
@@ -509,25 +509,25 @@ def doCheckCityState(pCity):
 				pCity.setNumRealBuilding(iBuildingProvinz, 1)
 				if gc.getPlayer(pCity.getOwner()).isHuman():
 						CyInterface().addMessage(pCity.getOwner(), True, 15, CyTranslator().getText("TXT_INFO_CITYSTATUS_3", (pCity.getName(), 0)),
-																		 "AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingProvinz).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+										"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingProvinz).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
 		if pCity.getPopulation() >= iPopMetropole and pCity.getNumBuilding(iBuildingMetropole) == 0:
 				pCity.setNumRealBuilding(iBuildingMetropole, 1)
 				if gc.getPlayer(pCity.getOwner()).isHuman():
 						CyInterface().addMessage(pCity.getOwner(), True, 15, CyTranslator().getText("TXT_INFO_CITYSTATUS_5", (pCity.getName(), 0)),
-																		 "AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingMetropole).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+										"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iBuildingMetropole).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
 		# Falls extremer Bev.rueckgang: Meldungen von hoeheren Status beginnend
 		if pCity.getPopulation() < iPopMetropole and pCity.getNumBuilding(iBuildingMetropole) == 1:
 				pCity.setNumRealBuilding(iBuildingMetropole, 0)
 				if gc.getPlayer(pCity.getOwner()).isHuman():
 						CyInterface().addMessage(pCity.getOwner(), True, 15, CyTranslator().getText("TXT_INFO_CITYSTATUS_6", (pCity.getName(), 0)),
-																		 "AS2D_PLAGUE", 2, gc.getBuildingInfo(iBuildingProvinz).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+										"AS2D_PLAGUE", 2, gc.getBuildingInfo(iBuildingProvinz).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 		if pCity.getPopulation() < iPopProvinz and pCity.getNumBuilding(iBuildingProvinz) == 1:
 				pCity.setNumRealBuilding(iBuildingProvinz, 0)
 				if gc.getPlayer(pCity.getOwner()).isHuman():
 						CyInterface().addMessage(pCity.getOwner(), True, 15, CyTranslator().getText("TXT_INFO_CITYSTATUS_4", (pCity.getName(), 0)),
-																		 "AS2D_PLAGUE", 2, gc.getBuildingInfo(iBuildingCity).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+										"AS2D_PLAGUE", 2, gc.getBuildingInfo(iBuildingCity).getButton(), ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
 		# AI and its slaves
 		if not gc.getPlayer(pCity.getOwner()).isHuman():
@@ -803,7 +803,7 @@ def doTurnCityRevolt(pCity):
 				# Human PopUp 675
 				if pPlayer.isHuman():
 						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText(text, (pCity.getName(),)), "AS2D_REVOLTSTART", 2,
-																		 "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+										"Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
@@ -926,11 +926,11 @@ def doNextCityRevolt(iX, iY, iOwner, iAttacker):
 								if gc.getPlayer(iAttacker).isHuman():
 										iRand = 1 + CvUtil.myRandom(6, "msg_cityRevolt")
 										CyInterface().addMessage(iAttacker, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLTS_1_"+str(iRand), (pCity.getName(), 0)),
-																						 "AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+														"AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 								elif gc.getPlayer(iOwner).isHuman():
 										iRand = 1 + CvUtil.myRandom(6, "msg_ownerCityRevolt")
 										CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLTS_2_"+str(iRand), (pCity.getName(), 0)),
-																						 "AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+														"AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 				# --- next city revolt
 
@@ -951,7 +951,7 @@ def doCityCheckRevoltEnd(pCity):
 						pPlayer = gc.getPlayer(pCity.getOwner())
 						if pPlayer.isHuman():
 								CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_1", (pCity.getName(),)), "AS2D_WELOVEKING", 2,
-																				 gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+												gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 						return True
 		return False
 
@@ -1095,16 +1095,16 @@ def doDesertification(pCity, pUnit):
 								# Attention: AS2D_CHOP_WOOD is additional defined in XML/Audio/Audio2DScripts.xml   (not used, AS2D_BUILD_FORGE instead)
 								if iPlotPlayer == iPlayer:
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RODUNG_1", (pCity.getName(), 0)), 'AS2D_BUILD_FORGE', 2,
-																						 ',Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8', ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+														',Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8', ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 
 								elif iPlotPlayer > -1 and iPlotPlayer != gc.getBARBARIAN_PLAYER():
 										pPlotPlayer = gc.getPlayer(iPlotPlayer)
 										if pPlayer.isHuman():
 												CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RODUNG_2", (pPlotPlayer.getCivilizationShortDescription(0), pPlotPlayer.getCivilizationAdjective(1))), 'AS2D_BUILD_FORGE',
-																								 2, ',Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8', ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+															2, ',Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8', ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 										if pPlotPlayer.isHuman():
 												CyInterface().addMessage(iPlotPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RODUNG_3", (pPlayer.getCivilizationShortDescription(0), 0)), 'AS2D_BUILD_FORGE', 2,
-																								 ',Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8', ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+															',Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8', ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 										pPlotPlayer.AI_changeAttitudeExtra(iPlayer, -1)
 
 		# Feature Waldrodung Ende
@@ -1161,22 +1161,22 @@ def doDisbandCity(pCity, pUnit, pPlayer):
 				# Missionar
 				getCityMissionar(pCity, pCity.getOwner())
 
-				# Emigrant
-				if not isCityState(pCity.getOwner()):
-						iUnitType = gc.getInfoTypeForString("UNIT_EMIGRANT")
-						pNewUnit = pPlayer.initUnit(iUnitType, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-						PAE_Unit.setUnitCulture(pNewUnit)
-						PAE_Unit.setUnitReligion(pNewUnit)
-						pNewUnit.finishMoves()
-						pUnit.finishMoves()
+				# Emigrant (update: cannot found cities)
+				#if not isCityState(pCity.getOwner()):
+				iUnitType = gc.getInfoTypeForString("UNIT_EMIGRANT")
+				pNewUnit = pPlayer.initUnit(iUnitType, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+				PAE_Unit.setUnitCulture(pNewUnit)
+				PAE_Unit.setUnitReligion(pNewUnit)
+				pNewUnit.finishMoves()
+				pUnit.finishMoves()
 
 				CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_DISBAND_CITY_OK",
-																																										(pCity.getName(),)), "AS2D_PILLAGE", 2, None, ColorTypes(13), pCity.getX(), pCity.getY(), False, False)
+												(pCity.getName(),)), "AS2D_PILLAGE", 2, None, ColorTypes(13), pCity.getX(), pCity.getY(), False, False)
 				pPlayer.disband(pCity)
 
 		else:
 				CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_DISBAND_CITY_NOT_OK",
-																																										(pCity.getName(),)), "AS2D_CITY_REVOLT", 2, None, ColorTypes(7), pCity.getX(), pCity.getY(), False, False)
+												(pCity.getName(),)), "AS2D_CITY_REVOLT", 2, None, ColorTypes(7), pCity.getX(), pCity.getY(), False, False)
 				# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
 				pUnit.kill(True, -1)  # RAMK_CTD
 
@@ -1248,11 +1248,11 @@ def doSpreadPlague(pCity):
 								if gc.getTeam(iSecTeam).isHasMet(iThisTeam):
 										if pSecondPlayer.isHuman():
 												CyInterface().addMessage(iSecondPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_SPREAD", (pCityOrig.getName(), pCity.getName())),
-																								 "AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+																"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
 				if pPlayer.isHuman():
 						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_SPREAD", (pCityOrig.getName(), pCity.getName())),
-																		 "AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+										"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 				# end message
 
 				# Plague building gets added into city => culture -50
@@ -1474,14 +1474,14 @@ def doRenegadeOnCombatResult(pLoser, pCity, iWinnerPlayer):
 								# Button 0: Keep
 								iRand = 1 + CvUtil.myRandom(5, "TXT_KEY_POPUP_RENEGADE_CITY_KEEP_")
 								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_RENEGADE_CITY_KEEP_"+str(iRand), ()),
-																					",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,4")
+											",Art/Interface/Buttons/Actions/FoundCity.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,1,4")
 								# Button 1: Enslave
 								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_RENEGADE_CITY_ENSLAVE_1", ()),
-																					",Art/Interface/Buttons/Civics/Slavery.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,2")
+											",Art/Interface/Buttons/Civics/Slavery.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,8,2")
 								# Button 2: Raze
 								iRand = 1 + CvUtil.myRandom(5, "TXT_KEY_POPUP_RENEGADE_CITY_RAZE_")
 								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_RENEGADE_CITY_RAZE_"+str(iRand), ()),
-																					",Art/Interface/Buttons/Builds/BuildCityRuins.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,9")
+											",Art/Interface/Buttons/Builds/BuildCityRuins.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,9")
 								popupInfo.addPopup(iWinnerPlayer)
 
 						if pLoserPlayer.isHuman():
@@ -2093,7 +2093,7 @@ def doJewRevolt(pCity):
 								else:
 										iColor = 10
 								CyInterface().addMessage(iLoopPlayer, True, 5, CyTranslator().getText("TXT_KEY_JEWISH_REVOLT", (pPlayer.getCivilizationAdjective(1), pCity.getName())), None,
-																				 InterfaceMessageTypes.MESSAGE_TYPE_INFO, 'Art/Interface/Buttons/Units/button_freedom_fighter.dds', ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
+												InterfaceMessageTypes.MESSAGE_TYPE_INFO, 'Art/Interface/Buttons/Units/button_freedom_fighter.dds', ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
 								if pLoopPlayer.getStateReligion() == iReligionType:
 										if iCivID != -1:
 												pLoopPlayer.AI_changeAttitudeExtra(iCivID, 2)
@@ -2716,7 +2716,7 @@ def doEmigrantSpawn(pCity):
 
 						if pPlayer.isHuman() and text != "":
 								CyInterface().addMessage(iPlayer, True, 10, text, "AS2D_REVOLTSTART", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																				 "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												"Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 						else:
 								PAE_Sklaven.doAIReleaseSlaves(pCity)
 				# ***TEST***
@@ -2749,7 +2749,7 @@ def doLeprosy(pCity):
 								# pCity.setOccupationTimer(1)
 								if pPlayer.isHuman():
 										CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_LEBRA_2",
-																																																(pCity.getName(), iNewPop, iOldPop)), "AS2D_PLAGUE", 2, None, ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
+														(pCity.getName(), iNewPop, iOldPop)), "AS2D_PLAGUE", 2, None, ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
 
 						pCity.setPopulation(iNewPop)
 						bDecline = True
@@ -2796,11 +2796,11 @@ def doSpawnPest(pCity):
 										iSecTeam = pSecondPlayer.getTeam()
 										if pTeam.isHasMet(iSecTeam):
 												CyInterface().addMessage(iPlayer2, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLOBAL", (pCity.getName(), 0)),
-																								 "AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
+																"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
 
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLOBAL", (pCity.getName(), 0)),
-																				 "AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
+												"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
 						# end message
 
 						# Plague building gets added into city
@@ -2937,14 +2937,14 @@ def doPlagueEffects(pCity):
 										if pLoopUnit.getDamage() > 95:
 												if psOwner is not None and psOwner.isHuman():
 														CyInterface().addMessage(sOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_KILL_UNIT", (pLoopUnit.getName(), pCity.getName())),
-																										 None, 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(12), loopPlot.getX(), loopPlot.getY(), True, True)
+																		None, 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(12), loopPlot.getX(), loopPlot.getY(), True, True)
 												# pLoopUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
 												pLoopUnit.kill(True, -1)  # RAMK_CTD
 										if psOwner is not None and psOwner.isHuman():
 												if sOwner not in lMessageOwners:
 														lMessageOwners.append(sOwner)
 														CyInterface().addMessage(sOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_2", (pCity.getName(), 0)),
-																										 None, 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(12), iX, iY, True, True)
+																		None, 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(12), iX, iY, True, True)
 
 		# Change City Culture
 		iCultureNew = max(0, iCulture - 50)
@@ -2959,7 +2959,7 @@ def doPlagueEffects(pCity):
 				# Message
 				if pPlayer.isHuman():
 						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_DONE", (pCity.getName(), iNewPop, iOldPop)),
-																		 "AS2D_WELOVEKING", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(8), pCity.getX(),  pCity.getY(), True, True)
+										"AS2D_WELOVEKING", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(8), pCity.getX(),  pCity.getY(), True, True)
 
 		else:
 				CvUtil.changeBuildingHappyChange(pCity, iBuildingPlague, +1)
@@ -2988,7 +2988,7 @@ def doRevoltShrink(pCity):
 								pPlayer = gc.getPlayer(iPlayer)
 								if pPlayer.isHuman():
 										CyInterface().addMessage(iPlayer, False, 25, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLT_SHRINK", (pCity.getName(),)), "AS2D_REVOLTSTART",
-																						 InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+														InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 								# ***TEST***
 								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Stadtpop sinkt wegen Revolte (Zeile 4126)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 								return True
@@ -3179,7 +3179,7 @@ def doSettledSlavesAndReservists(pCity):
 						if pPlayer.isHuman():
 								iRand = 1 + CvUtil.myRandom(9, "Reservisten")
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_DYING_RESERVIST_"+str(iRand), (pCity.getName(), "")), None, 2,
-																				 ",Art/Interface/MainScreen/CityScreen/Great_Engineer.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,7,6", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												",Art/Interface/MainScreen/CityScreen/Great_Engineer.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,7,6", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 				# Sklavensterben
 				elif iTyp != -1:
 						# PAE V: stehende Sklaven werden zugewiesen
@@ -3201,7 +3201,7 @@ def doSettledSlavesAndReservists(pCity):
 								if pPlayer.isHuman():
 										iRand = 1 + CvUtil.myRandom(16, "Feldsklaven")
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_SLAVES_FELD_"+str(iRand), (pCity.getName(), "")),
-																						 None, 2, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+														None, 2, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 						# Bergwerkssklaven
 						elif iTyp == 1:
@@ -3211,7 +3211,7 @@ def doSettledSlavesAndReservists(pCity):
 								if pPlayer.isHuman():
 										iRand = 1 + CvUtil.myRandom(20, "Bergwerkssklaven")
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_SLAVES_MINE_"+str(iRand), (pCity.getName(), "")),
-																						 None, 2, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+														None, 2, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 						# Haussklaven
 						elif iTyp == 2:
@@ -3229,7 +3229,7 @@ def doSettledSlavesAndReservists(pCity):
 										if pPlayer.isHuman():
 												iRand = 1 + CvUtil.myRandom(14, "Haussklaven2")
 												CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_SLAVES_HAUS_"+str(iRand), (pCity.getName(), "")),
-																								 None, 2, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+																None, 2, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 								# Patronat
 								# else:
 								#    bErsatz = False
@@ -3243,7 +3243,7 @@ def doSettledSlavesAndReservists(pCity):
 						if bErsatz:
 								if pPlayer.isHuman():
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_SLAVES_ERSATZ", ("",)), None, 2,
-																						 "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+														"Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 						else:
 								# Gesamtsumme aendern
 								iCitySlaves -= 1
@@ -3391,10 +3391,10 @@ def doSettledSlavesAndReservists(pCity):
 																		iColor = 10
 																if iNumRebels == 1:
 																		CyInterface().addMessage(iLoopPlayer, True, 8, CyTranslator().getText("TXT_KEY_REBELL_REVOLT_ONE", (pCity.getName(), pPlayer.getCivilizationAdjective(1), iNumRebels)),
-																														 None, InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
+																						None, InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
 																else:
 																		CyInterface().addMessage(iLoopPlayer, True, 8, CyTranslator().getText("TXT_KEY_REBELL_REVOLT", (pCity.getName(), pPlayer.getCivilizationAdjective(1), iNumRebels)),
-																														 None, InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
+																						None, InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
 
 						# KI soll Stadtsklaven freistellen 1:4
 						elif not pPlayer.isHuman():
@@ -3428,7 +3428,7 @@ def doSettledSlavesAndReservists(pCity):
 												else:
 														iColor = 10
 												CyInterface().addMessage(iLoopPlayer, True, 8, CyTranslator().getText("TXT_KEY_REVOLT_CHRISTIANS", (pCity.getName(), pPlayer.getCivilizationAdjective(1))), None,
-																								 InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
+																InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(iColor), pCity.getX(), pCity.getY(), True, True)
 
 								# 1 settled Slave (Slave or gladiator) gets killed
 								if iCitySlaves > 0 or iCityGlads > 0:
@@ -3475,12 +3475,12 @@ def doSettledSlavesAndReservists(pCity):
 
 												if pPlayer.isHuman():
 														CyInterface().addMessage(iPlayer, True, 8, CyTranslator().getText("TXT_KEY_REVOLT_CHRISTIANS_1_SLAVE", (pCity.getName(), )),
-																										 None, 2, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+																		None, 2, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 										else:
 												pCity.changeFreeSpecialistCount(eSpecialistGlad, -1)
 												if pPlayer.isHuman():
 														CyInterface().addMessage(iPlayer, True, 8, CyTranslator().getText("TXT_KEY_REVOLT_CHRISTIANS_1_GLAD", (pCity.getName(), )),
-																										 None, 2, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+																		None, 2, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 		# Christentum kommt in die Stadt 5%
 		if iCitySlaves > 0 and not bRevolt:
@@ -3492,7 +3492,7 @@ def doSettledSlavesAndReservists(pCity):
 										pCity.setHasReligion(iReligion, 1, 1, 0)
 										if pPlayer.isHuman():
 												CyInterface().addMessage(iPlayer, True, 8, CyTranslator().getText("TXT_KEY_SLAVES_SPREAD_CHRISTIANITY", (pCity.getName(), )),
-																								 None, 2, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+																None, 2, "Art/Interface/Buttons/Actions/button_kreuz.dds", ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
 
 def doMissionaryForCivs(iPlayer):
@@ -4019,11 +4019,11 @@ def doMessageWonderCapture(pCity):
 												pLoopTeam = gc.getTeam(pLoopPlayer.getTeam())
 												if pLoopTeam.isHasMet(pPlayer.getTeam()) and pLoopPlayer.isHuman():
 														if iLoopPlayer == iOwner:
-																CyInterface().addMessage(iLoopPlayer, False, 10, CyTranslator().getText("TXT_KEY_WONDER_CAPTURE_YOU", (pPlayer.getName(),
-																																																																			 eLoopBuilding.getDescription())), '', 0, eLoopBuilding.getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+																CyInterface().addMessage(iLoopPlayer, False, 10, CyTranslator().getText("TXT_KEY_WONDER_CAPTURE_YOU", (pPlayer.getName(),eLoopBuilding.getDescription())),
+																				'', 0, eLoopBuilding.getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 														else:
 																CyInterface().addMessage(iLoopPlayer, False, 10, CyTranslator().getText("TXT_KEY_WONDER_CAPTURE", (pPlayer.getName(), eLoopBuilding.getDescription())),
-																												 '', 0, eLoopBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+																				'', 0, eLoopBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 
 def isHasHeldendenkmal(pCity):
@@ -4206,7 +4206,7 @@ def doCheckCivilWar(pCity):
 				# Der Bürgerkrieg in %s wurde beendet.
 				if pPlayer.isHuman():
 						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_1", (pCity.getName(),)), "AS2D_WELOVEKING", 2,
-																		 gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+										gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 						# popupInfo = CyPopupInfo()
 						# popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						# popupInfo.setText(CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_1", (pCity.getName(),)))
@@ -4216,7 +4216,7 @@ def doCheckCivilWar(pCity):
 		# In %s tobt immer noch ein Bürgerkrieg! Es steht/stehen x Einheit/en gegen y Bevölkerung!
 		if pPlayer.isHuman():
 				CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_6", (pCity.getName(), iMilitaryUnits, iPop)), "AS2D_REVOLTSTART",
-																 2, gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+								2, gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 		# Chance, dass diese Runde nix passiert: HI 25%, KI 50%
 		if iChance < 25 or bHuman and iChance < 50:
@@ -4230,7 +4230,7 @@ def doCheckCivilWar(pCity):
 						# Es wurden etliche Bürger in %s niedergemetzelt.
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_2", (pCity.getName(),)), None, 2,
-																				 gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 						# ***TEST***
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Civil War -POP",pCity.getX())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 				# es wird eine Einheit gekillt
@@ -4251,7 +4251,7 @@ def doCheckCivilWar(pCity):
 								# Der Mob in %s konnte eine Einheit töten.
 								if pPlayer.isHuman():
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_3", (pCity.getName(),)), None, 2,
-																						 gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+														gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 										popupInfo = CyPopupInfo()
 										popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 										popupInfo.setText(CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_3", (pCity.getName(),)))
@@ -4268,7 +4268,7 @@ def doCheckCivilWar(pCity):
 						# Ihr habt die Stadt %s verloren.
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_4", (pCity.getName(),)), "AS2D_REVOLTSTART", 2,
-																				 gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 								popupInfo = CyPopupInfo()
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 								popupInfo.setText(CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_4", (pCity.getName(),)))
@@ -4290,7 +4290,7 @@ def doStartCivilWar(pCity, iChance):
 				# Ein Bürgerkrieg ist in %s1 ausgebrochen!
 				if pPlayer.isHuman():
 						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_5", (pCity.getName(),)), "AS2D_REVOLTSTART", 2,
-																		 gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+										gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						popupInfo.setText(CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_5", (pCity.getName(),)))
@@ -4308,7 +4308,7 @@ def doStartCivilWar(pCity, iChance):
 						# Es wurden etliche Bürger in %s niedergemetzelt.
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_2", (pCity.getName(),)), None, 2,
-																				 gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+												gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 						# ***TEST***
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Civil War -POP",pCity.getX())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
@@ -4384,7 +4384,7 @@ def getHolyRelic(pCity, iPlayer):
 								CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_RELIC"), pCity.plot(), pPlayer)
 								if pPlayer.isHuman():
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_RELIC", (pCity.getName(),)), None, 2,
-																						 gc.getUnitInfo(gc.getInfoTypeForString("UNIT_RELIC")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+														gc.getUnitInfo(gc.getInfoTypeForString("UNIT_RELIC")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 
 # onCityRazed: Missionar erstellen
 def getCityMissionar(pCity, iPlayer):

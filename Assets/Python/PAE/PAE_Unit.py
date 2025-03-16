@@ -4464,6 +4464,7 @@ def onModNetMessage(argsList):
 	if iData1 == 773:
 		pPlayer = gc.getPlayer(iData4)
 		pUnit = pPlayer.getUnit(iData5)
+		pCapital = False
 
 		lCities = []
 		(loopCity, pIter) = pPlayer.firstCity(False)
@@ -4471,10 +4472,14 @@ def onModNetMessage(argsList):
 			while loopCity:
 				if not loopCity.isNone():
 					if pUnit.plot().getArea() == loopCity.plot().getArea() and not pUnit.atPlot(loopCity.plot()):
-						lCities.append((loopCity.getName(),loopCity.getID()))
+						if loopCity.isCapital():
+							pCapital = (loopCity.getName(),loopCity.getID())
+						else:
+							lCities.append((loopCity.getName(),loopCity.getID()))
 				(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
 		lCities.sort()
+		if pCapital: lCities.insert(0,pCapital)
 
 		# PopUp choose city
 		if iData2 == -1:
