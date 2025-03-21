@@ -59,7 +59,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 				self.X_GLANCE_OFFSET = 10
 				self.Y_GLANCE_OFFSET = 2
 				self.GLANCE_BUTTON_SIZE = 30
-				self.PLUS_MINUS_SIZE = 10
+				self.PLUS_MINUS_SIZE = 30
 				self.bGlancePlus = True
 
 ############################################
@@ -329,7 +329,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 
 								# Player panel
 								playerPanelName = self.getNextWidgetName()
-								screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getName(), "", False, True, PanelStyles.PANEL_STYLE_MAIN)
+								screen.attachPanel(mainPanelName, playerPanelName, gc.getPlayer(iLoopPlayer).getName(), "", False, True, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 								screen.attachImageButton(playerPanelName, "", objLeaderHead.getButton(), GenericButtonSizes.BUTTON_SIZE_46, WidgetTypes.WIDGET_LEADERHEAD, iLoopPlayer, -1, False)
 
@@ -401,7 +401,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 				mainPanelName = self.getNextWidgetName()
 				screen.addPanel(mainPanelName, "", "", True, True, 0, 50, self.W_SCREEN, self.H_SCREEN - 100, PanelStyles.PANEL_STYLE_EMPTY)
 
-				screen.attachPanel(mainPanelName, self.GLANCE_HEADER, "", "", False, True, PanelStyles.PANEL_STYLE_MAIN)
+				screen.attachPanel(mainPanelName, self.GLANCE_HEADER, "", "", False, True, PanelStyles.PANEL_STYLE_MAIN_BLACK50)
 
 				# loop through all players and display leaderheads
 				# Their leaderheads
@@ -443,7 +443,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 												continue
 										szName = self.getNextWidgetName()
 										screen.addCheckBoxGFCAt(self.GLANCE_HEADER, szName, gc.getLeaderHeadInfo(gc.getPlayer(iLoopPlayer).getLeaderType()).getButton(), ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(
-										), self.X_GLANCE_OFFSET + (self.nSpread * nCount), self.Y_GLANCE_OFFSET + 5, self.GLANCE_BUTTON_SIZE, self.GLANCE_BUTTON_SIZE, WidgetTypes.WIDGET_LEADERHEAD, iLoopPlayer, self.iActiveLeader, ButtonStyles.BUTTON_STYLE_LABEL, False)
+										), self.X_GLANCE_OFFSET + (self.nSpread * nCount), self.Y_GLANCE_OFFSET, self.GLANCE_BUTTON_SIZE, self.GLANCE_BUTTON_SIZE, WidgetTypes.WIDGET_LEADERHEAD, iLoopPlayer, self.iActiveLeader, ButtonStyles.BUTTON_STYLE_LABEL, False)
 										if (self.iSelectedLeader == iLoopPlayer):
 												screen.setState(szName, True)
 										else:
@@ -455,9 +455,9 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 										else:
 												nButtonStyle = ButtonStyles.BUTTON_STYLE_CITY_MINUS
 
-										#screen.addCheckBoxGFCAt(self.GLANCE_HEADER, self.GLANCE_BUTTON, "", "", self.X_GLANCE_OFFSET, self.Y_GLANCE_OFFSET, self.PLUS_MINUS_SIZE, self.PLUS_MINUS_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, nButtonStyle, False)
 										screen.attachLabel(self.GLANCE_HEADER, "", "   ")
-										screen.attachCheckBoxGFC(self.GLANCE_HEADER, self.GLANCE_BUTTON, "", "", self.PLUS_MINUS_SIZE, self.PLUS_MINUS_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, nButtonStyle)
+										screen.addCheckBoxGFCAt(self.GLANCE_HEADER, self.GLANCE_BUTTON, "", "", self.X_GLANCE_OFFSET + 8, self.Y_GLANCE_OFFSET, self.PLUS_MINUS_SIZE, self.PLUS_MINUS_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, nButtonStyle, False)
+										#screen.attachCheckBoxGFC(self.GLANCE_HEADER, self.GLANCE_BUTTON, "", "", self.PLUS_MINUS_SIZE, self.PLUS_MINUS_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, nButtonStyle)
 
 								nCount += 1
 
@@ -504,7 +504,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 #     ExoticForPrint ("iLoopPlayer = %d" % iLoopPlayer)
 
 						playerPanelName = self.getNextWidgetName()
-						screen.attachPanel(mainPanelName, playerPanelName, "", "", False, True, PanelStyles.PANEL_STYLE_MAIN)
+						screen.attachPanel(mainPanelName, playerPanelName, "", "", False, True, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 						szName = self.getNextWidgetName()
 						screen.attachCheckBoxGFC(playerPanelName, szName, gc.getLeaderHeadInfo(gc.getPlayer(iLoopPlayer).getLeaderType()).getButton(), ArtFileMgr.getInterfaceArtInfo(
@@ -687,7 +687,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 				# Assemble the surplus panel
 				self.mainAvailablePanel = self.getNextWidgetName()
 				screen.addPanel(self.mainAvailablePanel, localText.getText("TXT_KEY_FOREIGN_ADVISOR_SURPLUS_RESOURCES", ()), "", False, True,
-												self.SURPLUS_X, self.SURPLUS_Y, self.SURPLUS_WIDTH, self.RES_SURPLUS_HEIGHT, PanelStyles.PANEL_STYLE_MAIN)
+												self.SURPLUS_X, self.SURPLUS_Y, self.SURPLUS_WIDTH, self.RES_SURPLUS_HEIGHT, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 				self.availableMultiList = self.getNextWidgetName()
 				screen.addMultiListControlGFC(self.availableMultiList, "", self.SURPLUS_ICONS_X, self.SURPLUS_ICONS_Y, self.RESOURCE_ICON_SIZE *
@@ -729,7 +729,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 
 				self.tradePanel = self.getNextWidgetName()
 				screen.addPanel(self.tradePanel, localText.getText("TXT_KEY_FOREIGN_ADVISOR_TRADE_TABLE", ()), "", True, True, self.TABLE_PANEL_X,
-												self.TABLE_PANEL_Y, self.TABLE_PANEL_WIDTH, self.TABLE_PANEL_HEIGHT, PanelStyles.PANEL_STYLE_MAIN)
+												self.TABLE_PANEL_Y, self.TABLE_PANEL_WIDTH, self.TABLE_PANEL_HEIGHT, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 				self.resIconGrid.createGrid()
 
@@ -835,7 +835,7 @@ class CvExoticForeignAdvisor (CvForeignAdvisor.CvForeignAdvisor):
 				TECH_PANEL_HEIGHT = self.H_SCREEN - 2 * self.TECH_TOP_BOTTOM_SPACE
 
 				self.tradePanel = self.getNextWidgetName()
-				screen.addPanel(self.tradePanel, "", "", True, True, TECH_PANEL_X, TECH_PANEL_Y, TECH_PANEL_WIDTH, TECH_PANEL_HEIGHT, PanelStyles.PANEL_STYLE_MAIN)
+				screen.addPanel(self.tradePanel, "", "", True, True, TECH_PANEL_X, TECH_PANEL_Y, TECH_PANEL_WIDTH, TECH_PANEL_HEIGHT, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
 
 				self.techIconGrid.createGrid()
 

@@ -5818,11 +5818,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FUTURE_TECH_PAE</Tag>
-		<English>The Dark Ages</English>
-		<French>L'&#226;ge des t&#233;n&#232;bres</French>
-		<German>Das Dunkle Zeitalter</German>
-		<Italian>I Secoli Bui</Italian>
-		<Spanish>La Edad Oscura</Spanish>
+		<English>Better times?</English>
+		<French>Des temps meilleurs ?</French>
+		<German>Bessere Zeiten?</German>
+		<Italian>Tempi migliori?</Italian>
+		<Spanish>&#191;Tiempos mejores?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLADIATOR3</Tag>
@@ -5930,11 +5930,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_INFO_10</Tag>
-		<English>~600 AD-Early Middle Ages</English>
-		<French>~600 ap JC.-D&#233;but du moyen &#226;ge</French>
-		<German>~600 n. Chr.-Fr&#252;hmittelalter</German>
-		<Italian>~ 600 d.C.-Alto medioevo</Italian>
-		<Spanish>~600 d.C.-Edad media temprana</Spanish>
+		<English>~500 AD-Early Middle Ages</English>
+		<French>~500 ap JC.-D&#233;but du moyen &#226;ge</French>
+		<German>~500 n. Chr.-Fr&#252;hmittelalter</German>
+		<Italian>~500 d.C.-Alto medioevo</Italian>
+		<Spanish>~500 d.C.-Edad media temprana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ISLAM</Tag>

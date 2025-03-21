@@ -1163,7 +1163,7 @@ def doThing():
 								iRand = CvUtil.myRandom(len(lCities4BonusBuilding), "CityOfThing")
 								pCity = lCities4BonusBuilding[iRand]
 
-								# Olympionike in die Stadt stellen
+								# Thing in die Stadt stellen
 								pCity.setNumRealBuilding(iBuilding, 1)
 
 								# Meldung an alle beteiligten Spieler

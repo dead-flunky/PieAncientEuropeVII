@@ -665,6 +665,14 @@
 		<Spanish>&#161;Vamos a rendir homenaje a los dioses con esta variedad!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_CITY_FIRE</Tag>
+		<English>A building has been destroyed.</English>
+		<French>Un b&#226;timent a &#233;t&#233; d&#233;truit.</French>
+		<German>Ein Geb&#228;ude wurde zerst&#246;rt.</German>
+		<Italian>Un edificio &#232; stato distrutto.</Italian>
+		<Spanish>Un edificio ha sido destruido.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_ELEFANTEN_1</Tag>
 		<English>War elephants [PARAGRAPH:1] The god of war has prompted you to strengthen your army with War Elephants.</English>
 		<French>&#201;l&#233;phants de guerre[PARAGRAPH:1]Le dieu de la guerre vous exhorte &#224; renforcer votre arm&#233;e par des &#233;l&#233;phants de guerre.</French>

@@ -977,6 +977,14 @@
 		<Spanish>Los heridos, como los Partos, mientras acelerabas la marcha te mataban con la mirada. Samuel Butler (en Hudibras)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_213</Tag>
+		<English>My name is Legion, for we are many. Mark (5:9)</English>
+		<French>Je m'appelle L&#233;gion ; car nous sommes nombreux. Marc (5:9)</French>
+		<German>Mein Name ist Legion; denn wir sind viele. Markus (5:9)</German>
+		<Italian>Il mio nome &#232; Legione; perch&#233; siamo tanti. Marco (5:9)</Italian>
+		<Spanish>Mi nombre es Legi&#243;n; porque somos muchos. Marcos (5:9)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_22</Tag>
 		<English>"La Garde meurt mais ne se rend pas !" ("The Guard dies and does not yield") a Grognard at Waterloo</English>
 		<French>"La Garde meurt mais ne se rend pas !" G&#233;n&#233;ral Cambronne &#224; Waterloo</French>
@@ -1655,6 +1663,14 @@
 		<German>Was ist Eleganz? Wasser und Seife! Cecil Beaton</German>
 		<Italian>Che cos'&#232; l'eleganza? Acqua e sapone! Cecil Beaton</Italian>
 		<Spanish>"&#191;Qu&#233; es la elegancia? &#161;Agua y jab&#243;n!" Cecil Beaton</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_DARK_AGE_QUOTE</Tag>
+		<English>Since Jesus Christ, however, we no longer need to research. Tertullian</English>
+		<French>Mais depuis J&#233;sus-Christ, nous n'avons plus besoin de faire de recherches. Tertullien</French>
+		<German>Wir indes bed&#252;rfen seit Jesus Christus des Forschens nicht mehr. Tertullian</German>
+		<Italian>Tuttavia, da quando esiste Ges&#249; Cristo, non abbiamo pi&#249; bisogno di fare ricerche. Tertulliano</Italian>
+		<Spanish>Pero desde Jesucristo ya no necesitamos investigar. Tertuliano</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_INFO_QUOTE</Tag>

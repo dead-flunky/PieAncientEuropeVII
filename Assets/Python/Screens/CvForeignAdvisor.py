@@ -177,37 +177,37 @@ class CvForeignAdvisor:
 				szRelationsId = self.getNextWidgetName()
 				if (self.iScreen != FOREIGN_RELATIONS_SCREEN):
 						screen.setText(szRelationsId, "", u"<font=4>" + localText.getText("TXT_KEY_FOREIGN_ADVISOR_RELATIONS", ()).upper() + u"</font>",
-													 CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_RELATIONS_SCREEN, -1)
+											CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_RELATIONS_SCREEN, -1)
 				else:
-						screen.setText(szRelationsId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_RELATIONS", (), gc.getInfoTypeForString("COLOR_YELLOW")
-																																									 ).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
+						screen.setText(szRelationsId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_RELATIONS", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>",
+											CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
 				xLink += self.DX_LINK
 
 				szBonusId = self.getNextWidgetName()
 				if (self.iScreen != FOREIGN_BONUS_SCREEN):
 						screen.setText(szBonusId, "", u"<font=4>" + localText.getText("TXT_KEY_FOREIGN_ADVISOR_RESOURCES", ()).upper() + u"</font>",
-													 CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_BONUS_SCREEN, -1)
+											CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_BONUS_SCREEN, -1)
 				else:
-						screen.setText(szBonusId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_RESOURCES", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() +
-													 u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
+						screen.setText(szBonusId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_RESOURCES", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>",
+											CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
 				xLink += self.DX_LINK
 
 				szTechId = self.getNextWidgetName()
 				if (self.iScreen != FOREIGN_TECH_SCREEN):
 						screen.setText(szTechId, "", u"<font=4>" + localText.getText("TXT_KEY_FOREIGN_ADVISOR_TECHS", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY,
-													 xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_TECH_SCREEN, -1)
+											xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_TECH_SCREEN, -1)
 				else:
-						screen.setText(szTechId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_TECHS", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() +
-													 u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
+						screen.setText(szTechId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_TECHS", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>",
+											CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
 				xLink += self.DX_LINK
 
 				szActiveId = self.getNextWidgetName()
 				if (self.iScreen != FOREIGN_ACTIVE_TRADE_SCREEN):
 						screen.setText(szActiveId, "", u"<font=4>" + localText.getText("TXT_KEY_FOREIGN_ADVISOR_ACTIVE", ()).upper() + u"</font>", CvUtil.FONT_LEFT_JUSTIFY,
-													 xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_ACTIVE_TRADE_SCREEN, -1)
+											xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, FOREIGN_ACTIVE_TRADE_SCREEN, -1)
 				else:
-						screen.setText(szActiveId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_ACTIVE", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() +
-													 u"</font>", CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
+						screen.setText(szActiveId, "", u"<font=4>" + localText.getColorText("TXT_KEY_FOREIGN_ADVISOR_ACTIVE", (), gc.getInfoTypeForString("COLOR_YELLOW")).upper() + u"</font>",
+											CvUtil.FONT_LEFT_JUSTIFY, xLink, self.Y_LINK, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_FOREIGN_ADVISOR, -1, -1)
 				xLink += self.DX_LINK
 
 		def drawActive(self):
@@ -346,8 +346,8 @@ class CvForeignAdvisor:
 				# Add active player leaderhead
 				screen.attachLabel(activePlayerPanelName, "", "   ")
 				szName = self.getNextWidgetName()
-				screen.addCheckBoxGFCAt(activePlayerPanelName, szName, gc.getLeaderHeadInfo(gc.getPlayer(self.iActiveLeader).getLeaderType()).getButton(), ArtFileMgr.getInterfaceArtInfo(
-						"BUTTON_HILITE_SQUARE").getPath(), 10, 0, self.W_LEADER, self.H_LEADER, WidgetTypes.WIDGET_LEADERHEAD, self.iActiveLeader, -1, ButtonStyles.BUTTON_STYLE_LABEL, False)
+				screen.addCheckBoxGFCAt(activePlayerPanelName, szName, gc.getLeaderHeadInfo(gc.getPlayer(self.iActiveLeader).getLeaderType()).getButton(), ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(), 
+						0, 0, self.W_LEADER, self.H_LEADER, WidgetTypes.WIDGET_LEADERHEAD, self.iActiveLeader, -1, ButtonStyles.BUTTON_STYLE_LABEL, False)
 				if (self.iSelectedLeader == self.iActiveLeader):
 						screen.setState(szName, True)
 				else:

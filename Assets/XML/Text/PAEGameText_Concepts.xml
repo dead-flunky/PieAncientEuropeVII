@@ -281,6 +281,14 @@
 		<Spanish>Rebeliones</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RESERVISTS</Tag>
+		<English>Units-Reservists</English>
+		<French>Unit&#233;s-R&#233;servistes</French>
+		<German>Einheiten-Reservisten</German>
+		<Italian>Unit&#224;-Riservisti</Italian>
+		<Spanish>Unidades-Reservistas</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SCHIFFFAHRT</Tag>
 		<English>Shipping</English>
 		<French>Navigation</French>

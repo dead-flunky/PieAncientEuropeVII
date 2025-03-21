@@ -1230,7 +1230,7 @@ class CvGameUtils:
 												return iTech
 
 				# Kriegstechs
-				if pTeam.getAtWarCount(True) >= 1:
+				if pTeam.getAtWarCount(True) > 0:
 						lTechs.append(gc.getInfoTypeForString('TECH_BELAGERUNG'))
 						lTechs.append(gc.getInfoTypeForString('TECH_TORSION'))
 
@@ -1555,8 +1555,21 @@ class CvGameUtils:
 										pUnit.getGroup().pushMission(MissionTypes.MISSION_SKIP, 0, 0, 0, True, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 								return True
 						elif iUnitType == gc.getInfoTypeForString("UNIT_SEEVOLK"):  # and pUnit.plot().isCity():
-								if pUnit.canUnloadAll() and pUnit.plot().getOwner() != -1 or not pUnit.hasCargo():
-										pUnit.doCommand(CommandTypes.COMMAND_UNLOAD_ALL, 0, 0)
+								if pUnit.canUnloadAll():
+										if pUnit.plot().getOwner() != -1:
+												pUnit.doCommand(CommandTypes.COMMAND_UNLOAD_ALL, 0, 0)
+										else:
+												iRange = 1
+												iX = pUnit.plot().getX()
+												iY = pUnit.plot().getY()
+												for i in range(-iRange, iRange+1):
+														for j in range(-iRange, iRange+1):
+																loopPlot = plotXY(iX, iY, i, j)
+																if loopPlot is not None and not loopPlot.isNone():
+																		if loopPlot.getNumUnits():
+																				if loopPlot.getUnit(0) != None and loopPlot.getUnit(0).getOwner() != pUnit.getOwner():
+																						pUnit.doCommand(CommandTypes.COMMAND_UNLOAD_ALL, 0, 0)
+								if not pUnit.hasCargo():
 										pUnit.kill(True, -1)
 
 						if iOwner == iBarbarianPlayer:

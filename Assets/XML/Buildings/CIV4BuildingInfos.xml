@@ -4925,7 +4925,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_KONZIL5</ObsoleteTech>
+			<ObsoleteTech>TECH_KONZIL3</ObsoleteTech>
 			<PrereqTech>TECH_GLADIATOR3</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -5694,7 +5694,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_KONZIL1</ObsoleteTech>
+			<ObsoleteTech>TECH_TOLERANZ</ObsoleteTech>
 			<PrereqTech>TECH_BETON</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_SLAVES</Bonus>
@@ -10747,6 +10747,7 @@
 			<Description>TXT_KEY_BUILDING_AQUEDUCT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_AQUEDUCT_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_AQUEDUCT_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_AQUEDUCT_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_AQUEDUCT</ArtDefineTag>
 			<MovieDefineTag/>
@@ -10945,7 +10946,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DAEMON</ObsoleteTech>
 			<PrereqTech>TECH_SEIFE</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -11664,7 +11665,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DAEMON</ObsoleteTech>
 			<PrereqTech>TECH_MEDICINE3</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -11816,6 +11817,7 @@
 			<Description>TXT_KEY_BUILDING_BRUNNEN</Description>
 			<Civilopedia>TXT_KEY_TECH_BRUNNEN_PEDIA</Civilopedia>
 			<Strategy/>
+			<Help>TXT_KEY_BUILDING_BRUNNEN_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_BRUNNEN</ArtDefineTag>
 			<MovieDefineTag/>
@@ -18982,7 +18984,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_KONZIL2</ObsoleteTech>
+			<ObsoleteTech/>
 			<PrereqTech>TECH_AESTHETICS</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_MARBLE</Bonus>
@@ -19544,7 +19546,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_IRON_WORKING</ObsoleteTech>
+			<ObsoleteTech>TECH_DENKMAL</ObsoleteTech>
 			<PrereqTech>TECH_SCHAMANISMUS</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -21464,7 +21466,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_DIVINE_RIGHT</ObsoleteTech>
+			<ObsoleteTech>TECH_PAPSTTUM</ObsoleteTech>
 			<PrereqTech>TECH_GLADIATOR</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -23059,7 +23061,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_WELTBILD</ObsoleteTech>
 			<PrereqTech>TECH_BEWEIS</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -23242,7 +23244,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_CHRISTIANISIERUNG</ObsoleteTech>
+			<ObsoleteTech>TECH_KONZIL4</ObsoleteTech>
 			<PrereqTech>TECH_NEOPLATON</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -25488,7 +25490,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DAEMON</ObsoleteTech>
 			<PrereqTech>TECH_PHARMAZIE</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -27128,7 +27130,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DAEMON</ObsoleteTech>
 			<PrereqTech>TECH_HEILKUNDE</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_SCULPTURE</Bonus>
@@ -28222,7 +28224,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DAEMON</ObsoleteTech>
 			<PrereqTech>TECH_PHARMAZIE</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -30326,7 +30328,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DAEMON</ObsoleteTech>
 			<PrereqTech>TECH_MASONRY2</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_GEOMETRIE</PrereqTech>
@@ -31601,7 +31603,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_CHRISTIANISIERUNG</ObsoleteTech>
 			<PrereqTech>TECH_IRRIGATION</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -31778,7 +31780,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_CHRISTIANISIERUNG</ObsoleteTech>
 			<PrereqTech>TECH_IRRIGATION</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -31955,7 +31957,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_CHRISTIANISIERUNG</ObsoleteTech>
 			<PrereqTech>TECH_DEICHBAU</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -32108,6 +32110,7 @@
 			<Description>TXT_KEY_BUILDING_FEUERWEHR</Description>
 			<Civilopedia>TXT_KEY_TECH_FEUERWEHR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_FEUERWEHR_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_FEUERWEHR_HELP</Help>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_FEUERWEHR</ArtDefineTag>
 			<MovieDefineTag/>
@@ -32476,7 +32479,7 @@
 			<FreeBonus/>
 			<iNumFreeBonuses>0</iNumFreeBonuses>
 			<FreeBuilding/>
-			<FreePromotion>PROMOTION_FEUERPFEILE</FreePromotion>
+			<FreePromotion/>
 			<CivicOption/>
 			<GreatPeopleUnitClass/>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
@@ -38850,7 +38853,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_KONZIL1</ObsoleteTech>
 			<PrereqTech>TECH_POLYTHEISM</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -40086,7 +40089,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_KONZIL5</ObsoleteTech>
+			<ObsoleteTech>TECH_KONZIL3</ObsoleteTech>
 			<PrereqTech>TECH_GLADIATOR2</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -40262,7 +40265,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech>TECH_KONZIL5</ObsoleteTech>
+			<ObsoleteTech>TECH_KONZIL3</ObsoleteTech>
 			<PrereqTech>TECH_SKLAVENRECHTE</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -47964,7 +47967,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DAEMON</ObsoleteTech>
 			<PrereqTech>TECH_THEOKRATIE</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_STONE</Bonus>
@@ -49422,7 +49425,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_MATHEMATICS</ObsoleteTech>
 			<PrereqTech>TECH_MASONRY2</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_ASTRONOMIE</PrereqTech>
@@ -49800,7 +49803,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_GNOSIS</ObsoleteTech>
 			<PrereqTech>TECH_LIBRARY</PrereqTech>
 			<TechTypes>
 				<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
@@ -50169,7 +50172,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_KONZIL2</ObsoleteTech>
 			<PrereqTech>TECH_HELIO</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -51126,7 +51129,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_KONZIL1</ObsoleteTech>
 			<PrereqTech>TECH_MANTIK</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_COAL</Bonus>
@@ -55884,7 +55887,7 @@
 												<VictoryPrereq/>
 												<FreeStartEra/>
 												<MaxStartEra/>
-												<ObsoleteTech/>
+												<ObsoleteTech>TECH_KONZIL2</ObsoleteTech>
 												<PrereqTech>TECH_HELIO</PrereqTech>
 												<TechTypes/>
 												<Bonus/>
@@ -57750,7 +57753,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_KONZIL2</ObsoleteTech>
 			<PrereqTech>TECH_DENKMAL</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_MARBLE</Bonus>

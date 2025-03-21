@@ -413,6 +413,24 @@
 			<DefaultUnit>UNIT_ELITE_ASSUR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_HASTATI</Type>
+			<Description>TXT_KEY_UNIT_HASTATI</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>1</iInstanceCostModifier>
+			<DefaultUnit>UNIT_HASTATI</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_TRIARII</Type>
+			<Description>TXT_KEY_UNIT_TRIARII</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>2</iInstanceCostModifier>
+			<DefaultUnit>UNIT_TRIARII</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_AUXILIAR</Type>
 			<Description>TXT_KEY_UNIT_AUXILIAR</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -429,6 +447,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>5</iInstanceCostModifier>
 			<DefaultUnit>UNIT_GLADIATOR</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_LIGHT_SPEARMAN_MEDIEVAL</Type>
+			<Description>TXT_KEY_UNIT_LIGHT_SPEARMAN_MEDIEVAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>1</iInstanceCostModifier>
+			<DefaultUnit>UNIT_LIGHT_SPEARMAN_MEDIEVAL</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_KURZSCHWERT</Type>
@@ -494,31 +521,13 @@
 			<DefaultUnit>UNIT_MOUNTED_SACRED_BAND_CARTHAGE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_SWORDSMAN_LATENE</Type>
-			<Description>TXT_KEY_UNIT_SWORDSMAN_LATENE</Description>
+			<Type>UNITCLASS_PILUMNI</Type>
+			<Description>TXT_KEY_UNIT_PILUMNI</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>1</iInstanceCostModifier>
-			<DefaultUnit>UNIT_SWORDSMAN_LATENE</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_SOLDURII</Type>
-			<Description>TXT_KEY_UNIT_SOLDURII</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_SOLDURII</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_FOEDERATI</Type>
-			<Description>TXT_KEY_UNIT_FOEDERATI</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>1</iInstanceCostModifier>
-			<DefaultUnit>UNIT_FOEDERATI</DefaultUnit>
+			<DefaultUnit>UNIT_PILUMNI</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_PRINCIPES</Type>
@@ -528,33 +537,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>1</iInstanceCostModifier>
 			<DefaultUnit>UNIT_PRINCIPES</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_HASTATI</Type>
-			<Description>TXT_KEY_UNIT_HASTATI</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>1</iInstanceCostModifier>
-			<DefaultUnit>UNIT_HASTATI</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_TRIARII</Type>
-			<Description>TXT_KEY_UNIT_TRIARII</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>2</iInstanceCostModifier>
-			<DefaultUnit>UNIT_TRIARII</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_PILUMNI</Type>
-			<Description>TXT_KEY_UNIT_PILUMNI</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>1</iInstanceCostModifier>
-			<DefaultUnit>UNIT_PILUMNI</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_LEGION</Type>
@@ -726,6 +708,42 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ROME_SCHOLAE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_SWORDSMAN_LATENE</Type>
+			<Description>TXT_KEY_UNIT_SWORDSMAN_LATENE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>1</iInstanceCostModifier>
+			<DefaultUnit>UNIT_SWORDSMAN_LATENE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_SOLDURII</Type>
+			<Description>TXT_KEY_UNIT_SOLDURII</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_SOLDURII</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_FOEDERATI</Type>
+			<Description>TXT_KEY_UNIT_FOEDERATI</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>1</iInstanceCostModifier>
+			<DefaultUnit>UNIT_FOEDERATI</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_LIGHT_SWORDSMAN_MEDIEVAL</Type>
+			<Description>TXT_KEY_UNIT_LIGHT_SWORDSMAN_MEDIEVAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>1</iInstanceCostModifier>
+			<DefaultUnit>UNIT_LIGHT_SWORDSMAN_MEDIEVAL</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CROSSBOWMAN_ROME</Type>

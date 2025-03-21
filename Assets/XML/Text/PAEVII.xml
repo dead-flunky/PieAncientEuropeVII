@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_AQUEDUCT_HELP</Tag>
+		<English>[ICON BULLET] Aqueducts protect cities from fire up to population 17.</English>
+		<French>[IC&#212;NE BULLET] Les aqueducs prot&#232;gent les villes des incendies jusqu'&#224; 17 habitants.</French>
+		<German>[ICON BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 17.</German>
+		<Italian>[ICONA PUNTINO] Gli acquedotti proteggono le citt&#224; dagli incendi fino a 17 abitanti.</Italian>
+		<Spanish>[ICON BULLET] Los acueductos protegen a las ciudades del fuego hasta una poblaci&#243;n de 17 habitantes.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLASEBALG</Tag>
 		<English>Blast furnace</English>
 		<French>Four &#224; air puls&#233;</French>
 		<German>Gebl&#228;seofen</German>
 		<Italian>Forno ad aria forzata</Italian>
 		<Spanish>Horno de aire forzado</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BRUNNEN_HELP</Tag>
+		<English>[ICON_BULLET] Wells protect cities from fires up to pop 5.</English>
+		<French>[ICON_BULLET] Les puits prot&#232;gent les villes des incendies jusqu'&#224; une pop de 5.</French>
+		<German>[ICON_BULLET] Brunnen sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 5.</German>
+		<Italian>[ICON_BULLET] I pozzi proteggono le citt&#224; dagli incendi fino a pop 5.</Italian>
+		<Spanish>[ICON_BULLET] Los pozos protegen a las ciudades de los incendios hasta una pob de 5.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BULE</Tag>
@@ -39,6 +55,22 @@
 		<German>Curia</German>
 		<Italian>Curia</Italian>
 		<Spanish>Curia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FEUERWEHR_HELP</Tag>
+		<English>[ICON BULLET] Fire stations protect cities 100% from fires.</English>
+		<French>[ICON BULLET] Les services d'incendie prot&#232;gent les villes &#224; 100 % contre les incendies.</French>
+		<German>[ICON BULLET] Feuerwehren sch&#252;tzen St&#228;dte zu 100% vor Br&#228;nden.</German>
+		<Italian>[ICONA PUNTINO] I vigili del fuoco proteggono le citt&#224; al 100% dagli incendi.</Italian>
+		<Spanish>[ICON BULLET] Los departamentos de bomberos protegen las ciudades al 100% de los incendios.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LEVEE_HELP</Tag>
+		<English>[ICON BULLET] Irrigation canals protect cities from fires up to pop 11.</English>
+		<French>[ICON BULLET] Les canaux d'irrigation prot&#232;gent les villes des incendies jusqu'&#224; 11 habitants.</French>
+		<German>[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 11.</German>
+		<Italian>[ICONA PUNTINO] I canali di irrigazione proteggono dagli incendi le citt&#224; fino a 11 abitanti.</Italian>
+		<Spanish>[ICON BULLET] Los canales de riego protegen a las ciudades de los incendios hasta los 11 habitantes.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ISRAEL</Tag>
@@ -113,117 +145,12 @@
 		<Spanish>%d1 [ICON_FOOD] por turnoCrecimiento: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turnos])</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CONCEPT_RESERVISTS</Tag>
-		<English>Units-Reservists</English>
-		<French>Unit&#233;s-R&#233;servistes</French>
-		<German>Einheiten-Reservisten</German>
-		<Italian>Unit&#224;-Riservisti</Italian>
-		<Spanish>Unidades-Reservistas</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CONCEPT_RESERVISTS_PEDIA</Tag>
-		<English>[H1]Reservists[\H1]
-
-Veteran units can join a city as reservists which provide +1[ICON_FOOD], +1[ICON_PRODUCTION] and +1[ICON_COMMERCE]. Reservists can always be drafted as veteran shield bearers or archers in case of need if you have already researched the required technologies (without the disadvantages of Conscripts civic). Veteran partisans arise when a city with local reservists is captured.
-
-Every fourth turn, there is a chance of 3% that a settled reservist dies (usually of old age).
-
-[H2]Available reservists[\H2]
-[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Shield Bearer[\LINK]
-[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Greek peoples)
-[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberians or Nordic peoples)
-[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruscans or Romans)
-[ICON_BULLET] [LINK=UNIT_ARCHER]Shortbowman[\LINK]
-[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Recurvebowman[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliary[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Mounted Auxiliary[\LINK]
-
-[H2]Settled Exhibition Fighters[\H2]
-[ICON_BULLET] Exhibition fighters can, with the civic "Civil Right", become reservists (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1[ICON_COMMERCE]) (chance of 2% every turn)
-[ICON_BULLET] Exhibition fighters can, with the civic "International law", become reservists (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (chance of 3% every turn)</English>
-		<French>
-[H1]R&#233;servistes[\H1]
-
-Les unit&#233;s de v&#233;t&#233;rans peuvent s'&#233;tablir en tant que r&#233;serviste dans les villes, ce qui apporte &#224; la ville 1 [ICON_FOOD], 1 [ICON_PRODUCTION] et 1 [ICON_COMMERCE]. Les r&#233;servistes peuvent en cas d'urgence &#234;tre mobilis&#233;s &#224; tout moment comme porteur de bouclier ou comme archer v&#233;t&#233;rans si vous avez les technologies n&#233;cessaires pour cela (sans les inconv&#233;nients du recrutement forc&#233;). Quand une ville est conquise, les r&#233;servistes locaux se joignent aux partisans et aux combattants libres.
-
-Tous les quatre tours, il y a une probabilit&#233; de 3 % qu'un r&#233;serviste install&#233; meurt (g&#233;n&#233;ralement de vieillesse).
-
-[H2]R&#233;servistes disponibles[\H2]
-[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Porteur de bouclier[\LINK]
-[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (peuples grecs)
-[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Ib&#232;res ou peuples nordiques)
-[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (&#201;trusques ou Romains)
-[ICON_BULLET] [LINK=UNIT_ARCHER]Archer[\LINK]
-[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Archer &#224; double courbure[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliaire[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Auxiliaire mont&#233;[\LINK]
-
-[H2]Gladiateurs install&#233;s[\H2]
-[ICON_BULLET] Les gladiateurs affect&#233;s dans une ville peuvent devenir des r&#233;servistes (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) si la doctrine Droit civil est active (Probabilit&#233; : 2% par tour)
-[ICON_BULLET] Les gladiateurs affect&#233;s dans une ville peuvent devenir des r&#233;servistes (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) si la doctrine Loi internationale est active (Probabilit&#233; : 3% par tour)
-		</French>
-		<German>
-[H1]Reservisten[\H1]
-
-Veteran-Einheiten k&#246;nnen sich als Reservist einer Stadt anschlie&#223;en, dies bringt der Stadt +1[ICON_FOOD], +1[ICON_PRODUCTION] und +1[ICON_COMMERCE]. Reservisten k&#246;nnen im Notfall jederzeit wieder als Veteran-Schildtr&#228;ger oder -Bogensch&#252;tzen eingezogen werden, wenn man die n&#246;tigen Technologien daf&#252;r besitzt (ohne die Nachteile einer Zwangsrekrutierung). Wird eine Stadt mit ans&#228;ssigen Reservisten erobert, entstehen Veteran-Partisanen.
-
-Alle vier Runden gibt es eine Wahrscheinlichkeit von 3%, dass ein angesiedelter Reservist (meist an Altersschw&#228;che) stirbt.
-
-[H2]Verf&#252;gbare Reservisten[\H2]
-[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Schildtr&#228;ger[\LINK]
-[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Griechische V&#246;lker)
-[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberer oder Nordische V&#246;lker)
-[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etrusker oder R&#246;mer)
-[ICON_BULLET] [LINK=UNIT_ARCHER]Kurzbogensch&#252;tze[\LINK]
-[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Reflexbogensch&#252;tze[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR]Hilfstrupp[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Berittener Hilfstrupp[\LINK]
-
-[H2]Angesiedelte Schauk&#228;mpfer[\H2]
-[ICON_BULLET] Schauk&#228;mpfer k&#246;nnen innerhalb der Staatsform "B&#252;rgerrecht" zu Reservisten werden (2% Wahrscheinlichkeit pro Runde)
-[ICON_BULLET] Schauk&#228;mpfer k&#246;nnen innerhalb der Staatsform "V&#246;lkerrecht" zu Reservisten werden (3% Wahrscheinlichkeit pro Runde)
-		</German>
-		<Italian>
-[H1]Riservisti[\H1]
-
-Unit&#224; veterane possono aderire come riservista di una citt&#224;, questo porta la citt&#224; +1 [ICON_FOOD], +1 [ICON_PRODUCTION] e +1 [ICON_COMMERCE]. Riservisti possono in caso di emergenza in qualsiasi momento, essere ritirata come supporto o arcieri veterano-label se avete le tecnologie necessarie per questo ( senza gli svantaggi di reclutamento forzato ). Quando una citt&#224; viene conquistata con riservisti locali sorgono partigiani veterani.
-
-Ogni quattro turni c'&#232; una probabilit&#224; del 3% che un riservista residente muoia (di solito di vecchiaia).
-
-[H2]Riservisti disponibili[\H2]
-[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Guerriero con Scudo[\LINK]
-[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Popoli greci)
-[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberici o popoli nordici)
-[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruschi o Romani)
-[ICON_BULLET] [LINK=UNIT_ARCHER]Arciere con Arco Corto[\LINK]
-[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Arciere con Arco Ricurvo[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR]Ausiliari[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Ausiliari a Cavallo[\LINK]
-
-[H2]Combattenti dell'arena/gladiatoridella stabilita[\H2]
-[ICON_BULLET] Con la forma di governo "Diritti Civili", i combattenti dell'arena/gladiatori di una citt&#224; possono diventare riservisti (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE], 2 % di possibilit&#224; per ogni turno )
-[ICON_BULLET] Con la forma di governo "Diritto Internazionale", i combattenti dell'arena/gladiatori di una citt&#224; possono diventare riservisti (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE], 3 % di possibilit&#224; per turno )
-		</Italian>
-		<Spanish>
-[H1]Reservistas[\H1]
-Las unidades veteranas pueden unirse a una ciudad como reservistas que proporcionan +1[ICON_FOOD], +1[ICON_PRODUCTION] y +1[ICON_COMMERCE]. Los reservistas pueden ser siempre reclutados como soldados con escudo o arqueros veteranos en caso de necesidad si has descubierto las tecnolog&#237;as requeridas (sin las desventajas del reclutamiento forzado). Los partisanos veteranos surgir&#225;n cuando una ciudad con reservistas locales es capturada.
-
-Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente muera (normalmente de vejez).
-
-[H2]Reservistas disponibles[\H2]
-[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Soldado con Escudo[\LINK]
-[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (pueblos griegos)
-[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (&#205;beros o pueblos n&#243;rdicos)
-[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruscos o romanos)
-[ICON_BULLET] [LINK=UNIT_ARCHER]Arquero con Arco Corto[\LINK]
-[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Arquero con Arco Recurvado[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliar[\LINK]
-[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Auxiliar Montado[\LINK]
-
-[H2]Luchadores de espect&#225;culo/gladiadores asentados[\H2]
-[ICON_BULLET] Los luchadores de espect&#225;culo/gladiadores asentados en una ciudad, con el principio "Derecho civil", pueden volverse reservistas (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (probabilidad del 2% cada turno)
-[ICON_BULLET] Los luchadores de espect&#225;culo/gladiadores asentados en una ciudad pueden, con el principio "Ley Internacional", volverse reservistas (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (probabilidad del 3% cada turno)
-		</Spanish>
+		<Tag>TXT_KEY_EVENT_CITY_BUILDING_DESTROYED</Tag>
+		<English>Your %s1_building has been destroyed.</English>
+		<French>Votre b&#226;timent %s1_building a &#233;t&#233; d&#233;truit.</French>
+		<German>Das Geb&#228;ude %s1_building wurde zerst&#246;rt.</German>
+		<Italian>L'edificio %s1_building &#232; stato distrutto.</Italian>
+		<Spanish>El edificio %s1_building ha quedado destruido.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GRAPHICOPTION_HIRES_TERRAIN</Tag>
@@ -242,12 +169,300 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<Spanish>Se usar&#225; un nivel de detalle del terreno m&#225;s alto</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS</Tag>
+		<Tag>TXT_KEY_KONZIL0_1</Tag>
+		<English>Followers of the Gnostic Basilides are calling on their fellow human beings to abandon their material values. Unrest is breaking out in %s1. A council is needed to prevent such disputes.</English>
+		<French>Les adeptes du gnostique Basilide appellent leurs semblables &#224; se d&#233;tacher de leurs valeurs mat&#233;rielles. Il y a des troubles &#224; %s1. Un conseil est n&#233;cessaire pour &#233;viter de tels conflits.</French>
+		<German>Anh&#228;nger des Gnostikers Basilides fordern ihre Mitmenschen auf, sich von ihren materiellen Werten zu l&#246;sen. Es kommt in %s1 zu Unruhen. Es braucht ein Konzil, um solche Streitigkeiten zu vermeiden.</German>
+		<Italian>I seguaci dello gnostico Basilide invitano i loro simili a distaccarsi dai valori materiali. Ci sono disordini in %s1. Per evitare tali controversie &#232; necessario un consiglio.</Italian>
+		<Spanish>Los seguidores del gn&#243;stico Bas&#237;lides llaman a sus semejantes a desprenderse de sus valores materiales. Hay disturbios en %s1. Se necesita un consejo para evitar este tipo de disputas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL0_2</Tag>
+		<English>Some Manichaeans (Gnostics) claim to be true Christian doctrine and boycott their Christians of other faiths. Internal unrest breaks out in %s1. A synod (council) is needed to prevent these conflicts.</English>
+		<French>Certains manich&#233;ens (gnostiques) pr&#233;tendent &#234;tre de vrais chr&#233;tiens et boycottent leurs chr&#233;tiens d'autres confessions. Il y a des troubles civils &#224; %s1. Un synode (concile) est n&#233;cessaire pour &#233;viter ces conflits.</French>
+		<German>Einige Manich&#228;er (Gnostiker) berufen sich auf die wahre christliche Lehre und boykottieren ihre andersgl&#228;ubigen Christen. Es kommt in %s1 zu inneren Unruhen. Es braucht eine Synode (Konzil), um diese Auseinandersetzungen zu vermeiden.</German>
+		<Italian>Alcuni manichei (gnostici) affermano di essere veri cristiani e boicottano i cristiani di altre fedi. Ci sono disordini civili a %s1. Per evitare queste controversie &#232; necessario un sinodo (concilio).</Italian>
+		<Spanish>Algunos maniqueos (gn&#243;sticos) afirman ser verdaderos cristianos y boicotean a sus cristianos de otras religiones. Hay disturbios civiles en %s1. Se necesita un s&#237;nodo (concilio) para evitar estas disputas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL0_3</Tag>
+		<English>Gnostics, the Chosen, and members of the True Way have engaged in a massacre in %s1. Citizens are demanding a supra-regional synod (ecumenical council)!</English>
+		<French>Les Gnostiques, les &#201;lus et les membres de la Vraie Voie se sont livr&#233;s &#224; un massacre en %s1. Les citoyens exigent un synode suprar&#233;gional (concile oecum&#233;nique) !</French>
+		<German>Gnostiker, Auserw&#228;hlte und Angeh&#246;rige des rechten Weges haben sich in %s1 ein Gemetzel geliefert. Die B&#252;rger fordern eine &#252;berregionale Synode (&#214;kumenisches Konzil)!</German>
+		<Italian>Gnostici, Eletti e membri della Vera Via hanno compiuto un massacro a %s1. I cittadini chiedono un sinodo sovraregionale (concilio ecumenico)!</Italian>
+		<Spanish>Gn&#243;sticos, Elegidos y miembros del Camino Verdadero han participado en una masacre en %s1. &#161;Los ciudadanos exigen un s&#237;nodo suprarregional (concilio ecum&#233;nico)!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL1_1</Tag>
+		<English>Followers of Arius (Arians) argue about the consubstantiality of God and his Son. Unrest breaks out in %s1. People demand a council!</English>
+		<French>Les partisans d'Arius (Ariens) d&#233;battent de l'&#233;galit&#233; essentielle de Dieu et de son Fils. Il y a des troubles &#224; %s1. Le peuple exige un concile !</French>
+		<German>Anh&#228;nger des Arius (Arianer) streiten &#252;ber die Wesensgleichheit von Gott und seinem Sohn. Es kommt in %s1 zu Unruhen. Die Menschen fordern ein Konzil!</German>
+		<Italian>I seguaci di Ario (ariani) discutono dell'uguaglianza essenziale di Dio e di suo Figlio. Ci sono disordini in %s1. Il popolo chiede un consiglio!</Italian>
+		<Spanish>Los seguidores de Arrio (arrianos) discuten sobre la igualdad esencial de Dios y su Hijo. Hay disturbios en %s1. &#161;El pueblo exige un consejo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL1_2</Tag>
+		<English>Arians argue with the Gnostics over Christian heresies! Religious unrest breaks out in %s1. A council is demanded!</English>
+		<French>Les ariens discutent avec les gnostiques au sujet des h&#233;r&#233;sies chr&#233;tiennes ! Des troubles religieux se produisent &#224; %s1. Un conseil s'impose !</French>
+		<German>Arianer streiten mit den Gnostikern &#252;ber christliche Irrlehren! Es kommt in %s1 zu religi&#246;sen Unruhen. Ein Konzil wird gefordert!</German>
+		<Italian>Gli ariani discutono con gli gnostici sulle eresie cristiane! Si stanno verificando disordini religiosi in %s1. &#200; necessario un consiglio!</Italian>
+		<Spanish>&#161;Los arrianos discuten con los gn&#243;sticos sobre herej&#237;as cristianas! Est&#225;n ocurriendo disturbios religiosos en %s1. &#161;Se llama a un consejo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL1_3</Tag>
+		<English>A dispute over the consubstantiality of God and his Son has broken out among followers of Arius (Arians)! The citizens of %s1 are demanding a council where the clergy can reach agreement.</English>
+		<French>Une dispute sur l'&#233;galit&#233; essentielle de Dieu et de son Fils a &#233;clat&#233; parmi les disciples d'Arius (Ariens) ! Les citoyens de %s1 r&#233;clament un concile o&#249; le clerg&#233; pourra parvenir &#224; un accord.</French>
+		<German>Ein Streit um die Wesensgleichheit von Gott und seinem Sohn durch Anh&#228;nger des Arius (Arianer) ist ausgebrochen! Die B&#252;rger von %s1 fordern ein Konzil, wo sich die Kleriker einig werden k&#246;nnen.</German>
+		<Italian>Tra i seguaci di Ario (ariani) &#232; scoppiata una disputa sull'uguaglianza essenziale di Dio e di suo Figlio! I cittadini di %s1 chiedono un consiglio in cui il clero possa raggiungere un accordo.</Italian>
+		<Spanish>&#161;Entre los seguidores de Arrio (arrianos) ha estallado una disputa sobre la igualdad esencial de Dios y su Hijo! Los ciudadanos de %s1 piden un consejo donde el clero pueda llegar a un acuerdo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL2_1</Tag>
+		<English>Homerics testify to the absolute equality of God and the Son, thereby once again stirring up the tempers of the clergy. A tumult ensues in %s1. A second synod (council) should be convened!</English>
+		<French>Les hom&#233;oens t&#233;moignent de l'&#233;galit&#233; absolue de Dieu et du Fils et suscitent ainsi une fois de plus l'int&#233;r&#234;t du clerg&#233;. Il y a une agitation &#224; %s1. Un deuxi&#232;me synode (concile) devrait &#234;tre convoqu&#233; !</French>
+		<German>Hom&#246;er bezeugen die absolute Gleichheit von Gott und Sohn und erhitzen damit erneut die Gem&#252;ter der Kleriker. Es kommt zu einem Tumult in %s1. Es sollte eine zweite Synode (Konzil) einberufen werden!</German>
+		<Italian>Gli omei testimoniano l'assoluta uguaglianza di Dio e del Figlio e cos&#236; ancora una volta eccitano gli animi del clero. C'&#232; confusione in %s1. Bisognerebbe convocare un secondo sinodo (concilio)!</Italian>
+		<Spanish>Los homeanos dan testimonio de la absoluta igualdad entre Dios y el Hijo y con ello vuelven a despertar el esp&#237;ritu del clero. Hay una conmoci&#243;n en %s1. &#161;Deber&#237;a convocarse un segundo s&#237;nodo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL2_2</Tag>
+		<English>A Goth named Wulfila continues to captivate with his theory of the consubstantiality of God and the Son and continues to cause a stir in your realm. An uprising is breaking out in %s1. Another council could help.</English>
+		<French>Un Goth nomm&#233; Wulfila captive par sa th&#233;orie de la consubstantialit&#233; de Dieu et du Fils et continue de faire sensation dans votre royaume. Il y a une &#233;meute &#224; %s1. Un autre conseil pourrait aider.</French>
+		<German>Ein Gote namens Wulfila besticht mit seiner Theorie &#252;ber die Wesensgleichheit Gottes zum Sohn und sorgt in Eurem Reich weiterhin f&#252;r Furore. Es kommt in %s1 zu einem Aufstand. Eine weiteres Konzil k&#246;nnte helfen.</German>
+		<Italian>Un goto di nome Wulfila affascina con la sua teoria della consustanzialit&#224; di Dio e del Figlio e continua a suscitare scalpore nel vostro regno. C'&#232; una rivolta a %s1. Un altro consiglio potrebbe aiutare.</Italian>
+		<Spanish>Un godo llamado Wulfila cautiva con su teor&#237;a de la consustancialidad de Dios y el Hijo y contin&#250;a causando sensaci&#243;n en su reino. Hay un mot&#237;n en %s1. Otro consejo podr&#237;a ayudar.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL2_3</Tag>
+		<English>With their sermons "Glory be to the Father through the Son in the Holy Spirit" instead of "Glory be to the Father and to the Son and to the Holy Spirit," the Homoeans and Arians stir up unrest among the clergy. A street battle breaks out in %s1. Another council could provide relief.</English>
+		<French>Avec leurs sermons "Gloire au P&#232;re par le Fils dans le Saint-Esprit" au lieu de "Gloire au P&#232;re et au Fils et au Saint-Esprit", les Hom&#233;ens et les Ariens provoquent l'enthousiasme parmi le clerg&#233;. Une bataille de rue &#233;clate &#224; %s1. Un autre conseil pourrait apporter une solution.</French>
+		<German>Mit ihren Predikten "Ehre sei dem Vater durch den Sohn im Heiligen Geist" anstatt "Ehre sei dem Vater und dem Sohn und dem Heiligen Geist" sorgen die Hom&#246;er und Arianer f&#252;r Aufregung bei den Klerikern. Es kommt in %s1 zu einer Stra&#223;enschlacht. Ein weiteres Konzil k&#246;nnte Abhilfe verschaffen.</German>
+		<Italian>Con i loro sermoni "Gloria al Padre per mezzo del Figlio nello Spirito Santo" invece di "Gloria al Padre e al Figlio e allo Spirito Santo", gli Omei e gli Ariani suscitano entusiasmo tra il clero. Scoppia una battaglia di strada a %s1. Un altro consiglio potrebbe fornire una soluzione.</Italian>
+		<Spanish>Con sus sermones "Gloria al Padre por el Hijo en el Esp&#237;ritu Santo" en lugar de "Gloria al Padre y al Hijo y al Esp&#237;ritu Santo", los homeanos y arrianos provocan agitaci&#243;n entre el clero. Una batalla callejera estalla en %s1. Otro consejo podr&#237;a ofrecer una soluci&#243;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL2_4</Tag>
+		<English>An Arian dispute over the Trinity of the Christian faith has erupted in %s1. A new council must be convened!</English>
+		<French>Une dispute arienne sur la Trinit&#233; de la foi chr&#233;tienne &#233;clate en %s1. Un nouveau conseil doit &#234;tre convoqu&#233; !</French>
+		<German>Ein arianischer Streit um die Trinit&#228;t des christlichen Glaubens entfacht in %s1. Es muss ein neues Konzil einberufen werden!</German>
+		<Italian>A %s1 scoppia una disputa ariana sulla Trinit&#224; della fede cristiana. Bisogna convocare un nuovo consiglio!</Italian>
+		<Spanish>En %s1 estalla una disputa arriana sobre la Trinidad de la fe cristiana. &#161;Es necesario convocar un nuevo consejo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL3_1</Tag>
+		<English>A dispute over whether Mary is the Mother of Christ or the Mother of God is dividing the country. Disputes are erupting in %s1. Could a third council help?</English>
+		<French>Un d&#233;bat sur la question de savoir si Marie est la M&#232;re du Christ ou la M&#232;re de Dieu divise le pays. Il y a des conflits dans %s1. Un troisi&#232;me conseil pourrait-il aider ?</French>
+		<German>Ein Streit ob Maria nun Christusgeb&#228;rerin oder doch Gottesgeb&#228;rerin sei, spaltet das Land. Es kommt in %s1 zu Auseinandersetzungen. Ob ein drittes Konzil helfen k&#246;nnte?</German>
+		<Italian>La disputa su chi sia Maria la Madre di Cristo o la Madre di Dio sta dividendo il Paese. Ci sono conflitti in %s1. Un terzo concilio potrebbe essere utile?</Italian>
+		<Spanish>Una disputa sobre si Mar&#237;a es la Madre de Cristo o la Madre de Dios est&#225; dividiendo al pa&#237;s. Hay conflictos en %s1. &#191;Podr&#237;a ayudar un tercer consejo?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL3_2</Tag>
+		<English>Patriarchs Cyril of Alexandria and Nestorius of Constantinople are competing with each other over two different doctrines. A fierce dispute ensues in %s1. Another synod may have to be convened.</English>
+		<French>Les patriarches Cyrille d'Alexandrie et Nestorius de Constantinople rivalisent avec deux doctrines diff&#233;rentes. Une vive dispute a lieu &#224; %s1. Peut-&#234;tre faudra-t-il convoquer un autre synode.</French>
+		<German>Die Patriarchen Kyrill von Alexandria und Nestorius von Konstantinopel rivalisieren sich mit zwei unterschiedliche Lehren. Es kommt in %s1 zu einem wilden Disput. Wom&#246;glich muss eine weitere Synode einberufen werden.</German>
+		<Italian>I patriarchi Cirillo di Alessandria e Nestorio di Costantinopoli si contendono due dottrine diverse. In %s1 &#232; in corso una disputa accesa. Forse sar&#224; necessario convocare un altro sinodo.</Italian>
+		<Spanish>Los patriarcas Cirilo de Alejandr&#237;a y Nestorio de Constantinopla rivalizan entre s&#237; con dos doctrinas diferentes. En %s1 se est&#225; produciendo una acalorada disputa. Quiz&#225;s sea necesario convocar otro s&#237;nodo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL3_3</Tag>
+		<English>The views of Cyril and Nestorius divide the country. Only another council can address the reconciliation of Christ's two natures.</English>
+		<French>Les opinions de Cyrille et de Nestorius divisent le pays. Seul un nouveau concile pourra aborder l'unification des deux natures du Christ.</French>
+		<German>Die Ansichten des Kyrill und Nestorius spalten das Land. Nur ein weiteres Konzil kann sich der Einigung der zwei Naturen Christi annehmen.</German>
+		<Italian>Le opinioni di Cirillo e Nestorio dividono il paese. Solo un ulteriore concilio potr&#224; affrontare l'unificazione delle due nature di Cristo.</Italian>
+		<Spanish>Las opiniones de Cirilo y Nestorio dividen al pa&#237;s. S&#243;lo un concilio posterior podr&#225; abordar la unificaci&#243;n de las dos naturalezas de Cristo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL4_1</Tag>
+		<English>Nestorians are still arguing about the divine and human nature of Jesus Christ. Riots are breaking out in %s1. You should call a fourth council!</English>
+		<French>Les nestoriens d&#233;battent encore de la nature divine et humaine de J&#233;sus-Christ. Il y a des &#233;meutes &#224; %s1. Vous devriez convoquer un quatri&#232;me conseil !</French>
+		<German>Nestorianer streiten immer noch um die g&#246;ttliche und menschliche Natur Jesus Christus. Es kommt in %s1 zu Aufst&#228;nden. Ihr solltet ein viertes Konzil einberufen!</German>
+		<Italian>I nestoriani discutono ancora sulla natura divina e umana di Ges&#249; Cristo. Ci sono rivolte a %s1. Dovresti convocare un quarto consiglio!</Italian>
+		<Spanish>Los nestorianos todav&#237;a discuten sobre la naturaleza divina y humana de Jesucristo. Hay disturbios en %s1. &#161;Deber&#237;ais convocar un cuarto concilio!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL4_2</Tag>
+		<English>The Nestorians' doctrine of two natures divides the country. An uprising breaks out in %s1. Only a fourth council can achieve a settlement.</English>
+		<French>La doctrine des deux natures des Nestoriens divise le pays. Il y a une &#233;meute &#224; %s1. Seul un quatri&#232;me conseil peut parvenir &#224; un accord.</French>
+		<German>Die 2-Naturen-Lehre der Nestorianer spaltet das Land. Es kommt in %s1 zu einem Aufstand. Nur ein viertes Konzil kann eine Einigung erzielen.</German>
+		<Italian>La dottrina nestoriana delle due nature divide il paese. C'&#232; una rivolta a %s1. Solo un quarto consiglio pu&#242; raggiungere un accordo.</Italian>
+		<Spanish>La doctrina nestoriana de las dos naturalezas divide al pa&#237;s. Hay un mot&#237;n en %s1. S&#243;lo un cuarto consejo puede llegar a un acuerdo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL4_3</Tag>
+		<English>The two unmixed, unchanging, undivided, and indivisible natures of Jesus Christ are seriously undermining the Christian creed. Fanatics are rioting through the streets of %s1. The people are demanding a fourth council!</English>
+		<French>Les deux natures immuables, ins&#233;parables et indivisibles de J&#233;sus-Christ portent gravement atteinte au credo chr&#233;tien. Des fanatiques se r&#233;voltent dans les rues de %s1. Le peuple r&#233;clame un quatri&#232;me concile !</French>
+		<German>Die zwei unvermischten, unver&#228;nderlichen, ungetrennten und unteilbaren Naturen Jesu Christi bringen das christliche Glaubensbekenntnis stark ins Wanken. Fanatisten ziehen randalierend durch die Stra&#223;en von %s1. Die Bev&#246;lkerung fordert ein viertes Konzil!</German>
+		<Italian>Le due nature non mescolate, immutabili, inseparate e indivisibili di Ges&#249; Cristo minano seriamente il credo cristiano. I fanatici si stanno ribellando per le strade di %s1. Il popolo chiede un quarto concilio!</Italian>
+		<Spanish>Las dos naturalezas inmezcladas, inmutables, inseparadas e indivisibles de Jesucristo minan gravemente el credo cristiano. Los fan&#225;ticos se est&#225;n amotinando en las calles de %s1. &#161;El pueblo exige un cuarto concejo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL5_1</Tag>
+		<English>The three-chapter controversy over the nature of Jesus stirs up turmoil among all believers. The clergy are calling for a fifth synod.</English>
+		<French>La controverse en trois chapitres sur la nature de J&#233;sus agite tous les croyants. Le clerg&#233; r&#233;clame un cinqui&#232;me synode.</French>
+		<German>Der Dreikapitelstreit &#252;ber die Natur Jesu bringt alle Gl&#228;ubigen in Aufruhr. Die Kleriker fordern eine f&#252;nfte Synode.</German>
+		<Italian>La controversia in tre capitoli sulla natura di Ges&#249; agita tutti i credenti. Il clero chiede un quinto sinodo.</Italian>
+		<Spanish>La controversia de tres cap&#237;tulos sobre la naturaleza de Jes&#250;s conmueve a todos los creyentes. El clero pide un quinto s&#237;nodo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL5_2</Tag>
+		<English>Chalcedonians and Nestorians argue about the relationship between the human and divine natures of Jesus Christ. Clerics call for a fifth council.</English>
+		<French>Les Chalc&#233;doniens et les Nestoriens d&#233;battent de la relation entre la nature humaine et divine de J&#233;sus-Christ. Les clercs convoquent un cinqui&#232;me concile.</French>
+		<German>Chalkedonier und Nestorianer streiten sich um das Verh&#228;ltnis der menschlichen und g&#246;ttlichen Natur von Jesus Christus zueinander. Kleriker fordern ein f&#252;nftes Konzil.</German>
+		<Italian>Calcedoniani e nestoriani dibattono sulla relazione tra la natura umana e quella divina di Ges&#249; Cristo. Gli ecclesiastici chiedono un quinto concilio.</Italian>
+		<Spanish>Los calcedonios y los nestorianos discuten sobre la relaci&#243;n entre la naturaleza humana y divina de Jesucristo. Los cl&#233;rigos convocan un quinto concilio.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL5_3</Tag>
+		<English>The open question about the relationship between the human and divine nature of Jesus Christ threatens the Christian faith. A fifth council can prevent a schism within the church.</English>
+		<French>La question ouverte sur la relation entre la nature humaine et divine de J&#233;sus-Christ menace la communaut&#233; de foi chr&#233;tienne. Un cinqui&#232;me concile peut emp&#234;cher un schisme dans l'&#201;glise.</French>
+		<German>Die offene Frage &#252;ber das Verh&#228;ltnis zwischen der menschlichen und g&#246;ttlichen Natur Jesu Christi bedroht die christliche Glaubensgemeinschaft. Ein f&#252;nftes Konzil kann eine Kirchenspaltung verhindern.</German>
+		<Italian>La questione aperta sul rapporto tra la natura umana e quella divina di Ges&#249; Cristo minaccia la comunit&#224; di fede cristiana. Un quinto concilio pu&#242; impedire uno scisma nella chiesa.</Italian>
+		<Spanish>La pregunta abierta sobre la relaci&#243;n entre la naturaleza humana y divina de Jesucristo amenaza a la comunidad de fe cristiana. Un quinto concilio puede prevenir un cisma en la iglesia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL5_4</Tag>
+		<English>Older Christian writings are causing unrest among believers. No one is sure what to believe anymore! Call a fifth council!</English>
+		<French>Les &#233;crits chr&#233;tiens anciens suscitent l'enthousiasme parmi les croyants. Personne ne sait plus vraiment quoi croire ! Convoquez un cinqui&#232;me concile !</French>
+		<German>&#196;ltere christliche Schriften sorgen bei den Gl&#228;ubigern f&#252;r Aufregung. Niemand ist sich mehr sicher was er glauben soll! Beruft ein f&#252;nftes Konzil!</German>
+		<Italian>Gli scritti cristiani pi&#249; antichi suscitano entusiasmo tra i credenti. Ormai nessuno sa pi&#249; cosa credere! Convocate un quinto concilio!</Italian>
+		<Spanish>Los escritos cristianos m&#225;s antiguos causan entusiasmo entre los creyentes. &#161;Ya nadie est&#225; seguro de qu&#233; creer! &#161;Convocatoria de un quinto concilio!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL6_1</Tag>
+		<English>An attempt to reconcile the differences of opinion within the dual nature doctrine by means of a monotheletist doctrine that Jesus Christ had two natures but only one will failed. A new council is needed!</English>
+		<French>Une tentative de concilier les diff&#233;rences d'opinion dans la doctrine des deux natures au moyen d'une doctrine monoth&#233;liste selon laquelle J&#233;sus-Christ avait deux natures mais une seule volont&#233; a &#233;chou&#233;. Un nouveau conseil est n&#233;cessaire !</French>
+		<German>Ein Versuch mittels einer monotheletistischen Lehre, dass Jesus Christus zwar zwei Naturen, aber nur einen einzigen Willen habe, die Meinungsverschiedenheiten der Zweinaturenlehre auszus&#246;hnen, schlug fehl. Ein neues Konzil muss her!</German>
+		<Italian>Un tentativo di conciliare le differenze di opinione nella dottrina delle due nature per mezzo di una dottrina monotelita secondo cui Ges&#249; Cristo aveva due nature ma una sola volont&#224; fall&#236;. Serve un nuovo consiglio!</Italian>
+		<Spanish>Un intento de reconciliar las diferencias de opini&#243;n en la doctrina de las dos naturalezas mediante una doctrina monotelista de que Jesucristo ten&#237;a dos naturalezas pero s&#243;lo una voluntad fracas&#243;. &#161;Se necesita un nuevo consejo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL6_2</Tag>
+		<English>The centuries-long disunity within the Christian faith is causing immense headaches for our citizens. Calls for another synod are growing louder.</English>
+		<French>La d&#233;sunion de la foi chr&#233;tienne, qui dure depuis des si&#232;cles, cause d'immenses maux de t&#234;te &#224; nos citoyens. L'appel &#224; un autre synode se fait de plus en plus pressant.</French>
+		<German>Die jahrhundertelangen Uneinigkeiten des christlichen Glaubens erzeugen bei unseren B&#252;rgern immense Kopfschmerzen. Der Ruf nach einer weiteren Synode wird laut.</German>
+		<Italian>La secolare disunione della fede cristiana sta causando enormi grattacapi ai nostri cittadini. La richiesta di un altro sinodo si fa sempre pi&#249; forte.</Italian>
+		<Spanish>La desuni&#243;n secular de la fe cristiana est&#225; causando inmensos dolores de cabeza a nuestros ciudadanos. El llamado a un nuevo s&#237;nodo se hace cada vez m&#225;s fuerte.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL6_3</Tag>
+		<English>Miaphysites do not believe in the doctrine of the two natures of Jesus Christ and have recently caused unrest. Perhaps a sixth council should soon be considered.</English>
+		<French>Les miaphysites ne croient pas &#224; la doctrine de la double nature de J&#233;sus-Christ et ont r&#233;cemment provoqu&#233; des troubles. Peut-&#234;tre faudrait-il bient&#244;t envisager un sixi&#232;me concile.</French>
+		<German>Miaphysiten glauben nicht an die Zweinaturenlehre Jesu Christi und sorgen neuerdings f&#252;r Unruhe. Es sollte vielleicht bald ein sechstes Konzil in Betracht gezogen werden.</German>
+		<Italian>I miafisisti non credono nella dottrina della duplice natura di Ges&#249; Cristo e di recente hanno causato disordini. Forse bisognerebbe prendere in considerazione presto l'idea di un sesto concilio.</Italian>
+		<Spanish>Los miafisitas no creen en la doctrina de la naturaleza dual de Jesucristo y recientemente han causado malestar. Tal vez deber&#237;a considerarse pronto un sexto concilio.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL7_1</Tag>
+		<English>"You shall not make for yourself an icon of God," echoes the streets of %s1. Citizens don't know whether they should venerate icons or not.</English>
+		<French>"Tu ne te feras pas d'ic&#244;ne de Dieu", r&#233;sonnent les rues de %s1. Les citoyens ne savent pas s'ils doivent adorer les ic&#244;nes ou non.</French>
+		<German>"Du sollst dir kein Gottesbildnis machen", hallt es in den Stra&#223;en von %s1. Die B&#252;rger wissen nicht, ob sie Ikonen verehren sollen oder nicht.</German>
+		<Italian>"Non ti farai alcuna immagine di Dio", risuonano nelle strade di %s1. I cittadini non sanno se venerare o meno le icone.</Italian>
+		<Spanish>"No te har&#225;s un icono de Dios", se oye en las calles de %s1. Los ciudadanos no saben si adorar a los iconos o no.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL7_2</Tag>
+		<English>Iconophobic citizens are destroying several images of canonized saints in %s1. Please organize a seventh council!</English>
+		<French>Des citoyens iconophobes d&#233;truisent plusieurs images de personnes canonis&#233;es &#224; %s1. S'il vous pla&#238;t, organisez un septi&#232;me conseil !</French>
+		<German>Ikonophobische B&#252;rger zerst&#246;ren etliche Bildnisse von Heiliggesprochenen in %s1. Bitte organisiert ein siebtes Konzil!</German>
+		<Italian>Cittadini iconofobi distruggono diverse immagini di persone canonizzate in %s1. Per favore, organizzate un settimo concilio!</Italian>
+		<Spanish>Ciudadanos iconof&#243;bicos destruyen varias im&#225;genes de personas canonizadas en %s1. &#161;Por favor, organicen un s&#233;ptimo consejo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL7_3</Tag>
+		<English>Hostility toward cult and sacred images is growing in %s1. Save these art treasures and call a seventh council before everything is destroyed!</English>
+		<French>Dans %s1, l'hostilit&#233; envers les images cultuelles et sacr&#233;es augmente. Sauvez ces tr&#233;sors artistiques et convoquez un septi&#232;me conseil avant que tout ne soit d&#233;truit !</French>
+		<German>In %s1 steigt die Feindlichkeit gegen&#252;ber Kult- und Heiligenbilder. Rettet diese Kunstsch&#228;tze und beruft ein siebtes Konzil ein, ehe alles zerst&#246;rt wird!</German>
+		<Italian>In %s1, l'ostilit&#224; verso il culto e le immagini sacre &#232; in aumento. Salvate questi tesori artistici e convocate un settimo concilio prima che tutto venga distrutto!</Italian>
+		<Spanish>En %s1, la hostilidad hacia el culto y las im&#225;genes sagradas est&#225; aumentando. &#161;Salva estos tesoros art&#237;sticos y convoca un s&#233;ptimo concilio antes de que todo sea destruido!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_KONZIL7_4</Tag>
+		<English>A mass fear of icons is sweeping through the streets of %s1. Citizens are arbitrarily destroying statues and icons. Please stop this madness with a definitive synod!</English>
+		<French>Une peur massive des images envahit les rues de %s1. Les citoyens d&#233;truisent arbitrairement des statues et des ic&#244;nes. S'il vous pla&#238;t, arr&#234;tez cette folie avec un synode final !</French>
+		<German>Eine massenhafte Bilderfurcht fegt durch die Stra&#223;en von %s1. Die B&#252;rger zerst&#246;ren willk&#252;rlich Statuen und Ikonen. Stoppt bitte diesen Wahn mit einer endg&#252;ltigen Synode!</German>
+		<Italian>Una paura di massa delle immagini sta dilagando per le strade di %s1. I cittadini distruggono arbitrariamente statue e icone. Per favore, fermate questa follia con un sinodo finale!</Italian>
+		<Spanish>Un miedo masivo a las im&#225;genes est&#225; recorriendo las calles de %s1. Los ciudadanos destruyen arbitrariamente estatuas e iconos. &#161;Por favor, detengamos esta locura con un s&#237;nodo final!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_BRANDGEFAHR_1</Tag>
+		<English>%F1 Fire hazard! (no well)</English>
+		<French>%F1 Risque d'incendie ! (p.d. puit)</French>
+		<German>%F1 Brandgefahr! (kein Brunnen)</German>
+		<Italian>%F1 Pericolo di incendio! (nes. pozzo)</Italian>
+		<Spanish>%F1 &#161;Peligro de incendio! (sin pozo)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_BRANDGEFAHR_2</Tag>
+		<English>%F1 Fire hazard! (no irrigation)</English>
+		<French>%F1 Risque d'incendie ! (p.d. canal d'irr.)</French>
+		<German>%F1 Brandgefahr! (kein Bew.kanal)</German>
+		<Italian>%F1 Pericolo di incendio! (ness. can. di irr.)</Italian>
+		<Spanish>%F1 &#161;Peligro de incendio! (sin can. de riego)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_REVOLT_BORDELL</Tag>
+		<English>%F1 No brothel!</English>
+		<French>%F1 Pas de bordel !</French>
+		<German>%F1 Kein Freudenhaus!</German>
+		<Italian>%F1 Niente bordello!</Italian>
+		<Spanish>%F1 &#161;No al burdel!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_1</Tag>
 		<English>Religious fanatics have destroyed a building in %s1: %s2</English>
 		<French>Des fanatiques religieux ont d&#233;truit un b&#226;timent &#224; %s1: %s2</French>
 		<German>Religi&#246;se Fanatiker haben in %s1 ein Geb&#228;ude zerst&#246;rt: %s2</German>
 		<Italian>I fanatici religiosi hanno distrutto un edificio in %s1: %s2</Italian>
 		<Spanish>Los fan&#225;ticos religiosos han destruido un edificio en %s1: %s2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_2</Tag>
+		<English>Unknown perpetrators destroyed the %s2 in %s1.</English>
+		<French>Des auteurs inconnus ont d&#233;truit un b&#226;timent &#224; %s1 : %s2</French>
+		<German>Unbekannte T&#228;ter haben in %s1 ein Geb&#228;ude zerst&#246;rt: %s2</German>
+		<Italian>Autori sconosciuti hanno distrutto un edificio in %s1: %s2</Italian>
+		<Spanish>Perpetradores desconocidos destruyeron un edificio en %s1: %s2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_3</Tag>
+		<English>The building %s2 was destroyed in %s1. A religious motive is suspected.</English>
+		<French>Le b&#226;timent %s2 a &#233;t&#233; d&#233;truit en %s1. On soup&#231;onne une origine religieuse.</French>
+		<German>Das Geb&#228;ude %s2 wurde in %s1 zerst&#246;rt. Man vermutet einen religi&#246;sen Hintergrund.</German>
+		<Italian>L'edificio %s2 &#232; stato distrutto in %s1. Si sospetta un background religioso.</Italian>
+		<Spanish>El edificio %s2 fue destruido en %s1. Se sospecha de antecedentes religiosos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_4</Tag>
+		<English>A building in %s1 was destroyed (%s2). Could this have been a religious act?</English>
+		<French>Un b&#226;timent &#224; %s1 a &#233;t&#233; d&#233;truit (%s2). Cela aurait-il pu &#234;tre un acte religieux ?</French>
+		<German>Ein Geb&#228;ude in %s1 wurde zerst&#246;rt (%s2). K&#246;nnte es sich um einen religi&#246;sen Akt gehandelt haben?</German>
+		<Italian>Un edificio in %s1 &#232; stato distrutto (%s2). Potrebbe essere stato un atto religioso?</Italian>
+		<Spanish>Un edificio en %s1 fue destruido (%s2). &#191;Pudo haber sido un acto religioso?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_5</Tag>
+		<English>The building %s2 in %s1 fell victim to a fire. Arson is not ruled out.</English>
+		<French>Le b&#226;timent %s2 &#224; %s1 a &#233;t&#233; victime d'un incendie. L'incendie criminel n'est pas exclu.</French>
+		<German>Das Geb&#228;ude %s2 in %s1 fiel einem Brand zum Opfer. Brandstiftung wird nicht ausgeschlossen.</German>
+		<Italian>L'edificio %s2 in %s1 &#232; stato vittima di un incendio. Non si esclude l'ipotesi di incendio doloso.</Italian>
+		<Spanish>El edificio %s2 en %s1 fue v&#237;ctima de un incendio. No se descarta que se trate de un incendio provocado.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_6</Tag>
+		<English>The building %s2 in %s1 was destroyed. An act of vandalism?</English>
+		<French>Le b&#226;timent %s2 &#224; %s1 a &#233;t&#233; d&#233;truit. Un acte de vandalisme ?</French>
+		<German>Das Geb&#228;ude %s2 in %s1 wurde zerst&#246;rt. Ein Akt des Vandalismus?</German>
+		<Italian>L'edificio %s2 in %s1 &#232; stato distrutto. Un atto vandalico?</Italian>
+		<Spanish>El edificio %s2 en %s1 fue destruido. &#191;Un acto de vandalismo?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_7</Tag>
+		<English>The building %s2 in %1 was set on fire. The arsonists escaped.</English>
+		<French>Le b&#226;timent %s2 &#224; %1 a &#233;t&#233; incendi&#233;. Les incendiaires ont pris la fuite.</French>
+		<German>Das Geb&#228;ude %s2 in %1 wurde in Brand gesetzt. Die Brandstifter sind entkommen.</German>
+		<Italian>L'edificio %s2 in %1 &#232; stato incendiato. Gli incendiari sono fuggiti.</Italian>
+		<Spanish>El edificio %s2 en %1 fue incendiado. Los pir&#243;manos escaparon.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_MERCHANT_ROBBERY_10</Tag>
@@ -344,6 +559,30 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<German>Ein guter Mensch ist zuverl&#228;ssiger als eine steinerne Br&#252;cke. Marc Aurel</German>
 		<Italian>Una brava persona &#232; pi&#249; affidabile di un ponte di pietra. Marco Aurelio</Italian>
 		<Spanish>Una buena persona es m&#225;s confiable que un puente de piedra. Marco Aurelio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_212</Tag>
+		<English>He begrudges our fellow soldiers the honor of martyrdom. Christian author under Emperor Julian</English>
+		<French>Il refuse &#224; nos camarades l'honneur du martyre. Auteur chr&#233;tien sous l'empereur Julien</French>
+		<German>Er missg&#246;nnt unseren Mitstreitern die Ehre des Martyriums. Christlicher Autor unter Kaiser Julian</German>
+		<Italian>Egli nega ai nostri compagni l'onore del martirio. Autore cristiano sotto l'imperatore Giuliano</Italian>
+		<Spanish>&#201;l envidia a nuestros camaradas el honor del martirio. Autor cristiano bajo el emperador Juliano</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_214</Tag>
+		<English>The wisdom of this world is foolishness with God. Apostle Paul</English>
+		<French>La sagesse de ce monde est folie devant Dieu. L'ap&#244;tre Paul</French>
+		<German>Die Weisheit dieser Welt ist die Torheit bei Gott. Apostel Paulus</German>
+		<Italian>La sapienza di questo mondo &#232; stoltezza davanti a Dio. Apostolo Paolo</Italian>
+		<Spanish>La sabidur&#237;a de este mundo es necedad para con Dios. Ap&#243;stol Pablo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_215</Tag>
+		<English>Whoever has Christ cannot be a criminal. Schenute of Atripe</English>
+		<French>Celui qui a Christ ne peut pas &#234;tre un criminel. Shenute d'Atripe</French>
+		<German>Wer Christus hat, kann kein Verbrecher sein. Schenute von Atripe</German>
+		<Italian>Chi ha Cristo non pu&#242; essere un criminale. Shenute di Atripe</Italian>
+		<Spanish>Quien tiene a Cristo no puede ser un criminal. Shenute de Atripe</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CAN_CONSTRUCT</Tag>
@@ -474,6 +713,22 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<Spanish>Esta tecnolog&#237;a est&#225; reservada a todas las civilizaciones griegas. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_KONZIL6</Tag>
+		<English>6. Ecumenical Council</English>
+		<French>6&#232;me Concile oecum&#233;nique</French>
+		<German>6. &#214;kumenisches Konzil</German>
+		<Italian>6. Consiglio ecumenico</Italian>
+		<Spanish>6. Concilio Ecum&#233;nico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_KONZIL7</Tag>
+		<English>7. Ecumenical Council</English>
+		<French>7&#232;me Concile oecum&#233;nique</French>
+		<German>7. &#214;kumenisches Konzil</German>
+		<Italian>7. Consiglio ecumenico</Italian>
+		<Spanish>7. Concilio Ecum&#233;nico</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_MOND</Tag>
 		<English>Lunar Calendar</English>
 		<French>Calendrier lunaire</French>
@@ -528,6 +783,22 @@ Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente mue
 		<German>Kataphraktoi</German>
 		<Italian>Kataphraktoi</Italian>
 		<Spanish>Kataphraktoi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIGHT_SPEARMAN_MEDIEVAL</Tag>
+		<English>Light Pikeman</English>
+		<French>Piquier l&#233;ger</French>
+		<German>Spie&#223;b&#252;rger</German>
+		<Italian>Picchiere leggero</Italian>
+		<Spanish>Piquero ligero</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN_MEDIEVAL</Tag>
+		<English>Seaxman</English>
+		<French>Combattant de Saxe</French>
+		<German>Sax-K&#228;mpfer</German>
+		<Italian>Combattente con scramasax</Italian>
+		<Spanish>Luchador con Seax</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_HELP</Tag>

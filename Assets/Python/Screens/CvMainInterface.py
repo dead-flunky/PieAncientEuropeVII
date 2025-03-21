@@ -2081,7 +2081,7 @@ class CvMainInterface:
 
 												# Go to city button
 												if pUnit.canMove() and pUnit.getDomainType() == DomainTypes.DOMAIN_LAND:
-													if pUnitOwner.getNumCities() > 0:
+													if pUnitOwner.getNumCities() > 1 or pUnitOwner.getNumCities() == 1 and not pPlot.isCity() and pPlot.getOwner() != iUnitOwner:
 														screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
 																"INTERFACE_BUTTON_GO2CITY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 773, -1, False)
 														screen.show("BottomButtonContainer")
@@ -2143,13 +2143,13 @@ class CvMainInterface:
 														#						screen.show("BottomButtonContainer")
 														#						iCount += 1
 														# Build Option: Beobachtungsturm
-														if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HOLZWEHRANLAGEN")):
-																if pPlot.isHills() and pPlot.getImprovementType() == -1 and not pPlot.isCity():
-																		if pPlot.getOwner() == -1 or pPlot.getOwner() == pUnit.getOwner() and not pPlot.isCultureRangeCity(iUnitOwner, 2):
-																				screen.appendMultiListButton(
-																						"BottomButtonContainer", "Art/Interface/Buttons/Builds/button_turm.dds", 0, WidgetTypes.WIDGET_GENERAL, 771, 2, False)
-																				screen.show("BottomButtonContainer")
-																				iCount += 1
+														#if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HOLZWEHRANLAGEN")):
+														#		if pPlot.isHills() and pPlot.getImprovementType() == -1 and not pPlot.isCity():
+														#				if pPlot.getOwner() == -1 or pPlot.getOwner() == pUnit.getOwner() and not pPlot.isCultureRangeCity(iUnitOwner, 2):
+														#						screen.appendMultiListButton(
+														#								"BottomButtonContainer", "Art/Interface/Buttons/Builds/button_turm.dds", 0, WidgetTypes.WIDGET_GENERAL, 771, 2, False)
+														#						screen.show("BottomButtonContainer")
+														#						iCount += 1
 														# Build Option: Pfad
 														#if not pTeam.isHasTech(gc.getInfoTypeForString("TECH_THE_WHEEL2")):
 														#		# Build Option: Pfad
@@ -5313,9 +5313,16 @@ class CvMainInterface:
 												szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_GLADS", (CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR), ()))
 										else:
 												szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_SLAVES", (CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR), ()))
+
+								# Freudenhaus (PAE 7.0)
+								elif iCityPop > 5 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BORDELL")):
+										szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_BORDELL", (CyGame().getSymbolID(FontSymbols.UNHAPPY_CHAR), ()))
+
+								# Fremde Kultur
 								elif pCity.findHighestCulture() != iPlayer and pCity.findHighestCulture() != gc.getBARBARIAN_PLAYER():
 										if pCity.getCulturePercentAnger() / 60 > 0:
 												szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_NATIONALITY", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), (pCity.getCulturePercentAnger() / 60)))
+
 								else:
 										iForeignCulture = 0
 										if pCity.getOriginalOwner() != iPlayer and pCity.getOriginalOwner() != gc.getBARBARIAN_PLAYER() and gc.getPlayer(pCity.getOriginalOwner()).isAlive():
@@ -5349,6 +5356,23 @@ class CvMainInterface:
 
 										if szBuffer != "" and iCityPop < 4:
 												bRevoltWarning = True
+
+								# Brandgefahr/Stadtbrand (PAE 7.8)
+								if szBuffer == "" and iCityPop > 2 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
+										if iCityPop < 18:
+											if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
+												if iCityPop >= 12:
+													szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_3", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
+												else:
+													if (not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) and
+														 not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) and
+														 not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
+													):
+														if iCityPop >= 6:
+															szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_2", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
+														else:
+															if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
+																szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_1", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
 
 								if szBuffer != "":
 										bRevoltDanger = True

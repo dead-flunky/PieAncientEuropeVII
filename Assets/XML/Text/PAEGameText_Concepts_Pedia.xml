@@ -213,6 +213,507 @@ Debido a la niebla "negra" de guerra, deber&#237;as poner algunos textos de info
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_ANIMALS_PEDIA</Tag>
+		<English>[H1]Animals[\H1]
+At the start of a game in Civilization IV, wild animals live everywhere that can attack your units. Unarmed settlers and construction crews are particularly at risk. In contrast to CIV, animals in PAE even venture into cultural areas because they have no idea of &#8203;&#8203;cultural boundaries. Animals can be hunted and destroyed. In doing so, they bring food to a nearby city. The hunter unit increases the food bonus and shows cities (green or red circle) whether they are within the radius of the hunting prey.
+
+[H1]Characteristics of animals in PAE[\H1]
+
+[ICON_BULLET] Never attack directly across rivers
+[ICON_BULLET] Never move to tribal villages, towns, towers or forts
+[ICON_BULLET] Different animal species do not share plots
+[ICON_BULLET] Animals appear in all eras
+[ICON_BULLET] Bears can also appear on uncultivated wild bonus within the cultural borders
+
+
+[H2]Lions:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] spawn in deserts
+[ICON_BULLET] avoid forest, dense forest, ice and tundra
+[ICON_BULLET] attack bonus: desert
+[ICON_BULLET] attack penalty against spearmen and skirmishers
+
+[H2]Wolves:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] spawn in forest and dense forest
+[ICON_BULLET] avoid desert, jungle and savannah
+[ICON_BULLET] attack bonus: forest and dense forest
+[ICON_BULLET] attack penalty against spearmen and Skirmishers
+
+[H2]Bears:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] spawns in forest and dense forest
+[ICON_BULLET] avoids desert, swamp, jungle and savannah
+[ICON_BULLET] move exclusively in forests
+[ICON_BULLET] attack bonus: forest and dense forest
+[ICON_BULLET] attack penalty against spearmen and skirmishers
+
+[H2]Ur:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] only spawns in dense forest
+[ICON_BULLET] avoids desert, swamp, jungle and savannah
+[ICON_BULLET] attack bonus: forest and dense forest
+[ICON_BULLET] attack penalty against skirmishers
+
+[H2]Hyenas:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] spawn in deserts and savannahs
+[ICON_BULLET] avoid tundra, ice, forest and dense forest
+[ICON_BULLET] attack bonus: savannah
+[ICON_BULLET] attack penalty against spearmen and skirmishers
+
+[H2]Panther:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] spawns in jungles
+[ICON_BULLET] avoids deserts, tundra, ice and dense forests
+[ICON_BULLET] attack bonus: jungles
+[ICON_BULLET] attack penalty against spearmen and skirmishers
+
+[H2]Tiger:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] spawns in jungles
+[ICON_BULLET] avoids desert, tundra, ice and dense forest
+[ICON_BULLET] Attack bonus: jungle
+[ICON_BULLET] Attack penalty against spearmen and skirmishers
+
+[H2]Leopard:[\H2]
+[ICON_BULLET] hostile/aggressive
+[ICON_BULLET] spawns in savannah
+[ICON_BULLET] avoids ice and dense forest
+[ICON_BULLET] Attack bonus: savannah
+[ICON_BULLET] Attack penalty against spearmen and skirmishers
+
+[H2]Wild boar:[\H2]
+[ICON_BULLET] harmless/only defends
+[ICON_BULLET] spawns in forests and dense forests
+[ICON_BULLET] avoids desert, jungle and savannah
+
+[H2]Red deer (Deer):[\H2]
+[ICON_BULLET] harmless/defend only
+[ICON_BULLET] spawn in forests and dense forests
+[ICON_BULLET] avoid desert, ice and jungle
+
+[H2]Mountain goats:[\H2]
+[ICON_BULLET] harmless/defend only
+[ICON_BULLET] spawn only on mountain peaks
+[ICON_BULLET] avoid flatlands, deserts and swamps
+
+[H2]Horses:[\H2]
+[ICON_BULLET] harmless/tamable
+[ICON_BULLET] spawn only on horse resources
+[ICON_BULLET] avoid ice and forests
+
+[H2]Camels:[\H2]
+[ICON_BULLET] harmless/tamable
+[ICON_BULLET] spawn on camel resources and in deserts
+[ICON_BULLET] avoid ice and forests
+
+[H2]Donkey:[\H2]
+[ICON_BULLET] harmless/tamable
+[ICON_BULLET] spawn on donkey resources and on dry plains
+[ICON_BULLET] avoid ice and dense forest</English>
+		<French>
+[H1]Animaux[\H1]
+Au d&#233;but d'une partie dans Civilization IV, il y a partout des animaux sauvages qui peuvent attaquer vos unit&#233;s. Les colons non arm&#233;s et les &#233;quipes de construction sont particuli&#232;rement menac&#233;s. Contrairement au CIV, les animaux du PAE s'aventurent m&#234;me dans les zones culturelles parce qu'ils n'ont aucune id&#233;e des fronti&#232;res culturelles. Les animaux peuvent &#234;tre chass&#233;s et d&#233;truits. Ils apportent de la nourriture dans une ville voisine. L'unit&#233; de chasseur augmente le bonus de nourriture et indique aux villes (cercle vert ou rouge) si elles se trouvent dans la zone autour de la proie.
+
+[H1]Caract&#233;ristiques des animaux en PAE[\H1]
+
+[ICON_BULLET] Les animaux n'attaquent jamais directement &#224; travers les rivi&#232;res
+[ICON_BULLET] Ne vous dirigez jamais vers les villages tribaux, les villages, les tours ou les forts
+[ICON_BULLET] Diff&#233;rentes esp&#232;ces animales ne partagent pas les champs
+[ICON_BULLET] Les animaux apparaissent &#224; toutes les &#233;poques
+[ICON_BULLET] Les ours peuvent &#233;galement appara&#238;tre sur des bonus sauvages non g&#233;r&#233;s au sein des limites culturelles.
+
+
+[H2]Lions :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] appara&#238;t dans les d&#233;serts
+[ICON_BULLET] &#233;vitez les for&#234;ts, les for&#234;ts denses, la glace et la toundra
+[ICON_BULLET] Bonus d'attaque : D&#233;sert
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+
+[H2]Loups :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] appara&#238;t dans la for&#234;t et la for&#234;t dense
+[ICON_BULLET] &#233;vitez le d&#233;sert, la jungle et la savane
+[ICON_BULLET] Bonus d'attaque : for&#234;t et for&#234;t dense
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+
+[H2]Ours :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] appara&#238;t dans la for&#234;t et la for&#234;t dense
+[ICON_BULLET] &#233;vitez le d&#233;sert, les marais, la jungle et la savane
+[ICON_BULLET] se d&#233;place uniquement dans les for&#234;ts
+[ICON_BULLET] Bonus d'attaque : for&#234;t et for&#234;t dense
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+
+[H2]Ur :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] n'appara&#238;t que dans la for&#234;t dense
+[ICON_BULLET] &#233;vite le d&#233;sert, les marais, la jungle et la savane
+[ICON_BULLET] Bonus d'attaque : for&#234;t et for&#234;t dense
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les tirailleurs
+
+[H2]Hy&#232;nes :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] appara&#238;t dans les d&#233;serts et les savanes
+[ICON_BULLET] &#233;vitez la toundra, la glace, la for&#234;t et la for&#234;t dense
+[ICON_BULLET] Bonus d'attaque : Savane
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+
+[H2]Panth&#232;re :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] appara&#238;t dans la jungle
+[ICON_BULLET] &#233;vite le d&#233;sert, la toundra, la glace et les for&#234;ts denses
+[ICON_BULLET] Bonus d'attaque : Jungle
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+
+[H2]Tigre :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] appara&#238;t dans la jungle
+[ICON_BULLET] &#233;vite le d&#233;sert, la toundra, la glace et les for&#234;ts denses
+[ICON_BULLET] Bonus d'attaque : Jungle
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+
+[H2]L&#233;opard :[\H2]
+[ICON_BULLET] hostile/agressif
+[ICON_BULLET] appara&#238;t &#224; Savannah
+[ICON_BULLET] &#233;vite la glace et les for&#234;ts denses
+[ICON_BULLET] Bonus d'attaque : Savane
+[ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+
+[H2]Sangliers :[\H2]
+[ICON_BULLET] inoffensif/d&#233;fense uniquement
+[ICON_BULLET] appara&#238;t dans les for&#234;ts et les for&#234;ts denses
+[ICON_BULLET] &#233;vitez le d&#233;sert, la jungle et la savane
+
+[H2]Cerf &#233;laphe (chevreuil) :[\H2]
+[ICON_BULLET] inoffensif/d&#233;fense uniquement
+[ICON_BULLET] appara&#238;t dans les for&#234;ts et les for&#234;ts denses
+[ICON_BULLET] &#233;vitez le d&#233;sert, la glace et la jungle
+
+[H2]Ch&#232;vres de montagne :[\H2]
+[ICON_BULLET] inoffensif/d&#233;fense uniquement
+[ICON_BULLET] n'appara&#238;t qu'au sommet des montagnes
+[ICON_BULLET] &#233;vitez les plaines, les d&#233;serts et les mar&#233;cages
+
+[H2]Chevaux :[\H2]
+[ICON_BULLET] inoffensif/apprivoisable
+[ICON_BULLET] n'appara&#238;t que sur les ressources des chevaux
+[ICON_BULLET] &#233;vitez la glace et les for&#234;ts
+
+[H2]Chameaux :[\H2]
+[ICON_BULLET] inoffensif/apprivoisable
+[ICON_BULLET] appara&#238;t sur les ressources de chameaux et les d&#233;serts
+[ICON_BULLET] &#233;vitez la glace et les for&#234;ts
+
+[H2]Ane :[\H2]
+[ICON_BULLET] inoffensif/apprivoisable
+[ICON_BULLET] appara&#238;t sur les ressources d'&#226;nes et les plaines s&#232;ches
+[ICON_BULLET] &#233;vitez la glace et les for&#234;ts denses
+		</French>
+		<German>
+[H1]Tiere[\H1]
+Am Anfang eines Spiels leben in Civilization IV &#252;berall wilde Tiere, die deine Einheiten attackieren k&#246;nnen. Gef&#228;hrdet sind vor allem unbewaffnete Siedler und Bautrupps. Tiere wagen sich in PAE im Gegensatz zu CIV sogar in kulturelle Gebiete, da sie keine Ahnung von Kulturgrenzen haben. Tiere k&#246;nne gejagt und vernichtet werden. Dabei bringen sie Nahrung in eine nahegelegene Stadt. Die Einheit J&#228;ger erh&#246;ht den Nahrungsbonus und zeigt bei St&#228;dten an (gr&#252;ner oder roter Kreis), ob sich diese im Umkreis der Jagdbeute befinden.
+
+[H1]Eigenschaften der Tiere in PAE[\H1]
+
+[ICON_BULLET] Tiere greifen nie direkt &#252;ber Fl&#252;sse an
+[ICON_BULLET] Bewegen sich nie auf Stammesd&#246;rfer, D&#246;rfer, T&#252;rme oder Forts
+[ICON_BULLET] Verschiedene Tierarten teilen sich keine Felder
+[ICON_BULLET] Tiere tauchen in allen Epochen auf
+[ICON_BULLET] B&#228;ren k&#246;nnen auch auf unbewirtschaftetem Wild-Bonus innerhalb der Kulturgrenzen auftauchen
+
+
+[H2]L&#246;wen:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnen in W&#252;sten
+[ICON_BULLET] meiden Wald, Dichten Wald, Eis und Tundra
+[ICON_BULLET] Angriffsbonus: W&#252;ste
+[ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+
+[H2]W&#246;lfe:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnen in Wald und Dichten Wald
+[ICON_BULLET] meiden W&#252;ste, Dschungel und Savanne
+[ICON_BULLET] Angriffsbonus: Wald und Dichter Wald
+[ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+
+[H2]B&#228;ren:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnt in Wald und Dichten Wald
+[ICON_BULLET] meiden W&#252;ste, Sumpf, Dschungel und Savannen
+[ICON_BULLET] bewegen sich ausschlie&#223;lich in W&#228;ldern
+[ICON_BULLET] Angriffsbonus: Wald und Dichter Wald
+[ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+
+[H2]Ur:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnt nur im Dichten Wald
+[ICON_BULLET] meidet W&#252;ste, Sumpf, Dschungel und Savanne
+[ICON_BULLET] Angriffsbonus: Wald und Dichter Wald
+[ICON_BULLET] Angriffsmalus gegen Pl&#228;nkler
+
+[H2]Hy&#228;nen:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnen in W&#252;sten und Savannen
+[ICON_BULLET] meiden Tundra, Eis, Wald und Dichten Wald
+[ICON_BULLET] Angriffsbonus: Savanne
+[ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+
+[H2]Panther:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnt in Dschungel
+[ICON_BULLET] meidet W&#252;ste, Tundra, Eis und Dichten Wald
+[ICON_BULLET] Angriffsbonus: Dschungel
+[ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+
+[H2]Tiger:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnt in Dschungel
+[ICON_BULLET] meidet W&#252;ste, Tundra, Eis und Dichten Wald
+[ICON_BULLET] Angriffsbonus: Dschungel
+[ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+
+[H2]Leopard:[\H2]
+[ICON_BULLET] feindlich/aggressiv
+[ICON_BULLET] spawnt in Savanne
+[ICON_BULLET] meidet Eis und Dichten Wald
+[ICON_BULLET] Angriffsbonus: Savanne
+[ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+
+[H2]Schwarzwild (Wildschweine):[\H2]
+[ICON_BULLET] harmlos/verteidigen nur
+[ICON_BULLET] spawnen in W&#228;ldern und Dichten W&#228;ldern
+[ICON_BULLET] meiden W&#252;ste, Dschungel und Savanne
+
+[H2]Rotwild (Rehe/Hirsche):[\H2]
+[ICON_BULLET] harmlos/verteidigen nur
+[ICON_BULLET] spawnen in W&#228;ldern und Dichten W&#228;ldern
+[ICON_BULLET] meiden W&#252;ste, Eis und Dschungel
+
+[H2]Bergziegen:[\H2]
+[ICON_BULLET] harmlos/verteidigen nur
+[ICON_BULLET] spawnen nur auf Berggipfel
+[ICON_BULLET] meiden Flachland, W&#252;sten und S&#252;mpfe
+
+[H2]Pferde:[\H2]
+[ICON_BULLET] harmlos/z&#228;hmbar
+[ICON_BULLET] spawnen nur auf Pferdressourcen
+[ICON_BULLET] meiden Eis und W&#228;lder
+
+[H2]Kamele:[\H2]
+[ICON_BULLET] harmlos/z&#228;hmbar
+[ICON_BULLET] spawnen auf Kamelressourcen und in W&#252;sten
+[ICON_BULLET] meiden Eis und W&#228;lder
+
+[H2]Esel:[\H2]
+[ICON_BULLET] harmlos/z&#228;hmbar
+[ICON_BULLET] spawnen auf Eselressourcen und auf Trockenebenen
+[ICON_BULLET] meiden Eis und Dichten Wald
+		</German>
+		<Italian>
+[H1]Animali[\H1]
+All'inizio di una partita in Civilization IV, ovunque ci sono animali selvaggi che possono attaccare le tue unit&#224;. I coloni disarmati e le squadre di costruzione sono particolarmente a rischio. A differenza del CIV, nel PAE gli animali si avventurano addirittura in aree culturali perch&#233; non hanno idea dei confini culturali. Gli animali possono essere cacciati e distrutti. Portano il cibo in una citt&#224; vicina. L'unit&#224; cacciatore aumenta il bonus cibo e mostra le citt&#224; (cerchio verde o rosso) se si trovano nell'area attorno alla preda.
+
+[H1]Caratteristiche degli animali nel PAE[\H1]
+
+[ICON_BULLET] Gli animali non attaccano mai direttamente attraverso i fiumi
+[ICON_BULLET] Non dirigersi mai verso villaggi tribali, villaggi, torri o fortezze
+[ICON_BULLET] Diverse specie animali non condividono i campi
+[ICON_BULLET] Gli animali compaiono in tutte le epoche
+[ICON_BULLET] Gli orsi possono apparire anche sui bonus selvaggi non gestiti all'interno dei confini culturali
+
+
+[H2]Leoni:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] si generano nei deserti
+[ICON_BULLET] evita foreste, foreste fitte, ghiaccio e tundra
+[ICON_BULLET] Bonus di attacco: deserto
+[ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+
+[H2]Lupi:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] si genera nella foresta e nella foresta fitta
+[ICON_BULLET] evita il deserto, la giungla e la savana
+[ICON_BULLET] Bonus di attacco: Foresta e Foresta Fitta
+[ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+
+[H2]Orsi:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] si genera nella foresta e nella foresta fitta
+[ICON_BULLET] evita il deserto, la palude, la giungla e la savana
+[ICON_BULLET] si muovono solo nelle foreste
+[ICON_BULLET] Bonus di attacco: Foresta e Foresta Fitta
+[ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+
+[H2]Ur:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] si genera solo nella fitta foresta
+[ICON_BULLET] evita il deserto, la palude, la giungla e la savana
+[ICON_BULLET] Bonus di attacco: Foresta e Foresta Fitta
+[ICON_BULLET] Penalit&#224; di attacco contro gli schermagliatori
+
+[H2]Iene:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] si generano nei deserti e nelle savane
+[ICON_BULLET] evita tundra, ghiaccio, foreste e foreste fitte
+[ICON_BULLET] Bonus di attacco: Savannah
+[ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+
+[H2]Pantera:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] appare nella giungla
+[ICON_BULLET] evita il deserto, la tundra, il ghiaccio e la fitta foresta
+[ICON_BULLET] Bonus di attacco: Giungla
+[ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+
+[H2]Tigre:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] appare nella giungla
+[ICON_BULLET] evita il deserto, la tundra, il ghiaccio e la fitta foresta
+[ICON_BULLET] Bonus di attacco: Giungla
+[ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+
+[H2]Leopardo:[\H2]
+[ICON_BULLET] ostile/aggressivo
+[ICON_BULLET] appare a Savannah
+[ICON_BULLET] evita il ghiaccio e la fitta foresta
+[ICON_BULLET] Bonus di attacco: Savannah
+[ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+
+[H2]Cinghiali:[\H2]
+[ICON_BULLET] solo innocuo/difendi
+[ICON_BULLET] si generano nelle foreste e nelle fitte foreste
+[ICON_BULLET] evita il deserto, la giungla e la savana
+
+[H2]Cervo (capriolo):[\H2]
+[ICON_BULLET] solo innocuo/difendi
+[ICON_BULLET] si generano nelle foreste e nelle fitte foreste
+[ICON_BULLET] evita il deserto, il ghiaccio e la giungla
+
+[H2]Capre di montagna:[\H2]
+[ICON_BULLET] solo innocuo/difendi
+[ICON_BULLET] si genera solo sulle cime delle montagne
+[ICON_BULLET] evita pianure, deserti e paludi
+
+[H2]Cavalli:[\H2]
+[ICON_BULLET] innocuo/addomesticabile
+[ICON_BULLET] si genera solo su risorse cavallo
+[ICON_BULLET] evita il ghiaccio e foreste
+
+[H2]Cammelli:[\H2]
+[ICON_BULLET] innocuo/addomesticabile
+[ICON_BULLET] si generano nelle risorse dei cammelli e nei deserti
+[ICON_BULLET] evita il ghiaccio e foreste
+
+[H2]Asino:[\H2]
+[ICON_BULLET] innocuo/addomesticabile
+[ICON_BULLET] si generano sulle risorse degli asini e sulle pianure aride
+[ICON_BULLET] evita il ghiaccio e la fitta foresta
+		</Italian>
+		<Spanish>
+[H1]Animales[\H1]
+Al comienzo de un juego en Civilization IV, hay animales salvajes por todas partes que pueden atacar a tus unidades. Los colonos desarmados y los equipos de construcci&#243;n corren especial riesgo. A diferencia de CIV, los animales en PAE incluso se aventuran en &#225;reas culturales porque no tienen idea de los l&#237;mites culturales. Los animales pueden ser cazados y destruidos. Llevan comida a un pueblo cercano. La unidad de cazador aumenta la bonificaci&#243;n de comida y muestra las ciudades (c&#237;rculo verde o rojo) si se encuentran en el &#225;rea alrededor de la presa.
+
+[H1]Caracter&#237;sticas de los animales en PAE[\H1]
+
+[ICON_BULLET] Los animales nunca atacan directamente al otro lado de los r&#237;os.
+[ICON_BULLET] Nunca te dirijas hacia aldeas tribales, aldeas, torres o fuertes.
+[ICON_BULLET] Las diferentes especies animales no comparten campos
+[ICON_BULLET] Los animales aparecen en todas las &#233;pocas.
+[ICON_BULLET] Los osos tambi&#233;n pueden aparecer en bonificaciones comod&#237;n no administradas dentro de los l&#237;mites culturales.
+
+
+[H2]Leones:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] aparece en los desiertos
+[ICON_BULLET] evita los bosques, los bosques densos, el hielo y la tundra
+[ICON_BULLET] Bonificaci&#243;n de ataque: Desierto
+[ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+
+[H2]Lobos:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] aparece en Bosque y Bosque Denso
+[ICON_BULLET] evita el desierto, la jungla y la sabana
+[ICON_BULLET] Bonificaci&#243;n de ataque: bosque y bosque denso
+[ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+
+[H2]Osos:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] aparece en Bosque y Bosque Denso
+[ICON_BULLET] evita el desierto, el pantano, la jungla y la sabana
+[ICON_BULLET] solo se mueve en bosques
+[ICON_BULLET] Bonificaci&#243;n de ataque: bosque y bosque denso
+[ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+
+[H2]Ur:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] solo aparece en el bosque denso
+[ICON_BULLET] evita el desierto, el pantano, la jungla y la sabana
+[ICON_BULLET] Bonificaci&#243;n de ataque: bosque y bosque denso
+[ICON_BULLET] Penalizaci&#243;n de ataque contra hostigadores
+
+[H2]Hienas:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] aparece en desiertos y sabanas
+[ICON_BULLET] evita la tundra, el hielo, los bosques y los bosques densos
+[ICON_BULLET] Bonificaci&#243;n de ataque: Savannah
+[ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+
+[H2]Pantera:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] aparece en la jungla
+[ICON_BULLET] evita el desierto, la tundra, el hielo y los bosques densos
+[ICON_BULLET] Bonificaci&#243;n de ataque: Selva
+[ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+
+[H2]Tigre:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] aparece en la jungla
+[ICON_BULLET] evita el desierto, la tundra, el hielo y los bosques densos
+[ICON_BULLET] Bonificaci&#243;n de ataque: Selva
+[ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+
+[H2]Leopardo:[\H2]
+[ICON_BULLET] hostil/agresivo
+[ICON_BULLET] aparece en Savannah
+[ICON_BULLET] evita el hielo y el bosque denso
+[ICON_BULLET] Bonificaci&#243;n de ataque: Savannah
+[ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+
+[H2]Jabal&#237;es:[\H2]
+[ICON_BULLET] inofensivo/solo defender
+[ICON_BULLET] aparece en bosques y bosques densos
+[ICON_BULLET] evita el desierto, la jungla y la sabana
+
+[H2]Ciervo rojo (corzo):[\H2]
+[ICON_BULLET] inofensivo/solo defender
+[ICON_BULLET] aparece en bosques y bosques densos
+[ICON_BULLET] evita el desierto, el hielo y la jungla
+
+[H2]Cabras montesas:[\H2]
+[ICON_BULLET] inofensivo/solo defender
+[ICON_BULLET] solo aparece en las cimas de las monta&#241;as
+[ICON_BULLET] evita llanuras, desiertos y pantanos
+
+[H2]Caballos:[\H2]
+[ICON_BULLET] inofensivo/domestable
+[ICON_BULLET] solo aparece en recursos de caballos
+[ICON_BULLET] evita el hielo y los bosques
+
+[H2]Camellos:[\H2]
+[ICON_BULLET] inofensivo/domestable
+[ICON_BULLET] aparece en desiertos y recursos de camellos
+[ICON_BULLET] evita el hielo y los bosques
+
+[H2]Burro:[\H2]
+[ICON_BULLET] inofensivo/domestable
+[ICON_BULLET] aparece en recursos de burros y llanuras secas
+[ICON_BULLET] evita el hielo y el bosque denso
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_BARBARIANS_PEDIA</Tag>
 		<English>[H1]Aggressive animals[\H1]
 From the beginning there are LOTS OF [LINK=CONCEPT_ANIMALS]wild animals[\LINK].
@@ -1390,7 +1891,17 @@ The buildings that have been constructed are displayed in different colors accor
 [ICON_BULLET] Buildings that cannot be conquered: light gray
 [ICON_BULLET] Normal buildings: white
 
-[H2]Unhealty cities[\H2]
+
+[H2]City Fires[\H2]
+City fires were very common in ancient times. Fires can break out in a city starting at village status (Pop 3).
+[ICON_BULLET] Villages up to Pop 2 are unaffected.
+[ICON_BULLET] Wells protect cities up to Pop 5.
+[ICON_BULLET] Irrigation canals protect cities up to Pop 11.
+[ICON_BULLET] Aqueducts protect cities up to Pop 17.
+[ICON_BULLET] (Roman) fire departments protect cities 100%.
+
+
+[H2]Unhealthy cities[\H2]
 In unhealty cities diseases will emerge with a fairly high probability. These are
 [ICON_BULLET] Leprosy
 [TAB] Leprosy will infect 5 citizens. The city's population may fall by half. With a leper colony, the city only decreases by 1.
@@ -1512,6 +2023,16 @@ Les b&#226;timents construits sont affich&#233;s en diff&#233;rentes couleurs se
 [ICON_BULLET] Palais et Palais provincial : vert
 [ICON_BULLET] B&#226;timents qui ne peuvent pas &#234;tre conquis : gris clair
 [ICON_BULLET] B&#226;timents normaux : blancs
+
+
+[H2]Incendies urbains[\H2]
+Les incendies de ville &#233;taient tr&#232;s courants dans l'Antiquit&#233;. Des incendies peuvent se d&#233;clarer dans une ville &#224; partir du statut de village (Pop 3).
+[ICON_BULLET] Les villages jusqu'&#224; Pop 2 ne sont pas affect&#233;s.
+[ICON_BULLET] Les fontaines prot&#232;gent les villes jusqu'&#224; 5 populations.
+[ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes jusqu'&#224; 11 ans.
+[ICON_BULLET] Les aqueducs prot&#232;gent les villes jusqu'&#224; la population 17.
+[ICON_BULLET] Les pompiers (romains) prot&#232;gent les villes &#224; 100 %.
+
 
 [H2]Insalubrit&#233;[\H2]
 Des &#233;pid&#233;mies parmi les suivantes peuvent se d&#233;clarer dans les villes insalubres :
@@ -1635,6 +2156,16 @@ Die erbauten Geb&#228;ude werden nach ihrer Bedeutung in unterschiedlichen Farbe
 [ICON_BULLET] Palast und Provinzpalast: gr&#252;n
 [ICON_BULLET] Geb&#228;ude, die nicht erobert werden k&#246;nnen: hellgrau
 [ICON_BULLET] Normale Geb&#228;ude: wei&#223;
+
+
+[H2]Stadtbr&#228;nde[\H2]
+Stadtbr&#228;nde kommen in der Antike sehr h&#228;ufig vor. Ab dem Dorfstatus (Pop 3) k&#246;nnen in einer Stadt Br&#228;nde entstehen.
+[ICON_BULLET] D&#246;rfer bis Pop 2 sind nicht betroffen.
+[ICON_BULLET] Brunnen sch&#252;tzen St&#228;dte bis Pop 5.
+[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte bis Pop 11.
+[ICON_BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte bis Pop 17.
+[ICON_BULLET] (R&#246;mische) Feuerwehren sch&#252;tzen St&#228;dte zu 100%.
+
 
 [H2]Ungesunde St&#228;dte[\H2]
 In ungesunden St&#228;dten tauchen mit ziemlich gro&#223;er Wahrscheinlichkeit Seuchen auf. Diese sind
@@ -1763,6 +2294,16 @@ Gli edifici costruiti sono visualizzati in colori diversi a seconda della loro i
 [ICON_BULLET] Edifici che non possono essere conquistati: grigio chiaro
 [ICON_BULLET] Edifici normali: bianchi
 
+
+[H2]Incendi cittadini[\H2]
+Gli incendi nelle citt&#224; erano molto comuni nell'antichit&#224;. In una citt&#224; possono scoppiare incendi anche se si &#232; in un villaggio (Pop 3).
+[ICON_BULLET] I villaggi fino a Pop 2 non sono interessati.
+[ICON_BULLET] Le fontane proteggono le citt&#224; fino a Pop 5.
+[ICON_BULLET] I canali di irrigazione proteggono le citt&#224; fino all'11&#186; anno di popolazione.
+[ICON_BULLET] Gli acquedotti proteggono le citt&#224; fino alla popolazione 17.
+[ICON_BULLET] (Roman) I vigili del fuoco proteggono le citt&#224; al 100%.
+
+
 Citt&#224; [H2] salutare [\H2]
 Nelle citt&#224; malsane immergersi con abbastanza elevata probabilit&#224; di epidemie . questi sono
 [ICON_BULLET] lebbra
@@ -1888,6 +2429,16 @@ Los edificios construidos se muestran en diferentes colores seg&#250;n su import
 [ICON_BULLET] Palacio y Palacio Provincial: verde
 [ICON_BULLET] Edificios que no se pueden conquistar: gris claro
 [ICON_BULLET] Edificios normales: blancos
+
+
+[H2]Incendios urbanos[\H2]
+Los incendios urbanos eran muy comunes en la antig&#252;edad. Los incendios pueden estallar en una ciudad desde el estado de aldea (Poblaci&#243;n 3).
+[ICON_BULLET] Las aldeas hasta una poblaci&#243;n de 2 no se ver&#225;n afectadas.
+[ICON_BULLET] Las fuentes protegen ciudades hasta una poblaci&#243;n de 5.
+[ICON_BULLET] Los canales de irrigaci&#243;n protegen las ciudades hasta la poblaci&#243;n 11.
+[ICON_BULLET] Los acueductos protegen las ciudades hasta poblaci&#243;n 17.
+[ICON_BULLET] Los departamentos de bomberos (romanos) protegen las ciudades al 100%.
+
 
 [H2]Ciudades insalubres[\H2]
 En las ciudades insalubres es m&#225;s probable la aparici&#243;n de epidemias, tales como:
@@ -10286,41 +10837,74 @@ Ascetic religions
 For polytheistic religions there are only temples available and no monasteries. High Priests can be built with temples.
 
 
-[H1]Religious conflicts[\H1]
+[H1]Religious Conflicts[\H1]
 
-1) In times of peace, cities with polytheistic religions can lead to a riot.
+The Jewish and Christian religions forbade the worship of the emperor, a human being, as a god. However, this was prescribed by the Roman religion. Situations in which members of other faiths are discriminated against, harassed, or persecuted result from a lack of religious freedom. This lack can have the same consequences for believers of other religions; it depends on which religion is favored by the state.
 
-2) Cities with monotheistic religions can destroy pagan institutions:
+[H2]Polytheistic phase[\H2]
+
+Villages with at least two religions and cities (city status) with at least three religions can fall into rebellion. In this case, attempts are always made to expel a religion other than the state religion from the city.
 
 Trigger:
-[ICON_BULLET] Jewish city: 2%
-[ICON_BULLET] Christian city: 5%
-[ICON_BULLET] Muslim city: 10%
+[ICON_BULLET] Any city with 2 (or 3 if city status is City) religions
+[ICON_BULLET] 2% chance per city/round
+[ICON_BULLET] From the Heresy technology, 6% per city/round
 
 Effect:
-[ICON_BULLET] A cult and its buildings are expelled (excluding Wonders and Academies)
-[ICON_BULLET] Another religion is expelled (excluding Wonders, Holy City and Holy Shrine)
+[ICON_BULLET] Step 1: All city units are injured and immobilized for 1 round
+[ICON_BULLET] Step 2: 1:3 chance: The temple is destroyed (except for World Wonders)
+[ICON_BULLET] Step 3: 1:3 chance: A fire breaks out (triggers the fire event)
+[ICON_BULLET] Step 4: 1:4 chance: The population decreases by 1
+[ICON_BULLET] Step 5: If steps 2+4, 1:4 chance: The religion is expelled from the city
 
 
-[H1]Religious expulsion[\H1]
+[H2]Monotheistic phase[\H2]
 
-With the [LINK=UNIT_INQUISITOR]religious inquisitor[\LINK] you are able to expel non-state religions from cities.
-If a city just belongs to one religion, they are happy to believe in something but they will still have conflict with peers from other cities who believe in something else. Therefore, you cannot eject this sole religion and there are still +2 unhappy citizens (only +1 with a temple).
+Why were Jews and Christians persecuted?
 
-Religious expulsion requirements:
-[ICON_BULLET] The "religious inquisitor" has to move into the city.
-[ICON_BULLET] The state religion must be located in the city.
+[ICON_BULLET] Because the Jewish and Christian belief in one God represented a provocation to the then widespread beliefs in a multitude of gods.
+[ICON_BULLET] Judaism, as well as Christianity, rejected polytheism, syncretism, and the oriental god-king cults because of their belief in the one Creator God (monotheism).
+[ICON_BULLET] They saw themselves as a people chosen by this God with a mission for all other peoples (Genesis 12:3). This made it impossible for devout Jews and Christians to participate in the cults of the surrounding peoples.
+[ICON_BULLET] For a long time, Christians (and Jews too) refused military service due to their pacifist doctrine and what they considered an ungodly ruler. If an ungodly ruler issued an order that blatantly contradicted divine commandments, then the obedient soldier would be guilty. With the conversion of Emperor Constantine (reigned 307-337 AD) to Christianity, everything changed. If one fought in the right state of mind, one could almost be obligated to fight others for their own good.
 
-Religious expulsion impacts:
-[ICON_BULLET] A city revolts for 2 turns.
-[ICON_BULLET] One religious inquisitor will only expel one religion.
-[ICON_BULLET] If the expulsion fails, the city population decreases by 1 and the unit disappears. You will have to send another one to expel the religion.
-[ICON_BULLET] If you have success, the city population decreases by 1, the unit disappears and the following happens:
-[TAB][ICON_BULLET] Deterioration of relations with all civilizations by 1 which have the expelled religion as the state religion.
-[TAB][ICON_BULLET] Improvement of relations of all civilizations by 1 which have your state religion as the state religion.
-[ICON_BULLET] All buildings of the expelled religion get destroyed, except for shrines.
+Why did Christians persecute the Jews?
 
-The AI uses religious inquisitors when a city has more unhappy than happy citizens and more than one religion.</English>
+[ICON_BULLET] The Christians accused the Jews of not recognizing Jesus Christ, who, according to Christian belief, was sent by God, as their Messiah and Savior.
+[ICON_BULLET] They also accused the Jews of being responsible for the crucifixion of Christ and thus of being murderers of God.
+
+Every city with a monotheistic religion can destroy pagan institutions:
+
+Trigger:
+[ICON_BULLET] Jewish city: 0%, Judaism as state religion: 20%
+[ICON_BULLET] Christian city: 20%, Christianity as state religion: 60%
+[ICON_BULLET] Muslim city: 30%, Islam as state religion: 70%
+
+Effect:
+[ICON_BULLET] A cult and its buildings are expelled (except for Wonders of the World)
+[ICON_BULLET] Another religion is expelled and its temple is destroyed (except for Wonders of the World)
+[ICON_BULLET] Holy cities can also be affected
+[ICON_BULLET] Pagan institutions such as libraries, baths, theaters, etc. are destroyed (max. 1 building per city/round)
+
+[H1] Religious Expulsion[\H1]
+
+With a High Priest, Non-state religions can also be manually expelled from the city.
+If a city has only one religion, the villagers are happy to be able to believe in something, and this religion cannot be removed. However, if the religion does not correspond to the state religion, disputes arise, resulting in +2 dissatisfied citizens (only +1 for a temple).
+
+Requirements for a religious expulsion:
+[ICON_BULLET] The high priest must be in the city.
+[ICON_BULLET] There must be at least two religions in the city.
+[ICON_BULLET] High priests cannot expel their own religion.
+
+Effects of a religious expulsion:
+[ICON_BULLET] The city falls into unrest for two rounds.
+[ICON_BULLET] Only one religion is removed per expulsion.
+[ICON_BULLET] If the attempt to expel a religion from the city fails, the city size decreases by 1 and the unit disappears. You have to send another one.
+[ICON_BULLET] If the expulsion works, the city shrinks by 1, the unit disappears, and the following happens:
+[TAB][ICON_BULLET] The relationships of all civilizations that have this expelled religion as their state religion are worsened by 1.
+[TAB][ICON_BULLET] The relationships of all civilizations that have your state religion as their state religion are improved by 1.
+[ICON_BULLET] The buildings of the expelled religion disappear, except for the shrine if it is the religion's founding city.
+
+The AI &#8203;&#8203;applies a religious expulsion if a city with more than one religion has more dissatisfied citizens than happy citizens.</English>
 		<French>
 [H1]Religion[\H1]
 La religion joue un r&#244;le majeur dans l'histoire de l'Humanit&#233;.
@@ -10348,53 +10932,85 @@ Les religions polyth&#233;istes ne peuvent construire que des temples (pas de mo
 
 [H1]Conflits religieux[\H1]
 
-1) En temps de paix, les villes aux religions polyth&#233;istes peuvent conduire &#224; des &#233;meutes.
+Les religions juive et chr&#233;tienne interdisaient le culte de l'empereur, c'est-&#224;-dire d'un &#234;tre humain, comme d'un dieu. Mais c'&#233;tait ce que prescrivait la religion romaine. Les situations dans lesquelles des personnes d'autres confessions sont discrimin&#233;es, harcel&#233;es ou pers&#233;cut&#233;es r&#233;sultent d'un manque de libert&#233; religieuse. Cette d&#233;ficience peut avoir des cons&#233;quences similaires pour les croyants d'autres religions ; Cela d&#233;pend de la religion pr&#233;f&#233;r&#233;e par l'&#201;tat.
 
-2) Les villes aux religions monoth&#233;istes peuvent d&#233;truire les institutions pa&#239;ennes :
+[H2]Phase polyth&#233;iste[\H2]
+
+Les villages ayant au moins 2 religions et les villes (statut de ville) ayant au moins 3 religions peuvent tomber en r&#233;bellion. Il y a toujours une tentative de chasser de la ville une religion autre que la religion d'&#201;tat.
 
 D&#233;clenchement:
-[ICON_BULLET] Ville juive : 2 %
-[ICON_BULLET] Ville chr&#233;tienne : 5 %
-[ICON_BULLET] Ville musulmane : 10 %
+[ICON_BULLET] Chaque ville avec 2 (ou 3 si le statut de la ville est une ville) religions
+[ICON_BULLET] Chance 2% par ville/tour
+[ICON_BULLET] De l'h&#233;r&#233;sie technologique 6 % par ville/tour
 
 Impact:
-[ICON_BULLET] Un culte et ses b&#226;timents sont expuls&#233;s (sauf Merveilles du Monde et Acad&#233;mies)
-[ICON_BULLET] Une autre religion est expuls&#233;e (sauf les merveilles du monde, la ville sainte et le sanctuaire sacr&#233;)
+[ICON_BULLET] &#201;tape 1 : Toutes les unit&#233;s de la ville sont bless&#233;es et immobilis&#233;es pendant 1 round
+[ICON_BULLET] &#201;tape 2 : Chance 1 : 3 : Le temple est d&#233;truit (hors Merveilles)
+[ICON_BULLET] &#201;tape 3 : Chance 1 : 3 : Un incendie se d&#233;clare (d&#233;clenche l'&#233;v&#233;nement incendie)
+[ICON_BULLET] &#201;tape 4 : Chance 1 : 4 : La population diminue de 1
+[ICON_BULLET] &#201;tape 5 : si &#233;tape 2+4, chance 1:4 : La religion est expuls&#233;e de la ville
+
+[H2]Phase monoth&#233;iste[\H2]
+
+Pourquoi les Juifs et les Chr&#233;tiens ont-ils &#233;t&#233; pers&#233;cut&#233;s ?
+
+[ICON_BULLET] Parce que la croyance juive et chr&#233;tienne en un seul Dieu &#233;tait une provocation pour les croyances en une multitude de dieux qui &#233;taient r&#233;pandues &#224; cette &#233;poque.
+[ICON_BULLET] Le juda&#239;sme, ainsi que le christianisme, ont rejet&#233; le polyth&#233;isme, le syncr&#233;tisme et les cultes orientaux du dieu-roi en raison de leur croyance en un seul Dieu cr&#233;ateur (monoth&#233;isme).
+[ICON_BULLET] Ils se consid&#233;raient comme un peuple choisi par ce Dieu avec une mission pour tous les autres peuples (Gen 12:3). Cela rendait impossible pour les juifs et les chr&#233;tiens pieux de participer aux cultes des peuples environnants.
+[ICON_BULLET] Les chr&#233;tiens (y compris les juifs) ont refus&#233; le service militaire pendant longtemps en raison de leurs enseignements pacifistes et de ce qu'ils consid&#233;raient comme un dirigeant impie. Si un dirigeant impie donne un ordre qui est manifestement contraire aux commandements divins, alors le soldat ob&#233;issant sera coupable. Avec la conversion de l'empereur Constantin (r&#232;gne 307-337 apr&#232;s J.-C.) au christianisme, tout a chang&#233;. Si l'on combattait dans le bon &#233;tat d'esprit, on pourrait presque &#234;tre oblig&#233; de combattre les autres pour leur propre bien.
+
+Pourquoi les chr&#233;tiens ont-ils pers&#233;cut&#233; les juifs ?
+
+[ICON_BULLET] Les chr&#233;tiens ont accus&#233; les juifs de ne pas reconna&#238;tre J&#233;sus-Christ, qui selon la foi chr&#233;tienne a &#233;t&#233; envoy&#233; par Dieu, comme leur Messie et Sauveur.
+[ICON_BULLET] De plus, ils accus&#232;rent les Juifs d'&#234;tre responsables de la crucifixion du Christ et donc d'&#234;tre des meurtriers de Dieu.
+
+Une ville avec une religion monoth&#233;iste peut d&#233;truire les institutions pa&#239;ennes :
+
+D&#233;clenchement:
+[ICON_BULLET] Ville juive : 0 %, juda&#239;sme comme religion d'&#201;tat : 20 %
+[ICON_BULLET] Ville chr&#233;tienne : 20 %, christianisme comme religion d'&#201;tat : 60 %
+[ICON_BULLET] Ville musulmane : 30 %, Islam comme religion d'&#201;tat : 70 %
+
+Impact:
+[ICON_BULLET] Une secte et ses b&#226;timents sont expuls&#233;s (sauf les Merveilles du Monde)
+[ICON_BULLET] Une autre religion est expuls&#233;e et son temple d&#233;truit (sauf les Merveilles du Monde)
+[ICON_BULLET] Les villes saintes peuvent &#233;galement &#234;tre touch&#233;es
+[ICON_BULLET] Les institutions pa&#239;ennes telles que les biblioth&#232;ques, les bains, les th&#233;&#226;tres, etc. sont d&#233;truites (max. 1 b&#226;timent par ville/tour)
 
 
-[H1]Expulser une religion[\H1]
+[H1]Expulsion religieuse[\H1]
 
-Les [LINK=UNIT_INQUISITOR]fanatiques religieux[\LINK] peuvent expulser les religions non officielles des villes.
+Avec un grand pr&#234;tre, les religions non &#233;tatiques peuvent &#233;galement &#234;tre expuls&#233;es manuellement de la ville.
+Si une ville n'a qu'une seule religion, les villageois sont heureux de pouvoir croire en quelque chose et cette religion ne peut pas &#234;tre supprim&#233;e. Cependant, si la religion ne correspond pas &#224; la religion d'&#201;tat, des conflits surgissent, d'o&#249; +2 citoyens insatisfaits (seulement +1 pour un temple).
 
-Pr&#233;requis pour expulser une religion :
-[ICON_BULLET] Le fanatique doit se d&#233;placer jusqu'&#224; la ville souhait&#233;e
-[ICON_BULLET] La religion d'&#233;tat doit &#234;tre pr&#233;sente dans la ville
+Conditions pr&#233;alables &#224; l'expulsion religieuse :
+[ICON_BULLET] Le grand pr&#234;tre doit &#234;tre dans la ville.
+[ICON_BULLET] Il doit y avoir au moins 2 religions dans la ville.
+[ICON_BULLET] Les grands pr&#234;tres ne peuvent pas expulser leur propre religion.
 
-Cons&#233;quences :
-[ICON_BULLET] La ville se r&#233;volte pendant 2 tours
-[ICON_BULLET] Une seule religion sera expuls&#233;e
-[ICON_BULLET] La population diminuera de 1
-[ICON_BULLET] Le fanatique religieux sera perdu
-[ICON_BULLET] En cas de succ&#232;s :
-[TAB][ICON_BULLET] D&#233;t&#233;rioration des relations (-1) avec les civilisations qui ont la religion expuls&#233;e comme religion d'&#233;tat
-[TAB][ICON_BULLET] Am&#233;lioration des relations (+1) avec les civilisations qui ont la m&#234;me religion d'&#233;tat que celle du fanatique
-[ICON_BULLET] Tous les b&#226;timents li&#233;s &#224; la religion expuls&#233;e seront d&#233;truits (sauf les merveilles)
+Effets de l'expulsion religieuse :
+[ICON_BULLET] La ville tombe dans l'agitation pendant 2 rounds.
+[ICON_BULLET] Une seule religion est supprim&#233;e par expulsion.
+[ICON_BULLET] Si la tentative d'expulser une religion de la ville &#233;choue, la taille de la ville diminue de 1 et l'unit&#233; dispara&#238;t. Tu dois en envoyer un autre.
+[ICON_BULLET] Si l'expulsion fonctionne, la ville r&#233;tr&#233;cit de 1, l'unit&#233; dispara&#238;t et ce qui suit se produit :
+[TAB][ICON_BULLET] D&#233;t&#233;rioration des relations de toutes les civilisations qui ont cette religion expuls&#233;e comme religion d'&#201;tat par 1.
+[TAB][ICON_BULLET] Am&#233;liorez les relations de toutes les civilisations qui ont votre religion d'&#201;tat comme religion d'&#201;tat de 1.
+[ICON_BULLET] Les b&#226;timents de la religion exil&#233;e disparaissent, sauf le sanctuaire s'il s'agit de la ville fondatrice de la religion.
 
-L'IA utilise les fanatiques quand une ville a plus d'habitants malheureux qu'heureux et plusieurs religions.
+L'IA applique l'expulsion religieuse lorsqu'une ville avec plus d'une religion a plus de citoyens insatisfaits que satisfaits.
 		</French>
 		<German>
 [H1]Religion[\H1]
-Religionen haben in der Geschichte der Menschheit stets eine bedeutende Rolle gespielt.
-Ein Stamm ohne Religion bleibt klein und schwer zu spielen, deshalb sollte schon so fr&#252;h wie m&#246;glich versucht werden, eine Religion zu erhalten/gr&#252;nden.
+Religionen haben in der Geschichte der Menschheit stets eine bedeutende Rolle gespielt. Ein Stamm ohne Religion bleibt klein und daher schwerer zu spielen, deshalb sollte schon so fr&#252;h wie m&#246;glich versucht werden, eine Religion zu erhalten beziehungsweise zu gr&#252;nden.
 
 Es gibt 13 Religionen. Die polytheistischen Religionen k&#246;nnen nur von bestimmten V&#246;lkern gegr&#252;ndet werden:
 
 Polytheistische Religionen
-[ICON_BULLET] Nordische Mythen: Germanen, Vandalen
-[ICON_BULLET] Keltische Mythen: Kelten, Gallier
+[ICON_BULLET] Nordische Mythen: Germanen und Vandalen
+[ICON_BULLET] Keltische Mythen: Kelten und Gallier
 [ICON_BULLET] Vedische Mythen (Hinduismus): Inder
-[ICON_BULLET] Ph&#246;nizischer Kult: Ph&#246;nizier
-[ICON_BULLET] &#196;gyptische G&#246;tter: &#196;gypter
+[ICON_BULLET] Ph&#246;nizischer Kult: Ph&#246;nizier und Karthager
+[ICON_BULLET] &#196;gyptische G&#246;tter: &#196;gypter und Nubier
 [ICON_BULLET] Griechische G&#246;tter: Griechen
 [ICON_BULLET] Sumerische G&#246;tter: Sumerer und Babylonier
 [ICON_BULLET] R&#246;mische G&#246;tter: R&#246;mer und Etrusker
@@ -10409,44 +11025,78 @@ Asketische Religionen (Voraussetzung Hinduismus)
 [ICON_BULLET] Buddhismus
 [ICON_BULLET] Jainismus
 
-F&#252;r die polytheistischen Religionen k&#246;nnen nur Tempel errichtet werden und keine Kl&#246;ster. Hohepriester werden mittels Tempel gebaut.
+F&#252;r die polytheistischen Religionen k&#246;nnen nur Tempel errichtet werden und keine Kl&#246;ster.
 
 
 [H1]Religionskonflikte[\H1]
 
-1) In Friedenszeiten k&#246;nnen St&#228;dte mit polytheistischen Religionen zu einem Aufruhr f&#252;hren.
+Die j&#252;dische und christliche Religion verbot, den Kaiser, also einen Menschen, als Gott zu verehren. Das schrieb aber die r&#246;mische Religion vor. Situationen, in denen Andersgl&#228;ubige benachteiligt, bedr&#228;ngt oder verfolgt werden, resultieren aus einem Mangel an Religionsfreiheit. Dieser Mangel kann gleiche Folgen f&#252;r Gl&#228;ubige anderer Religionen haben; es h&#228;ngt davon ab, welche Religion staatlicherseits bevorzugt wird.
 
-2) St&#228;dte mit monotheistischen Religionen k&#246;nnen pagane Einrichtungen zerst&#246;ren:
+[H2]Polytheistische Phase[\H2]
+
+D&#246;rfer mit mindestens 2 und St&#228;dte (Stadtstatus) mit min. 3 Religionen k&#246;nnen in Aufruhr geraten. Dabei wird immer versucht, eine andere Religion als die Staatsreligion aus der Stadt zu vertreiben.
 
 Ausl&#246;ser:
-[ICON_BULLET] J&#252;dische Stadt: 2%
-[ICON_BULLET] Christliche Stadt: 5%
-[ICON_BULLET] Muslimische Stadt: 10%
+[ICON_BULLET] Jede Stadt mit 2 (bzw 3 bei Stadtstatus Stadt) Religionen
+[ICON_BULLET] Chance 2% pro Stadt/Runde
+[ICON_BULLET] Ab der Technologie H&#228;resie 6% pro Stadt/Runde
 
 Auswirkung:
-[ICON_BULLET] Ein Kult und dessen Geb&#228;ude werden vertrieben (ausgenommen Weltwunder und Akademien)
-[ICON_BULLET] Eine andere Religion wird vertrieben (ausgenommen Weltwunder, Heilige Stadt und Heiliger Schrein)
+[ICON_BULLET] Schritt 1: Alle Stadteinheiten werden verletzt und sind 1 Runde unbeweglich
+[ICON_BULLET] Schritt 2: Chance 1:3: Der Tempel wird zerst&#246;rt (ausgenommen Weltwunder)
+[ICON_BULLET] Schritt 3: Chance 1:3: Ein Brand entsteht (Triggert das Brand-Event)
+[ICON_BULLET] Schritt 4: Chance 1:4: Die Bev&#246;lkerung sinkt um 1
+[ICON_BULLET] Schritt 5: falls Schritt 2+4, Chance 1:4: Die Religion wird aus der Stadt vertrieben
+
+
+[H2]Monotheistische Phase[\H2]
+
+Warum wurden Juden und Christen verfolgt?
+
+[ICON_BULLET] Weil f&#252;r die damals verbreiteten Glaubensvorstellungen an eine Vielzahl von G&#246;ttern, der j&#252;dische und christliche Glaube an den einen Gott eine Provokation darstellte.
+[ICON_BULLET] Das Judentum, sowie Christentum lehnte den Polytheismus, Synkretismus und die orientalischen Gottk&#246;nigskulte aufgrund ihres Glaubens an den einzigen Sch&#246;pfergott (Monotheismus) ab. 
+[ICON_BULLET] Es verstand sich als von diesem Gott erw&#228;hltes Volk mit einem Auftrag f&#252;r alle &#252;brigen V&#246;lker (Gen 12,3). Dies machte gl&#228;ubige Juden und Christen die Teilnahme an den Kulten der umgebenden V&#246;lker unm&#246;glich.
+[ICON_BULLET] Christen (auch Juden) verweigerten lange Zeit den Kriegsdienst auf Grund ihrer pazifistischen Lehre und dem ihrer Ansicht nach gottlosen Herrscher. Wenn ein gottloser Herrscher einen Befehl erteilt, der offensichtlich den g&#246;ttlichen Geboten entgegensteht, dann w&#228;re der gehorsame Soldat schuldig. Mit der Bekehrung des Kaisers Konstantin (Regierungszeit 307-337 n.Chr.) zum Christentum, &#228;nderte sich alles. Wenn man im richtigen Seelenzustand k&#228;mpfte, dann konnte man beinahe dazu verpflichtet sein, andere zu ihrem eigenen Wohl zu bek&#228;mpfen.
+
+Warum haben Christen die Juden verfolgt?
+
+[ICON_BULLET] Die Christen warfen den Juden vor, dass die Juden den nach dem christlichen Glauben von Gott gesandten Jesus Christus nicht als ihren Messias und Erl&#246;ser anerkannten.
+[ICON_BULLET] Desweiteren warfen sie den Juden vor, sie seien verantwortlich f&#252;r die Kreuzigung Christi und somit Gottesm&#246;rder.
+
+Jede Stadt mit einer monotheistischen Religion kann pagane Einrichtungen zerst&#246;ren:
+
+Ausl&#246;ser:
+[ICON_BULLET] J&#252;dische Stadt: 0%, Judentum als Staatsreligion: 20%
+[ICON_BULLET] Christliche Stadt: 10%, Christentum als Staatsreligion: 30%
+[ICON_BULLET] Muslimische Stadt: 20%, Islam als Staatsreligion: 40%
+
+Auswirkung:
+[ICON_BULLET] Ein Kult und dessen Geb&#228;ude werden vertrieben (ausgenommen Weltwunder)
+[ICON_BULLET] Eine andere Religion wird vertrieben und dessen Tempel zerst&#246;rt (ausgenommen Weltwunder)
+[ICON_BULLET] Auch Heilige St&#228;dte k&#246;nnen davon betroffen sein
+[ICON_BULLET] Pagane Einrichtungen, wie Bibliotheken, B&#228;der, Theater, etc. werden zerst&#246;rt (max. 1 Geb&#228;ude pro Stadt/Runde)
 
 
 [H1]Religionsaustreibung[\H1]
 
-Mit dem [LINK=UNIT_INQUISITOR]Religionsaustreiber[\LINK] k&#246;nnen nicht-staatliche Religionen aus der Stadt vertrieben werden.
-Besitzt eine Stadt nur eine Religion, sind die Bewohner im Dorf froh an etwas glauben zu d&#252;rfen, streiten aber mit den Gleichgesinnten anderer St&#228;dte, weil die an etwas anderes glauben. Deshalb kann man sie nicht entfernen und es gibt trotzdem +2 unzufriedene B&#252;rger (bei einem Tempel nur +1 unzufriedenen B&#252;rger).
+Mit einem Hohepriester k&#246;nnen nicht-staatliche Religionen auch manuell aus der Stadt vertrieben werden.
+Besitzt eine Stadt nur eine Religion, sind die Bewohner im Dorf froh an etwas glauben zu d&#252;rfen und diese Religion kann nicht entfernt werden. Falls die Religion aber nicht der Staatsreligion entspricht, kommt es zu Streitigkeiten, daher +2 unzufriedene B&#252;rger (bei einem Tempel nur +1).
 
 Voraussetzungen einer Religionsaustreibung:
-[ICON_BULLET] Der Religionsaustreiber (ab der Technologie "Brandschatzen" verf&#252;gbar) muss in der Stadt stehen.
-[ICON_BULLET] Die Staatsreligion muss sich in der Stadt befinden.
+[ICON_BULLET] Der Hohepriester muss in der Stadt stehen.
+[ICON_BULLET] Es m&#252;ssen mindestens 2 Religionen in der Stadt vorhanden sein.
+[ICON_BULLET] Hohepriester k&#246;nnen nicht ihre eigene Religion austreiben.
 
 Auswirkungen einer Religionsaustreibung:
 [ICON_BULLET] Die Stadt f&#228;llt 2 Runden lang in Unruhe.
-[ICON_BULLET] Es wird immer nur 1 Religion pro Austreiber ausgetrieben.
+[ICON_BULLET] Es wird immer nur 1 Religion pro Austreibung entfernt.
 [ICON_BULLET] Schl&#228;gt der Versuch eine Religion aus der Stadt auszutreiben fehl, sinkt die Stadtgr&#246;&#223;e um 1 und die Einheit verschwindet. Man muss noch einen schicken.
 [ICON_BULLET] Funktioniert die Austreibung, dann schrumpft die Stadt um 1, die Einheit verschwindet und es passiert folgendes:
 [TAB][ICON_BULLET] Verschlechterung der Beziehungen aller Zivilisationen um 1, die diese ausgetriebene Religion als Staatsreligion besitzen.
 [TAB][ICON_BULLET] Verbesserung der Beziehungen aller Zivilisationen um 1, die deine Staatsreligion als Staatsreligion besitzen.
 [ICON_BULLET] Die Geb&#228;ude der ausgetriebenen Religion verschwinden, au&#223;er der Schrein, wenn es die Gr&#252;ndungsstadt der Religion ist.
 
-Die KI benutzt Religionsaustreiber, wenn in einer Stadt mit mehr als einer Religion mehr unzufriedene als gl&#252;ckliche B&#252;rger leben.
+Die KI wendet eine Religionsaustreibung an, wenn in einer Stadt mit mehr als einer Religion mehr unzufriedene als gl&#252;ckliche B&#252;rger leben.
 		</German>
 		<Italian>
 [H1] Religione [\H1]
@@ -10480,39 +11130,72 @@ Per le religioni politeiste pu&#242; essere costruita solo templi e monasteri no
 
 [H1]Conflitti religiosi[\H1]
 
-1) In tempo di pace, le citt&#224; con religioni politeiste possono portare a rivolte.
+Le religioni ebraica e cristiana proibivano il culto dell'imperatore, cio&#232; di un essere umano, come dio. Ma questo era quanto prescriveva la religione romana. Le situazioni in cui le persone di altre fedi vengono discriminate, molestate o perseguitate sono il risultato della mancanza di libert&#224; religiosa. Questa carenza pu&#242; avere conseguenze simili per i credenti di altre religioni; Dipende da quale religione &#232; preferita dallo Stato.
 
-2) Le citt&#224; con religioni monoteistiche possono distruggere le istituzioni pagane:
+[H2]Fase politeistica[\H2]
+
+I villaggi con almeno 2 religioni e le citt&#224; (con status di citt&#224;) con almeno 3 religioni possono ribellarsi. C'&#232; sempre un tentativo di scacciare dalla citt&#224; una religione diversa da quella di Stato.
 
 Grilletto:
-[ICON_BULLET] Citt&#224; ebraica: 2%
-[ICON_BULLET] Citt&#224; cristiana: 5%
-[ICON_BULLET] Citt&#224; musulmana: 10%
+[ICON_BULLET] Ogni citt&#224; con 2 (o 3 se lo stato della citt&#224; &#232; citt&#224;) religioni
+[ICON_BULLET] Probabilit&#224; 2% per citt&#224;/round
+[ICON_BULLET] Dall'eresia tecnologica 6% per citt&#224;/round
 
 Impatto:
-[ICON_BULLET] Un culto e i suoi edifici vengono espulsi (eccetto Meraviglie del mondo e Accademie)
-[ICON_BULLET] Un'altra religione viene espulsa (eccetto Meraviglie del mondo, Citt&#224; santa e Santuario sacro)
+[ICON_BULLET] Fase 1: tutte le unit&#224; cittadine vengono ferite e immobilizzate per 1 round
+[ICON_BULLET] Fase 2: Probabilit&#224; 1:3: Il tempio viene distrutto (escluse le Meraviglie)
+[ICON_BULLET] Fase 3: Probabilit&#224; 1:3: Si scatena un incendio (innesca l'evento incendio)
+[ICON_BULLET] Fase 4: Probabilit&#224; 1:4: la popolazione diminuisce di 1
+[ICON_BULLET] Fase 5: se fase 2+4, possibilit&#224; 1:4: la religione viene espulsa dalla citt&#224;
+
+[H2]Fase monoteistica[\H2]
+
+Perch&#233; ebrei e cristiani furono perseguitati?
+
+[ICON_BULLET] Perch&#233; la fede ebraica e cristiana in un solo Dio era una provocazione per le credenze in una moltitudine di dei diffuse a quel tempo.
+[ICON_BULLET] L'ebraismo, cos&#236; come il cristianesimo, rifiutavano il politeismo, il sincretismo e i culti orientali del dio-re a causa della loro fede in un unico Dio creatore (monoteismo).
+[ICON_BULLET] Si consideravano un popolo scelto da questo Dio con una missione verso tutti gli altri popoli (Gen 12:3). Ci&#242; rese impossibile per gli ebrei e i cristiani devoti partecipare ai culti dei popoli circostanti.
+[ICON_BULLET] I cristiani (compresi gli ebrei) rifiutarono per lungo tempo il servizio militare a causa dei loro insegnamenti pacifisti e di quello che consideravano un governante empio. Se un governante empio impartisce un ordine palesemente contrario ai comandamenti divini, allora il soldato obbediente sarebbe colpevole. Con la conversione dell'imperatore Costantino (regno 307-337 d.C.) al cristianesimo, tutto cambi&#242;. Se si combattesse con il giusto stato d'animo, si potrebbe quasi essere obbligati a combattere contro gli altri per il loro bene.
+
+Perch&#233; i cristiani perseguitavano gli ebrei?
+
+[ICON_BULLET] I cristiani accusarono gli ebrei di non riconoscere Ges&#249; Cristo, che secondo la fede cristiana era stato mandato da Dio, come loro Messia e Salvatore.
+[ICON_BULLET] Inoltre, accusarono gli ebrei di essere responsabili della crocifissione di Cristo e quindi di essere assassini di Dio.
+
+Una citt&#224; con una religione monoteista pu&#242; distruggere le istituzioni pagane:
+
+Grilletto:
+[ICON_BULLET] Citt&#224; ebraica: 0%, Ebraismo come religione di Stato: 20%
+[ICON_BULLET] Citt&#224; cristiana: 20%, cristianesimo come religione di stato: 60%
+[ICON_BULLET] Citt&#224; musulmana: 30%, Islam come religione di stato: 70%
+
+Impatto:
+[ICON_BULLET] Un culto e i suoi edifici vengono espulsi (tranne le Meraviglie del Mondo)
+[ICON_BULLET] Un'altra religione viene espulsa e il suo tempio distrutto (tranne Meraviglie del Mondo)
+[ICON_BULLET] Anche le citt&#224; sante possono essere colpite
+[ICON_BULLET] Le istituzioni pagane come biblioteche, bagni, teatri, ecc. vengono distrutte (max. 1 edificio per citt&#224;/round)
 
 
-[H1] Religione esorcismo [\H1]
+[H1]Espulsione religiosa[\H1]
 
-Il [LINK=UNIT_INQUISITOR] Religione sfreccia Reiber [\LINK] religioni non statali possono essere espulsi dalla citt&#224; .
-Ha una citt&#224; solo una religione , gli abitanti del villaggio sono felice di poter credere in qualcosa , ma discutere con le persone che la pensano da altre citt&#224; , perch&#233; coloro che credono in qualcosa d'altro . Pertanto , non si pu&#242; rimuovere loro e ci sono ancora due cittadini insoddisfatti ( in un tempio solo +1 cittadini scontenti ) .
+Con un sommo sacerdote, anche le religioni non statali possono essere espulse manualmente dalla citt&#224;.
+Se una citt&#224; ha una sola religione, gli abitanti del villaggio sono felici di poter credere in qualcosa e questa religione non pu&#242; essere eliminata. Tuttavia, se la religione non corrisponde alla religione di Stato, sorgono controversie, da cui +2 cittadini insoddisfatti (solo +1 per un tempio).
 
-Requisiti di un esorcismo religioso :
-[ICON_BULLET] Il conducente sfreccia religione ( dalla tecnologia di " saccheggio " disponibili) dovrebbe essere in citt&#224; .
-[ICON_BULLET] La religione di stato deve essere situato in citt&#224;.
+Prerequisiti per l'espulsione religiosa:
+[ICON_BULLET] Il sommo sacerdote deve essere in citt&#224;.
+[ICON_BULLET] Devono esserci almeno 2 religioni nella citt&#224;.
+[ICON_BULLET] I sommi sacerdoti non possono espellere la propria religione.
 
-Effetti di esorcismo religioso :
-[ICON_BULLET] La citt&#224; cade due giri in subbuglio .
-[ICON_BULLET] Non viene espulso una sola religione per ogni panello .
-[ICON_BULLET] Se il tentativo di una religione fuori della citt&#224; per scacciare fallisce, la dimensione della citt&#224; diminuisce di 1 e l'unit&#224; scompare . &#200; comunque necessario inviare una .
-[ICON_BULLET] L' espulsione , poi la citt&#224; si riduce a 1 , l'unit&#224; scompare e si verifica quanto segue :
-[TAB] [ICON_BULLET] deterioramento dei rapporti di tutte le civilt&#224; a uno che ha espulso la religione come religione di stato .
-[TAB] [ICON_BULLET] miglioramento delle relazioni di tutte le civilt&#224; a uno che tenere la religione di stato come religione di stato .
-[ICON_BULLET] La costruzione della religione espulso scomparire , tranne il santuario , se &#232; la citt&#224; fondante della religione .
+Effetti dell'espulsione religiosa:
+[ICON_BULLET] La citt&#224; cade in disordini per 2 round.
+[ICON_BULLET] Viene rimossa solo 1 religione per espulsione.
+[ICON_BULLET] Se il tentativo di espellere una religione dalla citt&#224; fallisce, la dimensione della citt&#224; diminuisce di 1 e l'unit&#224; scompare. Devi inviarne un altro.
+[ICON_BULLET] Se l'espulsione funziona, la citt&#224; si rimpicciolisce di 1, l'unit&#224; scompare e accade quanto segue:
+[TAB][ICON_BULLET] Peggioramento delle relazioni di tutte le civilt&#224; che hanno questa religione espulsa come religione di stato di 1.
+[TAB][ICON_BULLET] Migliora di 1 le relazioni di tutte le civilt&#224; che hanno la tua religione di stato come religione di stato.
+[ICON_BULLET] Gli edifici della religione esiliata scompaiono, tranne il santuario se si tratta della citt&#224; fondatrice della religione.
 
-L'IA utilizza religione sfreccia Reiber se pi&#249; insoddisfatto di cittadini felici vivono in una citt&#224; con pi&#249; di una religione .
+L'IA applica l'espulsione religiosa quando una citt&#224; con pi&#249; di una religione ha pi&#249; cittadini insoddisfatti che felici.
 		</Italian>
 		<Spanish>
 [H1]Religi&#243;n[\H1]
@@ -10546,39 +11229,177 @@ Para las religiones polite&#237;stas s&#243;lo se pueden construir templos, no s
 
 [H1]Conflictos religiosos[\H1]
 
-1) En tiempos de paz, las ciudades con religiones polite&#237;stas pueden provocar disturbios.
+Las religiones jud&#237;a y cristiana prohib&#237;an el culto al emperador, es decir a un ser humano, como a un dios. Pero eso era lo que prescrib&#237;a la religi&#243;n romana. Las situaciones en que personas de otras religiones son discriminadas, acosadas o perseguidas son resultado de la falta de libertad religiosa. Esta deficiencia puede tener consecuencias similares para los creyentes de otras religiones; Depende de qu&#233; religi&#243;n prefiera el Estado.
 
-2) Las ciudades con religiones monote&#237;stas pueden destruir las instituciones paganas:
+[H2]Fase polite&#237;sta[\H2]
+
+Los pueblos con al menos 2 y las ciudades (estatus de ciudad) con al menos 3 religiones pueden caer en rebeli&#243;n. Siempre existe un intento de expulsar de la ciudad una religi&#243;n distinta a la religi&#243;n estatal.
 
 Desencadenar:
-[ICON_BULLET] Ciudad jud&#237;a: 2%
-[ICON_BULLET] Ciudad cristiana: 5%
-[ICON_BULLET] Ciudad musulmana: 10%
+[ICON_BULLET] Cada ciudad con 2 religiones (o 3 si el estado de la ciudad es ciudad)
+[ICON_BULLET] Probabilidad del 2 % por ciudad/ronda
+[ICON_BULLET] De la Herej&#237;a Tecnol&#243;gica 6% por ciudad/ronda
 
 Impacto:
-[ICON_BULLET] Una secta y sus edificios son expulsados &#8203;&#8203;(excepto Maravillas del Mundo y Academias)
-[ICON_BULLET] Otra religi&#243;n es expulsada (excepto Maravillas del Mundo, Ciudad Santa y Santuario Sagrado)
+[ICON_BULLET] Paso 1: Todas las unidades de la ciudad resultan heridas y quedan inmovilizadas durante 1 ronda.
+[ICON_BULLET] Paso 2: Probabilidad 1:3: El templo es destruido (excluyendo Maravillas)
+[ICON_BULLET] Paso 3: Probabilidad 1:3: Se inicia un incendio (activa el evento de incendio)
+[ICON_BULLET] Paso 4: Probabilidad 1:4: La poblaci&#243;n disminuye en 1
+[ICON_BULLET] Paso 5: si el paso 2+4, probabilidad 1:4: La religi&#243;n es expulsada de la ciudad
+
+[H2]Fase monote&#237;sta[\H2]
+
+&#191;Por qu&#233; fueron perseguidos los jud&#237;os y los cristianos?
+
+[ICON_BULLET] Porque la creencia jud&#237;a y cristiana en un solo Dios fue una provocaci&#243;n para las creencias en una multitud de dioses que estaban muy extendidas en aquella &#233;poca.
+[ICON_BULLET] El juda&#237;smo, al igual que el cristianismo, rechaz&#243; el polite&#237;smo, el sincretismo y los cultos orientales al dios-rey debido a su creencia en el &#250;nico Dios creador (monote&#237;smo).
+[ICON_BULLET] Se ve&#237;an a s&#237; mismos como un pueblo elegido por este Dios con una misi&#243;n para todos los dem&#225;s pueblos (Gn 12,3). Esto hizo imposible que los jud&#237;os y cristianos devotos participaran en los cultos de los pueblos circundantes.
+[ICON_BULLET] Los cristianos (incluidos los jud&#237;os) rechazaron el servicio militar durante mucho tiempo debido a sus ense&#241;anzas pacifistas y a lo que consideraban un gobernante imp&#237;o. Si un gobernante imp&#237;o da una orden que es obviamente contraria a los mandamientos divinos, entonces el soldado obediente ser&#237;a culpable. Con la conversi&#243;n del emperador Constantino (reinado 307-337 d.C.) al cristianismo, todo cambi&#243;. Si uno luchaba con el estado mental adecuado, casi pod&#237;a verse obligado a luchar contra otros por su propio bien.
+
+&#191;Por qu&#233; los cristianos persiguieron a los jud&#237;os?
+
+[ICON_BULLET] Los cristianos acusaron a los jud&#237;os de no reconocer a Jesucristo, quien seg&#250;n la fe cristiana fue enviado por Dios, como su Mes&#237;as y Salvador.
+[ICON_BULLET] Adem&#225;s, acusaron a los jud&#237;os de ser responsables de la crucifixi&#243;n de Cristo y, por tanto, de ser asesinos de Dios.
+
+Cada ciudad con religi&#243;n monote&#237;sta puede destruir las instituciones paganas:
+
+Desencadenar:
+[ICON_BULLET] Ciudad jud&#237;a: 0%, Juda&#237;smo como religi&#243;n estatal: 20%
+[ICON_BULLET] Ciudad cristiana: 20%, cristianismo como religi&#243;n estatal: 60%
+[ICON_BULLET] Ciudad musulmana: 30%, Islam como religi&#243;n de Estado: 70%
+
+Impacto:
+[ICON_BULLET] Un culto y sus edificios son expulsados &#8203;&#8203;(excepto Maravillas del Mundo)
+[ICON_BULLET] Otra religi&#243;n es expulsada y su templo destruido (excepto Maravillas del Mundo)
+[ICON_BULLET] Las ciudades santas tambi&#233;n pueden verse afectadas
+[ICON_BULLET] Se destruyen instituciones paganas como bibliotecas, ba&#241;os, teatros, etc. (m&#225;ximo 1 edificio por ciudad/ronda).
 
 
-[H1]Inquisidores[\H1]
+[H1]Expulsi&#243;n religiosa[\H1]
 
-Con los [LINK=UNIT_INQUISITOR]inquisidores[\LINK] ser&#225;s capaz de eliminar la religi&#243;n no oficial de tus ciudades.
-Cuando una ciudad tiene una sola religi&#243;n, los ciudadanos est&#225;n felices de creer en algo, pero ellos tendr&#225;n que discutir con sus vecinos de otras ciudades, cuando &#233;stos tienen otra creencia. Por lo tanto, no podr&#225;s erradicar est&#225; religi&#243;n y tendr&#225;s +2 de infelicidad (solo +1 con un templo).
+Con un sumo sacerdote tambi&#233;n se pueden expulsar manualmente de la ciudad las religiones no estatales.
+Si una ciudad tiene una sola religi&#243;n, los habitantes est&#225;n contentos de poder creer en algo y esta religi&#243;n no puede ser eliminada. Sin embargo, si la religi&#243;n no corresponde a la religi&#243;n del estado, surgen disputas, por lo que hay +2 ciudadanos insatisfechos (solo +1 si hay un templo).
 
-Requisitos para erradicar una religi&#243;n:
-[ICON_BULLET] El "inquisidor" tiene que estar en la ciudad donde se quiere erradicar la religi&#243;n no oficial.
-[ICON_BULLET] La religi&#243;n oficial ha de estar en dicha ciudad, sino no ser&#225; posible erradicar la otra religi&#243;n.
+Requisitos previos para la expulsi&#243;n religiosa:
+[ICON_BULLET] El sumo sacerdote debe estar en la ciudad.
+[ICON_BULLET] Debe haber al menos 2 religiones en la ciudad.
+[ICON_BULLET] Los sumos sacerdotes no pueden expulsar su propia religi&#243;n.
 
-Efectos de erradicar una religi&#243;n:
-[ICON_BULLET] Una revuelta en la ciudad por 2 turnos.
-[ICON_BULLET] Un inquisidor s&#243;lo podr&#225; erradicar una religi&#243;n.
-[ICON_BULLET] Si la erradicaci&#243;n falla, la poblaci&#243;n de la ciudad se reducir&#225; en 1 y la unidad desaparecer&#225;. Tendr&#225;s que enviar otro inquisidor.
-[ICON_BULLET] Si tiene &#233;xito, la poblaci&#243;n de la ciudad se reduce en 1, la unidad desaparece y ocurre lo siguiente:
-[TAB][ICON_BULLET] Las relaciones diplom&#225;ticas con todas las civilizaciones que tienen la religi&#243;n erradicada como religi&#243;n oficial se reduce en 1.
-[TAB][ICON_BULLET] Las relaciones diplom&#225;ticas con todas las civilizaciones que tienen tu misma religi&#243;n oficial aumenta en 1.
-[ICON_BULLET] Todos los edificios de la religi&#243;n erradicada son destruidos, excepto los santuarios.
+Efectos de la expulsi&#243;n religiosa:
+[ICON_BULLET] La ciudad cae en disturbios durante 2 rondas.
+[ICON_BULLET] Solo se elimina una religi&#243;n por expulsi&#243;n.
+[ICON_BULLET] Si el intento de expulsar una religi&#243;n de la ciudad falla, el tama&#241;o de la ciudad disminuye en 1 y la unidad desaparece. Tienes que enviar otro.
+[ICON_BULLET] Si la expulsi&#243;n funciona, la ciudad se reduce en 1, la unidad desaparece y sucede lo siguiente:
+[TAB][ICON_BULLET] Deterioro de las relaciones de todas las civilizaciones que tienen esta religi&#243;n expulsada como religi&#243;n de Estado en 1.
+[TAB][ICON_BULLET] Mejora las relaciones de todas las civilizaciones que tienen tu religi&#243;n estatal como religi&#243;n estatal en 1.
+[ICON_BULLET] Los edificios de la religi&#243;n exiliada desaparecen, excepto el santuario si es la ciudad fundadora de la religi&#243;n.
 
-La IA utiliza los inquisidores en sus ciudades cuando una ciudad tiene m&#225;s ciudadanos infelices que felices y en dicha ciudad hay m&#225;s de una religi&#243;n.
+La IA aplica la expulsi&#243;n religiosa cuando una ciudad con m&#225;s de una religi&#243;n tiene m&#225;s ciudadanos insatisfechos que felices.
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_RESERVISTS_PEDIA</Tag>
+		<English>[H1]Reservists[\H1]
+
+Veteran units can join a city as reservists which provide +1[ICON_FOOD], +1[ICON_PRODUCTION] and +1[ICON_COMMERCE]. Reservists can always be drafted as veteran shield bearers or archers in case of need if you have already researched the required technologies (without the disadvantages of Conscripts civic). Veteran partisans arise when a city with local reservists is captured.
+
+Every fourth turn, there is a chance of 3% that a settled reservist dies (usually of old age).
+
+[H2]Available reservists[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Shield Bearer[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Greek peoples)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberians or Nordic peoples)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruscans or Romans)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Shortbowman[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Recurvebowman[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliary[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Mounted Auxiliary[\LINK]
+
+[H2]Settled Exhibition Fighters[\H2]
+[ICON_BULLET] Exhibition fighters can, with the civic "Civil Right", become reservists (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1[ICON_COMMERCE]) (chance of 2% every turn)
+[ICON_BULLET] Exhibition fighters can, with the civic "International law", become reservists (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (chance of 3% every turn)</English>
+		<French>
+[H1]R&#233;servistes[\H1]
+
+Les unit&#233;s de v&#233;t&#233;rans peuvent s'&#233;tablir en tant que r&#233;serviste dans les villes, ce qui apporte &#224; la ville 1 [ICON_FOOD], 1 [ICON_PRODUCTION] et 1 [ICON_COMMERCE]. Les r&#233;servistes peuvent en cas d'urgence &#234;tre mobilis&#233;s &#224; tout moment comme porteur de bouclier ou comme archer v&#233;t&#233;rans si vous avez les technologies n&#233;cessaires pour cela (sans les inconv&#233;nients du recrutement forc&#233;). Quand une ville est conquise, les r&#233;servistes locaux se joignent aux partisans et aux combattants libres.
+
+Tous les quatre tours, il y a une probabilit&#233; de 3 % qu'un r&#233;serviste install&#233; meurt (g&#233;n&#233;ralement de vieillesse).
+
+[H2]R&#233;servistes disponibles[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Porteur de bouclier[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (peuples grecs)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Ib&#232;res ou peuples nordiques)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (&#201;trusques ou Romains)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Archer[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Archer &#224; double courbure[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliaire[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Auxiliaire mont&#233;[\LINK]
+
+[H2]Gladiateurs install&#233;s[\H2]
+[ICON_BULLET] Les gladiateurs affect&#233;s dans une ville peuvent devenir des r&#233;servistes (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) si la doctrine Droit civil est active (Probabilit&#233; : 2% par tour)
+[ICON_BULLET] Les gladiateurs affect&#233;s dans une ville peuvent devenir des r&#233;servistes (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) si la doctrine Loi internationale est active (Probabilit&#233; : 3% par tour)
+		</French>
+		<German>
+[H1]Reservisten[\H1]
+
+Veteran-Einheiten k&#246;nnen sich als Reservist einer Stadt anschlie&#223;en, dies bringt der Stadt +1[ICON_FOOD], +1[ICON_PRODUCTION] und +1[ICON_COMMERCE]. Reservisten k&#246;nnen im Notfall jederzeit wieder als Veteran-Schildtr&#228;ger oder -Bogensch&#252;tzen eingezogen werden, wenn man die n&#246;tigen Technologien daf&#252;r besitzt (ohne die Nachteile einer Zwangsrekrutierung). Wird eine Stadt mit ans&#228;ssigen Reservisten erobert, entstehen Veteran-Partisanen.
+
+Alle vier Runden gibt es eine Wahrscheinlichkeit von 3%, dass ein angesiedelter Reservist (meist an Altersschw&#228;che) stirbt.
+
+[H2]Verf&#252;gbare Reservisten[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Schildtr&#228;ger[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Griechische V&#246;lker)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberer oder Nordische V&#246;lker)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etrusker oder R&#246;mer)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Kurzbogensch&#252;tze[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Reflexbogensch&#252;tze[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Hilfstrupp[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Berittener Hilfstrupp[\LINK]
+
+[H2]Angesiedelte Schauk&#228;mpfer[\H2]
+[ICON_BULLET] Schauk&#228;mpfer k&#246;nnen innerhalb der Staatsform "B&#252;rgerrecht" zu Reservisten werden (2% Wahrscheinlichkeit pro Runde)
+[ICON_BULLET] Schauk&#228;mpfer k&#246;nnen innerhalb der Staatsform "V&#246;lkerrecht" zu Reservisten werden (3% Wahrscheinlichkeit pro Runde)
+		</German>
+		<Italian>
+[H1]Riservisti[\H1]
+
+Unit&#224; veterane possono aderire come riservista di una citt&#224;, questo porta la citt&#224; +1 [ICON_FOOD], +1 [ICON_PRODUCTION] e +1 [ICON_COMMERCE]. Riservisti possono in caso di emergenza in qualsiasi momento, essere ritirata come supporto o arcieri veterano-label se avete le tecnologie necessarie per questo ( senza gli svantaggi di reclutamento forzato ). Quando una citt&#224; viene conquistata con riservisti locali sorgono partigiani veterani.
+
+Ogni quattro turni c'&#232; una probabilit&#224; del 3% che un riservista residente muoia (di solito di vecchiaia).
+
+[H2]Riservisti disponibili[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Guerriero con Scudo[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (Popoli greci)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (Iberici o popoli nordici)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruschi o Romani)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Arciere con Arco Corto[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Arciere con Arco Ricurvo[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Ausiliari[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Ausiliari a Cavallo[\LINK]
+
+[H2]Combattenti dell'arena/gladiatoridella stabilita[\H2]
+[ICON_BULLET] Con la forma di governo "Diritti Civili", i combattenti dell'arena/gladiatori di una citt&#224; possono diventare riservisti (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE], 2 % di possibilit&#224; per ogni turno )
+[ICON_BULLET] Con la forma di governo "Diritto Internazionale", i combattenti dell'arena/gladiatori di una citt&#224; possono diventare riservisti (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE], 3 % di possibilit&#224; per turno )
+		</Italian>
+		<Spanish>
+[H1]Reservistas[\H1]
+Las unidades veteranas pueden unirse a una ciudad como reservistas que proporcionan +1[ICON_FOOD], +1[ICON_PRODUCTION] y +1[ICON_COMMERCE]. Los reservistas pueden ser siempre reclutados como soldados con escudo o arqueros veteranos en caso de necesidad si has descubierto las tecnolog&#237;as requeridas (sin las desventajas del reclutamiento forzado). Los partisanos veteranos surgir&#225;n cuando una ciudad con reservistas locales es capturada.
+
+Cada cuatro rondas hay un 3% de posibilidades de que un reservista residente muera (normalmente de vejez).
+
+[H2]Reservistas disponibles[\H2]
+[ICON_BULLET] [LINK=UNIT_SCHILDTRAEGER]Soldado con Escudo[\LINK]
+[ICON_BULLET] [LINK=UNIT_KLERUCHOI]Kleruchoi[\LINK] (pueblos griegos)
+[ICON_BULLET] [LINK=UNIT_SOLDURII]Soldurio[\LINK] (&#205;beros o pueblos n&#243;rdicos)
+[ICON_BULLET] [LINK=UNIT_LEGION_EVOCAT]Evocatus[\LINK] (Etruscos o romanos)
+[ICON_BULLET] [LINK=UNIT_ARCHER]Arquero con Arco Corto[\LINK]
+[ICON_BULLET] [LINK=UNIT_REFLEX_ARCHER]Arquero con Arco Recurvado[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR]Auxiliar[\LINK]
+[ICON_BULLET] [LINK=UNIT_AUXILIAR_HORSE]Auxiliar Montado[\LINK]
+
+[H2]Luchadores de espect&#225;culo/gladiadores asentados[\H2]
+[ICON_BULLET] Los luchadores de espect&#225;culo/gladiadores asentados en una ciudad, con el principio "Derecho civil", pueden volverse reservistas (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (probabilidad del 2% cada turno)
+[ICON_BULLET] Los luchadores de espect&#225;culo/gladiadores asentados en una ciudad pueden, con el principio "Ley Internacional", volverse reservistas (+1 [ICON_FOOD], +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]) (probabilidad del 3% cada turno)
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -13590,7 +14411,7 @@ Chance: 100%
 16&#186; Ypostrategos (Generalmajor)
 17&#186; Antistrategos (General-Lieutnant)
 18&#186; Strategos (General)
-19&#186; Polemarchos (H&#246;chster Generalstitel)
+19&#186; Polemarchos (Rangh&#246;chster Generalstitel)
 
 
 [H1]Sparta[\H1]
@@ -14161,14 +14982,14 @@ Probabilidad: 25%
 continua con el rango 15 de los legionarios: Praefectus
 
 
-[H1]Greeks (+ Athens, Thebes)[\H1]
-Units: Hoplites
-Chance: 100%
+[H1]Griegos (+Atenas, Tebas)[\H1]
+Unidades: Hoplitas
+Probabilidad: 100%
 
--- Hoplites --
-1. Stratiotis (Soldier)
-2. Protostates (1,3,5,7. line of a phalanx)
-3. Epistates (2,4,6,8. line of a phalanx)
+-- Hoplitas --
+1. Stratiotis (soldado)
+2. Protostates (1,3,5,7. l&#237;nea de falange)
+3. Epistates (2,4,6,8. l&#237;nea de falange)
 4. Ypodekaneas
 5. Dekaneas (corporal) => Promo up
 -- Junior officers --
@@ -14179,7 +15000,7 @@ Chance: 100%
 10. Ypolochagos (Lieutnant) => Promo up
 -- Officers-Hippeis --
 11. Lochagos (Captain)
-12. Tagmatarches (Major/Battalion leader)
+12. Tagmatarches (Major/Battalion L&#237;der)
 13. Antisyntagmatarches (Lieutnant colonel)
 14. Syntagmatarches (Colonel)
 15. Taxiarchos (Brigadier general) => Promo Up
@@ -14187,22 +15008,22 @@ Chance: 100%
 16. Ypostrategos (Major general)
 17. Antistrategos (Lieutnant general)
 18. Strategos (General)
-19. Polemarchos (Highest general)
+19. Polemarchos (General de m&#225;s alto rango)
 
 
-[H1]Sparta[\H1]
-Units: Spartans
-Chance: 100%
+[H1]Esparta[\H1]
+Unidades: Espartanos
+Probabilidad: 100%
 
--- Spartans -- 
-1. Demi-Phylearchos (leader of 6)
-2. Phylearchos (leader of 12)
+-- Espartanos -- 
+1. Demi-Phylearchos (l&#237;der de 6)
+2. Phylearchos (l&#237;der de 12)
 3. Hyperetes (assists the Enomotarch)
 4. Ouragos (assists the Enomotarch)
 -- Spartiats --
-5. Enomotarches (leader of 36)
-6. Pentekonter (leader of 180)
-7. Lochagos (leader of 1000)
+5. Enomotarches (l&#237;der de 36)
+6. Pentekonter (l&#237;der de 180)
+7. Lochagos (l&#237;der de 1000)
 -- Armored Spartiats (Hippeus Spartiatas) --
 8. Harmost (military governor)
 9. Polemarchos (leader of the army)

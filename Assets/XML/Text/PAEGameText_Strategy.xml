@@ -562,11 +562,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FUTURE_TECH_STRATEGY</Tag>
-		<English>The [COLOR_TECH_TEXT]Dark Ages[COLOR_REVERT] decreases health in your cities.</English>
-		<French>L' insalubrit&#233; de vos villes s'aggrave pendant [COLOR_TECH_TEXT]L'Age des t&#233;n&#232;bres[COLOR_REVERT].</French>
-		<German>Das [COLOR_TECH_TEXT]Dunkle Zeitalter[COLOR_REVERT] verschlechtert die Gesundheit Ihrer St&#228;dte.</German>
-		<Italian>Il [COLOR_TECH_TEXT]et&#224; buie[COLOR_REVERT] riduce la salute delle tue citt&#224;.</Italian>
-		<Spanish>La [COLOR_TECH_TEXT]edad oscura[COLOR_REVERT] disminuye la salud de tus ciudades.</Spanish>
+		<English>The [COLOR_TECH_TEXT]Dark Ages[COLOR_REVERT]...</English>
+		<French>[COLOR_TECH_TEXT]L'Age des t&#233;n&#232;bres[COLOR_REVERT]...</French>
+		<German>Das [COLOR_TECH_TEXT]Dunkle Zeitalter[COLOR_REVERT]...</German>
+		<Italian>Il [COLOR_TECH_TEXT]et&#224; buie[COLOR_REVERT]...</Italian>
+		<Spanish>La [COLOR_TECH_TEXT]edad oscura[COLOR_REVERT]...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLADIATOR2_STRATEGY</Tag>

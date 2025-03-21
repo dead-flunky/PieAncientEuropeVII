@@ -87,6 +87,7 @@ class CvDomesticAdvisor:
 				screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
 
 				# Here we set the background widget and exit button, and we show the screen
+				#screen.addDDSGFC("DomesticAdvisorMainBG", ArtFileMgr.getInterfaceArtInfo("SCREEN_BG_OPAQUE").getPath(), 0, 0, self.nScreenWidth, self.nScreenHeight, WidgetTypes.WIDGET_GENERAL, -1, -1)
 				screen.addPanel("DomesticAdvisorBG", u"", u"", True, False, 0, 0, self.nScreenWidth, self.nScreenHeight, PanelStyles.PANEL_STYLE_MAIN)
 				screen.setText("DomesticExit", "Background", u"<font=4>" + localText.getText("TXT_KEY_PEDIA_SCREEN_EXIT", ()).upper() + u"</font>", CvUtil.FONT_RIGHT_JUSTIFY,
 											 self.nScreenWidth - 25, self.nScreenHeight - 45, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1)
@@ -1019,6 +1020,7 @@ class CvDomesticAdvisor:
 						gc.getInfoTypeForString("BONUSCLASS_PLANTATION")
 				]
 				Bonuses = []
+				Bonuses.append(gc.getInfoTypeForString("BONUS_ESEL"))
 				Bonuses.append(gc.getInfoTypeForString("BONUS_HORSE"))
 				Bonuses.append(gc.getInfoTypeForString("BONUS_CAMEL"))
 				for eBonus in range(gc.getNumBonusInfos()):
