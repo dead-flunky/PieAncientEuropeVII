@@ -2648,6 +2648,14 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 							szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_STRING", GC.getTechInfo((TechTypes) GC.getBuildInfo(eBuild).getFeatureTech(pMissionPlot->getFeatureType())).getTextKeyWide()));
 						}
 					}
+
+					// PAE
+					if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).getGold() < GC.getBuildInfo(eBuild).getCost())
+					{
+						szBuffer.append(NEWLINE);
+						szBuffer.append(gDLL->getText("TXT_KEY_IMPROVEMENT_REQUIRES_GOLD"));
+					}
+
 				}
 
 				if (eImprovement != NO_IMPROVEMENT)

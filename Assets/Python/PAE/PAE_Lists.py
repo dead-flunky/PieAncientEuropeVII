@@ -296,7 +296,7 @@ def init():
 				gc.getInfoTypeForString("UNIT_BEAR"): (4, 3),
 				gc.getInfoTypeForString("UNIT_BEAR2"): (4, 3),
 				gc.getInfoTypeForString("UNIT_HORSE"): (4, 4),
-				gc.getInfoTypeForString("UNIT_ELEFANT"): (6, 4)
+				gc.getInfoTypeForString("UNIT_ELEFANT"): (6, 4),
 		}
 
 		LArcherCombats = [

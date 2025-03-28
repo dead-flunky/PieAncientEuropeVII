@@ -18,7 +18,7 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 								InterfaceDirtyBits, NotifyCode,
 								CyGlobeLayerManager, YieldTypes,
 								EndTurnButtonStates, getClockText,
-								CultureLevelTypes, CityTabTypes,
+								CultureLevelTypes, CityTabTypes, CyMap,
 								isWorldWonderClass, isTeamWonderClass, isNationalWonderClass)
 
 import CvUtil
@@ -3128,9 +3128,10 @@ class CvMainInterface:
 														elif iUnitType == gc.getInfoTypeForString("UNIT_LEGION") or iUnitType == gc.getInfoTypeForString("UNIT_LEGION2") or \
 																		iUnitType == gc.getInfoTypeForString("UNIT_AUXILIAR_ROME") or iUnitType == gc.getInfoTypeForString("UNIT_ROME_LIMITANEI"):
 																if pTeam.isHasTech(gc.getInfoTypeForString("TECH_LIMES")):
-																		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_building_limes.dds", 0, WidgetTypes.WIDGET_GENERAL, 733, -1, False)
-																		screen.show("BottomButtonContainer")
-																		iCount += 1
+																		if pUnit.canBuild(pPlot,gc.getInfoTypeForString("BUILD_LIMES1"),False):
+																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_building_limes.dds", 0, WidgetTypes.WIDGET_GENERAL, 733, -1, False)
+																				screen.show("BottomButtonContainer")
+																				iCount += 1
 														# Handelsposten / Trade post
 														elif iUnitType in L.LTradeUnits and pUnit.getDomainType() == DomainTypes.DOMAIN_LAND:
 																# Update: auch in eigenen Grenzen anzeigen (zB fuer Inseln), aber nur wenn nicht bereits was drauf steht
@@ -3140,7 +3141,7 @@ class CvMainInterface:
 																				if pPlot.getBonusType(-1) != -1:
 																						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_WARENHANDEL")):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Builds/button_build_handelsposten.dds",
-																																						 0, WidgetTypes.WIDGET_GENERAL, 736, pPlot.getBonusType(-1), False)
+																																		0, WidgetTypes.WIDGET_GENERAL, 736, pPlot.getBonusType(-1), False)
 																								screen.show("BottomButtonContainer")
 																								screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																								iCount += 1
@@ -3150,14 +3151,14 @@ class CvMainInterface:
 																		if pPlot.getImprovementType() in L.LVillages:
 																				if pPlot.getUpgradeTimeLeft(pPlot.getImprovementType(), iUnitOwner) > 1:
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_slave2village.dds",
-																																				 0, WidgetTypes.WIDGET_GENERAL, 753, 0, False)
+																																0, WidgetTypes.WIDGET_GENERAL, 753, 0, False)
 																						screen.show("BottomButtonContainer")
 																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																						iCount += 1
 																		elif pPlot.getImprovementType() in L.LLatifundien and iUnitType == gc.getInfoTypeForString("UNIT_SLAVE"):
 																				# if pPlot.getUpgradeTimeLeft(pPlot.getImprovementType(), iUnitOwner) > 1:
 																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_slave2latifundium.dds",
-																																		 0, WidgetTypes.WIDGET_GENERAL, 753, 1, False)
+																														0, WidgetTypes.WIDGET_GENERAL, 753, 1, False)
 																				screen.show("BottomButtonContainer")
 																				screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																				iCount += 1
@@ -3171,13 +3172,25 @@ class CvMainInterface:
 																		screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																		iCount += 1
 
+														# Grosser Prophet: darf Land terraformen
+														elif iUnitType == gc.getInfoTypeForString("UNIT_PROPHET"):
+																if pPlot.getOwner() == -1 or pPlot.getOwner() == iUnitOwner:
+																		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_terraforming.dds",
+																												0, WidgetTypes.WIDGET_GENERAL, 774, -1, False)
+																		screen.show("BottomButtonContainer")
+																		if pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_DESERT") or pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_TUNDRA"):
+																				screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
+																		else:
+																				screen.disableMultiListButton("BottomButtonContainer", 0, iCount, "Art/Interface/Buttons/Actions/button_action_terraforming.dds")
+																		iCount += 1
+
 														# Siedler und Auswanderer ausserhalb der Stadt
 														if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HEILKUNDE")):
 																if iUnitType == gc.getInfoTypeForString("UNIT_SETTLER") or iUnitType == gc.getInfoTypeForString("UNIT_EMIGRANT"):
 																		if pPlot.getOwner() == pUnit.getOwner():
 																				if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_VILLAGE"):
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_slave2village.dds",
-																																				 0, WidgetTypes.WIDGET_GENERAL, 753, 2, False)
+																																0, WidgetTypes.WIDGET_GENERAL, 753, 2, False)
 																						screen.show("BottomButtonContainer")
 																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																						iCount += 1
@@ -3205,7 +3218,7 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2")
 																						if not pUnit.isHasPromotion(iFormation):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_fortress.dds",
-																																						 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																		0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 
@@ -3220,7 +3233,7 @@ class CvMainInterface:
 																								bFullSpeed = False
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_NAVAL_FULL_SPEED")
 																								screen.appendMultiListButton("BottomButtonContainer", gc.getPromotionInfo(iFormation).getButton(),
-																																						 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																		0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																								screen.show("BottomButtonContainer")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.disableMultiListButton("BottomButtonContainer", 0, iCount, gc.getPromotionInfo(iFormation).getButton())
@@ -3233,24 +3246,24 @@ class CvMainInterface:
 																										iFormation = gc.getInfoTypeForString("PROMOTION_FORM_NAVAL_KEIL")
 																										if pUnit.isHasPromotion(iFormation):
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_keil_marine_gr.dds",
-																																										 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
+																																						0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
 																												screen.show("BottomButtonContainer")
 																												bFormationUndo = True
 																										else:
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_keil_marine.dds",
-																																										 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																						0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																												screen.show("BottomButtonContainer")
 																										iCount += 1
 																										# Zange
 																										iFormation = gc.getInfoTypeForString("PROMOTION_FORM_NAVAL_ZANGE")
 																										if pUnit.isHasPromotion(iFormation):
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_zange_gr.dds",
-																																										 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
+																																						0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
 																												screen.show("BottomButtonContainer")
 																												bFormationUndo = True
 																										else:
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_zange.dds",
-																																										 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																						0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																												screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3263,13 +3276,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_PARTHER")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_parther_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_parther.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_KANTAKREIS")):
@@ -3277,13 +3290,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_KANTAKREIS")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_kantakreis_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_kantakreis.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3294,13 +3307,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_KEIL")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_keil_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_keil.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3310,13 +3323,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_FOURAGE")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_fourage_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_fourage.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3327,13 +3340,13 @@ class CvMainInterface:
 																				if PAE_Unit.canDoFormation(pUnit, iFormation):
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_wall_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_wall.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3346,13 +3359,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_KOHORTE")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_kohorte_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_kohorte.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3361,13 +3374,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_TREFFEN")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_treffen_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_treffen.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3376,13 +3389,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_MANIPEL")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_manipel_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_manipel.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3396,13 +3409,13 @@ class CvMainInterface:
 																												iFormation = gc.getInfoTypeForString("PROMOTION_FORM_SCHIEF")
 																												if pUnit.isHasPromotion(iFormation):
 																														screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_phalanx_s_gr.dds",
-																																												 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																								0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																														screen.show("BottomButtonContainer")
 																														iCount += 1
 																														bFormationUndo = True
 																												else:
 																														screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_phalanx_s.dds",
-																																												 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																								0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																														screen.show("BottomButtonContainer")
 																														iCount += 1
 
@@ -3410,13 +3423,13 @@ class CvMainInterface:
 																												iFormation = gc.getInfoTypeForString("PROMOTION_FORM_PHALANX2")
 																												if pUnit.isHasPromotion(iFormation):
 																														screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_phalanx_m_gr.dds",
-																																												 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																								0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																														screen.show("BottomButtonContainer")
 																														iCount += 1
 																														bFormationUndo = True
 																												else:
 																														screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_phalanx_m.dds",
-																																												 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																								0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																														screen.show("BottomButtonContainer")
 																														iCount += 1
 
@@ -3425,13 +3438,13 @@ class CvMainInterface:
 																												iFormation = gc.getInfoTypeForString("PROMOTION_FORM_PHALANX")
 																												if pUnit.isHasPromotion(iFormation):
 																														screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_phalanx_gr.dds",
-																																												 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																								0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																														screen.show("BottomButtonContainer")
 																														iCount += 1
 																														bFormationUndo = True
 																												else:
 																														screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_phalanx.dds",
-																																												 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																								0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																														screen.show("BottomButtonContainer")
 																														iCount += 1
 
@@ -3440,13 +3453,13 @@ class CvMainInterface:
 																										iFormation = gc.getInfoTypeForString("PROMOTION_FORM_CLOSED_FORM")
 																										if pUnit.isHasPromotion(iFormation):
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_closed_gr.dds",
-																																										 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																						0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																												screen.show("BottomButtonContainer")
 																												iCount += 1
 																												bFormationUndo = True
 																										else:
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_closed.dds",
-																																										 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																						0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																												screen.show("BottomButtonContainer")
 																												iCount += 1
 																				# Drill end ------------
@@ -3457,13 +3470,13 @@ class CvMainInterface:
 																						iFormation = gc.getInfoTypeForString("PROMOTION_FORM_KEIL")
 																						if pUnit.isHasPromotion(iFormation):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_keil_gr.dds",
-																																						 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																		0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 																								bFormationUndo = True
 																						else:
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_keil.dds",
-																																						 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																		0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 
@@ -3472,13 +3485,13 @@ class CvMainInterface:
 																						iFormation = gc.getInfoTypeForString("PROMOTION_FORM_ZANGENANGRIFF")
 																						if pUnit.isHasPromotion(iFormation):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_zange_a_gr.dds",
-																																						 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																		0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 																								bFormationUndo = True
 																						else:
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_form_zange_a.dds",
-																																						 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																		0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 
@@ -3488,13 +3501,13 @@ class CvMainInterface:
 																								iFormation = gc.getInfoTypeForString("PROMOTION_FORM_FLANKENSCHUTZ")
 																								if pUnit.isHasPromotion(iFormation):
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_flanke_gr.dds",
-																																								 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																				0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 																										bFormationUndo = True
 																								else:
 																										screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_flanke.dds",
-																																								 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																				0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																										screen.show("BottomButtonContainer")
 																										iCount += 1
 
@@ -3507,13 +3520,13 @@ class CvMainInterface:
 																										iFormation = gc.getInfoTypeForString("PROMOTION_FORM_TESTUDO")
 																										if pUnit.isHasPromotion(iFormation):
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_testudo_gr.dds",
-																																										 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																						0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																												screen.show("BottomButtonContainer")
 																												iCount += 1
 																												bFormationUndo = True
 																										else:
 																												screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_testudo.dds",
-																																										 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																						0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																												screen.show("BottomButtonContainer")
 																												iCount += 1
 
@@ -3522,13 +3535,13 @@ class CvMainInterface:
 																						iFormation = gc.getInfoTypeForString("PROMOTION_FORM_GASSE")
 																						if pUnit.isHasPromotion(iFormation):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_gasse_gr.dds",
-																																						 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																		0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 																								bFormationUndo = True
 																						else:
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_gasse.dds",
-																																						 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																		0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 
@@ -3540,13 +3553,13 @@ class CvMainInterface:
 																						iFormation = gc.getInfoTypeForString("PROMOTION_FORM_GASSE")
 																						if pUnit.isHasPromotion(iFormation):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_gasse_gr.dds",
-																																						 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																		0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 																								bFormationUndo = True
 																						else:
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_gasse.dds",
-																																						 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																		0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 
@@ -3556,13 +3569,13 @@ class CvMainInterface:
 																				iFormation = gc.getInfoTypeForString("PROMOTION_FORM_LEADER_POSITION")
 																				if pUnit.isHasPromotion(iFormation):
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_leaderpos_gr.dds",
-																																				 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
+																																0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, 718, False)
 																						screen.show("BottomButtonContainer")
 																						iCount += 1
 																						bFormationUndo = True
 																				else:
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_leaderpos.dds",
-																																				 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																						screen.show("BottomButtonContainer")
 																						iCount += 1
 																# -- Ende else Fortress
@@ -3583,13 +3596,13 @@ class CvMainInterface:
 																						iFormation = gc.getInfoTypeForString("PROMOTION_FORM_FLIGHT")
 																						if pUnit.isHasPromotion(iFormation):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_flight_gr.dds",
-																																						 0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
+																																		0, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iFormation, -1, False)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 																								bFormationUndo = True
 																						else:
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Formations/button_formation_flight.dds",
-																																						 0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
+																																		0, WidgetTypes.WIDGET_HELP_PROMOTION, iFormation, 718, True)
 																								screen.show("BottomButtonContainer")
 																								screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																								iCount += 1
@@ -3653,7 +3666,7 @@ class CvMainInterface:
 																		if pTeam.isHasTech(gc.getInfoTypeForString("TECH_DEZIMATION")):
 																				# Button
 																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_dezimierung.dds",
-																																		 0, WidgetTypes.WIDGET_GENERAL, 735, 2, True)
+																														0, WidgetTypes.WIDGET_GENERAL, 735, 2, True)
 																				screen.show("BottomButtonContainer")
 
 																				if pUnit.getDamage() > 80:
@@ -3667,7 +3680,7 @@ class CvMainInterface:
 																if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_RHETORIK")):
 																		if pPlot.getNumDefenders(iUnitOwner) > 1:
 																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_leader_moral.dds",
-																																		 0, WidgetTypes.WIDGET_GENERAL, 759, 1, False)
+																														0, WidgetTypes.WIDGET_GENERAL, 759, 1, False)
 																				screen.show("BottomButtonContainer")
 																				screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																				iCount += 1
@@ -3695,7 +3708,7 @@ class CvMainInterface:
 																								or pUnit.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_GALLIEN") \
 																								or pUnit.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_BRITEN"):
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_sklave_kopf.dds",
-																																				 0, WidgetTypes.WIDGET_GENERAL, 760, 0, False)
+																																0, WidgetTypes.WIDGET_GENERAL, 760, 0, False)
 																						screen.show("BottomButtonContainer")
 																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																						iCount += 1
@@ -3712,7 +3725,7 @@ class CvMainInterface:
 
 																				if bCheck:
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_sklave_fight.dds",
-																																				 0, WidgetTypes.WIDGET_GENERAL, 761, 0, True)
+																																0, WidgetTypes.WIDGET_GENERAL, 761, 0, True)
 																				else:
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_info.dds", 0, WidgetTypes.WIDGET_GENERAL, 761, 0, False)
 																				screen.show("BottomButtonContainer")
@@ -6531,7 +6544,7 @@ class CvMainInterface:
 				screen.hide("ScoreRowMinus")
 				screen.hide("ScoreWidthPlus")
 				screen.hide("ScoreWidthMinus")
-				screen.hide("ScoreHidePoints")  # PAE
+				screen.hide("ScoreHidePoints") # PAE
 				if CyEngine().isGlobeviewUp():
 						return
 				if CyInterface().isCityScreenUp():
@@ -6542,6 +6555,11 @@ class CvMainInterface:
 						return
 				if not CyInterface().isScoresVisible():
 						return
+
+				# PAE
+				bIsScenario = False
+				if CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"]) != "":
+					bIsScenario = True
 
 				xResolution = screen.getXResolution()
 				yResolution = screen.getYResolution()
@@ -6584,23 +6602,30 @@ class CvMainInterface:
 				nRows = len(lPlayers)
 				self.iScoreRows = max(0, min(self.iScoreRows, nRows - 1))
 				iHeight = min(yResolution - 300, max(1, (nRows - self.iScoreRows)) * 24 + 2)
-		#                screen.addTableControlGFC("ScoreBackground", 6, xResolution - self.iScoreWidth - 230, yResolution - iHeight - 180, self.iScoreWidth + 230, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
-		#                screen.enableSelect("ScoreBackground", False)
-		#                screen.setTableColumnHeader("ScoreBackground", 0, "", self.iScoreWidth)
-		#                screen.setTableColumnHeader("ScoreBackground", 1, "", 23)
-		#                screen.setTableColumnHeader("ScoreBackground", 2, "", 23)
-		#                screen.setTableColumnHeader("ScoreBackground", 3, "", 23)
-		#                screen.setTableColumnHeader("ScoreBackground", 4, "", 90)
-		#                screen.setTableColumnHeader("ScoreBackground", 5, "", 73)
-				screen.addTableControlGFC("ScoreBackground2", 6, xResolution - self.iScoreWidth - 230, yResolution - iHeight - 180,
-																	self.iScoreWidth + 230, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
+				#                screen.addTableControlGFC("ScoreBackground", 6, xResolution - self.iScoreWidth - 230, yResolution - iHeight - 180, self.iScoreWidth + 230, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
+				#                screen.enableSelect("ScoreBackground", False)
+				#                screen.setTableColumnHeader("ScoreBackground", 0, "", self.iScoreWidth)
+				#                screen.setTableColumnHeader("ScoreBackground", 1, "", 23)
+				#                screen.setTableColumnHeader("ScoreBackground", 2, "", 23)
+				#                screen.setTableColumnHeader("ScoreBackground", 3, "", 23)
+				#                screen.setTableColumnHeader("ScoreBackground", 4, "", 90)
+				#                screen.setTableColumnHeader("ScoreBackground", 5, "", 73)
+				if bIsScenario: Spalten = 5
+				else: Spalten = 6
+				screen.addTableControlGFC("ScoreBackground2", Spalten, xResolution - self.iScoreWidth - 200, yResolution - iHeight - 180,
+																	self.iScoreWidth + 200, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
 				screen.enableSelect("ScoreBackground2", False)
 				screen.setTableColumnHeader("ScoreBackground2", 0, "", self.iScoreWidth)
 				screen.setTableColumnHeader("ScoreBackground2", 1, "", 23)
 				screen.setTableColumnHeader("ScoreBackground2", 2, "", 23)
-				screen.setTableColumnHeader("ScoreBackground2", 3, "", 23)
-				screen.setTableColumnHeader("ScoreBackground2", 4, "", 90)
-				screen.setTableColumnHeader("ScoreBackground2", 5, "", 73)
+				if not bIsScenario:
+					screen.setTableColumnHeader("ScoreBackground2", 3, "", 23)
+					Spalte = 3
+				else:
+					Spalte = 2
+				screen.setTableColumnHeader("ScoreBackground2", Spalte+1, "", 90)
+				screen.setTableColumnHeader("ScoreBackground2", Spalte+2, "", 73)
+
 				if self.iScoreWidth > 0:
 						screen.setButtonGFC("ScoreWidthMinus", "", "", xResolution - 48, yResolution - 179, 17, 17, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_ARROW_RIGHT)
 				screen.setButtonGFC("ScoreRowMinus", "", "", xResolution - 70, yResolution - 180, 20, 20, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_CITY_MINUS)
@@ -6642,11 +6667,13 @@ class CvMainInterface:
 						#szTempBuffer = u"<color=%d,%d,%d,%d>%s</color>" %(pPlayer.getPlayerTextColorR(), pPlayer.getPlayerTextColorG(), pPlayer.getPlayerTextColorB(), pPlayer.getPlayerTextColorA(), pPlayer.getName())
 						#screen.setTableText("ScoreBackground2", 2, iRow, szTempBuffer, None, WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						screen.setTableText("ScoreBackground2", 2, iRow, "", gc.getLeaderHeadInfo(pPlayer.getLeaderType()).getButton(), WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
-						screen.setTableText("ScoreBackground2", 3, iRow, "", gc.getCivilizationInfo(pPlayer.getCivilizationType()).getButton(), WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						# Szenario / Scenario
+						if not bIsScenario:
+								screen.setTableText("ScoreBackground2", Spalte, iRow, "", gc.getCivilizationInfo(pPlayer.getCivilizationType()).getButton(), WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						szTempBuffer = u"<color=%d,%d,%d,%d>%s</color>" % (pPlayer.getPlayerTextColorR(), pPlayer.getPlayerTextColorG(), pPlayer.getPlayerTextColorB(), pPlayer.getPlayerTextColorA(), pPlayer.getCivilizationShortDescription(0))
 						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_CITY_STATE")):
 								szTempBuffer = u"%c" % CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR) + szTempBuffer
-						screen.setTableText("ScoreBackground2", 4, iRow, szTempBuffer, None, WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
+						screen.setTableText("ScoreBackground2", Spalte+1, iRow, szTempBuffer, None, WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
 						if pTeam.isAVassal():
 								sText1 += CyTranslator().getText("[ICON_SILVER_STAR]", ())
@@ -6693,7 +6720,7 @@ class CvMainInterface:
 								if iTech > -1:
 										sTech = u"<color=%d,%d,%d,%d>%d</color>" % (pPlayer.getPlayerTextColorR(), pPlayer.getPlayerTextColorG(), pPlayer.getPlayerTextColorB(),
 																																pPlayer.getPlayerTextColorA(), pPlayer.getResearchTurnsLeft(pPlayer.getCurrentResearch(), True))
-										screen.setTableText("ScoreBackground2", 5, iRow, sTech, gc.getTechInfo(iTech).getButton(), WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, CvUtil.FONT_LEFT_JUSTIFY)
+										screen.setTableText("ScoreBackground2", Spalte+2, iRow, sTech, gc.getTechInfo(iTech).getButton(), WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, CvUtil.FONT_LEFT_JUSTIFY)
 		# Platy Scoreboard - End
 
 		# Will update the scores - TEAMS Ansicht
@@ -7621,9 +7648,13 @@ class CvMainInterface:
 												CyAudioGame().Play2DSound("AS2D_BUILD_COLOSSEUM")
 												CyMessageControl().sendModNetMessage(iData1, -1, pPlot.getPlotCity().getID(), iOwner, iUnitID)
 
-										# Go to city (go2city)
+										# PAE 7.7: Go to city popup(go2city)
 										if iData1 == 773:
 												CyMessageControl().sendModNetMessage(773, iData2, -1, iOwner, iUnitID)
+
+										# PAE 7.9: Terraforming (Great Prophet)
+										if iData1 == 774:
+												CyMessageControl().sendModNetMessage(774, iData2, -1, iOwner, iUnitID)
 
 								# ID 718 Unit Formations
 								# Zusatz: Eigenes Widget for Formations!

@@ -767,6 +767,422 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	}
 }
 
+/************************************************************************************************/
+/* CHANGE_PLAYER                          08/17/08                                jdog5000      */
+/*                                                                                              */
+/*                                                                                              */
+/************************************************************************************************/
+//
+// for stripping obsolete trait bonuses
+// for complete reset, use in conjunction with addTraitBonuses
+//
+void CvPlayer::clearTraitBonuses( )
+{
+	int iI, iJ;
+
+	FAssertMsg((GC.getNumTraitInfos() > 0), "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvPlayer::init");
+	for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
+	{
+		if (hasTrait((TraitTypes)iI))
+		{
+			changeExtraHealth(-GC.getTraitInfo((TraitTypes)iI).getHealth());
+			changeExtraHappiness(-GC.getTraitInfo((TraitTypes)iI).getHappiness());
+
+			for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+			{
+				changeExtraBuildingHappiness((BuildingTypes)iJ, -GC.getBuildingInfo((BuildingTypes)iJ).getHappinessTraits(iI));
+			}
+
+			changeUpkeepModifier(-GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier());
+			changeLevelExperienceModifier(-GC.getTraitInfo((TraitTypes)iI).getLevelExperienceModifier());
+			changeGreatPeopleRateModifier(-GC.getTraitInfo((TraitTypes)iI).getGreatPeopleRateModifier());
+			changeGreatGeneralRateModifier(-GC.getTraitInfo((TraitTypes)iI).getGreatGeneralRateModifier());
+			changeDomesticGreatGeneralRateModifier(-GC.getTraitInfo((TraitTypes)iI).getDomesticGreatGeneralRateModifier());
+
+			changeMaxGlobalBuildingProductionModifier(-GC.getTraitInfo((TraitTypes)iI).getMaxGlobalBuildingProductionModifier());
+			changeMaxTeamBuildingProductionModifier(-GC.getTraitInfo((TraitTypes)iI).getMaxTeamBuildingProductionModifier());
+			changeMaxPlayerBuildingProductionModifier(-GC.getTraitInfo((TraitTypes)iI).getMaxPlayerBuildingProductionModifier());
+
+			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+			{
+				changeTradeYieldModifier(((YieldTypes)iJ), -GC.getTraitInfo((TraitTypes)iI).getTradeYieldModifier(iJ));
+			}
+
+			for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+			{
+				changeFreeCityCommerce(((CommerceTypes)iJ), -GC.getTraitInfo((TraitTypes)iI).getCommerceChange(iJ));
+				changeCommerceRateModifier(((CommerceTypes)iJ), -GC.getTraitInfo((TraitTypes)iI).getCommerceModifier(iJ));
+			}
+
+			for (iJ = 0; iJ < GC.getNumCivicOptionInfos(); iJ++)
+			{
+				if (GC.getCivicOptionInfo((CivicOptionTypes) iJ).getTraitNoUpkeep(iI))
+				{
+					changeNoCivicUpkeepCount(((CivicOptionTypes)iJ), -1);
+				}
+			}
+		}
+	}
+}
+//
+// for adding new trait bonuses
+//
+void CvPlayer::addTraitBonuses( )
+{
+	int iI, iJ;
+
+	FAssertMsg((GC.getNumTraitInfos() > 0), "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvPlayer::init");
+	for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
+	{
+		if (hasTrait((TraitTypes)iI))
+		{
+			changeExtraHealth(GC.getTraitInfo((TraitTypes)iI).getHealth());
+			changeExtraHappiness(GC.getTraitInfo((TraitTypes)iI).getHappiness());
+
+			for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+			{
+				changeExtraBuildingHappiness((BuildingTypes)iJ, GC.getBuildingInfo((BuildingTypes)iJ).getHappinessTraits(iI));
+			}
+
+			changeUpkeepModifier(GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier());
+			changeLevelExperienceModifier(GC.getTraitInfo((TraitTypes)iI).getLevelExperienceModifier());
+			changeGreatPeopleRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatPeopleRateModifier());
+			changeGreatGeneralRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatGeneralRateModifier());
+			changeDomesticGreatGeneralRateModifier(GC.getTraitInfo((TraitTypes)iI).getDomesticGreatGeneralRateModifier());
+
+			changeMaxGlobalBuildingProductionModifier(GC.getTraitInfo((TraitTypes)iI).getMaxGlobalBuildingProductionModifier());
+			changeMaxTeamBuildingProductionModifier(GC.getTraitInfo((TraitTypes)iI).getMaxTeamBuildingProductionModifier());
+			changeMaxPlayerBuildingProductionModifier(GC.getTraitInfo((TraitTypes)iI).getMaxPlayerBuildingProductionModifier());
+
+			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+			{
+				changeTradeYieldModifier(((YieldTypes)iJ), GC.getTraitInfo((TraitTypes)iI).getTradeYieldModifier(iJ));
+			}
+
+			for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+			{
+				changeFreeCityCommerce(((CommerceTypes)iJ), GC.getTraitInfo((TraitTypes)iI).getCommerceChange(iJ));
+				changeCommerceRateModifier(((CommerceTypes)iJ), GC.getTraitInfo((TraitTypes)iI).getCommerceModifier(iJ));
+			}
+
+			for (iJ = 0; iJ < GC.getNumCivicOptionInfos(); iJ++)
+			{
+				if (GC.getCivicOptionInfo((CivicOptionTypes) iJ).getTraitNoUpkeep(iI))
+				{
+					changeNoCivicUpkeepCount(((CivicOptionTypes)iJ), 1);
+				}
+			}
+		}
+	}
+
+	updateMaxAnarchyTurns();
+
+	for (iI = 0; iI < NUM_YIELD_TYPES; iI++)
+	{
+		updateExtraYieldThreshold((YieldTypes)iI);
+	}
+}
+//
+// for changing the personality of the player
+//
+void CvPlayer::changePersonalityType( )
+{
+	LeaderHeadTypes eBestPersonality;
+	int iValue;
+	int iBestValue;
+	int iI, iJ;
+
+	if (GC.getGameINLINE().isOption(GAMEOPTION_RANDOM_PERSONALITIES))
+	{
+		if (!isBarbarian())
+		{
+			iBestValue = 0;
+			eBestPersonality = NO_LEADER;
+
+			for (iI = 0; iI < GC.getNumLeaderHeadInfos(); iI++)
+			{
+				if (iI != GC.getDefineINT("BARBARIAN_LEADER")) // XXX minor civ???
+				{
+					iValue = (1 + GC.getGameINLINE().getSorenRandNum(10000, "Choosing Personality"));
+
+					for (iJ = 0; iJ < MAX_CIV_PLAYERS; iJ++)
+					{
+						if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+						{
+							if (GET_PLAYER((PlayerTypes)iJ).getPersonalityType() == ((LeaderHeadTypes)iI))
+							{
+								iValue /= 2;
+							}
+						}
+					}
+
+					if (iValue > iBestValue)
+					{
+						iBestValue = iValue;
+						eBestPersonality = ((LeaderHeadTypes)iI);
+					}
+				}
+			}
+
+			if (eBestPersonality != NO_LEADER)
+			{
+				setPersonalityType(eBestPersonality);
+			}
+		}
+	}
+	else
+	{
+		setPersonalityType( getLeaderType() );
+	}
+}
+//
+// reset state of event logic, unit prices
+//
+void CvPlayer::resetCivTypeEffects( )
+{
+	int iI;
+
+	if( !isAlive() ) 
+	{
+		for (iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
+		{
+			setCivics(((CivicOptionTypes)iI), ((CivicTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationInitialCivics(iI))));
+		}
+
+		for (iI = 0; iI < GC.getNumEventInfos(); iI++)
+		{
+			resetEventOccured((EventTypes)iI, false);
+		}
+
+		for (iI = 0; iI < GC.getNumEventTriggerInfos(); iI++)
+		{
+			if( (!GC.getEventTriggerInfo((EventTriggerTypes)iI).isGlobal()) && (!GC.getEventTriggerInfo((EventTriggerTypes)iI).isTeam() || GET_TEAM(getTeam()).getNumMembers() == 1) )
+			{
+				resetTriggerFired((EventTriggerTypes)iI);
+			}
+		}
+	}
+
+	for (iI = 0; iI < GC.getNumUnitClassInfos(); ++iI)
+	{
+		UnitTypes eUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+
+		if (NO_UNIT != eUnit)
+		{
+			if (GC.getUnitInfo(eUnit).isFound())
+			{
+				setUnitExtraCost((UnitClassTypes)iI, getNewCityProductionValue());
+			}
+		}
+	}
+}
+//
+// for switching the leaderhead of this player
+//
+void CvPlayer::changeLeader( LeaderHeadTypes eNewLeader )
+{
+	LeaderHeadTypes eOldLeader = getLeaderType();
+
+	if( eOldLeader == eNewLeader )
+		return;
+
+	// Clear old traits
+	clearTraitBonuses();
+
+	GC.getInitCore().setLeader( getID(), eNewLeader );
+
+	// Add new traits
+	addTraitBonuses();
+
+	// Set new personality
+	changePersonalityType();
+
+	if( isAlive() || isEverAlive() )
+	{
+		gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	}
+
+	AI_init();
+}
+//
+// for changing the civilization of this player
+//
+void CvPlayer::changeCiv( CivilizationTypes eNewCiv )
+{
+	CivilizationTypes eOldCiv = getCivilizationType();
+	PlayerColorTypes eColor = (PlayerColorTypes)GC.getCivilizationInfo(eNewCiv).getDefaultPlayerColor();
+
+	if( eOldCiv == eNewCiv )
+		return;
+
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (eColor == NO_PLAYERCOLOR || (GET_PLAYER((PlayerTypes)iI).getPlayerColor() == eColor && iI != getID()) )
+		{
+			for (int iK = 0; iK < GC.getNumPlayerColorInfos(); iK++)
+			{
+				if (iK != GC.getCivilizationInfo((CivilizationTypes)GC.getDefineINT("BARBARIAN_CIVILIZATION")).getDefaultPlayerColor())
+				{
+					bool bValid = true;
+
+					for (int iL = 0; iL < MAX_CIV_PLAYERS; iL++)
+					{
+						if (GET_PLAYER((PlayerTypes)iL).getPlayerColor() == iK)
+						{
+							bValid = false;
+							break;
+						}
+					}
+
+					if (bValid)
+					{
+						eColor = (PlayerColorTypes)iK;
+						iI = MAX_CIV_PLAYERS;
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	GC.getInitCore().setCiv( getID(), eNewCiv );
+	GC.getInitCore().setColor( getID(), eColor );
+
+	resetCivTypeEffects();
+
+	if( isAlive() )
+	{
+		// if the player is alive and showing on scoreboard, etc
+		// change colors, graphics, flags, units
+		GC.getInitCore().setFlagDecal( getID(), (CvWString)GC.getCivilizationInfo(eNewCiv).getFlagTexture() );
+		GC.getInitCore().setArtStyle( getID(), (ArtStyleTypes)GC.getCivilizationInfo(eNewCiv).getArtStyleType() );
+
+		// Forces update of units flags
+		EraTypes eEra = getCurrentEra();
+		bool bAuto = m_bDisableHuman;
+		m_bDisableHuman = true;
+		//setCurrentEra((EraTypes)((eEra + 1)%GC.getNumEraInfos()));
+		setCurrentEra((EraTypes)0);
+		setCurrentEra((EraTypes)(GC.getNumEraInfos() - 1));
+
+		setCurrentEra(eEra);
+		m_bDisableHuman = bAuto;
+		gDLL->getInterfaceIFace()->makeInterfaceDirty();
+		
+
+		int iLoop;
+		CvCity* pLoopCity;
+		// dirty all of this player's cities...
+		for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+		{
+			//if (pLoopCity->getOwnerINLINE() == getID())
+			FAssert(pLoopCity->getOwnerINLINE() == getID()); // K-Mod
+			{
+				pLoopCity->setLayoutDirty(true);
+			}
+		}
+
+		//update unit eras
+		CvUnit* pLoopUnit;
+		CvPlot* pLoopPlot;
+		for(pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+		{
+			pLoopUnit->reloadEntity();
+			pLoopPlot = pLoopUnit->plot();
+/*
+			if( pLoopPlot != NULL )
+			{
+				
+				CvFlagEntity* pFlag = pLoopPlot->getFlagSymbol();
+
+				if( pFlag != NULL )
+				{
+
+					if( gDLL->getFlagEntityIFace()->getPlayer(pFlag) == getID() )
+					{
+						gDLL->getFlagEntityIFace()->destroy(pFlag);
+						CvFlagEntity* pNewFlag = gDLL->getFlagEntityIFace()->create(getID());
+						if (pFlag != NULL)
+						{
+							gDLL->getFlagEntityIFace()->setPlot(pNewFlag, pLoopPlot, false);
+						}
+
+						gDLL->getFlagEntityIFace()->updateGraphicEra(pNewFlag);
+					}
+
+				}
+				
+				pLoopPlot->setFlagDirty(true);
+				//pLoopPlot->updateGraphicEra();
+			}
+*/
+		}
+
+		//update flag eras
+		gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+
+		if (getID() == GC.getGameINLINE().getActivePlayer())
+		{
+			gDLL->getInterfaceIFace()->setDirty(Soundtrack_DIRTY_BIT, true);
+		}
+
+		gDLL->getInterfaceIFace()->makeInterfaceDirty();
+
+		// Need to force redraw
+		gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+		gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+		gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
+		gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
+
+		gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(HighlightPlot_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
+		gDLL->getEngineIFace()->SetDirty(MinimapTexture_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(SelectionSound_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(GlobeInfo_DIRTY_BIT, true);
+	}
+	else if( isEverAlive() )
+	{
+		// Not currently alive, but may show on some people's scoreboard
+		// or graphs
+		// change colors
+		gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	}
+
+	setupGraphical();
+}
+//
+// for changing whether this player is human or not
+//
+void CvPlayer::setIsHuman( bool bNewValue )
+{
+	if( bNewValue == isHuman() )
+		return;
+
+	if( bNewValue )
+		GC.getInitCore().setSlotStatus( getID(), SS_TAKEN );
+	else
+		GC.getInitCore().setSlotStatus( getID(), SS_COMPUTER ); // or SS_OPEN for multiplayer?
+
+}
+/************************************************************************************************/
+/* CHANGE_PLAYER                          END                                                  */
+/************************************************************************************************/
+
 
 //////////////////////////////////////
 // graphical only setup

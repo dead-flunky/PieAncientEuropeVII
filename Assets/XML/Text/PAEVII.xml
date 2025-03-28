@@ -2,11 +2,11 @@
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUEDUCT_HELP</Tag>
-		<English>[ICON BULLET] Aqueducts protect cities from fire up to population 17.</English>
-		<French>[IC&#212;NE BULLET] Les aqueducs prot&#232;gent les villes des incendies jusqu'&#224; 17 habitants.</French>
-		<German>[ICON BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 17.</German>
-		<Italian>[ICONA PUNTINO] Gli acquedotti proteggono le citt&#224; dagli incendi fino a 17 abitanti.</Italian>
-		<Spanish>[ICON BULLET] Los acueductos protegen a las ciudades del fuego hasta una poblaci&#243;n de 17 habitantes.</Spanish>
+		<English>[ICON_BULLET] Aqueducts protect cities from fire up to population 17.</English>
+		<French>[ICON_BULLET] Les aqueducs prot&#232;gent les villes des incendies jusqu'&#224; 17 habitants.</French>
+		<German>[ICON_BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 17.</German>
+		<Italian>[ICON_BULLET] Gli acquedotti proteggono le citt&#224; dagli incendi fino a 17 abitanti.</Italian>
+		<Spanish>[ICON_BULLET] Los acueductos protegen a las ciudades del fuego hasta una poblaci&#243;n de 17 habitantes.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLASEBALG</Tag>
@@ -58,19 +58,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FEUERWEHR_HELP</Tag>
-		<English>[ICON BULLET] Fire stations protect cities 100% from fires.</English>
-		<French>[ICON BULLET] Les services d'incendie prot&#232;gent les villes &#224; 100 % contre les incendies.</French>
-		<German>[ICON BULLET] Feuerwehren sch&#252;tzen St&#228;dte zu 100% vor Br&#228;nden.</German>
-		<Italian>[ICONA PUNTINO] I vigili del fuoco proteggono le citt&#224; al 100% dagli incendi.</Italian>
-		<Spanish>[ICON BULLET] Los departamentos de bomberos protegen las ciudades al 100% de los incendios.</Spanish>
+		<English>[ICON_BULLET] Fire stations protect cities 100% from fires.</English>
+		<French>[ICON_BULLET] Les services d'incendie prot&#232;gent les villes &#224; 100 % contre les incendies.</French>
+		<German>[ICON_BULLET] Feuerwehren sch&#252;tzen St&#228;dte zu 100% vor Br&#228;nden.</German>
+		<Italian>[ICON_BULLET] I vigili del fuoco proteggono le citt&#224; al 100% dagli incendi.</Italian>
+		<Spanish>[ICON_BULLET] Los departamentos de bomberos protegen las ciudades al 100% de los incendios.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LEVEE2_HELP</Tag>
+		<English>[ICON_BULLET] Levees protect cities from fires up to pop 11.[NEWLINE][ICON_BULLET]Dries surrounding marshes/swamps</English>
+		<French>[ICON_BULLET] Les diques prot&#232;gent les villes des incendies jusqu'&#224; 11 habitants.[NEWLINE][ICON_BULLET]Ass&#232;che les mar&#233;cages aux alentours</French>
+		<German>[ICON_BULLET] Deiche sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 11.[NEWLINE][ICON_BULLET] Legt umliegende S&#252;mpfe trocken</German>
+		<Italian>[ICON_BULLET] Diga ad anello proteggono dagli incendi le citt&#224; fino a 11 abitanti.[NEWLINE][ICON_BULLET] Asciuga le paludi circostanti</Italian>
+		<Spanish>[ICON_BULLET] Dique de anillo protegen a las ciudades de los incendios hasta los 11 habitantes.[NEWLINE][ICON_BULLET]Seca las marismas de los alrededores</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEVEE_HELP</Tag>
-		<English>[ICON BULLET] Irrigation canals protect cities from fires up to pop 11.</English>
-		<French>[ICON BULLET] Les canaux d'irrigation prot&#232;gent les villes des incendies jusqu'&#224; 11 habitants.</French>
-		<German>[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 11.</German>
-		<Italian>[ICONA PUNTINO] I canali di irrigazione proteggono dagli incendi le citt&#224; fino a 11 abitanti.</Italian>
-		<Spanish>[ICON BULLET] Los canales de riego protegen a las ciudades de los incendios hasta los 11 habitantes.</Spanish>
+		<English>[ICON_BULLET] Irrigation canals protect cities from fires up to pop 11.[NEWLINE][ICON_BULLET]Can only be built in cities next to rivers</English>
+		<French>[ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes des incendies jusqu'&#224; 11 habitants.[NEWLINE][ICON_BULLET]Ne peut &#234;tre construit que dans des villes au bord de rivi&#232;res</French>
+		<German>[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 11.[NEWLINE][ICON_BULLET]Kann nur in St&#228;dten an Fl&#252;ssen erstellt werden</German>
+		<Italian>[ICON_BULLET] I canali di irrigazione proteggono dagli incendi le citt&#224; fino a 11 abitanti.[NEWLINE][ICON_BULLET]Pu&#242; essere costruito solo nelle citt&#224; vicino ai fiumi</Italian>
+		<Spanish>[ICON_BULLET] Los canales de riego protegen a las ciudades de los incendios hasta los 11 habitantes.[NEWLINE][ICON_BULLET]S&#243;lo se puede construir en ciudades pr&#243;ximas a r&#237;os</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ISRAEL</Tag>
@@ -137,6 +145,14 @@
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Ciudad de destino[COLOR_REVERT][NEWLINE]Env&#237;a la unidad a una de tus ciudades.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUTTON_TERRAFORMING</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Make this land fertile![COLOR_REVERT][NEWLINE][ICON BULLET]Transforms desert into plains[NEWLINE][ICON BULLET]Transforms tundra into grassland[NEWLINE][ICON_BULLET]Will consume the unit</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Rendez cette terre fertile ![COLOR_REVERT][NEWLINE][ICON BULLET]Transforme le d&#233;sert en plaines[NEWLINE][ICON BULLET]Transforme la toundra en prairie[NEWLINE][ICON_BULLET]Consommera l'unit&#233;</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Mache dieses Land fruchtbar![COLOR_REVERT][NEWLINE][ICON_BULLET]Verwandelt W&#252;ste zu Ebenen[NEWLINE][ICON_BULLET]Verwandelt Tundra zu Grassland[NEWLINE][ICON_BULLET]Wird die Einheit verbrauchen</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Rendi fertile questa terra![COLOR_REVERT][NEWLINE][ICONA PUNTINO]Trasforma il deserto in pianura[NEWLINE][ICONA PUNTINO]Trasforma la tundra in prateria[NEWLINE][ICON_BULLET]Consumer&#224; l'unit&#224;</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]&#161;Haz que esta tierra sea f&#233;rtil![COLOR_REVERT][NEWLINE][ICON BULLET]Transforma el desierto en llanuras[NEWLINE][ICON BULLET]Transforma la tundra en pradera[NEWLINE][ICON_BULLET]Consumir&#225; la unidad</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CITY_BAR_FOOD_GROWTH</Tag>
 		<English>%d1 [ICON_FOOD] per turnGrowth: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:Turn:Turns])</English>
 		<French>%d1 [ICON_FOOD] par tourCroissance : %d2/%d3 [ICON_FOOD] (%d4 [NUM4:tour:tours])</French>
@@ -167,6 +183,14 @@
 		<German>Es werden hohe Gel&#228;ndedetails verwendet</German>
 		<Italian>Verr&#224; utilizzato un dettaglio alto del terreno</Italian>
 		<Spanish>Se usar&#225; un nivel de detalle del terreno m&#225;s alto</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_REQUIRES_GOLD</Tag>
+		<English>[COLOR_WARNING_TEXT]Not enough gold in your treasury![COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Pas assez d'or dans le tr&#233;sor ![COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Nicht genug Gold in der Schatzkammer![COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Non c'&#232; abbastanza oro nel tuo tesoro![COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]&#161;No hay suficiente oro en tu tesoro![COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_KONZIL0_1</Tag>
@@ -473,6 +497,14 @@
 		<Spanish>&#161;Un atraco fallido! Gracias por tu escolta. Cuando los ladrones intentaron robar sus bienes, decidieron huir.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_TERRAFORMING</Tag>
+		<English>Your prophet has made this land fertile! May our kingdom live long and prosper!</English>
+		<French>Votre proph&#232;te a rendu cette terre fertile ! Que notre royaume vive longtemps et prosp&#232;re !</French>
+		<German>Euer Prophet hat dieses Land fruchtbar gemacht! M&#246;ge unser Reich lang und in Wohlstand leben!</German>
+		<Italian>Il tuo profeta ha reso fertile questa terra! Che il nostro regno viva a lungo e prosperi!</Italian>
+		<Spanish>&#161;Tu profeta ha hecho f&#233;rtil esta tierra! &#161;Que nuestro reino viva largo y pr&#243;spero!</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_UNIT_ESCAPE</Tag>
 		<English>Our %s1 barely escaped from combat with a %s2!</English>
 		<French>Notre unit&#233; (%s1) a pu s'&#233;chapper de justesse (contre %s2)!</French>
@@ -633,6 +665,14 @@
 		<Spanish>Muestra los movimientos de animales salvajes inofensivos entre turnos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_ELEPHANT_SPREADS_BONUS</Tag>
+		<English>Elephants have settled in the immediate vicinity of your borders.</English>
+		<French>Les &#233;l&#233;phants se sont install&#233;s &#224; proximit&#233; imm&#233;diate de vos fronti&#232;res.</French>
+		<German>Elefanten haben sich in unmittelbarer Umgebung Eurer Grenzen niedergelassen.</German>
+		<Italian>Gli elefanti si sono insediati nelle immediate vicinanze dei vostri confini.</Italian>
+		<Spanish>Los elefantes se han asentado en las inmediaciones de sus fronteras.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_POPUP_GO2CITY</Tag>
 		<English>Which city should the unit be sent to?</English>
 		<French>Dans quelle ville l'unit&#233; doit-elle &#234;tre envoy&#233;e ?</French>
@@ -761,6 +801,14 @@
 		<Spanish>Esta tecnolog&#237;a est&#225; reservada a los romanos y etruscos. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TERRAIN_FOUND_INFO</Tag>
+		<English>[ICON_BULLET]%s1 cannot be settled</English>
+		<French>[ICON_BULLET]%s1 ne peut pas &#234;tre r&#233;gl&#233;</French>
+		<German>[ICON_BULLET]%s1 kann nicht besiedelt werden</German>
+		<Italian>[ICON_BULLET]%s1 non pu&#242; essere popolato</Italian>
+		<Spanish>[ICON_BULLET]%s1 no se puede completar</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1</Tag>
 		<English>Merchants</English>
 		<French>Marchands</French>
@@ -785,6 +833,22 @@
 		<Spanish>Kataphraktoi</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_IMPASSABLE_FEATURE</Tag>
+		<English>[ICON_BULLET][ICON_MOVES]Chariots: [COLOR_WARNING_TEXT]Road required[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][ICON_MOVES]Chars : [COLOR_WARNING_TEXT]Route requise[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][ICON_MOVES]Streitwagen: [COLOR_WARNING_TEXT]Stra&#223;e erforderlich[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][ICON_MOVES]Carri: [COLOR_WARNING_TEXT]Strada richiesta[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][ICON_MOVES]Carros: [COLOR_WARNING_TEXT]Se requiere carretera[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_IMPASSABLE_TERRAIN</Tag>
+		<English>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]Road required[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]Route requise[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]Stra&#223;e erforderlich[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]Strada richiesta[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]Se requiere carretera[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SPEARMAN_MEDIEVAL</Tag>
 		<English>Light Pikeman</English>
 		<French>Piquier l&#233;ger</French>
@@ -799,6 +863,14 @@
 		<German>Sax-K&#228;mpfer</German>
 		<Italian>Combattente con scramasax</Italian>
 		<Spanish>Luchador con Seax</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LION_HELP</Tag>
+		<English>[ICON_BULLET] Avoid forests, snow and tundra landscapes</English>
+		<French>[ICON_BULLET] &#201;vitez les for&#234;ts, la neige et les paysages de toundra</French>
+		<German>[ICON_BULLET] Meidet W&#228;lder, Schnee- und Tundra-Landschaften</German>
+		<Italian>[ICON_BULLET] Evita foreste, neve e paesaggi di tundra</Italian>
+		<Spanish>[ICON_BULLET] Evite los bosques, la nieve y los paisajes de tundra.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_HELP</Tag>

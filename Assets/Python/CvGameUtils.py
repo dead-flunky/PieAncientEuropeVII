@@ -3481,6 +3481,9 @@ class CvGameUtils:
 						# Go to city
 						elif iData1 == 773:
 								return CyTranslator().getText("TXT_KEY_BUTTON_GO2CITY", ())
+						# Terraforming
+						elif iData1 == 774:
+								return CyTranslator().getText("TXT_KEY_BUTTON_TERRAFORMING", ())
 
 
 						# CITY_TAB replacements

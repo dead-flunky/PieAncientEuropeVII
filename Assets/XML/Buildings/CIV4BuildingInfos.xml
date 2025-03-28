@@ -31587,7 +31587,7 @@
 			<Description>TXT_KEY_BUILDING_LEVEE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_LEVEE_PEDIA</Civilopedia>
 			<Strategy/>
-			<Help>TXT_KEY_BUILDING_RIVER_HELP</Help>
+			<Help>TXT_KEY_BUILDING_LEVEE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LEVEE1</ArtDefineTag>
 			<MovieDefineTag/>
@@ -31764,7 +31764,7 @@
 			<Description>TXT_KEY_BUILDING_QANAT</Description>
 			<Civilopedia>TXT_KEY_BUILDING_LEVEE_PEDIA</Civilopedia>
 			<Strategy/>
-			<Help/>
+			<Help>TXT_KEY_BUILDING_LEVEE_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LEVEE1</ArtDefineTag>
 			<MovieDefineTag/>
@@ -31941,7 +31941,7 @@
 			<Description>TXT_KEY_BUILDING_LEVEE2</Description>
 			<Civilopedia>TXT_KEY_BUILDING_LEVEE2_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_SANITATION_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_SANITATION_HELP</Help>
+			<Help>TXT_KEY_BUILDING_LEVEE2_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_LEVEE2</ArtDefineTag>
 			<MovieDefineTag/>

@@ -35,6 +35,22 @@ public:
 	DllExport void setupGraphical();
 	DllExport void reset(PlayerTypes eID = NO_PLAYER, bool bConstructorCall = false);
 
+/************************************************************************************************/
+/* CHANGE_PLAYER                          12/30/08                                jdog5000      */
+/*                                                                                              */
+/*                                                                                              */
+/************************************************************************************************/
+	void clearTraitBonuses();
+	void addTraitBonuses();
+	void changePersonalityType();
+	void resetCivTypeEffects();
+	void changeLeader( LeaderHeadTypes eNewLeader );
+	void changeCiv( CivilizationTypes eNewCiv );
+	void setIsHuman( bool bNewValue );
+/************************************************************************************************/
+/* CHANGE_PLAYER                           END                                                  */
+/************************************************************************************************/
+
 protected:
 
 	void uninit();

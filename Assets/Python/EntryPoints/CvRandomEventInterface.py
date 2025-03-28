@@ -18,7 +18,7 @@ from CvPythonExtensions import (CyGlobalContext, CyTranslator, UnitAITypes,
 											InterfaceMessageTypes, CommerceTypes,
 											ReligionTypes, CyPopupInfo, ButtonPopupTypes,
 											WarPlanTypes, DomainTypes, plotDistance,
-											MemoryTypes, plotXY, isLimitedWonderClass)
+											MemoryTypes, plotXY, isLimitedWonderClass, OrderTypes)
 import CvUtil
 import PAE_City
 import PAE_Lists as L
@@ -37,18 +37,14 @@ def getHelpHolyMountain1(argsList):
 		map = gc.getMap()
 		iMinPoints = gc.getWorldInfo(map.getWorldSize()).getDefaultPlayers() / 2
 
-		iBuilding = -1
 		iReligion = gc.getPlayer(kTriggeredData.ePlayer).getStateReligion()
 
 		if iReligion != -1:
 				Temples = getTemples()
 				for iTemple in Temples:
 						if gc.getBuildingInfo(iTemple).getReligionType() == iReligion:
-								iBuilding = iTemple
+								szHelp = localText.getText("TXT_KEY_EVENT_HOLY_MOUNTAIN_HELP", (gc.getBuildingInfo(iTemple).getTextKey(), gc.getBuildingInfo(iTemple).getTextKey(), iMinPoints))
 								break
-
-				if iBuilding != -1:
-						szHelp = localText.getText("TXT_KEY_EVENT_HOLY_MOUNTAIN_HELP", (gc.getBuildingInfo(iBuilding).getTextKey(), gc.getBuildingInfo(iBuilding).getTextKey(), iMinPoints))
 
 		return szHelp
 
@@ -119,7 +115,7 @@ def canTriggerHolyMountainRevealed(argsList):
 		Temples = getTemples()
 		for iTemple in Temples:
 				if gc.getBuildingInfo(iTemple).getReligionType() == kOrigTriggeredData.eReligion:
-						iNumPoints += player.countNumBuildings(i)
+						iNumPoints += player.countNumBuildings(iTemple)
 
 		if player.countNumBuildings(gc.getInfoTypeForString("BUILDING_ORACLE2")) > 0:
 				iNumPoints = iNumPoints * 2
@@ -3983,10 +3979,21 @@ def canTriggerBordell(argsList):
 		pPlayer = gc.getPlayer(argsList[1])
 		iCity = argsList[2]
 		pCity = pPlayer.getCity(iCity)
-		#if pCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_BORDELL")): return False
-		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BORDELL")): return False
+		iBuilding = gc.getInfoTypeForString("BUILDING_BORDELL")
+		#if pCity.getNumRealBuilding(iBuilding): return False
+		if pCity.isHasBuilding(iBuilding):
+			return False
 		# Tech Check muss sein, weil dieses Event direkt im EventManager ausgeführt wird und es sonst immer startet
-		if not gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_SYNKRETISMUS")): return False
-		if gc.getGame().getSorenRandNum(10, "Event:canTriggerBordell") == 1: return True
+		if not gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_SYNKRETISMUS")):
+			return False
+		# 1:2 chance
+		if gc.getGame().getSorenRandNum(2, "Event:canTriggerBordell") == 0:
+			return False
+		# check Order Queue in dieser Stadt
+		for iOrderCurrentCity in range(pCity.getOrderQueueLength()):
+				pOrder = pCity.getOrderFromQueue(iOrderCurrentCity)
+				if pOrder.eOrderType == OrderTypes.ORDER_CONSTRUCT and pOrder.iData1 == iBuilding:
+						return False
+		return True
 
 

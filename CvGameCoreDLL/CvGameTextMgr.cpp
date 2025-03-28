@@ -1097,6 +1097,14 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 					szString.append(gDLL->getText("TXT_KEY_UNIT_DEFENSE", pUnit->terrainDefenseModifier((TerrainTypes)iI), GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
 				}
 			}
+
+			// PAE
+			if (pUnit->getUnitInfo().getTerrainImpassable((TerrainTypes)iI))
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_TERRAIN", GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+			}
+
 		}
 
 		for (iI = 0; iI < GC.getNumFeatureInfos(); ++iI)
@@ -1123,6 +1131,14 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 					szString.append(gDLL->getText("TXT_KEY_UNIT_DEFENSE", pUnit->featureDefenseModifier((FeatureTypes)iI), GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide()));
 				}
 			}
+
+			// PAE
+			if (pUnit->getUnitInfo().getFeatureImpassable((FeatureTypes)iI))
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_TERRAIN", GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide()));
+			}
+
 		}
 
 		for (iI = 0; iI < GC.getNumUnitClassInfos(); ++iI)
@@ -3067,6 +3083,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				{
 					szString.append(ENDCOLR);
 				}
+
 			}
 		}
 
@@ -3085,7 +3102,28 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}
 
 		// PAE start (more plot infos on MouseOver)
+
 		RouteTypes eRoute = pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true);
+
+		// Chariots: no movement on forests, jungle without roads
+		if (eRoute == NO_ROUTE && pPlot->getFeatureType() != NO_FEATURE) {
+			if (pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_FOREST") ||
+				 pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
+				 pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_DICHTERWALD") )
+			{
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_FEATURE"));
+			}
+		}
+
+		// Settler: cannot found cities
+		if (!pPlot->isPeak() && !GC.getTerrainInfo(pPlot->getTerrainType()).isFound())
+		{
+			szString.append(NEWLINE);
+			szString.append(gDLL->getText("TXT_KEY_TERRAIN_FOUND_INFO", GC.getTerrainInfo(pPlot->getTerrainType()).getDescription()));
+		}
+
+		// Movement bonus on roads
 		int iMovementCost = 0;
 		if (eRoute != NO_ROUTE) {
 

@@ -2782,11 +2782,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INFO_LIMES_0</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Secure Limes[COLOR_REVERT][NEWLINE][ICON_BULLET]Replaces existing improvement[NEWLINE][ICON_BULLET]Increases defense bonus[NEWLINE][ICON_BULLET]+2 [ICON_COMMERCE]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Renforcer Limes [COLOR_REVERT][NEWLINE][ICON_BULLET]Remplace les am&#233;nagements d&#233;j&#224; pr&#233;sents[NEWLINE][ICON_BULLET]Augmente le bonus d&#233;fensif[NEWLINE][ICON_BULLET]+2[ICON_COMMERCE]</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Limes befestigen[COLOR_REVERT][NEWLINE][ICON_BULLET]Ersetzt darunterliegende Modernisierung[NEWLINE][ICON_BULLET]Erh&#246;ht den Verteidigungsbonus[NEWLINE][ICON_BULLET]+2[ICON_COMMERCE]</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Limes sicure[COLOR_REVERT][NEWLINE][ICON_BULLET]Sostituisce il miglioramento esistente[NEWLINE][ICON_BULLET]Aumenta il bonus di difesa[NEWLINE][ICON_BULLET]+2 [ICON_COMMERCE]</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Limes de seguridad[COLOR_REVERT][NEWLINE][ICON_BULLET]Reemplaza mejora existente[NEWLINE][ICON_BULLET]Aumenta el bonus defensivo[NEWLINE][ICON_BULLET]+2 [ICON_COMMERCE]</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Establish the Limes[COLOR_REVERT][NEWLINE][ICON_BULLET]Opens a build menu with Limes variants[NEWLINE][ICON_BULLET]Replaces existing improvement[NEWLINE][ICON_BULLET]Increases defense bonus[NEWLINE][ICON_BULLET]+2 [ICON_COMMERCE]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]&#201;tablir le Limes [COLOR_REVERT][NEWLINE][ICON_BULLET]Ouvre un menu de construction avec des variantes de Limes[NEWLINE][ICON_BULLET]Remplace les am&#233;nagements d&#233;j&#224; pr&#233;sents[NEWLINE][ICON_BULLET]Augmente le bonus d&#233;fensif[NEWLINE][ICON_BULLET]+2[ICON_COMMERCE]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Limes befestigen[COLOR_REVERT][NEWLINE][ICON_BULLET]&#214;ffnet ein Baumen&#252; mit Limes-Varianten[NEWLINE][ICON_BULLET]Ersetzt darunterliegende Modernisierung[NEWLINE][ICON_BULLET]Erh&#246;ht den Verteidigungsbonus[NEWLINE][ICON_BULLET]+2[ICON_COMMERCE]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Stabilire un Limes[COLOR_REVERT][NEWLINE][ICON_BULLET]Apre un menu di build con le varianti di Limes[NEWLINE][ICON_BULLET]Sostituisce il miglioramento esistente[NEWLINE][ICON_BULLET]Aumenta il bonus di difesa[NEWLINE][ICON_BULLET]+2 [ICON_COMMERCE]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Establecer un Limes[COLOR_REVERT][NEWLINE][ICON_BULLET]Abre un men&#250; de construcci&#243;n con variantes de Limes[NEWLINE][ICON_BULLET]Reemplaza mejora existente[NEWLINE][ICON_BULLET]Aumenta el bonus defensivo[NEWLINE][ICON_BULLET]+2 [ICON_COMMERCE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INFO_LIMES_1</Tag>
@@ -8590,11 +8590,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ELEFANT_HELP</Tag>
-		<English>[ICON_BULLET]Can be sold in foreign cities[NEWLINE][ICON_BULLET]Can not be distributed[NEWLINE][ICON_BULLET]Defensive only [ICON_STRENGTH]</English>
-		<French>[ICON_BULLET]Peut &#234;tre vendu dans des villes &#233;trang&#232;res[NEWLINE][ICON_BULLET]Ne peut pas &#234;tre implant&#233;[NEWLINE][ICON_BULLET]Ne peut que d&#233;fendre [ICON_STRENGTH]</French>
-		<German>[ICON_BULLET]Kann in fremden St&#228;dten verkauft werden[NEWLINE][ICON_BULLET]Kann nicht verbreitet werden[NEWLINE][ICON_BULLET]Kann nur verteidigen [ICON_STRENGTH]</German>
-		<Italian>[ICON_BULLET]Pu&#242; essere venduto in citt&#224; straniere[NEWLINE][ICON_BULLET]Non pu&#242; essere distribuito[NEWLINE][ICON_BULLET]Pu&#242; solo difendere [ICON_STRENGTH]</Italian>
-		<Spanish>[ICON_BULLET]Se puede vender en ciudades extranjeras[NEWLINE][ICON_BULLET]No se puede distribuir[NEWLINE][ICON_BULLET]Solo puedo defender [ICON_STRENGTH]</Spanish>
+		<English>[ICON_BULLET]Can be sold in foreign cities[NEWLINE][ICON_BULLET]Can not be distributed[NEWLINE][ICON_BULLET]Defensive only [ICON_STRENGTH][NEWLINE][ICON BULLET]Wild elephants can create an elephant resource in jungles if there is none within a 5x5 radius and the surrounding area consists of at least 50% jungle.</English>
+		<French>[ICON_BULLET]Peut &#234;tre vendu dans des villes &#233;trang&#232;res[NEWLINE][ICON_BULLET]Ne peut pas &#234;tre implant&#233;[NEWLINE][ICON_BULLET]Ne peut que d&#233;fendre [ICON_STRENGTH][NEWLINE][ICON_BULLET]Les &#233;l&#233;phants sauvages peuvent cr&#233;er une ressource d'&#233;l&#233;phants dans les jungles s'il n'y en a pas dans un rayon de 5x5 et que la zone environnante est constitu&#233;e d'au moins 50 % de jungle.</French>
+		<German>[ICON_BULLET]Kann in fremden St&#228;dten verkauft werden[NEWLINE][ICON_BULLET]Kann nicht verbreitet werden[NEWLINE][ICON_BULLET]Kann nur verteidigen [ICON_STRENGTH][NEWLINE][ICON_BULLET]Wilde Elefanten k&#246;nnen in Dschungeln eine Elefantenressource erstellen, wenn im Umkreis von 5x5 keine vorhanden ist und die Umgebung aus min. 50% Dschungel besteht.</German>
+		<Italian>[ICON_BULLET]Pu&#242; essere venduto in citt&#224; straniere[NEWLINE][ICON_BULLET]Non pu&#242; essere distribuito[NEWLINE][ICON_BULLET]Pu&#242; solo difendere [ICON_STRENGTH][NEWLINE][ICONA PUNTINO]Gli elefanti selvatici possono creare una risorsa elefante nella giungla se non ce n'&#232; nessuna entro un raggio di 5x5 e se l'area circostante &#232; composta almeno per il 50% da giungla.</Italian>
+		<Spanish>[ICON_BULLET]Se puede vender en ciudades extranjeras[NEWLINE][ICON_BULLET]No se puede distribuir[NEWLINE][ICON_BULLET]Solo puedo defender [ICON_STRENGTH][NEWLINE][ICON BULLET]Los elefantes salvajes pueden crear un recurso de elefantes en las junglas si no hay ninguno dentro de un radio de 5x5 y el &#225;rea circundante consiste en al menos un 50% de jungla.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EROBERT</Tag>
@@ -8646,11 +8646,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSE_HELP</Tag>
-		<English>[ICON_BULLET]Can be sold in foreign cities[NEWLINE][ICON_BULLET]Can be distributed in cities with flatlands. Improvements prevents the distribution.</English>
-		<French>[ICON_BULLET]Peut &#234;tre vendu dans des villes &#233;trang&#232;res[NEWLINE][ICON_BULLET]Peut &#234;tre implant&#233; dans une plaine/prairie non am&#233;nag&#233;e pr&#232;s d'une ville</French>
-		<German>[ICON_BULLET]Kann in fremden St&#228;dten verkauft werden[NEWLINE][ICON_BULLET]Kann in St&#228;dten mit Flachland verbreitet werden. Modernisierungen verhindern die Verbreitung.</German>
-		<Italian>[ICON_BULLET]Pu&#242; essere venduto in citt&#224; straniere[NEWLINE][ICON_BULLET]Pu&#242; essere distribuito in citt&#224; con pianura. I miglioramenti impediscono la distribuzione.</Italian>
-		<Spanish>[ICON_BULLET]Se puede vender en ciudades extranjeras[NEWLINE][ICON_BULLET]Puede ser distribuido en ciudades con planicies. Las mejoras impiden la distribuci&#243;n.</Spanish>
+		<English>[ICON_BULLET]Can accelerate production in cities[NEWLINE][ICON_BULLET]Can be sold in foreign cities[NEWLINE][ICON_BULLET]Can be distributed in cities with flatlands. Improvements prevents the distribution.</English>
+		<French>[ICON_BULLET]Peut acc&#233;l&#233;rer la production dans les villes[NEWLINE][ICON_BULLET]Peut &#234;tre vendu dans des villes &#233;trang&#232;res[NEWLINE][ICON_BULLET]Peut &#234;tre implant&#233; dans une plaine/prairie non am&#233;nag&#233;e pr&#232;s d'une ville</French>
+		<German>[ICON_BULLET]Kann die Produktion in St&#228;dten beschleunigen[NEWLINE][ICON_BULLET]Kann in fremden St&#228;dten verkauft werden[NEWLINE][ICON_BULLET]Kann in St&#228;dten mit Flachland verbreitet werden. Modernisierungen verhindern die Verbreitung.</German>
+		<Italian>[ICON_BULLET]Pu&#242; accelerare la produzione nelle citt&#224;[NEWLINE][ICON_BULLET]Pu&#242; essere venduto in citt&#224; straniere[NEWLINE][ICON_BULLET]Pu&#242; essere distribuito in citt&#224; con pianura. I miglioramenti impediscono la distribuzione.</Italian>
+		<Spanish>[ICON_BULLET]Puede acelerar la producci&#243;n en las ciudades[NEWLINE][ICON_BULLET]Se puede vender en ciudades extranjeras[NEWLINE][ICON_BULLET]Puede ser distribuido en ciudades con planicies. Las mejoras impiden la distribuci&#243;n.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INSTANCE_COST_MOD</Tag>

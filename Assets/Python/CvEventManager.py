@@ -2189,7 +2189,24 @@ class CvEventManager:
 				# Go2city button
 				elif iData1 == 773:
 						PAE_Unit.onModNetMessage(argsList)
+				# terraforming button (Great prophet)
+				elif iData1 == 774:
+						pPlayer = gc.getPlayer(iData4)
+						pUnit = pPlayer.getUnit(iData5)
+						pPlot = pUnit.plot()
+						if pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_DESERT"):
+							iNewTerrain = gc.getInfoTypeForString("TERRAIN_PLAINS")
+						elif pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_TUNDRA"):
+							iNewTerrain = gc.getInfoTypeForString("TERRAIN_GRASS")
 
+						pPlot.setTerrainType(iNewTerrain,1,1)
+
+						if pPlayer.isHuman():
+								CyInterface().addMessage(iData4, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TERRAFORMING", ()),
+								"AS2D_WELOVEKING", 2, gc.getTerrainInfo(iNewTerrain).getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
+
+						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
+						pUnit = None
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -2914,13 +2931,14 @@ class CvEventManager:
 
 					# PAE 6.16: Triggering PAE events
 					iEvent = -1
-					iRand = CvUtil.myRandom(20, "Trigger PAE Sumpf Events")
+					iRand = CvUtil.myRandom(20, "Trigger PAE Events")
 					if iRand < 3:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_MOOR")
 					elif iRand < 5:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_MOORPROMO")
-					elif iRand < 10:
+					elif iRand < 8:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_BORDELL")
+
 					if iEvent != -1: 
 							pPlayer.trigger(iEvent)
 							pPlayer.resetEventOccured(iEvent)
@@ -5367,9 +5385,9 @@ class CvEventManager:
 
 							# PAE 6.14: Allgemeine Religionskonflikte
 							PAE_Christen.removePagans(pCity)
-							#if not PAE_Christen.removePagans(pCity):
-							#		# PAE 7.x
-							#		PAE_Christen.doReligionsKonflikt(pCity)
+							if not PAE_Christen.removePagans(pCity):
+									# PAE 7.x
+									PAE_Christen.doReligionsKonflikt(pCity)
 
 							# CivilWar, Stadt kann barbarisch werden (pCity pointer weg!)
 							bRevolt = PAE_City.doCheckCivilWar(pCity)

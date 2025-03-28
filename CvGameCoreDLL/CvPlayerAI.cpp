@@ -177,12 +177,30 @@ void CvPlayerAI::AI_reset(bool bConstructor)
 	m_iCivicTimer = 0;
 	m_iReligionTimer = 0;
 	m_iExtraGoldTarget = 0;
-
+	
+/* BTS
 	for (iI = 0; iI < NUM_UNITAI_TYPES; iI++)
 	{
 		m_aiNumTrainAIUnits[iI] = 0;
 		m_aiNumAIUnits[iI] = 0;
 	}
+*/
+/************************************************************************************************/
+/* CHANGE_PLAYER                         06/08/09                                 jdog5000      */
+/*                                                                                              */
+/*                                                                                              */
+/************************************************************************************************/
+	if( bConstructor || getNumUnits() == 0 )
+	{
+		for (iI = 0; iI < NUM_UNITAI_TYPES; iI++)
+		{
+			m_aiNumTrainAIUnits[iI] = 0;
+			m_aiNumAIUnits[iI] = 0;
+		}
+	}
+/************************************************************************************************/
+/* CHANGE_PLAYER                           END                                                  */
+/************************************************************************************************/
 
 	for (iI = 0; iI < MAX_PLAYERS; iI++)
 	{

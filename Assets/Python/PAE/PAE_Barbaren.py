@@ -355,6 +355,11 @@ def doHuns():
 		elif iGameTurn >= 400 and iGameTurn <= 500 and iGameTurn % 10 == 0:
 				iHuns = 18  # Diesen Wert auch unten bei der Meldung angeben!
 
+		if not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ADVANCED_START) and gc.getGame().getGameTurnYear() != gc.getDefineINT("START_YEAR"):
+				iEra = gc.getGame().getStartEra()
+				if iEra > 0:
+						iHuns = int(iHuns / iEra)
+
 		if iHuns == 0:
 				return
 
@@ -519,21 +524,57 @@ def doVikings():
 def doOnUnitMove(pUnit, pPlot, pOldPlot):
 		# Seevoelkereinheit wird entladen, leere Seevoelkerschiffe werden gekillt
 		if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_SEEVOLK"):
-				if not pUnit.hasCargo():
-						# COMMAND_DELETE can cause CtD if used in onUnitMove()
-						# pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
-						pUnit.kill(True, -1)
-						return True
-				else:
-						if pOldPlot.getOwner() == -1 and pPlot.getOwner() != -1:
-								if gc.getPlayer(pPlot.getOwner()).isHuman():
-										CyInterface().addMessage(pPlot.getOwner(), True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_SEEVOLK_ALERT", ()), None, 2, pUnit.getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
-								if pPlot.getOwner() == gc.getGame().getActivePlayer():
-										CyAudioGame().Play2DSound("AS2D_THEIRDECLAREWAR")
+			if not pUnit.hasCargo():
+				# COMMAND_DELETE can cause CtD if used in onUnitMove()
+				# pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
+				pUnit.kill(True, -1)
+				return True
+			else:
+				if pOldPlot.getOwner() == -1 and pPlot.getOwner() != -1:
+					if gc.getPlayer(pPlot.getOwner()).isHuman():
+						CyInterface().addMessage(pPlot.getOwner(), True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_SEEVOLK_ALERT", ()), None, 2, pUnit.getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+					if pPlot.getOwner() == gc.getGame().getActivePlayer():
+						CyAudioGame().Play2DSound("AS2D_THEIRDECLAREWAR")
 
 		# Ziegen bleiben auf Bergen, wenn sie wegen Kulturgrenzen ausgeschlossen sind
 		if pPlot.isPeak() and pOldPlot.isPeak():
-				if CvUtil.myRandom(3, "killGoatsOnPeaks") == 1:
+			if CvUtil.myRandom(3, "killGoatsOnPeaks") == 1:
+				pUnit.kill(True, -1)
+				return True
+
+		# Elephants can spread the bonus resource
+		if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_ELEFANT"):
+			if CvUtil.myRandom(10, "ElephantSpreadsBonus") == 1:
+				iJungle = gc.getInfoTypeForString("FEATURE_JUNGLE")
+				iBonus = gc.getInfoTypeForString("BONUS_IVORY")
+				if pPlot.getFeatureType() == iJungle:
+					iX = pPlot.getX()
+					iY = pPlot.getY()
+					iRange = 2
+					iAnzJungle = 0
+					iAnzWhatever = 0
+					lPlayers = []
+					for x in range(-iRange, iRange):
+							for y in range(-iRange, iRange):
+									loopPlot = plotXY(iX, iY, x, y)
+									if not loopPlot.isNone() and not loopPlot.isWater() and not loopPlot.isPeak():
+
+										if loopPlot.getBonusType(-1) == iBonus or loopPlot.getBonusType(loopPlot.getOwner()) == iBonus:
+											return False
+
+										if loopPlot.getFeatureType() == iJungle: iAnzJungle += 1
+										else: iAnzWhatever += 1
+										
+										if loopPlot.getOwner() != -1:
+											if loopPlot.getOwner() not in lPlayers:
+												lPlayers.append(loopPlot.getOwner())
+
+					if iAnzJungle >= iAnzWhatever / 2:
+						pPlot.setBonusType(iBonus)
+						if len(lPlayers):
+							for iPlayer in lPlayers:
+								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_POPUP_ELEPHANT_SPREADS_BONUS", (gc.getBonusInfo(iBonus).getDescription(),)),
+												None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(8), pPlot.getX(), pPlot.getY(), True, True)
 						pUnit.kill(True, -1)
 						return True
 
