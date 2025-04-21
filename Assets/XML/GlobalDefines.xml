@@ -295,7 +295,7 @@
 	</Define>
 	<Define>
 		<DefineName>NUM_BUILDING_PREREQ_OR_BONUSES</DefineName>
-		<iDefineIntVal>6</iDefineIntVal>
+		<iDefineIntVal>7</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>NUM_CORPORATION_PREREQ_BONUSES</DefineName>

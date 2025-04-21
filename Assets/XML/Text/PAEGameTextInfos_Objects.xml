@@ -4994,7 +4994,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FORM_TREFFEN</Tag>
-		<English>Encounting Tactics</English>
+		<English>Encounting-Tactics</English>
 		<French>Piquier</French>
 		<German>Treffen-Taktik</German>
 		<Italian>Tattiche di combattimento</Italian>
@@ -8030,11 +8030,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEZHETAIROI</Tag>
-		<English>Pezhetairos</English>
-		<French>Pezhetairos</French>
-		<German>Pezhetairos</German>
-		<Italian>Pezhetairos</Italian>
-		<Spanish>Pezhetairos</Spanish>
+		<English>Companions on foot</English>
+		<French>Compagnons &#224; pied</French>
+		<German>Gef&#228;hrten zu Fuss</German>
+		<Italian>Compagni a piedi</Italian>
+		<Spanish>Compa&#241;eros a pie</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEZHETAIROI2</Tag>
@@ -8054,11 +8054,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEZHETAIROI4</Tag>
-		<English>Pezhetairos Basilike</English>
-		<French>Pezhetairos Basilike</French>
-		<German>Pezhetairos Basilike</German>
-		<Italian>Pezhetairos Basilike</Italian>
-		<Spanish>Pezhetairos Basilike</Spanish>
+		<English>Ile Basilike</English>
+		<French>Ile Basilike</French>
+		<German>Ile Basilike</German>
+		<Italian>Ile Basilike</Italian>
+		<Spanish>Ile Basilike</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHALANX</Tag>

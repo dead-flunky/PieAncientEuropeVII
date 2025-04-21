@@ -2195,7 +2195,7 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LEVEE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
+					<BuildingType>BUILDING_LEVEE2</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>

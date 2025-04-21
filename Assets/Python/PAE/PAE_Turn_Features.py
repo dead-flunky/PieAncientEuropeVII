@@ -362,28 +362,32 @@ def doPlotFeatures():
 
 		# Tiere setzen --------------------
 		if len(Desert):
-				if CvUtil.myRandom(33, "setAnimals4Desert") == 1:
-						setAnimals(gc.getInfoTypeForString("UNIT_LION"), Desert)
-						setAnimals(gc.getInfoTypeForString("UNIT_LIONESS"), Desert)
+				iChance = CvUtil.myRandom(33, "setAnimals4Desert")
+				if iChance == 1: setAnimals(gc.getInfoTypeForString("UNIT_LION"), Desert)
+				elif iChance == 2: setAnimals(gc.getInfoTypeForString("UNIT_LIONESS"), Desert)
+				elif iChance == 3: setAnimals(gc.getInfoTypeForString("UNIT_HYENA"), Desert)
 		if len(DenseForest):
-				if CvUtil.myRandom(33, "setAnimals4DenseForest") == 1:
-						setAnimals(gc.getInfoTypeForString("UNIT_BEAR"), DenseForest)
-						setAnimals(gc.getInfoTypeForString("UNIT_BEAR2"), DenseForest)
-						setAnimals(gc.getInfoTypeForString("UNIT_UR"), DenseForest)
+				iChance = CvUtil.myRandom(33, "setAnimals4DenseForest")
+				if iChance == 1: setAnimals(gc.getInfoTypeForString("UNIT_BEAR"), DenseForest)
+				elif iChance == 2: setAnimals(gc.getInfoTypeForString("UNIT_BEAR2"), DenseForest)
+				elif iChance == 3: setAnimals(gc.getInfoTypeForString("UNIT_UR"), DenseForest)
 		if len(Tundra):
-				if CvUtil.myRandom(33, "setAnimals4Tundra") == 1:
-						setAnimals(gc.getInfoTypeForString("UNIT_WOLF"), Tundra)
-						setAnimals(gc.getInfoTypeForString("UNIT_WOLF2"), Tundra)
+				iChance = CvUtil.myRandom(33, "setAnimals4Tundra")
+				if iChance == 1: setAnimals(gc.getInfoTypeForString("UNIT_WOLF"), Tundra)
+				elif iChance == 2: setAnimals(gc.getInfoTypeForString("UNIT_WOLF2"), Tundra)
+				elif iChance == 3: setAnimals(gc.getInfoTypeForString("UNIT_HORSE"), Tundra)
 		if len(Jungle):
-				if CvUtil.myRandom(33, "setAnimals4Jungle") == 1:
-						setAnimals(gc.getInfoTypeForString("UNIT_PANTHER"), Jungle)
-						setAnimals(gc.getInfoTypeForString("UNIT_TIGER"), Jungle)
+				iChance = CvUtil.myRandom(33, "setAnimals4Jungle")
+				if iChance == 1: setAnimals(gc.getInfoTypeForString("UNIT_PANTHER"), Jungle)
+				elif iChance == 2: setAnimals(gc.getInfoTypeForString("UNIT_TIGER"), Jungle)
+				elif iChance == 3: setAnimals(gc.getInfoTypeForString("UNIT_LEOPARD"), Jungle)
 		if len(Forest):
-				if CvUtil.myRandom(33, "setAnimals4Forest") == 1:
-						setAnimals(gc.getInfoTypeForString("UNIT_WOLF"), Forest)
-						setAnimals(gc.getInfoTypeForString("UNIT_WOLF2"), Forest)
-						setAnimals(gc.getInfoTypeForString("UNIT_BOAR"), Forest)
-						setAnimals(gc.getInfoTypeForString("UNIT_DEER"), Forest)
+				iChance = CvUtil.myRandom(33, "setAnimals4Forest")
+				if iChance == 1: setAnimals(gc.getInfoTypeForString("UNIT_WOLF"), Forest)
+				elif iChance == 2: setAnimals(gc.getInfoTypeForString("UNIT_WOLF2"), Forest)
+				elif iChance == 3: setAnimals(gc.getInfoTypeForString("UNIT_BOAR"), Forest)
+				elif iChance == 4: setAnimals(gc.getInfoTypeForString("UNIT_DEER"), Forest)
+				elif iChance == 5: setAnimals(gc.getInfoTypeForString("UNIT_ESEL"), Forest)
 		# if len(Plains):
 		#	if CvUtil.myRandom(33, "setAnimals4Plains") == 1:
 		#		setAnimals(gc.getInfoTypeForString("UNIT_LEOPARD"),Plains)
@@ -1026,10 +1030,12 @@ def doOlympicGames():
 								pCity.setNumRealBuilding(iBuildingOlympionike, 1)
 
 								# Stadion verbessern +1 Kultur (Chance 25%)
+								bStadion = False
 								if pCity.isHasBuilding(iBuildingStadion):
 									if CvUtil.myRandom(4, "Olympia_ChanceOfStationCulture") == 1:
 										iCulture = pCity.getBuildingCommerceChange(iBuildingClassStadion, CommerceTypes.COMMERCE_CULTURE) + 1
 										pCity.setBuildingCommerceChange(iBuildingClassStadion, CommerceTypes.COMMERCE_CULTURE, iCulture)
+										bStadion = True
 
 								# Goldkarren erzeugen
 								CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.plot(), gc.getPlayer(pCity.getOwner()))
@@ -1037,12 +1043,12 @@ def doOlympicGames():
 								# einen weiteren bei Seasons
 								if iTurns >= 16:
 										CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.plot(), gc.getPlayer(pCity.getOwner()))
-										# zwei weitere bei Months (insg. 5)
+										# einen weiteren bei Months (insg. 5)
 										if iTurns > 16:
-												CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.plot(), gc.getPlayer(pCity.getOwner()))
 												CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.plot(), gc.getPlayer(pCity.getOwner()))
 
 								# Chance eines beladenen Fuhrwerks
+								eBonus = -1
 								if CvUtil.myRandom(4, "Olympia_ChanceOfBonus") == 1:
 										pNewUnit = CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_SUPPLY_FOOD"), pCity.plot(), gc.getPlayer(pCity.getOwner()))
 										lBonuses = [
@@ -1077,12 +1083,22 @@ def doOlympicGames():
 												bShow = True
 												popupInfo = CyPopupInfo()
 												popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-												sText = CyTranslator().getText("TXT_KEY_INFO_OLYMPIC_GAMES_WINNER", (pCity.getName(), gc.getPlayer(pCity.getOwner()).getCivilizationShortDescription(0)))
+												sText = CyTranslator().getText("TXT_KEY_INFO_OLYMPIC_GAMES_WINNER", (pCity.getName(), gc.getPlayer(iPlayer).getCivilizationShortDescription(0)))
 												popupInfo.setText(sText)
 												popupInfo.addPopup(iPlayer)
+
 										# Ingame Text
 										CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_INFO_OLYMPIC_GAMES_WINNER", (pCity.getName(), gc.getPlayer(pCity.getOwner()).getCivilizationShortDescription(0))),
-																						 xSound, 2, "Art/Interface/Buttons/Buildings/button_building_olympionike.dds", ColorTypes(iColor), pCity.plot().getX(), pCity.plot().getY(), bShow, bShow)
+																		xSound, 2, "Art/Interface/Buttons/Buildings/button_building_olympionike.dds", ColorTypes(iColor), pCity.plot().getX(), pCity.plot().getY(), bShow, bShow)
+
+										# Meldung für den extra Bonus
+										if bShow:
+											if bStadion:
+												CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_INFO_OLYMPIC_GAMES_WINNER_STADION", ()),
+																				xSound, 2, "Art/Interface/Buttons/Buildings/button_building_olympionike.dds", ColorTypes(iColor), pCity.plot().getX(), pCity.plot().getY(), False, False)
+											if eBonus != -1:
+												CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_INFO_OLYMPIC_GAMES_WINNER_BONUS", (gc.getBonusInfo(eBonus).getDescription(),"")),
+																				xSound, 2, "Art/Interface/Buttons/Buildings/button_building_olympionike.dds", ColorTypes(iColor), pCity.plot().getX(), pCity.plot().getY(), False, False)
 # -- Olympiade Ende --
 
 # Besonderes Thing

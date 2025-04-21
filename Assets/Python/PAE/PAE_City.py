@@ -2651,7 +2651,8 @@ def doEmigrantSpawn(pCity):
 		popNeu = max(1, popCity - 1)
 		text = ""
 		bRevoltDanger = False
-		iChance = 4
+		bRevoltDangerWarning = False
+		iChance = 3
 		iCityUnhappy = pCity.unhappyLevel(0) - pCity.happyLevel()
 		iTaxesLimit = getTaxesLimit(pPlayer)
 
@@ -2687,6 +2688,9 @@ def doEmigrantSpawn(pCity):
 		elif pPlayer.getStateReligion() != -1 and not pCity.isHasReligion(pPlayer.getStateReligion()):
 				bRevoltDanger = True
 				text = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_EMIGRANTS_4", (pCity.getName(), popNeu, popCity))
+				if CvUtil.myRandom(2, "doEmigrantSpawnWarning") == 1:
+						bRevoltDangerWarning = True
+						text = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_EMIGRANTS_4_WARNING", (pCity.getName(),))
 		elif pPlayer.getCommercePercent(0) > iTaxesLimit:
 				iChance = int((pPlayer.getCommercePercent(0) - iTaxesLimit) / 5)
 				# Pro Happy Citizen 5% Nachlass
@@ -2696,6 +2700,13 @@ def doEmigrantSpawn(pCity):
 
 		if bRevoltDanger:
 				if CvUtil.myRandom(100, "doEmigrantSpawn") < iChance:
+
+						if bRevoltDangerWarning:
+							if pPlayer.isHuman():
+								CyInterface().addMessage(iPlayer, True, 20, text, "AS2D_REVOLTSTART", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+								"Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(6), pCity.getX(), pCity.getY(), True, True)
+							return
+
 						iUnitType = gc.getInfoTypeForString("UNIT_EMIGRANT")
 						NewUnit = pPlayer.initUnit(iUnitType, pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
@@ -2714,13 +2725,14 @@ def doEmigrantSpawn(pCity):
 						pCity.setPopulation(popNeu)
 						doCheckCityState(pCity)
 
-						if pPlayer.isHuman() and text != "":
-								CyInterface().addMessage(iPlayer, True, 10, text, "AS2D_REVOLTSTART", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-												"Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
-						else:
+						if not pPlayer.isHuman():
 								PAE_Sklaven.doAIReleaseSlaves(pCity)
-				# ***TEST***
-				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Emigrant verlaesst Stadt (Zeile 3624)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+
+						if pPlayer.isHuman() and text != "":
+								CyInterface().addMessage(iPlayer, True, 20, text, "AS2D_REVOLTSTART", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+								"Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+						# ***TEST***
+						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Emigrant verlaesst Stadt (Zeile 3624)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 
 def doLeprosy(pCity):

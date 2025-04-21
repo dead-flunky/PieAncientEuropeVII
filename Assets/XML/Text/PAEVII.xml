@@ -193,6 +193,22 @@
 		<Spanish>[COLOR_WARNING_TEXT]&#161;No hay suficiente oro en tu tesoro![COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INFO_OLYMPIC_GAMES_WINNER_BONUS</Tag>
+		<English>The Olympian was given an additional gift (%s1_bonus) for his outstanding achievements.</English>
+		<French>L'Olympien a re&#231;u un cadeau suppl&#233;mentaire (%s1_bonus) pour ses r&#233;alisations exceptionnelles.</French>
+		<German>Dabei wurde dem Olympioniken ein zus&#228;tzliches Geschenk (%s1_bonus) f&#252;r seine herausragenden Leistungen mitgegeben.</German>
+		<Italian>All'olimpionico &#232; stato dato un regalo aggiuntivo (%s1_bonus) per i suoi straordinari risultati.</Italian>
+		<Spanish>El ol&#237;mpico recibi&#243; un regalo adicional (%s1_bonus) por sus destacados logros.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INFO_OLYMPIC_GAMES_WINNER_STADION</Tag>
+		<English>The resident Olympian was able to score +1[ICON_CULTURE] for the local stadium.</English>
+		<French>L'olympien r&#233;sident a pu marquer +1[ICON_CULTURE] pour le stade local.</French>
+		<German>Der ans&#228;ssige Olympionike konnte f&#252;r das hiesige Stadion +1[ICON_CULTURE] erzielen.</German>
+		<Italian>L'olimpionico residente &#232; riuscito a segnare +1[ICON_CULTURE] per lo stadio locale.</Italian>
+		<Spanish>El ol&#237;mpico residente logr&#243; sumar +1[ICON_CULTURE] para el estadio local.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_KONZIL0_1</Tag>
 		<English>Followers of the Gnostic Basilides are calling on their fellow human beings to abandon their material values. Unrest is breaking out in %s1. A council is needed to prevent such disputes.</English>
 		<French>Les adeptes du gnostique Basilide appellent leurs semblables &#224; se d&#233;tacher de leurs valeurs mat&#233;rielles. Il y a des troubles &#224; %s1. Un conseil est n&#233;cessaire pour &#233;viter de tels conflits.</French>
@@ -431,6 +447,22 @@
 		<German>%F1 Kein Freudenhaus!</German>
 		<Italian>%F1 Niente bordello!</Italian>
 		<Spanish>%F1 &#161;No al burdel!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_REVOLT_RELIGION_LIMIT</Tag>
+		<English>%F1 Too many religions!</English>
+		<French>%F1 Trop de religions !</French>
+		<German>%F1 Zu viele Religionen!</German>
+		<Italian>%F1 Troppe religioni!</Italian>
+		<Spanish>%F1 &#161;Demasiadas religiones!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_EMIGRANTS_4_WARNING</Tag>
+		<English>Due to the absence of your state religion in %s1, the local population feels neglected by your rule. Some citizens are already considering leaving the city.</English>
+		<French>En raison de l'absence de votre religion d'&#201;tat en %s1, la population locale se sent d&#233;laiss&#233;e par votre r&#233;gime. Certains citoyens envisagent d&#233;j&#224; de quitter la ville.</French>
+		<German>Durch die fehlende Staatsreligion in %s1 f&#252;hlt sich die ans&#228;ssige Bev&#246;lkerung unter Eurer F&#252;hrung vernachl&#228;ssigt. Einige B&#252;rger denken schon daran die Stadt zu verlassen.</German>
+		<Italian>A causa dell'assenza della tua religione di stato in %s1, la popolazione locale si sente trascurata dal tuo governo. Alcuni cittadini stanno gi&#224; pensando di lasciare la citt&#224;.</Italian>
+		<Spanish>Debido a la ausencia de su religi&#243;n estatal en %s1, la poblaci&#243;n local se siente desatendida por su gobierno. Algunos ciudadanos ya est&#225;n considerando abandonar la ciudad.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_1</Tag>
@@ -849,6 +881,14 @@
 		<Spanish>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]Se requiere carretera[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_IMPASSABLE_TERRAIN_SHIP</Tag>
+		<English>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]not navigable[COLOR_REVERT]</English>
+		<French>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]non navigable[COLOR_REVERT]</French>
+		<German>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]nicht schiffbar[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]non navigabile[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]no navegable[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SPEARMAN_MEDIEVAL</Tag>
 		<English>Light Pikeman</English>
 		<French>Piquier l&#233;ger</French>
@@ -898,11 +938,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TROJAN_HORSE_HELP</Tag>
-		<English>[ICON BULLET]Can instantly set the defense of cities to 0. The city must have over 50% defense strength.</English>
-		<French>[ICON_BULLET]Peut instantan&#233;ment d&#233;finir la d&#233;fense de la ville &#224; 0. La ville doit avoir plus de 50 % de force de d&#233;fense.</French>
-		<German>[ICON_BULLET]Kann die Verteidung von St&#228;dten sofort auf 0 setzen. Die Stadt muss &#252;ber 50% Verteidigungsst&#228;rke haben.</German>
-		<Italian>[ICON_BULLET]Pu&#242; impostare immediatamente la difesa della citt&#224; a 0. La citt&#224; deve avere una forza difensiva superiore al 50%.</Italian>
-		<Spanish>[ICON_BULLET]Puede establecer instant&#225;neamente la defensa de la ciudad a 0. La ciudad debe tener m&#225;s del 50% de fuerza de defensa.</Spanish>
+		<English>[ICON BULLET]Can instantly set the defense of cities to 0. The city must have over 100% defense strength.</English>
+		<French>[ICON_BULLET]Peut instantan&#233;ment d&#233;finir la d&#233;fense de la ville &#224; 0. La ville doit avoir plus de 100 % de force de d&#233;fense.</French>
+		<German>[ICON_BULLET]Kann die Verteidung von St&#228;dten sofort auf 0 setzen. Die Stadt muss &#252;ber 100% Verteidigungsst&#228;rke haben.</German>
+		<Italian>[ICON_BULLET]Pu&#242; impostare immediatamente la difesa della citt&#224; a 0. La citt&#224; deve avere una forza difensiva superiore al 100%.</Italian>
+		<Spanish>[ICON_BULLET]Puede establecer instant&#225;neamente la defensa de la ciudad a 0. La ciudad debe tener m&#225;s del 100% de fuerza de defensa.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_UNIT_INFO_NACH</Tag>

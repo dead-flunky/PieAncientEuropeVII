@@ -1101,8 +1101,14 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 			// PAE
 			if (pUnit->getUnitInfo().getTerrainImpassable((TerrainTypes)iI))
 			{
-				szString.append(NEWLINE);
-				szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_TERRAIN", GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+				TechTypes eTech = (TechTypes)pUnit->getUnitInfo().getTerrainPassableTech((TerrainTypes)iI);
+				if (NO_TECH == eTech || !GET_TEAM(pUnit->getTeam()).isHasTech(eTech)) {
+					szString.append(NEWLINE);
+					if (pUnit->getDomainType() == DOMAIN_SEA)
+						szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_TERRAIN_SHIP", GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+					else
+						szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_TERRAIN", GC.getTerrainInfo((TerrainTypes) iI).getTextKeyWide()));
+				}
 			}
 
 		}
@@ -1135,8 +1141,11 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 			// PAE
 			if (pUnit->getUnitInfo().getFeatureImpassable((FeatureTypes)iI))
 			{
-				szString.append(NEWLINE);
-				szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_TERRAIN", GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide()));
+				TechTypes eTech = (TechTypes)pUnit->getUnitInfo().getFeaturePassableTech((FeatureTypes)iI);
+				if (NO_TECH == eTech || !GET_TEAM(pUnit->getTeam()).isHasTech(eTech)) {
+					szString.append(NEWLINE);
+					szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_TERRAIN", GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide()));
+				}
 			}
 
 		}
@@ -1611,7 +1620,7 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 
 
 	CvUnit* pLoopUnit;
-	static const uint iMaxNumUnits = 15;
+	static const uint iMaxNumUnits = 10; // PAE, BTS: 15
 	static std::vector<CvUnit*> apUnits;
 	static std::vector<int> aiUnitNumbers;
 	static std::vector<int> aiUnitStrength;
@@ -1730,7 +1739,7 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 
 					if (aiUnitNumbers[iIndex] > 0)
 					{
-						if (iCount < 5 || bFirst)
+						if (iCount < 4 || bFirst)
 						{
 							szString.append(NEWLINE);
 							bFirst = false;
@@ -3073,8 +3082,10 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 				if (pPlot->getFeatureType() != NO_FEATURE)
 				{
+					szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_GREEN_TEXT")));
 					szTempBuffer.Format(L"%s/", GC.getFeatureInfo(pPlot->getFeatureType()).getDescription());
 					szString.append(szTempBuffer);
+					szString.append(ENDCOLR);
 				}
 
 				szString.append(GC.getTerrainInfo(pPlot->getTerrainType()).getDescription());
@@ -3117,7 +3128,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		}
 
 		// Settler: cannot found cities
-		if (!pPlot->isPeak() && !GC.getTerrainInfo(pPlot->getTerrainType()).isFound())
+		if (!pPlot->isPeak() && !pPlot->isWater() && !GC.getTerrainInfo(pPlot->getTerrainType()).isFound())
 		{
 			szString.append(NEWLINE);
 			szString.append(gDLL->getText("TXT_KEY_TERRAIN_FOUND_INFO", GC.getTerrainInfo(pPlot->getTerrainType()).getDescription()));
@@ -3160,6 +3171,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
+			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_DARK_GREEN_TEXT")));
 			// Feature City Health
 			int iCityHealth = GC.getFeatureInfo(pPlot->getFeatureType()).getHealthPercent();
 			if (iCityHealth > 0)
@@ -3183,26 +3195,35 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				szString.append(NEWLINE);
 				szString.append(gDLL->getText("TXT_KEY_MISC_FEAT_GROWTHPERCENT", iGrowth));
 			}
+			szString.append(ENDCOLR);
 		}
 		// PAE end
 
+		// PAE Colors
 		if (pPlot->isFreshWater())
 		{
 			szString.append(NEWLINE);
+			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_BLUE_TEXT")));
 			szString.append(gDLL->getText("TXT_KEY_PLOT_FRESH_WATER"));
+			szString.append(CvWString::format( ENDCOLR));
 		}
 
 		if (pPlot->isLake())
 		{
 			szString.append(NEWLINE);
+			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_BLUE_TEXT")));
 			szString.append(gDLL->getText("TXT_KEY_PLOT_FRESH_WATER_LAKE"));
+			szString.append(CvWString::format( ENDCOLR));
 		}
 
 		if (pPlot->isImpassable())
 		{
 			szString.append(NEWLINE);
+			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(gDLL->getText("TXT_KEY_PLOT_IMPASSABLE"));
+			szString.append(CvWString::format( ENDCOLR));
 		}
+		// PAE -----
 
 		if (GC.getGameINLINE().isDebugMode())
 		{
@@ -3350,8 +3371,14 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		// PAE: eRoute defined above at movementCosts
 		if (eRoute != NO_ROUTE)
 		{
+			// PAE
 			szString.append(NEWLINE);
+			if (eRoute == GC.getInfoTypeForString("ROUTE_TRADE_ROAD") || eRoute == GC.getInfoTypeForString("ROUTE_ROMAN_ROAD"))
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_POSITIVE_TEXT")));
+			else
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT")));
 			szString.append(GC.getRouteInfo(eRoute).getDescription());
+			szString.append(CvWString::format( ENDCOLR));
 			
 			// PAE (more plot infos on MouseOver)
 			if (pPlot->isHills()) {
@@ -3367,8 +3394,8 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 		if (pPlot->getBlockadedCount(GC.getGameINLINE().getActiveTeam()) > 0)
 		{
-			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(NEWLINE);
+			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(gDLL->getText("TXT_KEY_PLOT_BLOCKADED"));
 			szString.append(CvWString::format( ENDCOLR));
 		}
@@ -3449,10 +3476,25 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 	int iRate;
 	int iI;
 
-	iFoodDifference = pCity->foodDifference();
-
+	// PAE City Name & City Status
+	szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_UNIT_TEXT")));
 	szString.append(pCity->getName());
+	szString.append(CvWString::format(ENDCOLR));
 
+	int iCityStatus1 = GC.getInfoTypeForString("BUILDING_SIEDLUNG");
+	int iCityStatus2 = GC.getInfoTypeForString("BUILDING_KOLONIE");
+	int iCityStatus3 = GC.getInfoTypeForString("BUILDING_STADT");
+	int iCityStatus4 = GC.getInfoTypeForString("BUILDING_PROVINZ");
+	int iCityStatus5 = GC.getInfoTypeForString("BUILDING_METROPOLE");
+	if (pCity->getNumRealBuilding((BuildingTypes)iCityStatus5)) szString.append(L" (" + gDLL->getText("TXT_KEY_BUILDING_METROPOLE") + L")");
+	else if (pCity->getNumRealBuilding((BuildingTypes)iCityStatus4)) szString.append(L" (" + gDLL->getText("TXT_KEY_BUILDING_PROVINZ") + L")");
+	else if (pCity->getNumRealBuilding((BuildingTypes)iCityStatus3)) szString.append(L" (" + gDLL->getText("TXT_KEY_BUILDING_STADT") + L")");
+	else if (pCity->getNumRealBuilding((BuildingTypes)iCityStatus2)) szString.append(L" (" + gDLL->getText("TXT_KEY_BUILDING_KOLONIE") + L")");
+	else szString.append(L" (" + gDLL->getText("TXT_KEY_BUILDING_SIEDLUNG") + L")");
+
+	szString.append(NEWLINE);
+
+	iFoodDifference = pCity->foodDifference();
 	if (iFoodDifference <= 0)
 	{
 		szString.append(gDLL->getText("TXT_KEY_CITY_BAR_GROWTH", pCity->getFood(), pCity->growthThreshold()));

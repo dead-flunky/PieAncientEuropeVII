@@ -1402,11 +1402,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_1</Tag>
-		<English>Religious disagreements have enraged some citizens in %s1. A violent street fight ensues. (several religions in one city)</English>
-		<French>Des d&#233;saccords religieux ont enrag&#233; certains citoyens de %s1. Une violente bagarre de rue s'ensuit. (plusieurs religions dans une m&#234;me ville)</French>
-		<German>Religi&#246;se Meinungsverschiedenheiten brachten einige B&#252;rger in %s1 in Wut und Rage. Es kommt zu einer heftigen Stra&#223;enschlacht. (mehrere Religionen in einer Stadt)</German>
-		<Italian>I disaccordi religiosi hanno fatto infuriare alcuni cittadini in %s1. Segue una violenta rissa di strada. (diverse religioni in una citt&#224;)</Italian>
-		<Spanish>Los desacuerdos religiosos han enfurecido a algunos ciudadanos en %s1. Se produce una violenta pelea callejera. (varias religiones en una ciudad)</Spanish>
+		<English>Religious disagreements have enraged some citizens in %s1. A violent street fight ensues.</English>
+		<French>Des d&#233;saccords religieux ont enrag&#233; certains citoyens de %s1. Une violente bagarre de rue s'ensuit.</French>
+		<German>Religi&#246;se Meinungsverschiedenheiten brachten einige B&#252;rger in %s1 in Wut und Rage. Es kommt zu einer heftigen Stra&#223;enschlacht.</German>
+		<Italian>I disaccordi religiosi hanno fatto infuriare alcuni cittadini in %s1. Segue una violenta rissa di strada.</Italian>
+		<Spanish>Los desacuerdos religiosos han enfurecido a algunos ciudadanos en %s1. Se produce una violenta pelea callejera.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_2</Tag>

@@ -1443,17 +1443,17 @@
 			<iHealth>0</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>1</iPlacementOrder>
-			<iConstAppearance>50</iConstAppearance>
+			<iConstAppearance>100</iConstAppearance>
 			<iMinAreaSize>3</iMinAreaSize>
 			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>90</iMaxLatitude>
 			<Rands>
 				<iRandApp1>50</iRandApp1>
-				<iRandApp2>50</iRandApp2>
+				<iRandApp2>0</iRandApp2>
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<iPlayer>0</iPlayer>
+			<iPlayer>50</iPlayer>
 			<iTilesPer>0</iTilesPer>
 			<iMinLandPercent>0</iMinLandPercent>
 			<iUnique>0</iUnique>
@@ -1461,7 +1461,7 @@
 			<iGroupRand>0</iGroupRand>
 			<bArea>0</bArea>
 			<bHills>0</bHills>
-			<bFlatlands>1</bFlatlands>
+			<bFlatlands>0</bFlatlands>
 			<bNoRiverSide>0</bNoRiverSide>
 			<bNormalize>0</bNormalize>
 			<TerrainBooleans>
@@ -1514,7 +1514,7 @@
 			<iHealth>0</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>1</iPlacementOrder>
-			<iConstAppearance>50</iConstAppearance>
+			<iConstAppearance>100</iConstAppearance>
 			<iMinAreaSize>3</iMinAreaSize>
 			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>90</iMaxLatitude>
@@ -1524,7 +1524,7 @@
 				<iRandApp3>0</iRandApp3>
 				<iRandApp4>0</iRandApp4>
 			</Rands>
-			<iPlayer>0</iPlayer>
+			<iPlayer>25</iPlayer>
 			<iTilesPer>0</iTilesPer>
 			<iMinLandPercent>0</iMinLandPercent>
 			<iUnique>0</iUnique>
@@ -1585,7 +1585,7 @@
 			<iHealth>0</iHealth>
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>1</iPlacementOrder>
-			<iConstAppearance>50</iConstAppearance>
+			<iConstAppearance>100</iConstAppearance>
 			<iMinAreaSize>3</iMinAreaSize>
 			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>90</iMaxLatitude>

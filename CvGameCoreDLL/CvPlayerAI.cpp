@@ -410,6 +410,84 @@ void CvPlayerAI::AI_doTurnUnitsPre()
 		return;
 	}
 
+	// PAE Ranged Combat / Range Attack / Fernangriff
+	int iRange = 1;
+	CvUnit* pLoopUnit;
+	CvPlot* plot;
+	CvPlot* loopPlot;
+	int iLoop, iDamage, iUnitDamage, i, iX, iY, x, y, iNumUnits, iOwner, iRand;
+	bool bDoRangeAttack;
+	std::vector<CvPlot*> pAttackPlot1, pAttackPlot2;
+	std::vector<CvPlot*> pAttackPlot;
+
+	for(pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop)) {
+
+		if (pLoopUnit->isRanged() && pLoopUnit->canAttack()) {
+
+			iDamage = 50;
+			bDoRangeAttack = false;
+
+			// Plot holen
+			plot = pLoopUnit->plot();
+
+			// Wenn Unit in der Stadt, immer verteidigen
+			// Wenn Unit alleine auf dem Feld, nicht angreifen sondern eher wegbewegen (AI choice)
+			if (plot->isCity() || plot->getNumUnits() > 1) bDoRangeAttack = true;
+
+			// Plots rundum checken
+			if (bDoRangeAttack) {
+				bDoRangeAttack = false;
+				iX = pLoopUnit->getX();
+				iY = pLoopUnit->getY();
+
+				for (x = -iRange; x <= iRange; x++) {
+					for (y = -iRange; y <= iRange; y++) {
+						loopPlot = plotXY(iX, iY, x, y);
+						if (loopPlot != NULL) {
+							iNumUnits = loopPlot->getNumUnits();
+							if (iNumUnits > 0) {
+								for (i = 0; i < iNumUnits; i++) {
+									iOwner = loopPlot->getUnitByIndex(i)->getOwner();
+									if (iOwner != getID()) {
+										if (GET_TEAM(getTeam()).isAtWar(GET_PLAYER((PlayerTypes)iOwner).getTeam())) {
+
+											iUnitDamage = loopPlot->getUnitByIndex(i)->getDamage();
+											if (iUnitDamage < iDamage) {
+												if (iUnitDamage < iDamage/2) pAttackPlot1.push_back(loopPlot);
+												else pAttackPlot2.push_back(loopPlot);
+												bDoRangeAttack = true;
+												break;
+											}
+
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			if (bDoRangeAttack) {
+				if (!pAttackPlot1.empty()) {
+					iRand = GC.getGameINLINE().getSorenRandNum(pAttackPlot1.size(), "onEndPlayerTurn (AI): Choose primary Plot for Ranged Combat");
+					pAttackPlot.push_back(pAttackPlot1[iRand]);
+				} else if (!pAttackPlot2.empty()) {
+					iRand = GC.getGameINLINE().getSorenRandNum(pAttackPlot2.size(), "onEndPlayerTurn (AI): Choose secondary Plot for Ranged Combat");
+					pAttackPlot.push_back(pAttackPlot2[iRand]);
+				}
+
+				if (!pAttackPlot.empty()) {
+					pLoopUnit->rangeStrike(pAttackPlot[0]->getX(), pAttackPlot[0]->getY());
+					// pLoopUnit->finishMoves();
+				}
+			}
+
+		}
+	} // pLoopUnit
+	// PAE end
+
+
 	if (isBarbarian())
 	{
 		return;
@@ -420,7 +498,6 @@ void CvPlayerAI::AI_doTurnUnitsPre()
 //		AI_convertUnitAITypesForCrush();
 //	}
 }
-
 
 void CvPlayerAI::AI_doTurnUnitsPost()
 {
@@ -3743,9 +3820,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 															if (AI_isDoStrategy(AI_STRATEGY_DAGGER))
 															{
 																iMilitaryValue += 1000;
-															}															
+															}
 														}
-													}					
+													}
 													iUnitValue += 100;
 													break;
 
@@ -4741,10 +4818,9 @@ void CvPlayerAI::AI_chooseResearch()
 
 		if (eBestTech == NO_TECH)
 		{
-			int iAIResearchDepth;
-			iAIResearchDepth = AI_isDoStrategy(AI_STRATEGY_CULTURE3) ? 2 : 3; // PAE 2 : 3, BTS 1 : 3
+			int iAIResearchDepth = (isHuman() || isBarbarian() || AI_isDoStrategy(AI_STRATEGY_CULTURE3)) ? 1 : 3;
 
-			eBestTech = AI_bestTech((isHuman()) ? 1 : iAIResearchDepth);
+			eBestTech = AI_bestTech(iAIResearchDepth);
 		}
 
 		if (eBestTech != NO_TECH)

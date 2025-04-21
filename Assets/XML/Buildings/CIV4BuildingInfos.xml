@@ -23,7 +23,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DEFENCES</ObsoleteTech>
 			<PrereqTech>TECH_FENCES</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -185,7 +185,7 @@
 			<VictoryPrereq/>
 			<FreeStartEra/>
 			<MaxStartEra/>
-			<ObsoleteTech/>
+			<ObsoleteTech>TECH_DEFENCES</ObsoleteTech>
 			<PrereqTech>TECH_FENCES</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -5292,19 +5292,19 @@
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HIPPODROME</ArtDefineTag>
 			<MovieDefineTag/>
-			<HolyCity>NONE</HolyCity>
-			<ReligionType>NONE</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<HolyCity/>
+			<ReligionType/>
+			<StateReligion/>
 			<bStateReligion>0</bStateReligion>
-			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCorporation>NONE</PrereqCorporation>
-			<FoundsCorporation>NONE</FoundsCorporation>
-			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
-			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
-			<VictoryPrereq>NONE</VictoryPrereq>
-			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>NONE</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<PrereqReligion/>
+			<PrereqCorporation/>
+			<FoundsCorporation/>
+			<GlobalReligionCommerce/>
+			<GlobalCorporationCommerce/>
+			<VictoryPrereq/>
+			<FreeStartEra/>
+			<MaxStartEra/>
+			<ObsoleteTech/>
 			<PrereqTech>TECH_HELLENISMUS2</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_HORSE</Bonus>
@@ -6752,7 +6752,7 @@
 			<GlobalReligionCommerce/>
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
-			<FreeStartEra/>
+			<FreeStartEra>ERA_IRON</FreeStartEra>
 			<MaxStartEra/>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_POTTERY</PrereqTech>
@@ -7440,7 +7440,7 @@
 			<GlobalReligionCommerce/>
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
-			<FreeStartEra/>
+			<FreeStartEra>ERA_IRON</FreeStartEra>
 			<MaxStartEra/>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_TAUBENZUCHT</PrereqTech>
@@ -7610,7 +7610,7 @@
 			<GlobalReligionCommerce/>
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
-			<FreeStartEra>ERA_LATE_ANTIQUITY</FreeStartEra>
+			<FreeStartEra/>
 			<MaxStartEra/>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_BASILICA</PrereqTech>
@@ -7783,7 +7783,7 @@
 			<GlobalReligionCommerce/>
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
-			<FreeStartEra>ERA_LATE_ANTIQUITY</FreeStartEra>
+			<FreeStartEra/>
 			<MaxStartEra/>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_BUENDNISSE</PrereqTech>
@@ -11993,7 +11993,7 @@
 			<GlobalReligionCommerce/>
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
-			<FreeStartEra/>
+			<FreeStartEra>ERA_CLASSICAL</FreeStartEra>
 			<MaxStartEra/>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_AGRICULTURE2</PrereqTech>
@@ -14498,6 +14498,7 @@
 				<BonusType>BONUS_COW</BonusType>
 				<BonusType>BONUS_SHEEP</BonusType>
 				<BonusType>BONUS_PIG</BonusType>
+				<BonusType>BONUS_ESEL</BonusType>
 				<BonusType>BONUS_HORSE</BonusType>
 				<BonusType>BONUS_CAMEL</BonusType>
 				<BonusType>BONUS_DEER</BonusType>
@@ -15082,10 +15083,6 @@
 					<BuildingClassType>BUILDINGCLASS_KOLONIE</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
 				</BuildingClassNeeded>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_POTTERY</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
 			</BuildingClassNeededs>
 			<SpecialistYieldChanges/>
 			<BonusYieldModifiers>
@@ -15093,7 +15090,7 @@
 					<BonusType>BONUS_COPPER</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>20</iYield>
+						<iYield>25</iYield>
 						<iYield>0</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
@@ -15102,7 +15099,7 @@
 					<YieldModifiers>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>20</iYield>
+						<iYield>25</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 				<BonusYieldModifier>
@@ -15110,7 +15107,7 @@
 					<YieldModifiers>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>20</iYield>
+						<iYield>25</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 			</BonusYieldModifiers>
@@ -15285,14 +15282,10 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_WINDOFEN</BuildingClassType>
-					<iNumBuildingNeeded>4</iNumBuildingNeeded>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_POTTERY</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_WINDOFEN</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -15304,7 +15297,7 @@
 					<BonusType>BONUS_COPPER</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>30</iYield>
+						<iYield>25</iYield>
 						<iYield>0</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
@@ -15313,7 +15306,7 @@
 					<YieldModifiers>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>30</iYield>
+						<iYield>25</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 				<BonusYieldModifier>
@@ -15321,7 +15314,7 @@
 					<YieldModifiers>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>30</iYield>
+						<iYield>25</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 			</BonusYieldModifiers>
@@ -15366,8 +15359,9 @@
 			<TechTypes/>
 			<Bonus/>
 			<PrereqBonuses>
-				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_BRONZE</BonusType>
+				<BonusType>BONUS_SILVER</BonusType>
+				<BonusType>BONUS_GOLD</BonusType>
 			</PrereqBonuses>
 			<ProductionTraits/>
 			<HappinessTraits/>
@@ -15501,19 +15495,27 @@
 			<SpecialistYieldChanges/>
 			<BonusYieldModifiers>
 				<BonusYieldModifier>
-					<BonusType>BONUS_COPPER</BonusType>
+					<BonusType>BONUS_BRONZE</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>20</iYield>
+						<iYield>25</iYield>
 						<iYield>0</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 				<BonusYieldModifier>
-					<BonusType>BONUS_BRONZE</BonusType>
+					<BonusType>BONUS_SILVER</BonusType>
 					<YieldModifiers>
 						<iYield>0</iYield>
-						<iYield>20</iYield>
 						<iYield>0</iYield>
+						<iYield>25</iYield>
+					</YieldModifiers>
+				</BonusYieldModifier>
+				<BonusYieldModifier>
+					<BonusType>BONUS_GOLD</BonusType>
+					<YieldModifiers>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>25</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 			</BonusYieldModifiers>
@@ -15550,7 +15552,7 @@
 			<GlobalReligionCommerce/>
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
-			<FreeStartEra>ERA_CLASSICAL</FreeStartEra>
+			<FreeStartEra>ERA_LATE_ANTIQUITY</FreeStartEra>
 			<MaxStartEra/>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_RENNOFEN</PrereqTech>
@@ -16437,10 +16439,6 @@
 			<BuildingHappinessChanges/>
 			<PrereqBuildingClasses/>
 			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_STADT</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
 				<BuildingClassNeeded>
 					<BuildingClassType>BUILDINGCLASS_WERKSTATT</BuildingClassType>
 					<bNeededInCity>1</bNeededInCity>
@@ -17660,7 +17658,7 @@
 			<YieldChanges/>
 			<YieldModifiers>
 				<iYield>0</iYield>
-				<iYield>10</iYield>
+				<iYield>25</iYield>
 				<iYield>0</iYield>
 			</YieldModifiers>
 			<CommerceChanges/>
@@ -17702,7 +17700,7 @@
 					<YieldModifiers>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>5</iYield>
+						<iYield>25</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 				<BonusYieldModifier>
@@ -17710,7 +17708,7 @@
 					<YieldModifiers>
 						<iYield>0</iYield>
 						<iYield>0</iYield>
-						<iYield>5</iYield>
+						<iYield>25</iYield>
 					</YieldModifiers>
 				</BonusYieldModifier>
 			</BonusYieldModifiers>
@@ -36944,19 +36942,19 @@
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ISLAMIC_TEMPLE</ArtDefineTag>
 			<MovieDefineTag/>
-			<HolyCity>NONE</HolyCity>
+			<HolyCity/>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion/>
 			<bStateReligion>0</bStateReligion>
 			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
-			<PrereqCorporation>NONE</PrereqCorporation>
-			<FoundsCorporation>NONE</FoundsCorporation>
-			<GlobalReligionCommerce>NONE</GlobalReligionCommerce>
-			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
-			<VictoryPrereq>NONE</VictoryPrereq>
-			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>NONE</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<PrereqCorporation/>
+			<FoundsCorporation/>
+			<GlobalReligionCommerce/>
+			<GlobalCorporationCommerce/>
+			<VictoryPrereq/>
+			<FreeStartEra/>
+			<MaxStartEra/>
+			<ObsoleteTech/>
 			<PrereqTech>TECH_ISLAM</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -37121,17 +37119,17 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_ISLAMIC</MovieDefineTag>
 			<HolyCity>RELIGION_ISLAM</HolyCity>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
-			<StateReligion>NONE</StateReligion>
+			<StateReligion/>
 			<bStateReligion>0</bStateReligion>
-			<PrereqReligion>NONE</PrereqReligion>
-			<PrereqCorporation>NONE</PrereqCorporation>
-			<FoundsCorporation>NONE</FoundsCorporation>
+			<PrereqReligion/>
+			<PrereqCorporation/>
+			<FoundsCorporation/>
 			<GlobalReligionCommerce>RELIGION_ISLAM</GlobalReligionCommerce>
-			<GlobalCorporationCommerce>NONE</GlobalCorporationCommerce>
-			<VictoryPrereq>NONE</VictoryPrereq>
-			<FreeStartEra>NONE</FreeStartEra>
-			<MaxStartEra>NONE</MaxStartEra>
-			<ObsoleteTech>NONE</ObsoleteTech>
+			<GlobalCorporationCommerce/>
+			<VictoryPrereq/>
+			<FreeStartEra/>
+			<MaxStartEra/>
+			<ObsoleteTech/>
 			<PrereqTech>TECH_ISLAM</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
@@ -37317,7 +37315,7 @@
 			<FreeStartEra/>
 			<MaxStartEra/>
 			<ObsoleteTech/>
-			<PrereqTech>TECH_MANTIK</PrereqTech>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
 			<PrereqBonuses/>
@@ -54431,7 +54429,7 @@
 			<iFreeSpecialist>0</iFreeSpecialist>
 			<iAreaFreeSpecialist>0</iAreaFreeSpecialist>
 			<iGlobalFreeSpecialist>0</iGlobalFreeSpecialist>
-			<iMaintenanceModifier>10</iMaintenanceModifier>
+			<iMaintenanceModifier>5</iMaintenanceModifier>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iGlobalWarWearinessModifier>0</iGlobalWarWearinessModifier>
 			<iEnemyWarWearinessModifier>0</iEnemyWarWearinessModifier>
@@ -54593,7 +54591,7 @@
 			<iFreeSpecialist>0</iFreeSpecialist>
 			<iAreaFreeSpecialist>0</iAreaFreeSpecialist>
 			<iGlobalFreeSpecialist>0</iGlobalFreeSpecialist>
-			<iMaintenanceModifier>10</iMaintenanceModifier>
+			<iMaintenanceModifier>5</iMaintenanceModifier>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iGlobalWarWearinessModifier>0</iGlobalWarWearinessModifier>
 			<iEnemyWarWearinessModifier>0</iEnemyWarWearinessModifier>
@@ -54933,7 +54931,7 @@
 			<iFreeSpecialist>0</iFreeSpecialist>
 			<iAreaFreeSpecialist>0</iAreaFreeSpecialist>
 			<iGlobalFreeSpecialist>0</iGlobalFreeSpecialist>
-			<iMaintenanceModifier>20</iMaintenanceModifier>
+			<iMaintenanceModifier>10</iMaintenanceModifier>
 			<iWarWearinessModifier>0</iWarWearinessModifier>
 			<iGlobalWarWearinessModifier>0</iGlobalWarWearinessModifier>
 			<iEnemyWarWearinessModifier>0</iEnemyWarWearinessModifier>

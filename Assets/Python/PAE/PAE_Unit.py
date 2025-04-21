@@ -3958,7 +3958,7 @@ def TrojanHorsePossible(pUnit):
 								if iCityOwner != iUnitOwner:
 										if gc.getTeam(iUnitOwner).isAtWar(loopCity.getTeam()):
 												iDefense = loopCity.getDefenseModifier(0)
-												if iDefense > 50:
+												if iDefense >= 100:
 														return True
 		return False
 
@@ -4331,7 +4331,10 @@ def getPlotSupplyCost(iPlayer, pPlot):
 			elif iUnitType in L.LMeleeSupplyCombats:
 				iMelee += 1
 
-	return iMounted + iMelee
+	if iMounted + iMelee - iStackLimit1 <= 0:
+		return 0
+	else:
+		return iMounted + iMelee
 
 
 def move2nextPlot(pUnit, bWater):

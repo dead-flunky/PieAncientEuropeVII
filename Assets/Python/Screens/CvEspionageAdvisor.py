@@ -95,7 +95,7 @@ class CvEspionageAdvisor:
             self.szDropdownName = self.DEBUG_DROPDOWN_ID
             screen.addDropDownBoxGFC(self.szDropdownName, 22, 12, 300, WidgetTypes.WIDGET_GENERAL, self.iDebugDropdownID, -1, FontTypes.GAME_FONT)
             for j in range(gc.getMAX_PLAYERS()):
-                if gc.getPlayer(j).isAlive() and not pPlayer.isWatchingCiv():
+                if gc.getPlayer(j).isAlive() and not gc.getPlayer(j).isWatchingCiv():
                     screen.addPullDownString(self.szDropdownName, gc.getPlayer(j).getName(), j, j, False)
 
         # draw the contents

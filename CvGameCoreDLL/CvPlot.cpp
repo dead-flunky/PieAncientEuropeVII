@@ -3621,7 +3621,10 @@ CvUnit *CvPlot::getVisibleEnemyDefender(PlayerTypes ePlayer) const
 
 int CvPlot::getNumDefenders(PlayerTypes ePlayer) const
 {
-	return plotCount(PUF_canDefend, -1, -1, ePlayer);
+	// BTS
+	//return plotCount(PUF_canDefend, -1, -1, ePlayer);
+	// PAE
+	return plotCount(PUF_canDefend, -1, -1, ePlayer) - plotCount(PUF_canSiege, -1, -1, ePlayer);
 }
 
 

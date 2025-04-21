@@ -995,9 +995,9 @@
 				<TechYieldChange>
 					<PrereqTech>TECH_CALENDAR</PrereqTech>
 					<TechYields>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
 						<iYield>1</iYield>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange>
 				<TechYieldChange>
@@ -1011,9 +1011,9 @@
 				<TechYieldChange>
 					<PrereqTech>TECH_SENSE</PrereqTech>
 					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
 						<iYield>1</iYield>
-						<iYield>0</iYield>
-						<iYield>0</iYield>
 					</TechYields>
 				</TechYieldChange> 
 			</TechYieldChanges>

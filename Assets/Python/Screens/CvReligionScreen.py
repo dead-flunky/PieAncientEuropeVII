@@ -252,7 +252,7 @@ class CvReligionScreen:
 						# PAE: late antiquity: do not show abandoned religions
 						xLoop = self.X_RELIGION_START
 						for i in range(gc.getNumReligionInfos()):
-								if gc.getGame().getReligionGameTurnFounded(i) >= 0 and gc.getGame().calculateReligionPercent(i) > 0:
+								if gc.getGame().getReligionGameTurnFounded(i) >= 0 and (gc.getGame().getCurrentEra() < 4 or gc.getGame().calculateReligionPercent(i) > 0):
 										screen.addCheckBoxGFCAt("CivicList", self.getReligionButtonName(i), gc.getReligionInfo(i).getButton(), ArtFileMgr.getInterfaceArtInfo("BUTTON_HILITE_SQUARE").getPath(
 										), self.X_RELIGION_AREA + xLoop - 25, self.Y_RELIGION_AREA + 10, self.BUTTON_SIZE, self.BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, -1, -1, ButtonStyles.BUTTON_STYLE_LABEL, False)
 										# else:
@@ -297,7 +297,7 @@ class CvReligionScreen:
 				# Date Founded:
 				xLoop = self.X_RELIGION_START
 				for i in range(gc.getNumReligionInfos()):
-						if gc.getGame().getReligionGameTurnFounded(i) >= 0 and gc.getGame().calculateReligionPercent(i) > 0:
+						if gc.getGame().getReligionGameTurnFounded(i) >= 0 and (gc.getGame().getCurrentEra() < 4 or gc.getGame().calculateReligionPercent(i) > 0):
 								szFounded = CyGameTextMgr().getTimeStr(gc.getGame().getReligionGameTurnFounded(i), False)
 								screen.setLabelAt("", "CivicList", szFounded, CvUtil.FONT_CENTER_JUSTIFY, self.X_RELIGION_AREA + xLoop,
 																	self.Y_FOUNDED, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -312,7 +312,7 @@ class CvReligionScreen:
 				xLoop = self.X_RELIGION_START
 				for i in range(gc.getNumReligionInfos()):
 						pHolyCity = gc.getGame().getHolyCity(i)
-						if gc.getGame().getReligionGameTurnFounded(i) >= 0 and gc.getGame().calculateReligionPercent(i) > 0:
+						if gc.getGame().getReligionGameTurnFounded(i) >= 0 and (gc.getGame().getCurrentEra() < 4 or gc.getGame().calculateReligionPercent(i) > 0):
 								if not pHolyCity.isRevealed(gc.getPlayer(self.iActivePlayer).getTeam(), False):
 										szFounded = localText.getText("TXT_KEY_UNKNOWN", ())
 										screen.setLabelAt("", "CivicList", szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_HOLY_CITY, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
@@ -332,7 +332,7 @@ class CvReligionScreen:
 
 				xLoop = self.X_RELIGION_START
 				for i in range(gc.getNumReligionInfos()):
-						if gc.getGame().getReligionGameTurnFounded(i) >= 0 and gc.getGame().calculateReligionPercent(i) > 0:
+						if gc.getGame().getReligionGameTurnFounded(i) >= 0 and (gc.getGame().getCurrentEra() < 4 or gc.getGame().calculateReligionPercent(i) > 0):
 								szFounded = str(gc.getGame().calculateReligionPercent(i)) + "%"
 								screen.setLabelAt("", "CivicList", szFounded, CvUtil.FONT_CENTER_JUSTIFY, xLoop, self.Y_INFLUENCE, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 								xLoop += self.DX_RELIGION

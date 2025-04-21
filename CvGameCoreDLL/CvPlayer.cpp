@@ -12470,9 +12470,11 @@ int CvPlayer::findPathLength(TechTypes eTech, bool bCost) const
 	}
 
 	// Ramk
-	updateTechPathCache(eTech);
-	return m_iTechPathCosts[(int)eTech];
-
+	if (bCost)
+	{
+		updateTechPathCache(eTech);
+		return m_iTechPathCosts[(int)eTech];
+	}
 	//The original approach follows...
 	// Ramk
 
@@ -12517,7 +12519,8 @@ int CvPlayer::findPathLength(TechTypes eTech, bool bCost) const
 		iPathLength += iShortestPath;
 	}
 
-	return (iPathLength + ((bCost) ? GET_TEAM(getTeam()).getResearchCost(eTech) : 1));
+	return (iPathLength + ((bCost) ? GET_TEAM(getTeam()).getResearchCost(eTech) : 0)); // PAE
+	//return (iPathLength + ((bCost) ? GET_TEAM(getTeam()).getResearchCost(eTech) : 1)); // BTS
 }
 
 
@@ -22342,10 +22345,10 @@ void CvPlayer::updateTechPathCache(TechTypes eTech) const{
 				// Check if Tech is leaf. If not, add predecessors.
 				if( GET_TEAM(getTeam()).isHasTech(ePreReq) ){
 					m_iTechPathCosts[(int)ePreReq] = 0;
-					if( !In(Active, ePreReq) ) Active.push_back(ePreReq);					
+					if( !In(Active, ePreReq) ) Active.push_back(ePreReq);
 				}else if( m_iTechPathCosts[(int)ePreReq] < MAX_INT ){
-					Y.push_back(ePreReq);					
-					if( !In(Active, ePreReq) ) Active.push_back(ePreReq);					
+					Y.push_back(ePreReq);
+					if( !In(Active, ePreReq) ) Active.push_back(ePreReq);
 				}else{
 					X.push_back(ePreReq);
 				}
@@ -22374,7 +22377,7 @@ void CvPlayer::updateTechPathCache(TechTypes eTech) const{
 			//Active.push_back(x); //not used
 			addSuccessors(x, X, true);
 		}
-	}	
+	}
 
 	//return m_iTechPathCosts[(int)eTech];
 }

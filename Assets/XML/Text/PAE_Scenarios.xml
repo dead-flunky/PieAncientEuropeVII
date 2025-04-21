@@ -3161,6 +3161,30 @@
 		<Spanish>Guerra de Diadochi, 210 aC[NEWLINE][NEWLINE]Este es un mapa muy grande con altos tiempos de giro. 148x118 = 17464 parcelas jugables con 50 civilizaciones jugables.[NEWLINE][NEWLINE]Creado por JohnDay</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_SCENARIO_WDG_DAWNOFMAN</Tag>
+		<English></English>
+		<French></French>
+		<German>Hagelsberg 50 v.Chr.:[NEWLINE]Beim Thing zur Sonnenwende eskalierte es. Mehrere Gruppen, die unterschiedliche Ziele verfolgen, man kennt das. Aber diesmal war es ernst! Die Gemeinschaft der Goten stand wohl kurz vor dem Zusammenbruch...[NEWLINE][NEWLINE]Die Rede war davon, dass sich weit im S&#252;den ein Gegner zeigt, der &#252;ber die letzten Jahrzehnte gesehen immer m&#228;chtiger wurde. Die R&#246;mer! Auch wenn unser Stamm noch weit entfernt scheint, gibt es schon lange die Bef&#252;rchtung, dass die Zeiten sich &#228;ndern k&#246;nnten.[NEWLINE]Ihr seid der Meinung: Sie WERDEN sich &#228;ndern! Die f&#252;hrenden Germanenst&#228;mme im Westen treffen schon seit langem Vorbereitungen. Nur unser &#196;ltester und die ihm treu ergebenen Clanf&#252;rsten wollen die Lage nicht erkennen, sie sind schwach! Und sie sind faul! Sie meinen, dass unser Volk schon genug getan h&#228;tte, dass wir sicher w&#228;ren. Dass die G&#246;tter uns schon sch&#252;tzen w&#252;rden... Es ist j&#228;mmerlich![NEWLINE][NEWLINE]Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!" rief der &#196;lteste noch hinterher. Dank eures Standes konntet ihr immerhin euer Gefolge und die treuesten Soldaten mitnehmen.[NEWLINE][NEWLINE][NEWLINE]Ihr seid Alarich der Gote![NEWLINE]Gestern noch ein angesehener Clanf&#252;rst im Gotenreich, heute ein Verbannter. Die alte Heimat ist zum Feind geworden, ihr m&#252;sst sie als Barbaren betrachten! Aber die Gemeinschaft ist schwach, wir sollten nicht z&#246;gern und zur&#252;ckschlagen![NEWLINE][NEWLINE]Wir k&#246;nnten sofort nach Hagelsberg marschieren. Dem &#196;ltesten pers&#246;nlich die T&#252;r eintreten, durch die er uns grade erst hinausgeworfen hat. Und dort ist auch die zentrale Waffenschmiede, von der aus das ganze Reich versorgt wird. Allerdings ist Hagelsberg gut befestigt...[NEWLINE]Wir k&#246;nnten unseren Feldzug auch weiter s&#252;dlich die Weichsel rauf beginnen, wo mit weniger Widerstand zu rechnen ist. Interessant sind vor allem die Pferde in Gotonen. Die Reiterei ist eine f&#252;r uns noch recht neue Angelegenheit, k&#246;nnte aber ein wichtiger Pfeiler der Armee werden.[NEWLINE][NEWLINE][NEWLINE]Die Entscheidung liegt bei Euch und das Schicksal der wahren Goten liegt in Eurer Hand.[NEWLINE][NEWLINE][ICON_BULLET] EROBERT EINE STADT !</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCENARIO_WDG_DAWNOFMAN_TITLE</Tag>
+		<English></English>
+		<French></French>
+		<German>WEG DER GOTEN</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCENARIO_WDG_INFO</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_SCENARIO_WESTERN_MED</Tag>
 		<English>A map (100x72) based on Keinpferd's scenario "First Punic War" with 24 tribes about 5000 BC. Fixed starting points.[NEWLINE][NEWLINE]Created by Barcas</English>
 		<French>Une carte (100x72) bas&#233;e sur le sc&#233;nario de Keinpferd "Premi&#232;re guerre punique" avec 24 tribus vers 5000 av. Points de d&#233;part fixes.[NEWLINE][NEWLINE]Cr&#233;&#233; par Barcas</French>
@@ -4047,6 +4071,14 @@
 		<German>Belgius der Belgier</German>
 		<Italian>Belgio il belga</Italian>
 		<Spanish>Belgio el belga</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCEN_LEADER_BOIORIX</Tag>
+		<English>Boiorix the Boii</English>
+		<French>Boiorix le Bo&#239;en</French>
+		<German>Boiorix der Boier</German>
+		<Italian>Boiorix il Boii</Italian>
+		<Spanish>Boiorix el Boii</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCEN_LEADER_BOLGIOS</Tag>

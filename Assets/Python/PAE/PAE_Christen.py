@@ -3,7 +3,8 @@
 # Imports
 from CvPythonExtensions import (CyGlobalContext, CyInterface, plotXY, CyPopupInfo, ButtonPopupTypes,
 											CyTranslator, ColorTypes, isWorldWonderClass,
-											isTeamWonderClass, isNationalWonderClass)
+											isTeamWonderClass, isNationalWonderClass,
+											UnitAITypes, DirectionTypes)
 # import CvEventInterface
 import CvUtil
 import PAE_Lists as L
@@ -404,6 +405,7 @@ def removePagans(pCity):
 						return True
 
 					# danach pagane Gebäude zerstören (wenn Relis und Kulte weg sind)
+					# in dieser Reihenfolge
 					LBuildings = [
 						gc.getInfoTypeForString("BUILDING_ANCIENT_OBSERVATORY"),
 						gc.getInfoTypeForString("BUILDING_NUBIAN_PYRAMID"),
@@ -413,7 +415,6 @@ def removePagans(pCity):
 						gc.getInfoTypeForString("BUILDING_GYMNASION"),
 						gc.getInfoTypeForString("BUILDING_ORACLE2"),
 						gc.getInfoTypeForString("BUILDING_HOSPITAL_ROME"),
-						gc.getInfoTypeForString("BUILDING_GLADIATORENSCHULE"),
 						gc.getInfoTypeForString("BUILDING_CORPORATION_1"),
 						gc.getInfoTypeForString("BUILDING_CORPORATION_2"),
 						gc.getInfoTypeForString("BUILDING_CORPORATION_3"),
@@ -436,6 +437,8 @@ def removePagans(pCity):
 						gc.getInfoTypeForString("BUILDING_ACADEMY_4"),
 						gc.getInfoTypeForString("BUILDING_ACADEMY_5"),
 						gc.getInfoTypeForString("BUILDING_ACADEMY_6"),
+						gc.getInfoTypeForString("BUILDING_GLADIATORENSCHULE"),
+						gc.getInfoTypeForString("BUILDING_SKLAVENMARKT"),
 						gc.getInfoTypeForString("BUILDING_BADEHAUS"),
 						gc.getInfoTypeForString("BUILDING_THERME"),
 						gc.getInfoTypeForString("BUILDING_ASKLEPIEION"),
@@ -477,7 +480,7 @@ def doReligionsKonflikt(pCity):
 		pPlayer = gc.getPlayer(iPlayer)
 		pTeam = gc.getTeam(pPlayer.getTeam())
 
-		if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HERESY")): iChance = 6
+		if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HERESY")): iChance = 4
 		else: iChance = 2
 
 		# Chance to abort
@@ -491,23 +494,23 @@ def doReligionsKonflikt(pCity):
 		# Stadt hat mindestens 2 verschiedene Relis (Staatsreligion ausgenommen)
 		iStateReligion = pPlayer.getStateReligion()
 		# Konflikt gibt es nicht, wenn in einer Stadt nur eine Religion existiert (Staatsreligion ist egal)
-		# Konflikt gibt es ab 2 verschiedenen Religionen
-		iKonflikt = 2
+		# Konflikt gibt es bei verschiedenen Religionen je nach Stadtstatus
+		iNumReligions = 0
 		LOtherReligions = []
 		for i in range(gc.getNumReligionInfos()):
 			if pCity.isHasReligion(i):
-				# wenn die Staatsreligion in der Stadt ist, dann besteht der Konflikt schon bei 1 fremden Religion
-				# die Staatsreligion soll nicht in der LOtherReligions gelistet sein, denn das sind die Opfer
+				iNumReligions += 1
+				# die Staatsreligion soll nicht in der LOtherReligions gelistet sein, denn das werden die Opfer
 				# (vor der Spätantike werden dies monotheistische Religionen sein)
-				if i == iStateReligion:
-					iKonflikt = 1
-				else:
+				if i != iStateReligion:
 					LOtherReligions.append(i)
 
-		# größere Städte dürfen 2 Religionen gleichzeitig haben
-		if pCity.getPopulation() > 5: iKonflikt += 1
+		# größere Städte dürfen mehr Religionen gleichzeitig haben
+		iKonflikt = 2
+		if pCity.getPopulation() > 11: iKonflikt += 2
+		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")): iKonflikt += 1
 
-		if len(LOtherReligions) >= iKonflikt:
+		if iNumReligions >= iKonflikt:
 
 			# Religion auswählen
 			i = CvUtil.myRandom(len(LOtherReligions), "ReligionsKonflikt4: LOtherReligions")
@@ -516,18 +519,7 @@ def doReligionsKonflikt(pCity):
 			#pCity.changeOccupationTimer(1)
 
 			# Einheiten verletzen und immobile setzen
-			pPlot = pCity.plot()
-			iRange = pPlot.getNumUnits()
-			for iUnit in range(iRange):
-				pLoopUnit = pPlot.getUnit(iUnit)
-				if pLoopUnit:
-					if pLoopUnit.getDamage() < 30:
-						pLoopUnit.setDamage(15 + CvUtil.myRandom(25, "removePaganReli"), -1)
-					pLoopUnit.setImmobileTimer(1)
-
-			if pPlayer.isHuman():
-				CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_1", (pCity.getName(),)),
-				None, 2, "Art/Interface/Buttons/General/button_icon_angry.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+			doHurtUnitsOnPlot(iPlayer,pCity)
 
 			# 1:3 Der Tempel wird zerstört
 			bTempel = False
@@ -556,8 +548,14 @@ def doReligionsKonflikt(pCity):
 
 			# 1:4 Stadt verliert Pop und ggf Religion
 			if CvUtil.myRandom(4, "ReligionsKonflikt3") == 1:
+				# Pop abziehen
 				iPop = int(pCity.getPopulation() / 5)
+				iPop = max(1,iPop)
 				pCity.changePopulation(-iPop)
+
+				# Kultur verringern
+				iCulture = pCity.getCulture(iPlayer)
+				pCity.changeCulture(iPlayer, -(iCulture/10*iPop), 1)
 
 				# Auswanderer erstellen
 				pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EMIGRANT"), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
@@ -579,11 +577,174 @@ def doReligionsKonflikt(pCity):
 
 		return False
 
+# Einheiten verletzen und immobile setzen
+# Alle anwesenden Einheiten, auch von anderen Playern
+def doHurtUnitsOnPlot(iPlayer,pCity):
+	pPlayer = gc.getPlayer(iPlayer)
+	pPlot = pCity.plot()
+	iRange = pPlot.getNumUnits()
+	for iUnit in range(iRange):
+		pLoopUnit = pPlot.getUnit(iUnit)
+		if pLoopUnit:
+			if pLoopUnit.getDamage() < 30:
+				pLoopUnit.setDamage(15 + CvUtil.myRandom(25, "doHurtUnitsOnPlot"), -1)
+			pLoopUnit.setImmobileTimer(1)
+
+	if pPlayer.isHuman():
+		CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_1", (pCity.getName(),)),
+		None, 2, "Art/Interface/Buttons/General/button_icon_angry.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+
+# CvEventManager: onEndPlayerTurn
+def doKonzile(iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+	pTeam = gc.getTeam(pPlayer.getTeam())
+
+	# Beginnt mit:
+	if not pTeam.isHasTech(gc.getInfoTypeForString("TECH_SKLAVENRECHTE")):
+		return
+
+	# Endet mit:
+	if pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL7")):
+		return
+
+	# Trigger
+	if CvUtil.myRandom(5, "doKonzile: trigger") > 0:
+		return
+
+	bDestroyBuildings = False
+	bRebell = False
+	if pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL6")):
+		iMessages = 4
+		sText = "TXT_KEY_KONZIL7_"
+		bDestroyBuildings = True
+		bRebell = True
+	elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL5")):
+		iMessages = 3
+		sText = "TXT_KEY_KONZIL6_"
+		bRebell = True
+	elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL4")):
+		iMessages = 4
+		sText = "TXT_KEY_KONZIL5_"
+		bRebell = True
+	elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL3")):
+		iMessages = 3
+		sText = "TXT_KEY_KONZIL4_"
+	elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL2")):
+		iMessages = 3
+		sText = "TXT_KEY_KONZIL3_"
+	elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL1")):
+		iMessages = 4
+		sText = "TXT_KEY_KONZIL2_"
+	elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_HERESY")):
+		iMessages = 3
+		sText = "TXT_KEY_KONZIL1_"
+	else:
+		iMessages = 3
+		sText = "TXT_KEY_KONZIL0_"
+
+	iReligion = gc.getInfoTypeForString("RELIGION_CHRISTIANITY")
+	# Choose a city
+	lCities = []
+	(loopCity, pIter) = pPlayer.firstCity(False)
+	while loopCity:
+		if not loopCity.isNone() and loopCity.isHasReligion(iReligion):
+			lCities.append(loopCity)
+		(loopCity, pIter) = pPlayer.nextCity(pIter, False)
+
+	iNumChristianCities = len(loopCity)
+	if (iNumChristianCities and iNumChristianCities / 2 >= pPlayer.getNumCities()):
+		iRandMessage = 1 + CvUtil.myRandom(iMessages, "doKonzile: choose message")
+		iRandCity = CvUtil.myRandom(iNumChristianCities, "doKonzile: choose city")
+		pCity = lCities[iRandCity]
+
+		# Meldung
+		if pPlayer.isHuman():
+			CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText(sText + str(iRandMessage), (pCity.getName(),"")),
+			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+
+		# Auswirkungen
+
+		# Einheiten verletzen und immobile setzen
+		doHurtUnitsOnPlot(iPlayer,pCity)
+
+		# Gebäude zerstören
+		if bDestroyBuildings:
+			# Gebäude zerstören
+			# in dieser Reihenfolge
+			LBuildings = [
+				gc.getInfoTypeForString("BUILDING_LIBRARY"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_1"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_2"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_3"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_4"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_5"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_6"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_7"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_8"),
+				gc.getInfoTypeForString("BUILDING_CORPORATION_9"),
+				gc.getInfoTypeForString("BUILDING_CORP1"),
+				gc.getInfoTypeForString("BUILDING_CORP3"),
+				gc.getInfoTypeForString("BUILDING_CORP5"),
+				gc.getInfoTypeForString("BUILDING_CORP6"),
+				gc.getInfoTypeForString("BUILDING_CORP7"),
+				gc.getInfoTypeForString("BUILDING_THEATER"),
+				gc.getInfoTypeForString("BUILDING_GREEK_ODEON"),
+				gc.getInfoTypeForString("BUILDING_ACADEMY_1"),
+				gc.getInfoTypeForString("BUILDING_ACADEMY_2"),
+				gc.getInfoTypeForString("BUILDING_ACADEMY_3"),
+				gc.getInfoTypeForString("BUILDING_ACADEMY_4"),
+				gc.getInfoTypeForString("BUILDING_ACADEMY_5"),
+				gc.getInfoTypeForString("BUILDING_ACADEMY_6"),
+				gc.getInfoTypeForString("BUILDING_AMPHITHEATER"),
+				gc.getInfoTypeForString("BUILDING_VERSAMMLUNG_ROME"),
+				gc.getInfoTypeForString("BUILDING_THING"),
+				gc.getInfoTypeForString("BUILDING_COURTHOUSE"),
+				gc.getInfoTypeForString("BUILDING_COURTHOUSE_GREEK"),
+				gc.getInfoTypeForString("BUILDING_JURTE"),
+				gc.getInfoTypeForString("BUILDING_STADION"),
+				gc.getInfoTypeForString("BUILDING_CIRCUS"),
+				gc.getInfoTypeForString("BUILDING_VIVARIUM"),
+				gc.getInfoTypeForString("BUILDING_ARENA")
+			]
+			for iBuilding in LBuildings:
+				if gc.getBuildingInfo(iBuilding) is not None:
+					if pCity.isHasBuilding(iBuilding):
+
+						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Pagan Building",iBuilding)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+						CvUtil.pyPrint ("Pagan building removed: " + gc.getBuildingInfo(iBuilding).getDescription() + " (ID:" + str(iBuilding) +  ") " + pCity.getName() + " X"+str(pCity.getX())+" Y"+str(pCity.getY()))
+
+						pCity.setNumRealBuilding(iBuilding, 0)
+
+						if pPlayer.isHuman():
+							iRand = 1 + CvUtil.myRandom(7, "TXT_KEY_MESSAGE_HERESY_BUILDINGS_")
+							CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_HERESY_BUILDINGS_" + str(iRand), (pCity.getName(),gc.getBuildingInfo(iBuilding).getDescription())),
+							None, 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(11), pCity.getX(), pCity.getY(), True, True)
+						break
+
+		# Rebell erstellen
+		if bRebell:
+			iRange = 1
+			iX = pCity.getX()
+			iY = pCity.getY()
+			iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
+			lPlots = []
+			for x in range(-iRange, iRange):
+				for y in range(-iRange, iRange):
+					loopPlot = plotXY(iX, iY, x, y)
+					if not loopPlot.isNone() and not loopPlot.isWater() and loopPlot.getNumUnits() == 0 and loopPlot.getFeatureType() != iDarkIce:
+						lPlots.append(loopPlot)
+			if len(lPlots):
+				iUnit = gc.getInfoTypeForString("UNIT_FOEDERATI")
+				iRand = CvUtil.myRandom(len(lPlots), "doKonzil rebell plot")
+				pPlot = lPlots[iRand]
+				gc.getPlayer(gc.getBARBARIAN_PLAYER()).initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+
 
 # Christen nach 44 Runden überall verbreiten
 def canSpreadChristentumOverall():
 		iReligion = gc.getInfoTypeForString("RELIGION_CHRISTIANITY")
-		if gc.getGame().isReligionFounded(iReligion) and gc.getGame().getReligionGameTurnFounded(iReligion) > gc.getGame().getGameTurn() + 44:
+		#if gc.getGame().isReligionFounded(iReligion) and gc.getGame().getReligionGameTurnFounded(iReligion) > gc.getGame().getGameTurn() + 44:
+		if gc.getGame().isReligionFounded(iReligion) and gc.getGame().getGameTurnYear() > 44:
 				return True
 		return False
 

@@ -100,10 +100,11 @@ import EurasiaXXXLCivs
 # Diverse Einstellungen
 # +++++++++++++++++++++
 
+# folder name
 PAEMod = "Pie'sAncientEurope"
 
 # Modernisierungen sollen mit automatischen Pfaden erstellt werden
-# wenn deaktivert, sollte im XML BUILD_PATH bei UNIT_WORKER eingebaut werden
+# falls deaktivert, sollte im XML BUILD_PATH bei UNIT_WORKER eingebaut werden
 bAutomatischePfade = True
 
 # PB Mod
@@ -929,7 +930,12 @@ class CvEventManager:
 				elif iData1 == 718:
 						# CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("718 erreicht",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 						# iData1,... iFormation, iPlayer, iUnitID
-						PAE_Unit.doUnitFormation(gc.getPlayer(iData4).getUnit(iData5), iData3)
+						pUnit = gc.getPlayer(iData4).getUnit(iData5)
+						if iData3 == gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS") or iData3 == gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2"):
+								pUnit.getGroup().pushMission(MissionTypes.MISSION_FORTIFY, 0, 0, 0, False, True, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+						if iData4 == gc.getGame().getActivePlayer():
+								CyAudioGame().Play2DSound("AS2D_COMBAT_UNIT")
+						PAE_Unit.doUnitFormation(pUnit, iData3)
 
 				# Promotion Trainer Building (Forest 1, Hills1, ...)
 				elif iData1 == 719:
@@ -2846,6 +2852,7 @@ class CvEventManager:
 
 																			# max eine Techanfrage
 																			break
+
 				# PAE Debug Mark 2 end
 
 				## PB Mod ## 
@@ -2858,6 +2865,10 @@ class CvEventManager:
 				'Called at the end of a players turn'
 				iGameTurn, iPlayer = argsList
 				pPlayer = gc.getPlayer(iPlayer)
+
+				#x = CvUtil.myRandom(150, "Leaders")
+				#pPlayer.changeLeader(x)
+				#pPlayer.setName(gc.getLeaderHeadInfo(x).getName())
 
 				# ***TEST***
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pPlayer.getName(),pPlayer.calculateGoldRate())), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -2950,9 +2961,12 @@ class CvEventManager:
 									for pyCity in PyPlayer(iPlayer).getCityList():
 											PAE_City.doMessageCityGrowing(pyCity.GetCy())
 
+					# PAE 7.10
+					PAE_Christen.doKonzile(iPlayer)
 
 					# PAE 6.16 Ranged Combat / Range Attack / Fernangriff
-
+					# PAE 7.10 in CvPlayerAI::AI_doTurnUnitsPre()
+					"""
 					if not pPlayer.isHuman():
 							iRange = 1
 							pTeam = gc.getTeam(pPlayer.getTeam())
@@ -2961,7 +2975,7 @@ class CvEventManager:
 									if loopUnit.isRanged() and loopUnit.canAttack():
 											pAttackPlot1 = []
 											pAttackPlot2 = []
-											iDamage = 100
+											iDamage = 50
 											bDoRangeAttack = False
 											# Plot holen
 											plot = loopUnit.plot()
@@ -2971,41 +2985,41 @@ class CvEventManager:
 													bDoRangeAttack = True
 											# Plots rundum checken
 											if bDoRangeAttack:
-													iX = loopUnit.getX()
-													iY = loopUnit.getY()
-													for x in range(-iRange, iRange+1):
-															for y in range(-iRange, iRange+1):
-																	loopPlot = plotXY(iX, iY, x, y)
-																	if loopPlot is not None and not loopPlot.isNone():
-																			iNumUnits = loopPlot.getNumUnits()
-																			if iNumUnits > 0:
-																					for i in range(iNumUnits):
-																							iOwner = loopPlot.getUnit(i).getOwner()
-																							if iOwner != iPlayer:
-																									if pTeam.isAtWar(gc.getPlayer(iOwner).getTeam()):
-																											iUnitDamage = loopPlot.getUnit(i).getDamage()
-																											if iUnitDamage < iDamage:
-																													iDamage = iUnitDamage
-																													if iDamage == 0:
-																															pAttackPlot1.append(loopPlot)
-																													else:
-																															pAttackPlot2.append(loopPlot)
-																													break
-					
-											pAttackPlot = []
-											if len(pAttackPlot1):
+												bDoRangeAttack = False
+												iX = loopUnit.getX()
+												iY = loopUnit.getY()
+												for x in range(-iRange, iRange+1):
+													for y in range(-iRange, iRange+1):
+														loopPlot = plotXY(iX, iY, x, y)
+														if loopPlot is not None and not loopPlot.isNone():
+															iNumUnits = loopPlot.getNumUnits()
+															if iNumUnits > 0:
+																for i in range(iNumUnits):
+																	iOwner = loopPlot.getUnit(i).getOwner()
+																	if iOwner != iPlayer:
+																		if pTeam.isAtWar(gc.getPlayer(iOwner).getTeam()):
+																			iUnitDamage = loopPlot.getUnit(i).getDamage()
+																			if iUnitDamage < iDamage:
+																				if iUnitDamage == 0: pAttackPlot1.append(loopPlot)
+																				else: pAttackPlot2.append(loopPlot)
+																				bDoRangeAttack = True
+																				break
+
+											if bDoRangeAttack:
+												pAttackPlot = []
+												if len(pAttackPlot1):
 													iRand = CvUtil.myRandom(len(pAttackPlot1), "onEndPlayerTurn (AI): Choose primary Plot for Ranged Combat")
 													pAttackPlot.append(pAttackPlot1[iRand])
-											elif len(pAttackPlot2):
+												elif len(pAttackPlot2):
 													iRand = CvUtil.myRandom(len(pAttackPlot2), "onEndPlayerTurn (AI): Choose secondary Plot for Ranged Combat")
 													pAttackPlot.append(pAttackPlot2[iRand])
-					
-											if len(pAttackPlot):
+						
+												if len(pAttackPlot):
 													loopUnit.rangeStrike(pAttackPlot[0].getX(), pAttackPlot[0].getY())
 													#loopUnit.finishMoves()
 					
 									(loopUnit, pIter) = pPlayer.nextUnit(pIter, False)
-
+					"""
 				# PAE Debug Mark 3 end
 
 				# ++ Standard BTS ++
@@ -4155,6 +4169,7 @@ class CvEventManager:
 																					break
 																	if iNum < iAnzahlFortifiedUnits:
 																			PAE_Unit.doUnitFormation(pUnit, iPromo)
+																			pUnit.getGroup().pushMission(MissionTypes.MISSION_FORTIFY, 0, 0, 0, True, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 
 															# Fort besetzen (763)
 															# if pPlot.getOwner() == -1:

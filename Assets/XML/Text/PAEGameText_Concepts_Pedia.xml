@@ -917,29 +917,12 @@ Donkeys, horses, camels, grapes, olives, dates, crabs and glams are excluded. Th
 
 [H1]Climate conditions[\H1]
 
-A cultivable bonus good can only be cultivated on suitable soils. The necessary soil types are shown in the bonus resource pedia. If cultivation is not possible even though a field meets all the conditions, it may be that there is an undiscovered bonus resource underneath.
+A cultivable bonus good can only be cultivated on suitable soils. The necessary soil types are shown in the bonus resource pedia. If cultivation is not possible even though a field meets all the conditions, it may be that there is an undiscovered bonus resource underneath. Grain is not always easy to grow, so there is a spread chance of only 80%.
 
-[H2]Grain[\H2]
-[ICON_BULLET] All: Flatlands
-[ICON_BULLET] Wheat: Grassland, plains or flood plains
-[ICON_BULLET] Barley: Grassland, plains or flood plains
-[ICON_BULLET] Oat: Grassland
-[ICON_BULLET] Rye: Grassland
-[ICON_BULLET] Millet: Grassland, plains or flood plains
-[ICON_BULLET] Rice: Jungle on swamp or grassland
-
-Grain is not always easy to grow, so there is a spread chance of only 80%.
-
-[H2]Cattle[\H2]
-[ICON_BULLET] All: Flatland or hills
-[ICON_BULLET] Cow: Grassland or plains
-[ICON_BULLET] Pig: Grassland or swamp
-[ICON_BULLET] Sheep: Grassland or plains
-
-[H2]Misc[\H2]
-[ICON_BULLET] Olives: Plains + coast only (flatlands or hills)
-[ICON_BULLET] Dates: Flatlands + desert only
-[ICON_BULLET] Grapes: Grassland or plains (flatlands or hills)
+[ICON_BULLET] Grains and rice: Plains
+[ICON_BULLET] Livestock and grapes: Plains or hills
+[ICON_BULLET] Special case: Olives: Dry plains and only coastal
+For terrain types, see the respective resource's pedia.
 
 [H1]Priorities[\H1]
 The plots on which the resource can be distributed are divided into up to four priorities. The tile with the highest priority will always be chosen, if there are several possibilities, one of them is chosen randomly.
@@ -1024,29 +1007,12 @@ Sont exclus les &#226;nes, les chevaux, les chameaux, les raisins, les olives, l
 
 [H1]Conditions de climat[\H1]
 
-Un bien bonus cultivable ne peut &#234;tre cultiv&#233; que sur un sol appropri&#233;. La page de ressources bonus affiche les types de sols n&#233;cessaires. Si la culture n'est pas possible m&#234;me si un champ remplit toutes les conditions, il peut y avoir une ressource bonus encore inconnue en dessous.
+Un bien bonus cultivable ne peut &#234;tre cultiv&#233; que sur un sol appropri&#233;. La page de ressources bonus affiche les types de sols n&#233;cessaires. Si la culture n'est pas possible m&#234;me si un champ remplit toutes les conditions, il peut y avoir une ressource bonus encore inconnue en dessous. Puisque les c&#233;r&#233;ales sont parfois difficiles &#224; cultiver, elles ont une probabilit&#233; d'implantation de 80%.
 
-[H2]C&#233;r&#233;ales[\H2]
-[ICON_BULLET] Tous : sur terrain plat
-[ICON_BULLET] Bl&#233; : Prairie, plaines ou plaines inondables
-[ICON_BULLET] Orge : Prairie, plaines ou plaines inondables
-[ICON_BULLET] Avoine : Prairie
-[ICON_BULLET] Seigle : Prairie
-[ICON_BULLET] Millet : Prairie, plaines ou plaines inondables
-[ICON_BULLET] Riz: Jungle sur mar&#233;cage ou prairie
-
-Puisque les c&#233;r&#233;ales sont parfois difficiles &#224; cultiver, elles ont une probabilit&#233; d'implantation de 80%.
-
-[H2]B&#233;tail[\H2]
-[ICON_BULLET] Tous : sur terrain plat ou collines
-[ICON_BULLET] Bovins : Prairie ou plaines
-[ICON_BULLET] Cochons : Prairie ou mar&#233;cage
-[ICON_BULLET] Moutons : Prairie ou plaines
-
-[H2]Divers[\H2]
-[ICON_BULLET] Olives : Plaines + c&#244;tes (Terrain plat ou collines)
-[ICON_BULLET] Dattes : D&#233;sert (Terrain plat)
-[ICON_BULLET] Raisins : Prairie ou plaines (Terrain plat ou collines)
+[ICON_BULLET] C&#233;r&#233;ales et riz : basses terres
+[ICON_BULLET] B&#233;tail et vignes : plaines ou collines
+[ICON_BULLET] Cas particulier : Olives : plaine s&#232;che et seulement c&#244;te
+Les types de terrain peuvent &#234;tre trouv&#233;s dans la p&#233;dia de la ressource respective.
 
 [H1]Priorit&#233;s[\H1]
 Les ressources peuvent se propager sur les cases cultivables selon quatre niveaux de priorit&#233;. La case avec la priorit&#233; la plus &#233;lev&#233;e sera toujours choisie. Si plusieurs options sont possibles, le choix est al&#233;atoire.
@@ -1133,33 +1099,15 @@ Ausgenommen sind Esel, Pferde, Kamele, Weintrauben, Oliven, Datteln, Krabben und
 
 [H1]Klimabedingungen[\H1]
 
-Ein kultivierbares Bonusgut kann nur auf geeigneten B&#246;den kultiviert werden. In der Bonusresource-Pedia werden die notwendigen Bodentypen angezeigt. Falls keine Kultivierung m&#246;glich ist, obwohl ein Feld alle Bedingungen erf&#252;llt, so kann es sein, dass sich darunter eine noch unentdeckte Bonusressource befindet.
+Ein kultivierbares Bonusgut kann nur auf geeigneten B&#246;den kultiviert werden. In der Ressourcen-Pedia werden die notwendigen Bodentypen angezeigt. Falls keine Kultivierung m&#246;glich ist, obwohl ein Feld alle Bedingungen erf&#252;llt, so kann es sein, dass sich darunter eine noch unentdeckte Bonusressource befindet. Nicht immer kann Getreide leicht angebaut werden, deshalb gibt es hier eine Verbreitungschance von nur 80%.
 
-[H2]Getreide[\H2]
-[ICON_BULLET] Alle: Flachland
-[ICON_BULLET] Weizen: Grasland, Trockenebene oder Schwemmland
-[ICON_BULLET] Gerste: Trockenebene oder Schwemmland
-[ICON_BULLET] Hafer: Grasland oder Schwemmland
-[ICON_BULLET] Roggen: Grasland
-[ICON_BULLET] Hirse: Grasland, Trockenebene oder Schwemmland
-[ICON_BULLET] Reis: Dschungel auf Sumpf oder Gras
-
-Nicht immer kann Getreide leicht angebaut werden, deshalb gibt es hier eine Verbreitungschance von nur 80%.
-
-[H2]Vieh[\H2]
-[ICON_BULLET] Alle: Flachland oder H&#252;gel
-[ICON_BULLET] Kuh: Grasland oder Trockenebene 
-[ICON_BULLET] Schwein: Grasland
-[ICON_BULLET] Schaf: Trockenebene
-
-[H2]Sonstige[\H2]
-[ICON_BULLET] Oliven: Trockenebene und nur K&#252;ste
-[ICON_BULLET] Datteln: Flachland und nur W&#252;ste
-[ICON_BULLET] Trauben: Grasland oder Trockenebene 
+[ICON_BULLET] Getreide und Reis: Flachland
+[ICON_BULLET] Vieh und Trauben: Flachland oder H&#252;gel
+[ICON_BULLET] Sonderfall: Oliven: Trockenebene und nur K&#252;ste
+Terraintypen siehe in der Pedia der jeweiligen Ressource.
 
 [H1]Priorit&#228;ten[\H1]
 Die Felder, auf denen die ausgew&#228;hlte Ressource verbreitet werden kann, werden nach bis zu vier Priorit&#228;ten geordnet. Die Ressource wird dabei immer auf einem Feld mit m&#246;glichst hoher Priorit&#228;t verbreitet, haben mehrere Felder dieselbe Priorit&#228;t, wird zuf&#228;llig gew&#228;hlt.
-
 
 [H1]Pferde[\H1]
 [ICON_BULLET] Voraussetzung: Dorfstatus, Trockenebene oder Grasland, Flachland
@@ -1241,29 +1189,12 @@ Sono esclusi gli asini, i cavalli, i cammelli, l'uva, le olive, i datteri, i gra
 
 [H1]Condizioni climatiche[\H1]
 
-Un bene bonus coltivabile pu&#242; essere coltivato solo su un terreno adatto. La pedia delle risorse bonus mostra i tipi di terreno necessari. Se la coltivazione non &#232; possibile anche se un campo soddisfa tutte le condizioni, sotto potrebbe esserci una risorsa bonus non ancora scoperta.
+Un bene bonus coltivabile pu&#242; essere coltivato solo su un terreno adatto. La pedia delle risorse bonus mostra i tipi di terreno necessari. Se la coltivazione non &#232; possibile anche se un campo soddisfa tutte le condizioni, sotto potrebbe esserci una risorsa bonus non ancora scoperta. Le colture non sono sempre facili da coltivare, quindi c'&#232; solo l'80% di possibilit&#224; che si diffonda qui.
 
-[H2]grano[\H2]
-[ICON_BULLET] Tutti: Pianure
-[ICON_BULLET] Grano: prateria, steppa o terreno alluvionale
-[ICON_BULLET] Orzo: steppa o terra alluvionale
-[ICON_BULLET] Avena: prateria o terreno alluvionale
-[ICON_BULLET] Rye: prateria
-[ICON_BULLET] Miglio: prateria, steppa o terreno alluvionale
-[ICON_BULLET] Riso: giungla su palude o erba
-
-Le colture non sono sempre facili da coltivare, quindi c'&#232; solo l'80% di possibilit&#224; che si diffonda qui.
-
-[H2]Bovini[\H2]
-[ICON_BULLET] Tutti: pianure o colline
-[ICON_BULLET] Mucca: prateria o steppa
-[ICON_BULLET] Maiale: prateria
-[ICON_BULLET] Pecore: steppa
-
-[H2]Altro[\H2]
-[ICON_BULLET] Olive: solo steppa e costa
-[ICON_BULLET] Date: solo pianura e deserto
-[ICON_BULLET] Uva: prateria o steppa
+[ICON_BULLET] Cereali e riso: pianure
+[ICON_BULLET] Bestiame e uva: pianure o colline
+[ICON_BULLET] Caso speciale: Olive: pianura secca e solo costa
+I tipi di terreno possono essere trovati nella pedia della rispettiva risorsa.
 
 [H1]Priorit&#224;[\H1]
 I campi su cui la risorsa selezionata pu&#242; essere disseminata sono ordinati secondo un massimo di quattro priorit&#224;. La risorsa &#232; sempre distribuita su un campo con la priorit&#224; pi&#249; alta possibile, se pi&#249; campi hanno la stessa priorit&#224;, viene scelto a caso.
@@ -1349,29 +1280,12 @@ Quedan excluidos los burros, los caballos, los camellos, las uvas, las aceitunas
 
 [H1]Condiciones clim&#225;ticas[\H1]
 
-Un bien de bonificaci&#243;n cultivable s&#243;lo puede cultivarse en un suelo adecuado. La gu&#237;a de recursos adicionales muestra los tipos de suelo necesarios. Si el cultivo no es posible a pesar de que un campo cumple todas las condiciones, es posible que debajo haya un recurso adicional a&#250;n no descubierto.
+Un bien de bonificaci&#243;n cultivable s&#243;lo puede cultivarse en un suelo adecuado. La gu&#237;a de recursos adicionales muestra los tipos de suelo necesarios. Si el cultivo no es posible a pesar de que un campo cumple todas las condiciones, es posible que debajo haya un recurso adicional a&#250;n no descubierto. El grano no siempre crece, as&#237; que hay una probabilidad de cultivarlo del 80%.
 
-[H2]Grano[\H2]
-[ICON_BULLET] Todos: Terreno llano
-[ICON_BULLET] Trigo: Praderas, steppas o terrenos de aluvi&#243;n
-[ICON_BULLET] Cebada: Steppas o terrenos de aluvi&#243;n
-[ICON_BULLET] Avena: Praderas o terrenos de aluvi&#243;n
-[ICON_BULLET] Centeno: Praderas
-[ICON_BULLET] Mijo: Praderas, steppas o terrenos de aluvi&#243;n
-[ICON_BULLET] Arroz: Jungla en pantano o praderas 
-
-El grano no siempre crece, as&#237; que hay una probabilidad de cultivarlo del 80%
-
-[H2]Ganado[\H2]
-[ICON_BULLET] Todos: Terreno llano o colinas
-[ICON_BULLET] Reses: Praderas o steppas 
-[ICON_BULLET] Cerdos: Praderas
-[ICON_BULLET] Ovejas: Steppas 
-
-[H2]Misc[\H2]
-[ICON_BULLET] Olivas: estepas y costa solo
-[ICON_BULLET] D&#225;tiles: terreno llano y desierto solo
-[ICON_BULLET] Uvas: praderas o estepas
+[ICON_BULLET] Granos y arroz: tierras bajas
+[ICON_BULLET] Ganado y uvas: llanuras o colinas
+[ICON_BULLET] Caso especial: Olivos: llanura seca y solo costa
+Los tipos de terreno se pueden encontrar en la pedia del recurso respectivo.
 
 [H1]Prioridad[\H1]
 Las casillas donde van a ser distribuidas est&#225;n divididas en cuatro prioridades. La casilla con la m&#225;s alta prioridad es la elegida. Si hay varias, una de ellas lo ser&#225; de forma aleatoria.
@@ -7215,6 +7129,7 @@ Numbers ... Number of points in network players
 2nd symbol: button from head of state
 3rd symbol: button of civilization
 4th: short description of the civilization
+[ICON_STAR] ... Hegemon
 [ICON_SILVER_STAR] ... vassal (hegemon is always above vassals)
 [ICON_STRENGTH] ... CIV has more power points than us
 [ICON_DEFENSIVEPACT] ... we have an active defensive alliance with this CIV
@@ -7237,6 +7152,7 @@ Nombre ... score des joueurs en r&#233;seau
 2e sigle: Raccourci vers chef d'&#233;tat
 3e sigle: Raccourci vers civilisation
 4e sigle: Descriptif de la civilisation
+[ICON_STAR] ... H&#233;g&#233;mon
 [ICON_SILVER_STAR] ... vassal (les vassaux sont directement sous leur suzerain)
 [ICON_STRENGTH] ... civilisation avec score sup&#233;rieur au joueur
 [ICON_DEFENSIVEPACT] ... pacte de d&#233;fense conclu avec cette civilisation
@@ -7260,6 +7176,7 @@ Ziffern ... Punkteanzahl bei Netzwerkspielern
 2. Symbol: Button vom Staatsoberhaupt
 3. Symbol: Button der Zivilisation
 4. Stelle: Kurzbeschreibung der Zivilisation
+[ICON_STAR] ... Hegemon
 [ICON_SILVER_STAR] ... Vasall (Hegemon steht immer oberhalb der Vasallen)
 [ICON_STRENGTH] ... Civ hat mehr St&#228;rkepunkte als wir
 [ICON_DEFENSIVEPACT] ... mit dieser CIV haben wir ein aktives Verteidigungsb&#252;ndnis
@@ -7283,6 +7200,7 @@ Numeri... Numero di punti in rete giocatori
 2. simbolo: bottone del capo di stato
 3. simbolo: pulsante della civilt&#224;
 4. breve descrizione della civilt&#224;
+[ICON_STAR] ... Egemone
 [ICON_SILVER_STAR] ... vassallo (l'egemone &#232; sempre al di sopra dei vassalli)
 [ICON_STRENGTH] ... CIV ha pi&#249; punti di potere di noi
 [ICON_DEFENSIVEPACT] ... abbiamo un'alleanza difensiva attiva con questo CIV
@@ -7306,6 +7224,7 @@ N&#250;meros... N&#250;mero de puntos en jugadores de la red
 2. s&#237;mbolo: bot&#243;n del jefe de estado
 3. s&#237;mbolo: bot&#243;n de civilizaci&#243;n
 4. breve descripci&#243;n de la civilizaci&#243;n
+[ICON_STAR] ... Hegem&#243;n
 [ICON_SILVER_STAR] ... vasallo (la potencia hegem&#243;nica siempre est&#225; por encima de los vasallos)
 [ICON_STRENGTH] ... CIV tiene m&#225;s puntos de poder que nosotros
 [ICON_DEFENSIVEPACT] ... tenemos una alianza defensiva activa con este CIV
@@ -10843,7 +10762,11 @@ The Jewish and Christian religions forbade the worship of the emperor, a human b
 
 [H2]Polytheistic phase[\H2]
 
-Villages with at least two religions and cities (city status) with at least three religions can fall into rebellion. In this case, attempts are always made to expel a religion other than the state religion from the city.
+Cities can fall into revolt if they contain more than the accepted number of religions:
+[ICON_BULLET] Settlements and villages: 1
+[ICON_BULLET] Cities: 2
+[ICON_BULLET] Provincial cities and metropolis: 3
+If this number is exceeded, citizens will attempt to expel a religion other than their state religion from the city.
 
 Trigger:
 [ICON_BULLET] Any city with 2 (or 3 if city status is City) religions
@@ -10854,7 +10777,7 @@ Effect:
 [ICON_BULLET] Step 1: All city units are injured and immobilized for 1 round
 [ICON_BULLET] Step 2: 1:3 chance: The temple is destroyed (except for World Wonders)
 [ICON_BULLET] Step 3: 1:3 chance: A fire breaks out (triggers the fire event)
-[ICON_BULLET] Step 4: 1:4 chance: The population decreases by 1
+[ICON_BULLET] Step 4: 1:4 chance: The population decreases by (Pop/5, min 1) and culture decreases by (Pop/5)*10%
 [ICON_BULLET] Step 5: If steps 2+4, 1:4 chance: The religion is expelled from the city
 
 
@@ -10936,7 +10859,11 @@ Les religions juive et chr&#233;tienne interdisaient le culte de l'empereur, c'e
 
 [H2]Phase polyth&#233;iste[\H2]
 
-Les villages ayant au moins 2 religions et les villes (statut de ville) ayant au moins 3 religions peuvent tomber en r&#233;bellion. Il y a toujours une tentative de chasser de la ville une religion autre que la religion d'&#201;tat.
+Les villes peuvent devenir agit&#233;es si elles abritent plus de religions que le nombre accept&#233; :
+[ICON_BULLET] Colonies et villages : 1
+[ICON_BULLET] Villes : 2
+[ICON_BULLET] Villes de province et m&#233;tropoles : 3
+Si ce nombre est d&#233;pass&#233;, les citoyens tenteront d'expulser de la ville toute religion autre que leur religion d'&#201;tat.
 
 D&#233;clenchement:
 [ICON_BULLET] Chaque ville avec 2 (ou 3 si le statut de la ville est une ville) religions
@@ -10947,7 +10874,7 @@ Impact:
 [ICON_BULLET] &#201;tape 1 : Toutes les unit&#233;s de la ville sont bless&#233;es et immobilis&#233;es pendant 1 round
 [ICON_BULLET] &#201;tape 2 : Chance 1 : 3 : Le temple est d&#233;truit (hors Merveilles)
 [ICON_BULLET] &#201;tape 3 : Chance 1 : 3 : Un incendie se d&#233;clare (d&#233;clenche l'&#233;v&#233;nement incendie)
-[ICON_BULLET] &#201;tape 4 : Chance 1 : 4 : La population diminue de 1
+[ICON_BULLET] &#201;tape 4 : Chance 1 : 4 : La population diminue de (Pop/5, min 1) et la culture diminue de (Pop/5)*10%
 [ICON_BULLET] &#201;tape 5 : si &#233;tape 2+4, chance 1:4 : La religion est expuls&#233;e de la ville
 
 [H2]Phase monoth&#233;iste[\H2]
@@ -11034,7 +10961,11 @@ Die j&#252;dische und christliche Religion verbot, den Kaiser, also einen Mensch
 
 [H2]Polytheistische Phase[\H2]
 
-D&#246;rfer mit mindestens 2 und St&#228;dte (Stadtstatus) mit min. 3 Religionen k&#246;nnen in Aufruhr geraten. Dabei wird immer versucht, eine andere Religion als die Staatsreligion aus der Stadt zu vertreiben.
+St&#228;dte k&#246;nnen in Aufruhr geraten, wenn sie mehr als die akzeptierte Anzahl an Religionen beinhalten:
+[ICON_BULLET] Siedlungen und D&#246;rfer: 1
+[ICON_BULLET] St&#228;dte: 2
+[ICON_BULLET] Provinzst&#228;dte und Metropolen: 3
+Wird diese Anzahl &#252;berschritten, werden die B&#252;rger versuchen, eine andere Religion als ihre Staatsreligion aus der Stadt zu vertreiben.
 
 Ausl&#246;ser:
 [ICON_BULLET] Jede Stadt mit 2 (bzw 3 bei Stadtstatus Stadt) Religionen
@@ -11045,7 +10976,7 @@ Auswirkung:
 [ICON_BULLET] Schritt 1: Alle Stadteinheiten werden verletzt und sind 1 Runde unbeweglich
 [ICON_BULLET] Schritt 2: Chance 1:3: Der Tempel wird zerst&#246;rt (ausgenommen Weltwunder)
 [ICON_BULLET] Schritt 3: Chance 1:3: Ein Brand entsteht (Triggert das Brand-Event)
-[ICON_BULLET] Schritt 4: Chance 1:4: Die Bev&#246;lkerung sinkt um 1
+[ICON_BULLET] Schritt 4: Chance 1:4: Die Bev&#246;lkerung sinkt um (Pop/5, min 1) und Kultur sinkt um (Pop/5)*10%
 [ICON_BULLET] Schritt 5: falls Schritt 2+4, Chance 1:4: Die Religion wird aus der Stadt vertrieben
 
 
@@ -11134,7 +11065,11 @@ Le religioni ebraica e cristiana proibivano il culto dell'imperatore, cio&#232; 
 
 [H2]Fase politeistica[\H2]
 
-I villaggi con almeno 2 religioni e le citt&#224; (con status di citt&#224;) con almeno 3 religioni possono ribellarsi. C'&#232; sempre un tentativo di scacciare dalla citt&#224; una religione diversa da quella di Stato.
+Le citt&#224; possono diventare tumultuose se ospitano un numero di religioni superiore a quello consentito:
+[ICON_BULLET] Insediamenti e villaggi: 1
+[ICON_BULLET] Citt&#224;: 2
+[ICON_BULLET] Citt&#224; di provincia e metropoli: 3
+Se questo numero viene superato, i cittadini cercheranno di espellere dalla citt&#224; qualsiasi religione diversa dalla propria religione di Stato.
 
 Grilletto:
 [ICON_BULLET] Ogni citt&#224; con 2 (o 3 se lo stato della citt&#224; &#232; citt&#224;) religioni
@@ -11145,7 +11080,7 @@ Impatto:
 [ICON_BULLET] Fase 1: tutte le unit&#224; cittadine vengono ferite e immobilizzate per 1 round
 [ICON_BULLET] Fase 2: Probabilit&#224; 1:3: Il tempio viene distrutto (escluse le Meraviglie)
 [ICON_BULLET] Fase 3: Probabilit&#224; 1:3: Si scatena un incendio (innesca l'evento incendio)
-[ICON_BULLET] Fase 4: Probabilit&#224; 1:4: la popolazione diminuisce di 1
+[ICON_BULLET] Fase 4: Probabilit&#224; 1:4: la popolazione diminuisce di (Pop/5, min 1) e la coltura diminuisce di (Pop/5)*10%
 [ICON_BULLET] Fase 5: se fase 2+4, possibilit&#224; 1:4: la religione viene espulsa dalla citt&#224;
 
 [H2]Fase monoteistica[\H2]
@@ -11233,7 +11168,11 @@ Las religiones jud&#237;a y cristiana prohib&#237;an el culto al emperador, es d
 
 [H2]Fase polite&#237;sta[\H2]
 
-Los pueblos con al menos 2 y las ciudades (estatus de ciudad) con al menos 3 religiones pueden caer en rebeli&#243;n. Siempre existe un intento de expulsar de la ciudad una religi&#243;n distinta a la religi&#243;n estatal.
+Las ciudades pueden volverse alborotadas si contienen m&#225;s del n&#250;mero aceptado de religiones:
+[ICON_BULLET] Asentamientos y pueblos: 1
+[ICON_BULLET] Ciudades: 2
+[ICON_BULLET] Ciudades y metr&#243;polis provinciales: 3
+Si se supera esta cifra, los ciudadanos intentar&#225;n expulsar de la ciudad cualquier religi&#243;n que no sea la estatal.
 
 Desencadenar:
 [ICON_BULLET] Cada ciudad con 2 religiones (o 3 si el estado de la ciudad es ciudad)
@@ -11244,7 +11183,7 @@ Impacto:
 [ICON_BULLET] Paso 1: Todas las unidades de la ciudad resultan heridas y quedan inmovilizadas durante 1 ronda.
 [ICON_BULLET] Paso 2: Probabilidad 1:3: El templo es destruido (excluyendo Maravillas)
 [ICON_BULLET] Paso 3: Probabilidad 1:3: Se inicia un incendio (activa el evento de incendio)
-[ICON_BULLET] Paso 4: Probabilidad 1:4: La poblaci&#243;n disminuye en 1
+[ICON_BULLET] Paso 4: Probabilidad 1:4: La poblaci&#243;n disminuye en (Pop/5, min 1) y la cultura disminuye en (Pop/5)*10%
 [ICON_BULLET] Paso 5: si el paso 2+4, probabilidad 1:4: La religi&#243;n es expulsada de la ciudad
 
 [H2]Fase monote&#237;sta[\H2]

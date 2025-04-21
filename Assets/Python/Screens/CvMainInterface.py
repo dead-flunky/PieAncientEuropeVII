@@ -323,7 +323,7 @@ class CvMainInterface:
 				g_NumActionInfos = gc.getNumActionInfos()
 
 				# Help Text Area
-				screen.setHelpTextArea(350, FontTypes.SMALL_FONT, 7, yResolution - 172, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
+				screen.setHelpTextArea(390, FontTypes.SMALL_FONT, 7, yResolution - 172, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
 
 				# Center Left
 				screen.addPanel("InterfaceCenterLeftBackgroundWidget", u"", u"", True, False, 0, 0, 258, yResolution-149, PanelStyles.PANEL_STYLE_STANDARD)
@@ -3818,7 +3818,6 @@ class CvMainInterface:
 						for i in range(gc.getNumTechInfos()):
 								if gc.getActivePlayer().canResearch(i, False):
 										if iCount < 20:
-												iCount += 1
 												szName = "ResearchButton" + str(i)
 												for j in range(gc.getNumReligionInfos()):
 														if gc.getReligionInfo(j).getTechPrereq() == i:
@@ -3827,6 +3826,7 @@ class CvMainInterface:
 																		break
 												screen.show(szName)
 												self.setResearchButtonPosition(szName, iCount)
+												iCount += 1 # PAE (Korrektur: nach hinten verschoben)
 										else:
 												break
 				return 0
@@ -5050,7 +5050,7 @@ class CvMainInterface:
 
 								szBuffer = u""
 
-								# Alot of this code is just rewriten as it now only shows
+								# Alot of this code is just rewritten as it now only shows
 								# religions the city has and has to deal with way more then
 								lReligions = []
 								for i in range(gc.getNumReligionInfos()):
@@ -5065,8 +5065,8 @@ class CvMainInterface:
 										iButtonSize = 24
 										iButtonSpace = 10
 								# elif (iCountReligions >= iMaxButtons):
-		 #iButtonSize = iMaxWidth / iMaxButtons
-		 #iButtonSpace = 0
+								#		iButtonSize = iMaxWidth / iMaxButtons
+								#		iButtonSpace = 0
 								elif iCountReligions == 8:
 										iButtonSize = 24
 										iButtonSpace = 5
@@ -5157,9 +5157,9 @@ class CvMainInterface:
 
 										szButton = gc.getReligionInfo(i).getButton()
 
-						# else:
-						#  bEnable = False
-						#  szButton = gc.getReligionInfo(i).getButton()
+										#else:
+										#		bEnable = False
+										#		szButton = gc.getReligionInfo(i).getButton()
 
 										szName = "ReligionDDS" + str(i)
 										screen.setImageButton(szName, szButton, xCoord, yCoord, 24, 24, WidgetTypes.WIDGET_HELP_RELIGION_CITY, i, -1)
@@ -5306,6 +5306,8 @@ class CvMainInterface:
 										gc.getInfoTypeForString("SPECIALIST_SLAVE_FOOD")) + pCity.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_SLAVE_PROD"))
 								iCityGlads = pCity.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_GLADIATOR"))
 								iCityPop = pCity.getPopulation()
+								iTeam = pPlayer.getTeam()
+								pTeam = gc.getTeam(iTeam)
 
 								# Revolten-Gefahrenanzeige und -texte (City Statusbar)
 								bRevoltDanger = False
@@ -5328,7 +5330,7 @@ class CvMainInterface:
 												szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_SLAVES", (CyGame().getSymbolID(FontSymbols.STRENGTH_CHAR), ()))
 
 								# Freudenhaus (PAE 7.0)
-								elif iCityPop > 5 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BORDELL")):
+								elif iCityPop > 5 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BORDELL")) and pTeam.isHasTech(gc.getInfoTypeForString("TECH_SYNKRETISMUS")):
 										szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_BORDELL", (CyGame().getSymbolID(FontSymbols.UNHAPPY_CHAR), ()))
 
 								# Fremde Kultur
@@ -5359,13 +5361,26 @@ class CvMainInterface:
 												# Unhappiness
 												elif pCity.unhappyLevel(0) > pCity.happyLevel():
 														szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_UNHAPPY", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
-												# Hohe Steuern
-												elif pPlayer.getCommercePercent(0) > iTaxesLimit:
-														iChance = int((pPlayer.getCommercePercent(0) - iTaxesLimit) / 5)
-														# Pro Happy Citizen 5% Nachlass
-														iChance = iChance - pCity.happyLevel() + pCity.unhappyLevel(0)
-														if iChance > 0:
-																szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_TAXES", (gc.getCommerceInfo(CommerceTypes.COMMERCE_GOLD).getChar(), (iChance)))
+
+										# Zu viele Religionen
+										if szBuffer == "":
+												if pCity.getPopulation() > 11: iAnz2 = 3
+												elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")): iAnz2 = 2
+												else: iAnz2 = 1
+
+												iAnz1 = 0
+												for j in range(gc.getNumReligionInfos()):
+													if pCity.isHasReligion(j): iAnz1 += 1
+												if iAnz1 > iAnz2:
+														szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_RELIGION_LIMIT", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
+
+										# Hohe Steuern
+										if szBuffer == "" and pPlayer.getCommercePercent(0) > iTaxesLimit:
+												iChance = int((pPlayer.getCommercePercent(0) - iTaxesLimit) / 5)
+												# Pro Happy Citizen 5% Nachlass
+												iChance = iChance - pCity.happyLevel() + pCity.unhappyLevel(0)
+												if iChance > 0:
+														szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_TAXES", (gc.getCommerceInfo(CommerceTypes.COMMERCE_GOLD).getChar(), (iChance)))
 
 										if szBuffer != "" and iCityPop < 4:
 												bRevoltWarning = True
@@ -5408,8 +5423,6 @@ class CvMainInterface:
 
 								# Emigration Bar / Emigrant -----------------------------------
 								iTech = gc.getInfoTypeForString("TECH_COLONIZATION")
-								iTeam = pPlayer.getTeam()
-								pTeam = gc.getTeam(iTeam)
 								iChance = 0
 
 								if iPlayer == gc.getBARBARIAN_PLAYER():
@@ -5799,9 +5812,9 @@ class CvMainInterface:
 				else:
 						# Help Text Area
 						if CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW:
-								screen.setHelpTextArea(350, FontTypes.SMALL_FONT, 7, yResolution - 172, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
+								screen.setHelpTextArea(390, FontTypes.SMALL_FONT, 7, yResolution - 172, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
 						else:
-								screen.setHelpTextArea(350, FontTypes.SMALL_FONT, 7, yResolution - 50, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
+								screen.setHelpTextArea(390, FontTypes.SMALL_FONT, 7, yResolution - 50, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
 
 						screen.hide("InterfaceTopLeftBackgroundWidget")
 						screen.hide("InterfaceTopRightBackgroundWidget")
@@ -6567,37 +6580,36 @@ class CvMainInterface:
 				lMasters = []
 				lVassals = []
 				lPlayers = []
+				lHegemons = []
 				iRange = gc.getMAX_CIV_PLAYERS()
 				for iPlayerX in xrange(iRange):
-						if CyInterface().isScoresMinimized():
-								if iPlayerX == CyGame().getActivePlayer():
-										lPlayers.append(iPlayerX)
-										break
-						else:
-								pPlayerX = gc.getPlayer(iPlayerX)
-								if pPlayerX.isAlive():
-										iTeamX = pPlayerX.getTeam()
-										pTeamX = gc.getTeam(iTeamX)
-										if pTeamX.isHasMet(CyGame().getActiveTeam()) or CyGame().isDebugMode():
-												if pTeamX.isAVassal():
-														for iTeamY in xrange(gc.getMAX_CIV_TEAMS()):
-																if pTeamX.isVassal(iTeamY):
-																		lVassals.append([CyGame().getTeamRank(iTeamY), CyGame().getTeamRank(iTeamX), CyGame().getPlayerRank(iPlayerX), iPlayerX])
-																		break
-												else:
-														lMasters.append([CyGame().getTeamRank(iTeamX), CyGame().getPlayerRank(iPlayerX), iPlayerX])
+					if CyInterface().isScoresMinimized():
+						if iPlayerX == CyGame().getActivePlayer():
+							lPlayers.append(iPlayerX)
+							break
+					else:
+						pPlayerX = gc.getPlayer(iPlayerX)
+						if pPlayerX.isAlive():
+							iTeamX = pPlayerX.getTeam()
+							pTeamX = gc.getTeam(iTeamX)
+							if pTeamX.isHasMet(CyGame().getActiveTeam()) or CyGame().isDebugMode():
+								if pTeamX.isAVassal():
+									for iTeamY in xrange(gc.getMAX_CIV_TEAMS()):
+										if pTeamX.isVassal(iTeamY):
+											if iTeamY not in lHegemons:
+												lHegemons.append(iTeamY)
+											lVassals.append([CyGame().getTeamRank(iTeamY), CyGame().getTeamRank(iTeamX), CyGame().getPlayerRank(iPlayerX), iTeamY, iPlayerX])
+											break
+								else:
+									lMasters.append([CyGame().getTeamRank(iTeamX), CyGame().getPlayerRank(iPlayerX), iPlayerX])
+
 				lMasters.sort()
 				lVassals.sort()
-				iOldRank = -1
 				for i in lMasters:
-						if iOldRank != i[0]:
-								for j in lVassals:
-										if j[0] == iOldRank:
-												lPlayers.append(j[3])
-										elif j[0] > iOldRank:
-												break
-								iOldRank = i[0]
-						lPlayers.append(i[2])
+					lPlayers.append(i[2])
+					for j in lVassals:
+						if j[3] == i[2]:
+							lPlayers.append(j[4])
 
 				nRows = len(lPlayers)
 				self.iScoreRows = max(0, min(self.iScoreRows, nRows - 1))
@@ -6613,7 +6625,7 @@ class CvMainInterface:
 				if bIsScenario: Spalten = 5
 				else: Spalten = 6
 				screen.addTableControlGFC("ScoreBackground2", Spalten, xResolution - self.iScoreWidth - 200, yResolution - iHeight - 180,
-																	self.iScoreWidth + 200, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
+													self.iScoreWidth + 200, iHeight, False, False, 24, 24, TableStyles.TABLE_STYLE_EMPTY)
 				screen.enableSelect("ScoreBackground2", False)
 				screen.setTableColumnHeader("ScoreBackground2", 0, "", self.iScoreWidth)
 				screen.setTableColumnHeader("ScoreBackground2", 1, "", 23)
@@ -6675,7 +6687,9 @@ class CvMainInterface:
 								szTempBuffer = u"%c" % CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR) + szTempBuffer
 						screen.setTableText("ScoreBackground2", Spalte+1, iRow, szTempBuffer, None, WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
-						if pTeam.isAVassal():
+						if iTeam in lHegemons:
+								sText1 += CyTranslator().getText("[ICON_STAR]", ())
+						elif pTeam.isAVassal():
 								sText1 += CyTranslator().getText("[ICON_SILVER_STAR]", ())
 
 						# if iPlayer == CyGame().getActivePlayer():
@@ -6705,7 +6719,7 @@ class CvMainInterface:
 
 						if not self.iScoreHidePoints:
 								sText1 += u"<color=%d,%d,%d,%d>%d</color>" % (pPlayer.getPlayerTextColorR(), pPlayer.getPlayerTextColorG(), pPlayer.getPlayerTextColorB(),
-																															pPlayer.getPlayerTextColorA(), CyGame().getPlayerScore(iPlayer))
+																							pPlayer.getPlayerTextColorA(), CyGame().getPlayerScore(iPlayer))
 
 						screen.setTableText("ScoreBackground2", 0, iRow, sText1, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
 
@@ -6719,7 +6733,7 @@ class CvMainInterface:
 								iTech = pPlayer.getCurrentResearch()
 								if iTech > -1:
 										sTech = u"<color=%d,%d,%d,%d>%d</color>" % (pPlayer.getPlayerTextColorR(), pPlayer.getPlayerTextColorG(), pPlayer.getPlayerTextColorB(),
-																																pPlayer.getPlayerTextColorA(), pPlayer.getResearchTurnsLeft(pPlayer.getCurrentResearch(), True))
+																								pPlayer.getPlayerTextColorA(), pPlayer.getResearchTurnsLeft(pPlayer.getCurrentResearch(), True))
 										screen.setTableText("ScoreBackground2", Spalte+2, iRow, sTech, gc.getTechInfo(iTech).getButton(), WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, CvUtil.FONT_LEFT_JUSTIFY)
 		# Platy Scoreboard - End
 
@@ -6897,7 +6911,9 @@ class CvMainInterface:
 				# PAE: x+5 and Original modulo: 15
 				screen = CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE)
 				xResolution = screen.getXResolution()
-				screen.moveItem(szButtonID, 264 + 5 + ((xResolution - 1024) / 2) + (34 * (iCount % 12)), 0 + (34 * (iCount / 12)), -0.3)
+				if xResolution <= 1024: iModulo = 10
+				else: iModulo = 18
+				screen.moveItem(szButtonID, 264 + 5 + ((xResolution - 1024) / 2) + (34 * (iCount % iModulo)), 0 + (34 * (iCount / iModulo)), -0.3)
 
 		# Will set the selection button position
 		def setScoreTextPosition(self, szButtonID, iWhichLine):
@@ -6924,12 +6940,12 @@ class CvMainInterface:
 
 				# Positioning things based on the visibility of the globe
 				if kEngine.isGlobeviewUp():
-						screen.setHelpTextArea(350, FontTypes.SMALL_FONT, 7, yResolution - 50, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
+						screen.setHelpTextArea(390, FontTypes.SMALL_FONT, 7, yResolution - 50, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
 				else:
 						if CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_SHOW:
-								screen.setHelpTextArea(350, FontTypes.SMALL_FONT, 7, yResolution - 172, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
+								screen.setHelpTextArea(390, FontTypes.SMALL_FONT, 7, yResolution - 172, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
 						else:
-								screen.setHelpTextArea(350, FontTypes.SMALL_FONT, 7, yResolution - 50, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
+								screen.setHelpTextArea(390, FontTypes.SMALL_FONT, 7, yResolution - 50, -0.1, False, "", True, False, CvUtil.FONT_LEFT_JUSTIFY, 150)
 
 				# Set base Y position for the LayerOptions, if we find them
 				if CyInterface().getShowInterface() == InterfaceVisibility.INTERFACE_HIDE:

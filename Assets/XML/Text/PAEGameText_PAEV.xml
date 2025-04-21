@@ -7202,11 +7202,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN_MACEDON2</Tag>
-		<English>Hetairoi</English>
-		<French>Hetairoi</French>
-		<German>Hetairoi</German>
-		<Italian>Hetairoi</Italian>
-		<Spanish>Hetairoi</Spanish>
+		<English>Mounted companions</English>
+		<French>Compagnons &#224; cheval</French>
+		<German>Gef&#228;hrte zu Pferd</German>
+		<Italian>Compagni a cavallo</Italian>
+		<Spanish>Compa&#241;eros a caballo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN_SKYTHEN</Tag>

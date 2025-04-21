@@ -13226,7 +13226,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CARVEL_TRADE</Type>
 			<Button>Art/Interface/Buttons/Units/button_carvel_trade.dds</Button>
-			<fScale>0.10</fScale>
+			<fScale>0.12</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13265,7 +13265,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_CARVEL_WAR</Type>
 			<Button>Art/Interface/Buttons/Units/button_carvel_war.dds</Button>
-			<fScale>0.22</fScale>
+			<fScale>0.24</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13304,7 +13304,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KONTERE</Type>
 			<Button>,Art/Interface/Buttons/Units/Galley.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,9</Button>
-			<fScale>0.16</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13343,7 +13343,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIRAT_KONTERE</Type>
 			<Button>Art/Interface/Buttons/Units/button_pirat_kontere.dds</Button>
-			<fScale>0.16</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13382,7 +13382,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_BIREME</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_bireme.dds</Button>
-			<fScale>0.12</fScale>
+			<fScale>0.16</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13421,7 +13421,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIRAT_BIREME</Type>
 			<Button>Art/Interface/Buttons/Units/button_pirat_bireme.dds</Button>
-			<fScale>0.12</fScale>
+			<fScale>0.16</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13460,7 +13460,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TRIERE</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_trireme.dds</Button>
-			<fScale>0.13</fScale>
+			<fScale>0.17</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13499,7 +13499,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIRAT_TRIERE</Type>
 			<Button>Art/Interface/Buttons/Units/button_pirat_trireme.dds</Button>
-			<fScale>0.13</fScale>
+			<fScale>0.17</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13538,7 +13538,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_TRIERE_CARTHAGE</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_trireme.dds</Button>
-			<fScale>0.13</fScale>
+			<fScale>0.17</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13577,7 +13577,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LIBURNE</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_liburne.dds</Button>
-			<fScale>0.12</fScale>
+			<fScale>0.16</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13616,7 +13616,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_PIRAT_LIBURNE</Type>
 			<Button>Art/Interface/Buttons/Units/button_pirat_liburne.dds</Button>
-			<fScale>0.12</fScale>
+			<fScale>0.16</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13655,7 +13655,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_KILIKIEN</Type>
 			<Button>Art/Interface/Buttons/Units/button_kilikischerpirat.dds</Button>
-			<fScale>0.13</fScale>
+			<fScale>0.19</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13694,7 +13694,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_QUADRIREME</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_galeere.dds</Button>
-			<fScale>0.15</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13733,7 +13733,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_GALEERE</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_quad.dds</Button>
-			<fScale>0.15</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13772,7 +13772,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_QUINQUEREME</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_quin.dds</Button>
-			<fScale>0.15</fScale>
+			<fScale>0.20</fScale>
 			<fInterfaceScale>0.7</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -13811,7 +13811,7 @@
 		<UnitArtInfo>
 				 <Type>ART_DEF_UNIT_DECAREME</Type>
 				 <Button>Art/Interface/Buttons/Units/button_decareme.dds</Button>
-				 <fScale>0.28</fScale>
+				 <fScale>0.42</fScale>
 				 <fInterfaceScale>0.6</fInterfaceScale>
 				 <bActAsLand>0</bActAsLand>
 				 <bActAsAir>0</bActAsAir>
@@ -13889,7 +13889,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_LANGSCHIFF</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_langschiff.dds</Button>
-			<fScale>0.14</fScale>
+			<fScale>0.17</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
@@ -14013,6 +14013,45 @@
 			<NIF>Art/Units/Caravel/Caravel.nif</NIF>
 			<KFM>Art/Units/Caravel/Caravel.kfm</KFM>
 			<SHADERNIF>Art/Units/Caravel/Caravel_FX.nif</SHADERNIF>
+			<ShadowDef>
+				<ShadowNIF>Art/Units/01_UnitShadows/CaravelShadow.nif</ShadowNIF>
+				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
+				<fShadowScale>1.0</fShadowScale>
+			</ShadowDef>
+			<iDamageStates>4</iDamageStates>
+			<TrailDefinition>
+				<Texture>Art/Shared/water_ship_wake.dds</Texture>
+				<fWidth>1</fWidth>
+				<fLength>180.0</fLength>
+				<fTaper>1</fTaper>
+				<fFadeStartTime>.2</fFadeStartTime>
+				<fFadeFalloff>0.35</fFadeFalloff>
+			</TrailDefinition>
+			<fBattleDistance>0.35</fBattleDistance>
+			<fRangedDeathTime>0.31</fRangedDeathTime>
+			<bSmoothMove>1</bSmoothMove>
+			<fAngleInterpRate>720.0</fAngleInterpRate>
+			<fBankRate>.4</fBankRate>
+			<fExchangeAngle>25.0</fExchangeAngle>
+			<bActAsRanged>0</bActAsRanged>
+			<TrainSound>AS2D_UNIT_BUILD_UNIT</TrainSound>
+			<AudioRunSounds>
+				<AudioRunTypeLoop>LOOPSTEP_OCEAN2</AudioRunTypeLoop>
+				<AudioRunTypeEnd>ENDSTEP_OCEAN2</AudioRunTypeEnd>
+			</AudioRunSounds>
+			<SelectionSound>AS3D_UN_OCEAN_END1</SelectionSound>
+			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
+		</UnitArtInfo>
+		<UnitArtInfo>
+			<Type>ART_DEF_UNIT_SHIP_MERCHANT</Type>
+			<Button>Art/Interface/Buttons/Units/button_merchantman.dds</Button>
+			<fScale>0.22</fScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
+			<bActAsLand>0</bActAsLand>
+			<bActAsAir>0</bActAsAir>
+			<NIF>Art/Units/Ships/RoundShip/Early_Merchant_Ship.nif</NIF>
+			<KFM>Art/Units/Caravel/Caravel.kfm</KFM>
+			<SHADERNIF></SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/CaravelShadow.nif</ShadowNIF>
 				<ShadowAttachNode>BIP Pelvis</ShadowAttachNode>
