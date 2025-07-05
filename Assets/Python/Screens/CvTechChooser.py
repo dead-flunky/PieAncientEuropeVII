@@ -1000,7 +1000,7 @@ class CvTechChooser:
 								screen.addDDSGFCAt("", szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_SLAVE2THEATRE").getPath(), iX +
 																	 fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 670, 670, False)
 								fX += X_INCREMENT
-						elif i == gc.getInfoTypeForString("TECH_LITERATURE"):
+						elif i == gc.getInfoTypeForString("TECH_GRAMMATIK"):
 								screen.addDDSGFCAt("", szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_SLAVE2SCHOOL").getPath(), iX +
 																	 fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 679, 679, False)
 								fX += X_INCREMENT
@@ -1081,10 +1081,18 @@ class CvTechChooser:
 						elif i == gc.getInfoTypeForString("TECH_MEDICINE3") or i == gc.getInfoTypeForString("TECH_ANATOMIE"):
 								screen.addDDSGFCAt("", szTechRecord, "Art/Interface/Buttons/Units/button_slave.dds", iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 721, 19, False)
 								fX += X_INCREMENT
+						elif i == gc.getInfoTypeForString("TECH_SKLAVENRECHTE"):
+								screen.addDDSGFCAt("", szTechRecord, "Art/Interface/Buttons/Units/button_slave.dds", iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 721, 22, False)
+								fX += X_INCREMENT
 
 						# Auswanderer und Siedler können Dörfer zu Gemeinden vergrößern
 						elif i == gc.getInfoTypeForString("TECH_HEILKUNDE"):
 								screen.addDDSGFCAt("", szTechRecord, "Art/Interface/Buttons/Actions/button_action_slave2village.dds", iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 721, 21, False)
+								fX += X_INCREMENT
+								
+						# Trade Routes per City change
+						elif i == gc.getInfoTypeForString("TECH_KARTOGRAPHIE2"):
+								screen.addDDSGFCAt("", szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TECH_MAPTRADING").getPath(), iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 721, 23, False)
 								fX += X_INCREMENT
 
 						# Limes
@@ -1128,7 +1136,7 @@ class CvTechChooser:
 																	 iX + fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 754, j, True)
 								fX += X_INCREMENT
 						# Obsolet Olympic Games
-						elif i == gc.getInfoTypeForString("TECH_PAPSTTUM"):
+						elif i == gc.getInfoTypeForString("TECH_KONZIL2"):
 								j = gc.getInfoTypeForString("PROJECT_OLYMPIC_GAMES")
 								szObsoleteButton = "ObsoleteProject" + str(j)
 								szObsoleteX = "ObsoleteProjectX" + str(j)

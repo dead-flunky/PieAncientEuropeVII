@@ -2464,6 +2464,11 @@ class CvMainInterface:
 																# remove from plot => iData2 = 0. 1 = charge all goods without removing. Nur bei leerem Karren.
 																elif eBonus == -1:
 																		if ePlotBonus != -1 and (ePlotBonus in L.LBonusCultivatable or ePlotBonus in L.LBonusStratCultivatable or ePlotBonus in L.LBonusCultivatableCoast):
+																				# Kaufen
+																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																						"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 2, True)
+																				screen.show("BottomButtonContainer")
+																				iCount += 1
 																				# Bonusgut aufnehmen (Eigenes Terrain, Neutrales Terrain, Feindliches Terrain)
 																				if pPlot.getOwner() == iUnitOwner or pPlot.getOwner() == -1 or gc.getTeam(pPlot.getOwner()).isAtWar(pUnitOwner.getTeam()):
 																						if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
@@ -2476,11 +2481,6 @@ class CvMainInterface:
 																						iCount += 1
 																				# Bonusgut kaufen oder stehlen (freundliches Terrain, Vasallenterrain)
 																				elif not bCity:
-																						# Kaufen
-																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																								"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 2, True)
-																						screen.show("BottomButtonContainer")
-																						iCount += 1
 																						# Stehlen
 																						if pTeam.getEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam()) > 100:
 																								screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
@@ -4785,7 +4785,7 @@ class CvMainInterface:
 														szRightBuffer = u""
 														bFirst = True
 
-														# Bonus der aktiven (nicht obsolet) Buildings
+														# Bonus der aktiven (nicht obsoleten) Buildings
 														if pHeadSelectedCity.getNumActiveBuilding(i) > 0:
 
 																# Trade
@@ -4875,6 +4875,18 @@ class CvMainInterface:
 																				else:
 																						szTempBuffer = u"%d%s%c" % (iYield, "%", gc.getYieldInfo(j).getChar())
 																				szRightBuffer = szRightBuffer + szTempBuffer
+
+																# Defense/Defence
+																iValue = BuildingInfo.getDefenseModifier()
+																if iValue > 0:
+																		if not bFirst:
+																				szRightBuffer = szRightBuffer + ", "
+																		else:
+																				bFirst = False
+
+																		szTempBuffer = u"+%d%%%c" % (iValue, CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR))
+																		szRightBuffer = szRightBuffer + szTempBuffer
+
 
 														# betrifft hier auch obsolete Buildings
 														# Commercebonus (Gold, Wissen, Kultur, Spionage)
@@ -5356,7 +5368,7 @@ class CvMainInterface:
 												if pPlayer.getAnarchyTurns() > 0:
 														szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_ANARCHY", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
 												# Keine Reli oder Staatsreligion
-												elif iRel != -1 and not pCity.isHasReligion(iRel):
+												elif iRel != -1 and not pCity.isHasReligion(iRel) and not pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_HENOTHEISM")) and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")):
 														szBuffer = localText.getText("TXT_KEY_MAIN_REVOLT_RELIGION", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
 												# Unhappiness
 												elif pCity.unhappyLevel(0) > pCity.happyLevel():
@@ -5757,11 +5769,11 @@ class CvMainInterface:
 								iDefenseModifier = pHeadSelectedCity.getDefenseModifier(False)
 
 								if iDefenseModifier != 0:
-										szBuffer = localText.getText("TXT_KEY_MAIN_CITY_DEFENSE", (CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR), iDefenseModifier))
+										szBuffer = localText.getText("TXT_KEY_MAIN_CITY_DEFENSE", (CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR), iDefenseModifier, pHeadSelectedCity.getTotalDefense(False)))
 
-										if pHeadSelectedCity.getDefenseDamage() > 0:
-												szTempBuffer = u" (%d%%)" % (((gc.getMAX_CITY_DEFENSE_DAMAGE() - pHeadSelectedCity.getDefenseDamage()) * 100) / gc.getMAX_CITY_DEFENSE_DAMAGE())
-												szBuffer = szBuffer + szTempBuffer
+										#if pHeadSelectedCity.getDefenseDamage() > 0:
+										szTempBuffer = u" (%d%%)" % (((gc.getMAX_CITY_DEFENSE_DAMAGE() - pHeadSelectedCity.getDefenseDamage()) * 100) / gc.getMAX_CITY_DEFENSE_DAMAGE())
+										szBuffer = szBuffer + szTempBuffer
 										szNewBuffer = "<font=4>"
 										szNewBuffer = szNewBuffer + szBuffer
 										szNewBuffer = szNewBuffer + "</font>"
@@ -6687,10 +6699,6 @@ class CvMainInterface:
 								szTempBuffer = u"%c" % CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR) + szTempBuffer
 						screen.setTableText("ScoreBackground2", Spalte+1, iRow, szTempBuffer, None, WidgetTypes.WIDGET_CONTACT_CIV, iPlayer, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
-						if iTeam in lHegemons:
-								sText1 += CyTranslator().getText("[ICON_STAR]", ())
-						elif pTeam.isAVassal():
-								sText1 += CyTranslator().getText("[ICON_SILVER_STAR]", ())
 
 						# if iPlayer == CyGame().getActivePlayer():
 						#        sText1 += CyTranslator().getText("[ICON_POWER]", ())
@@ -6721,7 +6729,13 @@ class CvMainInterface:
 								sText1 += u"<color=%d,%d,%d,%d>%d</color>" % (pPlayer.getPlayerTextColorR(), pPlayer.getPlayerTextColorG(), pPlayer.getPlayerTextColorB(),
 																							pPlayer.getPlayerTextColorA(), CyGame().getPlayerScore(iPlayer))
 
+						if iTeam in lHegemons:
+								sText1 += CyTranslator().getText("[ICON_STAR]", ())
+						elif pTeam.isAVassal():
+								sText1 += CyTranslator().getText("[ICON_SILVER_STAR]", ())
+
 						screen.setTableText("ScoreBackground2", 0, iRow, sText1, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_RIGHT_JUSTIFY)
+
 
 						bEspionageCanSeeResearch = False
 						for iMissionLoop in xrange(gc.getNumEspionageMissionInfos()):
@@ -6908,12 +6922,12 @@ class CvMainInterface:
 		# Will set the selection button position
 		def setResearchButtonPosition(self, szButtonID, iCount):
 
-				# PAE: x+5 and Original modulo: 15
+				# BTS: 264 + PAE: 240 and Original modulo: 15
 				screen = CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE)
 				xResolution = screen.getXResolution()
 				if xResolution <= 1024: iModulo = 10
-				else: iModulo = 18
-				screen.moveItem(szButtonID, 264 + 5 + ((xResolution - 1024) / 2) + (34 * (iCount % iModulo)), 0 + (34 * (iCount / iModulo)), -0.3)
+				else: iModulo = 15
+				screen.moveItem(szButtonID, 240 + ((xResolution - 1024) / 2) + (34 * (iCount % iModulo)), 0 + (34 * (iCount / iModulo)), -0.3)
 
 		# Will set the selection button position
 		def setScoreTextPosition(self, szButtonID, iWhichLine):

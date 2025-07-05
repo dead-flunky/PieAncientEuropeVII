@@ -379,5 +379,9 @@
 			<Type>ART_DEF_MOVIE_EXODUS</Type>
 			<Path>Art/Movies/Wonders/Exodus.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_ZORO_SHRINE</Type>
+			<Path>Art/Movies/Wonders/AdurFarnbag.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

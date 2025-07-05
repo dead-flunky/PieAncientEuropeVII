@@ -56,6 +56,15 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		// PBMod end
 		.def("getNameForm", &CyPlayer::getNameForm, "wstring (int iForm)")
 		.def("getNameKey", &CyPlayer::getNameKey, "wstring ()")
+		/********************************************************************************/
+		/**		REVOLUTION_MOD							1/1/08				jdog5000	*/
+		/**																				*/
+		/**		For DynamicCivNames														*/
+		/********************************************************************************/
+		.def("setCivName", &CyPlayer::setCivName, "void(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)" )																														// Exposed to Python
+		/********************************************************************************/
+		/**		REVOLUTION_MOD							END								*/
+		/********************************************************************************/
 		.def("getCivilizationDescription", &CyPlayer::getCivilizationDescription, "wstring (int iForm) - returns the Civilization Description String")
 		.def("getCivilizationShortDescription", &CyPlayer::getCivilizationShortDescription, "wstring (int iForm) - returns the short Civilization Description")
 		.def("getCivilizationDescriptionKey", &CyPlayer::getCivilizationDescriptionKey, "wstring () - returns the Civilization Description String")

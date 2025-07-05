@@ -1784,7 +1784,7 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 		<Tag>TXT_KEY_HISTORY_215BC_3</Tag>
 		<English>202 BC. Scipio Africanus defeats Hannibal at Zama.</English>
 		<French>202 av JC. Scipion l'Africain bat Hannibal &#224; Zama.</French>
-		<German>202 v. Chr.: Scipio Afrikanus schl&#228;gt Hannibal bei Zama.</German>
+		<German>202 v. Chr.: Scipio Africanus schl&#228;gt Hannibal bei Zama.</German>
 		<Italian>202 a.C. Scipio Africanus sconfigge Annibale a Zama.</Italian>
 		<Spanish>202 a.C. Escipi&#243;n el Africano derrota a An&#237;bal en Zama.</Spanish>
 	</TEXT>
@@ -4374,11 +4374,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERO_MOVE_INTO_CITY_POPUP</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Heroes[COLOR_REVERT] (through combat) and units with the Art of [COLOR_HIGHLIGHT_TEXT]Rhetoric[COLOR_REVERT] (through promotion) can reduce city riots and civil wars to just one turn.[NEWLINE]If you move normal units into such cities, the timer per unit decreases by one (at least 2 turns of riot remain).</English>
-		<French>Des unit&#233;s avec la promotion [COLOR_HIGHLIGHT_TEXT]H&#233;ros[COLOR_REVERT] ou [COLOR_HIGHLIGHT_TEXT]Rh&#233;torique[COLOR_REVERT] peuvent r&#233;duire les &#233;meutes urbaines et les guerres civiles &#224; un seul tour.[NEWLINE]Si vous d&#233;placez des unit&#233;s normales dans de telles villes, la dur&#233;e des &#233;meutes diminue de 1 tour par unit&#233; (minimum incompressible de 2 tours).</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Helden[COLOR_REVERT] (durch Kampf) und Einheiten mit der Kunst der [COLOR_HIGHLIGHT_TEXT]Rhetorik[COLOR_REVERT] (durch Bef&#246;rderung) k&#246;nnen Unruhen und B&#252;rgerkriege von St&#228;dten auf nur eine Runde reduzieren.[NEWLINE]Bewegt man normale Einheiten in solche St&#228;dte, sinkt der Timer pro Einheit um eins (min 2 Runden Unruhe verbleiben).</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Gli eroi[COLOR_REVERT] (attraverso il combattimento) e le unit&#224; con l'Arte di [COLOR_HIGHLIGHT_TEXT]Retorica[COLOR_REVERT] (attraverso la promozione) possono ridurre le rivolte cittadine e le guerre civili a un solo turno.[NEWLINE]Se sposti unit&#224; normali in tali citt&#224;, il timer per unit&#224; diminuisce di uno (rimangono almeno 2 turni di rivolta).</Italian>
-		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]H&#233;roes[COLOR_REVERT] (a trav&#233;s del combate) y las unidades con el Arte de la [COLOR_HIGHLIGHT_TEXT]Ret&#243;rica[COLOR_REVERT] (a trav&#233;s de la promoci&#243;n) pueden reducir los disturbios de la ciudad y las guerras civiles a un solo turno.[NEWLINE]Si mueves unidades normales a tales ciudades, el tiempo por unidad se reduce en uno (quedan al menos 2 turnos de disturbios).</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Heroes[COLOR_REVERT] (through combat) and generals with the Art of [COLOR_HIGHLIGHT_TEXT]Rhetoric[COLOR_REVERT] (through promotion) can reduce city riots and civil wars to just one turn.[NEWLINE]If you move normal units into such cities, the timer per unit decreases by one (at least 2 turns of riot remain).</English>
+		<French>Des unit&#233;s avec la promotion [COLOR_HIGHLIGHT_TEXT]H&#233;ros[COLOR_REVERT] et des G&#233;n&#233;raux avec [COLOR_HIGHLIGHT_TEXT]Rh&#233;torique[COLOR_REVERT] peuvent r&#233;duire les &#233;meutes urbaines et les guerres civiles &#224; un seul tour.[NEWLINE]Si vous d&#233;placez des unit&#233;s normales dans de telles villes, la dur&#233;e des &#233;meutes diminue de 1 tour par unit&#233; (minimum incompressible de 2 tours).</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Helden[COLOR_REVERT] (durch Kampf) und Gener&#228;le mit der Kunst der [COLOR_HIGHLIGHT_TEXT]Rhetorik[COLOR_REVERT] (durch Bef&#246;rderung) k&#246;nnen Unruhen und B&#252;rgerkriege von St&#228;dten auf nur eine Runde reduzieren.[NEWLINE]Bewegt man normale Einheiten in solche St&#228;dte, sinkt der Timer pro Einheit um eins (min 2 Runden Unruhe verbleiben).</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Gli eroi[COLOR_REVERT] (attraverso il combattimento) e generali con l'Arte di [COLOR_HIGHLIGHT_TEXT]Retorica[COLOR_REVERT] (attraverso la promozione) possono ridurre le rivolte cittadine e le guerre civili a un solo turno.[NEWLINE]Se sposti unit&#224; normali in tali citt&#224;, il timer per unit&#224; diminuisce di uno (rimangono almeno 2 turni di rivolta).</Italian>
+		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]H&#233;roes[COLOR_REVERT] (a trav&#233;s del combate) y generales con el Arte de la [COLOR_HIGHLIGHT_TEXT]Ret&#243;rica[COLOR_REVERT] (a trav&#233;s de la promoci&#243;n) pueden reducir los disturbios de la ciudad y las guerras civiles a un solo turno.[NEWLINE]Si mueves unidades normales a tales ciudades, el tiempo por unidad se reduce en uno (quedan al menos 2 turnos de disturbios).</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HUNNEN_1</Tag>
@@ -6006,11 +6006,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CONTACT_LEADER</Tag>
-		<English>Contact %s1_PlyrName of %s2_CivName</English>
-		<French>Contacter %s1_PlyrName de %s2_CivName</French>
-		<German>%s1_PlyrName von der Zivilisation von %s2_CivName kontaktieren</German>
-		<Italian>Contatta il giocatore %s1_PlyrName della civilt&#224; di %s2:2_CivName</Italian>
-		<Spanish>Contactar con %s1_PlyrName de %s2_CivName</Spanish>
+		<English>Contact %s1_PlyrName (%s2_CivName)</English>
+		<French>Contacter %s1_PlyrName (%s2_CivName)</French>
+		<German>%s1_PlyrName (%s2_CivName) kontaktieren</German>
+		<Italian>Contatta il giocatore %s1_PlyrName (%s2:2_CivName)</Italian>
+		<Spanish>Contactar con %s1_PlyrName (%s2_CivName)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CORPORATION_FOUNDED</Tag>
@@ -7614,11 +7614,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_VASSAL_05</Tag>
-		<English>[H1]A Message![\H1][NEWLINE]An ambassador of %s1_leader (%s2_civ_shortdesc) offers to become your hegemon for d3% gold! Do you accept the offer and serve this empire as a faithful vassal?[NEWLINE]</English>
-		<French>[H1]Une missive ![\H1][NEWLINE]Un &#233;missaire de %s1_leader (%s2_civ_shortdesc) vous propose de devenir votre suzerain contre d3% [ICON_GOLD] ! Allez-vous accepter la proposition de servir loyalement cet empire ?[NEWLINE]</French>
+		<English>[H1]A Message![\H1][NEWLINE]An ambassador of %s1_leader (%s2_civ_shortdesc) offers to become your hegemon for %d3 gold! Do you accept the offer and serve this empire as a faithful vassal?[NEWLINE]</English>
+		<French>[H1]Une missive ![\H1][NEWLINE]Un &#233;missaire de %s1_leader (%s2_civ_shortdesc) vous propose de devenir votre suzerain contre %d3 [ICON_GOLD] ! Allez-vous accepter la proposition de servir loyalement cet empire ?[NEWLINE]</French>
 		<German>[H1]Eine Botschaft![\H1][NEWLINE]Ein Botschafter von %s1_leader (%s2_civ_shortdesc) bietet Euch an, f&#252;r %d3 Gold Euer Hegemon zu werden! Nehmt ihr das Angebot an und dient Ihr diesem Reich als treuer Vasall?[NEWLINE]</German>
-		<Italian>[H1]Un messaggio![\H1][NEWLINE]Un ambasciatore di %s1_leader (%s2_civ_shortdesc) si offre di diventare il tuo signore per il d3% di oro! Accetterai l'offerta e servirai questo impero come un fedele vassallo?[NEWLINE]</Italian>
-		<Spanish>[H1]&#161;Un mensaje![\H1][NEWLINE]&#161;Un embajador de %s1_leader (%s2_civ_shortdesc) se ofrece convertirse en tu se&#241;or por d3% de oro! &#191;Aceptas la oferta y servir a este imperio como un fiel vasallo?[NEWLINE]</Spanish>
+		<Italian>[H1]Un messaggio![\H1][NEWLINE]Un ambasciatore di %s1_leader (%s2_civ_shortdesc) si offre di diventare il tuo signore per il %d3 di oro! Accetterai l'offerta e servirai questo impero come un fedele vassallo?[NEWLINE]</Italian>
+		<Spanish>[H1]&#161;Un mensaje![\H1][NEWLINE]&#161;Un embajador de %s1_leader (%s2_civ_shortdesc) se ofrece convertirse en tu se&#241;or por %d3 de oro! &#191;Aceptas la oferta y servir a este imperio como un fiel vasallo?[NEWLINE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_VASSAL_05_1</Tag>
@@ -8422,11 +8422,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ADVISOR_BOTTOM2</Tag>
-		<English>Sales value = base value + population + distance + wonder bonus + attitude + availability &#8211; corruption</English>
-		<French>Valeur des ventes = valeur de base + population + distance + bonus merveille + attitude + disponibilit&#233; &#8211; corruption</French>
-		<German>Verkaufspreis = Basiswert + Population + Distanz + Wunderbonus + Haltung + Verf&#252;gbarkeit &#8211; Korruption</German>
-		<Italian>Valore di vendita = valore base + popolazione + distanza + bonus di meraviglia + atteggiamento + disponibilit&#224; &#8211; corruzione</Italian>
-		<Spanish>Valor de ventas = valor base + poblaci&#243;n + distancia + bonificaci&#243;n de maravilla + actitud + disponibilidad &#8211; corrupci&#243;n</Spanish>
+		<English>Sales value = base value + population + distance + wonder bonus + attitude + availability - corruption</English>
+		<French>Valeur des ventes = valeur de base + population + distance + bonus merveille + attitude + disponibilit&#233; - corruption</French>
+		<German>Verkaufspreis = Basiswert + Population + Distanz + Wunderbonus + Haltung + Verf&#252;gbarkeit - Korruption</German>
+		<Italian>Valore di vendita = valore base + popolazione + distanza + bonus di meraviglia + atteggiamento + disponibilit&#224; - corruzione</Italian>
+		<Spanish>Valor de ventas = valor base + poblaci&#243;n + distancia + bonificaci&#243;n de maravilla + actitud + disponibilidad - corrupci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRADE_ADVISOR_BOTTOM3</Tag>
@@ -8734,11 +8734,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WONDER_HAGIA_HELP</Tag>
-		<English>[ICON_BULLET]City needs [COLOR_HIGHLIGHT_TEXT]Christianity[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilgrims can be blessed in this city (+25%[ICON_STRENGTH] in the first battle). Christianity as state religion required.</English>
-		<French>[ICON_BULLET]La ville a besoin du [COLOR_HIGHLIGHT_TEXT]Christianisme[COLOR_REVERT][NEWLINE][ICON_BULLET]Les p&#232;lerins peuvent &#234;tre b&#233;nis dans cette ville (+25%[ICON_STRENGTH] dans la premi&#232;re bataille). Christianisme requis comme religion d'&#201;tat.</French>
-		<German>[ICON_BULLET]Stadt ben&#246;tigt das [COLOR_HIGHLIGHT_TEXT]Christentum[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilger k&#246;nnen sich in dieser Stadt segnen lassen (+25%[ICON_STRENGTH] beim ersten Gefecht). Christentum als Staatsreligion notwendig.</German>
-		<Italian>[ICON_BULLET]La citt&#224; ha bisogno del [COLOR_HIGHLIGHT_TEXT]Cristianesimo[COLOR_REVERT][NEWLINE][ICON_BULLET]I pellegrini possono essere benedetti in questa citt&#224; (+25%[ICON_STRENGTH] nella prima battaglia). Cristianesimo richiesto come religione di stato.</Italian>
-		<Spanish>[ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]Cristianismo[COLOR_REVERT][NEWLINE][ICON_BULLET]Los peregrinos pueden ser bendecidos en esta ciudad (+25%[ICON_STRENGTH] en la primera batalla). Se requiere el cristianismo como religi&#243;n de estado.</Spanish>
+		<English>[ICON_BULLET]Pilgrims can be blessed in this city (+25%[ICON_STRENGTH] in the first battle). Christianity as state religion required.</English>
+		<French>[ICON_BULLET]Les p&#232;lerins peuvent &#234;tre b&#233;nis dans cette ville (+25%[ICON_STRENGTH] dans la premi&#232;re bataille). Christianisme requis comme religion d'&#201;tat.</French>
+		<German>[ICON_BULLET]Pilger k&#246;nnen sich in dieser Stadt segnen lassen (+25%[ICON_STRENGTH] beim ersten Gefecht). Christentum als Staatsreligion notwendig.</German>
+		<Italian>[ICON_BULLET]I pellegrini possono essere benedetti in questa citt&#224; (+25%[ICON_STRENGTH] nella prima battaglia). Cristianesimo richiesto come religione di stato.</Italian>
+		<Spanish>[ICON_BULLET]Los peregrinos pueden ser bendecidos en esta ciudad (+25%[ICON_STRENGTH] en la primera batalla). Se requiere el cristianismo como religi&#243;n de estado.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WONDER_RAZED</Tag>
@@ -8758,11 +8758,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WONDER_ZEUS_HELP</Tag>
-		<English>[ICON_BULLET]City needs [COLOR_HIGHLIGHT_TEXT]Greek gods[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilgrims can improve their morale in this city (+15%[ICON_STRENGTH]). Greek religion as state religion required.</English>
-		<French>[ICON_BULLET]La ville a besoin du [COLOR_HIGHLIGHT_TEXT]Panth&#233;on olympien[COLOR_REVERT][NEWLINE][ICON_BULLET]Les p&#232;lerins peuvent am&#233;liorer leur moral dans cette ville (+15%[ICON_STRENGTH]). La religion grecque requise comme religion d'&#201;tat.</French>
-		<German>[ICON_BULLET]Stadt ben&#246;tigt [COLOR_HIGHLIGHT_TEXT]Griechische G&#246;tter[COLOR_REVERT][NEWLINE][ICON_BULLET]Pilger k&#246;nnen in dieser Stadt ihre Kampfmoral verbessern (+15%[ICON_STRENGTH]). Griechische Religion als Staatsreligion notwendig.</German>
-		<Italian>[ICON_BULLET]La citt&#224; ha bisogno degli [COLOR_HIGHLIGHT_TEXT]d&#232;i greci[COLOR_REVERT][NEWLINE][ICON_BULLET]I pellegrini possono migliorare il loro morale in questa citt&#224; (+15%[ICON_STRENGTH]). Religione greca richiesta come religione di stato.</Italian>
-		<Spanish>[ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]dioses griegos[COLOR_REVERT][NEWLINE][ICON_BULLET]Los peregrinos pueden mejorar su moral en esta ciudad (+15%[ICON_STRENGTH]). Se requiere la religi&#243;n griega como religi&#243;n de estado.</Spanish>
+		<English>[ICON_BULLET]Pilgrims can improve their morale in this city (+15%[ICON_STRENGTH]). Greek religion as state religion required.</English>
+		<French>[ICON_BULLET]Les p&#232;lerins peuvent am&#233;liorer leur moral dans cette ville (+15%[ICON_STRENGTH]). La religion grecque requise comme religion d'&#201;tat.</French>
+		<German>[ICON_BULLET]Pilger k&#246;nnen in dieser Stadt ihre Kampfmoral verbessern (+15%[ICON_STRENGTH]). Griechische Religion als Staatsreligion notwendig.</German>
+		<Italian>[ICON_BULLET]I pellegrini possono migliorare il loro morale in questa citt&#224; (+15%[ICON_STRENGTH]). Religione greca richiesta come religione di stato.</Italian>
+		<Spanish>[ICON_BULLET]Los peregrinos pueden mejorar su moral en esta ciudad (+15%[ICON_STRENGTH]). Se requiere la religi&#243;n griega como religi&#243;n de estado.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORST_ENEMY_OF</Tag>

@@ -17,6 +17,8 @@ def onCityAcquired(pCity, iNewOwner, iPreviousOwner):
 		iWinnerTeam = pWinner.getTeam()
 		pWinnerTeam = gc.getTeam(iWinnerTeam)
 
+		if pWinner.isMinorCiv() or gc.getPlayer(iPreviousOwner).isMinorCiv(): return
+
 		# Der Gewinner muss die TECH Vassallentum erforscht haben
 		iTechVasallentum = gc.getInfoTypeForString("TECH_VASALLENTUM")
 		if pWinnerTeam.isHasTech(iTechVasallentum) and iNewOwner != gc.getBARBARIAN_PLAYER():
@@ -1137,10 +1139,11 @@ def doGiveCity2Vassal(pCity, iNewOwner):
 						iUnitType = gc.getInfoTypeForString('UNIT_FREED_SLAVE')
 						NewUnit = pNewOwner.initUnit(iUnitType, iX, iY, UnitAITypes.UNITAI_ENGINEER, DirectionTypes.DIRECTION_SOUTH)
 						PAE_Unit.copyName(NewUnit, iUnitType, pLoopUnit.getName())
-				# Emigrant und dessen Kultur
+				# Emigrant und dessen Kultur und Religion
 				elif iUnitType == gc.getInfoTypeForString('UNIT_EMIGRANT'):
 						NewUnit = pNewOwner.initUnit(iUnitType, iX, iY, UnitAITypes.UNITAI_SETTLE, DirectionTypes.DIRECTION_SOUTH)
 						CvUtil.addScriptData(NewUnit, "p", iOldOwner)
+						PAE_Unit.setUnitReligion(NewUnit)
 						PAE_Unit.copyName(NewUnit, iUnitType, pLoopUnit.getName())
 				elif iUnitType != -1:
 						NewUnit = pNewOwner.initUnit(iUnitType, iX, iY, UnitAITypes(iUnitAIType), DirectionTypes.DIRECTION_SOUTH)

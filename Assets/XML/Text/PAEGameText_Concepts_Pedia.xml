@@ -982,7 +982,7 @@ En plus de livrer de la nourriture &#224; d'autres villes, les chariots peuvent 
 [ICON_BULLET] Il suffit que la ressource soit accessible par le r&#233;seau commercial d'une ville pour qu'elle puisse &#234;tre diffus&#233;e en &#233;tant charg&#233;e sur le chariot dans cette ville. Le co&#251;t d'achat est moindre si la ressource fait partie du territoire de la ville. Les cercles verts sur la carte montrent les cases de cultures potentielles. L'unit&#233; est dissoute lorsque une case de culture est cr&#233;&#233;e.
 
 [ICON_BULLET] Soit vous d&#233;placez le chariot dans la ville (cercle blanc) et laissez le hasard d&#233;cider o&#249; le bien bonus est distribu&#233; dans l'un des espaces verts environnants, soit vous d&#233;placez le chariot directement vers le champ avec le cercle vert pour le faire monter &#224; r&#233;pandre &#231;a.
-Exemple : Les villes peuvent partager une ressource &#233;questre pour construire une &#233;curie. La ressource doit se trouver dans la sph&#232;re d'influence des deux villes.
+Exemple: Les villes peuvent partager une ressource &#233;questre pour construire une &#233;curie. La ressource doit se trouver dans la sph&#232;re d'influence des deux villes.
 
 [ICON_BULLET] Une ressource bonus cultivable peut &#234;tre retir&#233;e d'une case et transf&#233;r&#233;e &#224; une autre en amenant un chariot sur la case de culture. Un chariot charg&#233; indique son statut dans l'&#233;cran principal par un sigle &#224; gauche sous les caract&#233;ristiques de l'unit&#233;.
 
@@ -1500,34 +1500,34 @@ Prio 4: actuellement la plus grande capitale
 
 [H1]Diffusion (christianisme, juda&#239;sme et islam)[\H1]
 Une fois qu'une religion monoth&#233;iste a &#233;t&#233; fond&#233;e, elle peut automatiquement se propager aux villes voisines (dans un rayon de 8 cases) ou aux partenaires commerciaux (routes commerciales passives).
-[ICON_BULLET] Propagation du christianisme : 33 %, 44 tours plus tard, 50 % (L'errance des ap&#244;tres)
-[ICON_BULLET] Propagation du juda&#239;sme : 10 %
-[ICON_BULLET] Propagation de l'Islam : 20 %
+[ICON_BULLET] Propagation du christianisme : 33 %, 44 tours plus tard, 50 % (L'errance des ap&#244;tres)
+[ICON_BULLET] Propagation du juda&#239;sme : 10 %
+[ICON_BULLET] Propagation de l'Islam : 20 %
 
-[H2]Exigences :[\H2]
+[H2]Exigences :[\H2]
 [ICON_BULLET] La religion n'est pas encore repr&#233;sent&#233;e dans la ville
 [ICON_BULLET] La religion juive peut s'&#233;tendre &#224; n'importe quelle ville
 [ICON_BULLET] Le christianisme ne peut pas s'&#233;tendre aux villes musulmanes
 [ICON_BULLET] L'Islam ne peut pas s'&#233;tendre aux villes chr&#233;tiennes
 
-[H2]Propagation du christianisme :[\H2]
-[ICON_BULLET] Capitales et capitales provinciales : 100 %
-[ICON_BULLET] Villes (statut de ville) avec march&#233; aux esclaves : 90 %
-[ICON_BULLET] Villes (ville de statut) : 80 %
-[ICON_BULLET] Villes (sans statut de ville) avec march&#233; aux esclaves : 70 %
-[ICON_BULLET] Villes (sans statut de ville) : 50 %
-[ICON_BULLET] Le propri&#233;taire de la ville a une forme de gouvernement "th&#233;ocratique" : -30 %
-[ICON_BULLET] Le propri&#233;taire de la ville a le formulaire d'&#233;tat "Amphiktionia" : -20 %
+[H2]Propagation du christianisme :[\H2]
+[ICON_BULLET] Capitales et capitales provinciales : 100 %
+[ICON_BULLET] Villes (statut de ville) avec march&#233; aux esclaves : 90 %
+[ICON_BULLET] Villes (ville de statut) : 80 %
+[ICON_BULLET] Villes (sans statut de ville) avec march&#233; aux esclaves : 70 %
+[ICON_BULLET] Villes (sans statut de ville) : 50 %
+[ICON_BULLET] Le propri&#233;taire de la ville a une forme de gouvernement "th&#233;ocratique" : -30 %
+[ICON_BULLET] Le propri&#233;taire de la ville a le formulaire d'&#233;tat "Amphiktionia" : -20 %
 [ICON_BULLET] &#224; partir de la Randonn&#233;e des Ap&#244;tres, une deuxi&#232;me ville peut &#234;tre missionn&#233;e : chance 1:3
 
 [ICON_BULLET] V&#233;rification suppl&#233;mentaire par ville : Esclaves install&#233;s : 5 % par tour
 
-[H2]Diffusion du juda&#239;sme ou de l'islam :[\H2]
-[ICON_BULLET] Capitales et capitales provinciales : 75 %
-[ICON_BULLET] Villes (ville de statut) : 50 %
-[ICON_BULLET] Villes (sans statut de ville) : 25 %
-[ICON_BULLET] Le propri&#233;taire de la ville a une forme de gouvernement "th&#233;ocratique" : -25 %
-[ICON_BULLET] Le propri&#233;taire de la ville a le formulaire d'&#233;tat "Amphiktionia" : -15 %
+[H2]Diffusion du juda&#239;sme ou de l'islam :[\H2]
+[ICON_BULLET] Capitales et capitales provinciales : 75 %
+[ICON_BULLET] Villes (ville de statut) : 50 %
+[ICON_BULLET] Villes (sans statut de ville) : 25 %
+[ICON_BULLET] Le propri&#233;taire de la ville a une forme de gouvernement "th&#233;ocratique" : -25 %
+[ICON_BULLET] Le propri&#233;taire de la ville a le formulaire d'&#233;tat "Amphiktionia" : -15 %
 
 
 [H1]Pers&#233;cution des chr&#233;tiens[\H1]
@@ -1942,7 +1942,7 @@ Les b&#226;timents construits sont affich&#233;s en diff&#233;rentes couleurs se
 [H2]Incendies urbains[\H2]
 Les incendies de ville &#233;taient tr&#232;s courants dans l'Antiquit&#233;. Des incendies peuvent se d&#233;clarer dans une ville &#224; partir du statut de village (Pop 3).
 [ICON_BULLET] Les villages jusqu'&#224; Pop 2 ne sont pas affect&#233;s.
-[ICON_BULLET] Les fontaines prot&#232;gent les villes jusqu'&#224; 5 populations.
+[ICON_BULLET] Les fontaines prot&#232;gent les villes jusqu'&#224; 5 populations.
 [ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes jusqu'&#224; 11 ans.
 [ICON_BULLET] Les aqueducs prot&#232;gent les villes jusqu'&#224; la population 17.
 [ICON_BULLET] Les pompiers (romains) prot&#232;gent les villes &#224; 100 %.
@@ -2828,7 +2828,7 @@ Combat sur terre :
 
 1) Exp&#233;rience de guerre : A chaque victoire, une unit&#233; est en mesure d'augmenter son degr&#233;s d'exp&#233;rience. Les diff&#233;rents degr&#233;s sont : entra&#238;n&#233;, exp&#233;riment&#233;, aguerri, v&#233;t&#233;ran, &#233;lite et l&#233;gendaire. Voir les concepts de [LINK=CONCEPT_COMBAT3]Unit&#233;s-Rang d'exp&#233;rience[\LINK]
 
-2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir &#8211; [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
+2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir – [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
 
 3) Mercenaires : les v&#233;t&#233;rans qui combattent pour eux-m&#234;mes peuvent se d&#233;faire de cette promotion apr&#232;s un combat (20% de chance). S'il y a un h&#233;ros ou un g&#233;n&#233;ral dans la pile de l'unit&#233;, m&#234;me 50 %.
 
@@ -2856,7 +2856,7 @@ Combat sur terre :
 
 15) Combat contre des [LINK=CONCEPT_MERCENARY]mercenaires en mission[\LINK] : L'un d'entre eux est le chef. S'il est vaincu, vous pouvez le faire torturer. Il est probable qu'il r&#233;v&#232;le un ou plusieurs de ses potentiels commanditaires.
 
-16) Mort du meneur d'homme : voir &#8211; [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
+16) Mort du meneur d'homme : voir – [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
 
 17) Culture : la culture d'une unit&#233; victorieuse influence la case du combat. Parfois, des territoires ennemis voisins sont convertis &#224; la culture de l'unit&#233;. Seulement valable si ces cases sont aussi influenc&#233;es par une ville de m&#234;me culture.
 
@@ -2904,7 +2904,7 @@ Certaines unit&#233;s mont&#233;es (cavalerie lourde, auxiliar, bataillon/l&#233
 
 [H2]El&#233;phants[\H2]
 
-[ICON_BULLET] Les &#233;l&#233;phants de guerre infligent jusqu'&#224; 50 % de d&#233;g&#226;ts collat&#233;raux &#224; 4 unit&#233;s ennemies lors d'une attaque.
+[ICON_BULLET] Les &#233;l&#233;phants de guerre infligent jusqu'&#224; 50 % de d&#233;g&#226;ts collat&#233;raux &#224; 4 unit&#233;s ennemies lors d'une attaque.
 [ICON_BULLET] Les &#233;l&#233;phants de guerre infligent 20 % de d&#233;g&#226;ts &#224; 4 unit&#233;s de leur propre pile s'ils perdent.
 
 [H1]Combats[\H1]
@@ -3263,7 +3263,7 @@ Los pretorianos montados, Auxiliar, el batall&#243;n sagrado montado y las cabal
 [H2]Elefantes[\H2]
 
 [ICON_BULLET] Los elefantes de guerra causan hasta un 50 % de da&#241;o colateral a 4 unidades enemigas durante un ataque.
-[ICON_BULLET] Los elefantes de guerra infligen un 20% de da&#241;o a 4 unidades en su propia pila si pierden.
+[ICON_BULLET] Los elefantes de guerra infligen un 20 % de da&#241;o a 4 unidades en su propia pila si pierden.
 
 [H1]Situaciones de batalla[\H1]
 
@@ -4130,7 +4130,7 @@ Les animaux sauvages et les menaces inconnues ont emp&#234;ch&#233; toute explor
 [ICON_BULLET] Avec l'Equitation Asiatique , vous pourrez recruter des &#233;claireurs plus rapides et puissants (Eclaireur mont&#233;)
 [ICON_BULLET] Les unit&#233;s ne peuvent pas se soigner en territoire ennemi (&#224; moins d'&#234;tre empil&#233;es avec une unit&#233; poss&#233;dant la promotion Infirmier)
 [ICON_BULLET] Les chasseurs sont mieux adapt&#233;s pour courir dans la nature, car ils peuvent se soigner eux-m&#234;mes.
-[ICON_BULLET] Les zones explor&#233;es en dehors de la port&#233;e visuelle des fronti&#232;res culturelles ou d'une unit&#233; redeviennent noires : voir la [LINK=CONCEPT_FOG_OF_WAR]Carte du monde et Brouillard de guerre[\LINK]
+[ICON_BULLET] Les zones explor&#233;es en dehors de la port&#233;e visuelle des fronti&#232;res culturelles ou d'une unit&#233; redeviennent noires : voir la [LINK=CONCEPT_FOG_OF_WAR]Carte du monde et Brouillard de guerre[\LINK]
 		</French>
 		<German>
 Wilde Tiere und unbekannte Gefahren haben die Erkundung damals verhindert. Man kannte damals nur sehr wenig von der Welt und das blieb lange so.
@@ -4278,7 +4278,7 @@ Le mod n'a probablement pas &#233;t&#233; charg&#233; enti&#232;rement. Essayez 
 Ce message peut appara&#238;tre quand vous jouez vos propres sc&#233;narios et changez des options. Il faut changer ces options directement dans le fichier du sc&#233;nario.
 
 [ICON_BULLET] CIV4 plante !
- Jouez en mode fen&#234;tr&#233; (plus stable &#8211; Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
+ Jouez en mode fen&#234;tr&#233; (plus stable – Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
 
 [ICON_BULLET] Je ne vois pas l'interface du jeu !
 1) Soyez s&#251;r d'avoir install&#233; le patch 3.19
@@ -6781,11 +6781,13 @@ Consequence:
 [ICON_BULLET] A Plague building is built in the city (+5 [ICON_UNHAPPY] and +5 [ICON_UNHEALTHY])
 
 During 5 turns:
-[ICON_BULLET] Improvements can be damaged (Village => Hamlet and Hamlet => Cottage)
+[ICON_BULLET] Improvements can be damaged (Farm, Village => Hamlet and Hamlet => Cottage)
 [ICON_BULLET] Population is reduced by 1 or 2
 [ICON_BULLET] City culture is reduced by 50 [ICON_CULTURE]
 [ICON_BULLET] The [ICON_UNHAPPY] penalty of the building is reduce by 1
 [ICON_BULLET] Plague can spread and affect other cities with a possibility of 10% (connected cities only)
+[ICON BULLET] Slaves die (field, house, mine slaves, and gladiators)
+[ICON BULLET] Livestock can die
 
 The plague spread by the following means
 [ICON_BULLET] along roads connected to infected cities within 10 plots
@@ -6824,11 +6826,13 @@ Cons&#233;quence :
 [ICON_BULLET] Cr&#233;e un "b&#226;timent" Peste dans la ville qui donne +5 [ICON_UNHAPPY] et +5 [ICON_UNHEALTHY]
 
 Pendant 5 tours :
-[ICON_BULLET] Possibilit&#233; de d&#233;gradation de certains am&#233;nagements (Village => Hameau et Hameau => Cottage)
+[ICON_BULLET] Possibilit&#233; de d&#233;gradation de certains am&#233;nagements (Ferme, Village => Hameau et Hameau => Cottage)
 [ICON_BULLET] R&#233;duction de la population (1 ou 2 habitants en moins)
 [ICON_BULLET] R&#233;duction de la culture de la ville de 50 [ICON_CULTURE]
 [ICON_BULLET] Le malus de [ICON_UNHAPPY] est r&#233;duit de 1
 [ICON_BULLET] La peste peut se propager et affecter d'autres villes connect&#233;es &#224; la ville touch&#233;e (probabilit&#233; de 10%)
+[ICON BULLET] Les esclaves meurent (esclaves des champs, des maisons, des mines et gladiateurs)
+[IC&#212;NE BULLET] Le b&#233;tail peut mourir
 
 Les villes sont connect&#233;es :
 [ICON_BULLET] si elles sont reli&#233;es par une route et au plus 10 cases de distance
@@ -6868,11 +6872,13 @@ Folgen:
 [ICON_BULLET] Ein Pestgeb&#228;ude wird in der Stadt erstellt (+5 [ICON_UNHAPPY] und +5 [ICON_UNHEALTHY])
 
 W&#228;hrend weiteren 5 Runden:
-[ICON_BULLET] Modernisierungen werden besch&#228;digt bzw. verschwinden (Dorf => Weiler und Weiler => H&#252;tte)
+[ICON_BULLET] Modernisierungen werden besch&#228;digt bzw. verschwinden (Bauernhof, Dorf => Weiler und Weiler => H&#252;tte)
 [ICON_BULLET] Die Bev&#246;lkerung sinkt um 1 oder 2
 [ICON_BULLET] Die Stadtkultur sinkt um 50 [ICON_CULTURE]
 [ICON_BULLET] Die [ICON_UNHAPPY]-Strafe des Geb&#228;udes wird um 1 reduziert
 [ICON_BULLET] Die Seuche kann mit einer Wahrscheinlichkeit von 10% auf andere verbundene(!) St&#228;dte &#252;bergreifen
+[ICON_BULLET] Sklavensterben (Feld-, Haus-, Bergwerksklaven und Gladiatoren)
+[ICON_BULLET] Vieh kann sterben
 
 Wie wird Pest &#252;bertragen?
 [ICON_BULLET] Mit Stra&#223;en verbundene St&#228;dte im Umkreis von 10 Plots
@@ -6912,11 +6918,13 @@ Seguire :
 [ICON_BULLET] Un Pestgeb&#228;ude &#232; in citt&#224; creato ( +5 [ICON_UNHAPPY] +5 [ICON_UNHEALTHY] )
 
 Durante un ulteriore 5 turni:
-[ICON_BULLET] ammodernamenti sono danneggiati o scompaiono ( del villaggio = &#62; borghi e localit&#224; = &#62; capanna )
+[ICON_BULLET] ammodernamenti sono danneggiati o scompaiono (del fattoria, del villaggio = &#62; borghi e localit&#224; = &#62; capanna )
 [ICON_BULLET] La popolazione &#232; in declino da 1 o 2
 [ICON_BULLET] La cultura della citt&#224; &#232; diminuito di 50 [ICON_CULTURE]
 [ICON_BULLET] La punizione [ICON_UNHAPPY] l'edificio &#232; ridotto di 1
 [ICON_BULLET] La malattia pu&#242; con una probabilit&#224; del 10 % ad altre citt&#224; collegate ( ! ) Overlap
+[ICONA PROIETTILE] Gli schiavi muoiono (schiavi dei campi, delle case, delle miniere e gladiatori)
+[ICONA PROIETTILE] Il bestiame pu&#242; morire
 
 Come si trasmette la peste ?
 [ICON_BULLET] associata con la citt&#224; via entro 10 piazzole
@@ -6956,11 +6964,13 @@ Consecuencia:
 [ICON_BULLET] Un edifico de peste es construido en la ciudad (+5 [ICON_UNHAPPY] y +5 [ICON_UNHEALTHY])
 
 Durante 5 turnos:
-[ICON_BULLET] Las mejoras pueden ser da&#241;adas (Aldea=> Caser&#237;o y Caser&#237;o => Villa)
+[ICON_BULLET] Las mejoras pueden ser da&#241;adas (Agricultura, Aldea=> Caser&#237;o y Caser&#237;o => Villa)
 [ICON_BULLET] La poblaci&#243;n es reducida en 1 o 2
 [ICON_BULLET] La cultura de la ciudad es reducida en 50 [ICON_CULTURE]
 [ICON_BULLET] La penalizaci&#243;n de [ICON_UNHAPPY] del edificio es reducido en 1
 [ICON_BULLET] La peste puede propagar y afectar otras ciudades con una posibilidad del 10% (solo ciudades conectadas)
+[ICON BULLET] Los esclavos mueren (esclavos de campo, casa, mina y gladiadores)
+[ICON BULLET] El ganado puede morir
 
 &#191;C&#243;mo se propaga la peste?
 [ICON_BULLET] con ciudades conectadas con caminos hasta 10 casillas de distancia
@@ -7816,10 +7826,10 @@ De l'&#226;ge classique :
 [ICON_BULLET] Archer &#224; cheval (&#201;trier + Archerie mont&#233;e + Chevaux)
 [ICON_BULLET] Cavalerie (Cavalerie+ Cheval + Bronze ou Fer)
 
-[H2]Le co&#251;t ([ICON_GOLD]) de chaque unit&#233; est &#233;gal &#224; :[\H2]
-[ICON_BULLET] Co&#251;ts de production [ICON_PRODUCTION] (x2 pour les &#233;l&#233;phants) + 20 % [ICON_PRODUCTION] x (Tour*)
+[H2]Le co&#251;t ([ICON_GOLD]) de chaque unit&#233; est &#233;gal &#224; :[\H2]
+[ICON_BULLET] Co&#251;ts de production [ICON_PRODUCTION] (x2 pour les &#233;l&#233;phants) + 20 % [ICON_PRODUCTION] x (Tour*)
 [ICON_BULLET] Avec la fiche &#233;tatique "Mercenariat" : -25% des frais totaux
-*Tour : chaque r&#233;clamation au cours d'un tour augmente le compteur de 1
+*Tour : chaque r&#233;clamation au cours d'un tour augmente le compteur de 1
 
 [ICON_BULLET] Promotion "Peu fiable" de ces unit&#233;s :
 Comme les mercenaires n'avaient en t&#234;te que leur propre avantage et pas &#224; se battre avec acharnement pour leur existence dans des guerres, ils ont plus de chances de passer &#224; l'ennemi s'ils perdent un combat (1:3 ) . La promotion All&#233;geance est ignor&#233;e.
@@ -8263,10 +8273,10 @@ Without an escort, the merchant can either lose his goods or be killed. With an 
 [H1]D&#233;placement sur route[\H1]
 
 [ICON_BULLET] (Trample)Chemins (sont automatiquement cr&#233;&#233;s lors de la construction d'am&#233;liorations et m&#232;nent &#224; la ville suivante) : * 1 (pas de p&#233;nalit&#233; de mouvement &#224; travers les collines/for&#234;ts)
-[ICON_BULLET] Routes (Roues &#224; rayons) : * 2
-[ICON_BULLET] [LINK=CONCEPT_TRADE]Routes commerciales[\LINK] (cr&#233;&#233;es automatiquement lors d'&#233;changes avec des pays &#233;trangers avec un commer&#231;ant) : * 3
-[ICON_BULLET] Routes Royales (Route Royale Perse) : * 3
-[ICON_BULLET] Via Romana (routes militaires romaines) : * 4
+[ICON_BULLET] Routes (Roues &#224; rayons) : * 2
+[ICON_BULLET] [LINK=CONCEPT_TRADE]Routes commerciales[\LINK] (cr&#233;&#233;es automatiquement lors d'&#233;changes avec des pays &#233;trangers avec un commer&#231;ant) : * 3
+[ICON_BULLET] Routes Royales (Route Royale Perse) : * 3
+[ICON_BULLET] Via Romana (routes militaires romaines) : * 4
 
 [ICON_BULLET] Les routes commerciales et les routes romaines ajoutent +1 [ICON_COMMERCE] sur une case.
 
@@ -8293,9 +8303,9 @@ Un papyrus de l'Egypte antique, de l'&#233;poque du Nouveau Royaume pharaonique,
 [H1]Vol de commer&#231;ants[\H1]
 Les marchands peuvent &#234;tre d&#233;valis&#233;s, sauf dans les villes.
 La probabilit&#233; d'&#234;tre vol&#233; d&#233;pend du nombre de villes barbares actives. Le danger actuel est affich&#233; apr&#232;s chaque vol. Calcul : Nombre de villes barbares divis&#233; par la taille de la carte : 1 (Duel) &#224; 6 (&#201;norme)
-[ICON_BULLET] par exemple 10 villes barbares sur une carte standard (4) correspondent &#224; 2 %
-[ICON_BULLET] par exemple 30 villes barbares sur une immense carte (6) correspondent &#224; 5 %
-[ICON_BULLET] La chance minimale est d&#233;finitivement de 1 %
+[ICON_BULLET] par exemple 10 villes barbares sur une carte standard (4) correspondent &#224; 2 %
+[ICON_BULLET] par exemple 30 villes barbares sur une immense carte (6) correspondent &#224; 5 %
+[ICON_BULLET] La chance minimale est d&#233;finitivement de 1 %
 
 Sans escorte, le commer&#231;ant peut soit perdre ses marchandises, soit &#234;tre tu&#233;. Avec une escorte, le maximum que le croupier peut perdre est l'escorte. La probabilit&#233; que cela se produise est de 50 %.
 		</French>
@@ -9592,16 +9602,16 @@ The risk of epidemics and the excessive number of units will be displayed in the
 The city's food production is not affected by the presence of units, hence, units which are stationed in a city do not consume food (but, in case of shortage, supply tickets).</English>
 		<French>
 [H1]FOURRIER ( chariots de ravitaillement )[\H1]
-En plus d'&#234;tre un gu&#233;risseur, un fournisseur peut &#233;galement &#234;tre utilis&#233; pour approvisionner de gros stacks. La taille de la pile &#224; fournir d&#233;pend du niveau de difficult&#233; :
-[ICON_BULLET] Colon : &#224; partir de 20 unit&#233;s
+En plus d'&#234;tre un gu&#233;risseur, un fournisseur peut &#233;galement &#234;tre utilis&#233; pour approvisionner de gros stacks. La taille de la pile &#224; fournir d&#233;pend du niveau de difficult&#233; :
+[ICON_BULLET] Colon : &#224; partir de 20 unit&#233;s
 [ICON_BULLET] Chef tribal: &#224; partir de 20 unit&#233;s
 [ICON_BULLET] Seigneur de guerre : &#224; partir de 15 unit&#233;s
 [ICON_BULLET] R&#233;gent : &#224; partir de 10 unit&#233;s
 [ICON_BULLET] Prince : &#224; partir de 10 unit&#233;s
 [ICON_BULLET] Monarque : &#224; partir de 10 unit&#233;s
 [ICON_BULLET] Empereur : &#224; partir de 15 unit&#233;s
-[ICON_BULLET] Immortel : &#224; partir de 20 unit&#233;s
-[ICON_BULLET] Divinit&#233; : &#224; partir de 20 unit&#233;s
+[ICON_BULLET] Immortel : &#224; partir de 20 unit&#233;s
+[ICON_BULLET] Divinit&#233; : &#224; partir de 20 unit&#233;s
 [ICON_BULLET] pour l'IA, il y a encore +20 gratuits
 [ICON_BULLET] Unit&#233;s de si&#232;ge et de ravitaillement exclues
 
@@ -9613,11 +9623,11 @@ En plus d'&#234;tre un gu&#233;risseur, un fournisseur peut &#233;galement &#234
 
 
 [H2]Capacit&#233; d'un fournisseur[\H2]
-[ICON_BULLET] Promotion Infirmier I : 100 billets
-[ICON_BULLET] Promotion Infirmier II : +100 billets
-[ICON_BULLET] Promotion Infirmier III : +100 billets
-[ICON_BULLET] Promotion Infirmier IV : +100 billets
-[ICON_BULLET] Promotion Infirmier V : +100 billets
+[ICON_BULLET] Promotion Infirmier I : 100 billets
+[ICON_BULLET] Promotion Infirmier II : +100 billets
+[ICON_BULLET] Promotion Infirmier III : +100 billets
+[ICON_BULLET] Promotion Infirmier IV : +100 billets
+[ICON_BULLET] Promotion Infirmier V : +100 billets
 [ICON_BULLET] Chef de l'&#201;tat "Strat&#232;ge" : +50%
 
 
@@ -9643,14 +9653,14 @@ Territoires alli&#233;s (selon l'attitude du chef de l'Etat ) :
 [ICON_BULLET] Tout le reste : 0 %
  ----------------
 [ICON_BULLET] Ville : revenu de moins de nourriture nombre d'unit&#233;s
-[ICON_BULLET] Rendement de base : 10 (hors villes)
+[ICON_BULLET] Rendement de base : 10 (hors villes)
 [ICON_BULLET] Ferme, P&#226;turage : 20
 [ICON_BULLET] Plantation, Puits du d&#233;sert : 15
 [ICON_BULLET] Oasis : 10
-[ICON_BULLET] Rivi&#232;re ou eau douce : +10
+[ICON_BULLET] Rivi&#232;re ou eau douce : +10
 [ICON_BULLET] Vassal (aide suppl&#233;mentaire) : +20
 [ICON_BULLET] Territoire ennemi (saisie) : +20
-[ICON_BULLET] D&#233;sert : -30
+[ICON_BULLET] D&#233;sert : -30
 
 Le territoire ennemi donne au fournisseur plus de tickets car le pillage et l'expropriation ont lieu sur le territoire ennemi.
 L'am&#233;lioration n'est pas d&#233;truite au cours du processus. En pillant les am&#233;liorations, un bonus suppl&#233;mentaire ponctuel peut &#234;tre obtenu (voir ci-dessous), mais le terrain ne fournit alors plus autant de tickets de chargement.
@@ -10211,7 +10221,7 @@ Les unit&#233;s ne peuvent pas acqu&#233;rir Choc ou Couverture apr&#232;s l'ent
 
 [H2]Manque de fiabilit&#233;[\H2]
 
-Les unit&#233;s s'entra&#238;nant dans les villes captur&#233;es re&#231;oivent automatiquement la promotion Manque de fiabilit&#233; si :
+Les unit&#233;s s'entra&#238;nant dans les villes captur&#233;es re&#231;oivent automatiquement la promotion Manque de fiabilit&#233; si :
 -) le fondateur de la ville &#233;tait une autre nation
 -) la taille de la ville est inf&#233;rieure &#224; 9
 -) votre propre culture est inf&#233;rieure &#224; 75%
@@ -10742,6 +10752,8 @@ Polytheistic religions
 [ICON_BULLET] Greek gods (Greeks)
 [ICON_BULLET] Sumerian gods (Sumerians and Babylonians)
 [ICON_BULLET] Roman gods (Romans and Etrucans)
+
+Dualistic religion
 [ICON_BULLET] Zoroastriasm (Persians and Assyrians)
 
 [LINK=CONCEPT_CHRISTEN]Monotheistic religions[\LINK]
@@ -10750,8 +10762,8 @@ Polytheistic religions
 [ICON_BULLET] Islam
 
 Ascetic religions
+[ICON_BULLET] Hinduism
 [ICON_BULLET] Buddhism
-[ICON_BULLET] Jainism
 
 For polytheistic religions there are only temples available and no monasteries. High Priests can be built with temples.
 
@@ -10760,7 +10772,7 @@ For polytheistic religions there are only temples available and no monasteries. 
 
 The Jewish and Christian religions forbade the worship of the emperor, a human being, as a god. However, this was prescribed by the Roman religion. Situations in which members of other faiths are discriminated against, harassed, or persecuted result from a lack of religious freedom. This lack can have the same consequences for believers of other religions; it depends on which religion is favored by the state.
 
-[H2]Polytheistic phase[\H2]
+[H2]Polytheistic phase (Phase 1)[\H2]
 
 Cities can fall into revolt if they contain more than the accepted number of religions:
 [ICON_BULLET] Settlements and villages: 1
@@ -10781,7 +10793,12 @@ Effect:
 [ICON_BULLET] Step 5: If steps 2+4, 1:4 chance: The religion is expelled from the city
 
 
-[H2]Monotheistic phase[\H2]
+[H2]Transition from Polytheism to Monotheism (Phase 2)[\H2]
+
+Once a monotheistic religion has taken hold in a city with a polytheistic state religion, created units may refuse military service and the construction may fail. The chance of this happening is 10%.
+
+
+[H2]Monotheistic phase (Phase 3)[\H2]
 
 Why were Jews and Christians persecuted?
 
@@ -10795,12 +10812,13 @@ Why did Christians persecute the Jews?
 [ICON_BULLET] The Christians accused the Jews of not recognizing Jesus Christ, who, according to Christian belief, was sent by God, as their Messiah and Savior.
 [ICON_BULLET] They also accused the Jews of being responsible for the crucifixion of Christ and thus of being murderers of God.
 
-Every city with a monotheistic religion can destroy pagan institutions:
+Every city with a monotheistic or dualistic religion can destroy pagan institutions:
 
 Trigger:
-[ICON_BULLET] Jewish city: 0%, Judaism as state religion: 20%
-[ICON_BULLET] Christian city: 20%, Christianity as state religion: 60%
-[ICON_BULLET] Muslim city: 30%, Islam as state religion: 70%
+Chance per city 1:30, then:
+[ICON_BULLET] Jewish city: 5%, Judaism as state religion: 20%
+[ICON_BULLET] Christian city: 10%, Christianity as state religion: 30%
+[ICON_BULLET] Muslim city: 20%, Islam as state religion: 40%
 
 Effect:
 [ICON_BULLET] A cult and its buildings are expelled (except for Wonders of the World)
@@ -10811,21 +10829,26 @@ Effect:
 [H1] Religious Expulsion[\H1]
 
 With a High Priest, Non-state religions can also be manually expelled from the city.
-If a city has only one religion, the villagers are happy to be able to believe in something, and this religion cannot be removed. However, if the religion does not correspond to the state religion, disputes arise, resulting in +2 dissatisfied citizens (only +1 for a temple).
+If a city has only one religion, the villagers are happy to be able to believe in something, and this religion cannot be removed. By attempting to ban or expel religion, unbelievers are enslaved and dispossessed.
 
 Requirements for a religious expulsion:
 [ICON_BULLET] The high priest must be in the city.
 [ICON_BULLET] There must be at least two religions in the city.
 [ICON_BULLET] High priests cannot expel their own religion.
 
+The chance of a successful expulsion is 75% + 5% for each religion established.
+If the state religion is to be expelled, the chance decreases by 50%.
+
 Effects of a religious expulsion:
-[ICON_BULLET] The city falls into unrest for two rounds.
-[ICON_BULLET] Only one religion is removed per expulsion.
-[ICON_BULLET] If the attempt to expel a religion from the city fails, the city size decreases by 1 and the unit disappears. You have to send another one.
-[ICON_BULLET] If the expulsion works, the city shrinks by 1, the unit disappears, and the following happens:
+[ICON_BULLET] The unit is consumed.
+[ICON_BULLET] The city loses at least 1 population point (quotient of population / 6), even if the expulsion fails.
+[ICON_BULLET] The player receives the same number of slaves and gold carts as the city loses population.
+[ICON_BULLET] Only 1 religion is removed per expulsion.
+[ICON_BULLET] The buildings of the religion disappear, except for shrines.
+[ICON_BULLET] 1:10 chance: The city falls into unrest for 1 turn.
+[TAB] If a dualistic or monotheistic religion is expelled:
 [TAB][ICON_BULLET] The relationships of all civilizations that have this expelled religion as their state religion are worsened by 1.
 [TAB][ICON_BULLET] The relationships of all civilizations that have your state religion as their state religion are improved by 1.
-[ICON_BULLET] The buildings of the expelled religion disappear, except for the shrine if it is the religion's founding city.
 
 The AI &#8203;&#8203;applies a religious expulsion if a city with more than one religion has more dissatisfied citizens than happy citizens.</English>
 		<French>
@@ -10843,6 +10866,8 @@ Religion polyth&#233;istes
 [ICON_BULLET] Panth&#233;on olympien (Grecs)
 [ICON_BULLET] Dieux sum&#233;riens (Sum&#233;riens et Babyloniens)
 [ICON_BULLET] Panth&#233;on romain (Romains et &#201;trusques)
+
+Religion dualiste
 [ICON_BULLET] Zoroastrisme (Perses et Assyriens)
 
 [LINK=CONCEPT_CHRISTEN]Religions monoth&#233;istes[\LINK]
@@ -10850,18 +10875,22 @@ Religion polyth&#233;istes
 [ICON_BULLET] Christianisme
 [ICON_BULLET] Islam
 
+Religions asc&#233;tiques
+[ICON_BULLET] Hindouisme
+[ICON_BULLET] Bouddhisme
+
 Les religions polyth&#233;istes ne peuvent construire que des temples (pas de monast&#232;res). Il est possible d'y recruter les Grands pr&#234;tres associ&#233;s.
 
 
 [H1]Conflits religieux[\H1]
 
-Les religions juive et chr&#233;tienne interdisaient le culte de l'empereur, c'est-&#224;-dire d'un &#234;tre humain, comme d'un dieu. Mais c'&#233;tait ce que prescrivait la religion romaine. Les situations dans lesquelles des personnes d'autres confessions sont discrimin&#233;es, harcel&#233;es ou pers&#233;cut&#233;es r&#233;sultent d'un manque de libert&#233; religieuse. Cette d&#233;ficience peut avoir des cons&#233;quences similaires pour les croyants d'autres religions ; Cela d&#233;pend de la religion pr&#233;f&#233;r&#233;e par l'&#201;tat.
+Les religions juive et chr&#233;tienne interdisaient le culte de l'empereur, c'est-&#224;-dire d'un &#234;tre humain, comme d'un dieu. Mais c'&#233;tait ce que prescrivait la religion romaine. Les situations dans lesquelles des personnes d'autres confessions sont discrimin&#233;es, harcel&#233;es ou pers&#233;cut&#233;es r&#233;sultent d'un manque de libert&#233; religieuse. Cette d&#233;ficience peut avoir des cons&#233;quences similaires pour les croyants d'autres religions ; Cela d&#233;pend de la religion pr&#233;f&#233;r&#233;e par l'&#201;tat.
 
-[H2]Phase polyth&#233;iste[\H2]
+[H2]Phase polyth&#233;iste (Phase 1)[\H2]
 
 Les villes peuvent devenir agit&#233;es si elles abritent plus de religions que le nombre accept&#233; :
-[ICON_BULLET] Colonies et villages : 1
-[ICON_BULLET] Villes : 2
+[ICON_BULLET] Colonies et villages : 1
+[ICON_BULLET] Villes : 2
 [ICON_BULLET] Villes de province et m&#233;tropoles : 3
 Si ce nombre est d&#233;pass&#233;, les citoyens tenteront d'expulser de la ville toute religion autre que leur religion d'&#201;tat.
 
@@ -10872,12 +10901,18 @@ D&#233;clenchement:
 
 Impact:
 [ICON_BULLET] &#201;tape 1 : Toutes les unit&#233;s de la ville sont bless&#233;es et immobilis&#233;es pendant 1 round
-[ICON_BULLET] &#201;tape 2 : Chance 1 : 3 : Le temple est d&#233;truit (hors Merveilles)
-[ICON_BULLET] &#201;tape 3 : Chance 1 : 3 : Un incendie se d&#233;clare (d&#233;clenche l'&#233;v&#233;nement incendie)
-[ICON_BULLET] &#201;tape 4 : Chance 1 : 4 : La population diminue de (Pop/5, min 1) et la culture diminue de (Pop/5)*10%
+[ICON_BULLET] &#201;tape 2 : Chance 1 : 3 : Le temple est d&#233;truit (hors Merveilles)
+[ICON_BULLET] &#201;tape 3 : Chance 1 : 3 : Un incendie se d&#233;clare (d&#233;clenche l'&#233;v&#233;nement incendie)
+[ICON_BULLET] &#201;tape 4 : Chance 1 : 4 : La population diminue de (Pop/5, min 1) et la culture diminue de (Pop/5)*10%
 [ICON_BULLET] &#201;tape 5 : si &#233;tape 2+4, chance 1:4 : La religion est expuls&#233;e de la ville
 
-[H2]Phase monoth&#233;iste[\H2]
+
+[H2]Transition du polyth&#233;isme au monoth&#233;isme (Phase 2)[\H2]
+
+Une fois qu'une religion monoth&#233;iste s'est implant&#233;e dans une ville dot&#233;e d'une religion d'&#201;tat polyth&#233;iste, les unit&#233;s cr&#233;&#233;es peuvent refuser le service militaire et la construction peut &#233;chouer. La probabilit&#233; que cela se produise est de 10 %.
+
+
+[H2]Phase monoth&#233;iste (Phase 3)[\H2]
 
 Pourquoi les Juifs et les Chr&#233;tiens ont-ils &#233;t&#233; pers&#233;cut&#233;s ?
 
@@ -10886,17 +10921,18 @@ Pourquoi les Juifs et les Chr&#233;tiens ont-ils &#233;t&#233; pers&#233;cut&#23
 [ICON_BULLET] Ils se consid&#233;raient comme un peuple choisi par ce Dieu avec une mission pour tous les autres peuples (Gen 12:3). Cela rendait impossible pour les juifs et les chr&#233;tiens pieux de participer aux cultes des peuples environnants.
 [ICON_BULLET] Les chr&#233;tiens (y compris les juifs) ont refus&#233; le service militaire pendant longtemps en raison de leurs enseignements pacifistes et de ce qu'ils consid&#233;raient comme un dirigeant impie. Si un dirigeant impie donne un ordre qui est manifestement contraire aux commandements divins, alors le soldat ob&#233;issant sera coupable. Avec la conversion de l'empereur Constantin (r&#232;gne 307-337 apr&#232;s J.-C.) au christianisme, tout a chang&#233;. Si l'on combattait dans le bon &#233;tat d'esprit, on pourrait presque &#234;tre oblig&#233; de combattre les autres pour leur propre bien.
 
-Pourquoi les chr&#233;tiens ont-ils pers&#233;cut&#233; les juifs ?
+Pourquoi les chr&#233;tiens ont-ils pers&#233;cut&#233; les juifs ?
 
 [ICON_BULLET] Les chr&#233;tiens ont accus&#233; les juifs de ne pas reconna&#238;tre J&#233;sus-Christ, qui selon la foi chr&#233;tienne a &#233;t&#233; envoy&#233; par Dieu, comme leur Messie et Sauveur.
 [ICON_BULLET] De plus, ils accus&#232;rent les Juifs d'&#234;tre responsables de la crucifixion du Christ et donc d'&#234;tre des meurtriers de Dieu.
 
-Une ville avec une religion monoth&#233;iste peut d&#233;truire les institutions pa&#239;ennes :
+Une ville avec une religion monoth&#233;iste ou dualiste peut d&#233;truire les institutions pa&#239;ennes :
 
 D&#233;clenchement:
-[ICON_BULLET] Ville juive : 0 %, juda&#239;sme comme religion d'&#201;tat : 20 %
-[ICON_BULLET] Ville chr&#233;tienne : 20 %, christianisme comme religion d'&#201;tat : 60 %
-[ICON_BULLET] Ville musulmane : 30 %, Islam comme religion d'&#201;tat : 70 %
+Chance par ville 1:30, puis :
+[ICON_BULLET] Ville juive : 5 %, juda&#239;sme comme religion d'&#201;tat : 20 %
+[ICON_BULLET] Ville chr&#233;tienne : 10 %, christianisme comme religion d'&#201;tat : 30 %
+[ICON_BULLET] Ville musulmane : 20 %, Islam comme religion d'&#201;tat : 40 %
 
 Impact:
 [ICON_BULLET] Une secte et ses b&#226;timents sont expuls&#233;s (sauf les Merveilles du Monde)
@@ -10908,21 +10944,26 @@ Impact:
 [H1]Expulsion religieuse[\H1]
 
 Avec un grand pr&#234;tre, les religions non &#233;tatiques peuvent &#233;galement &#234;tre expuls&#233;es manuellement de la ville.
-Si une ville n'a qu'une seule religion, les villageois sont heureux de pouvoir croire en quelque chose et cette religion ne peut pas &#234;tre supprim&#233;e. Cependant, si la religion ne correspond pas &#224; la religion d'&#201;tat, des conflits surgissent, d'o&#249; +2 citoyens insatisfaits (seulement +1 pour un temple).
+Si une ville n'a qu'une seule religion, les villageois sont heureux de pouvoir croire en quelque chose et cette religion ne peut pas &#234;tre supprim&#233;e. En tentant d'interdire ou d'expulser la religion, les non-croyants sont r&#233;duits en esclavage et d&#233;poss&#233;d&#233;s.
 
 Conditions pr&#233;alables &#224; l'expulsion religieuse :
 [ICON_BULLET] Le grand pr&#234;tre doit &#234;tre dans la ville.
 [ICON_BULLET] Il doit y avoir au moins 2 religions dans la ville.
 [ICON_BULLET] Les grands pr&#234;tres ne peuvent pas expulser leur propre religion.
 
+La probabilit&#233; d'une expulsion r&#233;ussie est de : 75 % + 5 % par nombre de religions install&#233;es.
+Si la religion d'&#201;tat doit &#234;tre expuls&#233;e, la probabilit&#233; diminue de 50 %.
+
 Effets de l'expulsion religieuse :
-[ICON_BULLET] La ville tombe dans l'agitation pendant 2 rounds.
+[ICON_BULLET] L'unit&#233; est consomm&#233;e.
+[ICON_BULLET] La ville perd au moins 1 point de population (quotient de Pop / 6), m&#234;me si l'expulsion &#233;choue.
+[ICON_BULLET] Le joueur re&#231;oit autant d'esclaves et de chariots d'or que la ville perd de la population.
 [ICON_BULLET] Une seule religion est supprim&#233;e par expulsion.
-[ICON_BULLET] Si la tentative d'expulser une religion de la ville &#233;choue, la taille de la ville diminue de 1 et l'unit&#233; dispara&#238;t. Tu dois en envoyer un autre.
-[ICON_BULLET] Si l'expulsion fonctionne, la ville r&#233;tr&#233;cit de 1, l'unit&#233; dispara&#238;t et ce qui suit se produit :
+[ICON_BULLET] Les b&#226;timents religieux disparaissent, &#224; l'exception des sanctuaires.
+[ICON_BULLET] 1:10 chance : La ville tombe en &#233;meute pendant 1 tour.
+[TAB] Si une religion dualiste ou monoth&#233;iste est expuls&#233;e :
 [TAB][ICON_BULLET] D&#233;t&#233;rioration des relations de toutes les civilisations qui ont cette religion expuls&#233;e comme religion d'&#201;tat par 1.
 [TAB][ICON_BULLET] Am&#233;liorez les relations de toutes les civilisations qui ont votre religion d'&#201;tat comme religion d'&#201;tat de 1.
-[ICON_BULLET] Les b&#226;timents de la religion exil&#233;e disparaissent, sauf le sanctuaire s'il s'agit de la ville fondatrice de la religion.
 
 L'IA applique l'expulsion religieuse lorsqu'une ville avec plus d'une religion a plus de citoyens insatisfaits que satisfaits.
 		</French>
@@ -10941,6 +10982,8 @@ Polytheistische Religionen
 [ICON_BULLET] Griechische G&#246;tter: Griechen
 [ICON_BULLET] Sumerische G&#246;tter: Sumerer und Babylonier
 [ICON_BULLET] R&#246;mische G&#246;tter: R&#246;mer und Etrusker
+
+Dualistische Religion
 [ICON_BULLET] Zoroastrismus: Perser und Assyrer
 
 [LINK=CONCEPT_CHRISTEN]Monotheistische Religionen[\LINK]
@@ -10948,9 +10991,9 @@ Polytheistische Religionen
 [ICON_BULLET] Christentum
 [ICON_BULLET] Islam
 
-Asketische Religionen (Voraussetzung Hinduismus)
+Asketische Religionen
+[ICON_BULLET] Hinduismus
 [ICON_BULLET] Buddhismus
-[ICON_BULLET] Jainismus
 
 F&#252;r die polytheistischen Religionen k&#246;nnen nur Tempel errichtet werden und keine Kl&#246;ster.
 
@@ -10959,7 +11002,7 @@ F&#252;r die polytheistischen Religionen k&#246;nnen nur Tempel errichtet werden
 
 Die j&#252;dische und christliche Religion verbot, den Kaiser, also einen Menschen, als Gott zu verehren. Das schrieb aber die r&#246;mische Religion vor. Situationen, in denen Andersgl&#228;ubige benachteiligt, bedr&#228;ngt oder verfolgt werden, resultieren aus einem Mangel an Religionsfreiheit. Dieser Mangel kann gleiche Folgen f&#252;r Gl&#228;ubige anderer Religionen haben; es h&#228;ngt davon ab, welche Religion staatlicherseits bevorzugt wird.
 
-[H2]Polytheistische Phase[\H2]
+[H2]Polytheistische Phase (Phase 1)[\H2]
 
 St&#228;dte k&#246;nnen in Aufruhr geraten, wenn sie mehr als die akzeptierte Anzahl an Religionen beinhalten:
 [ICON_BULLET] Siedlungen und D&#246;rfer: 1
@@ -10980,7 +11023,12 @@ Auswirkung:
 [ICON_BULLET] Schritt 5: falls Schritt 2+4, Chance 1:4: Die Religion wird aus der Stadt vertrieben
 
 
-[H2]Monotheistische Phase[\H2]
+[H2]&#220;bergang Polytheismus zu Monotheismus (Phase 2)[\H2]
+
+Sobald eine monotheistische Religion in einer Stadt einer polytheistischen Staatsreligion Einzug gefunden hat, kann es passieren, dass erstellte Einheiten den Kriegsdienst verweigern und der Bau fehlschl&#228;gt. Die Chance daf&#252;r betr&#228;gt 10%.
+
+
+[H2]Monotheistische Phase (Phase 3)[\H2]
 
 Warum wurden Juden und Christen verfolgt?
 
@@ -10989,15 +11037,16 @@ Warum wurden Juden und Christen verfolgt?
 [ICON_BULLET] Es verstand sich als von diesem Gott erw&#228;hltes Volk mit einem Auftrag f&#252;r alle &#252;brigen V&#246;lker (Gen 12,3). Dies machte gl&#228;ubige Juden und Christen die Teilnahme an den Kulten der umgebenden V&#246;lker unm&#246;glich.
 [ICON_BULLET] Christen (auch Juden) verweigerten lange Zeit den Kriegsdienst auf Grund ihrer pazifistischen Lehre und dem ihrer Ansicht nach gottlosen Herrscher. Wenn ein gottloser Herrscher einen Befehl erteilt, der offensichtlich den g&#246;ttlichen Geboten entgegensteht, dann w&#228;re der gehorsame Soldat schuldig. Mit der Bekehrung des Kaisers Konstantin (Regierungszeit 307-337 n.Chr.) zum Christentum, &#228;nderte sich alles. Wenn man im richtigen Seelenzustand k&#228;mpfte, dann konnte man beinahe dazu verpflichtet sein, andere zu ihrem eigenen Wohl zu bek&#228;mpfen.
 
-Warum haben Christen die Juden verfolgt?
+Warum haben Christen Juden verfolgt?
 
-[ICON_BULLET] Die Christen warfen den Juden vor, dass die Juden den nach dem christlichen Glauben von Gott gesandten Jesus Christus nicht als ihren Messias und Erl&#246;ser anerkannten.
-[ICON_BULLET] Desweiteren warfen sie den Juden vor, sie seien verantwortlich f&#252;r die Kreuzigung Christi und somit Gottesm&#246;rder.
+[ICON_BULLET] Die Christen warfen den Juden vor, dass sie den nach dem christlichen Glauben von Gott gesandten Jesus Christus nicht als ihren Messias und Erl&#246;ser anerkannten.
+[ICON_BULLET] Weiters warfen sie den Juden vor, sie seien verantwortlich f&#252;r die Kreuzigung Christi und somit Gottesm&#246;rder.
 
-Jede Stadt mit einer monotheistischen Religion kann pagane Einrichtungen zerst&#246;ren:
+Jede Stadt mit einer monotheistischen bzw. dualistischen Religion kann pagane Einrichtungen zerst&#246;ren:
 
 Ausl&#246;ser:
-[ICON_BULLET] J&#252;dische Stadt: 0%, Judentum als Staatsreligion: 20%
+Chance pro Stadt 1:30, danach:
+[ICON_BULLET] J&#252;dische Stadt: 5%, Judentum als Staatsreligion: 20%
 [ICON_BULLET] Christliche Stadt: 10%, Christentum als Staatsreligion: 30%
 [ICON_BULLET] Muslimische Stadt: 20%, Islam als Staatsreligion: 40%
 
@@ -11011,21 +11060,26 @@ Auswirkung:
 [H1]Religionsaustreibung[\H1]
 
 Mit einem Hohepriester k&#246;nnen nicht-staatliche Religionen auch manuell aus der Stadt vertrieben werden.
-Besitzt eine Stadt nur eine Religion, sind die Bewohner im Dorf froh an etwas glauben zu d&#252;rfen und diese Religion kann nicht entfernt werden. Falls die Religion aber nicht der Staatsreligion entspricht, kommt es zu Streitigkeiten, daher +2 unzufriedene B&#252;rger (bei einem Tempel nur +1).
+Besitzt eine Stadt nur eine Religion, sind die Bewohner im Dorf froh an etwas glauben zu d&#252;rfen und diese Religion kann nicht entfernt werden. Durch den Versuch die Religion zu verbieten beziehungsweise zu vertreiben werden die Ungl&#228;ubigen versklavt und enteignet.
 
 Voraussetzungen einer Religionsaustreibung:
 [ICON_BULLET] Der Hohepriester muss in der Stadt stehen.
 [ICON_BULLET] Es m&#252;ssen mindestens 2 Religionen in der Stadt vorhanden sein.
-[ICON_BULLET] Hohepriester k&#246;nnen nicht ihre eigene Religion austreiben.
+[ICON_BULLET] Hohepriester k&#246;nnen ihre eigene Religion nicht austreiben.
+
+Die Chance einer erfolgreichen Austreibung besteht aus: 75% + 5% je Anzahl angesiedelter Religionen.
+Soll die Staatsreligion ausgetrieben werden, sinkt die Chance um 50%.
 
 Auswirkungen einer Religionsaustreibung:
-[ICON_BULLET] Die Stadt f&#228;llt 2 Runden lang in Unruhe.
+[ICON_BULLET] Die Einheit wird verbraucht.
+[ICON_BULLET] Die Stadt verliert mindestens 1 Bev&#246;lkerungspunkt (Quotient von Pop / 6), auch wenn die Austreibung fehl schl&#228;gt.
+[ICON_BULLET] Der Spieler erh&#228;lt genauso viel Sklaven und Goldkarren wie die Stadt an Bev&#246;lkerung verliert.
 [ICON_BULLET] Es wird immer nur 1 Religion pro Austreibung entfernt.
-[ICON_BULLET] Schl&#228;gt der Versuch eine Religion aus der Stadt auszutreiben fehl, sinkt die Stadtgr&#246;&#223;e um 1 und die Einheit verschwindet. Man muss noch einen schicken.
-[ICON_BULLET] Funktioniert die Austreibung, dann schrumpft die Stadt um 1, die Einheit verschwindet und es passiert folgendes:
+[ICON_BULLET] Die Geb&#228;ude der Religion verschwinden, ausgenommen Schreine.
+[ICON_BULLET] Chance von 1:10: Die Stadt f&#228;llt 1 Runde lang in Unruhe.
+[TAB] Falls eine dualistische oder monotheistische Religion ausgetrieben wird:
 [TAB][ICON_BULLET] Verschlechterung der Beziehungen aller Zivilisationen um 1, die diese ausgetriebene Religion als Staatsreligion besitzen.
 [TAB][ICON_BULLET] Verbesserung der Beziehungen aller Zivilisationen um 1, die deine Staatsreligion als Staatsreligion besitzen.
-[ICON_BULLET] Die Geb&#228;ude der ausgetriebenen Religion verschwinden, au&#223;er der Schrein, wenn es die Gr&#252;ndungsstadt der Religion ist.
 
 Die KI wendet eine Religionsaustreibung an, wenn in einer Stadt mit mehr als einer Religion mehr unzufriedene als gl&#252;ckliche B&#252;rger leben.
 		</German>
@@ -11045,6 +11099,8 @@ religioni politeiste
 [ICON_BULLET] Dei Greci : greca
 [ICON_BULLET] d&#232;i sumeri : Sumeri e Babilonesi
 [ICON_BULLET] dei romani , etruschi e romani
+
+Religione dualistica
 [ICON_BULLET] Zoroastrismo : persiana e assiro
 
 [LINK=CONCEPT_CHRISTEN]Religioni monoteiste[\LINK]
@@ -11052,9 +11108,9 @@ religioni politeiste
 [ICON_BULLET] Cristianesimo
 [ICON_BULLET] Islam
 
-Religioni ascetiche (induismo prerequisito )
+Religioni ascetiche
+[ICON_BULLET] Induismo 
 [ICON_BULLET] Buddismo
-[ICON_BULLET] Jainismo
 
 Per le religioni politeiste pu&#242; essere costruita solo templi e monasteri no. I Sommi Sacerdoti devono essere costruite dal tempio.
 
@@ -11063,7 +11119,7 @@ Per le religioni politeiste pu&#242; essere costruita solo templi e monasteri no
 
 Le religioni ebraica e cristiana proibivano il culto dell'imperatore, cio&#232; di un essere umano, come dio. Ma questo era quanto prescriveva la religione romana. Le situazioni in cui le persone di altre fedi vengono discriminate, molestate o perseguitate sono il risultato della mancanza di libert&#224; religiosa. Questa carenza pu&#242; avere conseguenze simili per i credenti di altre religioni; Dipende da quale religione &#232; preferita dallo Stato.
 
-[H2]Fase politeistica[\H2]
+[H2]Fase politeistica (fase 1)[\H2]
 
 Le citt&#224; possono diventare tumultuose se ospitano un numero di religioni superiore a quello consentito:
 [ICON_BULLET] Insediamenti e villaggi: 1
@@ -11083,7 +11139,13 @@ Impatto:
 [ICON_BULLET] Fase 4: Probabilit&#224; 1:4: la popolazione diminuisce di (Pop/5, min 1) e la coltura diminuisce di (Pop/5)*10%
 [ICON_BULLET] Fase 5: se fase 2+4, possibilit&#224; 1:4: la religione viene espulsa dalla citt&#224;
 
-[H2]Fase monoteistica[\H2]
+
+[H2]Transizione dal politeismo al monoteismo (Fase 2)[\H2]
+
+Una volta che una religione monoteista ha preso piede in una citt&#224; con una religione di stato politeista, le unit&#224; create potrebbero rifiutare il servizio militare e la costruzione potrebbe fallire. La probabilit&#224; che ci&#242; accada &#232; del 10%.
+
+
+[H2]Fase monoteistica (fase 3)[\H2]
 
 Perch&#233; ebrei e cristiani furono perseguitati?
 
@@ -11097,12 +11159,13 @@ Perch&#233; i cristiani perseguitavano gli ebrei?
 [ICON_BULLET] I cristiani accusarono gli ebrei di non riconoscere Ges&#249; Cristo, che secondo la fede cristiana era stato mandato da Dio, come loro Messia e Salvatore.
 [ICON_BULLET] Inoltre, accusarono gli ebrei di essere responsabili della crocifissione di Cristo e quindi di essere assassini di Dio.
 
-Una citt&#224; con una religione monoteista pu&#242; distruggere le istituzioni pagane:
+Una citt&#224; con una religione monoteista o dualistica pu&#242; distruggere le istituzioni pagane:
 
 Grilletto:
-[ICON_BULLET] Citt&#224; ebraica: 0%, Ebraismo come religione di Stato: 20%
-[ICON_BULLET] Citt&#224; cristiana: 20%, cristianesimo come religione di stato: 60%
-[ICON_BULLET] Citt&#224; musulmana: 30%, Islam come religione di stato: 70%
+Probabilit&#224; per citt&#224; 1:30, quindi:
+[ICON_BULLET] Citt&#224; ebraica: 5%, Ebraismo come religione di Stato: 20%
+[ICON_BULLET] Citt&#224; cristiana: 10%, cristianesimo come religione di stato: 30%
+[ICON_BULLET] Citt&#224; musulmana: 20%, Islam come religione di stato: 40%
 
 Impatto:
 [ICON_BULLET] Un culto e i suoi edifici vengono espulsi (tranne le Meraviglie del Mondo)
@@ -11114,21 +11177,26 @@ Impatto:
 [H1]Espulsione religiosa[\H1]
 
 Con un sommo sacerdote, anche le religioni non statali possono essere espulse manualmente dalla citt&#224;.
-Se una citt&#224; ha una sola religione, gli abitanti del villaggio sono felici di poter credere in qualcosa e questa religione non pu&#242; essere eliminata. Tuttavia, se la religione non corrisponde alla religione di Stato, sorgono controversie, da cui +2 cittadini insoddisfatti (solo +1 per un tempio).
+Se una citt&#224; ha una sola religione, gli abitanti del villaggio sono felici di poter credere in qualcosa e questa religione non pu&#242; essere eliminata. Tentando di vietare o espellere la religione, i non credenti vengono resi schiavi e espropriati.
 
 Prerequisiti per l'espulsione religiosa:
 [ICON_BULLET] Il sommo sacerdote deve essere in citt&#224;.
 [ICON_BULLET] Devono esserci almeno 2 religioni nella citt&#224;.
 [ICON_BULLET] I sommi sacerdoti non possono espellere la propria religione.
 
+La probabilit&#224; di successo dell'espulsione &#232;: 75% + 5% per numero di religioni insediate.
+Se la religione di Stato dovesse essere espulsa, la probabilit&#224; scenderebbe del 50%.
+
 Effetti dell'espulsione religiosa:
-[ICON_BULLET] La citt&#224; cade in disordini per 2 round.
-[ICON_BULLET] Viene rimossa solo 1 religione per espulsione.
-[ICON_BULLET] Se il tentativo di espellere una religione dalla citt&#224; fallisce, la dimensione della citt&#224; diminuisce di 1 e l'unit&#224; scompare. Devi inviarne un altro.
-[ICON_BULLET] Se l'espulsione funziona, la citt&#224; si rimpicciolisce di 1, l'unit&#224; scompare e accade quanto segue:
+[ICON_BULLET] L'unit&#224; &#232; consumata.
+[ICON_BULLET] La citt&#224; perde almeno 1 punto popolazione (quoziente Pop / 6), anche se l'espulsione fallisce.
+[ICON_BULLET] Il giocatore riceve tanti schiavi e carri d'oro quanti sono i decessi della citt&#224;.
+[ICON_BULLET] Viene rimossa solo 1 religione per ogni espulsione.
+[ICON_BULLET] Gli edifici religiosi scompaiono, tranne i santuari.
+[ICON_BULLET] Probabilit&#224; di 1:10: la citt&#224; &#232; in preda all'agitazione per 1 giro.
+[TAB] Se una religione dualistica o monoteistica viene espulsa:
 [TAB][ICON_BULLET] Peggioramento delle relazioni di tutte le civilt&#224; che hanno questa religione espulsa come religione di stato di 1.
 [TAB][ICON_BULLET] Migliora di 1 le relazioni di tutte le civilt&#224; che hanno la tua religione di stato come religione di stato.
-[ICON_BULLET] Gli edifici della religione esiliata scompaiono, tranne il santuario se si tratta della citt&#224; fondatrice della religione.
 
 L'IA applica l'espulsione religiosa quando una citt&#224; con pi&#249; di una religione ha pi&#249; cittadini insoddisfatti che felici.
 		</Italian>
@@ -11148,6 +11216,8 @@ Religiones polite&#237;stas
 [ICON_BULLET] Culto Griego (Griegos)
 [ICON_BULLET] Culto Sumerio (Sumerios y Babilonios)
 [ICON_BULLET] Culto Romano (Romanos y Etruscos)
+
+Religi&#243;n dualista
 [ICON_BULLET] Zoroastrismo (Persas y Asirios)
 
 [LINK=CONCEPT_CHRISTEN]Religiones monote&#237;stas[\LINK]
@@ -11156,8 +11226,8 @@ Religiones polite&#237;stas
 [ICON_BULLET] Islam
 
 Religiones asc&#233;ticas
+[ICON_BULLET] Hinduismo
 [ICON_BULLET] Budismo
-[ICON_BULLET] Jainismo
 
 Para las religiones polite&#237;stas s&#243;lo se pueden construir templos, no se podr&#225;n construir monasterios. Los Sumos Sacerdotes pueden ser construidos con templos.
 
@@ -11166,7 +11236,7 @@ Para las religiones polite&#237;stas s&#243;lo se pueden construir templos, no s
 
 Las religiones jud&#237;a y cristiana prohib&#237;an el culto al emperador, es decir a un ser humano, como a un dios. Pero eso era lo que prescrib&#237;a la religi&#243;n romana. Las situaciones en que personas de otras religiones son discriminadas, acosadas o perseguidas son resultado de la falta de libertad religiosa. Esta deficiencia puede tener consecuencias similares para los creyentes de otras religiones; Depende de qu&#233; religi&#243;n prefiera el Estado.
 
-[H2]Fase polite&#237;sta[\H2]
+[H2]Fase polite&#237;sta (fase 1)[\H2]
 
 Las ciudades pueden volverse alborotadas si contienen m&#225;s del n&#250;mero aceptado de religiones:
 [ICON_BULLET] Asentamientos y pueblos: 1
@@ -11186,7 +11256,13 @@ Impacto:
 [ICON_BULLET] Paso 4: Probabilidad 1:4: La poblaci&#243;n disminuye en (Pop/5, min 1) y la cultura disminuye en (Pop/5)*10%
 [ICON_BULLET] Paso 5: si el paso 2+4, probabilidad 1:4: La religi&#243;n es expulsada de la ciudad
 
-[H2]Fase monote&#237;sta[\H2]
+
+[H2]Transici&#243;n del polite&#237;smo al monote&#237;smo (Fase 2)[\H2]
+
+Una vez que una religi&#243;n monote&#237;sta se ha establecido en una ciudad con una religi&#243;n estatal polite&#237;sta, las unidades creadas pueden negarse a prestar servicio militar y la construcci&#243;n puede fracasar. La probabilidad de que esto ocurra es del 10 %.
+
+
+[H2]Fase monote&#237;sta (fase 3)[\H2]
 
 &#191;Por qu&#233; fueron perseguidos los jud&#237;os y los cristianos?
 
@@ -11200,12 +11276,13 @@ Impacto:
 [ICON_BULLET] Los cristianos acusaron a los jud&#237;os de no reconocer a Jesucristo, quien seg&#250;n la fe cristiana fue enviado por Dios, como su Mes&#237;as y Salvador.
 [ICON_BULLET] Adem&#225;s, acusaron a los jud&#237;os de ser responsables de la crucifixi&#243;n de Cristo y, por tanto, de ser asesinos de Dios.
 
-Cada ciudad con religi&#243;n monote&#237;sta puede destruir las instituciones paganas:
+Cada ciudad con religi&#243;n monote&#237;sta o dualista puede destruir las instituciones paganas:
 
 Desencadenar:
-[ICON_BULLET] Ciudad jud&#237;a: 0%, Juda&#237;smo como religi&#243;n estatal: 20%
-[ICON_BULLET] Ciudad cristiana: 20%, cristianismo como religi&#243;n estatal: 60%
-[ICON_BULLET] Ciudad musulmana: 30%, Islam como religi&#243;n de Estado: 70%
+Probabilidad por ciudad 1:30, luego:
+[ICON_BULLET] Ciudad jud&#237;a: 5%, Juda&#237;smo como religi&#243;n estatal: 20%
+[ICON_BULLET] Ciudad cristiana: 10%, cristianismo como religi&#243;n estatal: 30%
+[ICON_BULLET] Ciudad musulmana: 20%, Islam como religi&#243;n de Estado: 40%
 
 Impacto:
 [ICON_BULLET] Un culto y sus edificios son expulsados &#8203;&#8203;(excepto Maravillas del Mundo)
@@ -11217,21 +11294,26 @@ Impacto:
 [H1]Expulsi&#243;n religiosa[\H1]
 
 Con un sumo sacerdote tambi&#233;n se pueden expulsar manualmente de la ciudad las religiones no estatales.
-Si una ciudad tiene una sola religi&#243;n, los habitantes est&#225;n contentos de poder creer en algo y esta religi&#243;n no puede ser eliminada. Sin embargo, si la religi&#243;n no corresponde a la religi&#243;n del estado, surgen disputas, por lo que hay +2 ciudadanos insatisfechos (solo +1 si hay un templo).
+Si una ciudad tiene una sola religi&#243;n, los habitantes est&#225;n contentos de poder creer en algo y esta religi&#243;n no puede ser eliminada. Al intentar prohibir o expulsar la religi&#243;n, los no creyentes quedan esclavizados y despose&#237;dos.
 
 Requisitos previos para la expulsi&#243;n religiosa:
 [ICON_BULLET] El sumo sacerdote debe estar en la ciudad.
 [ICON_BULLET] Debe haber al menos 2 religiones en la ciudad.
 [ICON_BULLET] Los sumos sacerdotes no pueden expulsar su propia religi&#243;n.
 
+La probabilidad de una expulsi&#243;n exitosa es: 75% + 5% por n&#250;mero de religiones establecidas.
+Si se expulsa la religi&#243;n del Estado, la probabilidad se reduce al 50%.
+
 Efectos de la expulsi&#243;n religiosa:
-[ICON_BULLET] La ciudad cae en disturbios durante 2 rondas.
+[ICON_BULLET] La unidad est&#225; consumida.
+[ICON_BULLET] La ciudad pierde al menos 1 punto de poblaci&#243;n (cociente de Pob / 6), incluso si la expulsi&#243;n falla.
+[ICON_BULLET] El jugador recibe tantos esclavos y carros de oro como poblaci&#243;n pierde la ciudad.
 [ICON_BULLET] Solo se elimina una religi&#243;n por expulsi&#243;n.
-[ICON_BULLET] Si el intento de expulsar una religi&#243;n de la ciudad falla, el tama&#241;o de la ciudad disminuye en 1 y la unidad desaparece. Tienes que enviar otro.
-[ICON_BULLET] Si la expulsi&#243;n funciona, la ciudad se reduce en 1, la unidad desaparece y sucede lo siguiente:
+[ICON_BULLET] Los edificios religiosos desaparecen, a excepci&#243;n de los santuarios.
+[ICON_BULLET] Probabilidad 1:10: La ciudad cae en disturbios durante 1 ronda.
+[TAB] Si se expulsa una religi&#243;n dualista o monote&#237;sta:
 [TAB][ICON_BULLET] Deterioro de las relaciones de todas las civilizaciones que tienen esta religi&#243;n expulsada como religi&#243;n de Estado en 1.
 [TAB][ICON_BULLET] Mejora las relaciones de todas las civilizaciones que tienen tu religi&#243;n estatal como religi&#243;n estatal en 1.
-[ICON_BULLET] Los edificios de la religi&#243;n exiliada desaparecen, excepto el santuario si es la ciudad fundadora de la religi&#243;n.
 
 La IA aplica la expulsi&#243;n religiosa cuando una ciudad con m&#225;s de una religi&#243;n tiene m&#225;s ciudadanos insatisfechos que felices.
 		</Spanish>
@@ -11477,7 +11559,7 @@ L&#233;gende : [ICON_BULLET] Nom ressource (R&#233;gion): Am&#233;nagement / Tec
 
 [H2]Ressources fournies par les b&#226;timents[\H2]
 
-[ICON_BULLET] Cuivre : Fonderie de cuivre / M&#233;tallurgie
+[ICON_BULLET] Cuivre : Fonderie de cuivre / M&#233;tallurgie
 [ICON_BULLET] Bronze (Cuivre + (Plomb ou &#201;tain)) : Bronzeerie / Travail du bronze
 [ICON_BULLET] Fer (Minerai de fer) : Ferronnerie / Traitement du fer
 [ICON_BULLET] Acteurs (Grecs): Od&#233;on / Construction + Th&#233;&#226;tre
@@ -12044,7 +12126,7 @@ Instead of settling them down in your cities, you can also use your slaves to bu
 
 [H1]Slave revolt[\H1]
 Calculation: 20% every turn, if number of slaves and gladiators is higher than city population:
-2nd calculation: (number of slaves + gladiators &#8211; city population) * 10 (in %) per city
+2nd calculation: (number of slaves + gladiators - city population) * 10 (in %) per city
 
 Additional factors:
 [ICON_BULLET] Per military unit with promotion [LINK=CONCEPT_PROMOTIONS]Hero[\LINK]: -25%
@@ -12171,7 +12253,7 @@ D&#232;s qu'un esclave est affect&#233; &#224; une ville, un march&#233; aux esc
 
 [H1]R&#233;volte d'esclaves[\H1]
 20% par tour, si le nombre d'esclaves et de gladiateurs est sup&#233;rieur &#224; la population de la ville:
-2&#232;me calculation: (nombre d'esclaves + de gladiateurs &#8211; population) * 10 (en %) par ville
+2&#232;me calculation: (nombre d'esclaves + de gladiateurs - population) * 10 (en %) par ville
 
 Facteurs additionnels :
 [ICON_BULLET] Par unit&#233; avec la promotion [LINK=CONCEPT_PROMOTIONS]H&#233;ros[\LINK] : -25%
@@ -12300,7 +12382,7 @@ Statt die Sklaven in einer Stadt anzusiedeln, k&#246;nnen sie auch einen Sklaven
 
 [H1]Sklavenaufstand[\H1]
 Berechnung pro Runde 20%, wenn die Anzahl der Sklaven und Schauk&#228;mpfer/Gladiatoren gr&#246;&#223;er als die Stadtbev&#246;lkerung ist:
-2te Berechnung: (Anzahl der Sklaven + Schauk&#228;mpfer &#8211; Stadtgr&#246;&#223;e) * 10 (in %)
+2te Berechnung: (Anzahl der Sklaven + Schauk&#228;mpfer - Stadtgr&#246;&#223;e) * 10 (in %)
 
 Zus&#228;tzliche Faktoren:
 [ICON_BULLET] Pro Einheit mit Bef&#246;rderung [LINK=CONCEPT_PROMOTIONS]Held[\LINK]: -25%
@@ -12429,7 +12511,7 @@ Uno schiavo pu&#242; costruire un mercato di schiavi sacrificandolo. Il mercato 
 
 [H1] Rivolta degli schiavi [\H1]
 20% a turno, se il numero di schiavi e gladiatori &#232; superiore alla popolazione della citt&#224;:
-2. calcolo: (numero di schiavi + gladiatori &#8211; popolazione) * 10 (in%) per citt&#224;
+2. calcolo: (numero di schiavi + gladiatori - popolazione) * 10 (in%) per citt&#224;
 
 Fattori aggiuntivi:
 [ICON_BULLET] Per unit&#224; con promozione [LINK = CONCEPT_PROMOTIONS] Eroe [\ LINK]: -25%
@@ -12558,7 +12640,7 @@ En vez de asentarlos en tus ciudades, tambi&#233;n puedes usar tus esclavos para
 
 [H1]Revuelta de esclavos[\H1]
 C&#225;lculo: 20% por turno, si el n&#250;mero de esclavos y gladiadores es mayor que la poblaci&#243;n de la ciudad:
-2do c&#225;lculo: (n&#250;mero de esclavos + gladiadores &#8211; poblaci&#243;n) * 10 (en %)
+2do c&#225;lculo: (n&#250;mero de esclavos + gladiadores - poblaci&#243;n) * 10 (en %)
 
 Factores adicionales:
 [ICON_BULLET] Por cada unidad militar con el ascenso [LINK=CONCEPT_PROMOTIONS]h&#233;roe[\LINK]: -25%
@@ -13239,9 +13321,9 @@ Une ville est consid&#233;r&#233;e comme un centre de n&#233;goce si plusieurs r
 [H1]Vol de commer&#231;ants[\H1]
 Les marchands peuvent &#234;tre d&#233;valis&#233;s, sauf dans les villes.
 La probabilit&#233; d'&#234;tre vol&#233; d&#233;pend du nombre de villes barbares actives. Le danger actuel est affich&#233; apr&#232;s chaque vol. Calcul : Nombre de villes barbares divis&#233; par la taille de la carte : 1 (Duel) &#224; 6 (&#201;norme)
-[ICON_BULLET] par exemple 10 villes barbares sur une carte standard (4) correspondent &#224; 2 %
-[ICON_BULLET] par exemple 30 villes barbares sur une immense carte (6) correspondent &#224; 5 %
-[ICON_BULLET] La chance minimale est d&#233;finitivement de 1 %
+[ICON_BULLET] par exemple 10 villes barbares sur une carte standard (4) correspondent &#224; 2 %
+[ICON_BULLET] par exemple 30 villes barbares sur une immense carte (6) correspondent &#224; 5 %
+[ICON_BULLET] La chance minimale est d&#233;finitivement de 1 %
 
 Sans escorte, le commer&#231;ant peut soit perdre ses marchandises, soit &#234;tre tu&#233;. Avec une escorte, le maximum que le croupier peut perdre est l'escorte. La probabilit&#233; que cela se produise est de 50 %.
 		</French>
@@ -14041,7 +14123,7 @@ Chance : 100%
 8. Archilochias (adjudant-chef)
 9. Anthypolochagos (lieutenant suppl&#233;ant)
 10. Ypolochagos (lieutenant) => promotion sup.
--- sous-officier &#8211; 
+-- sous-officier --
 11. Lochagos (capitaine)
 12. Tagmatarches (major/commandant de r&#233;giment)
 13. Antisyntagmatarches (lieutenant-colonel)
@@ -15142,7 +15224,7 @@ Therefore, the vassal-feature in PAE has been expanded.
 
 [H1]To become a vassal[\H1]
 In PAE, it is now easier to become a vassal. You have just conquered a city of a player who has only 4 or fewer cities, it offers to be a vassal.
-Probability 1: 120% &#8211; (20x number of cities)%
+Probability 1: 120% - (20x number of cities)%
 Probability 2: The loser's civilization strength points (x2) are less than the winner's strength points
 This should help maintain a certain strength of the vassals. The same applies to human players. Now it is possible in PAE, as a human player to become a vassal of the AI.
 
@@ -15167,7 +15249,7 @@ Aucun pays ne servirait &#233;ternellement un autre royaume. Le concept de Vassa
 
 [H1]Devenir un vassal[\H1]
 Dans PAE, il est plus facile de devenir un vassal. Si vous capturez la ville d'une nation qui en compte 4 ou moins, celle-ci propose de devenir votre vassal.
-Probabilit&#233; 1: 120% &#8211; (20x le nombre de villes)%
+Probabilit&#233; 1: 120% - (20x le nombre de villes)%
 Probabilit&#233; 2: les points de force de civilisation du perdant (x2) sont inf&#233;rieurs aux points de force du gagnant
 Cela devrait permettre de maintenir les vassaux &#224; un certain niveau. Les m&#234;mes conditions s'appliquent aux joueurs humains. Il est donc possible &#224; un joueur humain de devenir le vassal d'un joueur IA.
 
@@ -15191,7 +15273,7 @@ Kein Land m&#246;chte ewig als Vasall einem anderen Reich dienen. Vasallen sind 
 
 [H1]Ein Vasall werden[\H1]
 In PAE ist es nun leichter einen Vasallen zu bekommen. Hat man eine Stadt eines Spielers erobert, der nur mehr 4 oder weniger St&#228;dte besitzt, bietet er an, Vasall zu werden. 
-Wahrscheinlichkeit 1: 120% &#8211; (20xAnzahl der St&#228;dte)%
+Wahrscheinlichkeit 1: 120% - (20xAnzahl der St&#228;dte)%
 Wahrscheinlichkeit 2: Civilizations-St&#228;rkepunkte des Verlierers (x2) sind kleiner als die St&#228;rkepunkte des Gewinners
 Dies soll helfen, dass die Vasallen eine gewisse St&#228;rke beibehalten. Das gleiche gilt auch f&#252;r menschliche Spieler. In PAE ist es m&#246;glich, auch als menschlicher Spieler Vasall der KI zu werden.
 
@@ -15217,7 +15299,7 @@ Nessun paese potrebbe sempre servire come un vassallo di un altro regno . Vassal
 
 [H1] Un vassallo [\H1]
 In PAE , ora &#232; pi&#249; facile ottenere un vassallo . Se avete appena conquistato una citt&#224; di un giocatore che ha solo 4 o meno citt&#224; , offre di diventare un vassallo .
-Probabilit&#224; 1: 120% &#8211; (20x numero di citt&#224;)%
+Probabilit&#224; 1: 120% - (20x numero di citt&#224;)%
 Probabilit&#224; 2: i punti di forza della civilt&#224; del perdente (x2) sono inferiori ai punti di forza del vincitore
 Ci&#242; dovrebbe contribuire a che il vassallo mantenere una certa forza . Lo stesso vale per i giocatori umani . Ora &#232; possibile in PAE essere come un essere umano vassallo del AI .
 
@@ -15244,7 +15326,7 @@ Por ese motivo la funci&#243;n de vasallaje en PAE se ha ampliado.
 
 [H1]Para convertirse en vasallo[\H1]
 En PAE, es f&#225;cil convertirse en vasallo. Solo tienes que conquistar una ciudad de un jugador que tiene 4 ciudades o menos, entonces se ofrece a ser un vasallo.
-Probabilidad 1: 120% &#8211; (20 veces el n&#250;mero de ciudades)%
+Probabilidad 1: 120% - (20 veces el n&#250;mero de ciudades)%
 Probabilidad 2: los puntos de fuerza de civilizaci&#243;n del perdedor (x2) son menores que los puntos de fuerza del ganador
 Esto ayuda a que los vasallos mantengan cierta fuerza. Lo mismo se aplica a los jugadores humanos. En PAE ahora es posible, que un jugador humano se convierta en vasallo de la IA.
 

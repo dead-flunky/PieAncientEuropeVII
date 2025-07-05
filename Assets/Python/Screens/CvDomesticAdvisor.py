@@ -567,53 +567,146 @@ class CvDomesticAdvisor:
 
 				# Haussklaven
 				iChance = 4
-				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_PATRONAT")): iChance = 2
+				bTech0 = False
+				bTech1 = False
+				bTech2 = False
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_PATRONAT")):
+					iChance -= 2
+					bTech1 = True
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_SKLAVENRECHTE")):
+					iChance -= 1
+					bTech2 = True
+				if not bTech1 and not bTech2:
+					bTech0 = True
 				szText = u"<font=3>" + localText.getText("TXT_KEY_UNIT_SLAVE_HAUS", ()) + (u": %s%%</font>" % str(iChance))
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 200, self.nScreenHeight - 85, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 				screen.addPanel(self.getNextWidgetName(), u"", u"", True, False, 200, self.nScreenHeight-66, 220, 56, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 4%</font>"
+
+				szText = u""
+				if bTech0: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 4%</font>"
+				if bTech0: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 200, self.nScreenHeight - 60, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_PATRONAT", ()) + u": -2%</font>"
+
+				szText = u""
+				if bTech1: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_PATRONAT", ()) + u": -2%</font>"
+				if bTech1: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 200, self.nScreenHeight - 44, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
+
+				szText = u""
+				if bTech2: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_SKLAVENRECHTE", ()) + u": -1%</font>"
+				if bTech2: szText += localText.getText("[COLOR_REVERT]", ())
+				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 200, self.nScreenHeight - 28, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
 
 				# Feldsklaven
 				iChance = 6
-				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_EISENPFLUG")): iChance = 3
+				bTech0 = False
+				bTech1 = False
+				bTech2 = False
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_EISENPFLUG")):
+					iChance -= 3
+					bTech1 = True
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_SKLAVENRECHTE")):
+					iChance -= 1
+					bTech2 = True
+				if not bTech1 and not bTech2:
+					bTech0 = True
 				szText = u"<font=3>" + localText.getText("TXT_KEY_UNIT_SLAVE_FOOD", ()) + (u": %s%%</font>" % str(iChance))
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 430, self.nScreenHeight - 85, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
 
 				screen.addPanel(self.getNextWidgetName(), u"", u"", True, False, 430, self.nScreenHeight-66, 220, 56, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 6%</font>"
+
+				szText = u""
+				if bTech0: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 6%</font>"
+				if bTech0: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 430, self.nScreenHeight - 60, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_EISENPFLUG", ()) + u": -3%</font>"
+
+				szText = u""
+				if bTech1: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_EISENPFLUG", ()) + u": -3%</font>"
+				if bTech1: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 430, self.nScreenHeight - 44, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
+
+				szText = u""
+				if bTech2: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_SKLAVENRECHTE", ()) + u": -1%</font>"
+				if bTech2: szText += localText.getText("[COLOR_REVERT]", ())
+				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 430, self.nScreenHeight - 28, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
 
 				# Bergwerksklaven
 				iChance = 8
-				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_MECHANIK")): iChance = 4
+				bTech0 = False
+				bTech1 = False
+				bTech2 = False
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_MECHANIK")):
+					iChance -= 4
+					bTech1 = True
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_SKLAVENRECHTE")):
+					iChance -= 1
+					bTech2 = True
+				if not bTech1 and not bTech2:
+					bTech0 = True
 				szText = u"<font=3>" + localText.getText("TXT_KEY_UNIT_SLAVE_PROD", ()) + (u": %s%%</font>" % str(iChance))
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 660, self.nScreenHeight - 85, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
 
 				screen.addPanel(self.getNextWidgetName(), u"", u"", True, False, 660, self.nScreenHeight-66, 220, 56, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 8%</font>"
+
+				szText = u""
+				if bTech0: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 8%</font>"
+				if bTech0: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 660, self.nScreenHeight - 60, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_MECHANIK", ()) + u": -4%</font>"
+
+				szText = u""
+				if bTech1: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_MECHANIK", ()) + u": -4%</font>"
+				if bTech1: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 660, self.nScreenHeight - 44, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
+
+				szText = u""
+				if bTech2: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_SKLAVENRECHTE", ()) + u": -1%</font>"
+				if bTech2: szText += localText.getText("[COLOR_REVERT]", ())
+				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 660, self.nScreenHeight - 28, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
 
 				# Gebäudesklaven
 				iChance = 6
-				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_MEDICINE3")): iChance -= 2
-				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_ANATOMIE")): iChance -= 2
+				bTech0 = False
+				bTech1 = False
+				bTech2 = False
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_MEDICINE3")):
+					iChance -= 2
+					bTech1 = True
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_ANATOMIE")):
+					iChance -= 2
+					bTech2 = True
+				if not bTech1 and not bTech2:
+					bTech0 = True
 				szText = u"<font=3>" + localText.getText("TXT_KEY_UNIT_SLAVE_BUILDING", ()) + (u": %s%%</font>" % str(iChance))
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 890, self.nScreenHeight - 85, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
 
 				screen.addPanel(self.getNextWidgetName(), u"", u"", True, False, 890, self.nScreenHeight-66, 220, 56, PanelStyles.PANEL_STYLE_MAIN_BLACK25)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 6%</font>"
+
+				szText = u""
+				if bTech0: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_WORLD_STANDARD", ()) + u": 6%</font>"
+				if bTech0: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 890, self.nScreenHeight - 60, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_MEDICINE3", ()) + u": -2%</font>"
+
+				szText = u""
+				if bTech1: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_MEDICINE3", ()) + u": -2%</font>"
+				if bTech1: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 890, self.nScreenHeight - 44, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
-				szText = u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_ANATOMIE", ()) + u": -2%</font>"
+
+				szText = u""
+				if bTech2: szText += localText.getText("[COLOR_POSITIVE_TEXT]", ())
+				szText += u"<font=2>" + localText.getText("TXT_KEY_TRADE_TECH", ()) + u" " + localText.getText("TXT_KEY_TECH_ANATOMIE", ()) + u": -2%</font>"
+				if bTech2: szText += localText.getText("[COLOR_REVERT]", ())
 				screen.setText(self.getNextWidgetName(), "Background", szText, CvUtil.FONT_LEFT_JUSTIFY, 890, self.nScreenHeight - 28, -0.1, FontTypes.MENU_FONT, WidgetTypes.WIDGET_ACTION, gc.getControlInfo(ControlTypes.CONTROL_TECH_CHOOSER).getActionInfoIndex(), -1)
 
 

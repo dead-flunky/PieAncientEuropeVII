@@ -1593,6 +1593,14 @@ bool CvPlot::isRiverSide() const
 
 bool CvPlot::isRiver() const
 {
+	// PAE new
+	return isRiverSide();
+	// PAE
+	if (getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER")) || getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+	{
+		return true;
+	}
+	// BTS
 	return (getRiverCrossingCount() > 0);
 }
 

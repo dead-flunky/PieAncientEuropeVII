@@ -49,6 +49,22 @@
 		<Spanish>Dicasterio</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COURTHOUSE_ISLAM</Tag>
+		<English>Divan</English>
+		<French>Divan</French>
+		<German>Diwan</German>
+		<Italian>Diwan</Italian>
+		<Spanish>Div&#225;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_COURTHOUSE_JUDEN</Tag>
+		<English>Rabbinical Court</English>
+		<French>Tribunal rabbinique</French>
+		<German>Rabbinatsgericht</German>
+		<Italian>Corte rabbinica</Italian>
+		<Spanish>Tribunal Rab&#237;nico</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CURIA</Tag>
 		<English>Curia</English>
 		<French>Curia</French>
@@ -63,6 +79,30 @@
 		<German>[ICON_BULLET] Feuerwehren sch&#252;tzen St&#228;dte zu 100% vor Br&#228;nden.</German>
 		<Italian>[ICON_BULLET] I vigili del fuoco proteggono le citt&#224; al 100% dagli incendi.</Italian>
 		<Spanish>[ICON_BULLET] Los departamentos de bomberos protegen las ciudades al 100% de los incendios.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FREE_START_ERA</Tag>
+		<English>[ICON_BULLET]Available for free on [COLOR_HIGHLIGHT_TEXT]%s1_EraName[COLOR_REVERT] and later starts</English>
+		<French>[ICON_BULLET]Disponible gratuitement &#224; l'&#233;poque [COLOR_HIGHLIGHT_TEXT]"%s1_EraName"[COLOR_REVERT] et pour les d&#233;buts de partie plus tardifs</French>
+		<German>[ICON_BULLET]Frei verf&#252;gbar im Zeitalter [COLOR_HIGHLIGHT_TEXT]%s1_EraName[COLOR_REVERT] und sp&#228;ter</German>
+		<Italian>[ICON_BULLET]Disponibile gratuitamente al raggiungimento di [COLOR_HIGHLIGHT_TEXT]%s1_EraName[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]Disponible gratis a partir [NUM1:del:de la:de los:de las] [COLOR_HIGHLIGHT_TEXT]%s1_EraName[COLOR_REVERT] e inicios posteriores</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GREEK_ALTAR</Tag>
+		<English>Bomos</English>
+		<French>Bomos</French>
+		<German>Bomos</German>
+		<Italian>Bomos</Italian>
+		<Spanish>Bomos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HOCHSCHULE_ROME</Tag>
+		<English>Athenaeum</English>
+		<French>Athenaeum</French>
+		<German>Athenaeum</German>
+		<Italian>Athenaeum</Italian>
+		<Spanish>Athenaeum</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEVEE2_HELP</Tag>
@@ -81,6 +121,22 @@
 		<Spanish>[ICON_BULLET] Los canales de riego protegen a las ciudades de los incendios hasta los 11 habitantes.[NEWLINE][ICON_BULLET]S&#243;lo se puede construir en ciudades pr&#243;ximas a r&#237;os</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MILIT_LAGER_ISLAM</Tag>
+		<English>Misr</English>
+		<French>Misr</French>
+		<German>Misr</German>
+		<Italian>Misr</Italian>
+		<Spanish>Misr</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MONTE_CASSINO</Tag>
+		<English>Monte Cassino</English>
+		<French>Mont Cassin</French>
+		<German>Monte Cassino</German>
+		<Italian>Montecassino</Italian>
+		<Spanish>Montecasino</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ISRAEL</Tag>
 		<English>Exodus</English>
 		<French>Exode</French>
@@ -95,6 +151,54 @@
 		<German>[H1]"Lass mein Volk ziehen!"[\H1][NEWLINE]Das Buch Exodus, auch bekannt als das 2. Buch Moses, ist ein fundamentaler Teil des Alten Testaments und erz&#228;hlt die bewegende Geschichte des Auszugs der Israeliten aus &#196;gypten. Der Name "Exodus" leitet sich vom griechischen Wort f&#252;r "Auszug" ab und beschreibt treffend den Kern der Erz&#228;hlung. Das Buch Exodus setzt dort an, wo das Buch Genesis endet, und beschreibt die Situation der Israeliten, die in &#196;gypten im Exil leben und unter der Herrschaft des Pharaos zu unbezahlter Arbeit gezwungen werden. Die Erz&#228;hlung gliedert sich in drei Hauptteile: Die Befreiung aus &#196;gypten, der Beginn des W&#252;stenzuges zum Sinai und Israel am Sinai (Bund und Gesetz). Ein zentrales Ereignis im Buch Exodus ist die Erscheinung Gottes vor Mose in einem brennenden Dornbusch. Hier erh&#228;lt Mose den g&#246;ttlichen Auftrag, die Israeliten aus der Sklaverei zu befreien und sie in das "gelobte Land Kanaan" zu f&#252;hren. Die Exodus Geschichte endet nicht mit dem Verlassen &#196;gyptens. Sie beschreibt auch die 40-j&#228;hrige Wanderung durch die W&#252;ste, w&#228;hrend der nur zwei der urspr&#252;nglichen Erwachsenen das verhei&#223;ene Land Kanaan erreichen. Diese lange Reise symbolisiert die Pr&#252;fungen und Herausforderungen, die das Volk Israel auf seinem Weg zur Freiheit und zum Bund mit Gott bew&#228;ltigen musste.</German>
 		<Italian>[H1]"Lascia andare il mio popolo!"[\H1][NEWLINE]Il Libro dell'Esodo, noto anche come Secondo Libro di Mos&#232;, &#232; una parte fondamentale dell'Antico Testamento e racconta la commovente storia dell'Esodo degli Israeliti dall'Egitto. Il nome "Exodus" deriva dalla parola greca che significa "esodo" e descrive adeguatamente il nocciolo della storia. Il libro dell'Esodo inizia dove finisce il libro della Genesi e descrive la situazione degli Israeliti che vivevano in esilio in Egitto e costretti a svolgere lavori non retribuiti sotto il dominio del Faraone. La storia &#232; divisa in tre parti principali: la liberazione dall'Egitto, l'inizio del viaggio nel deserto verso il Sinai e Israele al Sinai (alleanza e legge). Un evento centrale nel libro dell'Esodo &#232; l'apparizione di Dio a Mos&#232; in un roveto ardente. Qui Mos&#232; riceve la missione divina di liberare gli Israeliti dalla schiavit&#249; e di condurli alla "terra promessa di Canaan". La storia dell'Esodo non finisce con la partenza dall'Egitto. Descrive anche il viaggio lungo 40 anni attraverso il deserto, durante il quale solo due degli adulti originari raggiungono la terra promessa di Canaan. Questo lungo viaggio simboleggia le prove e le sfide che il popolo d'Israele dovette superare nel suo cammino verso la libert&#224; e l'alleanza con Dio.</Italian>
 		<Spanish>[H1]"&#161;Deja ir a mi pueblo!"[\H1][NEWLINE]El Libro del &#201;xodo, tambi&#233;n conocido como el 2º Libro de Mois&#233;s, es parte fundamental del Antiguo Testamento y cuenta la conmovedora historia del &#201;xodo de los israelitas de Egipto. El nombre "&#201;xodo" se deriva de la palabra griega para "&#233;xodo" y describe acertadamente el n&#250;cleo de la historia. El libro del &#201;xodo comienza donde termina el libro de G&#233;nesis y describe la situaci&#243;n de los israelitas que viv&#237;an en el exilio en Egipto y eran obligados a realizar trabajos no remunerados bajo el gobierno del Fara&#243;n. La historia se divide en tres partes principales: la liberaci&#243;n de Egipto, el comienzo del viaje por el desierto hacia el Sina&#237; e Israel en el Sina&#237; (alianza y ley). Un acontecimiento central en el libro de &#201;xodo es la aparici&#243;n de Dios a Mois&#233;s en una zarza ardiente. Aqu&#237; Mois&#233;s recibe la misi&#243;n divina de liberar a los israelitas de la esclavitud y conducirlos a la "tierra prometida de Cana&#225;n". La historia del &#201;xodo no termina con la salida de Egipto. Tambi&#233;n describe el viaje de 40 a&#241;os a trav&#233;s del desierto durante el cual s&#243;lo dos de los adultos originales llegan a la tierra prometida de Cana&#225;n. Este largo viaje simboliza las pruebas y desaf&#237;os que el pueblo de Israel tuvo que superar en su camino hacia la libertad y la alianza con Dios.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NEEDS_RELIGION</Tag>
+		<English>[ICON_BULLET]City needs [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</English>
+		<French>[ICON_BULLET]La ville a besoin du [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</French>
+		<German>[ICON_BULLET]Stadt ben&#246;tigt [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</German>
+		<Italian>[ICON_BULLET]La citt&#224; ha bisogno [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</Italian>
+		<Spanish>[ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_CHRISTEN</Tag>
+		<English>Monastery school</English>
+		<French>&#201;cole du monast&#232;re</French>
+		<German>Klosterschule</German>
+		<Italian>Scuola del monastero</Italian>
+		<Spanish>Escuela del monasterio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_EGYPT</Tag>
+		<English>Temple School</English>
+		<French>&#201;cole du Temple</French>
+		<German>Tempelschule</German>
+		<Italian>Scuola del Tempio</Italian>
+		<Spanish>Escuela del templo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_ISLAM</Tag>
+		<English>Madhhab</English>
+		<French>Madhhab</French>
+		<German>Madhhab</German>
+		<Italian>Madhhab</Italian>
+		<Spanish>Madhhab</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_JUDEN</Tag>
+		<English>Torah school</English>
+		<French>Ecole de Torah</French>
+		<German>Tora-Schule</German>
+		<Italian>Scuola della Torah</Italian>
+		<Spanish>Escuela de la Tor&#225;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_ZORO</Tag>
+		<English>School of Magi</English>
+		<French>&#201;cole des mages</French>
+		<German>Magier-Schule</German>
+		<Italian>Scuola di Magi</Italian>
+		<Spanish>Escuela de Magi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SKIAS</Tag>
@@ -129,6 +233,22 @@
 		<Spanish>Horno de viento</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZION</Tag>
+		<English>Fortress Zion</English>
+		<French>Forteresse de Sion</French>
+		<German>Bergfeste Zion</German>
+		<Italian>Fortezza Sion</Italian>
+		<Spanish>Fortaleza Si&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZORO_SHRINE</Tag>
+		<English>Atas Bahram Temple</English>
+		<French>Temple d'Atas Bahram</French>
+		<German>Atas Bahram-Tempel</German>
+		<Italian>Tempio di Atas Bahram</Italian>
+		<Spanish>Templo de Atas Bahram</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
 		<English>Build a [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</English>
 		<French>Construire une [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</French>
@@ -159,6 +279,22 @@
 		<German>%d1 [ICON_FOOD] pro RundeWachstum: %d2/%d3 [ICON_FOOD] (%d4 [NUM3:Runde:Runden])</German>
 		<Italian>%d1 [ICON_FOOD] per turnoCrescita: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turni])</Italian>
 		<Spanish>%d1 [ICON_FOOD] por turnoCrecimiento: %d2/%d3 [ICON_FOOD] (%d4 [NUM4:turno:turnos])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_MILITARY_UNITS</Tag>
+		<English>[ICON_BULLET]%D1_Num Free Military Units (%d2%% of pop)</English>
+		<French>[ICON_BULLET]%D1_Num unit&#233;s militaires gratuites (%d2%% de la pop)</French>
+		<German>[ICON_BULLET]%D1_Num freie Milit&#228;reinheiten (%d2%% von Pop)</German>
+		<Italian>[ICON_BULLET]%D1_Num unit&#224; militari gratis (%d2%% della pop)</Italian>
+		<Spanish>[ICON_BULLET]%D1_Num unidades militares gratis (%d2%% de la pob)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_FREE_UNITS</Tag>
+		<English>[ICON_BULLET]%D1_Num Free Units (%d2%% of pop)</English>
+		<French>[ICON_BULLET]%D1_Num unit&#233;s gratuites (%d2%% de la pop)</French>
+		<German>[ICON_BULLET]%D1_Num freie Einheiten (%d2%% von Pop)</German>
+		<Italian>[ICON_BULLET]%D1_Num unit&#224; gratis (%d2%% della pop)</Italian>
+		<Spanish>[ICON_BULLET]%D1_Num unidades gratis (%d2%% de la pob)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_CITY_BUILDING_DESTROYED</Tag>
@@ -441,6 +577,14 @@
 		<Spanish>%F1 &#161;Peligro de incendio! (sin can. de riego)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MAIN_CITY_DEFENSE</Tag>
+		<English>%F1 Defense: %d2/%d3</English>
+		<French>%F1 D&#233;fense: %d2/%d3</French>
+		<German>%F1-Verteidigung: %d2/%d3</German>
+		<Italian>%F1 Difesa: %d2/%d3</Italian>
+		<Spanish>%F1 Defensa: %d2/%d3</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MAIN_REVOLT_BORDELL</Tag>
 		<English>%F1 No brothel!</English>
 		<French>%F1 Pas de bordel !</French>
@@ -465,6 +609,14 @@
 		<Spanish>Debido a la ausencia de su religi&#243;n estatal en %s1, la poblaci&#243;n local se siente desatendida por su gobierno. Algunos ciudadanos ya est&#225;n considerando abandonar la ciudad.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_PEST_VIEH</Tag>
+		<English>The livestock (%s2) at %s1 was wiped out by the plague.</English>
+		<French>Le b&#233;tail (%s2) de %s1 a &#233;t&#233; an&#233;anti par la peste.</French>
+		<German>Der Viehbestand (%s2) bei %s1 wurde von der Pest dahingerafft.</German>
+		<Italian>Il bestiame (%s2) a %s1 &#232; stato sterminato dalla peste.</Italian>
+		<Spanish>El ganado (%s2) en %s1 fue aniquilado por la plaga.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_1</Tag>
 		<English>Religious fanatics have destroyed a building in %s1: %s2</English>
 		<French>Des fanatiques religieux ont d&#233;truit un b&#226;timent &#224; %s1: %s2</French>
@@ -475,7 +627,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_2</Tag>
 		<English>Unknown perpetrators destroyed the %s2 in %s1.</English>
-		<French>Des auteurs inconnus ont d&#233;truit un b&#226;timent &#224; %s1 : %s2</French>
+		<French>Des auteurs inconnus ont d&#233;truit un b&#226;timent &#224; %s1 : %s2</French>
 		<German>Unbekannte T&#228;ter haben in %s1 ein Geb&#228;ude zerst&#246;rt: %s2</German>
 		<Italian>Autori sconosciuti hanno distrutto un edificio in %s1: %s2</Italian>
 		<Spanish>Perpetradores desconocidos destruyeron un edificio en %s1: %s2</Spanish>
@@ -601,54 +753,6 @@
 		<Spanish>[COLOR_NEGATIVE_TEXT](herido)[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PAE_QUOTE_209</Tag>
-		<English>Only pessimists strike the iron while it is hot. Optimists trust that it will not run cold. Peter Bamm</English>
-		<French>Seuls les pessimistes forgent le fer lorsqu'il est chaud. Les optimistes croient qu'il ne fera pas froid. Peter Bamm</French>
-		<German>Nur Pessimisten schmieden das Eisen, solange es hei&#223; ist. Optimisten vertrauen darauf, da&#223; es nicht erkaltet. Peter Bamm</German>
-		<Italian>Solo i pessimisti forgiano il ferro mentre &#232; caldo. Gli ottimisti confidano che non far&#224; freddo. Peter Bamm</Italian>
-		<Spanish>S&#243;lo los pesimistas forjan el hierro mientras est&#225; caliente. Los optimistas conf&#237;an en que no har&#225; fr&#237;o. Peter Bam</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PAE_QUOTE_210</Tag>
-		<English>War is the best merchant. It turns iron into gold. Friedrich Schiller</English>
-		<French>La guerre est le meilleur marchand. Il transforme le fer en or. Fr&#233;d&#233;ric Schiller</French>
-		<German>Krieg ist der beste Kaufmann. Er macht aus Eisen Gold. Friedrich Schiller</German>
-		<Italian>La guerra &#232; il miglior mercante. Trasforma il ferro in oro. Friedrich Schiller</Italian>
-		<Spanish>La guerra es el mejor comerciante. Convierte el hierro en oro. Friedrich Schiller</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PAE_QUOTE_211</Tag>
-		<English>A good person is more reliable than a stone bridge. Marcus Aurelius</English>
-		<French>Une bonne personne est plus fiable qu'un pont de pierre. Marc Aur&#232;le</French>
-		<German>Ein guter Mensch ist zuverl&#228;ssiger als eine steinerne Br&#252;cke. Marc Aurel</German>
-		<Italian>Una brava persona &#232; pi&#249; affidabile di un ponte di pietra. Marco Aurelio</Italian>
-		<Spanish>Una buena persona es m&#225;s confiable que un puente de piedra. Marco Aurelio</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PAE_QUOTE_212</Tag>
-		<English>He begrudges our fellow soldiers the honor of martyrdom. Christian author under Emperor Julian</English>
-		<French>Il refuse &#224; nos camarades l'honneur du martyre. Auteur chr&#233;tien sous l'empereur Julien</French>
-		<German>Er missg&#246;nnt unseren Mitstreitern die Ehre des Martyriums. Christlicher Autor unter Kaiser Julian</German>
-		<Italian>Egli nega ai nostri compagni l'onore del martirio. Autore cristiano sotto l'imperatore Giuliano</Italian>
-		<Spanish>&#201;l envidia a nuestros camaradas el honor del martirio. Autor cristiano bajo el emperador Juliano</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PAE_QUOTE_214</Tag>
-		<English>The wisdom of this world is foolishness with God. Apostle Paul</English>
-		<French>La sagesse de ce monde est folie devant Dieu. L'ap&#244;tre Paul</French>
-		<German>Die Weisheit dieser Welt ist die Torheit bei Gott. Apostel Paulus</German>
-		<Italian>La sapienza di questo mondo &#232; stoltezza davanti a Dio. Apostolo Paolo</Italian>
-		<Spanish>La sabidur&#237;a de este mundo es necedad para con Dios. Ap&#243;stol Pablo</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PAE_QUOTE_215</Tag>
-		<English>Whoever has Christ cannot be a criminal. Schenute of Atripe</English>
-		<French>Celui qui a Christ ne peut pas &#234;tre un criminel. Shenute d'Atripe</French>
-		<German>Wer Christus hat, kann kein Verbrecher sein. Schenute von Atripe</German>
-		<Italian>Chi ha Cristo non pu&#242; essere un criminale. Shenute di Atripe</Italian>
-		<Spanish>Quien tiene a Cristo no puede ser un criminal. Shenute de Atripe</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CAN_CONSTRUCT</Tag>
 		<English>Can construct following buildings</English>
 		<French>Peut construire les b&#226;timents suivants</French>
@@ -753,6 +857,14 @@
 		<Spanish><Text>equipo</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_ARTES</Tag>
+		<English>Artes liberales</English>
+		<French>Artes liberales</French>
+		<German>Artes liberales</German>
+		<Italian>Artes liberales</Italian>
+		<Spanish>Artes liberales</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_BLASEBALG</Tag>
 		<English>Bellows</English>
 		<French>Soufflet</French>
@@ -769,6 +881,14 @@
 		<Spanish>Construcci&#243;n de puentes</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_CHRISTIANISIERUNG_HELP</Tag>
+		<English>[ICON_BULLET] Re-researchable technology[NEWLINE][ICON_BULLET] Creates a unit of Kataphraktoi in the capital city</English>
+		<French>[ICON_BULLET] Technologie re-recherchable[NEWLINE][ICON_BULLET] Cr&#233;e une unit&#233; de Kataphraktoi dans la capitale</French>
+		<German>[ICON_BULLET] Wiedererforschbare Technologie[NEWLINE][ICON_BULLET] Erzeugt eine Einheit Kataphraktoi in der Hauptstadt</German>
+		<Italian>[ICON_BULLET] Tecnologia ri-ricercabile[NEWLINE][ICON_BULLET] Crea un'unit&#224; di Catafratti nella capitale</Italian>
+		<Spanish>[ICON_BULLET] Tecnolog&#237;a re-investigable[NEWLINE][ICON_BULLET] Crea una unidad de Kataphraktoi en la capital.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_CITY_STATE_INFO</Tag>
 		<English>Civilizations with this technology cannot build settlers and therefore cannot found new cities.</English>
 		<French>Les civilisations dot&#233;es de cette technologie ne peuvent pas construire de colons et ne peuvent donc pas fonder de nouvelles villes.</French>
@@ -777,12 +897,100 @@
 		<Spanish>Las civilizaciones con esta tecnolog&#237;a no pueden construir colonos y, por lo tanto, no pueden fundar nuevas ciudades.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_DIASPORA</Tag>
+		<English>The Diaspora</English>
+		<French>La Diaspora</French>
+		<German>Die Diaspora</German>
+		<Italian>La Diaspora</Italian>
+		<Spanish>La Di&#225;spora</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_FUTURE_TECH_HELP</Tag>
+		<English>[ICON_BULLET] Re-researchable technology</English>
+		<French>[ICON_BULLET] Technologie re-recherchable</French>
+		<German>[ICON_BULLET] Wiedererforschbare Technologie</German>
+		<Italian>[ICON_BULLET] Tecnologia ri-ricercabile</Italian>
+		<Spanish>[ICON_BULLET] Tecnolog&#237;a re-investigable</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_GREEK_FIRE</Tag>
+		<English>Greek Fire</English>
+		<French>Feu gr&#233;geois</French>
+		<German>Griechisches Feuer</German>
+		<Italian>Fuoco greco</Italian>
+		<Spanish>Fuego griego</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_GREEK_INFO</Tag>
 		<English>This technology is exclusive to all Greek civilizations. It allows these civilizations to research specific technologies, create units, or establish military formations. Some technologies and their properties are even conquerable.</English>
 		<French>Cette technologie est r&#233;serv&#233;e &#224; toutes les civilisations grecques. Cela permet &#224; ces civilisations de rechercher des technologies sp&#233;cifiques, de cr&#233;er des unit&#233;s ou d'&#233;tablir des formations militaires. Certaines technologies et leurs propri&#233;t&#233;s peuvent m&#234;me &#234;tre conquises.</French>
 		<German>Diese Technologie ist allen griechischen Zivilisationen vorbehalten. Damit k&#246;nnen diese Zivilisationen ganz bestimmte Technologien erforschen, Einheiten erstellen oder milit&#228;rische Formationen durchf&#252;hren. Manche Technologien und deren Eigenschaften sind sogar eroberbar.</German>
 		<Italian>Questa tecnologia &#232; riservata a tutte le civilt&#224; greche. Ci&#242; consente a queste civilt&#224; di ricercare tecnologie specifiche, creare unit&#224; o istituire formazioni militari. Alcune tecnologie e le loro propriet&#224; possono addirittura essere conquistate.</Italian>
 		<Spanish>Esta tecnolog&#237;a est&#225; reservada a todas las civilizaciones griegas. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ISLAMISIERUNG</Tag>
+		<English>Islamization</English>
+		<French>Islamisation</French>
+		<German>Islamisierung</German>
+		<Italian>Islamizzazione</Italian>
+		<Spanish>Islamizaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ISLAMISIERUNG_HELP</Tag>
+		<English>[ICON_BULLET] Re-researchable technology[NEWLINE][ICON_BULLET] Creates a Caliph unit in the capital</English>
+		<French>[ICON_BULLET] Technologie re-recherchable[NEWLINE][ICON_BULLET] Cr&#233;e une unit&#233; de calife dans la capitale</French>
+		<German>[ICON_BULLET] Wiedererforschbare Technologie[NEWLINE][ICON_BULLET] Erzeugt eine Einheit Kalif in der Hauptstadt</German>
+		<Italian>[ICON_BULLET] Tecnologia ri-ricercabile[NEWLINE][ICON_BULLET] Crea un'unit&#224; Califfo nella capitale</Italian>
+		<Spanish>[ICON_BULLET] Tecnolog&#237;a re-investigable[NEWLINE][ICON_BULLET] Crea una unidad Califa en la capital</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ISLAM_COUNCIL</Tag>
+		<English>Islamic Council</English>
+		<French>Conseil islamique</French>
+		<German>Islamischer Rat</German>
+		<Italian>Consiglio islamico</Italian>
+		<Spanish>Consejo Isl&#225;mico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ISLAM_EXPANSION</Tag>
+		<English>Islamic expansion</English>
+		<French>L'expansion islamique</French>
+		<German>Islamische Expansion</German>
+		<Italian>Espansione islamica</Italian>
+		<Spanish>Expansi&#243;n isl&#225;mica</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_ISLAM_LAW</Tag>
+		<English>The Sharia</English>
+		<French>La Charia</French>
+		<German>Die Scharia</German>
+		<Italian>La Sharia</Italian>
+		<Spanish>La Sharia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JEWISH_LAW</Tag>
+		<English>Halakha and Aggadah</English>
+		<French>Halakha et Aggadah</French>
+		<German>Halacha und Aggada</German>
+		<Italian>Halakha e Aggadah</Italian>
+		<Spanish>Halaj&#225; y Agad&#225;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_JEWISH_TORA</Tag>
+		<English>Torah and Talmud</English>
+		<French>Torah et Talmud</French>
+		<German>Thora und Talmud</German>
+		<Italian>Torah e Talmud</Italian>
+		<Spanish>Tor&#225; y Talmud</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_KLOSTERSCHULEN</Tag>
+		<English>Monastery schools</English>
+		<French>&#201;coles monastiques</French>
+		<German>Klosterschulen</German>
+		<Italian>Scuole monastiche</Italian>
+		<Spanish>Escuelas del monasterio</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL6</Tag>
@@ -799,6 +1007,30 @@
 		<German>7. &#214;kumenisches Konzil</German>
 		<Italian>7. Consiglio ecumenico</Italian>
 		<Spanish>7. Concilio Ecum&#233;nico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_KONZIL_INFO</Tag>
+		<English>[ICON_BULLET]All players receive this technology as soon as it is researched by a civilization.</English>
+		<French>[ICON_BULLET]Tous les joueurs re&#231;oivent cette technologie d&#232;s qu'elle est recherch&#233;e par une civilisation.</French>
+		<German>[ICON_BULLET]Diese Technologie bekommen alle Spieler, sobald sie von einer Zivilisation erforscht wird.</German>
+		<Italian>[ICON_BULLET]Tutti i giocatori ricevono questa tecnologia non appena viene studiata da una civilt&#224;.</Italian>
+		<Spanish>[ICON_BULLET]Todos los jugadores reciben esta tecnolog&#237;a tan pronto como una civilizaci&#243;n la investiga.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_KUPPEL</Tag>
+		<English>Dome construction</English>
+		<French>Construction de d&#244;mes</French>
+		<German>Kuppelbau</German>
+		<Italian>Costruzione di cupole</Italian>
+		<Spanish>Construcci&#243;n de c&#250;pulas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_MOENCHTUM2</Tag>
+		<English>Monastic Orders</English>
+		<French>Ordres monastiques</French>
+		<German>M&#246;nchsorden</German>
+		<Italian>Ordini Monastici</Italian>
+		<Spanish>&#211;rdenes Mon&#225;sticas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MOND</Tag>
@@ -833,6 +1065,22 @@
 		<Spanish>Esta tecnolog&#237;a est&#225; reservada a los romanos y etruscos. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_SKLAVENRECHTE_HELP</Tag>
+		<English>[ICON_BULLET]Reduces the death rate of house, field, and mining slaves by a further 1%.</English>
+		<French>[ICON_BULLET]R&#233;duit le taux de mortalit&#233; des esclaves domestiques, des champs et des mines de 1 %.</French>
+		<German>[ICON_BULLET]Senkt die Sterberate von Haus-, Feld- und Bergwerksklaven um weitere 1%.</German>
+		<Italian>[ICON_BULLET]Riduce ulteriormente il tasso di mortalit&#224; degli schiavi domestici, dei campi e delle miniere.</Italian>
+		<Spanish>[ICON_BULLET]Reduce la tasa de muerte de los esclavos dom&#233;sticos, de campo y mineros en un 1% m&#225;s.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TEMPELBAU</Tag>
+		<English>Temple construction</English>
+		<French>Construction du temple</French>
+		<German>Tempelbau</German>
+		<Italian>Costruzione del tempio</Italian>
+		<Spanish>Construcci&#243;n del templo</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_FOUND_INFO</Tag>
 		<English>[ICON_BULLET]%s1 cannot be settled</English>
 		<French>[ICON_BULLET]%s1 ne peut pas &#234;tre r&#233;gl&#233;</French>
@@ -865,6 +1113,30 @@
 		<Spanish>Kataphraktoi</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_DROMON</Tag>
+		<English>Dromon</English>
+		<French>Dromon</French>
+		<German>Dromone</German>
+		<Italian>Dromone</Italian>
+		<Spanish>Drom&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM</Tag>
+		<English>Faris</English>
+		<French>Faris</French>
+		<German>Faris</German>
+		<Italian>Faris</Italian>
+		<Spanish>Faris</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM_KALIF</Tag>
+		<English>Caliph</English>
+		<French>Calife</French>
+		<German>Kalif</German>
+		<Italian>Califfo</Italian>
+		<Spanish>Califa</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_IMPASSABLE_FEATURE</Tag>
 		<English>[ICON_BULLET][ICON_MOVES]Chariots: [COLOR_WARNING_TEXT]Road required[COLOR_REVERT]</English>
 		<French>[ICON_BULLET][ICON_MOVES]Chars : [COLOR_WARNING_TEXT]Route requise[COLOR_REVERT]</French>
@@ -889,12 +1161,20 @@
 		<Spanish>[ICON_BULLET][ICON_MOVES]%s1: [COLOR_WARNING_TEXT]no navegable[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY2</Tag>
+		<English>Rabbi</English>
+		<French>Rabbin</French>
+		<German>Rabbiner</German>
+		<Italian>Rabbino</Italian>
+		<Spanish>Rabino:Rabinos</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SPEARMAN_MEDIEVAL</Tag>
-		<English>Light Pikeman</English>
-		<French>Piquier l&#233;ger</French>
+		<English>Spear burgher</English>
+		<French>Citoyen lancier</French>
 		<German>Spie&#223;b&#252;rger</German>
-		<Italian>Picchiere leggero</Italian>
-		<Spanish>Piquero ligero</Spanish>
+		<Italian>Cittadino lanciere</Italian>
+		<Spanish>Ciudadano lancero</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SWORDSMAN_MEDIEVAL</Tag>

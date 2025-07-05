@@ -930,11 +930,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_TEMPLE</Tag>
-		<English>Tabernacle</English>
-		<French>Tabernacle</French>
-		<German>Tabernakel</German>
-		<Italian>Tabernacolo</Italian>
-		<Spanish>Tabern&#225;culo</Spanish>
+		<English>House of Assembly</English>
+		<French>Chambre d'assembl&#233;e</French>
+		<German>Haus der Versammlung</German>
+		<Italian>Camera dell'Assemblea</Italian>
+		<Spanish>C&#225;mara de la Asamblea</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KASTELL</Tag>
@@ -4777,6 +4777,14 @@
 		<Spanish>Jerjes de Persia</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_227</Tag>
+		<English>Speak little and do much. Pirkei Avot 1:15</English>
+		<French>Parlez peu et faites beaucoup. Pirkei Avot 1:15</French>
+		<German>Sprich wenig und tue viel. Pirkej Awot 1:15</German>
+		<Italian>Parla poco e fai molto. Pirkei Avot 1:15</Italian>
+		<Spanish>Habla poco y haz mucho. Pirkei Avot 1:15</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROCESS_ESPIONAGE</Tag>
 		<English>Espionage</English>
 		<French>Espionnage</French>
@@ -7670,11 +7678,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY</Tag>
-		<English>Rabbi</English>
-		<French>Rabbin</French>
-		<German>Rabbiner</German>
-		<Italian>Rabbino</Italian>
-		<Spanish>Rabino:Rabinos</Spanish>
+		<English>Jewish High Priest</English>
+		<French>Grand pr&#234;tre juif</French>
+		<German>J&#252;discher Hohepriester:J&#252;dische Hohepriester</German>
+		<Italian>Sommo Sacerdote Ebreo</Italian>
+		<Spanish>Sumo Sacerdote Jud&#237;o:Sumos Sacerdotes Jud&#237;os</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_KILIKIEN</Tag>

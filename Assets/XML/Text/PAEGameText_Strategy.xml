@@ -2,11 +2,11 @@
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_10GEBOTE_STRATEGY</Tag>
-		<English>[ICON_BULLET]The creator receives a Great Prophet and disseminates Judaism in up to 10 local cities.[NEWLINE][ICON_BULLET]City needs [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT]</English>
-		<French>[ICON_BULLET]L'innovateur obtient un Proph&#232;te Illustre et diffuse le Juda&#239;sme dans un maximum de 10 villes de la r&#233;gion.[NEWLINE][ICON_BULLET]La ville a besoin du [COLOR_HIGHLIGHT_TEXT]Juda&#239;sme[COLOR_REVERT]</French>
-		<German>[ICON_BULLET]Der Erschaffer erh&#228;lt einen gro&#223;en Propheten und verbreitet das Judentum in bis zu 10 lokale St&#228;dte.[NEWLINE][ICON_BULLET]Stadt ben&#246;tigt das [COLOR_HIGHLIGHT_TEXT]Judentum[COLOR_REVERT]</German>
-		<Italian>[ICON_BULLET]Il creatore riceve un grande profeta e propaga l'ebraismo in 10 citt&#224; locali.[NEWLINE][ICON_BULLET]La citt&#224; ha bisogno degli [COLOR_HIGHLIGHT_TEXT]l'ebraismo[COLOR_REVERT]</Italian>
-		<Spanish>[ICON_BULLET]El creador recibe un Gran Profeta y propaga el juda&#237;smo en 10 ciudades locales.[NEWLINE][ICON_BULLET]La ciudad necesita el [COLOR_HIGHLIGHT_TEXT]juda&#237;smo[COLOR_REVERT]</Spanish>
+		<English>[ICON_BULLET]The creator receives a Great Prophet and disseminates Judaism in up to 10 local cities.</English>
+		<French>[ICON_BULLET]L'innovateur obtient un Proph&#232;te Illustre et diffuse le Juda&#239;sme dans un maximum de 10 villes de la r&#233;gion.</French>
+		<German>[ICON_BULLET]Der Erschaffer erh&#228;lt einen gro&#223;en Propheten und verbreitet das Judentum in bis zu 10 lokale St&#228;dte.</German>
+		<Italian>[ICON_BULLET]Il creatore riceve un grande profeta e propaga l'ebraismo in 10 citt&#224; locali.</Italian>
+		<Spanish>[ICON_BULLET]El creador recibe un Gran Profeta y propaga el juda&#237;smo en 10 ciudades locales.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ACROPOLIS_STRATEGY</Tag>
@@ -26,11 +26,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BABEL_STRATEGY</Tag>
-		<English>[ICON_BULLET]The creator receives +4 diplomatic advantages (plus points) to all known civilizations.[NEWLINE][ICON_BULLET]City needs [COLOR_HIGHLIGHT_TEXT]Sumerian gods[COLOR_REVERT]</English>
-		<French>[ICON_BULLET]Le fondateur re&#231;oit un bonus de +4 aux relations avec toutes les civilisations connues.[NEWLINE][ICON_BULLET]La ville a besoin de [COLOR_HIGHLIGHT_TEXT]dieux sum&#233;riens[COLOR_REVERT]</French>
-		<German>[ICON_BULLET]Der Erschaffer erh&#228;lt +4 Diplomatie-Pluspunkte bei allen bekannten Zivilisationen.[NEWLINE][ICON_BULLET]Stadt ben&#246;tigt [COLOR_HIGHLIGHT_TEXT]Sumerische G&#246;tter[COLOR_REVERT]</German>
-		<Italian>[ICON_BULLET]Il creatore riceve +4 vantaggi diplomatici (pi&#249; punti) per tutte le civilt&#224; conosciute.[NEWLINE][ICON_BULLET]La citt&#224; ha bisogno degli [COLOR_HIGHLIGHT_TEXT]dei sumere[COLOR_REVERT]</Italian>
-		<Spanish>[ICON_BULLET]El creador recibe +4 ventajas diplom&#225;ticas (puntos positivos) para todas civilizaciones conocidas.[NEWLINE][ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]dioses sumerios[COLOR_REVERT]</Spanish>
+		<English>[ICON_BULLET]The creator receives +4 diplomatic advantages (plus points) to all known civilizations.</English>
+		<French>[ICON_BULLET]Le fondateur re&#231;oit un bonus de +4 aux relations avec toutes les civilisations connues.</French>
+		<German>[ICON_BULLET]Der Erschaffer erh&#228;lt +4 Diplomatie-Pluspunkte bei allen bekannten Zivilisationen.</German>
+		<Italian>[ICON_BULLET]Il creatore riceve +4 vantaggi diplomatici (pi&#249; punti) per tutte le civilt&#224; conosciute.</Italian>
+		<Spanish>[ICON_BULLET]El creador recibe +4 ventajas diplom&#225;ticas (puntos positivos) para todas civilizaciones conocidas.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BORDELL_STRATEGY</Tag>
@@ -529,6 +529,14 @@
 		<Spanish>Esta tecnolog&#237;a implica la [COLOR_HIGHLIGHT_TEXT]Edad de Bronce[COLOR_REVERT]. Desde ahora, un bosque cercano puede ser talado durante la producci&#243;n de una unidad militar ([COLOR_HIGHLIGHT_TEXT]desertificaci&#243;n[COLOR_REVERT]).</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_DARK_AGE_STRATEGY</Tag>
+		<English>The [COLOR_TECH_TEXT]Dark Ages[COLOR_REVERT]...</English>
+		<French>[COLOR_TECH_TEXT]L'Age des t&#233;n&#232;bres[COLOR_REVERT]...</French>
+		<German>Das [COLOR_TECH_TEXT]Dunkle Zeitalter[COLOR_REVERT]...</German>
+		<Italian>Il [COLOR_TECH_TEXT]et&#224; buie[COLOR_REVERT]...</Italian>
+		<Spanish>La [COLOR_TECH_TEXT]edad oscura[COLOR_REVERT]...</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_DEZIMATION_STRATEGY</Tag>
 		<English>From this technology on, units can be decimated in order to strengthen their fighting spirit.</English>
 		<French>Avec cette technologie, les unit&#233;s peuvent d&#233;sormais subir une d&#233;cimation pour attiser leur esprit combatif.</French>
@@ -559,14 +567,6 @@
 		<German>Wenn sich Einheiten [COLOR_HIGHLIGHT_TEXT]formieren[COLOR_REVERT], erhalten sie einen zus&#228;tzlichen Kampfbonus auf Gel&#228;nde oder bestimmten Einheitentypen.</German>
 		<Italian>Quando le unit&#224; usano una [COLOR_HIGHLIGHT_TEXT]formazione[COLOR_REVERT], ricevono un bonus di battaglia aggiuntivo sui terreni o su determinati tipi di unit&#224;.</Italian>
 		<Spanish>Cuando las unidades usan una [COLOR_HIGHLIGHT_TEXT]formaci&#243;n[COLOR_REVERT], reciben un bonus adicional de combate en terrenos o contra determinadas unidades.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_FUTURE_TECH_STRATEGY</Tag>
-		<English>The [COLOR_TECH_TEXT]Dark Ages[COLOR_REVERT]...</English>
-		<French>[COLOR_TECH_TEXT]L'Age des t&#233;n&#232;bres[COLOR_REVERT]...</French>
-		<German>Das [COLOR_TECH_TEXT]Dunkle Zeitalter[COLOR_REVERT]...</German>
-		<Italian>Il [COLOR_TECH_TEXT]et&#224; buie[COLOR_REVERT]...</Italian>
-		<Spanish>La [COLOR_TECH_TEXT]edad oscura[COLOR_REVERT]...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_GLADIATOR2_STRATEGY</Tag>
@@ -970,11 +970,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INQUISITOR_STRATEGY</Tag>
-		<English>Use [COLOR_UNIT_TEXT]religious ejectors[COLOR_REVERT] to eliminate non-state religions from a city. This will eliminate religious discontent. The [COLOR_UNIT_TEXT]religious ejector[COLOR_REVERT] can only be used if you belong to a state religion. Doing so will destroy the [COLOR_UNIT_TEXT]religious ejector[COLOR_REVERT] and the population shrinks by 1. Be careful, because this action will cause negative consequences to a state, which belongs to this religion. Leaders with your religion supports this action.</English>
-		<French>Utilisez un [COLOR_UNIT_TEXT]fanatique religieux[COLOR_REVERT] pour faire dispara&#238;tre d'une ville les religions non officielles. Le m&#233;contentement d&#251; &#224; ces religions sera alors &#233;limin&#233;. Le [COLOR_UNIT_TEXT]fanatique religieux[COLOR_REVERT] peut seulement &#234;tre utilis&#233; si vous avez une religion d'&#233;tat. En faisant cela, le [COLOR_UNIT_TEXT]fanatique religieux[COLOR_REVERT] sera d&#233;truit et la population diminuera de 1. Soyez prudent car cette action aura des r&#233;percussions n&#233;gatives sur vos relations avec les nations adeptes des religions &#233;limin&#233;es. Par contre, les relations avec les nations qui partagent votre religion d'&#233;tat seront am&#233;lior&#233;es.</French>
-		<German>Benutzen Sie [COLOR_UNIT_TEXT]Religionsaustreiber[COLOR_REVERT], um Religionen, die nicht der Staatsreligion angeh&#246;ren, aus einer Stadt zu vertreiben. Dadurch beseitigen Sie auch die Unzufriedenheit, die durch fremde Religionen verursacht werden. Der [COLOR_UNIT_TEXT]Religionsaustreiber[COLOR_REVERT] kann nur dann fremde Religionen vertreiben, wenn Eurer Reich einer Staatsreligion angeh&#246;rt. Die Einheit wird dabei vernichtet und die Stadtbev&#246;lkerung sinkt um 1. Bedenken Sie, dass ein anderer Staat, der dessen Religion als Staatsreligion f&#252;hrt, negativ darauf reagiert. Ein Staat, dessen Staatsreligion Eurer Staatsreligion entspricht, ist hingegen positiv angetan.</German>
-		<Italian>Usa l'[COLOR_UNIT_TEXT]religious ejectors[COLOR_REVERT] per eliminare da una citt&#224; tutte le religioni non di stato. This will eliminate religious discontent. The [COLOR_UNIT_TEXT]religious ejector[COLOR_REVERT] can only be used if you belong to a state religion. Doing so will destroy the [COLOR_UNIT_TEXT]religious ejector[COLOR_REVERT] and the population shrinks by 1. Be careful, because this action will cause negative consequences to a state, which belongs to this religion. Leaders with your religion supports this action.</Italian>
-		<Spanish>Usa a los [COLOR_UNIT_TEXT]inquisidores[COLOR_REVERT] para eliminar todas las religiones no oficiales de una ciudad. Esto eliminar&#225; el descontento religioso. El [COLOR_UNIT_TEXT]inquisidor[COLOR_REVERT] solo puede ser usado si sigues una religi&#243;n oficial. Hacerlo destruir&#225; el [COLOR_UNIT_TEXT]inquisidor[COLOR_REVERT] y la poblaci&#243;n se reducir&#225; en 1. Ten ciudado, porque esta acci&#243;n tendr&#225; consecuencias negativas hacia una naci&#243;n, que siga esta religi&#243;n. Los l&#237;deres con tu religi&#243;n apoyar&#225;n esta acci&#243;n.</Spanish>
+		<English>Use [COLOR_UNIT_TEXT]religious ejectors[COLOR_REVERT] to eliminate non-state religions from a city. This will eliminate religious discontent. The [COLOR_UNIT_TEXT]religious ejector[COLOR_REVERT] can only be used if you belong to a state religion. Doing so will destroy the [COLOR_UNIT_TEXT]religious ejector[COLOR_REVERT] and the population shrinks by 1. Keep in mind that with monotheistic religions, another state that has this religion as its state religion will react negatively. A state whose state religion corresponds to your state religion, on the other hand, will react positively.</English>
+		<French>Utilisez un [COLOR_UNIT_TEXT]fanatique religieux[COLOR_REVERT] pour faire dispara&#238;tre d'une ville les religions non officielles. Le m&#233;contentement d&#251; &#224; ces religions sera alors &#233;limin&#233;. Le [COLOR_UNIT_TEXT]fanatique religieux[COLOR_REVERT] peut seulement &#234;tre utilis&#233; si vous avez une religion d'&#233;tat. En faisant cela, le [COLOR_UNIT_TEXT]fanatique religieux[COLOR_REVERT] sera d&#233;truit et la population diminuera de 1. N'oubliez pas que dans le cas des religions monoth&#233;istes, un autre &#201;tat qui adopte cette religion comme religion d'&#201;tat r&#233;agira n&#233;gativement. En revanche, un &#201;tat dont la religion d'&#201;tat correspond &#224; la v&#244;tre est positivement impressionn&#233;.</French>
+		<German>Benutze [COLOR_UNIT_TEXT]Religionsaustreiber[COLOR_REVERT], um Religionen, die nicht der Staatsreligion angeh&#246;ren, aus einer Stadt zu vertreiben. Dadurch beseitigt man die Unzufriedenheit, die durch fremde Religionen verursacht werden. Der [COLOR_UNIT_TEXT]Religionsaustreiber[COLOR_REVERT] kann nur dann fremde Religionen vertreiben, wenn Eurer Reich einer Staatsreligion angeh&#246;rt. Die Einheit wird dabei vernichtet und die Stadtbev&#246;lkerung sinkt um 1. Bedenke, dass bei monotheistischen Religionen ein anderer Staat, der diese Religion als Staatsreligion f&#252;hrt, negativ darauf reagiert. Ein Staat, dessen Staatsreligion Eurer Staatsreligion entspricht, ist hingegen positiv angetan.</German>
+		<Italian>Usa l'[COLOR_UNIT_TEXT]religious ejectors[COLOR_REVERT] per eliminare da una citt&#224; tutte le religioni non di stato. This will eliminate religious discontent. L'[COLOR_UNIT_TEXT]Espulsore di religioni[COLOR_REVERT] pu&#242; espellere religioni straniere solo se il tuo regno appartiene a una religione di stato. L'unit&#224; viene distrutta e la popolazione della citt&#224; diminuisce di 1. Tieni presente che, nel caso delle religioni monoteiste, un altro stato che abbia questa religione come religione di stato reagir&#224; negativamente. Al contrario, uno Stato la cui religione di Stato corrisponde alla vostra religione di Stato ne trae impressione positiva.</Italian>
+		<Spanish>Usa a los [COLOR_UNIT_TEXT]inquisidores[COLOR_REVERT] para eliminar todas las religiones no oficiales de una ciudad. Esto eliminar&#225; el descontento religioso. El [COLOR_UNIT_TEXT]inquisidor[COLOR_REVERT] solo puede ser usado si sigues una religi&#243;n oficial. Hacerlo destruir&#225; el [COLOR_UNIT_TEXT]inquisidor[COLOR_REVERT] y la poblaci&#243;n se reducir&#225; en 1. Recuerde que en el caso de las religiones monote&#237;stas, otro estado que adopte esa religi&#243;n como religi&#243;n estatal reaccionar&#225; negativamente. Por el contrario, un Estado cuya religi&#243;n estatal se corresponde con la suya queda positivamente impresionado.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_JEWISH_MISSIONARY_STRATEGY</Tag>

@@ -122,6 +122,7 @@ LUnits4HorseSwap = []
 LMovingBonus = []
 LRammen = []
 LInquisitors = []
+LGlobalTechs = []
 
 
 def init():
@@ -231,6 +232,7 @@ def init():
 		global LMovingBonus
 		global LRammen
 		global LInquisitors
+		global LGlobalTechs
 
 		if gc.getInfoTypeForString("COLOR_EMPTY") == -1:
 				raise Exception("Called init() to early. getInfoTypeForString() returns -1.")
@@ -1327,8 +1329,8 @@ def init():
 						(iRome, gc.getInfoTypeForString("UNIT_ARCHER_LEGION"), gc.getInfoTypeForString("UNIT_HORSE_ARCHER_ROMAN"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(iRome, gc.getInfoTypeForString("UNIT_HASTA"), gc.getInfoTypeForString("UNIT_CELERES"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(iRome, gc.getInfoTypeForString("UNIT_PRINCIPES"), gc.getInfoTypeForString("UNIT_TRIARII"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
-						(iRome, gc.getInfoTypeForString("UNIT_HASTATI"), gc.getInfoTypeForString("UNIT_TRIARII"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
-						(iRome, gc.getInfoTypeForString("UNIT_PILUMNI"), gc.getInfoTypeForString("UNIT_TRIARII"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
+						(iRome, gc.getInfoTypeForString("UNIT_HASTATI"),   gc.getInfoTypeForString("UNIT_TRIARII"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
+						(iRome, gc.getInfoTypeForString("UNIT_PILUMNI"),   gc.getInfoTypeForString("UNIT_TRIARII"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(iRome, gc.getInfoTypeForString("UNIT_TRIARII"), gc.getInfoTypeForString("UNIT_PRAETORIAN"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(iRome, gc.getInfoTypeForString("UNIT_LEGION"), gc.getInfoTypeForString("UNIT_LEGION_OPTIO"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_4")),
 						(iRome, gc.getInfoTypeForString("UNIT_LEGION_OPTIO"), gc.getInfoTypeForString("UNIT_LEGION_CENTURIO"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_7")),
@@ -1337,18 +1339,19 @@ def init():
 						(iRome, gc.getInfoTypeForString("UNIT_LEGION_OPTIO2"), gc.getInfoTypeForString("UNIT_LEGION_CENTURIO2"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_7")),
 						(iRome, gc.getInfoTypeForString("UNIT_LEGION_CENTURIO2"), gc.getInfoTypeForString("UNIT_LEGION_TRIBUN"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_11")),
 						(iRome, gc.getInfoTypeForString("UNIT_LEGION_EVOCAT"), gc.getInfoTypeForString("UNIT_PRAETORIAN3"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
-						(iRome, gc.getInfoTypeForString("UNIT_PRAETORIAN2"), gc.getInfoTypeForString("UNIT_PRAETORIAN3"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(iRome, gc.getInfoTypeForString("UNIT_PRAETORIAN2"),   gc.getInfoTypeForString("UNIT_PRAETORIAN3"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_ROME_COHORTES_URBANAE"), gc.getInfoTypeForString("UNIT_PRAETORIAN3"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_EQUITES"), gc.getInfoTypeForString("UNIT_HORSEMAN_DECURIO"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_EQUES_3")),
 						(iRome, gc.getInfoTypeForString("UNIT_EQUITES"), gc.getInfoTypeForString("UNIT_PRAETORIAN_RIDER"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_HORSEMAN_EQUITES2"), gc.getInfoTypeForString("UNIT_HORSEMAN_DECURIO"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_EQUES_3")),
-						(iRome, gc.getInfoTypeForString("UNIT_HORSEMAN_DECURIO"), gc.getInfoTypeForString("UNIT_LEGION_TRIBUN"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_EQUES_5")),
+						(iRome, gc.getInfoTypeForString("UNIT_HORSEMAN_DECURIO"),  gc.getInfoTypeForString("UNIT_LEGION_TRIBUN"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_EQUES_5")),
 						(iRome, gc.getInfoTypeForString("UNIT_ROME_LIMITANEI"), gc.getInfoTypeForString("UNIT_ROME_LIMITANEI_GARDE"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
-						(iRome, gc.getInfoTypeForString("UNIT_ROME_COMITATENSES"), gc.getInfoTypeForString("UNIT_ROME_COMITATENSES2"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_LATE_5")),
+						(iRome, gc.getInfoTypeForString("UNIT_ROME_COMITATENSES"),  gc.getInfoTypeForString("UNIT_ROME_COMITATENSES2"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_LATE_5")),
 						(iRome, gc.getInfoTypeForString("UNIT_ROME_COMITATENSES2"), gc.getInfoTypeForString("UNIT_ROME_COMITATENSES3"), gc.getInfoTypeForString("PROMOTION_RANG_ROM_LATE_10")),
+						(iRome, gc.getInfoTypeForString("UNIT_ROME_COMITATENSES"),  gc.getInfoTypeForString("UNIT_ROME_PALATINI"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_ROME_COMITATENSES2"), gc.getInfoTypeForString("UNIT_ROME_PALATINI"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_ROME_COMITATENSES3"), gc.getInfoTypeForString("UNIT_ROME_PALATINI"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
-						(iRome, gc.getInfoTypeForString("UNIT_ROME_PALATINI"), gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(iRome, gc.getInfoTypeForString("UNIT_ROME_PALATINI"),   gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_CLIBANARII_ROME"), gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_CATAPHRACT_ROME"), gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
@@ -1531,7 +1534,8 @@ def init():
 
 		# monotheistische Religionen
 		LMonoReligions = [
-				gc.getInfoTypeForString("RELIGION_BUDDHISM"),
+				#gc.getInfoTypeForString("RELIGION_BUDDHISM"),
+				gc.getInfoTypeForString("RELIGION_ZORO"),
 				gc.getInfoTypeForString("RELIGION_JUDAISM"),
 				gc.getInfoTypeForString("RELIGION_CHRISTIANITY"),
 				gc.getInfoTypeForString("RELIGION_ISLAM")
@@ -1603,6 +1607,16 @@ def init():
 				gc.getInfoTypeForString("UNIT_CHRISTIAN_MISSIONARY"),
 				gc.getInfoTypeForString("UNIT_ISLAMIC_MISSIONARY"),
 				gc.getInfoTypeForString("UNIT_INQUISITOR")
+		]
+
+		LGlobalTechs = [
+				gc.getInfoTypeForString("TECH_KONZIL1"),
+				gc.getInfoTypeForString("TECH_KONZIL2"),
+				gc.getInfoTypeForString("TECH_KONZIL3"),
+				gc.getInfoTypeForString("TECH_KONZIL4"),
+				gc.getInfoTypeForString("TECH_KONZIL5"),
+				gc.getInfoTypeForString("TECH_KONZIL6"),
+				gc.getInfoTypeForString("TECH_KONZIL7")
 		]
 
 		# # Transfer local defined variables into module ones.

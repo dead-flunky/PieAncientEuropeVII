@@ -114,19 +114,11 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL1</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE_ASSUR</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL2</BuildingClassType>
 					<BuildingType>BUILDING_HAREM</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -160,6 +152,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LAGERHAUS</BuildingClassType>
 					<BuildingType>BUILDING_LAGERHAUS_ASSYRIA</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SCHULE</BuildingClassType>
+					<BuildingType>BUILDING_SCHULE_SUMER</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_NATIONAL_EPIC</BuildingClassType>
@@ -299,6 +295,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_REFLEXBOGEN</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -793,19 +793,11 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL1</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE_ASSUR</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL2</BuildingClassType>
 					<BuildingType>BUILDING_HAREM</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -831,6 +823,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LEVEE</BuildingClassType>
 					<BuildingType>BUILDING_QANAT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SCHULE</BuildingClassType>
+					<BuildingType>BUILDING_SCHULE_SUMER</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
@@ -970,6 +966,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_REFLEXBOGEN</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -1218,6 +1218,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_PARTHERSCHUSS</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -1491,6 +1495,10 @@
 					<TechType>TECH_KAMELZUCHT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -1615,10 +1623,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -2108,6 +2112,10 @@
 					<TechType>TECH_KAMELZUCHT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -2365,6 +2373,10 @@
 					<TechType>TECH_KAMELZUCHT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -2469,10 +2481,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -2486,6 +2494,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SCHULE</BuildingClassType>
+					<BuildingType>BUILDING_SCHULE_EGYPT</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
@@ -2637,6 +2649,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_PARTHERSCHUSS</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -3297,6 +3313,10 @@
 					<TechType>TECH_KAMELZUCHT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -3665,6 +3685,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_KAMELZUCHT</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -4227,10 +4251,6 @@
 					<BuildingType>BUILDING_NECROPOLIS</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL5</BuildingClassType>
 					<BuildingType>BUILDING_STEINBECKEN</BuildingType>
 				</Building>
@@ -4677,6 +4697,10 @@
 					<TechType>TECH_PERSIAN_ROAD</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -4760,10 +4784,6 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL2</BuildingClassType>
 					<BuildingType>BUILDING_NECROPOLIS</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ANCIENT_OBSERVATORY</BuildingClassType>
@@ -4919,6 +4939,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_KAMELZUCHT</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -5250,10 +5274,6 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL5</BuildingClassType>
 					<BuildingType>BUILDING_STUFENBRUNNEN</BuildingType>
 				</Building>
@@ -5405,6 +5425,10 @@
 					<TechType>TECH_KAMELZUCHT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -5533,10 +5557,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -5544,8 +5564,16 @@
 					<BuildingType>BUILDING_SANITATION</BuildingType>
 				</Building>
 				<Building>
+					<BuildingClassType>BUILDINGCLASS_SPECIAL9</BuildingClassType>
+					<BuildingType>BUILDING_ZION</BuildingType>
+				</Building>
+				<Building>
 					<BuildingClassType>BUILDINGCLASS_STEINGRAB</BuildingClassType>
 					<BuildingType>BUILDING_KOENIGSGRAB</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
+					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
@@ -5944,6 +5972,10 @@
 					<TechType>TECH_PARTHERSCHUSS</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -6058,10 +6090,6 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL1</BuildingClassType>
 					<BuildingType>BUILDING_MUREX</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL5</BuildingClassType>
@@ -6665,10 +6693,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -6686,6 +6710,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_VERSAMMLUNG</BuildingClassType>
 					<BuildingType>BUILDING_VERSAMMLUNG_MESO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SCHULE</BuildingClassType>
+					<BuildingType>BUILDING_SCHULE_EGYPT</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORT</BuildingClassType>
@@ -6837,6 +6865,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_PARTHERSCHUSS</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -7087,6 +7119,10 @@
 					<TechType>TECH_PARTHERSCHUSS</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -7327,6 +7363,10 @@
 					<TechType>TECH_PERSIAN_ROAD</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -7435,15 +7475,11 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL2</BuildingClassType>
 					<BuildingType>BUILDING_HAREM</BuildingType>
 				</Building>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
+					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -7614,6 +7650,10 @@
 					<TechType>TECH_WURFAXT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -7736,10 +7776,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -8643,6 +8679,10 @@
 					<TechType>TECH_KAMELZUCHT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -9119,15 +9159,7 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL1</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE_ASSUR</BuildingType>
-				</Building>
-				<Building>
 					<BuildingClassType>BUILDINGCLASS_SPECIAL3</BuildingClassType>
-					<BuildingType>BUILDING_SCHULE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_SPECIAL4</BuildingClassType>
 					<BuildingType>BUILDING_GARDEN</BuildingType>
 				</Building>
 				<Building>
@@ -9153,6 +9185,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_LEVEE</BuildingClassType>
 					<BuildingType>BUILDING_QANAT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SCHULE</BuildingClassType>
+					<BuildingType>BUILDING_SCHULE_SUMER</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
@@ -9292,6 +9328,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_REFLEXBOGEN</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -10051,6 +10091,10 @@
 					<TechType>TECH_KAMELZUCHT</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
 			</DisableTechs>
 			<InitialCivics>
 				<CivicType>CIVIC_DESPOTISM</CivicType>
@@ -10485,6 +10529,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_PERSIAN_ROAD</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>
@@ -11025,6 +11073,10 @@
 				</DisableTech>
 				<DisableTech>
 					<TechType>TECH_PERSIAN_ROAD</TechType>
+					<bDisableTech>1</bDisableTech>
+				</DisableTech>
+				<DisableTech>
+					<TechType>TECH_GREEK_FIRE</TechType>
 					<bDisableTech>1</bDisableTech>
 				</DisableTech>
 			</DisableTechs>

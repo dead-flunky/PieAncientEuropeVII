@@ -959,7 +959,7 @@ def doOlympicGames():
 
 						iTechSchaukampf = gc.getInfoTypeForString("TECH_GLADIATOR")
 						iTechImperialismus = gc.getInfoTypeForString("TECH_NATIONALISM")
-						iTechPapsttum = gc.getInfoTypeForString("TECH_PAPSTTUM")
+						iTechPapsttum = gc.getInfoTypeForString("TECH_KONZIL2")
 						iReligionGreek = gc.getInfoTypeForString("RELIGION_GREEK")
 						iReligionRome = gc.getInfoTypeForString("RELIGION_ROME")
 

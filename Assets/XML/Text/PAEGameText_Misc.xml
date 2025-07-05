@@ -458,11 +458,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_MORALE_UNITS</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Preaching morality[COLOR_REVERT]Reduces war weariness and raises the morale of the troop</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Pr&#234;cher la moralit&#233;[COLOR_REVERT]R&#233;duit la fatigue de la guerre et rehausse le moral de la troupe</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Moral predigen[COLOR_REVERT]Vermindert Kriegsm&#252;digkeit und hebt die Moral der Truppe</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Predicare la moralit&#224;[COLOR_REVERT]Riduce la fatica di guerra e aumenta il morale delle truppe</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Predicando la moral[COLOR_REVERT]Reduce la fatiga de guerra y eleva la moral de la tropa.</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Preaching morality[COLOR_REVERT][NEWLINE]Reduces war weariness and raises the morale of the troop</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Pr&#234;cher la moralit&#233;[COLOR_REVERT][NEWLINE]R&#233;duit la fatigue de la guerre et rehausse le moral de la troupe</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Moral predigen[COLOR_REVERT][NEWLINE]Vermindert Kriegsm&#252;digkeit und hebt die Moral der Truppe</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Predicare la moralit&#224;[COLOR_REVERT][NEWLINE]Riduce la fatica di guerra e aumenta il morale delle truppe</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Predicando la moral[COLOR_REVERT][NEWLINE]Reduce la fatiga de guerra y eleva la moral de la tropa.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_REPAIR_SHIP</Tag>
@@ -1321,6 +1321,30 @@
 		<Spanish>La ciudad %s1 ha sido declarada Ciudad Santa para la religi&#243;n "%s2".</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS1_1</Tag>
+		<English>%s1_cult got banished by Followers of the Way (Christians) in %s2_city.</English>
+		<French>Un culte (%s1_cult) a &#233;t&#233; banni par les adeptes du chemin (chr&#233;tiens) &#224; %s2_city.</French>
+		<German>%s1_cult wurde durch Anh&#228;nger des rechten Weges (Christen) aus %s2_city vertrieben.</German>
+		<Italian>%s1_cult &#232; stato bandito dai seguaci della via (cristiani) a %s2_city.</Italian>
+		<Spanish>%s1_cult ha sido expulsado por los seguidores del camino correcto (cristianos) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS1_2</Tag>
+		<English>Followers of the Way (Christians) have destroyed holy sites (%s1_cult) in %s2_city.</English>
+		<French>Adeptes du Chemin (chr&#233;tiens) ont saccag&#233; des lieux sacr&#233;s (%s1_cult) &#224; %s2_city.</French>
+		<German>Anh&#228;nger des Weges (Christen) haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
+		<Italian>Seguaci del Cammino (cristiani) hanno distrutto luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Seguidores del Camino (cristianos) han destru&#237;do lugares santos (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS1_3</Tag>
+		<English>Christian religious fanatics have desecrated holy sites (%s1_cult) in %s2_city.</English>
+		<French>Des fanatiques chr&#233;tiens ont profan&#233; des lieux saints (%s1_cult) &#224; %s2_city.</French>
+		<German>Christliche Glaubensfanatiker haben heilige St&#228;tten (%s1_cult) in %s2_city entweiht.</German>
+		<Italian>I fanatici religiosi cristiani hanno profanato luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Fan&#225;ticos religiosos cristianos han profanado lugares santos (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS2_1</Tag>
 		<English>%s1_cult got banished by followers of Judaism in %s2_city.</English>
 		<French>Un culte (%s1_cult) a &#233;t&#233; banni par les juifs &#224; %s2_city.</French>
@@ -1330,11 +1354,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS2_2</Tag>
-		<English>Followers of Judaism have destroyed holy sites (%s1_cult) in %s2_city.</English>
-		<French>Des juifs ont saccag&#233; des lieux sacr&#233;s (%s1_cult) &#224; %s2_city.</French>
-		<German>Anh&#228;nger des Judentums haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
-		<Italian>I seguaci dell'ebraismo hanno distrutto luoghi sacri (%s1_cult) a %s2_city.</Italian>
-		<Spanish>Seguidores del Juda&#237;smo han destru&#237;do lugares santos (%s1_cult) en %s2_city.</Spanish>
+		<English>The Chosen Ones (Judaism) have destroyed holy sites (%s1_cult) in %s2_city.</English>
+		<French>Les &#233;lus (Juda&#239;sme) ont saccag&#233; des lieux sacr&#233;s (%s1_cult) &#224; %s2_city.</French>
+		<German>Die Auserw&#228;hlten (Judentum) haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
+		<Italian>Gli eletti (Ebraismo) hanno distrutto luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Los Elegidos (Juda&#237;smo) han destru&#237;do lugares santos (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS2_3</Tag>
@@ -1370,27 +1394,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_1</Tag>
-		<English>%s1_cult got banished by Followers of the Way (Christians) in %s2_city.</English>
-		<French>Un culte (%s1_cult) a &#233;t&#233; banni par les adeptes du chemin (chr&#233;tiens) &#224; %s2_city.</French>
-		<German>%s1_cult wurde durch Anh&#228;nger des rechten Weges (Christen) aus %s2_city vertrieben.</German>
-		<Italian>%s1_cult &#232; stato bandito dai seguaci della via (cristiani) a %s2_city.</Italian>
-		<Spanish>%s1_cult ha sido expulsado por los seguidores del camino correcto (cristianos) en %s2_city.</Spanish>
+		<English>%s1_cult was expelled from %s2_city by staunch believers of your state religion.</English>
+		<French>%s1_cult a &#233;t&#233; expuls&#233; de %s2_city par de fervents croyants de votre religion d'&#201;tat.</French>
+		<German>%s1_cult wurde durch stenge Gl&#228;ubige Eurer Staatsreligion aus %s2_city vertrieben.</German>
+		<Italian>%s1_cult &#232; stato espulso da %s2_city da fedeli seguaci della tua religione di stato.</Italian>
+		<Spanish>%s1_cult fue expulsado de %s2_city por creyentes fieles de su religi&#243;n estatal.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_2</Tag>
-		<English>Followers of the Way (Christians) have destroyed holy sites (%s1_cult) in %s2_city.</English>
-		<French>Adeptes du Chemin (chr&#233;tiens) ont saccag&#233; des lieux sacr&#233;s (%s1_cult) &#224; %s2_city.</French>
-		<German>Anh&#228;nger des Weges (Christen) haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
-		<Italian>Seguaci del Cammino (cristiani) hanno distrutto luoghi sacri (%s1_cult) a %s2_city.</Italian>
-		<Spanish>Seguidores del Camino (cristianos) han destru&#237;do lugares santos (%s1_cult) en %s2_city.</Spanish>
+		<English>Followers of your state religion have destroyed holy sites (%s1_cult) in %s2city.</English>
+		<French>Les adeptes de votre religion d'&#201;tat ont d&#233;truit des lieux saints (%s1_cult) dans %s2city.</French>
+		<German>Anh&#228;nger Eurer Staatsreligion haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
+		<Italian>I seguaci della tua religione di stato hanno distrutto i luoghi sacri (%s1_cult) a %s2city.</Italian>
+		<Spanish>Los seguidores de tu religi&#243;n estatal han destruido lugares sagrados (%s1_cult) en %s2city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_3</Tag>
-		<English>Christian religious fanatics have desecrated holy sites (%s1_cult) in %s2_city.</English>
-		<French>Des fanatiques chr&#233;tiens ont profan&#233; des lieux saints (%s1_cult) &#224; %s2_city.</French>
-		<German>Christliche Glaubensfanatiker haben heilige St&#228;tten (%s1_cult) in %s2_city entweiht.</German>
-		<Italian>I fanatici religiosi cristiani hanno profanato luoghi sacri (%s1_cult) a %s2_city.</Italian>
-		<Spanish>Fan&#225;ticos religiosos cristianos han profanado lugares santos (%s1_cult) en %s2_city.</Spanish>
+		<English>Religious fanatics have desecrated holy sites (%s1_cult) in %s2_city.</English>
+		<French>Des fanatiques religieux ont profan&#233; des lieux saints (%s1_cult) &#224; %s2_city.</French>
+		<German>Glaubensfanatiker haben heilige St&#228;tten (%s1_cult) in %s2_city entweiht.</German>
+		<Italian>I fanatici religiosi hanno profanato luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Fan&#225;ticos religiosos han profanado lugares santos (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_POPUP_GETTING_TECH_2</Tag>
@@ -1514,11 +1538,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PAE_VERSION</Tag>
-		<English>Pie's Ancient Europe VII (7.5)</English>
-		<French>Pie's Ancient Europe VII (7.5)</French>
-		<German>Pie's Ancient Europe VII (7.5)</German>
-		<Italian>Pie's Ancient Europe VII (7.5)</Italian>
-		<Spanish>Pie's Ancient Europe VII (7.5)</Spanish>
+		<English>Pie's Ancient Europe VII (7.11)</English>
+		<French>Pie's Ancient Europe VII (7.11)</French>
+		<German>Pie's Ancient Europe VII (7.11)</German>
+		<Italian>Pie's Ancient Europe VII (7.11)</Italian>
+		<Spanish>Pie's Ancient Europe VII (7.11)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROGRESS_TOWARDS_TECH</Tag>

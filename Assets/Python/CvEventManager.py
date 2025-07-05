@@ -31,9 +31,9 @@ import os
 # import re
 # import itertools  # faster repeating of stuff
 
-from CvPythonExtensions import (CyGlobalContext, CyTranslator, plotXY,
+from CvPythonExtensions import (CyGlobalContext, CyTranslator, plotXY, CyGameTextMgr,
 								DomainTypes, InputTypes, ColorTypes, CyMap, UnitAITypes, CommandTypes,
-								CyInterface, DirectionTypes, CyPopupInfo, ButtonPopupTypes,
+								CyInterface, CyGInterfaceScreen, DirectionTypes, CyPopupInfo, ButtonPopupTypes,
 								CyGame, CyEngine, CyAudioGame, MissionTypes, FontSymbols, PlotTypes,
 								InterfaceDirtyBits, InterfaceMessageTypes, GameOptionTypes, UnitTypes,
 								EventContextTypes, getChtLvl, plotDirection, MissionAITypes, RouteTypes,
@@ -95,6 +95,7 @@ import FirstPunicWar
 import SecondPunicWar
 import Diadochi_JD
 import EurasiaXXXLCivs
+import WegDerGoten
 
 # +++++++++++++++++++++
 # Diverse Einstellungen
@@ -380,6 +381,9 @@ class CvEventManager:
 				'Apply the effects of an event '
 				context, playerID, netUserData, popupReturn = argsList
 
+				# PAE, Popup mit DDS
+				if context == 4000: return
+
 				if context == CvUtil.PopupTypeEffectViewer:
 						return CvDebugTools.g_CvDebugTools.applyEffectViewer(playerID, netUserData, popupReturn)
 
@@ -406,7 +410,7 @@ class CvEventManager:
 
 				if self.bAllowCheats:
 						# notify debug tools of input to allow it to override the control
-						argsList = (eventType, key, self.bCtrl, self.bShift, self.bAlt, mx, my, px, py, gc.getGame().isNetworkMultiPlayer())
+						argsList = (eventType, key, self.bCtrl, self.bShift, self.bAlt, mx, my, px, py, gc.getGame().isGameMultiPlayer())
 						if CvDebugTools.g_CvDebugTools.notifyInput(argsList):
 								return 0
 
@@ -681,15 +685,17 @@ class CvEventManager:
 						pCity = pPlayer.getCity(iData3)
 						pPlot = pCity.plot()
 
+						iGold = int(pCity.getPopulation() * (1 + pPlayer.getCurrentEra()))
 						if iData5 == 0:
-								if pPlayer.getGold() >= pCity.getPopulation() * 10:
-										pPlayer.changeGold(pCity.getPopulation() * (-10))
+								iGold *= 2
+								if pPlayer.getGold() >= iGold:
+										pPlayer.changeGold(-iGold)
 										iChance = 1
 								else:
 										iChance = 10
 						elif iData5 == 1:
-								if pPlayer.getGold() >= pCity.getPopulation() * 5:
-										pPlayer.changeGold(pCity.getPopulation() * (-5))
+								if pPlayer.getGold() >= iGold:
+										pPlayer.changeGold(-iGold)
 										iChance = 5
 								else:
 										iChance = 10
@@ -2438,12 +2444,14 @@ class CvEventManager:
 						Diadochi_JD.onGameStart()
 				elif sScenarioName == "EurasiaXXXLCivs":
 						EurasiaXXXLCivs.onGameStart()
+				elif sScenarioName == "WegDerGoten":
+						WegDerGoten.onGameStart()
 
 				# Tiefsee setzen
 				if sScenarioName == "":
 						PAE_Turn_Features.doPlaceDeepOcean()
 
-				# +++++ Special dawn of man texts for Szenario Maps in PAE in CvDawnOfMan.py ++++++++++++++++++++++++++++++++
+				# +++++ Special dawn of man texts for Szenario Maps in PAE in Screens/CvDawnOfMan.py ++++++++++++++++++++++++++++++++
 				# if (gc.getGame().getGameTurnYear() == gc.getDefineINT("START_YEAR") and not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ADVANCED_START)):
 				iEra = gc.getGame().getStartEra()
 				lTechs = [
@@ -2574,6 +2582,10 @@ class CvEventManager:
 				#		elif loopPlot.getTerrainType() == iTerrainRiverFord: loopPlot.setTerrainType(iTerrainCoast,1,1)
 				# -----------
 
+				# Nach dem BTS DawnOfMan PopUp
+				if sScenarioName == "WegDerGoten":
+						WegDerGoten.DawnOfMan()
+
 				# BTS Standard
 				if gc.getGame().isPbem():
 						iRange = gc.getMAX_PLAYERS()
@@ -2683,12 +2695,21 @@ class CvEventManager:
 					PAE_Turn_Features.doPlotFeatures()
 
 					# Christentum gruenden
-					if gc.getGame().getGameTurnYear() >= 0:
-						if not PAE_Christen.bChristentum:
-							PAE_Christen.setHolyCity()
+					if sScenarioName == "WegDerGoten":
+						if gc.getGame().getGameTurnYear() >= -5 and not PAE_Christen.bChristentum:
+							if CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_SEASON_WINTER",("",)) or CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_MONTH_DECEMBER",("",)):
+								WegDerGoten.setChristentum()
+					else:
+						if gc.getGame().getGameTurnYear() >= 0:
+							if not PAE_Christen.bChristentum:
+								PAE_Christen.setHolyCity()
 
 					# Religionsverbreitung monotheistischer Religionen
-					PAE_Christen.doSpreadReligion()
+					if sScenarioName == "WegDerGoten" and PAE_Christen.bChristentum:
+						if CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_SEASON_SUMMER",("",)) or CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_MONTH_MAY",("",)):
+							WegDerGoten.doSpreadReligion()
+					else:
+						PAE_Christen.doSpreadReligion()
 
 				# PAE Debug Mark 1 end
 
@@ -2715,32 +2736,36 @@ class CvEventManager:
 				elif sScenarioName == "WarOfDiadochiJD":
 						Diadochi_JD.onBeginPlayerTurn(iGameTurn, iPlayer)
 
-				# -- TESTMESSAGE
+				# -- TEST MESSAGES
 
 				# if CyInterface().isOOSVisible():
 				#   CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("OOS-Fehler - Player",iPlayer)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("MaxPlayers",gc.getMAX_PLAYERS())), None, 2, None, ColorTypes(10), 0, 0, False, False)
+				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pPlayer.getName(),pPlayer.getCurrentResearch())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 				# PAE Debug Mark 2 begin
 				if not bPAEDebugMark2:
 
-					# -- Prevent BTS TECH BUG/Forschungsbug: AI chooses Tech if -1 -> 25% to push
+					# -- Prevent BTS TECH BUG/Forschungsbug: AI chooses Tech if -1 -> 50% to push
 					if iPlayer != gc.getBARBARIAN_PLAYER() and not pPlayer.isHuman() and pPlayer.getCurrentResearch() == -1:
-							if CvUtil.myRandom(4, "Forschungsbug") == 1:
+							if CvUtil.myRandom(2, "Forschungsbug") == 0:
 									techs = []
 									iRange = gc.getNumTechInfos()
 									for iTech in range(iRange):
-											if pPlayer.canResearch(iTech, False):
+											if not pTeam.isHasTech(iTech) and pPlayer.canResearch(iTech, False):
 													iCost = pTeam.getResearchLeft(iTech)
-													if iCost > 0:
-															techs.append((-iCost, iTech))
-									if techs:
+													#if iCost >= 0:
+													techs.append((iCost, iTech))
+											if len(techs) > 2: break
+
+									if len(techs):
 											techs.sort()
 											iTech = techs[0][1]
-											pTeam.changeResearchProgress(iTech, 1, iPlayer)
-											pPlayer.clearResearchQueue()
-											#pPlayer.pushResearch (iTech, 1)
+											#pPlayer.clearResearchQueue()
+											#pTeam.changeResearchProgress(iTech, 1, iPlayer)
+											pPlayer.pushResearch (iTech, True)
+
 
 					# --- Automated trade routes for HI (Boggy)
 					# if pPlayer.isHuman():
@@ -2866,15 +2891,18 @@ class CvEventManager:
 				iGameTurn, iPlayer = argsList
 				pPlayer = gc.getPlayer(iPlayer)
 
-				#x = CvUtil.myRandom(150, "Leaders")
-				#pPlayer.changeLeader(x)
-				#pPlayer.setName(gc.getLeaderHeadInfo(x).getName())
+				# XXX TEST PIE
+				#pPlayer.changeLeader(x) # change to XML leader
+				#pPlayer.changeCiv(x) # change to XML Civ
+				#pPlayer.setName(x) # Leader's name
+				#pPlayer.setCivName("AAA", "BBB", "CCC") # CivDesc, CivShortDesc, CivAdjective
+
 
 				# ***TEST***
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pPlayer.getName(),pPlayer.calculateGoldRate())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Gold",pPlayer.getGold())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-				# TEST PIE
+				# XXX TEST PIE
 				#if pPlayer.isHuman():
 				#		iSum = 0
 				#		iChristentum = gc.getInfoTypeForString("RELIGION_CHRISTIANITY")
@@ -2909,6 +2937,8 @@ class CvEventManager:
 							SecondPunicWar.onEndPlayerTurn(iPlayer, iGameTurn)
 					elif sScenarioName == "PeloponnesianWarKeinpferd":
 							PeloponnesianWarKeinpferd.onEndPlayerTurn(iPlayer, iGameTurn)
+					elif sScenarioName == "WegDerGoten":
+							WegDerGoten.onEndPlayerTurn(iPlayer, iGameTurn)
 
 					# +++++ MAP Reveal to black fog - Kriegsnebel - Fog of War (FoW) - Karte schwarz zurueckfaerben
 					if pPlayer is not None and not pPlayer.isBarbarian():
@@ -2943,9 +2973,9 @@ class CvEventManager:
 					# PAE 6.16: Triggering PAE events
 					iEvent = -1
 					iRand = CvUtil.myRandom(20, "Trigger PAE Events")
-					if iRand < 3:
+					if iRand < 2:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_MOOR")
-					elif iRand < 5:
+					elif iRand < 4:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_MOORPROMO")
 					elif iRand < 8:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_BORDELL")
@@ -3069,6 +3099,11 @@ class CvEventManager:
 				## Platy WorldBuilder ##
 				iTeamX, iHasMetTeamY = argsList
 
+				# Szenarien
+				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				if sScenarioName == "WegDerGoten":
+						WegDerGoten.onFirstContact(argsList)
+
 				## PB Mod ##
 				if PBMod:
 						if self.__LOG_CONTACT:
@@ -3124,9 +3159,12 @@ class CvEventManager:
 													iLoserUnitType in L.LUnitWildAnimals or
 													iLoserUnitType in L.LUnitWarAnimals)
 
+					# Szenarien
 					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
 					if sScenarioName == "FirstPunicWar":
 							FirstPunicWar.onCombatResult(pWinner, pLoser)
+					elif sScenarioName == "WegDerGoten":
+							WegDerGoten.onCombatResult(pWinner, pLoser)
 
 					# ---- Blessed Units
 					# Blessed promo only helps one time
@@ -3710,7 +3748,7 @@ class CvEventManager:
 				# PAE Debug Mark 5 begin
 				if not bPAEDebugMark5:
 					#    #If this is a wonder...
-					#    if not gc.getGame().isNetworkMultiPlayer() and gc.getPlayer(pCity.getOwner()).isHuman() and isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
+					#    if not gc.getGame().isGameMultiPlayer() and gc.getPlayer(pCity.getOwner()).isHuman() and isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
 					if pPlayer.isHuman() and gc.getBuildingInfo(iBuildingType).getMovieDefineTag() != "NONE":
 							## Platy WorldBuilder ##
 							if not CyGame().GetWorldBuilderMode():
@@ -3846,8 +3884,12 @@ class CvEventManager:
 											"AS2D_CHOP_WOOD", 2, ",Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8",
 											ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
 
-
 					PAE_Cultivation.doBuildingCultivate(pCity, iBuildingType)
+
+					# Szenarien
+					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					if sScenarioName == "WegDerGoten":
+							WegDerGoten.onBuildingBuilt(pCity, iPlayer, iBuildingType)
 
 				# PAE Debug Mark 5 end
 
@@ -4032,9 +4074,13 @@ class CvEventManager:
 									PAE_Trade.doAutomateMerchant(pUnit)
 									return
 
-							# Merchants can be robbed (on land only)
 							if pUnit.getDomainType() == DomainTypes.DOMAIN_LAND:
-									PAE_Trade.doMerchantRobbery(pUnit, pPlot, pOldPlot)
+									# Merchants can be robbed (on land only)
+									if not PAE_Trade.doMerchantRobbery(pUnit, pPlot, pOldPlot):
+											# PAE 7.11 Merchants can create paths on empty plots
+											if not pPlot.isRoute():
+													if CvUtil.myRandom(20, "Pfad erstellen") == 1:
+															pPlot.setRouteType(gc.getInfoTypeForString("ROUTE_PATH"))
 
 					# Barbaren
 					if pUnit.isBarbarian():
@@ -4116,7 +4162,7 @@ class CvEventManager:
 									iCivilWar = gc.getInfoTypeForString("BUILDING_CIVIL_WAR")
 									if pCity.getOccupationTimer() > 1 or pCity.getNumRealBuilding(iCivilWar):
 											if pUnit.movesLeft() >= 20:
-													#bRhetorik = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_RHETORIK"))
+													bRhetorik = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_RHETORIK"))
 													bGeneral = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER"))
 													bHero = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_HERO"))
 													if pUnit.isMilitaryHappiness() and pCity.getOccupationTimer() > 2:
@@ -4125,9 +4171,10 @@ class CvEventManager:
 															# if PyInfo.UnitInfo(pUnit.getUnitType()).getMoves() == 1:
 															# if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_CITY_GARRISON1")):
 															pCity.changeOccupationTimer(-1)
-													if bGeneral or bHero:
+													if bRhetorik or bHero:
 															if pCity.getOccupationTimer(): pCity.setOccupationTimer(1)
 															if pCity.getNumRealBuilding(iCivilWar): pCity.setNumRealBuilding(iCivilWar, 0)
+													if bRhetorik or bHero or bGeneral:
 															if gc.getPlayer(pUnit.getOwner()).isHuman():
 																	popupInfo = CyPopupInfo()
 																	popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
@@ -4546,7 +4593,7 @@ class CvEventManager:
 
 				#return
 				# Names for Great Generals / Feldherrenliste
-				if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_GREAT_GENERAL"): # and not (gc.getGame().isGameMultiPlayer() or gc.getGame().isNetworkMultiPlayer()):
+				if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_GREAT_GENERAL"): # and not (gc.getGame().isGameMultiPlayer() or gc.getGame().isGameMultiPlayer()):
 						GG_Name = PAE_Unit.getGGName(pPlayer)
 						if GG_Name != "":
 								pUnit.setName(GG_Name)
@@ -4576,7 +4623,7 @@ class CvEventManager:
 				# Show tech splash when applicable
 				if bAnnounce and not CyInterface().noTechSplash():
 						if gc.getGame().isFinalInitialized() and not gc.getGame().GetWorldBuilderMode():
-								# if not gc.getGame().isNetworkMultiPlayer() and iPlayer == gc.getGame().getActivePlayer():
+								# if not gc.getGame().isGameMultiPlayer() and iPlayer == gc.getGame().getActivePlayer():
 								if pPlayer.isHuman():
 										popupInfo = CyPopupInfo()
 										popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
@@ -4607,6 +4654,14 @@ class CvEventManager:
 				# Tech und freie Einheit / Free Unit (676)
 				PAE_City.doFreeTechMissionary(iTechType, iPlayer)
 
+				# PAE 7.11: Konzile/Synoden werden automatisch verbreitet
+				if iTechType in L.LGlobalTechs:
+						iRange = gc.getMAX_PLAYERS()
+						for iPlayer in range(iRange):
+							if gc.getPlayer(iPlayer).isAlive():
+								pTeam = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
+								pTeam.setHasTech(iTechType, 1, iPlayer, 0, 1)
+
 				# Palast bei Tech sofort setzen
 				if iTechType == gc.getInfoTypeForString("TECH_LEADERSHIP"):
 						if not pPlayer.isBarbarian():
@@ -4621,6 +4676,19 @@ class CvEventManager:
 										pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_PALACE"), 1)
 										if i == gc.getGame().getActivePlayer():
 												CyAudioGame().Play2DSound("AS2D_WELOVEKING")
+
+				# PAE 7.11: Freie Einheiten bei endlos Tech
+				elif iTechType == gc.getInfoTypeForString("TECH_CHRISTIANISIERUNG"):
+					pCity = pPlayer.getCapitalCity()
+					if pCity is not None:
+						pPlayer.initUnit(gc.getInfoTypeForString("UNIT_BYZANTINE_CATAPHRACT"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+
+				elif iTechType == gc.getInfoTypeForString("TECH_ISLAMISIERUNG"):
+					pCity = pPlayer.getCapitalCity()
+					if pCity is not None:
+						pPlayer.initUnit(gc.getInfoTypeForString("UNIT_HORSEMAN_ISLAM_KALIF"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+				# ----------------------------
+
 
 				# Heresy ---------------------
 				# if iPlayer > -1 and iTechType == gc.getInfoTypeForString("TECH_HERESY"):
@@ -4831,8 +4899,12 @@ class CvEventManager:
 						strStatus = "declared war"
 				else:
 						strStatus = "declared peace"
-				CvUtil.pyPrint('Team %d has %s on Team %d'
-											 % (iTeam, strStatus, iRivalTeam))
+				CvUtil.pyPrint('Team %d has %s on Team %d' % (iTeam, strStatus, iRivalTeam))
+
+				# Szenarien
+				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				if sScenarioName == "WegDerGoten":
+						WegDerGoten.onChangeWar(argsList)
 
 		def onChat(self, argsList):
 				'Chat Message Event'
@@ -4844,6 +4916,12 @@ class CvEventManager:
 				iPlayerID = argsList[0]
 				bNewValue = argsList[1]
 				CvUtil.pyPrint("Player %d's alive status set to: %d" % (iPlayerID, int(bNewValue)))
+
+				# Szenarien
+				if not bNewValue:
+					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					if sScenarioName == "WegDerGoten":
+							WegDerGoten.onPlayerKilled(iPlayerID)
 
 		def onPlayerChangeStateReligion(self, argsList):
 				'Player changes his state religion'
@@ -5040,6 +5118,8 @@ class CvEventManager:
 							SecondPunicWar.onCityAcquired(pCity, iNewOwner)
 					elif sScenarioName == "WarOfDiadochiJD":
 							Diadochi_JD.onCityAcquired(iPreviousOwner, iNewOwner, pCity, bConquest, bTrade)
+					elif sScenarioName == "WegDerGoten":
+							WegDerGoten.onCityAcquired(iPreviousOwner, iNewOwner, pCity)
 
 					# PAE triumph movies when city is reconquered
 					if pPlayer.isHuman():
@@ -5260,12 +5340,12 @@ class CvEventManager:
 
 												if pHegemon.isHuman():
 														CyInterface().addMessage(pHegemon.getID(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_GET_UNIT_SUPPLY_FOOD", (pCity.getName(),)),
-																										 "AS2D_BUILD_GRANARY", 2, gc.getUnitInfo(iNewUnit).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+														"AS2D_BUILD_GRANARY", 2, gc.getUnitInfo(iNewUnit).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 
 				# CvUtil.pyPrint("%s has grown to size %i" %(pCity.getName(),pCity.getPopulation()))
 				if pPlayer.isHuman():
 						CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GROWTH",
-																																												(pCity.getName(), pCity.getPopulation())), None, 2, None, ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+						(pCity.getName(), pCity.getPopulation())), None, 2, None, ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
 				# Kolonie / Provinz ----------
 				PAE_City.doCheckCityState(pCity)
@@ -5274,6 +5354,11 @@ class CvEventManager:
 				# Negatives Nahrungslager durch Stadtstatusgebaeude vermeiden (Flunky)
 				if pCity.getFood() < 0:
 						pCity.setFood(0)
+
+				# Szenarien
+				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				if sScenarioName == "WegDerGoten":
+						WegDerGoten.onCityGrowth(pCity,iPlayer)
 
 
 		def onCityDoTurn(self, argsList):
@@ -5399,7 +5484,7 @@ class CvEventManager:
 					if not bRevolt:
 
 							# PAE 6.14: Allgemeine Religionskonflikte
-							PAE_Christen.removePagans(pCity)
+							#PAE_Christen.removePagans(pCity)
 							if not PAE_Christen.removePagans(pCity):
 									# PAE 7.x
 									PAE_Christen.doReligionsKonflikt(pCity)
@@ -5497,6 +5582,11 @@ class CvEventManager:
 				else:
 						CvUtil.pyPrint("Team %d revolts and is no longer a Vassal State of Team %d"
 													 % (iVassal, iMaster))
+
+				# Szenarien
+				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				if sScenarioName == "WegDerGoten":
+						WegDerGoten.onVassalState(argsList)
 
 		def onGameUpdate(self, argsList):
 				'sample generic event, called on each game turn slice'

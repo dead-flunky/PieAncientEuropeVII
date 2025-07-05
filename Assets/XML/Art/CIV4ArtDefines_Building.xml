@@ -437,6 +437,16 @@
 			<Button>,Art/Interface/Buttons/Buildings/ThreeGorgesDam.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,10</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ZION</Type>
+			<LSystem>LSYSTEM_4x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/ArgeBam/spanish_citadel.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_zion.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ARGE_BAM</Type>
 			<LSystem>LSYSTEM_4x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -1000,8 +1010,8 @@
 			<Type>ART_DEF_BUILDING_KRIEGSHAFEN</Type>
 			<LSystem>LSYSTEM_HARBOR</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>2.4</fScale>
-			<fInterfaceScale>2.0</fInterfaceScale>
+			<fScale>3.6</fScale>
+			<fInterfaceScale>1.8</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Kriegshafen/doppelhafen.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Techs/button_kueste.dds</Button>
@@ -2150,6 +2160,16 @@
 			<Button>Art/Interface/Buttons/Techs/button_tech_armor.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MILIT_LAGER_ISLAM</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.0</fScale>
+			<fInterfaceScale>0.0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_lager_islam.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_FORGE_ARMOR</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>1</bAnimated>
@@ -2519,16 +2539,6 @@
 			<NIF>Art/Structures/Buildings/scriptorium/library.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_building_geldstube.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SCHULE</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
-			<bAnimated>0</bAnimated>
-			<fScale>1.2</fScale>
-			<fInterfaceScale>0.58</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
-			<KFM/>
-			<Button>Art/Interface/Buttons/Builds/button_schule.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PYTHAGORAS</Type>
@@ -2921,7 +2931,7 @@
 			<Button>,Art/Interface/Buttons/Buildings/Courthouse.dds,Art/Interface/Buttons/Buildings_Atlas.dds,4,2</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_COURTHOUSE2</Type>
+			<Type>ART_DEF_BUILDING_COURTHOUSE_CHRISTEN</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.0</fScale>
@@ -2929,6 +2939,106 @@
 			<NIF/>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_building_bischofsgericht.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_COURTHOUSE_JUDEN</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.0</fScale>
+			<fInterfaceScale>0.0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_courthouse_juden.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_COURTHOUSE_ISLAM</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.0</fScale>
+			<fInterfaceScale>0.0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_courthouse_islam.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HOCHSCHULE_ROME</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.0</fScale>
+			<fInterfaceScale>0.0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_atheneum.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_SUMER</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_sumer.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_EGYPT</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_egypt.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_ZORO</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_zoro.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_CHRISTEN</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_christen.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_JUDEN</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_juden.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_ISLAM</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_islam.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AZTEC_SACRIFICIAL_ALTAR</Type>
@@ -3251,6 +3361,16 @@
 			<Button>Art/Interface/Buttons/Builds/button_temple_zoro.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_ZORO_SHRINE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/AdurFarnbag/adur_farnbag.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_zoro_shrine.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_PHOEN_TEMPLE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3269,6 +3389,16 @@
 			<NIF>Art/Structures/Buildings/Tempel_Enlil/america_midtemple.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_phoen_shrine.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GREEK_ALTAR</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.0</fScale>
+			<fInterfaceScale>0.0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_greek_altar.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GREEK_TEMPLE</Type>
@@ -3590,6 +3720,16 @@
 			<NIF>Art/Structures/Buildings/Hagia_Sophia/HagiaSophia.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_hagia_sophia.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MONTE_CASSINO</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.37</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Marialaach/marialaach.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_montecassino.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

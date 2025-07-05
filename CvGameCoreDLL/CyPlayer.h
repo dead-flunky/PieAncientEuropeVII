@@ -59,6 +59,15 @@ public:
 	// PBMod end
 	std::wstring getNameForm(int iForm);
 	std::wstring getNameKey();
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         01/01/08                                jdog5000      */
+/**                                                                                              */
+/** For dynamic civ names                                                                        */
+/*************************************************************************************************/
+	void setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj);
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
 	std::wstring getCivilizationDescription(int iForm);
 	std::wstring getCivilizationDescriptionKey();
 	std::wstring getCivilizationShortDescription(int iForm);

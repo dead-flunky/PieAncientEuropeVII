@@ -149,6 +149,20 @@ std::wstring CyPlayer::getNameKey()
 	return m_pPlayer ? m_pPlayer->getNameKey() : std::wstring();
 }
 
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         01/01/08                                jdog5000      */
+/**                                                                                              */
+/** For dynamic civ names                                                                        */
+/*************************************************************************************************/
+void CyPlayer::setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)
+{
+	if( m_pPlayer )
+		m_pPlayer->setCivName(szNewDesc, szNewShort, szNewAdj);
+}
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
+
 std::wstring CyPlayer::getCivilizationDescription(int iForm)
 {
 	return m_pPlayer ? m_pPlayer->getCivilizationDescription((uint)iForm) : std::wstring();

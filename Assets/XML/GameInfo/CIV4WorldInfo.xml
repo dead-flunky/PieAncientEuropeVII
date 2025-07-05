@@ -22,7 +22,7 @@
 			<iGridHeight>6</iGridHeight>
 			<iTerrainGrainChange>-1</iTerrainGrainChange>
 			<iFeatureGrainChange>-1</iFeatureGrainChange>
-			<iResearchPercent>150</iResearchPercent>
+			<iResearchPercent>75</iResearchPercent>
 			<iTradeProfitPercent>80</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>25</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>35</iNumCitiesMaintenancePercent>
@@ -46,7 +46,7 @@
 			<iGridHeight>8</iGridHeight>
 			<iTerrainGrainChange>-1</iTerrainGrainChange>
 			<iFeatureGrainChange>-1</iFeatureGrainChange>
-			<iResearchPercent>150</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iTradeProfitPercent>70</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>50</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>30</iNumCitiesMaintenancePercent>
@@ -70,7 +70,7 @@
 			<iGridHeight>10</iGridHeight>
 			<iTerrainGrainChange>0</iTerrainGrainChange>
 			<iFeatureGrainChange>0</iFeatureGrainChange>
-			<iResearchPercent>150</iResearchPercent>
+			<iResearchPercent>100</iResearchPercent>
 			<iTradeProfitPercent>60</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>50</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>25</iNumCitiesMaintenancePercent>
@@ -118,7 +118,7 @@
 			<iGridHeight>16</iGridHeight>
 			<iTerrainGrainChange>1</iTerrainGrainChange>
 			<iFeatureGrainChange>1</iFeatureGrainChange>
-			<iResearchPercent>150</iResearchPercent>
+			<iResearchPercent>200</iResearchPercent>
 			<iTradeProfitPercent>40</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>75</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>15</iNumCitiesMaintenancePercent>
@@ -142,7 +142,7 @@
 			<iGridHeight>20</iGridHeight>
 			<iTerrainGrainChange>1</iTerrainGrainChange>
 			<iFeatureGrainChange>1</iFeatureGrainChange>
-			<iResearchPercent>175</iResearchPercent>
+			<iResearchPercent>300</iResearchPercent>
 			<iTradeProfitPercent>30</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>100</iDistanceMaintenancePercent>
 			<iNumCitiesMaintenancePercent>10</iNumCitiesMaintenancePercent>

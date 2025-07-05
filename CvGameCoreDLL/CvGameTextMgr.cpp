@@ -3575,6 +3575,13 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 		szString.append(gDLL->getText("TXT_KEY_CITY_BAR_GREAT_PEOPLE", pCity->getGreatPeopleProgress(), GET_PLAYER(pCity->getOwnerINLINE()).greatPeopleThreshold(false)));
 	}
 
+	// PAE city defense info
+	if (pCity->getDefenseModifier(false) > 0)
+	{
+		szTempBuffer.Format(L"\n%c: %d/%d (%d%%)", gDLL->getSymbolID(DEFENSE_CHAR), pCity->getDefenseModifier(false), pCity->getTotalDefense(false), ((GC.getMAX_CITY_DEFENSE_DAMAGE() - pCity->getDefenseDamage()) * 100) / GC.getMAX_CITY_DEFENSE_DAMAGE());
+		szString.append(szTempBuffer);
+	}
+
 	int iNumUnits = pCity->plot()->countNumAirUnits(GC.getGameINLINE().getActiveTeam());
 	if (pCity->getAirUnitCapacity(GC.getGameINLINE().getActiveTeam()) > 0 && iNumUnits > 0)
 	{
@@ -4855,8 +4862,8 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		if (bPlayerContext)
 		{
-			szHelpText.append(NEWLINE);
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FREE_UNITS", (GC.getCivicInfo(eCivic).getBaseFreeUnits() + ((GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getTotalPopulation() * GC.getCivicInfo(eCivic).getFreeUnitsPopulationPercent()) / 100))));
+			szHelpText.append(NEWLINE); // PAE more info
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FREE_UNITS", (GC.getCivicInfo(eCivic).getBaseFreeUnits() + ((GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getTotalPopulation() * GC.getCivicInfo(eCivic).getFreeUnitsPopulationPercent()) / 100)),GC.getCivicInfo(eCivic).getFreeUnitsPopulationPercent()));
 		}
 		else
 		{
@@ -4870,8 +4877,8 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 	{
 		if (bPlayerContext)
 		{
-			szHelpText.append(NEWLINE);
-			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FREE_MILITARY_UNITS", (GC.getCivicInfo(eCivic).getBaseFreeMilitaryUnits() + ((GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getTotalPopulation() * GC.getCivicInfo(eCivic).getFreeMilitaryUnitsPopulationPercent()) / 100))));
+			szHelpText.append(NEWLINE); // PAE more info
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_FREE_MILITARY_UNITS", (GC.getCivicInfo(eCivic).getBaseFreeMilitaryUnits() + ((GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getTotalPopulation() * GC.getCivicInfo(eCivic).getFreeMilitaryUnitsPopulationPercent()) / 100)),GC.getCivicInfo(eCivic).getFreeMilitaryUnitsPopulationPercent()));
 		}
 		else
 		{
@@ -7454,6 +7461,14 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 		szFirstBuffer = gDLL->getText("TXT_KEY_BUILDING_WITH_BONUS", GC.getBonusInfo((BonusTypes) iI).getTextKeyWide());
 		setYieldChangeHelp(szBuffer, L"", L"", szFirstBuffer, kBuilding.getBonusYieldModifierArray(iI), true);
 	}
+
+	// PAE more infos
+	if (kBuilding.getPrereqReligion() > -1)
+	{
+		szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_NEEDS_RELIGION", GC.getReligionInfo((ReligionTypes) kBuilding.getPrereqReligion()).getDescription(), GC.getReligionInfo((ReligionTypes) kBuilding.getPrereqReligion()).getChar()).c_str());
+		szBuffer.append(szTempBuffer);
+	}
+	// --------------
 
 	for (iI = 0; iI < GC.getNumReligionInfos(); ++iI)
 	{

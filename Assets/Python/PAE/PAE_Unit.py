@@ -3131,7 +3131,9 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 				if pPlayer.isHuman():
 						iRand = 1 + CvUtil.myRandom(9, "Stadtaufruhr_Message")
 						szTextKey = "TXT_KEY_MESSAGE_CITY_DYING_GENERAL_" + str(iRand)
-						szText = CyTranslator().getText(szTextKey, ("",)) + CyTranslator().getText("TXT_KEY_MESSAGE_CITY_DYING_GENERAL_NEGATIVE", ())
+						szText = CyTranslator().getText(szTextKey, ("",))
+						szText += CyTranslator().getText("[NEWLINE]", ())
+						szText += CyTranslator().getText("TXT_KEY_MESSAGE_CITY_DYING_GENERAL_NEGATIVE", ())
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						popupInfo.setText(szText)
@@ -3210,7 +3212,11 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 						if pWinnerPlayer.isHuman():
 								iRand = 1 + CvUtil.myRandom(9, "Stadtaufruhr_Message")
 								szTextKey = "TXT_KEY_MESSAGE_CITY_DYING_GENERAL2_" + str(iRand)
-								szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_DYING_GENERAL_TITLE", ()) + CyTranslator().getText(szTextKey, ("",)) + CyTranslator().getText("TXT_KEY_MESSAGE_CITY_DYING_GENERAL_POSITIVE", ())
+								szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_DYING_GENERAL_TITLE", ())
+								szText += CyTranslator().getText("[NEWLINE]", ())
+								szText += CyTranslator().getText(szTextKey, ("",))
+								szText += CyTranslator().getText("[NEWLINE]", ())
+								szText += CyTranslator().getText("TXT_KEY_MESSAGE_CITY_DYING_GENERAL_POSITIVE", ())
 								popupInfo = CyPopupInfo()
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 								popupInfo.setText(szText)
@@ -3777,16 +3783,24 @@ def huntingResult(pLoser, pWinner):
 				#				CyInterface().addMessage(iWinnerPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_ADD_FOOD", (pWinner.getName(),
 				#				CityArray[iCity].getName(), iFoodAdd)), None, 2, pLoser.getButton(), ColorTypes(13), pLoser.getX(), pLoser.getY(), True, True)
 
-
 def huntingDistance(pPlot1, pPlot2):
 		if pPlot1 is not None and not pPlot1.isNone():
 				if pPlot2 is not None and not pPlot2.isNone():
 						# if pPlot1.getArea() == pPlot2.getArea():
 						#iDist = gc.getMap().calculatePathDistance(pPlot1, pPlot2)
+						iDistance = getHuntingDistance()
 						iDist = plotDistance(pPlot1.getX(), pPlot1.getY(), pPlot2.getX(), pPlot2.getY())
-						if iDist > -1 and iDist <= 4:
+						if iDist > -1 and iDist <= iDistance:
 								return True
 		return False
+
+def getHuntingDistance():
+	sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+	# Szenario: Weg der Goten
+	#[EVENT-1.2] Jagdgebiet wird erweitert:
+	#8 Plots um eigene Städte kann Nahrung erjagt werden
+	if sScenarioName == "WegDerGoten": return 8
+	else: return 4
 
 def huntingCity(pUnit):
 		iX = pUnit.getX()
@@ -3806,8 +3820,9 @@ def huntingCity(pUnit):
 		iCityPop = 0
 		iCityDist = 0
 		pPlot = None
-		for x in range(-4,4):
-				for y in range(-4,4):
+		iDistance = getHuntingDistance()
+		for x in range(-iDistance,iDistance):
+				for y in range(-iDistance,iDistance):
 						loopPlot = gc.getMap().plot(iX+x, iY+y)
 						if loopPlot is not None and not loopPlot.isNone():
 								if loopPlot.isCity() and loopPlot.getOwner() in lTeamPlayer:
@@ -4398,7 +4413,8 @@ def setUnitReligion(pUnit):
 	pCity = pPlot.getPlotCity()
 	iReligion = PAE_City.getCityReligion(pCity)
 
-	if iReligion > -1:
+	# Nur monotheistische Religionen zulassen
+	if iReligion > -1 and iReligion in L.LMonoReligions:
 		CvUtil.addScriptData(pUnit, "rel", iReligion)
 	return
 

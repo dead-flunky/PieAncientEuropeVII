@@ -655,7 +655,7 @@ def doInquisitorPersecution2(iPlayer, iCity, iButton, iReligion, iUnit):
 
 				# Does Persecution succeed
 				iRandom = CvUtil.myRandom(100, "pers_success")
-				if iRandom < 60 + (len(lCityReligions) * 5) + iHC:
+				if iRandom < 50 + iHC + (len(lCityReligions) * 5):
 						pCity.setHasReligion(iReligion, 0, 0, 0)
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION", (pCity.getName(),)), "AS2D_PLAGUE", 2, szButton, ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
@@ -678,42 +678,57 @@ def doInquisitorPersecution2(iPlayer, iCity, iButton, iReligion, iUnit):
 														# CyInterface().addMessage(iPlayer,True,15,CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_Bildersturm",(pCity.getName(),)),"AS2D_PLAGUE",2,szButton,ColorTypes(8),pCity.getX(),pCity.getY(),True,True)
 
 						# increasing Anger or Sympathy for an AI
-						iRange = gc.getMAX_PLAYERS()
-						for iSecondPlayer in range(iRange):
-								pSecondPlayer = gc.getPlayer(iSecondPlayer)
-								pReligion = gc.getReligionInfo(iReligion)
-
-								# increases Anger for all AIs which have this religion as State Religion
-								if iReligion == pSecondPlayer.getStateReligion() and pSecondPlayer.isAlive():
-										pSecondPlayer.AI_changeAttitudeExtra(iPlayer, -2)
-								# increases Sympathy for all AIs which have the same State Religion as the inquisitor
-								elif pPlayer.getStateReligion() == pSecondPlayer.getStateReligion() and pSecondPlayer.isAlive():
-										pSecondPlayer.AI_changeAttitudeExtra(iPlayer, 1)
-
-								# info for all
-								if pSecondPlayer.isHuman():
+						if iReligion in L.LMonoReligions:
+								iRange = gc.getMAX_PLAYERS()
+								for iSecondPlayer in range(iRange):
+										pSecondPlayer = gc.getPlayer(iSecondPlayer)
 										iSecTeam = pSecondPlayer.getTeam()
+										pReligion = gc.getReligionInfo(iReligion)
+
 										if gc.getTeam(iSecTeam).isHasMet(pPlayer.getTeam()):
-												CyInterface().addMessage(iSecondPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_GLOBAL",
-														(pCity.getName(), pReligion.getText())), None, 2, szButton, ColorTypes(10), pCity.getX(), pCity.getY(), True, True)
+												# increases Anger for all AIs which have this religion as State Religion
+												if iReligion == pSecondPlayer.getStateReligion() and pSecondPlayer.isAlive():
+														pSecondPlayer.AI_changeAttitudeExtra(iPlayer, -1)
+												# increases Sympathy for all AIs which have the same State Religion as the inquisitor
+												elif pPlayer.getStateReligion() == pSecondPlayer.getStateReligion() and pSecondPlayer.isAlive():
+														pSecondPlayer.AI_changeAttitudeExtra(iPlayer, 1)
 
-						# info for the player
-						CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_GLOBAL_NEG",
-								(pCity.getName(), pReligion.getText())), None, 2, szButton, ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
-						CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_GLOBAL_POS",
-								(pCity.getName(), pReligion.getText())), None, 2, szButton, ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+										# info for all
+										if pSecondPlayer.isHuman():
+												if gc.getTeam(iSecTeam).isHasMet(pPlayer.getTeam()):
+														CyInterface().addMessage(iSecondPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_GLOBAL",
+																(pCity.getName(), pReligion.getText())), None, 2, szButton, ColorTypes(10), pCity.getX(), pCity.getY(), True, True)
 
-						# decrease population by 1, even if mission fails
-						if pCity.getPopulation() > 1:
-								pCity.changePopulation(-1)
-								doCheckCityState(pCity)
+								# info for the player
+								CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_GLOBAL_NEG",
+										(pCity.getName(), pReligion.getText())), None, 2, szButton, ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+								CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_GLOBAL_POS",
+										(pCity.getName(), pReligion.getText())), None, 2, szButton, ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+
 
 				# Persecution fails
 				elif pPlayer.isHuman():
-						CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_FAIL", (pCity.getName(),)), "AS2D_SABOTAGE", 2, szButton, ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+					CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_INQUISITION_FAIL", (pCity.getName(),)), "AS2D_SABOTAGE", 2, szButton, ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
-		# City Revolt
-		pCity.changeOccupationTimer(1)
+
+				# decrease population by 1, even if mission fails
+				# PAE 7.11: decrease population by POP / 6 (min 1)
+				iPop = pCity.getPopulation()
+				if iPop > 1:
+					iPopChange = max(1,iPop // 6)
+					pCity.changePopulation(-iPopChange)
+					doCheckCityState(pCity)
+
+					# PAE 7.11 slaves and gold carts
+					for i in range(iPopChange):
+						pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_SLAVE"), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+						pNewUnit.finishMoves()
+						pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+						pNewUnit.finishMoves()
+
+				# City Revolt 10%
+				if CvUtil.myRandom(10, "pers_success_changeOccupationTimer") == 1:
+					pCity.changeOccupationTimer(1)
 		# ------
 
 # end Inquisition / Religionsaustreibung
@@ -812,9 +827,8 @@ def doTurnCityRevolt(pCity):
 						popupInfo.setData2(pCity.getID())
 						popupInfo.setData3(iCityRevoltTurns)
 						popupInfo.setOnClickedPythonCallback("popupRevoltPayment")
-						iGold = pCity.getPopulation()*10
-						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_REVOLT_1", (iGold,)), "")
-						iGold = pCity.getPopulation()*5
+						iGold = int(pCity.getPopulation() * (1 + pPlayer.getCurrentEra()))
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_REVOLT_1", (iGold*2,)), "")
 						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_REVOLT_2", (iGold,)), "")
 						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_REVOLT_CANCEL", ()), "")
 						popupInfo.addPopup(iPlayer)
@@ -2334,11 +2348,13 @@ def removeNoBonusNoBuilding(pCity):
 						# bonus1 = gc.getInfoTypeForString("BONUS_COAL")
 						# bonus2 = gc.getInfoTypeForString("BONUS_ZINN")
 						bonus = bonusMissing(pCity, building)
-						if bonus is not None:
+						if bonus != -1:
 								pCity.setNumRealBuilding(building, 0)
 								# Welche Resi
 								if bonus == bonus0:
 										szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_1"
+								elif bonus == -2:
+										szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_4"
 								else:
 										szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_2"
 								# Meldung
@@ -2375,13 +2391,17 @@ def removeNoBonusNoBuilding(pCity):
 								# bonus4 = gc.getInfoTypeForString("BONUS_ROGGEN")
 								# bonus5 = gc.getInfoTypeForString("BONUS_HIRSE")
 								bonus = bonusMissing(pCity, building)
-								if bonus is not None:
+								if bonus != -1:
 										pCity.setNumRealBuilding(building, 0)
 										# Meldung
 										if pPlayer.isHuman():
 												# Dies soll doppelte Popups in PB-Spielen vermeiden.
 												if iPlayer == gc.getGame().getActivePlayer():
-														szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_3", (pCity.getName(), "", gc.getBuildingInfo(building).getDescription()))
+														if bonus == -2:
+																szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_4"
+														else:
+																szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_3"
+														szText = CyTranslator().getText(szText, (pCity.getName(), "", gc.getBuildingInfo(building).getDescription()))
 														# Ingame message
 														CyInterface().addMessage(iPlayer, True, 10, szText, None, 2, gc.getBuildingInfo(building).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 														# Pop Up
@@ -2411,13 +2431,17 @@ def removeNoBonusNoBuilding(pCity):
 				if pCity.isHasBuilding(building):
 						if CvUtil.myRandom(iRand, "removeNoBonusNoBuilding3") == 1:
 								bonus = bonusMissing(pCity, building)
-								if bonus is not None:
+								if bonus != -1:
 										pCity.setNumRealBuilding(building, 0)
 										# Meldung
 										if pPlayer.isHuman():
 												if iPlayer == gc.getGame().getActivePlayer():
-														# In %s1_city wurde durch das Fehlen der Bonusresource %s2_resource das Gebäude %s3_building abgebaut.
-														szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_1", (pCity.getName(), gc.getBonusInfo(bonus).getDescription(), gc.getBuildingInfo(building).getDescription()))
+														if bonus == -2:
+																# In %s1 wurde aufgrund fehlender Güter das Gebäude %s3 abgebaut.
+																szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_4", (pCity.getName(),"",gc.getBuildingInfo(building).getDescription()))
+														else:
+																# In %s1_city wurde durch das Fehlen der Bonusresource %s2_resource das Gebäude %s3_building abgebaut.
+																szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_1", (pCity.getName(), gc.getBonusInfo(bonus).getDescription(), gc.getBuildingInfo(building).getDescription()))
 														# Ingame message
 														CyInterface().addMessage(iPlayer, True, 10, szText, None, 2, gc.getBuildingInfo(building).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 														# Pop up
@@ -2462,7 +2486,7 @@ def removeNoBonusNoBuilding(pCity):
 										bonus = bonusMissingCity3x3(pCity, building)
 								else:
 										bonus = bonusMissingCity(pCity, building)
-								if bonus is not None:
+								if bonus != -1:
 										pCity.setNumRealBuilding(building, 0)
 										# Meldung
 										if pPlayer.isHuman():
@@ -2470,14 +2494,13 @@ def removeNoBonusNoBuilding(pCity):
 												if iPlayer == gc.getGame().getActivePlayer():
 														if building in lBuildings2:
 																# In %s1_city wurde durch das Fehlen der Rohstoffe von %s2_resource das Gebäude %s3_building abgebaut
-																szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_5"
-														elif building in lBuildings3:
+																szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_5", (pCity.getName(), gc.getBonusInfo(bonus).getDescription(), gc.getBuildingInfo(building).getDescription()))
+														elif bonus == -2:
 																# In %s1 wurde auf Grund fehlender Güter das Gebäude %s3 abgebaut.
-																szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_4"
+																szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_4", (pCity.getName(), "", gc.getBuildingInfo(building).getDescription()))
 														else:
 																# In %s1_city wurde durch das Fehlen der Bonusresource %s2_resource das Gebäude %s3_building abgebaut.
-																szText = "TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_1"
-														szText = CyTranslator().getText(szText, (pCity.getName(), gc.getBonusInfo(bonus).getDescription(), gc.getBuildingInfo(building).getDescription()))
+																szText = CyTranslator().getText("TXT_KEY_MESSAGE_CITY_NOBONUSNOBUILDING_1", (pCity.getName(), gc.getBonusInfo(bonus).getDescription(), gc.getBuildingInfo(building).getDescription()))
 														# Ingame message
 														CyInterface().addMessage(iPlayer, True, 10, szText, None, 2, gc.getBuildingInfo(building).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 														# Pop up
@@ -2496,15 +2519,19 @@ def bonusMissing(pCity, eBuilding):
 				if not pCity.hasBonus(eBonus):
 						return eBonus
 
-		eRequiredBonus = None
+		lBonus2 = []
 		for iI in range(gc.getNUM_BUILDING_PREREQ_OR_BONUSES()):
-				eBonus = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
-				if eBonus != -1:
-						eRequiredBonus = eBonus
-						if pCity.hasBonus(eBonus):
-								eRequiredBonus = None
-								break
-		return eRequiredBonus
+				eBonus2 = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
+				if eBonus2 != -1:
+						if pCity.hasBonus(eBonus2):
+								return -1
+						lBonus2.append(eBonus2)
+
+		if lBonus2:
+				if len(lBonus2) > 1: return -2
+				else: return eBonus2
+
+		return -1
 
 
 def bonusMissingCity(pCity, eBuilding):
@@ -2524,12 +2551,10 @@ def bonusMissingCity(pCity, eBuilding):
 				return eBonus
 
 		# Zweite Abhängigkeit: bonus1 AND (bonus2 OR bonus3 OR ...)
-		bBonus2Missing = False
 		lBonus2 = []
 		for iI in range(gc.getNUM_BUILDING_PREREQ_OR_BONUSES()):
 				eBonus2 = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
 				if eBonus2 != -1:
-						bBonus2Missing = True
 						lBonus2.append(eBonus2)
 
 		if lBonus2:
@@ -2537,7 +2562,7 @@ def bonusMissingCity(pCity, eBuilding):
 				if eBonus != -1:
 						for eBonus2 in lBonus2:
 								if pCity.hasBonus(eBonus2):
-										return None
+										return -1
 				else:
 						eBonus2 = lBonus2[0]
 						for iI in range(gc.getNUM_CITY_PLOTS()):
@@ -2548,11 +2573,12 @@ def bonusMissingCity(pCity, eBuilding):
 												eBonus2 = eBonusPlot
 												iImprovement = loopPlot.getImprovementType()
 												if iImprovement != -1 and gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(eBonusPlot):
-														bBonus2Missing = False
-		if bBonus2Missing:
-				return eBonus2
+														return -1
 
-		return None
+				if len(lBonus2) > 1: return -2
+				else: return eBonus2
+
+		return -1
 
 
 def bonusMissingCity3x3(pCity, eBuilding):
@@ -2576,12 +2602,10 @@ def bonusMissingCity3x3(pCity, eBuilding):
 				return eBonus
 
 		# Zweite Abhängigkeit: bonus1 AND (bonus2 OR bonus3 OR ...)
-		bBonus2Missing = False
 		lBonus2 = []
 		for iI in range(gc.getNUM_BUILDING_PREREQ_OR_BONUSES()):
 				eBonus2 = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
 				if eBonus2 != -1:
-						bBonus2Missing = True
 						lBonus2.append(eBonus2)
 
 		if lBonus2:
@@ -2589,7 +2613,7 @@ def bonusMissingCity3x3(pCity, eBuilding):
 				if eBonus != -1:
 						for eBonus2 in lBonus2:
 								if pCity.hasBonus(eBonus2):
-										return None
+										return -1
 				else:
 						eBonus2 = lBonus2[0]
 						for i in range(-iRange, iRange+1):
@@ -2600,11 +2624,11 @@ def bonusMissingCity3x3(pCity, eBuilding):
 												if eBonusPlot in lBonus2:
 														iImp = loopPlot.getImprovementType()
 														if iImp != -1 and gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus):
-																bBonus2Missing = False
-		if bBonus2Missing:
-				return eBonus2
+																return -1
+				if len(lBonus2) > 1: return -2
+				else: return eBonus2
 
-		return None
+		return -1
 
 
 def onEmigrantBuilt(city, unit):
@@ -2773,18 +2797,19 @@ def doLeprosy(pCity):
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Lepra (Zeile 3660)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return bDecline
 
-
+# Chance: 2% pro ungesunder Bürger
 def doSpawnPest(pCity):
 		if pCity is None or pCity.isNone():
 				return False
 
 		iChance = pCity.badHealth(False) - pCity.goodHealth()
 		if iChance > 0:
+				iChance *= 2
 				iPlayer = pCity.getOwner()
 				pPlayer = gc.getPlayer(iPlayer)
 				# PAE V: less chance for AI
 				if not pPlayer.isHuman():
-						iChance = iChance / 3
+						iChance /= 2
 
 				if CvUtil.myRandom(100, "doSpawnPest") < iChance:
 						iThisTeam = pPlayer.getTeam()
@@ -2841,32 +2866,44 @@ def doPlagueEffects(pCity):
 
 		# Plots rundherum mit SeuchenFeature belasten
 		if iHappiness == -5:
-				feat_seuche = gc.getInfoTypeForString('FEATURE_SEUCHE')
-				for iI in range(DirectionTypes.NUM_DIRECTION_TYPES):
-						loopPlot = plotDirection(iX, iY, DirectionTypes(iI))
-						if loopPlot is not None and not loopPlot.isNone():
-								if not loopPlot.isWater() and not loopPlot.isPeak() and loopPlot.getFeatureType() == -1:
-										loopPlot.setFeatureType(feat_seuche, 0)
+			feat_seuche = gc.getInfoTypeForString('FEATURE_SEUCHE')
+			#for iI in range(DirectionTypes.NUM_DIRECTION_TYPES):
+			#		loopPlot = plotDirection(iX, iY, DirectionTypes(iI))
+			for iI in range(gc.getNUM_CITY_PLOTS()):
+				loopPlot = pCity.getCityIndexPlot(iI)
+				if loopPlot is not None and not loopPlot.isNone():
+					if not loopPlot.isWater() and not loopPlot.isPeak() and loopPlot.getFeatureType() == -1:
+						loopPlot.setFeatureType(feat_seuche, 0)
 
 		# Downgrade Improvements
-		if iHappiness == -4 or iHappiness == -2:
-				for iI in range(gc.getNUM_CITY_PLOTS()):
-						loopPlot = pCity.getCityIndexPlot(iI)
-						if loopPlot is not None and not loopPlot.isNone():
-								improv1 = gc.getInfoTypeForString('IMPROVEMENT_COTTAGE')
-								improv2 = gc.getInfoTypeForString('IMPROVEMENT_HAMLET')
-								improv3 = gc.getInfoTypeForString('IMPROVEMENT_VILLAGE')
-								improv4 = gc.getInfoTypeForString('IMPROVEMENT_TOWN')
-								iImprovement = loopPlot.getImprovementType()
-								# 50% chance of downgrading
-								iRand = CvUtil.myRandom(2, "doPlagueEffects")
-								if iRand == 1:
-										if iImprovement == improv2:
-												loopPlot.setImprovementType(improv1)
-										elif iImprovement == improv3:
-												loopPlot.setImprovementType(improv2)
-										elif iImprovement == improv4:
-												loopPlot.setImprovementType(improv3)
+		#if iHappiness == -4 or iHappiness == -2:
+		if iHappiness > -5:
+			improv1 = gc.getInfoTypeForString('IMPROVEMENT_COTTAGE')
+			improv2 = gc.getInfoTypeForString('IMPROVEMENT_HAMLET')
+			improv3 = gc.getInfoTypeForString('IMPROVEMENT_VILLAGE')
+			improv4 = gc.getInfoTypeForString('IMPROVEMENT_TOWN')
+			improv5 = gc.getInfoTypeForString('IMPROVEMENT_FARM')
+			for iI in range(gc.getNUM_CITY_PLOTS()):
+				loopPlot = pCity.getCityIndexPlot(iI)
+				if loopPlot is not None and not loopPlot.isNone():
+					iImprovement = loopPlot.getImprovementType()
+					# 50% chance of downgrading
+					iRand = CvUtil.myRandom(3, "doPlagueEffects")
+					if iRand == 1:
+						if iImprovement == improv2:   loopPlot.setImprovementType(improv1)
+						elif iImprovement == improv3: loopPlot.setImprovementType(improv2)
+						elif iImprovement == improv4: loopPlot.setImprovementType(improv3)
+						elif iImprovement == improv5: loopPlot.setImprovementType(-1)
+
+						# PAE 7.11: Vieh
+						iBonus = loopPlot.getBonusType(pPlayer.getTeam())
+						if iBonus != -1 and iBonus in L.LMovingBonus and iBonus != gc.getInfoTypeForString("BONUS_FISH"):
+							loopPlot.setBonusType(-1)
+							loopPlot.setImprovementType(-1)
+							if pPlayer.isHuman():
+								CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_VIEH", (pCity.getName(), gc.getBonusInfo(iBonus).getDescription())),
+								None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(13), loopPlot.getX(), loopPlot.getY(), True, True)
+
 
 		# decline City pop
 		# iThisTeam = pPlayer.getTeam()
@@ -2900,7 +2937,7 @@ def doPlagueEffects(pCity):
 
 		# Message new Pop
 		if pPlayer.isHuman():
-				CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST", (pCity.getName(), iNewPop, iOldPop)), None, 2, None, ColorTypes(13), 0, 0, False, False)
+				CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST", (pCity.getName(), iNewPop, iOldPop)), None, 2, None, ColorTypes(13), 0, 0, False, False)
 
 		pCity.setPopulation(iNewPop)
 		# end decline city pop
@@ -2913,22 +2950,22 @@ def doPlagueEffects(pCity):
 						pCity.changeFreeSpecialistCount(eSpecialistHouse, -1)
 						iCitySlavesHaus -= 1
 						if pPlayer.isHuman():
-								CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_HAUS", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
+								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_HAUS", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
 				elif iCitySlavesFood > 0:
 						pCity.changeFreeSpecialistCount(eSpecialistFood, -1)
 						iCitySlavesFood -= 1
 						if pPlayer.isHuman():
-								CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_FOOD", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
+								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_FOOD", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
 				elif iCityGlads > 0:
 						pCity.changeFreeSpecialistCount(eSpecialistGlad, -1)
 						iCityGlads -= 1
 						if pPlayer.isHuman():
-								CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLAD", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
+								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLAD", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
 				elif iCitySlavesProd > 0:
 						pCity.changeFreeSpecialistCount(eSpecialistProd, -1)
 						iCitySlavesProd -= 1
 						if pPlayer.isHuman():
-								CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_PROD", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
+								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_PROD", (pCity.getName(),)), None, 2, None, ColorTypes(7), 0, 0, False, False)
 				iSlaves -= 1
 				iPopChange -= 1
 
@@ -3162,21 +3199,27 @@ def doSettledSlavesAndReservists(pCity):
 				# Haussklave 4%
 				if iCitySlavesHaus > 0:
 						iChance = 4
-						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_PATRONAT")):
+						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_SKLAVENRECHTE")):
+								iChance = 1
+						elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_PATRONAT")):
 								iChance = 2
 						if CvUtil.myRandom(100, "iCitySlavesHaus") < iChance:
 								iTyp = 2
 				# Feldsklave 6%
 				if iCitySlavesFood > 0 and iTyp == -1:
 						iChance = 6
-						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_EISENPFLUG")):
+						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_SKLAVENRECHTE")):
+								iChance = 2
+						elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_EISENPFLUG")):
 								iChance = 3
 						if CvUtil.myRandom(100, "iCitySlavesFood") < iChance:
 								iTyp = 0
 				# Bergwerkssklave 8%
 				if iCitySlavesProd > 0 and iTyp == -1:
 						iChance = 8
-						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_MECHANIK")):
+						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_SKLAVENRECHTE")):
+								iChance = 3
+						elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_MECHANIK")):
 								iChance = 4
 						if CvUtil.myRandom(100, "iCitySlavesProd") < iChance:
 								iTyp = 1

@@ -2914,7 +2914,8 @@
 			<bPickCorporation>0</bPickCorporation>
 			<bHeadquarters>0</bHeadquarters>
 			<Events>
-				<Event>EVENT_CITY_FIRE</Event>
+				<Event>EVENT_CITY_FIRE_1</Event>
+				<Event>EVENT_CITY_FIRE_2</Event>
 			</Events>
 			<PrereqEvents/>
 			<bPrereqEventPlot>0</bPrereqEventPlot>
@@ -17257,6 +17258,26 @@
 				</TriggerText>
 				<TriggerText>
 					<Text>TXT_KEY_EVENT_TRIGGER_BORDELL_5</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_BORDELL_6</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_BORDELL_7</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_BORDELL_8</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_BORDELL_9</Text>
+					<Era>NONE</Era>
+				</TriggerText>
+				<TriggerText>
+					<Text>TXT_KEY_EVENT_TRIGGER_BORDELL_10</Text>
 					<Era>NONE</Era>
 				</TriggerText>
 			</TriggerTexts>

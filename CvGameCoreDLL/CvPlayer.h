@@ -100,7 +100,16 @@ public:
 
 	DllExport const wchar* getName(uint uiForm = 0) const;																											// Exposed to Python
 	void setName(const wchar* szNewValue);		// Exposed to Python
-	DllExport const wchar* getNameKey() const;																																	// Exposed to Python
+	DllExport const wchar* getNameKey() const;  // Exposed to Python
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         01/15/08                                jdog5000      */
+/**                                                                                              */
+/** Used for dynamic civ names                                                                   */
+/*************************************************************************************************/
+	void setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj);												// Exposed to Python
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
 	DllExport const wchar* getCivilizationDescription(uint uiForm = 0) const;																		// Exposed to Python
 	DllExport const wchar* getCivilizationDescriptionKey() const;																								// Exposed to Python
 	DllExport const wchar* getCivilizationShortDescription(uint uiForm = 0) const;															// Exposed to Python 
@@ -1192,6 +1201,19 @@ protected:
 /* AI_AUTO_PLAY_MOD                        END                                                  */
 /************************************************************************************************/
 
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         01/01/08                                jdog5000      */
+/**                                                                                              */
+/**                                                                                              */
+/*************************************************************************************************/
+	// Used for DynamicCivNames
+	CvWString m_szName;
+	CvWString m_szCivDesc;
+	CvWString m_szCivShort;
+	CvWString m_szCivAdj;
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;

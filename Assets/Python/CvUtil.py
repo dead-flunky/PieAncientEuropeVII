@@ -15,9 +15,9 @@ import sys
 
 # For Civ game code access
 from CvPythonExtensions import (CyGlobalContext, CyTranslator, CyPythonMgr,
-																CyInterface, CyGame, CardinalDirectionTypes,
-																UnitAITypes, FontSymbols, YieldTypes,
-																CommerceTypes, shuffleList, DirectionTypes)
+										CyInterface, CyGame, CardinalDirectionTypes,
+										UnitAITypes, FontSymbols, YieldTypes,
+										CommerceTypes, shuffleList, DirectionTypes)
 
 # For ScriptData dict
 import simplejson as json

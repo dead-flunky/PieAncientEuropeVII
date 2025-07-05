@@ -71,17 +71,19 @@ def init():
 
 def doBuyBonus(pUnit, eBonus, iCityOwner):
 
-		if not pUnit.getUnitType() in L.LTradeUnits:
-				return
+		if not pUnit.getUnitType() in L.LTradeUnits: return
+
+		# PAE 7.11
+		if not pUnit.canMove(): return
 
 		if eBonus != -1:
 				iBuyer = pUnit.getOwner()
 				pBuyer = gc.getPlayer(iBuyer)
 
 				eUnitBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
-				if eBonus == eUnitBonus:
-						#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Das haben wir bereits geladen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-						return
+				#if eBonus == eUnitBonus:
+				#		#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Das haben wir bereits geladen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+				#		return
 				if eUnitBonus != -1:
 						# Geladene Ressource automatisch verkaufen
 						#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Die Einheit hat bereits eine Ressource geladen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -1320,6 +1322,7 @@ def doAutomateMerchant(pUnit):
 						CvUtil.removeScriptData(pUnit, "autY2")
 						CvUtil.removeScriptData(pUnit, "autB1")
 						CvUtil.removeScriptData(pUnit, "autB2")
+						CvUtil.removeScriptData(pUnit, "originCiv")
 
 						# Messages
 						if pUnit.isHuman():
@@ -1351,8 +1354,9 @@ def doAutomateMerchant(pUnit):
 								eBonusBuy = eBonus2
 								# eBonusSell = eBonus1
 
-						# if eBonusSell != -1 and eStoredBonus == eBonusSell:
-						if eStoredBonus != -1 and eStoredBonus != eBonusBuy:
+						#if eBonusSell != -1 and eStoredBonus == eBonusSell:
+						#if eStoredBonus != -1 and eStoredBonus != eBonusBuy:
+						if eStoredBonus != -1:
 								doSellBonus(pUnit, pCurrentCity)
 								# if iPlayer == iHumanPlayer:
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit sold bonus in city", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
@@ -1383,6 +1387,7 @@ def doAutomateMerchant(pUnit):
 								if eStoredBonus != eBonusBuy:
 										# if not already acquired / Wenn Bonus nicht bereits gekauft wurde
 										# if not pUnit.hasMoved():
+										#if pUnit.canMove():
 										doBuyBonus(pUnit, eBonusBuy, pCurrentCity.getOwner())
 										pUnit.finishMoves()
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy MOVE to new city ", None, 2, None, ColorTypes(7), 0, 0, False, False)
@@ -2062,7 +2067,9 @@ def doMerchantRobbery(pUnit, pPlot, pOldPlot):
 						if bKill:
 								# pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 								pUnit.kill(True, -1)
-								return
+
+						return True
+		return False
 
 
 def getMaxTradeUnits():

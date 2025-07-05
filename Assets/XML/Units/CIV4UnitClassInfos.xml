@@ -1106,6 +1106,24 @@
 			<DefaultUnit>UNIT_HEAVY_HORSEMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_HORSEMAN_ISLAM</Type>
+			<Description>TXT_KEY_UNIT_HORSEMAN_ISLAM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>3</iInstanceCostModifier>
+			<DefaultUnit>UNIT_HORSEMAN_ISLAM</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HORSEMAN_ISLAM_KALIF</Type>
+			<Description>TXT_KEY_UNIT_HORSEMAN_ISLAM_KALIF</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>3</iInstanceCostModifier>
+			<DefaultUnit>UNIT_HORSEMAN_ISLAM_KALIF</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_CAMEL_ARCHER</Type>
 			<Description>TXT_KEY_UNIT_ARABIA_CAMELARCHER</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -1338,6 +1356,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>50</iInstanceCostModifier>
 			<DefaultUnit>UNIT_KILIKIEN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_DROMON</Type>
+			<Description>TXT_KEY_UNIT_DROMON</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>10</iInstanceCostModifier>
+			<DefaultUnit>UNIT_DROMON</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_STATTHALTER</Type>
@@ -1608,6 +1635,15 @@
 			<iMaxPlayerInstances>1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_JEWISH_MISSIONARY</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_JEWISH_MISSIONARY2</Type>
+			<Description>TXT_KEY_UNIT_JEWISH_MISSIONARY2</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_JEWISH_MISSIONARY2</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CHRISTIAN_MISSIONARY</Type>

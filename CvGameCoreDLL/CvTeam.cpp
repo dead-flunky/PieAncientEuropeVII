@@ -2768,20 +2768,20 @@ void CvTeam::changeEverAliveCount(int iChange)
 }
 
 
-int CvTeam::getNumCities() const														
+int CvTeam::getNumCities() const
 {
 	return m_iNumCities;
 }
 
 
-void CvTeam::changeNumCities(int iChange)							
+void CvTeam::changeNumCities(int iChange)
 {
 	m_iNumCities += iChange;
 	FAssert(getNumCities() >= 0);
 }
 
 
-int CvTeam::getTotalPopulation(bool bCheckVassals) const											
+int CvTeam::getTotalPopulation(bool bCheckVassals) const
 {
 	int iVassalPop = 0;
 
@@ -2844,7 +2844,7 @@ int CvTeam::getTotalLand(bool bCheckVassals) const
 }
 
 
-void CvTeam::changeTotalLand(int iChange)														
+void CvTeam::changeTotalLand(int iChange)
 {
 	m_iTotalLand += iChange;
 	FAssert(getTotalLand() >= 0);

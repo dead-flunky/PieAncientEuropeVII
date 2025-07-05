@@ -211,15 +211,35 @@ class CvGameUtils:
 
 										# Sklavenmarkt
 										if bSlave:
-												for i in lTeamPlayer:
-														loopPlayer = gc.getPlayer(i)
-														(loopCity, pIter) = loopPlayer.firstCity(False)
-														while loopCity:
-																if not loopCity.isNone():
-																		if loopCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")):
-																				if not loopCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")):
-																						CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
-																(loopCity, pIter) = loopPlayer.nextCity(pIter, False)
+											iBuildingStadt = gc.getInfoTypeForString("BUILDING_STADT")
+											iSklavenmarkt = gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")
+											# Settled Slaves and Glads
+											eSpecialistGlad = gc.getInfoTypeForString("SPECIALIST_GLADIATOR")
+											eSpecialistHouse = gc.getInfoTypeForString("SPECIALIST_SLAVE")
+											eSpecialistFood = gc.getInfoTypeForString("SPECIALIST_SLAVE_FOOD")
+											eSpecialistProd = gc.getInfoTypeForString("SPECIALIST_SLAVE_PROD")
+											for i in lTeamPlayer:
+												loopPlayer = gc.getPlayer(i)
+												(loopCity, pIter) = loopPlayer.firstCity(False)
+												while loopCity:
+													if not loopCity.isNone():
+														iCityGlads = loopCity.getFreeSpecialistCount(eSpecialistGlad)
+														iCitySlavesHaus = loopCity.getFreeSpecialistCount(eSpecialistHouse)
+														iCitySlavesFood = loopCity.getFreeSpecialistCount(eSpecialistFood)
+														iCitySlavesProd = loopCity.getFreeSpecialistCount(eSpecialistProd)
+														iSlaves = iCityGlads + iCitySlavesHaus + iCitySlavesFood + iCitySlavesProd
+														if iSlaves < loopCity.getPopulation(): bOK = True
+														else: bOK = False
+														if loopCity.isHasBuilding(iBuildingStadt):
+															if not loopCity.isHasBuilding(iSklavenmarkt):
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+																bOK = False
+														if bOK:
+															CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
+
+
+
+													(loopCity, pIter) = loopPlayer.nextCity(pIter, False)
 
 								# Hunter
 								if iUnitType == gc.getInfoTypeForString("UNIT_HUNTER"):
@@ -786,8 +806,22 @@ class CvGameUtils:
 				if eUnit in L.LRammen:
 						iPlayer = pCity.getOwner()
 						pPlayer = gc.getPlayer(iPlayer)
-						if pPlayer.getUnitClassCountPlusMaking(gc.getUnitInfo(eUnit).getUnitClassType()) > 10:
+
+						# Alt:
+						#if pPlayer.getUnitClassCountPlusMaking(gc.getUnitInfo(eUnit).getUnitClassType()) > 10:
+						#		return True
+
+						# Neu by Flunky:
+						iAnz = pPlayer.getUnitClassCountPlusMaking(gc.getUnitInfo(eUnit).getUnitClassType())
+						# check Order Queue in dieser Stadt
+						for iOrderCurrentCity in range(pCity.getOrderQueueLength()):
+								pOrder = pCity.getOrderFromQueue(iOrderCurrentCity)
+								if pOrder.eOrderType == OrderTypes.ORDER_TRAIN and pOrder.iData1 == eUnit:
+										iAnz -= 1
+										break
+						if iAnz >= 10:
 								return True
+
 
 				# Stadtstaaten sollen keine Siedler bauen dürfen / City States
 				if eUnit == gc.getInfoTypeForString("UNIT_SETTLER"):
@@ -3095,7 +3129,7 @@ class CvGameUtils:
 						elif iData1 == 720:
 								return CyTranslator().getText("TXT_KEY_HELP_LEGEND_HERO_TO_GENERAL", ())
 
-						# INFO BUTTONS: Techs/ Elefanten / Kamel / Hunter
+						# INFO BUTTONS: Techs / Elefanten / Kamel / Hunter / Slave death rates / Supply / ...
 						elif iData1 == 721:
 								if iData2 == 1:
 										return CyTranslator().getText("TXT_KEY_HELP_ELEFANTENSTALL1", ())
@@ -3139,6 +3173,10 @@ class CvGameUtils:
 										return CyTranslator().getText("TXT_KEY_HELP_ADD_ESEL", ())
 								elif iData2 == 21:
 										return CyTranslator().getText("TXT_KEY_HELP_TECH_VILLAGE2TOWN", ())
+								elif iData2 == 22:
+										return CyTranslator().getText("TXT_KEY_TECH_SKLAVENRECHTE_HELP", ())
+								elif iData2 == 23:
+										return CyTranslator().getText("TXT_KEY_TECH_KARTOGRAPHIE2_STRATEGY", ())
 
 						# Piraten-Feature
 						elif iData1 == 722:

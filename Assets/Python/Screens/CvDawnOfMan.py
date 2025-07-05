@@ -221,6 +221,9 @@ class CvDawnOfMan:
 				elif sScenarioName == "GalliaEstOmnis":
 						szDawnText1 = "TXT_KEY_DAWN_OF_MAN_SCREEN_TITLE_GALLIA_EST_OMNIS"
 						szDawnText2 = "TXT_KEY_DAWN_OF_MAN_GALLIA_EST_OMNIS"
+				elif sScenarioName == "WegDerGoten":
+						szDawnText1 = "TXT_KEY_SCENARIO_WDG_DAWNOFMAN_TITLE"
+						szDawnText2 = "TXT_KEY_SCENARIO_WDG_DAWNOFMAN"
 				else:
 						szDawnText1 = "TXT_KEY_DAWN_OF_MAN_SCREEN_TITLE"
 						szDawnText2 = "TXT_KEY_DAWN_OF_MAN_TEXT"

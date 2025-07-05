@@ -103,6 +103,20 @@ CvPlayer::CvPlayer()
 /* AI_AUTO_PLAY_MOD                        END                                                  */
 /************************************************************************************************/
 
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         06/11/08                                jdog5000      */
+/**                                                                                              */
+/**                                                                                              */
+/*************************************************************************************************/
+	// Used for DynamicCivNames
+	CvWString m_szName;
+	CvWString m_szCivDesc;
+	CvWString m_szCivShort;
+	CvWString m_szCivAdj;
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
+
 	reset(NO_PLAYER, true);
 }
 
@@ -512,6 +526,20 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 /************************************************************************************************/
 /* AI_AUTO_PLAY_MOD                        END                                                  */
 /************************************************************************************************/
+
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         06/11/08                                jdog5000      */
+/**                                                                                              */
+/**                                                                                              */
+/*************************************************************************************************/
+	// Used for DynamicCivNames (3.19)
+	m_szName.clear();
+	m_szCivDesc.clear();
+	m_szCivShort.clear();
+	m_szCivAdj.clear();
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
 
 	m_eID = eID;
 	updateTeamType();
@@ -2774,7 +2802,11 @@ bool CvPlayer::isBarbarian() const
 const wchar* CvPlayer::getName(uint uiForm) const
 {
 
-	if (GC.getInitCore().getLeaderName(getID(), uiForm).empty() || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive() && GC.getGameINLINE().getGameState() == GAMESTATE_ON))
+	if( !(m_szName.empty()) )
+	{
+		return m_szName;
+	}
+	else if (GC.getInitCore().getLeaderName(getID(), uiForm).empty() || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive() && GC.getGameINLINE().getGameState() == GAMESTATE_ON))
 	{
 		return GC.getLeaderHeadInfo(getLeaderType()).getDescription(uiForm);
 	}
@@ -2792,7 +2824,11 @@ void CvPlayer::setName(const wchar* szNewValue)
 
 const wchar* CvPlayer::getNameKey() const
 {
-	if (GC.getInitCore().getLeaderNameKey(getID()).empty() || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive()))
+	if( !(m_szName.empty()) )
+	{
+		return m_szName;
+	}
+	else if (GC.getInitCore().getLeaderNameKey(getID()).empty() || (GC.getGameINLINE().isMPOption(MPOPTION_ANONYMOUS) && isAlive()))
 	{
 		return GC.getLeaderHeadInfo(getLeaderType()).getTextKeyWide();
 	}
@@ -2802,10 +2838,34 @@ const wchar* CvPlayer::getNameKey() const
 	}
 }
 
+/************************************************************************************************/
+/* REVOLUTION_MOD                         01/01/08                                jdog5000      */
+/*                                                                                              */
+/* dynamic civ names                                                                            */
+/************************************************************************************************/
+void CvPlayer::setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)
+{
+	m_szCivDesc = szNewDesc;
+	m_szCivShort = szNewShort;
+	m_szCivAdj = szNewAdj;
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+}
+/************************************************************************************************/
+/* REVOLUTION_MOD                          END                                                  */
+/************************************************************************************************/
 
 const wchar* CvPlayer::getCivilizationDescription(uint uiForm) const
 {
-	if (GC.getInitCore().getCivDescription(getID(), uiForm).empty())
+	if( !(m_szCivDesc.empty()) )
+	{
+		return m_szCivDesc;
+	}
+	else if (GC.getInitCore().getCivDescription(getID(), uiForm).empty())
 	{
 		return GC.getCivilizationInfo(getCivilizationType()).getDescription(uiForm);
 	}
@@ -2818,7 +2878,11 @@ const wchar* CvPlayer::getCivilizationDescription(uint uiForm) const
 
 const wchar* CvPlayer::getCivilizationDescriptionKey() const
 {
-	if (GC.getInitCore().getCivDescriptionKey(getID()).empty())
+	if( !(m_szCivDesc.empty()) )
+	{
+		return m_szCivDesc;
+	}
+	else if (GC.getInitCore().getCivDescriptionKey(getID()).empty())
 	{
 		return GC.getCivilizationInfo(getCivilizationType()).getTextKeyWide();
 	}
@@ -2831,7 +2895,11 @@ const wchar* CvPlayer::getCivilizationDescriptionKey() const
 
 const wchar* CvPlayer::getCivilizationShortDescription(uint uiForm) const
 {
-	if (GC.getInitCore().getCivShortDesc(getID(), uiForm).empty())
+	if( !(m_szCivShort.empty()) )
+	{
+		return m_szCivShort;
+	}
+	else if (GC.getInitCore().getCivShortDesc(getID(), uiForm).empty())
 	{
 		return GC.getCivilizationInfo(getCivilizationType()).getShortDescription(uiForm);
 	}
@@ -2844,7 +2912,11 @@ const wchar* CvPlayer::getCivilizationShortDescription(uint uiForm) const
 
 const wchar* CvPlayer::getCivilizationShortDescriptionKey() const
 {
-	if (GC.getInitCore().getCivShortDescKey(getID()).empty())
+	if( !(m_szCivShort.empty()) )
+	{
+		return m_szCivShort;
+	}
+	else if (GC.getInitCore().getCivShortDescKey(getID()).empty())
 	{
 		return GC.getCivilizationInfo(getCivilizationType()).getShortDescriptionKey();
 	}
@@ -2857,7 +2929,11 @@ const wchar* CvPlayer::getCivilizationShortDescriptionKey() const
 
 const wchar* CvPlayer::getCivilizationAdjective(uint uiForm) const
 {
-	if (GC.getInitCore().getCivAdjective(getID(), uiForm).empty())
+	if( !(m_szCivAdj.empty()) )
+	{
+		return m_szCivAdj;
+	}
+	else if (GC.getInitCore().getCivAdjective(getID(), uiForm).empty())
 	{
 		return GC.getCivilizationInfo(getCivilizationType()).getAdjective(uiForm);
 	}
@@ -2869,7 +2945,11 @@ const wchar* CvPlayer::getCivilizationAdjective(uint uiForm) const
 
 const wchar* CvPlayer::getCivilizationAdjectiveKey() const
 {
-	if (GC.getInitCore().getCivAdjectiveKey(getID()).empty())
+	if( !(m_szCivAdj.empty()) )
+	{
+		return m_szCivAdj;
+	}
+	else if (GC.getInitCore().getCivAdjectiveKey(getID()).empty())
 	{
 		return GC.getCivilizationInfo(getCivilizationType()).getAdjectiveKey();
 	}
@@ -7291,13 +7371,7 @@ int CvPlayer::getResearchTurnsLeftTimes100(TechTypes eTech, bool bOverflow) cons
 		return 100; // PAE, max_int looks strange
 		return MAX_INT;
 	}
-	
-	// PAE
-	int iLimit = 500 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent() / 100;
-	iResearchRate = std::min(iLimit, iResearchRate);
-	iOverflow = std::min(iLimit/2, iOverflow);
-	// --------
-	
+
 	iResearchLeft = GET_TEAM(getTeam()).getResearchLeft(eTech);
 
 	if (bOverflow)
@@ -16440,6 +16514,20 @@ void CvPlayer::read(FDataStreamBase* pStream)
 	pStream->Read(&m_bStrike);
 	pStream->Read(&m_bWatchingCiv); // PBMod
 
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         06/11/08                                jdog5000      */
+/**                                                                                              */
+/**                                                                                              */
+/*************************************************************************************************/
+	// Used for DynamicCivNames
+	pStream->ReadString(m_szName);
+	pStream->ReadString(m_szCivDesc);
+	pStream->ReadString(m_szCivShort);
+	pStream->ReadString(m_szCivAdj);
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
+
 	pStream->Read((int*)&m_eID);
 	pStream->Read((int*)&m_ePersonalityType);
 	pStream->Read((int*)&m_eCurrentEra);
@@ -16903,6 +16991,20 @@ void CvPlayer::write(FDataStreamBase* pStream)
 	pStream->Write(m_bFoundedFirstCity);
 	pStream->Write(m_bStrike);
 	pStream->Write(m_bWatchingCiv); // PBMod
+
+/*************************************************************************************************/
+/** REVOLUTION_MOD                         06/11/08                                jdog5000      */
+/**                                                                                              */
+/**                                                                                              */
+/*************************************************************************************************/
+	// Used for DynamicCivNames
+	pStream->WriteString(m_szName);
+	pStream->WriteString(m_szCivDesc);
+	pStream->WriteString(m_szCivShort);
+	pStream->WriteString(m_szCivAdj);
+/*************************************************************************************************/
+/** REVOLUTION_MOD                          END                                                  */
+/*************************************************************************************************/
 
 	pStream->Write(m_eID);
 	pStream->Write(m_ePersonalityType);

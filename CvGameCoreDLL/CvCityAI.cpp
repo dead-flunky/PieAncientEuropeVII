@@ -4518,6 +4518,8 @@ int CvCityAI::AI_neededDefenders()
 
 int CvCityAI::AI_minDefenders()
 {
+	// ++++++++++++++ BTS ++++++++++++++++++
+	/*
 	int iDefenders = 1;
 	int iEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
 	if (iEra > 0)
@@ -4528,7 +4530,15 @@ int CvCityAI::AI_minDefenders()
 	{
 		iDefenders++;
 	}
-	
+	*/
+
+	// +++++++++++++ PAE ++++++++++++++++++++
+	int iDefenders = 2;
+	int iEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
+	if (iEra > 1) iDefenders++;
+	if (iEra > 2 && isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN())) iDefenders++;
+	if (getPopulation() >= 6) iDefenders++;
+
 	return iDefenders;
 }
 	

@@ -1747,7 +1747,7 @@
 			<Type>BONUS_SALT</Type>
 			<Description>TXT_KEY_BONUS_SALT</Description>
 			<Civilopedia>TXT_KEY_BONUS_SALT_PEDIA</Civilopedia>
-			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<BonusClassType>BONUSCLASS_LUXURY</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_SALT2</ArtDefineTag>
 			<TechReveal>TECH_STEINABBAU</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
@@ -3670,7 +3670,7 @@
 			<Type>BONUS_PAPYRUS_PAPER</Type>
 			<Description>TXT_KEY_BONUS_PAPYRUS_PAPER</Description>
 			<Civilopedia>TXT_KEY_BONUS_PAPYRUS_PEDIA</Civilopedia>
-			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
+			<BonusClassType>BONUSCLASS_LUXURY</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_PAPYRUS_PAPER</ArtDefineTag>
 			<TechReveal>TECH_ALPHABET</TechReveal>
 			<TechCityTrade>TECH_ALPHABET</TechCityTrade>

@@ -26,6 +26,8 @@ import PAE_Lists as L
 gc = CyGlobalContext()
 localText = CyTranslator()
 
+# EventTriggerInfos.xml: kTriggeredData = argsList[0]
+# EventInfos.xml: kTriggeredData = argsList[1]
 
 ######## HOLY MOUNTAIN ###########
 
@@ -470,6 +472,18 @@ def canTriggerCityFire(argsList):
 				return False
 
 		return True
+
+####### City Fire Crisis ######
+
+def canApplyCityFire1(argsList):
+		# iEvent = argsList[0]
+		kTriggeredData = argsList[1]
+
+		# Chance 1:3: Brand unter Kontrolle
+		return (gc.getGame().getGameTurn() * kTriggeredData.iCityId) % 3 == 0
+
+def canApplyCityFire2(argsList):
+		return not canApplyCityFire1(argsList)
 
 ######## HURRICANE ###########
 ######## PAE changes #########
@@ -2631,6 +2645,7 @@ def canTriggerMoor(argsList):
 
 		if unit.isNone(): return False
 		if unit.getImmobileTimer() > 0: return False
+		if unit.plot().isRoute(): return False
 		if unit.plot().getImprovementType() != -1: return False
 		if unit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_SUMPF1")): return False
 		if unit.plot().isCity(): return False
@@ -3160,7 +3175,7 @@ def canTriggerKastellDone(argsList):
 
 
 def applyKastellDone1(argsList):
-		kTriggeredData = argsList[0]
+		kTriggeredData = argsList[1]
 		player = gc.getPlayer(kTriggeredData.ePlayer)
 		team = gc.getTeam(player.getTeam())
 
@@ -3169,7 +3184,7 @@ def applyKastellDone1(argsList):
 
 
 def applyKastellDone2(argsList):
-		kTriggeredData = argsList[0]
+		kTriggeredData = argsList[1]
 		player = gc.getPlayer(kTriggeredData.ePlayer)
 		team = gc.getTeam(player.getTeam())
 
@@ -3986,8 +4001,8 @@ def canTriggerBordell(argsList):
 		# Tech Check muss sein, weil dieses Event direkt im EventManager ausgeführt wird und es sonst immer startet
 		if not gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_SYNKRETISMUS")):
 			return False
-		# 1:2 chance
-		if gc.getGame().getSorenRandNum(2, "Event:canTriggerBordell") == 0:
+		# 1:4 chance
+		if gc.getGame().getSorenRandNum(4, "Event:canTriggerBordell") == 0:
 			return False
 		# check Order Queue in dieser Stadt
 		for iOrderCurrentCity in range(pCity.getOrderQueueLength()):

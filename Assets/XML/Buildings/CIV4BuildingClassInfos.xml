@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <!-- +++++++ BUILDINGCLASS_SPECIAL1 ++++++ -->
-<!-- BUILDING_SCHULE_ASSUR: Assyrer, Babylon, Sumer -->
 <!-- BUILDING_HOSPITAL_ROME: Rom, Etrusker -->
 <!-- BUILDING_ACROPOLIS: Griechen, Ath, Spa, Theb -->
 <!-- BUILDING_WARFT: Kelten, Germanen, Briten, Gallier, Vandalen -->
@@ -14,12 +13,11 @@
 <!-- BUILDING_NECROPOLIS: Etrusker, Rom, Griechen (Theb, Athen, Spa), Iberer, Phoen, Karthago, Israel, Hethiter -->
 <!-- BUILDING_HAREM: Egypt, Nubia, Assyrer, Babylon, Perser -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL3 ++++++ -->
-<!-- BUILDING_SCHULE: Assyrer, Babylon, Sumer, Hethiter, Phoen, Perser, Karthago, Egypt, Berber, Iberer, Nubia, Lyder, Inder -->
-<!-- BUILDING_GYMNASION: Griechen,  Ath,Theb,Spar, Makedon -->
 <!-- BUILDING_GYMNASIUM: Rom, Etrusker -->
-<!-- +++++++ BUILDINGCLASS_SPECIAL4 ++++++ -->
+<!-- BUILDING_GYMNASION: Griechen, Ath,Theb,Sparta, Makedon -->
 <!-- BUILDING_GARDEN: Assyrer, Phoen, Perser, Babylon, Sumer, Karthago, Egypt, Nubia, Israel -->
-<!-- BUILDING_JURTE: Berber, Hunnen, Libyer, Numid, Parther, Skythen, Barbar -->
+<!-- +++++++ BUILDINGCLASS_SPECIAL4 ++++++ -->
+<!-- frei -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL5 ++++++ -->
 <!-- BUILDING_NYMPHAION: Griechen, Ath,Theb,Spa, Makedon -->
 <!-- BUILDING_NYMPHAEUM: Rom -->
@@ -39,6 +37,7 @@
 <!-- BUILDING_MILITARY_ACADEMY_SPARTA: Griechen, Sparta -->
 <!-- BUILDING_HAMMURABI_CODE: Babylon -->
 <!-- BUILDING_HITTI_CODE: Hethiter -->
+<!-- BUILDING_ZION: Israel -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL10 ++++++ -->
 <!-- frei -->
 <!-- ++++++++ BUILDINGCLASS_STEINGRAB +++++++ -->
@@ -390,6 +389,18 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_TAILOR</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MILIT_LAGER_ISLAM</Type>
+			<Description>TXT_KEY_BUILDING_MILIT_LAGER_ISLAM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_MILIT_LAGER_ISLAM</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
@@ -1005,15 +1016,111 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_COURTHOUSE2</Type>
-			<Description>TXT_KEY_BUILDING_COURTHOUSE2</Description>
+			<Type>BUILDINGCLASS_COURTHOUSE_CHRISTEN</Type>
+			<Description>TXT_KEY_BUILDING_COURTHOUSE_CHRISTEN</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_COURTHOUSE2</DefaultBuilding>
+			<DefaultBuilding>BUILDING_COURTHOUSE_CHRISTEN</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_COURTHOUSE_JUDEN</Type>
+			<Description>TXT_KEY_BUILDING_COURTHOUSE_JUDEN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_COURTHOUSE_JUDEN</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_COURTHOUSE_ISLAM</Type>
+			<Description>TXT_KEY_BUILDING_ISLAM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_COURTHOUSE_ISLAM</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_HOCHSCHULE_ROME</Type>
+			<Description>TXT_KEY_BUILDING_HOCHSCHULE_ROME</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_HOCHSCHULE_ROME</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SCHULE</Type>
+			<Description>TXT_KEY_BUILDING_SCHULE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_SCHULE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SCHULE_ZORO</Type>
+			<Description>TXT_KEY_BUILDING_SCHULE_ZORO</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_SCHULE_ZORO</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SCHULE_CHRISTEN</Type>
+			<Description>TXT_KEY_BUILDING_SCHULE_CHRISTEN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_SCHULE_CHRISTEN</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SCHULE_JUDEN</Type>
+			<Description>TXT_KEY_BUILDING_SCHULE_JUDEN</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_SCHULE_JUDEN</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SCHULE_ISLAM</Type>
+			<Description>TXT_KEY_BUILDING_SCHULE_ISLAM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_SCHULE_ISLAM</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
@@ -1701,280 +1808,304 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-												<Type>BUILDINGCLASS_HINDU_TEMPLE</Type>
-												<Description>TXT_KEY_BUILDING_HINDU_MANDIR</Description>
-												<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-												<iMaxTeamInstances>-1</iMaxTeamInstances>
-												<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-												<iExtraPlayerInstances>0</iExtraPlayerInstances>
-												<bNoLimit>0</bNoLimit>
-												<bMonument>1</bMonument>
-												<DefaultBuilding>BUILDING_HINDU_TEMPLE</DefaultBuilding>
-												<VictoryThresholds/>
+						<Type>BUILDINGCLASS_SUMER_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_SUMER_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_SUMER_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-												<Type>BUILDINGCLASS_HINDU_MONASTERY</Type>
-												<Description>TXT_KEY_BUILDING_HINDU_ASHRAM</Description>
-												<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-												<iMaxTeamInstances>-1</iMaxTeamInstances>
-												<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-												<iExtraPlayerInstances>0</iExtraPlayerInstances>
-												<bNoLimit>0</bNoLimit>
-												<bMonument>0</bMonument>
-												<DefaultBuilding>BUILDING_HINDU_MONASTERY</DefaultBuilding>
-												<VictoryThresholds/>
+						<Type>BUILDINGCLASS_EGYPT_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_EGYPT_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_EGYPT_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-												<Type>BUILDINGCLASS_HINDU_SHRINE</Type>
-												<Description>TXT_KEY_BUILDING_HINDU_SHRINE</Description>
-												<iMaxGlobalInstances>1</iMaxGlobalInstances>
-												<iMaxTeamInstances>-1</iMaxTeamInstances>
-												<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-												<iExtraPlayerInstances>0</iExtraPlayerInstances>
-												<bNoLimit>0</bNoLimit>
-												<bMonument>0</bMonument>
-												<DefaultBuilding>BUILDING_HINDU_SHRINE</DefaultBuilding>
-												<VictoryThresholds/>
+						<Type>BUILDINGCLASS_CELTIC_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_CELTIC_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_CELTIC_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-												<Type>BUILDINGCLASS_BUDDHIST_TEMPLE</Type>
-												<Description>TXT_KEY_BUILDING_BUDDHIST_STUPA</Description>
-												<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-												<iMaxTeamInstances>-1</iMaxTeamInstances>
-												<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-												<iExtraPlayerInstances>0</iExtraPlayerInstances>
-												<bNoLimit>0</bNoLimit>
-												<bMonument>1</bMonument>
-												<DefaultBuilding>BUILDING_BUDDHIST_TEMPLE</DefaultBuilding>
-												<VictoryThresholds/>
+						<Type>BUILDINGCLASS_NORDIC_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_NORDIC_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_NORDIC_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-												<Type>BUILDINGCLASS_BUDDHIST_MONASTERY</Type>
-												<Description>TXT_KEY_BUILDING_BUDDHIST_MONASTERY</Description>
-												<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-												<iMaxTeamInstances>-1</iMaxTeamInstances>
-												<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-												<iExtraPlayerInstances>0</iExtraPlayerInstances>
-												<bNoLimit>0</bNoLimit>
-												<bMonument>0</bMonument>
-												<DefaultBuilding>BUILDING_BUDDHIST_MONASTERY</DefaultBuilding>
-												<VictoryThresholds/>
+						<Type>BUILDINGCLASS_GREEK_ALTAR</Type>
+						<Description>TXT_KEY_BUILDING_GREEK_ALTAR</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_GREEK_ALTAR</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-												<Type>BUILDINGCLASS_BUDDHIST_SHRINE</Type>
-												<Description>TXT_KEY_BUILDING_BUDDHIST_SHRINE</Description>
-												<iMaxGlobalInstances>1</iMaxGlobalInstances>
-												<iMaxTeamInstances>-1</iMaxTeamInstances>
-												<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-												<iExtraPlayerInstances>0</iExtraPlayerInstances>
-												<bNoLimit>0</bNoLimit>
-												<bMonument>0</bMonument>
-												<DefaultBuilding>BUILDING_BUDDHIST_SHRINE</DefaultBuilding>
-												<VictoryThresholds/>
+						<Type>BUILDINGCLASS_GREEK_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_GREEK_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_GREEK_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_JEWISH_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_JEWISH_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_ROME_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_ROME_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_ROME_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_JEWISH_MONASTERY</Type>
-			<Description>TXT_KEY_BUILDING_JEWISH_MONASTERY</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_JEWISH_MONASTERY</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_PHOEN_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_PHOEN_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_PHOEN_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_JEWISH_SHRINE</Type>
-			<Description>TXT_KEY_BUILDING_JEWISH_SHRINE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_JEWISH_SHRINE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_PHOEN_SHRINE</Type>
+						<Description>TXT_KEY_BUILDING_PHOEN_SHRINE</Description>
+						<iMaxGlobalInstances>1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_PHOEN_SHRINE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CHRISTIAN_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_CHRISTIAN_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_ZORO_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_ZORO_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_ZORO_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CHRISTIAN_MONASTERY</Type>
-			<Description>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CHRISTIAN_MONASTERY</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_ZORO_SHRINE</Type>
+						<Description>TXT_KEY_BUILDING_ZORO_SHRINE</Description>
+						<iMaxGlobalInstances>1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_ZORO_SHRINE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CHRISTIAN_SHRINE</Type>
-			<Description>TXT_KEY_BUILDING_CHRISTIAN_SHRINE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_CHRISTIAN_SHRINE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_HINDU_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_HINDU_MANDIR</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_HINDU_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ISLAMIC_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_ISLAMIC_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_ISLAMIC_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_HINDU_MONASTERY</Type>
+						<Description>TXT_KEY_BUILDING_HINDU_ASHRAM</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_HINDU_MONASTERY</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ISLAMIC_SHRINE</Type>
-			<Description>TXT_KEY_BUILDING_ISLAMIC_SHRINE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_ISLAMIC_SHRINE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_HINDU_SHRINE</Type>
+						<Description>TXT_KEY_BUILDING_HINDU_SHRINE</Description>
+						<iMaxGlobalInstances>1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_HINDU_SHRINE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ROME_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_ROME_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_ROME_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_BUDDHIST_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_BUDDHIST_STUPA</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_BUDDHIST_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_SUMER_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_SUMER_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_SUMER_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_BUDDHIST_MONASTERY</Type>
+						<Description>TXT_KEY_BUILDING_BUDDHIST_MONASTERY</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_BUDDHIST_MONASTERY</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ZORO_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_ZORO_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_ZORO_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_BUDDHIST_SHRINE</Type>
+						<Description>TXT_KEY_BUILDING_BUDDHIST_SHRINE</Description>
+						<iMaxGlobalInstances>1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_BUDDHIST_SHRINE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_PHOEN_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_PHOEN_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_PHOEN_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_JEWISH_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_JEWISH_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GREEK_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_GREEK_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_GREEK_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_JEWISH_MONASTERY</Type>
+						<Description>TXT_KEY_BUILDING_JEWISH_MONASTERY</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_JEWISH_MONASTERY</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CELTIC_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_CELTIC_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_CELTIC_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_JEWISH_SHRINE</Type>
+						<Description>TXT_KEY_BUILDING_JEWISH_SHRINE</Description>
+						<iMaxGlobalInstances>1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_JEWISH_SHRINE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_EGYPT_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_EGYPT_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_EGYPT_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_CHRISTIAN_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_CHRISTIAN_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_CHRISTIAN_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_NORDIC_TEMPLE</Type>
-			<Description>TXT_KEY_BUILDING_NORDIC_TEMPLE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>1</bMonument>
-			<DefaultBuilding>BUILDING_NORDIC_TEMPLE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_CHRISTIAN_MONASTERY</Type>
+						<Description>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_CHRISTIAN_MONASTERY</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_PHOEN_SHRINE</Type>
-			<Description>TXT_KEY_BUILDING_PHOEN_SHRINE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<bNoLimit>0</bNoLimit>
-			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_PHOEN_SHRINE</DefaultBuilding>
-			<VictoryThresholds/>
+						<Type>BUILDINGCLASS_CHRISTIAN_SHRINE</Type>
+						<Description>TXT_KEY_BUILDING_CHRISTIAN_SHRINE</Description>
+						<iMaxGlobalInstances>1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_CHRISTIAN_SHRINE</DefaultBuilding>
+						<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+						<Type>BUILDINGCLASS_ISLAMIC_TEMPLE</Type>
+						<Description>TXT_KEY_BUILDING_ISLAMIC_TEMPLE</Description>
+						<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>1</bMonument>
+						<DefaultBuilding>BUILDING_ISLAMIC_TEMPLE</DefaultBuilding>
+						<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+						<Type>BUILDINGCLASS_ISLAMIC_SHRINE</Type>
+						<Description>TXT_KEY_BUILDING_ISLAMIC_SHRINE</Description>
+						<iMaxGlobalInstances>1</iMaxGlobalInstances>
+						<iMaxTeamInstances>-1</iMaxTeamInstances>
+						<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+						<iExtraPlayerInstances>0</iExtraPlayerInstances>
+						<bNoLimit>0</bNoLimit>
+						<bMonument>0</bMonument>
+						<DefaultBuilding>BUILDING_ISLAMIC_SHRINE</DefaultBuilding>
+						<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CORPORATION_1</Type>
@@ -2945,6 +3076,18 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_HAGIA_SOPHIA</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MONTE_CASSINO</Type>
+			<Description>TXT_KEY_BUILDING_MONTE_CASSINO</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_MONTE_CASSINO</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>

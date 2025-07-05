@@ -821,5 +821,13 @@
 			<WaterLevelDecals><WaterLevelDecalPath>Art/Interface/Screens/WorldPicker/PAE-GalliaEstOmnis.dds</WaterLevelDecalPath></WaterLevelDecals>
 			<WaterLevelGloss><WaterLevelGlossPath>Art/Interface/Screens/WorldPicker/MapBlank.dds</WaterLevelGlossPath></WaterLevelGloss>
 		</WorldPickerInfo>
+		<WorldPickerInfo>
+			<MapName>PAE_WegDerGoten</MapName>
+			<ModelFile>Art/Interface/Screens/WorldPicker/GlobeFLAT.nif</ModelFile>
+			<Sizes><Size>1.0</Size></Sizes>
+			<Climates><ClimatePath>Art/Interface/Screens/WorldPicker/MapBlank.dds</ClimatePath></Climates>
+			<WaterLevelDecals><WaterLevelDecalPath>Art/Scenarios/WegDerGoten/WDGWorldPicker.dds</WaterLevelDecalPath></WaterLevelDecals>
+			<WaterLevelGloss><WaterLevelGlossPath>Art/Interface/Screens/WorldPicker/MapBlank.dds</WaterLevelGlossPath></WaterLevelGloss>
+		</WorldPickerInfo>
 	</WorldPickerInfos>
 </Civ4WorldPickerInfos>

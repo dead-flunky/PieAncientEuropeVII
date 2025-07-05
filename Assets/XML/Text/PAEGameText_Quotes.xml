@@ -129,6 +129,14 @@
 		<Spanish>"Cuando es una cuesti&#243;n de dinero, todos son de las misma religi&#243;n." Voltaire</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_113</Tag>
+		<English>He who would excel in the school of the scribes must rise with the dawn. Sumerian proverb</English>
+		<French>Qui veut exceller &#224; l'&#233;cole des scribes doit se lever &#224; l'aube. Proverbe sum&#233;rien</French>
+		<German>Wer in der Schule der Schriftgelehrten hervorstechen will, muss mit der Morgend&#228;mmerung aufstehen. Sumerisches Sprichwort</German>
+		<Italian>Chi vuole eccellere nella scuola degli scribi deve sorgere con l'alba. Proverbio sumero</Italian>
+		<Spanish>Quien quiera destacar en la escuela de los escribas debe levantarse con el alba. Proverbio sumerio.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_114</Tag>
 		<English>"In vino veritas" ("In wine there is the truth") Pliny the Elder</English>
 		<French>"In vino veritas" ("Dans le vin la v&#233;rit&#233;") Pline l'Ancien</French>
@@ -570,7 +578,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_164</Tag>
-		<English>Anyone who does not resist injustice is not safe from the sword. 79. night out of 1001 Nights</English>
+		<English>Anyone who does not resist injustice is not safe from the sword. 79. night out of 1001 Arabian Nights</English>
 		<French>Ne pas r&#233;sister &#224; l'injustice est s'offrir &#224; la merci du glaive. 79&#232;me des 1001 nuits</French>
 		<German>Wer sich gegen Unrecht nicht wehrt, der ist nicht sicher vor dem Schwert. 79. Nacht aus 1001 Nacht</German>
 		<Italian>Chi non resiste all'ingiustizia non &#232; al sicuro dalla spada. 79. notte su 1001 notti</Italian>
@@ -969,12 +977,44 @@
 		<Spanish>No es el viento, sino la vela la que determina la direcci&#243;n. Proverbio chino</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_209</Tag>
+		<English>Only pessimists strike the iron while it is hot. Optimists trust that it will not run cold. Peter Bamm</English>
+		<French>Seuls les pessimistes forgent le fer lorsqu'il est chaud. Les optimistes croient qu'il ne fera pas froid. Peter Bamm</French>
+		<German>Nur Pessimisten schmieden das Eisen, solange es hei&#223; ist. Optimisten vertrauen darauf, da&#223; es nicht erkaltet. Peter Bamm</German>
+		<Italian>Solo i pessimisti forgiano il ferro mentre &#232; caldo. Gli ottimisti confidano che non far&#224; freddo. Peter Bamm</Italian>
+		<Spanish>S&#243;lo los pesimistas forjan el hierro mientras est&#225; caliente. Los optimistas conf&#237;an en que no har&#225; fr&#237;o. Peter Bam</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_21</Tag>
 		<English>You wound, like Parthians, while you fly, and kill with a retreating eye. Samuel Butler (in Hudibras)</English>
 		<French>"Comme les Parthes en fuyant, Vos yeux au coeur blessent l'amant ; Et, plus il presse la poursuite, Plus vous l'amorcez par la fuite." Samuel Butler (Hudibras)</French>
 		<German>"Ihr andern verwundet, wie Parther, indem ihr stiebet, und t&#246;det mit wegeilenden Blicken." Samuel Butler (in Hudibras)</German>
 		<Italian>Il mio feriti un altro, come Parti da lei stiebet, e t&#246;det con gli occhi wegeilenden." Samuel Butler (Hudibras in)</Italian>
 		<Spanish>Los heridos, como los Partos, mientras acelerabas la marcha te mataban con la mirada. Samuel Butler (en Hudibras)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_210</Tag>
+		<English>War is the best merchant. It turns iron into gold. Friedrich Schiller</English>
+		<French>La guerre est le meilleur marchand. Il transforme le fer en or. Fr&#233;d&#233;ric Schiller</French>
+		<German>Krieg ist der beste Kaufmann. Er macht aus Eisen Gold. Friedrich Schiller</German>
+		<Italian>La guerra &#232; il miglior mercante. Trasforma il ferro in oro. Friedrich Schiller</Italian>
+		<Spanish>La guerra es el mejor comerciante. Convierte el hierro en oro. Friedrich Schiller</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_211</Tag>
+		<English>A good person is more reliable than a stone bridge. Marcus Aurelius</English>
+		<French>Une bonne personne est plus fiable qu'un pont de pierre. Marc Aur&#232;le</French>
+		<German>Ein guter Mensch ist zuverl&#228;ssiger als eine steinerne Br&#252;cke. Marc Aurel</German>
+		<Italian>Una brava persona &#232; pi&#249; affidabile di un ponte di pietra. Marco Aurelio</Italian>
+		<Spanish>Una buena persona es m&#225;s confiable que un puente de piedra. Marco Aurelio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_212</Tag>
+		<English>He begrudges our fellow soldiers the honor of martyrdom. Christian author under Emperor Julian</English>
+		<French>Il refuse &#224; nos camarades l'honneur du martyre. Auteur chr&#233;tien sous l'empereur Julien</French>
+		<German>Er missg&#246;nnt unseren Mitstreitern die Ehre des Martyriums. Christlicher Autor unter Kaiser Julian</German>
+		<Italian>Egli nega ai nostri compagni l'onore del martirio. Autore cristiano sotto l'imperatore Giuliano</Italian>
+		<Spanish>&#201;l envidia a nuestros camaradas el honor del martirio. Autor cristiano bajo el emperador Juliano</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_213</Tag>
@@ -985,12 +1025,116 @@
 		<Spanish>Mi nombre es Legi&#243;n; porque somos muchos. Marcos (5:9)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_214</Tag>
+		<English>The wisdom of this world is foolishness with God. Apostle Paul</English>
+		<French>La sagesse de ce monde est folie devant Dieu. L'ap&#244;tre Paul</French>
+		<German>Die Weisheit dieser Welt ist die Torheit bei Gott. Apostel Paulus</German>
+		<Italian>La sapienza di questo mondo &#232; stoltezza davanti a Dio. Apostolo Paolo</Italian>
+		<Spanish>La sabidur&#237;a de este mundo es necedad para con Dios. Ap&#243;stol Pablo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_215</Tag>
+		<English>Whoever has Christ cannot be a criminal. Schenute of Atripe</English>
+		<French>Celui qui a Christ ne peut pas &#234;tre un criminel. Shenute d'Atripe</French>
+		<German>Wer Christus hat, kann kein Verbrecher sein. Schenute von Atripe</German>
+		<Italian>Chi ha Cristo non pu&#242; essere un criminale. Shenute di Atripe</Italian>
+		<Spanish>Quien tiene a Cristo no puede ser un criminal. Shenute de Atripe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_216</Tag>
+		<English>Ancient temples concentrate the god in man; medieval churches strive for the god in the heights. Johann Wolfgang von Goethe</English>
+		<French>Les temples antiques concentrent le dieu en l'homme ; les &#233;glises m&#233;di&#233;vales aspirent au dieu des hauteurs. Johann Wolfgang von Goethe</French>
+		<German>Antike Tempel konzentrieren den Gott im Menschen, des Mittelalters Kirchen streben nach dem Gott in der H&#246;he. Johann Wolfgang von Goethe</German>
+		<Italian>I templi antichi concentrano il dio nell'uomo; le chiese medievali aspirano al dio nelle altezze. Johann Wolfgang von Goethe</Italian>
+		<Spanish>Los templos antiguos concentran al dios en el hombre; las iglesias medievales buscan al dios en las alturas. Johann Wolfgang von Goethe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_217</Tag>
+		<English>The dome rises like a prayer made of stone. Unknown author</English>
+		<French>Le d&#244;me s'&#233;l&#232;ve comme une pri&#232;re de pierre. Auteur inconnu.</French>
+		<German>Die Kuppel erhebt sich wie ein Gebet aus Stein. Unbekannter Autor</German>
+		<Italian>La cupola si erge come una preghiera di pietra. Autore sconosciuto</Italian>
+		<Spanish>La c&#250;pula se alza como una plegaria de piedra. Autor desconocido.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_218</Tag>
+		<English>The Jews are hated only for their virtues, not for their faults. Theodor Herzl</English>
+		<French>Les Juifs sont ha&#239;s uniquement pour leurs vertus, non pour leurs d&#233;fauts. Theodor Herzl</French>
+		<German>Die Juden werden nur wegen ihrer Tugenden gehasst, nicht wegen ihrer Fehler. Theodor Herzl</German>
+		<Italian>Gli ebrei sono odiati solo per le loro virt&#249;, non per i loro difetti. Theodor Herzl</Italian>
+		<Spanish>Los jud&#237;os son odiados solo por sus virtudes, no por sus defectos. Theodor Herzl</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_219</Tag>
+		<English>To everything there is a season, and a time for every purpose under heaven. Ecclesiastes 3:1</English>
+		<French>Il y a un moment pour tout, un temps pour chaque chose sous le ciel. Eccl&#233;siaste 3:1</French>
+		<German>Alles hat seine Zeit, und alles Vorhaben unter dem Himmel hat seine Stunde. Prediger 3:1</German>
+		<Italian>C'&#232; un tempo per ogni cosa, un momento per ogni faccenda sotto il cielo. Ecclesiaste 3:1</Italian>
+		<Spanish>Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora. Eclesiast&#233;s 3:1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_22</Tag>
 		<English>"La Garde meurt mais ne se rend pas !" ("The Guard dies and does not yield") a Grognard at Waterloo</English>
 		<French>"La Garde meurt mais ne se rend pas !" G&#233;n&#233;ral Cambronne &#224; Waterloo</French>
 		<German>"La Garde meurt et ne se rend pas !" ("Die Garde stirbt und ergibt sich nicht!") ein Ruf in der Schlacht von Waterloo</German>
 		<Italian>"La Garde meurt et ne se rend pas !" ("La Guardia muore e non si arrende!") Una chiamata nella battaglia di Waterloo</Italian>
 		<Spanish>"La Garde meurt mais ne se rend pas!" ("&#161;La guardia muere y no se rinde!") grito de guerra en Waterloo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_220</Tag>
+		<English>Islam has no priests, but many preachers. Unknown author</English>
+		<French>L'islam n'a pas de pr&#234;tres, mais de nombreux pr&#233;dicateurs. Auteur inconnu.</French>
+		<German>Der Islam hat keine Priester, aber viele Prediger. Unbekannter Autor</German>
+		<Italian>L'Islam non ha sacerdoti, ma molti predicatori. Autore sconosciuto</Italian>
+		<Spanish>El Islam no tiene sacerdotes, pero s&#237; muchos predicadores. Autor desconocido.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_221</Tag>
+		<English>In Islam, religion and government are inextricably linked. Ibn Khaldun</English>
+		<French>Dans l'Islam, religion et gouvernement sont inextricablement li&#233;s. Ibn Khaldoun</French>
+		<German>Im Islam ist die Religion und die Regierung untrennbar miteinander verbunden. Ibn Khaldun</German>
+		<Italian>Nell'Islam, religione e governo sono indissolubilmente legati. Ibn Khaldun</Italian>
+		<Spanish>En el Islam, la religi&#243;n y el gobierno est&#225;n inextricablemente unidos. Ibn Jald&#250;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_222</Tag>
+		<English>Indeed, with hardship comes ease. Quran 94:6</English>
+		<French>Certes, avec la difficult&#233; vient la facilit&#233;. Coran 94:6</French>
+		<German>Wahrlich, mit der Erschwernis kommt die Erleichterung. Koran 94:6</German>
+		<Italian>In verit&#224;, con le difficolt&#224; giunge la facilit&#224;. Corano 94:6</Italian>
+		<Spanish>De hecho, con las dificultades llega la facilidad. Cor&#225;n 94:6</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_223</Tag>
+		<English>I am the light of the world. Whoever follows me will not walk in darkness. Jesus Christ (John 8:12)</English>
+		<French>Je suis la lumi&#232;re du monde. Celui qui me suit ne marchera pas dans les t&#233;n&#232;bres. J&#233;sus-Christ (Jean 8:12)</French>
+		<German>Ich bin das Licht der Welt. Wer mir nachfolgt, wird nicht in der Finsternis wandeln. Jesus Christus (Johannes 8,12)</German>
+		<Italian>Io sono la luce del mondo; chi segue me non camminer&#224; nelle tenebre. Ges&#249; Cristo (Giovanni 8:12)</Italian>
+		<Spanish>Yo soy la luz del mundo. El que me sigue no andar&#225; en tinieblas. Jesucristo (Juan 8:12)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_224</Tag>
+		<English>The Church is a community of sinners who hope in the grace of God. Augustine</English>
+		<French>L'&#201;glise est une communaut&#233; de p&#233;cheurs qui esp&#232;rent en la gr&#226;ce de Dieu. Augustin</French>
+		<German>Die Kirche ist eine Gemeinschaft von S&#252;ndern, die auf die Gnade Gottes hoffen. Augustinus</German>
+		<Italian>La Chiesa &#232; una comunit&#224; di peccatori che sperano nella grazia di Dio. Agostino</Italian>
+		<Spanish>La Iglesia es una comunidad de pecadores que esperan en la gracia de Dios. Agust&#237;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_225</Tag>
+		<English>Islam is a religion of peace. Tariq Ramada</English>
+		<French>L'Islam est une religion de paix. Tariq Ramada</French>
+		<German>Der Islam ist eine Religion des Friedens. Tariq Ramada</German>
+		<Italian>L'Islam &#232; una religione di pace. Tariq Ramada</Italian>
+		<Spanish>El Islam es una religi&#243;n de paz. Tariq Ramada</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_226</Tag>
+		<English>School should not be a place of fear, but of the joy of learning. Johann Amos Comenius</English>
+		<French>L'&#233;cole ne devrait pas &#234;tre un lieu de peur, mais un lieu de joie d'apprendre. Johann Amos Comenius</French>
+		<German>Die Schule soll nicht ein Ort der Angst, sondern der Freude am Lernen sein. Johann Amos Comenius</German>
+		<Italian>La scuola non dovrebbe essere un luogo di paura, ma di gioia di imparare. Johann Amos Comenius</Italian>
+		<Spanish>La escuela no deber&#237;a ser un lugar de miedo, sino de la alegr&#237;a de aprender. Johann Amos Comenius</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_23</Tag>
