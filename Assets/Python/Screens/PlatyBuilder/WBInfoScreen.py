@@ -1,8 +1,10 @@
-from CvPythonExtensions import (CyGlobalContext, CyGInterfaceScreen, CyGame,
+from CvPythonExtensions import (CyGlobalContext, CyGame,
 																PanelStyles, CyTranslator, PopupStates,
 																WidgetTypes, FontTypes, TableStyles, CyMap,
 																CyArtFileMgr, CyReplayInfo, MinimapModeTypes)
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 import WBPlotScreen

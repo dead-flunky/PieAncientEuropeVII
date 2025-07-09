@@ -18,7 +18,7 @@ import urllib.error
 import urllib.request
 
 # Define mod name. Required if WITH_MOD_PATH = False
-_MOD_NAME_FALLBACK_ = "PB93"
+_MOD_NAME_FALLBACK_ = "Pie'sAncientEurope"
 
 
 # Wrap extracted files into extra folder (just for debugging)

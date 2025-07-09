@@ -9,12 +9,14 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 																GenericButtonSizes, FontSymbols, PopupStates,
 																TableStyles, CyStatistics,
 																isTeamProject, isWorldProject, NotifyCode,
-																CyGInterfaceScreen, InputTypes,
+																InputTypes,
 																AttitudeTypes, CommerceTypes,
 																isNationalWonderClass, isTeamWonderClass,
 																isWorldWonderClass, ButtonStyles, GameOptionTypes)
 # import CvScreenEnums
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 
 import string

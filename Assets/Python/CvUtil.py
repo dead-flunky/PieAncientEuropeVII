@@ -718,4 +718,19 @@ def _decode_dict(data):
 						value = _decode_dict(value)
 				rv[key] = value
 		return rv
+
+
+__isPitbossHost = None
+def isPitbossHost():
+	global __isPitbossHost
+	if __isPitbossHost is not None:
+		return __isPitbossHost
+
+	try:
+		from CvPythonExtensions import CyPitboss
+		__isPitbossHost = True
+	except:
+		__isPitbossHost = False
+
+	return __isPitbossHost
 #### Ramk - End
