@@ -40,7 +40,7 @@ from CvPythonExtensions import (CyGlobalContext, CyTranslator, plotXY, CyGameTex
 								PlayerTypes, CyCamera, NotifyCode, PlayerOptionTypes, ControlTypes)
 import CvUtil
 if not CvUtil.isPitbossHost():
-    from CvPythonExtensions import CyGInterfaceScreen
+	from CvPythonExtensions import CyGInterfaceScreen
 if CvUtil.isPitbossHost():
 	from CvPythonExtensions import CyPitboss
 
