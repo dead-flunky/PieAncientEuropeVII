@@ -7,7 +7,7 @@
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 								CyUserProfile, PlayerOptionTypes, WidgetTypes,
 								ControlTypes, DomainTypes, CommerceTypes,
-								CyInterface, CyGInterfaceScreen, ButtonStyles,
+								CyInterface, ButtonStyles,
 								InterfaceVisibility, CyMessageControl, CyGame,
 								TableStyles, CyEngine, CyAudioGame, HitTestTypes,
 								InterfaceModeTypes, MissionTypes,
@@ -22,6 +22,8 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 								isWorldWonderClass, isTeamWonderClass, isNationalWonderClass)
 
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 import CvEventInterface

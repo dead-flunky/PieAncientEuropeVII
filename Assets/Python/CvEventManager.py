@@ -33,12 +33,20 @@ import os
 
 from CvPythonExtensions import (CyGlobalContext, CyTranslator, plotXY, CyGameTextMgr,
 								DomainTypes, InputTypes, ColorTypes, CyMap, UnitAITypes, CommandTypes,
-								CyInterface, CyGInterfaceScreen, DirectionTypes, CyPopupInfo, ButtonPopupTypes,
+								CyInterface, DirectionTypes, CyPopupInfo, ButtonPopupTypes,
 								CyGame, CyEngine, CyAudioGame, MissionTypes, FontSymbols, PlotTypes,
 								InterfaceDirtyBits, InterfaceMessageTypes, GameOptionTypes, UnitTypes,
 								EventContextTypes, getChtLvl, plotDirection, MissionAITypes, RouteTypes,
 								PlayerTypes, CyCamera, NotifyCode, PlayerOptionTypes, ControlTypes)
 import CvUtil
+if not CvUtil.isPitbossHost():
+	from CvPythonExtensions import CyGInterfaceScreen
+if CvUtil.isPitbossHost():
+	from CvPythonExtensions import CyPitboss
+
+
+
+
 import CvScreensInterface
 import CvDebugTools
 import PyHelpers
@@ -111,20 +119,23 @@ bAutomatischePfade = True
 # PB Mod
 PBMod = False
 
-# Flag to enable Civ4 shell (See Extras/Pyconsole).
-# Note that the flag will also be used to enable/disable
-# other debugging features of Ramkhamhaeng
-CIV4_SHELL = False
-RAMK_EXTENDED_DEBUG = False
-RAMK_WRAP_FUNCTIONS = False
-if CIV4_SHELL:
-		import Civ4ShellBackend
-		civ4Console = Civ4ShellBackend.Server(tcp_port=3333)
+# Civ4 shell funktioniert nicht auf dem PB Server, ist sowieso primär als Debugtool nötig
+# Ungetestet, ob das Abfragen so funktioniert
+if not PBMod:
+	# Flag to enable Civ4 shell (See Extras/Pyconsole).
+	# Note that the flag will also be used to enable/disable
+	# other debugging features of Ramkhamhaeng
+	CIV4_SHELL = False
+	RAMK_EXTENDED_DEBUG = False
+	RAMK_WRAP_FUNCTIONS = False
+	if CIV4_SHELL:
+			import Civ4ShellBackend
+			civ4Console = Civ4ShellBackend.Server(tcp_port=3333)
 
-if RAMK_EXTENDED_DEBUG:
-		# Ramk - Redirect exception handler
-		import ExtendedDebug
-		ExtendedDebug.init_extended_debug()  # Made game very slow!
+	if RAMK_EXTENDED_DEBUG:
+			# Ramk - Redirect exception handler
+			import ExtendedDebug
+			ExtendedDebug.init_extended_debug()  # Made game very slow!
 
 gc = CyGlobalContext()
 localText = CyTranslator()
@@ -159,10 +170,11 @@ class CvEventManager:
 				#################### ON EVENT MAP ######################
 				# print "EVENTMANAGER INIT"
 				# In CvEventManager.__init__:
-				if CIV4_SHELL:
-						self.glob = globals()
-						self.loc = locals()
-						civ4Console.init()
+				if not PBMod: # Siehe Civ4 shell weiter oben
+					if CIV4_SHELL:
+							self.glob = globals()
+							self.loc = locals()
+							civ4Console.init()
 
 				# PAE - Show message which player is on turn
 				self.bPAE_ShowMessagePlayerTurn = False
@@ -522,26 +534,45 @@ class CvEventManager:
 												unit.setDamage(d, PlayerTypes.NO_PLAYER)
 
 								elif theKey == int(InputTypes.KB_F1):
-										if self.bShift and self.bAlt:
-												CyInterface().addImmediateMessage("BEGIN Python file optimization", "")
-												import ResolveConstantFunctions
-												ResolveConstantFunctions.main(True)
-												CyInterface().addImmediateMessage("END Python file optimization", "")
-												return 1
-										elif self.bShift:
-												CvScreensInterface.replayScreen.showScreen(False)
-												return 1
-										# don't return 1 unless you want the input consumed
+										# Das hier ist im PB Fork für PAE6.17 ausgeklammert; Grund unklar - vermutlich ein Problem mit dem Import ?
+										# Unklar ob das Ausklammern mit Anfrage funktioniert
+										if not PBMod:
+												if self.bShift and self.bAlt:
+														CyInterface().addImmediateMessage("BEGIN Python file optimization", "")
+														import ResolveConstantFunctions
+														ResolveConstantFunctions.main(True)
+														CyInterface().addImmediateMessage("END Python file optimization", "")
+														return 1
+												elif self.bShift:
+														CvScreensInterface.replayScreen.showScreen(False)
+														return 1
+												# don't return 1 unless you want the input consumed
+										# Beibehalten von möglich viel des ursprünglichen Codes, diese Option scheint zu funktioieren
+										if PBMod:
+												if self.bShift:
+													CvScreensInterface.replayScreen.showScreen(False)
+													return 1
+												# don't return 1 unless you want the input consumed
 
 								elif theKey == int(InputTypes.KB_F2):
-										if self.bShift and self.bAlt:
-												import remote_pdb
-												remote_pdb.RemotePdb("127.0.0.1", 4444).set_trace()
-												return 1
-										elif self.bShift:
-												# import CvDebugInfoScreen
-												CvScreensInterface.showDebugInfoScreen()
-												return 1
+										# Das hier ist im PB Fork für PAE6.17 ausgeklammert; Grund unklar - vermutlich ein Problem mit dem Import ?
+										# Unklar ob das Ausklammern mit Anfrage funktioniert
+										if not PBMod:
+												if self.bShift and self.bAlt:
+														import remote_pdb
+														remote_pdb.RemotePdb("127.0.0.1", 4444).set_trace()
+														return 1
+												elif self.bShift:
+														# import CvDebugInfoScreen
+														CvScreensInterface.showDebugInfoScreen()
+														return 1
+												
+										# Beibehalten von möglich viel des ursprünglichen Codes, diese Option scheint zu funktioieren
+										if PBMod:
+												if self.bShift:
+													CvScreensInterface.showDebugInfoScreen()
+													return 1
+
 
 								elif theKey == int(InputTypes.KB_F3):
 										if self.bShift:
@@ -2226,9 +2257,11 @@ class CvEventManager:
 		def onInit(self, argsList):
 				'Called when Civ starts up'
 				CvUtil.pyPrint('OnInit')
-				if RAMK_WRAP_FUNCTIONS:
-						import Wrappers
-						Wrappers.addWrappers()
+				# PB Host hat probleme mit verschiedenen Importen
+				if not PBMod:
+						if RAMK_WRAP_FUNCTIONS:
+								import Wrappers
+								Wrappers.addWrappers()
 
 		def onUpdate(self, argsList):
 				'Called every frame'
@@ -2247,7 +2280,9 @@ class CvEventManager:
 		def onWindowActivation(self, argsList):
 				'Called when the game window activates or deactivates'
 				bActive = argsList[0]
-
+				''' Updater ist weiter oben deaktiviert ohne Verbindung mit PB Mod. 
+				Das müsste also so zu Fehlern führen
+				Es ist gut, dass die Funktionen mit eingebaut sind, aber wird vermutlich nicht genutzt werden.
 				# PB Mod - Mod Updater
 				if PBMod and not hasattr(CvScreensInterface, "showModUpdaterScreen"):
 						CvModUpdaterScreen.integrate()
@@ -2256,6 +2291,7 @@ class CvEventManager:
 				if PBMod and bActive:
 						CvScreensInterface.showModUpdaterScreen(True)
 				# PB Mod - Mod Updater END
+				'''
 				return
 
 		def onUnInit(self, argsList):
@@ -5602,12 +5638,13 @@ class CvEventManager:
 								check_stack_attack()
 								check_show_ressources()
 				## PB Mod ##
-
-				if CIV4_SHELL:
-						civ4Console.update(self.glob, self.loc)
-				# Added by Gerikes for OOS logging.
-				OOSLogger.doGameUpdate()
-				# End added by Gerikes for OOS logging.
+				# Civ4 shell funktioniert nicht auf dem PB Server, ist sowieso primär als Debugtool nötig
+				if not PBMod:
+					if CIV4_SHELL:
+							civ4Console.update(self.glob, self.loc)
+					# Added by Gerikes for OOS logging.
+					OOSLogger.doGameUpdate()
+					# End added by Gerikes for OOS logging.
 
 		def onMouseEvent(self, argsList):
 				'mouse handler - returns 1 if the event was consumed'

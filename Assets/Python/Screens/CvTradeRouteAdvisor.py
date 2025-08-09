@@ -5,8 +5,11 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 																FontTypes, TableStyles,
 																WidgetTypes, PanelStyles,
 																CyGame, FontSymbols,
-																CyGInterfaceScreen, PopupStates)
+																PopupStates)
+
 import CvUtil
+if not CvUtil.isPitbossHost():
+    from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 import PAE_Trade

@@ -3,11 +3,13 @@
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 																FontTypes, NotifyCode, WidgetTypes, PanelStyles,
 																CyInterface, InterfaceDirtyBits, CyGame, CyCamera,
-																CyGInterfaceScreen, CommerceTypes, CyMessageControl,
+																CommerceTypes, CyMessageControl,
 																PopupStates, ButtonPopupTypes, CyPopupInfo,
 																ButtonStyles, FontSymbols, ControlTypes,
 																YieldTypes, TableStyles, ChatTargetTypes)
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 import PAE_Cultivation
@@ -35,7 +37,7 @@ import PAE_Vassal
 gc = CyGlobalContext()
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
-
+PBMod = False
 
 class CvDomesticAdvisor:
 		"Domestic Advisor Screen"
@@ -91,8 +93,8 @@ class CvDomesticAdvisor:
 				screen.addPanel("DomesticAdvisorBG", u"", u"", True, False, 0, 0, self.nScreenWidth, self.nScreenHeight, PanelStyles.PANEL_STYLE_MAIN)
 				screen.setText("DomesticExit", "Background", u"<font=4>" + localText.getText("TXT_KEY_PEDIA_SCREEN_EXIT", ()).upper() + u"</font>", CvUtil.FONT_RIGHT_JUSTIFY,
 											 self.nScreenWidth - 25, self.nScreenHeight - 45, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1)
-				# PB Mod Unpause MOD
-				if CyGame().isPitboss():
+				# PB Mod Unpause MOD - Änderung auf PB Mod boolean
+				if PBMod:
 						screen.setText("DomesticUnpause", "Background", localText.getText("TXT_KEY_MOD_UNPAUSE", ()).upper(), CvUtil.FONT_LEFT_JUSTIFY, 25, self.nScreenHeight - 45, -0.1, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_GENERAL, 301311, 2013 )
 
 				# PAE: Page 2 for Slave Buildings

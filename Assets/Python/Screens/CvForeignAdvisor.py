@@ -7,8 +7,10 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 								MouseFlags, CyInterface, InterfaceDirtyBits,
 								TradeData, TradeableItems, DenialTypes,
 								FontSymbols, GenericButtonSizes,
-								CyGInterfaceScreen, PopupStates)
+								PopupStates)
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 import math

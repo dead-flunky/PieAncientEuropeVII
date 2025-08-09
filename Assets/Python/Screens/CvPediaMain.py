@@ -2,11 +2,13 @@
 # Copyright Firaxis Games 2005
 # Changes by Pie for PAE V
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
-																CyGInterfaceScreen, PopupStates, FontTypes,
+																PopupStates, FontTypes,
 																WidgetTypes, PanelStyles, CyGameTextMgr,
 																CivilopediaPageTypes, TableStyles)
 import string
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 import CvPediaScreen  # base class

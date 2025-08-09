@@ -7,9 +7,9 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 																CyGameTextMgr, WidgetTypes, PanelStyles,
 																GenericButtonSizes, PopupStates,
 																CyInterface, CyAudioGame,
-																CyGInterfaceScreen,
 																AttitudeTypes, ButtonStyles)
-
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 ArtFileMgr = CyArtFileMgr()
 localText = CyTranslator()
 gc = CyGlobalContext()
