@@ -2696,7 +2696,7 @@ class CvEventManager:
 
 					# Christentum gruenden
 					if sScenarioName == "WegDerGoten":
-						if gc.getGame().getGameTurnYear() >= -5 and not PAE_Christen.bChristentum:
+						if gc.getGame().getGameTurnYear() >= -10 and not PAE_Christen.bChristentum:
 							if CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_SEASON_WINTER",("",)) or CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_MONTH_DECEMBER",("",)):
 								WegDerGoten.setChristentum()
 					else:
@@ -4078,8 +4078,8 @@ class CvEventManager:
 									# Merchants can be robbed (on land only)
 									if not PAE_Trade.doMerchantRobbery(pUnit, pPlot, pOldPlot):
 											# PAE 7.11 Merchants can create paths on empty plots
-											if not pPlot.isRoute():
-													if CvUtil.myRandom(20, "Pfad erstellen") == 1:
+											if not pPlot.isRoute() and not pPlot.isWater():
+													if CvUtil.myRandom(33, "Pfad erstellen") == 1:
 															pPlot.setRouteType(gc.getInfoTypeForString("ROUTE_PATH"))
 
 					# Barbaren
@@ -4165,16 +4165,17 @@ class CvEventManager:
 													bRhetorik = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_RHETORIK"))
 													bGeneral = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER"))
 													bHero = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_HERO"))
+													bComes = ( pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_PROTECTOR")) or pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_EXCUBITOR")) )
 													if pUnit.isMilitaryHappiness() and pCity.getOccupationTimer() > 2:
 															# if pUnit.getOwner() == pCity.getOwner():  # -> allies can help ;)
 															# if pPlot.getNumUnits() > pCity.getPopulation():
 															# if PyInfo.UnitInfo(pUnit.getUnitType()).getMoves() == 1:
 															# if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_CITY_GARRISON1")):
 															pCity.changeOccupationTimer(-1)
-													if bRhetorik or bHero:
+													if bRhetorik or bHero or bComes:
 															if pCity.getOccupationTimer(): pCity.setOccupationTimer(1)
 															if pCity.getNumRealBuilding(iCivilWar): pCity.setNumRealBuilding(iCivilWar, 0)
-													if bRhetorik or bHero or bGeneral:
+													if bRhetorik or bHero or bComes or bGeneral:
 															if gc.getPlayer(pUnit.getOwner()).isHuman():
 																	popupInfo = CyPopupInfo()
 																	popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
@@ -4656,11 +4657,20 @@ class CvEventManager:
 
 				# PAE 7.11: Konzile/Synoden werden automatisch verbreitet
 				if iTechType in L.LGlobalTechs:
-						iRange = gc.getMAX_PLAYERS()
-						for iPlayer in range(iRange):
-							if gc.getPlayer(iPlayer).isAlive():
-								pTeam = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
-								pTeam.setHasTech(iTechType, 1, iPlayer, 0, 1)
+					iRange = gc.getMAX_PLAYERS()
+					for iPlayerX in range(iRange):
+						if gc.getPlayer(iPlayerX).isAlive():
+							pTeam = gc.getTeam(gc.getPlayer(iPlayerX).getTeam())
+							pTeam.setHasTech(iTechType, 1, iPlayerX, 0, 1)
+
+							if not CyInterface().noTechSplash():
+								if gc.getGame().isFinalInitialized() and not gc.getGame().GetWorldBuilderMode():
+									if iPlayerX == gc.getGame().getActivePlayer():
+										popupInfo = CyPopupInfo()
+										popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
+										popupInfo.setData1(iTechType)
+										popupInfo.setText(u"showTechSplash")
+										popupInfo.addPopup(iPlayerX)
 
 				# Palast bei Tech sofort setzen
 				if iTechType == gc.getInfoTypeForString("TECH_LEADERSHIP"):

@@ -19,6 +19,10 @@ gc = CyGlobalContext()
 # Used keys for UnitScriptData:
 # "b": index of bonus stored in merchant/cultivation unit (only one at a time)
 
+#  DEBUGGING  ##
+bDebug = False
+bDebugPlayer = 0
+# ----------- #
 
 def _getCitiesInRange(pPlot, iPlayer):
 		iX = pPlot.getX()
@@ -43,7 +47,8 @@ def _getCitiesInRange(pPlot, iPlayer):
 def _isCityCultivationPossible(pCity, iTyp):
 		iMax = getCityCultivationAmount(pCity, iTyp)
 		iBonusAnzahl = getCityCultivatedBonuses(pCity, iTyp)
-		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + " iTyp:  " + str(iTyp) + " iBonusAnzahl:  " + str(iBonusAnzahl) + " iMax: " + str(iMax), None, 2, None, ColorTypes(10), 0, 0, False, False)
+		#if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+		#	CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + " iTyp:  " + str(iTyp) + " iBonusAnzahl:  " + str(iBonusAnzahl) + " iMax: " + str(iMax), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return iBonusAnzahl < iMax
 
 
@@ -110,6 +115,8 @@ def getCityCultivatedPlots(pCity, eBonus):
 
 def getCityCultivatablePlots(pCity, eBonus):
 		iOwner = pCity.getOwner()
+		if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+			CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"getCityCultivatablePlots: " + pCity.getName(), None, 2, None, ColorTypes(2), 0, 0, False, False)
 		plots = []
 		for iI in range(gc.getNUM_CITY_PLOTS()):
 				pLoopPlot = pCity.getCityIndexPlot(iI)
@@ -119,6 +126,8 @@ def getCityCultivatablePlots(pCity, eBonus):
 								return []
 						if ePlotBonus == eBonus or ePlotBonus == -1 and _isBonusCultivationChance(iOwner, pLoopPlot, eBonus, False, pCity):
 								plots.append(pLoopPlot)
+		if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+			CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"getCityCultivatablePlots: " + str(len(plots)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return plots
 
 
@@ -139,7 +148,7 @@ def _isBonusCultivationChance(iPlayer, pPlot, eBonus, bVisibleOnly=True, pCity=N
 		In particular, the normal cultivation chance will be displayed, but bVisibleOnly=False prevents invisible bonus from removal.
 		"""
 		# iTyp 0 = Grain/Livestock 
-		# iTyp 1 = Strategics (Horse, Camel, Elefant, Dog)
+		# iTyp 1 = Strategics (Esel, Horse, Camel)
 		iTyp = getBonusCultivationType(eBonus)
 		if iTyp == 1:
 				List = L.LBonusStratCultivatable
@@ -150,12 +159,15 @@ def _isBonusCultivationChance(iPlayer, pPlot, eBonus, bVisibleOnly=True, pCity=N
 		if (eBonus not in List
 				or pPlot is None or pPlot.isNone()
 				or pPlot.getOwner() != iPlayer
-				or pPlot.isCity()
+				or (pPlot.isCity() and pCity == None)
 				or pPlot.getFeatureType() == gc.getInfoTypeForString("FEATURE_DARK_ICE")
 				or pPlot.isPeak()
 				):
-				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "peak/water/black ice", None, 2, None, ColorTypes(10), 0, 0, False, False)
+				if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+					CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "peak/water/black ice", None, 2, None, ColorTypes(10), 0, 0, False, False)
 				return False
+
+		if bDebug: CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"_isBonusCultivationChance: Insel-Check", None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 		# Stadt auf ner Insel
 		if pCity != None and eBonus not in L.LBonusCultivatableCoast:
@@ -167,8 +179,11 @@ def _isBonusCultivationChance(iPlayer, pPlot, eBonus, bVisibleOnly=True, pCity=N
 				eTeam = pPlot.getTeam()
 		ePlotBonus = pPlot.getBonusType(eTeam)
 		if ePlotBonus != -1 and (ePlotBonus not in List or ePlotBonus == eBonus):
-				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "uncultivatable bonus present", None, 2, None, ColorTypes(10), 0, 0, False, False)
+				if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+					CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "uncultivatable bonus present", None, 2, None, ColorTypes(10), 0, 0, False, False)
 				return False
+
+		if bDebug: CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"_isBonusCultivationChance: canHaveBonus-Check", None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 		# Fertility conditions
 		# or (eBonus in L.LBonusCorn and not pPlot.isFreshWater()) # siehe https://www.civforum.de/showthread.php?97599-PAE-Bonusressourcen&p=7653686&viewfull=1#post7653686
@@ -187,7 +202,8 @@ def _isBonusCultivationChance(iPlayer, pPlot, eBonus, bVisibleOnly=True, pCity=N
 								return True
 				elif eBonus in L.LBonusPlantation or eBonus in L.LBonusStratCultivatable:
 						if not isCityHasBonus(pCity, eBonus):
-								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + " (*) true " + str(iTyp) + " | " + str(len(lCities)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+								if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+									CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + " (*) true " + str(iTyp) + " | " + str(len(lCities)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 								return True
 
 				# VARIANTE 1: Pro Stadt jedes Gut erlaubt
@@ -204,7 +220,8 @@ def _isBonusCultivationChance(iPlayer, pPlot, eBonus, bVisibleOnly=True, pCity=N
 				#		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + " true " + str(iTyp) + " | " + str(len(lCities)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 				#		return True
 
-		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "no city in range has capacity " + str(iTyp), None, 2, None, ColorTypes(10), 0, 0, False, False)
+		if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+			CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "no city in range has capacity for Typ " + str(iTyp), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return False
 
 
@@ -236,9 +253,11 @@ def canHaveBonus(pPlot, eBonus, bIgnoreLatitude):
 
 		# Ist die Insel gross genug
 		if gc.getBonusInfo(eBonus).getMinAreaSize() != -1:
-				if pPlot.area().getNumTiles() < gc.getBonusInfo(eBonus).getMinAreaSize():
+				#if pPlot.area().getNumTiles() < gc.getBonusInfo(eBonus).getMinAreaSize():
+				# man soll auf jeder Insel ab Größe 2 verbreiten können
+				if pPlot.area().getNumTiles() < 2:
 						return False
-						# Breitengrad
+		# Breitengrad
 		if not bIgnoreLatitude:
 				if pPlot.getLatitude() > gc.getBonusInfo(eBonus).getMaxLatitude():
 						return False
@@ -267,7 +286,7 @@ def canHaveBonus(pPlot, eBonus, bIgnoreLatitude):
 		#if eBonus == gc.getInfoTypeForString("BONUS_HORSE") and pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_FARM"):
 		#		return False
 
-		if eBonus == gc.getInfoTypeForString("BONUS_CAMEL") or eBonus == gc.getInfoTypeForString("BONUS_HORSE"):
+		if eBonus in L.LBonusStratCultivatable:
 				if pPlot.getBonusType(-1) != -1: return False
 
 		# wenn das Terrain passt
@@ -407,13 +426,18 @@ def isBonusCultivatable(pUnit):
 
 
 def _bonusIsCultivatableFromCity(iPlayer, pCity, eBonus, bVisibleOnly=True):
+		if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+			CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"_bonusIsCultivatableFromCity: " + pCity.getName(), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		for iI in range(gc.getNUM_CITY_PLOTS()):
 				pLoopPlot = pCity.getCityIndexPlot(iI)
 				if pLoopPlot is not None and not pLoopPlot.isNone():
 						ePlotBonus = pLoopPlot.getBonusType(-1)
 						if ePlotBonus == -1 and _isBonusCultivationChance(iPlayer, pLoopPlot, eBonus, bVisibleOnly, pCity):
-								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + ": true  ", None, 2, None, ColorTypes(10), 0, 0, False, False)
+								if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+									CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + ": true  ", None, 2, None, ColorTypes(10), 0, 0, False, False)
 								return True
+		if bDebug and bDebugPlayer == gc.getGame().getActivePlayer():
+			CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, pCity.getName() + ": false  ", None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return False
 
 

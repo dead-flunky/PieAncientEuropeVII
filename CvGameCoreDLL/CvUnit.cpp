@@ -2579,7 +2579,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			*/
 
 			// PAE: animals don't move into cities (even not in Barbarian ones!)
-			if (pPlot->isCity()) return false;
+			if (pPlot->isCity(true)) return false;
 
 			// PAE: only same type of units may share a plot
 			if (pPlot->getNumUnits() > 0)

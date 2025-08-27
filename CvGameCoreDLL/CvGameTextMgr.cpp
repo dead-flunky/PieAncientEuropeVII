@@ -1519,6 +1519,7 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 								{
 									szString.append(CvWString::format(L", " SETCOLR L"%s" ENDCOLR, GET_PLAYER(eMissionPlotOwner).getPlayerTextColorR(), GET_PLAYER(eMissionPlotOwner).getPlayerTextColorG(), GET_PLAYER(eMissionPlotOwner).getPlayerTextColorB(), GET_PLAYER(eMissionPlotOwner).getPlayerTextColorA(), GET_PLAYER(eMissionPlotOwner).getName()));
 								}
+
 							}
 						}
 					}
@@ -3330,6 +3331,18 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(NEWLINE);
 			szString.append(GC.getImprovementInfo(eImprovement).getDescription());
 
+
+			// PAE 7.11
+			if (GC.getImprovementInfo(eImprovement).getDefenseModifier() != 0)
+			{
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_GREY")));
+				szTempBuffer.Format(L" (%c %d%%)", gDLL->getSymbolID(DEFENSE_CHAR), GC.getImprovementInfo(eImprovement).getDefenseModifier());
+				szString.append(szTempBuffer);
+				szString.append(CvWString::format(ENDCOLR));
+			}
+			// -------
+
+
 			bFound = false;
 
 			for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
@@ -3366,6 +3379,17 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 					szString.append(gDLL->getText("TXT_KEY_PLOT_WORK_TO_UPGRADE", GC.getImprovementInfo((ImprovementTypes) GC.getImprovementInfo(eImprovement).getImprovementUpgrade()).getTextKeyWide()));
 				}
 			}
+
+			// PAE 7.11 ActAsCity Info
+			if (pPlot->isCity(true))
+			{
+				szString.append(NEWLINE);
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_GREY")));
+				szString.append(gDLL->getText("[ICON_DEFENSE]").c_str());
+				szString.append(gDLL->getText("TXT_KEY_PLOTINFO_ACT_AS_CITY", ""));
+				szString.append(CvWString::format(ENDCOLR));
+			}
+
 		}
 
 		// PAE: eRoute defined above at movementCosts
@@ -3396,6 +3420,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		{
 			szString.append(NEWLINE);
 			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
+			szString.append(gDLL->getText("[ICON_STRENGTH]").c_str());
 			szString.append(gDLL->getText("TXT_KEY_PLOT_BLOCKADED"));
 			szString.append(CvWString::format( ENDCOLR));
 		}

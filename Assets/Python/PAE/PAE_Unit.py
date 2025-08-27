@@ -807,8 +807,8 @@ def getUpgradeUnit(iPlayer, iUnitType):
 						if iUnitType == data[2]:
 								continue
 						if (iUnitType == data[1] 
-									or data[1] == -1 and pUnit.getUnitCombatType() in L.LMeleeCombats
-									or data[1] == -2 and pUnit.getUnitCombatType() == iMounted
+									or data[1] == -1 and gc.getUnitInfo(iUnitType).getUnitCombatType() in L.LMeleeCombats
+									or data[1] == -2 and gc.getUnitInfo(iUnitType).getUnitCombatType() == iMounted
 								):
 								iNewUnit = data[2]
 								# Primär die Einheit schicken, die mit Rang und nicht mit Veteranstatus befördert wird
@@ -1567,6 +1567,7 @@ def doUnitGetsPromo(pUnitTarget, pUnitSource, pPlot, bMadeAttack, bOpponentAnima
 		iNewPromo = -1
 		iRand = CvUtil.myRandom(100, "combatTypePromo")
 		if iChanceUnitType > iRand:
+				iChanceUnitType = iChanceUnitType / 2
 				if pUnitSource.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_ARCHER"):
 						if pUnitTarget.isHasPromotion(gc.getInfoTypeForString("PROMOTION_COVER2")):
 								iNewPromo = gc.getInfoTypeForString("PROMOTION_COVER3")
@@ -1632,6 +1633,28 @@ def doUnitGetsPromo(pUnitTarget, pUnitSource, pPlot, bMadeAttack, bOpponentAnima
 									CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_GETS_PROMOTION", (pUnitTarget.getName(), gc.getPromotionInfo(iNewPromo).getDescription())),
 									"AS2D_IF_LEVELUP", 2, gc.getPromotionInfo(iNewPromo).getButton(), ColorTypes(13), pUnitTarget.getX(), pUnitTarget.getY(), True, True)
 						return True
+
+		# PAE 7.11 (25.08.25): Chance für Kommandanten der römischen Spätantike (Comes)
+		if iNewPromo == -1:
+			LRome = [
+				gc.getInfoTypeForString("CIVILIZATION_ROME"),
+				gc.getInfoTypeForString("CIVILIZATION_ETRUSCANS")
+			]
+			if pPlayer.getCivilizationType() in LRome:
+				iRand = CvUtil.myRandom(100, "combatTypePromoComes")
+				if iChanceUnitType > iRand:
+					if pUnitTarget.getUnitType() == gc.getInfoTypeForString("UNIT_ROME_PROTECTORES"):
+						iNewPromo = gc.getInfoTypeForString("PROMOTION_PROTECTOR")
+					elif pUnitTarget.getUnitType() == gc.getInfoTypeForString("UNIT_ROME_EXCUBITORES"):
+						iNewPromo = gc.getInfoTypeForString("PROMOTION_EXCUBITOR")
+					if iNewPromo != -1:
+						pUnitTarget.setHasPromotion(iNewPromo, True)
+						PAEInstanceFightingModifier.append((iPlayer, pUnitTarget.getID()))
+						if pPlayer.isHuman():
+								CyInterface().addMessage(iPlayer, True, 10,
+									CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_GETS_PROMOTION", (pUnitTarget.getName(), gc.getPromotionInfo(iNewPromo).getDescription())),
+									"AS2D_IF_LEVELUP", 2, gc.getPromotionInfo(iNewPromo).getButton(), ColorTypes(13), pUnitTarget.getX(), pUnitTarget.getY(), True, True)
+
 		return False
 
 

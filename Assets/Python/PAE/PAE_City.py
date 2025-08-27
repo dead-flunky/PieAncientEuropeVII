@@ -3112,33 +3112,52 @@ def doCaptureSlaves(pCity, iNewOwner, iPreviousOwner):
 		iTeam = pPlayer.getTeam()
 		pTeam = gc.getTeam(iTeam)
 
-		iTechEnslavement = gc.getInfoTypeForString("TECH_ENSLAVEMENT")
-		if pTeam.isHasTech(iTechEnslavement):
-				iSlaves = CvUtil.myRandom(pCity.getPopulation() - 1, "doCaptureSlaves") + 1
+		if pTeam.isHasTech(gc.getInfoTypeForString("TECH_ENSLAVEMENT")):
+			iSlaves = CvUtil.myRandom(pCity.getPopulation() - 1, "doCaptureSlaves") + 1
 
-				# Trait Aggressive: Popverlust bleibt gleich / loss of pop remains the same
-				iSetPop = max(1, pCity.getPopulation() - iSlaves)
-				pCity.setPopulation(iSetPop)
+			# Trait Aggressive: Popverlust bleibt gleich / loss of pop remains the same
+			iSetPop = max(1, pCity.getPopulation() - iSlaves)
+			pCity.setPopulation(iSetPop)
 
-				# Trait Aggressive: Slaves * 2
-				if pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_AGGRESSIVE")) or pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_EROBERER")):
-						iSlaves *= 2
+			# Trait Aggressive: Slaves * 2
+			if pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_AGGRESSIVE")) or pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_EROBERER")):
+				iSlaves *= 2
 
-				iUnit = gc.getInfoTypeForString("UNIT_SLAVE")
-				pPlot = pCity.plot()
-				for _ in range(iSlaves):
+			iUnit = gc.getInfoTypeForString("UNIT_SLAVE")
+			pPlot = pCity.plot()
+			for _ in range(iSlaves):
+				CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+
+			# PAE VII: Gebildete Sklaven
+			if pTeam.isHasTech(gc.getInfoTypeForString("TECH_MATHEMATICS")):
+				bReligion = False
+				for iReligion in L.LMonoReligions:
+					if pCity.isHasReligion(iReligion):
+						bReligion = True
+				if bReligion or gc.getPlayer(iPreviousOwner).getCivilizationType() in L.LCivsWithSchools:
+					iUnit = gc.getInfoTypeForString("UNIT_SLAVE_EDUCATED")
+					# Chance: 100% + 1:2 + 1:4
+					CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+					iSlaves += 1
+					iRand = CvUtil.myRandom(10, "doCaptureEducatedSlaves1")
+					if iRand < 5:
 						CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+						iSlaves += 1
+					iRand = CvUtil.myRandom(20, "doCaptureEducatedSlaves2")
+					if iRand < 5:
+						CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+						iSlaves += 1
 
-				if pPlayer.isHuman():
-						if iSlaves == 1:
-								CyInterface().addMessage(iNewOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_1", (0, 0)), None, 2, None, ColorTypes(8), 0, 0, False, False)
-						else:
-								CyInterface().addMessage(iNewOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_2", (iSlaves, 0)), None, 2, None, ColorTypes(8), 0, 0, False, False)
-				if gc.getPlayer(iPreviousOwner).isHuman():
-						if iSlaves == 1:
-								CyInterface().addMessage(iPreviousOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_3", (pCity.getName(), 0)), None, 2, None, ColorTypes(7), 0, 0, False, False)
-						else:
-								CyInterface().addMessage(iPreviousOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_4", (pCity.getName(), iSlaves)), None, 2, None, ColorTypes(7), 0, 0, False, False)
+			if pPlayer.isHuman():
+				if iSlaves == 1:
+					CyInterface().addMessage(iNewOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_1", (0, 0)), None, 2, None, ColorTypes(8), 0, 0, False, False)
+				else:
+					CyInterface().addMessage(iNewOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_2", (iSlaves, 0)), None, 2, None, ColorTypes(8), 0, 0, False, False)
+			if gc.getPlayer(iPreviousOwner).isHuman():
+				if iSlaves == 1:
+					CyInterface().addMessage(iPreviousOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_3", (pCity.getName(), 0)), None, 2, None, ColorTypes(7), 0, 0, False, False)
+				else:
+					CyInterface().addMessage(iPreviousOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_SLAVES_4", (pCity.getName(), iSlaves)), None, 2, None, ColorTypes(7), 0, 0, False, False)
 
 		# ***TEST***
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Stadt erobert (Zeile 3182)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)

@@ -683,15 +683,6 @@
 			<DefaultUnit>UNIT_ROME_LIMITANEI</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_ROME_LIMITANEI_GARDE</Type>
-			<Description>TXT_KEY_UNIT_ROME_LIMITANEI_GARDE</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>2</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_ROME_LIMITANEI_GARDE</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_ROME_PALATINI</Type>
 			<Description>TXT_KEY_UNIT_ROME_PALATINI</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -701,6 +692,15 @@
 			<DefaultUnit>UNIT_ROME_PALATINI</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_ROME_PROTECTORES</Type>
+			<Description>TXT_KEY_UNIT_ROME_PROTECTORES</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>2</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_ROME_PROTECTORES</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_ROME_SCHOLAE</Type>
 			<Description>TXT_KEY_UNIT_ROME_SCHOLAE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -708,6 +708,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_ROME_SCHOLAE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_ROME_EXCUBITORES</Type>
+			<Description>TXT_KEY_UNIT_ROME_EXCUBITORES</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_ROME_EXCUBITORES</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SWORDSMAN_LATENE</Type>
@@ -1869,6 +1878,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SLAVE</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_SLAVE_EDUCATED</Type>
+			<Description>TXT_KEY_UNIT_SLAVE_EDUCATED</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_SLAVE_EDUCATED</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_FREED_SLAVE</Type>

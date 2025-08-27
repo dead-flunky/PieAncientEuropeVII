@@ -517,7 +517,7 @@ class CvTradeRouteAdvisor2:
 												self.hideScreen()
 												return
 
-								elif self.iActiveTab == 2 and inputClass.getData2() != -1:
+								elif self.iActiveTab == 2 and inputClass.getData1() != -1 and inputClass.getData2() != -1:
 										pPlayer = gc.getPlayer(inputClass.getData1())
 										pCity = pPlayer.getCity(inputClass.getData2())
 										CyCamera().JustLookAtPlot(pCity.plot())

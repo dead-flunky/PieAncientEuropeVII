@@ -1082,11 +1082,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PRAETORIAN3_STRATEGY</Tag>
-		<English>The first Praetorian Guard must be promoted from elite Praetorians (Cohors Praetoriae or Cohortes Urbanae). This unit is able to construct the Castra Praetoria, where only 1 of these special units can be built, if there is no other one active. In addition to this constructable elite unit, you can still have a maximum of 2 other active Praetorian Guards promoted from elite Praetorians.</English>
-		<French>Le premier Garde pr&#233;torien doit &#234;tre issu des rangs des Pr&#233;toriens d'&#233;lites (Cohors Praetoriae ou Cohors Urbanae). Les suivants sont recrutables au Castra Praetoria, qui peut former une seule de ces unit&#233;s &#224; la fois, s'il n'y en a pas d'autre dans votre empire. En sus de cette unit&#233; d'&#233;lite, seules 2 autres unit&#233;s d'&#233;lites de Garde pr&#233;torien au maximum peuvent &#234;tre recrut&#233;es en m&#234;me temps.</French>
-		<German>Die erste Pr&#228;torianergarde muss aus Elite Pr&#228;torianern (Cohors Praetoriae oder Cohortes Urbanae) erstellt werden. Diese kann dann die Castra Praetoria erstellen, wo immer nur 1 dieser Spezialeinheiten erstellt werden kann, sofern es keine andere gibt. Zus&#228;tzlich zu dieser baubaren Eliteeinheit k&#246;nnen aus Elitepr&#228;torianern noch maximal 2 weitere Pr&#228;torianergarden aktiv sein.</German>
-		<Italian>La prima Guardia Pretoria deve provenire dai ranghi dei Pretoriani d'&#233;lite (Cohors Praetoriae o Cohors Urbanae). Possono essere reclutati a Castra Praetoria, che pu&#242; formare solo una di queste unit&#224; alla volta, se non ce n'&#232; un'altra nel tuo impero. Oltre a questa unit&#224; d'&#233;lite, solo un massimo di altre 2 unit&#224; di Guardia Pretoriana d'&#233;lite possono essere reclutate contemporaneamente.</Italian>
-		<Spanish>El primer guardia pretoriano puede ser promocionado desde un pretoriano de &#233;lite (Cohors praetoriae o Cohors Urbanae). Esta unidad puede construir la Casta Praetoria, donde solo una de estas unidades pueden ser entrenadas, si no hay ninguna activa. Adem&#225;s de esta unidad, se pueden tener un m&#225;ximo de dos unidades de otros guardia pretorianos promocionados desde pretorianos de &#233;lite.</Spanish>
+		<English>The first Praetorian Guard must be promoted from elite Praetorians or Cohors Urbana. This unit is able to construct the Castra Praetoria, where only 1 of these special units can be built, if there is no other one active. In addition to this constructable elite unit, you can still have a maximum of 2 other active Praetorian Guards promoted from elite Praetorians.</English>
+		<French>Le premier Garde pr&#233;torien doit &#234;tre issu des rangs des Pr&#233;toriens d'&#233;lites ou Cohors Urbana. Les suivants sont recrutables au Castra Praetoria, qui peut former une seule de ces unit&#233;s &#224; la fois, s'il n'y en a pas d'autre dans votre empire. En sus de cette unit&#233; d'&#233;lite, seules 2 autres unit&#233;s d'&#233;lites de Garde pr&#233;torien au maximum peuvent &#234;tre recrut&#233;es en m&#234;me temps.</French>
+		<German>Die erste Pr&#228;torianergarde muss aus Elite Pr&#228;torianern oder Cohors Urbana erstellt werden. Diese kann dann die Castra Praetoria erstellen, wo immer nur 1 dieser Spezialeinheiten erstellt werden kann, sofern es keine andere gibt. Zus&#228;tzlich zu dieser baubaren Eliteeinheit k&#246;nnen aus Elitepr&#228;torianern noch maximal 2 weitere Pr&#228;torianergarden aktiv sein.</German>
+		<Italian>La prima Guardia Pretoria deve provenire dai ranghi dei Pretoriani d'&#233;lite o Cohors Urbana. Possono essere reclutati a Castra Praetoria, che pu&#242; formare solo una di queste unit&#224; alla volta, se non ce n'&#232; un'altra nel tuo impero. Oltre a questa unit&#224; d'&#233;lite, solo un massimo di altre 2 unit&#224; di Guardia Pretoriana d'&#233;lite possono essere reclutate contemporaneamente.</Italian>
+		<Spanish>El primer guardia pretoriano puede ser promocionado desde un pretoriano de &#233;lite o Cohors Urbana. Esta unidad puede construir la Casta Praetoria, donde solo una de estas unidades pueden ser entrenadas, si no hay ninguna activa. Adem&#225;s de esta unidad, se pueden tener un m&#225;ximo de dos unidades de otros guardia pretorianos promocionados desde pretorianos de &#233;lite.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_RADSCHA_STRATEGY</Tag>
@@ -1129,20 +1129,20 @@
 		<Spanish>Esta [COLOR_UNIT_TEXT]unidad especial Romana[COLOR_REVERT] puede ser construida en un n&#250;mero limitado y est&#225; particularmente cualificada para defender ciudades.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ROME_COMITATENSES_STRATEGY</Tag>
-		<English>Comitatenses can be appointed as elite to Palatins.</English>
-		<French>Comitatenses peut &#234;tre nomm&#233; comme &#233;lite &#224; Palatins.</French>
-		<German>Comitatenses k&#246;nnen als Elite zu Palatins ernannt werden.</German>
-		<Italian>I Comitatensi possono essere promossi come Elite a Palatini.</Italian>
-		<Spanish>Comitatenses pueden ser nombrados como elite a Palatines.</Spanish>
+		<Tag>TXT_KEY_UNIT_ROME_COMIT_LIMIT_STRATEGY</Tag>
+		<English>This unit can be appointed as elite to a Palatin.</English>
+		<French>Cette unit&#233; peut &#234;tre d&#233;sign&#233;e comme &#233;lite aupr&#232;s d'un Palatin.</French>
+		<German>Diese Einheit kann als Elite zu einem Palatin ernannt werden.</German>
+		<Italian>Questa unit&#224; pu&#242; essere nominata &#233;lite da un Palatino.</Italian>
+		<Spanish>Esta unidad puede ser designada como &#233;lite de un Palatino.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ROME_LIMITANEI_STRATEGY</Tag>
-		<English>The Imperial Guard can be commended from Elite Limitanei.</English>
-		<French>La garde imp&#233;riale peut &#234;tre recommand&#233;e par Limitanei d'&#233;lite.</French>
-		<German>Die Kaiserliche Garde kann aus Elite Limitanei belobigt werden.</German>
-		<Italian>La Guardia Imperiale pu&#242; essere promossa da Elite Limitanei.</Italian>
-		<Spanish>La Guardia Imperial puede ser elogiada de Elite Limitanei.</Spanish>
+		<Tag>TXT_KEY_UNIT_ROME_EXCUBITORES_STRATEGY</Tag>
+		<English>Excubitores can be commended from mounted elite soldiers.</English>
+		<French>Les Excubitores peuvent &#234;tre command&#233;s par des soldats d'&#233;lite mont&#233;s.</French>
+		<German>Excubitores k&#246;nnen aus berittenen Elitesoldaten belobigt werden.</German>
+		<Italian>Gli Excubitores possono essere elogiati dai soldati d'&#233;lite a cavallo.</Italian>
+		<Spanish>Los excubitores pueden ser elogiados por los soldados de &#233;lite montados.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROME_MISSIONARY_STRATEGY</Tag>
@@ -1153,12 +1153,12 @@
 		<Spanish>Con este misionero la [COLOR_HIGHLIGHT_TEXT]religi&#243;n Romana[COLOR_REVERT] puede ser difundida r&#225;pidamente en otras ciudades.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ROME_PALATINI_STRATEGY</Tag>
-		<English>Palatins can be commended from Elite Comitatenses and appointed as elite to the Imperial Guard.</English>
-		<French>Les Palatins peuvent &#234;tre f&#233;licit&#233;s par Comitatenses d'&#233;lites et nomm&#233;s comme d'&#233;lites &#224; la Garde Imp&#233;riale.</French>
-		<German>Palatini k&#246;nnen aus Elite Comitatenses belobigt werden und als Elite zur Kaiserlichen Garde ernannt werden.</German>
-		<Italian>I Palatini possono essere promossi dai Comitatensi e come Elite possono essere promossi a Guardia Imperiale.</Italian>
-		<Spanish>Los Palatinos pueden ser elogiados por los Elite Comitatenses y designados como elite de la Guardia Imperial.</Spanish>
+		<Tag>TXT_KEY_UNIT_ROME_PALATIN_STRATEGY</Tag>
+		<English>Palatines can be commended from Elite Comitatenses and Limitanei and, as veterans, can advance to the Imperial Guard of the Protectores Domistici.</English>
+		<French>Les Palatins peuvent &#234;tre recommand&#233;s par les Comitatenses d'&#233;lite et les Limitanei et, en tant que v&#233;t&#233;rans, peuvent acc&#233;der &#224; la Garde imp&#233;riale des Protectores Domistici.</French>
+		<German>Palatins k&#246;nnen aus Elite Comitatenses sowie Limitanei belobigt werden und als Veteran zur kaiserlichen Garde der Protectores Domistici aufsteigen.</German>
+		<Italian>I Palatini possono essere encomiati dai Comitatenses e dai Limitanei d'Elite e, in quanto veterani, possono avanzare alla Guardia Imperiale dei Protectores Domistici.</Italian>
+		<Spanish>Los Palatinos pueden recibir elogios de los Comitatenses de &#201;lite y de los Limitanei y, como veteranos, pueden avanzar a la Guardia Imperial de los Protectores Domistici.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROME_PRAETORIAN_RIDER_STRATEGY</Tag>
@@ -1170,19 +1170,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROME_PRAETORIAN_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Praetorians[COLOR_REVERT] can be promoted from [COLOR_HIGHLIGHT_TEXT]Veteran[COLOR_REVERT] [COLOR_UNIT_TEXT]Legionaries[COLOR_REVERT] with the rank of [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. Praetorians can be used for building the [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] as a farm upgrade or used for military purposes as [COLOR_UNIT_TEXT]Cohors Praetoriae[COLOR_REVERT] or [COLOR_UNIT_TEXT]Cohortes Urbanae[COLOR_REVERT]. Elite Cohors Praetoriae or Cohortes Urbanae can become to the legendary [COLOR_UNIT_TEXT]Praetorian Guard[COLOR_REVERT].</English>
-		<French>Les [COLOR_UNIT_TEXT]Pr&#233;toriens[COLOR_REVERT] peuvent &#234;tre promus &#224; partir d'un [COLOR_UNIT_TEXT]L&#233;gionnaires[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]v&#233;t&#233;ran[COLOR_REVERT] avec le grade d'[COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. Les pr&#233;toriens peuvent &#234;tre utilis&#233;s pour construire une [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] ou utilis&#233;s &#224; des fins militaires comme [COLOR_UNIT_TEXT]Cohors Praetoria[COLOR_REVERT] ou [COLOR_UNIT_TEXT]Cohors Urbana[COLOR_REVERT]. Les Cohortes Praetoriae ou Cohortes Urbanae &#233;lites peut &#234;tre promus en mythiques [COLOR_UNIT_TEXT]Gardes pr&#233;toriens[COLOR_REVERT].</French>
-		<German>[COLOR_UNIT_TEXT]Pr&#228;torianer[COLOR_REVERT] k&#246;nnen aus [COLOR_HIGHLIGHT_TEXT]Veteran[COLOR_REVERT]-[COLOR_UNIT_TEXT]Legion&#228;ren[COLOR_REVERT] mit dem Rang eines [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT] ernannt werden. Pr&#228;torianer k&#246;nnen f&#252;r den Bau einer [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] als Verbesserung des Bauernhofs oder f&#252;r milit&#228;rische Zwecke als [COLOR_UNIT_TEXT]Cohors Praetoriae[COLOR_REVERT] oder [COLOR_UNIT_TEXT]Cohortes Urbanae[COLOR_REVERT] genutzt werden. Aus den Elite Cohors Praetoriae oder Cohortes Urbanae kann die legend&#228;re [COLOR_UNIT_TEXT]Pr&#228;torianergarde[COLOR_REVERT] erstellt werden.</German>
-		<Italian>[COLOR_UNIT_TEXT]Praetoriani[COLOR_REVERT] possono essere nominati dai [COLOR_UNIT_TEXT]legionari[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]veterani [COLOR_REVERT] con il grado di [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. I pretoriani possono essere utilizzati per la costruzione della [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] come ammodernamento di una fattoria o usati per scopi militari come [COLOR_UNIT_TEXT]Cohors Praetoriae[COLOR_REVERT] o [COLOR_UNIT_TEXT]Cohortes Urbanae[COLOR_REVERT]. Elite Cohors Praetoriae o Cohortes Urbanae possono diventare la leggendaria [COLOR_UNIT_TEXT]Guardia del pretorio[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_UNIT_TEXT]Los pretorianos[COLOR_REVERT] se pueden nombrar de [COLOR_HIGHLIGHT_TEXT]veterano[COLOR_REVERT] [COLOR_UNIT_TEXT]legionarios[COLOR_REVERT] con el rango de [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. Los pretorianos pueden usarse para construir la [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] como mejora de una granja o para fines militares como [COLOR_UNIT_TEXT]Cohors Praetoriae[COLOR_REVERT] o [COLOR_UNIT_TEXT]Cohortes Urbanae[COLOR_REVERT]. Elite Cohors Praetoriae o Cohortes Urbanae pueden convertirse en la legendaria [COLOR_UNIT_TEXT]Guardia pretoriana[COLOR_REVERT].</Spanish>
+		<English>[COLOR_UNIT_TEXT]Praetorians[COLOR_REVERT] can be promoted from [COLOR_HIGHLIGHT_TEXT]Veteran[COLOR_REVERT] [COLOR_UNIT_TEXT]Legionaries[COLOR_REVERT] with the rank of [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. Praetorians can be used for building the [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] as a farm upgrade or used for military purposes as [COLOR_UNIT_TEXT]Cohors Urbana[COLOR_REVERT]. An elite Praetorian or Cohors Urbana can become to the legendary [COLOR_UNIT_TEXT]Praetorian Guard[COLOR_REVERT].</English>
+		<French>Les [COLOR_UNIT_TEXT]Pr&#233;toriens[COLOR_REVERT] peuvent &#234;tre promus &#224; partir d'un [COLOR_UNIT_TEXT]L&#233;gionnaires[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]v&#233;t&#233;ran[COLOR_REVERT] avec le grade d'[COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. Les pr&#233;toriens peuvent &#234;tre utilis&#233;s pour construire une [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] ou utilis&#233;s &#224; des fins militaires comme [COLOR_UNIT_TEXT]Cohors Urbana[COLOR_REVERT]. Les Pr&#233;toriens ou Cohortes Urbanae &#233;lites peut &#234;tre promus en mythiques [COLOR_UNIT_TEXT]Gardes pr&#233;toriens[COLOR_REVERT].</French>
+		<German>[COLOR_UNIT_TEXT]Pr&#228;torianer[COLOR_REVERT] k&#246;nnen aus [COLOR_HIGHLIGHT_TEXT]Veteran[COLOR_REVERT]-[COLOR_UNIT_TEXT]Legion&#228;ren[COLOR_REVERT] mit dem Rang eines [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT] ernannt werden. Pr&#228;torianer k&#246;nnen f&#252;r den Bau einer [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] als Verbesserung des Bauernhofs oder f&#252;r milit&#228;rische Zwecke als [COLOR_UNIT_TEXT]Cohors Urbana[COLOR_REVERT] genutzt werden. Aus Elite Pr&#228;torianern oder Cohortes Urbanae kann die legend&#228;re [COLOR_UNIT_TEXT]Pr&#228;torianergarde[COLOR_REVERT] erstellt werden.</German>
+		<Italian>[COLOR_UNIT_TEXT]Praetoriani[COLOR_REVERT] possono essere nominati dai [COLOR_UNIT_TEXT]legionari[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]veterani [COLOR_REVERT] con il grado di [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. I pretoriani possono essere utilizzati per la costruzione della [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] come ammodernamento di una fattoria o usati per scopi militari come [COLOR_UNIT_TEXT]Cohors Urbana[COLOR_REVERT]. Elite Praetoriani o Cohors Urbana possono diventare la leggendaria [COLOR_UNIT_TEXT]Guardia del pretorio[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_UNIT_TEXT]Los Pretorianos[COLOR_REVERT] se pueden nombrar de [COLOR_HIGHLIGHT_TEXT]veterano[COLOR_REVERT] [COLOR_UNIT_TEXT]legionarios[COLOR_REVERT] con el rango de [COLOR_HIGHLIGHT_TEXT]Immunes[COLOR_REVERT]. Los pretorianos pueden usarse para construir la [COLOR_HIGHLIGHT_TEXT]Villa Rustica[COLOR_REVERT] como mejora de una granja o para fines militares como [COLOR_UNIT_TEXT]Cohors Urbana[COLOR_REVERT]. Elite Pretorianos o Cohors Urbana pueden convertirse en la legendaria [COLOR_UNIT_TEXT]Guardia Pretoriana[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROME_PROTECTORES_STRATEGY</Tag>
+		<English>This Imperial Guard can be commended from Veteran Palatines.</English>
+		<French>Cette garde imp&#233;riale peut &#234;tre recommand&#233;e par les palatins v&#233;t&#233;rans.</French>
+		<German>Diese kaiserliche Garde kann aus Veteran Palatins belobigt werden.</German>
+		<Italian>Questa Guardia Imperiale pu&#242; essere encomiata dai Palatini Veterani.</Italian>
+		<Spanish>Esta Guardia Imperial puede ser elogiada por el veterano Palatines.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROME_SCHOLAE_STRATEGY</Tag>
-		<English>This unit can be commended from Roman elite Palatini, Cataphracti or Clibanari.</English>
-		<French>Cette unit&#233; peut &#234;tre recommand&#233;e par Palatini, Cataphracti ou Clibanari d'&#233;lite romaine.</French>
-		<German>Diese Einheit kann aus r&#246;mischen Elite Palatini, Cataphracti oder Clibanari belobigt werden.</German>
-		<Italian>Questa unit&#224; pu&#242; essere promossa dall'&#233;lite romana Palatini, Cataphracti o Clibanari.</Italian>
-		<Spanish>Esta unidad se puede elogiar de la &#233;lite romana Palatini, Cataphracti o Clibanari.</Spanish>
+		<English>This unit can be commended from Roman elite mounted units.</English>
+		<French>Cette unit&#233; peut &#234;tre recommand&#233;e parmi les unit&#233;s mont&#233;es d'&#233;lite romaines.</French>
+		<German>Diese Einheit kann aus r&#246;mischen berittenen Eliteeinheiten belobigt werden.</German>
+		<Italian>Questa unit&#224; pu&#242; essere elogiata dalle unit&#224; d'&#233;lite a cavallo romane.</Italian>
+		<Spanish>Esta unidad puede ser elogiada por las unidades montadas de &#233;lite romanas.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SACRED_BAND_STRATEGY</Tag>
@@ -1207,22 +1215,6 @@
 		<German>[COLOR_UNIT_TEXT]Seev&#246;lker[COLOR_REVERT] terrorisieren die umliegenden L&#228;nder des Mittelmeeres von 1400 bis 800 v.Chr.</German>
 		<Italian>[COLOR_UNIT_TEXT]I popoli del mare[COLOR_REVERT] terrorizzano i paesi circostanti del Mediterraneo dal 1400 al 800 aC.</Italian>
 		<Spanish>Los [COLOR_UNIT_TEXT]Pueblos del Mar[COLOR_REVERT] aterrorizar&#225;n los pa&#237;ses circundantes del Mediterr&#225;neo desde el 1400 hasta el 800 a.C.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SLAVE_HOUSE_STRATEGY</Tag>
-		<English>Household slaves add +2 [ICON_RESEARCH] and +1 [ICON_CULTURE] to a city and increase the birthrate of a [COLOR_UNIT_TEXT]Great Philosopher[COLOR_REVERT] by 1, because citizens could employ with science and philosophy, while the slaves had to manage the heavy and unpleasant physical work.</English>
-		<French>Les esclaves domestiques procurent &#224; la ville +2 [ICON_RESEARCH] et +1 [ICON_CULTURE] chacun et augmentent le rythme d'&#233;mergence des [COLOR_UNIT_TEXT]Philosophes Illustres[COLOR_REVERT] de +1, car les travaux d&#233;sagr&#233;ables et &#233;reintants sont ainsi rel&#233;gu&#233;s &#224; la charge des esclaves, laissant les citoyens se consacrer aux sciences et &#224; la philosophie.</French>
-		<German>Haussklaven bringen der Stadt +2 [ICON_RESEARCH] und +1 [ICON_CULTURE] pro Sklave und steigern die Geburtenrate eines [COLOR_UNIT_TEXT]Gro&#223;en Philosophen[COLOR_REVERT] um +1, da sich die B&#252;rger mit Wissenschaft und Philosophie besch&#228;ftigen konnten, w&#228;hrend durch die Sklaven ihnen die schwere und unangenehme k&#246;rperliche Arbeit abgenommen wurde.</German>
-		<Italian>Gli schiavi domestici aggiungono +2 [ICON_RESEARCH] e +1 [ICON_CULTURE] a una citt&#224; e aumentano il tasso di natalit&#224; di un [COLOR_UNIT_TEXT]Grande Scienziato[COLOR_REVERT] di 1, perch&#233; i cittadini possono occuparsi di scienza e filosofia, mentre Gli schiavi devono svolgere il lavoro fisico pesante e sgradevole.</Italian>
-		<Spanish>Los esclavos dom&#233;sticos a&#241;aden +2 [ICON_RESEARCH] y +1 [ICON_CULTURE] a una ciudad y aumentan la tasa de nacimiento de un [COLOR_UNIT_TEXT]Gran Cient&#237;fico[COLOR_REVERT] en 1, porque los ciudadanos pueden ocuparse de la ciencia y la filosof&#237;a, mientras los esclavos tienen que llevar el pesado y desagradable trabajo f&#237;sico.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SLAVE_PROD_STRATEGY</Tag>
-		<English>Mine slaves add +2 [ICON_PRODUCTION] to a city and increase the birthrate of a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT] by 1.</English>
-		<French>Chaque esclave mineur apporte +2 [ICON_PRODUCTION] &#224; la ville et augmente le rythme d'apparition des [COLOR_UNIT_TEXT]Ing&#233;nieurs illustres[COLOR_REVERT] de +1.</French>
-		<German>Bergwerksklaven bringen der Stadt +2 [ICON_PRODUCTION] und steigern die Geburtenrate eines [COLOR_UNIT_TEXT]Gro&#223;en Ingenieurs[COLOR_REVERT] um +1.</German>
-		<Italian>Gli schiavi delle miniere portano +2 [ICON_PRODUCTION] in citt&#224; e aumentano il tasso di natalit&#224; di un [COLOR_UNIT_TEXT]grande ingegnere[COLOR_REVERT] di +1.</Italian>
-		<Spanish>Los esclavos de la mina a&#241;aden +2 [ICON_PRODUCTION] a una ciudad y aumentan la tasa de nacimiento de un [COLOR_UNIT_TEXT]Gran Ingeniero[COLOR_REVERT] en 1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_STRATEGY</Tag>

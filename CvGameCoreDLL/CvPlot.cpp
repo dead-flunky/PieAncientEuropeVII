@@ -1228,7 +1228,10 @@ bool CvPlot::isCoastalLand(int iMinWaterSize) const
 
 		if (pAdjacentPlot != NULL)
 		{
-			if (pAdjacentPlot->isWater())
+			// BTS
+			//if (pAdjacentPlot->isWater())
+			// PAE
+			if (pAdjacentPlot->isWater() && !pAdjacentPlot->isFreshWater())
 			{
 				if (pAdjacentPlot->area()->getNumTiles() >= iMinWaterSize)
 				{
@@ -1568,6 +1571,9 @@ bool CvPlot::isRiverSide() const
 {
 	CvPlot* pLoopPlot;
 	int iI;
+
+	// PAE
+	if (getRiverCrossingCount() > 0) return true;
 
 	for (iI = 0; iI < NUM_CARDINALDIRECTION_TYPES; ++iI)
 	{
@@ -2801,10 +2807,15 @@ int CvPlot::defenseModifier(TeamTypes eDefender, bool bIgnoreBuilding, bool bHel
 
 	if (eImprovement != NO_IMPROVEMENT)
 	{
+		// BTS
+		/*
 		if (eDefender != NO_TEAM && (getTeam() == NO_TEAM || GET_TEAM(eDefender).isFriendlyTerritory(getTeam())))
 		{
 			iModifier += GC.getImprovementInfo(eImprovement).getDefenseModifier();
 		}
+		*/
+		// PAE 7.11
+		iModifier += GC.getImprovementInfo(eImprovement).getDefenseModifier();
 	}
 
 	if (!bHelp)
@@ -3506,10 +3517,15 @@ bool CvPlot::isCity(bool bCheckImprovement, TeamTypes eForTeam) const
 	{
 		if (GC.getImprovementInfo(getImprovementType()).isActsAsCity())
 		{
+			// BTS
+			/*
 			if (NO_TEAM == eForTeam || (NO_TEAM == getTeam() && GC.getImprovementInfo(getImprovementType()).isOutsideBorders()) || GET_TEAM(eForTeam).isFriendlyTerritory(getTeam()))
 			{
 				return true;
 			}
+			*/
+			// PAE
+			return true;
 		}
 	}
 

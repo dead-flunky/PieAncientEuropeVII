@@ -2008,15 +2008,15 @@ class CvMainInterface:
 										actions = CyInterface().getActionsToShow()
 										for i in actions:
 
-												if pHeadSelectedUnit.getUnitType() == gc.getInfoTypeForString("UNIT_WORKER"):
+												#if pHeadSelectedUnit.getUnitType() == gc.getInfoTypeForString("UNIT_WORKER"):
 														# Path (wird obsolet)
 														#if gc.getActionInfo(i).getMissionData() == gc.getInfoTypeForString("BUILD_PATH"):
 														#		if pTeam.isHasTech(gc.getInfoTypeForString("TECH_THE_WHEEL2")):
 														#				continue
-														# Ore Camp (wird obsolet)
-														if gc.getActionInfo(i).getMissionData() == gc.getInfoTypeForString("BUILD_ORE_CAMP"):
-																if pTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG2")):
-																		continue
+												# Ore Camp (wird obsolet)
+												if gc.getActionInfo(i).getMissionData() == gc.getInfoTypeForString("BUILD_ORE_CAMP"):
+														if pTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG2")):
+																continue
 												# Limes
 												if gc.getActionInfo(i).getMissionData() in L.LBuildLimes:
 														continue
@@ -2660,7 +2660,33 @@ class CvMainInterface:
 																# --------------------------------------------------------
 
 																# Sklaven in der Stadt
-																if iUnitType == gc.getInfoTypeForString("UNIT_SLAVE"):
+																# Gebildete Sklaven
+																if iUnitType == gc.getInfoTypeForString("UNIT_SLAVE_EDUCATED"):
+
+																		# Sklaven -> Privatschule (andere Schulen haben sowieso mehr Forschung)
+																		iBuilding1 = gc.getInfoTypeForString("BUILDING_SCHULE")
+																		if pCity.isHasBuilding(iBuilding1):
+																				iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
+																				if iCulture < 10:
+																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																								"INTERFACE_SLAVE2SCHOOL").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 679, 679, False)
+																						screen.show("BottomButtonContainer")
+																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
+																						iCount += 1
+
+																		# Sklaven -> Bibliothek
+																		iBuilding1 = gc.getInfoTypeForString("BUILDING_LIBRARY")
+																		if pCity.isHasBuilding(iBuilding1):
+																				iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
+																				if iCulture < 10:
+																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																								"INTERFACE_SLAVE2LIBRARY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 729, 729, False)
+																						screen.show("BottomButtonContainer")
+																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
+																						iCount += 1
+
+																# Normale Sklaven
+																elif iUnitType == gc.getInfoTypeForString("UNIT_SLAVE"):
 																		# Sklaven zu Feld oder Bergwerksklaven
 																		bFarms = False
 																		bMines = False
@@ -2709,28 +2735,6 @@ class CvMainInterface:
 																						"INTERFACE_GLADIATOR").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 669, 669, False)
 																				screen.show("BottomButtonContainer")
 																				iCount += 1
-
-																		# Sklaven -> Schule (Gymnasion hat bereits +5 Forschung)
-																		iBuilding1 = gc.getInfoTypeForString("BUILDING_SCHULE")
-																		if pCity.isHasBuilding(iBuilding1):
-																				iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
-																				if iCulture < 10:
-																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																								"INTERFACE_SLAVE2SCHOOL").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 679, 679, False)
-																						screen.show("BottomButtonContainer")
-																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
-																						iCount += 1
-
-																		# Sklaven -> Bibliothek
-																		iBuilding1 = gc.getInfoTypeForString("BUILDING_LIBRARY")
-																		if pCity.isHasBuilding(iBuilding1):
-																				iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
-																				if iCulture < 10:
-																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																								"INTERFACE_SLAVE2LIBRARY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 729, 729, False)
-																						screen.show("BottomButtonContainer")
-																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
-																						iCount += 1
 
 																		# Sklaven -> Bordell / Freudenhaus
 																		iBuilding1 = gc.getInfoTypeForString("BUILDING_BORDELL")
@@ -3146,7 +3150,9 @@ class CvMainInterface:
 																								screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																								iCount += 1
 														# Sklaven und Auswanderer ausserhalb der Stadt
-														elif iUnitType == gc.getInfoTypeForString("UNIT_SLAVE") or iUnitType == gc.getInfoTypeForString("UNIT_EMIGRANT"):
+														elif (iUnitType == gc.getInfoTypeForString("UNIT_SLAVE") or 
+																iUnitType == gc.getInfoTypeForString("UNIT_EMIGRANT") or
+																iUnitType == gc.getInfoTypeForString("UNIT_SLAVE_EDUCATED")):
 																if pPlot.getOwner() == pUnit.getOwner():
 																		if pPlot.getImprovementType() in L.LVillages:
 																				if pPlot.getUpgradeTimeLeft(pPlot.getImprovementType(), iUnitOwner) > 1:

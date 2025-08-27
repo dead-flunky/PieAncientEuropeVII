@@ -676,6 +676,11 @@ def doRemovePaganBuilding(iPlayer,pCity,iReligion):
 			gc.getInfoTypeForString("BUILDING_STEINKREIS"),
 			gc.getInfoTypeForString("BUILDING_LIBRARY"),
 			gc.getInfoTypeForString("BUILDING_SCHULE"),
+			gc.getInfoTypeForString("BUILDING_SCHULE_SUMER"),
+			gc.getInfoTypeForString("BUILDING_SCHULE_EGYPT"),
+			gc.getInfoTypeForString("BUILDING_SCHULE_HELLE"),
+			gc.getInfoTypeForString("BUILDING_SCHULE_GREEK"),
+			gc.getInfoTypeForString("BUILDING_SCHULE_ROME"),
 			gc.getInfoTypeForString("BUILDING_GYMNASION"),
 			gc.getInfoTypeForString("BUILDING_ORACLE2"),
 			gc.getInfoTypeForString("BUILDING_CORPORATION_1"),
@@ -725,6 +730,7 @@ def doRemovePaganBuilding(iPlayer,pCity,iReligion):
 			LBuildings.append(gc.getInfoTypeForString("BUILDING_BADEHAUS"))
 			LBuildings.append(gc.getInfoTypeForString("BUILDING_GARDEN"))
 			LBuildings.append(gc.getInfoTypeForString("BUILDING_APOTHEKE"))
+			LBuildings.append(gc.getInfoTypeForString("BUILDING_SCHULE_ZORO"))
 
 		for iBuilding in LBuildings:
 			if gc.getBuildingInfo(iBuilding) is not None:

@@ -2418,11 +2418,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HURRICANE_2</Tag>
-		<English>Citizens have been killed.</English>
-		<French>Des citoyens ont &#233;t&#233; tu&#233;s.</French>
-		<German>Es hat Opfer gegeben.</German>
-		<Italian>Sono morti dei cittadini.</Italian>
-		<Spanish>Se lamenta la p&#233;rdida de ciudadanos.</Spanish>
+		<English>"Only" citizens have been killed.</English>
+		<French>"Seuls" des citoyens ont &#233;t&#233; tu&#233;s.</French>
+		<German>Es hat "nur" Opfer gegeben.</German>
+		<Italian>Sono stati uccisi "solo" cittadini.</Italian>
+		<Spanish>"S&#243;lo" los ciudadanos han sido asesinados.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HYMNS_AND_SCULPTURES_1</Tag>

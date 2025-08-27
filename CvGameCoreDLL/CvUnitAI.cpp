@@ -1138,7 +1138,7 @@ void CvUnitAI::AI_settleMove()
 				if (canFound(plot()))
 				{
 					getGroup()->pushMission(MISSION_FOUND);
-					return;					
+					return;
 				}
 			}
 			iAreaBestFoundValue = std::max(iAreaBestFoundValue, pCitySitePlot->getFoundValue(getOwnerINLINE()));
@@ -1644,14 +1644,17 @@ void CvUnitAI::AI_barbAttackMove()
 		}
 	}
 	// PBMod
-	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive(true) * 2))
+	// BTS
+	//else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive(true) * 2))
+	// PAE
+	else
 	{
 		if (AI_pillageRange(2))
 		{
 			return;
 		}
 
-		if (AI_cityAttack(1, 10))
+		if (AI_cityAttack(2, 10))
 		{
 			return;
 		}
@@ -1742,19 +1745,19 @@ void CvUnitAI::AI_attackMove()
 		}
 		
 		AreaAITypes eAreaAIType = area()->getAreaAIType(getTeam());
-        if (plot()->isCity())
-        {
-            if (plot()->getOwnerINLINE() == getOwnerINLINE())
-            {
-                if ((eAreaAIType == AREAAI_ASSAULT) || (eAreaAIType == AREAAI_ASSAULT_ASSIST))
-                {
-                    if (AI_offensiveAirlift())
-                    {
-                        return;
-                    }
-                }
-            }
-        }
+		if (plot()->isCity())
+		{
+			if (plot()->getOwnerINLINE() == getOwnerINLINE())
+			{
+				if ((eAreaAIType == AREAAI_ASSAULT) || (eAreaAIType == AREAAI_ASSAULT_ASSIST))
+				{
+					if (AI_offensiveAirlift())
+					{
+						return;
+					}
+				}
+			}
+		}
 		
 		if (bDanger)
 		{
@@ -14014,7 +14017,7 @@ bool CvUnitAI::AI_improveBonus(int iMinValue, CvPlot** ppBestPlot, BuildTypes* p
 
 			return true;
 		}
-		else if (bBestBuildIsRoute)
+		else if (bBestBuildIsRoute && bCanRoute) // PAE, thx to rucivfan
 		{
 			if (AI_connectPlot(pBestPlot))
 			{

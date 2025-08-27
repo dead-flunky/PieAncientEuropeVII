@@ -8233,7 +8233,7 @@ El puesto de mercenario te permite comprar tropas (dependiendo del nivel de desa
 		<Tag>TXT_KEY_CONCEPT_MOVEMENT_PEDIA</Tag>
 		<English>[H1]Movement on roads:[\H1]
 
-[ICON_BULLET] (Trampled)Paths (are automatically created when building modernizations and lead to the next city): * 1 (no movement penalty due to hills/forest)
+[ICON_BULLET] (Trampled)Paths (are automatically created when building modernizations and lead to the next city): * 1 (no movement penalty due to hills/forest). If a merchant moves through a roadless plot, a path may appear (3% chance).
 [ICON_BULLET] Roads (Spoked Wheels): * 2
 [ICON_BULLET] [LINK=CONCEPT_TRADE]Trade roads[\LINK] (automatically created when trading with foreign nations using a merchant): * 3
 [ICON_BULLET] Royal roads (Persian Royal Road): * 3
@@ -8272,7 +8272,7 @@ Without an escort, the merchant can either lose his goods or be killed. With an 
 		<French>
 [H1]D&#233;placement sur route[\H1]
 
-[ICON_BULLET] (Trample)Chemins (sont automatiquement cr&#233;&#233;s lors de la construction d'am&#233;liorations et m&#232;nent &#224; la ville suivante) : * 1 (pas de p&#233;nalit&#233; de mouvement &#224; travers les collines/for&#234;ts)
+[ICON_BULLET] (Trample)Chemins (sont automatiquement cr&#233;&#233;s lors de la construction d'am&#233;liorations et m&#232;nent &#224; la ville suivante) : * 1 (pas de p&#233;nalit&#233; de mouvement &#224; travers les collines/for&#234;ts). Si un commer&#231;ant foncier se d&#233;place dans une zone sans route, un chemin peut appara&#238;tre (3 % de chance).
 [ICON_BULLET] Routes (Roues &#224; rayons) : * 2
 [ICON_BULLET] [LINK=CONCEPT_TRADE]Routes commerciales[\LINK] (cr&#233;&#233;es automatiquement lors d'&#233;changes avec des pays &#233;trangers avec un commer&#231;ant) : * 3
 [ICON_BULLET] Routes Royales (Route Royale Perse) : * 3
@@ -8312,7 +8312,7 @@ Sans escorte, le commer&#231;ant peut soit perdre ses marchandises, soit &#234;t
 		<German>
 [H1]Fortbewegung auf Stra&#223;en:[\H1]
 
-[ICON_BULLET] (Trampel)Pfade (werden beim Bau von Modernisierungen automatisch erstellt und f&#252;hren zur n&#228;chsten Stadt): * 1 (kein Bewegungsmalus durch H&#252;gel/Wald)
+[ICON_BULLET] (Trampel)Pfade (werden beim Bau von Modernisierungen automatisch erstellt und f&#252;hren zur n&#228;chsten Stadt): * 1 (kein Bewegungsmalus durch H&#252;gel/Wald). Auch durch H&#228;ndler k&#246;nnen auf stra&#223;enlosen Plots Trampelpfade erstellt werden (Chance 3%).
 [ICON_BULLET] Stra&#223;en (Speichenr&#228;der): * 2
 [ICON_BULLET] [LINK=CONCEPT_TRADE]Handelsstra&#223;en[\LINK] (wird beim Handeln mit fremden Nationen mit einem H&#228;ndler automatisch erstellt): * 3
 [ICON_BULLET] K&#246;nigsstra&#223;en (Persische K&#246;nigsstra&#223;e): * 3
@@ -8353,7 +8353,7 @@ Ohne Begleitschutz kann der H&#228;ndler entweder sein Gut verlieren oder wird g
 		<Italian>
 [H1]Movimento sulle strade :[\H1]
 
-[ICON_BULLET] (Calpestare)Percorsi (vengono creati automaticamente quando si costruiscono miglioramenti e conducono alla citt&#224; successiva): * 1 (nessuna penalit&#224; al movimento attraverso colline/foreste)
+[ICON_BULLET] (Calpestare)Percorsi (vengono creati automaticamente quando si costruiscono miglioramenti e conducono alla citt&#224; successiva): * 1 (nessuna penalit&#224; al movimento attraverso colline/foreste). Se un commerciante di terreni attraversa un'area senza strade, potrebbe apparire un sentiero (probabilit&#224; del 3%).
 [ICON_BULLET] Strade (ruote a raggi): * 2
 [ICON_BULLET] [LINK=CONCEPT_TRADE]Strade commerciali[\LINK] (create automaticamente quando si commercia con nazioni straniere con un commerciante): * 3
 [ICON_BULLET] Strade Reali (Strada Reale Persiana): * 3
@@ -8393,7 +8393,7 @@ Senza scorta, il commerciante pu&#242; perdere i suoi beni o essere ucciso. Con 
 		<Spanish>
 [H1]Movimiento en los caminos:[\H1]
 
-[ICON_BULLET] (Pisotear)Senderos (se crean autom&#225;ticamente al construir mejoras y conducen a la siguiente ciudad): * 1 (sin penalizaci&#243;n de movimiento a trav&#233;s de colinas/bosques)
+[ICON_BULLET] (Pisotear)Senderos (se crean autom&#225;ticamente al construir mejoras y conducen a la siguiente ciudad): * 1 (sin penalizaci&#243;n de movimiento a trav&#233;s de colinas/bosques). Si un comerciante de tierras se mueve a trav&#233;s de un &#225;rea sin caminos, puede aparecer un camino (3 % de probabilidad).
 [ICON_BULLET] Caminos (Ruedas con radio): * 2
 [ICON_BULLET] [LINK=CONCEPT_TRADE]Caminos comerciales[\LINK] (creadas autom&#225;ticamente al comerciar con naciones extranjeras con un comerciante): * 3
 [ICON_BULLET] Caminos Reales (Camino Real Persa): * 3
@@ -12059,6 +12059,7 @@ How to get slaves:
 [ICON_BULLET] Slaves can be conquered in battles (See [LINK=CONCEPT_LOYAL]Allegiance in battle[\LINK] concept)
 [ICON_BULLET] They can be conquered through city capture (number of slaves: 1 to city population)
 [ICON_BULLET] They can be born in cities with settled slaves (unless Christianity is not state religion)
+[ICON_BULLET] Educated slaves only when conquering a city of a civilization that can establish schools on its own (Assyria, Egypt, Babylon, Carthage, Etruscans, Greeks (Athens and Thebes), Nubia, Phoenicia, Romans and Sumer), as well as cities with a monotheistic religion
 
 Advantages of slaves:
 [ICON_BULLET] Slaves can build improvements twice as fast as normal workers
@@ -12074,12 +12075,14 @@ Advantages of slaves:
 [ICON_BULLET] They can be assigned to a Temple (+1 [ICON_CULTURE], creative leader +3 [ICON_CULTURE] (no limit), death rate 8% / check every 3 turns)
 [ICON_BULLET] They can be assigned to a Brothel (+2 [ICON_CULTURE] (max. 10), death rate 10% / check every 3 turns)
 [ICON_BULLET] They can be assigned to a Theater (+2 [ICON_CULTURE] (max. 10), death rate 0%)
-[ICON_BULLET] They can be assigned to a Library (+2 [ICON_RESEARCH] (max. 10), death rate 0%)
-[ICON_BULLET] They can be assigned to a School (+2 [ICON_RESEARCH] (max. 10), death rate 6% / check every 3 turns)
-Exception: Gymnasion/Gymnasium, this generates +6 [ICON_RESEARCH] anyway
 [ICON_BULLET] They can be assigned to a Bread Manufactory (+1 [ICON_FOOD] (max. 5), death rate 8% / check every 3 turns)
 [ICON_BULLET] They can be assigned to a Manufactory (+1 [ICON_FOOD] or +1 [ICON_PRODUCTION] (max. 5 each), death rate 8% / check every 3 turns)
 [ICON_BULLET] They can be assigned to a Fire Service (+1 [ICON_HAPPY] (max. 3), death rate 6% / check every 3 turns)
+
+Educated slaves:
+[ICON_BULLET] They can be assigned to a Library (+2 [ICON_RESEARCH] (max. 10), death rate 0%)
+[ICON_BULLET] They can be assigned to a School (+2 [ICON_RESEARCH] (max. 10), death rate 6% / check every 3 turns)
+Exception: Gymnasion/Gymnasium, this generates +6 [ICON_RESEARCH] anyway
 
 The death rate drops by 2% for each of the following technologies: humoral pathology, anatomy (exhibition fighters / gladiators excluded)
 
@@ -12102,9 +12105,9 @@ Disadvantages of slaves:
 
 [H1]Household, field and mine slaves[\H1]
 Slaves can be settled into a city as one of these 3 types with no limits (requirements below).
-[ICON_BULLET] Household slaves: +2 [ICON_RESEARCH], +1 [ICON_CULTURE], +1 [ICON_GREATPEOPLE], death rate 4% (calc. every 4th turn)
-[ICON_BULLET] Field slaves: +2 [ICON_FOOD], +1 [ICON_GREATPEOPLE], death rate 5% (calc. every 4th turn)
-[ICON_BULLET] Mine slaves: +2 [ICON_PRODUCTION], +1 [ICON_GREATPEOPLE], death rate 8% (calc. every 4th turn)
+[ICON_BULLET] Household slaves: +1 [ICON_RESEARCH], +1 [ICON_CULTURE], death rate 4% (calc. every 4th turn)
+[ICON_BULLET] Field slaves: +2 [ICON_FOOD], death rate 6% (calc. every 4th turn)
+[ICON_BULLET] Mine slaves: +2 [ICON_PRODUCTION], death rate 8% (calc. every 4th turn)
 Only one slave can die in that turn.
 Slaves and gladiators can be removed from cities by selecting a unit in the desired city and pressing the appropriate button. Then, one of the settled slaves/gladiators (the type can be chosen) will be removed and you get a slave unit.
 
@@ -12118,6 +12121,9 @@ Instead of settling them down in your cities, you can also use your slaves to bu
 [ICON_BULLET]Slave units can be sold in this city (10-40[ICON_GOLD])
 [ICON_BULLET]provides the slave resource (usable in every city connected to this city)
 [ICON_BULLET]New slave units can appear in every city with a slave market and/or settled slaves (1.5%/round, 3% with Tyranny)
+
+[H1]Educated slaves:[\H1]
+Educated slaves can be settled into a city as teachers: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
 
 
 [H1]Slaves become Christians[\H1]
@@ -12187,6 +12193,7 @@ Comment obtenir des esclaves :
 [ICON_BULLET] Une unit&#233; ennemie vaincue peut &#234;tre r&#233;duite en esclavage (voir le concept [LINK=CONCEPT_LOYAL]Loyaut&#233; au combat[\LINK])
 [ICON_BULLET] Une ville conquise fournit des esclaves (entre 1 et la population de la ville)
 [ICON_BULLET] Ils peuvent appara&#238;tre dans des villes o&#249; sont d&#233;j&#224; &#233;tablis d'autres esclaves (sauf avec le christianisme comme religion d'&#233;tat)
+[ICON_BULLET] Esclaves instruits uniquement lors de la conqu&#234;te d'une ville d'une civilisation qui peut &#233;tablir ses propres &#233;coles (Assyrie, &#201;gypte, Babylone, Carthage, &#201;trusques, Grecs (Ath&#232;nes et Th&#232;bes), Nubie, Ph&#233;nicie, Romains et Sumer), ainsi que des villes avec une religion monoth&#233;iste
 
 Avantages des esclaves :
 [ICON_BULLET] Ils peuvent construire les am&#233;nagements deux fois plus vite que les ouvriers
@@ -12202,12 +12209,14 @@ Avantages des esclaves :
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; un Temple (+1 [ICON_CULTURE], chefs d'&#201;tat cr&#233;atifs +3 [ICON_CULTURE] (pas de limite), taux de mort. 8% / contr&#244;le tous les 3 tours)
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; un Bordel (+2 [ICON_CULTURE] (max. 10), taux de mort. 10% / contr&#244;le tous les 3 tours)
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; un Th&#233;&#226;tre (+2 [ICON_CULTURE] (max. 10), taux de mort. 0%)
-[ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une Biblioth&#232;que (+2 [ICON_RESEARCH] (max. 10), taux de mort. 0%)
-[ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une Ecole (+2 [ICON_RESEARCH] (max. 10), taux de mort. 6% / contr&#244;le tous les 3 tours)
-Exception: Gymnasion/Gymnasium, cela rapporte quand m&#234;me +6 [ICON_RESEARCH]
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une Manufacture de pain (+1 [ICON_FOOD] (max. 5), taux de mort. 8% / contr&#244;le tous les 3 tours)
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une Manufacture (+1 [ICON_FOOD] ou +1 [ICON_PRODUCTION] (max. chacune 5), taux de mort. 8% / contr&#244;le tous les 3 tours)
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une Caserne de pompiers (+1 [ICON_HAPPY] (max. 3), taux de mort. 6% / contr&#244;le tous les 3 tours)
+
+Esclaves instruits :
+[ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une Biblioth&#232;que (+2 [ICON_RESEARCH] (max. 10), taux de mort. 0%)
+[ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une Ecole (+2 [ICON_RESEARCH] (max. 10), taux de mort. 6% / contr&#244;le tous les 3 tours)
+Exception: Gymnasion/Gymnasium, cela rapporte quand m&#234;me +6 [ICON_RESEARCH]
 
 Le taux de mortalit&#233; baisse de 2% pour chacune des technologies suivantes: Th&#233;orie des humeurs, Anatomie (gladiateurs exclus)
 
@@ -12230,9 +12239,9 @@ Inconv&#233;nients des esclaves :
 
 [H1]Domestiques, paysans et mineurs[\H1]
 Les esclaves peuvent &#234;tre affect&#233;s sans limite aux villes en tant que domestiques, paysans ou mineurs.
-[ICON_BULLET] Domestiques : +1 [ICON_RESEARCH], +1 [ICON_CULTURE], +1 [ICON_GREATPEOPLE], Probabilit&#233; de mourir : 5%
-[ICON_BULLET] Paysans : +2 [ICON_FOOD], +1 [ICON_GREATPEOPLE], Probabilit&#233; de mourir : 8%
-[ICON_BULLET] Mineurs : +2 [ICON_PRODUCTION], +1 [ICON_GREATPEOPLE], Probabilit&#233; de mourir : 12%
+[ICON_BULLET] Domestiques : +1 [ICON_RESEARCH], +1 [ICON_CULTURE], Probabilit&#233; de mourir : 4%
+[ICON_BULLET] Paysans : +2 [ICON_FOOD], Probabilit&#233; de mourir : 6%
+[ICON_BULLET] Mineurs : +2 [ICON_PRODUCTION], Probabilit&#233; de mourir : 8%
 Seul un esclave peut mourir par tour. La probabilit&#233; n'est calcul&#233;e que tous les 4 tours.
 
 Conditions: 
@@ -12245,6 +12254,9 @@ D&#232;s qu'un esclave est affect&#233; &#224; une ville, un march&#233; aux esc
 [ICON_BULLET] G&#233;n&#232;re une ressource Esclave qui donne un bonus &#224; chaque ville : +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]
 [ICON_BULLET] Les esclaves peuvent y &#234;tre vendus (10-40[ICON_GOLD])
 [ICON_BULLET] Un esclave peut &#234;tre cr&#233;&#233; dans les villes avec un march&#233; aux esclaves et/ou au moins un esclave install&#233; (1,5% chance/tour, 3% avec la doctrine Tyrannie)
+
+[H1]Des esclaves instruits :[\H1]
+Les esclaves instruits peuvent s'installer comme enseignants dans une ville : +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
 
 
 [H1]Les esclaves deviennent chr&#233;tiens[\H1]
@@ -12315,6 +12327,7 @@ Wie man Sklaven erh&#228;lt:
 [ICON_BULLET] Sklaven erobert man in gewonnenen K&#228;mpfen (Siehe [LINK=CONCEPT_LOYAL]Loyalit&#228;t im Kampf[\LINK])
 [ICON_BULLET] Durch Eroberung von St&#228;dten (Anzahl der Sklaven: 1 bis Stadtgr&#246;&#223;e)
 [ICON_BULLET] Neugeborene in St&#228;dten mit angesiedelten Sklaven (Christentum darf nicht Staatsreligion sein)
+[ICON_BULLET] Gebildete Sklaven nur bei Eroberung einer Stadt einer Zivilisation, die von sich aus Schulen errichten kann (Assyrien, &#196;gypten, Babylon, Karthago, Etrusker, Griechen (Athen und Theben), Nubien, Ph&#246;nizien, R&#246;mer und Sumer), sowie St&#228;dte mit einer monotheistischen Religion
 
 Vorteile der Sklaven:
 [ICON_BULLET] Bauen Modernisierungen doppelt so schnell wie Bautrupps
@@ -12330,12 +12343,14 @@ Vorteile der Sklaven:
 [ICON_BULLET] K&#246;nnen einem Tempel zugeteilt werden (+1 [ICON_CULTURE], kreatives Staatsoberhaupt +3 [ICON_CULTURE] (kein Limit), Sterberate 8% / Check alle 3 Runden)
 [ICON_BULLET] K&#246;nnen einem Freudenhaus zugeteilt werden (+2 [ICON_CULTURE] (max. 10), Sterberate 10% / Check alle 3 Runden)
 [ICON_BULLET] K&#246;nnen einem Theater zugeteilt werden (+2 [ICON_CULTURE] (max. 10), Sterberate 0%)
-[ICON_BULLET] K&#246;nnen einer Bibliothek zugeteilt werden (+2 [ICON_RESEARCH] (max. 10), Sterberate 0%)
-[ICON_BULLET] K&#246;nnen einer Schule zugeteilt werden (+2 [ICON_RESEARCH] (max. 10), Sterberate 6% / Check alle 3 Runden)
-Ausnahme: Gymnasion/Gymnasium, dieses erwirtschaftet ohnehin +6 [ICON_RESEARCH]
 [ICON_BULLET] K&#246;nnen einer Brotmanufaktur zugeteilt werden (+1 [ICON_FOOD] (max. 5), Sterberate 8% / Check alle 3 Runden)
 [ICON_BULLET] K&#246;nnen einer Manufaktur zugeteilt werden (+1 [ICON_FOOD] oder +1 [ICON_PRODUCTION] (max. je 5), Sterberate 8% / Check alle 3 Runden)
 [ICON_BULLET] K&#246;nnen der Feuerwehr zugeteilt werden (+1 [ICON_HAPPY] (max. 3), Sterberate 6% / Check alle 3 Runden)
+
+Gebildete Sklaven:
+[ICON_BULLET] K&#246;nnen einer Bibliothek zugeteilt werden (+2 [ICON_RESEARCH] (max. 10), Sterberate 0%)
+[ICON_BULLET] K&#246;nnen einer Schule zugeteilt werden (+2 [ICON_RESEARCH] (max. 10), Sterberate 6% / Check alle 3 Runden)
+Ausnahme: Gymnasion/Gymnasium, dieses erwirtschaftet ohnehin +6 [ICON_RESEARCH]
 
 Die Sterberate sinkt bei folgenden Technologien um je 2%: Humoralpathologie, Anatomie (Schauk&#228;mpfer/Gladiatoren ausgenommen)
 
@@ -12356,11 +12371,11 @@ Nachteile der Sklaven:
 [TAB][ICON_BULLET] Werden Sklaven von Barbaren erobert, werden diese auch zu Rebellen
 
 
-[H1]Haus-, Feld- und Bergwerkssklaven[\H1]
-Sklaven k&#246;nnen einer Stadt als eine von diesen 3 Sklaventypen angesiedelt werden (Bedingungen weiter unten). Dabei gibt es kein Limit.
-[ICON_BULLET] Haussklaven: +1 [ICON_RESEARCH], +1[ICON_CULTURE], +1 [ICON_GREATPEOPLE], Sterbensrate 4% (Berechnung jede 4. Runde)
-[ICON_BULLET] Feldsklaven: +2 [ICON_FOOD], +1 [ICON_GREATPEOPLE], Sterbensrate 6% (Berechnung jede 4. Runde)
-[ICON_BULLET] Bergwerkssklaven: +2 [ICON_PRODUCTION], +1 [ICON_GREATPEOPLE], Sterbensrate 8% (Berechnung jede 4. Runde)
+[H1]Haus-, Feld-, Bergwerksklaven:[\H1]
+Normale Sklaven k&#246;nnen einer Stadt als eine von diesen 3 Sklaventypen angesiedelt werden (Bedingungen weiter unten). Dabei gibt es kein Limit.
+[ICON_BULLET] Haussklaven: +1 [ICON_RESEARCH], +1[ICON_CULTURE], Sterbensrate 4% (Berechnung jede 4. Runde)
+[ICON_BULLET] Feldsklaven: +2 [ICON_FOOD], Sterbensrate 6% (Berechnung jede 4. Runde)
+[ICON_BULLET] Bergwerkssklaven: +2 [ICON_PRODUCTION], Sterbensrate 8% (Berechnung jede 4. Runde)
 Es kann nur ein Sklave pro Stadt in jener Runde sterben.
 Sklaven und Gladiatoren k&#246;nnen auch aus St&#228;dten entfernt werden, indem man eine Einheit in der gew&#252;nschten Stadt ausw&#228;hlt und den daf&#252;r vorgesehenen Button bet&#228;tigt. Dann wird einer der angesiedelten Sklaven/Gladiatoren (Typ w&#228;hlbar) aus der Stadt entfernt und man erh&#228;lt eine Sklaveneinheit.
 
@@ -12374,6 +12389,9 @@ Statt die Sklaven in einer Stadt anzusiedeln, k&#246;nnen sie auch einen Sklaven
 [ICON_BULLET]Sklaveneinheiten k&#246;nnen in dieser Stadt verkauft werden (10-40[ICON_GOLD])
 [ICON_BULLET]liefert die Ressource Sklaven (in allen St&#228;dten verf&#252;gbar, die mit dieser Stadt verbunden sind)
 [ICON_BULLET]Neue Sklaveneinheiten k&#246;nnen in St&#228;dten mit einem Sklavenmarkt und/oder angesiedelten Sklaven auftauchen (1.5%/Runde, 3% mit Tyrannis)
+
+[H1]Gebildete Sklaven:[\H1]
+Gebildete Sklaven k&#246;nnen sich als Lehrer einer Stadt ansiedeln: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
 
 
 [H1]Sklaven werden Christen[\H1]
@@ -12444,6 +12462,7 @@ Come ottenere schiavi:
 [ICON_BULLET] Gli schiavi possono essere sottomessi in battaglia (vedi anche [LINK=CONCEPT_LOYAL] lealt&#224; in battaglia [\LINK])
 [ICON_BULLET] Possono essere soggiogati quando catturi una citt&#224; (numero di schiavi: 1 per ogni punto popolazione)
 [ICON_BULLET] Possono nascere in una citt&#224; che ha schiavi che lavorano in essa (Cristianesimo non deve essere la religione di stato)
+[ICON_BULLET] Schiavi istruiti solo quando si conquista una citt&#224; di una civilt&#224; che pu&#242; fondare scuole da sola (Assiria, Egitto, Babilonia, Cartagine, Etruschi, Greci (Atene e Tebe), Nubia, Fenicia, Romani e Sumeri), cos&#236; come citt&#224; con una religione monoteista
 
 Vantaggi degli schiavi:
 [ICON_BULLET] Gli schiavi apportano miglioramenti due volte pi&#249; velocemente dei normali lavoratori
@@ -12459,12 +12478,14 @@ Vantaggi degli schiavi:
 [ICON_BULLET] Pu&#242; essere assegnato a un tempio (+1 [ICON_CULTURE], leader creativo +3 [ICON_CULTURE] (nessun limite), mortalit&#224; 8% / applicato ogni 3 turni)
 [ICON_BULLET] Pu&#242; essere assegnato a un bordello (+2 [ICON_CULTURE] (max. 10), mortalit&#224; 10% / applicato ogni 3 turni)
 [ICON_BULLET] Pu&#242; essere assegnato a un teatro (+2 [ICON_CULTURE] (max. 10), mortalit&#224; 0%)
-[ICON_BULLET] Pu&#242; essere assegnato a una biblioteca (+2 [ICON_RESEARCH] (max. 10), mortalit&#224; 0%)
-[ICON_BULLET] Pu&#242; essere assegnato a una scuola (+2 [ICON_RESEARCH] (max. 10), mortalit&#224; 6% / applicato ogni 3 turni)
-Eccezione: Gymnasion/Gymnasium, guadagna comunque +6 [ICON_RESEARCH]
 [ICON_BULLET] Pu&#242; essere assegnato a un panificio (+1 [ICON_FOOD] (max. 5), mortalit&#224; 8% / applicato ogni 3 turni)
 [ICON_BULLET] Pu&#242; essere assegnato a una manifattura (+1 [ICON_FOOD] o +1 [ICON_PRODUCTION] (max. 5 ciascuno), mortalit&#224; 8% / applicato ogni 3 turni)
 [ICON_BULLET] Pu&#242; essere assegnato a una servizio anti-incendio (+1 [ICON_HAPPY] (max. 3), mortalit&#224; 6% / applicato ogni 3 turni)
+
+Schiavi istruiti:
+[ICON_BULLET] Pu&#242; essere assegnato a una biblioteca (+2 [ICON_RESEARCH] (max. 10), mortalit&#224; 0%)
+[ICON_BULLET] Pu&#242; essere assegnato a una scuola (+2 [ICON_RESEARCH] (max. 10), mortalit&#224; 6% / applicato ogni 3 turni)
+Eccezione: Gymnasion/Gymnasium, guadagna comunque +6 [ICON_RESEARCH]
 
 Il tasso di mortalit&#224; diminuisce del 2% per ciascuna delle seguenti tecnologie: patologia umorale, anatomia (esclusi combattenti / gladiatori dell'arena)
 
@@ -12488,9 +12509,9 @@ Svantaggi di schiavi :
 
 [H1] Schiavi domestici, contadini e minatori [\H1]
 Gli schiavi possono essere assegnati senza limiti alle citt&#224; come schiavi domestici, contadini o minatori.
-[ICON_BULLET] Schiavi domestici: +1 [ICON_RESEARCH], +1 [ICON_CULTURE], +1 [ICON_GREATPEOPLE], Probabilit&#224; di morire: 5%
-[ICON_BULLET] Contadini: +2 [ICON_FOOD], +1 [ICON_GREATPEOPLE], Probabilit&#224; di morire: 8%
-[ICON_BULLET] Minori: +2 [ICON_PRODUCTION], +1 [ICON_GREATPEOPLE], Probabilit&#224; di morire: 12%
+[ICON_BULLET] Schiavi domestici: +1 [ICON_RESEARCH], +1 [ICON_CULTURE], Probabilit&#224; di morire: 4%
+[ICON_BULLET] Contadini: +2 [ICON_FOOD], Probabilit&#224; di morire: 6%
+[ICON_BULLET] Minori: +2 [ICON_PRODUCTION], Probabilit&#224; di morire: 8%
 Pu&#242; morire solo uno schiavo per turno. La probabilit&#224; viene calcolata ogni 4 turni.
 
 Condizioni:
@@ -12503,6 +12524,9 @@ Uno schiavo pu&#242; costruire un mercato di schiavi sacrificandolo. Il mercato 
 [ICON_BULLET] Genera una risorsa schiavo che d&#224; un bonus a ogni citt&#224;: +1 [ICON_PRODUCTION], +1 [ICON_COMMERCE]
 [ICON_BULLET] Gli schiavi possono essere venduti in questa citt&#224; (10-40 [ICON_GOLD])
 [ICON_BULLET] Uno schiavo pu&#242; essere creato in citt&#224; con un mercato di schiavi e/o almeno uno schiavo assegnato (1,5% probabilit&#224;/turno, 3% con dottrina Tirannia)
+
+[H1]Schiavi istruiti:[\H1]
+Gli schiavi istruiti possono stabilirsi come insegnanti in una citt&#224;: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
 
 
 [H1]Gli schiavi diventano cristiani[\H1]
@@ -12573,6 +12597,7 @@ Como conseguir esclavos:
 [ICON_BULLET] Los esclavos pueden ser sojuzgados en las batallas (Ver concepto [LINK=CONCEPT_LOYAL]lealtad en combate[\LINK])
 [ICON_BULLET] Pueden ser sojuzgados cuando capturas una ciudad (n&#250;mero de esclavos: 1 por cada punto de poblaci&#243;n)
 [ICON_BULLET] Pueden nacer en una ciudad que tenga esclavos trabajando en ella (para esto el cristianismo no puede ser la religi&#243;n oficial)
+[ICON_BULLET] Los esclavos educados solo al conquistar una ciudad de una civilizaci&#243;n que puede establecer escuelas por s&#237; misma (Asiria, Egipto, Babilonia, Cartago, etruscos, griegos (Atenas y Tebas), Nubia, Fenicia, romanos y sumerios), as&#237; como ciudades con una religi&#243;n monote&#237;sta.
 
 Ventajas de los esclavos:
 [ICON_BULLET] Los esclavos hacen mejoras el doble de r&#225;pido que los trabajadores normales
@@ -12588,12 +12613,14 @@ Ventajas de los esclavos:
 [ICON_BULLET] Pueden ser asignados a un templo (+1 [ICON_CULTURE], l&#237;der creativo +3 [ICON_CULTURE] (sin limite), mortalidad 8% / verificaci&#243;n cada 3 turnos)
 [ICON_BULLET] Pueden ser asignados a un burdel (+2 [ICON_CULTURE] (m&#225;x. 10), mortalidad 10% / verificaci&#243;n cada 3 turnos)
 [ICON_BULLET] Pueden ser asignados a un teatro (+2 [ICON_CULTURE] (m&#225;x. 10), mortalidad 0%)
-[ICON_BULLET] Pueden ser asignados a una biblioteca (+2 [ICON_RESEARCH] (m&#225;x. 10), mortalidad 0%)
-[ICON_BULLET] Pueden ser asignados a una escuela (+2 [ICON_RESEARCH] (m&#225;x. 10), mortalidad 6% / verificaci&#243;n cada 3 turnos)
-Excepci&#243;n: Gymnasion/Gymnasium, esto genera +6 [ICON_RESEARCH]
 [ICON_BULLET] Pueden ser asignados a panader&#237;as (+1 [ICON_FOOD] (m&#225;x. 5), mortalidad 8% / verificaci&#243;n cada 3 turnos)
 [ICON_BULLET] Pueden ser asignados a una manufactor&#237;a (+1 [ICON_FOOD] o +1 [ICON_PRODUCTION] (m&#225;x. 5 cada), mortalidad 8% / verificaci&#243;n cada 3 turnos)
 [ICON_BULLET] Pueden ser asignados a servicio de bomberos (+1 [ICON_HAPPY] (m&#225;x. 3), mortalidad 6% / verificaci&#243;n cada 3 turnos)
+
+Esclavos educados:
+[ICON_BULLET] Pueden ser asignados a una biblioteca (+2 [ICON_RESEARCH] (m&#225;x. 10), mortalidad 0%)
+[ICON_BULLET] Pueden ser asignados a una escuela (+2 [ICON_RESEARCH] (m&#225;x. 10), mortalidad 6% / verificaci&#243;n cada 3 turnos)
+Excepci&#243;n: Gymnasion/Gymnasium, esto genera +6 [ICON_RESEARCH]
 
 La tasa de mortalidad se reduce en un 2% para cada una de las siguientes tecnolog&#237;as: patolog&#237;a humoral, anatom&#237;a (se excluyen los luchadores / gladiadores de exhibici&#243;n)
 
@@ -12617,9 +12644,9 @@ Desventajas de los esclavos:
 
 [H1]Esclavos de la mina, del campo y dom&#233;sticos[\H1]
 Los esclavos pueden ser asentados en una ciudad como alguno de estos 3 tipos pero sin l&#237;mites.
-[ICON_BULLET] Esclavos dom&#233;sticos: +1 [ICON_RESEARCH], +1 [ICON_CULTURE], +1 [ICON_GREATPEOPLE], tasa de muerte del 4% (c&#225;lculo cada 4 turnos)
-[ICON_BULLET] Esclavos del campo: +2 [ICON_FOOD], +1 [ICON_GREATPEOPLE], tasa de muerte del 5% (c&#225;lculo cada 4 turnos)
-[ICON_BULLET] Esclavos de la mina: +2 [ICON_PRODUCTION], +1 [ICON_GREATPEOPLE], tasa de muerte del 8% (c&#225;lculo cada 4 turnos)
+[ICON_BULLET] Esclavos dom&#233;sticos: +1 [ICON_RESEARCH], +1 [ICON_CULTURE], tasa de muerte del 4% (c&#225;lculo cada 4 turnos)
+[ICON_BULLET] Esclavos del campo: +2 [ICON_FOOD], tasa de muerte del 6% (c&#225;lculo cada 4 turnos)
+[ICON_BULLET] Esclavos de la mina: +2 [ICON_PRODUCTION], tasa de muerte del 8% (c&#225;lculo cada 4 turnos)
 Solo un esclavo puede morir en ese turno.
 
 Requerimientos: 
@@ -12632,6 +12659,9 @@ En vez de asentarlos en tus ciudades, tambi&#233;n puedes usar tus esclavos para
 [ICON_BULLET] Las unidades esclavas pueden ser vendidas en esta ciudad(10-40[ICON_GOLD])
 [ICON_BULLET] Proporciona el recurso esclavo (utilizables en cada ciudad conectada a esta ciudad)
 [ICON_BULLET]Nuevas unidades de esclavos pueden aparecer en cada ciudad con un mercado de esclavos y/o esclavos asentados (2% por turno, 4% con tiran&#237;a)
+
+[H1]Esclavos educados:[\H1]
+Los esclavos educados pueden establecerse como profesores en una ciudad: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
 
 
 [H1]Los esclavos se convierten en cristianos[\H1]
@@ -13162,6 +13192,8 @@ If you own fewer than 10 trading posts or play an OCC game, you can have more in
 [ICON_BULLET] Tech Magnetism: +1
 [ICON_BULLET] Tech Cartography: +1
 
+If a land trader moves through a roadless area, a path may appear (3% chance).
+
 [H1]Trading[\H1]
 In PAE goods can be bought and sold. These goods remain available 3 turns in the trading network. The dealer is not dissolved. These trade routes can be automated.
 
@@ -13254,6 +13286,8 @@ Si vous poss&#233;dez moins de 10 postes de traite ou jouez &#224; un jeu OCC, v
 
 [ICON_BULLET] Tech Magn&#233;tisme : +1
 [ICON_BULLET] Tech Cartographie : +1
+
+Si un commer&#231;ant foncier se d&#233;place dans une zone sans route, un chemin peut appara&#238;tre (3 % de chance).
 
 [H1]Echange[\H1]
 Ce mod permet l'achat et la vente des ressources. Elles sont alors disponibles dans le r&#233;seau d'&#233;changes pour 3 tours. L'unit&#233; n'est pas consomm&#233;e par cette action, elle peut de plus recevoir des instructions pour &#233;changer automatiquement.
@@ -13349,6 +13383,8 @@ Wer weniger als 10 Handelsposten besitzt oder ein OCC-Spiel spielt, erlangt mehr
 [ICON_BULLET] Tech Magnetismus: +1
 [ICON_BULLET] Tech Kartographie: +1
 
+Bewegt sich ein H&#228;ndler an Land durch ein stra&#223;enloses Gebiet, kann ein Pfad entstehen (Chance 3%).
+
 [H1]Handel[\H1]
 In PAE k&#246;nnen Waren eingekauft und verkauft werden. Diese Waren bleiben 3 Runden im Handelsnetz verf&#252;gbar. Dabei wird der H&#228;ndler nicht aufgel&#246;st. Diese Handelsrouten k&#246;nnen automatisiert werden.
 
@@ -13443,6 +13479,8 @@ Se possiedi meno di 10 stazioni di scambio o giochi a un gioco OCC, puoi averne 
 [ICON_BULLET] Tec Magnetismo: +1
 [ICON_BULLET] Tec Cartografia: +1
 
+Se un commerciante di terreni attraversa un'area senza strade, potrebbe apparire un sentiero (probabilit&#224; del 3%).
+
 [H1]Commercio[\H1]
 In PAE le risorse possono essere comprate e vendute. Questi beni rimangono disponibili 3 turni nella rete commerciale. L'unit&#224; non viene consumata da questa azione. Queste rotte commerciali possono essere automatizzate.
 
@@ -13533,6 +13571,8 @@ Si posee menos de 10 puestos comerciales o juega un juego de OCC, puedes tener m
 
 [ICON_BULLET] Tec Magnetismo: +1
 [ICON_BULLET] Tec Cartograf&#237;a: +1
+
+Si un comerciante de tierras se mueve a trav&#233;s de un &#225;rea sin caminos, puede aparecer un camino (3 % de probabilidad).
 
 [H1]Comercio[\H1]
 En PAE los bienes se pueden comprar y vender. Estos bienes permanecen disponibles durante 3 rondas en la red comercial. El comerciante no se disuelve. Estas rutas comerciales se pueden automatizar.
@@ -13654,9 +13694,9 @@ While all units with the status of a veteran can be commended to new units, ther
 
 -) Elite Limitanei => Imperial Guard
 
--) Elite Comitatenses => Palatini
+-) Elite Comitatenses => Palatin
 
--) Elite Palatini, Clibanarii or Cataphractii => Scholae Palatinae 
+-) Elite Palatin, Clibanarii or Cataphractii => Schola Palatina
 
 -) Elite Cohors Equitata => Equites Singulares Augusti
 
@@ -13668,9 +13708,9 @@ Bien que toutes les unit&#233;s de v&#233;t&#233;rans puissent se distinguer en 
 
 -) Elite Limitanei => Garde imp&#233;riale
 
--) Elite Comitatenses => Palatini
+-) Elite Comitatenses => Palatin
 
--) Palatini d'&#233;lite , Clibanarii ou Cataphractii => Scholae Palatinae 
+-) Palatin d'&#233;lite , Clibanarii ou Cataphractii => Schola Palatina
 
 -) Cohors Equitata d'&#233;lite=> Equites Singulares Augusti
 
@@ -13683,9 +13723,9 @@ W&#228;hrend s&#228;mtliche Einheiten mit dem Status eines Veterans zu neuen Ein
 
 -) Elite Limitanei => Imperiale Garde
 
--) Elite Comitatenses => Palatini
+-) Elite Comitatenses => Palatin
 
--) Elite Palatini, Clibanarii oder Cataphractii => Scholae Palatinae 
+-) Elite Palatin, Clibanarii oder Cataphractii => Schola Palatina
 
 -) Elite Cohors Equitata => Equites Singulares Augusti
 
@@ -13698,9 +13738,9 @@ Sebbene tutte le unit&#224; con status di veterano possano essere lodate come nu
 
 -) Elite Limitanei => Guardia Imperiale
 
--) Elite Comitatenses => Palatini
+-) Elite Comitatenses => Palatin
 
--) Elite Palatini, Clibanarii o Cataphractii => Scholae Palatinae
+-) Elite Palatin, Clibanarii o Cataphractii => Schola Palatina
 
 -) Elite Cohors Equitata => Equites Singulares Augusti
 
@@ -13713,11 +13753,11 @@ Mientras que muchas unidades pueden ser ascendidas a otro tipo cuando son vetera
 
 -) &#201;lite limitanei => Guarda imperial
 
--) &#201;lite comitatenses => Palatini
+-) &#201;lite comitatenses => Palatin
 
--) &#201;lite palatini, clibanarii o catafracto => Scholae palatinae
+-) &#201;lite palatin, clibanarii o catafracto => Schola Palatina
 
--) &#201;lite cohors equitata => Equites singulares augusti
+-) &#201;lite cohors equitata => Equites Singulares Augusti
 
 -) &#201;lite merodeador huno => Azote de Dios
 		</Spanish>
@@ -15464,54 +15504,6 @@ H1] Miracolo [\H1]
 		</Italian>
 		<Spanish>
 [H1]Ciudadanos libres[\H1][PARAGRAPH:2] En algunas formas de gobierno existe la posibilidad de que un esclavo asentado en una ciudad pueda desarrollarse como un ciudadano libre, quien hace una peque&#241;a contribuci&#243;n a la econom&#237;a de la ciudad. Adem&#225;s, los esclavos liberados, capturados con las conquistas, pueden ser asentados en las propias ciudades como ciudadanos libres.
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SLAVE_FOOD_PEDIA</Tag>
-		<English>[H1]Food slave[\H1][PARAGRAPH:2]In ancient times slaves were established in many different ways. A slave settled in a city as a field slave increases the food yield of a city and supports a [COLOR_UNIT_TEXT]Great Merchant[COLOR_REVERT] in his work.</English>
-		<French>
-[H1] esclaves sur le terrain [\H1] [PARAGRAPHE:2] esclaves ont &#233;t&#233; utilis&#233;s dans les temps anciens dans de nombreux domaines diff&#233;rents. Un r&#233;install&#233;s comme un esclave sur le terrain dans un esclave de la ville augmente le rendement d'une ville de la nourriture et de soutenir une [COLOR_UNIT_TEXT] Grande Merchant [COLOR_REVERT] dans son travail.
-		</French>
-		<German>
-[H1]Feldsklaven[\H1][PARAGRAPH:2]Sklaven wurden in der Antike in vielen verschiedenen Bereichen eingesetzt. Ein in einer Stadt als Feldsklave angesiedelter Sklave erh&#246;ht den Nahrungsertrag einer Stadt und unterst&#252;tzt einen [COLOR_UNIT_TEXT]Gro&#223;en H&#228;ndler[COLOR_REVERT] bei seiner Arbeit.
-		</German>
-		<Italian>
-[H1] schiavi campo [\H1] [PARAGRAPH:2] gli schiavi sono stati utilizzati in tempi antichi in molte aree differenti. Un reinsediati come slave campo in uno schiavo citt&#224; aumenta il rendimento di una citt&#224; alimentare e sostenere un [COLOR_UNIT_TEXT] Grande Mercante [COLOR_REVERT] nel suo lavoro.
-		</Italian>
-		<Spanish>
-[H1]Esclavo del campo[\H1][PARAGRAPH:2]En tiempos antiguos los esclavos se establec&#237;an de diferentes maneras. Un escalvo asentado en una ciudad como un esclavo del campo aumenta la comida total de una ciudad y ayuda a un [COLOR_UNIT_TEXT]Gran Mercader[COLOR_REVERT] con su trabajo.
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SLAVE_HAUS_PEDIA</Tag>
-		<English>[H1]House slave[\H1][PARAGRAPH:2]In ancient times slaves were established in many different ways. A slave settled in a city as a house slave takes care of the household, so the citizens can concentrate on philosophical and scientific questions and a [COLOR_UNIT_TEXT]Great Philosopher[COLOR_REVERT] can be born.</English>
-		<French>
-[H1] esclaves de la maison [\H1] [PARAGRAPHE 2] esclaves ont &#233;t&#233; utilis&#233;s dans les temps anciens dans de nombreux domaines diff&#233;rents. Un r&#233;install&#233;s comme un esclave de la maison dans une ville esclave prend soin de la maison, de sorte que les citoyens puissent se concentrer sur des questions philosophiques et scientifiques et un [COLOR_UNIT_TEXT]Philosophe Illustre[COLOR_REVERT] peut &#234;tre n&#233;.
-		</French>
-		<German>
-[H1]Haussklaven[\H1][PARAGRAPH:2]Sklaven wurden in der Antike in vielen verschiedenen Bereichen eingesetzt. Ein in einer Stadt als Haussklave angesiedelter Sklave sorgt f&#252;r den Haushalt, so dass sich die B&#252;rger der Stadt auf philosophische und wissenschaftliche Fragen konzentrieren k&#246;nnen und ein [COLOR_UNIT_TEXT]Gro&#223;er Philosoph[COLOR_REVERT] geboren werden kann.
-		</German>
-		<Italian>
-[H1] schiavi casa [\H1] [PARAGRAPH:2] gli schiavi sono stati utilizzati in tempi antichi in molte aree differenti. Un reinsediati come slave casa in una citt&#224; schiava prende cura della casa, in modo che i cittadini possano concentrarsi su questioni filosofiche e scientifiche e di un [COLOR_UNIT_TEXT] Grande Scienziato [COLOR_REVERT] pu&#242; nascere.
-		</Italian>
-		<Spanish>
-[H1]Esclavo dom&#233;stico[\H1][PARAGRAPH:2]En tiempos antiguos los esclavos se establec&#237;an de diferentes maneras. Un escalvo asentado en una ciudad como un esclavo dom&#233;stico se queda a cargo de la casa, y as&#237; los ciudadanos pueden concentrarse en asuntos cient&#237;ficos y filos&#243;ficos y adem&#225;s puede nacer un [COLOR_UNIT_TEXT]Gran cient&#237;fico[COLOR_REVERT].
-		</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SLAVE_PROD_PEDIA</Tag>
-		<English>[H1]Mine slave[\H1][PARAGRAPH:2]In ancient times slaves were established in many different ways. A slave settled in a city as a mine slave increases the production yield of a city and supports a [COLOR_UNIT_TEXT]Great Engineer[COLOR_REVERT] in his work.</English>
-		<French>
-[H1] esclave Mine [\H1] [PARAGRAPHE 2] Dans les temps anciens esclaves ont &#233;t&#233; &#233;tablis dans de nombreuses mani&#232;res diff&#233;rentes. Un esclave s'installe dans une ville comme un esclave de la mine augmente le rendement d'une ville de production et prend en charge un [COLOR_UNIT_TEXT] Grand Ing&#233;nieur [COLOR_REVERT] dans son travail.
-		</French>
-		<German>
-[H1]Bergwerkklaven[\H1][PARAGRAPH:2]Sklaven wurden in der Antike in vielen verschiedenen Bereichen eingesetzt. Ein in einer Stadt als Bergwerkslave angesiedelter Sklave erh&#246;ht den Produktionsertrag einer Stadt und unterst&#252;tzt einen [COLOR_UNIT_TEXT]Gro&#223;en Ingenieur[COLOR_REVERT] bei seiner Arbeit.
-		</German>
-		<Italian>
-[H1] schiavo Miniera [\H1] [PARAGRAPH:2] Nei tempi antichi gli schiavi sono stati istituiti in molti modi diversi. Uno schiavo si stabil&#236; in una citt&#224; come schiavo miniera aumenta la resa di produzione di una citt&#224; e supporta una [COLOR_UNIT_TEXT] Grande Ingegnere [COLOR_REVERT] nel suo lavoro.
-		</Italian>
-		<Spanish>
-[H1]Esclavo de la mina[\H1][PARAGRAPH:2]En tiempos antiguos los esclavos se establec&#237;an de diferentes maneras. Un escalvo asentado en una ciudad como un esclavo de la mina aumenta la producci&#243;n total de una ciudad y ayuda a un [COLOR_UNIT_TEXT]Gran Ingeniero[COLOR_REVERT] con su trabajo.
 		</Spanish>
 	</TEXT>
 </Civ4GameText>
