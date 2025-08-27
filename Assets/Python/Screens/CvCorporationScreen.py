@@ -1,12 +1,14 @@
 # Sid Meier's Civilization 4
 # Copyright Firaxis Games 2005
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
-										CyGInterfaceScreen, PopupStates, FontTypes,
+										PopupStates, FontTypes,
 										WidgetTypes, CyGame, PanelStyles, ButtonStyles,
 										ActivationTypes, NotifyCode, CyGameTextMgr,
 										FontSymbols)
 import PyHelpers
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 

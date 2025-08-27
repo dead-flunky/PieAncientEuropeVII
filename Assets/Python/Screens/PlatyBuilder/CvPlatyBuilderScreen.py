@@ -1,4 +1,4 @@
-from CvPythonExtensions import (CyGInterfaceScreen, CyGlobalContext,
+from CvPythonExtensions import (CyGlobalContext,
 																CyInterface, CyCamera, CyEngine, CyGame,
 																CyArtFileMgr, CyTranslator, CyMap,
 																CyMessageControl, DirectionTypes,
@@ -18,6 +18,8 @@ from CvPythonExtensions import (CyGInterfaceScreen, CyGlobalContext,
 																getWBToolNormalMapTabCtrl, InterfaceDirtyBits,
 																isMouseOverGameSurface, setFocusToCVG)
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import CvScreensInterface
 # import ScreenInput
 # import CvEventInterface

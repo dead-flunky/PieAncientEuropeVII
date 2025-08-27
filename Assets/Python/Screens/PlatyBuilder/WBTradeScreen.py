@@ -1,8 +1,10 @@
-from CvPythonExtensions import (CyGlobalContext, CyGInterfaceScreen,
+from CvPythonExtensions import (CyGlobalContext,
 																PanelStyles, CyTranslator, PopupStates,
 																WidgetTypes, FontTypes, TableStyles, CyGame,
 																TradeableItems)
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 import WBDiplomacyScreen

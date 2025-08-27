@@ -2,13 +2,15 @@
 # Copyright Firaxis Games 2005
 # Improvements to this screen by Almightix - thanks
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
-                                CyGInterfaceScreen, PopupStates, FontTypes,
+                                PopupStates, FontTypes,
                                 WidgetTypes, CyGame, PanelStyles, ButtonStyles,
                                 CyInterface, InterfaceDirtyBits, CommerceTypes,
                                 getEspionageModifier, TableStyles,
                                 CyMessageControl)
 from PyHelpers import PyPlayer
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 

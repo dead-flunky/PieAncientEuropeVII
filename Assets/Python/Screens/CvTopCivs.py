@@ -11,10 +11,10 @@ from CvPythonExtensions import (CyGlobalContext, CyTranslator,
 																FontTypes, NotifyCode,
 																WidgetTypes, PanelStyles,
 																CyGame, InputTypes,
-																CyGInterfaceScreen,
 																PopupStates,
 																ButtonStyles)
-
+if not CvUtil.isPitbossHost():
+    from CvPythonExtensions import CyGInterfaceScreen
 
 # TODO remove
 # DEBUG code for Python 3 linter

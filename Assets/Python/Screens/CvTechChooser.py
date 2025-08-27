@@ -4,10 +4,12 @@ from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
 																FontTypes, NotifyCode, AdvancedStartActionTypes,
 																CyMessageControl, WidgetTypes, PanelStyles,
 																CyInterface, InterfaceDirtyBits, CyGame,
-																CyGInterfaceScreen, CommerceTypes, UnitClassTypes,
+																CommerceTypes, UnitClassTypes,
 																ActivationTypes, PopupStates, GameOptionTypes,
 																ButtonStyles, DomainTypes, YieldTypes)
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 import CvScreenEnums
 # import CvScreensInterface

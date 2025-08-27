@@ -6,9 +6,11 @@ from CvPythonExtensions import (
 		FontTypes, FontSymbols, CyGame, CyMap, InterfaceDirtyBits,
 		WidgetTypes, PanelStyles, PopupStates, ActivationTypes,
 		CyInterface, NotifyCode, CyMessageControl,
-		CyGInterfaceScreen, CyCamera)
-
+		CyCamera)
 import CvUtil
+if not CvUtil.isPitbossHost():
+    	from CvPythonExtensions import CyGInterfaceScreen
+
 # import ScreenInput
 import CvScreenEnums
 import PAE_Trade

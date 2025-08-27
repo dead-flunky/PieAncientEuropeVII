@@ -2,12 +2,14 @@
 # Copyright Firaxis Games 2005
 # edited by Pie (06.02.2013)
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
-																CyGInterfaceScreen, PopupStates, FontTypes,
+																PopupStates, FontTypes,
 																WidgetTypes, PanelStyles, ButtonStyles,
 																NotifyCode, CyGameTextMgr, InputTypes,
 																MinimapModeTypes, CyMap, TableStyles,
 																InfoBarTypes, CyInterface, InterfaceVisibility)
 import CvUtil
+if not CvUtil.isPitbossHost():
+		from CvPythonExtensions import CyGInterfaceScreen
 # import ScreenInput
 # import time
 import PyHelpers
