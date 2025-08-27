@@ -154,8 +154,71 @@ class CvGameUtils:
 								lTeamPlayer.append(i)
 
 						if not CyInterface().isCityScreenUp():
+
+								# Gebildeter Sklave
+								if iUnitType == gc.getInfoTypeForString("UNIT_SLAVE_EDUCATED"):
+									iMapW = gc.getMap().getGridWidth()
+									iMapH = gc.getMap().getGridHeight()
+									iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
+									for x in range(iMapW):
+										for y in range(iMapH):
+											loopPlot = gc.getMap().plot(x, y)
+											if loopPlot is not None and not loopPlot.isNone():
+												if loopPlot.getFeatureType() == iDarkIce:
+													continue
+												if loopPlot.isWater() or loopPlot.isPeak() or loopPlot.isCity():
+													continue
+												if loopPlot.getOwner() == iPlayer:
+													# Latifundium oder Village/Dorf
+													iImprovement = loopPlot.getImprovementType()
+													if (iImprovement != -1 and iImprovement in L.LVillages):
+														CyEngine().addColoredPlotAlt(loopPlot.getX(), loopPlot.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_TECH_GREEN", 1)
+
+									# Schulen und Bibliotheken
+									if pTeam.isHasTech(gc.getInfoTypeForString("TECH_GRAMMATIK")):
+											iBuildingStadt = gc.getInfoTypeForString("BUILDING_STADT")
+											iSchule = gc.getInfoTypeForString("BUILDING_SCHULE")
+											iLibrary = gc.getInfoTypeForString("BUILDING_LIBRARY")
+											# Settled Slaves and Glads
+											eSpecialistGlad = gc.getInfoTypeForString("SPECIALIST_GLADIATOR")
+											eSpecialistHouse = gc.getInfoTypeForString("SPECIALIST_SLAVE")
+											eSpecialistFood = gc.getInfoTypeForString("SPECIALIST_SLAVE_FOOD")
+											eSpecialistProd = gc.getInfoTypeForString("SPECIALIST_SLAVE_PROD")
+											eSpecialistEdu = gc.getInfoTypeForString("SPECIALIST_SLAVE_EDUCATED")
+											for i in lTeamPlayer:
+												loopPlayer = gc.getPlayer(i)
+												(loopCity, pIter) = loopPlayer.firstCity(False)
+												while loopCity:
+													if not loopCity.isNone():
+														iCityGlads = loopCity.getFreeSpecialistCount(eSpecialistGlad)
+														iCitySlavesHaus = loopCity.getFreeSpecialistCount(eSpecialistHouse)
+														iCitySlavesFood = loopCity.getFreeSpecialistCount(eSpecialistFood)
+														iCitySlavesProd = loopCity.getFreeSpecialistCount(eSpecialistProd)
+														iCitySlavesEdu = loopCity.getFreeSpecialistCount(eSpecialistEdu)
+														iSlaves = iCityGlads + iCitySlavesHaus + iCitySlavesFood + iCitySlavesProd + iCitySlavesEdu
+														if iSlaves < loopCity.getPopulation(): bOK = True
+														else: bOK = False
+
+														# Schule / School
+														if loopCity.isHasBuilding(iBuildingStadt):
+															if not loopCity.isHasBuilding(iSchule):
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+																bOK = False
+
+														# Anzahl Sklaven
+														if bOK:
+															CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
+
+														# Bibliothek / Library
+														elif loopCity.isHasBuilding(iLibrary):
+															iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iLibrary)
+															if iCulture < 10:
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
+
+													(loopCity, pIter) = loopPlayer.nextCity(pIter, False)
+
 								# Worker, Arbeitstrupp oder Sklave, Slave
-								if (iUnitType == gc.getInfoTypeForString("UNIT_WORKER") or iUnitType == gc.getInfoTypeForString("UNIT_SLAVE") or iUnitType == gc.getInfoTypeForString("UNIT_WORK_ELEPHANT")):
+								elif (iUnitType == gc.getInfoTypeForString("UNIT_WORKER") or iUnitType == gc.getInfoTypeForString("UNIT_SLAVE") or iUnitType == gc.getInfoTypeForString("UNIT_WORK_ELEPHANT")):
 										if iUnitType == gc.getInfoTypeForString("UNIT_SLAVE"):
 												bSlave = True
 										else:
@@ -218,6 +281,7 @@ class CvGameUtils:
 											eSpecialistHouse = gc.getInfoTypeForString("SPECIALIST_SLAVE")
 											eSpecialistFood = gc.getInfoTypeForString("SPECIALIST_SLAVE_FOOD")
 											eSpecialistProd = gc.getInfoTypeForString("SPECIALIST_SLAVE_PROD")
+											eSpecialistEdu = gc.getInfoTypeForString("SPECIALIST_SLAVE_EDUCATED")
 											for i in lTeamPlayer:
 												loopPlayer = gc.getPlayer(i)
 												(loopCity, pIter) = loopPlayer.firstCity(False)
@@ -227,7 +291,8 @@ class CvGameUtils:
 														iCitySlavesHaus = loopCity.getFreeSpecialistCount(eSpecialistHouse)
 														iCitySlavesFood = loopCity.getFreeSpecialistCount(eSpecialistFood)
 														iCitySlavesProd = loopCity.getFreeSpecialistCount(eSpecialistProd)
-														iSlaves = iCityGlads + iCitySlavesHaus + iCitySlavesFood + iCitySlavesProd
+														iCitySlavesEdu = loopCity.getFreeSpecialistCount(eSpecialistEdu)
+														iSlaves = iCityGlads + iCitySlavesHaus + iCitySlavesFood + iCitySlavesProd + iCitySlavesEdu
 														if iSlaves < loopCity.getPopulation(): bOK = True
 														else: bOK = False
 														if loopCity.isHasBuilding(iBuildingStadt):
@@ -236,8 +301,6 @@ class CvGameUtils:
 																bOK = False
 														if bOK:
 															CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
-
-
 
 													(loopCity, pIter) = loopPlayer.nextCity(pIter, False)
 
@@ -340,7 +403,7 @@ class CvGameUtils:
 														(loopCity, pIter) = pPlayer.firstCity(False)
 														while loopCity:
 																#loopCity = pHeadSelectedUnit.plot().getWorkingCity()
-																if not loopCity.isNone() and loopCity.getOwner() == pPlayer.getID():
+																if not loopCity.isNone() and loopCity.getOwner() == iPlayer:
 																		for iI in range(gc.getNUM_CITY_PLOTS()):
 																				pLoopPlot = loopCity.getCityIndexPlot(iI)
 																				if pLoopPlot is not None and not pLoopPlot.isNone():
@@ -613,10 +676,10 @@ class CvGameUtils:
 						# if loopCity.isHasBuilding(eCityStatus):
 						if eBuilding == -1 or not loopCity.isHasBuilding(eBuilding):
 
-								iX = loopCity.getX()
-								iY = loopCity.getY()
+								#iX = loopCity.getX()
+								#iY = loopCity.getY()
+								# bereits kultivierte Plots
 								lPlots = PAE_Cultivation.getCityCultivatedPlots(loopCity, eBonus)
-
 								for p in lPlots:
 										if p.getBonusType(-1) == eBonus:
 												iImp = p.getImprovementType()
@@ -626,11 +689,14 @@ class CvGameUtils:
 												else:
 														CyEngine().addColoredPlotAlt(p.getX(), p.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_PLAYER_ORANGE", 1)
 
+								# kultivierbare Plots
 								lPlots = PAE_Cultivation.getCityCultivatablePlots(loopCity, eBonus)
 								if lPlots:
-										CyEngine().addColoredPlotAlt(iX, iY, PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
 										for p in lPlots:
 												if p:
+													if p.isCity():
+														CyEngine().addColoredPlotAlt(p.getX(), p.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+													else:
 														CyEngine().addColoredPlotAlt(p.getX(), p.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_HIGHLIGHT_TEXT", 1)
 
 						# else:
@@ -1871,8 +1937,35 @@ class CvGameUtils:
 																return True
 						# END Unit -> Horse UPGRADE
 
+						# Gebildete Sklaven
+						if iUnitType == gc.getInfoTypeForString("UNIT_SLAVE_EDUCATED"):
+								if pPlot.isCity() and pPlot.getOwner() == iOwner:
+										pCity = pPlot.getPlotCity()
+										if not pCity.isNone() and pCity.getID() not in self.PAE_AI_Cities_Slaves:
+												# assign to school
+												iBuilding1 = gc.getInfoTypeForString('BUILDING_SCHULE')
+												if pCity.isHasBuilding(iBuilding1):
+														iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
+														if iCulture < 10:
+																iNewCulture = iCulture + 2
+																pCity.setBuildingCommerceChange(gc.getBuildingInfo(iBuilding1).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, iNewCulture)
+																# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
+																pUnit.kill(True, -1)  # RAMK_CTD
+																return True
+
+												# assign to library
+												iBuilding1 = gc.getInfoTypeForString('BUILDING_LIBRARY')
+												if pCity.isHasBuilding(iBuilding1):
+														iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
+														if iCulture < 10:
+																iNewCulture = iCulture + 2
+																pCity.setBuildingCommerceChange(gc.getBuildingInfo(iBuilding1).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, iNewCulture)
+																# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
+																pUnit.kill(True, -1)  # RAMK_CTD
+																return True
+
 						# Slaves settle into city
-						if iUnitType == gc.getInfoTypeForString("UNIT_SLAVE"):
+						elif iUnitType == gc.getInfoTypeForString("UNIT_SLAVE"):
 								if pPlot.isCity() and pPlot.getOwner() == iOwner:
 										pCity = pPlot.getPlotCity()
 										if not pCity.isNone() and pCity.getID() not in self.PAE_AI_Cities_Slaves:
@@ -1951,31 +2044,8 @@ class CvGameUtils:
 																		pUnit.kill(True, -1)  # RAMK_CTD
 																		return True
 
-												# Priority 1 - Schule
 
-												# assign to school
-												iBuilding1 = gc.getInfoTypeForString('BUILDING_SCHULE')
-												if pCity.isHasBuilding(iBuilding1):
-														iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
-														if iCulture < 10:
-																iNewCulture = iCulture + 2
-																pCity.setBuildingCommerceChange(gc.getBuildingInfo(iBuilding1).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, iNewCulture)
-																# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
-																pUnit.kill(True, -1)  # RAMK_CTD
-																return True
-
-												# assign to library
-												iBuilding1 = gc.getInfoTypeForString('BUILDING_LIBRARY')
-												if pCity.isHasBuilding(iBuilding1):
-														iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iBuilding1)
-														if iCulture < 10:
-																iNewCulture = iCulture + 2
-																pCity.setBuildingCommerceChange(gc.getBuildingInfo(iBuilding1).getBuildingClassType(), CommerceTypes.COMMERCE_RESEARCH, iNewCulture)
-																# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
-																pUnit.kill(True, -1)  # RAMK_CTD
-																return True
-
-												# Priority 2a - Brotmanufaktur
+												# Priority 1 - Brotmanufaktur
 												# assign to bread manufactory
 												iBuilding1 = gc.getInfoTypeForString('BUILDING_BROTMANUFAKTUR')
 												if pCity.isHasBuilding(iBuilding1):
@@ -1987,7 +2057,7 @@ class CvGameUtils:
 																pUnit.kill(True, -1)  # RAMK_CTD
 																return True
 
-												# Priority 2b - Manufaktur
+												# Priority 2 - Manufaktur
 												# assign to manufactory
 												iBuilding1 = gc.getInfoTypeForString('BUILDING_CORP3')
 												if pCity.isHasBuilding(iBuilding1):

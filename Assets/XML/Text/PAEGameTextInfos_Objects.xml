@@ -1354,11 +1354,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCHULE</Tag>
-		<English>School</English>
-		<French>Ecole</French>
-		<German>Schule</German>
-		<Italian>Scuola</Italian>
-		<Spanish><Text>Escuela</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
+		<English>Private School</English>
+		<French>Ecole priv&#233;e</French>
+		<German>Privatschule</German>
+		<Italian>Scuola privata</Italian>
+		<Spanish><Text>Escuela privada</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SENATE_BUILDING</Tag>

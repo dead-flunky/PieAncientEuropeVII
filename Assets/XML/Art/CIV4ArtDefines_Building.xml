@@ -2971,6 +2971,16 @@
 			<Button>Art/Interface/Buttons/Buildings/button_building_atheneum.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_HELLE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_helle.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SCHULE</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
@@ -2999,6 +3009,26 @@
 			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_building_schule_egypt.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_GREEK</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_lykeion.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_ROME</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_schule_lyceum.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SCHULE_ZORO</Type>
@@ -3442,11 +3472,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CELTIC_SHRINE</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
+			<LSystem>LSYSTEM_2x4</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.0</fScale>
-			<fInterfaceScale>0.0</fInterfaceScale>
-			<NIF/>
+			<fScale>1.9</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/sacred_grove/Dru_Found.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_sacred_grove.dds</Button>
 		</BuildingArtInfo>

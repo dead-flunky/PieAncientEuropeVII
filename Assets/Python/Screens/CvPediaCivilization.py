@@ -179,7 +179,7 @@ class CvPediaCivilization:
 								gc.getInfoTypeForString("UNIT_ROME_COMITATENSES2"),
 								gc.getInfoTypeForString("UNIT_ROME_COMITATENSES3"),
 								gc.getInfoTypeForString("UNIT_ROME_PALATINI"),
-								gc.getInfoTypeForString("UNIT_ROME_LIMITANEI_GARDE"),
+								gc.getInfoTypeForString("UNIT_ROME_PROTECTORES"),
 								gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"),
 
 								gc.getInfoTypeForString("UNIT_ARCHER_LEGION"),

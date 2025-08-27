@@ -177,6 +177,46 @@
 		<Spanish>Escuela del templo</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_GREEK</Tag>
+		<English>Lyceion</English>
+		<French>
+Lyceion
+		</French>
+		<German>
+Lyceion
+		</German>
+		<Italian>
+Lyceion
+		</Italian>
+		<Spanish>
+<Text>Lyceion</Text><Gender>Male</Gender><Plural>0</Plural>
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_GREEK</Tag>
+		<English>Lykeion</English>
+		<French>Lykeion</French>
+		<German>Lykeion</German>
+		<Italian>Lykeion</Italian>
+		<Spanish><Text>Lykeion</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_HELLE</Tag>
+		<English>Rhetoric school</English>
+		<French>
+&#201;cole de rh&#233;torique
+		</French>
+		<German>
+Rhetorikschule
+		</German>
+		<Italian>
+Scuola di retorica
+		</Italian>
+		<Spanish>
+Escuela de ret&#243;rica
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCHULE_ISLAM</Tag>
 		<English>Madhhab</English>
 		<French>Madhhab</French>
@@ -191,6 +231,14 @@
 		<German>Tora-Schule</German>
 		<Italian>Scuola della Torah</Italian>
 		<Spanish>Escuela de la Tor&#225;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_ROME</Tag>
+		<English>Lyceum</English>
+		<French>Lyceum</French>
+		<German>Lyceum</German>
+		<Italian>Lyceum</Italian>
+		<Spanish><Text>Lyceum</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCHULE_ZORO</Tag>
@@ -343,6 +391,22 @@
 		<German>Der ans&#228;ssige Olympionike konnte f&#252;r das hiesige Stadion +1[ICON_CULTURE] erzielen.</German>
 		<Italian>L'olimpionico residente &#232; riuscito a segnare +1[ICON_CULTURE] per lo stadio locale.</Italian>
 		<Spanish>El ol&#237;mpico residente logr&#243; sumar +1[ICON_CULTURE] para el estadio local.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INFO_SCREEN_KILLED</Tag>
+		<English>Defeated</English>
+		<French>Vaincu</French>
+		<German>Besiegt</German>
+		<Italian>Sconfitto</Italian>
+		<Spanish>Derrotado</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INFO_SCREEN_NUM_TECHS</Tag>
+		<English>Researched technologies</English>
+		<French>Technologies &#233;tudi&#233;es</French>
+		<German>Erforschte Technologien</German>
+		<Italian>Tecnologie ricercate</Italian>
+		<Spanish>Tecnolog&#237;as investigadas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_KONZIL0_1</Tag>
@@ -801,6 +865,14 @@
 		<Spanish>Muestra los movimientos de animales salvajes inofensivos entre turnos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PLOTINFO_ACT_AS_CITY</Tag>
+		<English>Acts as city: offers resource connection, port/canal and city defense for units</English>
+		<French>Agit comme une ville : offre une connexion aux ressources, un port/canal et une d&#233;fense de la ville pour les unit&#233;s</French>
+		<German>Agiert wie eine Stadt: bietet Ressourcenanbindung, Hafen/Kanal und Stadtverteidigung f&#252;r Einheiten</German>
+		<Italian>Funziona come citt&#224;: offre collegamento di risorse, porto/canale e difesa della citt&#224; per le unit&#224;</Italian>
+		<Spanish>Act&#250;a como ciudad: ofrece conexi&#243;n de recursos, puerto/canal y defensa de la ciudad para las unidades.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_POPUP_ELEPHANT_SPREADS_BONUS</Tag>
 		<English>Elephants have settled in the immediate vicinity of your borders.</English>
 		<French>Les &#233;l&#233;phants se sont install&#233;s &#224; proximit&#233; imm&#233;diate de vos fronti&#232;res.</French>
@@ -825,12 +897,36 @@
 		<Spanish>&#161;Un ni&#241;o llamado Jes&#250;s naci&#243; en %s1!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_COMES_HELP</Tag>
+		<English>This unit holds the highest officer title of the late Roman Empire.</English>
+		<French>Cette unit&#233; d&#233;tient le titre d'officier le plus &#233;lev&#233; de la fin de l'Empire romain.</French>
+		<German>Diese Einheit tr&#228;gt den h&#246;chsten Offizierstitel des sp&#228;tr&#246;mischen Reichs.</German>
+		<Italian>Questa unit&#224; detiene il titolo ufficiale pi&#249; alto del tardo Impero Romano.</Italian>
+		<Spanish>Esta unidad ostenta el t&#237;tulo de oficial m&#225;s alto del Imperio Romano tard&#237;o.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_EXCUBITOR</Tag>
+		<English>Comes Excubitorium</English>
+		<French>Comes Excubitorium</French>
+		<German>Comes Excubitorium</German>
+		<Italian>Comes Excubitorium</Italian>
+		<Spanish>Comes Excubitorium</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_MEDIC_HELP</Tag>
 		<English>[ICON_BULLET]Increases the capacity of a supply cart by 100.</English>
 		<French>[ICON_BULLET]Augmente la capacit&#233; d'un chariot de fournitures de 100.</French>
 		<German>[ICON_BULLET]Erh&#246;ht die Kapazit&#228;t eines Versorgungskarren um 100.</German>
 		<Italian>[ICON_BULLET]Aumenta la capacit&#224; di un carrello di rifornimenti di 100.</Italian>
 		<Spanish>[ICON_BULLET]Aumenta la capacidad de un carro de suministros en 100.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PROTECTOR</Tag>
+		<English>Comes Domesticorum</English>
+		<French>Comes Domesticorum</French>
+		<German>Comes Domesticorum</German>
+		<Italian>Comes Domesticorum</Italian>
+		<Spanish>Comes Domesticorum</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ROAD_MOVEMENT_COST</Tag>
@@ -1065,6 +1161,14 @@
 		<Spanish>Esta tecnolog&#237;a est&#225; reservada a los romanos y etruscos. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_SKLAVENMARKT</Tag>
+		<English>Slave markets</English>
+		<French>March&#233;s aux esclaves</French>
+		<German>Sklavenm&#228;rkte</German>
+		<Italian>Mercati degli schiavi</Italian>
+		<Spanish>Mercados de esclavos</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_SKLAVENRECHTE_HELP</Tag>
 		<English>[ICON_BULLET]Reduces the death rate of house, field, and mining slaves by a further 1%.</English>
 		<French>[ICON_BULLET]R&#233;duit le taux de mortalit&#233; des esclaves domestiques, des champs et des mines de 1 %.</French>
@@ -1193,12 +1297,60 @@
 		<Spanish>[ICON_BULLET] Evite los bosques, la nieve y los paisajes de tundra.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROME_EXCUBITORES</Tag>
+		<English>Excubitores</English>
+		<French>Excubitores</French>
+		<German>Excubitores</German>
+		<Italian>Excubitores</Italian>
+		<Spanish>Excubitores</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROME_PROTECTORES</Tag>
+		<English>Protector Domesticus</English>
+		<French>Protector Domesticus</French>
+		<German>Protector Domesticus</German>
+		<Italian>Protector Domesticus</Italian>
+		<Spanish>Protector Domesticus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROME_SCHOLAE</Tag>
+		<English>Schola Palatina</English>
+		<French>Schola Palatina</French>
+		<German>Schola Palatina</German>
+		<Italian>Schola Palatina</Italian>
+		<Spanish>Schola Palatina</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE_EDUCATED</Tag>
+		<English>Educated slave</English>
+		<French>Esclave instruit</French>
+		<German>Gebildeter Sklave</German>
+		<Italian>Schiavo istruito</Italian>
+		<Spanish><Text>Esclavo educado</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE_EDUCATED_HELP</Tag>
+		<English>[ICON_BULLET]Can be sold at a slave market[NEWLINE][ICON_BULLET]Can join huts/hamlets/villages[NEWLINE][ICON_BULLET]Can be assigned to libraries and private schools[NEWLINE][ICON_BULLET]Should be guarded by a military unit</English>
+		<French>[ICON_BULLET]Peut &#234;tre vendu sur un march&#233; aux esclaves[NEWLINE][ICON_BULLET]Peut rejoindre des cabanes/hameaux/villages[NEWLINE][ICON_BULLET]Peut &#234;tre affect&#233; aux biblioth&#232;ques et aux &#233;coles priv&#233;es[NEWLINE][ICON_BULLET]Doit &#234;tre gard&#233; par une unit&#233; militaire</French>
+		<German>[ICON_BULLET]Kann auf einem Sklavenmarkt verkauft werden[NEWLINE][ICON_BULLET]Kann sich H&#252;tten/Weiler/D&#246;rfern anschlie&#223;en[NEWLINE][ICON_BULLET]Kann Bibliotheken und Privatschulen zugewiesen werden[NEWLINE][ICON_BULLET]Sollte von einer Milit&#228;reinheit bewacht werden</German>
+		<Italian>[ICON_BULLET]Pu&#242; essere venduto al mercato degli schiavi[NEWLINE][ICON_BULLET]Pu&#242; unirsi a capanne/borgate/villaggi[NEWLINE][ICON_BULLET]Pu&#242; essere assegnato a biblioteche e scuole private[NEWLINE][ICON_BULLET]Dovrebbe essere sorvegliato da un'unit&#224; militare</Italian>
+		<Spanish>[ICON_BULLET]Se puede vender en un mercado de esclavos.[NEWLINE][ICON_BULLET]Puede unirse a caba&#241;as/aldeas/aldeas.[NEWLINE][ICON_BULLET]Puede asignarse a bibliotecas y escuelas privadas.[NEWLINE][ICON_BULLET]Deber&#237;a estar custodiado por una unidad militar.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_HELP</Tag>
 		<English>[ICON_BULLET]Can be sold at a slave market[NEWLINE][ICON_BULLET]Can join huts/hamlets/villages[NEWLINE][ICON_BULLET]Can be deployed in cities[NEWLINE][ICON_BULLET]Can be assigned to buildings[NEWLINE][ICON_BULLET]Should be guarded by a military unit</English>
 		<French>[ICON_BULLET]Peut &#234;tre vendu sur un march&#233; aux esclaves[NEWLINE][ICON_BULLET]Peut rejoindre des cabanes/hameaux/villages[NEWLINE][ICON_BULLET]Peut &#234;tre utilis&#233; dans les villes[NEWLINE][ICON_BULLET]Peut &#234;tre attribu&#233; &#224; des b&#226;timents[NEWLINE][ICON_BULLET]Doit &#234;tre gard&#233; par une unit&#233; militaire</French>
 		<German>[ICON_BULLET]Kann auf einem Sklavenmarkt verkauft werden[NEWLINE][ICON_BULLET]Kann sich H&#252;tten/Weiler/D&#246;rfern anschlie&#223;en[NEWLINE][ICON_BULLET]Kann in St&#228;dten eingesetzt werden[NEWLINE][ICON_BULLET]Kann Geb&#228;uden zugewiesen werden[NEWLINE][ICON_BULLET]Sollte von einer Milit&#228;reinheit bewacht werden</German>
 		<Italian>[ICON_BULLET]Pu&#242; essere venduto al mercato degli schiavi[NEWLINE][ICON_BULLET]Pu&#242; unirsi a capanne/borgate/villaggi[NEWLINE][ICON_BULLET]Pu&#242; essere utilizzato nelle citt&#224;[NEWLINE][ICON_BULLET]Pu&#242; essere assegnato agli edifici[NEWLINE][ICON_BULLET]Dovrebbe essere sorvegliato da un'unit&#224; militare</Italian>
 		<Spanish>[ICON_BULLET]Se puede vender en un mercado de esclavos.[NEWLINE][ICON_BULLET]Puede unirse a caba&#241;as/aldeas/aldeas[NEWLINE][ICON_BULLET]Se puede usar en ciudades[NEWLINE][ICON_BULLET]Se puede asignar a edificios[NEWLINE][ICON_BULLET]Deber&#237;a estar custodiado por una unidad militar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SLAVE_LEHRER</Tag>
+		<English>Pedagogue</English>
+		<French>Pr&#233;cepteur</French>
+		<German>Pedagoge</German>
+		<Italian>Precettore</Italian>
+		<Spanish>Preceptor</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SWORDSMAN_LATENE</Tag>
@@ -1210,11 +1362,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TRADE_MERCHANT_MAN_HELP</Tag>
-		<English>[ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire (max 9 merchants)[NEWLINE][ICON_BULLET]Low inventory capacity and therefore low profit margin</English>
-		<French>[ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 9)[NEWLINE][ICON_BULLET]Faible capacit&#233; de marchandises et donc faible marge b&#233;n&#233;ficiaire</French>
-		<German>[ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer Einheiten entspricht der Anzahl der Handelsposten im Reich (max 9 H&#228;ndler)[NEWLINE][ICON_BULLET]Geringe Warenkapazit&#228;t und daher geringe Gewinnspanne</German>
-		<Italian>[ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 9 commercianti)[NEWLINE][ICON_BULLET]Scarsa capacit&#224; di merce e quindi basso margine di profitto</Italian>
-		<Spanish>[ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 9 comerciantes)[NEWLINE][ICON_BULLET]Baja capacidad de mercanc&#237;as y, por tanto, bajo margen de beneficio</Spanish>
+		<English>[ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire and is limited by 10[NEWLINE][ICON_BULLET]Low inventory capacity and therefore low profit margin</English>
+		<French>[ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 10)[NEWLINE][ICON_BULLET]Faible capacit&#233; de marchandises et donc faible marge b&#233;n&#233;ficiaire</French>
+		<German>[ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer H&#228;ndler entspricht der Anzahl der Handelsposten im Reich und ist limitiert auf 10[NEWLINE][ICON_BULLET]Geringe Warenkapazit&#228;t und daher geringe Gewinnspanne</German>
+		<Italian>[ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 10 commercianti)[NEWLINE][ICON_BULLET]Scarsa capacit&#224; di merce e quindi basso margine di profitto</Italian>
+		<Spanish>[ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 10 comerciantes)[NEWLINE][ICON_BULLET]Baja capacidad de mercanc&#237;as y, por tanto, bajo margen de beneficio</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TROJAN_HORSE_HELP</Tag>

@@ -1021,6 +1021,7 @@ class CvTechChooser:
 								screen.addDDSGFCAt("", szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_SLAVES_TEMPLE").getPath(), iX +
 																	 fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 693, 693, False)
 								fX += X_INCREMENT
+						elif i == gc.getInfoTypeForString("TECH_SKLAVENMARKT"):
 								screen.addDDSGFCAt("", szTechRecord, ArtFileMgr.getInterfaceArtInfo("INTERFACE_SELL_SLAVES").getPath(), iX +
 																	 fX, iY + Y_ROW, TEXTURE_SIZE, TEXTURE_SIZE, WidgetTypes.WIDGET_GENERAL, 694, 694, False)
 								fX += X_INCREMENT

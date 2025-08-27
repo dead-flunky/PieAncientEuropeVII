@@ -1298,11 +1298,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CITY_DYING_GENERAL_POSITIVE</Tag>
-		<English>[NEWLINE][ICON_BULLET] Temporarily +1[ICON_HAPPY]</English>
-		<French>[NEWLINE][ICON_BULLET] Temporairement +1[ICON_HAPPY]</French>
-		<German>[NEWLINE][ICON_BULLET] Vor&#252;bergehend +1[ICON_HAPPY]</German>
-		<Italian>[NEWLINE][ICON_BULLET] Temporaneamente +1[ICON_HAPPY]</Italian>
-		<Spanish>[NEWLINE][ICON_BULLET] Temporalmente +1[ICON_HAPPY]</Spanish>
+		<English>[NEWLINE][ICON_BULLET] Temporarily +1[ICON_HAPPY] in each city (city status)</English>
+		<French>[NEWLINE][ICON_BULLET] Temporairement +1[ICON_HAPPY] dans chaque ville (statut de ville)</French>
+		<German>[NEWLINE][ICON_BULLET] Vor&#252;bergehend +1[ICON_HAPPY] in jeder Stadt (Stadtstatus)</German>
+		<Italian>[NEWLINE][ICON_BULLET] Temporaneamente +1[ICON_HAPPY] in ogni citt&#224; (stato di citt&#224;)</Italian>
+		<Spanish>[NEWLINE][ICON_BULLET] Temporalmente +1[ICON_HAPPY] en cada ciudad (estado de ciudad)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CITY_DYING_GENERAL_TITLE</Tag>

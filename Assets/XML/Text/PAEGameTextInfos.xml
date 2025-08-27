@@ -8646,11 +8646,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSE_HELP</Tag>
-		<English>[ICON_BULLET]Can accelerate production in cities[NEWLINE][ICON_BULLET]Can be sold in foreign cities[NEWLINE][ICON_BULLET]Can be distributed in cities with flatlands. Improvements prevents the distribution.</English>
-		<French>[ICON_BULLET]Peut acc&#233;l&#233;rer la production dans les villes[NEWLINE][ICON_BULLET]Peut &#234;tre vendu dans des villes &#233;trang&#232;res[NEWLINE][ICON_BULLET]Peut &#234;tre implant&#233; dans une plaine/prairie non am&#233;nag&#233;e pr&#232;s d'une ville</French>
-		<German>[ICON_BULLET]Kann die Produktion in St&#228;dten beschleunigen[NEWLINE][ICON_BULLET]Kann in fremden St&#228;dten verkauft werden[NEWLINE][ICON_BULLET]Kann in St&#228;dten mit Flachland verbreitet werden. Modernisierungen verhindern die Verbreitung.</German>
-		<Italian>[ICON_BULLET]Pu&#242; accelerare la produzione nelle citt&#224;[NEWLINE][ICON_BULLET]Pu&#242; essere venduto in citt&#224; straniere[NEWLINE][ICON_BULLET]Pu&#242; essere distribuito in citt&#224; con pianura. I miglioramenti impediscono la distribuzione.</Italian>
-		<Spanish>[ICON_BULLET]Puede acelerar la producci&#243;n en las ciudades[NEWLINE][ICON_BULLET]Se puede vender en ciudades extranjeras[NEWLINE][ICON_BULLET]Puede ser distribuido en ciudades con planicies. Las mejoras impiden la distribuci&#243;n.</Spanish>
+		<English>[ICON_BULLET]Can accelerate production in cities[NEWLINE][ICON_BULLET]Can be sold in foreign cities[NEWLINE][ICON_BULLET]Can be distributed in cities with flatlands. Improvements prevents the automatic distribution.</English>
+		<French>[ICON_BULLET]Peut acc&#233;l&#233;rer la production dans les villes[NEWLINE][ICON_BULLET]Peut &#234;tre vendu dans des villes &#233;trang&#232;res[NEWLINE][ICON_BULLET]Peut &#234;tre distribu&#233; dans les villes &#224; terrain plat. Les am&#233;liorations emp&#234;chent la distribution automatique.</French>
+		<German>[ICON_BULLET]Kann die Produktion in St&#228;dten beschleunigen[NEWLINE][ICON_BULLET]Kann in fremden St&#228;dten verkauft werden[NEWLINE][ICON_BULLET]Kann in St&#228;dten mit Flachland verbreitet werden. Modernisierungen verhindern die automatische Verbreitung.</German>
+		<Italian>[ICON_BULLET]Pu&#242; accelerare la produzione nelle citt&#224;[NEWLINE][ICON_BULLET]Pu&#242; essere venduto in citt&#224; straniere[NEWLINE][ICON_BULLET]Pu&#242; essere distribuito in citt&#224; con pianura. I miglioramenti impediscono la distribuzione automatica.</Italian>
+		<Spanish>[ICON_BULLET]Puede acelerar la producci&#243;n en las ciudades[NEWLINE][ICON_BULLET]Se puede vender en ciudades extranjeras[NEWLINE][ICON_BULLET]Puede ser distribuido en ciudades con planicies. Las mejoras impiden la distribuci&#243;n autom&#225;tica.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INSTANCE_COST_MOD</Tag>

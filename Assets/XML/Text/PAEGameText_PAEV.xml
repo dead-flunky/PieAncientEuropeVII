@@ -7577,14 +7577,6 @@
 		<Spanish>Limitanei</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_ROME_LIMITANEI_GARDE</Tag>
-		<English>Imperial Guard</English>
-		<French>Garde Imp&#233;riale</French>
-		<German>Kaiserliche Garde</German>
-		<Italian>Guardia Imperiale</Italian>
-		<Spanish>Guardia Imperial</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROME_PALATINI</Tag>
 		<English>Palatin</English>
 		<French>Palatin</French>
@@ -7607,14 +7599,6 @@
 		<German>Equites Singulares Augusti</German>
 		<Italian>Equites Singulares Augusti</Italian>
 		<Spanish>Equites Singulares Augusti</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ROME_SCHOLAE</Tag>
-		<English>Scholae Palatinae</English>
-		<French>Scholae Palatinae</French>
-		<German>Scholae Palatinae</German>
-		<Italian>Schola Palatina</Italian>
-		<Spanish>Scholae Palatinae</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SAMNIT</Tag>
@@ -7985,20 +7969,12 @@
 		<Spanish>&#161;Trajiste un grupo de n&#225;ufragos a bordo, que son adecuados como esclavos!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TRIARII1</Tag>
-		<English>Triarii</English>
-		<French>Triarii</French>
-		<German>Triarii</German>
-		<Italian>Triarii</Italian>
-		<Spanish>Triarii</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_TRIARII2</Tag>
-		<English>Triarii</English>
-		<French>Triarii</French>
-		<German>Triarii</German>
-		<Italian>Triarii</Italian>
-		<Spanish>Triarii</Spanish>
+		<Tag>TXT_KEY_UNIT_TRIARII_STRATEGY2</Tag>
+		<English>Elite Triarii can be promoted to [LINK=UNIT_TRIARII]Cohors Praetoria[\LINK].</English>
+		<French>Elite Triarii peut &#234;tre promu [LINK=UNIT_TRIARII]Cohors Praetoria[\LINK].</French>
+		<German>Elite Triarii k&#246;nnen zu [LINK=UNIT_TRIARII]Cohors Praetoria[\LINK] belobigt werden.</German>
+		<Italian>L'Elite Triarii pu&#242; essere promosso a [LINK=UNIT_TRIARII]Cohors Praetoria[\LINK].</Italian>
+		<Spanish>Elite Triarii puede ser promovido a [LINK=UNIT_TRIARII]Cohors Praetoria[\LINK].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_UR</Tag>
