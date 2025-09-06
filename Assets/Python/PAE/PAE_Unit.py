@@ -3204,8 +3204,16 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 
 				if iWinnerPlayer != -1:
 						pWinnerPlayer = gc.getPlayer(iWinnerPlayer)
+						pWinnerTeam = gc.getTeam(pWinnerPlayer.getTeam())
 						# War Weariness
-						pTeam.changeWarWeariness(pWinnerPlayer.getTeam(), 10)
+						# Verlierer: + 1/3
+						iWarWeariness = pTeam.getWarWeariness(pWinnerPlayer.getTeam())
+						iWarWeariness = iWarWeariness + int(iWarWeariness / 3)
+						pTeam.changeWarWeariness(pWinnerPlayer.getTeam(), iWarWeariness)
+						# Gewinner: - 2/3
+						iWarWeariness = pWinnerTeam.getWarWeariness(pPlayer.getTeam())
+						iWarWeariness = int(iWarWeariness * 2 / 3)
+						pWinnerTeam.changeWarWeariness(pPlayer.getTeam(), -iWarWeariness)
 
 						# PAE Movie (only a Great General)
 						if pUnit.getLeaderUnitType() > -1 and (pPlayer.isHuman() and pPlayer.isTurnActive() or pWinnerPlayer.isHuman() and pWinnerPlayer.isTurnActive()):

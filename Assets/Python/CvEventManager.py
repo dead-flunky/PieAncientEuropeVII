@@ -2771,6 +2771,8 @@ class CvEventManager:
 						PeloponnesianWarKeinpferd.onBeginPlayerTurn(iGameTurn, pPlayer)
 				elif sScenarioName == "WarOfDiadochiJD":
 						Diadochi_JD.onBeginPlayerTurn(iGameTurn, iPlayer)
+				elif sScenarioName == "WegDerGoten":
+						WegDerGoten.onBeginPlayerTurn(iGameTurn, iPlayer)
 
 				# -- TEST MESSAGES
 
@@ -5007,6 +5009,10 @@ class CvEventManager:
 				if iStateReligion > -1:
 						city.setHasReligion(iStateReligion, 1, 0, 0)
 
+				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				if sScenarioName == "WegDerGoten":
+						WegDerGoten.onCityBuilt(city)
+
 				# ***TEST***
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Neue Kolonie (Zeile 3041)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
@@ -5166,6 +5172,9 @@ class CvEventManager:
 							Diadochi_JD.onCityAcquired(iPreviousOwner, iNewOwner, pCity, bConquest, bTrade)
 					elif sScenarioName == "WegDerGoten":
 							WegDerGoten.onCityAcquired(iPreviousOwner, iNewOwner, pCity)
+
+					# War Weariness
+					PAE_City.doWarWeariness(iPreviousOwner, iNewOwner)
 
 					# PAE triumph movies when city is reconquered
 					if pPlayer.isHuman():

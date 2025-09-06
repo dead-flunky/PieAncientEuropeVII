@@ -33,6 +33,14 @@
 		<Spanish>Buleuterio</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CARNAC</Tag>
+		<English>Menhirs of Carnac</English>
+		<French>Menhirs de Carnac</French>
+		<German>Menhire von Carnac</German>
+		<Italian>Menhir di Carnac</Italian>
+		<Spanish><Text>Menhires de Carnac</Text><Gender>Male</Gender><Plural>1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COURTHOUSE</Tag>
 		<English>Court of Justice</English>
 		<French><Text>Cour de justice:Cours de justice</Text><Gender>Female</Gender><Plural>0:1</Plural></French>
@@ -213,7 +221,7 @@ Rhetorikschule
 Scuola di retorica
 		</Italian>
 		<Spanish>
-Escuela de ret&#243;rica
+<Text>Escuela de ret&#243;rica</Text><Gender>Female</Gender><Plural>0</Plural>
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -255,6 +263,14 @@ Escuela de ret&#243;rica
 		<German>Ski&#225;s</German>
 		<Italian>Ski&#225;s</Italian>
 		<Spanish>Ski&#225;s</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEPE</Tag>
+		<English>G&#246;bekli Tepe</English>
+		<French>G&#246;bekli Tepe</French>
+		<German>G&#246;bekli Tepe</German>
+		<Italian>G&#246;bekli Tepe</Italian>
+		<Spanish><Text>G&#246;bekli Tepe</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VERSAMMLUNG</Tag>
@@ -943,6 +959,30 @@ Escuela de ret&#243;rica
 		<German>Via Romana</German>
 		<Italian>Via Romana</Italian>
 		<Spanish>V&#237;a Romana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCEN_CIV_WARNEN</Tag>
+		<English>Warns</English>
+		<French>Warnes</French>
+		<German>Warnen</German>
+		<Italian>Varni</Italian>
+		<Spanish>Varnos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCEN_CIV_WARNEN_ADJECTIVE</Tag>
+		<English>warnian</English>
+		<French>warnien</French>
+		<German>warnisch/e/r</German>
+		<Italian>warniano</Italian>
+		<Spanish>warniano</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCEN_CIV_WARNEN_LEADER</Tag>
+		<English>Boiorix the Warne</English>
+		<French>Boiorix le Warne</French>
+		<German>Boiorix der Warne</German>
+		<Italian>Boiorix il Warne</Italian>
+		<Spanish>Boiorix el Warne</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SYSTEM_TEAM</Tag>

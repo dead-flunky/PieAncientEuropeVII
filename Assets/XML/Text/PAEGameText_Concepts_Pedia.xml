@@ -1825,6 +1825,9 @@ In unhealty cities diseases will emerge with a fairly high probability. These ar
 [ICON_BULLET] Plague
 [TAB] Plague will infect 9 citizens. Plague lasts 5 turns. The city's population falls per turn.
 
+[H2]War weariness upon City Conquest[\H2]
+When a city is conquered, war weariness against the previous owner decreases by 20%.
+
 [H2]Research bonus from city conquest[\H2]
 A city conquest brings a research bonus and can even lead to a new technology, if the city has built an archive or a library.
 
@@ -1834,7 +1837,7 @@ In conquered cities, new units will receive the status "Unreliable". See [LINK=C
 [H2]Revolting cities[\H2]
 If a city is taken during war, there is a possibility of 33% that its nearest neighbour city will go into revolt.
 When a city gets razed, another neighbour city will revolt.
-This excludes the capital and the second government city with the Basilica (forbidden palace).
+Excluded are capital cities, barbarian cities, and cities whose number of defenders is greater than or equal to the city pop.
 
 [ICON_BULLET] Taxes
 If taxes (depending on the form of government) exceed 50% or 75% and are no longer used for research, culture or espionage, the citizens of a city can revolt (AI is not affected).
@@ -1957,6 +1960,9 @@ Se d&#233;clenche par &#233;v&#233;nement dans les villes avec une population de
 [ICON_BULLET] Peste
 Se d&#233;clenche dans les villes avec une population de 9 ou plus. L'&#233;pid&#233;mie dure 5 tours. La population diminue &#224; chaque tour.
 
+[H2]Lassitude de la guerre apr&#232;s la conqu&#234;te d'une ville[\H2]
+Lorsqu'une ville est conquise, la lassitude de la guerre contre son ancien propri&#233;taire diminue de 20 %.
+
 [H2]Bonus de recherche apr&#232;s conqu&#234;te[\H2]
 Une ville conquise apporte un bonus de recherche voire m&#234;me une nouvelle technologie si la ville poss&#232;de une archive ou une biblioth&#232;que.
 
@@ -1966,7 +1972,7 @@ Dans les villes conquises, les nouvelles unit&#233;s recevront le statut "Peu fi
 [H2]R&#233;voltes[\H2]
 Quand une ville est captur&#233;e, il y a une chance de 33% que sa plus proche voisine se r&#233;volte.
 Quand une ville est d&#233;truite, une ville voisine suppl&#233;mentaire se r&#233;voltera.
-Les capitales et villes avec un palais provincial ne sont pas touch&#233;es par ce type de r&#233;volte.
+Sont exclues les capitales, les villes barbares et les villes dont le nombre de d&#233;fenseurs est sup&#233;rieur ou &#233;gal &#224; la population de la ville.
 
 [ICON_BULLET] Taxes
 Si les imp&#244;ts (selon la forme de gouvernement) d&#233;passent 50 % ou 75 % et ne sont plus utilis&#233;s pour la recherche, la culture ou l'espionnage, les citoyens d'une ville peuvent se r&#233;volter (l'IA n'en est pas affect&#233;e).
@@ -2091,6 +2097,9 @@ In ungesunden St&#228;dten tauchen mit ziemlich gro&#223;er Wahrscheinlichkeit S
 [ICON_BULLET] Pest
 [TAB] Pest ab 9 Einwohnerpunkte. Sie dauert 5 Runden. Die Stadtbev&#246;lkerung sinkt pro Runde.
 
+[H2]Kriegsverdruss bei Stadteroberung[\H2]
+Bei Eroberung einer Stadt, sinkt die Kriegsm&#252;digkeit gegen den Vorbesitzer um 20%.
+
 [H2]Forschungsbonus durch Stadteroberung[\H2]
 Eine Eroberung einer Stadt bringt einen Forschungsbonus und kann sogar zu einer neuen Technologie f&#252;hren, sofern in der Stadt ein Archiv oder eine Bibliothek steht.
 
@@ -2102,7 +2111,7 @@ In eroberten St&#228;dten wird es vorkommen, dass neue Einheiten den Status "Unz
 [ICON_BULLET] Eine Stadt wird erobert
 Wird eine Stadt w&#228;hrend einem Krieg eingenommen, gibt es eine 33% Wahrscheinlichkeit, dass dessen n&#228;chste Nachbarstadt revoltiert.
 Wird diese Stadt niedergebrannt, revoltiert auf jeden Fall (noch) eine Nachbarstadt.
-Ausgenommen sind Hauptstadt und Provinzhauptst&#228;dte.
+Ausgenommen sind Hauptst&#228;dte, barbarische St&#228;dte und St&#228;dte, deren Anzahl an Verteidigern gr&#246;&#223;er oder gleich der Stadt-Pop ist.
 
 [ICON_BULLET] Steuern
 Wenn die Steuern (je nach Staatsform) &#252;ber 50% oder 75% nicht mehr f&#252;r Forschung, Kultur oder Spionage eingesetzt werden, k&#246;nnen die B&#252;rger einer Stadt revoltieren (KI ist nicht davon betroffen).
@@ -2228,6 +2237,9 @@ Nelle citt&#224; malsane immergersi con abbastanza elevata probabilit&#224; di e
 [ICON_BULLET] Plague
 [TAB] piaga da 9 abitanti punti. Dura cinque turni . La popolazione della citt&#224; diminuisce per round.
 
+[H2]Stanchezza da guerra dopo la conquista di una citt&#224;[\H2]
+Quando una citt&#224; viene conquistata, lo stanchezza da guerra contro il precedente proprietario diminuisce del 20%.
+
 [H2] bonus ricerca dalla citt&#224; di conquista [\H2]
 Una cattura di una citt&#224; porta un bonus di ricerca e pu&#242; anche portare ad una nuova tecnologia , se un archivio o biblioteca &#232; in citt&#224; .
 
@@ -2238,7 +2250,7 @@ Nelle citt&#224; conquistate, le nuove unit&#224; riceveranno lo stato "Inaffida
 [ICON_BULLET] Una citt&#224; &#232; conquistata
 Quando una citt&#224; &#232; occupata durante la guerra , c'&#232; una probabilit&#224; del 33% che la citt&#224; vicina pi&#249; vicina si ribell&#242; .
 Se questa citt&#224; bruciata , non si ribellarono sicuramente ( ancora) una citt&#224; vicina .
-Fatta eccezione per la capitale e capoluoghi di provincia .
+Sono escluse le citt&#224; capitali, le citt&#224; barbare e le citt&#224; il cui numero di difensori &#232; maggiore o uguale alla popolazione della citt&#224;.
 
 [ICON_BULLET] Imposte
 Se le tasse (a seconda della forma di governo) superano il 50% o il 75% e non vengono pi&#249; utilizzate per la ricerca, la cultura o lo spionaggio, i cittadini di una citt&#224; possono ribellarsi (l'IA non ne &#232; influenzata).
@@ -2364,6 +2376,9 @@ En las ciudades insalubres es m&#225;s probable la aparici&#243;n de epidemias, 
 [ICON_BULLET] Peste
 [TAB] La peste desde los 9 ciudadanos. La peste dura 5 turnos. La poblaci&#243;n de la ciudad decrece cada turno.
 
+[H2]Fatiga de guerra tras la conquista de una ciudad[\H2]
+Cuando se conquista una ciudad, la fatiga de guerra contra el propietario anterior disminuye un 20%.
+
 [H2]Bonus de investigaci&#243;n por conquista de ciudad[\H2]
 La conquista de una ciudad conlleva un bonus de investigaci&#243;n e incluso puede llevar a una nueva tecnolog&#237;a, si la ciudad est&#225; provista de un archivo o una biblioteca.
 
@@ -2373,7 +2388,7 @@ En las ciudades conquistadas, las nuevas unidades recibir&#225;n el estado "No f
 [H2]Revuelta de ciudades[\H2]
 Si una ciudad es conquistada durante la guerra, hay una probabilidad del 33% que una ciudad vecina entre en una revuelta.
 Cuando una ciudad es arrasada, una ciudad vecina entra en revuelta.
-Esto excluye a la capital y a la segunda ciudad gubernamental con la Bas&#237;lica (palacio prohibido).
+Se excluyen las ciudades capitales, las ciudades b&#225;rbaras y las ciudades cuyo n&#250;mero de defensores sea mayor o igual a la poblaci&#243;n de la ciudad.
 
 [ICON_BULLET] Impuestos
 Si los impuestos (seg&#250;n la forma de gobierno) superan el 50% o el 75% y ya no se utilizan para la investigaci&#243;n, la cultura o el espionaje, los ciudadanos de una ciudad pueden rebelarse (la IA no se ve afectada por esto).
@@ -2745,7 +2760,7 @@ Battle on land:
 
 19) Deflecting cities: If a unit is defeated in a city, the number of defenders and besieders is compared. If the ratio is more than 1: 4, the city can surrender. This does not apply to barbaric cities.
 
-20) Conquered cities cause unrest in neighboring enemy cities. Thus, as once Alexander the Great, with fast units, one can occupy several easily defended cities in a very short time. This does not apply to barbaric cities.
+20) Conquered cities cause unrest in neighboring enemy cities if the number of defenders is less than the city pop. Thus, as once Alexander the Great, with fast units, one can occupy several easily defended cities in a very short time. This does not apply to barbaric cities.
 
 21) Burned earth: If a battle is carried out on an improved field, city ruins may arise. The chance is 5%. Villages/Cottages are reduced by one step.
 
@@ -2864,7 +2879,7 @@ Combat sur terre :
 
 19) D&#233;fection d'une ville : lorsqu'une unit&#233; en garnison est vaincue, les nombres de d&#233;fenseurs et d'assaillants sont compar&#233;s. Si le rapport est de 1 pour 4 ou plus en faveur des assi&#233;geants, la ville risque de faire d&#233;fection. Ne s'applique pas aux villes barbares.
 
-20) La conqu&#234;te d'une ville d&#233;stabilise ses voisines. Tel le fit Alexandre le Grand, il est possible de tirer parti de ces r&#233;voltes en capturant rapidement plusieurs cit&#233;s peu d&#233;fendues gr&#226;ce &#224; des troupes rapides. Ne s'applique pas aux villes barbares.
+20) La conqu&#234;te d'une ville d&#233;stabilise ses voisines si le nombre de d&#233;fenseurs est inf&#233;rieur &#224; la population de la ville. Tel le fit Alexandre le Grand, il est possible de tirer parti de ces r&#233;voltes en capturant rapidement plusieurs cit&#233;s peu d&#233;fendues gr&#226;ce &#224; des troupes rapides. Ne s'applique pas aux villes barbares.
 
 21) Terre br&#251;l&#233;e : Des ruines sont susceptibles d'appara&#238;tre sur une case am&#233;nag&#233;e qui voit des unit&#233;s s'affronter (5% de chance). Les cottages, hameaux et villages sont r&#233;duits au niveau inf&#233;rieur. 
 
@@ -2983,7 +2998,7 @@ Kampf zu Land:
 
 19) &#220;berlaufende St&#228;dte: Wird eine Einheit in einer Stadt besiegt, so werden die Anzahl der Verteidiger und Belagerer verglichen. Liegt das Verh&#228;ltnis &#252;ber 1:4 so kann die Stadt &#252;berlaufen. Dies gilt nicht f&#252;r barbarische St&#228;dte.
 
-20) Eroberte St&#228;dte verursachen Unruhen in benachbarten gegnerischen St&#228;dten. Sodass man, wie einst Alexander der Gro&#223;e, mit schnellen Einheiten in k&#252;rzester Zeit mehrere leicht verteidigte St&#228;dte einnehmen kann. Dies gilt nicht f&#252;r barbarische St&#228;dte.
+20) Eroberte St&#228;dte verursachen Unruhen in benachbarten gegnerischen St&#228;dten, wenn die Anzahl der Verteidiger weniger als die Stadt-Pop betr&#228;gt. Sodass man, wie einst Alexander der Gro&#223;e, mit schnellen Einheiten in k&#252;rzester Zeit mehrere leicht verteidigte St&#228;dte einnehmen kann. Dies gilt nicht f&#252;r barbarische St&#228;dte.
 
 21) Verbrannte Erde: Wird eine Schlacht auf einem modernisierten Feld ausgetragen, so k&#246;nnen darauf Stadtruinen entstehen. Die Chance daf&#252;r betr&#228;gt 5%. Gemeinden/D&#246;rfer/H&#252;tten werden hierbei um eine Stufe zur&#252;ckgesetzt.
 
@@ -3104,7 +3119,7 @@ Unit&#224;-Classifica esperienza[\LINK]
 
 19) Defezione della citt&#224;: quando un'unit&#224; presidiata viene sconfitta, viene confrontato il numero di difensori e attaccanti. Se il rapporto &#232; 1:4 o pi&#249; a favore degli assedianti, la citt&#224; potrebbe arrendersi. Non si applica alle citt&#224; barbariche.
 
-20) La conquista di una citt&#224; destabilizza le citt&#224; nemiche vicine. Come fece Alessandro Magno, &#232; possibile trarre vantaggio da queste rivolte catturando rapidamente diverse citt&#224; mal difese in poco tempo. Non si applica alle citt&#224; barbariche.
+20) La conquista di una citt&#224; destabilizza le citt&#224; nemiche vicine se il numero di difensori &#232; inferiore alla popolazione della citt&#224;. Come fece Alessandro Magno, &#232; possibile trarre vantaggio da queste rivolte catturando rapidamente diverse citt&#224; mal difese in poco tempo. Non si applica alle citt&#224; barbariche.
 
 21) Terra bruciata: &#232; probabile che le rovine appaiano su una casella migliorata che vede le unit&#224; scontrarsi (probabilit&#224; del 5%). I paesi e i villaggi sono ridotti al livello inferiore.
 
@@ -3222,7 +3237,7 @@ Batallas terrestres:
 
 19) Ciudades desertoras: Si una unidad es derrotada en una ciudad, el n&#250;mero de defensores y atacantes se compara. Si la proporci&#243;n es m&#225;s de 1 : 4, la ciudad puede rendirse. Esto no se aplica a las ciudades b&#225;rbaras.
 
-20) Ciudades conquistadas causan disturbios en las ciudades vecinas enemigas. As&#237;, tal y como hizo una vez Alejandro Magno, con unidades r&#225;pidas, uno puede ocupar varias ciudades f&#225;cilmente en muy poco tiempo. Esto no se aplica a las ciudades b&#225;rbaras.
+20) Ciudades conquistadas causan disturbios en las ciudades vecinas enemigas si el n&#250;mero de defensores es menor que la poblaci&#243;n de la ciudad. As&#237;, tal y como hizo una vez Alejandro Magno, con unidades r&#225;pidas, uno puede ocupar varias ciudades f&#225;cilmente en muy poco tiempo. Esto no se aplica a las ciudades b&#225;rbaras.
 
 21) Tierra quemada: si la batalla toma lugar en una casilla con mejoras, unas ruinas de ciudad pueden surgir. La probabilidad es del 5%. Los pueblos/villas se reducen un paso.
 
@@ -5902,55 +5917,65 @@ La unidad obtendr&#225; inmediatamente una formaci&#243;n ofensiva (m&#225;s bon
 		<English>[H1]The death of a general[\H1]
 The death of some leaders or generals have often brought the country into turmoil (Caesar), or even in worst cases, cut up (Alexander).
 
-Therefore, there is a 10% chance that a city will plunge into a [LINK=CONCEPT_CIVIL_WAR]Civil War[\LINK].
+1.) Therefore, there is a 10% chance that a city will plunge into a [LINK=CONCEPT_CIVIL_WAR]Civil War[\LINK].
 If you have adopted the [LINK=CIVIC_POLYARCHIE]polyarchy[\LINK] form of government, the cities are spared a civil war.
 
-Furthermore, each city (status: city) gets +1 [ICON_UNHAPPY]. Defeating an enemy general also gives cities +1 [ICON_HAPPY]. This means that the more generals you lose without being victorious yourself, the unhappier the cities become. This in turn means that they can [LINK=UNIT_EMIGRANT]emigrate[\LINK] out of dissatisfaction or start a [LINK=CONCEPT_CIVIL_WAR]civil war[\LINK].
+2.) Furthermore, each city (status: city) gets +1 [ICON_UNHAPPY]. Defeating an enemy general also gives cities +1 [ICON_HAPPY]. This means that the more generals you lose without being victorious yourself, the unhappier the cities become. This in turn means that they can [LINK=UNIT_EMIGRANT]emigrate[\LINK] out of dissatisfaction or start a [LINK=CONCEPT_CIVIL_WAR]civil war[\LINK].
 
-The bonuses [ICON_UNHAPPY] or [ICON_HAPPY] expire over time (chance 5% per turn).</English>
+The bonuses [ICON_UNHAPPY] or [ICON_HAPPY] expire over time (chance 5% per turn).
+
+3.) The loser's war weariness increases by one-third. The victor's war weariness even decreases by two-thirds.</English>
 		<French>
 [H1]Mort d'un g&#233;n&#233;ral[\H1]
 L'histoire nous a montr&#233; que la mort d'un grand meneur d'hommes ou d'un g&#233;n&#233;ral est souvent la cause de troubles (C&#233;sar) ou pire, de l'&#233;clatement d'une nation (Alexandre).
 
-Par cons&#233;quent, il y a 10 % de chances qu'une ville plonge dans une [LINK=CONCEPT_CIVIL_WAR]Guerre civile[\LINK].
+1.) Par cons&#233;quent, il y a 10 % de chances qu'une ville plonge dans une [LINK=CONCEPT_CIVIL_WAR]Guerre civile[\LINK].
 Si vous avez adopt&#233; la [LINK=CIVIC_POLYARCHIE]polyarchie[\LINK] forme de gouvernement, les villes sont &#233;pargn&#233;es d'une guerre civile.
 
-De plus, chaque ville (statut : ville) obtient +1 [ICON_UNHAPPY]. Vaincre un g&#233;n&#233;ral ennemi donne &#233;galement aux villes +1 [ICON_HAPPY]. Cela signifie que plus vous perdez de g&#233;n&#233;raux sans &#234;tre vous-m&#234;me victorieux, plus les villes deviennent malheureuses. Cela signifie qu'ils peuvent [LINK=UNIT_EMIGRANT]&#233;migrer[\LINK] par m&#233;contentement ou d&#233;clencher une [LINK=CONCEPT_CIVIL_WAR]guerre civile[\LINK].
+2.) De plus, chaque ville (statut : ville) obtient +1 [ICON_UNHAPPY]. Vaincre un g&#233;n&#233;ral ennemi donne &#233;galement aux villes +1 [ICON_HAPPY]. Cela signifie que plus vous perdez de g&#233;n&#233;raux sans &#234;tre vous-m&#234;me victorieux, plus les villes deviennent malheureuses. Cela signifie qu'ils peuvent [LINK=UNIT_EMIGRANT]&#233;migrer[\LINK] par m&#233;contentement ou d&#233;clencher une [LINK=CONCEPT_CIVIL_WAR]guerre civile[\LINK].
 
 Les bonus [ICON_UNHAPPY] ou [ICON_HAPPY] expirent avec le temps (chance 5 % par tour).
+
+3.) La lassitude du vaincu augmente d'un tiers. Celle du vainqueur diminue m&#234;me des deux tiers.
 		</French>
 		<German>
 [H1]Der Tod eines Generals[\H1]
 Der Tod so mancher Anf&#252;hrer oder Gener&#228;le hat oftmals das Land in Aufruhr gebracht (Caesar), ja in den schlimmsten F&#228;llen sogar zerteilt (Alexander).
 
-Daher gibt es eine Chance von 10%, dass eine Stadt in einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] st&#252;rzt.
+1.) Daher gibt es eine Chance von 10%, dass eine Stadt in einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] st&#252;rzt.
 Hat man die Regierungsform [LINK=CIVIC_POLYARCHIE]Polyarchie[\LINK] angenommen, bleiben die St&#228;dte von einem B&#252;rgerkrieg verschont.
 
-Weiters erh&#228;lt jede Stadt (Status: Stadt) +1 [ICON_UNHAPPY]. Besiegt man einen gegnerischen General bekommen St&#228;dte wiederum +1 [ICON_HAPPY]. Das bedeutet, je mehr Gener&#228;le man verliert, ohne selbst siegreich zu sein, desto ungl&#252;cklicher werden die St&#228;dte. Das wiederum bedeutet, dass sie wegen Unzufriedenheit [LINK=UNIT_EMIGRANT]auswandern[\LINK] oder einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] anzetteln k&#246;nnen.
+2.) Weiters erh&#228;lt jede Stadt (Status: Stadt) +1 [ICON_UNHAPPY]. Besiegt man einen gegnerischen General bekommen St&#228;dte wiederum +1 [ICON_HAPPY]. Das bedeutet, je mehr Gener&#228;le man verliert, ohne selbst siegreich zu sein, desto ungl&#252;cklicher werden die St&#228;dte. Das wiederum bedeutet, dass sie wegen Unzufriedenheit [LINK=UNIT_EMIGRANT]auswandern[\LINK] oder einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] anzetteln k&#246;nnen.
 
 Die Boni [ICON_UNHAPPY] oder [ICON_HAPPY] verfallen im Laufe der Zeit (Chance 5% pro Runde).
+
+3.) Der Kriegsverdruss des Verlierers steigt um ein Drittel. Der Kriegsverdruss des Siegers sinkt sogar um zwei Drittel.
 		</German>
 		<Italian>
 [H1] La morte del generale [\H1]
 La morte di cos&#236; tanti leader o generali ha spesso portato il paese nel caos (Cesare), anche nel peggiore dei casi anche tagliati (Alexander).
 
-Pertanto, c'&#232; una probabilit&#224; del 10% che una citt&#224; precipiti in una [LINK=CONCEPT_CIVIL_WAR]guerra civile[\LINK].
+1.) Pertanto, c'&#232; una probabilit&#224; del 10% che una citt&#224; precipiti in una [LINK=CONCEPT_CIVIL_WAR]guerra civile[\LINK].
 Se hai adottato la forma di governo [LINK=CIVIC_POLYARCHIE]poliarchia[\LINK], alle citt&#224; viene risparmiata una guerra civile.
 
-Inoltre, ogni citt&#224; (stato: citt&#224;) ottiene +1 [ICON_UNHAPPY]. Sconfiggere un generale nemico d&#224; anche alle citt&#224; +1 [ICON_HAPPY]. Ci&#242; significa che pi&#249; generali perdi senza vincere tu stesso, pi&#249; infelici diventano le citt&#224;. Questo a sua volta significa che possono [LINK=UNIT_EMIGRANT]emigrare[\LINK] per insoddisfazione o iniziare una [LINK=CONCEPT_CIVIL_WAR]guerra civile[\LINK].
+2.) Inoltre, ogni citt&#224; (stato: citt&#224;) ottiene +1 [ICON_UNHAPPY]. Sconfiggere un generale nemico d&#224; anche alle citt&#224; +1 [ICON_HAPPY]. Ci&#242; significa che pi&#249; generali perdi senza vincere tu stesso, pi&#249; infelici diventano le citt&#224;. Questo a sua volta significa che possono [LINK=UNIT_EMIGRANT]emigrare[\LINK] per insoddisfazione o iniziare una [LINK=CONCEPT_CIVIL_WAR]guerra civile[\LINK].
 
 I bonus [ICON_UNHAPPY] o [ICON_HAPPY] scadono nel tempo (probabilit&#224; 5% per turno).
+
+3.) La stanchezza della guerra del perdente aumenta di un terzo. Quella del vincitore diminuisce addirittura di due terzi.
 		</Italian>
 		<Spanish>
 [H1]La muerte de un general[\H1]
 La muerte de algunos l&#237;deres o generales a menudo han llevado al pa&#237;s al caos (C&#233;sar); o incluso en el peor de los casos, a su divisi&#243;n (Alejandro).
 
-Por lo tanto, existe un 10 % de probabilidad de que una ciudad se sumerja en una [LINK=CONCEPT_CIVIL_WAR]Guerra civil[\LINK].
+1.) Por lo tanto, existe un 10 % de probabilidad de que una ciudad se sumerja en una [LINK=CONCEPT_CIVIL_WAR]Guerra civil[\LINK].
 Si has adoptado la forma de gobierno de [LINK=CIVIC_POLYARCHIE]poliarqu&#237;a[\LINK], las ciudades se librar&#225;n de una guerra civil.
 
-Adem&#225;s, cada ciudad (estado: ciudad) obtiene +1 [ICON_UNHAPPY]. Derrotar a un general enemigo tambi&#233;n otorga a las ciudades +1 [ICON_HAPPY]. Esto significa que cuantos m&#225;s generales pierdas sin salir victorioso, m&#225;s infelices ser&#225;n las ciudades. Esto a su vez significa que pueden [LINK=UNIT_EMIGRANT]emigrar[\LINK] por insatisfacci&#243;n o iniciar una [LINK=CONCEPT_CIVIL_WAR]guerra civil[\LINK].
+2.) Adem&#225;s, cada ciudad (estado: ciudad) obtiene +1 [ICON_UNHAPPY]. Derrotar a un general enemigo tambi&#233;n otorga a las ciudades +1 [ICON_HAPPY]. Esto significa que cuantos m&#225;s generales pierdas sin salir victorioso, m&#225;s infelices ser&#225;n las ciudades. Esto a su vez significa que pueden [LINK=UNIT_EMIGRANT]emigrar[\LINK] por insatisfacci&#243;n o iniciar una [LINK=CONCEPT_CIVIL_WAR]guerra civil[\LINK].
 
 Las bonificaciones [ICON_UNHAPPY] o [ICON_HAPPY] caducan con el tiempo (probabilidad del 5 % por turno).
+
+3.) El cansancio b&#233;lico del perdedor aumenta en un tercio. El del vencedor incluso disminuye en dos tercios.
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -6074,11 +6099,54 @@ Ver concepto [LINK=CONCEPT_SLAVES]esclavos y esclavos liberados[\LINK].
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_GREAT_GENERALS_PEDIA</Tag>
-		<English>[H1]Great Generals[\H1][PARAGRAPH:2]Great Generals are military leaders that emerge as your civilization gains combat experience. When you have won enough battles to reach a certain threshold of total experience, a [LINK=UNIT_GREAT_GENERAL]Great General[\LINK] appears in one of your cities. Each Great General requires twice the amount of combat experience that was needed to generate the one before.[PARAGRAPH:2]Once generated, you can turn your Great General into a Warlord by joining him with another unit in the field. That action also distributes a one-time experience bonus to units in the same tile. The unit receiving the Warlord can be upgraded at no cost, and retains all of its experience when doing so. The unit also gains access to some special promotions not normally available, such as [LINK=PROMOTION_COMBAT6]Combat VI[\LINK], [LINK=PROMOTION_MEDIC3]Medic III[\LINK], [LINK=PROMOTION_TACTICS]Tactics[\LINK], [LINK=PROMOTION_LEADERSHIP]Leadership[\LINK], and [LINK=PROMOTION_MORALE]Morale[\LINK].[PARAGRAPH:2]Alternatively, you can use your Great General to construct a [LINK=BUILDING_MILITARY_ACADEMY]Military academy[\LINK] or an [LINK=BUILDING_HEROIC_EPIC]Heroic Epic[\LINK] in a city. That city receives a production bonus when building military units.[PARAGRAPH:2]And finally, the third possible use of a Great General is to erect a monument for himself in a city. These include a [LINK=BUILDING_SIEGESSTATUE]victory statue[\LINK], a [LINK=BUILDING_SIEGESSAEULE]victory column[\LINK], an [LINK=BUILDING_ELEPHANTMONUMENT]elephant monument[\LINK], a [LINK=BUILDING_TRIUMPH]triumphal arch[\LINK] and the [LINK=BUILDING_ROMAN_SHRINE]Temple of Mars[\LINK] in the founding city of the Roman gods.</English>
-		<French>[H1]G&#233;n&#233;raux illustres[\H1][PARAGRAPH:2]Les g&#233;n&#233;raux illustres sont des chefs militaires qui &#233;mergent au fur et &#224; mesure que votre civilisation gagne de l'exp&#233;rience au combat. Une fois que vous avez remport&#233; suffisamment de victoires pour atteindre un certain seuil d'exp&#233;rience, un [LINK=UNIT_GREAT_GENERAL]g&#233;n&#233;ral illustre[\LINK] appara&#238;t dans votre capitale. Chaque nouveau g&#233;n&#233;ral illustre n&#233;cessite deux fois plus d'exp&#233;rience que le pr&#233;c&#233;dent.[PARAGRAPH:2]Une fois g&#233;n&#233;r&#233;, un g&#233;n&#233;ral illustre peut devenir un Seigneur de guerre en rejoignant une autre unit&#233; sur le champ de bataille. Les unit&#233;s plac&#233;es sur la m&#234;me case obtiennent dans le processus un bonus ponctuel d'exp&#233;rience. L'unit&#233; qui accueille le Seigneur de guerre peut &#234;tre am&#233;lior&#233;e gratuitement, tout en conservant l'int&#233;gralit&#233; de son exp&#233;rience acquise. L'unit&#233; a aussi acc&#232;s &#224; des promotions sp&#233;ciales, telles que [LINK=PROMOTION_COMBAT6]Combat VI[\LINK], [LINK=PROMOTION_MEDIC3]Infirmier III[\LINK], [LINK=PROMOTION_TACTICS]Tactiques[\LINK], [LINK=PROMOTION_LEADERSHIP]Commandement[\LINK] et [LINK=PROMOTION_MORALE]Moral[\LINK].[PARAGRAPH:2]Votre g&#233;n&#233;ral illustre peut aussi construire dans une ville une [LINK=BUILDING_MILITARY_ACADEMY]Acad&#233;mie militaire[\LINK] ou une [LINK=BUILDING_HEROIC_EPIC]Epop&#233;e H&#233;ro&#239;que[\LINK]. La ville re&#231;oit alors un bonus de production pour la cr&#233;ation d'unit&#233;s militaires.[PARAGRAPH:2]Et enfin, la troisi&#232;me utilisation possible d'un Grand G&#233;n&#233;ral est de s'&#233;riger un monument dans une ville. Il s'agit notamment d'une [LINK=BUILDING_SIEGESSTATUE]statue de la victoire[\LINK], d'une [LINK=BUILDING_SIEGESSAEULE]colonne de la victoire[\LINK], d'un [LINK=BUILDING_ELEPHANTMONUMENT]monument &#224; l'&#233;l&#233;phant[\LINK], d'un [LINK=BUILDING_TRIUMPH]arc de triomphe[\LINK] et du [LINK=BUILDING_ROMAN_SHRINE]Temple de Mars[\LINK] dans la ville fondatrice des dieux romains.</French>
-		<German>[H1]Gro&#223;e Gener&#228;le[\H1][PARAGRAPH:2]Gro&#223;e Gener&#228;le sind Milit&#228;rf&#252;hrer, die Ihre Zivilisation mit fortschreitender Kampferfahrung hervorbringt. Sobald Sie gen&#252;gend Schlachten gewonnen und damit hinreichend Erfahrung angesammelt haben, wird in Ihrer Hauptstadt zun&#228;chst ein [LINK=UNIT_GREAT_GENERAL]Gro&#223;er General[\LINK] zur Verf&#252;gung gestellt. F&#252;r jeden weiteren Gro&#223;en General ist die doppelte Erfahrungspunktzahl des vorherigen erforderlich.[PARAGRAPH:2]Nach seiner Bereitstellung k&#246;nnen Sie Ihren Gro&#223;en General zum Kriegsherrn ernennen, indem Sie ihn mit einer anderen Einheit im Feld vereinigen. Dadurch erhalten alle auf demselben Gel&#228;ndefeld befindlichen Einheiten einen einmaligen Erfahrungsbonus. Die Einheit, die mit dem Kriegsherrn vereinigt wird, kann kostenlos bef&#246;rdert werden und beh&#228;lt dar&#252;ber hinaus alle ihre bis zu diesem Zeitpunkt angesammelten Erfahrungspunkte. Au&#223;erdem werden speziell f&#252;r diese Einheit einige besondere Bef&#246;rderungsoptionen angeboten, die normalerweise nicht verf&#252;gbar sind, wie zum Beispiel [LINK=PROMOTION_COMBAT6]Kampf VI[\LINK], [LINK=PROMOTION_MEDIC3]Arzt III[\LINK], [LINK=PROMOTION_TACTICS]Taktik[\LINK], [LINK=PROMOTION_LEADERSHIP]F&#252;hrerschaft[\LINK] und [LINK=PROMOTION_MORALE]Kampfmoral[\LINK].[PARAGRAPH:2]Alternativ k&#246;nnen Sie Ihren Gro&#223;en General auch zur Errichtung einer [LINK=BUILDING_MILITARY_ACADEMY]Milit&#228;rakademie[\LINK] oder eines [LINK=BUILDING_HEROIC_EPIC]Heldenepos[\LINK] in einer Stadt einsetzen. Diese Stadt erh&#228;lt daraufhin einen Produktionsbonus f&#252;r die Ausbildung von Milit&#228;reinheiten.[PARAGRAPH:2]Und die dritte Einsatzm&#246;glichkeit eines Gro&#223;en Generals besteht schlie&#223;lich darin, dass er sich in einer Stadt ein Denkmal setzt. Darunter z&#228;hlen eine [LINK=BUILDING_SIEGESSTATUE]Siegesstatue[\LINK], eine [LINK=BUILDING_SIEGESSAEULE]Siegess&#228;ule[\LINK], ein [LINK=BUILDING_ELEPHANTMONUMENT]Elefantenmonument[\LINK], ein [LINK=BUILDING_TRIUMPH]Triumphbogen[\LINK] und der [LINK=BUILDING_ROMAN_SHRINE]Marstempel[\LINK] in der Gr&#252;ndungsstadt der R&#246;mischen G&#246;tter.</German>
-		<Italian>[H1]Grandi Generali[\H1][PARAGRAPH:2]I Grandi Generali sono condottieri militari che emergono dalle fila del tuo esercito man mano che vinci degli scontri e superi certe soglie di esperienza: a quel punto nella capitale verr&#224; generato un [LINK=UNIT_GREAT_GENERAL]Grande Generale[\LINK]. I punti esperienza necessari per generare il Grande Generale successivo si raddoppiano di volta in volta.[PARAGRAPH:2]Una volta che hai a disposizione un Grande Generale, puoi trasformarlo in un Guerriero unendolo a un'altra unit&#224; sul campo. Cos&#236; agendo distribuirai un bonus una tantum di esperienza alle unit&#224; presenti nella stessa casella. L'unit&#224; che riceve il Guerriero pu&#242; essere aggiornata gratuitamente e mantenendo al contempo la propria esperienza. L'unit&#224; d&#224; inoltre accesso a una serie di promozioni normalmente non disponibili, quali [LINK=PROMOTION_COMBAT6]Combattimento VI[\LINK], [LINK=PROMOTION_MEDIC3]Medico III[\LINK], [LINK=PROMOTION_TACTICS]Tattica[\LINK], [LINK=PROMOTION_LEADERSHIP]Comando[\LINK] e [LINK=PROMOTION_MORALE]Morale[\LINK].[PARAGRAPH:2]In alternativa, puoi sfruttare il Grande Generale per costruire una [LINK=BUILDING_MILITARY_ACADEMY]Accademia Militare[\LINK] o un [LINK=BUILDING_HEROIC_EPIC]Epico Eroico[\LINK] in una citt&#224;, che ricever&#224; cos&#236; un bonus di produzione relativamente alle unit&#224; militari.[PARAGRAPH:2]E infine, il terzo possibile utilizzo di un Grande Generale &#232; quello di erigere un monumento a se stesso in una citt&#224;. Questi includono una [LINK=BUILDING_SIEGESSTATUE]statua della vittoria[\LINK], una [LINK=BUILDING_SIEGESSAEULE]colonna della vittoria[\LINK], un [LINK=BUILDING_ELEPHANTMONUMENT]monumento all'elefante[\LINK], un [LINK=BUILDING_TRIUMPH]arco di trionfo[\LINK] e il [LINK=BUILDING_ROMAN_SHRINE]Tempio di Marte[\LINK] nella citt&#224; fondatrice degli dei romani.</Italian>
-		<Spanish>[H1]Los grandes generales[\H1][PARAGRAPH:2]Los grandes generales son l&#237;deres militares que aparecen a medida que la civilizaci&#243;n gana experiencia en combate. Cuando hayas ganado experiencia suficiente para superar un umbral determinado, aparecer&#225; en tu capital un [LINK=UNIT_GREAT_GENERAL]Gran general[\LINK]. Cada gran general requiere el doble de la experiencia que ser&#237;a necesaria para generar al anterior.[PARAGRAPH:2]Un vez generado, puedes convertir al gran general en un caudillo si lo unes a otra unidad en el campo. Esta acci&#243;n tambi&#233;n otorga una bonificaci&#243;n &#250;nica en puntos de experiencia a las unidades que est&#233;n en la misma casilla. La unidad que reciba al caudillo no podr&#225; modernizarse a ning&#250;n coste y conservar&#225; toda su experiencia. La unidad tambi&#233;n ganar&#225; acceso a algunos ascensos especiales que no est&#225;n disponibles normalmente, como [LINK=PROMOTION_COMBAT6]Combate VI[\LINK], [LINK=PROMOTION_MEDIC3]M&#233;dica III[\LINK], [LINK=PROMOTION_TACTICS]T&#225;cticas[\LINK], [LINK=PROMOTION_LEADERSHIP]Liderazgo[\LINK] y [LINK=PROMOTION_MORALE]Moral[\LINK].[PARAGRAPH:2]Como alternativa, puedes emplear al gran general para construir una [LINK=BUILDING_MILITARY_ACADEMY]academia militar[\LINK] o una [LINK=BUILDING_HEROIC_EPIC]&#233;pica heroica[\LINK] en una ciudad. Dicha ciudad obtendr&#225; una bonificaci&#243;n a la producci&#243;n cuando construya unidades militares.[PARAGRAPH:2]Y finalmente, el tercer uso posible de un Gran General es erigir un monumento para s&#237; mismo en una ciudad. Estos incluyen una [LINK=BUILDING_SIEGESSTATUE]estatua de la victoria[\LINK], una [LINK=BUILDING_SIEGESSAEULE]columna de la victoria[\LINK], un [LINK=BUILDING_ELEPHANTMONUMENT]monumento al elefante[\LINK], un [LINK=BUILDING_TRIUMPH]arco triunfal[\LINK] y el [LINK=BUILDING_ROMAN_SHRINE]Templo de Marte[\LINK] en la ciudad fundadora de los dioses romanos.</Spanish>
+		<English>[H1]Great Generals[\H1]
+[PARAGRAPH:2]Great Generals are military leaders that emerge as your civilization gains combat experience. When you have won enough battles to reach a certain threshold of total experience, a [LINK=UNIT_GREAT_GENERAL]Great General[\LINK] appears in one of your cities. Each Great General requires twice the amount of combat experience that was needed to generate the one before.
+
+[PARAGRAPH:2]Once generated, you can turn your Great General into a Warlord by joining him with another unit in the field. That action also distributes a one-time experience bonus to units in the same tile. The unit receiving the Warlord can be upgraded at no cost, and retains all of its experience when doing so. The unit also gains access to some special promotions not normally available, such as [LINK=PROMOTION_COMBAT6]Combat VI[\LINK], [LINK=PROMOTION_MEDIC3]Medic III[\LINK], [LINK=PROMOTION_TACTICS]Tactics[\LINK], [LINK=PROMOTION_LEADERSHIP]Leadership[\LINK], and [LINK=PROMOTION_MORALE]Morale[\LINK].
+
+[PARAGRAPH:2]Alternatively, you can use your Great General to construct a [LINK=BUILDING_MILITARY_ACADEMY]Military academy[\LINK] or an [LINK=BUILDING_HEROIC_EPIC]Heroic Epic[\LINK] in a city. That city receives a production bonus when building military units.[PARAGRAPH:2]And finally, the third possible use of a Great General is to erect a monument for himself in a city. These include a [LINK=BUILDING_SIEGESSTATUE]victory statue[\LINK], a [LINK=BUILDING_SIEGESSAEULE]victory column[\LINK], an [LINK=BUILDING_ELEPHANTMONUMENT]elephant monument[\LINK], a [LINK=BUILDING_TRIUMPH]triumphal arch[\LINK] and the [LINK=BUILDING_ROMAN_SHRINE]Temple of Mars[\LINK] in the founding city of the Roman gods.
+
+[PARAGRAPH:2] Effects when a General dies: [LINK=CONCEPT_GENERALDEATH]General's death[\LINK]</English>
+		<French>
+[H1]G&#233;n&#233;raux illustres[\H1]
+[PARAGRAPH:2]Les g&#233;n&#233;raux illustres sont des chefs militaires qui &#233;mergent au fur et &#224; mesure que votre civilisation gagne de l'exp&#233;rience au combat. Une fois que vous avez remport&#233; suffisamment de victoires pour atteindre un certain seuil d'exp&#233;rience, un [LINK=UNIT_GREAT_GENERAL]g&#233;n&#233;ral illustre[\LINK] appara&#238;t dans votre capitale. Chaque nouveau g&#233;n&#233;ral illustre n&#233;cessite deux fois plus d'exp&#233;rience que le pr&#233;c&#233;dent.
+
+[PARAGRAPH:2]Une fois g&#233;n&#233;r&#233;, un g&#233;n&#233;ral illustre peut devenir un Seigneur de guerre en rejoignant une autre unit&#233; sur le champ de bataille. Les unit&#233;s plac&#233;es sur la m&#234;me case obtiennent dans le processus un bonus ponctuel d'exp&#233;rience. L'unit&#233; qui accueille le Seigneur de guerre peut &#234;tre am&#233;lior&#233;e gratuitement, tout en conservant l'int&#233;gralit&#233; de son exp&#233;rience acquise. L'unit&#233; a aussi acc&#232;s &#224; des promotions sp&#233;ciales, telles que [LINK=PROMOTION_COMBAT6]Combat VI[\LINK], [LINK=PROMOTION_MEDIC3]Infirmier III[\LINK], [LINK=PROMOTION_TACTICS]Tactiques[\LINK], [LINK=PROMOTION_LEADERSHIP]Commandement[\LINK] et [LINK=PROMOTION_MORALE]Moral[\LINK].
+
+[PARAGRAPH:2]Votre g&#233;n&#233;ral illustre peut aussi construire dans une ville une [LINK=BUILDING_MILITARY_ACADEMY]Acad&#233;mie militaire[\LINK] ou une [LINK=BUILDING_HEROIC_EPIC]Epop&#233;e H&#233;ro&#239;que[\LINK]. La ville re&#231;oit alors un bonus de production pour la cr&#233;ation d'unit&#233;s militaires.[PARAGRAPH:2]Et enfin, la troisi&#232;me utilisation possible d'un Grand G&#233;n&#233;ral est de s'&#233;riger un monument dans une ville. Il s'agit notamment d'une [LINK=BUILDING_SIEGESSTATUE]statue de la victoire[\LINK], d'une [LINK=BUILDING_SIEGESSAEULE]colonne de la victoire[\LINK], d'un [LINK=BUILDING_ELEPHANTMONUMENT]monument &#224; l'&#233;l&#233;phant[\LINK], d'un [LINK=BUILDING_TRIUMPH]arc de triomphe[\LINK] et du [LINK=BUILDING_ROMAN_SHRINE]Temple de Mars[\LINK] dans la ville fondatrice des dieux romains.
+
+[PARAGRAPH:2] Effets lorsqu'un g&#233;n&#233;ral meurt : [LINK=CONCEPT_GENERALDEATH]D&#233;c&#232;s g&#233;n&#233;ral[\LINK]
+		</French>
+		<German>
+[H1]Gro&#223;e Gener&#228;le[\H1]
+[PARAGRAPH:2]Gro&#223;e Gener&#228;le sind Milit&#228;rf&#252;hrer, die Ihre Zivilisation mit fortschreitender Kampferfahrung hervorbringt. Sobald Sie gen&#252;gend Schlachten gewonnen und damit hinreichend Erfahrung angesammelt haben, wird in Ihrer Hauptstadt zun&#228;chst ein [LINK=UNIT_GREAT_GENERAL]Gro&#223;er General[\LINK] zur Verf&#252;gung gestellt. F&#252;r jeden weiteren Gro&#223;en General ist die doppelte Erfahrungspunktzahl des vorherigen erforderlich.
+
+[PARAGRAPH:2]Nach seiner Bereitstellung k&#246;nnen Sie Ihren Gro&#223;en General zum Kriegsherrn ernennen, indem Sie ihn mit einer anderen Einheit im Feld vereinigen. Dadurch erhalten alle auf demselben Gel&#228;ndefeld befindlichen Einheiten einen einmaligen Erfahrungsbonus. Die Einheit, die mit dem Kriegsherrn vereinigt wird, kann kostenlos bef&#246;rdert werden und beh&#228;lt dar&#252;ber hinaus alle ihre bis zu diesem Zeitpunkt angesammelten Erfahrungspunkte. Au&#223;erdem werden speziell f&#252;r diese Einheit einige besondere Bef&#246;rderungsoptionen angeboten, die normalerweise nicht verf&#252;gbar sind, wie zum Beispiel [LINK=PROMOTION_COMBAT6]Kampf VI[\LINK], [LINK=PROMOTION_MEDIC3]Arzt III[\LINK], [LINK=PROMOTION_TACTICS]Taktik[\LINK], [LINK=PROMOTION_LEADERSHIP]F&#252;hrerschaft[\LINK] und [LINK=PROMOTION_MORALE]Kampfmoral[\LINK].
+
+[PARAGRAPH:2]Alternativ k&#246;nnen Sie Ihren Gro&#223;en General auch zur Errichtung einer [LINK=BUILDING_MILITARY_ACADEMY]Milit&#228;rakademie[\LINK] oder eines [LINK=BUILDING_HEROIC_EPIC]Heldenepos[\LINK] in einer Stadt einsetzen. Diese Stadt erh&#228;lt daraufhin einen Produktionsbonus f&#252;r die Ausbildung von Milit&#228;reinheiten.[PARAGRAPH:2]Und die dritte Einsatzm&#246;glichkeit eines Gro&#223;en Generals besteht schlie&#223;lich darin, dass er sich in einer Stadt ein Denkmal setzt. Darunter z&#228;hlen eine [LINK=BUILDING_SIEGESSTATUE]Siegesstatue[\LINK], eine [LINK=BUILDING_SIEGESSAEULE]Siegess&#228;ule[\LINK], ein [LINK=BUILDING_ELEPHANTMONUMENT]Elefantenmonument[\LINK], ein [LINK=BUILDING_TRIUMPH]Triumphbogen[\LINK] und der [LINK=BUILDING_ROMAN_SHRINE]Marstempel[\LINK] in der Gr&#252;ndungsstadt der R&#246;mischen G&#246;tter.
+
+[PARAGRAPH:2]Auswirkungen, wenn ein General stirbt: [LINK=CONCEPT_GENERALDEATH]Generalstod[\LINK]
+		</German>
+		<Italian>
+[H1]Grandi Generali[\H1]
+[PARAGRAPH:2]I Grandi Generali sono condottieri militari che emergono dalle fila del tuo esercito man mano che vinci degli scontri e superi certe soglie di esperienza: a quel punto nella capitale verr&#224; generato un [LINK=UNIT_GREAT_GENERAL]Grande Generale[\LINK]. I punti esperienza necessari per generare il Grande Generale successivo si raddoppiano di volta in volta.
+
+[PARAGRAPH:2]Una volta che hai a disposizione un Grande Generale, puoi trasformarlo in un Guerriero unendolo a un'altra unit&#224; sul campo. Cos&#236; agendo distribuirai un bonus una tantum di esperienza alle unit&#224; presenti nella stessa casella. L'unit&#224; che riceve il Guerriero pu&#242; essere aggiornata gratuitamente e mantenendo al contempo la propria esperienza. L'unit&#224; d&#224; inoltre accesso a una serie di promozioni normalmente non disponibili, quali [LINK=PROMOTION_COMBAT6]Combattimento VI[\LINK], [LINK=PROMOTION_MEDIC3]Medico III[\LINK], [LINK=PROMOTION_TACTICS]Tattica[\LINK], [LINK=PROMOTION_LEADERSHIP]Comando[\LINK] e [LINK=PROMOTION_MORALE]Morale[\LINK].
+
+[PARAGRAPH:2]In alternativa, puoi sfruttare il Grande Generale per costruire una [LINK=BUILDING_MILITARY_ACADEMY]Accademia Militare[\LINK] o un [LINK=BUILDING_HEROIC_EPIC]Epico Eroico[\LINK] in una citt&#224;, che ricever&#224; cos&#236; un bonus di produzione relativamente alle unit&#224; militari.[PARAGRAPH:2]E infine, il terzo possibile utilizzo di un Grande Generale &#232; quello di erigere un monumento a se stesso in una citt&#224;. Questi includono una [LINK=BUILDING_SIEGESSTATUE]statua della vittoria[\LINK], una [LINK=BUILDING_SIEGESSAEULE]colonna della vittoria[\LINK], un [LINK=BUILDING_ELEPHANTMONUMENT]monumento all'elefante[\LINK], un [LINK=BUILDING_TRIUMPH]arco di trionfo[\LINK] e il [LINK=BUILDING_ROMAN_SHRINE]Tempio di Marte[\LINK] nella citt&#224; fondatrice degli dei romani.
+
+[PARAGRAPH:2] Effetti quando muore un generale: [LINK=CONCEPT_GENERALDEATH]Morte generale[\LINK]
+		</Italian>
+		<Spanish>
+[H1]Los grandes generales[\H1]
+[PARAGRAPH:2]Los grandes generales son l&#237;deres militares que aparecen a medida que la civilizaci&#243;n gana experiencia en combate. Cuando hayas ganado experiencia suficiente para superar un umbral determinado, aparecer&#225; en tu capital un [LINK=UNIT_GREAT_GENERAL]Gran general[\LINK]. Cada gran general requiere el doble de la experiencia que ser&#237;a necesaria para generar al anterior.
+
+[PARAGRAPH:2]Un vez generado, puedes convertir al gran general en un caudillo si lo unes a otra unidad en el campo. Esta acci&#243;n tambi&#233;n otorga una bonificaci&#243;n &#250;nica en puntos de experiencia a las unidades que est&#233;n en la misma casilla. La unidad que reciba al caudillo no podr&#225; modernizarse a ning&#250;n coste y conservar&#225; toda su experiencia. La unidad tambi&#233;n ganar&#225; acceso a algunos ascensos especiales que no est&#225;n disponibles normalmente, como [LINK=PROMOTION_COMBAT6]Combate VI[\LINK], [LINK=PROMOTION_MEDIC3]M&#233;dica III[\LINK], [LINK=PROMOTION_TACTICS]T&#225;cticas[\LINK], [LINK=PROMOTION_LEADERSHIP]Liderazgo[\LINK] y [LINK=PROMOTION_MORALE]Moral[\LINK].
+
+[PARAGRAPH:2]Como alternativa, puedes emplear al gran general para construir una [LINK=BUILDING_MILITARY_ACADEMY]academia militar[\LINK] o una [LINK=BUILDING_HEROIC_EPIC]&#233;pica heroica[\LINK] en una ciudad. Dicha ciudad obtendr&#225; una bonificaci&#243;n a la producci&#243;n cuando construya unidades militares.[PARAGRAPH:2]Y finalmente, el tercer uso posible de un Gran General es erigir un monumento para s&#237; mismo en una ciudad. Estos incluyen una [LINK=BUILDING_SIEGESSTATUE]estatua de la victoria[\LINK], una [LINK=BUILDING_SIEGESSAEULE]columna de la victoria[\LINK], un [LINK=BUILDING_ELEPHANTMONUMENT]monumento al elefante[\LINK], un [LINK=BUILDING_TRIUMPH]arco triunfal[\LINK] y el [LINK=BUILDING_ROMAN_SHRINE]Templo de Marte[\LINK] en la ciudad fundadora de los dioses romanos.
+
+[PARAGRAPH:2] Efectos cuando muere un general: [LINK=CONCEPT_GENERALDEATH]Muerte general[\LINK]
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_IMPORTANT_FACTS_PEDIA</Tag>

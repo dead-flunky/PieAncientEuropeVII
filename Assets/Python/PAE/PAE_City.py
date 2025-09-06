@@ -469,7 +469,23 @@ def doMessageCityGrowing(pCity):
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_IS_UNHEALTY", (pCity.getName(),)),
 												None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
-				# -----------------
+
+# PAE War Weariness
+def doWarWeariness(iPreviousOwner, iNewOwner):
+		iPreviousTeam = gc.getPlayer(iPreviousOwner).getTeam()
+		#pPreviousTeam = gc.getTeam(iPreviousTeam)
+		iNewTeam = gc.getPlayer(iNewOwner).getTeam()
+		pNewTeam = gc.getTeam(iNewTeam)
+
+		# Verlierer: + 10% (nicht notwendig: Standard WarWeariness ist ausreichend)
+		#iWarWeariness = pPreviousTeam.getWarWeariness(iNewTeam)
+		#iWarWeariness = iWarWeariness + int(iWarWeariness / 3)
+		#pPreviousTeam.changeWarWeariness(iNewTeam, iWarWeariness)
+
+		# Gewinner: - 20%
+		iWarWeariness = pNewTeam.getWarWeariness(iPreviousTeam)
+		iWarWeariness = int(iWarWeariness * 0.2)
+		pNewTeam.changeWarWeariness(iPreviousTeam, -iWarWeariness)
 
 
 # PAE City status --------------------------
@@ -864,25 +880,25 @@ def doTurnCityRevolt(pCity):
 
 def doCityRevolt(pCity, iTurns):
 		if pCity is None or pCity.isNone():
-				return
+			return
 
 		# ***TEST***
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("City Revolt (Zeile 6485)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 		if iTurns < 2:
-				iTurns = 2
+			iTurns = 2
 
 		pPlot = pCity.plot()
 		# Einheiten stilllegen
 		iRange = pPlot.getNumUnits()
 		for iUnit in range(iRange):
-				pLoopUnit = pPlot.getUnit(iUnit)
-				if pLoopUnit:
-						iDamage = pLoopUnit.getDamage()
-						if iDamage < 30:
-								pLoopUnit.setDamage(30, -1)
-						if CvUtil.myRandom(2, "cityRevolt") == 1:
-								pLoopUnit.setImmobileTimer(iTurns)
+			pLoopUnit = pPlot.getUnit(iUnit)
+			if pLoopUnit:
+				iDamage = pLoopUnit.getDamage()
+				if iDamage < 30:
+					pLoopUnit.changeDamage(30, False)
+				#if CvUtil.myRandom(2, "cityRevolt") == 1:
+				#	pLoopUnit.setImmobileTimer(iTurns)
 
 		# Stadtaufruhr
 		pCity.changeHurryAngerTimer(iTurns)
@@ -903,50 +919,52 @@ def doCityRevolt(pCity, iTurns):
 # A nearby city of pCity will revolt
 def doNextCityRevolt(iX, iY, iOwner, iAttacker):
 		if iOwner != -1 and iOwner != gc.getBARBARIAN_PLAYER():
-				pOwner = gc.getPlayer(iOwner)
-				if pOwner.getNumCities() > 1:
-						# ***TEST***
-						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Next City Revolt (Zeile 4766)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+			pOwner = gc.getPlayer(iOwner)
+			if pOwner.getNumCities() > 1:
+				# ***TEST***
+				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Next City Revolt (Zeile 4766)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-						# Stadtentfernung messen und naeheste Stadt definieren / die Stadt soll innerhalb 10 Plots entfernt sein.
-						iRevoltCity = -1
-						iCityCheck = -1
-						# City with forbidden palace shall not revolt
-						# ~ if gc.getTeam(pOwner.getTeam()).isHasTech(gc.getInfoTypeForString('TECH_POLYARCHY')): iBuilding = gc.getInfoTypeForString('BUILDING_PRAEFECTUR')
-						# ~ else: iBuilding = gc.getInfoTypeForString('BUILDING_PROVINZPALAST')
-						iRange = pOwner.getNumCities()
-						for i in range(iRange):
-								pLoopCity = pOwner.getCity(i)
-								if pLoopCity is not None and not pLoopCity.isNone():
-										if not pLoopCity.isCapital() and pLoopCity.getOccupationTimer() < 1 and not pLoopCity.isGovernmentCenter() and pLoopCity.getOwner() != iAttacker:
-												tmpX = pLoopCity.getX()
-												tmpY = pLoopCity.getY()
-												iBetrag = plotDistance(iX, iY, tmpX, tmpY)
-												if iBetrag > 0 and iBetrag < 11 and (iCityCheck == -1 or iCityCheck > iBetrag):
-														iCityCheck = iBetrag
-														iRevoltCity = i
-										#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("City",i)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-										#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Betrag",iBetrag)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+				# Stadtentfernung messen und naeheste Stadt definieren / die Stadt soll innerhalb 10 Plots entfernt sein.
+				iRevoltCity = -1
+				iCityCheck = -1
+				# City with forbidden palace shall not revolt
+				# ~ if gc.getTeam(pOwner.getTeam()).isHasTech(gc.getInfoTypeForString('TECH_POLYARCHY')): iBuilding = gc.getInfoTypeForString('BUILDING_PRAEFECTUR')
+				# ~ else: iBuilding = gc.getInfoTypeForString('BUILDING_PROVINZPALAST')
+				iRange = pOwner.getNumCities()
+				for i in range(iRange):
+					pLoopCity = pOwner.getCity(i)
+					if pLoopCity is not None and not pLoopCity.isNone():
+						# 31.08.25: rausgenommen: and not pLoopCity.isGovernmentCenter()
+						if not pLoopCity.isCapital() and pLoopCity.getOccupationTimer() < 1 and pLoopCity.getOwner() != iAttacker:
+							if pLoopCity.getPopulation() < pLoopCity.plot().getNumDefenders(iOwner):
+								tmpX = pLoopCity.getX()
+								tmpY = pLoopCity.getY()
+								iBetrag = plotDistance(iX, iY, tmpX, tmpY)
+								if iBetrag > 0 and iBetrag < 11 and (iCityCheck == -1 or iCityCheck > iBetrag):
+									iCityCheck = iBetrag
+									iRevoltCity = i
+						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("City",i)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Betrag",iBetrag)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Revolt",iRevoltCity)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Revolt",iRevoltCity)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-						# Stadt soll revoltieren
-						if iRevoltCity != -1:
-								pCity = pOwner.getCity(iRevoltCity)
-								# pCity.setOccupationTimer(3)
-								doCityRevolt(pCity, 3)
+				# Stadt soll revoltieren
+				if iRevoltCity != -1:
+					pCity = pOwner.getCity(iRevoltCity)
+					# pCity.setOccupationTimer(3)
+					doCityRevolt(pCity, 3)
 
-								# Message for the other city revolt
-								if gc.getPlayer(iAttacker).isHuman():
-										iRand = 1 + CvUtil.myRandom(6, "msg_cityRevolt")
-										CyInterface().addMessage(iAttacker, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLTS_1_"+str(iRand), (pCity.getName(), 0)),
-														"AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
-								elif gc.getPlayer(iOwner).isHuman():
-										iRand = 1 + CvUtil.myRandom(6, "msg_ownerCityRevolt")
-										CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLTS_2_"+str(iRand), (pCity.getName(), 0)),
-														"AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+					# Message for the other city revolt
+					if gc.getPlayer(iAttacker).isHuman():
+						iRand = 1 + CvUtil.myRandom(6, "msg_cityRevolt")
+						CyInterface().addMessage(iAttacker, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLTS_1_"+str(iRand), (pCity.getName(), 0)),
+								"AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+					if gc.getPlayer(iOwner).isHuman():
+						iRand = 1 + CvUtil.myRandom(6, "msg_ownerCityRevolt")
+						CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLTS_2_"+str(iRand), (pCity.getName(), 0)),
+								"AS2D_REVOLTSTART", 2, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
-				# --- next city revolt
+			# --- next city revolt
 
 
 def doCityCheckRevoltEnd(pCity):

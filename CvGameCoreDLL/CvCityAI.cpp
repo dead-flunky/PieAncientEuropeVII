@@ -4533,9 +4533,9 @@ int CvCityAI::AI_minDefenders()
 	*/
 
 	// +++++++++++++ PAE ++++++++++++++++++++
-	int iDefenders = 2;
+	int iDefenders = 1;
 	int iEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
-	if (iEra > 1) iDefenders++;
+	if (iEra > 0) iDefenders++;
 	if (iEra > 2 && isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN())) iDefenders++;
 	if (getPopulation() >= 6) iDefenders++;
 
@@ -5826,7 +5826,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 			{
 				if (plot()->plotCheck(PUF_isUnitAIType, UNITAI_SETTLE, -1, getOwnerINLINE()) != NULL)
 				{
-					if (!AI_isDefended(-2)) // XXX check for other team's units?
+					if (!AI_isDefended(-1)) // XXX check for other team's units? // PAE -1, BTS -2
 					{
 						iMinTurns = std::min(iMinTurns, 5);
 					}

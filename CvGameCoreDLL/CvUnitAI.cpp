@@ -1575,15 +1575,17 @@ void CvUnitAI::AI_barbAttackMove()
 		return;
 	}
 
-	if (plot()->isGoody())
+	if (plot()->isGoody() && !isAnimal())
 	{
-		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) == 1)
+		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) < 2) // PAE < 2, BTS: == 1
 		{
-			getGroup()->pushMission(MISSION_SKIP);
+			getGroup()->pushMission(MISSION_FORTIFY); // PAE: MISSION_FORTIFY, BTS: MISSION_SKIP
 			return;
 		}
 	}
 
+	// PAE (not necessary), BTS: active
+	/*
 	if (GC.getGameINLINE().getSorenRandNum(2, "AI Barb") == 0)
 	{
 		if (AI_pillageRange(1))
@@ -1591,6 +1593,7 @@ void CvUnitAI::AI_barbAttackMove()
 			return;
 		}
 	}
+	*/
 
 	if (AI_anyAttack(1, 20))
 	{

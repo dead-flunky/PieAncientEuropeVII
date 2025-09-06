@@ -2644,7 +2644,7 @@
 		<Tag>TXT_KEY_CIV_LOWER_EGYPT_ADJECTIVE</Tag>
 		<English>Lower Egyptian</English>
 		<French><Text>bas-&#233;gyptien:bas-&#233;gyptienne:bas-&#233;gyptiens:bas-&#233;gyptiennes</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>unter&#228;gyptische</German>
+		<German>unter&#228;gyptisch/e/r</German>
 		<Italian>basso egiziano</Italian>
 		<Spanish>bajo egipcio</Spanish>
 	</TEXT>
@@ -3124,7 +3124,7 @@
 		<Tag>TXT_KEY_CIV_UPPER_EGYPT_ADJECTIVE</Tag>
 		<English>Upper Egyptian</English>
 		<French><Text>haut-&#233;gyptien:haut-&#233;gyptienne:haut-&#233;gyptiens:haut-&#233;gyptiennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>ober&#228;gyptische</German>
+		<German>ober&#228;gyptisch/e/r</German>
 		<Italian>alto egiziano</Italian>
 		<Spanish>alto egipicio</Spanish>
 	</TEXT>

@@ -28,7 +28,7 @@
 		<Tag>TXT_KEY_CIV_ARVERNI_ADJECTIVE</Tag>
 		<English>Arvernian</English>
 		<French><Text>arverne:arverne:arvernes:arvernes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>arvernische</German>
+		<German>arvernisch/e/r</German>
 		<Italian>arverno</Italian>
 		<Spanish>arverno</Spanish>
 	</TEXT>
@@ -157,7 +157,7 @@
 		<English>Tribe of the Insubres</English>
 		<French>Tribu des Insubres</French>
 		<German>Stamm der Insubrer</German>
-		<Italian>Trib&#249; dei Insubri</Italian>
+		<Italian>Trib&#249; degli Insubri</Italian>
 		<Spanish><Text>Tribu de los &#205;nsubres</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
@@ -181,7 +181,7 @@
 		<English>Tribe of the Ligurans</English>
 		<French>Tribu des Ligures</French>
 		<German>Ligurer</German>
-		<Italian>Tribe of the Ligures</Italian>
+		<Italian>Trib&#249; dei Liguri</Italian>
 		<Spanish><Text>Tribu de los Ligures</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
@@ -292,7 +292,7 @@
 		<Tag>TXT_KEY_CIV_SYRACUSAE_ADJECTIVE</Tag>
 		<English>Syracusian</English>
 		<French><Text>syracusain:syracusaine:syracusains:syracusaines</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>syrakusische</German>
+		<German>syrakusisch/e/r</German>
 		<Italian>siracusano</Italian>
 		<Spanish>siracusano</Spanish>
 	</TEXT>
@@ -394,11 +394,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_SCREEN_TITLE_FIRST_PUNIC_WAR</Tag>
-		<English>Pie's Ancient Europe &#8211; The First Punic War</English>
-		<French>Pie's Ancient Europe &#8211; La premi&#232;re Guerre Punique</French>
-		<German>Pie's Ancient Europe &#8211; Der 1. Punische Krieg</German>
-		<Italian>Pie's Ancient Europe &#8211; Il 1. guerra punica</Italian>
-		<Spanish>Pie's Ancient Europe &#8211; La 1. Guerra P&#250;nica</Spanish>
+		<English>Pie's Ancient Europe - The First Punic War</English>
+		<French>Pie's Ancient Europe - La premi&#232;re Guerre Punique</French>
+		<German>Pie's Ancient Europe - Der 1. Punische Krieg</German>
+		<Italian>Pie's Ancient Europe - Il 1. guerra punica</Italian>
+		<Spanish>Pie's Ancient Europe - La 1. Guerra P&#250;nica</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FIRSTPUNIC_CIV1</Tag>

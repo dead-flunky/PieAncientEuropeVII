@@ -4,7 +4,7 @@
 		<Tag>TXT_KEY_ADJ_SARDINIEN</Tag>
 		<English>sardian</English>
 		<French>sarde</French>
-		<German>sardische</German>
+		<German>sardisch/e/r</German>
 		<Italian>sardo</Italian>
 		<Spanish>sardo</Spanish>
 	</TEXT>
@@ -204,7 +204,7 @@
 		<Tag>TXT_KEY_CHERSUKER_ADJECTIVE</Tag>
 		<English>Cheruscan</English>
 		<French>ch&#233;rusque</French>
-		<German>Cheruskische</German>
+		<German>cheruskisch/e/r</German>
 		<Italian>cherusco</Italian>
 		<Spanish>cherusco</Spanish>
 	</TEXT>
@@ -220,7 +220,7 @@
 		<Tag>TXT_KEY_CIV_ABYSSINIA_ADJECTIVE</Tag>
 		<English>Abyssinian</English>
 		<French><Text>abyssin:abyssine:abyssins:abyssines</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>Abyssinische</German>
+		<German>abyssinisch/e/r</German>
 		<Italian>abbissino</Italian>
 		<Spanish>abyssinio</Spanish>
 	</TEXT>
@@ -236,7 +236,7 @@
 		<Tag>TXT_KEY_CIV_ACHAIER_ADJECTIVE</Tag>
 		<English>Achaean</English>
 		<French><Text>ach&#233;en:ach&#233;enne:ach&#233;ens:ach&#233;ennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>achaiisch</German>
+		<German>achaiisch/e/r</German>
 		<Italian>achea</Italian>
 		<Spanish><Text>aqueo:aquea:aqueos:aqueas</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
 	</TEXT>
@@ -260,7 +260,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_AKRAGAS</Tag>
 		<English>akratinian</English>
 		<French>acrigan</French>
-		<German>akratinisch</German>
+		<German>akratinisch/e/r</German>
 		<Italian>akratini</Italian>
 		<Spanish>akratine</Spanish>
 	</TEXT>
@@ -268,7 +268,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_ELMYRER</Tag>
 		<English>elmyrian</English>
 		<French>elmyrien</French>
-		<German>elmyrische</German>
+		<German>elmyrisch/e/r</German>
 		<Italian>elmyre</Italian>
 		<Spanish>elmyre</Spanish>
 	</TEXT>
@@ -276,7 +276,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_GELON</Tag>
 		<English>Gelonian</English>
 		<French>G&#233;lon</French>
-		<German>gelonisch</German>
+		<German>gelonisch/e/r</German>
 		<Italian>gelon</Italian>
 		<Spanish>gelon</Spanish>
 	</TEXT>
@@ -284,7 +284,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_HIMERA</Tag>
 		<English>himeranian</English>
 		<French>himeranien</French>
-		<German>himeranische</German>
+		<German>himeranisch/e/r</German>
 		<Italian>himeran</Italian>
 		<Spanish>himeran</Spanish>
 	</TEXT>
@@ -292,7 +292,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_KAMARINA</Tag>
 		<English>kamarinian</English>
 		<French>camarins</French>
-		<German>kamarinische</German>
+		<German>kamarinisch/e/r</German>
 		<Italian>kamarin</Italian>
 		<Spanish>kamarine</Spanish>
 	</TEXT>
@@ -300,7 +300,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_MESSANA</Tag>
 		<English>messanian</English>
 		<French>mamertin</French>
-		<German>messanische</German>
+		<German>messanisch/e/r</German>
 		<Italian>messan</Italian>
 		<Spanish>messan</Spanish>
 	</TEXT>
@@ -308,7 +308,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_RHEGION</Tag>
 		<English>rhegionian</English>
 		<French>rh&#233;gionien</French>
-		<German>rhegionische</German>
+		<German>rhegionisch/e/r</German>
 		<Italian>rhegioni</Italian>
 		<Spanish>rhegione</Spanish>
 	</TEXT>
@@ -316,7 +316,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_SELINUS</Tag>
 		<English>selinian</English>
 		<French>selinien</French>
-		<German>selinische</German>
+		<German>selinisch/e/r</German>
 		<Italian>selin</Italian>
 		<Spanish>selin</Spanish>
 	</TEXT>
@@ -324,7 +324,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_SIKANER</Tag>
 		<English>sikan</English>
 		<French>sicane</French>
-		<German>sikanische</German>
+		<German>sikanisch/e/r</German>
 		<Italian>sikani</Italian>
 		<Spanish>sikane</Spanish>
 	</TEXT>
@@ -332,7 +332,7 @@
 		<Tag>TXT_KEY_CIV_ADJ_SIKULER</Tag>
 		<English>sikulian</English>
 		<French>sicule</French>
-		<German>sikulische</German>
+		<German>sikulisch/e/r</German>
 		<Italian>sikule</Italian>
 		<Spanish>sikule</Spanish>
 	</TEXT>
@@ -340,7 +340,7 @@
 		<Tag>TXT_KEY_CIV_ALEMANNEN_ADJECTIVE</Tag>
 		<English>Alemanni</English>
 		<French><Text>alaman:alamane:alamans:alamanes</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>Alemannen</German>
+		<German>alemannisch/e/r</German>
 		<Italian>Alemanni</Italian>
 		<Spanish>Alamanes</Spanish>
 	</TEXT>
@@ -356,7 +356,7 @@
 		<Tag>TXT_KEY_CIV_ARMENIA_ADJECTIVE</Tag>
 		<English>Armenian</English>
 		<French><Text>arm&#233;nien:arm&#233;nienne:arm&#233;niens:arm&#233;niennes</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>armenische</German>
+		<German>armenisch/e/r</German>
 		<Italian>armenio</Italian>
 		<Spanish>armenio</Spanish>
 	</TEXT>
@@ -388,7 +388,7 @@
 		<Tag>TXT_KEY_CIV_BACTRIA_ADJECTIVE</Tag>
 		<English>Bactrian</English>
 		<French><Text>bactrien:bactrienne:bactriens:bactriennes</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>baktrische</German>
+		<German>baktrisch/e/r</German>
 		<Italian>battriana</Italian>
 		<Spanish>bactriano</Spanish>
 	</TEXT>
@@ -428,7 +428,7 @@
 		<Tag>TXT_KEY_CIV_BELGER_ADJECTIVE</Tag>
 		<English>Belgian</English>
 		<French><Text>belge:belge:belges:belges</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>belgische</German>
+		<German>belgisch/e/r</German>
 		<Italian>belgi</Italian>
 		<Spanish>belgio</Spanish>
 	</TEXT>
@@ -452,7 +452,7 @@
 		<Tag>TXT_KEY_CIV_BITURIGEN_ADJECTIVE</Tag>
 		<English>Biturigian</English>
 		<French>biturigii</French>
-		<German>biturigii</German>
+		<German>biturigisch/e/r</German>
 		<Italian>biturigii</Italian>
 		<Spanish>biturigii</Spanish>
 	</TEXT>
@@ -460,7 +460,7 @@
 		<Tag>TXT_KEY_CIV_BRIGANTEN_ADJECTIVE</Tag>
 		<English>Brigantian</English>
 		<French>brigantien</French>
-		<German>brigantische</German>
+		<German>brigantisch/e/r</German>
 		<Italian>brigantino</Italian>
 		<Spanish>briganta</Spanish>
 	</TEXT>
@@ -468,7 +468,7 @@
 		<Tag>TXT_KEY_CIV_CIMBRI_ADJECTIVE</Tag>
 		<English>Cimbrian</English>
 		<French><Text>cimbre:cimbre:cimbres:cimbres</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>kimbrische</German>
+		<German>kimbrisch/e/r</German>
 		<Italian>cimbri</Italian>
 		<Spanish>cimbri</Spanish>
 	</TEXT>
@@ -500,7 +500,7 @@
 		<Tag>TXT_KEY_CIV_CITYSTATE_ADJECTIVE</Tag>
 		<English>city state</English>
 		<French>&#233;tat de la ville</French>
-		<German>stadtstaatliche</German>
+		<German>stadtstaatlich</German>
 		<Italian>stato della citt&#224;</Italian>
 		<Spanish>estado de la ciudad</Spanish>
 	</TEXT>
@@ -652,7 +652,7 @@
 		<Tag>TXT_KEY_CIV_HERMUNDUREN_ADJECTIVE</Tag>
 		<English>Hermundurian</English>
 		<French>Hermundure</French>
-		<German>hermundurische</German>
+		<German>hermundurisch/e/r</German>
 		<Italian>ermunduro</Italian>
 		<Spanish>herm&#250;nduro</Spanish>
 	</TEXT>
@@ -668,7 +668,7 @@
 		<Tag>TXT_KEY_CIV_HURRITER_ADJECTIVE</Tag>
 		<English>Hurrian</English>
 		<French>hourrite</French>
-		<German>hurritisch</German>
+		<German>hurritisch/e/r</German>
 		<Italian>hurrita</Italian>
 		<Spanish>hurrita</Spanish>
 	</TEXT>
@@ -684,7 +684,7 @@
 		<Tag>TXT_KEY_CIV_ICENI_ADJECTIVE</Tag>
 		<English>Icenian</English>
 		<French>Icene</French>
-		<German>icenische</German>
+		<German>icenisch/e/r</German>
 		<Italian>iceni</Italian>
 		<Spanish>iceno</Spanish>
 	</TEXT>
@@ -716,7 +716,7 @@
 		<Tag>TXT_KEY_CIV_IONIER_ADJECTIVE</Tag>
 		<English>Ionian</English>
 		<French><Text>ionien:ionienne:ioniens:ioniennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>ionisch</German>
+		<German>ionisch/e/r</German>
 		<Italian>ionia</Italian>
 		<Spanish><Text>jonio:jonia:jonios:jonias</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
 	</TEXT>
@@ -756,7 +756,7 @@
 		<Tag>TXT_KEY_CIV_JUTES_ADJECTIVE</Tag>
 		<English>Jutian</English>
 		<French><Text>jute:jute:jutes:jutes</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>j&#252;tische</German>
+		<German>j&#252;tisch/e/r</German>
 		<Italian>jutio</Italian>
 		<Spanish>jutio</Spanish>
 	</TEXT>
@@ -876,7 +876,7 @@
 		<Tag>TXT_KEY_CIV_MARKOMANNI_ADJECTIVE</Tag>
 		<English>Marcomannian</English>
 		<French><Text>marcoman:marcomane:marcomans:marcomanes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>markomannische</German>
+		<German>markomannisch/e/r</German>
 		<Italian>marcomanno</Italian>
 		<Spanish>marcomanno</Spanish>
 	</TEXT>
@@ -884,7 +884,7 @@
 		<Tag>TXT_KEY_CIV_MAURYA_ADJECTIVE</Tag>
 		<English>Mauryan</English>
 		<French>Maurya</French>
-		<German>mauryanische</German>
+		<German>mauryanisch/e/r</German>
 		<Italian>mauria</Italian>
 		<Spanish><Text>mauria:mauria:maurias:maurias</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
 	</TEXT>
@@ -932,7 +932,7 @@
 		<Tag>TXT_KEY_CIV_NABATU_ADJECTIVE</Tag>
 		<English>Nabataean</English>
 		<French>nabat&#233;en</French>
-		<German>nabat&#228;ische</German>
+		<German>nabat&#228;isch/e/r</German>
 		<Italian><Text>nabateo:nabatea:nabatei:nabateie</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Italian>
 		<Spanish><Text>nabateo:nabatea:nabateos:nabateas</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
 	</TEXT>
@@ -1004,7 +1004,7 @@
 		<Tag>TXT_KEY_CIV_NUMIDIA_WEST_ADJECTIVE</Tag>
 		<English>West Numidian</English>
 		<French>Numide occidental</French>
-		<German>westnumidische</German>
+		<German>westnumidisch/e/r</German>
 		<Italian>Numidia occidentale</Italian>
 		<Spanish>Numidiano occidental</Spanish>
 	</TEXT>
@@ -1012,7 +1012,7 @@
 		<Tag>TXT_KEY_CIV_PARISI_ADJECTIVE</Tag>
 		<English>Parisian</English>
 		<French><Text>parisii:parisii:parisii:parisii</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>Parisische</German>
+		<German>parisisch/e/r</German>
 		<Italian>parisi</Italian>
 		<Spanish>parisi</Spanish>
 	</TEXT>
@@ -1020,7 +1020,7 @@
 		<Tag>TXT_KEY_CIV_PERGAMON_ADJECTIVE</Tag>
 		<English>Pergamonian</English>
 		<French>Pergam&#233;nien</French>
-		<German>Pergamenische</German>
+		<German>Pergamenisch/e/r</German>
 		<Italian>pergamena</Italian>
 		<Spanish><Text>pergameno:pergamena:pergamenos:pergamenas</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
 	</TEXT>
@@ -1476,7 +1476,7 @@
 		<Tag>TXT_KEY_CIV_SUEBEN_ADJECTIVE</Tag>
 		<English>Suebian</English>
 		<French><Text>su&#232;ve:su&#232;ve:su&#232;ves:su&#232;ves</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>suebische</German>
+		<German>suebisch/e/r</German>
 		<Italian>suebo</Italian>
 		<Spanish>suevo</Spanish>
 	</TEXT>
@@ -1508,7 +1508,7 @@
 		<Tag>TXT_KEY_CIV_TURDETANI_ADJECTIVE</Tag>
 		<English>Turdetanic</English>
 		<French><Text>turd&#233;tan:turd&#233;tane:turd&#233;tans:turd&#233;tanes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>turdetanische</German>
+		<German>turdetanisch/e/r</German>
 		<Italian>turdetano</Italian>
 		<Spanish>turdetano</Spanish>
 	</TEXT>
@@ -1540,7 +1540,7 @@
 		<Tag>TXT_KEY_CIV_VEDER_ADJECTIVE</Tag>
 		<English>Vedic</English>
 		<French><Text>veda:veda:vedas:vedas</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>vedische</German>
+		<German>vedisch/e/r</German>
 		<Italian>vedico</Italian>
 		<Spanish>v&#233;dico</Spanish>
 	</TEXT>
@@ -1905,6 +1905,14 @@
 		<Spanish>Potidaia, ciudad tributaria de la Liga del Mar &#193;tico, se niega a expulsar a los funcionarios corintios rivales y a proporcionar rehenes a Atenas. Temiendo por su autonom&#237;a, la Polis Potidaea se pasa a los corintios y provoca as&#237; el comienzo de una gran guerra, &#161;la Guerra del Peloponeso!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FREE</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GAMESPEED_EURASIA_XL</Tag>
 		<English>Gamespeed Eurasia XL</English>
 		<French>Vitesse de jeu Eurasia XL</French>
@@ -1980,7 +1988,7 @@
 		<Tag>TXT_KEY_HAEDUER_ADJECTIVE</Tag>
 		<English>Aeduic</English>
 		<French>&#233;duen</French>
-		<German>haeduische</German>
+		<German>haeduisch/e/r</German>
 		<Italian>eduico</Italian>
 		<Spanish>heduico</Spanish>
 	</TEXT>
@@ -2124,7 +2132,7 @@
 		<Tag>TXT_KEY_LIMES_CIV1_ADJECTIVE</Tag>
 		<English>Menapic</English>
 		<French>M&#233;napien</French>
-		<German>Menapische</German>
+		<German>menapisch/e/r</German>
 		<Italian>Menapio</Italian>
 		<Spanish>Menapio</Spanish>
 	</TEXT>
@@ -2133,7 +2141,7 @@
 		<English>Tribe of Menapi</English>
 		<French>Tribu des M&#233;napiens</French>
 		<German>Stamm der Menapier</German>
-		<Italian>Tribu di Menapi</Italian>
+		<Italian>Trib&#249; dei Menapi</Italian>
 		<Spanish>Tribu de los Menapios</Spanish>
 	</TEXT>
 	<TEXT>
@@ -2148,7 +2156,7 @@
 		<Tag>TXT_KEY_LIMES_CIV2_ADJECTIVE</Tag>
 		<English>Lingonic</English>
 		<French>Lingonien</French>
-		<German>Lingonische</German>
+		<German>lingonisch/e/r</German>
 		<Italian>Lingoni</Italian>
 		<Spanish>Lingono</Spanish>
 	</TEXT>
@@ -2157,7 +2165,7 @@
 		<English>Tribe of Lingones</English>
 		<French>Tribu des Lingons</French>
 		<German>Stamm der Lingonen</German>
-		<Italian>Tribu di Lingoni</Italian>
+		<Italian>Trib&#249; dei Lingoni</Italian>
 		<Spanish>Tribu de los Lingoones</Spanish>
 	</TEXT>
 	<TEXT>
@@ -2178,11 +2186,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LIMES_CIV3_DESC</Tag>
-		<English>Tribe of Goths</English>
-		<French>Tribu des Goths</French>
+		<English>Tribe of Gotons</English>
+		<French>Tribu des Gotones</French>
 		<German>Stamm der Gotonen</German>
-		<Italian>Tribu di Goti</Italian>
-		<Spanish>Tribu de los Godos</Spanish>
+		<Italian>Trib&#249; dei Gotoni</Italian>
+		<Spanish>Tribu de los Godones</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LIMES_CIV3_SHORT_DESC</Tag>
@@ -2196,7 +2204,7 @@
 		<Tag>TXT_KEY_LIMES_CIV4_ADJECTIVE</Tag>
 		<English>Variscian</English>
 		<French>Varisque</French>
-		<German>Naristische</German>
+		<German>naristisch/e/r</German>
 		<Italian>Naristio</Italian>
 		<Spanish>Naristio</Spanish>
 	</TEXT>
@@ -2205,7 +2213,7 @@
 		<English>Tribe of Varisci</English>
 		<French>Tribu des Varisques</French>
 		<German>Stamm der Narister</German>
-		<Italian>Tribu di Naristi</Italian>
+		<Italian>Trib&#249; dei Naristi</Italian>
 		<Spanish>Tribu de los Naristios</Spanish>
 	</TEXT>
 	<TEXT>
@@ -2229,7 +2237,7 @@
 		<English>Tribe of Bastarnae</English>
 		<French>Tribu des Bastarnes</French>
 		<German>Stamm der Bastarnen</German>
-		<Italian>Tribu di Bastarni</Italian>
+		<Italian>Trib&#249; dei Bastarni</Italian>
 		<Spanish>Tribu de los Bastarnos</Spanish>
 	</TEXT>
 	<TEXT>
@@ -2596,7 +2604,7 @@
 		<Tag>TXT_KEY_LUSITAN_ADJECTIVE</Tag>
 		<English>Lusitanian</English>
 		<French><Text>lusitanien:lusitanienne:lusitaniens:lusitaniennes</Text><Gender>Male:Male:Female:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>lusitanische</German>
+		<German>lusitanisch/e/r</German>
 		<Italian>lusitano</Italian>
 		<Spanish>lusitano</Spanish>
 	</TEXT>
@@ -2884,7 +2892,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_ALARICH_BODY</Tag>
 		<English></English>
 		<French></French>
-		<German>Zeit f&#252;r Trauer bleibt jedoch nicht viel, das Leben muss weitergehen. Zu euren Ehren wird in %s1 ein Monument errichtet, wie es noch keins zuvor gab. Ein riesiger gehauener Stein, der mit einer Inschrift an Alarich den Goten erinnert.[NEWLINE]Doch wer soll eure Nachfolge antreten? Die Adligen kommen zusammen, um eine Entscheidung zu treffen.</German>
+		<German>Zeit f&#252;r Trauer bleibt jedoch nicht viel, das Leben muss weitergehen. Zu euren Ehren wird in %s1_city ein Monument errichtet, wie es noch keins zuvor gab. Ein riesiger Obelisk, der mit einer Inschrift an Alarich den Goten erinnert.[NEWLINE][NEWLINE]Doch wer soll eure Nachfolge antreten? Die Adligen kommen zusammen, um eine Entscheidung zu treffen.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF &#220;BERNIMMT DIE F&#220;HRUNG DER GOTEN[NEWLINE][ICON_BULLET] DIE STELE DES ALARICH WIRD IN %s1_city ERRICHTET</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2909,6 +2917,30 @@
 		<English></English>
 		<French></French>
 		<German>%s1 hat sich von %s2 (Byzanz) losgesagt und ist wieder frei. Wir sollten umgehend einen Boten schicken!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CAPTURED_NORDIC_HOLY_CITY_1</Tag>
+		<English></English>
+		<French></French>
+		<German>Den G&#246;ttern sei Dank! Wir haben die Heilige Stadt unter Kontrolle gebracht! Der H&#252;ter der Donareiche steht zu eurer Verf&#252;gung.[NEWLINE]Auf dass dieser heilige Ort zu wahrer Gr&#246;&#223;e gelangen m&#246;ge, wie es dem Thing der G&#246;tter w&#252;rdig ist.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GROSSEN PROPHETEN</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CAPTURED_NORDIC_HOLY_CITY_2</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Donareiche, das Zentrum der alten G&#246;tter steht unter eurer Kontrolle. Wenn auch ohne Bedeutung f&#252;r uns, doch eine sch&#246;ne Erinnerung an die Zeiten der Ahnen.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CAPTURED_NORDIC_HOLY_CITY_3</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Heilige Stadt %s1_city wurde von %s2_civ erobert! Das ist gegen den Willen der G&#246;tter, wir sollten sie befreien!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2940,7 +2972,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN</Tag>
 		<English></English>
 		<French></French>
-		<German>Gratulation! Ihr habt %s1 besiegt. Er zeigt uns den Weg zu seiner geheimen Schatzkammer.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 250 [ICON_GOLD]</German>
+		<German>Gratulation! Ihr habt %s1 unterworfen.[NEWLINE]Er schw&#246;rt bei den G&#246;ttern, euch als Vasall keine Schande zu machen. Um das zu unterstreichen, gew&#228;hrt er euch Zugang zu seiner geheimen Schatzkammer.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1000 [ICON_GOLD]</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2964,7 +2996,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS_OTHERS</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 wurde von %s2 besiegt! Wir sollten das Gebiet umgehend zur&#252;ckerobern.</German>
+		<German>%s1 wurde besiegt! Wir sollten das Gebiet umgehend zur&#252;ckerobern.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2996,7 +3028,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CITY_HEAD</Tag>
 		<English></English>
 		<French></French>
-		<German>Der erste Schritt ist getan. Ihr habt %s1 erobert!</German>
+		<German>Der erste Schritt ist getan. Ihr habt %s1_city erobert!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3185,6 +3217,22 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_OWN_CITY</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Siedler bedanken sich.[NEWLINE]Sie wollen ihre neue Heimat schnell zu einem Dorf erweitern, auf dass es bald zum Glanze des Gotenreiches beitragen m&#246;ge. Wir k&#246;nnten Fuhrwerke schicken, die hier Ressourcen verbreiten...</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_FRUCHTBARKEITSKULTIST</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt unterschiedliche Fleischressourcen im Handelsnetz. Ein Anh&#228;nger des Fruchtbarkeitskultes will sich bei Euch ansiedeln.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_GALLIA_DECLARES_WAR_GERMANIA</Tag>
 		<English></English>
 		<French></French>
@@ -3225,18 +3273,10 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_WDG_GOTEN_ERSTEPROVINZSTADT</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 ist zu erstaunlicher Gr&#246;&#223;e herangewachsen. Einer der ans&#228;ssigen Adligen erkl&#228;rt sich bereit, die Verwaltung zu &#252;bernehmen.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GAUF&#220;RST</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_GOTEN_ERSTERPROVINZPALAST</Tag>
 		<English></English>
 		<French></French>
-		<German>Hier, von %s1 aus wird unsere erste Provinz verwaltet.[NEWLINE][NEWLINE]Schon seit den Ahnen gilt: Mit der Entfernung zu %s2 nimmt die Motivation des Adels ab! Provinzpal&#228;ste sind der Schl&#252;ssel zu einem gro&#223;en Reich. Von dort aus k&#246;nnen Gauf&#252;rsten eures Vertrauens in der Gegend f&#252;r Ruhe sorgen.</German>
+		<German>Hier, von %s1_city aus wird unsere erste Provinz verwaltet.[NEWLINE]Schon seit den Ahnen gilt: Mit der Entfernung zu %s2_city nimmt die Motivation des Adels ab! Provinzpal&#228;ste sind der Schl&#252;ssel zu einem gro&#223;en Reich. Von dort aus k&#246;nnen Gauf&#252;rsten eures Vertrauens in der Gegend f&#252;r Ruhe sorgen.[NEWLINE][NEWLINE]Einer der ans&#228;ssigen Adligen erkl&#228;rt sich bereit, euch zu begleiten. Er will die Verantwortung in der n&#228;chsten Provinz &#252;bernehmen und euch bis dahin unterst&#252;tzen wo er kann.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GAUF&#220;RST</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3245,6 +3285,14 @@
 		<English></English>
 		<French></French>
 		<German>Herr, unsere Sp&#228;her melden eine riesige Reiterarmee unbekannter Herkunft im Osten! Es sind die Hunnen. Und sie werden von einem grimmig aussehenden Krieger gef&#252;hrt, der sich Attila nennt. Wir m&#252;ssen uns sch&#252;tzen...</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_KYBELEKULTIST</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt unterschiedliche Getreidesorten im Handelsnetz. Ein Anh&#228;nger des Kybele-Kults will sich bei Euch ansiedeln.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3380,7 +3428,7 @@
 		<Tag>TXT_KEY_SALLUVIER_ADJECTIVE</Tag>
 		<English>Salluvian</English>
 		<French><Text>salyen:salyenne:salyens:salyennes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>salluvische</German>
+		<German>salluvisch/e/r</German>
 		<Italian>salluvico</Italian>
 		<Spanish>salluvico</Spanish>
 	</TEXT>
@@ -3700,7 +3748,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_ADUATUKER_ADJ</Tag>
 		<English>Aduatuc</English>
 		<French>Aduatuque</French>
-		<German>Aduatukische</German>
+		<German>aduatukisch/e/r</German>
 		<Italian>aduatuco</Italian>
 		<Spanish>aduatuco</Spanish>
 	</TEXT>
@@ -3724,7 +3772,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_ARECOMICER_ADJ</Tag>
 		<English>arecomic</English>
 		<French>arecomique</French>
-		<German>Arecomicische</German>
+		<German>arecomicisch/e/r</German>
 		<Italian>arecomico</Italian>
 		<Spanish>arecomico</Spanish>
 	</TEXT>
@@ -3748,7 +3796,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_ASTURIEN_ADJ</Tag>
 		<English>Asturian</English>
 		<French>Asturien</French>
-		<German>Asturiansche</German>
+		<German>asturiansch/e/r</German>
 		<Italian>Asturiano</Italian>
 		<Spanish>Asturiano</Spanish>
 	</TEXT>
@@ -3772,7 +3820,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_ATREBATEN_ADJ</Tag>
 		<English>Atrebatian</English>
 		<French>atrebatien</French>
-		<German>Atrebatisch</German>
+		<German>atrebatisch/e/r</German>
 		<Italian>atrebatio</Italian>
 		<Spanish>atrebatio</Spanish>
 	</TEXT>
@@ -3796,7 +3844,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_AULERKER_ADJ</Tag>
 		<English>Aulerkic</English>
 		<French>aulerkien</French>
-		<German>aulerkische</German>
+		<German>aulerkisch/e/r</German>
 		<Italian>aulerco</Italian>
 		<Spanish>aulerco</Spanish>
 	</TEXT>
@@ -3812,7 +3860,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_BATAVER_ADJ</Tag>
 		<English>Batavian</English>
 		<French>Batavique</French>
-		<German>Bataverische</German>
+		<German>bataverisch/e/r</German>
 		<Italian>batavio</Italian>
 		<Spanish>batavio</Spanish>
 	</TEXT>
@@ -3836,7 +3884,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_BELLOVAKER_ADJ</Tag>
 		<English>bellovakian</English>
 		<French>bellovacien</French>
-		<German>bellovakische</German>
+		<German>bellovakisch/e/r</German>
 		<Italian>bellovaci</Italian>
 		<Spanish>bellovaco</Spanish>
 	</TEXT>
@@ -3852,7 +3900,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_BOIER_ADJ</Tag>
 		<English>boii</English>
 		<French>bo&#239;en</French>
-		<German>Boiische</German>
+		<German>boiisch/e/r</German>
 		<Italian>boii</Italian>
 		<Spanish>boii</Spanish>
 	</TEXT>
@@ -3876,7 +3924,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_BRUKTERER_ADJ</Tag>
 		<English>Bructeric</English>
 		<French>Bruct&#232;rien</French>
-		<German>Brukterische</German>
+		<German>brukterisch/e/r</German>
 		<Italian>bructerio</Italian>
 		<Spanish>br&#250;cterio</Spanish>
 	</TEXT>
@@ -3900,7 +3948,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_CANTABRER_ADJ</Tag>
 		<English>cantabrian</English>
 		<French>cantabrien</French>
-		<German>Cantabrische</German>
+		<German>Cantabrisch/e/r</German>
 		<Italian>cantabrio</Italian>
 		<Spanish>cantabrio</Spanish>
 	</TEXT>
@@ -3924,7 +3972,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_CARNUTEN_ADJECTIVE</Tag>
 		<English>Carnutian</English>
 		<French>carnutian</French>
-		<German>carnutische</German>
+		<German>carnutisch/e/r</German>
 		<Italian>carnuti</Italian>
 		<Spanish>carnutio</Spanish>
 	</TEXT>
@@ -3932,7 +3980,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_CHATTEN_ADJ</Tag>
 		<English>chattic</English>
 		<French>chattes</French>
-		<German>chattische</German>
+		<German>chattisch/e/r</German>
 		<Italian>chattii</Italian>
 		<Spanish>chattii</Spanish>
 	</TEXT>
@@ -3948,7 +3996,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_DUMNON_ADJ</Tag>
 		<English>dumnonian</English>
 		<French>dumnonien</French>
-		<German>Dumnonische</German>
+		<German>dumnonisch/e/r</German>
 		<Italian>dumnonio</Italian>
 		<Spanish>dumnonio</Spanish>
 	</TEXT>
@@ -3972,7 +4020,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_ILERGETES_ADJ</Tag>
 		<English>Ilergetian</English>
 		<French>Il&#233;rg&#233;tien</French>
-		<German>Ilergetische</German>
+		<German>ilergetisch/e/r</German>
 		<Italian>Ilergetio</Italian>
 		<Spanish>Ilergetio</Spanish>
 	</TEXT>
@@ -3996,7 +4044,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_LEXOVIER_ADJ</Tag>
 		<English>Lexovian</English>
 		<French>lexovique</French>
-		<German>Lexovische</German>
+		<German>lexovisch/e/r</German>
 		<Italian>lexovio</Italian>
 		<Spanish>lexovio</Spanish>
 	</TEXT>
@@ -4028,7 +4076,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_MASSILIA_ADJ</Tag>
 		<English>Massilian</English>
 		<French>Massilien</French>
-		<German>Massilianische</German>
+		<German>massilianisch/e/r</German>
 		<Italian>massiliano</Italian>
 		<Spanish>massiliano</Spanish>
 	</TEXT>
@@ -4052,7 +4100,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_MORINER_ADJ</Tag>
 		<English>Morin</English>
 		<French>morin</French>
-		<German>Morinische</German>
+		<German>morinisch/e/r</German>
 		<Italian>morino</Italian>
 		<Spanish>morino</Spanish>
 	</TEXT>
@@ -4084,7 +4132,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_NORIKER_ADJECTIVE</Tag>
 		<English>noric</English>
 		<French>norician</French>
-		<German>Norikische</German>
+		<German>Norikisch/e/r</German>
 		<Italian>norico</Italian>
 		<Spanish>norico</Spanish>
 	</TEXT>
@@ -4100,7 +4148,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_PICTONEN_ADJ</Tag>
 		<English>pictonian</English>
 		<French>pictonien</French>
-		<German>Piktonische</German>
+		<German>Piktonisch/e/r</German>
 		<Italian>pictonio</Italian>
 		<Spanish>pictonio</Spanish>
 	</TEXT>
@@ -4116,7 +4164,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_RAETER_ADJ</Tag>
 		<English>raetic</English>
 		<French>raetique</French>
-		<German>Raetische</German>
+		<German>raetisch/e/r</German>
 		<Italian>raeti</Italian>
 		<Spanish>raeti</Spanish>
 	</TEXT>
@@ -4132,7 +4180,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_REMER_ADJ</Tag>
 		<English>Remerian</English>
 		<French>r&#233;meur</French>
-		<German>remerische</German>
+		<German>remerisch/e/r</German>
 		<Italian>remeii</Italian>
 		<Spanish>remeo</Spanish>
 	</TEXT>
@@ -4156,7 +4204,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_RUTENI_ADJ</Tag>
 		<English>Rutian</English>
 		<French>rutenique</French>
-		<German>Rutenische</German>
+		<German>rutenisch/e/r</German>
 		<Italian>ruteno</Italian>
 		<Spanish>ruteno</Spanish>
 	</TEXT>
@@ -4180,7 +4228,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_SANTONEN_ADJ</Tag>
 		<English>Santon</English>
 		<French>Santonien</French>
-		<German>Santonische</German>
+		<German>Santonisch/e/r</German>
 		<Italian>santono</Italian>
 		<Spanish>santono</Spanish>
 	</TEXT>
@@ -4204,7 +4252,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_SEGUSIAVI_ADJ</Tag>
 		<English>Segusiavic</English>
 		<French>Segusiavique</French>
-		<German>Segusiavische</German>
+		<German>segusiavisch/e/r</German>
 		<Italian>Segusiavi</Italian>
 		<Spanish>Segusiavi</Spanish>
 	</TEXT>
@@ -4228,7 +4276,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_SEQUAN_ADJECTIVE</Tag>
 		<English>sequan</English>
 		<French>s&#233;quane</French>
-		<German>sequanische</German>
+		<German>sequanisch/e/r</German>
 		<Italian>sequano</Italian>
 		<Spanish>sequano</Spanish>
 	</TEXT>
@@ -4260,7 +4308,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_TIGURIN_ADJ</Tag>
 		<English>Tigurin</English>
 		<French>tigurinien</French>
-		<German>Tigurinische</German>
+		<German>Tigurinisch/e/r</German>
 		<Italian>tigurino</Italian>
 		<Spanish>tigurino</Spanish>
 	</TEXT>
@@ -4276,7 +4324,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_TREVERER_ADJECTIVE</Tag>
 		<English>Treverian</English>
 		<French>Tr&#233;virien</French>
-		<German>Treverische</German>
+		<German>treverisch/e/r</German>
 		<Italian>trevero</Italian>
 		<Spanish>trevero</Spanish>
 	</TEXT>
@@ -4300,7 +4348,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_TRIBOK_ADJECTIVE</Tag>
 		<English>tribocian</English>
 		<French>tribocien</French>
-		<German>tribokische</German>
+		<German>tribokisch/e/r</German>
 		<Italian>tribocii</Italian>
 		<Spanish>tribocio</Spanish>
 	</TEXT>
@@ -4316,7 +4364,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_VENETER_ADJECTIVE</Tag>
 		<English>Venetian</English>
 		<French>v&#233;n&#232;te</French>
-		<German>Venetische</German>
+		<German>Venetisch/e/r</German>
 		<Italian>venetii</Italian>
 		<Spanish>venetii</Spanish>
 	</TEXT>
@@ -4332,7 +4380,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_VENETICA_ADJ</Tag>
 		<English>veneticai</English>
 		<French>veneticai</French>
-		<German>Veneticaische</German>
+		<German>veneticaisch/e/r</German>
 		<Italian>veneticaii</Italian>
 		<Spanish>veneticaio</Spanish>
 	</TEXT>
@@ -4356,7 +4404,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_VERAGRER_ADJ</Tag>
 		<English>Veragrian</English>
 		<French>veragrique</French>
-		<German>Veragrische</German>
+		<German>veragrisch/e/r</German>
 		<Italian>veragrio</Italian>
 		<Spanish>veragrio</Spanish>
 	</TEXT>
@@ -4380,7 +4428,7 @@
 		<Tag>TXT_KEY_SCEN_CIV_VOLCAE_ADJ</Tag>
 		<English>volcaeic</English>
 		<French>volcaeique</French>
-		<German>volcaeische</German>
+		<German>volcaeisch/e/r</German>
 		<Italian>volcaeio</Italian>
 		<Spanish>volcaeio</Spanish>
 	</TEXT>
@@ -5095,6 +5143,14 @@
 		<German><Text>Turdetanien</Text><Gender>Neuter</Gender><Plural>0</Plural></German>
 		<Italian><Text>Turdetania</Text><Gender>Female</Gender><Plural>0</Plural></Italian>
 		<Spanish><Text>Turdetania</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WDG_NORDIC_GUARDIAN</Tag>
+		<English>The Guardian</English>
+		<French>Le Gardien</French>
+		<German>Der H&#252;ter</German>
+		<Italian>Il Guardiano</Italian>
+		<Spanish>El guardi&#225;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_SCENARIOS_EURASIA_XXXL</Tag>

@@ -7,19 +7,21 @@ from CvPythonExtensions import (CyGlobalContext, UnitAITypes,
 		CyGInterfaceScreen, EventContextTypes, CyGame)
 # import CvEventInterface
 import CvUtil
-# import PyHelpers
+import PyHelpers
 # import CvCameraControls
 import PAE_Unit
 import PAE_City
+import PAE_Christen
+import PAE_Lists as L
 # for popups with dds:
 import CvScreenEnums
 import Popup as PyPopup
 
 # Defines
 gc = CyGlobalContext()
+PyPlayer = PyHelpers.PyPlayer
 
 # Internes für einmalige Events
-GotenCities3Pop6 = False
 GotenErsteProvinzstadt = False
 
 #[EVENT-1.2] Jagdgebiet wird erweitert:
@@ -65,12 +67,99 @@ def onGameStart():
 	pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CELTIC_SHRINE"), 1)
 
 
+#[EVENT-1.5] - onGameStart; Spielstart: Einige KI-Spieler erhalten zufällig 1 Siedler:
+	#Alle Siedler, die evtl. auf der Karte sind, löschen -> DANN
+	#Player 1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 17 erhalten mit 33% Wahrscheinlichkeit 1 Siedler in ihrer Hauptstadt
+	iRange = gc.getMAX_PLAYERS()
+	for iPlayer in range(iRange):
+		loopPlayer = gc.getPlayer(iPlayer)
+		if loopPlayer is not None and not loopPlayer.isNone() and loopPlayer.isAlive():
+			lUnits = PyPlayer(loopPlayer.getID()).getUnitList()
+			for pUnit in lUnits:
+				if pUnit is not None and not pUnit.isNone():
+					eUnitType = pUnit.getUnitType()
+					if (eUnitType == gc.getInfoTypeForString("UNIT_SETTLER")):
+						pUnit.kill(True, -1)
+
+	lPlayers = [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 15, 16, 17]
+	for iPlayer in lPlayers:
+		iRand = CvUtil.myRandom(9, "WDG_SettlerOnGameStart")
+		if iRand < 3:
+			pCity = gc.getPlayer(iPlayer).getCapitalCity()
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_SETTLER"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_SETTLE, DirectionTypes.DIRECTION_SOUTH)
+
+
+#[EVENT-10.0] - onGameStart; Spielstart: Je nach Schwierigkeitsgrad erhält der Spieler unterschiedliche Truppen auf Plot (99/79):
+	#Alle Einheiten, die auf dem Feld 99/79 stehen, löschen -> DANN
+	#Alles über Kaiser: (A)
+	#Kaiser: (B)
+	#König: (C)
+	#Bis einschl. Prinz: (D)
+	"""
+	(A)
+	1x UNIT_SWORDSMAN_LATENE,
+	2x UNIT_AXEMAN2,
+	2x UNIT_GERMANNE,
+	1x UNIT_SEHER,
+	1x UNIT_WORKER,
+
+	(B)
+	Alles aus A, plus:
+	1x UNIT_GERMANNE,
+	1x UNIT_EMIGRANT
+
+	(C)
+	Alles aus A, B, plus:
+	1x UNIT_BERSERKER_GERMAN,
+	1x UNIT_EMIGRANT
+
+	(D)
+	Alles aus A, B, C, plus:
+	1x UNIT_GERMANNE,
+	1x UNIT_EMIGRANT
+	"""
+	iPlayer = 0
+	pPlayer = gc.getPlayer(iPlayer)
+	iX = 99
+	iY = 79
+	# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
+	iHandicap = gc.getGame().getHandicapType()
+	pPlot = gc.getMap().plot(iX, iY)
+	iRange = pPlot.getNumUnits()
+	for iUnit in range(iRange):
+		pLoopUnit = pPlot.getUnit(iUnit)
+		if not pLoopUnit.isNone():
+			pLoopUnit.kill(True, -1)
+	# (A)
+	pPlayer.initUnit(gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+	pPlayer.initUnit(gc.getInfoTypeForString("UNIT_AXEMAN2"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+	pPlayer.initUnit(gc.getInfoTypeForString("UNIT_AXEMAN2"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+	pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GERMANNE"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+	pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GERMANNE"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+	pPlayer.initUnit(gc.getInfoTypeForString("UNIT_SEHER"), iX, iY, UnitAITypes.UNITAI_RESERVE, DirectionTypes.DIRECTION_SOUTH)
+	pPlayer.initUnit(gc.getInfoTypeForString("UNIT_WORKER"), iX, iY, UnitAITypes.UNITAI_WORKER, DirectionTypes.DIRECTION_SOUTH)
+	# (B)
+	if iHandicap <= 6:
+		pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GERMANNE"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+		pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EMIGRANT"), iX, iY, UnitAITypes.UNITAI_RESERVE, DirectionTypes.DIRECTION_SOUTH)
+	# (C)
+	if iHandicap <= 5:
+		pPlayer.initUnit(gc.getInfoTypeForString("UNIT_BERSERKER_GERMAN"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+		pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EMIGRANT"), iX, iY, UnitAITypes.UNITAI_RESERVE, DirectionTypes.DIRECTION_SOUTH)
+	# (D)
+	if iHandicap <= 4:
+		pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GERMANNE"), iX, iY, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+		pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EMIGRANT"), iX, iY, UnitAITypes.UNITAI_RESERVE, DirectionTypes.DIRECTION_SOUTH)
+
+
+
 # [EVENT-2.1] Rom (Player 14) und Byzanz (Player 12) haben ein permanentes Verteidigungsbündnis bis zur Reichsteilung
 	#gc.getTeam(gc.getPlayer(14).getTeam()).signDefensivePact(12)
 
 
 
 def DawnOfMan():
+#[EVENT-10.1] - onDawnOfMan;
 	# Bild PopUp bei Spielstart
 	#Ihr seid Alarich der Gote!
 	#Gestern noch ein angesehener Clanfürst im Gotenreich, heute ein Verbannter. Die alte Heimat ist zum Feind geworden, ihr müsst sie als Barbaren betrachten! Aber die Gemeinschaft ist schwach, wir sollten nicht zögern und zurückschlagen! Einer eurer Gefolgsleute ist dortgeblieben, um die Lage für euch auszukundschaften.
@@ -81,6 +170,57 @@ def DawnOfMan():
 	szTextHead = ""
 	szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GAME_START", ("", ))
 	PopUpDDS("Art/Scenarios/WegDerGoten/WDG01.dds",szTextHead,szTextBody)
+
+
+
+def onBeginPlayerTurn(iGameTurn, iPlayer):
+	pPlayer = gc.getPlayer(iPlayer)
+
+	if iPlayer == 0:
+
+#[EVENT-10.6] Wenn der Spieler zwei verschiedene Fleischressourcen im Handelsnetz hat -> DANN
+		#Plot (0,1): pPlot.setScriptData() für EVENT-10.6
+		#Ein Fruchtbarkeitskultist wird in der Hauptstadt [get.Capitalname] erstellt
+		#Ihr habt unterschiedliche Fleischressourcen im Handelsnetz. Ein Anhänger des Fruchtbarkeitskultes will sich bei euch ansiedeln.
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "10_6")
+		if iCheck == "":
+			pCity = pPlayer.getCapitalCity()
+			iBoni = 0
+			for iBonus in L.LBonusLivestock:
+				#if pPlayer.hasBonus(iBonus):
+				if pCity.hasBonus(iBonus):
+					iBoni += 1
+			if iBoni > 1:
+				pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EXECUTIVE_2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_UNKNOWN, DirectionTypes.DIRECTION_SOUTH)
+				CvUtil.setScriptData(gc.getMap().plot(0, 1), "10_6", 1)
+
+				if pPlayer.isHuman():
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FRUCHTBARKEITSKULTIST", ("", )))
+					popupInfo.addPopup(iPlayer)
+
+#[EVENT-10.7] Wenn der Spieler zwei verschiedene Getreideressourcen im Handelsnetz hat -> DANN
+		#Plot (0,1): pPlot.setScriptData() für EVENT-10.7
+		#Ein Kybelekultist wird in der [get.Capitalname] erstellt
+		#Ihr habt unterschiedliche Getreidesorten im Handelsnetz. Ein Anhänger des Kybelekultes will sich bei euch ansiedeln.
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "10_7")
+		if iCheck == "":
+			pCity = pPlayer.getCapitalCity()
+			iBoni = 0
+			for iBonus in L.LBonusGetreide:
+				#if pPlayer.hasBonus(iBonus):
+				if pCity.hasBonus(iBonus):
+					iBoni += 1
+			if iBoni > 1:
+				pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EXECUTIVE_3"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_UNKNOWN, DirectionTypes.DIRECTION_SOUTH)
+				CvUtil.setScriptData(gc.getMap().plot(0, 1), "10_7", 1)
+
+				if pPlayer.isHuman():
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_KYBELEKULTIST", ("", )))
+					popupInfo.addPopup(iPlayer)
 
 
 
@@ -105,7 +245,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_SETTLER", ("", )))
-				popupInfo.addPopup(pNewOwner.getID())
+				popupInfo.addPopup(iNewOwner)
 
 		if iNumCities == 4:
 #[EVENT-12.1] Wenn der Spieler 4 Städte hat (inkl. Hauptstadt):
@@ -121,7 +261,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_THING", (pCity.getName().upper(), )))
-				popupInfo.addPopup(pNewOwner.getID())
+				popupInfo.addPopup(iNewOwner)
 
 #[EVENT-10.3] Wenn der Gote die erste Stadt erobert
 	#Der Palast, Monolith und Heldendenkmal wird gesetzt.
@@ -151,10 +291,74 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		CyCamera().JustLookAtPlot(pCity.plot())
 		CyCamera().ZoomIn(0.5)
 
-		# Heilige Stadt nur aufdecken
+		# Die Heilige Stadt der Nordischen Mythen wird 1x aufgedeckt (aus [Event-1.1])
 		pHolyCity = gc.getGame().getHolyCity(gc.getInfoTypeForString("RELIGION_NORDIC"))
 		if pHolyCity is not None:
 			doRevealPlot(0, pHolyCity.plot(), False)
+
+
+#[EVENT-13.1] - onCityAcquired; Wenn der Spieler (zum ersten Mal) eine Stadt eines Germanen (Player 1, 2, 3, 4) erobert:
+	#[ABFRAGE] Lebt Alarich noch? -> DANN
+	#Plot (0,1): pPlot.setScriptData() für EVENT-13.1
+
+	# => DAS ÜBERSCHNEIDET SICH MIT [EVENT-10.3] Wenn der Gote die erste Stadt erobert
+
+
+#[EVENT-14.1] - onCityAcquired; Wenn der Spieler die Heilige Stadt (Donareiche aus Event-1.1) erobert
+	#[ABFRAGE] Hat der Spieler Nordische Mythen als Staatsreli? -> DANN (A)
+	#[ABFRAGE] Hat der Spieler eine andere Staatsreli? -> DANN (B)
+	#(A)
+	#Den Göttern sei Dank! Wir haben die Heilige Stadt unter Kontrolle gebracht! Der Hüter der Donareiche steht zu eurer Verfügung.
+	#Auf dass dieser heilige Ort zu wahrer Größe gelangen möge, wie es dem Thing der Götter würdig ist.
+	#<IHR ERHALTET 1 GROSSER PROPHET>
+	#Plot (0,1): pPlot.setScriptData() für EVENT-14.1
+	#Großer Prophet „Der Hüter“ wird in der Heiligen Stadt gesetzt
+	#(B)
+	#Plot (0,1): pPlot.setScriptData() für EVENT-14.1
+	#Die Donareiche, das Zentrum der alten Götter steht unter eurer Kontrolle. Wenn auch ohne Bedeutung für uns, doch eine schöne Erinnerung an die Zeiten der Ahnen.
+	if iNewOwner == 0 and pNewOwner.isHuman():
+		iReligion = gc.getInfoTypeForString("RELIGION_NORDIC")
+		pHolyCity = gc.getGame().getHolyCity(iReligion)
+		if pCity.getID() == pHolyCity.getID():
+			iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "14_1")
+			if iCheck == "":
+				iCheck = CvUtil.setScriptData(gc.getMap().plot(0, 1), "14_1", 1)
+				if pNewOwner.getStateReligion() == iReligion:
+
+					pNewUnit = gc.getPlayer(iNewOwner).initUnit(gc.getInfoTypeForString("UNIT_PROPHET"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_PROPHET, DirectionTypes.DIRECTION_SOUTH)
+					txtName = CyTranslator().getText("TXT_KEY_WDG_NORDIC_GUARDIAN", ())
+					pNewUnit.setName(txtName)
+
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CAPTURED_NORDIC_HOLY_CITY_1", ()))
+					popupInfo.addPopup(iNewOwner)
+
+				else:
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CAPTURED_NORDIC_HOLY_CITY_2", ()))
+					popupInfo.addPopup(iNewOwner)
+
+
+#[EVENT-14.2]; Wenn jemand anders die Heilige Stadt (Donareiche aus Event-1.1) erobert -> DANN
+	#[ABFRAGE] Hat der Spieler Nordische Mythen als Staatsreli? -> DANN
+	#Die Heilige Stadt [get.Cityname] wurde von [get.Leadername] erobert! Das ist gegen den Willen der Götter, wir sollten sie befreien!
+	else:
+		iHumanPlayer = gc.getGame().getActivePlayer()
+		if iHumanPlayer == 0 and gc.getPlayer(iHumanPlayer).isHuman():
+			iReligion = gc.getInfoTypeForString("RELIGION_NORDIC")
+			pHolyCity = gc.getGame().getHolyCity(iReligion)
+			if pCity.getID() == pHolyCity.getID():
+				if gc.getPlayer(iHumanPlayer).getStateReligion() == iReligion:
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CAPTURED_NORDIC_HOLY_CITY_3", (pCity.getName(), gc.getPlayer(iNewOwner).getName())))
+					popupInfo.addPopup(iHumanPlayer)
+
+
+
+
 
 
 #[QUEST] Wenn der Spieler einen Germanen erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
@@ -200,28 +404,43 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 			pCity = gc.getPlayer(iPlayer).getCapitalCity()
 			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 
-		#Hermunduren:
+#[EVENT-22.3] Hermunduren:
 		#Gratulation! Ihr habt [get.Leadername] besiegt. Er zeigt uns den Weg zu seiner geheimen Schatzkammer.
-		#<IHR ERHALTET 250 Gold>
+		#<IHR ERHALTET 1000 Gold>
 		if iConqueredPlayer == 4:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iConqueredPlayer).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			
-			gc.getPlayer(iPlayer).changeGold(250)
+			if CvUtil.getScriptData(gc.getMap().plot(0, 1), "22_3") == "":
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iConqueredPlayer).getName(), )))
+				popupInfo.addPopup(iPlayer)
+				gc.getPlayer(iPlayer).changeGold(1000)
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", 1)
 
-		#[EVENT-10.4] Wenn der Spieler die alten Goten (Player 20) erobert hat -> DANN
+#[EVENT-10.4] - onCityAcquired; Wenn der Spieler die drei Städte der Alten Goten (Hagelsberg, Gnesen und Gotonen) im Besitz hat:
+		#Plot (0,1): pPlot.setScriptData() für EVENT-10.4
 		if iConqueredPlayer == 20:
-			#Ausgezeichnet! Ihr habt die alte Heimat unter eure Kontrolle gebracht.
-			#Nun lasst uns Vorbereitungen treffen, um die umliegenden Stämme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren müssen, um zu gegebener Zeit mit einer großen Armee vor den Göttern nach Westen zu marschieren.
-			#Alle großen Germanenstämme sollen hinter euch versammelt sein!
-			#Denkt daran, schon früh Straßen in die weiten Wälder zu schlagen. Auch das wurde vom Ältesten immer vernachlässigt!
-			#<VEREINT DIE GERMANENSTÄMME UNTER EUREM BANNER>
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS", ("", )))
-			popupInfo.addPopup(iPlayer)
+			iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "10_4")
+			if iCheck == "":
+				#Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht.
+				#Nun lasst uns Vorbereitungen treffen, um die umliegenden Stämme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren müssen, um zu gegebener Zeit mit einer großen Armee vor den Göttern nach Westen zu marschieren.
+				#Die vier großen Germanenstämme sollen hinter euch versammelt sein, euch als Vasallen die Treue schwören!
+
+				#Denkt daran, schon früh Straßen in die weiten Wälder zu schlagen. Auch das wurde vom Ältesten immer vernachlässigt!
+
+				#<VEREINT DIE GERMANENSTÄMME IM WESTEN UNTER EUREM BANNER>
+				#Hagelsberg: x=95,y=83
+				#Gnesen: x=91,y=77
+				#Gotonen: x=102,y=71
+				if (gc.getMap().plot(95, 83).getOwner() == 0 and
+					 gc.getMap().plot(91, 77).getOwner() == 0 and
+					 gc.getMap().plot(102,71).getOwner() == 0
+					):
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS", ("", )))
+					popupInfo.addPopup(iPlayer)
+					# setScriptData
+					CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_4", 1)
 
 
 
@@ -640,7 +859,11 @@ def onCombatResult(pWinner, pLoser):
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_THE_ELDER", (gc.getPlayer(iLoser).getName(), )))
 				popupInfo.addPopup(0)
 
-#[EVENT-11.1 Wenn Alarich stirbt:
+#[EVENT-11.1] - onCombatResult; Wenn Alarich stirbt:
+	#Die Startarmee des Spielers wird von Stammesfürst mit General "Alarich" angeführt. Nach dessen Tod gibt es einen neuen Leader der Goten (Athaulf)
+	#[ABFRAGE] Ist pPlot.setScriptData() für EVENT-12.2 gesetzt? -> DANN -1 Zufriedenheit im Palast
+	#[ABFRAGE] Gibt es schon eine Hauptstadt? -> DANN
+	#In [get.Capitalname] wird ein Obelisk gesetzt
 	if iLoser == 0 and pLoser.isHasPromotion(iPromoLeader) and (pLoser.getName() == "Alarich" or pLoser.getScriptData() == "Alarich"):
 		#Die Startarmee des Spielers wird von Stammesfürst mit General "Alarich" angeführt.
 		#Nach dessen Tod gibt es einen neuen Leader der Goten (X oder Y)
@@ -666,65 +889,102 @@ def onCombatResult(pWinner, pLoser):
 		else:
 			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_OBELISK"), 1)
 			szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ALARICH_HEAD", ("", ))
-			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ALARICH_BODY", ("", ))
+			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ALARICH_BODY", (pCity.getName().upper(), ))
 			PopUpDDS("Art/Scenarios/WegDerGoten/WDG07.dds",szTextHead,szTextBody)
 
+
+
+def onCityBuilt(pCity):
+	iPlayer = pCity.getOwner()
+	pPlayer = gc.getPlayer(iPlayer)
+
+#[EVENT-12.1] - onCityBuilt; Wenn der Spieler eine (erste) Stadt mit einem Siedler gründet -> DANN
+	#Plot (0,1): pPlot.setScriptData() für EVENT-12.1
+	#ZOOM AUF DIE SIEDLUNG
+	#Die Siedler bedanken sich.
+	#Sie wollen ihre neue Heimat schnell zu einem Dorf erweitern, auf dass es bald zum Glanze des Gotenreiches beitragen möge.
+	#Wir könnten Fuhrwerke schicken, die hier Ressourcen verbreiten...
+	if iPlayer == 0 and pPlayer.isHuman():
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "12_1")
+		if iCheck == "":
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_OWN_CITY", ("", )))
+			popupInfo.addPopup(iPlayer)
+			CvUtil.setScriptData(gc.getMap().plot(0, 1), "12_1", 1)
+			#ZOOM AUF DIE SIEDLUNG
+			CyCamera().JustLookAtPlot(pCity.plot())
 
 
 
 #[QUEST] Wenn der Spieler einen Germanen erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
 def onPlayerKilled(iConqueredPlayer):
 	iPlayer = gc.getGame().getActivePlayer()
-	if iPlayer != 0: return
 
-	#Cherusker:
-	#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
-	#<IHR ERHALTET 1 GENERAL "Arminius">
-	if iConqueredPlayer == 1:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iConqueredPlayer).getName(), )))
-		popupInfo.addPopup(iPlayer)
-		
-		pCity = gc.getPlayer(iPlayer).getCapitalCity()
-		pNewUnit = gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
-		pNewUnit.setName("Arminius")
+	if iPlayer == 0:
+		#Cherusker:
+		#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
+		#<IHR ERHALTET 1 GENERAL "Arminius">
+		if iConqueredPlayer == 1:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCity = gc.getPlayer(iPlayer).getCapitalCity()
+			pNewUnit = gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
+			pNewUnit.setName("Arminius")
 
-	#Warnen:
-	#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
-	#<IHR ERHALTET 2 TEUTONEN>
-	if iConqueredPlayer == 2:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iConqueredPlayer).getName(), )))
-		popupInfo.addPopup(iPlayer)
-		
-		pCity = gc.getPlayer(iPlayer).getCapitalCity()
-		gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-		gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+		#Warnen:
+		#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
+		#<IHR ERHALTET 2 TEUTONEN>
+		if iConqueredPlayer == 2:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCity = gc.getPlayer(iPlayer).getCapitalCity()
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 
-	#Markomannen:
-	#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
-	#<IHR ERHALTET 1 LEGIONÄR>
-	if iConqueredPlayer == 3:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iConqueredPlayer).getName(), )))
-		popupInfo.addPopup(iPlayer)
-		
-		pCity = gc.getPlayer(iPlayer).getCapitalCity()
-		gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+		#Markomannen:
+		#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
+		#<IHR ERHALTET 1 LEGIONÄR>
+		if iConqueredPlayer == 3:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCity = gc.getPlayer(iPlayer).getCapitalCity()
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 
-	#Hermunduren:
-	#Gratulation! Ihr habt [get.Leadername] besiegt. Er zeigt uns den Weg zu seiner geheimen Schatzkammer.
-	#<IHR ERHALTET 250 Gold>
-	if iConqueredPlayer == 4:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iConqueredPlayer).getName(), )))
-		popupInfo.addPopup(iPlayer)
-		
-		gc.getPlayer(iPlayer).changeGold(250)
+#[EVENT-22.3] Wenn der Spieler den Hermunduren (Player 4) vasallisiert:
+		#Plot (0,1): pPlot.setScriptData() für EVENT-22.3
+		#Der Spieler erhält 1000 Geld
+		#Gratulation! Ihr habt [get.Leadername] unterworfen.
+		#Er schwört bei den Göttern, euch als Vasall keine Schande zu machen. Um das zu unterstreichen, gewährt er euch Zugang zu seiner geheimen Schatzkammer.
+		#<IHR ERHALTET 1000 Gold>
+		if iConqueredPlayer == 4:
+			if CvUtil.getScriptData(gc.getMap().plot(0, 1), "22_3") == "":
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iConqueredPlayer).getName(), )))
+				popupInfo.addPopup(iPlayer)
+				gc.getPlayer(iPlayer).changeGold(1000)
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", 1)
+
+	else:
+#[EVENT-10.5] - onPlayerKilled; Wenn jemand anders als der Spieler die Alten Goten (Player 20) vernichtet -> DANN
+		#[get.LeadernamePlayer20] wurde von [get.civname] besiegt! Wir sollten das Gebiet umgehend zurückerobern.
+		# es geht nur: [get.LeadernamePlayer20] wurde besiegt! Wir sollten das Gebiet umgehend zurückerobern.
+		# (weil der Gewinner wird in dieser Funktion nicht mitgeschickt) => außer ich mach es in onCityAcquired() (aber dann ist der Gegner ja nicht komplett besiegt)
+		if iConqueredPlayer == 20:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS_OTHERS", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(0)
 
 
 
@@ -773,16 +1033,17 @@ def onVassalState(argsList):
 			pCity = gc.getPlayer(iVassal).getCapitalCity()
 			gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 
-		#Hermunduren:
+#[EVENT-22.3] Hermunduren:
 		#Gratulation! Ihr habt [get.Leadername] besiegt. Er zeigt uns den Weg zu seiner geheimen Schatzkammer.
 		#<IHR ERHALTET 250 Gold>
 		if iVassal == 4:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iVassal).getName(), )))
-			popupInfo.addPopup(0)
-			
-			gc.getPlayer(0).changeGold(250)
+			if CvUtil.getScriptData(gc.getMap().plot(0, 1), "22_3") == "":
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iVassal).getName(), )))
+				popupInfo.addPopup(0)
+				gc.getPlayer(0).changeGold(1000)
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", 1)
 
 
 	#[QUEST] Wenn sich ein Vasall von Rom lossagt:
@@ -959,6 +1220,9 @@ def setChristentum():
 				pBarbTeam = gc.getTeam(gc.getPlayer(gc.getBARBARIAN_PLAYER()).getTeam())
 				pBarbTeam.setHasTech(gc.getInfoTypeForString("TECH_THEOLOGY"), True, gc.getBARBARIAN_PLAYER(), True, False)
 
+				# 3. globale Variable bChristentum auf true setzen
+				PAE_Christen.init()
+
 
 
 #[EVENT-2.2] Christentum verbreitet sich:
@@ -1039,66 +1303,77 @@ def doSpreadReligion():
 
 
 def onCityGrowth(pCity,iPlayer):
-	global GotenCities3Pop6
 	global GotenErsteProvinzstadt
 	pPlayer = gc.getPlayer(iPlayer)
 
-#[EVENT-12.2] Wenn der Spieler 3 Städte mit Größe 6 (Stadtstatus) hat:
+#[EVENT-12.2] - onCityGrowth; Wenn der Spieler mehr als 2 Städte mit Stadtstatus (Größe 6) hat:
+	#[ABFRAGE] Lebt Alarich noch? -> DANN
+	#Plot (0,1): pPlot.setScriptData() für EVENT-12.2
+	#+1 Zufriedenheit im Palast
 	iBuilding = gc.getInfoTypeForString("BUILDING_STADT")
-	if iPlayer == 0 and pPlayer.countNumBuildings(iBuilding) == 3 and not GotenCities3Pop6:
-		GotenCities3Pop6 = True
+	if iPlayer == 0 and pPlayer.countNumBuildings(iBuilding) > 2:
 
-		#[ABFRAGE] Lebt Alarich noch? -> DANN
-		iRange = pPlayer.getNumUnits()
-		for i in range(iRange):
-			if pPlayer.getUnit(i) is not None:
-				iPromoLeader = gc.getInfoTypeForString("PROMOTION_LEADER")
-				if pPlayer.getUnit(i).isHasPromotion(iPromoLeader) and (pPlayer.getUnit(i).getName() == "Alarich" or pPlayer.getUnit(i).getScriptData() == "Alarich"):
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "12_2")
+		if iCheck == "":
 
-					#+1 Zufriedenheit im Palast
-					pCity = pPlayer.getCapitalCity()
-					if not pCity.isNone():
-						iBuildingClass = gc.getInfoTypeForString("BUILDINGCLASS_PROVINZPALAST")
-						iBuildingHappiness = pCity.getBuildingHappyChange(iBuildingClass)
-						pCity.setBuildingHappyChange(iBuildingClass, iBuildingHappiness + 1)
+			#[ABFRAGE] Lebt Alarich noch? -> DANN
+			iRange = pPlayer.getNumUnits()
+			for i in range(iRange):
+				if pPlayer.getUnit(i) is not None:
+					iPromoLeader = gc.getInfoTypeForString("PROMOTION_LEADER")
+					if pPlayer.getUnit(i).isHasPromotion(iPromoLeader) and (pPlayer.getUnit(i).getName() == "Alarich" or pPlayer.getUnit(i).getScriptData() == "Alarich"):
 
-						if pPlayer.isHuman():
-							popupInfo = CyPopupInfo()
-							popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-							popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GOTEN_3POP6", ("", )))
-							popupInfo.addPopup(iPlayer)
-					return
+						#+1 Zufriedenheit im Palast
+						pCity = pPlayer.getCapitalCity()
+						if not pCity.isNone():
+							iBuildingClass = gc.getInfoTypeForString("BUILDINGCLASS_PALACE")
+							iBuildingHappiness = pCity.getBuildingHappyChange(iBuildingClass) + 1
+							pCity.setBuildingHappyChange(iBuildingClass, iBuildingHappiness)
 
-#[EVENT-12.3] Wenn der Spieler seine erste Provinzstadt (Größe 12) hat -> DANN
-	#1 Gaufürst wird erstellt (Auch wenn es schon einen gibt)
-	if iPlayer == 0 and pCity.getPopulation() == 12 and not GotenErsteProvinzstadt:
-		GotenErsteProvinzstadt = True
+							if pPlayer.isHuman():
+								popupInfo = CyPopupInfo()
+								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+								popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GOTEN_3POP6", ("", )))
+								popupInfo.addPopup(iPlayer)
 
-		pPlayer.initUnit(gc.getInfoTypeForString("UNIT_STATTHALTER_NORTH"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+						CvUtil.setScriptData(gc.getMap().plot(0, 1), "12_2", 1)
+						return
 
-		#[get.cityname] ist zu erstaunlicher Größe herangewachsen. Einer der ansässigen Adligen erklärt sich bereit, die Verwaltung zu übernehmen.
-		#<IHR ERHALTET 1 GAUFÜRST>
-		if pPlayer.isHuman():
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GOTEN_ERSTEPROVINZSTADT", (pCity.getName(), )))
-			popupInfo.addPopup(iPlayer)
+
+#[EVENT-12.3] in Event 12.4 integriert
 
 
 
 def onBuildingBuilt(pCity, iPlayer, iBuildingType):
-#[EVENT-12.4] Wenn der Spieler seinen ersten Provinzpalast baut -> DANN
+	pPlayer = gc.getPlayer(iPlayer)
+
+#[EVENT-12.4] - onBuildingBuilt; Wenn der Spieler einen ersten Provinzpalast gebaut hat -> DANN
+	#Plot (0,1): pPlot.setScriptData() für EVENT-12.4
 	#KAMERA ZOOM AUF DIE STADT
-	if iPlayer == 0 and iBuildingType == gc.getInfoTypeForString("BUILDING_PROVINZPALAST"):
-		pPlayer = gc.getPlayer(iPlayer)
-		pCapital = pPlayer.getCapitalCity()
-		#Hier, von [get.cityname] aus wird unsere erste Provinz verwaltet.
-		#Schon seit den Ahnen gilt: Mit der Entfernung zu [get.capitalname] nimmt die Motivation des Adels ab! Provinzpaläste sind der Schlüssel zu einem großen Reich. Von dort aus können Gaufürsten eures Vertrauens in der Gegend für Ruhe sorgen.
-		if pPlayer.isHuman():
+	#1 Gaufürst wird in der Stadt erstellt (Auch wenn man schon einen hat). Der Gaufürst bekommt 1 Stern (Trainiert?)
+	if iPlayer == 0 and pPlayer.isHuman() and iBuildingType == gc.getInfoTypeForString("BUILDING_PROVINZPALAST"):
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "12_4")
+		if iCheck == "":
+
+			pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_STATTHALTER_NORTH"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			pNewUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
+
+			CvUtil.setScriptData(gc.getMap().plot(0, 1), "12_4", 1)
+
+			#KAMERA ZOOM AUF DIE STADT
+			CyCamera().JustLookAtPlot(pCity.plot())
+
+			#Hier, von [get.cityname] aus wird unsere erste Provinz verwaltet.
+			#Schon seit den Ahnen gilt: Mit der Entfernung zu [get.capitalname] nimmt die Motivation des Adels ab! Provinzpaläste sind der Schlüssel zu einem großen Reich. Von dort aus können Gaufürsten eures Vertrauens in der Gegend für Ruhe sorgen.
+			#Einer der ansässigen Adligen erklärt sich bereit, euch zu begleiten. Er will die Verantwortung in der nächsten Provinz übernehmen und euch bis dahin unterstützen wo er kann.
+			#<IHR ERHALTET 1 GAUFÜRST>
+			pCapital = pPlayer.getCapitalCity()
 			popupInfo = CyPopupInfo()
 			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GOTEN_ERSTERPROVINZPALAST", (pCity.getName(),pCapital.getName())))
 			popupInfo.addPopup(iPlayer)
+
+
 
 
 def doRevealPlot(iTeam, pPlot, bZoom):
@@ -1117,10 +1392,15 @@ def doRevealPlot(iTeam, pPlot, bZoom):
 # PopUps mit dds-Bild
 def PopUpDDS(ddsPIC, txtHEADER, txtBODY):
 	screen = CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE)
-	iX = screen.getXResolution() / 2 - 200
+	# CENTER:
+	#iX = screen.getXResolution() / 2 - 200
+	#iY = 40
+	# RIGHT:
+	iX = screen.getXResolution() - 456
+	iY = 90
 	popupDDS = PyPopup.PyPopup(4000, EventContextTypes.EVENTCONTEXT_ALL) # 4000 = PopUpID
 	#popupDDS.setSize(400,400) # (INT iXS, INT iYS) geht net
-	popupDDS.setPosition(iX,40)
+	popupDDS.setPosition(iX,iY)
 	popupDDS.setHeaderString(txtHEADER)
 	popupDDS.addDDS(ddsPIC, 0, 0, 256, 256) # (dds, x, y, width: 360 max, height)
 	popupDDS.setBodyString(txtBODY)
