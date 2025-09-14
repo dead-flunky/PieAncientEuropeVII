@@ -3343,7 +3343,7 @@
 		<BuildingArtInfo>
 						<Type>ART_DEF_BUILDING_BUDDHIST_MONASTERY</Type>
 						<LSystem>LSYSTEM_3x2</LSystem>
-						<bAnimated>1</bAnimated>
+						<bAnimated>0</bAnimated>
 						<fScale>2.8</fScale>
 						<fInterfaceScale>0.5</fInterfaceScale>
 						<NIF>Art/Structures/Buildings/Monastery/Buddhist/Buddhist_monastery.nif</NIF>
@@ -3354,11 +3354,11 @@
 						<Type>ART_DEF_BUILDING_BUDDHIST_SHRINE</Type>
 						<LSystem>LSYSTEM_3x2</LSystem>
 						<bAnimated>0</bAnimated>
-						<fScale>1.0</fScale>
-						<fInterfaceScale>0.9</fInterfaceScale>
-						<NIF>Art/Structures/Buildings/Shrine/Buddhist_shrine.nif</NIF>
+						<fScale>7.0</fScale>
+						<fInterfaceScale>0.24</fInterfaceScale>
+						<NIF>Art/Structures/Buildings/mahabodhi/mahabodhi.nif</NIF>
 						<KFM/>
-						<Button>Art/Interface/Buttons/Buildings/button_buddha_shrine.dds</Button>
+						<Button>Art/Interface/Buttons/Buildings/button_building_mahabodhi.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ROME_TEMPLE</Type>
@@ -3536,7 +3536,7 @@
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.6</fScale>
-			<fInterfaceScale>0.44</fInterfaceScale>
+			<fInterfaceScale>0.28</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Halicarnassus/Halicarnassus.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/PoliceStation.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,1,5</Button>

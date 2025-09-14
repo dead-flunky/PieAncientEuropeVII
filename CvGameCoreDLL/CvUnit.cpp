@@ -3198,7 +3198,7 @@ bool CvUnit::canAutomate(AutomateTypes eAutomate) const
 	case AUTOMATE_EXPLORE:
 		// BTS
 		//if ((!canFight() && (getDomainType() != DOMAIN_SEA)) || (getDomainType() == DOMAIN_AIR) || (getDomainType() == DOMAIN_IMMOBILE))
-		// PAE
+		// PAE (daher auch keine Boote!)
 		if (!canFight() || getDomainType() == DOMAIN_AIR || getDomainType() == DOMAIN_IMMOBILE)
 		{
 			return false;

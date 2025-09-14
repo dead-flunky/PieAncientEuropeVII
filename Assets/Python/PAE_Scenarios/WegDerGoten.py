@@ -169,7 +169,7 @@ def DawnOfMan():
 	#<EROBERT EINE STADT>
 	szTextHead = ""
 	szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GAME_START", ("", ))
-	PopUpDDS("Art/Scenarios/WegDerGoten/WDG01.dds",szTextHead,szTextBody)
+	PopUpDDS("Art/Scenarios/WegDerGoten/WDG01.dds",szTextHead,szTextBody,"RIGHT")
 
 
 
@@ -182,7 +182,7 @@ def onBeginPlayerTurn(iGameTurn, iPlayer):
 		#Plot (0,1): pPlot.setScriptData() für EVENT-10.6
 		#Ein Fruchtbarkeitskultist wird in der Hauptstadt [get.Capitalname] erstellt
 		#Ihr habt unterschiedliche Fleischressourcen im Handelsnetz. Ein Anhänger des Fruchtbarkeitskultes will sich bei euch ansiedeln.
-		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "10_6")
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["10_6"], "")
 		if iCheck == "":
 			pCity = pPlayer.getCapitalCity()
 			iBoni = 0
@@ -192,7 +192,7 @@ def onBeginPlayerTurn(iGameTurn, iPlayer):
 					iBoni += 1
 			if iBoni > 1:
 				pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EXECUTIVE_2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_UNKNOWN, DirectionTypes.DIRECTION_SOUTH)
-				CvUtil.setScriptData(gc.getMap().plot(0, 1), "10_6", 1)
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_6", "x")
 
 				if pPlayer.isHuman():
 					popupInfo = CyPopupInfo()
@@ -204,7 +204,7 @@ def onBeginPlayerTurn(iGameTurn, iPlayer):
 		#Plot (0,1): pPlot.setScriptData() für EVENT-10.7
 		#Ein Kybelekultist wird in der [get.Capitalname] erstellt
 		#Ihr habt unterschiedliche Getreidesorten im Handelsnetz. Ein Anhänger des Kybelekultes will sich bei euch ansiedeln.
-		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "10_7")
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["10_7"], "")
 		if iCheck == "":
 			pCity = pPlayer.getCapitalCity()
 			iBoni = 0
@@ -214,7 +214,7 @@ def onBeginPlayerTurn(iGameTurn, iPlayer):
 					iBoni += 1
 			if iBoni > 1:
 				pPlayer.initUnit(gc.getInfoTypeForString("UNIT_EXECUTIVE_3"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_UNKNOWN, DirectionTypes.DIRECTION_SOUTH)
-				CvUtil.setScriptData(gc.getMap().plot(0, 1), "10_7", 1)
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_7", "x")
 
 				if pPlayer.isHuman():
 					popupInfo = CyPopupInfo()
@@ -254,13 +254,13 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 			#Das gotische Reich erweitert sich stetig. Wir kontrollieren jetzt vier ehemalige Fürstentümer.
 			#Genug, um eine wichtige Rolle bei den Things der Germanenvölker einzunehmen. Eine Rolle, die noch keinem Goten jemals zugestanden wurde. Der Älteste konnte seinerzeit froh sein, wenn er überhaupt eingeladen war.
 			#<DAS GROSSE THING FINDET IN [get.Capitalname] STATT> (Gebäude: Thing-Tagungen)
-			pCity = pNewOwner.getCapitalCity()
-			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_THING"), 1)
-			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_THING_CITY"), 1)
+			pCapitalCity = pNewOwner.getCapitalCity()
+			pCapitalCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_THING"), 1)
+			pCapitalCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_THING_CITY"), 1)
 			if pNewOwner.isHuman():
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_THING", (pCity.getName().upper(), )))
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_THING", (pCapitalCity.getName().upper(), )))
 				popupInfo.addPopup(iNewOwner)
 
 #[EVENT-10.3] Wenn der Gote die erste Stadt erobert
@@ -276,6 +276,11 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		pCity.setCulture(iPreviousOwner, iPreviousCulture * 2, 1)
 		pCity.setCulture(iNewOwner, iPreviousCulture * 8, 1)
 
+		# Die Heilige Stadt der Nordischen Mythen wird 1x aufgedeckt (aus [Event-1.1])
+		pHolyCity = gc.getGame().getHolyCity(gc.getInfoTypeForString("RELIGION_NORDIC"))
+		if pHolyCity is not None:
+			doRevealPlot(0, pHolyCity.plot(), False)
+
 		# Der erste Schritt ist getan. Ihr habt [get.cityname] erobert!
 		# Dies wird die Hauptstadt eines neuen, geeinten Gotenreiches sein. Es soll das größte Reich aller Zeiten in Germanien werden, das sich am Ende mit dem der Römer messen kann.
 		#Ihr lasst die Leute alle Schäden reparieren und hier unsere Heimat aufbauen. Wir sollten auch bald einen Tempel errichten, um den Göttern zu huldigen. Der Älteste und seine Sippe haben scheinbar geschlafen die letzten Jahre, viele Gebäude sind noch nichtmal geplant.
@@ -284,17 +289,13 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		#<EROBERT WEITERE STÄDTE>
 		#<EROBERT DIE HEILIGE STADT>
 		szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_HEAD", (pCity.getName(), ))
-		szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY", ("", ))
-		PopUpDDS("Art/Scenarios/WegDerGoten/WDG02.dds",szTextHead,szTextBody)
+		szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY", (gc.getPlayer(pHolyCity.getOwner()).getName(), pHolyCity.getName()))
+		PopUpDDS("Art/Scenarios/WegDerGoten/WDG02.dds",szTextHead,szTextBody,"RIGHT")
 
 		# Zoom zur neuen Hauptstadt
 		CyCamera().JustLookAtPlot(pCity.plot())
 		CyCamera().ZoomIn(0.5)
 
-		# Die Heilige Stadt der Nordischen Mythen wird 1x aufgedeckt (aus [Event-1.1])
-		pHolyCity = gc.getGame().getHolyCity(gc.getInfoTypeForString("RELIGION_NORDIC"))
-		if pHolyCity is not None:
-			doRevealPlot(0, pHolyCity.plot(), False)
 
 
 #[EVENT-13.1] - onCityAcquired; Wenn der Spieler (zum ersten Mal) eine Stadt eines Germanen (Player 1, 2, 3, 4) erobert:
@@ -320,9 +321,9 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		iReligion = gc.getInfoTypeForString("RELIGION_NORDIC")
 		pHolyCity = gc.getGame().getHolyCity(iReligion)
 		if pCity.getID() == pHolyCity.getID():
-			iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "14_1")
+			iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["14_1"], "")
 			if iCheck == "":
-				iCheck = CvUtil.setScriptData(gc.getMap().plot(0, 1), "14_1", 1)
+				iCheck = CvUtil.addScriptData(gc.getMap().plot(0, 1), "14_1", "x")
 				if pNewOwner.getStateReligion() == iReligion:
 
 					pNewUnit = gc.getPlayer(iNewOwner).initUnit(gc.getInfoTypeForString("UNIT_PROPHET"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_PROPHET, DirectionTypes.DIRECTION_SOUTH)
@@ -357,69 +358,22 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 					popupInfo.addPopup(iHumanPlayer)
 
 
-
-
-
-
-#[QUEST] Wenn der Spieler einen Germanen erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
-# egal ob es noch Einheiten gibt
-	if iNewOwner == 0 and gc.getPlayer(iPreviousOwner).getNumCities() == 0:
-		iConqueredPlayer = iPreviousOwner
-		iPlayer = iNewOwner
-		#Cherusker:
-		#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
-		#<IHR ERHALTET 1 GENERAL "Arminius">
-		if iConqueredPlayer == 1:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iConqueredPlayer).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			
-			pCity = gc.getPlayer(iPlayer).getCapitalCity()
-			pNewUnit = gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
-			pNewUnit.setName("Arminius")
-
-		#Warnen:
-		#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
-		#<IHR ERHALTET 2 TEUTONEN>
-		if iConqueredPlayer == 2:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iConqueredPlayer).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			
-			pCity = gc.getPlayer(iPlayer).getCapitalCity()
-			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-
-		#Markomannen:
-		#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
-		#<IHR ERHALTET 1 LEGIONÄR>
-		if iConqueredPlayer == 3:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iConqueredPlayer).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			
-			pCity = gc.getPlayer(iPlayer).getCapitalCity()
-			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-
 #[EVENT-22.3] Hermunduren:
 		#Gratulation! Ihr habt [get.Leadername] besiegt. Er zeigt uns den Weg zu seiner geheimen Schatzkammer.
 		#<IHR ERHALTET 1000 Gold>
-		if iConqueredPlayer == 4:
-			if CvUtil.getScriptData(gc.getMap().plot(0, 1), "22_3") == "":
+		if iPreviousOwner == 4:
+			if CvUtil.getScriptData(gc.getMap().plot(0, 1), ["22_3"], "") == "":
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iConqueredPlayer).getName(), )))
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iPreviousOwner).getName(), )))
 				popupInfo.addPopup(iPlayer)
 				gc.getPlayer(iPlayer).changeGold(1000)
-				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", 1)
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", "x")
 
 #[EVENT-10.4] - onCityAcquired; Wenn der Spieler die drei Städte der Alten Goten (Hagelsberg, Gnesen und Gotonen) im Besitz hat:
 		#Plot (0,1): pPlot.setScriptData() für EVENT-10.4
-		if iConqueredPlayer == 20:
-			iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "10_4")
+		if iPreviousOwner == 20:
+			iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["10_4"], "")
 			if iCheck == "":
 				#Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht.
 				#Nun lasst uns Vorbereitungen treffen, um die umliegenden Stämme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren müssen, um zu gegebener Zeit mit einer großen Armee vor den Göttern nach Westen zu marschieren.
@@ -440,70 +394,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS", ("", )))
 					popupInfo.addPopup(iPlayer)
 					# setScriptData
-					CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_4", 1)
-
-
-
-
-#[QUEST] Wenn der Daker (oder sein Vasall) eine Stadt vom Vandalen erobert:
-#[ABFRAGE] Hat der Spieler Frieden mit dem Vandalen? -> DANN
-#Krakau 98/56 wird 1x kurz aufgedeckt
-	if iPreviousOwner == 9 and (iNewOwner == 10 or iNewOwner == 11):
-		if not gc.getTeam(gc.getPlayer(0).getTeam()).isAtWar(gc.getPlayer(9).getTeam()):
-			#[get.Leadername] hat eine Stadt verloren! Er wird von den den [get.Civname] bedrängt. 
-			#Können wir da vielleicht helfen? Wir wollen ja nicht noch eine starke Macht im Süden!
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_DAKER_CONQUER_VANDAL_CITY", (gc.getPlayer(9).getName(), gc.getPlayer(iNewOwner).getCivilizationDescriptionKey())))
-			popupInfo.addPopup(iNewOwner)
-
-			pCity = gc.getPlayer(iPreviousOwner).getCapitalCity()
-			if pCity is not None:
-				doRevealPlot(0, pCity.plot(), True)
-
-
-#[QUEST ROM-A] Wenn Rom (oder sein Vasall) einem der GerVandanen die Hauptstadt erobert oder vasallisiert:
-	if iPreviousOwner in lGerVandalen:
-		if iNewOwner == 14 or gc.getTeam(gc.getPlayer(iNewOwner).getTeam()).isVassal(gc.getPlayer(14).getTeam()):
-			lCapitals = ["Tulifurdum","Rostock","Virteburh","","Krakau"]
-			if pCity.getName() in lCapitals:
-				szTextHead = ""
-				szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_CONQUERS_CAPITAL", (pCity.getName(),gc.getPlayer(iPreviousOwner).getName(),gc.getPlayer(iNewOwner).getName()))
-				PopUpDDS("Art/Scenarios/WegDerGoten/WDG05.dds",szTextHead,szTextBody)
-
-
-#[QUEST] Wenn Byzanz (oder sein Vasall) eine Stadt vom Daker erobert:
-#[ABFRAGE] Hat der Spieler Frieden mit dem Daker?
-#[ABFRAGE] Hat Rom noch Frieden mit Byzanz? -> DANN
-#Sarmizetegusa 110/32 wird 1x kurz aufgedeckt
-	if iPreviousOwner == 10:
-		if iNewOwner == 12 or gc.getTeam(gc.getPlayer(iNewOwner).getTeam()).isVassal(gc.getPlayer(12).getTeam()):
-			if not gc.getTeam(gc.getPlayer(10).getTeam()).isAtWar(gc.getPlayer(0).getTeam()):
-				if not gc.getTeam(gc.getPlayer(12).getTeam()).isAtWar(gc.getPlayer(14).getTeam()):
-					#[get.Leadername], der Unterhändler Roms, erobert Städte von [get.Leadername]. Also breiten sich die Römer jetzt auch im Osten aus. Wir sollten unsere Pläne anpassen...
-					popupInfo = CyPopupInfo()
-					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_BYZANZ_CONQUER_DAKER", (gc.getPlayer(iNewOwner).getName(), gc.getPlayer(iPreviousOwner).getName())))
-					popupInfo.addPopup(0)
-
-					pCity = gc.getPlayer(iPreviousOwner).getCapitalCity()
-					if pCity is not None:
-						doRevealPlot(0, pCity.plot(), True)
-
-
-#Wenn der Hunne die erste Stadt einnimmt:
-#Palast, Monument, Heldendenkmal setzen, der Hunne bekommt 1 Siedler
-#Alle Religionen/Tempel entfernen
-#Fremde Religion geben, Tempel der Religion setzen
-	if iNewOwner == 19 and iNumCities == 1:
-		pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_MONUMENT"), 1)
-
-		# Die Hunnenhauptstadt bekommt 80% Kultur.
-		iPreviousCulture = pCity.getCulture(iPreviousOwner) / 10
-		pCity.setCulture(iPreviousOwner, iPreviousCulture * 2, 1)
-		pCity.setCulture(iNewOwner, iPreviousCulture * 8, 1)
-
-
+					CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_4", "x")
 
 
 def onFirstContact(argsList):
@@ -515,33 +406,6 @@ def onFirstContact(argsList):
 	# Vandalen = 9
 	lGerVandalen = [1,2,3,4,9]
 	lGermanen = [1,2,3,4]
-
-	#[QUEST] Wenn Kontakt mit einem Germanen entsteht, werden 1x kurz die Hauptstädte aller vier Germanen aufgedeckt:
-	#Cherusker 60/70 - Warnen 70/82 - Markomannen 61/55 - Hermunduren 76/62
-	if iHasMetTeamY in lGermanen:
-		bFirstContact = True
-		for iPlayer in lGermanen:
-			if gc.getTeam(gc.getPlayer(iTeamX).getTeam()).isHasMet(gc.getPlayer(iHasMetTeamY).getTeam()):
-				bFirstContact = False
-				break
-
-		if bFirstContact:
-			for iPlayer in lGermanen:
-				pCity = gc.getPlayer(iPlayer).getCapitalCity()
-				if pCity is not None:
-					doRevealPlot(0, pCity.plot(), True)
-					# for PAE's black fog of war (falls der Plot immer sichtbar sein soll)
-					#CvUtil.addScriptData(plot, "H", "X")
-			
-			#Ihr habt [get.Leadername] getroffen.
-			#Wir sollten alle vier führenden Germanenstämme unter unserer Flagge vereinen, um der römischen Bedrohung ein geeintes Reich entgegenzustellen.
-			#<EROBERT ODER VASALLISIERT ALLE 4 GERMANENSTÄMME>
-			if gc.getPlayer(iTeamX).isHuman():
-				popupInfo = CyPopupInfo()
-				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GERMANEN", (gc.getPlayer(iHasMetTeamY).getName(), )))
-				popupInfo.addPopup(iTeamX)
-
 
 #[EVENT-20.1] Wenn Kontakt zum Vandalen (Player 9) entsteht:
 	#Erstellen einer aktuellen Punktliste der GerVandanen.
@@ -741,85 +605,6 @@ def onFirstContact(argsList):
 			doRevealPlot(0, pCity.plot(), True)
 
 
-#[QUEST] Wenn Kontakt zum Gallier entsteht:
-#Lutetia 32/49 wird 1x kurz aufgedeckt
-	if iHasMetTeamY == 6:
-		# Hat Gallien Krieg mit Rom?
-		if gc.getTeam(gc.getPlayer(6).getTeam()).isAtWar(gc.getPlayer(14).getTeam()):
-			szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GALLIA_1", (gc.getPlayer(iHasMetTeamY).getName(), ))
-		else:
-			szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GALLIA_2", (gc.getPlayer(iHasMetTeamY).getName(), ))
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(szText)
-		popupInfo.addPopup(iTeamX)
-
-		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
-		if pCity is not None:
-			doRevealPlot(0, pCity.plot(), True)
-
-
-#[QUEST] Wenn Kontakt zum Daker oder seinem Vasall entsteht:
-#Die [get.civname] sind ein fremdes Volk von weit aus den südlichen Wäldern. Solange sie nicht zu mächtig werden, 
-#müssen wir ihnen keine Bachtung schenken. Es sei denn, ihr habt andere Pläne.
-	if iHasMetTeamY == 10 or iHasMetTeamY == 11:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_DAKER", (gc.getPlayer(iHasMetTeamY).getCivilizationDescriptionKey(), )))
-		popupInfo.addPopup(iTeamX)
-
-
-#[QUEST] Wenn Kontakt zu Rom entsteht:
-#Rom 70/11 wird 1x kurz aufgedeckt
-#Das ist er also: [get.Leadername]! Er ist unersättlich, seine Legionen bedrohen die gesamte zivilisiert Welt! 
-#Auch wenn es einige geben mag die meinen, Rom wäre die Zivilisation, wir dagegen seien Barbaren. 
-#Solche Leute werden aber meist direkt aus der Wirtschaft geprügelt...
-	if iHasMetTeamY == 14:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_ROME", (gc.getPlayer(iHasMetTeamY).getName(), )))
-		popupInfo.addPopup(iTeamX)
-
-		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
-		if pCity is not None:
-			doRevealPlot(0, pCity.plot(), True)
-
-#[QUEST] Wenn Kontakt zu einem Vasall Roms entsteht:
-#[DARF ÖFTER KOMMEN]
-#[ABFRAGE]Hat Rom noch Frieden mit Byzanz? -> DANN
-	if gc.getTeam(gc.getPlayer(iHasMetTeamY).getTeam()).isVassal(gc.getPlayer(14).getTeam()):
-		if not gc.getTeam(14).isAtWar(12):
-			#Ihr habt [get.Leadername] getroffen, ein Vasall von [get.Leadername] (Rom). Solange er nicht frei entscheiden kann, ist er für uns uninteressant.
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_VASSAL_OF_ROME", (gc.getPlayer(iHasMetTeamY).getName(), gc.getPlayer(14).getName())))
-			popupInfo.addPopup(iTeamX)
-
-
-#[QUEST] Wenn Kontakt zu Byzanz entsteht:
-#Byzanz 134/7 wird 1x kurz aufgedeckt
-#Ihr habt [get.Leadername] getroffen. Er hat seinen Palast in Byzanz und ist ein enger Vertrauter Roms. Im Prinzip verwaltet er für 
-#[get.Leadername] (Rom) nur die östlichen Provinzen. Die Wahrscheinlichkeit, ihn auf unsere Seite zu bringen, ist im Moment sehr gering...
-	if iHasMetTeamY == 12:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_BYZANZ", (gc.getPlayer(iHasMetTeamY).getName(), gc.getPlayer(14).getName())))
-		popupInfo.addPopup(iTeamX)
-
-		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
-		if pCity is not None:
-			doRevealPlot(0, pCity.plot(), True)
-
-#[QUEST] Wenn Kontakt zu einem Vasall von Byzanz entsteht:
-#Ihr habt [get.Leadername] getroffen, ein Vasall von [get.Leadername] (Byzanz). Solange er nicht frei entscheiden kann, ist er für uns uninteressant.
-	if gc.getTeam(gc.getPlayer(iHasMetTeamY).getTeam()).isVassal(gc.getPlayer(12).getTeam()):
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_VASSAL_OF_BYZANZ", (gc.getPlayer(iHasMetTeamY).getName(), gc.getPlayer(12).getName())))
-		popupInfo.addPopup(iTeamX)
-
-
-
 def onCombatResult(pWinner, pLoser):
 	iWinner = pWinner.getOwner()
 	iLoser = pLoser.getOwner()
@@ -885,12 +670,12 @@ def onCombatResult(pWinner, pLoser):
 		if pCity.isNone():
 			szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ALARICH_HEAD", ("", ))
 			szTextBody = ""
-			PopUpDDS("Art/Scenarios/WegDerGoten/WDG07.dds",szTextHead,szTextBody)
+			PopUpDDS("Art/Scenarios/WegDerGoten/WDG07.dds",szTextHead,szTextBody,"RIGHT")
 		else:
 			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_OBELISK"), 1)
 			szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ALARICH_HEAD", ("", ))
 			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ALARICH_BODY", (pCity.getName().upper(), ))
-			PopUpDDS("Art/Scenarios/WegDerGoten/WDG07.dds",szTextHead,szTextBody)
+			PopUpDDS("Art/Scenarios/WegDerGoten/WDG07.dds",szTextHead,szTextBody,"RIGHT")
 
 
 
@@ -905,61 +690,25 @@ def onCityBuilt(pCity):
 	#Sie wollen ihre neue Heimat schnell zu einem Dorf erweitern, auf dass es bald zum Glanze des Gotenreiches beitragen möge.
 	#Wir könnten Fuhrwerke schicken, die hier Ressourcen verbreiten...
 	if iPlayer == 0 and pPlayer.isHuman():
-		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "12_1")
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["12_1"], "")
 		if iCheck == "":
 			popupInfo = CyPopupInfo()
 			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_OWN_CITY", ("", )))
 			popupInfo.addPopup(iPlayer)
-			CvUtil.setScriptData(gc.getMap().plot(0, 1), "12_1", 1)
+			CvUtil.addScriptData(gc.getMap().plot(0, 1), "12_1", "x")
 			#ZOOM AUF DIE SIEDLUNG
 			CyCamera().JustLookAtPlot(pCity.plot())
 
 
 
-#[QUEST] Wenn der Spieler einen Germanen erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
+# wenn man Spieler erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
 def onPlayerKilled(iConqueredPlayer):
 	iPlayer = gc.getGame().getActivePlayer()
 
+	if not gc.getPlayer(iPlayer).isHuman(): return
+
 	if iPlayer == 0:
-		#Cherusker:
-		#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
-		#<IHR ERHALTET 1 GENERAL "Arminius">
-		if iConqueredPlayer == 1:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iConqueredPlayer).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			
-			pCity = gc.getPlayer(iPlayer).getCapitalCity()
-			pNewUnit = gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
-			pNewUnit.setName("Arminius")
-
-		#Warnen:
-		#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
-		#<IHR ERHALTET 2 TEUTONEN>
-		if iConqueredPlayer == 2:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iConqueredPlayer).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			
-			pCity = gc.getPlayer(iPlayer).getCapitalCity()
-			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-
-		#Markomannen:
-		#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
-		#<IHR ERHALTET 1 LEGIONÄR>
-		if iConqueredPlayer == 3:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iConqueredPlayer).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			
-			pCity = gc.getPlayer(iPlayer).getCapitalCity()
-			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-
 #[EVENT-22.3] Wenn der Spieler den Hermunduren (Player 4) vasallisiert:
 		#Plot (0,1): pPlot.setScriptData() für EVENT-22.3
 		#Der Spieler erhält 1000 Geld
@@ -967,13 +716,13 @@ def onPlayerKilled(iConqueredPlayer):
 		#Er schwört bei den Göttern, euch als Vasall keine Schande zu machen. Um das zu unterstreichen, gewährt er euch Zugang zu seiner geheimen Schatzkammer.
 		#<IHR ERHALTET 1000 Gold>
 		if iConqueredPlayer == 4:
-			if CvUtil.getScriptData(gc.getMap().plot(0, 1), "22_3") == "":
+			if CvUtil.getScriptData(gc.getMap().plot(0, 1), ["22_3"], "") == "":
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iConqueredPlayer).getName(), )))
 				popupInfo.addPopup(iPlayer)
 				gc.getPlayer(iPlayer).changeGold(1000)
-				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", 1)
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", "x")
 
 	else:
 #[EVENT-10.5] - onPlayerKilled; Wenn jemand anders als der Spieler die Alten Goten (Player 20) vernichtet -> DANN
@@ -987,136 +736,37 @@ def onPlayerKilled(iConqueredPlayer):
 			popupInfo.addPopup(0)
 
 
-
+# wenn man einen Spieler erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
 def onVassalState(argsList):
 	iMaster, iVassal, bVassal = argsList
 
 	lGerVandalen = [1,2,3,4,9]
 
-	#[QUEST] Wenn der Spieler einen Germanen erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
 	if iMaster == 0 and bVassal:
-		#Cherusker:
-		#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
-		#<IHR ERHALTET 1 GENERAL "Arminius">
-		if iVassal == 1:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iVassal).getName(), )))
-			popupInfo.addPopup(0)
-
-			pCity = gc.getPlayer(iVassal).getCapitalCity()
-			pNewUnit = gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
-			pNewUnit.setName("Arminius")
-
-		#Warnen:
-		#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
-		#<IHR ERHALTET 2 TEUTONEN>
-		if iVassal == 2:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iVassal).getName(), )))
-			popupInfo.addPopup(0)
-			
-			pCity = gc.getPlayer(iVassal).getCapitalCity()
-			gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-			gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-
-		#Markomannen:
-		#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
-		#<IHR ERHALTET 1 LEGIONÄR>
-		if iVassal == 3:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iVassal).getName(), )))
-			popupInfo.addPopup(0)
-			
-			pCity = gc.getPlayer(iVassal).getCapitalCity()
-			gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 
 #[EVENT-22.3] Hermunduren:
 		#Gratulation! Ihr habt [get.Leadername] besiegt. Er zeigt uns den Weg zu seiner geheimen Schatzkammer.
 		#<IHR ERHALTET 250 Gold>
 		if iVassal == 4:
-			if CvUtil.getScriptData(gc.getMap().plot(0, 1), "22_3") == "":
+			if CvUtil.getScriptData(gc.getMap().plot(0, 1), ["22_3"], "") == "":
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iVassal).getName(), )))
 				popupInfo.addPopup(0)
 				gc.getPlayer(0).changeGold(1000)
-				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", 1)
-
-
-	#[QUEST] Wenn sich ein Vasall von Rom lossagt:
-	#[get.Leadername] hat sich von [get.Leadername] (Rom) losgesagt und ist wieder frei. Wir sollten umgehend einen Boten schicken!
-	if iMaster == 14 and not bVassal:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_LOST_VASSAL", (gc.getPlayer(iVassal).getName(),gc.getPlayer(iMaster).getName())))
-			popupInfo.addPopup(0)
-
-
-	#[QUEST ROM-A] Wenn Rom (oder sein Vasall) einem der GerVandanen die Hauptstadt erobert oder vasallisiert:
-	if bVassal and iVassal in lGerVandalen:
-		if iMaster == 14 or gc.getTeam(gc.getPlayer(iMaster).getTeam()).isVassal(gc.getPlayer(14).getTeam()):
-			szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_VASSALS_GERVANDALS_HEAD", ("", ))
-			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_VASSALS_GERVANDALS_BODY", ("", ))
-			PopUpDDS("Art/Scenarios/WegDerGoten/WDG05.dds",szTextHead,szTextBody)
-
-	#[QUEST] Wenn sich ein Vasall von Byzanz lossagt:
-	#[get.Leadername] hat sich von [get.Leadername] (Byzanz) losgesagt und ist wieder frei. Wir sollten umgehend einen Boten schicken!
-	if iMaster == 12 and not bVassal:
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_BYZANZ_LOST_VASSAL", (gc.getPlayer(iVassal).getName(),gc.getPlayer(iMaster).getName())))
-			popupInfo.addPopup(0)
-
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", "x")
 
 
 def onChangeWar(argsList):
 	bIsWar, iTeam, iRivalTeam = argsList
 	lGerVandalen = [1,2,3,4,9]
 	lGermanen = [1,2,3,4]
+
 	# wenn Krieg erklärt wird
 	if bIsWar:
-		#Wenn einer der GerVandalen dem Spieler Krieg erklärt:
-		if iTeam in lGerVandalen and iRivalTeam == 0:
-			for iPlayer in lGerVandalen:
-				if gc.getPlayer(iPlayer).getTeam() == iTeam:
-					iPlayerDeclaredWar = iPlayer
-					break
-			#[get.Leadername] kann es wohl nicht erwarten unter Euch zu dienen. Ihr lasst die Truppen sammeln. Die [get.Civname] werden sich schon bald Goten nennen!
-			popupInfo = CyPopupInfo()
-			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GER_DECLARE_WAR_GOTEN", (gc.getPlayer(iPlayerDeclaredWar).getName(), gc.getPlayer(iPlayerDeclaredWar).getCivilizationDescriptionKey())))
-			popupInfo.addPopup(0)
 
-		#[QUEST] Wenn der Gallier einem der 4 Germanen Krieg erklärt:
-		if iTeam == 6 and iRivalTeam in lGermanen:
-			#[ABFRAGE] Hat der Spieler Frieden mit dem betroffenen Germanen? -> DANN
-			#[get.Leadername] wird von Galliern aus dem Westen angegriffen! Auch das noch, können wir was tun?
-			if not gc.getTeam(gc.getPlayer(0).getTeam()).isAtWar(iRivalTeam):
-				for iPlayer in lGermanen:
-					if gc.getPlayer(iPlayer).getTeam() == iRivalTeam:
-						iPlayerVictim = iPlayer
-						break
-				popupInfo = CyPopupInfo()
-				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GALLIA_DECLARES_WAR_GERMANIA", (gc.getPlayer(iPlayerVictim).getName(), )))
-				popupInfo.addPopup(0)
-
-		#[QUEST] Wenn Rom einem der GerVandanen Krieg erklärt:
-		#Die Römer mischen sich in unsere Angelegenheiten ein, sie haben [get.Leadername] den Krieg erklärt! Das ist eine Provokation, 
-		#auf die wir reagieren sollten. Vielleicht können wir [get.Leadername] zu Hilfe eilen, bzw. dem Römer wenigstens zuvorzukommen?
-		if iTeam == 14 and iRivalTeam in lGerVandalen:
-				popupInfo = CyPopupInfo()
-				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_DECLARES_WAR_GERVANDALS", (gc.getPlayer(iRivalTeam).getName(), )))
-				popupInfo.addPopup(0)
-
-#[EVENT-27.1] Wenn einer der GerVandanen dem Römer Krieg erklärt:
-		#[QUEST] Wenn einer der GerVandanen dem Römer (oder seinen Vasallen) Krieg erklärt:
-		#[DARF ÖFTER KOMMEN]
-		#[ABFRAGE] Hat der Spieler Frieden mit dem angreifenden GerVandanen? -> DANN
+#[EVENT-28.1] Wenn einer der GerVandanen dem Römer (Player 14) Krieg erklärt:
+		#[ABFRAGE] Hat der Spieler Frieden mit dem angreifenden GerVandanen [get.Leadername]? -> DANN
 		#[get.Leadername] hat Rom den Krieg erklärt! Man muss ihm viel Glück wünschen.
 		#Vielleicht können wir ihn unterstützen? Zumindest sollten wir unsere Pläne anpassen.
 		if iTeam in lGerVandalen:
@@ -1127,66 +777,11 @@ def onChangeWar(argsList):
 					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GERVANDALS_DECLARES_WAR_ROME", (gc.getPlayer(iTeam).getName(), )))
 					popupInfo.addPopup(0)
 
-		#[QUEST ROM-C] Wenn Rom dem Spieler Krieg erklärt:
-		if iTeam == 14 and iRivalTeam == 0:
-			szTextHead = ""
-			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_DECLARES_WAR_GOTEN", (gc.getPlayer(iTeam).getName(), ))
-			PopUpDDS("Art/Scenarios/WegDerGoten/WDG05.dds",szTextHead,szTextBody)
-
 
 
 def onEndPlayerTurn(iPlayer, iGameTurn):
 	pPlayer = gc.getPlayer(iPlayer)
 
-	#[QUEST] Ab 350 n.Chr. gibt es jedes Jahr eine 2% Chance, dass die Hunnen kommen (also innerhalb von 50 Jahren):
-	#[ABFRAGE] Welchen Nationen gehören die Städte im Osten (Muss man noch sehen, welche).
-	#Attila spawnt mit seiner Armee zufällig an einem von mehreren möglichen Punkten. Er hat schlechtes Verhältnis und Krieg mit den Goten und allen, die in der Abfrage sind.
-	#Attila bekommt alle Städte im Osten aufgedeckt.
-	#Der Spieler bekommt das Feld aufgedeckt, wo er spawnt, sieht die Armee.
-	
-	#5-10 Runden vorher gibt es eine Warnung: Die Hunnen kommen bald
-	if iPlayer == 19 and gc.getGame().getGameTurnYear() == 349:
-		popupInfo = CyPopupInfo()
-		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-		popupInfo.setText(CyTranslator().getText("Die Hunnen kommen bald!", ("", ))) # XXX
-		popupInfo.addPopup(0)
-	
-	if iPlayer == 0 and gc.getGame().getGameTurnYear() > 350:
-		iHuns = 19 #TeamID
-
-		if gc.getPlayer(iHuns).getNumCities() > 0: return
-
-		iRand = CvUtil.myRandom(100, "WDG_Hunnen")
-		if iRand < 2:
-
-			#Herr, unsere Späher melden eine riesige Reiterarmee unbekannter Herkunft im Osten! Es sind die Hunnen.
-			#Und sie werden von einem grimmig aussehenden Krieger geführt, der sich Attila nennt. Wir müssen uns schützen... etc.
-			szTextHead = ""
-			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_HUNNEN", ("", ))
-			PopUpDDS("Art/Scenarios/WegDerGoten/WDG06.dds",szTextHead,szTextBody)
-
-			lPlots = []
-			iMapW = gc.getMap().getGridWidth()
-			iMapH = gc.getMap().getGridHeight()
-			iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
-			iTundra = gc.getInfoTypeForString("TERRAIN_TUNDRA") # damit man eingrenzen kann, wo die Hunnen starten sollen
-			for x in range(iMapW):
-				for y in range(iMapH):
-					if x > iMapW / 2 and y > iMapH / 2:
-						loopPlot = gc.getMap().plot(x, y)
-						if loopPlot is not None and not loopPlot.isNone():
-							if loopPlot.getFeatureType() == iDarkIce or loopPlot.isWater():
-								continue
-							if loopPlot.getTerrainType() == iTundra and loopPlot.getOwner() == -1:
-								lPlots.append(loopPlot)
-			iRand = CvUtil.myRandom(len(lPlots), "WDG_Hunnen_Plot")
-			pPlot = lPlots[iRand]
-
-			iUnit = gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN_HUN")
-			for _ in range(15):
-				pNewUnit = gc.getPlayer(iHuns).initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-			CyCamera().LookAtUnit(pNewUnit)
-			#CyCamera().ZoomIn(0.5)
 
 
 
@@ -1214,7 +809,7 @@ def setChristentum():
 				# Es gibt Gerüchte, dass in [get.cityname] ein Kind geboren- und damit eine alte Prophezeiung erfüllt wurde... 
 				# Es soll keinen sterblichen Vater haben, sondern von einem Gott gezeugt sein!
 				szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CHRIST_SET", (pCity.getName(), ))
-				PopUpDDS("Art/Scenarios/WegDerGoten/WDG03.dds","",szText)
+				PopUpDDS("Art/Scenarios/WegDerGoten/WDG03.dds","",szText,"RIGHT")
 
 				# 2. Religion den Barbaren zukommen (sonst kommt Religionswahl bei Theologie)
 				pBarbTeam = gc.getTeam(gc.getPlayer(gc.getBARBARIAN_PLAYER()).getTeam())
@@ -1299,7 +894,7 @@ def doSpreadReligion():
 					# Die Anhänger nennen sich Christen und sollen keine anderen Götter neben ihrem eigenen dulden...
 					# Obwohl ihr Prophet am Kreuz gestorben ist, behaupten sie, er wandle dennoch unter ihnen.
 					szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CHRIST_SPREAD", (gc.getGame().getHolyCity(iReligion).getName(), ))
-					PopUpDDS("Art/Scenarios/WegDerGoten/WDG04.dds","",szText)
+					PopUpDDS("Art/Scenarios/WegDerGoten/WDG04.dds","",szText,"RIGHT")
 
 
 def onCityGrowth(pCity,iPlayer):
@@ -1313,7 +908,7 @@ def onCityGrowth(pCity,iPlayer):
 	iBuilding = gc.getInfoTypeForString("BUILDING_STADT")
 	if iPlayer == 0 and pPlayer.countNumBuildings(iBuilding) > 2:
 
-		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "12_2")
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["12_2"], "")
 		if iCheck == "":
 
 			#[ABFRAGE] Lebt Alarich noch? -> DANN
@@ -1336,7 +931,7 @@ def onCityGrowth(pCity,iPlayer):
 								popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GOTEN_3POP6", ("", )))
 								popupInfo.addPopup(iPlayer)
 
-						CvUtil.setScriptData(gc.getMap().plot(0, 1), "12_2", 1)
+						CvUtil.addScriptData(gc.getMap().plot(0, 1), "12_2", "x")
 						return
 
 
@@ -1352,13 +947,13 @@ def onBuildingBuilt(pCity, iPlayer, iBuildingType):
 	#KAMERA ZOOM AUF DIE STADT
 	#1 Gaufürst wird in der Stadt erstellt (Auch wenn man schon einen hat). Der Gaufürst bekommt 1 Stern (Trainiert?)
 	if iPlayer == 0 and pPlayer.isHuman() and iBuildingType == gc.getInfoTypeForString("BUILDING_PROVINZPALAST"):
-		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), "12_4")
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["12_4"], "")
 		if iCheck == "":
 
 			pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_STATTHALTER_NORTH"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 			pNewUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
 
-			CvUtil.setScriptData(gc.getMap().plot(0, 1), "12_4", 1)
+			CvUtil.addScriptData(gc.getMap().plot(0, 1), "12_4", "x")
 
 			#KAMERA ZOOM AUF DIE STADT
 			CyCamera().JustLookAtPlot(pCity.plot())
@@ -1390,14 +985,17 @@ def doRevealPlot(iTeam, pPlot, bZoom):
 
 
 # PopUps mit dds-Bild
-def PopUpDDS(ddsPIC, txtHEADER, txtBODY):
+def PopUpDDS(ddsPIC, txtHEADER, txtBODY, alignment):
 	screen = CyGInterfaceScreen("MainInterface", CvScreenEnums.MAIN_INTERFACE)
-	# CENTER:
-	#iX = screen.getXResolution() / 2 - 200
-	#iY = 40
-	# RIGHT:
-	iX = screen.getXResolution() - 456
-	iY = 90
+	if alignment == "CENTER":
+		iX = screen.getXResolution() / 2 - 200
+		iY = 40
+	elif alignment == "LEFT":
+		iX = 90
+		iY = 90
+	else: # (RIGHT)
+		iX = screen.getXResolution() - 456
+		iY = 90
 	popupDDS = PyPopup.PyPopup(4000, EventContextTypes.EVENTCONTEXT_ALL) # 4000 = PopUpID
 	#popupDDS.setSize(400,400) # (INT iXS, INT iYS) geht net
 	popupDDS.setPosition(iX,iY)
@@ -1405,3 +1003,462 @@ def PopUpDDS(ddsPIC, txtHEADER, txtBODY):
 	popupDDS.addDDS(ddsPIC, 0, 0, 256, 256) # (dds, x, y, width: 360 max, height)
 	popupDDS.setBodyString(txtBODY)
 	popupDDS.launch()
+
+
+
+
+#onCityAcquired +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#[QUEST] Wenn der Spieler einen Germanen erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
+# egal ob es noch Einheiten gibt
+"""
+	if iNewOwner == 0 and gc.getPlayer(iPreviousOwner).getNumCities() == 0:
+		iConqueredPlayer = iPreviousOwner
+		iPlayer = iNewOwner
+		#Cherusker:
+		#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
+		#<IHR ERHALTET 1 GENERAL "Arminius">
+		if iConqueredPlayer == 1:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCapitalCity = gc.getPlayer(iPlayer).getCapitalCity()
+			pNewUnit = gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCapitalCity.getX(), pCapitalCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
+			pNewUnit.setName("Arminius")
+
+		#Warnen:
+		#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
+		#<IHR ERHALTET 2 TEUTONEN>
+		if iConqueredPlayer == 2:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCapitalCity = gc.getPlayer(iPlayer).getCapitalCity()
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCapitalCity.getX(), pCapitalCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCapitalCity.getX(), pCapitalCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+
+		#Markomannen:
+		#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
+		#<IHR ERHALTET 1 LEGIONÄR>
+		if iConqueredPlayer == 3:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCapitalCity = gc.getPlayer(iPlayer).getCapitalCity()
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCapitalCity.getX(), pCapitalCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+"""
+
+#[QUEST] Wenn der Daker (oder sein Vasall) eine Stadt vom Vandalen erobert:
+#[ABFRAGE] Hat der Spieler Frieden mit dem Vandalen? -> DANN
+#Krakau 98/56 wird 1x kurz aufgedeckt
+"""
+	if iPreviousOwner == 9 and (iNewOwner == 10 or iNewOwner == 11):
+		if not gc.getTeam(gc.getPlayer(0).getTeam()).isAtWar(gc.getPlayer(9).getTeam()):
+			#[get.Leadername] hat eine Stadt verloren! Er wird von den den [get.Civname] bedrängt. 
+			#Können wir da vielleicht helfen? Wir wollen ja nicht noch eine starke Macht im Süden!
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_DAKER_CONQUER_VANDAL_CITY", (gc.getPlayer(9).getName(), gc.getPlayer(iNewOwner).getCivilizationDescriptionKey())))
+			popupInfo.addPopup(iNewOwner)
+
+			pCapitalCity = gc.getPlayer(iPreviousOwner).getCapitalCity()
+			if pCapitalCity is not None:
+				doRevealPlot(0, pCapitalCity.plot(), True)
+"""
+
+
+
+#[QUEST ROM-A] Wenn Rom (oder sein Vasall) einem der GerVandanen die Hauptstadt erobert oder vasallisiert:
+"""
+	if iPreviousOwner in lGerVandalen:
+		if iNewOwner == 14 or gc.getTeam(gc.getPlayer(iNewOwner).getTeam()).isVassal(gc.getPlayer(14).getTeam()):
+			lCapitals = ["Tulifurdum","Rostock","Virteburh","","Krakau"]
+			if pCity.getName() in lCapitals:
+				szTextHead = ""
+				szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_CONQUERS_CAPITAL", (pCity.getName(),gc.getPlayer(iPreviousOwner).getName(),gc.getPlayer(iNewOwner).getName()))
+				PopUpDDS("Art/Scenarios/WegDerGoten/WDG05.dds",szTextHead,szTextBody,"RIGHT")
+"""
+
+#[QUEST] Wenn Byzanz (oder sein Vasall) eine Stadt vom Daker erobert:
+#[ABFRAGE] Hat der Spieler Frieden mit dem Daker?
+#[ABFRAGE] Hat Rom noch Frieden mit Byzanz? -> DANN
+#Sarmizetegusa 110/32 wird 1x kurz aufgedeckt
+"""
+	if iPreviousOwner == 10:
+		if iNewOwner == 12 or gc.getTeam(gc.getPlayer(iNewOwner).getTeam()).isVassal(gc.getPlayer(12).getTeam()):
+			if not gc.getTeam(gc.getPlayer(10).getTeam()).isAtWar(gc.getPlayer(0).getTeam()):
+				if not gc.getTeam(gc.getPlayer(12).getTeam()).isAtWar(gc.getPlayer(14).getTeam()):
+					#[get.Leadername], der Unterhändler Roms, erobert Städte von [get.Leadername]. Also breiten sich die Römer jetzt auch im Osten aus. Wir sollten unsere Pläne anpassen...
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_BYZANZ_CONQUER_DAKER", (gc.getPlayer(iNewOwner).getName(), gc.getPlayer(iPreviousOwner).getName())))
+					popupInfo.addPopup(0)
+
+					pCapitalCity = gc.getPlayer(iPreviousOwner).getCapitalCity()
+					if pCapitalCity is not None:
+						doRevealPlot(0, pCapitalCity.plot(), True)
+
+
+#Wenn der Hunne die erste Stadt einnimmt:
+#Palast, Monument, Heldendenkmal setzen, der Hunne bekommt 1 Siedler
+#Alle Religionen/Tempel entfernen
+#Fremde Religion geben, Tempel der Religion setzen
+	if iNewOwner == 19 and iNumCities == 1:
+		pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_MONUMENT"), 1)
+
+		# Die Hunnenhauptstadt bekommt 80% Kultur.
+		iPreviousCulture = pCity.getCulture(iPreviousOwner) / 10
+		pCity.setCulture(iPreviousOwner, iPreviousCulture * 2, 1)
+		pCity.setCulture(iNewOwner, iPreviousCulture * 8, 1)
+"""
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+# onFirstContact ++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+"""
+
+	#[QUEST] Wenn Kontakt mit einem Germanen entsteht, werden 1x kurz die Hauptstädte aller vier Germanen aufgedeckt:
+	#Cherusker 60/70 - Warnen 70/82 - Markomannen 61/55 - Hermunduren 76/62
+	if iHasMetTeamY in lGermanen:
+		bFirstContact = True
+		for iPlayer in lGermanen:
+			if gc.getTeam(gc.getPlayer(iTeamX).getTeam()).isHasMet(gc.getPlayer(iHasMetTeamY).getTeam()):
+				bFirstContact = False
+				break
+
+		if bFirstContact:
+			for iPlayer in lGermanen:
+				pCity = gc.getPlayer(iPlayer).getCapitalCity()
+				if pCity is not None:
+					doRevealPlot(0, pCity.plot(), True)
+					# for PAE's black fog of war (falls der Plot immer sichtbar sein soll)
+					#CvUtil.addScriptData(plot, "H", "X")
+			
+			#Ihr habt [get.Leadername] getroffen.
+			#Wir sollten alle vier führenden Germanenstämme unter unserer Flagge vereinen, um der römischen Bedrohung ein geeintes Reich entgegenzustellen.
+			#<EROBERT ODER VASALLISIERT ALLE 4 GERMANENSTÄMME>
+			if gc.getPlayer(iTeamX).isHuman():
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GERMANEN", (gc.getPlayer(iHasMetTeamY).getName(), )))
+				popupInfo.addPopup(iTeamX)
+
+
+
+#[QUEST] Wenn Kontakt zum Gallier entsteht:
+#Lutetia 32/49 wird 1x kurz aufgedeckt
+	if iHasMetTeamY == 6:
+		# Hat Gallien Krieg mit Rom?
+		if gc.getTeam(gc.getPlayer(6).getTeam()).isAtWar(gc.getPlayer(14).getTeam()):
+			szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GALLIA_1", (gc.getPlayer(iHasMetTeamY).getName(), ))
+		else:
+			szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GALLIA_2", (gc.getPlayer(iHasMetTeamY).getName(), ))
+		popupInfo = CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+		popupInfo.setText(szText)
+		popupInfo.addPopup(iTeamX)
+
+		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
+		if pCity is not None:
+			doRevealPlot(0, pCity.plot(), True)
+
+
+#[QUEST] Wenn Kontakt zum Daker oder seinem Vasall entsteht:
+#Die [get.civname] sind ein fremdes Volk von weit aus den südlichen Wäldern. Solange sie nicht zu mächtig werden, 
+#müssen wir ihnen keine Bachtung schenken. Es sei denn, ihr habt andere Pläne.
+	if iHasMetTeamY == 10 or iHasMetTeamY == 11:
+		popupInfo = CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_DAKER", (gc.getPlayer(iHasMetTeamY).getCivilizationDescriptionKey(), )))
+		popupInfo.addPopup(iTeamX)
+
+
+#[QUEST] Wenn Kontakt zu Rom entsteht:
+#Rom 70/11 wird 1x kurz aufgedeckt
+#Das ist er also: [get.Leadername]! Er ist unersättlich, seine Legionen bedrohen die gesamte zivilisiert Welt! 
+#Auch wenn es einige geben mag die meinen, Rom wäre die Zivilisation, wir dagegen seien Barbaren. 
+#Solche Leute werden aber meist direkt aus der Wirtschaft geprügelt...
+	if iHasMetTeamY == 14:
+		popupInfo = CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_ROME", (gc.getPlayer(iHasMetTeamY).getName(), )))
+		popupInfo.addPopup(iTeamX)
+
+		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
+		if pCity is not None:
+			doRevealPlot(0, pCity.plot(), True)
+
+#[QUEST] Wenn Kontakt zu einem Vasall Roms entsteht:
+#[DARF ÖFTER KOMMEN]
+#[ABFRAGE]Hat Rom noch Frieden mit Byzanz? -> DANN
+	if gc.getTeam(gc.getPlayer(iHasMetTeamY).getTeam()).isVassal(gc.getPlayer(14).getTeam()):
+		if not gc.getTeam(14).isAtWar(12):
+			#Ihr habt [get.Leadername] getroffen, ein Vasall von [get.Leadername] (Rom). Solange er nicht frei entscheiden kann, ist er für uns uninteressant.
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_VASSAL_OF_ROME", (gc.getPlayer(iHasMetTeamY).getName(), gc.getPlayer(14).getName())))
+			popupInfo.addPopup(iTeamX)
+
+
+#[QUEST] Wenn Kontakt zu Byzanz entsteht:
+#Byzanz 134/7 wird 1x kurz aufgedeckt
+#Ihr habt [get.Leadername] getroffen. Er hat seinen Palast in Byzanz und ist ein enger Vertrauter Roms. Im Prinzip verwaltet er für 
+#[get.Leadername] (Rom) nur die östlichen Provinzen. Die Wahrscheinlichkeit, ihn auf unsere Seite zu bringen, ist im Moment sehr gering...
+	if iHasMetTeamY == 12:
+		popupInfo = CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_BYZANZ", (gc.getPlayer(iHasMetTeamY).getName(), gc.getPlayer(14).getName())))
+		popupInfo.addPopup(iTeamX)
+
+		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
+		if pCity is not None:
+			doRevealPlot(0, pCity.plot(), True)
+
+#[QUEST] Wenn Kontakt zu einem Vasall von Byzanz entsteht:
+#Ihr habt [get.Leadername] getroffen, ein Vasall von [get.Leadername] (Byzanz). Solange er nicht frei entscheiden kann, ist er für uns uninteressant.
+	if gc.getTeam(gc.getPlayer(iHasMetTeamY).getTeam()).isVassal(gc.getPlayer(12).getTeam()):
+		popupInfo = CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_VASSAL_OF_BYZANZ", (gc.getPlayer(iHasMetTeamY).getName(), gc.getPlayer(12).getName())))
+		popupInfo.addPopup(iTeamX)
+
+"""
+
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+# onPlayerKilled ++++++++++++++++++++++++++++++++++++++++++++++++
+
+"""
+		#Cherusker:
+		#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
+		#<IHR ERHALTET 1 GENERAL "Arminius">
+		if iConqueredPlayer == 1:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCity = gc.getPlayer(iPlayer).getCapitalCity()
+			pNewUnit = gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
+			pNewUnit.setName("Arminius")
+
+		#Warnen:
+		#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
+		#<IHR ERHALTET 2 TEUTONEN>
+		if iConqueredPlayer == 2:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCity = gc.getPlayer(iPlayer).getCapitalCity()
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+
+		#Markomannen:
+		#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
+		#<IHR ERHALTET 1 LEGIONÄR>
+		if iConqueredPlayer == 3:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iConqueredPlayer).getName(), )))
+			popupInfo.addPopup(iPlayer)
+			
+			pCity = gc.getPlayer(iPlayer).getCapitalCity()
+			gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+"""
+
+
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+# onVassalState ++++++++++++++++++++++++++++++++++++++++++++++++
+
+"""
+	if iMaster == 0 and bVassal:
+		#Cherusker:
+		#Gratulation! Ihr habt [get.Leadername] unter Euer Banner gezwungen. Er wird von nun an als Heeresführer an eurer Seite dienen.
+		#<IHR ERHALTET 1 GENERAL "Arminius">
+		if iVassal == 1:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK", (gc.getPlayer(iVassal).getName(), )))
+			popupInfo.addPopup(0)
+
+			pCity = gc.getPlayer(iVassal).getCapitalCity()
+			pNewUnit = gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_GENERAL, DirectionTypes.DIRECTION_SOUTH)
+			pNewUnit.setName("Arminius")
+
+		#Warnen:
+		#Gratulation! [get.Leadername] ist unterworfen. Seine besten Krieger kämpfen von nun an für uns.
+		#<IHR ERHALTET 2 TEUTONEN>
+		if iVassal == 2:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN", (gc.getPlayer(iVassal).getName(), )))
+			popupInfo.addPopup(0)
+			
+			pCity = gc.getPlayer(iVassal).getCapitalCity()
+			gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_TEUTONEN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+
+		#Markomannen:
+		#Gratulation! [get.Leadername] steht nun auf unserer Seite. Ein vor Jahren zu ihm übergelaufener Legionär schließt sich uns an.
+		#<IHR ERHALTET 1 LEGIONÄR>
+		if iVassal == 3:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_MARKO", (gc.getPlayer(iVassal).getName(), )))
+			popupInfo.addPopup(0)
+			
+			pCity = gc.getPlayer(iVassal).getCapitalCity()
+			gc.getPlayer(0).initUnit(gc.getInfoTypeForString("UNIT_LEGION2"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+
+
+	#[QUEST] Wenn sich ein Vasall von Rom lossagt:
+	#[get.Leadername] hat sich von [get.Leadername] (Rom) losgesagt und ist wieder frei. Wir sollten umgehend einen Boten schicken!
+	if iMaster == 14 and not bVassal:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_LOST_VASSAL", (gc.getPlayer(iVassal).getName(),gc.getPlayer(iMaster).getName())))
+			popupInfo.addPopup(0)
+
+
+	#[QUEST ROM-A] Wenn Rom (oder sein Vasall) einem der GerVandanen die Hauptstadt erobert oder vasallisiert:
+	if bVassal and iVassal in lGerVandalen:
+		if iMaster == 14 or gc.getTeam(gc.getPlayer(iMaster).getTeam()).isVassal(gc.getPlayer(14).getTeam()):
+			szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_VASSALS_GERVANDALS_HEAD", ("", ))
+			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_VASSALS_GERVANDALS_BODY", ("", ))
+			PopUpDDS("Art/Scenarios/WegDerGoten/WDG05.dds",szTextHead,szTextBody,"RIGHT")
+
+	#[QUEST] Wenn sich ein Vasall von Byzanz lossagt:
+	#[get.Leadername] hat sich von [get.Leadername] (Byzanz) losgesagt und ist wieder frei. Wir sollten umgehend einen Boten schicken!
+	if iMaster == 12 and not bVassal:
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_BYZANZ_LOST_VASSAL", (gc.getPlayer(iVassal).getName(),gc.getPlayer(iMaster).getName())))
+			popupInfo.addPopup(0)
+
+"""
+
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+# onChangeWar ++++++++++++++++++++++++++++++++++++++++++++++++
+
+"""
+
+	if bIsWar:
+		#Wenn einer der GerVandalen dem Spieler Krieg erklärt:
+		if iTeam in lGerVandalen and iRivalTeam == 0:
+			for iPlayer in lGerVandalen:
+				if gc.getPlayer(iPlayer).getTeam() == iTeam:
+					iPlayerDeclaredWar = iPlayer
+					break
+			#[get.Leadername] kann es wohl nicht erwarten unter Euch zu dienen. Ihr lasst die Truppen sammeln. Die [get.Civname] werden sich schon bald Goten nennen!
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GER_DECLARE_WAR_GOTEN", (gc.getPlayer(iPlayerDeclaredWar).getName(), gc.getPlayer(iPlayerDeclaredWar).getCivilizationDescriptionKey())))
+			popupInfo.addPopup(0)
+
+		#[QUEST] Wenn der Gallier einem der 4 Germanen Krieg erklärt:
+		if iTeam == 6 and iRivalTeam in lGermanen:
+			#[ABFRAGE] Hat der Spieler Frieden mit dem betroffenen Germanen? -> DANN
+			#[get.Leadername] wird von Galliern aus dem Westen angegriffen! Auch das noch, können wir was tun?
+			if not gc.getTeam(gc.getPlayer(0).getTeam()).isAtWar(iRivalTeam):
+				for iPlayer in lGermanen:
+					if gc.getPlayer(iPlayer).getTeam() == iRivalTeam:
+						iPlayerVictim = iPlayer
+						break
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_GALLIA_DECLARES_WAR_GERMANIA", (gc.getPlayer(iPlayerVictim).getName(), )))
+				popupInfo.addPopup(0)
+
+		#[QUEST] Wenn Rom einem der GerVandanen Krieg erklärt:
+		#Die Römer mischen sich in unsere Angelegenheiten ein, sie haben [get.Leadername] den Krieg erklärt! Das ist eine Provokation, 
+		#auf die wir reagieren sollten. Vielleicht können wir [get.Leadername] zu Hilfe eilen, bzw. dem Römer wenigstens zuvorzukommen?
+		if iTeam == 14 and iRivalTeam in lGerVandalen:
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_DECLARES_WAR_GERVANDALS", (gc.getPlayer(iRivalTeam).getName(), )))
+				popupInfo.addPopup(0)
+
+
+		#[QUEST ROM-C] Wenn Rom dem Spieler Krieg erklärt:
+		if iTeam == 14 and iRivalTeam == 0:
+			szTextHead = ""
+			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ROME_DECLARES_WAR_GOTEN", (gc.getPlayer(iTeam).getName(), ))
+			PopUpDDS("Art/Scenarios/WegDerGoten/WDG05.dds",szTextHead,szTextBody,"RIGHT")
+"""
+
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+# onEndPlayerTurn ++++++++++++++++++++++++++++++++++++++++++++++++
+
+"""
+	#[QUEST] Ab 350 n.Chr. gibt es jedes Jahr eine 2% Chance, dass die Hunnen kommen (also innerhalb von 50 Jahren):
+	#[ABFRAGE] Welchen Nationen gehören die Städte im Osten (Muss man noch sehen, welche).
+	#Attila spawnt mit seiner Armee zufällig an einem von mehreren möglichen Punkten. Er hat schlechtes Verhältnis und Krieg mit den Goten und allen, die in der Abfrage sind.
+	#Attila bekommt alle Städte im Osten aufgedeckt.
+	#Der Spieler bekommt das Feld aufgedeckt, wo er spawnt, sieht die Armee.
+	
+	#5-10 Runden vorher gibt es eine Warnung: Die Hunnen kommen bald
+	if iPlayer == 19 and gc.getGame().getGameTurnYear() == 349:
+		popupInfo = CyPopupInfo()
+		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+		popupInfo.setText(CyTranslator().getText("Die Hunnen kommen bald!", ("", ))) # XXX
+		popupInfo.addPopup(0)
+	
+	if iPlayer == 0 and gc.getGame().getGameTurnYear() > 350:
+		iHuns = 19 #TeamID
+
+		if gc.getPlayer(iHuns).getNumCities() > 0: return
+
+		iRand = CvUtil.myRandom(100, "WDG_Hunnen")
+		if iRand < 2:
+
+			#Herr, unsere Späher melden eine riesige Reiterarmee unbekannter Herkunft im Osten! Es sind die Hunnen.
+			#Und sie werden von einem grimmig aussehenden Krieger geführt, der sich Attila nennt. Wir müssen uns schützen... etc.
+			szTextHead = ""
+			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_HUNNEN", ("", ))
+			PopUpDDS("Art/Scenarios/WegDerGoten/WDG06.dds",szTextHead,szTextBody,"RIGHT")
+
+			lPlots = []
+			iMapW = gc.getMap().getGridWidth()
+			iMapH = gc.getMap().getGridHeight()
+			iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
+			iTundra = gc.getInfoTypeForString("TERRAIN_TUNDRA") # damit man eingrenzen kann, wo die Hunnen starten sollen
+			for x in range(iMapW):
+				for y in range(iMapH):
+					if x > iMapW / 2 and y > iMapH / 2:
+						loopPlot = gc.getMap().plot(x, y)
+						if loopPlot is not None and not loopPlot.isNone():
+							if loopPlot.getFeatureType() == iDarkIce or loopPlot.isWater():
+								continue
+							if loopPlot.getTerrainType() == iTundra and loopPlot.getOwner() == -1:
+								lPlots.append(loopPlot)
+			iRand = CvUtil.myRandom(len(lPlots), "WDG_Hunnen_Plot")
+			pPlot = lPlots[iRand]
+
+			iUnit = gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN_HUN")
+			for _ in range(15):
+				pNewUnit = gc.getPlayer(iHuns).initUnit(iUnit, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+			CyCamera().LookAtUnit(pNewUnit)
+			#CyCamera().ZoomIn(0.5)
+"""

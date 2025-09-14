@@ -1409,7 +1409,7 @@ void CvCityAI::AI_chooseProduction()
         }
 
 		// PAE scouts: && kPlayer.getCurrentEra() > 1
-        if (!bLandWar && !bDanger && kPlayer.getCurrentEra() > 1)
+        if (!bLandWar && !bDanger) // && kPlayer.getCurrentEra() > 1)
         {
 			if (kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_EXPLORE) < (kPlayer.AI_neededExplorers(pArea)))
 			{
@@ -2208,7 +2208,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	else
 	{
 		// PAE getCurrentEra > 1
-		if (!bLandWar && GET_PLAYER(getOwnerINLINE()).getCurrentEra() > 1)
+		if (!bLandWar) // && GET_PLAYER(getOwnerINLINE()).getCurrentEra() > 1)
 		{
 			aiUnitAIVal[UNITAI_EXPLORE] += GET_PLAYER(getOwnerINLINE()).AI_neededExplorers(area());
 		}
@@ -4518,8 +4518,7 @@ int CvCityAI::AI_neededDefenders()
 
 int CvCityAI::AI_minDefenders()
 {
-	// ++++++++++++++ BTS ++++++++++++++++++
-	/*
+	// BTS ++++++++++++++++++
 	int iDefenders = 1;
 	int iEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
 	if (iEra > 0)
@@ -4530,14 +4529,15 @@ int CvCityAI::AI_minDefenders()
 	{
 		iDefenders++;
 	}
-	*/
 
-	// +++++++++++++ PAE ++++++++++++++++++++
+	// PAE ++++++++++++++++++
+	/*
 	int iDefenders = 1;
 	int iEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
 	if (iEra > 0) iDefenders++;
 	if (iEra > 2 && isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN())) iDefenders++;
 	if (getPopulation() >= 6) iDefenders++;
+	*/
 
 	return iDefenders;
 }
@@ -5826,7 +5826,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 			{
 				if (plot()->plotCheck(PUF_isUnitAIType, UNITAI_SETTLE, -1, getOwnerINLINE()) != NULL)
 				{
-					if (!AI_isDefended(-1)) // XXX check for other team's units? // PAE -1, BTS -2
+					if (!AI_isDefended(-2)) // XXX check for other team's units? // PAE -1, BTS -2
 					{
 						iMinTurns = std::min(iMinTurns, 5);
 					}

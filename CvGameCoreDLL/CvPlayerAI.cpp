@@ -411,6 +411,7 @@ void CvPlayerAI::AI_doTurnUnitsPre()
 	}
 
 	// PAE Ranged Combat / Range Attack / Fernangriff
+	/*
 	int iRange = 1;
 	CvUnit* pLoopUnit;
 	CvPlot* plot;
@@ -485,6 +486,7 @@ void CvPlayerAI::AI_doTurnUnitsPre()
 
 		}
 	} // pLoopUnit
+	*/
 	// PAE end
 
 
@@ -4096,9 +4098,9 @@ TechTypes CvPlayerAI::AI_bestTech(int iMaxPathLength, bool bIgnoreCost, bool bAs
 														if (pCapitalCity != NULL)
 														{
 															// PAE
-															iUnitValue += AI_neededExplorers(pCapitalCity->area());
+															//iUnitValue += AI_neededExplorers(pCapitalCity->area());
 															// BTS
-															//iUnitValue += (AI_neededExplorers(pCapitalCity->area()) * 400);
+															iUnitValue += (AI_neededExplorers(pCapitalCity->area()) * 400);
 														}
 													}
 
@@ -8636,10 +8638,10 @@ int CvPlayerAI::AI_neededExplorers(CvArea* pArea) const
 	int iNeeded = 0;
 
 	// PAE, cause AI shall not really explore
-	if (getCurrentEra() > 1) {
+	//if (getCurrentEra() > 1) {
 		if (pArea->isWater()) iNeeded = std::min(2, (pArea->getNumUnrevealedTiles(getTeam()) / 400));
 		else iNeeded = std::min(2, (pArea->getNumUnrevealedTiles(getTeam()) / 200));
-	}
+	//}
 
 	/*
 	if (pArea->isWater())

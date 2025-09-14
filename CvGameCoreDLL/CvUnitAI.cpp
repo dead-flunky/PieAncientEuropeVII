@@ -1628,7 +1628,7 @@ void CvUnitAI::AI_barbAttackMove()
 			return;
 		}
 
-		if (AI_pillageRange(3))
+		if (AI_pillageRange(4)) // PBMod 3
 		{
 			return;
 		}
@@ -1652,7 +1652,7 @@ void CvUnitAI::AI_barbAttackMove()
 	// PAE
 	else
 	{
-		if (AI_pillageRange(2))
+		if (AI_pillageRange(4)) // BTS 2
 		{
 			return;
 		}
@@ -10313,7 +10313,7 @@ bool CvUnitAI::AI_explore()
 			}
 
 			// PAE, BTS getSorenRandNum 4
-			if (iValue > 0 || GC.getGameINLINE().getSorenRandNum(10, "AI make explore faster ;)") == 0)
+			if (iValue > 0 || GC.getGameINLINE().getSorenRandNum(5, "AI make explore faster ;)") == 0)
 			{
 
 				if (!(pLoopPlot->isRevealed(getTeam(), false)))
