@@ -3115,7 +3115,7 @@ def getHelpProvinzHS1(argsList):
 		# iEvent = argsList[0]
 		# kTriggeredData = argsList[1]
 
-		iNumProvinzHS = gc.getMap().getWorldSize() + 1
+		iNumProvinzHS = max(1,gc.getMap().getWorldSize() - 1)
 		szHelp = localText.getText("TXT_KEY_EVENT_PROVINZHS_HELP", (iNumProvinzHS, ))
 
 		return szHelp
@@ -3127,7 +3127,7 @@ def canTriggerProvinzHSDone(argsList):
 		player = gc.getPlayer(kTriggeredData.ePlayer)
 
 		iProvinzHS = CvUtil.findInfoTypeNum(gc.getBuildingClassInfo, gc.getNumBuildingClassInfos(), 'BUILDINGCLASS_PROVINZPALAST')
-		iProvinzHSRequired = gc.getMap().getWorldSize() + 1
+		iProvinzHSRequired = max(1,gc.getMap().getWorldSize() - 1)
 		if iProvinzHSRequired > player.getBuildingClassCount(iProvinzHS):
 				return False
 

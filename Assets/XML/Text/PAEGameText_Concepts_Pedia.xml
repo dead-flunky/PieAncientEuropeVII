@@ -929,7 +929,7 @@ The plots on which the resource can be distributed are divided into up to four p
 
 
 [H1]Horses[\H1]
-[ICON_BULLET] Req: Village status, plains or grassland if flatland
+[ICON_BULLET] Req: Village status, plains or grassland
 [ICON_BULLET] Prio 1: Plains
 [ICON_BULLET] Prio 2: Grass
 [ICON_BULLET] Prio 1: unimproved
@@ -1019,7 +1019,7 @@ Les ressources peuvent se propager sur les cases cultivables selon quatre niveau
 
 
 [H1]Chevaux[\H1]
-[ICON_BULLET] Requis: Village, plaines ou prairie en plaine
+[ICON_BULLET] Requis: Village, plaines ou prairie
 [ICON_BULLET] Prio 1: plaines
 [ICON_BULLET] Prio 2: prairie
 [ICON_BULLET] Prio 1: case vierge
@@ -1110,7 +1110,7 @@ Terraintypen siehe in der Pedia der jeweiligen Ressource.
 Die Felder, auf denen die ausgew&#228;hlte Ressource verbreitet werden kann, werden nach bis zu vier Priorit&#228;ten geordnet. Die Ressource wird dabei immer auf einem Feld mit m&#246;glichst hoher Priorit&#228;t verbreitet, haben mehrere Felder dieselbe Priorit&#228;t, wird zuf&#228;llig gew&#228;hlt.
 
 [H1]Pferde[\H1]
-[ICON_BULLET] Voraussetzung: Dorfstatus, Trockenebene oder Grasland, Flachland
+[ICON_BULLET] Voraussetzung: Dorfstatus, Trockenebene oder Grasland
 [ICON_BULLET] Prio 1: Trockenebene
 [ICON_BULLET] Prio 2: Gras
 [ICON_BULLET] Prio 1: unmodernisiert
@@ -1201,7 +1201,7 @@ I campi su cui la risorsa selezionata pu&#242; essere disseminata sono ordinati 
 
 
 [H1]Cavalli[\H1]
-[ICON_BULLET] Requisiti: stato del villaggio, steppa o prateria, pianura
+[ICON_BULLET] Requisiti: stato del villaggio, steppa o prateria
 [ICON_BULLET] Priorit&#224; 1: steppa
 [ICON_BULLET] Priorit&#224; 2: erba
 [ICON_BULLET] Priorit&#224; 1: non modernizzato
@@ -1292,7 +1292,7 @@ Las casillas donde van a ser distribuidas est&#225;n divididas en cuatro priorid
 
 
 [H1]Caballos[\H1]
-[ICON_BULLET] Req: Estatus de villa, estepa o pradera, terreno llano
+[ICON_BULLET] Req: Estatus de villa, estepa o pradera
 [ICON_BULLET] Prio 1: estepa
 [ICON_BULLET] Prio 2: pradera
 [ICON_BULLET] Prio 1: sin mejoras
@@ -2478,6 +2478,12 @@ Consecuencias de la deserci&#243;n:
 [ICON_BULLET] Los esclavos inactivos se convierten el esclavos libres
 [ICON_BULLET] La cultura es transferida
 [ICON_BULLET] Una ciudad vecina puede entrar en una revuelta
+
+
+&#161;Atenci&#243;n!
+Estas capitales provinciales no deben ser construidas a la ligera, ya que piden un tributo de [ICON_GOLD] con una probabilidad del 20% (cada 10º turno).
+El tama&#241;o del tributo es generado a partir del tama&#241;o de la ciudad (poblaci&#243;n * 10 + n&#250;mero aleatorio por la mitad de su valor).
+Debido al beneficio basado en turnos (similar con la de la capital y las ciudades circundantes), deber&#237;a ser asequible.
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -6537,11 +6543,7 @@ The city in which it is built gains advantages:
 [ICON_BULLET] Can set a specialist spy
 [ICON_BULLET] War weariness is reduced by 25%
 [ICON_BULLET] Can recruit auxiliaries
-
-Attention!
-These provincial capitals should not be lightly built, as they call up for a [ICON_GOLD]-tribute with a probability of 3% per turn.
-The weight of the tribute is generated based on the city size (population * 10 + random number of half of this value).
-Due to the turn based profit (similar with the capital and their surrounding cities), this should be affordable.</English>
+[ICON_BULLET] Can be administered by [LINK=CONCEPT_STATTHALTER]Provincial Governors[\LINK]</English>
 		<French>
 [H1]Communaut&#233;[\H1]
 Une ville qui vient d'&#234;tre fond&#233;e a le statut de communaut&#233;.
@@ -6564,14 +6566,7 @@ Il donne &#233;galement des bonus sp&#233;cifiques &#224; la ville o&#249; il es
 [ICON_BULLET] Possibilit&#233; d'affecter un sp&#233;cialiste espion
 [ICON_BULLET] R&#233;duction de 25% du m&#233;contentement d&#251; &#224; la guerre
 [ICON_BULLET] Autorise le recrutement d'unit&#233;s de type Auxiliaire
-
-Vous pouvez construire un palais provincial par tranche de x villes (les communaut&#233;s et villages ne sont pas pris en compte).
-
-Attention !
-Les palais provinciaux ne doivent pas &#234;tre construit &#224; la l&#233;g&#232;re car leur gouverneur r&#233;clamera r&#233;guli&#232;rement un tribut en [ICON_GOLD] (Probabilit&#233; : 3% par tour).
-Calcul du tribut : (population de la ville x 10) + (un nombre al&#233;atoire compris entre 0 et la "valeur pr&#233;c&#233;dente / 2").
-Par exemple, pour une ville de 9 : (9 x 10) + (nombre al&#233;atoire entre 0 et 45) soit un tribut compris entre 90 et 135 [ICON_GOLD].
-Leur construction n'est donc rentable que si l'&#233;conomie r&#233;alis&#233;e sur la maintenance des villes avoisinantes permet de couvrir le paiement des tributs.
+[ICON_BULLET] Peut &#234;tre administr&#233; par les [LINK=CONCEPT_STATTHALTER]gouverneurs provinciaux[\LINK]
 		</French>
 		<German>
 [H1]Siedlung[\H1]
@@ -6595,11 +6590,7 @@ Diese Stadt hat weiters folgende Vorteile:
 [ICON_BULLET] Kann einen Spion als Spezialisten einstellen
 [ICON_BULLET] Senkt den Kriegsverdruss um weitere 25%
 [ICON_BULLET] K&#246;nnen Hilfstruppen ausbilden
-
-Achtung!
-Solche Provinzhauptst&#228;dte sollten aber nicht leichtfertig gebaut werden, da sie bei einer Wahrscheinlichkeit von 3% pro Runde Tribut fordern.
-Die H&#246;he des Tributs richtet sich nach der Gr&#246;&#223;e der fordernden Provinzhauptstadt (Bev&#246;lkerung * 10 + Zufallswert von der H&#228;lfte dieser Zahl).
-Durch den r&#252;ndlichen Profit dieser Stadt (vergleichbar mit dem Unterhaltsbonus der Hauptstadt und angrenzender St&#228;dte), sollte das leistbar sein.
+[ICON_BULLET] K&#246;nnen von [LINK=CONCEPT_STATTHALTER]Provinzstatthaltern[\LINK] administriert werden
 		</German>
 		<Italian>
 [H1] Regolamento [\H1]
@@ -6609,25 +6600,21 @@ Un insediamento viene automaticamente ogni citt&#224; &#232; fondata .
 Dalla taglia 3 &#232; una soluzione per il villaggio . Altri edifici saranno sbloccati e lo stato rimane , se la citt&#224; dovrebbe ridursi .
 
 [H1] citt&#224; [\H1]
-Dalla taglia 6 &#232; un villaggio alla citt&#224;. Altri edifici saranno sbloccati e lo stato rimane , se la citt&#224; dovrebbe ridursi .
+Dalla taglia 6 &#232; un villaggio alla citt&#224;. Altri edifici saranno sbloccati e lo stato rimane, se la citt&#224; dovrebbe ridursi.
 
 [H1] cittadina di provincia [\H1]
-Dalla taglia 12 a una citt&#224; a citt&#224; di provincia . Saranno sbloccati altri edifici. Se citt&#224; libera sotto i 12 Pop , si ricade nello stato di una citt&#224; ordinaria .
+Dalla taglia 12 a una citt&#224; a citt&#224; di provincia. Saranno sbloccati altri edifici. Se citt&#224; libera sotto i 12 Pop, si ricade nello stato di una citt&#224; ordinaria.
 
 [H1] metropoli [\H1]
-Dalla taglia 20 &#232; una citt&#224; di provincia in una metropoli . Saranno sbloccati altri edifici. Rientra in una metropoli Pop 20 , si ricade nello stato di una citt&#224; di provincia .
+Dalla taglia 20 &#232; una citt&#224; di provincia in una metropoli. Saranno sbloccati altri edifici. Rientra in una metropoli Pop 20, si ricade nello stato di una citt&#224; di provincia.
 
 [H1] provinciale [\H1]
-Un palazzo provinciale pu&#242; essere costruito solo in una citt&#224; di provincia (per x citt&#224; ) e riduce i costi di tutte le citt&#224; circostanti ( tra cui il Palazzo di manutenzione ) .
-Questa citt&#224; ha anche i seguenti vantaggi :
+Un palazzo provinciale pu&#242; essere costruito solo in una citt&#224; di provincia (per x citt&#224; ) e riduce i costi di tutte le citt&#224; circostanti ( tra cui il Palazzo di manutenzione ).
+Questa citt&#224; ha anche i seguenti vantaggi:
 [ICON_BULLET] Possibile impostare una spia come specialisti
 [ICON_BULLET] Abbassa il fastidio di guerra di un ulteriore 25 %
 [ICON_BULLET] Pu&#242; sviluppare ausiliari
-
-Attenzione !
-Ma tali capoluoghi di provincia non dovrebbero essere costruiti con leggerezza , che prendono il loro pedaggio su una probabilit&#224; del 3 % per round .
-La quantit&#224; di tributo dipende dalla dimensione del esigenti capitale provinciale ( popolazione * 10 + valore casuale dalla met&#224; di quel numero ) .
-Dal profitto r&#252;ndlichen questa citt&#224; (paragonabile alla capitale bonus di manutenzione e le citt&#224; limitrofe ) , che deve essere accessibile .
+[ICON_BULLET] Pu&#242; essere amministrato dai [LINK=CONCEPT_STATTHALTER]Governatori provinciali[\LINK]
 		</Italian>
 		<Spanish>
 [H1]Asentamiento[\H1]
@@ -6651,11 +6638,7 @@ La ciudad en la que es construida gana las ventajas:
 [ICON_BULLET] Puede poner un esp&#237;a especialista
 [ICON_BULLET] El hast&#237;o b&#233;lico es reducido en un 25%
 [ICON_BULLET] Pueden reclutar tropas auxiliares
-
-&#161;Atenci&#243;n!
-Estas capitales provinciales no deben ser construidas a la ligera, ya que piden un tributo de [ICON_GOLD] con una probabilidad del 3% por turno.
-El tama&#241;o del tributo es generado a partir del tama&#241;o de la ciudad (poblaci&#243;n * 10 + n&#250;mero aleatorio por la mitad de su valor).
-Debido al beneficio basado en turnos (similar con la de la capital y las ciudades circundantes), deber&#237;a ser asequible.
+[ICON_BULLET] Puede ser administrado por los [LINK=CONCEPT_STATTHALTER]Gobernadores provinciales[\LINK]
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -13106,7 +13089,7 @@ Las misiones pasivas son:
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_STATTHALTER_PEDIA</Tag>
-		<English>The bigger an empire, the more important a more organized administration becomes. Governors can appoint a city to a provincial capital for every 6 cities by settling there (governor's seat). Provincial capitals reduce maintenance in surrounding cities (similar to the Forbidden Palace in BTS).
+		<English>The bigger an empire, the more important a more organized administration becomes. Governors can appoint a city to a provincial capital for every 4 cities by settling there (governor's seat). Provincial capitals reduce maintenance in surrounding cities (similar to the Forbidden Palace in BTS).
 
 Each governor has a specific property that is assigned when the unit is created. This bonus is credited to the governor seat and works every turn. Governors can be replaced at any time by other governors (eg with other characteristics). Even a hero (in combat awarded unit) can be appointed a governor.
 
@@ -13120,9 +13103,13 @@ Each governor has a specific property that is assigned when the unit is created.
 [ICON_BULLET] organizes: +2 [ICON_HAPPY]
 [ICON_BULLET] expansive: +2 [ICON_HEALTHY]
 
-[ICON_BULLET] Hero: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]</English>
+[ICON_BULLET] Hero: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+These provincial capitals should not be lightly built, as they call up for a [ICON_GOLD]-tribute with a probability of 10% (every 10th turn).
+The weight of the tribute is generated based on the city size (population * 10 + random number of half of this value).
+Due to the turn based profit (similar with the capital and their surrounding cities), this should be affordable.</English>
 		<French>
-Avec l'expansion de votre empire, l'organisation de l'administration se r&#233;v&#233;lera de plus en plus importante. Les gouverneurs peuvent d&#233;signer une capitale provinciale pour 6 villes sous votre contr&#244;le, qu'ils administreront personnellement depuis leur palais. Les capitales provinciales diminuent les co&#251;ts d'entretien des villes proches (comme la merveille Cit&#233; Interdite de Civ IV).
+Avec l'expansion de votre empire, l'organisation de l'administration se r&#233;v&#233;lera de plus en plus importante. Les gouverneurs peuvent d&#233;signer une capitale provinciale pour 4 villes sous votre contr&#244;le, qu'ils administreront personnellement depuis leur palais. Les capitales provinciales diminuent les co&#251;ts d'entretien des villes proches (comme la merveille Cit&#233; Interdite de Civ IV).
 
 Chaque gouverneur poss&#232;de une qualit&#233; pr&#233;f&#233;rentielle exprim&#233;e lors de sa cr&#233;ation. Ce bonus se r&#233;percutera chaque tour sur le fonctionnement de leur capitale provinciale. Un gouverneur peut &#224; chaque instant &#234;tre remplac&#233; par un autre (c.&#224;.d. avec des qualit&#233;s diff&#233;rentes). Les h&#233;ros (unit&#233;s qui se sont distingu&#233;es au combat) sont aussi &#233;ligibles au poste de gouverneur.
 
@@ -13137,9 +13124,11 @@ Chaque gouverneur poss&#232;de une qualit&#233; pr&#233;f&#233;rentielle exprim&
 [ICON_BULLET] accessible : +2 [ICON_HEALTHY]
 
 [ICON_BULLET] H&#233;ros: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+Les palais provinciaux ne doivent pas &#234;tre construit &#224; la l&#233;g&#232;re car leur gouverneur r&#233;clamera r&#233;guli&#232;rement un tribut en [ICON_GOLD] avec une probabilit&#233; de 10% (tous les 10 tours). Calcul du tribut : (population de la ville x 10) + (un nombre al&#233;atoire compris entre 0 et la "valeur pr&#233;c&#233;dente / 2"). Par exemple, pour une ville de 9 : (9 x 10) + (nombre al&#233;atoire entre 0 et 45) soit un tribut compris entre 90 et 135 [ICON_GOLD]. Leur construction n'est donc rentable que si l'&#233;conomie r&#233;alis&#233;e sur la maintenance des villes avoisinantes permet de couvrir le paiement des tributs.
 		</French>
 		<German>
-Je gr&#246;&#223;er ein Reich, desto wichtiger wird eine organisiertere Verwaltung. Statthalter k&#246;nnen pro 6 St&#228;dte eine Stadt zu einer Provinzshauptstadt ernennen, indem sie sich dort niederlassen (Statthaltersitz). Provinzhauptst&#228;dte verringern den Unterhalt in umliegenden St&#228;dten (vergleichbar mit dem Verbotenen Palast in BTS).
+Je gr&#246;&#223;er ein Reich, desto wichtiger wird eine organisiertere Verwaltung. Statthalter k&#246;nnen pro 4 St&#228;dte eine Stadt zu einer Provinzshauptstadt ernennen, indem sie sich dort niederlassen (Statthaltersitz). Provinzhauptst&#228;dte verringern den Unterhalt in umliegenden St&#228;dten (vergleichbar mit dem Verbotenen Palast in BTS).
 
 Jeder Statthalter hat eine bestimmte Eigenschaft, die beim Erstellen der Einheit vergeben wird. Dieser Bonus wird dem Statthaltersitz gutgeschrieben und wirkt jede Runde. Statthalter k&#246;nnen jederzeit von anderen Statthaltern (zB mit anderen Eigenschaften) ersetzt werden. Auch ein Held (im Kampf ausgezeichnete Einheit) kann zu einem Statthalter ernannt werden.
 
@@ -13154,9 +13143,11 @@ Jeder Statthalter hat eine bestimmte Eigenschaft, die beim Erstellen der Einheit
 [ICON_BULLET] expansiv: +2 [ICON_HEALTHY]
 
 [ICON_BULLET] Held: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+Solche Provinzhauptst&#228;dte sollten aber nicht leichtfertig gebaut werden, da sie bei einer Wahrscheinlichkeit von 10% (jede 10. Runde) Tribut fordern. Die H&#246;he des Tributs richtet sich nach der Gr&#246;&#223;e der fordernden Provinzhauptstadt (Bev&#246;lkerung * 10 + Zufallswert von der H&#228;lfte dieser Zahl). Durch den r&#252;ndlichen Profit dieser Stadt (vergleichbar mit dem Unterhaltsbonus der Hauptstadt und angrenzender St&#228;dte), sollte das leistbar sein.
 		</German>
 		<Italian>
-Pi&#249; grande &#232; un impero, pi&#249; importante diventa un'amministrazione pi&#249; organizzata. I governatori possono nominare una citt&#224; capoluogo di provincia ogni 6 citt&#224; insediandosi l&#236; (sede del governatore). Le capitali di provincia riducono la manutenzione nelle citt&#224; circostanti (simile al Palazzo Proibito in BTS).
+Pi&#249; grande &#232; un impero, pi&#249; importante diventa un'amministrazione pi&#249; organizzata. I governatori possono nominare una citt&#224; capoluogo di provincia ogni 4 citt&#224; insediandosi l&#236; (sede del governatore). Le capitali di provincia riducono la manutenzione nelle citt&#224; circostanti (simile al Palazzo Proibito in BTS).
 
 Ogni governatore ha una propriet&#224; specifica che viene assegnata quando l'unit&#224; viene creata. Questo bonus viene accreditato alla sede del governatore e funziona a ogni turno. I governatori possono essere sostituiti in qualsiasi momento da altri governatori (ad esempio con altre caratteristiche). Anche un eroe (in un'unit&#224; premiata in combattimento) pu&#242; essere nominato governatore.
 
@@ -13171,9 +13162,12 @@ Ogni governatore ha una propriet&#224; specifica che viene assegnata quando l'un
 [ICON_BULLET] espansivo: +2 [ICON_HEALTHY]
 
 [ICON_BULLET] Eroe: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+
+Ma tali capoluoghi di provincia non dovrebbero essere costruiti con leggerezza, che prendono il loro pedaggio con una probabilit&#224; del 10% ( ogni 10&#186; turno ). La quantit&#224; di tributo dipende dalla dimensione del esigenti capitale provinciale ( popolazione * 10 + valore casuale dalla met&#224; di quel numero ). Dal profitto r&#252;ndlichen questa citt&#224; (paragonabile alla capitale bonus di manutenzione e le citt&#224; limitrofe ), che deve essere accessibile.
 		</Italian>
 		<Spanish>
-Cuanto m&#225;s grande es un imperio, m&#225;s importante se vuelve una administraci&#243;n m&#225;s organizada. Los gobernadores pueden designar una ciudad como capital provincial por cada 6 ciudades estableci&#233;ndose all&#237; (sede del gobernador). Las capitales provinciales reducen el mantenimiento en las ciudades circundantes (similar al Palacio Prohibido en BTS).
+Cuanto m&#225;s grande es un imperio, m&#225;s importante se vuelve una administraci&#243;n m&#225;s organizada. Los gobernadores pueden designar una ciudad como capital provincial por cada 4 ciudades estableci&#233;ndose all&#237; (sede del gobernador). Las capitales provinciales reducen el mantenimiento en las ciudades circundantes (similar al Palacio Prohibido en BTS).
 
 Cada gobernador tiene una propiedad espec&#237;fica que se asigna cuando se crea la unidad. Esta bonificaci&#243;n se acredita al puesto del gobernador y funciona en cada turno. Los gobernadores pueden ser reemplazados en cualquier momento por otros gobernadores (por ejemplo, con otras caracter&#237;sticas). Incluso un h&#233;roe (unidad premiada en combate) puede ser designado gobernador.
 
@@ -13188,6 +13182,8 @@ Cada gobernador tiene una propiedad espec&#237;fica que se asigna cuando se crea
 [ICON_BULLET] expansivo: +2 [ICON_HEALTHY]
 
 [ICON_BULLET] H&#233;roe: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+Ma tali capoluoghi di provincia non dovrebbero essere costruiti con leggerezza, che prendono il loro pedaggio con una probabilit&#224; del 10% ( ogni 10&#186; turno ). La quantit&#224; di tributo dipende dalla dimensione del esigenti capitale provinciale ( popolazione * 10 + valore casuale dalla met&#224; di quel numero ). Dal profitto r&#252;ndlichen questa citt&#224; (paragonabile alla capitale bonus di manutenzione e le citt&#224; limitrofe ), che deve essere accessibile.
 		</Spanish>
 	</TEXT>
 	<TEXT>

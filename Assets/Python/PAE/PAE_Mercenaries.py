@@ -14,13 +14,10 @@ import CvUtil
 gc = CyGlobalContext()
 localText = CyTranslator()
 
-# Globals
-PAEInstanceHiringModifier = {}  # Soeldner werden teurer innerhalb einer Runde
-PAEMercComission = {}  # Soelnder koennen nur 1x pro Runde beauftragt werden
-
-# Reminder: How to use ScriptData: CvUtil.getScriptData(pUnit, ["b"], -1), CvUtil.addScriptData(pUnit, "b", eBonus) (add uses string, get list of strings)
-# getScriptData returns string => cast might be necessary
-# Update (Ramk): No, CvUtil-Functions unpack an dict. You could directly use int, etc.
+# Reminder: How to use ScriptData (Ramk: add uses string or int):
+# CvUtil.getScriptData(pUnit, ["b"], -1)
+# CvUtil.addScriptData(pUnit, "b", eBonus)
+# CvUtil.removeScriptData(pUnit, "b")
 
 # Used keys for UnitScriptData:
 # "x"/"y": coordinates of plots where bonus was picked up (merchants)
@@ -47,10 +44,7 @@ def onModNetMessage(argsList):
 				popupInfo.setOnClickedPythonCallback("popupMercenariesMain")  # EntryPoints/CvScreenInterface und CvGameUtils -> 708, 709 usw
 				popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_MERCENARIES_HIRE", ("", )), "Art/Interface/Buttons/Actions/button_action_mercenary_hire.dds")
 
-				# do this only once per turn
-				PAEMercComission.setdefault(iPlayer, 0)
-				if PAEMercComission[iPlayer] == 0:
-						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_MERCENARIES_ASSIGN", ("", )), "Art/Interface/Buttons/Actions/button_action_mercenary_assign.dds")
+				popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_MERCENARIES_ASSIGN", ("", )), "Art/Interface/Buttons/Actions/button_action_mercenary_assign.dds")
 
 				popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
 				popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
@@ -812,9 +806,8 @@ def doCommissionMercenaries(iTargetPlayer, iFaktor, iPlayer):
 		iImmobile = 1
 		# iSize = 0
 
-		# PAEInstanceHiringModifier per turn
-		PAEMercComission.setdefault(iPlayer, 0)
-		PAEMercComission[iPlayer] = 1
+		# Do this only once per turn
+		CvUtil.addScriptData(pPlayer, "merc", 1)
 
 		# siege units
 		# iSiegeUnitAnz = 0
@@ -1570,7 +1563,7 @@ def doHireMercenariesPopup(iCity, iTypeButton, iUnitButton, iPlayer):
 				popupInfo.setData2(iTypeButton)
 
 				# PAEInstanceHiringModifier per turn
-				iMultiplier = PAEInstanceHiringModifier.setdefault(iPlayer, 0)
+				iMultiplier = CvUtil.getScriptData(pPlayer, ["hire"], 0)
 
 				# Elephants
 				if iTypeButton == 3:
@@ -1585,7 +1578,7 @@ def doHireMercenariesPopup(iCity, iTypeButton, iUnitButton, iPlayer):
 				if iUnitButton != -1:
 						if doHireMercenary(iPlayer, lTypeUnits[iUnitButton], iMultiplier, bCivicSoeldner, pCity, lImmobile[iTypeButton], iExtraMultiplier):
 								iMultiplier += 1
-								PAEInstanceHiringModifier[iPlayer] = iMultiplier
+								CvUtil.addScriptData(pPlayer, "hire", iMultiplier)
 
 				# redraw the list with new prices
 				for eUnit in lTypeUnits:

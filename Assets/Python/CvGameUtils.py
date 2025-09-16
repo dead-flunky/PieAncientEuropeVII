@@ -397,33 +397,36 @@ class CvGameUtils:
 
 										eBonus = CvUtil.getScriptData(pHeadSelectedUnit, ["b"], -1)
 										if eBonus != -1:  # and not gc.getActivePlayer().isOption(PlayerOptionTypes.PLAYEROPTION_NO_UNIT_RECOMMENDATIONS):
-												if eBonus in L.LBonusStratCultivatable:
-														self.colorPlots4strategicBonus(pHeadSelectedUnit, eBonus)
-												else:
-														(loopCity, pIter) = pPlayer.firstCity(False)
-														while loopCity:
-																#loopCity = pHeadSelectedUnit.plot().getWorkingCity()
-																if not loopCity.isNone() and loopCity.getOwner() == iPlayer:
-																		for iI in range(gc.getNUM_CITY_PLOTS()):
-																				pLoopPlot = loopCity.getCityIndexPlot(iI)
-																				if pLoopPlot is not None and not pLoopPlot.isNone():
-																						if PAE_Cultivation._isBonusCultivationChance(iPlayer, pLoopPlot, eBonus, False, loopCity):
-																								CyEngine().addColoredPlotAlt(pLoopPlot.getX(), pLoopPlot.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_TECH_GREEN", 1)
-																						elif eBonus not in L.LBonusPlantation:
-																								lPlots = PAE_Cultivation.getCityCultivatedPlots(loopCity, eBonus)
-																								for p in lPlots:
-																										ePlotBonus = p.getBonusType(pHeadSelectedUnit.getOwner())
-																										if ePlotBonus in L.LBonusCorn and eBonus in L.LBonusCorn or ePlotBonus in L.LBonusLivestock and eBonus in L.LBonusLivestock:
-																												CyEngine().addColoredPlotAlt(p.getX(), p.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_YIELD_FOOD", 1)
-																										else:
-																												CyEngine().addColoredPlotAlt(p.getX(), p.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_PLAYER_PALE_RED", 1)
-																		#pBestPlot = PAE_Cultivation.AI_bestCultivation(loopCity, 0, eBonus)
-																		# if pBestPlot:
-																		#    CyEngine().addColoredPlotAlt(pBestPlot.getX(), pBestPlot.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_HIGHLIGHT_TEXT", 1.0)
-																		#    pSecondBestPlot = PAE_Cultivation.AI_bestCultivation(loopCity, 1, eBonus)
-																		#    if pSecondBestPlot:
-																		#        CyEngine().addColoredPlotAlt(pSecondBestPlot.getX(), pSecondBestPlot.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_HIGHLIGHT_TEXT", 1.0)
-																(loopCity, pIter) = pPlayer.nextCity(pIter, False)
+											if eBonus in L.LBonusStratCultivatable:
+												self.colorPlots4strategicBonus(pHeadSelectedUnit, eBonus)
+											else:
+												(loopCity, pIter) = pPlayer.firstCity(False)
+												while loopCity:
+													#loopCity = pHeadSelectedUnit.plot().getWorkingCity()
+													if not loopCity.isNone() and loopCity.getOwner() == iPlayer:
+														bShip = pHeadSelectedUnit.getDomainType() == DomainTypes.DOMAIN_SEA
+														for iI in range(gc.getNUM_CITY_PLOTS()):
+															pLoopPlot = loopCity.getCityIndexPlot(iI)
+															if pLoopPlot is not None and not pLoopPlot.isNone():
+																if bShip and not pLoopPlot.isWater():
+																	continue
+																if PAE_Cultivation._isBonusCultivationChance(iPlayer, pLoopPlot, eBonus, False, loopCity):
+																	CyEngine().addColoredPlotAlt(pLoopPlot.getX(), pLoopPlot.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_TECH_GREEN", 1)
+																elif eBonus not in L.LBonusPlantation:
+																	lPlots = PAE_Cultivation.getCityCultivatedPlots(loopCity, eBonus)
+																	for p in lPlots:
+																		ePlotBonus = p.getBonusType(pHeadSelectedUnit.getOwner())
+																		if ePlotBonus in L.LBonusCorn and eBonus in L.LBonusCorn or ePlotBonus in L.LBonusLivestock and eBonus in L.LBonusLivestock:
+																			CyEngine().addColoredPlotAlt(p.getX(), p.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_YIELD_FOOD", 1)
+																		else:
+																			CyEngine().addColoredPlotAlt(p.getX(), p.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_PLAYER_PALE_RED", 1)
+														#pBestPlot = PAE_Cultivation.AI_bestCultivation(loopCity, 0, eBonus)
+														# if pBestPlot:
+														#    CyEngine().addColoredPlotAlt(pBestPlot.getX(), pBestPlot.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_HIGHLIGHT_TEXT", 1.0)
+														#    pSecondBestPlot = PAE_Cultivation.AI_bestCultivation(loopCity, 1, eBonus)
+														#    if pSecondBestPlot:
+														#        CyEngine().addColoredPlotAlt(pSecondBestPlot.getX(), pSecondBestPlot.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_HIGHLIGHT_TEXT", 1.0)
+													(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
 								# Donkey/Esel
 								elif iUnitType == gc.getInfoTypeForString("UNIT_ESEL"):
@@ -1059,6 +1062,7 @@ class CvGameUtils:
 						return True
 
 				# Buildings, die ihre notwendige Ressource im Stadtradius brauchen
+				# Listen stehen auch in PAE_City (!)
 				lBonusBuildings = [
 						gc.getInfoTypeForString("BUILDING_WINERY"),
 						gc.getInfoTypeForString("BUILDING_PAPYRUSPOST"),
@@ -1068,13 +1072,18 @@ class CvGameUtils:
 						gc.getInfoTypeForString("BUILDING_GUSS_BLEI"),
 						gc.getInfoTypeForString("BUILDING_GUSS_COPPER"),
 						gc.getInfoTypeForString("BUILDING_GUSS_ZINN"),
-						gc.getInfoTypeForString("BUILDING_GUSS_ZINK"),
+						gc.getInfoTypeForString("BUILDING_GUSS_ZINK")
+				]
+				if eBuilding in lBonusBuildings:
+						if PAE_City.bonusMissingCity(pCity, eBuilding) >= 0:
+								return True
+
+				lBonusBuildings3x3 = [
 						gc.getInfoTypeForString("BUILDING_FURRIER"),
 						gc.getInfoTypeForString("BUILDING_MARMOR_WERKSTATT")
 				]
-				if eBuilding in lBonusBuildings:
-						bonus = PAE_City.bonusMissingCity(pCity, eBuilding)
-						if bonus is not None:
+				if eBuilding in lBonusBuildings3x3:
+						if PAE_City.bonusMissingCity3x3(pCity, eBuilding) >= 0:
 								return True
 
 				# Standard-Einstellung: alles baubar

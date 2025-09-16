@@ -24,10 +24,6 @@ import PAE_Lists as L
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
-# PAE - for units in getting Fighting-Promotions (per turn)
-# [PlayerID, UnitID]
-PAEInstanceFightingModifier = []
-
 # PAE - Great General Names
 GG_UsedNames = []
 
@@ -185,6 +181,11 @@ def stackDoTurn(iPlayer, iGameTurn):
 
 		(sUnit, pIter) = pPlayer.firstUnit(False)
 		while sUnit:
+
+				# PAE 7.11d: PAEInstanceFightingModifier (instance fighting promotions)
+				if CvUtil.getScriptData(sUnit, ["ifp"], 0):
+						CvUtil.removeScriptData(sUnit, "ifp")
+
 				# tmpA: OBJECTS (tmpPlot) KANN MAN NICHT mit NOT IN in einer Liste pruefen!
 				tmpA = [sUnit.getX(), sUnit.getY()]
 				tmpPlot = sUnit.plot()
@@ -1440,13 +1441,13 @@ def doUnitGetsPromo(pUnitTarget, pUnitSource, pPlot, bMadeAttack, bOpponentAnima
 
 		iDivisor = 1
 		# PAEInstanceFightingModifier for wins in the same turn
-		if (iPlayer, pUnitTarget.getID()) in PAEInstanceFightingModifier:
+		if CvUtil.getScriptData(pUnitTarget, ["ifp"], 0):
 				iDivisor = 5
 
 		# Chances --- Inits -------------
 		iChanceCityDefense = 10 / iDivisor
 		iChanceUnitType = 10 / iDivisor
-		iChanceTerrain = 15 / (iFirstPromos*2 + 1) / iDivisor
+		iChanceTerrain = 25 / (iFirstPromos*2 + 1) / iDivisor
 		# Static chance of Promo 2-5 of a terrain
 		iChanceTerrain2 = 5 / iDivisor
 		# -------------------------------
@@ -1557,7 +1558,7 @@ def doUnitGetsPromo(pUnitTarget, pUnitSource, pPlot, bMadeAttack, bOpponentAnima
 						# naechste Chance verringern
 						iChanceUnitType = iChanceUnitType / 2
 						pUnitTarget.setHasPromotion(iNewPromo, True)
-						PAEInstanceFightingModifier.append((pUnitTarget.getOwner(), pUnitTarget.getID()))
+						CvUtil.addScriptData(pUnitTarget, "ifp", 1)
 						if gc.getPlayer(pUnitTarget.getOwner()).isHuman():
 								CyInterface().addMessage(pUnitTarget.getOwner(), True, 10,
 									CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_GETS_PROMOTION", (pUnitTarget.getName(), gc.getPromotionInfo(iNewPromo).getDescription())),
@@ -1627,7 +1628,7 @@ def doUnitGetsPromo(pUnitTarget, pUnitSource, pPlot, bMadeAttack, bOpponentAnima
 
 				if iNewPromo != -1:
 						pUnitTarget.setHasPromotion(iNewPromo, True)
-						PAEInstanceFightingModifier.append((iPlayer, pUnitTarget.getID()))
+						CvUtil.addScriptData(pUnitTarget, "ifp", 1)
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 10,
 									CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_GETS_PROMOTION", (pUnitTarget.getName(), gc.getPromotionInfo(iNewPromo).getDescription())),
@@ -1649,7 +1650,7 @@ def doUnitGetsPromo(pUnitTarget, pUnitSource, pPlot, bMadeAttack, bOpponentAnima
 						iNewPromo = gc.getInfoTypeForString("PROMOTION_EXCUBITOR")
 					if iNewPromo != -1:
 						pUnitTarget.setHasPromotion(iNewPromo, True)
-						PAEInstanceFightingModifier.append((iPlayer, pUnitTarget.getID()))
+						CvUtil.addScriptData(pUnitTarget, "ifp", 1)
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 10,
 									CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_GETS_PROMOTION", (pUnitTarget.getName(), gc.getPromotionInfo(iNewPromo).getDescription())),
@@ -2869,8 +2870,8 @@ def doAutomatedRanking(pWinner, pLoser):
 				(gc.getInfoTypeForString("PROMOTION_COMBAT2"), 70),
 				(gc.getInfoTypeForString("PROMOTION_COMBAT3"), 60),
 				(gc.getInfoTypeForString("PROMOTION_COMBAT4"), 50),
-				(gc.getInfoTypeForString("PROMOTION_COMBAT5"), 30),
-				(gc.getInfoTypeForString("PROMOTION_COMBAT6"), 10)
+				(gc.getInfoTypeForString("PROMOTION_COMBAT5"), 40),
+				(gc.getInfoTypeForString("PROMOTION_COMBAT6"), 30)
 		]
 		LPromoNegative = [
 				(gc.getInfoTypeForString("PROMOTION_MORAL_NEG1"), 10),
@@ -2911,8 +2912,8 @@ def doAutomatedRanking(pWinner, pLoser):
 								iChance += 15
 
 						if CvUtil.myRandom(100, "automatedRanking") < iChance:
-								if (iPlayer, pWinner.getID()) not in PAEInstanceFightingModifier:
-										PAEInstanceFightingModifier.append((iPlayer, pWinner.getID()))
+								if CvUtil.getScriptData(pWinner, ["ifp"], 0) == 0:
+										CvUtil.addScriptData(pWinner, "ifp", 1)
 										pWinner.setHasPromotion(iPromo, True)
 										if gc.getPlayer(iPlayer).isHuman():
 												CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_RANKING", (pWinner.getName(), gc.getPromotionInfo(iPromo).getDescription())),
@@ -2920,11 +2921,11 @@ def doAutomatedRanking(pWinner, pLoser):
 										return True
 						# War weariness parallel ab Elite
 						elif pWinner.isHasPromotion(LPromo[4][0]) and not pWinner.isHasPromotion(LPromoNegative[-1][0]):
-								if (iPlayer, pWinner.getID()) not in PAEInstanceFightingModifier:
+								if CvUtil.getScriptData(pWinner, ["ifp"], 0) == 0:
 										for iPromo, iChance in LPromoNegative:
 												if not pWinner.isHasPromotion(iPromo):
 														if iChance > CvUtil.myRandom(100, "war weariness"):
-																PAEInstanceFightingModifier.append((iPlayer, pWinner.getID()))
+																CvUtil.addScriptData(pWinner, "ifp", 1)
 																pWinner.setHasPromotion(iPromo, True)
 																if gc.getPlayer(iPlayer).isHuman():
 																		CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_WAR_WEARINESS", (pWinner.getName(), gc.getPromotionInfo(iPromo).getDescription())),

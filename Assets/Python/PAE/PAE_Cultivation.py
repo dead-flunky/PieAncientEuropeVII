@@ -153,7 +153,11 @@ def _isBonusCultivationChance(iPlayer, pPlot, eBonus, bVisibleOnly=True, pCity=N
 		if iTyp == 1:
 				List = L.LBonusStratCultivatable
 		else:
-				List = L.LBonusCultivatable + L.LBonusCultivatableCoast
+				List = L.LBonusCultivatable
+
+		if eBonus in L.LBonusCultivatableCoast:
+			if gc.getTeam(gc.getPlayer(iPlayer).getTeam()).isHasTech(gc.getInfoTypeForString("TECH_AQUA")):
+				List = List + L.LBonusCultivatableCoast
 
 		# Variety of invalid situations
 		if (eBonus not in List
@@ -668,13 +672,14 @@ def doCollectBonus4Cultivation(pUnit):
 
 
 def getCollectableGoods4Cultivation(pUnit):
+		lGoods = []
 		pPlot = pUnit.plot()
 		if pPlot.isCity():
 				pCity = pPlot.getPlotCity()
 				lGoods = _getCollectableGoods4Cultivation(pCity, pUnit)
 		else:
 				ePlotBonus = pPlot.getBonusType(pPlot.getTeam())
-				if ePlotBonus != -1 and ePlotBonus in L.LBonusCultivatable:
+				if ePlotBonus != -1 and ePlotBonus in L.LBonusCultivatable + L.LBonusCultivatableCoast:
 						lGoods = [ePlotBonus]
 
 		return lGoods
@@ -684,17 +689,12 @@ def getCollectableGoods4Cultivation(pUnit):
 
 def _getCollectableGoods4Cultivation(pCity, pUnit):
 		lGoods = []
-		LBonus = []
-		if pUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
-				iTeam = gc.getPlayer(pUnit.getOwner()).getTeam()
-				pTeam = gc.getTeam(iTeam)
-				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_AQUA")):
-						LBonus = L.LBonusCultivatableCoast
-		else:
-				LBonus = L.LBonusCultivatable + L.LBonusStratCultivatable
+
+		LBonus = L.LBonusCultivatable + L.LBonusStratCultivatable + L.LBonusCultivatableCoast
+
 		for eBonus in LBonus:
-				if pCity.hasBonus(eBonus):
-						lGoods.append(eBonus)
+			if pCity.hasBonus(eBonus):
+				lGoods.append(eBonus)
 		return lGoods
 
 
@@ -758,8 +758,7 @@ def doBuyBonus4Cultivation(pUnit, eBonus):
 
 		pBuyer = gc.getPlayer(iBuyer)
 		if pBuyer.getGold() < iPrice:
-				CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_COLLECT_NO_GOODS", ("",)),
-																 None, 2, "Art/Interface/PlotPicker/Warning.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+				CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_COLLECT_NO_GOODS", ("",)), None, 2, "Art/Interface/PlotPicker/Warning.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 				return False
 
 		pBuyer.changeGold(-iPrice)
@@ -770,8 +769,7 @@ def doBuyBonus4Cultivation(pUnit, eBonus):
 		CvUtil.addScriptData(pUnit, "originCiv", pUnit.plot().getOwner())
 
 		if pBuyer.isHuman():
-				CyInterface().addMessage(iBuyer, True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_COLLECT_GOODS", (gc.getBonusInfo(
-						eBonus).getDescription(), -iPrice)), "AS2D_COINS", 2, None, ColorTypes(13), pUnit.getX(), pUnit.getY(), False, False)
+				CyInterface().addMessage(iBuyer, True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_COLLECT_GOODS", (gc.getBonusInfo(eBonus).getDescription(), -iPrice)), "AS2D_COINS", 2, None, ColorTypes(13), pUnit.getX(), pUnit.getY(), False, False)
 
 		pUnit.finishMoves()
 		PAE_Unit.doGoToNextUnit(pUnit)

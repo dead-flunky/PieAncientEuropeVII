@@ -1294,7 +1294,7 @@ def doAutomateMerchant(pUnit):
 				if not pCity1.isNone():
 						# PAE VII: Team Check for MP Team games
 						iCityTeam = gc.getPlayer(pCity1.getOwner()).getTeam()
-						if pCity1.getOwner() != pUnit.getOwner() and iCityTeam != iUnitTeam:
+						if pCity1.getOwner() != pUnit.getOwner(): # and iCityTeam != iUnitTeam:
 								# Krieg
 								if pUnitTeam.isAtWar(iCityTeam):
 										bWar = True
@@ -1305,7 +1305,7 @@ def doAutomateMerchant(pUnit):
 				if not pCity2.isNone():
 						# PAE VII: Team Check for MP Team games
 						iCityTeam = gc.getPlayer(pCity2.getOwner()).getTeam()
-						if pCity2.getOwner() != pUnit.getOwner() and iCityTeam != iUnitTeam:
+						if pCity2.getOwner() != pUnit.getOwner(): # and iCityTeam != iUnitTeam:
 								# Krieg
 								if pUnitTeam.isAtWar(iCityTeam):
 										bWar = True
@@ -1333,7 +1333,7 @@ def doAutomateMerchant(pUnit):
 										popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_TRADE_INFO_4", ()))
 										popupInfo.addPopup(iPlayer)
 								# Message: Eure Handelsstadt wurde dem Erdboden gleich gemacht
-								elif not bWar:
+								elif bWar:
 										popupInfo = CyPopupInfo()
 										popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 										popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_TRADE_INFO_1", ()))
@@ -1347,16 +1347,15 @@ def doAutomateMerchant(pUnit):
 								pCurrentCity = pCity1
 								pNewCity = pCity2
 								eBonusBuy = eBonus1
-								# eBonusSell = eBonus2
+								eBonusSell = eBonus2
 						elif pUnit.atPlot(pCityPlot2):
 								pCurrentCity = pCity2
 								pNewCity = pCity1
 								eBonusBuy = eBonus2
-								# eBonusSell = eBonus1
+								eBonusSell = eBonus1
 
 						#if eStoredBonus != -1:
-						#if eBonusSell != -1 and eStoredBonus == eBonusSell:
-						if eStoredBonus != -1 and pCurrentCity.getID() != pNewCity.getID():
+						if eBonusSell != -1 and eStoredBonus == eBonusSell:
 								doSellBonus(pUnit, pCurrentCity)
 								# if iPlayer == iHumanPlayer:
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit sold bonus in city", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)

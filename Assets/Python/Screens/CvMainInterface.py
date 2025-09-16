@@ -2454,18 +2454,24 @@ class CvMainInterface:
 												# ------------------
 												# BEGIN Merchant trade/cultivation/collect Bonus (738-741) (Boggy)
 												if pUnit.canMove():  # and not pUnit.hasMoved():
+
 														if iUnitType in L.LCultivationUnits + L.LTradeUnits:
 																# if pPlot.getOwner() == iUnitOwner or pPlot.getOwner() != -1 and gc.getTeam(gc.getPlayer(pPlot.getOwner()).getTeam()).isVassal(pUnitOwner.getTeam()):
 																eBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
+																iTechAqua = gc.getInfoTypeForString("TECH_AQUA")
+
 																# Collect bonus from plot or city
 																# ePlotBonus = pPlot.getBonusType(iUnitOwner)  # Invisible bonuses can NOT be collected
 																ePlotBonus = pPlot.getBonusType(pUnit.getOwner())
-																if iUnitType == gc.getInfoTypeForString("UNIT_WORKBOAT") and not pTeam.isHasTech(gc.getInfoTypeForString("TECH_AQUA")):
+																if iUnitType == gc.getInfoTypeForString("UNIT_WORKBOAT") and not pTeam.isHasTech(iTechAqua):
 																		# getoutofhere = 1  # get out of LCultivationUnits
+																		pass
+																# Handelsschiffe sollen keine Güter im Meer kaufen können
+																elif pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not bCity:
 																		pass
 																# remove from plot => iData2 = 0. 1 = charge all goods without removing. Nur bei leerem Karren.
 																elif eBonus == -1:
-																		if ePlotBonus != -1 and (ePlotBonus in L.LBonusCultivatable or ePlotBonus in L.LBonusStratCultivatable or ePlotBonus in L.LBonusCultivatableCoast):
+																		if ePlotBonus != -1 and (ePlotBonus in L.LBonusCultivatable + L.LBonusStratCultivatable + L.LBonusCultivatableCoast):
 																				# Kaufen
 																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
 																						"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 2, True)
@@ -2520,6 +2526,9 @@ class CvMainInterface:
 
 																# Cultivate bonus onto plot (iData1: 738, iData2: 0 normal, 1 replace)
 																if eBonus != -1 and PAE_Cultivation.isBonusCultivatable(pUnit):
+																	if pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not pTeam.isHasTech(iTechAqua):
+																		pass
+																	else:
 																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
 																				"INTERFACE_TRADE_CULTIVATE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 738, 0, bCity)
 																		screen.show("BottomButtonContainer")
@@ -2611,17 +2620,9 @@ class CvMainInterface:
 																if pUnit.isMilitaryHappiness():
 																		# Provinzstatthalter / Tribut
 																		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
-
-																				bAllowed = True
-																				PAE_City.PAEStatthalterTribut.setdefault(iUnitOwner, 0)
-																				if PAE_City.PAEStatthalterTribut[iUnitOwner] == 1:
-																						bAllowed = False
-
-																				# Provinzstatthalter / Tribut
-																				if bAllowed:
+																				if CvUtil.getScriptData(pCity, ["tribut"], 0) == 0:
 																						if not pTeam.isHasTech(gc.getInfoTypeForString("TECH_POLYARCHY")):
-																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_statthalter_main.dds",
-																																						 0, WidgetTypes.WIDGET_GENERAL, 737, 737, False)
+																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_statthalter_main.dds", 0, WidgetTypes.WIDGET_GENERAL, 737, 737, False)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
 																		# --------------------------------------------------------
@@ -2638,10 +2639,12 @@ class CvMainInterface:
 																		# Soeldner anheuern / Mercenaries (in der eigenen Stadt)
 																		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SOELDNERPOSTEN")):
 																				if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")):
-																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																								"INTERFACE_MERCENARIES_CITYBUTTON").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 707, 707, False)
-																						screen.show("BottomButtonContainer")
-																						iCount += 1
+																						# do this only once per turn
+																						if CvUtil.getScriptData(pUnitOwner, ["merc"], 0) == 0:
+																								screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																										"INTERFACE_MERCENARIES_CITYBUTTON").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 707, 707, False)
+																								screen.show("BottomButtonContainer")
+																								iCount += 1
 																# --------------------------------------------------------
 
 																# Statthalter ansiedeln / Held / Hero / Feldherr / General

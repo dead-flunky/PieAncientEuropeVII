@@ -27,9 +27,6 @@ iPopStadt = 6
 iPopProvinz = 12
 iPopMetropole = 20
 
-# PAE Statthaltertribut
-PAEStatthalterTribut = {}  # Statthalter koennen nur 1x pro Runde entlohnt werden
-
 
 def onModNetMessage(argsList):
 		iData0, iData1, iData2, iData3, iData4 = argsList
@@ -181,6 +178,7 @@ def onModNetMessage(argsList):
 				# Third:  737, iCityID, iPlayer, iTyp, iButtonID
 				pPlayer = gc.getPlayer(iData3)
 				pCity = pPlayer.getCity(iData2)
+				pPlot = pCity.plot()
 
 				if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")):
 						return
@@ -276,7 +274,6 @@ def onModNetMessage(argsList):
 										CyAudioGame().Play2DSound("AS2D_WELOVEKING")
 
 								# Einheiten sind nun beschaeftigt
-								pPlot = pCity.plot()
 								iNumUnits = pPlot.getNumUnits()
 								if iNumUnits > 0:
 										for k in range(iNumUnits):
@@ -284,8 +281,8 @@ def onModNetMessage(argsList):
 														pPlot.getUnit(k).setImmobileTimer(iImmo)
 
 								# Do this only once per turn
-								PAEStatthalterTribut.setdefault(iData3, 0)
-								PAEStatthalterTribut[iData3] = 1
+								CvUtil.addScriptData(pPlot, "tribut", 1)
+
 
 				# -- Tribut fordern --
 				elif iData4 == 1:
@@ -377,8 +374,7 @@ def onModNetMessage(argsList):
 										CyAudioGame().Play2DSound("AS2D_UNIT_BUILD_UNIT")
 
 								# Do this only once per turn
-								PAEStatthalterTribut.setdefault(iData3, 0)
-								PAEStatthalterTribut[iData3] = 1
+								CvUtil.addScriptData(pPlot, "tribut", 1)
 
 				# -- Provinzstatthalter aus der Stadt entfernen --
 				elif iData4 == 2:
@@ -2155,8 +2151,8 @@ def provinceTribute(pCity):
 		if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_POLYARCHY")):
 				return False
 		bDoRebellion = False
-		# PAE VI: alle 10 Runden, Chance 25%
-		if pCity.getGameTurnFounded() % 10 == gc.getGame().getGameTurn() % 10 and CvUtil.myRandom(4, "provinceTribute") == 1:
+		# PAE VI: alle 10 Runden, Chance 20%
+		if pCity.getGameTurnFounded() % 10 == gc.getGame().getGameTurn() % 10 and CvUtil.myRandom(10, "provinceTribute") == 1:
 				#bDoRebellion = False
 				iBuildingClass = gc.getInfoTypeForString("BUILDINGCLASS_PROVINZPALAST")
 				iGold = pPlayer.getGold()
@@ -2472,6 +2468,7 @@ def removeNoBonusNoBuilding(pCity):
 										return
 
 		# Resourcen, die im Stadtkreis sein muessen
+		# Listen stehen auch in CvGameUtils (!)
 		lBuildings = [
 				gc.getInfoTypeForString("BUILDING_STABLE"),
 				gc.getInfoTypeForString("BUILDING_ELEPHANT_STABLE"),
@@ -2480,27 +2477,28 @@ def removeNoBonusNoBuilding(pCity):
 				gc.getInfoTypeForString("BUILDING_PAPYRUSPOST"),
 				gc.getInfoTypeForString("BUILDING_MUREX"),
 				#gc.getInfoTypeForString("BUILDING_GERBEREI"),
-				gc.getInfoTypeForString("BUILDING_FURRIER"),
 				gc.getInfoTypeForString("BUILDING_MARMOR_WERKSTATT")
 		]
 		lBuildings2 = [
 				gc.getInfoTypeForString("BUILDING_GUSS_BLEI"),
 				gc.getInfoTypeForString("BUILDING_GUSS_COPPER"),
 				gc.getInfoTypeForString("BUILDING_GUSS_ZINN"),
-				gc.getInfoTypeForString("BUILDING_GUSS_ZINK")
+				gc.getInfoTypeForString("BUILDING_GUSS_ZINK"),
+				gc.getInfoTypeForString("BUILDINGCLASS_WINDOFEN_NATIONAL")
 		]
 		# Buildings mit 3x3 Radius
-		lBuildings3 = [
+		lBuildings3x3 = [
+				gc.getInfoTypeForString("BUILDING_FURRIER"),
 				gc.getInfoTypeForString("BUILDING_IVORY_MARKET")
 		]
 		if bLager:
 				iRand = 20
 		else:
 				iRand = 5
-		for building in lBuildings + lBuildings2 + lBuildings3:
+		for building in lBuildings + lBuildings2 + lBuildings3x3:
 				if pCity.isHasBuilding(building):
 						if CvUtil.myRandom(iRand, "removeNoBonusNoBuilding4") == 1:
-								if building in lBuildings3:
+								if building in lBuildings3x3:
 										bonus = bonusMissingCity3x3(pCity, building)
 								else:
 										bonus = bonusMissingCity(pCity, building)

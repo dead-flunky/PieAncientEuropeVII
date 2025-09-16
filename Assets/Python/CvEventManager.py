@@ -1912,8 +1912,11 @@ class CvEventManager:
 						pPlayer = gc.getPlayer(iData4)
 						pUnit = pPlayer.getUnit(iData5)
 						if iData2 == -1:
-								# Kaufen
+								# Kaufen in der Stadt
 								if iData3 == 1:
+										PAE_Cultivation.doPopupChooseBonus4Cultivation(pUnit)
+								# Kaufen vom Plot
+								elif iData3 == 2:
 										PAE_Cultivation.doPopupChooseBonus4Cultivation(pUnit)
 								# Collect
 								else:
@@ -2759,11 +2762,12 @@ class CvEventManager:
 				pPlayer = gc.getPlayer(iPlayer)
 				pTeam = gc.getTeam(pPlayer.getTeam())
 
+				# Python Single Player Instanzen (Update auf ScriptData-Basis für MP Spiele)
 				# Reset InstanceModifier (Fighting Promotions, Hiring costs for mercenaries)
-				PAE_Unit.PAEInstanceFightingModifier = []
-				PAE_Mercenaries.PAEInstanceHiringModifier = {}
-				PAE_Mercenaries.PAEMercComission = {}
-				PAE_City.PAEStatthalterTribut = {}
+				#PAE_Unit.PAEInstanceFightingModifier = [] # -> in PAE_Unit.stackDoTurn
+				#PAE_Mercenaries.PAEInstanceHiringModifier = {} # -> hier in dieser Funktion
+				#PAE_Mercenaries.PAEMercComission = {} # -> hier in dieser Funktion
+				#PAE_City.PAEStatthalterTribut = {}    # -> onCityDoTurn
 
 				# ------- Scenario PeloponnesianWarKeinpferd Events Poteidaia, Megara, Plataiai, Syrakus
 				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
@@ -2784,6 +2788,13 @@ class CvEventManager:
 
 				# PAE Debug Mark 2 begin
 				if not bPAEDebugMark2:
+
+					# PAE 7.11d: PAEMercComission: Reset Söldner / Hiring Mercenaries
+					if CvUtil.getScriptData(pPlayer, ["merc"], 0):
+							CvUtil.removeScriptData(pPlayer, "merc")
+					# PAE 7.11d: PAEInstanceHiringModifier
+					if CvUtil.getScriptData(pPlayer, ["hire"], 0):
+							CvUtil.removeScriptData(pPlayer, "hire")
 
 					# -- Prevent BTS TECH BUG/Forschungsbug: AI chooses Tech if -1 -> 50% to push
 					if iPlayer != gc.getBARBARIAN_PLAYER() and not pPlayer.isHuman() and pPlayer.getCurrentResearch() == -1:
@@ -2814,8 +2825,9 @@ class CvEventManager:
 					#        (pLoopUnit, pIter) = pPlayer.nextUnit(pIter, False)
 
 					# +++++ STACKs ---------------------------------------------------------
-					# PAE IV Healer aufladen
+					# PAE IV: Healer aufladen
 					# PAE V: Staedte sind extra
+					# PAE VII: PAEInstanceFightingModifier setzen
 					if iPlayer > -1:
 							PAE_Unit.stackDoTurn(iPlayer, iGameTurn)
 
@@ -5437,6 +5449,12 @@ class CvEventManager:
 
 					if pCity.getOwner() == gc.getBARBARIAN_PLAYER():
 							return
+
+					# PAE 7.11d: Reset Statthaltertribut
+					iBuilding = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
+					if pCity.isHasBuilding(iBuilding):
+							if CvUtil.getScriptData(pCity, ["tribut"], 0):
+									CvUtil.removeScriptData(pCity, "tribut")
 
 					# prevent negative culture due to civil war
 					iBuilding = gc.getInfoTypeForString("BUILDING_CIVIL_WAR")

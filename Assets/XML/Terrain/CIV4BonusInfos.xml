@@ -2109,7 +2109,7 @@
 			<iHappiness>0</iHappiness>
 			<iPlacementOrder>9</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
-			<iMinAreaSize>9</iMinAreaSize>
+			<iMinAreaSize>4</iMinAreaSize>
 			<iMinLatitude>0</iMinLatitude>
 			<iMaxLatitude>50</iMaxLatitude>
 			<Rands>
@@ -2132,6 +2132,10 @@
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_COAST</TerrainType>
+					<bTerrain>1</bTerrain>
+				</TerrainBoolean>
+				<TerrainBoolean>
+					<TerrainType>TERRAIN_RIVER</TerrainType>
 					<bTerrain>1</bTerrain>
 				</TerrainBoolean>
 			</TerrainBooleans>

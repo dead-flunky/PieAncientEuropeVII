@@ -160,13 +160,13 @@ def doPlotFeatures():
 														if iPlotImprovement == gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
 																if iOwner != iPlotOwner and iPlotOwner != -1:
 																		loopPlot.setImprovementType(-1)
+																		CvUtil.removeScriptData(loopPlot, "p")
 																		if gc.getPlayer(iOwner).isHuman():
 																				szText = CyTranslator().getText("TXT_KEY_INFO_CLOSED_TRADEPOST", ("",))
 																				CyInterface().addMessage(iOwner, True, 15, szText, "AS2D_UNIT_BUILD_UNIT", 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
-
 																# Kultur setzen
-																if iPlotOwner == -1:
-																		loopPlot.setCulture(iOwner, 1, True)
+																elif iPlotOwner == -1:
+																		loopPlot.changeCulture(iOwner, 1, True)
 																		loopPlot.setOwner(iOwner)
 																		continue
 														# Kultur bei Forts
@@ -1211,7 +1211,7 @@ def doCheckFortCulture(pPlot):
 		iPlotData = int(CvUtil.getScriptData(pPlot, ["p", "t"], pPlot.getOwner()))
 
 		# Wenn der Plot bereits in kulturellem Besitz ist
-		if pPlot.getOwner() > 0:
+		if pPlot.getOwner() > -1:
 				if iPlotData != -1:
 						CvUtil.removeScriptData(pPlot, "p")
 				return

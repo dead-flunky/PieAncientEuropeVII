@@ -12930,23 +12930,24 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 /***** BTS *********/
 
 /***** PAE *********/
+	if (GC.getBuildingInfo(eBuilding).isRiver()) 
+	{
+		if (plot()->isRiver() || plot()->isRiverSide()) return true;
+		if (!GC.getBuildingInfo(eBuilding).isWater()) return false;
+	}
+
 	if (GC.getBuildingInfo(eBuilding).isWater())
 	{
 		if (!plot()->isAdjacentToWater()) return false;
-		if (!GC.getBuildingInfo(eBuilding).isRiver() && !isCoastal(GC.getBuildingInfo(eBuilding).getMinAreaSize())) return false;
-		if (GC.getBuildingInfo(eBuilding).isRiver() && !(plot()->isRiver() || plot()->isRiverSide())) return false;
+
+		if (!plot()->isCoastalLand(GC.getBuildingInfo(eBuilding).getMinAreaSize())) return false;
 	}
-	else if (GC.getBuildingInfo(eBuilding).isRiver() && !(plot()->isRiver() || plot()->isRiverSide()))
+
+	if (GC.getBuildingInfo(eBuilding).getMinAreaSize() > 0 && area()->getNumTiles() < GC.getBuildingInfo(eBuilding).getMinAreaSize())
 	{
 		return false;
 	}
-	else
-	{
-		if (GC.getBuildingInfo(eBuilding).getMinAreaSize() && area()->getNumTiles() < GC.getBuildingInfo(eBuilding).getMinAreaSize())
-		{
-			return false;
-		}
-	}
+
 /***** PAE *********/
 
 	return true;

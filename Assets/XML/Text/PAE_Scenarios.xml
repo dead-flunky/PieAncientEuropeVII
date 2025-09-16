@@ -3356,7 +3356,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_THE_ELDER</Tag>
 		<English></English>
 		<French></French>
-		<German>Der &#196;lteste ist besiegt! Damit hat %s1 seinen besten K&#228;mpfer verloren. Und wir konnten seinen engsten Vertrauten festnehmen. Oswald, ein viel gereister Mann, der sich in den W&#228;ldern bestens auskennt, ist weise genug, die richtigen Entscheidungen zu treffen. Bevor er am Galgenbaum endet, kniet er nieder und schw&#246;rt ewige Treue.[NEWLINE][NEWLINE]Ihr nehmt ihn gerne auf, von seinem Wissen und seinen F&#228;higkeiten k&#246;nnen wir nur profitieren.[NEWLINE][NEWLINE][ICON_BULLET] Ihr erhaltet 1 gro&#223;en Spion namens "Oswald"</German>
+		<German>Der &#196;lteste ist besiegt! Damit hat %s1 seinen besten K&#228;mpfer verloren. Und wir konnten seinen engsten Vertrauten festnehmen. Oswald, ein viel gereister Mann, der sich in den W&#228;ldern bestens auskennt, ist weise genug, die richtigen Entscheidungen zu treffen. Bevor er am Galgenbaum endet, kniet er nieder und schw&#246;rt ewige Treue.[NEWLINE][NEWLINE]Ihr nehmt ihn gerne auf, von seinem Wissen und seinen F&#228;higkeiten k&#246;nnen wir nur profitieren.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GROSSER SPION</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -4439,6 +4439,30 @@
 		<German>Tekatae der Volcae</German>
 		<Italian>Tekatae il Volcae</Italian>
 		<Spanish>Tekatae el Volcae</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCEN_CIV_WARNEN</Tag>
+		<English>Warns</English>
+		<French>Warnes</French>
+		<German>Warnen</German>
+		<Italian>Varni</Italian>
+		<Spanish>Varnos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCEN_CIV_WARNEN_ADJECTIVE</Tag>
+		<English>warnian</English>
+		<French>warnien</French>
+		<German>warnisch/e/r</German>
+		<Italian>warniano</Italian>
+		<Spanish>warniano</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_SCEN_CIV_WARNEN_LEADER</Tag>
+		<English>Boiorix the Warne</English>
+		<French>Boiorix le Warne</French>
+		<German>Boiorix der Warne</German>
+		<Italian>Boiorix il Warne</Italian>
+		<Spanish>Boiorix el Warne</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCEN_EDETANI_LEADER</Tag>
