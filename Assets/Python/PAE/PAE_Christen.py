@@ -287,12 +287,14 @@ def doReligionsKonflikt(pCity):
 		else: iChance = 2
 
 		# Chance to abort
-		if CvUtil.myRandom(100, "ReligionsKonflikt") >= iChance:
+		if CvUtil.myRandom(100, "ReligionsKonflikt1") >= iChance:
 			return False
 
 		# 2%: Poly Reli als Staatsreli, aber kein aktiver Krieg
 		# BTS Event System: EVENTTRIGGER_NO_WAR (aktiv)
 
+		# Juden werden zeitweise geduldet
+		iJudentum = gc.getInfoTypeForString("RELIGION_JUDAISM")
 
 		# Stadt hat mindestens 2 verschiedene Relis (Staatsreligion ausgenommen)
 		iStateReligion = pPlayer.getStateReligion()
@@ -310,14 +312,21 @@ def doReligionsKonflikt(pCity):
 
 		# größere Städte dürfen mehr Religionen gleichzeitig haben
 		# friedvolle Anzahl: je nach Stadtgröße 1-3 verschiedene Religionen
-		iKonflikt = 1
-		if pCity.getPopulation() > 11: iKonflikt += 2
-		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")): iKonflikt += 1
+		iPuffer = 1
+		if pCity.getPopulation() > 11: iPuffer += 2
+		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")): iPuffer += 1
+		
+		# Judentum wird zeitweise geduldet
+		bJudentum = False
+		if pCity.isHasReligion(iJudentum):
+			bJudentum = True
+			if CvUtil.myRandom(3, "ReligionsKonflikt2: iJudentum") < 2:
+				iPuffer += 1
 
-		if iNumReligions > iKonflikt:
+		if iNumReligions > iPuffer:
 
 			# Religion auswählen
-			i = CvUtil.myRandom(len(LOtherReligions), "ReligionsKonflikt4: LOtherReligions")
+			i = CvUtil.myRandom(len(LOtherReligions), "ReligionsKonflikt3: LOtherReligions")
 			iReligion = LOtherReligions[i]
 
 			#pCity.changeOccupationTimer(1)
@@ -327,7 +336,7 @@ def doReligionsKonflikt(pCity):
 
 			# 1:3 Der Tempel wird zerstört
 			bTempel = False
-			if CvUtil.myRandom(3, "ReligionsKonflikt1") == 1:
+			if CvUtil.myRandom(3, "ReligionsKonflikt4") == 1:
 				iRange = gc.getNumBuildingInfos()
 				for iBuildingLoop in range(iRange):
 					if pCity.isHasBuilding(iBuildingLoop):
@@ -345,13 +354,13 @@ def doReligionsKonflikt(pCity):
 										None, 2, gc.getBuildingInfo(iBuildingLoop).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 			# 1:3 Die Stadt wird in Brand gesteckt
-			if CvUtil.myRandom(3, "ReligionsKonflikt1") == 1:
+			if CvUtil.myRandom(3, "ReligionsKonflikt5") == 1:
 					iEvent = gc.getInfoTypeForString("EVENTTRIGGER_CITY_FIRE_CRISIS")
 					pPlayer.trigger(iEvent)
 					pPlayer.resetEventOccured(iEvent)
 
 			# 1:4 Stadt verliert Pop und ggf Religion
-			if CvUtil.myRandom(4, "ReligionsKonflikt3") == 1:
+			if CvUtil.myRandom(4, "ReligionsKonflikt6") == 1:
 				# Pop abziehen
 				iPop = int(pCity.getPopulation() / 5)
 				iPop = max(1,iPop)
@@ -372,12 +381,17 @@ def doReligionsKonflikt(pCity):
 					None, 2, "", ColorTypes(7), -1, -1, False, False)
 
 				# 1:4 die andere Religion fliegt raus
-				if bTempel and CvUtil.myRandom(4, "ReligionsKonflikt4") == 1:
+				if bTempel and CvUtil.myRandom(4, "ReligionsKonflikt7") == 1:
 					pCity.setHasReligion(iReligion, 0, 0, 0)
 					if pPlayer.isHuman():
 						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_4", (pCity.getName(),gc.getReligionInfo(iReligion).getText())),
 						None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 			return True
+
+		elif iNumReligions > 1 and bJudentum:
+			if pPlayer.isHuman():
+				CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_5", (pCity.getName(),)),
+				None, 2, gc.getReligionInfo(iJudentum).getButton(), ColorTypes(11), pCity.getX(), pCity.getY(), True, True)
 
 		return False
 

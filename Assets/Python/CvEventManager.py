@@ -1952,7 +1952,9 @@ class CvEventManager:
 						iCityOwner = iData3
 						PAE_Trade.doBuyBonus(pUnit, eBonus, iCityOwner)
 
-				# 743 free
+				# popupUsurpatorTribut
+				elif iData1 == 743:
+						PAE_Unit.onModNetMessage(argsList)
 
 				# 744-748: Automated trade routes
 				# Automated trade route: first popup (choose civ 1)
@@ -3046,7 +3048,6 @@ class CvEventManager:
 
 					# PAE 6.16 Ranged Combat / Range Attack / Fernangriff
 					# PAE 7.10 in CvPlayerAI::AI_doTurnUnitsPre()
-					"""
 					if not pPlayer.isHuman():
 							iRange = 1
 							pTeam = gc.getTeam(pPlayer.getTeam())
@@ -3099,7 +3100,7 @@ class CvEventManager:
 													#loopUnit.finishMoves()
 					
 									(loopUnit, pIter) = pPlayer.nextUnit(pIter, False)
-					"""
+
 				# PAE Debug Mark 3 end
 
 				# ++ Standard BTS ++
@@ -5214,6 +5215,10 @@ class CvEventManager:
 									if iNewOwnerCulture < iPreviousOwnerCulture:
 											pCity.setCulture(iNewOwner, iPreviousOwnerCulture, 1)
 											pCity.setCulture(iPreviousOwner, iNewOwnerCulture, 1)
+
+									# PAE 7.11: Revolt reset
+									pCity.setOccupationTimer(0)
+									pCity.changePopulation(1) # kleiner Bonus (hidden citizens)
 
 					# ------- Stadtnamenswechsel: Rename barbarian tribes (cities) B(xy) to C(xy)
 					if iOriginalOwner == gc.getBARBARIAN_PLAYER() or iPreviousOwner == gc.getBARBARIAN_PLAYER():

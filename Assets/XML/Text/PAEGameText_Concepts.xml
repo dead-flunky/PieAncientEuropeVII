@@ -337,6 +337,14 @@
 		<Spanish>Unidades: Rango militar</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_USURPATOR</Tag>
+		<English>Usurpers</English>
+		<French>Usurpateurs</French>
+		<German>Usurpatoren</German>
+		<Italian>Usurpatori</Italian>
+		<Spanish>Usurpadores</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_VASSALS</Tag>
 		<English>Vassals</English>
 		<French>Vassalit&#233;</French>

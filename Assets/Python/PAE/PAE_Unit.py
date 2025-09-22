@@ -165,6 +165,10 @@ def stackDoTurn(iPlayer, iGameTurn):
 		lFormationPlots = []
 		iPromoFort = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS")
 		iPromoFort2 = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2")
+		eSupplyUnit = gc.getInfoTypeForString("UNIT_SUPPLY_WAGON")
+		# PAE 7.12 Usurpatoren
+		lLeaders = []
+		iPromoLeader = gc.getInfoTypeForString("PROMOTION_LEADER")
 
 		# Plots herausfinden
 		# if iPlayer != gc.getBARBARIAN_PLAYER():
@@ -190,12 +194,19 @@ def stackDoTurn(iPlayer, iGameTurn):
 				tmpA = [sUnit.getX(), sUnit.getY()]
 				tmpPlot = sUnit.plot()
 				if not tmpPlot.isWater():
+
 						# if sUnit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_HEALER"):
-						if sUnit.getUnitType() == gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"):
+						if sUnit.getUnitType() == eSupplyUnit:
 								if tmpA not in lHealerPlots:
 										lHealerPlots.append(tmpA)
+
+						# PAE 7.12 Usurpatoren
+						if tmpPlot.getOwner() == iPlayer and sUnit.isHasPromotion(iPromoLeader):
+								lLeaders.append(sUnit)
+
 						# PAE V: bei den Staedten gibts ne eigene funktion bei city supply
 						if not tmpPlot.isCity():
+
 								if tmpA not in PlotArraySupply:
 										# 1. Instanz - Versorgung auf Land
 										tmpAnz = tmpPlot.getNumDefenders(iPlayer)
@@ -288,7 +299,7 @@ def stackDoTurn(iPlayer, iGameTurn):
 						pLoopUnit = loopPlot.getUnit(iUnit)
 						if pLoopUnit.getOwner() == iPlayer:
 								# if pLoopUnit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_HEALER"):
-								if pLoopUnit.getUnitType() == gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"):
+								if pLoopUnit.getUnitType() == eSupplyUnit:
 										if getSupply(pLoopUnit) < getMaxSupply(pLoopUnit):
 												lHealer.append(pLoopUnit)
 
@@ -363,8 +374,7 @@ def stackDoTurn(iPlayer, iGameTurn):
 
 		# +++++ Versorgung der Armee - supply wagon ---------------------------------------
 		if PlotArraySupply:
-				iUnitSupplyWagon = gc.getInfoTypeForString("UNIT_SUPPLY_WAGON")
-
+				eDessert = gc.getInfoTypeForString("TERRAIN_DESERT")
 				for h in PlotArraySupply:
 						loopPlot = gc.getMap().plot(h[0], h[1])
 						# Init
@@ -381,7 +391,7 @@ def stackDoTurn(iPlayer, iGameTurn):
 										if pLoopUnit.getOwner() == iPlayer:
 												iUnitType = pLoopUnit.getUnitCombatType()
 												# if iUnitType == gc.getInfoTypeForString("UNITCOMBAT_HEALER"):
-												if pLoopUnit.getUnitType() == iUnitSupplyWagon:
+												if pLoopUnit.getUnitType() == eSupplyUnit:
 														lHealer.append(pLoopUnit)
 												else:
 														if iUnitType in L.LMountedSupplyCombats:
@@ -394,7 +404,7 @@ def stackDoTurn(iPlayer, iGameTurn):
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST", ("UNITCOMBAT_HEALER", len(lHealer))), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 						# Plot properties
-						bDesert = (loopPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_DESERT"))
+						bDesert = (loopPlot.getTerrainType() == eDessert)
 
 						# 1. Versorgen
 						for loopUnit in lHealer:
@@ -482,13 +492,16 @@ def stackDoTurn(iPlayer, iGameTurn):
 										CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_NOSUPPLY_PLOT_2", (iUnitStackMounted, 15, iStackLimit1)), None, 2, None, ColorTypes(12), loopPlot.getX(), loopPlot.getY(), True, True)
 
 
-
-
 		# +++++ Rebellious STACKs ---------------
 		# Stack can become independent / rebellious
 		# per Unit 0.5%, pro Runde 25% check chance
 		if PlotArrayRebellion and CvUtil.myRandom(4, "StackRebellion") == 1:
 				doStackRebellion(iPlayer, PlotArrayRebellion, iStackLimit2)
+
+		# PAE 7.12 Usurpatoren
+		if len(lLeaders) > 1:
+				doUsurpatorCheck(lLeaders)
+
 
 
 def doStackRebellion(iPlayer, PlotArrayRebellion, iStackLimit2):
@@ -3119,6 +3132,7 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 				bNoCivilWar = pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_POLYARCHIE"))
 				eBuildingStadt = gc.getInfoTypeForString("BUILDING_STADT")
 				eBuildingClass = gc.getBuildingInfo(eBuildingStadt).getBuildingClassType()
+				eBuildingProvinzPalast = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
 
 				iTeam = pPlayer.getTeam()
 				pTeam = gc.getTeam(iTeam)
@@ -3168,25 +3182,6 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 				(loopCity, pIter) = pPlayer.firstCity(False)
 				while loopCity:
 						if not loopCity.isNone():  # only valid cities
-								
-								#if CvUtil.myRandom(iLeader, "Stadtaufruhr1") == 0: # bis PAE 6.14
-								# PAE 6.15: Chance 10%
-								if not bNoCivilWar and CvUtil.myRandom(10, "Stadtaufruhr1") == 0:
-										# 2 bis 4 Runden Aufstand!
-										#iRand = 2 + CvUtil.myRandom(2, "Stadtaufruhr2")
-
-										# in Abhaengigkeit von HURRY_ANGER_DIVISOR (GlobalDefines.xml) und iHurryConscriptAngerPercent (GameSpeedInfo.xml)
-										#iRand = loopCity.flatHurryAngerLength()
-										# loopCity.changeHurryAngerTimer(iRand)
-
-										# Stadt ohne Kulturgrenzen
-										#iRand = 2 + CvUtil.myRandom(3, "Stadtaufruhr3")
-										#loopCity.setOccupationTimer (iRand)
-										# if pPlayer.isHuman():
-										#    CyInterface().addMessage(iPlayer, True, 5, CyTranslator().getText("TXT_KEY_MAIN_CITY_RIOT", (loopCity.getName(),)), "AS2D_REVOLTSTART", 2, ",Art/Interface/Buttons/Promotions/Combat5.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10", ColorTypes(7), loopCity.getX(), loopCity.getY(), True, True)
-
-										# Civil War (ab PAE 6.3.2)
-										PAE_City.doStartCivilWar(loopCity, 100)
 
 								# PAE 6.14: -1 in jeder Stadt (Stadtstatus: Stadt)
 								if loopCity.isHasBuilding(eBuildingStadt):
@@ -3199,6 +3194,43 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 										#			iPlayer, False, 20, "", None, 2, "Art/Interface/Buttons/General/button_icon_angry.dds",
 										#			ColorTypes(7), loopCity.getX(), loopCity.getY(), True, True
 										#		)
+
+								#if CvUtil.myRandom(iLeader, "Stadtaufruhr1") == 0: # bis PAE 6.14
+								# PAE 6.15: Chance 10%
+								# PAE 7.12: Usurpatoren 1:4
+								if gc.getPlayer(gc.getGame().getActivePlayer()).getName() == "Apocalypto":
+									iChance = 2
+								else:
+									iChance = 4
+								if not bNoCivilWar:
+									if loopCity.isHasBuilding(eBuildingProvinzPalast):
+										if CvUtil.myRandom(iChance, "Stadtaufruhr1") == 0:
+											# 2 bis 4 Runden Aufstand!
+											#iRand = 2 + CvUtil.myRandom(2, "Stadtaufruhr2")
+
+											# in Abhaengigkeit von HURRY_ANGER_DIVISOR (GlobalDefines.xml) und iHurryConscriptAngerPercent (GameSpeedInfo.xml)
+											#iRand = loopCity.flatHurryAngerLength()
+											# loopCity.changeHurryAngerTimer(iRand)
+
+											# Stadt ohne Kulturgrenzen
+											#iRand = 2 + CvUtil.myRandom(3, "Stadtaufruhr3")
+											#loopCity.setOccupationTimer (iRand)
+											# if pPlayer.isHuman():
+											#    CyInterface().addMessage(iPlayer, True, 5, CyTranslator().getText("TXT_KEY_MAIN_CITY_RIOT", (loopCity.getName(),)), "AS2D_REVOLTSTART", 2, ",Art/Interface/Buttons/Promotions/Combat5.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10", ColorTypes(7), loopCity.getX(), loopCity.getY(), True, True)
+
+											# PAE 7.12: Usurpatoren-Feature
+											doUsurpator(loopCity)
+
+											# Einheiten verletzen
+											PAE_City.doCivilWarHarmUnits(loopCity)
+											
+											# PAE 7.1: Stadtmauerverteidigung dezimieren
+											iDefense = loopCity.getDefenseDamage()
+											iDamage = int(iDefense * 2 / 3)
+											loopCity.changeDefenseDamage(-iDamage)
+
+											# Civil War (ab PAE 6.3.2)
+											#PAE_City.doStartCivilWar(loopCity, 100)
 
 						(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
@@ -3276,6 +3308,244 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 						# wenn ein General stirbt sollen die Vasallenverhältnisse gecheckt werden
 						if not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_VASSAL_STATES):
 								PAE_Vassal.onCityAcquired(None, iWinnerPlayer, iPlayer)
+
+# PAE 7.12
+def doUsurpator(pCity):
+		iPlayer = pCity.getOwner()
+		pPlayer = gc.getPlayer(iPlayer)
+		pPlot = pCity.plot()
+		iX = pCity.getX()
+		iY = pCity.getY()
+
+		# Plots checken
+		lPlotsA = [] # hills & forests
+		lPlotsB = [] # hills or forests
+		lPlotsC = [] # rest
+		#for iI in range(gc.getNUM_CITY_PLOTS()):
+		#	loopPlot = pCity.getCityIndexPlot(iI)
+		for iI in range(DirectionTypes.NUM_DIRECTION_TYPES):
+			loopPlot = plotDirection(iX, iY, DirectionTypes(iI))
+			if not loopPlot.isNone():
+				if not loopPlot.isWater() and not loopPlot.isPeak() and not loopPlot.isImpassable():
+					if loopPlot.isHills() and loopPlot.getFeatureType() != -1:
+						lPlotsA.append(loopPlot)
+					elif loopPlot.isHills() or loopPlot.getFeatureType() != -1:
+						lPlotsB.append(loopPlot)
+					else:
+						lPlotsC.append(loopPlot)
+
+		# Plot definieren
+		pPlotUsurpator = None
+		lPlots = []
+		if   len(lPlotsA): lPlots = lPlotsA
+		elif len(lPlotsB): lPlots = lPlotsB
+		elif len(lPlotsC): lPlots = lPlotsC
+
+		if len(lPlots):
+			iRand = CvUtil.myRandom(len(lPlots), "Plot for Usurpation")
+			pPlotUsurpator = lPlots[iRand]
+
+		if pPlotUsurpator != None:
+			pLeaderUnit = -1
+			iLeaderUnitsCombat = 0
+			lUnits = []
+			# Einheiten auslesen
+			for i in range(pPlot.getNumUnits()):
+					pUnit = pPlot.getUnit(i)
+					# pUnit.getOwner() == iPlayer rausgenommen, falls Units anderer CIVs mitmachen wollen
+					if pUnit.isMilitaryHappiness() or pUnit.isOnlyDefensive():
+							lUnits.append(pUnit)
+
+			# Einheiten kopieren und setzen
+			pNewPlayer = gc.getPlayer(gc.getBARBARIAN_PLAYER())
+			for pOldUnit in lUnits:
+				iUnitType = pOldUnit.getUnitType()
+				pNewUnit = pNewPlayer.initUnit(iUnitType, pPlotUsurpator.getX(), pPlotUsurpator.getY(), UnitAITypes(pOldUnit.getUnitAIType()), DirectionTypes.DIRECTION_SOUTH)
+				initUnitFromUnit(pOldUnit, pNewUnit)
+
+				if gc.getUnitInfo(iUnitType).getCombat() > iLeaderUnitsCombat:
+					pLeaderUnit = pNewUnit
+					iLeaderUnitsCombat = gc.getUnitInfo(iUnitType).getCombat()
+
+			# Hilfstruppen
+			if len(lUnits) < 10:
+				pTeam = gc.getTeam(pPlayer.getTeam())
+				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_FOEDERATI")):
+					if pCity.hasBonus(gc.getInfoTypeForString("BONUS_HORSE")):
+						iUnitType = gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN")
+					else:
+						iUnitType = gc.getInfoTypeForString("UNIT_FOEDERATI")
+				elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_BUERGERSOLDATEN")):
+					iUnitType = gc.getInfoTypeForString("UNIT_SCHILDTRAEGER")
+				else:
+					iUnitType = gc.getInfoTypeForString("UNIT_REBELL")
+
+				iDiff = 10 - len(lUnits)
+				for i in range(iDiff):
+					if i % 2 == 0: iUnitAIType = UnitAITypes.UNITAI_ATTACK_CITY_LEMMING
+					else: iUnitAIType = UnitAITypes.UNITAI_ATTACK
+					pNewUnit = pNewPlayer.initUnit(iUnitType, pPlotUsurpator.getX(), pPlotUsurpator.getY(), iUnitAIType, DirectionTypes.DIRECTION_SOUTH)
+
+					if gc.getUnitInfo(iUnitType).getCombat() > iLeaderUnitsCombat:
+						pLeaderUnit = pNewUnit
+						iLeaderUnitsCombat = gc.getUnitInfo(iUnitType).getCombat()
+
+			# Leader erstellen
+			pLeaderUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER"), True)
+			pLeaderUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADERSHIP"), True)
+			pLeaderUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_LOYALITAT"), True)
+			pLeaderUnit.setLeaderUnitType(pLeaderUnit.getUnitType())
+			txtName = CyTranslator().getText("TXT_KEY_UNIT_USURPATOR", ()) + u" " + getGGName(pPlayer)
+			pLeaderUnit.setName(txtName);
+
+			# Provinzpalast entfernen
+			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST"),0)
+
+			# Meldungen
+			szButton = ",Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10"
+			iRange = gc.getMAX_PLAYERS()
+			for iSecondPlayer in range(iRange):
+					pSecondPlayer = gc.getPlayer(iSecondPlayer)
+					iSecTeam = pSecondPlayer.getTeam()
+
+					# info for the player
+					if iPlayer == iSecondPlayer and pPlayer.isHuman():
+							szText = CyTranslator().getText("[ICON_STRENGTH]", ()) + CyTranslator().getText("TXT_KEY_MESSAGE_USURPATOR_INSIDE", (pCity.getName(), ))
+							CyInterface().addMessage(iPlayer, True, 20, szText, None, 2, szButton, ColorTypes(11), pPlotUsurpator.getX(), pPlotUsurpator.getY(), True, True)
+
+							szText =  CyTranslator().getText("TXT_KEY_MESSAGE_USURPATOR_TITLE", ()) + CyTranslator().getText("[NEWLINE][NEWLINE]", ()) + szText
+							popupInfo = CyPopupInfo()
+							popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+							popupInfo.setText(szText)
+							popupInfo.addPopup(iPlayer)
+
+					# info for all
+					elif pSecondPlayer.isHuman():
+							if gc.getTeam(iSecTeam).isHasMet(pPlayer.getTeam()):
+									CyInterface().addMessage(iSecondPlayer, True, 15,
+									CyTranslator().getText("TXT_KEY_MESSAGE_USURPATOR_OUTSIDE", (pCity.getName(), pPlayer.getCivilizationShortDescription(0))),
+									None, 2, szButton, ColorTypes(14), pPlotUsurpator.getX(), pPlotUsurpator.getY(), True, True)
+
+
+# PAE 7.12
+# chance ab 0.5%, je mehr Leader, desto höher die Chance
+def doUsurpatorCheck(lLeaders):
+		if CvUtil.myRandom(200, "Leader check for usurpation") < len(lLeaders):
+			# choose unit
+			iRand = CvUtil.myRandom(len(lLeaders), "Get leader for usurpation")
+			pUnit = lLeaders[iRand]
+
+			# keine Rebellion wenn in einer Stadt
+			if pUnit.plot().isCity():
+				return
+
+			iPlayer = pUnit.getOwner()
+			pPlayer = gc.getPlayer(iPlayer)
+
+			if pPlayer.isHuman() and iPlayer == gc.getGame().getActivePlayer():
+
+				iGold = int(pPlayer.getGold() / 3)
+				iRand = 1+CvUtil.myRandom(5, "Usurpator popup text")
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_USURPATOR_" + str(iRand), (pUnit.getName(),iGold)))
+				popupInfo.setData1(iPlayer)
+				popupInfo.setData2(pUnit.getID())
+				popupInfo.setOnClickedPythonCallback("popupUsurpatorTribut")
+
+				# Button 0: Einfluss verbessern
+				popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_USURPATOR_YES", ()), "Art/Interface/Buttons/Actions/button_statthalter_einfluss.dds")
+
+				# Cancel button
+				popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_USURPATOR_NO", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
+				popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
+				popupInfo.addPopup(iPlayer)
+
+			# AI
+			else:
+				if CvUtil.myRandom(20, "AI leader gets usurper") == 1:
+					doUsurpatorGeneral(pUnit)
+				else:
+					iGold = int(pPlayer.getGold() / 3)
+					pPlayer.changeGold(-iGold)
+
+
+def doUsurpatorGeneral(pUnit):
+		iPlayer = pUnit.getOwner()
+		pPlayer = gc.getPlayer(iPlayer)
+		pPlot = pUnit.plot()
+		lOldUnits = []
+
+		# General umbenennen (vor dem Kopieren)
+		if pUnit.getName() == "":
+			txtName = CyTranslator().getText("TXT_KEY_UNIT_USURPATOR", ()) + u" " + getGGName(pPlayer)
+		else:
+			txtName = CyTranslator().getText("TXT_KEY_UNIT_USURPATOR", ()) + u" " + pUnit.getName()
+		pUnit.setName(txtName)
+
+		# Einheiten auslesen und auf einen anderen Plot setzen
+		iNumUnits = pPlot.getNumUnits()
+		for i in range(iNumUnits):
+			loopUnit = pPlot.getUnit(i)
+			if loopUnit.getOwner() == iPlayer:
+				lOldUnits.append(loopUnit)
+			loopUnit.jumpToNearestValidPlot()
+
+		# Einheiten kopieren und killen
+		pNewPlayer = gc.getPlayer(gc.getBARBARIAN_PLAYER())
+		iNumOldUnits = len(lOldUnits)
+		if iNumOldUnits:
+			for pOldUnit in lOldUnits:
+				iUnitType = pOldUnit.getUnitType()
+				pNewUnit = pNewPlayer.initUnit(iUnitType, pPlot.getX(), pPlot.getY(), UnitAITypes(pOldUnit.getUnitAIType()), DirectionTypes.DIRECTION_SOUTH)
+				initUnitFromUnit(pOldUnit, pNewUnit)
+				pNewUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_LOYALITAT"), True)
+				pOldUnit.kill(True, -1)
+
+		# Hilfstruppen
+		if iNumOldUnits < 10:
+			pTeam = gc.getTeam(pPlayer.getTeam())
+			if pTeam.isHasTech(gc.getInfoTypeForString("TECH_FOEDERATI")):
+				if pCity.hasBonus(gc.getInfoTypeForString("BONUS_HORSE")):
+					iUnitType = gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN")
+				else:
+					iUnitType = gc.getInfoTypeForString("UNIT_FOEDERATI")
+			elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_BUERGERSOLDATEN")):
+				iUnitType = gc.getInfoTypeForString("UNIT_SCHILDTRAEGER")
+			else:
+				iUnitType = gc.getInfoTypeForString("UNIT_REBELL")
+
+			iDiff = 10 - iNumOldUnits
+			for i in range(iDiff):
+				iUnitAIType = UnitAITypes.UNITAI_ATTACK
+				pNewUnit = pNewPlayer.initUnit(iUnitType, pPlot.getX(), pPlot.getY(), iUnitAIType, DirectionTypes.DIRECTION_SOUTH)
+				pNewUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_LOYALITAT"), True)
+
+		# Meldungen
+		szButton = ",Art/Interface/Buttons/Units/GreatEngineer.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,5,10"
+		iRange = gc.getMAX_PLAYERS()
+		for iSecondPlayer in range(iRange):
+				pSecondPlayer = gc.getPlayer(iSecondPlayer)
+				iSecTeam = pSecondPlayer.getTeam()
+
+				# info for the player
+				if iPlayer == iSecondPlayer and pPlayer.isHuman():
+						szText = CyTranslator().getText("[ICON_STRENGTH]", ()) + CyTranslator().getText("TXT_KEY_MESSAGE_USURPATOR_INSIDE2", (pUnit.getName(),))
+						CyInterface().addMessage(iPlayer, True, 20, szText, None, 2, szButton, ColorTypes(11), pPlot.getX(), pPlot.getY(), True, True)
+
+						szText =  CyTranslator().getText("TXT_KEY_MESSAGE_USURPATOR_TITLE2", ()) + CyTranslator().getText("[NEWLINE][NEWLINE]", ()) + szText
+						popupInfo = CyPopupInfo()
+						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+						popupInfo.setText(szText)
+						popupInfo.addPopup(iPlayer)
+
+				# info for all
+				elif pSecondPlayer.isHuman():
+						if gc.getTeam(iSecTeam).isHasMet(pPlayer.getTeam()):
+								CyInterface().addMessage(iSecondPlayer, True, 15,
+								CyTranslator().getText("TXT_KEY_MESSAGE_USURPATOR_OUTSIDE2", (pPlayer.getCivilizationShortDescription(0),)),
+								None, 2, szButton, ColorTypes(14), pPlot.getX(), pPlot.getY(), True, True)
+
 
 
 def unsettledSlaves(iPlayer):
@@ -4510,9 +4780,22 @@ def onModNetMessage(argsList):
 	iData2 = iData1
 	iData1 = iData0
 
+	# Usurpator (stehender General)
+	# NetID , -1, iButtonId, iPlayer, iUnitID
+	if iData1 == 743:
+		pPlayer = gc.getPlayer(iData4)
+		pUnit = pPlayer.getUnit(iData5)
+		# Bezahlen
+		if iData3 == 0:
+			iGold = int(pPlayer.getGold() / 3)
+			pPlayer.changeGold(-iGold)
+		# Bezahlung verweigern
+		else:
+			doUsurpatorGeneral(pUnit)
+
 	# Unit mission button: Go2City
 	# iData2: keine Stadt -1 oder StadtID
-	if iData1 == 773:
+	elif iData1 == 773:
 		pPlayer = gc.getPlayer(iData4)
 		pUnit = pPlayer.getUnit(iData5)
 		pCapital = False

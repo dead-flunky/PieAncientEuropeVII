@@ -102,6 +102,20 @@ def doPlotFeatures():
 		# GoodyPlots = []
 		MovingBonus = []
 
+		# Inits for plots check
+		eHandelsposten = gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN")
+		eLion = gc.getInfoTypeForString("UNIT_LION")
+		eBear = gc.getInfoTypeForString("UNIT_BEAR")
+		eWolf = gc.getInfoTypeForString("UNIT_WOLF")
+		eHorse = gc.getInfoTypeForString("UNIT_HORSE")
+		eHorseTech = gc.getInfoTypeForString("TECH_PFERDEZUCHT")
+		eCamel = gc.getInfoTypeForString("UNIT_CAMEL")
+		eCamelTech = gc.getInfoTypeForString("TECH_KAMELZUCHT")
+		eElefant = gc.getInfoTypeForString("UNIT_ELEFANT")
+		eElefantTech = gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")
+		eEsel = gc.getInfoTypeForString("UNIT_ESEL")
+		eEselTech = gc.getInfoTypeForString("TECH_FENCES")
+
 		# map
 		iMapW = gc.getMap().getGridWidth()
 		iMapH = gc.getMap().getGridHeight()
@@ -157,7 +171,7 @@ def doPlotFeatures():
 														iOwner = -1
 														iOwner = int(CvUtil.getScriptData(loopPlot, ["p", "t"], loopPlot.getOwner()))
 														# Handelsposten entfernen, wenn der Plot in einem fremden Kulturkreis liegt
-														if iPlotImprovement == gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
+														if iPlotImprovement == eHandelsposten:
 																if iOwner != iPlotOwner and iPlotOwner != -1:
 																		loopPlot.setImprovementType(-1)
 																		CvUtil.removeScriptData(loopPlot, "p")
@@ -181,103 +195,73 @@ def doPlotFeatures():
 														if loopPlot.getBonusType(-1) == bonus_lion and iPlotImprovement == -1:
 																if loopPlot.getNumUnits() == 0:
 																		if CvUtil.myRandom(33, "lion") == 1:
-																				iUnitType = gc.getInfoTypeForString("UNIT_LION")
-																				pBarbPlayer.initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																				pBarbPlayer.initUnit(eLion, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				# ***TEST***
 																				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "Barb. Atlasloewe erschaffen", None, 2, None, ColorTypes(10), 0, 0, False, False)
 																				continue
-														# Wolf - 3% Appearance
-														# elif loopPlot.getBonusType(iPlotOwner) == bonus_dogs and iPlotImprovement == -1:
-														#		if loopPlot.getNumUnits() == 0:
-														#				if CvUtil.myRandom(33, "wolf") == 1:
-														#						iUnitType = gc.getInfoTypeForString("UNIT_WOLF")
-														#						pBarbPlayer.initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
-														#						continue
-														# Bear
+														# Bear of Wolf
 														elif loopPlot.getBonusType(-1) == bonus_deer and iPlotImprovement == -1:
 																if loopPlot.getNumUnits() == 0:
-																		iRand = CvUtil.myRandom(20, "deer or bear")
-																		# if iRand == 0:
-																		#		iUnitType = gc.getInfoTypeForString("UNIT_DEER")
-																		#		pBarbPlayer.initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-																		#		continue
-																		if iRand == 1:
-																				iUnitType = gc.getInfoTypeForString("UNIT_BEAR")
-																				pBarbPlayer.initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																		iRand = CvUtil.myRandom(20, "bear or wolf")
+																		if iRand == 0:
+																				pBarbPlayer.initUnit(eWolf, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				continue
-														# Boar/Schwarzwild - 3% Appearance
-														# elif loopPlot.getBonusType(iPlotOwner) == bonus_pig and iPlotImprovement == -1:
-														#		if loopPlot.getNumUnits() == 0:
-														#				if CvUtil.myRandom(33, "boar") == 1:
-														#						iUnitType = gc.getInfoTypeForString("UNIT_BOAR")
-														#						pBarbPlayer.initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-														#						continue
+																		elif iRand == 1:
+																				pBarbPlayer.initUnit(eBear, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																				continue
 														# Horse
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_horse:
-																iUnitType = gc.getInfoTypeForString("UNIT_HORSE")
-																#iUnitTypeDom = gc.getInfoTypeForString("UNIT_HORSE")
-																iTechDom = gc.getInfoTypeForString("TECH_PFERDEZUCHT")
-																sTextDom = "TXT_KEY_INFO_DOM_HORSE"
 																if loopPlot.getNumUnits() == 0:
 																		if CvUtil.myRandom(45, "horse") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1 and iPlotOwner != iBarbPlayer:
-																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(iTechDom):
+																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(eHorseTech):
 																								iNewUnitOwner = iPlotOwner
-																								#iUnitType = iUnitTypeDom
 																						elif gc.getPlayer(iPlotOwner).isHuman():
-																								CyInterface().addMessage(iPlotOwner, True, 10, CyTranslator().getText(sTextDom, ("",)), None, 2, gc.getBonusInfo(bonus_horse).getButton(), ColorTypes(13), x, y, True, True)
+																								CyInterface().addMessage(iPlotOwner, True, 10, CyTranslator().getText("TXT_KEY_INFO_DOM_HORSE", ("",)), None, 2, gc.getBonusInfo(bonus_horse).getButton(), ColorTypes(13), x, y, True, True)
 																				# Add Unit
-																				gc.getPlayer(iNewUnitOwner).initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																				gc.getPlayer(iNewUnitOwner).initUnit(eHorse, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				continue
 														# Camel
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_camel:
-																iUnitType = gc.getInfoTypeForString("UNIT_CAMEL")
-																#iUnitTypeDom = gc.getInfoTypeForString("UNIT_CAMEL")
-																iTechDom = gc.getInfoTypeForString("TECH_KAMELZUCHT")
-																sTextDom = "TXT_KEY_INFO_DOM_CAMEL"
 																if loopPlot.getNumUnits() == 0:
 																		if CvUtil.myRandom(40, "camel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1:
-																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(iTechDom):
+																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(eCamelTech):
 																								iNewUnitOwner = iPlotOwner
-																								#iUnitType = iUnitTypeDom
 																						elif gc.getPlayer(iPlotOwner).isHuman():
-																								CyInterface().addMessage(iPlotOwner, True, 10, CyTranslator().getText(sTextDom, ("",)), None, 2, gc.getBonusInfo(bonus_camel).getButton(), ColorTypes(13), x, y, True, True)
+																								CyInterface().addMessage(iPlotOwner, True, 10, CyTranslator().getText("TXT_KEY_INFO_DOM_CAMEL", ("",)), None, 2, gc.getBonusInfo(bonus_camel).getButton(), ColorTypes(13), x, y, True, True)
 																				# Add Unit
-																				gc.getPlayer(iNewUnitOwner).initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																				gc.getPlayer(iNewUnitOwner).initUnit(eCamel, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				continue
 														# Elefant (ab Eisenzeit)
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_ivory and pBarbPlayer.getCurrentEra() >= 2:
-																iUnitType = gc.getInfoTypeForString("UNIT_ELEFANT")
 																if loopPlot.getNumUnits() == 0:
 																		if CvUtil.myRandom(50, "ele") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1:
-																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")):
+																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(eElefantTech):
 																								iNewUnitOwner = iPlotOwner
 																						elif gc.getPlayer(iPlotOwner).isHuman():
 																								CyInterface().addMessage(iPlotOwner, True, 10, CyTranslator().getText("TXT_KEY_INFO_DOM_ELEFANT", ("",)), None, 2, gc.getBonusInfo(bonus_ivory).getButton(), ColorTypes(13), x, y, True, True)
 																				# Add Unit
-																				gc.getPlayer(iNewUnitOwner).initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																				gc.getPlayer(iNewUnitOwner).initUnit(eElefant, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				continue
 														# Esel
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_esel:
-																iUnitType = gc.getInfoTypeForString("UNIT_ESEL")
-																iTechDom = gc.getInfoTypeForString("TECH_FENCES")
 																if loopPlot.getNumUnits() == 0:
 																		if CvUtil.myRandom(45, "esel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1 and iPlotOwner != iBarbPlayer:
-																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(iTechDom):
+																						if gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isHasTech(eEselTech):
 																								iNewUnitOwner = iPlotOwner
 																				# Add Unit
-																				gc.getPlayer(iNewUnitOwner).initUnit(iUnitType, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
+																				gc.getPlayer(iNewUnitOwner).initUnit(eEsel, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				continue
 
 
@@ -293,20 +277,23 @@ def doPlotFeatures():
 														if loopPlot.getNumUnits() == 0:
 																# Verteidiger setzen
 																PAE_Barbaren.setFortDefence(loopPlot)
-														elif loopPlot.getNumUnits() > 4:
-																iNum = loopPlot.getNumUnits() - 4
+														elif loopPlot.getNumUnits() > 5:
+																iNum = loopPlot.getNumUnits() - 5
 																for k in range(iNum):
 																		loopPlot.getUnit(k).kill(True, -1)
-														elif pBarbPlayer.getCurrentEra() > 0:
-																if bRageBarbs:
-																		iTurns = 5
-																else:
-																		iTurns = 9
-																if gc.getGame().getGameTurn() % iTurns == 0:
-																		#iAnzUnits = PAE_Barbaren.countNearbyUnits(loopPlot, 2, iBarbPlayer)
-																		#if iAnzUnits < 6:
-																		# Einheiten) setzen
-																		PAE_Barbaren.createBarbUnit(loopPlot)
+
+														if bRageBarbs:
+																iTurns = 6
+														else:
+																iTurns = 8
+														if pBarbPlayer.getCurrentEra() > 0:
+																iTurns = iTurns / 2
+
+														if gc.getGame().getGameTurn() % iTurns == 0:
+																#iAnzUnits = PAE_Barbaren.countNearbyUnits(loopPlot, 2, iBarbPlayer)
+																#if iAnzUnits < 6:
+																# Einheiten) setzen
+																PAE_Barbaren.createBarbUnit(loopPlot)
 														continue
 												# Baerenhoehle
 												elif iPlotImprovement == impCave:

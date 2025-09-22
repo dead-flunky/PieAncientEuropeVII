@@ -2449,6 +2449,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		}
 		if (!pPlot->isWater() && !canMoveAllTerrain())
 		{
+			// PAE
+			if (pPlot->isFriendlyCity(*this, true)) return true;
+			// BTS
 			if (!pPlot->isFriendlyCity(*this, true) || !pPlot->isCoastalLand()) 
 			{
 				return false;

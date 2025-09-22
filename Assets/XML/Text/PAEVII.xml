@@ -761,6 +761,14 @@ Scuola di retorica
 		<Spanish>&#161;Un atraco fallido! Gracias por tu escolta. Cuando los ladrones intentaron robar sus bienes, decidieron huir.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_5</Tag>
+		<English>The Jewish community in %s1 is a thorn in the side of residents of other faiths. Their presence is tolerated by social exclusion.</English>
+		<French>La communaut&#233; juive de %s1 est une source d'irritation pour les r&#233;sidents d'autres confessions. Leur pr&#233;sence est tol&#233;r&#233;e par l'exclusion sociale.</French>
+		<German>Die j&#252;dische Gemeinde in %s1 sind den andersgl&#228;ubigen Einwohnern ein Dorn im Auge. Man duldet ihre Anwesenheit, indem man sie von der Gesellschaft ausgrenzt.</German>
+		<Italian>La comunit&#224; ebraica di %s1 &#232; una spina nel fianco per i residenti di altre fedi. La loro presenza &#232; tollerata dall'esclusione sociale.</Italian>
+		<Spanish>La comunidad jud&#237;a de %s1 es una molestia para los residentes de otras confesiones. Su presencia se tolera mediante la exclusi&#243;n social.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_TERRAFORMING</Tag>
 		<English>Your prophet has made this land fertile! May our kingdom live long and prosper!</English>
 		<French>Votre proph&#232;te a rendu cette terre fertile ! Que notre royaume vive longtemps et prosp&#232;re !</French>
@@ -783,6 +791,30 @@ Scuola di retorica
 		<German>Die gegnerische Einheit %s1 konnte gerade noch vor unserer Einheit %s2 fliehen!</German>
 		<Italian>L'unit&#224; nemica %s1 &#232; riuscita a scappare per un soffio (contro %s2)!</Italian>
 		<Spanish>&#161;La unidad enemiga %s1 escap&#243; por poco (contra %s2)!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_USURPATOR_INSIDE</Tag>
+		<English>After an important general fell for you, the zealous provincial governor of %s1 rises up as a usurper and tries to seize your empire.</English>
+		<French>Apr&#232;s qu'un g&#233;n&#233;ral important soit tomb&#233; amoureux de vous, le z&#233;l&#233; gouverneur provincial de %s1 se l&#232;ve comme usurpateur et tente de s'emparer de votre empire.</French>
+		<German>Nachdem ein wichtiger General f&#252;r Euch gefallen war, erhebt sich der eifrige Provinzstatthalter von %s1 als Usurpator und versucht, Euer Reich an sich zu rei&#223;en.</German>
+		<Italian>Dopo che un importante generale si &#232; innamorato di te, lo zelante governatore provinciale di %s1 si ribella come usurpatore e cerca di impossessarsi del tuo impero.</Italian>
+		<Spanish>Despu&#233;s de que un general importante se enamor&#243; de ti, el celoso gobernador provincial de %s1 se alza como un usurpador e intenta apoderarse de tu imperio.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_USURPATOR_OUTSIDE</Tag>
+		<English>After the death of an important general for %s2, the provincial governor of %s1 senses his opportunity and attempts to seize the empire as a usurper.</English>
+		<French>Apr&#232;s la mort d'un g&#233;n&#233;ral important pour %s2, le gouverneur provincial de %s1 sent son opportunit&#233; et tente de s'emparer de l'empire en tant qu'usurpateur.</French>
+		<German>Nach dem Tod eines wichtigen Generals f&#252;r %s2 wittert der Provinzstatthalter von %s1 seine Chance und versucht, das Reich als Usurpator an sich zu rei&#223;en.</German>
+		<Italian>Dopo la morte di un importante generale per %s2, il governatore provinciale di %s1 intuisce l'opportunit&#224; e tenta di impadronirsi dell'impero come usurpatore.</Italian>
+		<Spanish>Despu&#233;s de la muerte de un general importante para %s2, el gobernador provincial de %s1 siente su oportunidad e intenta apoderarse del imperio como usurpador.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_USURPATOR_TITLE</Tag>
+		<English>[H1]A general has fallen![\H1]</English>
+		<French>[H1]Un g&#233;n&#233;ral est tomb&#233; ![\H1]</French>
+		<German>[H1]Ein General ist gefallen![\H1]</German>
+		<Italian>[H1]Un generale &#232; caduto![\H1]</Italian>
+		<Spanish>[H1]&#161;Ha ca&#237;do un general![\H1]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_FEAT_GROWTHPERCENT</Tag>
@@ -959,30 +991,6 @@ Scuola di retorica
 		<German>Via Romana</German>
 		<Italian>Via Romana</Italian>
 		<Spanish>V&#237;a Romana</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_SCEN_CIV_WARNEN</Tag>
-		<English>Warns</English>
-		<French>Warnes</French>
-		<German>Warnen</German>
-		<Italian>Varni</Italian>
-		<Spanish>Varnos</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_SCEN_CIV_WARNEN_ADJECTIVE</Tag>
-		<English>warnian</English>
-		<French>warnien</French>
-		<German>warnisch/e/r</German>
-		<Italian>warniano</Italian>
-		<Spanish>warniano</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_SCEN_CIV_WARNEN_LEADER</Tag>
-		<English>Boiorix the Warne</English>
-		<French>Boiorix le Warne</French>
-		<German>Boiorix der Warne</German>
-		<Italian>Boiorix il Warne</Italian>
-		<Spanish>Boiorix el Warne</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SYSTEM_TEAM</Tag>
@@ -1415,6 +1423,14 @@ Scuola di retorica
 		<German>[ICON_BULLET]Kann die Verteidung von St&#228;dten sofort auf 0 setzen. Die Stadt muss &#252;ber 100% Verteidigungsst&#228;rke haben.</German>
 		<Italian>[ICON_BULLET]Pu&#242; impostare immediatamente la difesa della citt&#224; a 0. La citt&#224; deve avere una forza difensiva superiore al 100%.</Italian>
 		<Spanish>[ICON_BULLET]Puede establecer instant&#225;neamente la defensa de la ciudad a 0. La ciudad debe tener m&#225;s del 100% de fuerza de defensa.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_USURPATOR</Tag>
+		<English>Usurper</English>
+		<French>Usurpateur</French>
+		<German>Usurpator</German>
+		<Italian>Usurpatore</Italian>
+		<Spanish>Usurpador</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_UNIT_INFO_NACH</Tag>

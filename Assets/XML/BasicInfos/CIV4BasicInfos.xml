@@ -271,5 +271,10 @@
 			<Description>TXT_KEY_CONCEPT_RESERVISTS</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_RESERVISTS_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_USURPATOR</Type>
+			<Description>TXT_KEY_CONCEPT_USURPATOR</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_USURPATOR_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

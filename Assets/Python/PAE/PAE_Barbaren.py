@@ -164,9 +164,15 @@ def createBarbUnit(pPlot):
 						lUnits.append(gc.getInfoTypeForString("UNIT_LIGHT_SPEARMAN"))
 
 		# Einheit setzen
+		bAILemming = False
+		if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_BARBARENFORT"):
+				iUnitAI = UnitAITypes.UNITAI_ATTACK_CITY_LEMMING
+				bAILemming = True
+
 		for _ in range(iAnz):
 				iUnit = lUnits[CvUtil.myRandom(iAnzUnits, "createBarbUnit")]
-				iUnitAI = lUnitAIs[CvUtil.myRandom(len(lUnitAIs), "createBarbUnit_AI")]
+				if not bAILemming:
+					iUnitAI = lUnitAIs[CvUtil.myRandom(len(lUnitAIs), "createBarbUnit_AI")]
 				pUnit = pBarbPlayer.initUnit(iUnit, pPlot.getX(), pPlot.getY(), iUnitAI, DirectionTypes.DIRECTION_SOUTH)
 				pUnit.setHasPromotion(iPromo, True)
 				if bRageBarbs or CvUtil.myRandom(2, "createBarbUnitWithCombatPromo2") == 1:

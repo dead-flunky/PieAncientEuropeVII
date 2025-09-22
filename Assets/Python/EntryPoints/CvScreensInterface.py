@@ -1902,8 +1902,6 @@ def popupBuildLimes(argsList):
 
 # Sold/Salae/Decimatio
 # iOwner, iUnitID, Typ: Salae(1) or Decimatio(2)
-
-
 def popupActionSalaeDecimatio(argsList):
 		iButtonId = argsList[0]
 		iData1 = argsList[1]
@@ -1918,11 +1916,23 @@ def popupActionSalaeDecimatio(argsList):
 		if iButtonId == 0:
 				CyMessageControl().sendModNetMessage(735, iData3, 1, iData1, iData2)
 
+# Usurpator Tribut
+def popupUsurpatorTribut(argsList):
+		iButtonId = argsList[0]
+		iData1 = argsList[1]
+		iData2 = argsList[2]
+		# iData3 = argsList[3]
+		# iData4 = argsList[4]
+		# szText = argsList[5]
+		# bOption1 = argsList[6]
+		# bOption2 = argsList[7]
+
+		# NetID , -1, iButtonId, iPlayer, iUnitID
+		CyMessageControl().sendModNetMessage(743, -1, iButtonId, iData1, iData2)
+
 # Provinzstatthalter / Tribut
 # iCityID, iOwner, iTyp (-1, 0 = Einfluss, 1 = Tribut)
 # Statische iButtonId Werte
-
-
 def popupStatthalterTribut(argsList):
 		iButtonId = argsList[0]
 		iData1 = argsList[1]
@@ -1940,8 +1950,6 @@ def popupStatthalterTribut(argsList):
 # Vasallen kuendigen oder Staedte schenken
 # -1, iPlayer, iVasall
 # Dynamische iButtonId Werte
-
-
 def popupVasallen(argsList):
 		iButtonId = argsList[0]
 		iData1 = argsList[1]
@@ -1958,8 +1966,6 @@ def popupVasallen(argsList):
 						CyMessageControl().sendModNetMessage(764, iData1, iData2, iButtonId, iData4)
 
 # Heldendenkmal / Siegesdenkmal
-
-
 def popupChooseHeldendenkmal(argsList):
 		iButtonId = argsList[0]
 		iUnitOwner = argsList[1]

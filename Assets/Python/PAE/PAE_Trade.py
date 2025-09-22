@@ -91,10 +91,10 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 						if pUnit.plot().isCity():
 								doSellBonus(pUnit, pUnit.plot().getPlotCity())
 
-				iPrice = int(_calculateBonusBuyingPrice(eBonus, iBuyer, iCityOwner))
+				iPrice = int(_calculateBonusBuyingPrice(eBonus, iBuyer, iCityOwner, pUnit.plot()))
 				if pBuyer.getGold() < iPrice:
 						CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_COLLECT_NO_GOODS", ("",)),
-																		 None, 2, "Art/Interface/PlotPicker/Warning.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+											None, 2, "Art/Interface/PlotPicker/Warning.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 						return
 				pBuyer.changeGold(-iPrice)
 
@@ -113,11 +113,11 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 				if pSeller.isHuman() and iBuyer != iCityOwner:
 						sBonusName = gc.getBonusInfo(eBonus).getDescription()
 						CyInterface().addMessage(iCityOwner, True, 10, CyTranslator().getText("TXT_KEY_BONUS_BOUGHT", (pBuyer.getName(), pBuyer.getCivilizationShortDescriptionKey(),
-																																																					 pUnit.plot().getPlotCity().getName(), sBonusName, iGewinnGold)), "AS2D_COINS", 2, pUnit.getButton(), ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
+											pUnit.plot().getPlotCity().getName(), sBonusName, iGewinnGold)), "AS2D_COINS", 2, pUnit.getButton(), ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
 
 				if pBuyer.isHuman():
 						CyInterface().addMessage(iBuyer, True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_COLLECT_GOODS",
-																																						 (gc.getBonusInfo(eBonus).getDescription(), -iPrice)), "AS2D_COINS", 2, None, ColorTypes(13), 0, 0, False, False)
+											(gc.getBonusInfo(eBonus).getDescription(), -iPrice)), "AS2D_COINS", 2, None, ColorTypes(13), 0, 0, False, False)
 
 				pUnit.finishMoves()
 				if pUnit.isHuman():
@@ -765,7 +765,11 @@ def doPopupChooseBonus(pUnit, pCity):
 		if iBuyer == gc.getGame().getActivePlayer():
 
 				iSeller = pCity.getOwner()
-				lGoods = getCitySaleableGoods(pCity, iBuyer)
+				lGoods1 = getCitySaleableGoods(pCity, iBuyer)
+				# PAE 7.11e: Importierte Waren
+				lGoodsX = getCitySaleableGoodsAll(pCity)
+				lGoods2 = list(set(lGoodsX) - set(lGoods1))
+				lGoods = lGoods1 + lGoods2
 
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
@@ -776,9 +780,10 @@ def doPopupChooseBonus(pUnit, pCity):
 
 				for eBonus in lGoods:
 						sBonusDesc = gc.getBonusInfo(eBonus).getDescription()
-						iPrice = _calculateBonusBuyingPrice(eBonus, iBuyer, iSeller)
+						iPrice = _calculateBonusBuyingPrice(eBonus, iBuyer, iSeller, pUnit.plot())
 						iBonusOwned = gc.getPlayer(iBuyer).getNumAvailableBonuses(eBonus)
 						sText = CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iBonusOwned))
+						if eBonus in lGoods2: sText += CyTranslator().getText("[ICON_TRADE]", ())
 						sBonusButton = gc.getBonusInfo(eBonus).getButton()
 						popupInfo.addPythonButton(sText, sBonusButton)
 
@@ -809,7 +814,8 @@ def getBonusValue(eBonus):
 # Price player pays for buying bonus
 # Einkauf in eigener Stadt: Basiswert
 # Einkauf in fremder Stadt: Basiswert + Haltung * 5%
-def _calculateBonusBuyingPrice(eBonus, iBuyer, iSeller):
+# PAE 7.11e: Einkauf von importierter Ware *2
+def _calculateBonusBuyingPrice(eBonus, iBuyer, iSeller, pPlot):
 		if iBuyer == -1 or iSeller == -1:
 				return -1
 
@@ -818,7 +824,18 @@ def _calculateBonusBuyingPrice(eBonus, iBuyer, iSeller):
 		#if not pTeam.isHasTech(gc.getInfoTypeForString("TECH_CURRENCY")):
 		#	return 0
 
+		# Basiswert
 		iValue = getBonusValue(eBonus)
+
+		# PAE 7.11e: Importierte Ware
+		if pPlot.isCity():
+			pCity = pPlot.getPlotCity()
+			lGoods1 = getCitySaleableGoods(pCity, -1)
+			lGoodsX = getCitySaleableGoodsAll(pCity)
+			lGoods2 = list(set(lGoodsX) - set(lGoods1))
+			if eBonus in lGoods2: iValue *= 2 # int(iValue * 3 / 2)
+
+
 		if iBuyer == iSeller:
 				return iValue
 		else:
@@ -874,11 +891,11 @@ def calculateBonusSellingPrice(pUnit, pCity, bCalcOnly, iBonus2=-1):
 		iModifier = 100
 
 		# if CvUtil.hasBonusIgnoreFreeBonuses(pCity, eBonus): # allows "cancellation" of buying / Bonus direkt nach Einkauf wieder verkaufen (ohne Gewinn)
-		#    return _calculateBonusBuyingPrice(eBonus, iSeller, iBuyer) # Switch positions of seller and buyer
+		#    return _calculateBonusBuyingPrice(eBonus, iSeller, iBuyer, pUnit.plot()) # Switch positions of seller and buyer
 
 		# Einkauf und Verkauf in der gleichen Stadt (=> undo)
 		if not bCalcOnly and pUnit.getX() == iX and pUnit.getY() == iY:
-				return _calculateBonusBuyingPrice(eBonus, iSeller, iBuyer)  # Switch positions of seller and buyer
+				return _calculateBonusBuyingPrice(eBonus, iSeller, iBuyer, pUnit.plot())  # Switch positions of seller and buyer
 
 		# Basiswert + Population + Distanz + Wunderbonus + Haltung + Verfügbarkeit - Korruption
 
@@ -889,6 +906,10 @@ def calculateBonusSellingPrice(pUnit, pCity, bCalcOnly, iBonus2=-1):
 		# Stadt hat dieses Bonusgut nicht im Handelsnetz
 		if not pCity.hasBonus(eBonus):
 				iModifier += 20
+		# PAE 7.11e
+		else:
+				iModifier -= 20
+
 		# Wunderbonus
 		iModifier += pCity.getNumWorldWonders() * 5
 		# Furious = 0, Annoyed = 1, Cautious = 2, Pleased = 3, Friendly = 4
@@ -927,6 +948,7 @@ def calcBonusProfit(pCityFrom, pCityTo, iBonus, pUnit):
 
 		# Stadt hat dieses Bonusgut nicht im Handelsnetz
 		if not pCityTo.hasBonus(iBonus): iModifier += 20
+		else: iModifier -= 20
 		# Wunderbonus
 		iModifier += pCityTo.getNumWorldWonders() * 5
 		# Furious = 0, Annoyed = 1, Cautious = 2, Pleased = 3, Friendly = 4
@@ -1066,8 +1088,20 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 		elif iType == 3 or iType == 6:
 				pCity = gc.getPlayer(iData1).getCity(iData2)
 				sCityName = pCity.getName()
-				lGoods = getCitySaleableGoods(pCity, -1)
+				lGoods1 = getCitySaleableGoods(pCity, -1)
+				# PAE 7.11e: Importiere Waren der Stadt
+				lGoodsX = getCitySaleableGoodsAll(pCity)
+
+				lGoods2 = []
+				#for e in lGoodsX:
+				#	if e not in lGoods1:
+				#		lGoods2.append(e)
+				lGoods2 = list(set(lGoodsX) - set(lGoods1))
+				#lGoods2 = [x for x in lGoodsX if x not in lGoods1]
+
+				lGoods = lGoods1 + lGoods2
 				lGoods.append(-1)
+
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_TRADE_ROUTE_CHOOSE_BONUS", (sCityName, )))
@@ -1076,6 +1110,7 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 				popupInfo.setData2(pUnit.getID())
 				popupInfo.setData3(iType == 3)
 
+				iBonus = -1
 				if iType == 6:
 						iBonus = int(CvUtil.getScriptData(pUnit, ["autB1"], -1))
 						iX1 = int(CvUtil.getScriptData(pUnit, ["autX1"], -1))
@@ -1083,19 +1118,26 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 						pCityPlot1 = CyMap().plot(iX1, iY1)
 
 				for eBonus in lGoods:
+						# bis PAE 7.11d: if eBonus != -1:
+						# ab  PAE 7.11e (keine gleichen Waren handeln): if eBonus != -1 and eBonus != iBonus:
 						if eBonus != -1:
+							if eBonus != iBonus:
 								sBonusDesc = gc.getBonusInfo(eBonus).getDescription()
-								iPrice = _calculateBonusBuyingPrice(eBonus, iUnitOwner, iData1)
+								iPrice = _calculateBonusBuyingPrice(eBonus, iUnitOwner, iData1, pUnit.plot())
+								sText = u""
+
+								if eBonus in lGoods2: sText += CyTranslator().getText("[ICON_TRADE]", ())
+
 								# Erste Stadt, eigene Stadt => keine Vergleich-CIV => keine Anzeige, wer das Bonusgut hat oder nicht hat
 								if iType == 3 and iData1 == iUnitOwner:
-										sText = sBonusDesc + u" (-" + str(iPrice) + CyTranslator().getText("[ICON_GOLD])", ())
+										sText += sBonusDesc + u" (-" + str(iPrice) + CyTranslator().getText("[ICON_GOLD])", ())
 								else:
 										if iData1 != iUnitOwner:
 												iBonusOwned = gc.getPlayer(iUnitOwner).getNumAvailableBonuses(eBonus)
-												#sText = CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iBonusOwned))
+												#sText += CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iBonusOwned))
 										else:
 												iBonusOwned = gc.getPlayer(pCityPlot1.getOwner()).getNumAvailableBonuses(eBonus)
-												#sText = CyTranslator().getText("TXT_KEY_BUY_BONUS2", (sBonusDesc, iPrice, iBonusOwned))
+												#sText += CyTranslator().getText("TXT_KEY_BUY_BONUS2", (sBonusDesc, iPrice, iBonusOwned))
 
 										if iType == 6:
 
@@ -1106,14 +1148,15 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 
 												# Anzeige mit Profit des Handels (Bonus1<->Bonus2)
 												if iData1 != iUnitOwner:
-														sText = CyTranslator().getText("TXT_KEY_BUY_BONUS_SELL", (sBonusDesc, iPrice, iBonusOwned, iProfit))
+														sText += CyTranslator().getText("TXT_KEY_BUY_BONUS_SELL", (sBonusDesc, iPrice, iBonusOwned, iProfit))
 												else:
-														sText = CyTranslator().getText("TXT_KEY_BUY_BONUS2_SELL", (sBonusDesc, iPrice, iBonusOwned, iProfit))
+														sText += CyTranslator().getText("TXT_KEY_BUY_BONUS2_SELL", (sBonusDesc, iPrice, iBonusOwned, iProfit))
+
 										else:
 												if iData1 != iUnitOwner:
-														sText = CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iBonusOwned))
+														sText += CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iBonusOwned))
 												else:
-														sText = CyTranslator().getText("TXT_KEY_BUY_BONUS2", (sBonusDesc, iPrice, iBonusOwned))
+														sText += CyTranslator().getText("TXT_KEY_BUY_BONUS2", (sBonusDesc, iPrice, iBonusOwned))
 
 										if iBonusOwned == 0:
 												sText += u" " + CyTranslator().getText("[ICON_HAPPY]", ())
@@ -1161,7 +1204,7 @@ def getCitySaleableGoods(pCity, iBuyer):
 								if eBonus != -1 and eBonus not in lGoods and eBonus not in L.LBonusUntradeable:
 										# if CvUtil.hasBonusIgnoreFreeBonuses(pCity, eBonus):
 										if pLoopPlot.isCity() or eImprovement != -1 and gc.getImprovementInfo(eImprovement).isImprovementBonusMakesValid(eBonus):
-												#if iBuyer == -1 or _calculateBonusBuyingPrice(eBonus, iBuyer, iCityOwner) <= iMaxPrice:  # Max price
+												#if iBuyer == -1 or _calculateBonusBuyingPrice(eBonus, iBuyer, iCityOwner, pCity.plot()) <= iMaxPrice:  # Max price
 												lGoods.append(eBonus)
 
 		iMaxNumBuildings = gc.getNumBuildingInfos()
@@ -1169,12 +1212,19 @@ def getCitySaleableGoods(pCity, iBuyer):
 				if pCity.isHasBuilding(iBuilding):
 						eBonus = gc.getBuildingInfo(iBuilding).getFreeBonus()
 						if eBonus != -1 and eBonus not in lGoods and eBonus not in L.LBonusUntradeable:  # and CvUtil.hasBonusIgnoreFreeBonuses(pCity, eBonus):
-								#if iBuyer == -1 or _calculateBonusBuyingPrice(eBonus, iBuyer, iCityOwner) <= iMaxPrice:  # Max price
+								#if iBuyer == -1 or _calculateBonusBuyingPrice(eBonus, iBuyer, iCityOwner, pCity.plot()) <= iMaxPrice:  # Max price
 								lGoods.append(eBonus)
 		return lGoods
 
 # Returns list of civs iPlayer can trade with (has met and peace with). List always includes iPlayer himself.
 
+def getCitySaleableGoodsAll(pCity):
+		lGoods = []
+		iNumBonuses = gc.getNumBonusInfos()
+		for eBonus in range(iNumBonuses):
+			if pCity.hasBonus(eBonus):
+				lGoods.append(eBonus)
+		return lGoods
 
 def getPossibleTradeCivs(iPlayer):
 		pTeam = gc.getTeam(gc.getPlayer(iPlayer).getTeam())
@@ -1371,6 +1421,7 @@ def doAutomateMerchant(pUnit):
 						else:
 								iBuyer = -1
 						lCitySaleableGoods = getCitySaleableGoods(pCurrentCity, iBuyer)
+						lCitySaleableGoods2 = getCitySaleableGoodsAll(pCurrentCity)
 
 						if eBonusBuy == -1:
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == -1 ", None, 2, None, ColorTypes(7), 0, 0, False, False)
@@ -1381,7 +1432,7 @@ def doAutomateMerchant(pUnit):
 								#	CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == eStoredBonus | going to " + pNewCity.getName(), None, 2, None, ColorTypes(7), 0, 0, False, False)
 								#pUnit.getGroup().pushMoveToMission(pNewCity.getX(), pNewCity.getY())
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-						elif eBonusBuy in lCitySaleableGoods:
+						elif eBonusBuy in lCitySaleableGoods + lCitySaleableGoods2:
 								#if iPlayer == iHumanPlayer: CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy in lCitySaleable ", None, 2, None, ColorTypes(7), 0, 0, False, False)
 								if eStoredBonus != eBonusBuy:
 										# if not already acquired / Wenn Bonus nicht bereits gekauft wurde
@@ -1398,7 +1449,7 @@ def doAutomateMerchant(pUnit):
 
 								# Messages:
 								if pUnit.isHuman() and iBuyer != -1:
-										if _calculateBonusBuyingPrice(eBonusBuy, iBuyer, pCurrentCity.getOwner()) > gc.getPlayer(iBuyer).getGold():
+										if _calculateBonusBuyingPrice(eBonusBuy, iBuyer, pCurrentCity.getOwner(), pUnit.plot()) > gc.getPlayer(iBuyer).getGold():
 												popupInfo = CyPopupInfo()
 												popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 												popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_TRADE_INFO_2", (gc.getBonusInfo(eBonusBuy).getDescription(), pCurrentCity.getName())))

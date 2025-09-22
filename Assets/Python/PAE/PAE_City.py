@@ -2575,12 +2575,12 @@ def bonusMissingCity(pCity, eBuilding):
 
 		if lBonus2:
 				# wenn Bonus1 notwendig ist, dann reicht es, wenn die OR-Boni im Handelsnetz sind
+				eBonus2 = lBonus2[0]
 				if eBonus != -1:
 						for eBonus2 in lBonus2:
 								if pCity.hasBonus(eBonus2):
 										return -1
 				else:
-						eBonus2 = lBonus2[0]
 						for iI in range(gc.getNUM_CITY_PLOTS()):
 								loopPlot = pCity.getCityIndexPlot(iI)
 								if loopPlot is not None and not loopPlot.isNone():
@@ -2591,8 +2591,9 @@ def bonusMissingCity(pCity, eBuilding):
 												if iImprovement != -1 and gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(eBonusPlot):
 														return -1
 
-				if len(lBonus2) > 1: return -2
-				else: return eBonus2
+				#if len(lBonus2) > 1: return -2
+				#else:
+				return eBonus2
 
 		return -1
 
@@ -2616,7 +2617,6 @@ def bonusMissingCity3x3(pCity, eBuilding):
 														bBonus1Missing = False
 		if bBonus1Missing:
 				return eBonus
-
 		# Zweite Abhängigkeit: bonus1 AND (bonus2 OR bonus3 OR ...)
 		lBonus2 = []
 		for iI in range(gc.getNUM_BUILDING_PREREQ_OR_BONUSES()):
@@ -2626,23 +2626,25 @@ def bonusMissingCity3x3(pCity, eBuilding):
 
 		if lBonus2:
 				# wenn Bonus1 notwendig ist, dann reicht es, wenn die OR-Boni im Handelsnetz sind
+				eBonus2 = lBonus2[0]
 				if eBonus != -1:
 						for eBonus2 in lBonus2:
 								if pCity.hasBonus(eBonus2):
 										return -1
 				else:
-						eBonus2 = lBonus2[0]
 						for i in range(-iRange, iRange+1):
 								for j in range(-iRange, iRange+1):
 										loopPlot = plotXY(iX, iY, i, j)
 										if loopPlot is not None and not loopPlot.isNone():
 												eBonusPlot = loopPlot.getBonusType(-1)
 												if eBonusPlot in lBonus2:
+														eBonus2 = eBonusPlot
 														iImp = loopPlot.getImprovementType()
-														if iImp != -1 and gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus):
+														if iImp != -1 and gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonusPlot):
 																return -1
-				if len(lBonus2) > 1: return -2
-				else: return eBonus2
+				#if len(lBonus2) > 1: return -2
+				#else:
+				return eBonus2
 
 		return -1
 
@@ -3656,6 +3658,15 @@ def catchGreatPeople(pCity, iNewOwner, iPreviousOwner, bAssimilation):
 				[gc.getInfoTypeForString("UNIT_GREAT_GENERAL"), 11, 3, 10],
 				[gc.getInfoTypeForString("UNIT_GREAT_SPY"), 4, 3, 4],
 		]
+		lSpecialists = [
+				gc.getInfoTypeForString("SPECIALIST_GREAT_PRIEST"),
+				gc.getInfoTypeForString("SPECIALIST_GREAT_ARTIST"),
+				gc.getInfoTypeForString("SPECIALIST_GREAT_SCIENTIST"),
+				gc.getInfoTypeForString("SPECIALIST_GREAT_MERCHANT"),
+				gc.getInfoTypeForString("SPECIALIST_GREAT_ENGINEER"),
+				gc.getInfoTypeForString("SPECIALIST_GREAT_GENERAL"),
+				gc.getInfoTypeForString("SPECIALIST_GREAT_SPY")
+		]
 		numGPTypes = len(lUnits)
 		if bAssimilation:
 				#lNumGP = [0] * numGPTypes
@@ -3716,6 +3727,9 @@ def catchGreatPeople(pCity, iNewOwner, iPreviousOwner, bAssimilation):
 								iRand = 1 + CvUtil.myRandom(lUnit[3], "TXT_KEY_MESSAGE_UNCATCH_GP")
 								text = CyTranslator().getText("TXT_KEY_MESSAGE_UNCATCH_GP"+str(i+1)+"_"+str(iRand), (0, 0))
 								CyInterface().addMessage(iNewOwner, True, 10, text, None, 2, None, ColorTypes(7), 0, 0, False, False)
+
+				# Specialists entfernen
+				pCity.setFreeSpecialistCount(lSpecialists[i], 0)
 
 
 def correctCityBuildings(pCity, pPlayer, pPreviousOwner):
@@ -4390,6 +4404,11 @@ def doStartCivilWar(pCity, iChance):
 				# A: Einheiten verletzen
 				# B: 50:50 Pop -1
 				doCivilWarHarmUnits(pCity)
+				
+				# PAE 7.1: Stadtmauerverteidigung halbieren
+				iDefense = pCity.getDefenseDamage()
+				iDamage = iDefense / 2
+				pCity.changeDefenseDamage(-iDamage)
 
 				# Die Einheiten gewinnen gegen Pop
 				if CvUtil.myRandom(2, "iRandCityCivilWarPop-1") == 1:

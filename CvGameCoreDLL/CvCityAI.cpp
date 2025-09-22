@@ -4417,7 +4417,7 @@ int CvCityAI::AI_neededDefenders()
 
 	if (!(GET_TEAM(getTeam()).AI_isWarPossible()))
 	{
-		return 1;
+		return 2; // BTS: 1 PAE: 2
 	}
 	
 	if (isBarbarian())

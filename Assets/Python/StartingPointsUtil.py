@@ -78,7 +78,9 @@ def ResortCivs(Debugging):
 				CurPlayer = gc.getPlayer(ip)
 				if CurPlayer.isHuman():
 						lHumanPlayers.append(ip)
-		iHumanPlayer = lHumanPlayers[0]
+		iHumanPlayer = 0
+		if len(lHumanPlayers):
+				iHumanPlayer = lHumanPlayers[0]
 		if Debugging:
 				CyInterface().addMessage(iHumanPlayer, False, 15, "Beginning to resort civs", '', 0, 'Art/Interface/Buttons/General/warning_popup.dds', ColorTypes(gc.getInfoTypeForString("COLOR_RED")), 1, 1, True, True)
 		if Debugging:

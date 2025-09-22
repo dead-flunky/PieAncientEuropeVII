@@ -12318,7 +12318,7 @@
 			<Quote>TXT_KEY_PAE_QUOTE_7</Quote>
 			<Sound>AS2D_TECH_PAE_QUOTE_7</Sound>
 			<SoundMP/>
-			<Button>Art/Interface/Buttons/Techs/tech_torsion.dds</Button>
+			<Button>,Art/Interface/Buttons/Units/Catapult.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,7,8</Button>
 		</TechInfo>
 		<TechInfo>
 			<Type>TECH_EISENWAFFEN</Type>

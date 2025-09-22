@@ -1834,6 +1834,11 @@ A city conquest brings a research bonus and can even lead to a new technology, i
 [H2] Building units in conquered cities [\H2]
 In conquered cities, new units will receive the status "Unreliable". See [LINK=CONCEPT_PROMOTIONS]Promotions[\LINK]
 
+[H2]Recaptured Cities[\H2]
+[ICON_BULLET] Ends the current city revolt
+[ICON_BULLET] +1 pop (e.g., hidden or escaped citizens)
+
+
 [H2]Revolting cities[\H2]
 If a city is taken during war, there is a possibility of 33% that its nearest neighbour city will go into revolt.
 When a city gets razed, another neighbour city will revolt.
@@ -1968,6 +1973,11 @@ Une ville conquise apporte un bonus de recherche voire m&#234;me une nouvelle te
 
 [H2] Construire des unit&#233;s dans les villes conquises [\H2]
 Dans les villes conquises, les nouvelles unit&#233;s recevront le statut "Peu fiable". Voir les [LINK=CONCEPT_PROMOTIONS]Promotions[\LINK]
+
+[H2]Villes reconquises[\H2]
+[ICON_BULLET] Met fin &#224; la r&#233;volte actuelle
+[ICON_BULLET] +1 pop (par exemple, citoyens cach&#233;s ou en fuite)
+
 
 [H2]R&#233;voltes[\H2]
 Quand une ville est captur&#233;e, il y a une chance de 33% que sa plus proche voisine se r&#233;volte.
@@ -2105,6 +2115,11 @@ Eine Eroberung einer Stadt bringt einen Forschungsbonus und kann sogar zu einer 
 
 [H2]Einheitenbau in eroberten St&#228;dten[\H2]
 In eroberten St&#228;dten wird es vorkommen, dass neue Einheiten den Status "Unzuverl&#228;ssig" bekommen. Siehe [LINK=CONCEPT_PROMOTIONS]Bef&#246;rderungen[\LINK]
+
+[H2]R&#252;ckeroberte St&#228;dte[\H2]
+[ICON_BULLET] Beendet die aktuellen Stadtrevolte
+[ICON_BULLET] +1 Pop (z.B. versteckte oder entlaufene B&#252;rger)
+
 
 [H2]Revoltierende St&#228;dte[\H2]
 
@@ -2246,6 +2261,11 @@ Una cattura di una citt&#224; porta un bonus di ricerca e pu&#242; anche portare
 [H2] Unit&#224; di costruzione nelle citt&#224; conquistate [\H2]
 Nelle citt&#224; conquistate, le nuove unit&#224; riceveranno lo stato "Inaffidabile". Vedi le [LINK=CONCEPT_PROMOTIONS]Promozioni[\LINK]
 
+[H2] Citt&#224; riconquistate[\H2]
+[ICON_BULLET] Termina la rivolta cittadina in corso
+[ICON_BULLET] +1 popolazione (ad esempio, cittadini nascosti o fuggiti)
+
+
 [H2] le citt&#224; ribelli [\H2]
 [ICON_BULLET] Una citt&#224; &#232; conquistata
 Quando una citt&#224; &#232; occupata durante la guerra , c'&#232; una probabilit&#224; del 33% che la citt&#224; vicina pi&#249; vicina si ribell&#242; .
@@ -2384,6 +2404,11 @@ La conquista de una ciudad conlleva un bonus de investigaci&#243;n e incluso pue
 
 [H2] Construyendo unidades en ciudades conquistadas [\H2]
 En las ciudades conquistadas, las nuevas unidades recibir&#225;n el estado "No fiable". Ver [LINK=CONCEPT_PROMOTIONS]Promociones[\LINK]
+
+[H2]Ciudades Recapturadas[\H2]
+[ICON_BULLET] Finaliza la revuelta actual de la ciudad.
+[ICON_BULLET] +1 poblaci&#243;n (p. ej., ciudadanos escondidos o fugados).
+
 
 [H2]Revuelta de ciudades[\H2]
 Si una ciudad es conquistada durante la guerra, hay una probabilidad del 33% que una ciudad vecina entre en una revuelta.
@@ -5923,65 +5948,80 @@ La unidad obtendr&#225; inmediatamente una formaci&#243;n ofensiva (m&#225;s bon
 		<English>[H1]The death of a general[\H1]
 The death of some leaders or generals have often brought the country into turmoil (Caesar), or even in worst cases, cut up (Alexander).
 
-1.) Therefore, there is a 10% chance that a city will plunge into a [LINK=CONCEPT_CIVIL_WAR]Civil War[\LINK].
-If you have adopted the [LINK=CIVIC_POLYARCHIE]polyarchy[\LINK] form of government, the cities are spared a civil war.
+Therefore, in PAE, when a general dies, the following happens:
+
+1.) Each unit in the fallen general's stack receives the "Unreliable" promotion (-20% strength).
 
 2.) Furthermore, each city (status: city) gets +1 [ICON_UNHAPPY]. Defeating an enemy general also gives cities +1 [ICON_HAPPY]. This means that the more generals you lose without being victorious yourself, the unhappier the cities become. This in turn means that they can [LINK=UNIT_EMIGRANT]emigrate[\LINK] out of dissatisfaction or start a [LINK=CONCEPT_CIVIL_WAR]civil war[\LINK].
 
 The bonuses [ICON_UNHAPPY] or [ICON_HAPPY] expire over time (chance 5% per turn).
 
-3.) The loser's war weariness increases by one-third. The victor's war weariness even decreases by two-thirds.</English>
+3.) Each provincial capital has a 25% chance of spawning a [LINK=CONCEPT_USURPATOR]Usurper[\LINK]. If the polyarchy government is adopted, the cities are spared this event.
+
+4.) The loser's war weariness increases by one-third. The victor's war weariness even decreases by two-thirds.</English>
 		<French>
 [H1]Mort d'un g&#233;n&#233;ral[\H1]
 L'histoire nous a montr&#233; que la mort d'un grand meneur d'hommes ou d'un g&#233;n&#233;ral est souvent la cause de troubles (C&#233;sar) ou pire, de l'&#233;clatement d'une nation (Alexandre).
 
-1.) Par cons&#233;quent, il y a 10 % de chances qu'une ville plonge dans une [LINK=CONCEPT_CIVIL_WAR]Guerre civile[\LINK].
-Si vous avez adopt&#233; la [LINK=CIVIC_POLYARCHIE]polyarchie[\LINK] forme de gouvernement, les villes sont &#233;pargn&#233;es d'une guerre civile.
+Par cons&#233;quent, dans PAE, lorsqu'un g&#233;n&#233;ral d&#233;c&#232;de, il se passe ce qui suit :
+
+1.) Chaque unit&#233; de la pile du g&#233;n&#233;ral d&#233;chu re&#231;oit la promotion "Peu fiable" (-20 % de force).
 
 2.) De plus, chaque ville (statut : ville) obtient +1 [ICON_UNHAPPY]. Vaincre un g&#233;n&#233;ral ennemi donne &#233;galement aux villes +1 [ICON_HAPPY]. Cela signifie que plus vous perdez de g&#233;n&#233;raux sans &#234;tre vous-m&#234;me victorieux, plus les villes deviennent malheureuses. Cela signifie qu'ils peuvent [LINK=UNIT_EMIGRANT]&#233;migrer[\LINK] par m&#233;contentement ou d&#233;clencher une [LINK=CONCEPT_CIVIL_WAR]guerre civile[\LINK].
 
 Les bonus [ICON_UNHAPPY] ou [ICON_HAPPY] expirent avec le temps (chance 5 % par tour).
 
+3.) Chaque capitale provinciale a 25 % de chances d'engendrer un [LINK=CONCEPT_USURPATOR]Usurpateur[\LINK]. Si le gouvernement polyarchien est adopt&#233;, les villes sont &#233;pargn&#233;es par cet &#233;v&#233;nement.
+
 3.) La lassitude du vaincu augmente d'un tiers. Celle du vainqueur diminue m&#234;me des deux tiers.
 		</French>
 		<German>
 [H1]Der Tod eines Generals[\H1]
-Der Tod so mancher Anf&#252;hrer oder Gener&#228;le hat oftmals das Land in Aufruhr gebracht (Caesar), ja in den schlimmsten F&#228;llen sogar zerteilt (Alexander).
+Der Tod so mancher Anf&#252;hrer oder Gener&#228;le hat oftmals das ganze Land in Aufruhr gebracht (Caesar), ja in den schlimmsten F&#228;llen sogar zerteilt (Alexander).
 
-1.) Daher gibt es eine Chance von 10%, dass eine Stadt in einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] st&#252;rzt.
-Hat man die Regierungsform [LINK=CIVIC_POLYARCHIE]Polyarchie[\LINK] angenommen, bleiben die St&#228;dte von einem B&#252;rgerkrieg verschont.
+Daher passiert in PAE beim Tod eines Generals folgendes:
 
-2.) Weiters erh&#228;lt jede Stadt (Status: Stadt) +1 [ICON_UNHAPPY]. Besiegt man einen gegnerischen General bekommen St&#228;dte wiederum +1 [ICON_HAPPY]. Das bedeutet, je mehr Gener&#228;le man verliert, ohne selbst siegreich zu sein, desto ungl&#252;cklicher werden die St&#228;dte. Das wiederum bedeutet, dass sie wegen Unzufriedenheit [LINK=UNIT_EMIGRANT]auswandern[\LINK] oder einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] anzetteln k&#246;nnen.
+1.) Jede Einheit im Stack des gefallenen Generals bekommt die Bef&#246;rderung "Unzuverl&#228;ssig" (-20% St&#228;rke).
+
+2.) Jede Stadt (Status: Stadt) bekommt +1 [ICON_UNHAPPY]. Besiegt man einen gegnerischen General bekommen St&#228;dte +1 [ICON_HAPPY]. Das bedeutet, je mehr Gener&#228;le man verliert, ohne selbst siegreich zu sein, desto ungl&#252;cklicher werden die St&#228;dte. Das wiederum bedeutet, dass sie wegen Unzufriedenheit [LINK=UNIT_EMIGRANT]auswandern[\LINK] oder einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] verursachen k&#246;nnen.
 
 Die Boni [ICON_UNHAPPY] oder [ICON_HAPPY] verfallen im Laufe der Zeit (Chance 5% pro Runde).
 
-3.) Der Kriegsverdruss des Verlierers steigt um ein Drittel. Der Kriegsverdruss des Siegers sinkt sogar um zwei Drittel.
+3.) Jede Provinzhauptstadt hat eine Chance von 25%, dass ein [LINK=CONCEPT_USURPATOR]Usurpator[\LINK] entsteht. Hat man die Regierungsform [LINK=CIVIC_POLYARCHIE]Polyarchie[\LINK] angenommen, bleiben die St&#228;dte von diesem Ereignis verschont.
+
+4.) Der Kriegsverdruss des Verlierers steigt um ein Drittel. Der Kriegsverdruss des Siegers sinkt sogar um zwei Drittel.
 		</German>
 		<Italian>
 [H1] La morte del generale [\H1]
 La morte di cos&#236; tanti leader o generali ha spesso portato il paese nel caos (Cesare), anche nel peggiore dei casi anche tagliati (Alexander).
 
-1.) Pertanto, c'&#232; una probabilit&#224; del 10% che una citt&#224; precipiti in una [LINK=CONCEPT_CIVIL_WAR]guerra civile[\LINK].
-Se hai adottato la forma di governo [LINK=CIVIC_POLYARCHIE]poliarchia[\LINK], alle citt&#224; viene risparmiata una guerra civile.
+Pertanto, nel PAE, quando muore un generale, accade quanto segue:
+
+1.) Ogni unit&#224; nella pila del generale caduto riceve la promozione "Inaffidabile" (-20% di forza).
 
 2.) Inoltre, ogni citt&#224; (stato: citt&#224;) ottiene +1 [ICON_UNHAPPY]. Sconfiggere un generale nemico d&#224; anche alle citt&#224; +1 [ICON_HAPPY]. Ci&#242; significa che pi&#249; generali perdi senza vincere tu stesso, pi&#249; infelici diventano le citt&#224;. Questo a sua volta significa che possono [LINK=UNIT_EMIGRANT]emigrare[\LINK] per insoddisfazione o iniziare una [LINK=CONCEPT_CIVIL_WAR]guerra civile[\LINK].
 
 I bonus [ICON_UNHAPPY] o [ICON_HAPPY] scadono nel tempo (probabilit&#224; 5% per turno).
 
-3.) La stanchezza della guerra del perdente aumenta di un terzo. Quella del vincitore diminuisce addirittura di due terzi.
+3.) Ogni capoluogo di provincia ha il 25% di probabilit&#224; di generare un [LINK=CONCEPT_USURPATOR]Usurpatore[\LINK]. Se viene adottato il governo poliarchico, le citt&#224; vengono risparmiate da questo evento.
+
+4.) La stanchezza della guerra del perdente aumenta di un terzo. Quella del vincitore diminuisce addirittura di due terzi.
 		</Italian>
 		<Spanish>
 [H1]La muerte de un general[\H1]
 La muerte de algunos l&#237;deres o generales a menudo han llevado al pa&#237;s al caos (C&#233;sar); o incluso en el peor de los casos, a su divisi&#243;n (Alejandro).
 
-1.) Por lo tanto, existe un 10 % de probabilidad de que una ciudad se sumerja en una [LINK=CONCEPT_CIVIL_WAR]Guerra civil[\LINK].
-Si has adoptado la forma de gobierno de [LINK=CIVIC_POLYARCHIE]poliarqu&#237;a[\LINK], las ciudades se librar&#225;n de una guerra civil.
+Por lo tanto, en PAE, cuando un general muere, ocurre lo siguiente:
+
+1.) Cada unidad en la pila del general ca&#237;do recibe la promoci&#243;n "Poco fiable" (-20% de fuerza).
 
 2.) Adem&#225;s, cada ciudad (estado: ciudad) obtiene +1 [ICON_UNHAPPY]. Derrotar a un general enemigo tambi&#233;n otorga a las ciudades +1 [ICON_HAPPY]. Esto significa que cuantos m&#225;s generales pierdas sin salir victorioso, m&#225;s infelices ser&#225;n las ciudades. Esto a su vez significa que pueden [LINK=UNIT_EMIGRANT]emigrar[\LINK] por insatisfacci&#243;n o iniciar una [LINK=CONCEPT_CIVIL_WAR]guerra civil[\LINK].
 
 Las bonificaciones [ICON_UNHAPPY] o [ICON_HAPPY] caducan con el tiempo (probabilidad del 5 % por turno).
 
-3.) El cansancio b&#233;lico del perdedor aumenta en un tercio. El del vencedor incluso disminuye en dos tercios.
+3.) Cada capital provincial tiene un 25% de probabilidad de generar un [LINK=CONCEPT_USURPATOR]Usurpador[\LINK]. Si se adopta el gobierno de poliarqu&#237;a, las ciudades se libran de este evento.
+
+4.) El cansancio b&#233;lico del perdedor aumenta en un tercio. El del vencedor incluso disminuye en dos tercios.
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -13288,6 +13328,7 @@ Proceeds = Sum-Corruption
 
 [ICON_BULLET] The civilization of the trading city also receives a research bonus, provided that the sold goods come from another civilization.
 [ICON_BULLET] For Bronze, Iron or Horse the attitude towards the trading partner can be improved by 1 (Chance 5%)
+[ICON_BULLET] Goods marked with [ICON_TRADE] are not local goods and therefore 2x more expensive
 
 
 [H1]Trade routes[\H1]
@@ -13383,6 +13424,7 @@ Recette = Co&#251;t-Corruption
 
 [ICON_BULLET] La civilisation &#224; laquelle appartient la ville marchande re&#231;oit en suppl&#233;ment de l'or et des points de recherche, pourvu que les biens vendus proviennent d'une autre civilisation
 [ICON_BULLET] Le bronze, le fer ou les chevaux ont 5% de chance d'am&#233;liorer les relations du partenaire commercial de +1 
+[ICON_BULLET] Les produits marqu&#233;s d'un [ICON_TRADE] ne sont pas des produits locaux et sont donc 2 fois plus chers
 
 
 [H1]Routes commerciales[\H1]
@@ -13479,6 +13521,7 @@ Erl&#246;s = Summe-Korruption
 
 [ICON_BULLET] Die Zivilisation der Handelsstadt bekommt zus&#228;tzlich einen Forschungs- und Goldbonus, sofern die verkauften G&#252;ter von einer anderen Zivilisation stammen.
 [ICON_BULLET] F&#252;r Bronze, Eisen oder Pferd kann die Haltung zum Handelspartner um 1 verbessert werden (Chance 5%)
+[ICON_BULLET] Mit [ICON_TRADE] gekennzeichnete Waren sind keine lokale Waren und deshalb um 2x teurer
 
 
 [H1]Handelsrouten[\H1]
@@ -13575,6 +13618,8 @@ Proventi = Somma-Corruzione
 
 [ICON_BULLET] La civilt&#224; della citt&#224; commerciale riceve anche un bonus in ricerca e oro, a condizione che le merci vendute provengano da un'altra civilt&#224;.
 [ICON_BULLET] Per Bronzo, Ferro o Cavallo l'atteggiamento nei confronti del partner commerciale pu&#242; essere migliorato di 1 (probabilit&#224; del 5%)
+[ICON_BULLET] I prodotti contrassegnati con [ICON_TRADE] non sono prodotti locali e quindi sono 2 volte pi&#249; costosi
+
 
 [H1]Rotte commerciali[\H1]
 I giocatori possono assegnare rotte commerciali automatiche ai mercanti. Queste sono elencati nella barra del menu del consigliere (in alto nella schermata principale) in Rotte commerciali.
@@ -13668,6 +13713,7 @@ Ingresos = Suma de Corrupci&#243;n
 
 [ICON_BULLET] La civilizaci&#243;n de la ciudad comercial tambi&#233;n recibe una bonificaci&#243;n de investigaci&#243;n y oro, siempre que los bienes vendidos provengan de otra civilizaci&#243;n.
 [ICON_BULLET] Para Bronce, Hierro o Caballo, la actitud hacia el socio comercial se puede mejorar en 1 (posibilidad 5%)
+[ICON_BULLET] Los productos marcados con [ICON_TRADE] no son productos locales y, por lo tanto, son 2 veces m&#225;s caros.
 
 
 [H1]Rutas comerciales[\H1]
@@ -15319,6 +15365,62 @@ Probabilidad: 3%
 
 1. Khagan (L&#237;der del ej&#233;rcito)
 2. Azote de Dios (Tech: Coraceros)
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_USURPATOR_PEDIA</Tag>
+		<English>H1]Usurpers[\H1]
+
+Between 235 and 284 AD, there were 70 Roman emperors who were called upon by their own troops, so-called usurpers (soldier emperors). During this period, the Roman Empire was plagued by civil wars, external threats, and epidemics. Parts of the empire seceded (Gaul). To end this crisis, Emperor Diocletian introduced the Tetrarchy in 293 AD. Four rulers ruled jointly: two Augusti (senior emperors) and two Caesares (junior emperors). The Tetrarchy collapsed after Diocletian's abdication in 305 AD, but the principle of multiple emperors remained in place until the end of the Western Roman Empire in 476 AD.
+
+In PAE, usurpers appear when a great general dies in battle. Then it can happen that the governor of a provincial capital rises up and declares himself Soldier Emperor. The units stationed in the city are copied and placed on a favorable plot around the city square. If there are fewer than 10 units, the corresponding support troops are added. Meanwhile, the city falls into a civil war instigated by the former governor, where the provincial palace is destroyed and the city wall defense is set to 0.
+
+If you are in the "Polyarchy" government, this event will not trigger. If you no longer own any provincial palaces, this event cannot be triggered either.
+
+Usurpers were not only found in the Roman Empire; in Egypt, China, Persia, the Greek city-states, the Diadochi, etc., there were also several rulers who came to power through seizure of power or intrigue.</English>
+		<French>
+H1]Usurpateurs[\H1]
+
+Entre 235 et 284 apr. J.-C., 70 empereurs romains furent appel&#233;s &#224; la rescousse par leurs propres troupes, appel&#233;s usurpateurs (empereurs soldats). Durant cette p&#233;riode, l'Empire romain fut en proie &#224; des guerres civiles, des menaces ext&#233;rieures et des &#233;pid&#233;mies. Certaines parties de l'empire (la Gaule) firent s&#233;cession. Pour mettre fin &#224; cette crise, l'empereur Diocl&#233;tien introduisit la T&#233;trarchie en 293 apr. J.-C. Quatre souverains r&#233;gn&#232;rent conjointement : deux Augustes (empereurs sup&#233;rieurs) et deux C&#233;sars (empereurs inf&#233;rieurs). La T&#233;trarchie s'effondra apr&#232;s l'abdication de Diocl&#233;tien en 305 apr. J.-C., mais le principe de la pluralit&#233; des empereurs resta en vigueur jusqu'&#224; la fin de l'Empire romain d'Occident en 476 apr. J.-C.
+
+Dans PAE, les usurpateurs apparaissent lorsqu'un grand g&#233;n&#233;ral meurt au combat. Il arrive alors que le gouverneur d'une capitale provinciale se soul&#232;ve et se proclame empereur soldat. Les unit&#233;s stationn&#233;es dans la ville sont copi&#233;es et plac&#233;es sur un terrain favorable autour de la place. S'il y a moins de 10 unit&#233;s, les troupes de soutien correspondantes sont ajout&#233;es. Pendant ce temps, la ville sombre dans une guerre civile d&#233;clench&#233;e par l'ancien gouverneur, o&#249; le palais provincial est d&#233;truit et la d&#233;fense du mur de la ville est remise &#224; 0.
+
+Si vous &#234;tes membre du gouvernement "Polyarchie", cet &#233;v&#233;nement ne se d&#233;clenchera pas. Si vous ne poss&#233;dez plus de palais provinciaux, cet &#233;v&#233;nement ne se d&#233;clenchera pas non plus.
+
+Les usurpateurs ne se trouvaient pas seulement dans l'Empire romain ; en &#201;gypte, en Chine, en Perse, dans les cit&#233;s-&#201;tats grecques, chez les Diadoques, etc., il y avait aussi plusieurs dirigeants qui arrivaient au pouvoir par prise de pouvoir ou par intrigue.
+		</French>
+		<German>
+H1]Usurpatoren[\H1]
+
+Zwischen 235-284 n. Chr. gab es 70 r&#246;mische Kaiser, die von ihren eigenen Truppen aufgerufen wurden, sogenannte Usurpatoren (Soldatenkaiser). Das r&#246;mische Reich wurde in jener Zeit von B&#252;rgerkriegen, &#228;u&#223;eren Bedrohungen und Epidemien heimgesucht. Dabei haben sich Teile des Reichs wieder abgespaltet (Gallien). Um diese Krise zu beenden, f&#252;hrte Kaiser Diokletian im Jahr 293 n. Chr. die Tetrarchie ein. Vier Herrscher regierten gemeinsam: zwei Augusti (Seniorkaiser) und zwei Caesares (Juniorkaiser). Die Tetrarchie zerfiel nach Diokletians R&#252;cktritt 305 n. Chr., aber das Prinzip des Mehrkaisertums blieb bis zum Ende des Westr&#246;mischen Reiches 476 n. Chr. erhalten.
+
+In PAE tauchen Usurpatoren dann auf, wenn ein Gro&#223;er General in einer Schlacht stirbt. Dann kann es passieren, dass sich der Statthalter einer Provinzhauptstadt erhebt und sich zum Soldatenkaiser ernennt. Dabei werden die in der Stadt stationierten Einheiten kopiert und auf einen g&#252;nstigen Plot um das Stadtfeld gestellt. Sollten es weniger als 10 Einheiten sein, wird mit entsprechenden Hilfstrupps aufgestockt. Die Stadt verf&#228;llt w&#228;hrenddessen in einen vom ehemaligen Statthalter angezettelten B&#252;rgerkrieg, wobei der Provinzpalast zerst&#246;rt und die Stadtmauerverteidigung auf 0 gesetzt wird.
+
+Sollte man sich in der Staatsform "Polyarchie" befinden, wird dieses Event nicht ausgel&#246;st. Wenn man keine Provinzpal&#228;ste (mehr) besitzt, kann dieses Event ebenfalls nicht ausgel&#246;st werden.
+
+Usurpatoren gab es nicht nur im r&#246;mischen Reich, auch in &#196;gypten, China, Persien, den griechischen Stadtstaaten, Diadochen usw. gab es mehrere Herrscher, die sich durch Macht&#252;bernahme oder Intrigen an die Spitze setzten.
+		</German>
+		<Italian>
+H1]Usurpatori[\H1]
+
+Tra il 235 e il 284 d.C., ci furono 70 imperatori romani chiamati a intervenire dalle proprie truppe, i cosiddetti usurpatori (imperatori soldato). Durante questo periodo, l'Impero Romano fu afflitto da guerre civili, minacce esterne ed epidemie. Alcune parti dell'impero si separarono (la Gallia). Per porre fine a questa crisi, l'imperatore Diocleziano introdusse la Tetrarchia nel 293 d.C. Quattro sovrani governavano congiuntamente: due Augusti (imperatori anziani) e due Cesari (imperatori giovani). La Tetrarchia croll&#242; dopo l'abdicazione di Diocleziano nel 305 d.C., ma il principio della pluralit&#224; di imperatori rimase in vigore fino alla fine dell'Impero Romano d'Occidente nel 476 d.C.
+
+In PAE, gli usurpatori compaiono quando un grande generale muore in battaglia. In questo caso pu&#242; accadere che il governatore di un capoluogo di provincia si ribellasse e si autoproclamasse Imperatore Soldato. Le unit&#224; di stanza in citt&#224; vengono copiate e posizionate in un lotto favorevole intorno alla piazza cittadina. Se ci sono meno di 10 unit&#224;, vengono aggiunte le truppe di supporto corrispondenti. Nel frattempo, la citt&#224; sprofonda in una guerra civile istigata dall'ex governatore, dove il palazzo provinciale viene distrutto e la difesa delle mura della citt&#224; viene impostata a 0.
+
+Se ti trovi nel governo "Poliarchia", questo evento non si attiver&#224;. Anche se non possiedi pi&#249; alcun palazzo provinciale, questo evento non si attiver&#224;.
+
+Gli usurpatori non si trovavano solo nell'Impero romano; anche in Egitto, Cina, Persia, nelle citt&#224;-stato greche, nei Diadochi, ecc., vi furono diversi sovrani che giunsero al potere attraverso la presa del potere o l'intrigo.
+		</Italian>
+		<Spanish>
+H1]Usurpadores[\H1]
+
+Entre el 235 y el 284 d. C., hubo 70 emperadores romanos llamados por sus propias tropas, los llamados usurpadores (emperadores soldados). Durante este per&#237;odo, el Imperio romano se vio afectado por guerras civiles, amenazas externas y epidemias. Partes del imperio se separaron (Galia). Para poner fin a esta crisis, el emperador Diocleciano instaur&#243; la Tetrarqu&#237;a en el 293 d. C. Cuatro gobernantes gobernaron conjuntamente: dos Augustos (emperadores mayores) y dos C&#233;sares (emperadores menores). La Tetrarqu&#237;a se derrumb&#243; tras la abdicaci&#243;n de Diocleciano en el 305 d. C., pero el principio de m&#250;ltiples emperadores se mantuvo vigente hasta el fin del Imperio romano de Occidente en el 476 d. C.
+
+En PAE, los usurpadores aparecen cuando un gran general muere en batalla. Entonces puede ocurrir que el gobernador de una capital provincial se alce y se declare Emperador Soldado. Las unidades estacionadas en la ciudad se copian y se colocan en una parcela favorable alrededor de la plaza. Si hay menos de 10 unidades, se a&#241;aden las tropas de apoyo correspondientes. Mientras tanto, la ciudad se ve sumida en una guerra civil instigada por el exgobernador, donde el palacio provincial es destruido y la defensa de la muralla de la ciudad queda a 0.
+
+Si perteneces al gobierno de la "Poliarqu&#237;a", este evento no se activar&#225;. Si ya no posees palacios provinciales, este evento tampoco se activar&#225;.
+
+Los usurpadores no s&#243;lo se encontraron en el Imperio Romano; en Egipto, China, Persia, las ciudades-estado griegas, los di&#225;docos, etc., tambi&#233;n hubo varios gobernantes que llegaron al poder mediante la toma del poder o la intriga.
 		</Spanish>
 	</TEXT>
 	<TEXT>
