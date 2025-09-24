@@ -289,6 +289,14 @@ Scuola di retorica
 		<Spanish>Sal&#243;n de actos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERSAMMLUNG_ISRAEL</Tag>
+		<English>Sanhedrin</English>
+		<French>Sanh&#233;drin</French>
+		<German>Sanhedrin</German>
+		<Italian>Sinedrio</Italian>
+		<Spanish>Sanedr&#237;n</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WINDOFEN</Tag>
 		<English>Wind kiln</English>
 		<French>Four &#224; vent</French>
@@ -697,6 +705,22 @@ Scuola di retorica
 		<Spanish>El ganado (%s2) en %s1 fue aniquilado por la plaga.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_DIASPORA_1</Tag>
+		<English>After being expelled from %s1, members of other faiths seek protection and hope in %s2, a city where a community of that religion (%s3) already exists.</English>
+		<French>Apr&#232;s avoir &#233;t&#233; expuls&#233;s de %s1, les membres d'autres confessions cherchent protection et espoir &#224; %s2, une ville o&#249; une communaut&#233; de cette religion (%s3) existe d&#233;j&#224;.</French>
+		<German>Nachdem Andersgl&#228;ubige aus %s1 vertrieben worden sind, suchen sie Schutz und Hoffnung in %s2, einer Stadt wo bereits eine Glaubensgemeinschaft dieser Religion (%s3) existiert.</German>
+		<Italian>Dopo essere stati espulsi da %s1, i membri di altre fedi cercano protezione e speranza a %s2, una citt&#224; in cui esiste gi&#224; una comunit&#224; di quella religione (%s3).</Italian>
+		<Spanish>Tras ser expulsados de %s1, miembros de otras religiones buscan protecci&#243;n y esperanza en %s2, una ciudad donde ya existe una comunidad de esa religi&#243;n (%s3).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_DIASPORA_2</Tag>
+		<English>Expelled from their hometown %s1, people of other faiths have now settled in %s2. Their religion (%s3) was previously unknown in this city, but with their arrival begins a new chapter of religious diversity and hope for tolerance.</English>
+		<French>Expuls&#233;s de leur ville natale %s1, des personnes d'autres confessions se sont install&#233;es &#224; %s2. Leur religion (%s3) &#233;tait auparavant inconnue dans cette ville, mais leur arriv&#233;e marque le d&#233;but d'un nouveau chapitre de diversit&#233; religieuse et d'espoir de tol&#233;rance.</French>
+		<German>Aus ihrer Heimatstadt %s1 versto&#223;en, haben sich Andersgl&#228;ubige nun in %s2 niedergelassen. Ihre Religion (%s3) war bislang unbekannt in dieser Stadt, doch mit ihrer Ankunft beginnt ein neues Kapitel religi&#246;ser Vielfalt und Hoffnung auf Toleranz.</German>
+		<Italian>Espulsi dalla loro citt&#224; natale %s1, gli abitanti di altre fedi si sono stabiliti a %s2. La loro religione (%s3) era precedentemente sconosciuta in questa citt&#224;, ma il loro arrivo apre un nuovo capitolo di diversit&#224; religiosa e di speranza di tolleranza.</Italian>
+		<Spanish>Expulsados de su ciudad natal %s1, personas de otras confesiones se han establecido en %s2. Su religi&#243;n (%s3) era desconocida en esta ciudad, pero su llegada abre un nuevo cap&#237;tulo de diversidad religiosa y esperanza de tolerancia.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_1</Tag>
 		<English>Religious fanatics have destroyed a building in %s1: %s2</English>
 		<French>Des fanatiques religieux ont d&#233;truit un b&#226;timent &#224; %s1: %s2</French>
@@ -801,12 +825,28 @@ Scuola di retorica
 		<Spanish>Despu&#233;s de que un general importante se enamor&#243; de ti, el celoso gobernador provincial de %s1 se alza como un usurpador e intenta apoderarse de tu imperio.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_USURPATOR_INSIDE2</Tag>
+		<English>The renegade general %s1 sees himself as a better ruler and tries to seize the throne with his loyal soldiers.</English>
+		<French>Le g&#233;n&#233;ral ren&#233;gat %s1 se consid&#232;re comme un meilleur dirigeant et tente de s'emparer du tr&#244;ne avec ses soldats fid&#232;les.</French>
+		<German>Der abtr&#252;nnige General %s1 sieht sich selbst als einen besseren Herrscher und versucht mit seinen loyal gewonnen Soldaten den Thron an sich zu rei&#223;en.</German>
+		<Italian>Il generale rinnegato %s1 si considera un sovrano migliore e cerca di impadronirsi del trono insieme ai suoi fedeli soldati.</Italian>
+		<Spanish>El general renegado %s1 se ve a s&#237; mismo como un mejor gobernante y trata de apoderarse del trono con sus leales soldados.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_USURPATOR_OUTSIDE</Tag>
-		<English>After the death of an important general for %s2, the provincial governor of %s1 senses his opportunity and attempts to seize the empire as a usurper.</English>
-		<French>Apr&#232;s la mort d'un g&#233;n&#233;ral important pour %s2, le gouverneur provincial de %s1 sent son opportunit&#233; et tente de s'emparer de l'empire en tant qu'usurpateur.</French>
-		<German>Nach dem Tod eines wichtigen Generals f&#252;r %s2 wittert der Provinzstatthalter von %s1 seine Chance und versucht, das Reich als Usurpator an sich zu rei&#223;en.</German>
-		<Italian>Dopo la morte di un importante generale per %s2, il governatore provinciale di %s1 intuisce l'opportunit&#224; e tenta di impadronirsi dell'impero come usurpatore.</Italian>
-		<Spanish>Despu&#233;s de la muerte de un general importante para %s2, el gobernador provincial de %s1 siente su oportunidad e intenta apoderarse del imperio como usurpador.</Spanish>
+		<English>After the death of an important general (%s2), the provincial governor of %s1 senses his opportunity and attempts to seize the empire as a usurper.</English>
+		<French>Apr&#232;s la mort d'un g&#233;n&#233;ral important (%s2), le gouverneur provincial de %s1 sent son opportunit&#233; et tente de s'emparer de l'empire en tant qu'usurpateur.</French>
+		<German>Nach dem Tod eines wichtigen Generals (%s2) wittert der Provinzstatthalter von %s1 seine Chance und versucht, das Reich als Usurpator an sich zu rei&#223;en.</German>
+		<Italian>Dopo la morte di un importante generale (%s2), il governatore provinciale di %s1 intuisce l'opportunit&#224; e tenta di impadronirsi dell'impero come usurpatore.</Italian>
+		<Spanish>Despu&#233;s de la muerte de un general importante (%s2), el gobernador provincial de %s1 siente su oportunidad e intenta apoderarse del imperio como usurpador.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_USURPATOR_OUTSIDE2</Tag>
+		<English>In %s1, a renegade general is trying to seize power!</English>
+		<French>Dans %s1, un g&#233;n&#233;ral ren&#233;gat tente de prendre le pouvoir !</French>
+		<German>In %s1 versucht ein abtr&#252;nniger General die Herrschaft an sich zu rei&#223;en!</German>
+		<Italian>In %s1, un generale rinnegato sta cercando di prendere il potere!</Italian>
+		<Spanish>&#161;En %s1, un general renegado est&#225; intentando tomar el poder!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_USURPATOR_TITLE</Tag>
@@ -815,6 +855,14 @@ Scuola di retorica
 		<German>[H1]Ein General ist gefallen![\H1]</German>
 		<Italian>[H1]Un generale &#232; caduto![\H1]</Italian>
 		<Spanish>[H1]&#161;Ha ca&#237;do un general![\H1]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_USURPATOR_TITLE2</Tag>
+		<English>[H1]A general goes rogue![\H1]</English>
+		<French>[H1]Un g&#233;n&#233;ral devient un voyou ![\H1]</French>
+		<German>[H1]Ein General wird abtr&#252;nnnig![\H1]</German>
+		<Italian>[H1]Un generale diventa un ribelle![\H1]</Italian>
+		<Spanish>[H1]&#161;Un general se vuelve rebelde![\H1]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_FEAT_GROWTHPERCENT</Tag>
@@ -943,6 +991,62 @@ Scuola di retorica
 		<German>Ein Kind namens Jesus wurde in %s1 geboren!</German>
 		<Italian>Un bambino di nome Ges&#249; &#232; nato a %s1!</Italian>
 		<Spanish>&#161;Un ni&#241;o llamado Jes&#250;s naci&#243; en %s1!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_USURPATOR_1</Tag>
+		<English>General %s1 demands a massive sum of gold (%d2 [ICON_GOLD]) or he will raise the banner of rebellion and overthrow the throne.</English>
+		<French>Le g&#233;n&#233;ral %s1 exige une &#233;norme somme d'or (%d2 [ICON_GOLD]) ou il l&#232;vera la banni&#232;re de la r&#233;bellion et renversera le tr&#244;ne.</French>
+		<German>Der General %s1 verlangt eine gewaltige Summe Gold (%d2 [ICON_GOLD]) oder er wird das Banner der Rebellion erheben und den Thron st&#252;rzen.</German>
+		<Italian>Il generale %s1 esige un'enorme somma d'oro (%d2 [ICON_GOLD]) o innalzer&#224; lo stendardo della ribellione e rovescer&#224; il trono.</Italian>
+		<Spanish>El general %s1 exige una enorme suma de oro (%d2 [ICON_GOLD]) o levantar&#225; el estandarte de la rebeli&#243;n y derrocar&#225; el trono.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_USURPATOR_2</Tag>
+		<English>General %s1's loyalty is wavering. Without the generous payment of %d2 [ICON_GOLD], he threatens to plunge the realm into blood and betrayal.</English>
+		<French>La loyaut&#233; du g&#233;n&#233;ral %s1 est chancelante. Sans la g&#233;n&#233;reuse r&#233;compense de %d2 [ICON_GOLD], il menace de plonger le royaume dans le sang et la trahison.</French>
+		<German>Die Loyalit&#228;t des Generals %s1 wankt. Ohne der gro&#223;z&#252;gigen Zahlung von %d2 [ICON_GOLD] droht er, das Reich in Blut und Verrat zu tauchen.</German>
+		<Italian>La lealt&#224; del generale %s1 sta vacillando. Senza il generoso pagamento di %d2 [ICON_GOLD], minaccia di far sprofondare il regno nel sangue e nel tradimento.</Italian>
+		<Spanish>La lealtad del general %s1 flaquea. Sin el generoso pago de %d2 [ICON_GOLD], amenaza con hundir el reino en sangre y traici&#243;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_USURPATOR_3</Tag>
+		<English>"Gold or crown," says General %s1. Without a tribute of %d2 [ICON_GOLD], he will turn his sword against you.</English>
+		<French>"De l'or ou de la couronne", dit le g&#233;n&#233;ral %s1. Sans un tribut de %d2 [ICON_GOLD], il retournera son &#233;p&#233;e contre vous.</French>
+		<German>"Gold oder Krone", spricht der General %s1. Ohne einem Tribut von %d2 [ICON_GOLD] wird er das Schwert gegen euch richten.</German>
+		<Italian>"Oro o corona", dice il generale %s1. Senza un tributo di %d2 [ICON_GOLD], rivolger&#224; la sua spada contro di te.</Italian>
+		<Spanish>"Oro o corona", dice el general %s1. Sin un tributo di %d2 [ICON_GOLD], volver&#225; su espada contra ti.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_USURPATOR_4</Tag>
+		<English>Once a loyal servant, now a shadow of greed: General %s1 demands %d2 [ICON_GOLD] ...or the empire shall fall.</English>
+		<French>Autrefois un serviteur loyal, aujourd'hui une ombre de cupidit&#233; : le g&#233;n&#233;ral %s1 exige %d2 [ICON_GOLD] ...ou l'empire tombera.</French>
+		<German>Einst ein treuer Diener, nun ein Schatten der Gier: Der General %s1 fordert %d2 [ICON_GOLD] ...oder das Reich soll fallen.</German>
+		<Italian>Un tempo fedele servitore, ora un'ombra di avidit&#224;: il generale %s1 esige %d2 [ICON_GOLD] ...o l'impero cadr&#224;.</Italian>
+		<Spanish>Una vez un sirviente leal, ahora una sombra de avaricia: el general %s1 exige %d2 [ICON_GOLD] ...o el imperio caer&#225;.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_USURPATOR_5</Tag>
+		<English>General %s1, blinded by his lust for power, demands %d2 [ICON_GOLD] tribute. If you refuse, he will demand the scepter with the sword.</English>
+		<French>Le g&#233;n&#233;ral %s1, aveugl&#233; par sa soif de pouvoir, exige un tribut de %d2 [ICON_GOLD]. Si vous refusez, il exigera le sceptre et l'&#233;p&#233;e.</French>
+		<German>Der General %s1, geblendet von Machtgier, verlangt %d2 [ICON_GOLD] Tribut. Verweigert ihr ihn, wird er das Zepter mit dem Schwert fordern.</German>
+		<Italian>Il generale %s1, accecato dalla sua brama di potere, esige %d2 [ICON_GOLD] tributi. Se rifiuti, ti chieder&#224; lo scettro con la spada.</Italian>
+		<Spanish>El general %s1, cegado por su ansia de poder, exige %d2 [ICON_GOLD] de tributo. Si te niegas, exigir&#225; el cetro con la espada.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_USURPATOR_NO</Tag>
+		<English>Never! We will show him who the rightful ruler is.</English>
+		<French>Jamais ! Nous lui montrerons qui est le souverain l&#233;gitime.</French>
+		<German>Niemals! Wir werden ihm zeigen, wer der rechtm&#228;&#223;ige Herrscher ist.</German>
+		<Italian>Mai! Gli mostreremo chi &#232; il legittimo sovrano.</Italian>
+		<Spanish>&#161;Jam&#225;s! Le demostraremos qui&#233;n es el gobernante leg&#237;timo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_USURPATOR_YES</Tag>
+		<English>Give him the amount he asks for.</English>
+		<French>Donnez-lui le montant qu'il demande.</French>
+		<German>Gebt ihm die Summe, die er verlangt.</German>
+		<Italian>Dategli la cifra che chiede.</Italian>
+		<Spanish>Dale la cantidad que pide.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COMES_HELP</Tag>

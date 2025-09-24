@@ -765,7 +765,10 @@ class CvEventManager:
 						PAE_City.onModNetMessage(argsList)
 
 				elif iData1 in [668, 669, 670, 679, 680, 681, 692, 693, 696, 755]:
+						if iData4 == gc.getGame().getActivePlayer():
+								CyAudioGame().Play2DSound("AS2D_WELOVEKING")
 						PAE_Sklaven.onModNetMessage(iData1, iData2, iData3, iData4, iData5)
+
 
 				elif iData1 == 671 or (iData1 >= 682 and iData1 <= 691):
 						PAE_Vassal.onModNetMessage(iData1, iData2, iData3, iData4, iData5)
@@ -2224,7 +2227,10 @@ class CvEventManager:
 						pCity.setNumRealBuilding(iBuilding, 1)
 						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 						pUnit = None
-						
+
+						if iData4 == gc.getGame().getActivePlayer():
+								CyAudioGame().Play2DSound("AS2D_BUILD_BARRACKS")
+
 						# Movie
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)

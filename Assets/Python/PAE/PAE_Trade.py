@@ -82,9 +82,9 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 				pBuyer = gc.getPlayer(iBuyer)
 
 				eUnitBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
-				if eBonus == eUnitBonus:
-						#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Das haben wir bereits geladen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-						return
+				#if eBonus == eUnitBonus:
+				#		#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Das haben wir bereits geladen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+				#		return
 				if eUnitBonus != -1:
 						# Geladene Ressource automatisch verkaufen
 						#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Die Einheit hat bereits eine Ressource geladen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -779,11 +779,12 @@ def doPopupChooseBonus(pUnit, pCity):
 				popupInfo.setData2(pUnit.getID())
 
 				for eBonus in lGoods:
+						sText = u""
 						sBonusDesc = gc.getBonusInfo(eBonus).getDescription()
 						iPrice = _calculateBonusBuyingPrice(eBonus, iBuyer, iSeller, pUnit.plot())
 						iBonusOwned = gc.getPlayer(iBuyer).getNumAvailableBonuses(eBonus)
-						sText = CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iBonusOwned))
 						if eBonus in lGoods2: sText += CyTranslator().getText("[ICON_TRADE]", ())
+						sText += CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iBonusOwned))
 						sBonusButton = gc.getBonusInfo(eBonus).getButton()
 						popupInfo.addPythonButton(sText, sBonusButton)
 
@@ -955,21 +956,27 @@ def calcBonusProfit(pCityFrom, pCityTo, iBonus, pUnit):
 		if iSeller != iBuyer: iModifier += 5 * gc.getPlayer(iSeller).AI_getAttitude(iBuyer)
 
 		# Zwischensumme
-		iSum = iBasis * (iPop + iModifier)/100 + iBasis*iDistance // (75 - iBasis)
+		iSum = iBasis * (iPop + iModifier) // 100 + iBasis*iDistance // (75 - iBasis)
 
 		iKorruption = pCityTo.calculateDistanceMaintenance()
-		
+
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pCityFrom.getName(),iBasis)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pCityTo.getName(),iSum)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-		
+
 		iSum -= iKorruption
-		
+
 		# Karren oder Karawane bringen mehr Gewinn
 		if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_TRADE_MERCHANT") or pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_CARAVAN"):
 				iSum = int(iSum * 1.5)
-		
+
+		# Handelsgüter aus dem Handelsnetz
+		lGoods1 = getCitySaleableGoods(pCityFrom, -1)
+		lGoodsX = getCitySaleableGoodsAll(pCityFrom)
+		lGoods2 = list(set(lGoodsX) - set(lGoods1))
+		if iBonus in lGoods2: iBasis *= 2 # int(iValue * 3 / 2)
+
 		iSum -= iBasis
-		
+
 		return max(2,iSum)
 # --- End of price stuff (trade) ---
 
@@ -1089,15 +1096,15 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 				pCity = gc.getPlayer(iData1).getCity(iData2)
 				sCityName = pCity.getName()
 				lGoods1 = getCitySaleableGoods(pCity, -1)
-				# PAE 7.11e: Importiere Waren der Stadt
-				lGoodsX = getCitySaleableGoodsAll(pCity)
+				# PAE 7.11e: Alle Waren der Stadt aus dem Handelsnetz
+				lGoodsAll = getCitySaleableGoodsAll(pCity)
 
 				lGoods2 = []
-				#for e in lGoodsX:
+				#for e in lGoodsAll:
 				#	if e not in lGoods1:
 				#		lGoods2.append(e)
-				lGoods2 = list(set(lGoodsX) - set(lGoods1))
-				#lGoods2 = [x for x in lGoodsX if x not in lGoods1]
+				lGoods2 = list(set(lGoodsAll) - set(lGoods1))
+				#lGoods2 = [x for x in lGoodsAll if x not in lGoods1]
 
 				lGoods = lGoods1 + lGoods2
 				lGoods.append(-1)
@@ -1119,9 +1126,7 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 
 				for eBonus in lGoods:
 						# bis PAE 7.11d: if eBonus != -1:
-						# ab  PAE 7.11e (keine gleichen Waren handeln): if eBonus != -1 and eBonus != iBonus:
 						if eBonus != -1:
-							if eBonus != iBonus:
 								sBonusDesc = gc.getBonusInfo(eBonus).getDescription()
 								iPrice = _calculateBonusBuyingPrice(eBonus, iUnitOwner, iData1, pUnit.plot())
 								sText = u""
@@ -1309,24 +1314,26 @@ def doAutomateMerchant(pUnit):
 
 				iPlayer = pUnit.getOwner()
 				pUnitPlot = pUnit.plot()
-				# iTurn = gc.getGame().getGameTurn()
 				# pUnit.getGroup().clearMissionQueue()
 
 				#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit autLTC: " + str(CvUtil.getScriptData(pUnit, ["autLTC"], -1)), None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 
 				# Verhindern, dass mehrmals pro Runden geprueft wird, um Rundenzeit zu sparen
 				# Z.B. bei bedrohten Einheiten ruft Civ die Funktion sonst 100 Mal auf, weiss nicht wieso...
-				# iLastTurnChecked = CvUtil.getScriptData(pUnit, ["autLTC"], -1)
-				# if iLastTurnChecked >= iTurn: # and not pUnit.isHuman():
-				#    return False
-				# else:
-				#  CvUtil.addScriptData(pUnit, "autLTC", iTurn)
+				#iTurn = gc.getGame().getGameTurn()
+				#iLastTurnChecked = CvUtil.getScriptData(pUnit, ["autLTC"], -1)
+				#if iLastTurnChecked >= iTurn: # and not pUnit.isHuman():
+				#	return False
+				#else:
+				#	CvUtil.addScriptData(pUnit, "autLTC", iTurn)
 
 				eStoredBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
 				iX1 = CvUtil.getScriptData(pUnit, ["autX1"], -1)
 				iY1 = CvUtil.getScriptData(pUnit, ["autY1"], -1)
 				iX2 = CvUtil.getScriptData(pUnit, ["autX2"], -1)
 				iY2 = CvUtil.getScriptData(pUnit, ["autY2"], -1)
+				iFromX = CvUtil.getScriptData(pUnit, ["x"], -1) # bonus from city
+				iFromY = CvUtil.getScriptData(pUnit, ["y"], -1) # bonus from city
 				eBonus1 = CvUtil.getScriptData(pUnit, ["autB1"], -1)  # bonus bought in city 1
 				eBonus2 = CvUtil.getScriptData(pUnit, ["autB2"], -1)  # bonus bought in city 2
 				pCityPlot1 = CyMap().plot(iX1, iY1)
@@ -1373,6 +1380,9 @@ def doAutomateMerchant(pUnit):
 						CvUtil.removeScriptData(pUnit, "autY2")
 						CvUtil.removeScriptData(pUnit, "autB1")
 						CvUtil.removeScriptData(pUnit, "autB2")
+						CvUtil.removeScriptData(pUnit, "x")
+						CvUtil.removeScriptData(pUnit, "y")
+						CvUtil.removeScriptData(pUnit, "originCiv")
 
 						# Messages
 						if pUnit.isHuman():
@@ -1404,14 +1414,19 @@ def doAutomateMerchant(pUnit):
 								eBonusBuy = eBonus2
 								eBonusSell = eBonus1
 
+						# if iPlayer == iHumanPlayer:
+						#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is in City", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+
+						bOriginalCity = False
+						if pCurrentCity.getX() == iFromX and pCurrentCity.getY() == iFromY:
+							bOriginalCity = True
+
 						#if eStoredBonus != -1:
-						if eBonusSell != -1 and eStoredBonus == eBonusSell:
+						if not bOriginalCity and eStoredBonus != -1:
 								doSellBonus(pUnit, pCurrentCity)
+								eStoredBonus = -1
 								# if iPlayer == iHumanPlayer:
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit sold bonus in city", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
-
-						# if iPlayer == iHumanPlayer:
-						#  CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is in City", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 
 						# HI: if player does not have enough money, trade route is cancelled
 						# AI: if AI does not have enough money, AI buys bonus nonetheless (causes no known errors)
@@ -1425,24 +1440,23 @@ def doAutomateMerchant(pUnit):
 
 						if eBonusBuy == -1:
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == -1 ", None, 2, None, ColorTypes(7), 0, 0, False, False)
-								#pUnit.getGroup().pushMoveToMission(pNewCity.getX(), pNewCity.getY())
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-						elif eStoredBonus == eBonusBuy:
-								# if iPlayer == 8:
-								#	CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == eStoredBonus | going to " + pNewCity.getName(), None, 2, None, ColorTypes(7), 0, 0, False, False)
-								#pUnit.getGroup().pushMoveToMission(pNewCity.getX(), pNewCity.getY())
-								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-						elif eBonusBuy in lCitySaleableGoods + lCitySaleableGoods2:
-								#if iPlayer == iHumanPlayer: CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy in lCitySaleable ", None, 2, None, ColorTypes(7), 0, 0, False, False)
-								if eStoredBonus != eBonusBuy:
-										# if not already acquired / Wenn Bonus nicht bereits gekauft wurde
-										# if not pUnit.hasMoved():
-										doBuyBonus(pUnit, eBonusBuy, pCurrentCity.getOwner())
-										pUnit.finishMoves()
+						#elif bOriginalCity:
+						#		# if iPlayer == 0:
+						#		#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == eStoredBonus | going to " + pNewCity.getName(), None, 2, None, ColorTypes(7), 0, 0, False, False)
+						#		pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+						elif eBonusBuy in lCitySaleableGoods + lCitySaleableGoods2 and eStoredBonus == -1:
+								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy in lCitySaleable ", None, 2, None, ColorTypes(7), 0, 0, False, False)
+								#if not bOriginalCity or eStoredBonus == -1:
+								# if not already acquired / Wenn Bonus nicht bereits gekauft wurde
+								# if not pUnit.hasMoved():
+								doBuyBonus(pUnit, eBonusBuy, pCurrentCity.getOwner())
+								pUnit.finishMoves()
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy MOVE to new city ", None, 2, None, ColorTypes(7), 0, 0, False, False)
-								#pUnit.getGroup().pushMoveToMission(pNewCity.getX(), pNewCity.getY())
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-								return True
+						# Wenn bereits die Ware aus dieser Stadt geladen ist
+						elif bOriginalCity and eStoredBonus != -1:
+								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 						else:
 								# bonus is no longer available (or player does not have enough money) => cancel automated trade route
 								CvUtil.addScriptData(pUnit, "autA", 0)  # deactivate route
@@ -1454,7 +1468,7 @@ def doAutomateMerchant(pUnit):
 												popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 												popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_TRADE_INFO_2", (gc.getBonusInfo(eBonusBuy).getDescription(), pCurrentCity.getName())))
 												popupInfo.addPopup(iPlayer)
-										elif eBonusBuy not in lCitySaleableGoods:
+										elif eBonusBuy not in lCitySaleableGoods + lCitySaleableGoods2:
 												popupInfo = CyPopupInfo()
 												popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 												popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_TRADE_INFO_3", (gc.getBonusInfo(eBonusBuy).getDescription(), pCurrentCity.getName())))
@@ -1466,19 +1480,17 @@ def doAutomateMerchant(pUnit):
 				else:
 						# unit is anywhere
 						# if iPlayer == 8:
-						#	CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
-						if eStoredBonus == eBonus1:
-								#pUnit.getGroup().pushMoveToMission(pCityPlot2.getX(), pCityPlot2.getY())
+						#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+						# iFlags = 1: MOVE_THROUGH_ENEMY
+						if iFromX == iX1 and iFromY == iY1:
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX2, iY2, 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 								# if iPlayer == 8:
-								#	CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere: eStoredBonus == eBonus1", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
-						elif eStoredBonus == eBonus2:
-								#pUnit.getGroup().pushMoveToMission(pCityPlot1.getX(), pCityPlot1.getY())
+								#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere: eStoredBonus == eBonus1", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+						elif iFromX == iX2 and iFromY == iY2:
 								# VOID pushMission (MissionType eMission, INT iData1, INT iData2, INT iFlags, BOOL bAppend, BOOL bManual, MissionAIType eMissionAI, CyPlot pMissionAIPlot, CyUnit pMissionAIUnit)
-								# iFlags = 1: MOVE_THROUGH_ENEMY
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX1, iY1, 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 								# if iPlayer == 8:
-								#	CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere: eStoredBonus == eBonus2", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+								#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere: eStoredBonus == eBonus2", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 						else:
 								# auch wenn eBonus = -1
 								#iDistance1 = CyMap().calculatePathDistance(pUnitPlot, pCityPlot1)
@@ -1488,17 +1500,15 @@ def doAutomateMerchant(pUnit):
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere: else: Distance1: "+str(iDistance1) + u" Distanz2: "+str(iDistance2), None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 								if iDistance1 == -1 and iDistance2 == -1:
 										# if iPlayer == 8:
-										#	CyInterface().addMessage(iHumanPlayer, True, 10, "doAutomateMerchant False: Plot unreachable", None, 2, None, ColorTypes(7), 0, 0, False, False)
+										#CyInterface().addMessage(iHumanPlayer, True, 10, "doAutomateMerchant False: Plot unreachable", None, 2, None, ColorTypes(7), 0, 0, False, False)
 										return False  # plot unreachable
 								elif iDistance1 == -1 or iDistance1 > iDistance2:
 										# if iPlayer == 8:
-										#	CyInterface().addMessage(iHumanPlayer, True, 10, "doAutomateMerchant iDistance1 == -1 ", None, 2, None, ColorTypes(6), 0, 0, False, False)
-										#pUnit.getGroup().pushMoveToMission(pCityPlot2.getX(), pCityPlot2.getY())
+										#CyInterface().addMessage(iHumanPlayer, True, 10, "doAutomateMerchant iDistance1 == -1 ", None, 2, None, ColorTypes(6), 0, 0, False, False)
 										pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX2, iY2, 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 								elif iDistance2 == -1:
 										# if iPlayer == 8:
-										#	CyInterface().addMessage(iHumanPlayer, True, 10, "doAutomateMerchant iDistance1 smaller than iDistance2 ", None, 2, None, ColorTypes(6), 0, 0, False, False)
-										#pUnit.getGroup().pushMoveToMission(pCityPlot1.getX(), pCityPlot1.getY())
+										#CyInterface().addMessage(iHumanPlayer, True, 10, "doAutomateMerchant iDistance1 smaller than iDistance2 ", None, 2, None, ColorTypes(6), 0, 0, False, False)
 										if iPlayer != iHumanPlayer and not pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX1, iY1, 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit):
 												#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere: else (does not move)", None, 2, None, ColorTypes(6), 0, 0, False, False)
 												#CyInterface().addMessage(iHumanPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iActivityType",pUnit.getGroup().getActivityType())), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -1510,7 +1520,6 @@ def doAutomateMerchant(pUnit):
 								else:
 										# if iPlayer == 8:
 										#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is anywhere: else (2x)", None, 2, None, ColorTypes(6), 0, 0, False, False)
-										#pUnit.getGroup().pushMoveToMission(pCityPlot2.getX(), pCityPlot2.getY())
 										pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX1, iY1, 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 
 				#CyInterface().addMessage(iHumanPlayer, True, 10, "doAutomateMerchant returns True ", None, 2, None, ColorTypes(6), 0, 0, False, False)
@@ -1664,6 +1673,8 @@ def doAssignTradeRoute_AI(pUnit):
 
 				CvUtil.addScriptData(pUnit, "autX1", pBestPlayerCity.getX())
 				CvUtil.addScriptData(pUnit, "autY1", pBestPlayerCity.getY())
+				CvUtil.addScriptData(pUnit, "x", pBestPlayerCity.getX())
+				CvUtil.addScriptData(pUnit, "y", pBestPlayerCity.getY())
 				CvUtil.addScriptData(pUnit, "autX2", pBestNeighborCity.getX())
 				CvUtil.addScriptData(pUnit, "autY2", pBestNeighborCity.getY())
 				CvUtil.addScriptData(pUnit, "autB1", eBonus1)  # bonus bought in city 1

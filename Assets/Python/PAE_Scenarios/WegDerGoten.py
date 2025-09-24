@@ -289,7 +289,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		#<EROBERT WEITERE STÄDTE>
 		#<EROBERT DIE HEILIGE STADT>
 		szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_HEAD", (pCity.getName(), ))
-		szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY", (gc.getPlayer(pHolyCity.getOwner()).getName(), pHolyCity.getName()))
+		szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY", (pHolyCity.getName(), gc.getPlayer(pHolyCity.getOwner()).getName(), pHolyCity.getName()))
 		PopUpDDS("Art/Scenarios/WegDerGoten/WDG02.dds",szTextHead,szTextBody,"RIGHT")
 
 		# Zoom zur neuen Hauptstadt
@@ -319,8 +319,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 	#Die Donareiche, das Zentrum der alten Götter steht unter eurer Kontrolle. Wenn auch ohne Bedeutung für uns, doch eine schöne Erinnerung an die Zeiten der Ahnen.
 	if iNewOwner == 0 and pNewOwner.isHuman():
 		iReligion = gc.getInfoTypeForString("RELIGION_NORDIC")
-		pHolyCity = gc.getGame().getHolyCity(iReligion)
-		if pCity.getID() == pHolyCity.getID():
+		if pCity.isHolyCityByType(iReligion):
 			iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["14_1"], "")
 			if iCheck == "":
 				iCheck = CvUtil.addScriptData(gc.getMap().plot(0, 1), "14_1", "x")
@@ -349,8 +348,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		iHumanPlayer = gc.getGame().getActivePlayer()
 		if iHumanPlayer == 0 and gc.getPlayer(iHumanPlayer).isHuman():
 			iReligion = gc.getInfoTypeForString("RELIGION_NORDIC")
-			pHolyCity = gc.getGame().getHolyCity(iReligion)
-			if pCity.getID() == pHolyCity.getID():
+			if pCity.isHolyCityByType(iReligion):
 				if gc.getPlayer(iHumanPlayer).getStateReligion() == iReligion:
 					popupInfo = CyPopupInfo()
 					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)

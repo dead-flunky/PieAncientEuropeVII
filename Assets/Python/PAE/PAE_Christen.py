@@ -9,6 +9,7 @@ from CvPythonExtensions import (CyGlobalContext, CyInterface, plotXY, CyPopupInf
 import CvUtil
 import PAE_Lists as L
 import PAE_Unit
+import PAE_City
 
 # Defines
 gc = CyGlobalContext()
@@ -293,9 +294,6 @@ def doReligionsKonflikt(pCity):
 		# 2%: Poly Reli als Staatsreli, aber kein aktiver Krieg
 		# BTS Event System: EVENTTRIGGER_NO_WAR (aktiv)
 
-		# Juden werden zeitweise geduldet
-		iJudentum = gc.getInfoTypeForString("RELIGION_JUDAISM")
-
 		# Stadt hat mindestens 2 verschiedene Relis (Staatsreligion ausgenommen)
 		iStateReligion = pPlayer.getStateReligion()
 		# Konflikt gibt es nicht, wenn in einer Stadt nur eine Religion existiert (Staatsreligion ist egal)
@@ -312,11 +310,13 @@ def doReligionsKonflikt(pCity):
 
 		# größere Städte dürfen mehr Religionen gleichzeitig haben
 		# friedvolle Anzahl: je nach Stadtgröße 1-3 verschiedene Religionen
+		# PAE 7.12: Maximal 2 (wegen Verbreitungsmöglichkeit)!! Alles andere wäre noch unrealistischer für damalige Zeiten!
 		iPuffer = 1
-		if pCity.getPopulation() > 11: iPuffer += 2
-		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")): iPuffer += 1
+		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")): iPuffer += 1
+		#if pCity.getPopulation() > 11: iPuffer += 1
 		
-		# Judentum wird zeitweise geduldet
+		# PAE 7.12: Judentum wird zeitweise geduldet
+		iJudentum = gc.getInfoTypeForString("RELIGION_JUDAISM")
 		bJudentum = False
 		if pCity.isHasReligion(iJudentum):
 			bJudentum = True
@@ -331,10 +331,10 @@ def doReligionsKonflikt(pCity):
 
 			#pCity.changeOccupationTimer(1)
 
-			# Einheiten verletzen und immobile setzen
+			# Stufe 1: Einheiten verletzen und immobile setzen
 			doHurtUnitsOnPlot(iPlayer,pCity)
 
-			# 1:3 Der Tempel wird zerstört
+			# Stufe 2: 1:3 Der Tempel wird zerstört
 			bTempel = False
 			if CvUtil.myRandom(3, "ReligionsKonflikt4") == 1:
 				iRange = gc.getNumBuildingInfos()
@@ -353,16 +353,16 @@ def doReligionsKonflikt(pCity):
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_2", (pCity.getName(),gc.getReligionInfo(iReligion).getText())),
 										None, 2, gc.getBuildingInfo(iBuildingLoop).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
-			# 1:3 Die Stadt wird in Brand gesteckt
+			# Stufe 3: 1:3 Die Stadt wird in Brand gesteckt
 			if CvUtil.myRandom(3, "ReligionsKonflikt5") == 1:
 					iEvent = gc.getInfoTypeForString("EVENTTRIGGER_CITY_FIRE_CRISIS")
 					pPlayer.trigger(iEvent)
 					pPlayer.resetEventOccured(iEvent)
 
-			# 1:4 Stadt verliert Pop und ggf Religion
+			# Stufe 4a: 1:4 Stadt verliert Pop und ggf Religion
 			if CvUtil.myRandom(4, "ReligionsKonflikt6") == 1:
 				# Pop abziehen
-				iPop = int(pCity.getPopulation() / 5)
+				iPop = pCity.getPopulation() // 5
 				iPop = max(1,iPop)
 				pCity.changePopulation(-iPop)
 
@@ -386,6 +386,14 @@ def doReligionsKonflikt(pCity):
 					if pPlayer.isHuman():
 						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_4", (pCity.getName(),gc.getReligionInfo(iReligion).getText())),
 						None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+
+					# PAE 7.12a: Gläubiger wandern aus
+					doDiaspora(pCity, iReligion)
+
+			# Stufe 4b: 1:5 Bürgerkrieg
+			else:
+				PAE_City.doStartCivilWar(pCity, 20)
+
 			return True
 
 		elif iNumReligions > 1 and bJudentum:
@@ -394,6 +402,64 @@ def doReligionsKonflikt(pCity):
 				None, 2, gc.getReligionInfo(iJudentum).getButton(), ColorTypes(11), pCity.getX(), pCity.getY(), True, True)
 
 		return False
+
+
+# PAE 7.12a
+# Ausgetriebene Gläubige im Umkreis von x in eine Stadt ansiedeln (80%)
+# Wenn in diesem Umkreis bereits eine Stadt mit dieser Religion ist: break
+# if Stadt < 5: Pop +1 else +Food
+def doDiaspora(pCity, iReligion):
+	if pCity.isNone(): return
+
+	# 20% Chance, dass keine Auswanderung zustande kommt
+	if CvUtil.myRandom(10, "doDiaspora") < 2: return
+
+	iRange = 10
+	iX = pCity.getX()
+	iY = pCity.getY()
+	lCities1 = [] #  mit iReligion (Prio 1)
+	lCities2 = [] # ohne iReligion (Prio 2)
+	for i in range(-iRange, iRange+1):
+		for j in range(-iRange, iRange+1):
+			loopPlot = plotXY(iX, iY, i, j)
+			if loopPlot is not None and not loopPlot.isNone():
+				if loopPlot.isCity():
+					loopCity = loopPlot.getPlotCity()
+					if loopCity.isHasReligion(iReligion):
+						lCities1.append(loopCity)
+					else:
+						lCities2.append(loopCity)
+
+	# Primär Städte mit dieser Religion (Gemeinschaft)
+	if len(lCities1):
+		iRand = CvUtil.myRandom(len(lCities1), "doDiasporaCities1")
+		loopCity = lCities1[iRand]
+	# Sekundär Neuanfang
+	elif len(lCities2):
+		iRand = CvUtil.myRandom(len(lCities2), "doDiasporaCities2")
+		loopCity = lCities2[iRand]
+	else:
+		return
+
+	iOwner = loopCity.getOwner()
+	pOwner = gc.getPlayer(iOwner)
+	if loopCity.isHasReligion(iReligion):
+		if pOwner.isHuman():
+			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_1", (pCity.getName(),loopCity.getName(),iReligion)),
+			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
+	else:
+		loopCity.setHasReligion(iReligion, 1, 0, 0)
+		if pOwner.isHuman():
+			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_2", (pCity.getName(),loopCity.getName(),iReligion)),
+			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
+
+	if loopCity.getPopulation() < 4:
+		loopCity.changePopulation(1)
+		PAE_City.doCheckCityState(loopCity)
+	else:
+		iFoodChange = (loopCity.growthThreshold() - loopCity.getFood()) / 2
+		loopCity.changeFood(iFoodChange)
+
 
 
 # ------- Religionskonflikte PHASE 3 -------------------- #
@@ -531,6 +597,9 @@ def removePagans(pCity):
 
 							pCity.setHasReligion(iReli, 0, 0, 0)
 							txtReligionOrKult = gc.getReligionInfo(iReli).getText()
+
+							# PAE 7.12a
+							doDiaspora(pCity, iReli)
 
 					# Meldung
 					if txtReligionOrKult != "":

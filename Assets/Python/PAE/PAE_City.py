@@ -738,6 +738,9 @@ def doInquisitorPersecution2(iPlayer, iCity, iButton, iReligion, iUnit):
 						pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.getX(), pCity.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 						pNewUnit.finishMoves()
 
+				# PAE 7.12a: Gläubiger wandern aus
+				PAE_Christen.doDiaspora(pCity, iReligion)
+
 				# City Revolt 10%
 				if CvUtil.myRandom(10, "pers_success_changeOccupationTimer") == 1:
 					pCity.changeOccupationTimer(1)
@@ -2785,7 +2788,7 @@ def doLeprosy(pCity):
 				iChance = pCity.badHealth(False) - pCity.goodHealth()
 				# PAE V: less chance for AI
 				if not pPlayer.isHuman():
-						iChance = iChance / 3
+						iChance = iChance // 3
 
 				if CvUtil.myRandom(100, "doLeprosy") < iChance:
 						iOldPop = pCity.getPopulation()

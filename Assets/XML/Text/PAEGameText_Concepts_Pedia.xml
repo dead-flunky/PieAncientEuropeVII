@@ -215,7 +215,7 @@ Debido a la niebla "negra" de guerra, deber&#237;as poner algunos textos de info
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_ANIMALS_PEDIA</Tag>
 		<English>[H1]Animals[\H1]
-At the start of a game in Civilization IV, wild animals live everywhere that can attack your units. Unarmed settlers and construction crews are particularly at risk. In contrast to CIV, animals in PAE even venture into cultural areas because they have no idea of &#8203;&#8203;cultural boundaries. Animals can be hunted and destroyed. In doing so, they bring food to a nearby city. The hunter unit increases the food bonus and shows cities (green or red circle) whether they are within the radius of the hunting prey.
+At the start of a game in Civilization IV, wild animals live everywhere that can attack your units. Unarmed settlers and construction crews are particularly at risk. In contrast to CIV, animals in PAE even venture into cultural areas because they have no idea of cultural boundaries. Animals can be hunted and destroyed. In doing so, they bring food to a nearby city. The hunter unit increases the food bonus and shows cities (green or red circle) whether they are within the radius of the hunting prey.
 
 [H1]Characteristics of animals in PAE[\H1]
 
@@ -892,7 +892,7 @@ Besides of increasing the food storage of other cities, wagons can also spread c
 [ICON_BULLET] A resource can be spread as soon as it is in a city's trade network, where it has to be loaded with a wagon. If the resource is in the surrounding area of the city, the purchase is cheaper. Green circles on the map make a possible cultivation onto this plot visible. The wagon will be disbanded during a cultivation.
 
 [ICON_BULLET] You can either move the wagon into the city (white circle) and let chance decide where the bonus good is distributed to one of the surrounding green areas, or you can move the wagon directly to the field with the green circle to distribute it there.
-Example: Cities can share a horse resource to build a horse stable. The resource must be in the area of &#8203;&#8203;influence of both cities.
+Example: Cities can share a horse resource to build a horse stable. The resource must be in the area of influence of both cities.
 
 [ICON_BULLET] If you drag the wagon onto a plot with a cultivable bonus resource, you can remove it from the plot and place it somewhere else. The info what the wagon is loaded is on the lower left of the unit properties in the main interface.
 
@@ -1163,10 +1163,10 @@ Oltre a consegnare cibo, il carro pu&#242; essere utilizzato per distribuire ris
 
 [ICON_BULLET] Una risorsa pu&#242; essere distribuita una volta che si trova nella rete commerciale della citt&#224;, dove devi caricarla/acquistarla con il carro. Se la risorsa &#232; all'interno della sfera di influenza della citt&#224;, &#232; pi&#249; conveniente acquistarla. I cerchi verdi sulla mappa indicano una possibile coltivazione sul rispettivo appezzamento. Quando &#232; sparso, il carro &#232; rotto.
 
-[ICON_BULLET] O sposti il &#8203;&#8203;carrello in citt&#224; (cerchio bianco) e lasci che sia il caso a decidere dove distribuire il bene bonus in una delle aree verdi circostanti, oppure sposti il &#8203;&#8203;carrello direttamente sul campo con il cerchio verde per sollevarlo diffondetelo.
+[ICON_BULLET] O sposti il carrello in citt&#224; (cerchio bianco) e lasci che sia il caso a decidere dove distribuire il bene bonus in una delle aree verdi circostanti, oppure sposti il carrello direttamente sul campo con il cerchio verde per sollevarlo diffondetelo.
 Esempio: le citt&#224; possono condividere una risorsa cavallo per costruire una scuderia. La risorsa deve trovarsi nella sfera di influenza di entrambe le citt&#224;.
 
-[ICON_BULLET] Se sposti il &#8203;&#8203;carro in un campo con una risorsa bonus coltivabile, puoi rimuoverlo dal campo e posizionarlo da qualche altra parte. Le informazioni sulla risorsa con cui &#232; caricato il veicolo si trovano in basso a sinistra delle propriet&#224; dell'unit&#224; nella schermata principale.
+[ICON_BULLET] Se sposti il carro in un campo con una risorsa bonus coltivabile, puoi rimuoverlo dal campo e posizionarlo da qualche altra parte. Le informazioni sulla risorsa con cui &#232; caricato il veicolo si trovano in basso a sinistra delle propriet&#224; dell'unit&#224; nella schermata principale.
 
 [ICON_BULLET] Le merci bonus sulle postazioni commerciali possono essere raccolte ma non rimosse.
 
@@ -5281,7 +5281,7 @@ Condition: Tech Logique
 Disponible pour : Navires (sauf pour les pirates )
 Effet: +25 % [ICON_STRENGTH] d&#233;fense , -1 [ICON_MOVES]
 
-La formation de pince doit toujours &#234;tre utilis&#233; si vos navires patrouillent sur &#8203;&#8203;les routes commerciales ou d'effectuer une mission de blocus .
+La formation de pince doit toujours &#234;tre utilis&#233; si vos navires patrouillent sur les routes commerciales ou d'effectuer une mission de blocus .
 
 
 [H1] Fuite [\H1]
@@ -5530,9 +5530,9 @@ contenuto :
 [ICON_BULLET] Comportamento del AI
 
 
-[H1] Formazioni [\H1]
+[H1]Formazioni[\H1]
 
-[H2] Mangimi [\H2]
+[H2]Mangimi[\H2]
 
 Requisito : Tech Saccheggio
 Disponibile per : unit&#224; montate
@@ -5542,7 +5542,7 @@ effetto:
 Nel mercenario e soldato gergo , Mangimi nominato l'acquisto di cibo e anche il saccheggio , che comprende rapina , stupro e massacro .
 
 
-[H2] Volo [\H2]
+[H2]Volo[\H2]
 
 Requisito : Danno &#62; 75 %
 Disponibile per : tutti
@@ -5552,7 +5552,7 @@ effetto:
 Con l'uso del volo , le unit&#224; possono lasciare il campo di battaglia veloce e ritirarsi in zone pi&#249; sicure .
 
 
-[H2] Scudo muro [\H2]
+[H2]Scudo muro[\H2]
 
 Requisito : Tech spada e scudo
 Disponibile per : unit&#224; da mischia e lancia- portatori con uno scudo
@@ -5565,7 +5565,7 @@ effetto:
 Il muro di scudi &#232; un allround formazione utilizzata per la difesa che funziona anche nelle foreste .
 
 
-[H2] Phalanx-Formation [\H2]
+[H2]Phalanx-Formation[\H2]
 
 Requisito : Tech Phalanx-Formazione e promozione Drill io
 Disponibile per : Spear-Portatori
@@ -5588,7 +5588,7 @@ Effect:
 
 The closed formation is an allround-formation used for attack.
 
-Ordine di [H2] Oblique ( falange obliqua ) [\H2]
+[H2]Ordine di Oblique ( falange obliqua )[\H2]
 
 Requisito : Tech Logica e Drill io la promozione
 Disponibile per : Spear-Portatori
@@ -5604,7 +5604,7 @@ effetto:
 L'ordine obliquo &#232; stato in primo luogo utilizzare dal generale tebano Epaminonda nel 4 . secolo aC contro la falange spartana . Altamente successo .
 
 
-Formazione [H2] cuneo [\H2]
+[H2]Formazione cuneo[\H2]
 
 Requisito : Cani da Attacco Tecnologici
 Disponibile per cani da attacco, fanteria e cavalleria con armatura (armatura cingolata)
@@ -5619,7 +5619,7 @@ effetto:
 La formazione a cuneo ha nessuna citt&#224; o sulle colline deduzione e pu&#242; essere utilizzato anche da unit&#224; di corpo a corpo.
 
 
-[H2] Tattiche di incontro ( manipolo ) [\H2]
+[H2]Tattiche di incontro ( manipolo )[\H2]
 
 Requisito : Tech Manipolo-Phalanx e Drill di promozione io
 Disponibile per : Melee e Spear-Portatori
@@ -5631,7 +5631,7 @@ effetto:
 
 I encounting-tattica non ha pi&#249; una detrazione contro le armi d'assedio ed &#232; un buon allround formazione .
 
-Protezione [H2] Fianco [\H2]
+[H2]Protezione Fianco[\H2]
 Requisito : Tech Saddle
 Disponibile per : Spear-Portatori
 effetto:
@@ -5642,7 +5642,7 @@ effetto:
 Questa formazione &#232; utilizzato solo per la difesa e deve proteggerlo da attacchi di fianco . Questa formazione non &#232; disponibile fino a tempi successivi quando le unit&#224; montate iniziato a diventare un problema . Esso costituisce una grande simbiosi con la falange formazioni .
 
 
-[H2] Pincer presa [\H2]
+[H2]Pincer presa[\H2]
 
 Requisito : Tech Strategia Militare
 Disponibile per : Melee e Spear-Portatori
@@ -5654,7 +5654,7 @@ effetto:
 Questa formazione &#232; perfetta contro la fanteria negativi e pu&#242; essere utilizzato anche nelle foreste . Ma tenete a mente che la sua formazione allentata &#232; soggetta a unit&#224; a cavallo .
 
 
-[H2] formazione Testude [\H2]
+[H2]Formazione Testude[\H2]
 
 Riforme Tech mariani e Drill I Promozione : Requisito
 Disponibile per : Melee e Spear-Portatori
@@ -5665,16 +5665,16 @@ effetto:
 Questa famosa formazione romana &#232; perfetto per gli attacchi della citt&#224;.
 
 
-Vicolo [H2] dell'Elefante [\H2]
+[H2]Vicolo dell'Elefante[\H2]
 
 Requisito : Tech Elementary Geometry
 Disponibile per : Arcieri , Melee e Spear-Portatori
 effetto:
 [ICON_BULLET] +50 % [ICON_STRENGTH] contro Elephants
 
-[H1] formazioni speciali per Horse Archers [\H1]
+[H1]Formazioni speciali per Horse Archers[\H1]
 
-[H2] Cantabrico Circle [\H2]
+[H2]Cantabrico Circle[\H2]
 
 Requisito : Nessuno
 Disponibile per : ogni unit&#224; montata della civilt&#224; occidentale ( fatta eccezione per gli arcieri dei carri )
@@ -5684,7 +5684,7 @@ effetto:
 [ICON_BULLET] +1 First Strike
 [ICON_BULLET] +25 % Ritiro Chance
 
-[H2] tiro partica [\H2]
+[H2]Tiro partica[\H2]
 
 Requisito : Nessuno
 Disponibile per : ogni unit&#224; montate delle civilt&#224; orientali ( tranne che per gli arcieri dei carri )
@@ -5697,16 +5697,16 @@ effetto:
 
 
 
-[H1] formazioni speciali per le Unit&#224; Navali [\H1]
+[H1]Formazioni speciali per le Unit&#224; Navali[\H1]
 
-[H2] cuneo [\H2]
+[H2]Cuneo[\H2]
 
 Requisito : Tech Logic
 Disponibile per : Navi ( tranne per i pirati )
 Effetto: +25 % [ICON_STRENGTH] attacco , -1 [ICON_MOVES]
 
 
-[H2] Pincer [\H2]
+[H2]Pincer[\H2]
 
 Requisito : Tech Logic
 Disponibile per : Navi ( tranne per i pirati )
@@ -5715,12 +5715,12 @@ Effetto: +25 % [ICON_STRENGTH] difesa , -1 [ICON_MOVES]
 La formazione tenaglia dovrebbe sempre essere usato se le vostre navi pattugliano sulle rotte commerciali o l'esecuzione di una missione di blocco .
 
 
-[H1] Fuga [\H1]
+[H1]Fuga[\H1]
 
 Questa promozione pu&#242; essere dato per ogni unit&#224; che subisce un danno superiore al 75 % e fornisce 2 punti movimento , non importa se attraverso i boschi o sulle colline . La promozione scomparir&#224; automaticamente alla fine del movimento .
 
 
-[H1] Comportamento della IA [\H1]
+[H1]Comportamento della IA[\H1]
 
 L'unit&#224; ottenere immediatamente una formazione offensiva ( pi&#249; bonus di attacco che di difesa bonus ) . In una pila , la forza di combattimento corrente viene confrontato con la forza totale possibile .
 
@@ -8113,7 +8113,7 @@ Corto de unidades: 70% unidades de larga distancia y 30% unidades de contraataqu
 		<English>[H1]Mercenaries[\H1]
 Armies were often made up of a large part of mercenaries.
 
-In PAE, the idea of &#8203;&#8203;mercenaryism was implemented as follows:
+In PAE, the idea of mercenaryism was implemented as follows:
 [ICON_BULLET] they do not require classic resources (horses, iron, bronze, ...)
 [ICON_BULLET] they have a high maintenance cost, +1[ICON_GOLD] or more per turn
 [ICON_BULLET] their efficiency is greater than units of the same level
@@ -8289,7 +8289,7 @@ En PAE, la idea del mercenarismo se implement&#243; de la siguiente manera:
 
 Hay 4 tipos de mercenarios en este mod.
 
-[H2]Aquellos basados &#8203;&#8203;en un recurso del mapa[\H2]
+[H2]Aquellos basados en un recurso del mapa[\H2]
 
 Para poder reclutarlos, debes tener acceso al &#250;nico recurso con el mismo nombre en el mapa (en un mapa aleatorio, es posible que algunos no est&#233;n disponibles):
 [ICON_BULLET] Honda balear
@@ -10861,14 +10861,11 @@ For polytheistic religions there are only temples available and no monasteries. 
 
 [H1]Religious Conflicts[\H1]
 
-The Jewish and Christian religions forbade the worship of the emperor, a human being, as a god. However, this was prescribed by the Roman religion. Situations in which members of other faiths are discriminated against, harassed, or persecuted result from a lack of religious freedom. This lack can have the same consequences for believers of other religions; it depends on which religion is favored by the state.
-
 [H2]Polytheistic phase (Phase 1)[\H2]
 
 Cities can fall into revolt if they contain more than the accepted number of religions:
 [ICON_BULLET] Settlements and villages: 1
 [ICON_BULLET] Cities: 2
-[ICON_BULLET] Provincial cities and metropolis: 3
 If this number is exceeded, citizens will attempt to expel a religion other than their state religion from the city.
 
 Trigger:
@@ -10880,11 +10877,15 @@ Effect:
 [ICON_BULLET] Step 1: All city units are injured and immobilized for 1 round
 [ICON_BULLET] Step 2: 1:3 chance: The temple is destroyed (except for World Wonders)
 [ICON_BULLET] Step 3: 1:3 chance: A fire breaks out (triggers the fire event)
-[ICON_BULLET] Step 4: 1:4 chance: The population decreases by (Pop/5, min 1) and culture decreases by (Pop/5)*10%
+[ICON_BULLET] Step 4a: 1:4 chance: The population decreases by (Pop/5, min 1) and culture decreases by (Pop/5)*10%
 [ICON_BULLET] Step 5: If steps 2+4, 1:4 chance: The religion is expelled from the city
+[ICON_BULLET] Step 6 (Diaspora): if step 5, chance 80%: The religion moves to a city in the area (preferably cities that already have this religion), increasing the population: +1 pop for cities under 5 pop, +food for cities with 5 or more pop.
+[ICON_BULLET] Step 4b: Chance 1:5: Civil War in the City
 
 
 [H2]Transition from Polytheism to Monotheism (Phase 2)[\H2]
+
+A monotheistic religion forbade the worship of the emperor, a human being, as a god. However, this was prescribed by the Roman religion. Situations in which members of other faiths are discriminated against, harassed, or persecuted result from a lack of religious freedom. This lack can have the same consequences for believers of other religions; it depends on which religion is favored by the state.
 
 Once a monotheistic religion has taken hold in a city with a polytheistic state religion, created units may refuse military service and the construction may fail. The chance of this happening is 10%.
 
@@ -10896,7 +10897,7 @@ Why were Jews and Christians persecuted?
 [ICON_BULLET] Because the Jewish and Christian belief in one God represented a provocation to the then widespread beliefs in a multitude of gods.
 [ICON_BULLET] Judaism, as well as Christianity, rejected polytheism, syncretism, and the oriental god-king cults because of their belief in the one Creator God (monotheism).
 [ICON_BULLET] They saw themselves as a people chosen by this God with a mission for all other peoples (Genesis 12:3). This made it impossible for devout Jews and Christians to participate in the cults of the surrounding peoples.
-[ICON_BULLET] For a long time, Christians (and Jews too) refused military service due to their pacifist doctrine and what they considered an ungodly ruler. If an ungodly ruler issued an order that blatantly contradicted divine commandments, then the obedient soldier would be guilty. With the conversion of Emperor Constantine (reigned 307-337 AD) to Christianity, everything changed. If one fought in the right state of mind, one could almost be obligated to fight others for their own good.
+[ICON_BULLET] For a long time, Christians (and Jews too) refused military service due to their pacifist doctrine and what they considered an ungodly ruler. If an ungodly ruler issued an order that blatantly contradicted divine commandments, then the obedient soldier would be guilty. With the conversion of Emperor Constantine (reigned 307-337 AD) to Christianity, everything changed. If one fought in the right state of mind, one could almost be obligated to fight others for their own good (Quote from Christian teaching).
 
 Why did Christians persecute the Jews?
 
@@ -10937,11 +10938,13 @@ Effects of a religious expulsion:
 [ICON_BULLET] Only 1 religion is removed per expulsion.
 [ICON_BULLET] The buildings of the religion disappear, except for shrines.
 [ICON_BULLET] 1:10 chance: The city falls into unrest for 1 turn.
+[ICON_BULLET] Diaspora: chance 80%: The religion moves to a city in the area (preferably cities that already have this religion), increasing the population: +1 pop for cities under 5 pop, +food for cities with 5 or more pop.
+
 [TAB] If a dualistic or monotheistic religion is expelled:
 [TAB][ICON_BULLET] The relationships of all civilizations that have this expelled religion as their state religion are worsened by 1.
 [TAB][ICON_BULLET] The relationships of all civilizations that have your state religion as their state religion are improved by 1.
 
-The AI &#8203;&#8203;applies a religious expulsion if a city with more than one religion has more dissatisfied citizens than happy citizens.</English>
+The AI applies a religious expulsion if a city with more than one religion has more dissatisfied citizens than happy citizens.</English>
 		<French>
 [H1]Religion[\H1]
 La religion joue un r&#244;le majeur dans l'histoire de l'Humanit&#233;.
@@ -10975,14 +10978,11 @@ Les religions polyth&#233;istes ne peuvent construire que des temples (pas de mo
 
 [H1]Conflits religieux[\H1]
 
-Les religions juive et chr&#233;tienne interdisaient le culte de l'empereur, c'est-&#224;-dire d'un &#234;tre humain, comme d'un dieu. Mais c'&#233;tait ce que prescrivait la religion romaine. Les situations dans lesquelles des personnes d'autres confessions sont discrimin&#233;es, harcel&#233;es ou pers&#233;cut&#233;es r&#233;sultent d'un manque de libert&#233; religieuse. Cette d&#233;ficience peut avoir des cons&#233;quences similaires pour les croyants d'autres religions ; Cela d&#233;pend de la religion pr&#233;f&#233;r&#233;e par l'&#201;tat.
-
 [H2]Phase polyth&#233;iste (Phase 1)[\H2]
 
 Les villes peuvent devenir agit&#233;es si elles abritent plus de religions que le nombre accept&#233; :
 [ICON_BULLET] Colonies et villages : 1
 [ICON_BULLET] Villes : 2
-[ICON_BULLET] Villes de province et m&#233;tropoles : 3
 Si ce nombre est d&#233;pass&#233;, les citoyens tenteront d'expulser de la ville toute religion autre que leur religion d'&#201;tat.
 
 D&#233;clenchement:
@@ -10994,11 +10994,15 @@ Impact:
 [ICON_BULLET] &#201;tape 1 : Toutes les unit&#233;s de la ville sont bless&#233;es et immobilis&#233;es pendant 1 round
 [ICON_BULLET] &#201;tape 2 : Chance 1 : 3 : Le temple est d&#233;truit (hors Merveilles)
 [ICON_BULLET] &#201;tape 3 : Chance 1 : 3 : Un incendie se d&#233;clare (d&#233;clenche l'&#233;v&#233;nement incendie)
-[ICON_BULLET] &#201;tape 4 : Chance 1 : 4 : La population diminue de (Pop/5, min 1) et la culture diminue de (Pop/5)*10%
+[ICON_BULLET] &#201;tape 4a : Chance 1 : 4 : La population diminue de (Pop/5, min 1) et la culture diminue de (Pop/5)*10%
 [ICON_BULLET] &#201;tape 5 : si &#233;tape 2+4, chance 1:4 : La religion est expuls&#233;e de la ville
+[ICON_BULLET] &#201;tape 6 (Diaspora) : si &#233;tape 5, chance 80 % : La religion se d&#233;place vers une ville de la r&#233;gion (de pr&#233;f&#233;rence les villes qui ont d&#233;j&#224; cette religion), augmentant la population : +1 pop pour les villes de moins de 5 pop, +nourriture pour les villes de 5 pop ou plus.
+[ICON_BULLET] &#201;tape 4b : Chance 1:5 : Guerre civile dans la ville
 
 
 [H2]Transition du polyth&#233;isme au monoth&#233;isme (Phase 2)[\H2]
+
+Une religion monoth&#233;iste interdite le culte de l'empereur, c'est-&#224;-dire d'un &#234;tre humain, comme d'un dieu. Mais c'&#233;tait ce que prescrivait la religion romaine. Les situations dans lesquelles des personnes d'autres confessions sont discrimin&#233;es, harcel&#233;es ou pers&#233;cut&#233;es r&#233;sultent d'un manque de libert&#233; religieuse. Cette d&#233;ficience peut avoir des cons&#233;quences similaires pour les croyants d'autres religions ; Cela d&#233;pend de la religion pr&#233;f&#233;r&#233;e par l'&#201;tat.
 
 Une fois qu'une religion monoth&#233;iste s'est implant&#233;e dans une ville dot&#233;e d'une religion d'&#201;tat polyth&#233;iste, les unit&#233;s cr&#233;&#233;es peuvent refuser le service militaire et la construction peut &#233;chouer. La probabilit&#233; que cela se produise est de 10 %.
 
@@ -11010,7 +11014,7 @@ Pourquoi les Juifs et les Chr&#233;tiens ont-ils &#233;t&#233; pers&#233;cut&#23
 [ICON_BULLET] Parce que la croyance juive et chr&#233;tienne en un seul Dieu &#233;tait une provocation pour les croyances en une multitude de dieux qui &#233;taient r&#233;pandues &#224; cette &#233;poque.
 [ICON_BULLET] Le juda&#239;sme, ainsi que le christianisme, ont rejet&#233; le polyth&#233;isme, le syncr&#233;tisme et les cultes orientaux du dieu-roi en raison de leur croyance en un seul Dieu cr&#233;ateur (monoth&#233;isme).
 [ICON_BULLET] Ils se consid&#233;raient comme un peuple choisi par ce Dieu avec une mission pour tous les autres peuples (Gen 12:3). Cela rendait impossible pour les juifs et les chr&#233;tiens pieux de participer aux cultes des peuples environnants.
-[ICON_BULLET] Les chr&#233;tiens (y compris les juifs) ont refus&#233; le service militaire pendant longtemps en raison de leurs enseignements pacifistes et de ce qu'ils consid&#233;raient comme un dirigeant impie. Si un dirigeant impie donne un ordre qui est manifestement contraire aux commandements divins, alors le soldat ob&#233;issant sera coupable. Avec la conversion de l'empereur Constantin (r&#232;gne 307-337 apr&#232;s J.-C.) au christianisme, tout a chang&#233;. Si l'on combattait dans le bon &#233;tat d'esprit, on pourrait presque &#234;tre oblig&#233; de combattre les autres pour leur propre bien.
+[ICON_BULLET] Les chr&#233;tiens (y compris les juifs) ont refus&#233; le service militaire pendant longtemps en raison de leurs enseignements pacifistes et de ce qu'ils consid&#233;raient comme un dirigeant impie. Si un dirigeant impie donne un ordre qui est manifestement contraire aux commandements divins, alors le soldat ob&#233;issant sera coupable. Avec la conversion de l'empereur Constantin (r&#232;gne 307-337 apr&#232;s J.-C.) au christianisme, tout a chang&#233;. Si l'on combattait dans le bon &#233;tat d'esprit, on pourrait presque &#234;tre oblig&#233; de combattre les autres pour leur propre bien (Citation de l'enseignement chr&#233;tien).
 
 Pourquoi les chr&#233;tiens ont-ils pers&#233;cut&#233; les juifs ?
 
@@ -11052,6 +11056,8 @@ Effets de l'expulsion religieuse :
 [ICON_BULLET] Une seule religion est supprim&#233;e par expulsion.
 [ICON_BULLET] Les b&#226;timents religieux disparaissent, &#224; l'exception des sanctuaires.
 [ICON_BULLET] 1:10 chance : La ville tombe en &#233;meute pendant 1 tour.
+[ICON_BULLET] Diaspora : chance 80 % : La religion se d&#233;place vers une ville de la r&#233;gion (de pr&#233;f&#233;rence les villes qui ont d&#233;j&#224; cette religion), augmentant la population : +1 pop pour les villes de moins de 5 pop, +nourriture pour les villes de 5 pop ou plus.
+
 [TAB] Si une religion dualiste ou monoth&#233;iste est expuls&#233;e :
 [TAB][ICON_BULLET] D&#233;t&#233;rioration des relations de toutes les civilisations qui ont cette religion expuls&#233;e comme religion d'&#201;tat par 1.
 [TAB][ICON_BULLET] Am&#233;liorez les relations de toutes les civilisations qui ont votre religion d'&#201;tat comme religion d'&#201;tat de 1.
@@ -11091,14 +11097,11 @@ F&#252;r die polytheistischen Religionen k&#246;nnen nur Tempel errichtet werden
 
 [H1]Religionskonflikte[\H1]
 
-Die j&#252;dische und christliche Religion verbot, den Kaiser, also einen Menschen, als Gott zu verehren. Das schrieb aber die r&#246;mische Religion vor. Situationen, in denen Andersgl&#228;ubige benachteiligt, bedr&#228;ngt oder verfolgt werden, resultieren aus einem Mangel an Religionsfreiheit. Dieser Mangel kann gleiche Folgen f&#252;r Gl&#228;ubige anderer Religionen haben; es h&#228;ngt davon ab, welche Religion staatlicherseits bevorzugt wird.
-
 [H2]Polytheistische Phase (Phase 1)[\H2]
 
 St&#228;dte k&#246;nnen in Aufruhr geraten, wenn sie mehr als die akzeptierte Anzahl an Religionen beinhalten:
 [ICON_BULLET] Siedlungen und D&#246;rfer: 1
 [ICON_BULLET] St&#228;dte: 2
-[ICON_BULLET] Provinzst&#228;dte und Metropolen: 3
 Wird diese Anzahl &#252;berschritten, werden die B&#252;rger versuchen, eine andere Religion als ihre Staatsreligion aus der Stadt zu vertreiben.
 
 Ausl&#246;ser:
@@ -11110,11 +11113,14 @@ Auswirkung:
 [ICON_BULLET] Schritt 1: Alle Stadteinheiten werden verletzt und sind 1 Runde unbeweglich
 [ICON_BULLET] Schritt 2: Chance 1:3: Der Tempel wird zerst&#246;rt (ausgenommen Weltwunder)
 [ICON_BULLET] Schritt 3: Chance 1:3: Ein Brand entsteht (Triggert das Brand-Event)
-[ICON_BULLET] Schritt 4: Chance 1:4: Die Bev&#246;lkerung sinkt um (Pop/5, min 1) und Kultur sinkt um (Pop/5)*10%
+[ICON_BULLET] Schritt 4a: Chance 1:4: Die Bev&#246;lkerung sinkt um (Pop/5, min 1) und Kultur sinkt um (Pop/5)*10%
 [ICON_BULLET] Schritt 5: falls Schritt 2+4, Chance 1:4: Die Religion wird aus der Stadt vertrieben
-
+[ICON_BULLET] Schritt 6 (Diaspora): falls Schritt 5, Chance 80%: Die Religion wandert in einer Stadt in der Umgebung (bevorzugt St&#228;dte mit bereits dieser Religion), dabei wird die Bev&#246;lkerung erh&#246;ht: +1 Pop f&#252;r St&#228;dte unter 5 Pop, +Nahrung f&#252;r St&#228;dte ab 5 Pop.
+[ICON_BULLET] Schritt 4b: Chance 1:5: B&#252;rgerkrieg in der Stadt
 
 [H2]&#220;bergang Polytheismus zu Monotheismus (Phase 2)[\H2]
+
+Eine monotheistische Religion verbot den Kaiser, also einen Menschen, als Gott zu verehren. Das schrieb aber die r&#246;mische Religion vor. Situationen, in denen Andersgl&#228;ubige benachteiligt, bedr&#228;ngt oder verfolgt werden, resultieren aus einem Mangel an Religionsfreiheit. Dieser Mangel kann gleiche Folgen f&#252;r Gl&#228;ubige anderer Religionen haben; es h&#228;ngt davon ab, welche Religion staatlicherseits bevorzugt wird.
 
 Sobald eine monotheistische Religion in einer Stadt einer polytheistischen Staatsreligion Einzug gefunden hat, kann es passieren, dass erstellte Einheiten den Kriegsdienst verweigern und der Bau fehlschl&#228;gt. Die Chance daf&#252;r betr&#228;gt 10%.
 
@@ -11126,7 +11132,7 @@ Warum wurden Juden und Christen verfolgt?
 [ICON_BULLET] Weil f&#252;r die damals verbreiteten Glaubensvorstellungen an eine Vielzahl von G&#246;ttern, der j&#252;dische und christliche Glaube an den einen Gott eine Provokation darstellte.
 [ICON_BULLET] Das Judentum, sowie Christentum lehnte den Polytheismus, Synkretismus und die orientalischen Gottk&#246;nigskulte aufgrund ihres Glaubens an den einzigen Sch&#246;pfergott (Monotheismus) ab. 
 [ICON_BULLET] Es verstand sich als von diesem Gott erw&#228;hltes Volk mit einem Auftrag f&#252;r alle &#252;brigen V&#246;lker (Gen 12,3). Dies machte gl&#228;ubige Juden und Christen die Teilnahme an den Kulten der umgebenden V&#246;lker unm&#246;glich.
-[ICON_BULLET] Christen (auch Juden) verweigerten lange Zeit den Kriegsdienst auf Grund ihrer pazifistischen Lehre und dem ihrer Ansicht nach gottlosen Herrscher. Wenn ein gottloser Herrscher einen Befehl erteilt, der offensichtlich den g&#246;ttlichen Geboten entgegensteht, dann w&#228;re der gehorsame Soldat schuldig. Mit der Bekehrung des Kaisers Konstantin (Regierungszeit 307-337 n.Chr.) zum Christentum, &#228;nderte sich alles. Wenn man im richtigen Seelenzustand k&#228;mpfte, dann konnte man beinahe dazu verpflichtet sein, andere zu ihrem eigenen Wohl zu bek&#228;mpfen.
+[ICON_BULLET] Christen (auch Juden) verweigerten lange Zeit den Kriegsdienst auf Grund ihrer pazifistischen Lehre und dem ihrer Ansicht nach gottlosen Herrscher. Wenn ein gottloser Herrscher einen Befehl erteilt, der offensichtlich den g&#246;ttlichen Geboten entgegensteht, dann w&#228;re der gehorsame Soldat schuldig. Mit der Bekehrung des Kaisers Konstantin (Regierungszeit 307-337 n.Chr.) zum Christentum, &#228;nderte sich alles. Wenn man im richtigen Seelenzustand k&#228;mpfte, dann konnte man beinahe dazu verpflichtet sein, andere zu ihrem eigenen Wohl zu bek&#228;mpfen (Zitat aus der christlichen Lehre).
 
 Warum haben Christen Juden verfolgt?
 
@@ -11168,6 +11174,8 @@ Auswirkungen einer Religionsaustreibung:
 [ICON_BULLET] Es wird immer nur 1 Religion pro Austreibung entfernt.
 [ICON_BULLET] Die Geb&#228;ude der Religion verschwinden, ausgenommen Schreine.
 [ICON_BULLET] Chance von 1:10: Die Stadt f&#228;llt 1 Runde lang in Unruhe.
+[ICON_BULLET] Diaspora: Chance 80%: Die Religion wandert in einer Stadt in der Umgebung (bevorzugt St&#228;dte mit bereits dieser Religion), dabei wird die Bev&#246;lkerung erh&#246;ht: +1 Pop f&#252;r St&#228;dte unter 5 Pop, +Nahrung f&#252;r St&#228;dte ab 5 Pop.
+
 [TAB] Falls eine dualistische oder monotheistische Religion ausgetrieben wird:
 [TAB][ICON_BULLET] Verschlechterung der Beziehungen aller Zivilisationen um 1, die diese ausgetriebene Religion als Staatsreligion besitzen.
 [TAB][ICON_BULLET] Verbesserung der Beziehungen aller Zivilisationen um 1, die deine Staatsreligion als Staatsreligion besitzen.
@@ -11208,14 +11216,11 @@ Per le religioni politeiste pu&#242; essere costruita solo templi e monasteri no
 
 [H1]Conflitti religiosi[\H1]
 
-Le religioni ebraica e cristiana proibivano il culto dell'imperatore, cio&#232; di un essere umano, come dio. Ma questo era quanto prescriveva la religione romana. Le situazioni in cui le persone di altre fedi vengono discriminate, molestate o perseguitate sono il risultato della mancanza di libert&#224; religiosa. Questa carenza pu&#242; avere conseguenze simili per i credenti di altre religioni; Dipende da quale religione &#232; preferita dallo Stato.
-
 [H2]Fase politeistica (fase 1)[\H2]
 
 Le citt&#224; possono diventare tumultuose se ospitano un numero di religioni superiore a quello consentito:
 [ICON_BULLET] Insediamenti e villaggi: 1
 [ICON_BULLET] Citt&#224;: 2
-[ICON_BULLET] Citt&#224; di provincia e metropoli: 3
 Se questo numero viene superato, i cittadini cercheranno di espellere dalla citt&#224; qualsiasi religione diversa dalla propria religione di Stato.
 
 Grilletto:
@@ -11227,11 +11232,15 @@ Impatto:
 [ICON_BULLET] Fase 1: tutte le unit&#224; cittadine vengono ferite e immobilizzate per 1 round
 [ICON_BULLET] Fase 2: Probabilit&#224; 1:3: Il tempio viene distrutto (escluse le Meraviglie)
 [ICON_BULLET] Fase 3: Probabilit&#224; 1:3: Si scatena un incendio (innesca l'evento incendio)
-[ICON_BULLET] Fase 4: Probabilit&#224; 1:4: la popolazione diminuisce di (Pop/5, min 1) e la coltura diminuisce di (Pop/5)*10%
+[ICON_BULLET] Fase 4a: Probabilit&#224; 1:4: la popolazione diminuisce di (Pop/5, min 1) e la coltura diminuisce di (Pop/5)*10%
 [ICON_BULLET] Fase 5: se fase 2+4, possibilit&#224; 1:4: la religione viene espulsa dalla citt&#224;
+[ICON_BULLET] Fase 6 (Diaspora): se fase 5, probabilit&#224; 80%: la religione si sposta in una citt&#224; nella zona (preferibilmente citt&#224; che hanno gi&#224; questa religione), aumentando la popolazione: +1 popolazione per le citt&#224; con meno di 5 abitanti, +cibo per le citt&#224; con 5 o pi&#249; abitanti.
+[ICON_BULLET] Fase 4b: Possibilit&#224; 1:5: Guerra civile in citt&#224;
 
 
 [H2]Transizione dal politeismo al monoteismo (Fase 2)[\H2]
+
+Una religione monoteista proibita il culto dell'imperatore, cio&#232; di un essere umano, come dio. Ma questo era quanto prescriveva la religione romana. Le situazioni in cui le persone di altre fedi vengono discriminate, molestate o perseguitate sono il risultato della mancanza di libert&#224; religiosa. Questa carenza pu&#242; avere conseguenze simili per i credenti di altre religioni; Dipende da quale religione &#232; preferita dallo Stato.
 
 Una volta che una religione monoteista ha preso piede in una citt&#224; con una religione di stato politeista, le unit&#224; create potrebbero rifiutare il servizio militare e la costruzione potrebbe fallire. La probabilit&#224; che ci&#242; accada &#232; del 10%.
 
@@ -11243,7 +11252,7 @@ Perch&#233; ebrei e cristiani furono perseguitati?
 [ICON_BULLET] Perch&#233; la fede ebraica e cristiana in un solo Dio era una provocazione per le credenze in una moltitudine di dei diffuse a quel tempo.
 [ICON_BULLET] L'ebraismo, cos&#236; come il cristianesimo, rifiutavano il politeismo, il sincretismo e i culti orientali del dio-re a causa della loro fede in un unico Dio creatore (monoteismo).
 [ICON_BULLET] Si consideravano un popolo scelto da questo Dio con una missione verso tutti gli altri popoli (Gen 12:3). Ci&#242; rese impossibile per gli ebrei e i cristiani devoti partecipare ai culti dei popoli circostanti.
-[ICON_BULLET] I cristiani (compresi gli ebrei) rifiutarono per lungo tempo il servizio militare a causa dei loro insegnamenti pacifisti e di quello che consideravano un governante empio. Se un governante empio impartisce un ordine palesemente contrario ai comandamenti divini, allora il soldato obbediente sarebbe colpevole. Con la conversione dell'imperatore Costantino (regno 307-337 d.C.) al cristianesimo, tutto cambi&#242;. Se si combattesse con il giusto stato d'animo, si potrebbe quasi essere obbligati a combattere contro gli altri per il loro bene.
+[ICON_BULLET] I cristiani (compresi gli ebrei) rifiutarono per lungo tempo il servizio militare a causa dei loro insegnamenti pacifisti e di quello che consideravano un governante empio. Se un governante empio impartisce un ordine palesemente contrario ai comandamenti divini, allora il soldato obbediente sarebbe colpevole. Con la conversione dell'imperatore Costantino (regno 307-337 d.C.) al cristianesimo, tutto cambi&#242;. Se si combattesse con il giusto stato d'animo, si potrebbe quasi essere obbligati a combattere contro gli altri per il loro bene (Citazione dall'insegnamento cristiano).
 
 Perch&#233; i cristiani perseguitavano gli ebrei?
 
@@ -11285,6 +11294,8 @@ Effetti dell'espulsione religiosa:
 [ICON_BULLET] Viene rimossa solo 1 religione per ogni espulsione.
 [ICON_BULLET] Gli edifici religiosi scompaiono, tranne i santuari.
 [ICON_BULLET] Probabilit&#224; di 1:10: la citt&#224; &#232; in preda all'agitazione per 1 giro.
+[ICON_BULLET] Diaspora: probabilit&#224; 80%: la religione si sposta in una citt&#224; nella zona (preferibilmente citt&#224; che hanno gi&#224; questa religione), aumentando la popolazione: +1 popolazione per le citt&#224; con meno di 5 abitanti, +cibo per le citt&#224; con 5 o pi&#249; abitanti.
+
 [TAB] Se una religione dualistica o monoteistica viene espulsa:
 [TAB][ICON_BULLET] Peggioramento delle relazioni di tutte le civilt&#224; che hanno questa religione espulsa come religione di stato di 1.
 [TAB][ICON_BULLET] Migliora di 1 le relazioni di tutte le civilt&#224; che hanno la tua religione di stato come religione di stato.
@@ -11325,14 +11336,11 @@ Para las religiones polite&#237;stas s&#243;lo se pueden construir templos, no s
 
 [H1]Conflictos religiosos[\H1]
 
-Las religiones jud&#237;a y cristiana prohib&#237;an el culto al emperador, es decir a un ser humano, como a un dios. Pero eso era lo que prescrib&#237;a la religi&#243;n romana. Las situaciones en que personas de otras religiones son discriminadas, acosadas o perseguidas son resultado de la falta de libertad religiosa. Esta deficiencia puede tener consecuencias similares para los creyentes de otras religiones; Depende de qu&#233; religi&#243;n prefiera el Estado.
-
 [H2]Fase polite&#237;sta (fase 1)[\H2]
 
 Las ciudades pueden volverse alborotadas si contienen m&#225;s del n&#250;mero aceptado de religiones:
 [ICON_BULLET] Asentamientos y pueblos: 1
 [ICON_BULLET] Ciudades: 2
-[ICON_BULLET] Ciudades y metr&#243;polis provinciales: 3
 Si se supera esta cifra, los ciudadanos intentar&#225;n expulsar de la ciudad cualquier religi&#243;n que no sea la estatal.
 
 Desencadenar:
@@ -11344,11 +11352,15 @@ Impacto:
 [ICON_BULLET] Paso 1: Todas las unidades de la ciudad resultan heridas y quedan inmovilizadas durante 1 ronda.
 [ICON_BULLET] Paso 2: Probabilidad 1:3: El templo es destruido (excluyendo Maravillas)
 [ICON_BULLET] Paso 3: Probabilidad 1:3: Se inicia un incendio (activa el evento de incendio)
-[ICON_BULLET] Paso 4: Probabilidad 1:4: La poblaci&#243;n disminuye en (Pop/5, min 1) y la cultura disminuye en (Pop/5)*10%
+[ICON_BULLET] Paso 4a: Probabilidad 1:4: La poblaci&#243;n disminuye en (Pop/5, min 1) y la cultura disminuye en (Pop/5)*10%
 [ICON_BULLET] Paso 5: si el paso 2+4, probabilidad 1:4: La religi&#243;n es expulsada de la ciudad
+[ICON_BULLET] Paso 6 (Di&#225;spora): si el paso 5, probabilidad 80%: La religi&#243;n se muda a una ciudad en el &#225;rea (preferiblemente ciudades que ya tienen esta religi&#243;n), aumentando la poblaci&#243;n: +1 poblaci&#243;n para ciudades con menos de 5 habitantes, +comida para ciudades con 5 o m&#225;s habitantes.
+[ICON_BULLET] Paso 4b: Probabilidad 1:5: Guerra Civil en la Ciudad
 
 
 [H2]Transici&#243;n del polite&#237;smo al monote&#237;smo (Fase 2)[\H2]
+
+Una religi&#243;n monote&#237;sta prohibida el culto al emperador, es decir a un ser humano, como a un dios. Pero eso era lo que prescrib&#237;a la religi&#243;n romana. Las situaciones en que personas de otras religiones son discriminadas, acosadas o perseguidas son resultado de la falta de libertad religiosa. Esta deficiencia puede tener consecuencias similares para los creyentes de otras religiones; Depende de qu&#233; religi&#243;n prefiera el Estado.
 
 Una vez que una religi&#243;n monote&#237;sta se ha establecido en una ciudad con una religi&#243;n estatal polite&#237;sta, las unidades creadas pueden negarse a prestar servicio militar y la construcci&#243;n puede fracasar. La probabilidad de que esto ocurra es del 10 %.
 
@@ -11360,7 +11372,7 @@ Una vez que una religi&#243;n monote&#237;sta se ha establecido en una ciudad co
 [ICON_BULLET] Porque la creencia jud&#237;a y cristiana en un solo Dios fue una provocaci&#243;n para las creencias en una multitud de dioses que estaban muy extendidas en aquella &#233;poca.
 [ICON_BULLET] El juda&#237;smo, al igual que el cristianismo, rechaz&#243; el polite&#237;smo, el sincretismo y los cultos orientales al dios-rey debido a su creencia en el &#250;nico Dios creador (monote&#237;smo).
 [ICON_BULLET] Se ve&#237;an a s&#237; mismos como un pueblo elegido por este Dios con una misi&#243;n para todos los dem&#225;s pueblos (Gn 12,3). Esto hizo imposible que los jud&#237;os y cristianos devotos participaran en los cultos de los pueblos circundantes.
-[ICON_BULLET] Los cristianos (incluidos los jud&#237;os) rechazaron el servicio militar durante mucho tiempo debido a sus ense&#241;anzas pacifistas y a lo que consideraban un gobernante imp&#237;o. Si un gobernante imp&#237;o da una orden que es obviamente contraria a los mandamientos divinos, entonces el soldado obediente ser&#237;a culpable. Con la conversi&#243;n del emperador Constantino (reinado 307-337 d.C.) al cristianismo, todo cambi&#243;. Si uno luchaba con el estado mental adecuado, casi pod&#237;a verse obligado a luchar contra otros por su propio bien.
+[ICON_BULLET] Los cristianos (incluidos los jud&#237;os) rechazaron el servicio militar durante mucho tiempo debido a sus ense&#241;anzas pacifistas y a lo que consideraban un gobernante imp&#237;o. Si un gobernante imp&#237;o da una orden que es obviamente contraria a los mandamientos divinos, entonces el soldado obediente ser&#237;a culpable. Con la conversi&#243;n del emperador Constantino (reinado 307-337 d.C.) al cristianismo, todo cambi&#243;. Si uno luchaba con el estado mental adecuado, casi pod&#237;a verse obligado a luchar contra otros por su propio bien (Cita de la ense&#241;anza cristiana).
 
 &#191;Por qu&#233; los cristianos persiguieron a los jud&#237;os?
 
@@ -11376,7 +11388,7 @@ Probabilidad por ciudad 1:30, luego:
 [ICON_BULLET] Ciudad musulmana: 20%, Islam como religi&#243;n de Estado: 40%
 
 Impacto:
-[ICON_BULLET] Un culto y sus edificios son expulsados &#8203;&#8203;(excepto Maravillas del Mundo)
+[ICON_BULLET] Un culto y sus edificios son expulsados (excepto Maravillas del Mundo)
 [ICON_BULLET] Otra religi&#243;n es expulsada y su templo destruido (excepto Maravillas del Mundo)
 [ICON_BULLET] Las ciudades santas tambi&#233;n pueden verse afectadas
 [ICON_BULLET] Se destruyen instituciones paganas como bibliotecas, ba&#241;os, teatros, etc. (m&#225;ximo 1 edificio por ciudad/ronda).
@@ -11402,6 +11414,8 @@ Efectos de la expulsi&#243;n religiosa:
 [ICON_BULLET] Solo se elimina una religi&#243;n por expulsi&#243;n.
 [ICON_BULLET] Los edificios religiosos desaparecen, a excepci&#243;n de los santuarios.
 [ICON_BULLET] Probabilidad 1:10: La ciudad cae en disturbios durante 1 ronda.
+[ICON_BULLET] Di&#225;spora: probabilidad 80%: La religi&#243;n se muda a una ciudad en el &#225;rea (preferiblemente ciudades que ya tienen esta religi&#243;n), aumentando la poblaci&#243;n: +1 poblaci&#243;n para ciudades con menos de 5 habitantes, +comida para ciudades con 5 o m&#225;s habitantes.
+
 [TAB] Si se expulsa una religi&#243;n dualista o monote&#237;sta:
 [TAB][ICON_BULLET] Deterioro de las relaciones de todas las civilizaciones que tienen esta religi&#243;n expulsada como religi&#243;n de Estado en 1.
 [TAB][ICON_BULLET] Mejora las relaciones de todas las civilizaciones que tienen tu religi&#243;n estatal como religi&#243;n estatal en 1.
@@ -12591,14 +12605,14 @@ Svantaggi di schiavi :
 [ICON_BULLET] Un gladiatore assegnato a una citt&#224; ha una probabilit&#224; (3% x numero di gladiatori nella citt&#224;, min 5%) di morire per turno (ogni 3 turni, 1 morte per citt&#224; per turno max.)
 [ICON_BULLET] Uno schiavo pu&#242; morire mentre costruisce un miglioramento (Probabilit&#224;: 3% per turno)
 [ICON_BULLET] Uno schiavo non assegnato a una citt&#224; pu&#242; ribellarsi (Probabilit&#224;: 8% ogni 4 turni)
-[TAB] [ICON_BULLET] Lo schiavo pu&#242; diventare un [LINK = UNIT_REBELL] Ribelle [\ LINK] in una casella senza un'unit&#224; militare (priorit&#224;: colline)
-[TAB] [ICON_BULLET] Con la forma di governo "Diritto Internazionale": Probabilit&#224; +4 %
-[TAB] [ICON_BULLET] Se un'unit&#224; militare &#232; nella stessa casella: Probabilit&#224; -4 %
-[TAB] [ICON_BULLET] Quando il Cristianesimo &#232; gi&#224; stato fondato, al posto di un ribelle pu&#242; apparire un missionario cristiano (probabilit&#224; del 25%)
-[TAB] [ICON_BULLET] Gli schiavi diventano ribelli se catturati da unit&#224; barbariche
+[TAB][ICON_BULLET] Lo schiavo pu&#242; diventare un [LINK = UNIT_REBELL]Ribelle[\ LINK] in una casella senza un'unit&#224; militare (priorit&#224;: colline)
+[TAB][ICON_BULLET] Con la forma di governo "Diritto Internazionale": Probabilit&#224; +4 %
+[TAB][ICON_BULLET] Se un'unit&#224; militare &#232; nella stessa casella: Probabilit&#224; -4 %
+[TAB][ICON_BULLET] Quando il Cristianesimo &#232; gi&#224; stato fondato, al posto di un ribelle pu&#242; apparire un missionario cristiano (probabilit&#224; del 25%)
+[TAB][ICON_BULLET] Gli schiavi diventano ribelli se catturati da unit&#224; barbariche
 
 
-[H1] Schiavi domestici, contadini e minatori [\H1]
+[H1]Schiavi domestici, contadini e minatori [\H1]
 Gli schiavi possono essere assegnati senza limiti alle citt&#224; come schiavi domestici, contadini o minatori.
 [ICON_BULLET] Schiavi domestici: +1 [ICON_RESEARCH], +1 [ICON_CULTURE], Probabilit&#224; di morire: 4%
 [ICON_BULLET] Contadini: +2 [ICON_FOOD], Probabilit&#224; di morire: 6%
@@ -12624,7 +12638,7 @@ Gli schiavi istruiti possono stabilirsi come insegnanti in una citt&#224;: +2 [I
 [ICON_BULLET] Il cristianesimo pu&#242; essere diffuso automaticamente nelle citt&#224; con schiavi stanziali: probabilit&#224; 1:5
 
 
-[H1] Rivolta degli schiavi [\H1]
+[H1]Rivolta degli schiavi[\H1]
 20% a turno, se il numero di schiavi e gladiatori &#232; superiore alla popolazione della citt&#224;:
 2. calcolo: (numero di schiavi + gladiatori - popolazione) * 10 (in%) per citt&#224;
 
@@ -12640,7 +12654,7 @@ Fattori aggiuntivi:
 [ICON_BULLET] Se la citt&#224; &#232; infelice: + 25%
 
 Conseguenze:
-[ICON_BULLET] Il numero di [LINK = UNIT_REBELL] Ribelli [\ LINK] creati &#232; determinato tra 1 e il numero di schiavi in &#8203;&#8203;citt&#224; (assegnati e non)
+[ICON_BULLET] Il numero di [LINK = UNIT_REBELL] Ribelli [\ LINK] creati &#232; determinato tra 1 e il numero di schiavi in citt&#224; (assegnati e non)
 [ICON_BULLET] I ribelli appaiono nei dintorni della citt&#224; (con priorit&#224; sulle colline)
 [ICON_BULLET] Per ogni ribelle creato, viene eliminato uno schiavo (assegnato o non)
 [ICON_BULLET] La citt&#224; cade in rivolta. La durata dipende dal numero di ribelli creati
@@ -15202,8 +15216,8 @@ Probabilidad: 100%
 
 
 [H1]Macedonia[\H1]
-Units: Pezhetairoi
-Chance: 100%
+Unidades: Pezhetairoi
+Probabilidad: 100%
 
 -- Pezhetairoi --
 1. Pezhetairos (Infantry companion)
@@ -15223,9 +15237,9 @@ Chance: 100%
 
 [H1]Persia[\H1]
 
-[H2]Infantrie[\H2]
-Units: Spearman, Immortals and Pezoi
-Chance: 100%
+[H2]Infanter&#237;a[\H2]
+Unidades: Lanceros, Inmortales y Pezoi
+Probabilidad: 100%
 
 1. Paygan: soldier
 2. Paygan-salar: chief of an infantry division
@@ -15241,9 +15255,9 @@ Chance: 100%
 9. Didiyaka: Eyes of the Lord
 10. Vizier: reliable eye at all-overseer of 10.000 and above
 
-[H2]Cavalry[\H2]
-Units: Mounted Lancier
-Chance: 33%
+[H2]Caballer&#237;a[\H2]
+Unidades: Lanceros montados
+Probabilidad: 33%
 
 1. Aswar
 2. Salar of 10
@@ -15265,10 +15279,10 @@ Chance: 33%
 15. Eran Spahbed: military head, defense minister
 
 
-[H1]Egyptians[\H1]
-From Tech: Shortsword
-Units: Axe-, Swords- and Spearmen
-Chance: 50%
+[H1]Egipcios[\H1]
+De Tecnolog&#237;a: Espada Corta
+Unidades: Hacha, Espadas y Lanceros
+Probabilidad: 50%
 
 1. Soldier (nfrw)
 2. Overseer of 10 (hrp nfrw)
@@ -15285,9 +15299,9 @@ Chance: 50%
 11. Tjati (Vizier), second most important man in state
 
 
-[H1]Carthage[\H1]
-Units: Sacred Band, Shield Bearer and Hoplites
-Chance: 33%
+[H1]Cartago[\H1]
+Unidades: Banda Sagrada, Escudero y Hoplitas
+Probabilidad: 33%
 
 1 Rab miat (rb m't)-greatest of 100
 2 Rab matem (rb mtm)-greatest of 200
@@ -15299,10 +15313,10 @@ Chance: 33%
 6 Rab mahanet (rb mhnt)-general (head of army)
 
 
-[H1]Assyrians and Babylonians[\H1]
-From Tech: Civic Soldiers
-Units: Axe-, Swords- and Spearmen
-Chance: 100%
+[H1]Asirios y babilonios[\H1]
+De la tecnolog&#237;a: Soldados c&#237;vicos
+Unidades: Hacha, espadas y lanceros
+Probabilidad: 100%
 
 1. Huradu (soldier)
 2. Sab kasrutu (professional soldier)
@@ -15329,10 +15343,10 @@ Chance: 100%
 20. Sukallu rabiu (chief chancellor)
 
 
-[H1]Sumerians[\H1]
-From Tech: Civic Soldiers
-Units: Axe-, Swords- and Spearmen
-Chance: 50%
+[H1]Sumerios[\H1]
+De Tecnolog&#237;a: Soldados C&#237;vicos
+Unidades: Hachas, Espadas y Lanceros
+Probabilidad: 50%
 
 1. aga-ush (follower of the crown, professional troops)
 2. ugula (overseer)
@@ -15369,7 +15383,7 @@ Probabilidad: 3%
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_USURPATOR_PEDIA</Tag>
-		<English>H1]Usurpers[\H1]
+		<English>[H1]Usurpers[\H1]
 
 Between 235 and 284 AD, there were 70 Roman emperors who were called upon by their own troops, so-called usurpers (soldier emperors). During this period, the Roman Empire was plagued by civil wars, external threats, and epidemics. Parts of the empire seceded (Gaul). To end this crisis, Emperor Diocletian introduced the Tetrarchy in 293 AD. Four rulers ruled jointly: two Augusti (senior emperors) and two Caesares (junior emperors). The Tetrarchy collapsed after Diocletian's abdication in 305 AD, but the principle of multiple emperors remained in place until the end of the Western Roman Empire in 476 AD.
 
@@ -15377,9 +15391,13 @@ In PAE, usurpers appear when a great general dies in battle. Then it can happen 
 
 If you are in the "Polyarchy" government, this event will not trigger. If you no longer own any provincial palaces, this event cannot be triggered either.
 
+
+A second way usurpers can arise is through standing generals. If you have more than one general in your country, a demand for money may arise. This general demands one-third of the state treasury. If you don't comply with this request, the general and his army will become barbaric. If there are fewer than 10 units, they will be reinforced with the appropriate auxiliary troops. The probability of the tribute demand is number of generals : 200. This event is prevented if the general is in a city.
+
+
 Usurpers were not only found in the Roman Empire; in Egypt, China, Persia, the Greek city-states, the Diadochi, etc., there were also several rulers who came to power through seizure of power or intrigue.</English>
 		<French>
-H1]Usurpateurs[\H1]
+[H1]Usurpateurs[\H1]
 
 Entre 235 et 284 apr. J.-C., 70 empereurs romains furent appel&#233;s &#224; la rescousse par leurs propres troupes, appel&#233;s usurpateurs (empereurs soldats). Durant cette p&#233;riode, l'Empire romain fut en proie &#224; des guerres civiles, des menaces ext&#233;rieures et des &#233;pid&#233;mies. Certaines parties de l'empire (la Gaule) firent s&#233;cession. Pour mettre fin &#224; cette crise, l'empereur Diocl&#233;tien introduisit la T&#233;trarchie en 293 apr. J.-C. Quatre souverains r&#233;gn&#232;rent conjointement : deux Augustes (empereurs sup&#233;rieurs) et deux C&#233;sars (empereurs inf&#233;rieurs). La T&#233;trarchie s'effondra apr&#232;s l'abdication de Diocl&#233;tien en 305 apr. J.-C., mais le principe de la pluralit&#233; des empereurs resta en vigueur jusqu'&#224; la fin de l'Empire romain d'Occident en 476 apr. J.-C.
 
@@ -15387,21 +15405,29 @@ Dans PAE, les usurpateurs apparaissent lorsqu'un grand g&#233;n&#233;ral meurt a
 
 Si vous &#234;tes membre du gouvernement "Polyarchie", cet &#233;v&#233;nement ne se d&#233;clenchera pas. Si vous ne poss&#233;dez plus de palais provinciaux, cet &#233;v&#233;nement ne se d&#233;clenchera pas non plus.
 
+
+Une deuxi&#232;me fa&#231;on pour les usurpateurs de se manifester est par l'interm&#233;diaire des g&#233;n&#233;raux permanents. Si votre pays compte plus d'un g&#233;n&#233;ral, une demande d'argent peut survenir. Ce g&#233;n&#233;ral exige un tiers du tr&#233;sor public. Si vous n'acc&#233;dez pas &#224; cette demande, le g&#233;n&#233;ral et son arm&#233;e deviendront barbares. S'il y a moins de 10 unit&#233;s, elles seront renforc&#233;es par les troupes auxiliaires appropri&#233;es. La probabilit&#233; de la demande de tribut est le nombre de g&#233;n&#233;raux : 200. Cet &#233;v&#233;nement est &#233;vit&#233; si le g&#233;n&#233;ral est en ville.
+
+
 Les usurpateurs ne se trouvaient pas seulement dans l'Empire romain ; en &#201;gypte, en Chine, en Perse, dans les cit&#233;s-&#201;tats grecques, chez les Diadoques, etc., il y avait aussi plusieurs dirigeants qui arrivaient au pouvoir par prise de pouvoir ou par intrigue.
 		</French>
 		<German>
-H1]Usurpatoren[\H1]
+[H1]Usurpatoren[\H1]
 
 Zwischen 235-284 n. Chr. gab es 70 r&#246;mische Kaiser, die von ihren eigenen Truppen aufgerufen wurden, sogenannte Usurpatoren (Soldatenkaiser). Das r&#246;mische Reich wurde in jener Zeit von B&#252;rgerkriegen, &#228;u&#223;eren Bedrohungen und Epidemien heimgesucht. Dabei haben sich Teile des Reichs wieder abgespaltet (Gallien). Um diese Krise zu beenden, f&#252;hrte Kaiser Diokletian im Jahr 293 n. Chr. die Tetrarchie ein. Vier Herrscher regierten gemeinsam: zwei Augusti (Seniorkaiser) und zwei Caesares (Juniorkaiser). Die Tetrarchie zerfiel nach Diokletians R&#252;cktritt 305 n. Chr., aber das Prinzip des Mehrkaisertums blieb bis zum Ende des Westr&#246;mischen Reiches 476 n. Chr. erhalten.
 
-In PAE tauchen Usurpatoren dann auf, wenn ein Gro&#223;er General in einer Schlacht stirbt. Dann kann es passieren, dass sich der Statthalter einer Provinzhauptstadt erhebt und sich zum Soldatenkaiser ernennt. Dabei werden die in der Stadt stationierten Einheiten kopiert und auf einen g&#252;nstigen Plot um das Stadtfeld gestellt. Sollten es weniger als 10 Einheiten sein, wird mit entsprechenden Hilfstrupps aufgestockt. Die Stadt verf&#228;llt w&#228;hrenddessen in einen vom ehemaligen Statthalter angezettelten B&#252;rgerkrieg, wobei der Provinzpalast zerst&#246;rt und die Stadtmauerverteidigung auf 0 gesetzt wird.
+In PAE tauchen Usurpatoren auf, wenn ein Gro&#223;er General in einer Schlacht stirbt. Dann kann es passieren, dass sich der Statthalter einer Provinzhauptstadt erhebt und sich zum Soldatenkaiser ernennt. Dabei werden die in der Stadt stationierten Einheiten kopiert und auf einen g&#252;nstigen Plot um das Stadtfeld gestellt. Sollten es weniger als 10 Einheiten sein, wird mit entsprechenden Hilfstrupps aufgestockt. Die Stadt verf&#228;llt w&#228;hrenddessen in einen vom ehemaligen Statthalter angezettelten B&#252;rgerkrieg, wobei der Provinzpalast zerst&#246;rt und die Stadtmauerverteidigung auf 0 gesetzt wird.
 
 Sollte man sich in der Staatsform "Polyarchie" befinden, wird dieses Event nicht ausgel&#246;st. Wenn man keine Provinzpal&#228;ste (mehr) besitzt, kann dieses Event ebenfalls nicht ausgel&#246;st werden.
+
+
+Eine zweite M&#246;glichkeit, wie es zu Usurpatoren kommen kann, sind stehende Gener&#228;le. Wenn man mehr als einen General in seinem Land stehen hat, kann es zu einer Geldforderung kommen. Dieser verlangt ein Drittel des Staatsschatzes. Sollte man seinem Bitten nicht nachkommen, wird dieser mit samt seiner Armee barbarisch. Sollten es weniger als 10 Einheiten sein, wird mit entsprechenden Hilfstrupps aufgestockt. Die Wahrscheinlichkeit f&#252;r die Tributaufforderung betr&#228;gt Anzahl der Gener&#228;le : 200. Das Event wird verhindert, wenn der General in einer Stadt steht.
+
 
 Usurpatoren gab es nicht nur im r&#246;mischen Reich, auch in &#196;gypten, China, Persien, den griechischen Stadtstaaten, Diadochen usw. gab es mehrere Herrscher, die sich durch Macht&#252;bernahme oder Intrigen an die Spitze setzten.
 		</German>
 		<Italian>
-H1]Usurpatori[\H1]
+[H1]Usurpatori[\H1]
 
 Tra il 235 e il 284 d.C., ci furono 70 imperatori romani chiamati a intervenire dalle proprie truppe, i cosiddetti usurpatori (imperatori soldato). Durante questo periodo, l'Impero Romano fu afflitto da guerre civili, minacce esterne ed epidemie. Alcune parti dell'impero si separarono (la Gallia). Per porre fine a questa crisi, l'imperatore Diocleziano introdusse la Tetrarchia nel 293 d.C. Quattro sovrani governavano congiuntamente: due Augusti (imperatori anziani) e due Cesari (imperatori giovani). La Tetrarchia croll&#242; dopo l'abdicazione di Diocleziano nel 305 d.C., ma il principio della pluralit&#224; di imperatori rimase in vigore fino alla fine dell'Impero Romano d'Occidente nel 476 d.C.
 
@@ -15409,16 +15435,24 @@ In PAE, gli usurpatori compaiono quando un grande generale muore in battaglia. I
 
 Se ti trovi nel governo "Poliarchia", questo evento non si attiver&#224;. Anche se non possiedi pi&#249; alcun palazzo provinciale, questo evento non si attiver&#224;.
 
+
+Un secondo modo in cui gli usurpatori possono emergere &#232; attraverso generali permanenti. Se hai pi&#249; di un generale nel tuo paese, potrebbe sorgere una richiesta di denaro. Questo generale richiede un terzo del tesoro dello Stato. Se non accogli questa richiesta, il generale e il suo esercito diventeranno barbari. Se ci sono meno di 10 unit&#224;, saranno rinforzate con le truppe ausiliarie appropriate. La probabilit&#224; che venga richiesto un tributo &#232; pari al numero di generali : 200. Questo evento &#232; impedito se il generale si trova in una citt&#224;.
+
+
 Gli usurpatori non si trovavano solo nell'Impero romano; anche in Egitto, Cina, Persia, nelle citt&#224;-stato greche, nei Diadochi, ecc., vi furono diversi sovrani che giunsero al potere attraverso la presa del potere o l'intrigo.
 		</Italian>
 		<Spanish>
-H1]Usurpadores[\H1]
+[H1]Usurpadores[\H1]
 
 Entre el 235 y el 284 d. C., hubo 70 emperadores romanos llamados por sus propias tropas, los llamados usurpadores (emperadores soldados). Durante este per&#237;odo, el Imperio romano se vio afectado por guerras civiles, amenazas externas y epidemias. Partes del imperio se separaron (Galia). Para poner fin a esta crisis, el emperador Diocleciano instaur&#243; la Tetrarqu&#237;a en el 293 d. C. Cuatro gobernantes gobernaron conjuntamente: dos Augustos (emperadores mayores) y dos C&#233;sares (emperadores menores). La Tetrarqu&#237;a se derrumb&#243; tras la abdicaci&#243;n de Diocleciano en el 305 d. C., pero el principio de m&#250;ltiples emperadores se mantuvo vigente hasta el fin del Imperio romano de Occidente en el 476 d. C.
 
 En PAE, los usurpadores aparecen cuando un gran general muere en batalla. Entonces puede ocurrir que el gobernador de una capital provincial se alce y se declare Emperador Soldado. Las unidades estacionadas en la ciudad se copian y se colocan en una parcela favorable alrededor de la plaza. Si hay menos de 10 unidades, se a&#241;aden las tropas de apoyo correspondientes. Mientras tanto, la ciudad se ve sumida en una guerra civil instigada por el exgobernador, donde el palacio provincial es destruido y la defensa de la muralla de la ciudad queda a 0.
 
 Si perteneces al gobierno de la "Poliarqu&#237;a", este evento no se activar&#225;. Si ya no posees palacios provinciales, este evento tampoco se activar&#225;.
+
+
+Una segunda forma de que surjan usurpadores es a trav&#233;s de generales permanentes. Si tienes m&#225;s de un general en tu pa&#237;s, podr&#237;a surgir una demanda de dinero. Este general exige un tercio del tesoro estatal. Si no cumples con esta petici&#243;n, el general y su ej&#233;rcito se volver&#225;n b&#225;rbaros. Si hay menos de 10 unidades, se reforzar&#225;n con las tropas auxiliares correspondientes. La probabilidad de la demanda de tributo es el n&#250;mero de generales : 200. Este evento se evita si el general se encuentra en una ciudad.
+
 
 Los usurpadores no s&#243;lo se encontraron en el Imperio Romano; en Egipto, China, Persia, las ciudades-estado griegas, los di&#225;docos, etc., tambi&#233;n hubo varios gobernantes que llegaron al poder mediante la toma del poder o la intriga.
 		</Spanish>

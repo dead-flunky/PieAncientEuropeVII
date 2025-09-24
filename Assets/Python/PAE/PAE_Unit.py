@@ -3128,8 +3128,8 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 				iPromoMercenary = gc.getInfoTypeForString("PROMOTION_MERCENARY")
 				iPlayer = pUnit.getOwner()
 				pPlayer = gc.getPlayer(iPlayer)
-				# PAE 6.14
-				bNoCivilWar = pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_POLYARCHIE"))
+				# PAE 7.12
+				bNoUsurpator = pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_POLYARCHIE"))
 				eBuildingStadt = gc.getInfoTypeForString("BUILDING_STADT")
 				eBuildingClass = gc.getBuildingInfo(eBuildingStadt).getBuildingClassType()
 				eBuildingProvinzPalast = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
@@ -3195,14 +3195,12 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 										#			ColorTypes(7), loopCity.getX(), loopCity.getY(), True, True
 										#		)
 
-								#if CvUtil.myRandom(iLeader, "Stadtaufruhr1") == 0: # bis PAE 6.14
-								# PAE 6.15: Chance 10%
 								# PAE 7.12: Usurpatoren 1:4
-								if gc.getPlayer(gc.getGame().getActivePlayer()).getName() == "Apocalypto":
-									iChance = 2
-								else:
-									iChance = 4
-								if not bNoCivilWar:
+								if not bNoUsurpator:
+									if gc.getPlayer(gc.getGame().getActivePlayer()).getName() == "Apocalypto":
+										iChance = 2
+									else:
+										iChance = 4
 									if loopCity.isHasBuilding(eBuildingProvinzPalast):
 										if CvUtil.myRandom(iChance, "Stadtaufruhr1") == 0:
 											# 2 bis 4 Runden Aufstand!
@@ -3229,8 +3227,9 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 											iDamage = int(iDefense * 2 / 3)
 											loopCity.changeDefenseDamage(-iDamage)
 
-											# Civil War (ab PAE 6.3.2)
-											#PAE_City.doStartCivilWar(loopCity, 100)
+								# Civil War (ab PAE 6.3.2, 100%)
+								# PAE 7.12a: kein Bürgerkrieg wegen Generalstod
+								#PAE_City.doStartCivilWar(loopCity, 10)
 
 						(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
@@ -3444,7 +3443,7 @@ def doUsurpatorCheck(lLeaders):
 
 			if pPlayer.isHuman() and iPlayer == gc.getGame().getActivePlayer():
 
-				iGold = int(pPlayer.getGold() / 3)
+				iGold = pPlayer.getGold() // 3
 				iRand = 1+CvUtil.myRandom(5, "Usurpator popup text")
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
@@ -3466,7 +3465,7 @@ def doUsurpatorCheck(lLeaders):
 				if CvUtil.myRandom(20, "AI leader gets usurper") == 1:
 					doUsurpatorGeneral(pUnit)
 				else:
-					iGold = int(pPlayer.getGold() / 3)
+					iGold = pPlayer.getGold() // 3
 					pPlayer.changeGold(-iGold)
 
 
@@ -4787,7 +4786,7 @@ def onModNetMessage(argsList):
 		pUnit = pPlayer.getUnit(iData5)
 		# Bezahlen
 		if iData3 == 0:
-			iGold = int(pPlayer.getGold() / 3)
+			iGold = pPlayer.getGold() // 3
 			pPlayer.changeGold(-iGold)
 		# Bezahlung verweigern
 		else:

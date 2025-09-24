@@ -1818,11 +1818,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SETTLE_STATTHALTER2</Tag>
-		<English>Appoint your Hero as [COLOR_HIGHLIGHT_TEXT]provincial governor[COLOR_REVERT] (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])</English>
-		<French>Nommer votre h&#233;ros [COLOR_HIGHLIGHT_TEXT]gouverneur provincial[COLOR_REVERT] de cette ville (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])[NEWLINE][ICON_BULLET]Construit un Palais provincial dans la ville[NEWLINE][ICON_BULLET]Cette unit&#233; est supprim&#233;e</French>
-		<German>Euren Helden als [COLOR_HIGHLIGHT_TEXT]Provinzstatthalter[COLOR_REVERT] ernennen (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])</German>
-		<Italian>Nomina il tuo eroe come [COLOR_HIGHLIGHT_TEXT]governatore della provincia[COLOR_REVERT] (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])</Italian>
-		<Spanish>Nombra a tu h&#233;roe como [COLOR_HIGHLIGHT_TEXT]gobernador provincial[COLOR_REVERT] (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])</Spanish>
+		<English>Appoint your Hero as [COLOR_HIGHLIGHT_TEXT]provincial governor[COLOR_REVERT] (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])[NEWLINE][ICON_BULLET]Builds a Provincial Palace[NEWLINE][ICON_BULLET]Unit gets deleted</English>
+		<French>Nommer votre h&#233;ro [COLOR_HIGHLIGHT_TEXT]gouverneur provincial[COLOR_REVERT] de cette ville (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])[NEWLINE][ICON_BULLET]Construit un Palais provincial dans la ville[NEWLINE][ICON_BULLET]Cette unit&#233; est supprim&#233;e</French>
+		<German>Euren Helden zum [COLOR_HIGHLIGHT_TEXT]Provinzstatthalter[COLOR_REVERT] ernennen (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])[NEWLINE][ICON_BULLET]Errichtet einen Provinzpalast[NEWLINE][ICON_BULLET]Einheit wird gel&#246;scht</German>
+		<Italian>Nomina il tuo eroe come [COLOR_HIGHLIGHT_TEXT]governatore della provincia[COLOR_REVERT] (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])[NEWLINE][ICON_BULLET]Costruisce un Palazzo Provinciale[NEWLINE][ICON_BULLET]L'unit&#224; viene eliminata</Italian>
+		<Spanish>Nombra a tu h&#233;roe como [COLOR_HIGHLIGHT_TEXT]gobernador provincial[COLOR_REVERT] (+1 [ICON_HAPPY], +5 [ICON_COMMERCE])[NEWLINE][ICON_BULLET]Construye un Palacio Provincial[NEWLINE][ICON_BULLET]La unidad se elimina</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SLAVE2LIBRARY</Tag>
@@ -3997,7 +3997,7 @@
 		<English>A majority of slaves in %s1 now believe in their Saviour Jesus Christ.</English>
 		<French>La majorit&#233; des esclaves de %s1 croit maintenant en son sauveur J&#233;sus Christ.</French>
 		<German>Ein Gro&#223;teil der Sklaven in %s1 glauben nun an ihren Erl&#246;ser Jesus Christus.</German>
-		<Italian>La maggioranza degli schiavi in &#8203;&#8203;%s1 ora crede nel loro Salvatore Ges&#249; Cristo.</Italian>
+		<Italian>La maggioranza degli schiavi in %s1 ora crede nel loro Salvatore Ges&#249; Cristo.</Italian>
 		<Spanish>Una gran parte de esclavos en %s1 creen ahora en su salvador Jesucristo.</Spanish>
 	</TEXT>
 	<TEXT>

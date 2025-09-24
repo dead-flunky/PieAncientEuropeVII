@@ -5494,15 +5494,28 @@
 			<bAIPlayable>1</bAIPlayable>
 			<Cities>
 				<City>TXT_KEY_CITY_NAME_C26</City>
-				<City>TXT_KEY_CITY_NAME_ISRAEL_01</City>
 				<City>TXT_KEY_CITY_NAME_GREEK_39</City>
+				<City>TXT_KEY_CITY_NAME_ISRAEL_06</City>
+				<City>TXT_KEY_CITY_NAME_ISRAEL_07</City>
+				<City>TXT_KEY_CITY_NAME_ISRAEL_64</City>
+				<City>Gophna</City>
+				<City>Akrabeta</City>
+				<City>Thamna</City>
+				<City>Lydda</City>
+				<City>En Gedi</City>
+				<City>Meris</City>
+				<City>Anthedon</City>
+				<City>Joppe</City>
+				<City>Sebaste</City>
+				<City>Gadara</City>
+				<City>TXT_KEY_CITY_NAME_ISRAEL_30</City>
+				<City>TXT_KEY_CITY_NAME_ISRAEL_13</City>
+				<City>TXT_KEY_CITY_NAME_ISRAEL_14</City>
+				<City>TXT_KEY_CITY_NAME_ISRAEL_01</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_02</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_03</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_04</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_05</City>
-				<City>TXT_KEY_CITY_NAME_ISRAEL_06</City>
-				<City>TXT_KEY_CITY_NAME_ISRAEL_07</City>
-				<City>TXT_KEY_CITY_NAME_ISRAEL_64</City>
 				<City>TXT_KEY_CITY_NAME_GABAE</City>
 				<City>TXT_KEY_CITY_NAME_PHON_03</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_08</City>
@@ -5511,8 +5524,6 @@
 				<City>TXT_KEY_CITY_NAME_ISRAEL_10</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_11</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_12</City>
-				<City>TXT_KEY_CITY_NAME_ISRAEL_13</City>
-				<City>TXT_KEY_CITY_NAME_ISRAEL_14</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_15</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_16</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_17</City>
@@ -5528,7 +5539,6 @@
 				<City>TXT_KEY_CITY_NAME_ISRAEL_27</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_28</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_29</City>
-				<City>TXT_KEY_CITY_NAME_ISRAEL_30</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_31</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_32</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_33</City>
@@ -5565,6 +5575,7 @@
 				<City>TXT_KEY_CITY_NAME_ISRAEL_61</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_62</City>
 				<City>TXT_KEY_CITY_NAME_ISRAEL_63</City>
+				<City>Gophna</City>
 			</Cities>
 			<Buildings>
 				<Building>

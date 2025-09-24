@@ -1733,8 +1733,6 @@ def popupBonusverbreitung(argsList):
 
 # Cultivation / Trade / Boggy
 # Called when player has selected bonus to buy
-
-
 def popupTradeChooseBonus(argsList):
 		iButtonId = argsList[0]
 		iUnitOwner = argsList[1]
@@ -1743,14 +1741,15 @@ def popupTradeChooseBonus(argsList):
 		pUnit = pPlayer.getUnit(iUnitId)
 		# Since CyPopup can only store 3 values, the city needs to be identified by the merchant's position...
 		pCity = CyMap().plot(pUnit.getX(), pUnit.getY()).getPlotCity()
-		lGoods = PAE_Trade.getCitySaleableGoods(pCity, iUnitOwner)
+		lGoods1 = PAE_Trade.getCitySaleableGoods(pCity, iUnitOwner)
+		lGoodsAll = PAE_Trade.getCitySaleableGoodsAll(pCity)
+		lGoods2 = list(set(lGoodsAll) - set(lGoods1))
+		lGoods = lGoods1 + lGoods2
 		if iButtonId < len(lGoods):  # Otherwise: Cancel button
 				CyMessageControl().sendModNetMessage(742, lGoods[iButtonId], pCity.getOwner(), iUnitOwner, iUnitId)
 
 # Cultivation / Trade / Boggy
 # Called when player has selected cultivation bonus to buy
-
-
 def popupTradeChooseBonus4Cultivation(argsList):
 		iButtonId = argsList[0]
 		iUnitOwner = argsList[1]
@@ -1764,8 +1763,6 @@ def popupTradeChooseBonus4Cultivation(argsList):
 				CyMessageControl().sendModNetMessage(739, lGoods[iButtonId], 0, iUnitOwner, iUnitId)
 
 # Called when player has selected civ to trade with. Next step: Select city.
-
-
 def popupTradeRouteChooseCiv(argsList):
 		iButtonId = argsList[0]
 		iUnitOwner = argsList[1]
@@ -1814,8 +1811,6 @@ def popupTradeRouteChooseCiv(argsList):
 						PAE_Trade.doPopupAutomatedTradeRoute(pUnit, iNewType, lCivList[iButtonId - iShift], -1)
 
 # Called when player has selected city to trade with. Next step: Select bonus.
-
-
 def popupTradeRouteChooseCity1(argsList):
 		iButtonId = argsList[0]
 		iUnitOwner = argsList[1]
@@ -1827,8 +1822,6 @@ def popupTradeRouteChooseCity1(argsList):
 				CyMessageControl().sendModNetMessage(745, iCityOwner, lCityList[iButtonId].getID(), iUnitOwner, iUnitId)
 
 # Same as above, but for second city in trade route. Two functions are needed bc. popupInfo only stores 4 values (5 needed)
-
-
 def popupTradeRouteChooseCity2(argsList):
 		iButtonId = argsList[0]
 		iUnitOwner = argsList[1]
@@ -1840,8 +1833,6 @@ def popupTradeRouteChooseCity2(argsList):
 				CyMessageControl().sendModNetMessage(746, iCityOwner, lCityList[iButtonId].getID(), iUnitOwner, iUnitId)
 
 # Called when has selected bonus to buy in city. Next step: Select civ 2 or start trade route (if finished)
-
-
 def popupTradeRouteChooseBonus(argsList):
 		iButtonId = argsList[0]
 		iUnitOwner = argsList[1]
@@ -1856,7 +1847,10 @@ def popupTradeRouteChooseBonus(argsList):
 				iY = int(CvUtil.getScriptData(pUnit, ["autY2"], -1))
 
 		pCity = CyMap().plot(iX, iY).getPlotCity()
-		lGoods = PAE_Trade.getCitySaleableGoods(pCity, -1)
+		lGoods1 = PAE_Trade.getCitySaleableGoods(pCity, -1)
+		lGoodsAll = PAE_Trade.getCitySaleableGoodsAll(pCity)
+		lGoods2 = list(set(lGoodsAll) - set(lGoods1))
+		lGoods = lGoods1 + lGoods2
 		lGoods.append(-1)
 		if iButtonId < len(lGoods):
 				CyMessageControl().sendModNetMessage(747, lGoods[iButtonId], bFirst, iUnitOwner, iUnitId)
