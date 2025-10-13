@@ -12820,7 +12820,7 @@
 			<iNumBuildings>0</iNumBuildings>
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
-			<bOwnPlot>0</bOwnPlot>
+			<bOwnPlot>1</bOwnPlot>
 			<iPlotType>2</iPlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired>
@@ -12849,7 +12849,7 @@
 			<bRecurring>0</bRecurring>
 			<bTeam>0</bTeam>
 			<bGlobal>0</bGlobal>
-			<bPickPlayer>0</bPickPlayer>
+			<bPickPlayer>1</bPickPlayer>
 			<bOtherPlayerWar>0</bOtherPlayerWar>
 			<bOtherPlayerHasReligion>0</bOtherPlayerHasReligion>
 			<bOtherPlayerHasOtherReligion>0</bOtherPlayerHasOtherReligion>

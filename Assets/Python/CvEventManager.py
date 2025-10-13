@@ -3467,6 +3467,7 @@ class CvEventManager:
 
 							# ------- Certain animals can be captured, when domestication has been researched
 							# ------- Bestimmte Tiere koennen eingefangen werden, wenn Domestizier-Tech erforscht wurde
+							# ------- Esel via XML (weil schon so früh verfügbar: TECH_FENCE)
 							elif iLoserUnitType in L.LUnitCanBeDomesticated:
 									iTech = -1
 									if iLoserUnitType == gc.getInfoTypeForString("UNIT_HORSE"):
@@ -3475,15 +3476,23 @@ class CvEventManager:
 											iTech = gc.getInfoTypeForString("TECH_KAMELZUCHT")
 									elif iLoserUnitType == gc.getInfoTypeForString("UNIT_ELEFANT"):
 											iTech = gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")
-									elif iLoserUnitType == gc.getInfoTypeForString("UNIT_ESEL"):
-											iTech = gc.getInfoTypeForString("TECH_FENCES")
 
 									if iTech != -1:
 											iThisTeam = pWinnerPlayer.getTeam()
 											if gc.getTeam(iThisTeam).isHasTech(iTech):
+												iNewUnitX = pWinner.getX()
+												iNewUnitY = pWinner.getY()
+												bCapture = False
+												if not pWinnerPlot.isWater(): bCapture = True
+												elif pLoserPlot.getNumUnits() == 1:
+													bCapture = True
+													iNewUnitX = pLoser.getX()
+													iNewUnitY = pLoser.getY()
+
+												if bCapture:
 													bUnitDone = True
 													# Create a new unit
-													NewUnit = pWinnerPlayer.initUnit(iLoserUnitType, pWinner.getX(), pWinner.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+													NewUnit = pWinnerPlayer.initUnit(iLoserUnitType, iNewUnitX, iNewUnitY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 													NewUnit.finishMoves()
 													if pWinnerPlayer.isHuman():
 															CyInterface().addMessage(iWinnerPlayer, True, 5, CyTranslator().getText("TXT_KEY_UNIT_EROBERT", (unitY.getDescription(), 0)), None, 2, None, ColorTypes(8), 0, 0, False, False)
@@ -3982,13 +3991,33 @@ class CvEventManager:
 						iTradeX = iX + 30
 						iTradeY = iY + 30
 
+						# Check, ob die Stadt im Umkreis Wüste hat (09.10.2025)
+						iTerrDesert = gc.getInfoTypeForString("TERRAIN_DESERT")
+						iRange = 5
+						bDesert = False
+						for i in range(-iRange, iRange+1):
+								for j in range(-iRange, iRange+1):
+										loopPlot = plotXY(iX, iY, i, j)
+										if loopPlot is not None and not loopPlot.isNone():
+												if not loopPlot.isPeak() and not loopPlot.isWater():
+														if loopPlot.getTerrainType() == iTerrDesert:
+																bDesert = True
+																break
+								if bDesert: break
+						if bDesert:
+								iUnit = gc.getInfoTypeForString("UNIT_CARAVAN")
+								szText = CyTranslator().getText("TXT_KEY_POPUP_PROJECT_SEIDENSTRASSE", ())
+						else:
+								iUnit = gc.getInfoTypeForString("UNIT_TRADE_MERCHANT")
+								szText = CyTranslator().getText("TXT_KEY_POPUP_PROJECT_SEIDENSTRASSE2", ())
+
 						lBonusgut = [
 								gc.getInfoTypeForString("BONUS_INCENSE"),
 								gc.getInfoTypeForString("BONUS_GEMS"),
 								gc.getInfoTypeForString("BONUS_SILK")
 						]
 						for eBonus in lBonusgut:
-								pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_CARAVAN"), iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTHWEST)
+								pNewUnit = pPlayer.initUnit(iUnit, iX, iY, UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTHWEST)
 								CvUtil.addScriptData(pNewUnit, "b", eBonus)
 								CvUtil.addScriptData(pNewUnit, "originCiv", iPlayer)
 								CvUtil.addScriptData(pNewUnit, "x", iTradeX)
@@ -3996,7 +4025,7 @@ class CvEventManager:
 						if pPlayer.isHuman():
 								popupInfo = CyPopupInfo()
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-								popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_PROJECT_SEIDENSTRASSE", ()))
+								popupInfo.setText(szText)
 								popupInfo.addPopup(iPlayer)
 
 						# Add Trade Route to city 26.01.2013
@@ -4460,7 +4489,7 @@ class CvEventManager:
 					if pPlayer.isHuman():
 							PAE_Unit.doDecreaseFoodOnUnitBuilt(city, unit)
 
-					# PAE 6.14: Religion: Einheiten verweigern Kriegsdienst
+					# PAE 6.14: Religion: Einheiten verweigern Kriegsdienst - Religions PHASE 2
 					PAE_Christen.doRefuseUnitBuilt(city, unit)
 
 				# PAE Debug Mark 7 end
@@ -4719,15 +4748,6 @@ class CvEventManager:
 						if gc.getPlayer(iPlayerX).isAlive():
 							pTeam = gc.getTeam(gc.getPlayer(iPlayerX).getTeam())
 							pTeam.setHasTech(iTechType, 1, iPlayerX, 0, 1)
-
-							if not CyInterface().noTechSplash():
-								if gc.getGame().isFinalInitialized() and not gc.getGame().GetWorldBuilderMode():
-									if iPlayerX == gc.getGame().getActivePlayer():
-										popupInfo = CyPopupInfo()
-										popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON_SCREEN)
-										popupInfo.setData1(iTechType)
-										popupInfo.setText(u"showTechSplash")
-										popupInfo.addPopup(iPlayerX)
 
 				# Palast bei Tech sofort setzen
 				if iTechType == gc.getInfoTypeForString("TECH_LEADERSHIP"):
@@ -5563,14 +5583,15 @@ class CvEventManager:
 							if pCity.isHolyCityByType(gc.getInfoTypeForString("RELIGION_JUDAISM")):
 									# Stadt wird barbarisch (pCity Pointer weg!)
 									bRevolt = PAE_City.doJewRevolt(pCity)
+									if bRevolt: pCity = None
 
 					# Weiterführende Aktionen...
 					if not bRevolt:
 
-							# PAE 6.14: Allgemeine Religionskonflikte
-							#PAE_Christen.removePagans(pCity)
+							# ab PAE 6.14: Allgemeine Religionskonflikte
+							# Religionskonflikt PHASE 3
 							if not PAE_Christen.removePagans(pCity):
-									# PAE 7.x
+									# PAE 7.x - Religionskonflikt PHASE 1
 									PAE_Christen.doReligionsKonflikt(pCity)
 
 							# CivilWar, Stadt kann barbarisch werden (pCity pointer weg!)

@@ -241,10 +241,13 @@ class CvPediaImprovement:
 
 				screen.attachLabel(panelName, "", "  ")
 
+				# damit keine Tech doppelt angezeigt wird (zB Lager, Jagdlager) - 10.10.2025
+				lTechs =[]
 				for iBuild in range(gc.getNumBuildInfos()):
 						if (gc.getBuildInfo(iBuild).getImprovement() == self.iImprovement):
 								iTech = gc.getBuildInfo(iBuild).getTechPrereq()
-								if (iTech > -1):
+								if (iTech > -1 and iTech not in lTechs):
+										lTechs.append(iTech)
 										screen.attachImageButton(panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
 
 				# PAE Units that can build that
@@ -280,6 +283,7 @@ class CvPediaImprovement:
 						screen.attachImageButton(panelName, "", gc.getUnitInfo(iUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, 1, False)
 						iUnit = gc.getInfoTypeForString("UNIT_CARAVAN")
 						screen.attachImageButton(panelName, "", gc.getUnitInfo(iUnit).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_UNIT, iUnit, 1, False)
+
 
 		def placeSpecial(self):
 

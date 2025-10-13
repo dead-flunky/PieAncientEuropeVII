@@ -4130,11 +4130,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_SUPPLY_RELOAD_2</Tag>
-		<English>The friendly %s1_civadj people have reprovisioned your supply unit!</English>
-		<French>Le peuple %s1_civadj amical a r&#233;approvisionn&#233; votre unit&#233; !</French>
-		<German>Das freundliche Volk der %s1_civadj hat Eure Versorgungseinheit mit Vorr&#228;ten aufgef&#252;llt!</German>
-		<Italian>La gente amichevole di %s1_civadj ha fatto il pieno di rifornimenti alla tua unit&#224; di supporto!</Italian>
-		<Spanish>&#161;La amable gente de %s1_civadj ha repuesto tu fuente de suministros!</Spanish>
+		<English>The friendly %s1_civ people have reprovisioned your supply unit!</English>
+		<French>Le peuple de %s1_civ amical a r&#233;approvisionn&#233; votre unit&#233; !</French>
+		<German>Das freundliche Volk der %s1_civ hat Eure Versorgungseinheit mit Vorr&#228;ten aufgef&#252;llt!</German>
+		<Italian>La gente amichevole di %s1_civ ha fatto il pieno di rifornimenti alla tua unit&#224; di supporto!</Italian>
+		<Spanish>&#161;La amable gente de %s1_civ ha repuesto tu fuente de suministros!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_UNIT_CIV_RANG</Tag>
@@ -4838,15 +4838,15 @@
 		<French>Elite</French>
 		<German>Elite</German>
 		<Italian>Elite</Italian>
-		<Spanish>&#201;lite:&#201;lites</Spanish>
+		<Spanish><Text>&#201;lite:&#201;lites</Text><Gender>Female:Female</Gender><Plural>0:1</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COMBAT6</Tag>
-		<English>Legendary</English>
-		<French>L&#233;gendaire</French>
-		<German>Legend&#228;r</German>
-		<Italian>Leggendaria</Italian>
-		<Spanish><Text>Legendaria</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
+		<English>Legend</English>
+		<French>L&#233;gende</French>
+		<German>Legende</German>
+		<Italian>Leggenda</Italian>
+		<Spanish><Text>Leyenda</Text><Gender>Female</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_CORVUS1</Tag>

@@ -2939,7 +2939,7 @@
 			<Type>UNIT_ESEL</Type>
 			<UniqueNames/>
 			<Special>NONE</Special>
-			<Capture>NONE</Capture>
+			<Capture>UNITCLASS_ESEL</Capture>
 			<Combat>NONE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ANIMAL</DefaultUnitAI>
@@ -9560,6 +9560,18 @@
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_DRILL1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COMBAT1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COMBAT2</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COMBAT3</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 				<FreePromotion>
@@ -18015,7 +18027,7 @@
 				<iRangedWaveSize>7</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_WURFAXT</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_WURFAXT2</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -22966,7 +22978,7 @@
 			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
-			<iCombat>15</iCombat>
+			<iCombat>14</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iAirCombat>0</iAirCombat>
 			<iAirCombatLimit>0</iAirCombatLimit>
@@ -24242,7 +24254,7 @@
 			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
-			<iCombat>14</iCombat>
+			<iCombat>12</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iAirCombat>0</iAirCombat>
 			<iAirCombatLimit>0</iAirCombatLimit>
@@ -24305,7 +24317,20 @@
 			<bShiftDown>0</bShiftDown>
 			<bCtrlDown>0</bCtrlDown>
 			<iHotKeyPriority>0</iHotKeyPriority>
-			<FreePromotions/>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COMBAT1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COMBAT2</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_COMBAT3</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 			<LeaderPromotion>NONE</LeaderPromotion>
 			<iLeaderExperience>0</iLeaderExperience>
 		</UnitInfo>
@@ -65720,7 +65745,15 @@
 			<CorporationSpreads/>
 			<GreatPeoples>
 				<GreatPeople>
-					<GreatPeopleType>SPECIALIST_RESERVIST</GreatPeopleType>
+					<GreatPeopleType>SPECIALIST_CITIZEN2</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_PRIEST</GreatPeopleType>
+					<bGreatPeople>1</bGreatPeople>
+				</GreatPeople>
+				<GreatPeople>
+					<GreatPeopleType>SPECIALIST_SPY</GreatPeopleType>
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 			</GreatPeoples>

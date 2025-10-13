@@ -747,11 +747,11 @@
 	</Define>
 	<Define>
 		<DefineName>TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>100</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>TECH_COST_KNOWN_PREREQ_MODIFIER</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>PEACE_TREATY_LENGTH</DefineName>
@@ -1667,8 +1667,8 @@
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
-		<!-- amount of bonuses for yield bonus and maintenance -->
+		<!-- PAE cults/corporations: max amount of bonuses (yield bonus and maintenance) -->
 		<DefineName>CORPORATION_MAX_BONUS</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>100</iDefineIntVal>
 	</Define>
 </Civ4Defines>

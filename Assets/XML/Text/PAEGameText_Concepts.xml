@@ -370,10 +370,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_7_WONDERS</Tag>
-		<English>Seven Wonders of the Ancient World</English>
-		<French>Sept Merveilles du Monde Antique</French>
-		<German>Sieben Weltwunder der Antike</German>
-		<Italian>Sette Meraviglie del Mondo Antico</Italian>
-		<Spanish>Siete Maravillas del Mundo Antiguo</Spanish>
+		<English>The 7 Wonders</English>
+		<French>Les 7 Merveilles</French>
+		<German>Die 7 Weltwunder</German>
+		<Italian>Le 7 Meraviglie</Italian>
+		<Spanish>Las 7 Maravillas</Spanish>
 	</TEXT>
 </Civ4GameText>

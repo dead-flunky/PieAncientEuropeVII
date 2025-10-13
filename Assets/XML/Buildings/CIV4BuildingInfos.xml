@@ -51569,6 +51569,7 @@
 			<Description>TXT_KEY_BUILDING_PYRAMID</Description>
 			<Civilopedia>TXT_KEY_BUILDING_PYRAMID_PEDIA</Civilopedia>
 			<Strategy/>
+			<Help>TXT_KEY_BUILDING_7WONDERS_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_PYRAMID</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_PYRAMIDS</MovieDefineTag>
@@ -52882,6 +52883,7 @@
 			<Description>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_GREAT_LIGHTHOUSE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_7WONDERS_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_GREAT_LIGHTHOUSE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_GREAT_LIGHTHOUSE</MovieDefineTag>
@@ -53074,6 +53076,7 @@
 			<Description>TXT_KEY_BUILDING_HANGING_GARDEN</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HANGING_GARDEN_PEDIA</Civilopedia>
 			<Strategy/>
+			<Help>TXT_KEY_BUILDING_7WONDERS_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_HANGING_GARDEN</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_HANGING_GARDENS</MovieDefineTag>
@@ -53266,6 +53269,7 @@
 			<Description>TXT_KEY_BUILDING_COLOSSUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_COLOSSUS_PEDIA</Civilopedia>
 			<Strategy/>
+			<Help>TXT_KEY_BUILDING_7WONDERS_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_COLOSSUS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_COLOSSUS</MovieDefineTag>
@@ -55112,6 +55116,7 @@
 			<Description>TXT_KEY_BUILDING_ARTEMIS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_TEMPLE_OF_ARTEMIS_PEDIA</Civilopedia>
 			<Strategy/>
+			<Help>TXT_KEY_BUILDING_7WONDERS_HELP</Help>
 			<Advisor>ADVISOR_SCIENCE</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ARTEMIS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_ARTEMIS</MovieDefineTag>
@@ -55485,6 +55490,7 @@
 			<Description>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS_PEDIA</Civilopedia>
 			<Strategy/>
+			<Help>TXT_KEY_BUILDING_7WONDERS_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MAUSOLEUM_OF_MAUSSOLLOS</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_MAUSOLEUM_OF_MAUSSOLLOS</MovieDefineTag>

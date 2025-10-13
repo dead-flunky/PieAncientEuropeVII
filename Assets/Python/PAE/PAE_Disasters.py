@@ -1,33 +1,46 @@
-# Disasters features and events
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++++++++++ Naturkatastrophen / Disasters +++++++++++++++++++++++++++++
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 # Imports
 from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap, CyGame,
-																CyCamera, CyEngine, PlotTypes,
-																CyTranslator, DirectionTypes,
-																ColorTypes, CyPopupInfo, isWorldWonderClass,
-																ButtonPopupTypes, plotXY, plotDirection)
+								CyCamera, CyEngine, PlotTypes,
+								CyTranslator, DirectionTypes,
+								ColorTypes, CyPopupInfo, isWorldWonderClass,
+								ButtonPopupTypes, plotXY, plotDirection)
 import CvUtil
 
 import PAE_City
 import PAE_Unit
 
+# for popups with dds
+import PAE_Popup
+
 # Defines
 gc = CyGlobalContext()
 
-# Entrypoint
-
+# ---- MAP SIZE ------------
+# gc.getMap().getWorldSize()
+# 0 = WORLDSIZE_DUEL
+# 1 = WORLDSIZE_TINY
+# 2 = WORLDSIZE_SMALL
+# 3 = WORLDSIZE_STANDARD
+# 4 = WORLDSIZE_LARGE
+# 5 = WORLDSIZE_HUGE
+# --------------------------
 
 def doGenerateDisaster(iGameTurn):
 
 		if iGameTurn == 0:
 				return
 
+		# Test
 		# doNebel()
 
-		iTurnDisastersModulo = 80
+		iTurnDisastersModulo = 120
 		bApocalypse = False
 		if gc.getPlayer(gc.getGame().getActivePlayer()).getName() == "Apocalypto":
-				iTurnDisastersModulo = 20
+				iTurnDisastersModulo = 60
 				bApocalypse = True
 
 		if gc.getGame().getGameTurnYear() > -600 and iGameTurn % 25 == 0:
@@ -43,13 +56,17 @@ def doGenerateDisaster(iGameTurn):
 
 		# Katas erzeugen
 		if iGameTurn % (iTurnDisastersModulo / iTeiler) == 0:
-				iRand = CvUtil.myRandom(5, "doDisaster")
+				iRand = CvUtil.myRandom(8, "doDisaster")
+				# 1:8
 				if iRand == 0:
-						doErdbeben(0, 0)
-				elif iRand == 1:
-						doVulkan(0, 0, 0)
-				elif iRand == 2:
 						doComet()
+				# 2:8
+				elif iRand < 3:
+						doVulkan(0, 0, 0)
+				# 3:8
+				elif iRand < 6:
+						doErdbeben(0, 0)
+				# 2:8
 				else:
 						doMeteorites()
 
@@ -71,31 +88,31 @@ def doGenerateDisaster(iGameTurn):
 										CyInterface().addMessage(i, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_ORACLE_WARNING", ("",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 		if bApocalypse:
-				if iGameTurn % (85 / iTeiler) == 0:
+				if iGameTurn % (86 / iTeiler) == 0:
 						doSeesturm()
 				if iGameTurn % (90 / iTeiler) == 0:
 						doGrasshopper()
 				if iGameTurn % (60 / iTeiler) == 0:
 						doTornado()
-		elif iGameTurn % (70 / iTeiler) == 0:
-				iRand = CvUtil.myRandom(2, "Disaster")
+		elif iGameTurn % (60 / iTeiler) == 0:
+				iRand = CvUtil.myRandom(4, "Disaster")
 				if iRand == 0:
-						doSeesturm()
+						doTornado()
 				elif iRand == 1:
 						doGrasshopper()
 				else:
-						doTornado()
+						doSeesturm()
 
 		if iGameTurn % (90 / iTeiler) == 0:
 				doSandsturm()
 
-		if iGameTurn % ((iTurnDisastersModulo / iTeiler) + 20) == 0:
+		if iGameTurn % (iTurnDisastersModulo / iTeiler + 20) == 0:
 				undoVulkan()
 
+		# PAE 7.12b: Globale Katastrophen (1:500)
+		if CvUtil.myRandom(500, "doGlobalDisaster") == 1:
+				doGlobalDisaster()
 
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# ++++++++++++++++++ Naturkatastrophen / Disasters +++++++++++++++++++++++++++++
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 def doSandsturm():
 
 		iMapW = gc.getMap().getGridWidth()
@@ -135,12 +152,6 @@ def doSandsturm():
 		# Schritt 2: Sandsturm setzen
 		if lDesert:
 				OwnerArray = []
-				#  0 = WORLDSIZE_DUEL
-				#  1 = WORLDSIZE_TINY
-				#  2 = WORLDSIZE_SMALL
-				#  3 = WORLDSIZE_STANDARD
-				#  4 = WORLDSIZE_LARGE
-				#  5 = WORLDSIZE_HUGE
 				iMaxEffect = max(1, gc.getMap().getWorldSize() - 1)
 				for _ in range(iMaxEffect):
 						if lDesert:
@@ -207,12 +218,6 @@ def doGrasshopper():
 				gc.getInfoTypeForString("IMPROVEMENT_QUARRY")
 		]
 
-		#  0 = WORLDSIZE_DUEL
-		#  1 = WORLDSIZE_TINY
-		#  2 = WORLDSIZE_SMALL
-		#  3 = WORLDSIZE_STANDARD
-		#  4 = WORLDSIZE_LARGE
-		#  5 = WORLDSIZE_HUGE
 		iMaxEffect = 0
 		iMapSize = gc.getMap().getWorldSize()
 		if iMapSize < 3:
@@ -283,12 +288,6 @@ def doNebel():
 				gc.getInfoTypeForString("TERRAIN_DEEP_OCEAN")
 		]
 
-		#  0 = WORLDSIZE_DUEL
-		#  1 = WORLDSIZE_TINY
-		#  2 = WORLDSIZE_SMALL
-		#  3 = WORLDSIZE_STANDARD
-		#  4 = WORLDSIZE_LARGE
-		#  5 = WORLDSIZE_HUGE
 		iMaxEffect = 0
 		iMapSize = gc.getMap().getWorldSize()
 		if iMapSize < 3:
@@ -370,12 +369,6 @@ def doSeesturm():
 				gc.getInfoTypeForString("TERRAIN_DEEP_OCEAN")
 		]
 
-		#  0 = WORLDSIZE_DUEL
-		#  1 = WORLDSIZE_TINY
-		#  2 = WORLDSIZE_SMALL
-		#  3 = WORLDSIZE_STANDARD
-		#  4 = WORLDSIZE_LARGE
-		#  5 = WORLDSIZE_HUGE
 		iMaxEffect = 0
 		iMapSize = gc.getMap().getWorldSize()
 		iMax = min(5, 1+round(iMapSize/2))
@@ -450,12 +443,6 @@ def doTornado():
 
 		iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
 
-		#  0 = WORLDSIZE_DUEL
-		#  1 = WORLDSIZE_TINY
-		#  2 = WORLDSIZE_SMALL
-		#  3 = WORLDSIZE_STANDARD
-		#  4 = WORLDSIZE_LARGE
-		#  5 = WORLDSIZE_HUGE
 		iMapSize = gc.getMap().getWorldSize()
 		iMax = min(7, iMapSize+1)
 
@@ -549,354 +536,354 @@ def doErdbeben(iX, iY):
 
 		iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
 
-		# Effekt beim Vulkanausbruch
+		feat_erdbeben = gc.getInfoTypeForString('FEATURE_ERDBEBEN')
+		feat_brand = gc.getInfoTypeForString('FEATURE_SMOKE')
+
+		feat_flood_plains = gc.getInfoTypeForString('FEATURE_FLOOD_PLAINS')
+		feat_oasis = gc.getInfoTypeForString('FEATURE_OASIS')
+		feat_forest = gc.getInfoTypeForString('FEATURE_FOREST')
+		feat_forest2 = gc.getInfoTypeForString('FEATURE_DICHTERWALD')
+		feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_BURNT')
+
+		feat_ice = gc.getInfoTypeForString('FEATURE_ICE')
+		terr_snow = gc.getInfoTypeForString('TERRAIN_SNOW')
+
+		# Staerkegrad des Erdbebens 6 - 9
+		# 6 - Radius 1: Modernisierungen 60%, Stadt: Gebaeude 15%, Units 10%
+		# 7 - Radius 1: Modernisierungen 70%, Stadt: Gebaeude 30%, Units 30%, -2 Pop, Land: Units 10%
+		# 8 - Radius 2: Modernisierungen 80%
+		#               Radius 2: Stadt: Gebaeude 30%, Units 30%, Pop - 1/3, Land: Units 10%
+		#               Epi + 1:  Stadt: Gebaeude 50%, Units 50%, Pop / 2,   Land: Units 20%
+		# 9 - Radius 3: Modernisierungen 90%
+		#               Epi + 1: Pop < 6: Stadt und Units 100%,
+		#                        Pop > 5: 3/4 Pop weg, Gebaeude 80%, Wunder 50%, Units 80%
+		#                        Land: Units 40%
+		#               Radius 2: Pop / 2, Stadt:   Gebaeude 60%, Units 60%, Land: Units 30%
+		#               Radius 3: Pop - 1/3, Stadt: Gebaeude 40%, Units 40%, Land: Units 20%
+		iSkala = 6 + CvUtil.myRandom(4, "doErdbeben1")
+
 		if iX > 0 and iY > 0:
-				CyEngine().triggerEffect(earthquakeEffect, gc.getMap().plot(iX, iY).getPoint())
+				iRandX = iX
+				iRandY = iY
 		else:
-				feat_erdbeben = gc.getInfoTypeForString('FEATURE_ERDBEBEN')
-				feat_brand = gc.getInfoTypeForString('FEATURE_SMOKE')
-
-				feat_flood_plains = gc.getInfoTypeForString('FEATURE_FLOOD_PLAINS')
-				feat_oasis = gc.getInfoTypeForString('FEATURE_OASIS')
-				feat_forest = gc.getInfoTypeForString('FEATURE_FOREST')
-				feat_forest2 = gc.getInfoTypeForString('FEATURE_DICHTERWALD')
-				feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_BURNT')
-
-				feat_ice = gc.getInfoTypeForString('FEATURE_ICE')
-				terr_snow = gc.getInfoTypeForString('TERRAIN_SNOW')
-
-				# Staerkegrad des Erdbebens 6 - 9
-				# 6 - Radius 1: Modernisierungen 60%, Stadt: Gebaeude 15%, Units 10%
-				# 7 - Radius 1: Modernisierungen 70%, Stadt: Gebaeude 30%, Units 30%, -2 Pop, Land: Units 10%
-				# 8 - Radius 2: Modernisierungen 80%
-				#               Radius 2: Stadt: Gebaeude 30%, Units 30%, Pop - 1/3, Land: Units 10%
-				#               Epi + 1:  Stadt: Gebaeude 50%, Units 50%, Pop / 2,   Land: Units 20%
-				# 9 - Radius 3: Modernisierungen 90%
-				#               Epi + 1: Pop < 6: Stadt und Units 100%,
-				#                        Pop > 5: 3/4 Pop weg, Gebaeude 80%, Wunder 50%, Units 80%
-				#                        Land: Units 40%
-				#               Radius 2: Pop / 2, Stadt:   Gebaeude 60%, Units 60%, Land: Units 30%
-				#               Radius 3: Pop - 1/3, Stadt: Gebaeude 40%, Units 40%, Land: Units 20%
-				iSkala = 6 + CvUtil.myRandom(4, "doErdbeben1")
-
 				iMapW = gc.getMap().getGridWidth()
 				iMapH = gc.getMap().getGridHeight()
-
-				# Plot soll nicht ganz am Rand sein (Flunky: alle 4 Raender ausnehmen)
+				# Plot soll nicht ganz am Rand sein (Flunky: Rahmen rausnehmen)
 				iRandX = 3 + CvUtil.myRandom(iMapW - 6, "doErdbeben2")
 				iRandY = 3 + CvUtil.myRandom(iMapH - 6, "doErdbeben3")
-				pPlot = gc.getMap().plot(iRandX, iRandY)
-				iPlayer = pPlot.getOwner()
 
-				if pPlot is not None and not pPlot.isNone():
+		pPlot = gc.getMap().plot(iRandX, iRandY)
+		iPlayer = pPlot.getOwner()
 
-						doOracleShowsDisaster(iRandX, iRandY)
+		if pPlot is not None and not pPlot.isNone():
 
-						if not pPlot.isWater() and pPlot.getFeatureType() != iDarkIce:
-								if pPlot.isVisibleToWatchingHuman():
-										CyCamera().JustLookAtPlot(pPlot)
-								# ERDBEBEN 6, 7
-								if iSkala < 8:
-										if iPlayer != -1:
-												if gc.getPlayer(iPlayer).isHuman():
-														# Message: Ein gewaltiges Erdbeben der Staerke %d erschuettert Euer Land!
-														popupInfo = CyPopupInfo()
-														popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-														popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_6_OR_7", (iSkala, 0)))
-														popupInfo.addPopup(iPlayer)
-														CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_6_OR_7", (iSkala, 0)),
-																										 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+				doOracleShowsDisaster(iRandX, iRandY)
 
-										for i in range(3):
-												for j in range(3):
-														loopPlot = gc.getMap().plot(iRandX - 1 + i, iRandY - 1 + j)
-														if loopPlot is not None and not loopPlot.isNone():
-																if loopPlot.getFeatureType() == iDarkIce:
-																		continue
-																if not loopPlot.isWater():
-																		CyEngine().triggerEffect(earthquakeEffect, loopPlot.getPoint())
+				if not pPlot.isWater() and pPlot.getFeatureType() != iDarkIce:
+						if pPlot.isVisibleToWatchingHuman():
+								CyCamera().JustLookAtPlot(pPlot)
+						# ERDBEBEN 6, 7
+						if iSkala < 8:
+								if iPlayer != -1:
+										if gc.getPlayer(iPlayer).isHuman():
+												# Message: Ein gewaltiges Erdbeben der Staerke %d erschuettert Euer Land!
+												popupInfo = CyPopupInfo()
+												popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+												popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_6_OR_7", (iSkala, 0)))
+												popupInfo.addPopup(iPlayer)
+												CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_6_OR_7", (iSkala, 0)),
+																								 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 
-																# Plot fuer Bonus Resource checken
-																# Vergabe unten
-																if not loopPlot.isWater() and loopPlot.getBonusType(loopPlot.getOwner()) == -1 and not loopPlot.isPeak() and loopPlot.isHills():
-																		bonusPlotArray.append(loopPlot)
+								for i in range(3):
+										for j in range(3):
+												loopPlot = gc.getMap().plot(iRandX - 1 + i, iRandY - 1 + j)
+												if loopPlot is not None and not loopPlot.isNone():
+														if loopPlot.getFeatureType() == iDarkIce:
+																continue
+														if not loopPlot.isWater():
+																CyEngine().triggerEffect(earthquakeEffect, loopPlot.getPoint())
 
-																# Stadt
-																if loopPlot.isCity():
-																		pCity = loopPlot.getPlotCity()
-																		pCity.setFood(0)
-																		if iSkala == 6:
-																				doDestroyCityBuildings(pCity, 15)
-																				doKillUnits(loopPlot, 10)
-																		else:
-																				doDestroyCityBuildings(pCity, 30)
-																				doKillUnits(loopPlot, 30)
-																				iPopAlt = pCity.getPopulation()
-																				iPopNeu = 1
-																				if iPopAlt > 4:
-																						iPopNeu = iPopAlt - 2
-																				elif iPopAlt > 2:
-																						iPopNeu = iPopAlt - 1
+														# Plot fuer Bonus Resource checken
+														# Vergabe unten
+														if not loopPlot.isWater() and loopPlot.getBonusType(loopPlot.getOwner()) == -1 and not loopPlot.isPeak() and loopPlot.isHills():
+																bonusPlotArray.append(loopPlot)
 
-																				pCity.setPopulation(iPopNeu)
-
-																				if iPopNeu and iPlayer != -1:
-																						if gc.getPlayer(iPlayer).isHuman():
-																								# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
-																								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
-																																				 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
-
-																		PAE_City.doCheckCityState(pCity)
-
-																# Modernisierungen zerstoeren
-																elif not loopPlot.isWater():
-																		iRand = CvUtil.myRandom(10, "doErdbeben4")
-																		if iSkala == 6:
-																				iLimit = 6
-																		else:
-																				iLimit = 7
-																				doKillUnits(loopPlot, 10)
-																		if iRand < iLimit:
-																				loopPlot.setRouteType(-1)
-																				loopPlot.setImprovementType(-1)
-																		# Brand setzen
-																		if not loopPlot.isPeak() and loopPlot.getFeatureType() != feat_flood_plains and loopPlot.getFeatureType() != feat_oasis:
-																				if loopPlot.getFeatureType() == feat_forest or loopPlot.getFeatureType() == feat_forest2:
-																						if CvUtil.myRandom(3, "doErdbeben5") == 1:
-																								loopPlot.setFeatureType(feat_forest_burnt, 0)
-																				elif loopPlot.getFeatureType() != feat_ice and loopPlot.getTerrainType() != terr_snow:
-																						loopPlot.setFeatureType(feat_brand, 0)
-
-								# ERDBEBEN 8
-								elif iSkala == 8:
-
-										if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman():
-												if pPlot.isVisibleToWatchingHuman():
-														CyCamera().JustLookAtPlot(pPlot)
-														# Message: Ein verheerendes Erdbeben der Staerke 8 erschuetterte das Land.
-														popupInfo = CyPopupInfo()
-														popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-														popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_8", ("",)))
-														popupInfo.addPopup(gc.getGame().getActivePlayer())
-														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_8", ("",)),
-																										 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
-												else:
-														# Message: Ein verheerendes Erdbeben der Staerke 8 erschuetterte ein fernes Land.
-														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_8_FAR_AWAY", ("",)),
-																										 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(12), pPlot.getX(), pPlot.getY(), True, True)
-
-										for i in range(5):
-												for j in range(5):
-														loopPlot = gc.getMap().plot(iRandX - 2 + i, iRandY - 2 + j)
-														if loopPlot is not None and not loopPlot.isNone():
-																if loopPlot.getFeatureType() == iDarkIce:
-																		continue
-																if not loopPlot.isWater():
-																		CyEngine().triggerEffect(earthquakeEffect, loopPlot.getPoint())
-
-																# Plot fuer Bonus Resource checken
-																# Vergabe unten
-																if not loopPlot.isWater() and loopPlot.getBonusType(loopPlot.getOwner()) == -1 and not loopPlot.isPeak() and loopPlot.isHills():
-																		bonusPlotArray.append(loopPlot)
-
-																# Entfernung zum Epizentrum berechnen
-																iBetrag = (iRandX - loopPlot.getX()) * (iRandX - loopPlot.getX()) + (iRandY - loopPlot.getY()) * (iRandY - loopPlot.getY())
-
-																# Stadt
-																if loopPlot.isCity():
-																		pCity = loopPlot.getPlotCity()
+														# Stadt
+														if loopPlot.isCity():
+																pCity = loopPlot.getPlotCity()
+																pCity.setFood(0)
+																if iSkala == 6:
+																		doDestroyCityBuildings(pCity, 15)
+																		doKillUnits(loopPlot, 10)
+																else:
+																		doDestroyCityBuildings(pCity, 30)
+																		doKillUnits(loopPlot, 30)
 																		iPopAlt = pCity.getPopulation()
-																		if iBetrag < 2:
-																				doDestroyCityBuildings(pCity, 50)
-																				doKillUnits(loopPlot, 50)
-																				iPopNeu = int(iPopAlt / 2)
-																				if iPopNeu < 2:
-																						iPopNeu = 1
-																				pCity.setPopulation(iPopNeu)
-																		else:
-																				doDestroyCityBuildings(pCity, 30)
-																				doKillUnits(loopPlot, 30)
-																				iPopNeu = iPopAlt - int(iPopAlt / 3)
-																				if iPopNeu < 2:
-																						iPopNeu = 1
-																				pCity.setPopulation(iPopNeu)
-																		pCity.setFood(0)
+																		iPopNeu = 1
+																		if iPopAlt > 4:
+																				iPopNeu = iPopAlt - 2
+																		elif iPopAlt > 2:
+																				iPopNeu = iPopAlt - 1
 
-																		if iPlayer != -1:
+																		pCity.setPopulation(iPopNeu)
+
+																		if iPopNeu and iPlayer != -1:
 																				if gc.getPlayer(iPlayer).isHuman():
 																						# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
 																						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
 																																		 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
 
-																		PAE_City.doCheckCityState(pCity)
+																PAE_City.doCheckCityState(pCity)
 
-																# Modernisierungen zerstoeren
-																elif not loopPlot.isWater():
-																		iRand = CvUtil.myRandom(10, "doErdbeben6")
-																		if iRand < 8:
-																				loopPlot.setRouteType(-1)
-																				loopPlot.setImprovementType(-1)
-																		# Brand setzen
-																		if not loopPlot.isPeak() and loopPlot.getFeatureType() != feat_flood_plains and loopPlot.getFeatureType() != feat_oasis:
-																				if loopPlot.getFeatureType() == feat_forest or loopPlot.getFeatureType() == feat_forest2:
-																						if CvUtil.myRandom(2, "doErdbeben7") == 1:
-																								loopPlot.setFeatureType(feat_forest_burnt, 0)
-																				elif loopPlot.getFeatureType() != feat_ice and loopPlot.getTerrainType() != terr_snow:
-																						loopPlot.setFeatureType(feat_brand, 0)
-																		# Units killen
-																		if iBetrag < 2:
-																				doKillUnits(loopPlot, 20)
-																		else:
-																				doKillUnits(loopPlot, 10)
-
-								# ERDBEBEN 9
-								elif iSkala > 8:
-										if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman():
-												if pPlot.isVisibleToWatchingHuman():
-														CyCamera().JustLookAtPlot(pPlot)
-														# Message: Ein katastrophales Erdbeben der Staerke 9 erschuetterte das Land.
-														popupInfo = CyPopupInfo()
-														popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-														popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_9", ("",)))
-														popupInfo.addPopup(gc.getGame().getActivePlayer())
-														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_9", ("",)),
-																										 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
-												else:
-														# Message: Ein verheerendes Erdbeben der Staerke 8 erschuetterte ein fernes Land.
-														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_9_FAR_AWAY", ("",)),
-																										 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(12), pPlot.getX(), pPlot.getY(), True, True)
-
-										for i in range(7):
-												for j in range(7):
-														loopPlot = gc.getMap().plot(iRandX - 3 + i, iRandY - 3 + j)
-														if loopPlot is not None and not loopPlot.isNone():
-																if loopPlot.getFeatureType() == iDarkIce:
-																		continue
-																if not loopPlot.isWater():
-																		CyEngine().triggerEffect(earthquakeEffect, loopPlot.getPoint())
-
-																# Plot fuer Bonus Resource checken
-																# Vergabe unten
-																if not loopPlot.isWater() and loopPlot.getBonusType(loopPlot.getOwner()) == -1 and not loopPlot.isPeak() and loopPlot.isHills():
-																		bonusPlotArray.append(loopPlot)
-
-																# Entfernung zum Epizentrum berechnen
-																iBetrag = (iRandX - loopPlot.getX()) * (iRandX - loopPlot.getX()) + (iRandY - loopPlot.getY()) * (iRandY - loopPlot.getY())
-
-																# Stadt
-																if loopPlot.isCity():
-																		bCityIsGone = False
-																		pCity = loopPlot.getPlotCity()
-																		iPopAlt = pCity.getPopulation()
-																		if iBetrag < 2:
-																				if iPopAlt < 6:
-																						doDestroyCityWonders(pCity, 100, feat_erdbeben)
-																						doKillUnits(loopPlot, 100)
-																						pCity.kill()
-																						bCityIsGone = True
-																						if gc.getPlayer(iPlayer).isHuman():
-																								# Message: Die Stadt %s und dessen Bevoelkerung wurde in ihren Truemmern begraben....
-																								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_CITY_DESTROYED", (pCity.getName(),)),
-																																				 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
-																				else:
-																						doDestroyCityWonders(pCity, 50, feat_erdbeben)
-																						doDestroyCityBuildings(pCity, 80)
-																						doKillUnits(loopPlot, 80)
-																						iPopNeu = int(iPopAlt / 4)
-																						iPopNeu = max(iPopNeu, 1)
-																						pCity.setPopulation(iPopNeu)
-																		elif iBetrag < 3:
-																				doDestroyCityBuildings(pCity, 60)
-																				doKillUnits(loopPlot, 60)
-																				iPopNeu = int(iPopAlt / 2)
-																				iPopNeu = max(iPopNeu, 1)
-																				pCity.setPopulation(iPopNeu)
-																		else:
-																				doDestroyCityBuildings(pCity, 40)
-																				doKillUnits(loopPlot, 40)
-																				iPopNeu = iPopAlt - int(iPopAlt / 3)
-																				iPopNeu = max(iPopNeu, 1)
-																				pCity.setPopulation(iPopNeu)
-
-																		if not bCityIsGone and not pCity.isNone():
-																				pCity.setFood(0)
-																				PAE_City.doCheckCityState(pCity)
-																				if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-																						# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
-																						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
-																																		 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
-
-																# Modernisierungen zerstoeren
-																elif not loopPlot.isWater():
-																		iRand = CvUtil.myRandom(100, "doErdbeben8")
-																		if iRand < 90:
-																				loopPlot.setRouteType(-1)
-																				loopPlot.setImprovementType(-1)
-																		# Brand setzen
-																		if not loopPlot.isPeak() and loopPlot.getFeatureType() != feat_flood_plains and loopPlot.getFeatureType() != feat_oasis:
-																				if loopPlot.getFeatureType() == feat_forest or loopPlot.getFeatureType() == feat_forest2:
+														# Modernisierungen zerstoeren
+														elif not loopPlot.isWater():
+																iRand = CvUtil.myRandom(10, "doErdbeben4")
+																if iSkala == 6:
+																		iLimit = 6
+																else:
+																		iLimit = 7
+																		doKillUnits(loopPlot, 10)
+																if iRand < iLimit:
+																		loopPlot.setRouteType(-1)
+																		loopPlot.setImprovementType(-1)
+																# Brand setzen
+																if not loopPlot.isPeak() and loopPlot.getFeatureType() != feat_flood_plains and loopPlot.getFeatureType() != feat_oasis:
+																		if loopPlot.getFeatureType() == feat_forest or loopPlot.getFeatureType() == feat_forest2:
+																				if CvUtil.myRandom(3, "doErdbeben5") == 1:
 																						loopPlot.setFeatureType(feat_forest_burnt, 0)
-																				elif loopPlot.getFeatureType() != feat_ice and loopPlot.getTerrainType() != terr_snow:
-																						loopPlot.setFeatureType(feat_brand, 0)
-																				# Units killen
-																		if iBetrag < 2:
-																				doKillUnits(loopPlot, 40)
-																		elif iBetrag < 3:
-																				doKillUnits(loopPlot, 30)
-																		else:
-																				doKillUnits(loopPlot, 20)
+																		elif loopPlot.getFeatureType() != feat_ice and loopPlot.getTerrainType() != terr_snow:
+																				loopPlot.setFeatureType(feat_brand, 0)
 
-								# Vergabe einer Bonus Resource 20%
-								if bonusPlotArray and CvUtil.myRandom(10, "doErdbeben9") < 2:
-										lBonus = [
-												gc.getInfoTypeForString("BONUS_GEMS"),
-												gc.getInfoTypeForString("BONUS_COPPER"),
-												gc.getInfoTypeForString("BONUS_IRON"),
-												gc.getInfoTypeForString("BONUS_MARBLE"),
-												gc.getInfoTypeForString("BONUS_STONE"),
-												gc.getInfoTypeForString("BONUS_OBSIDIAN"),
-												gc.getInfoTypeForString("BONUS_MAGNETIT"),
-												gc.getInfoTypeForString("BONUS_ZINK"),
-												gc.getInfoTypeForString("BONUS_ZINN"),
-												gc.getInfoTypeForString("BONUS_COAL"),
-												gc.getInfoTypeForString("BONUS_ELEKTRON"),
-												gc.getInfoTypeForString("BONUS_GOLD"),
-												gc.getInfoTypeForString("BONUS_SILVER"),
-												gc.getInfoTypeForString("BONUS_SALT")
-										]
-										iRand = CvUtil.myRandom(len(lBonus), "doErdbeben10")
-										iBonus = lBonus[iRand]
+						# ERDBEBEN 8
+						elif iSkala == 8:
 
-										iRandPlot = CvUtil.myRandom(len(bonusPlotArray), "doErdbeben11")
-										pRandPlot = bonusPlotArray[iRandPlot]
-										pRandPlot.setBonusType(iBonus)
-										iOwner = pRandPlot.getOwner()
-										if iOwner > -1 and gc.getPlayer(iOwner).isHuman():
-												CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iBonus).getDescription(),)),
-																								 None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(14), pRandPlot.getX(), pRandPlot.getY(), True, True)
+								if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman():
+										if pPlot.isVisibleToWatchingHuman():
+												CyCamera().JustLookAtPlot(pPlot)
+												# Message: Ein verheerendes Erdbeben der Staerke 8 erschuetterte das Land.
+												popupInfo = CyPopupInfo()
+												popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+												popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_8", ("",)))
+												popupInfo.addPopup(gc.getGame().getActivePlayer())
+												CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_8", ("",)),
+																								 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+										else:
+												# Message: Ein verheerendes Erdbeben der Staerke 8 erschuetterte ein fernes Land.
+												CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_8_FAR_AWAY", ("",)),
+																								 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(12), pPlot.getX(), pPlot.getY(), True, True)
 
-								# Zusaetzliche Gefahren durch das Erdbeben
-
-								# Vulkan
-								if pPlot.isPeak() and iSkala > 7:
-										doVulkan(iRandX, iRandY, iSkala)
-
-						# Unterwassererdbeben
-						elif iSkala > 8:
-
-								# Testen ob es ein Ozean ist
-								iNumWaterTiles = 0
 								for i in range(5):
 										for j in range(5):
 												loopPlot = gc.getMap().plot(iRandX - 2 + i, iRandY - 2 + j)
 												if loopPlot is not None and not loopPlot.isNone():
 														if loopPlot.getFeatureType() == iDarkIce:
 																continue
-														if loopPlot.isWater():
-																iNumWaterTiles += 1
-								# Statt dem Erbeben wird ein Tsunami zum Leben erweckt
-								if iNumWaterTiles > 9:
-										doTsunami(iRandX, iRandY)
+														if not loopPlot.isWater():
+																CyEngine().triggerEffect(earthquakeEffect, loopPlot.getPoint())
+
+														# Plot fuer Bonus Resource checken
+														# Vergabe unten
+														if not loopPlot.isWater() and loopPlot.getBonusType(loopPlot.getOwner()) == -1 and not loopPlot.isPeak() and loopPlot.isHills():
+																bonusPlotArray.append(loopPlot)
+
+														# Entfernung zum Epizentrum berechnen
+														iBetrag = (iRandX - loopPlot.getX()) * (iRandX - loopPlot.getX()) + (iRandY - loopPlot.getY()) * (iRandY - loopPlot.getY())
+
+														# Stadt
+														if loopPlot.isCity():
+																pCity = loopPlot.getPlotCity()
+																iPopAlt = pCity.getPopulation()
+																if iBetrag < 2:
+																		doDestroyCityBuildings(pCity, 50)
+																		doKillUnits(loopPlot, 50)
+																		iPopNeu = int(iPopAlt / 2)
+																		if iPopNeu < 2:
+																				iPopNeu = 1
+																		pCity.setPopulation(iPopNeu)
+																else:
+																		doDestroyCityBuildings(pCity, 30)
+																		doKillUnits(loopPlot, 30)
+																		iPopNeu = iPopAlt - int(iPopAlt / 3)
+																		if iPopNeu < 2:
+																				iPopNeu = 1
+																		pCity.setPopulation(iPopNeu)
+																pCity.setFood(0)
+
+																if iPlayer != -1:
+																		if gc.getPlayer(iPlayer).isHuman():
+																				# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
+																				CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
+																																 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
+
+																PAE_City.doCheckCityState(pCity)
+
+														# Modernisierungen zerstoeren
+														elif not loopPlot.isWater():
+																iRand = CvUtil.myRandom(10, "doErdbeben6")
+																if iRand < 8:
+																		loopPlot.setRouteType(-1)
+																		loopPlot.setImprovementType(-1)
+																# Brand setzen
+																if not loopPlot.isPeak() and loopPlot.getFeatureType() != feat_flood_plains and loopPlot.getFeatureType() != feat_oasis:
+																		if loopPlot.getFeatureType() == feat_forest or loopPlot.getFeatureType() == feat_forest2:
+																				if CvUtil.myRandom(2, "doErdbeben7") == 1:
+																						loopPlot.setFeatureType(feat_forest_burnt, 0)
+																		elif loopPlot.getFeatureType() != feat_ice and loopPlot.getTerrainType() != terr_snow:
+																				loopPlot.setFeatureType(feat_brand, 0)
+																# Units killen
+																if iBetrag < 2:
+																		doKillUnits(loopPlot, 20)
+																else:
+																		doKillUnits(loopPlot, 10)
+
+						# ERDBEBEN 9
+						elif iSkala > 8:
+								if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman():
+										if pPlot.isVisibleToWatchingHuman():
+												CyCamera().JustLookAtPlot(pPlot)
+												# Message: Ein katastrophales Erdbeben der Staerke 9 erschuetterte das Land.
+												popupInfo = CyPopupInfo()
+												popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+												popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_9", ("",)))
+												popupInfo.addPopup(gc.getGame().getActivePlayer())
+												CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_9", ("",)),
+																								 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+										else:
+												# Message: Ein verheerendes Erdbeben der Staerke 8 erschuetterte ein fernes Land.
+												CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_9_FAR_AWAY", ("",)),
+																								 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(12), pPlot.getX(), pPlot.getY(), True, True)
+
+								for i in range(7):
+										for j in range(7):
+												loopPlot = gc.getMap().plot(iRandX - 3 + i, iRandY - 3 + j)
+												if loopPlot is not None and not loopPlot.isNone():
+														if loopPlot.getFeatureType() == iDarkIce:
+																continue
+														if not loopPlot.isWater():
+																CyEngine().triggerEffect(earthquakeEffect, loopPlot.getPoint())
+
+														# Plot fuer Bonus Resource checken
+														# Vergabe unten
+														if not loopPlot.isWater() and loopPlot.getBonusType(loopPlot.getOwner()) == -1 and not loopPlot.isPeak() and loopPlot.isHills():
+																bonusPlotArray.append(loopPlot)
+
+														# Entfernung zum Epizentrum berechnen
+														iBetrag = (iRandX - loopPlot.getX()) * (iRandX - loopPlot.getX()) + (iRandY - loopPlot.getY()) * (iRandY - loopPlot.getY())
+
+														# Stadt
+														if loopPlot.isCity():
+																bCityIsGone = False
+																pCity = loopPlot.getPlotCity()
+																iPopAlt = pCity.getPopulation()
+																if iBetrag < 2:
+																		if iPopAlt < 6:
+																				doDestroyCityWonders(pCity, 100, feat_erdbeben)
+																				doKillUnits(loopPlot, 100)
+																				pCity.kill()
+																				bCityIsGone = True
+																				if gc.getPlayer(iPlayer).isHuman():
+																						# Message: Die Stadt %s und dessen Bevoelkerung wurde in ihren Truemmern begraben....
+																						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_EARTHQUAKE_CITY_DESTROYED", (pCity.getName(),)),
+																																		 "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
+																		else:
+																				doDestroyCityWonders(pCity, 50, feat_erdbeben)
+																				doDestroyCityBuildings(pCity, 80)
+																				doKillUnits(loopPlot, 80)
+																				iPopNeu = int(iPopAlt / 4)
+																				iPopNeu = max(iPopNeu, 1)
+																				pCity.setPopulation(iPopNeu)
+																elif iBetrag < 3:
+																		doDestroyCityBuildings(pCity, 60)
+																		doKillUnits(loopPlot, 60)
+																		iPopNeu = int(iPopAlt / 2)
+																		iPopNeu = max(iPopNeu, 1)
+																		pCity.setPopulation(iPopNeu)
+																else:
+																		doDestroyCityBuildings(pCity, 40)
+																		doKillUnits(loopPlot, 40)
+																		iPopNeu = iPopAlt - int(iPopAlt / 3)
+																		iPopNeu = max(iPopNeu, 1)
+																		pCity.setPopulation(iPopNeu)
+
+																if not bCityIsGone and not pCity.isNone():
+																		pCity.setFood(0)
+																		PAE_City.doCheckCityState(pCity)
+																		if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
+																				# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
+																				CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
+																																 None, 2, gc.getFeatureInfo(feat_erdbeben).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
+
+														# Modernisierungen zerstoeren
+														elif not loopPlot.isWater():
+																iRand = CvUtil.myRandom(100, "doErdbeben8")
+																if iRand < 90:
+																		loopPlot.setRouteType(-1)
+																		loopPlot.setImprovementType(-1)
+																# Brand setzen
+																if not loopPlot.isPeak() and loopPlot.getFeatureType() != feat_flood_plains and loopPlot.getFeatureType() != feat_oasis:
+																		if loopPlot.getFeatureType() == feat_forest or loopPlot.getFeatureType() == feat_forest2:
+																				loopPlot.setFeatureType(feat_forest_burnt, 0)
+																		elif loopPlot.getFeatureType() != feat_ice and loopPlot.getTerrainType() != terr_snow:
+																				loopPlot.setFeatureType(feat_brand, 0)
+																		# Units killen
+																if iBetrag < 2:
+																		doKillUnits(loopPlot, 40)
+																elif iBetrag < 3:
+																		doKillUnits(loopPlot, 30)
+																else:
+																		doKillUnits(loopPlot, 20)
+
+						# Vergabe einer Bonus Resource 20%
+						if bonusPlotArray and CvUtil.myRandom(10, "doErdbeben9") < 2:
+								lBonus = [
+										gc.getInfoTypeForString("BONUS_GEMS"),
+										gc.getInfoTypeForString("BONUS_COPPER"),
+										gc.getInfoTypeForString("BONUS_IRON"),
+										gc.getInfoTypeForString("BONUS_MARBLE"),
+										gc.getInfoTypeForString("BONUS_STONE"),
+										gc.getInfoTypeForString("BONUS_OBSIDIAN"),
+										gc.getInfoTypeForString("BONUS_MAGNETIT"),
+										gc.getInfoTypeForString("BONUS_ZINK"),
+										gc.getInfoTypeForString("BONUS_ZINN"),
+										gc.getInfoTypeForString("BONUS_COAL"),
+										gc.getInfoTypeForString("BONUS_ELEKTRON"),
+										gc.getInfoTypeForString("BONUS_GOLD"),
+										gc.getInfoTypeForString("BONUS_SILVER"),
+										gc.getInfoTypeForString("BONUS_SALT")
+								]
+								iRand = CvUtil.myRandom(len(lBonus), "doErdbeben10")
+								iBonus = lBonus[iRand]
+
+								iRandPlot = CvUtil.myRandom(len(bonusPlotArray), "doErdbeben11")
+								pRandPlot = bonusPlotArray[iRandPlot]
+								pRandPlot.setBonusType(iBonus)
+								iOwner = pRandPlot.getOwner()
+								if iOwner > -1 and gc.getPlayer(iOwner).isHuman():
+										CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iBonus).getDescription(),)),
+																						 None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(14), pRandPlot.getX(), pRandPlot.getY(), True, True)
+
+						# Zusaetzliche Gefahren durch das Erdbeben
+
+						# Vulkan
+						if pPlot.isPeak() and iSkala > 7:
+								doVulkan(iRandX, iRandY, iSkala)
+
+				# Unterwassererdbeben
+				elif iSkala > 8:
+
+						# Testen ob es ein Ozean ist
+						iNumWaterTiles = 0
+						for i in range(5):
+								for j in range(5):
+										loopPlot = gc.getMap().plot(iRandX - 2 + i, iRandY - 2 + j)
+										if loopPlot is not None and not loopPlot.isNone():
+												if loopPlot.getFeatureType() == iDarkIce:
+														continue
+												if loopPlot.isWater():
+														iNumWaterTiles += 1
+						# Statt dem Erbeben wird ein Tsunami zum Leben erweckt
+						if iNumWaterTiles > 9:
+								doTsunami(iRandX, iRandY)
 
 
 def doVulkan(iX, iY, iSkala):
@@ -1489,8 +1476,6 @@ def doMeteorites():
 
 		iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
 
-		iImpType1 = gc.getInfoTypeForString("IMPROVEMENT_LUMBER_CAMP")
-
 		bonus = [
 				gc.getInfoTypeForString("BONUS_MAGNETIT"),
 				gc.getInfoTypeForString("BONUS_OREICHALKOS"),
@@ -1498,82 +1483,64 @@ def doMeteorites():
 		]
 		bonusPlotArray = []
 
-		#  0 = WORLDSIZE_DUEL
-		#  1 = WORLDSIZE_TINY
-		#  2 = WORLDSIZE_SMALL
-		#  3 = WORLDSIZE_STANDARD
-		#  4 = WORLDSIZE_LARGE
-		#  5 = WORLDSIZE_HUGE
-		iMaxEffect = 0
 		iMapSize = gc.getMap().getWorldSize()
-		iMax = max(1, min(12, 2*iMapSize))
+		iMax = max(2, (iMapSize * 4))
 		# if iMapSize == 0:
-		# iMax = 1
-		# elif iMapSize == 1:
 		# iMax = 2
-		# elif iMapSize == 2:
+		# elif iMapSize == 1:
 		# iMax = 4
-		# elif iMapSize == 3:
-		# iMax = 6
-		# elif iMapSize == 4:
+		# elif iMapSize == 2:
 		# iMax = 8
-		# elif iMapSize == 5:
-		# iMax = 10
-		# else:
+		# elif iMapSize == 3:
 		# iMax = 12
+		# elif iMapSize == 4:
+		# iMax = 16
+		# elif iMapSize == 5:
+		# iMax = 20
 
-		# 20 Chancen fuer max. iMax Meteorstrikes
-		for _ in range(20):
-				# Maximal iMax Effekte
-				if iMaxEffect == iMax:
-						break
+		iMapW = gc.getMap().getGridWidth()
+		iMapH = gc.getMap().getGridHeight()
 
-				iMapW = gc.getMap().getGridWidth()
-				iMapH = gc.getMap().getGridHeight()
+		# Plots suchen (Wasser darf dabei sein)
+		lPlots = []
+		for x in range(iMapW):
+			for y in range(iMapH):
+				loopPlot = gc.getMap().plot(x, y)
+				if loopPlot is not None and not loopPlot.isNone():
+					if loopPlot.getFeatureType() == iDarkIce:
+						continue
+					lPlots.append(loopPlot)
 
-				iRandX = CvUtil.myRandom(iMapW, "doMeteorites1")
-				iRandY = CvUtil.myRandom(iMapH, "doMeteorites2")
-				pPlot = gc.getMap().plot(iRandX, iRandY)
+		# Falls es weniger Karten-Plots geben sollte als Einschlag-Plots
+		if iMax > len(lPlots): iMax = len(lPlots) // 4
+
+		# Meteorstrikes (ab PAE 7.12b: jeweils nur 1 Feld, anstatt 3x3 Felder)
+		for _ in range(iMax):
+
+				iRand = CvUtil.myRandom(len(lPlots), "doMeteorites1")
+				pPlot = lPlots[iRand]
 				if pPlot is not None and not pPlot.isNone():
-						if pPlot.getFeatureType() == iDarkIce:
-								continue
-
-						doOracleShowsDisaster(iRandX, iRandY)
-
-						iMaxEffect += 1
-						# Modernisierung und Strasse entfernen
-						if not pPlot.isCity():
-								pPlot.setRouteType(-1)
-								pPlot.setImprovementType(-1)
 
 						iPlayer = pPlot.getOwner()
-						if pPlot.isVisibleToWatchingHuman():
-								CyCamera().JustLookAtPlot(pPlot)
-								popupInfo = CyPopupInfo()
-								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-								popupInfo.setText(CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )))
-								popupInfo.addPopup(gc.getGame().getActivePlayer())
-								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )),
-																				 "AS2D_METEORSTRIKE", 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
+						iRandX = pPlot.getX()
+						iRandY = pPlot.getY()
 
-						# Effekt
-						iEffect = gc.getInfoTypeForString("EFFECT_METEORS")
-						CyEngine().triggerEffect(iEffect, pPlot.getPoint())
+						# Show Plot if Player has an Oracle
+						doOracleShowsDisaster(iRandX, iRandY)
 
 						# Stadt
 						if pPlot.isCity():
 								pCity = pPlot.getPlotCity()
 								iPop_alt = pCity.getPopulation()
-								iPop_neu = int(pCity.getPopulation() / 2)
-								if iPop_neu < 2:
-										iPop_neu = 1
+								iPop_neu = pCity.getPopulation() // 2
+								if iPop_neu < 2: iPop_neu = 1
 								pCity.setPopulation(iPop_neu)
 								pCity.setFood(0)
 								if iPlayer != -1:
 										if pPlot.isVisibleToWatchingHuman():
 												if iPlayer == gc.getGame().getActivePlayer():
 														CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES_CITY", (pCity.getName(), iPop_neu, iPop_alt)),
-																										 None, 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
+																None, 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
 												else:
 														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES_CITY_OTHER", (gc.getPlayer(
 																pCity.getOwner()).getCivilizationAdjective(2), pCity.getName())), None, 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(2), iRandX, iRandY, True, True)
@@ -1585,47 +1552,57 @@ def doMeteorites():
 								doDestroyWalls(pCity)
 								PAE_City.doCheckCityState(pCity)
 
-						# rundherum Brand generieren und dabei 50:50 Modernis und Strassen entfernen
-						for i in range(3):
-								for j in range(3):
-										loopPlot = gc.getMap().plot(iRandX - 1 + i, iRandY - 1 + j)
-										if loopPlot is not None and not loopPlot.isNone():
-												if loopPlot.getFeatureType() == iDarkIce:
-														continue
-												elif loopPlot.getFeatureType() != feat_flood_plains and not loopPlot.isPeak() and not loopPlot.isWater() and loopPlot.getFeatureType() != feat_oasis:
-														if loopPlot.getFeatureType() == feat_forest or loopPlot.getFeatureType() == feat_forest2:
-																loopPlot.setFeatureType(feat_forest_burnt, 0)
-														elif loopPlot.getFeatureType() != feat_ice and loopPlot.getTerrainType() != terr_snow:
-																loopPlot.setFeatureType(feat_brand, 0)
-														if loopPlot.getImprovementType() == iImpType1:
-																loopPlot.setImprovementType(-1)
 
-												if CvUtil.myRandom(2, "doMeteorites3") == 1 and not loopPlot.isCity():
-														loopPlot.setRouteType(-1)
-														loopPlot.setImprovementType(-1)
-												doKillUnits(loopPlot, 20)
-
-										# Plot fuer Magnetit/Oreichalkos Bonus checken
-										if not loopPlot.isWater() and not loopPlot.isCity() and not loopPlot.isPeak() and loopPlot.getBonusType(loopPlot.getOwner()) == -1 and loopPlot.getBonusType(-1) == -1:
-												bonusPlotArray.append(loopPlot)
+						# Land: Modernisierung und Strasse entfernen
+						else:
+								pPlot.setRouteType(-1)
+								pPlot.setImprovementType(-1)
+								if not pPlot.isWater():
+										if pPlot.getFeatureType() != feat_flood_plains and pPlot.getFeatureType() != feat_oasis:
+												if pPlot.getFeatureType() == feat_forest or pPlot.getFeatureType() == feat_forest2:
+														pPlot.setFeatureType(feat_forest_burnt, 0)
+												elif pPlot.getFeatureType() != feat_ice and pPlot.getTerrainType() != terr_snow:
+														pPlot.setFeatureType(feat_brand, 0)
 
 										# Verbreitbare Resi vernichten
-										if loopPlot.getBonusType(loopPlot.getOwner()) > -1 or loopPlot.getBonusType(-1) > -1:
-												doEraseBonusFromDisaster(loopPlot)
+										if pPlot.getBonusType(pPlot.getOwner()) > -1 or pPlot.getBonusType(-1) > -1:
+												doEraseBonusFromDisaster(pPlot)
 
-		# Chance einer neuen Bonus Resource, 30%
+										# Plot fuer Magnetit/Oreichalkos Bonus checken
+										if not pPlot.isPeak() and pPlot.getBonusType(pPlot.getOwner()) == -1 and pPlot.getBonusType(-1) == -1:
+												bonusPlotArray.append(pPlot)
+
+
+						if pPlot.isVisibleToWatchingHuman():
+								#CyCamera().JustLookAtPlot(pPlot)
+								popupInfo = CyPopupInfo()
+								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+								popupInfo.setText(CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )))
+								popupInfo.addPopup(gc.getGame().getActivePlayer())
+								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )),
+										"AS2D_METEORSTRIKE", 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
+
+						# Effekt
+						iEffect = gc.getInfoTypeForString("EFFECT_METEORS")
+						CyEngine().triggerEffect(iEffect, pPlot.getPoint())
+
+
+		# Jeweilige Chance einer neuen Bonus Resource, 33%
 		if bonusPlotArray:
-				iRand = CvUtil.myRandom(9, "doMeteorites4_ChanceSetBonus")
-				if iRand < 3:
-						iRand = CvUtil.myRandom(len(bonus), "doMeteorites5_ChooseBonus")
-						iNewBonus = bonus[iRand]
-						iRandPlot = CvUtil.myRandom(len(bonusPlotArray), "doMeteorites6_ChooseBonusPlot")
-						pRandPlot = bonusPlotArray[iRandPlot]
-						pRandPlot.setBonusType(iNewBonus)
-						iOwner = pRandPlot.getOwner()
-						if iOwner > -1 and gc.getPlayer(iOwner).isHuman():
-								CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(), )),
-																				 None, 2, gc.getBonusInfo(iNewBonus).getButton(), ColorTypes(14), pRandPlot.getX(), pRandPlot.getY(), True, True)
+				# PAE 7.12b: je nach Kartengröße mehr Durchläufe
+				iMaxBonus = max(1,(iMax // 6))
+				for _ in range(iMaxBonus):
+						iRand = CvUtil.myRandom(9, "doMeteorites2_ChanceSetBonus")
+						if iRand < 3:
+								iRand = CvUtil.myRandom(len(bonus), "doMeteorites3_ChooseBonus")
+								iNewBonus = bonus[iRand]
+								iRandPlot = CvUtil.myRandom(len(bonusPlotArray), "doMeteorites4_ChooseBonusPlot")
+								pRandPlot = bonusPlotArray[iRandPlot]
+								pRandPlot.setBonusType(iNewBonus)
+								iOwner = pRandPlot.getOwner()
+								if iOwner > -1 and gc.getPlayer(iOwner).isHuman():
+										CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(), )),
+												None, 2, gc.getBonusInfo(iNewBonus).getButton(), ColorTypes(14), pRandPlot.getX(), pRandPlot.getY(), True, True)
 
 
 def doComet():
@@ -1661,19 +1638,11 @@ def doComet():
 
 		iRangeMaxPlayers = gc.getMAX_PLAYERS()
 
-		#  0 = WORLDSIZE_DUEL
-		#  1 = WORLDSIZE_TINY
-		#  2 = WORLDSIZE_SMALL
-		#  3 = WORLDSIZE_STANDARD
-		#  4 = WORLDSIZE_LARGE
-		#  5 = WORLDSIZE_HUGE
 		iMapSize = gc.getMap().getWorldSize()
-		if iMapSize < 3:
+		if iMapSize < 5:
 				iMax = 1
-		elif iMapSize < 5:
-				iMax = 2
 		else:
-				iMax = 3
+				iMax = 2
 
 		# iMax Kometen
 		for _ in range(iMax):
@@ -1741,7 +1710,7 @@ def doComet():
 										doDestroyCityWonders(pCity, 25, feat_comet)
 										PAE_City.doCheckCityState(pCity)
 
-								# rundherum Brand generieren und dabei 50:50 Modernis und Strassen entfernen
+								# rundherum Brand generieren und dabei 75% Modernis und Strassen entfernen
 								for i in range(7):
 										for j in range(7):
 												loopPlot = gc.getMap().plot(iRandX - 3 + i, iRandY - 3 + j)
@@ -1756,7 +1725,7 @@ def doComet():
 																if loopPlot.getImprovementType() == iImpType1:
 																		loopPlot.setImprovementType(-1)
 
-														if CvUtil.myRandom(2, "doComet3") == 1:
+														if CvUtil.myRandom(4, "doComet3") < 3:
 																if not loopPlot.isCity():
 																		loopPlot.setRouteType(-1)
 																		loopPlot.setImprovementType(-1)
@@ -1874,6 +1843,7 @@ def doDestroyCityWonders(pCity, iChance, iFeatureType):
 				# iChance = Wahrscheinlichkeit, dass eine Unit gekillt wird
 
 
+# Kill or hurt units
 def doKillUnits(pPlot, iChance):
 		iRange = pPlot.getNumUnits()
 		for iUnit in range(iRange):
@@ -1892,12 +1862,13 @@ def doKillUnits(pPlot, iChance):
 								# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
 								pUnit.kill(True, -1)  # RAMK_CTD
 						else:
-								pUnit.setDamage(60, -1)
+								if pUnit.getDamage() < 60:
+									iRand = CvUtil.myRandom(30, "doKillUnitsHurt")
+									pUnit.setDamage(60 + iRand, -1)
 								pUnit.setImmobileTimer(1)
 
+
 # Stadtmauern zerstoeren
-
-
 def doDestroyWalls(pCity):
 		iPlayer = pCity.getOwner()
 		iBuildingPalisade = gc.getInfoTypeForString('BUILDING_PALISADE')
@@ -1952,8 +1923,6 @@ def doDestroyWalls(pCity):
 
 # Naturkatastrophen vernichten verbreitbare Bonusresourcen
 # Nur bei Vulkan, Meteoriten und Kometen
-
-
 def doEraseBonusFromDisaster(pPlot):
 		# Inits (von doBonusCityGetPlot)
 		lGetreide = [
@@ -1998,8 +1967,6 @@ def doEraseBonusFromDisaster(pPlot):
 																				 None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 
 # CIV mit dem Orakel von Delphi darf die Stelle grau sehen
-
-
 def doOracleShowsDisaster(iX, iY):
 		iBuilding = gc.getInfoTypeForString("BUILDINGCLASS_ORACLE")
 		iRange = gc.getMAX_PLAYERS()
@@ -2014,7 +1981,45 @@ def doOracleShowsDisaster(iX, iY):
 												if loopPlot is not None and not loopPlot.isNone():
 														if not loopPlot.isVisible(iTeam, 0):
 																# setRevealed (TeamType eTeam, BOOL bNewValue, BOOL bTerrainOnly, TeamType eFromTeam)
-																loopPlot.setRevealed(iTeam, 0, 1, -1)
+																loopPlot.setRevealed(iTeam, 1, 1, -1)
 								return
 
-# ++++++++++++++++++ ENDE Naturkatastrophen / Disasters +++++++++++++++++++++++++++++
+# Globale Naturkastastrophe / Klima / Pandemie
+# 2 Varianten:
+# A: Hungersnot: -25% Weltbevölkerung
+# B: Pest: Cities Pop > 5
+def doGlobalDisaster():
+		iVariant = CvUtil.myRandom(2, "doGlobalDisasterVariant")
+		iRange = gc.getMAX_PLAYERS()
+		for iPlayer in range(iRange):
+			pPlayer = gc.getPlayer(iPlayer)
+			if pPlayer.isAlive():
+				(loopCity, pIter) = pPlayer.firstCity(False)
+				while loopCity:
+					if not loopCity.isNone():
+
+						iPop = loopCity.getPopulation()
+						loopCity.setFood(0)
+
+						# Hungersnot
+						if iVariant == 1:
+							iPop = iPop // 4
+							loopCity.changePopulation(-iPop)
+							if pPlayer.isHuman():
+								CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_HUNGERSNOT", (loopCity.getName(),)),
+								"AS2D_PLAGUE", 2, "Art/Interface/Buttons/Actions/button_skull.dds", ColorTypes(13), loopCity.getX(),  loopCity.getY(), True, True)
+
+						# Pest
+						elif iPop > 5:
+								PAE_City.doSpawnPestToCity(loopCity)
+
+					(loopCity, pIter) = pPlayer.nextCity(pIter, False)
+
+				# Meldung mit PopUp
+				if pPlayer.isHuman():
+					szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_GLOBAL_HEAD", ("",))
+					szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_GLOBAL_BODY", ("",))
+					if pPlayer.getCurrentEra() < 2:
+							Bild = "Art/PAE/GlobalDisaster1.dds"
+					else: Bild = "Art/PAE/GlobalDisaster2.dds"
+					PAE_Popup.PopUpDDS(Bild,szTextHead,szTextBody,"CENTER")

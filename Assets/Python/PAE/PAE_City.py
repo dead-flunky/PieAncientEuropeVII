@@ -2818,7 +2818,8 @@ def doLeprosy(pCity):
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Lepra (Zeile 3660)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return bDecline
 
-# Chance: 2% pro ungesunder Bürger
+
+# Chance: 2% pro ungesunden Bürger
 def doSpawnPest(pCity):
 		if pCity is None or pCity.isNone():
 				return False
@@ -2833,42 +2834,48 @@ def doSpawnPest(pCity):
 						iChance /= 2
 
 				if CvUtil.myRandom(100, "doSpawnPest") < iChance:
-						iThisTeam = pPlayer.getTeam()
-						pTeam = gc.getTeam(iThisTeam)
-
-						#iMedicine1 = gc.getInfoTypeForString("TECH_MEDICINE1")
-						#iMedicine2 = gc.getInfoTypeForString("TECH_MEDICINE2")
-						#iMedicine3 = gc.getInfoTypeForString("TECH_MEDICINE3")
-						#iMedicine4 = gc.getInfoTypeForString("TECH_HEILKUNDE")
-
-						# City Revolt
-						#if team.isHasTech(iMedicine1) or  team.isHasTech(iMedicine2) or  team.isHasTech(iMedicine3) or  team.isHasTech(iMedicine4): pCity.setOccupationTimer(2)
-						# else: pCity.setOccupationTimer(3)
-						# pCity.setOccupationTimer(1)
-
-						# message for all
-						iRange = gc.getMAX_PLAYERS()
-						for iPlayer2 in range(iRange):
-								pSecondPlayer = gc.getPlayer(iPlayer2)
-								if pSecondPlayer.isHuman():
-										iSecTeam = pSecondPlayer.getTeam()
-										if pTeam.isHasMet(iSecTeam):
-												CyInterface().addMessage(iPlayer2, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLOBAL", (pCity.getName(), 0)),
-																"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
-
-						if pPlayer.isHuman():
-								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLOBAL", (pCity.getName(), 0)),
-												"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
-						# end message
-
-						# Plague building gets added into city
-						iBuildingPlague = gc.getInfoTypeForString("BUILDING_PLAGUE")
-						pCity.setNumRealBuilding(iBuildingPlague, 1)
+						# ***TEST***
+						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("doSpawnPest",iPlayer)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+						doSpawnPestToCity(pCity)
 						return True
 
-						# ***TEST***
-						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Pest (Zeile 3701)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return False
+
+
+def doSpawnPestToCity(pCity):
+		iPlayer = pCity.getOwner()
+		pPlayer = gc.getPlayer(iPlayer)
+		iThisTeam = pPlayer.getTeam()
+		pTeam = gc.getTeam(iThisTeam)
+
+		#iMedicine1 = gc.getInfoTypeForString("TECH_MEDICINE1")
+		#iMedicine2 = gc.getInfoTypeForString("TECH_MEDICINE2")
+		#iMedicine3 = gc.getInfoTypeForString("TECH_MEDICINE3")
+		#iMedicine4 = gc.getInfoTypeForString("TECH_HEILKUNDE")
+
+		# City Revolt
+		#if team.isHasTech(iMedicine1) or  team.isHasTech(iMedicine2) or  team.isHasTech(iMedicine3) or  team.isHasTech(iMedicine4): pCity.setOccupationTimer(2)
+		# else: pCity.setOccupationTimer(3)
+		# pCity.setOccupationTimer(1)
+
+		# message for all
+		iRange = gc.getMAX_PLAYERS()
+		for iPlayer2 in range(iRange):
+				pSecondPlayer = gc.getPlayer(iPlayer2)
+				if pSecondPlayer.isHuman():
+						iSecTeam = pSecondPlayer.getTeam()
+						if pTeam.isHasMet(iSecTeam):
+								CyInterface().addMessage(iPlayer2, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLOBAL", (pCity.getName(), 0)),
+												"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
+
+		if pPlayer.isHuman():
+				CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_GLOBAL", (pCity.getName(), 0)),
+								"AS2D_PLAGUE", 2, 'Art/Interface/Buttons/Actions/button_skull.dds', ColorTypes(13), pCity.getX(),  pCity.getY(), True, True)
+		# end message
+
+		# Plague building gets added into city
+		iBuildingPlague = gc.getInfoTypeForString("BUILDING_PLAGUE")
+		pCity.setNumRealBuilding(iBuildingPlague, 1)
 
 
 def doPlagueEffects(pCity):
@@ -3056,6 +3063,12 @@ def doRevoltShrink(pCity):
 								pCity.changePopulation(-1)
 								iPlayer = pCity.getOwner()
 								pPlayer = gc.getPlayer(iPlayer)
+
+								# Negative Zufriedenheit auf Grund anderer Bedingungen etwas zurücksetzen
+								iHappiness = pCity.getExtraHappiness()
+								if iHappiness < 0:
+									pCity.changeExtraHappiness(1)
+
 								if pPlayer.isHuman():
 										CyInterface().addMessage(iPlayer, False, 25, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_REVOLT_SHRINK", (pCity.getName(),)), "AS2D_REVOLTSTART",
 														InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Techs/button_brandschatzen.dds", ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
@@ -4355,6 +4368,12 @@ def doCheckCivilWar(pCity):
 
 								lHarmedUnits[iRand].kill(True, -1)
 								iMilitaryUnits -= 1
+
+								# Negative Zufriedenheit auf Grund anderer Bedingungen etwas zurücksetzen
+								iHappiness = pCity.getExtraHappiness()
+								if iHappiness < 0:
+									pCity.changeExtraHappiness(1)
+
 								# Der Mob in %s konnte eine Einheit töten.
 								if pPlayer.isHuman():
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_3", (pCity.getName(),)), None, 2,
@@ -4372,6 +4391,12 @@ def doCheckCivilWar(pCity):
 						#doRenegadeCity(pCity, gc.getBARBARIAN_PLAYER(), None)
 						# pPlayer.acquireCity (CyCity pCity, BOOL bConquest, BOOL bTrade)
 						gc.getPlayer(gc.getBARBARIAN_PLAYER()).acquireCity(pCity, False, True)
+
+						# Negative Zufriedenheit auf Grund voriger Features komplett zurücksetzen
+						iHappiness = pCity.getExtraHappiness()
+						if iHappiness < 0:
+							pCity.changeExtraHappiness(iHappiness*(-1))
+
 						# Ihr habt die Stadt %s verloren.
 						if pPlayer.isHuman():
 								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_4", (pCity.getName(),)), "AS2D_REVOLTSTART", 2,

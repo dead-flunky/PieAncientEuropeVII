@@ -6,15 +6,15 @@
 
 import CvUtil
 from CvPythonExtensions import (CyGlobalContext, PlotStyles, OrderTypes,
-																PlotLandscapeLayers, CyTranslator, plotXY,
-																DomainTypes, ColorTypes, CyMap,
-																UnitAITypes, CommandTypes, CyInterface,
-																DirectionTypes, CyCity, FontSymbols,
-																CyGame, CyEngine, MissionTypes, YieldTypes,
-																TechTypes, CommerceTypes, BuildingTypes,
-																CyGameTextMgr, WidgetTypes,
-																UnitTypes, isLimitedWonderClass,
-																plotDirection, MissionAITypes)
+								PlotLandscapeLayers, CyTranslator, plotXY,
+								DomainTypes, ColorTypes, CyMap,
+								UnitAITypes, CommandTypes, CyInterface,
+								DirectionTypes, CyCity, FontSymbols,
+								CyGame, CyEngine, MissionTypes, YieldTypes,
+								TechTypes, CommerceTypes, BuildingTypes,
+								CyGameTextMgr, WidgetTypes,
+								UnitTypes, isLimitedWonderClass,
+								plotDirection, MissionAITypes)
 # import CvEventInterface
 # import Popup as PyPopup
 import PyHelpers
@@ -479,19 +479,19 @@ class CvGameUtils:
 										while loopCity:
 												if not loopCity.isNone():
 														if pHeadSelectedUnit.canConstruct(loopCity.plot(), iBuilding1):
-																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
 														elif pHeadSelectedUnit.canConstruct(loopCity.plot(), iBuilding2):
 																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
 														elif pHeadSelectedUnit.canConstruct(loopCity.plot(), iBuilding3):
 																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
 														elif pHeadSelectedUnit.canConstruct(loopCity.plot(), iBuilding4):
-																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
 														elif pHeadSelectedUnit.canConstruct(loopCity.plot(), iBuilding5):
-																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
 														elif pHeadSelectedUnit.canConstruct(loopCity.plot(), iBuilding6):
-																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
 														elif pHeadSelectedUnit.canConstruct(loopCity.plot(), iBuilding7):
-																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
 												(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
 
@@ -1145,7 +1145,6 @@ class CvGameUtils:
 						# 2+3. Fischen oder Viehzucht
 						if pPlayer.countNumCoastalCities() > 0:
 								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
-								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 						else:
 								lTechs.append(gc.getInfoTypeForString('TECH_ANIMAL_HUSBANDRY'))
 								lTechs.append(gc.getInfoTypeForString('TECH_FENCES'))
@@ -1164,11 +1163,6 @@ class CvGameUtils:
 						# Viehzucht
 						lTechs.append(gc.getInfoTypeForString('TECH_ANIMAL_HUSBANDRY'))
 						lTechs.append(gc.getInfoTypeForString('TECH_FENCES'))
-
-						# aegyptischer Papyrus
-						if iCiv == gc.getInfoTypeForString('CIVILIZATION_EGYPT'):
-								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
-								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 
 						# Staatenbildung (Civic Zentralisierung) und Metall
 						lTechs.append(gc.getInfoTypeForString('TECH_POTTERY'))
@@ -1196,6 +1190,13 @@ class CvGameUtils:
 								lTechs.append(gc.getInfoTypeForString('TECH_PRIESTHOOD'))
 								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_SUMER'))
 								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_EGYPT'))
+								# Papyrus
+								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
+
+						if pPlayer.countNumCoastalCities() > 0:
+								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 
 						# Food
 						lTechs.append(gc.getInfoTypeForString('TECH_TAUBENZUCHT'))

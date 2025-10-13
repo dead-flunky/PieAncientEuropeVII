@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_7WONDERS_HELP</Tag>
+		<English>[ICON_BULLET]This Great Building is one of the 7 Wonders of the Ancient World (Wonder Victory)</English>
+		<French>[ICON_BULLET]Ce b&#226;timent est l'une des 7 merveilles du monde antique (Merveille de la Victoire)</French>
+		<German>[ICON_BULLET]Dieses Bauwerk geh&#246;rt zu den 7 Weltwundern der Antike (Weltwundersieg)</German>
+		<Italian>[ICON_BULLET]Questo edificio &#232; una delle 7 meraviglie del mondo antico (Meraviglia Vittoria)</Italian>
+		<Spanish>[ICON_BULLET]Este edificio es una de las 7 Maravillas del Mundo Antiguo (Maravilla Victoria)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUEDUCT_HELP</Tag>
 		<English>[ICON_BULLET] Aqueducts protect cities from fire up to population 17.</English>
 		<French>[ICON_BULLET] Les aqueducs prot&#232;gent les villes des incendies jusqu'&#224; 17 habitants.</French>
@@ -327,6 +335,14 @@ Scuola di retorica
 		<German>[LINK=CONCEPT_MOVEMENT]Via Romana[\LINK] bauen</German>
 		<Italian>Costruire una [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</Italian>
 		<Spanish>Construir una [LINK=CONCEPT_MOVEMENT]V&#237;a Romana[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILD_TURM_HUNTER</Tag>
+		<English>Build a [LINK=IMPROVEMENT_TURM]Look-out[\LINK] at no cost</English>
+		<French>Construire un [LINK=IMPROVEMENT_TURM]poste d'observation[\LINK] sans frais</French>
+		<German>[LINK=IMPROVEMENT_TURM]Sp&#228;hturm[\LINK] ohne Kosten errichten</German>
+		<Italian>Costruisci un [LINK=IMPROVEMENT_TURM]posto d'osservazione[\LINK] senza costi</Italian>
+		<Spanish>Construir un [LINK=IMPROVEMENT_TURM]vig&#237;a[\LINK] sin coste</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_GO2CITY</Tag>
@@ -697,6 +713,14 @@ Scuola di retorica
 		<Spanish>Debido a la ausencia de su religi&#243;n estatal en %s1, la poblaci&#243;n local se siente desatendida por su gobierno. Algunos ciudadanos ya est&#225;n considerando abandonar la ciudad.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_HUNGERSNOT</Tag>
+		<English>A famine is decimating the population of %s1_city.</English>
+		<French>Une famine d&#233;cime la population de %s1_city.</French>
+		<German>Eine Hungersnot rafft die Bev&#246;lkerung in %s1_city nieder.</German>
+		<Italian>Una carestia sta decimando la popolazione di %s1_city.</Italian>
+		<Spanish>Una hambruna est&#225; diezmando a la poblaci&#243;n de %s1_city.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CITY_PEST_VIEH</Tag>
 		<English>The livestock (%s2) at %s1 was wiped out by the plague.</English>
 		<French>Le b&#233;tail (%s2) de %s1 a &#233;t&#233; an&#233;anti par la peste.</French>
@@ -719,6 +743,22 @@ Scuola di retorica
 		<German>Aus ihrer Heimatstadt %s1 versto&#223;en, haben sich Andersgl&#228;ubige nun in %s2 niedergelassen. Ihre Religion (%s3) war bislang unbekannt in dieser Stadt, doch mit ihrer Ankunft beginnt ein neues Kapitel religi&#246;ser Vielfalt und Hoffnung auf Toleranz.</German>
 		<Italian>Espulsi dalla loro citt&#224; natale %s1, gli abitanti di altre fedi si sono stabiliti a %s2. La loro religione (%s3) era precedentemente sconosciuta in questa citt&#224;, ma il loro arrivo apre un nuovo capitolo di diversit&#224; religiosa e di speranza di tolleranza.</Italian>
 		<Spanish>Expulsados de su ciudad natal %s1, personas de otras confesiones se han establecido en %s2. Su religi&#243;n (%s3) era desconocida en esta ciudad, pero su llegada abre un nuevo cap&#237;tulo de diversidad religiosa y esperanza de tolerancia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_DISASTER_GLOBAL_BODY</Tag>
+		<English>For countless moons, the sun has hidden its face. The fields wither, the cattle die, the granaries empty faster than they can be filled. A ominous cold settles over the land. Harvests fail, the rivers barely carry water, and hunger creeps into every home. Diseases spread like shadows in the twilight. Your population is decimated. Order is faltering, and with it, trust in the powerful. In this time of trial, it will be revealed which empires will endure and which will sink into the dust of history.</English>
+		<French>Depuis d'innombrables lunes, le soleil se cache. Les champs se dess&#232;chent, le b&#233;tail meurt, les greniers se vident plus vite qu'ils ne peuvent &#234;tre remplis. Un froid mena&#231;ant s'installe sur le pays. Les r&#233;coltes sont mauvaises, les rivi&#232;res peinent &#224; s'&#233;couler et la faim s'insinue dans chaque foyer. Les maladies se propagent comme des ombres au cr&#233;puscule. Votre population est d&#233;cim&#233;e. L'ordre vacille, et avec lui, la confiance dans les puissants. En cette p&#233;riode d'&#233;preuve, on r&#233;v&#233;lera quels empires survivront et lesquels sombreront dans la poussi&#232;re de l'histoire.</French>
+		<German>Unz&#228;hlige Monde lang hat die Sonne ihr Antlitz verborgen. Die Felder verdorren, das Vieh verendet, die Speicher leeren sich schneller, als sie gef&#252;llt werden k&#246;nnen. Eine unheilvolle K&#228;lte legt sich &#252;ber das Land. Die Ernten bleiben aus, die Fl&#252;sse f&#252;hren kaum noch Wasser und der Hunger kriecht in jedes Haus. Krankheiten breiten sich aus wie Schatten in der D&#228;mmerung. Eure Bev&#246;lkerung rafft dahin. Die Ordnung wankt und mit ihr das Vertrauen in die M&#228;chtigen. In dieser Zeit der Pr&#252;fung zeigt sich, welche Reiche standhalten und welche im Staub der Geschichte versinken.</German>
+		<Italian>Per innumerevoli lune, il sole ha nascosto il suo volto. I campi appassiscono, il bestiame muore, i granai si svuotano pi&#249; velocemente di quanto possano essere riempiti. Un freddo minaccioso si abbatte sulla terra. I raccolti falliscono, i fiumi trasportano a malapena l'acqua e la fame si insinua in ogni casa. Le malattie si diffondono come ombre nel crepuscolo. La vostra popolazione &#232; decimata. L'ordine vacilla e, con esso, la fiducia nei potenti. In questo momento di prova, verr&#224; rivelato quali imperi resisteranno e quali sprofonderanno nella polvere della storia.</Italian>
+		<Spanish>Durante incontables lunas, el sol ha ocultado su rostro. Los campos se marchitan, el ganado muere, los graneros se vac&#237;an m&#225;s r&#225;pido de lo que pueden llenarse. Un fr&#237;o ominoso se asienta sobre la tierra. Las cosechas fracasan, los r&#237;os apenas transportan agua y el hambre se cuela en cada hogar. Las enfermedades se extienden como sombras en el crep&#250;sculo. Su poblaci&#243;n est&#225; diezmada. El orden se tambalea, y con &#233;l, la confianza en los poderosos. En esta &#233;poca de prueba, se revelar&#225; qu&#233; imperios perdurar&#225;n y cu&#225;les se hundir&#225;n en el polvo de la historia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_DISASTER_GLOBAL_HEAD</Tag>
+		<English>A GLOBAL CATASTROPHE!</English>
+		<French>UNE CATASTROPHE MONDIALE !</French>
+		<German>EINE GLOBALE KATASTROPHE!</German>
+		<Italian>UNA CATASTROFE GLOBALE!</Italian>
+		<Spanish>&#161;UNA CAT&#193;STROFE GLOBAL!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_BUILDINGS_1</Tag>
@@ -985,6 +1025,14 @@ Scuola di retorica
 		<Spanish>&#191;A qu&#233; ciudad se debe enviar la unidad?</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_PROJECT_SEIDENSTRASSE2</Tag>
+		<English>The Silk Road brings rich merchants to your city, fully loaded with the finest goods the East has to offer. The trade wagons are now available for your own trade routes.</English>
+		<French>La Route de la Soie am&#232;ne des marchands riches dans votre ville, lourdement charg&#233;es des meilleurs produits que l'Orient a &#224; offrir. Les chariots commerciaux sont d&#233;sormais disponibles pour vos propres routes commerciales.</French>
+		<German>Die Seidenstra&#223;e bringt reiche H&#228;ndler in Eure Stadt, voll beladen mit den feinsten G&#252;tern, die der Osten zu bieten hat. Die Handelskarren stehen nun f&#252;r eure eigenen Handelsrouten zur Verf&#252;gung.</German>
+		<Italian>La Via della Seta porta carri ricchi mercanti nella tua citt&#224;, caricati con le migliori merci che l'Oriente ha da offrire. I carri commerciali sono ora disponibili per le tue rotte commerciali.</Italian>
+		<Spanish>La Ruta de la Seda trae comerciantes ricos a su ciudad, totalmente cargadas con los mejores productos que Oriente tiene para ofrecer. Los carros comerciales ahora est&#225;n disponibles para tus propias rutas comerciales.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_POPUP_RELIGION_CHRISTIANITY</Tag>
 		<English>A child named Jesus was born in %s1!</English>
 		<French>Un enfant nomm&#233; J&#233;sus est n&#233; en %s1 !</French>
@@ -1146,11 +1194,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_DIASPORA</Tag>
-		<English>The Diaspora</English>
-		<French>La Diaspora</French>
-		<German>Die Diaspora</German>
-		<Italian>La Diaspora</Italian>
-		<Spanish>La Di&#225;spora</Spanish>
+		<English>Diaspora</English>
+		<French>Diaspora</French>
+		<German>Diaspora</German>
+		<Italian>Diaspora</Italian>
+		<Spanish>Di&#225;spora</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_FUTURE_TECH_HELP</Tag>

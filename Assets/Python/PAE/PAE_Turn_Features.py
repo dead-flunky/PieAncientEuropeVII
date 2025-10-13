@@ -2,10 +2,10 @@
 
 # Imports
 from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap,
-																CyTranslator, DirectionTypes, CommerceTypes,
-																ColorTypes, UnitAITypes, CyPopupInfo,
-																ButtonPopupTypes, plotXY, plotDirection,
-																GameOptionTypes)
+											CyTranslator, DirectionTypes, CommerceTypes,
+											ColorTypes, UnitAITypes, CyPopupInfo,
+											ButtonPopupTypes, plotXY, plotDirection,
+											GameOptionTypes)
 # import CvEventInterface
 import CvUtil
 import PAE_Barbaren
@@ -139,8 +139,9 @@ def doPlotFeatures():
 										lDesertStorm.append(loopPlot)
 										continue
 
+								# Verbrannte Wälder regenerieren sich wieder (1:30)
 								if loopPlot.getFeatureType() == iFeatBurned:
-										if CvUtil.myRandom(50, "burntForest2Forest") == 1:
+										if CvUtil.myRandom(30, "burntForest2Forest") == 1:
 												loopPlot.setFeatureType(iFeatForest, 0)
 										continue
 
@@ -202,7 +203,7 @@ def doPlotFeatures():
 														# Bear of Wolf
 														elif loopPlot.getBonusType(-1) == bonus_deer and iPlotImprovement == -1:
 																if loopPlot.getNumUnits() == 0:
-																		iRand = CvUtil.myRandom(20, "bear or wolf")
+																		iRand = CvUtil.myRandom(25, "bear or wolf")
 																		if iRand == 0:
 																				pBarbPlayer.initUnit(eWolf, x, y, UnitAITypes.UNITAI_ANIMAL, DirectionTypes.DIRECTION_SOUTH)
 																				continue

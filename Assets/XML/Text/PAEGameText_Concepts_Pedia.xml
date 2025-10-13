@@ -239,6 +239,7 @@ At the start of a game in Civilization IV, wild animals live everywhere that can
 [ICON_BULLET] avoid desert, jungle and savannah
 [ICON_BULLET] attack bonus: forest and dense forest
 [ICON_BULLET] attack penalty against spearmen and Skirmishers
+[ICON_BULLET] spawn on unoccupied wild resources until a camp is created on it
 
 [H2]Bears:[\H2]
 [ICON_BULLET] hostile/aggressive
@@ -247,6 +248,7 @@ At the start of a game in Civilization IV, wild animals live everywhere that can
 [ICON_BULLET] move exclusively in forests
 [ICON_BULLET] attack bonus: forest and dense forest
 [ICON_BULLET] attack penalty against spearmen and skirmishers
+[ICON_BULLET] spawn on unoccupied wild resources until a camp is created on it
 
 [H2]Ur:[\H2]
 [ICON_BULLET] hostile/aggressive
@@ -326,31 +328,33 @@ Au d&#233;but d'une partie dans Civilization IV, il y a partout des animaux sauv
 
 
 [H2]Lions :[\H2]
-[ICON_BULLET] hostile/agressif
-[ICON_BULLET] appara&#238;t dans les d&#233;serts
-[ICON_BULLET] &#233;vitez les for&#234;ts, les for&#234;ts denses, la glace et la toundra
+[ICON_BULLET] Hostile/agressif
+[ICON_BULLET] Appara&#238;t dans les d&#233;serts
+[ICON_BULLET] Evitez les for&#234;ts, les for&#234;ts denses, la glace et la toundra
 [ICON_BULLET] Bonus d'attaque : D&#233;sert
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
 
 [H2]Loups :[\H2]
-[ICON_BULLET] hostile/agressif
-[ICON_BULLET] appara&#238;t dans la for&#234;t et la for&#234;t dense
-[ICON_BULLET] &#233;vitez le d&#233;sert, la jungle et la savane
+[ICON_BULLET] Hostile/agressif
+[ICON_BULLET] Appara&#238;t dans la for&#234;t et la for&#234;t dense
+[ICON_BULLET] Evitez le d&#233;sert, la jungle et la savane
 [ICON_BULLET] Bonus d'attaque : for&#234;t et for&#234;t dense
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+[ICON_BULLET] Appara&#238;t sur des ressources sauvages inoccup&#233;es jusqu'&#224; ce qu'un camp soit cr&#233;&#233; dessus
 
 [H2]Ours :[\H2]
-[ICON_BULLET] hostile/agressif
-[ICON_BULLET] appara&#238;t dans la for&#234;t et la for&#234;t dense
-[ICON_BULLET] &#233;vitez le d&#233;sert, les marais, la jungle et la savane
-[ICON_BULLET] se d&#233;place uniquement dans les for&#234;ts
+[ICON_BULLET] Hostile/agressif
+[ICON_BULLET] Appara&#238;t dans la for&#234;t et la for&#234;t dense
+[ICON_BULLET] Evitez le d&#233;sert, les marais, la jungle et la savane
+[ICON_BULLET] Se d&#233;place uniquement dans les for&#234;ts
 [ICON_BULLET] Bonus d'attaque : for&#234;t et for&#234;t dense
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
+[ICON_BULLET] Appara&#238;t sur des ressources sauvages inoccup&#233;es jusqu'&#224; ce qu'un camp soit cr&#233;&#233; dessus
 
 [H2]Ur :[\H2]
-[ICON_BULLET] hostile/agressif
-[ICON_BULLET] n'appara&#238;t que dans la for&#234;t dense
-[ICON_BULLET] &#233;vite le d&#233;sert, les marais, la jungle et la savane
+[ICON_BULLET] Hostile/agressif
+[ICON_BULLET] N'appara&#238;t que dans la for&#234;t dense
+[ICON_BULLET] Evite le d&#233;sert, les marais, la jungle et la savane
 [ICON_BULLET] Bonus d'attaque : for&#234;t et for&#234;t dense
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les tirailleurs
 
@@ -362,55 +366,55 @@ Au d&#233;but d'une partie dans Civilization IV, il y a partout des animaux sauv
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
 
 [H2]Panth&#232;re :[\H2]
-[ICON_BULLET] hostile/agressif
-[ICON_BULLET] appara&#238;t dans la jungle
-[ICON_BULLET] &#233;vite le d&#233;sert, la toundra, la glace et les for&#234;ts denses
+[ICON_BULLET] Hostile/agressif
+[ICON_BULLET] Appara&#238;t dans la jungle
+[ICON_BULLET] Evite le d&#233;sert, la toundra, la glace et les for&#234;ts denses
 [ICON_BULLET] Bonus d'attaque : Jungle
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
 
 [H2]Tigre :[\H2]
-[ICON_BULLET] hostile/agressif
-[ICON_BULLET] appara&#238;t dans la jungle
-[ICON_BULLET] &#233;vite le d&#233;sert, la toundra, la glace et les for&#234;ts denses
+[ICON_BULLET] Hostile/agressif
+[ICON_BULLET] Appara&#238;t dans la jungle
+[ICON_BULLET] Evite le d&#233;sert, la toundra, la glace et les for&#234;ts denses
 [ICON_BULLET] Bonus d'attaque : Jungle
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
 
 [H2]L&#233;opard :[\H2]
-[ICON_BULLET] hostile/agressif
-[ICON_BULLET] appara&#238;t &#224; Savannah
-[ICON_BULLET] &#233;vite la glace et les for&#234;ts denses
+[ICON_BULLET] Hostile/agressif
+[ICON_BULLET] Appara&#238;t &#224; Savannah
+[ICON_BULLET] Evite la glace et les for&#234;ts denses
 [ICON_BULLET] Bonus d'attaque : Savane
 [ICON_BULLET] P&#233;nalit&#233; d'attaque contre les lanciers et les tirailleurs
 
 [H2]Sangliers :[\H2]
-[ICON_BULLET] inoffensif/d&#233;fense uniquement
-[ICON_BULLET] appara&#238;t dans les for&#234;ts et les for&#234;ts denses
-[ICON_BULLET] &#233;vitez le d&#233;sert, la jungle et la savane
+[ICON_BULLET] Inoffensif/d&#233;fense uniquement
+[ICON_BULLET] Appara&#238;t dans les for&#234;ts et les for&#234;ts denses
+[ICON_BULLET] Evitez le d&#233;sert, la jungle et la savane
 
 [H2]Cerf &#233;laphe (chevreuil) :[\H2]
-[ICON_BULLET] inoffensif/d&#233;fense uniquement
-[ICON_BULLET] appara&#238;t dans les for&#234;ts et les for&#234;ts denses
-[ICON_BULLET] &#233;vitez le d&#233;sert, la glace et la jungle
+[ICON_BULLET] Inoffensif/d&#233;fense uniquement
+[ICON_BULLET] Appara&#238;t dans les for&#234;ts et les for&#234;ts denses
+[ICON_BULLET] Evitez le d&#233;sert, la glace et la jungle
 
 [H2]Ch&#232;vres de montagne :[\H2]
-[ICON_BULLET] inoffensif/d&#233;fense uniquement
-[ICON_BULLET] n'appara&#238;t qu'au sommet des montagnes
-[ICON_BULLET] &#233;vitez les plaines, les d&#233;serts et les mar&#233;cages
+[ICON_BULLET] Inoffensif/d&#233;fense uniquement
+[ICON_BULLET] N'appara&#238;t qu'au sommet des montagnes
+[ICON_BULLET] Evitez les plaines, les d&#233;serts et les mar&#233;cages
 
 [H2]Chevaux :[\H2]
-[ICON_BULLET] inoffensif/apprivoisable
-[ICON_BULLET] n'appara&#238;t que sur les ressources des chevaux
-[ICON_BULLET] &#233;vitez la glace et les for&#234;ts
+[ICON_BULLET] Inoffensif/apprivoisable
+[ICON_BULLET] N'appara&#238;t que sur les ressources des chevaux
+[ICON_BULLET] Evitez la glace et les for&#234;ts
 
 [H2]Chameaux :[\H2]
-[ICON_BULLET] inoffensif/apprivoisable
-[ICON_BULLET] appara&#238;t sur les ressources de chameaux et les d&#233;serts
-[ICON_BULLET] &#233;vitez la glace et les for&#234;ts
+[ICON_BULLET] Inoffensif/apprivoisable
+[ICON_BULLET] Appara&#238;t sur les ressources de chameaux et les d&#233;serts
+[ICON_BULLET] Evitez la glace et les for&#234;ts
 
 [H2]Ane :[\H2]
-[ICON_BULLET] inoffensif/apprivoisable
-[ICON_BULLET] appara&#238;t sur les ressources d'&#226;nes et les plaines s&#232;ches
-[ICON_BULLET] &#233;vitez la glace et les for&#234;ts denses
+[ICON_BULLET] Inoffensif/apprivoisable
+[ICON_BULLET] Appara&#238;t sur les ressources d'&#226;nes et les plaines s&#232;ches
+[ICON_BULLET] Evitez la glace et les for&#234;ts denses
 		</French>
 		<German>
 [H1]Tiere[\H1]
@@ -438,6 +442,7 @@ Am Anfang eines Spiels leben in Civilization IV &#252;berall wilde Tiere, die de
 [ICON_BULLET] meiden W&#252;ste, Dschungel und Savanne
 [ICON_BULLET] Angriffsbonus: Wald und Dichter Wald
 [ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+[ICON_BULLET] spawnen auf unbesetzten Wildressourcen bis ein Lager darauf erstellt wird
 
 [H2]B&#228;ren:[\H2]
 [ICON_BULLET] feindlich/aggressiv
@@ -446,6 +451,7 @@ Am Anfang eines Spiels leben in Civilization IV &#252;berall wilde Tiere, die de
 [ICON_BULLET] bewegen sich ausschlie&#223;lich in W&#228;ldern
 [ICON_BULLET] Angriffsbonus: Wald und Dichter Wald
 [ICON_BULLET] Angriffsmalus gegen Speerk&#228;mpfer und Pl&#228;nkler
+[ICON_BULLET] spawnen auf unbesetzten Wildressourcen bis ein Lager darauf erstellt wird
 
 [H2]Ur:[\H2]
 [ICON_BULLET] feindlich/aggressiv
@@ -538,6 +544,7 @@ All'inizio di una partita in Civilization IV, ovunque ci sono animali selvaggi c
 [ICON_BULLET] evita il deserto, la giungla e la savana
 [ICON_BULLET] Bonus di attacco: Foresta e Foresta Fitta
 [ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+[ICON_BULLET] si generano su risorse selvagge non occupate finch&#233; non viene creato un accampamento su di esse
 
 [H2]Orsi:[\H2]
 [ICON_BULLET] ostile/aggressivo
@@ -546,6 +553,7 @@ All'inizio di una partita in Civilization IV, ovunque ci sono animali selvaggi c
 [ICON_BULLET] si muovono solo nelle foreste
 [ICON_BULLET] Bonus di attacco: Foresta e Foresta Fitta
 [ICON_BULLET] Penalit&#224; di attacco contro lancieri e schermagliatori
+[ICON_BULLET] si generano su risorse selvagge non occupate finch&#233; non viene creato un accampamento su di esse
 
 [H2]Ur:[\H2]
 [ICON_BULLET] ostile/aggressivo
@@ -638,6 +646,7 @@ Al comienzo de un juego en Civilization IV, hay animales salvajes por todas part
 [ICON_BULLET] evita el desierto, la jungla y la sabana
 [ICON_BULLET] Bonificaci&#243;n de ataque: bosque y bosque denso
 [ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+[ICON_BULLET] Aparece en recursos salvajes desocupados hasta que se crea un campamento en ellos.
 
 [H2]Osos:[\H2]
 [ICON_BULLET] hostil/agresivo
@@ -646,6 +655,7 @@ Al comienzo de un juego en Civilization IV, hay animales salvajes por todas part
 [ICON_BULLET] solo se mueve en bosques
 [ICON_BULLET] Bonificaci&#243;n de ataque: bosque y bosque denso
 [ICON_BULLET] Penalizaci&#243;n de ataque contra lanceros y hostigadores
+[ICON_BULLET] Aparece en recursos salvajes desocupados hasta que se crea un campamento en ellos.
 
 [H2]Ur:[\H2]
 [ICON_BULLET] hostil/agresivo
@@ -2523,7 +2533,7 @@ Requirements for a civil war in a city:
 
 3. Pollution
 
-4. General death
+4. Dissatisfaction due to general death
 
 5. Anarchy (e.g. due to a change of government)
 
@@ -2531,17 +2541,19 @@ Requirements for a civil war in a city:
 
 The population rises up against the stationed troops and a fight breaks out between units and population. If there are fewer stationed units than population, one of the following points comes into effect:
 
-1. The troops slaughter citizens: The population decreases by 1: chance >= (units + population) / units
+1. The dissatisfaction caused by the general's death gets erased
 
-2. The citizens fight against the troops: All stationed units are injured (up to 25% damage)
+2. The troops slaughter citizens: The population decreases by 1: chance >= (units + population) / units
 
-3. The citizens kill a stationed unit: An already badly injured unit dies (injury level &#62; 80%). Chance &#60; (units + population) / unit
+3. The citizens fight against the troops: All stationed units are injured (up to 25% damage)
 
-4. No impact (AI: chance 1:2, HI: chance 1:4)
+4. The citizens kill a stationed unit: An already badly injured unit dies (injury level &#62; 80%). Chance &#60; (units + population) / unit
 
-5. The civil war ends without effects (AI: chance 1:10, HI: chance: 1:20)
+5. No impact (AI: chance 1:2, HI: chance 1:4)
 
-6. Attention: The city becomes barbaric when the last unit dies or no unit is stationed in the city
+6. The civil war ends without effects (AI: chance 1:10, HI: chance: 1:20)
+
+7. Attention: The city becomes barbaric when the last unit dies or no unit is stationed in the city
 
 
 [H2]Measures to restore order:[\H2]
@@ -2568,7 +2580,7 @@ Pr&#233;requis pour le d&#233;clenchement d'une guerre civile dans une ville:
 
 3. Insalubrit&#233;
 
-4. Mort d'un G&#233;n&#233;ral
+4. M&#233;contement en raison de &#224; la mort g&#233;n&#233;rale
 
 5. Anarchie (par exemple &#224; travers un changement de gouvernement)
 
@@ -2577,17 +2589,19 @@ Pr&#233;requis pour le d&#233;clenchement d'une guerre civile dans une ville:
 
 La population se soul&#232;ve contre les troupes stationn&#233;es et une bataille entre unit&#233;s contre la population &#233;clate. S'il y a moins d'unit&#233;s stationn&#233;es que la population, l'un des points suivants s'applique :
 
-1. Les troupes massacrent les citoyens : La population diminue de 1 : Chance >= (unit&#233;s + population) / unit&#233;s
+1. Le m&#233;contentement caus&#233; par la mort du g&#233;n&#233;ral est effac&#233;
 
-2. Les citoyens combattent les troupes : toutes les unit&#233;s stationn&#233;es sont bless&#233;es (jusqu'&#224; 25% de d&#233;g&#226;ts)
+2. Les troupes massacrent les citoyens : La population diminue de 1 : Chance >= (unit&#233;s + population) / unit&#233;s
 
-3. Les citoyens tuent une unit&#233; stationn&#233;e : Une unit&#233; d&#233;j&#224; gravement bless&#233;e meurt (niveau de blessure &#62; 80 %). Chance &#60; (unit&#233;s + population) / unit&#233;
+3. Les citoyens combattent les troupes : toutes les unit&#233;s stationn&#233;es sont bless&#233;es (jusqu'&#224; 25% de d&#233;g&#226;ts)
 
-4. Sans cons&#233;quence (AI: chance 1:2, HI: chance 1:4)
+4. Les citoyens tuent une unit&#233; stationn&#233;e : Une unit&#233; d&#233;j&#224; gravement bless&#233;e meurt (niveau de blessure &#62; 80 %). Chance &#60; (unit&#233;s + population) / unit&#233;
 
-5. La guerre civile se termine sans effets (AI: chance 1:10, HI: chance: 1:20)
+5. Sans cons&#233;quence (AI: chance 1:2, HI: chance 1:4)
 
-6. Attention: La ville devient barbare lorsque la derni&#232;re unit&#233; meurt ou qu'aucune unit&#233; n'est stationn&#233;e dans la ville.
+6. La guerre civile se termine sans effets (AI: chance 1:10, HI: chance: 1:20)
+
+7. Attention: La ville devient barbare lorsque la derni&#232;re unit&#233; meurt ou qu'aucune unit&#233; n'est stationn&#233;e dans la ville.
 
 
 [H2]Mesures de r&#233;tablissement de l'ordre publique:[\H2]
@@ -2615,7 +2629,7 @@ Voraussetzungen f&#252;r einen B&#252;rgerkrieg in einer Stadt:
 
 3. Verschmutzung
 
-4. Generalstod
+4. Unzufriedenheit durch Generalstod
 
 5. Anarchie (z.B. durch Regierungswechsel)
 
@@ -2624,17 +2638,19 @@ Voraussetzungen f&#252;r einen B&#252;rgerkrieg in einer Stadt:
 
 Die Bev&#246;lkerung erhebt sich gegen die stationierten Truppen und es kommt zum Kampf Einheiten gegen Bev&#246;lkerung. Gibt es weniger stationierte Einheiten als Population, tritt einer der folgenden Punkte in Kraft:
 
-1. Die Truppen metzeln B&#252;rger nieder: Die Bev&#246;lkerung sinkt um 1: Chance >= (Einheiten + Bev&#246;lkerung) / Einheiten
+1. Die Unzufriedenheit durch Generalstod wird getilgt
 
-2. Die B&#252;rger k&#228;mpfen gegen die Truppen: Alle stationierten Einheiten werden verletzt (bis zu 25% Schaden)
+2. Die Truppen metzeln B&#252;rger nieder: Die Bev&#246;lkerung sinkt um 1: Chance >= (Einheiten + Bev&#246;lkerung) / Einheiten
 
-3. Die B&#252;rger t&#246;ten eine stationierte Einheit: Eine bereits stark verletzte Einheit stirbt (Verletzungsgrad &#62; 80%). Chance &#60; (Einheiten + Bev&#246;lkerung) / Einheit
+3. Die B&#252;rger k&#228;mpfen gegen die Truppen: Alle stationierten Einheiten werden verletzt (bis zu 25% Schaden)
 
-4. Keine Auswirkungen (KI: Chance 1:2, HI: Chance 1:4)
+4. Die B&#252;rger t&#246;ten eine stationierte Einheit: Eine bereits stark verletzte Einheit stirbt (Verletzungsgrad &#62; 80%). Chance &#60; (Einheiten + Bev&#246;lkerung) / Einheit
 
-5. Der B&#252;rgerkrieg wird ohne weiteres beendet (KI: Chance 1:10, HI: Chance: 1:20)
+5. Keine Auswirkungen (KI: Chance 1:2, HI: Chance 1:4)
 
-6. Vorsicht: Die Stadt wird barbarisch, wenn die letzte Einheit stirbt oder keine Einheit in der Stadt stationiert ist
+6. Der B&#252;rgerkrieg wird ohne weiteres beendet (KI: Chance 1:10, HI: Chance: 1:20)
+
+7. Vorsicht: Die Stadt wird barbarisch, wenn die letzte Einheit stirbt oder keine Einheit in der Stadt stationiert ist
 
 
 [H2]Ma&#223;nahmen zur Wiederherstellung der Ordnung:[\H2]
@@ -2662,7 +2678,7 @@ Requisiti per una guerra civile in una citt&#224;:
 
 3. Inquinamento
 
-4. Morte generale
+4. Insoddisfazione dovuta alla morte generale
 
 5. Anarchia (ad esempio attraverso il cambio di governo)
 
@@ -2671,17 +2687,19 @@ Requisiti per una guerra civile in una citt&#224;:
 
 La popolazione insorge contro le truppe di stanza e scoppia una battaglia tra unit&#224; contro la popolazione. Se ci sono meno unit&#224; stazionate rispetto alla popolazione, si applica uno dei seguenti punti:
 
-1. Le truppe massacrano i cittadini: La popolazione diminuisce di 1: Probabilit&#224; >= (unit&#224; + popolazione) / unit&#224;
+1. L'insoddisfazione causata dalla morte del generale viene cancellata
 
-2. I cittadini combattono contro le truppe: Tutte le unit&#224; di stanza sono ferite (fino al 25% di danno)
+2. Le truppe massacrano i cittadini: La popolazione diminuisce di 1: Probabilit&#224; >= (unit&#224; + popolazione) / unit&#224;
 
-3. I cittadini uccidono un'unit&#224; di stanza: Un'unit&#224; di stanza gi&#224; gravemente ferita muore (grado di lesione &#62; 80%). Possibilit&#224; &#60; (unit&#224; + popolazione) / unit&#224;
+3. I cittadini combattono contro le truppe: Tutte le unit&#224; di stanza sono ferite (fino al 25% di danno)
 
-4. Nessun impatto (AI: chance 1:2, HI: chance 1:4)
+4. I cittadini uccidono un'unit&#224; di stanza: Un'unit&#224; di stanza gi&#224; gravemente ferita muore (grado di lesione &#62; 80%). Possibilit&#224; &#60; (unit&#224; + popolazione) / unit&#224;
 
-5. La guerra civile finisce senza effetti (AI: chance 1:10, HI: chance: 1:20)
+5. Nessun impatto (AI: chance 1:2, HI: chance 1:4)
 
-6. Attenzione: la citt&#224; diventa barbara quando l'ultima unit&#224; muore o quando nessuna unit&#224; &#232; di stanza nella citt&#224;
+6. La guerra civile finisce senza effetti (AI: chance 1:10, HI: chance: 1:20)
+
+7. Attenzione: la citt&#224; diventa barbara quando l'ultima unit&#224; muore o quando nessuna unit&#224; &#232; di stanza nella citt&#224;
 
 
 [H2]Misure per ristabilire l'ordine:[\H2]
@@ -2709,7 +2727,7 @@ Requisitos para una guerra civil en una ciudad:
 
 3. Contaminaci&#243;n
 
-4. Muerte general
+4. Insatisfacci&#243;n por la muerte generalizada
 
 5. Anarqu&#237;a (por ejemplo, por cambio de gobierno)
 
@@ -2718,17 +2736,19 @@ Requisitos para una guerra civil en una ciudad:
 
 La poblaci&#243;n se rebela contra las tropas estacionadas y estalla una batalla entre unidades contra la poblaci&#243;n. Si hay menos unidades estacionadas que la poblaci&#243;n, se aplica uno de los siguientes puntos:
 
-1. Las tropas masacran a los ciudadanos: La poblaci&#243;n disminuye en 1: Chance >= (unidades + poblaci&#243;n) / unidades
+1. Se borra el descontento causado por la muerte del general
 
-2. Los ciudadanos luchan contra las tropas: todas las unidades estacionadas resultan heridas (hasta un 25% de da&#241;o)
+2. Las tropas masacran a los ciudadanos: La poblaci&#243;n disminuye en 1: Chance >= (unidades + poblaci&#243;n) / unidades
 
-3. Los ciudadanos matan a una unidad estacionada: una unidad que ya estaba gravemente herida muere (nivel de lesi&#243;n &#62; 80%). Probabilidad &#60; (unidades + poblaci&#243;n) / unidad
+3. Los ciudadanos luchan contra las tropas: todas las unidades estacionadas resultan heridas (hasta un 25% de da&#241;o)
 
-4. Sin impacto (AI: probabilidad 1:2, HI: probabilidad 1:4)
+4. Los ciudadanos matan a una unidad estacionada: una unidad que ya estaba gravemente herida muere (nivel de lesi&#243;n &#62; 80%). Probabilidad &#60; (unidades + poblaci&#243;n) / unidad
 
-5. La guerra civil termina sin efectos (AI: chance 1:10, HI: chance: 1:20)
+5. Sin impacto (AI: probabilidad 1:2, HI: probabilidad 1:4)
 
-6. Precauci&#243;n: la ciudad se vuelve b&#225;rbara cuando la &#250;ltima unidad muere o no hay ninguna unidad estacionada en la ciudad
+6. La guerra civil termina sin efectos (AI: chance 1:10, HI: chance: 1:20)
+
+7. Precauci&#243;n: la ciudad se vuelve b&#225;rbara cuando la &#250;ltima unidad muere o no hay ninguna unidad estacionada en la ciudad
 
 
 [H2]Medidas para restablecer el orden:[\H2]
@@ -2874,7 +2894,7 @@ Combat sur terre :
 
 1) Exp&#233;rience de guerre : A chaque victoire, une unit&#233; est en mesure d'augmenter son degr&#233;s d'exp&#233;rience. Les diff&#233;rents degr&#233;s sont : entra&#238;n&#233;, exp&#233;riment&#233;, aguerri, v&#233;t&#233;ran, &#233;lite et l&#233;gendaire. Voir les concepts de [LINK=CONCEPT_COMBAT3]Unit&#233;s-Rang d'exp&#233;rience[\LINK]
 
-2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir – [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
+2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir - [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
 
 3) Mercenaires : les v&#233;t&#233;rans qui combattent pour eux-m&#234;mes peuvent se d&#233;faire de cette promotion apr&#232;s un combat (20% de chance). S'il y a un h&#233;ros ou un g&#233;n&#233;ral dans la pile de l'unit&#233;, m&#234;me 50 %.
 
@@ -2902,7 +2922,7 @@ Combat sur terre :
 
 15) Combat contre des [LINK=CONCEPT_MERCENARY]mercenaires en mission[\LINK] : L'un d'entre eux est le chef. S'il est vaincu, vous pouvez le faire torturer. Il est probable qu'il r&#233;v&#232;le un ou plusieurs de ses potentiels commanditaires.
 
-16) Mort du meneur d'homme : voir – [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
+16) Mort du meneur d'homme : voir - [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
 
 17) Culture : la culture d'une unit&#233; victorieuse influence la case du combat. Parfois, des territoires ennemis voisins sont convertis &#224; la culture de l'unit&#233;. Seulement valable si ces cases sont aussi influenc&#233;es par une ville de m&#234;me culture.
 
@@ -4324,7 +4344,7 @@ Le mod n'a probablement pas &#233;t&#233; charg&#233; enti&#232;rement. Essayez 
 Ce message peut appara&#238;tre quand vous jouez vos propres sc&#233;narios et changez des options. Il faut changer ces options directement dans le fichier du sc&#233;nario.
 
 [ICON_BULLET] CIV4 plante !
- Jouez en mode fen&#234;tr&#233; (plus stable – Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
+ Jouez en mode fen&#234;tr&#233; (plus stable - Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
 
 [ICON_BULLET] Je ne vois pas l'interface du jeu !
 1) Soyez s&#251;r d'avoir install&#233; le patch 3.19
@@ -5954,7 +5974,7 @@ Therefore, in PAE, when a general dies, the following happens:
 
 2.) Furthermore, each city (status: city) gets +1 [ICON_UNHAPPY]. Defeating an enemy general also gives cities +1 [ICON_HAPPY]. This means that the more generals you lose without being victorious yourself, the unhappier the cities become. This in turn means that they can [LINK=UNIT_EMIGRANT]emigrate[\LINK] out of dissatisfaction or start a [LINK=CONCEPT_CIVIL_WAR]civil war[\LINK].
 
-The bonuses [ICON_UNHAPPY] or [ICON_HAPPY] expire over time (chance 5% per turn).
+The bonuses [ICON_UNHAPPY] or [ICON_HAPPY] expire over time (chance 5% per turn). If a civil war breaks out in the city, the penalty expires immediately.
 
 3.) Each provincial capital has a 25% chance of spawning a [LINK=CONCEPT_USURPATOR]Usurper[\LINK]. If the polyarchy government is adopted, the cities are spared this event.
 
@@ -5969,7 +5989,7 @@ Par cons&#233;quent, dans PAE, lorsqu'un g&#233;n&#233;ral d&#233;c&#232;de, il 
 
 2.) De plus, chaque ville (statut : ville) obtient +1 [ICON_UNHAPPY]. Vaincre un g&#233;n&#233;ral ennemi donne &#233;galement aux villes +1 [ICON_HAPPY]. Cela signifie que plus vous perdez de g&#233;n&#233;raux sans &#234;tre vous-m&#234;me victorieux, plus les villes deviennent malheureuses. Cela signifie qu'ils peuvent [LINK=UNIT_EMIGRANT]&#233;migrer[\LINK] par m&#233;contentement ou d&#233;clencher une [LINK=CONCEPT_CIVIL_WAR]guerre civile[\LINK].
 
-Les bonus [ICON_UNHAPPY] ou [ICON_HAPPY] expirent avec le temps (chance 5 % par tour).
+Les bonus [ICON_UNHAPPY] ou [ICON_HAPPY] expirent avec le temps (chance 5 % par tour). Si une guerre civile &#233;clate dans la ville, la peine expire imm&#233;diatement.
 
 3.) Chaque capitale provinciale a 25 % de chances d'engendrer un [LINK=CONCEPT_USURPATOR]Usurpateur[\LINK]. Si le gouvernement polyarchien est adopt&#233;, les villes sont &#233;pargn&#233;es par cet &#233;v&#233;nement.
 
@@ -5985,7 +6005,7 @@ Daher passiert in PAE beim Tod eines Generals folgendes:
 
 2.) Jede Stadt (Status: Stadt) bekommt +1 [ICON_UNHAPPY]. Besiegt man einen gegnerischen General bekommen St&#228;dte +1 [ICON_HAPPY]. Das bedeutet, je mehr Gener&#228;le man verliert, ohne selbst siegreich zu sein, desto ungl&#252;cklicher werden die St&#228;dte. Das wiederum bedeutet, dass sie wegen Unzufriedenheit [LINK=UNIT_EMIGRANT]auswandern[\LINK] oder einen [LINK=CONCEPT_CIVIL_WAR]B&#252;rgerkrieg[\LINK] verursachen k&#246;nnen.
 
-Die Boni [ICON_UNHAPPY] oder [ICON_HAPPY] verfallen im Laufe der Zeit (Chance 5% pro Runde).
+Die Boni [ICON_UNHAPPY] oder [ICON_HAPPY] verfallen im Laufe der Zeit (Chance 5% pro Runde). Sollte in der Stadt ein B&#252;rgerkrieg ausbrechen, verf&#228;llt der Malus sofort.
 
 3.) Jede Provinzhauptstadt hat eine Chance von 25%, dass ein [LINK=CONCEPT_USURPATOR]Usurpator[\LINK] entsteht. Hat man die Regierungsform [LINK=CIVIC_POLYARCHIE]Polyarchie[\LINK] angenommen, bleiben die St&#228;dte von diesem Ereignis verschont.
 
@@ -6001,7 +6021,7 @@ Pertanto, nel PAE, quando muore un generale, accade quanto segue:
 
 2.) Inoltre, ogni citt&#224; (stato: citt&#224;) ottiene +1 [ICON_UNHAPPY]. Sconfiggere un generale nemico d&#224; anche alle citt&#224; +1 [ICON_HAPPY]. Ci&#242; significa che pi&#249; generali perdi senza vincere tu stesso, pi&#249; infelici diventano le citt&#224;. Questo a sua volta significa che possono [LINK=UNIT_EMIGRANT]emigrare[\LINK] per insoddisfazione o iniziare una [LINK=CONCEPT_CIVIL_WAR]guerra civile[\LINK].
 
-I bonus [ICON_UNHAPPY] o [ICON_HAPPY] scadono nel tempo (probabilit&#224; 5% per turno).
+I bonus [ICON_UNHAPPY] o [ICON_HAPPY] scadono nel tempo (probabilit&#224; 5% per turno). Se in citt&#224; scoppia una guerra civile, la pena decade immediatamente.
 
 3.) Ogni capoluogo di provincia ha il 25% di probabilit&#224; di generare un [LINK=CONCEPT_USURPATOR]Usurpatore[\LINK]. Se viene adottato il governo poliarchico, le citt&#224; vengono risparmiate da questo evento.
 
@@ -6017,7 +6037,7 @@ Por lo tanto, en PAE, cuando un general muere, ocurre lo siguiente:
 
 2.) Adem&#225;s, cada ciudad (estado: ciudad) obtiene +1 [ICON_UNHAPPY]. Derrotar a un general enemigo tambi&#233;n otorga a las ciudades +1 [ICON_HAPPY]. Esto significa que cuantos m&#225;s generales pierdas sin salir victorioso, m&#225;s infelices ser&#225;n las ciudades. Esto a su vez significa que pueden [LINK=UNIT_EMIGRANT]emigrar[\LINK] por insatisfacci&#243;n o iniciar una [LINK=CONCEPT_CIVIL_WAR]guerra civil[\LINK].
 
-Las bonificaciones [ICON_UNHAPPY] o [ICON_HAPPY] caducan con el tiempo (probabilidad del 5 % por turno).
+Las bonificaciones [ICON_UNHAPPY] o [ICON_HAPPY] caducan con el tiempo (probabilidad del 5 % por turno). Si en la ciudad estalla una guerra civil, la pena expira inmediatamente.
 
 3.) Cada capital provincial tiene un 25% de probabilidad de generar un [LINK=CONCEPT_USURPATOR]Usurpador[\LINK]. Si se adopta el gobierno de poliarqu&#237;a, las ciudades se libran de este evento.
 
@@ -8526,14 +8546,14 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 		<Tag>TXT_KEY_CONCEPT_NATURAL_DISASTERS_PEDIA</Tag>
 		<English>[H1]Natural disasters[\H1]
 
-[H2]Fog (every 25 rounds)[\H2]
+[H2]Fog (every 25 turns)[\H2]
 [ICON_BULLET]only from 600 BC
 [ICON_BULLET]25% defense bonus
 [ICON_BULLET]only at ocean and coast tiles
 [ICON_BULLET]slows ships down
 
-[H2]Sea storm (every 45 rounds)[\H2]
-[ICON_BULLET]every 22 rounds from 600 BC
+[H2]Sea storm (every 60 turns)[\H2]
+[ICON_BULLET]every 30 turns from 600 BC
 [ICON_BULLET]-2 [ICON_FOOD], -2 [ICON_COMMERCE]
 [ICON_BULLET]units suffer 50 damage per round
 [ICON_BULLET]only at ocean and coast tiles
@@ -8569,14 +8589,13 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 [ICON_BULLET]-25% defense
 [ICON_BULLET]can spread
 
-[H2]Tornado (every 75 rounds)[\H2]
-[ICON_BULLET]every 37 rounds from 600 BC
+[H2]Tornado (every 60 rounds)[\H2]
+[ICON_BULLET]every 30 rounds from 600 BC
 [ICON_BULLET]-1 [ICON_FOOD], -2 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]units suffer 40 damage per round
 [ICON_BULLET]slows units down
 
-[H2]Sandstorm (every 110 rounds)[\H2]
-[ICON_BULLET]every 55 rounds from 600 BC
+[H2]Sandstorm (every 90 rounds)[\H2]
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]units suffer 20 damage per round
 [ICON_BULLET]-0,25 [ICON_UNHEALTHY] in cities
@@ -8607,6 +8626,7 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION]
 [ICON_BULLET]-0,25 [ICON_UNHEALTHY] in cities
 [ICON_BULLET]affects forests
+[ICON_BULLET]can regenerate itself
 
 [H2]Deluge[\H2]
 [ICON_BULLET]consequence of earthquakes, volcano eruptions, meteorites and comets
@@ -8617,10 +8637,10 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 
 
 [H1]Earthquakes, Volcano eruptions, Comets and Meteorites[\H1]
-occur every 80 rounds until 400 BC, then every 40 rounds. If you play with the name "Apocalypto", the frequency of these catastrophes will quadruple (every 20/10 rounds) (Apocalypto has no effect in multiplayer games).
+occur every 120 rounds until 400 BC, then every 60 turns. If you play with the name "Apocalypto", the frequency of these catastrophes doubles (every 60/30 turns) (Apocalypto has no effect in multiplayer games).
 In this interval, one of the four catastrophes will be chosen randomly.
 
-[H2]Earthquake (20%)[\H2]
+[H2]Earthquakes (3:8)[\H2]
 [ICON_BULLET]has strength 6, 7, 8 or 9
 [ICON_BULLET]6 and 7: radius of 1; 8: radius of 2; 9: radius of 3 tiles
 [ICON_BULLET]can destroy improvements and buildings, harm/kill units, decrease the population and stored food of cities and causes conflagration
@@ -8630,7 +8650,7 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET]if the epicentre is on a peak and the earthquake has strength 8 or 9, a volcano eruption with the strength of the earthquake is caused
 [ICON_BULLET]if the epicentre is located in the sea and the earthquake has strength 9, a tsunami is triggered instead of the earthquake (if strength lower 9, nothing will happen)
 
-[H2]Volcano eruption (20%)[\H2]
+[H2]Volcanic eruptions (2:8)[\H2]
 [ICON_BULLET]has strength 8 or 9
 [ICON_BULLET]8: radius of 1; 9: radius of 2 tiles
 [ICON_BULLET]can destroy improvements and buildings, harm/kill units, decrease the population and stored food of cities and causes conflagration
@@ -8640,17 +8660,41 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET]a volcano eruption causes acid rain (see acid rain)
 [ICON_BULLET]a strength 9 eruption will demolish the volcano (tile becomes coast) if there are more than three nearby coast tiles which causes a tsunami
 
-[H2]Meteorites (40%)[\H2]
+[H2]Meteorites (2:8)[\H2]
 [ICON_BULLET]maximum 1-12 impacts (depending on the map size) in one round
 [ICON_BULLET]city population is halved, food store emptied, units can be harmed/killed and buildings destroyed
 [ICON_BULLET]improvements and streets can be destroyed in a radius of one tile around the impact, orichalcum or magnetite can appear on one of the tiles with a chance of 25%
 
-[H2]Comet (20%)[\H2]
-[ICON_BULLET]maximum 1-3 impacts (depending on the map size) in one round
+[H2]Comet (1:8)[\H2]
+[ICON_BULLET]maximum 1-2 impacts (depending on the map size) in one turn
 [ICON_BULLET]city population is reduced to one sixth, food store emptied, every unit is killed and buildings just as wonders can be destroyed
 [ICON_BULLET]conflagration can occur, units be harmed/killed and improvements destroyed in a radius of three tiles around the impact
 [ICON_BULLET]magnetite or orichalcum appears at the impact tile with a probability of 50%
-[ICON_BULLET]can cause a tsunami if it strikes water</English>
+[ICON_BULLET]can cause a tsunami if it strikes water
+
+
+[H1]Global Natural Disasters Caused by Climate Fluctuations (1:500)[\H1]
+
+In extremely rare cases, global natural disasters can occur that severely disrupt the balance of the game world. These include worldwide pandemics, often associated with famines-triggered by climatic anomalies, which in turn are caused by devastating volcanic eruptions in distant regions such as Alaska, Iceland, or Central America.
+
+These disasters directly impact the population and thus influence the economic and political stability of empires and cultures. They serve as a reminder that civilizations can be shaken by external shocks and that adaptability often determines power.
+
+One of these variants occur:
+
+[ICON_BULLET] Famine: 25% population decline in every city
+
+[ICON_BULLET] Pandemic: Plague in every city with a population of 6 or more
+
+
+[H2]Historical examples:[\H2]
+[ICON_BULLET] 3500 BC: Plague in Europe and Asia
+[ICON_BULLET] 1400 BC: Plague in Eurasia
+[ICON_BULLET] 1250 BC: Drought, famine, and a chain of earthquakes lead to the spread of the Sea Peoples
+[ICON_BULLET] 165 AD: Antonine Plague: 7-10 million victims
+[ICON_BULLET] 250 AD: Cyprian Plague: several million victims
+[ICON_BULLET] 536 AD: Volcanic eruptions in Iceland and Ilopango lead to a year without sunshine in Europe and Asia
+[ICON_BULLET] 541 AD: Justinian Plague: at least 25 million victims
+[ICON_BULLET] 1346 AD: The Black Death: 1/3 of the population</English>
 		<French>
 [H1] Catastrophes naturelles [\H1]
 
@@ -8660,8 +8704,8 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET] uniquement sur les zones marines et c&#244;ti&#232;res
 [ICON_BULLET] Ralentit les navires
 
-[H2] Temp&#234;te de mer (tous les 45 tours) [\H2]
-[ICON_BULLET] &#224; partir de 600 av. tous les 22 tours
+[H2] Temp&#234;te de mer (tous les 60 tours) [\H2]
+[ICON_BULLET] &#224; partir de 600 av. tous les 30 tours
 [ICON_BULLET] -2 [ICON_FOOD] -2 [ICON_COMMERCE]
 [ICON_BULLET] 50 d&#233;g&#226;ts par tour aux unit&#233;s
 [ICON_BULLET] uniquement sur les zones maritimes et c&#244;ti&#232;res
@@ -8697,14 +8741,13 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET] -25 % d&#233;fense
 [ICON_BULLET] peut se propager
 
-[H2] Tornades (tous les 75 tours) [\H2]
-[ICON_BULLET] &#224; partir de 600 av. tous les 37 tours
+[H2] Tornades (tous les 60 tours) [\H2]
+[ICON_BULLET] &#224; partir de 600 av. tous les 30 tours
 [ICON_BULLET] -1 [ICON_FOOD] -2 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET] 40 d&#233;g&#226;ts par tour aux unit&#233;s
 [ICON_BULLET] Ralentit les unit&#233;s
 
-[H2] Temp&#234;te de sable (tous les 110 tours) [\H2]
-[ICON_BULLET] &#224; partir de 600 av. tous les 55 tours
+[H2] Temp&#234;te de sable (tous les 90 tours) [\H2]
 [ICON_BULLET] -1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET] 20 d&#233;g&#226;ts par tour aux unit&#233;s
 [ICON_BULLET] -0,25 [ICON_UNHEALTHY] dans les villes
@@ -8735,6 +8778,7 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET] -1 [ICON_FOOD], -1 [ICON_PRODUCTION]
 [ICON_BULLET] dans les villes -0,25 [ICON_UNHEALTHY]
 [ICON_BULLET] concerne les for&#234;ts
+[ICON_BULLET] peut se r&#233;g&#233;n&#233;rer
 
 [H2] Inondation [\H2]
 [ICON_BULLET] suite aux tremblements de terre, &#233;ruptions volcaniques, m&#233;t&#233;orites et com&#232;tes
@@ -8745,10 +8789,10 @@ In this interval, one of the four catastrophes will be chosen randomly.
 
 
 [H1] S&#233;ismes, &#233;ruptions volcaniques, com&#232;tes et m&#233;t&#233;orites [\H1]
-Tous les 80 tours, puis &#224; partir de 400 av. J.-C., tous les 40 tours. Si vous jouez avec le nom " Apocalypto ", la fr&#233;quence est quadrupl&#233;e (c'est &#224; dire tous les 20 ou 10 tours) (Apocalypto fonctionne uniquement en mode joueur unique et n'a aucun effet en mode multijoueur).
+Tous les 120 tours, puis &#224; partir de 400 av. J.-C., tous les 60 tours. Si vous jouez avec le nom " Apocalypto ", la fr&#233;quence double (c'est &#224; dire tous les 60 ou 30 tours) (Apocalypto fonctionne uniquement en mode joueur unique et n'a aucun effet en mode multijoueur).
 A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#233;e au hasard.
 
-[H2] S&#233;ismes (20 %) [\H2]
+[H2]S&#233;ismes (3:8)[\H2]
 [ICON_BULLET] a une magnitude de 6, 7, 8 ou 9
 [ICON_BULLET] magnitude 6 et 7, rayon de 1 case ; magnitude 8, rayon de 2 ; magnitude 9, rayon de 3
 [ICON_BULLET] peut d&#233;truire am&#233;nagements et b&#226;timents, endommager les unit&#233;s, r&#233;duire le nombre d'habitants et les stocks de nourriture des villes et g&#233;n&#233;rer des incendies
@@ -8758,7 +8802,7 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET] Si l'&#233;picentre est situ&#233; sur une montagne et le tremblement de terre a une magnitude de 8 ou 9, une &#233;ruption volcanique de m&#234;me violence est d&#233;clench&#233;e
 [ICON_BULLET] Si l'&#233;picentre se trouve sur une case de mer et que la magnitude du s&#233;isme est de 9, un tsunami remplace le tremblement de terre. Sinon, rien ne se passe
 
-[H2] Eruption volcanique (20%) [\H2]
+[H2]Eruption volcanique (2:8)[\H2]
 [ICON_BULLET] a une magnitude de 8 ou de 9
 [ICON_BULLET] magnitude 8 : Rayon de 1 case, magnitude 9 : rayon de 2 cases
 [ICON_BULLET] peut d&#233;truire am&#233;nagements et b&#226;timents, endommager les unit&#233;s, r&#233;duire le nombre d'habitants et les stocks de nourriture des villes et g&#233;n&#233;rer des incendies
@@ -8768,17 +8812,41 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET] une &#233;ruption volcanique provoque des pluies acides (voir Pluie acide)
 [ICON_BULLET] un volcan c&#244;tier (adjacent &#224; plus de 3 cases d'eau) qui entre en &#233;ruption de magnitude 9 est aras&#233; et sa case se transforme en case de c&#244;te, ce qui d&#233;clenche un tsunami
 
-[H2] M&#233;t&#233;orites (40%) [\H2]
+[H2]M&#233;t&#233;orites (2:8)[\H2]
 [ICON_BULLET] Selon la taille de la carte, un maximum de 1 &#224; 12 m&#233;t&#233;orites en un tour
 [ICON_BULLET] population des villes touch&#233;es divis&#233;e par 2, perte des r&#233;serves de nourriture, certaines unit&#233;s bless&#233;es/tu&#233;es et certains b&#226;timents d&#233;truits
 [ICON_BULLET] dans un rayon de 1 case autour de l'impact, destruction possible des routes et am&#233;nagements, et probabilit&#233; de 25 % d'apparition de magn&#233;tite ou d'obsidienne sur une de ces cases
 
-[H2] Com&#232;te ( 20 % ) [\H2]
-[ICON_BULLET] Selon la taille de la carte, un maximum de 1-3 com&#232;tes en un tour 
+[H2]Com&#232;te (1:8)[\H2]
+[ICON_BULLET] Selon la taille de la carte, un maximum de 1-2 morceaux de com&#232;te en un tour 
 [ICON_BULLET] la population des villes est r&#233;duite &#224; un sixi&#232;me, les r&#233;serves de nourriture sont perdues, toutes les unit&#233;s sont d&#233;truites et les b&#226;timents ainsi que les merveilles peuvent &#234;tre d&#233;truits
 [ICON_BULLET] dans un rayon de 3 cases autour de l'impact, des incendies peuvent se d&#233;clencher, les unit&#233;s &#234;tre bless&#233;es ou tu&#233;es et les am&#233;nagements d&#233;truits
 [ICON_BULLET] Sur la case d'impact, 50% de chance d'apparition de magn&#233;tite ou d'orichalque
 [ICON_BULLET] Peut provoquer un tsunami si elle s'ab&#238;me en mer
+
+
+[H1]Catastrophes naturelles mondiales caus&#233;es par les fluctuations climatiques (1:500)[\H1]
+
+Dans des cas extr&#234;mement rares, des catastrophes naturelles mondiales peuvent survenir et perturber gravement l'&#233;quilibre du monde du jeu. Il s'agit notamment de pand&#233;mies mondiales, souvent associ&#233;es &#224; des famines, d&#233;clench&#233;es par des anomalies climatiques, elles-m&#234;mes caus&#233;es par des &#233;ruptions volcaniques d&#233;vastatrices dans des r&#233;gions lointaines comme l'Alaska, l'Islande ou l'Am&#233;rique centrale.
+
+Ces catastrophes ont un impact direct sur la population et, par cons&#233;quent, influencent la stabilit&#233; &#233;conomique et politique des empires et des cultures. Elles rappellent que les civilisations peuvent &#234;tre &#233;branl&#233;es par des chocs ext&#233;rieurs et que la capacit&#233; d'adaptation d&#233;termine souvent la puissance.
+
+L'un de ces variantes ne se produit :
+
+[ICON_BULLET] Famine : baisse de population de 25 % dans chaque ville
+
+[ICON_BULLET] Pand&#233;mie : peste dans chaque ville de 6 habitants ou plus
+
+
+[H2]Exemples historiques :[\H2]
+[ICON_BULLET] 3 500 av. J.-C. : peste en Europe et en Asie
+[ICON_BULLET] 1 400 av. J.-C. : peste en Eurasie
+[ICON_BULLET] 1 250 av. J.-C. : s&#233;cheresse, famine et une s&#233;rie de tremblements de terre entra&#238;nent la propagation des Peuples de la Mer
+[ICON_BULLET] 165 apr. J.-C. : peste antonine : 7 &#224; 10 millions de victimes
+[ICON_BULLET] 250 apr. J.-C. : peste chypriote : plusieurs millions de victimes
+[ICON_BULLET] 536 apr. J.-C. : &#233;ruptions volcaniques en Islande et &#224; Ilopango : une ann&#233;e sans soleil en Europe et Asie
+[ICON_BULLET] 541 apr. J.-C. : Peste de Justinien : au moins 25 millions de victimes
+[ICON_BULLET] 1346 apr. J.-C. : Peste noire : 1/3 de la population
 		</French>
 		<German>
 [H1]Naturkatastrophen[\H1]
@@ -8789,8 +8857,8 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET]nur auf Meeres- und K&#252;stenfeldern
 [ICON_BULLET]verlangsamt Schiffe
 
-[H2]Seesturm (alle 45 Runden)[\H2]
-[ICON_BULLET]ab 600 v.Chr. alle 22 Runden
+[H2]Seesturm (alle 60 Runden)[\H2]
+[ICON_BULLET]ab 600 v.Chr. alle 30 Runden
 [ICON_BULLET]-2 [ICON_FOOD], -2 [ICON_COMMERCE]
 [ICON_BULLET]50 Schaden pro Runde an Einheiten
 [ICON_BULLET]nur auf Meeres- und K&#252;stenfeldern
@@ -8826,14 +8894,13 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET]-25% Verteidigung
 [ICON_BULLET]kann sich ausbreiten
 
-[H2]Tornado (alle 75 Runden)[\H2]
-[ICON_BULLET]ab 600 v.Chr. alle 37 Runden
+[H2]Tornado (alle 60 Runden)[\H2]
+[ICON_BULLET]ab 600 v.Chr. alle 30 Runden
 [ICON_BULLET]-1 [ICON_FOOD], -2 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]40 Schaden pro Runde an Einheiten
 [ICON_BULLET]verlangsamt Einheiten
 
-[H2]Sandsturm (alle 110 Runden)[\H2]
-[ICON_BULLET]ab 600 v.Chr. alle 55 Runden
+[H2]Sandsturm (alle 90 Runden)[\H2]
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]20 Schaden pro Runde an Einheiten
 [ICON_BULLET]-0,25 [ICON_UNHEALTHY] in St&#228;dten
@@ -8864,6 +8931,7 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION]
 [ICON_BULLET]-0,25 [ICON_UNHEALTHY] in St&#228;dten
 [ICON_BULLET]betrifft W&#228;lder
+[ICON_BULLET]kann sich von selber wieder regenerieren
 
 [H2]Sintflut[\H2]
 [ICON_BULLET]Folge von Erdbeben, Vulkanausbr&#252;chen, Meteoriten und Kometen
@@ -8874,10 +8942,10 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 
 
 [H1]Erdbeben, Vulkanausbr&#252;che, Kometen und Meteoriten[\H1]
-entstehen bis zum Jahr 400 v.Chr. alle 80 Runden und danach alle 40 Runden. Spielt man mit dem Namen "Apocalypto", vervierfacht sich die H&#228;ufigkeit (also alle 20 bzw. 10 Runden) (Apocalypto funktioniert nur im Einzelspielermodus und bleibt im Mehrspielermodus wirkungslos).
+entstehen bis zum Jahr 400 v.Chr. alle 120 Runden und danach alle 60 Runden. Spielt man mit dem Namen "Apocalypto", verdoppelt sich deren H&#228;ufigkeit (also alle 60 bzw. 30 Runden). Apocalypto funktioniert nur im Einzelspielermodus und bleibt im Mehrspielermodus wirkungslos.
 In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hlt.
 
-[H2]Erdbeben (20%)[\H2]
+[H2]Erdbeben (3:8)[\H2]
 [ICON_BULLET]hat St&#228;rke 6, 7, 8 oder 9
 [ICON_BULLET]6 und 7: Radius von 1; 8: Radius von 2; 9: Radius von 3 Feldern
 [ICON_BULLET]kann Modernisierungen und Geb&#228;ude zerst&#246;ren, Einheiten besch&#228;digen/vernichten, die Bev&#246;lkerung und den Nahrungsspeicher von St&#228;dten reduzieren und erzeugt Fl&#228;chenbrand
@@ -8887,7 +8955,7 @@ In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hl
 [ICON_BULLET]liegt das Epizentrum auf einem Berg und hat das Erdbeben eine St&#228;rke von 8 oder 9, wird ein Vulkanausbruch mit der St&#228;rke des Erdbebens ausgel&#246;st
 [ICON_BULLET]liegt das Epizentrum im Meer und das Erdbeben hat St&#228;rke 9, wird statt dem Erdbeben ein Tsunami ausgel&#246;st (bei St&#228;rke kleiner 9 geschieht nichts)
 
-[H2]Vulkanausbruch (20%)[\H2]
+[H2]Vulkanausbruch (2:8)[\H2]
 [ICON_BULLET]hat St&#228;rke 8 oder 9
 [ICON_BULLET]8: Radius von 1; 9: Radius von 2 Feldern
 [ICON_BULLET]kann Modernisierungen und Geb&#228;ude zerst&#246;ren, Einheiten besch&#228;digen/vernichten, die Bev&#246;lkerung und den Nahrungsspeicher von St&#228;dten reduzieren und erzeugt Fl&#228;chenbrand
@@ -8897,29 +8965,53 @@ In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hl
 [ICON_BULLET]ein Vulkanausbruch verursacht Sauren Regen (siehe Saurer Regen)
 [ICON_BULLET]ein Ausbruch der St&#228;rke 9 sprengt den Vulkan, wenn er in K&#252;stenn&#228;he (mehr als drei angrenzende Felder Wasser) ist, weg (Feld wird zu K&#252;ste) und l&#246;st einen Tsunami aus
 
-[H2]Meteoriten (40%)[\H2]
+[H2]Meteoriten (2:8)[\H2]
 [ICON_BULLET]je nach Kartengr&#246;&#223;e maximal 1 bis 12 Meteoriteneinschl&#228;ge in einer Runde
 [ICON_BULLET]Stadtbev&#246;lkerung wird halbiert, Nahrungslager geleert, Einheiten k&#246;nnen besch&#228;digt/vernichtet und Geb&#228;ude zerst&#246;rt werden
 [ICON_BULLET]kann in einem Radius von einem Feld um den Einschlag Modernisierungen und Stra&#223;en zerst&#246;ren, mit einer Wahrscheinlichkeit von 25% entsteht auf einem Feld Oreichalkos oder Magnetit
 
-[H2]Komet (20%)[\H2]
-[ICON_BULLET]je nach Kartengr&#246;&#223;e k&#246;nnen maximal 1 bis 3 Kometen einschlagen
+[H2]Komet (1:8)[\H2]
+[ICON_BULLET]je nach Kartengr&#246;&#223;e k&#246;nnen maximal 1 bis 2 Kometenst&#252;cke einschlagen
 [ICON_BULLET]Stadtbev&#246;lkerung wird auf ein Sechstel reduziert, Nahrungslager geleert, alle Einheiten werden vernichtet und Geb&#228;ude wie auch Wunder k&#246;nnen zerst&#246;rt werden
 [ICON_BULLET]in einem Radius von drei Feldern um den Einschlag k&#246;nnen Br&#228;nde entstehen, Einheiten besch&#228;digt/vernichtet und Modernisierungen zerst&#246;rt werden
 [ICON_BULLET]mit einer 50% Wahrscheinlichkeit entsteht auf dem Einschlagsfeld Magnetit oder Oreichalkos
 [ICON_BULLET]kann, wenn er im Wasser einschl&#228;gt, einen Tsunami ausl&#246;sen
+
+
+[H1]Globale Naturkatastrophen durch Klimaschwankungen (1:500)[\H1]
+
+In &#228;u&#223;erst seltenen F&#228;llen k&#246;nnen globale Naturkatastrophen auftreten, die das Gleichgewicht der Spielwelt empfindlich st&#246;ren. Dazu z&#228;hlen weltweite Pandemien, die oft im Zusammenhang mit Hungersn&#246;ten stehen - ausgel&#246;st durch klimatische Anomalien, die wiederum auf verheerende Vulkanausbr&#252;che in weit entfernten Regionen wie Alaska, Island oder Mittelamerika zur&#252;ckgehen.
+
+Diese Katastrophen wirken sich direkt auf die Bev&#246;lkerung aus und beeinflussen damit die wirtschaftliche und politische Stabilit&#228;t von Reichen und Kulturen. Sie erinnern daran, dass Zivilisationen durch externe Schocks ins Wanken geraten k&#246;nnen und dass Anpassungsf&#228;higkeit oft &#252;ber Macht entscheidet.
+
+Eine dieser Varianten wird auftreten:
+
+[ICON_BULLET] Hungersnot: 25% Bev&#246;lkerungsr&#252;ckgang in jeder Stadt
+
+[ICON_BULLET] Pandemie: Pest in jeder Stadt ab einer Population von 6
+
+
+[H2]Historische Beispiele:[\H2]
+[ICON_BULLET] 3500 v.Chr.: Pest in Europa und Asien
+[ICON_BULLET] 1400 v.Chr.: Pest in Eurasien
+[ICON_BULLET] 1250 v.Chr.: D&#252;rre, Hungersn&#246;te und Erdbebenketten f&#252;hren zur Ausbreitung der Seev&#246;lker
+[ICON_BULLET] 165 n.Chr.: Antoninische Pest: 7-10 Mio. Opfer
+[ICON_BULLET] 250 n.Chr.: Cyprianische Pest: mehrere Mio. Opfer
+[ICON_BULLET] 536 n.Chr.: Vulkanausbr&#252;che in Island und Ilopango f&#252;hren zu einem Jahr ohne Sonne in Europa und Asien
+[ICON_BULLET] 541 n.Chr.: Justinianische Pest: min. 25 Mio. Opfer
+[ICON_BULLET] 1346 n.Chr.: Der Schwarze Tod: 1/3 der Bev&#246;lkerung
 		</German>
 		<Italian>
 [H1] Disastri Naturali [\H1]
 
-Fog [H2] ( tutti i 25 turni ) [\H2]
+[H2]Fog ( tutti i 25 turni ) [\H2]
 [ICON_BULLET] fino al 600 aC .
 [ICON_BULLET] 25 % di bonus difesa
 [ICON_BULLET] solo sulle aree marine e costiere
 [ICON_BULLET] lente che navi
 
-[H2] Sea Storm ( tutti i 45 turni ) [\H2]
-[ICON_BULLET] dal 600 aC . tutti i 22 giri
+[H2] Sea Storm ( tutti i 60 turni ) [\H2]
+[ICON_BULLET] dal 600 aC . tutti i 30 giri
 [ICON_BULLET] -2 [ICON_FOOD] -2 [ICON_COMMERCE]
 [ICON_BULLET] 50 danni per round di unit&#224;
 [ICON_BULLET] solo sulle aree marine e costiere
@@ -8955,14 +9047,13 @@ Fog [H2] ( tutti i 25 turni ) [\H2]
 [ICON_BULLET] -25 % difesa
 [ICON_BULLET] pu&#242; diffondersi
 
-[H2] Tornado ( tutti i 75 turni ) [\H2]
-[ICON_BULLET] dal 600 aC . tutti i 37 giri
+[H2] Tornado ( tutti i 60 turni ) [\H2]
+[ICON_BULLET] dal 600 aC . tutti i 30 turni
 [ICON_BULLET] -1 [ICON_FOOD] -2 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
 [ICON_BULLET] 40 danni per round di unit&#224;
 [ICON_BULLET] unit&#224; lente che
 
-[H2] Sandstorm ( tutti i 110 turni ) [\H2]
-[ICON_BULLET] dal 600 aC . tutti i 55 giri
+[H2] Sandstorm ( tutti i 90 turni ) [\H2]
 [ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
 [ICON_BULLET] 20 danni per round di unit&#224;
 [ICON_BULLET] -0.25 [ICON_UNHEALTHY] nelle citt&#224;
@@ -8970,8 +9061,8 @@ Fog [H2] ( tutti i 25 turni ) [\H2]
 [ICON_BULLET] solo su terreni desertici , cos&#236; come le coste vicine e trame di livello
 [ICON_BULLET] pu&#242; diffondersi
 
-Locuste [H2] ( tutti i 60 giri ) [\H2]
-[ICON_BULLET] dal 600 aC . tutti i 30 giri
+[H2] Locuste ( tutti i 60 turni ) [\H2]
+[ICON_BULLET] dal 600 aC . tutti i 30 turni
 [ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
 [ICON_BULLET] 10 danni per round di unit&#224;
 [ICON_BULLET] -0,5 [ICON_UNHEALTHY] nelle citt&#224;
@@ -8988,13 +9079,14 @@ Locuste [H2] ( tutti i 60 giri ) [\H2]
 [ICON_BULLET] pu&#242; diffondersi
 [ICON_BULLET] copre superfici libere
 
-Foresta [H2] Bruciato [\H2]
+[H2]Foresta Bruciato[\H2]
 [ICON_BULLET] di terremoti, eruzioni vulcaniche , meteoriti e comete
 [ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION]
 [ICON_BULLET] -0.25 [ICON_UNHEALTHY] nelle citt&#224;
 [ICON_BULLET] si riferisce alle foreste
+[ICON_BULLET] pu&#242; rigenerarsi
 
-[H2] Flood [\H2]
+[H2]Flood[\H2]
 [ICON_BULLET] di terremoti, eruzioni vulcaniche , meteoriti e comete
 [ICON_BULLET] tsunami ha tre campi ampia e va fino a quattro campi dell'entroterra
 [ICON_BULLET] collina vetta e fermare lo tsunami
@@ -9003,10 +9095,10 @@ Foresta [H2] Bruciato [\H2]
 
 
 [H1] terremoti, eruzioni vulcaniche , comete e meteoriti [\H1]
-sostenute fino all'anno 400 aC . tutti i 80 giri e poi ogni 40 giri . Se si gioca con il nome di " Apocalypto ", la frequenza quadruplicato ( ad esempio ogni 20 o 10 giri ) ( Apocalypto funziona solo in modalit&#224; single player e non ha alcun effetto in modalit&#224; multiplayer ) .
+sostenute fino all'anno 400 aC . tutti i 120 giri e poi ogni 60 giri . Se si gioca con il nome di " Apocalypto ", la frequenza raddoppia ( ad esempio ogni 60 o 30 giri ) ( Apocalypto funziona solo in modalit&#224; single player e non ha alcun effetto in modalit&#224; multiplayer ) .
 In questo intervallo , uno di questi disastri naturali saranno selezionati a caso .
 
-Terremoti [H2] ( 20%) [\H2]
+[H2]Terremoti ( 3:8 ) [\H2]
 [ICON_BULLET] ha magnitudo 6 , 7 , 8 o 9
 [ICON_BULLET] 6 e 7 , un raggio di 1 , 8 : raggio di 2 , 9 : raggio di 3 campi
 [ICON_BULLET] pu&#242; modernizzazione e distruggere gli edifici , danni / distruggere le unit&#224; , ridurre la popolazione e la conservazione degli alimenti delle citt&#224; e genera conflagrazione
@@ -9016,7 +9108,7 @@ Terremoti [H2] ( 20%) [\H2]
 [ICON_BULLET] l'epicentro &#232; situato su una montagna e il terremoto ha una grandezza di 8 o 9 , un'eruzione vulcanica &#232; innescata dalla magnitudo del terremoto
 [ICON_BULLET] &#232; l'epicentro in mare e il terremoto di magnitudo 9 viene attivato al posto del terremoto , uno tsunami ( con spessore inferiore a 9, non succede nulla )
 
-[H2] un'eruzione vulcanica (20 % ) [\H2]
+[H2]Eruzione vulcanica ( 2:8 )[\H2]
 [ICON_BULLET] ha magnitudo 8 o 9
 [ICON_BULLET] 8 : raggio di 1 , 9 : raggio di 2 campi
 [ICON_BULLET] pu&#242; modernizzazione e distruggere gli edifici , danni / distruggere le unit&#224; , ridurre la popolazione e la conservazione degli alimenti delle citt&#224; e genera conflagrazione
@@ -9026,17 +9118,41 @@ Terremoti [H2] ( 20%) [\H2]
 [ICON_BULLET] un'eruzione vulcanica ha causato piogge acide ( vedi Acid Rain)
 [ICON_BULLET] un focolaio di magnitudo 9 &#232; al di l&#224; del vulcano quando &#232; vicino alla costa ( pi&#249; di tre campi adiacenti di acqua) , off ( box -to-coast ) e innesca uno tsunami
 
-Meteoriti [H2] (40%) [\H2]
+[H2]Meteoriti ( 2:8 )[\H2]
 [ICON_BULLET] a seconda della dimensione della mappa un massimo di 1 a 12 meteoriti in un round
 [ICON_BULLET] popolazione della citt&#224; &#232; tagliata a met&#224; , la conservazione degli alimenti vuoti , le unit&#224; possono essere danneggiati / distrutti e gli edifici sono distrutti
 [ICON_BULLET] pu&#242; distruggere in un raggio di un campo per l'impatto della modernizzazione e le strade , con una probabilit&#224; del 25 % &#232; prodotto in un campo Oriharukon o magnetite
 
-[H2] Comet ( 20 % ) [\H2]
-[ICON_BULLET] a seconda della dimensione della mappa fino a 1-3 comete pu&#242; perseguire
+[H2]Comet ( 1:8 )[\H2]
+[ICON_BULLET] a seconda della dimensione della mappa fino a 1-2 pezzi di cometa pu&#242; perseguire
 [ICON_BULLET] popolazione della citt&#224; &#232; ridotto ad un sesto , la conservazione degli alimenti vuoti , tutte le unit&#224; vengono distrutte e gli edifici cos&#236; come i miracoli possono essere distrutti
 [ICON_BULLET] entro un raggio di tre campi per l'abbattimento pu&#242; provocare incendi , le unit&#224; danneggiate / distrutte e distrutti modernizzazione
 [ICON_BULLET] con una probabilit&#224; del 50 % di essere costruito sul pannello di magnetite tuck -in o Oriharukon
 [ICON_BULLET] pu&#242; , se colpisce l'acqua , provocare uno tsunami
+
+
+[H1]Disastri naturali globali causati da fluttuazioni climatiche (1:500)[\H1]
+
+In casi estremamente rari, possono verificarsi disastri naturali globali che compromettono gravemente l'equilibrio del mondo di gioco. Tra questi, pandemie mondiali, spesso associate a carestie, innescate da anomalie climatiche, a loro volta causate da devastanti eruzioni vulcaniche in regioni remote come l'Alaska, l'Islanda o l'America Centrale.
+
+Questi disastri hanno un impatto diretto sulla popolazione e quindi influenzano la stabilit&#224; economica e politica di imperi e culture. Servono a ricordare che le civilt&#224; possono essere scosse da shock esterni e che l'adattabilit&#224; spesso determina il potere.
+
+Pu&#242; verificarsi una di queste varianti:
+
+[ICON_BULLET] Carestia: calo demografico del 25% in ogni citt&#224;
+
+[ICON_BULLET] Pandemia: peste in ogni citt&#224; con una popolazione di 6 o pi&#249; abitanti
+
+
+[H2]Esempi storici:[\H2]
+[ICON_BULLET] 3500 a.C.: peste in Europa e Asia
+[ICON_BULLET] 1400 a.C.: peste in Eurasia
+[ICON_BULLET] 1250 a.C.: siccit&#224;, carestia e una serie di terremoti portano alla diffusione dei Popoli del Mare
+[ICON_BULLET] 165 d.C.: peste antonina: 7-10 milioni di vittime
+[ICON_BULLET] 250 d.C.: peste cipriota: diversi milioni di vittime
+[ICON_BULLET] 536 d.C.: eruzioni vulcaniche in Islanda e Ilopango portano a un anno senza sole in Europa e Asia
+[ICON_BULLET] 541 d.C.: Peste di Giustiniano: almeno 25 milioni di vittime
+[ICON_BULLET] 1346 d.C.: Peste Nera: 1/3 della popolazione
 		</Italian>
 		<Spanish>
 [H1]Desastres naturales[\H1]
@@ -9048,8 +9164,8 @@ Meteoriti [H2] (40%) [\H2]
 [ICON_BULLET]s&#243;lo en casillas de oc&#233;ano y de costa
 [ICON_BULLET]ralentiza barcos
 
-[H2]Tormentas marinas[\H2]
-[ICON_BULLET]cada 22 turnos desde el 600 a.C.
+[H2]Tormentas marinas (cada 60 turnos)[\H2]
+[ICON_BULLET]cada 30 turnos desde el 600 a.C.
 [ICON_BULLET]-2 [ICON_FOOD], -2 [ICON_COMMERCE]
 [ICON_BULLET]las unidades sufren 50 de da&#241;o por turno
 [ICON_BULLET]s&#243;lo en casillas de oc&#233;ano y de costa
@@ -9085,14 +9201,13 @@ Meteoriti [H2] (40%) [\H2]
 [ICON_BULLET]-25% de defensa
 [ICON_BULLET]se puede propagar
 
-[H2]Tornado (cada 75 turnos)[\H2]
-[ICON_BULLET]cada 37 turnos desde el 600 a.C.
+[H2]Tornado (cada 60 turnos)[\H2]
+[ICON_BULLET]cada 30 turnos desde el 600 a.C.
 [ICON_BULLET]-1 [ICON_FOOD], -2 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]las unidades sufren 40 de da&#241;o por turno
 [ICON_BULLET]ralentiza a las unidades
 
-[H2]Tormenta de arena (cada 110 turnos)[\H2]
-[ICON_BULLET]cada 55 turnos desde el 600 a.C.
+[H2]Tormenta de arena (cada 90 turnos)[\H2]
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]las unidades sufren 20 de da&#241;o por turno
 [ICON_BULLET]-0.25 [ICON_UNHEALTHY] en ciudades
@@ -9114,14 +9229,14 @@ Meteoriti [H2] (40%) [\H2]
 [ICON_BULLET]-0,5 [ICON_UNHEALTHY] en ciudades
 [ICON_BULLET]ralentiza unidades
 [ICON_BULLET]puede propagarse
-[ICON_BULLET]afecta a &#225;reas sin bosques etc..
-
+[ICON_BULLET]afecta a &#225;reas sin bosques etc.
 
 [H2]Bosque quemado[\H2]
 [ICON_BULLET]consecuencia de terremotos, erupciones volc&#225;nicas, meteoritos y cometas
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION]
 [ICON_BULLET]-0,25 [ICON_UNHEALTHY] en ciudades
 [ICON_BULLET]afecta a bosques
+[ICON_BULLET]puede regenerarse a s&#237; mismo
 
 [H2]Inundaci&#243;n[\H2]
 [ICON_BULLET]consecuencia de terremotos, erupciones volc&#225;nicas, meteoritos y cometas
@@ -9131,11 +9246,11 @@ Meteoriti [H2] (40%) [\H2]
 [ICON_BULLET]las ciudades pierden hasta el 50% de su poblaci&#243;n, las unidades pueden ser da&#241;adas/matadas (menos que fuera de las ciudades) y los edificios destruidos. El da&#241;o en las ciudades se reduce con la distancia a la costa, las ciudades que son construidas en colinas Y tienen murallas sufren menos da&#241;os.
 
 [H1]Terremotos, erupciones volc&#225;nicas, meteoritos y cometas[\H1]
-Ocurren cada 80 turnos hasta el 400 a.C., entonces cada 40 turnos. Si juegas con el nombre "Apocalypto", la frecuencia de estas cat&#225;strofes se cuadriplicar&#225;n (cada 20/10 turnos) (Apocalypto no tiene efecto en juegos multijugador).
+Ocurren cada 120 turnos hasta el 400 a.C., entonces cada 60 turnos. Si juegas con el nombre "Apocalypto", la frecuencia de estas cat&#225;strofes se duplica (cada 60/30 turnos) (Apocalypto no tiene efecto en juegos multijugador).
 En este intervalo, uno de las cuatro cat&#225;strofes ser&#225; elegida aleatoriamente.
 
 
-[H2]Terremoto (20%)[\H2]
+[H2]Terremoto (3:8)[\H2]
 [ICON_BULLET]tiene fuerza 6, 7, 8 o 9
 [ICON_BULLET]6 y 7: radio de 1; 8: radio de 2; 9: radio de 3 casillas
 [ICON_BULLET]puede destruir mejoras y edificios, da&#241;ar/matar unidades, reducir la poblaci&#243;n y la comida almacenada y causa incendios
@@ -9145,7 +9260,7 @@ En este intervalo, uno de las cuatro cat&#225;strofes ser&#225; elegida aleatori
 [ICON_BULLET]si el epicentro est&#225; en un pico y el terremoto tiene una fuerza 8 o 9, se provoca una erupci&#243;n volc&#225;nica con la fuerza del terremoto.
 [ICON_BULLET]si el epicentro del terremoto est&#225; localizado en el mar y el terremoto tiene una fuerza de 9, se activa un tsunami en vez del terremoto (si la fuerza menos 9, no pasar&#225; nada)
 
-[H2]Erupci&#243;n volc&#225;nica (20%)[\H2]
+[H2]Erupci&#243;n volc&#225;nica (2:8)[\H2]
 [ICON_BULLET]tiene fuerza 8 o 9
 [ICON_BULLET]8: radio de 1; 9 radio de 2 casillas
 [ICON_BULLET]puede destruir mejoras y casillas, da&#241;ar/matar unidades, reducir la poblaci&#243;n y la comida almacenada y causa incendios
@@ -9155,17 +9270,41 @@ En este intervalo, uno de las cuatro cat&#225;strofes ser&#225; elegida aleatori
 [ICON_BULLET]una erupci&#243;n volc&#225;nica causa lluvia &#225;cida (ver lluvia &#225;cida)
 [ICON_BULLET]una erupci&#243;n de fuerza 9 derribar&#225; el volc&#225;n (la casilla se volver&#225; costa) si hay m&#225;s de tres casillas de costa cercanas lo que causar&#225; un tsunami
 
-[H2]Meteoritos (40%)[\H2]
+[H2]Meteoritos (2:8)[\H2]
 [ICON_BULLET]m&#225;ximo 1-12 impactos (dependiendo del tama&#241;o del mapa) en un turno
 [ICON_BULLET]la poblaci&#243;n de la ciudad es diezmada, la comida almacenada vaciada, las unidades pueden ser da&#241;adas/matadas y los edificios destruidos
 [ICON_BULLET]las mejoras y los caminos pueden ser destruidos en un radio de una casilla alrededor del impacto, oricalco o magnetita puede aparecer en una de las casillas con una probabilidad del 25%
 
-[H2]Cometa (20%)[\H2]
-[ICON_BULLET]m&#225;ximo 1-3 impactos (dependiendo del tama&#241;o del mapa) en un turno
+[H2]Cometa (1:8)[\H2]
+[ICON_BULLET]m&#225;ximo 1-2 impactos (dependiendo del tama&#241;o del mapa) en un turno
 [ICON_BULLET]la poblaci&#243;n de la ciudad es reducida a un sexto, la comida almacenada vaciada, toda unidad muerta y tanto edificios como maravillas pueden ser destruidas
 [ICON_BULLET]los incendios pueden ocurrir, las unidades son da&#241;adas/matadas y las mejoras destruidas en un radio de 3 casillas alrededor del impacto
 [ICON_BULLET]magnetita u oricalco aparece en la casilla del impacto con una probabilidad del 50%
 [ICON_BULLET]puede causar un tsunami si golpea el agua
+
+
+[H1] Desastres naturales globales causados por fluctuaciones clim&#225;ticas (1:500)[\H1]
+
+En casos extremadamente raros, pueden ocurrir desastres naturales globales que alteren gravemente el equilibrio del mundo del juego. Estos incluyen pandemias mundiales, a menudo asociadas con hambrunas, desencadenadas por anomal&#237;as clim&#225;ticas, que a su vez son causadas por devastadoras erupciones volc&#225;nicas en regiones distantes como Alaska, Islandia o Centroam&#233;rica.
+
+Estos desastres impactan directamente a la poblaci&#243;n y, por lo tanto, influyen en la estabilidad econ&#243;mica y pol&#237;tica de imperios y culturas. Sirven como recordatorio de que las civilizaciones pueden verse afectadas por choques externos y que la adaptabilidad a menudo determina el poder.
+
+Puede ocurrir una de estas variantes:
+
+[ICON_BULLET] Hambruna: Disminuci&#243;n del 25% de la poblaci&#243;n en todas las ciudades
+
+[ICON_BULLET] Pandemia: Peste en todas las ciudades con una poblaci&#243;n de 6 o m&#225;s habitantes
+
+
+[H2]Ejemplos hist&#243;ricos:[\H2]
+[ICON_BULLET] 3500 a. C.: Peste en Europa y Asia
+[ICON_BULLET] 1400 a. C.: Peste en Eurasia
+[ICON_BULLET] 1250 a. C.: Sequ&#237;a, hambruna y una serie de terremotos provocan la expansi&#243;n de los Pueblos del Mar
+[ICON_BULLET] 165 d. C.: Peste Antonina: 7-10 millones de v&#237;ctimas
+[ICON_BULLET] 250 d. C.: Peste Cipriana: varios millones de v&#237;ctimas
+[ICON_BULLET] 536 d. C.: Erupciones volc&#225;nicas en Islandia e Ilopango provocan un a&#241;o sin sol en Europa y Asia
+[ICON_BULLET] 541 d. C.: Plaga de Justiniano: al menos 25 millones de v&#237;ctimas
+[ICON_BULLET] 1346 d. C.: Peste Negra: 1/3 de la poblaci&#243;n
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -10832,9 +10971,9 @@ Consecuencias de una gran rebeli&#243;n (m&#225;s de la mitad del n&#250;mero to
 Religion has always played a critical part in human history.
 A tribe without religion will stay small and be hard to play, therefore you should try to catch/found a religion as soon as possible.
 
-There are 13 religions. The polytheistic religions can be founded by certain civilizations only.
+There are 14 religions. The polytheistic religions can be founded by certain civilizations only.
 
-Polytheistic religions
+[H2]Polytheistic religions[\H2]
 [ICON_BULLET] Nordic myths (Germanics)
 [ICON_BULLET] Celtic myths (Celts and Gauls)
 [ICON_BULLET] Vedic myths/Hinduism (Indians)
@@ -10844,15 +10983,15 @@ Polytheistic religions
 [ICON_BULLET] Sumerian gods (Sumerians and Babylonians)
 [ICON_BULLET] Roman gods (Romans and Etrucans)
 
-Dualistic religion
+[H2]Dualistic religion[\H2]
 [ICON_BULLET] Zoroastriasm (Persians and Assyrians)
 
-[LINK=CONCEPT_CHRISTEN]Monotheistic religions[\LINK]
+[H2][LINK=CONCEPT_CHRISTEN]Monotheistic religions[\LINK][\H2]
 [ICON_BULLET] Judaism
 [ICON_BULLET] Christianity
 [ICON_BULLET] Islam
 
-Ascetic religions
+[H2]Ascetic religions[\H2]
 [ICON_BULLET] Hinduism
 [ICON_BULLET] Buddhism
 
@@ -10870,8 +11009,8 @@ If this number is exceeded, citizens will attempt to expel a religion other than
 
 Trigger:
 [ICON_BULLET] Any city with 2 (or 3 if city status is City) religions
-[ICON_BULLET] 2% chance per city/round
-[ICON_BULLET] From the Heresy technology, 6% per city/round
+[ICON_BULLET] 2% chance per city/turn
+[ICON_BULLET] From the Heresy technology, 4% per city/turn
 
 Effect:
 [ICON_BULLET] Step 1: All city units are injured and immobilized for 1 round
@@ -10898,6 +11037,7 @@ Why were Jews and Christians persecuted?
 [ICON_BULLET] Judaism, as well as Christianity, rejected polytheism, syncretism, and the oriental god-king cults because of their belief in the one Creator God (monotheism).
 [ICON_BULLET] They saw themselves as a people chosen by this God with a mission for all other peoples (Genesis 12:3). This made it impossible for devout Jews and Christians to participate in the cults of the surrounding peoples.
 [ICON_BULLET] For a long time, Christians (and Jews too) refused military service due to their pacifist doctrine and what they considered an ungodly ruler. If an ungodly ruler issued an order that blatantly contradicted divine commandments, then the obedient soldier would be guilty. With the conversion of Emperor Constantine (reigned 307-337 AD) to Christianity, everything changed. If one fought in the right state of mind, one could almost be obligated to fight others for their own good (Quote from Christian teaching).
+[ICON_BULLET] The circumcision of Jews was considered barbaric by the Hellenistic and Roman rulers.
 
 Why did Christians persecute the Jews?
 
@@ -10906,15 +11046,21 @@ Why did Christians persecute the Jews?
 
 Every city with a monotheistic or dualistic religion can destroy pagan institutions:
 
-Trigger:
-Chance per city 1:30, then:
-[ICON_BULLET] Jewish city: 5%, Judaism as state religion: 20%
-[ICON_BULLET] Christian city: 10%, Christianity as state religion: 30%
-[ICON_BULLET] Muslim city: 20%, Islam as state religion: 40%
+Trigger (chance per city):
+Priority 1: Under the Exclusivist government: 1:10
+Priority 2: With the Edict of Toleration technology: 1:50
+Priority 3: With the Heresy technology: 1:25
+Priority 4: 1:40
+
+Chance afterward:
+[ICON_BULLET] Zoroastrian city: 10%, Zoroastrianism as state religion: 30%
+[ICON_BULLET] Jewish city: 20%, Judaism as state religion: 50%
+[ICON_BULLET] Christian city: 30%, Christianity as state religion: 50%
+[ICON_BULLET] Muslim city: 40%, Islam as state religion: 50%
 
 Effect:
 [ICON_BULLET] A cult and its buildings are expelled (except for Wonders of the World)
-[ICON_BULLET] Another religion is expelled and its temple is destroyed (except for Wonders of the World)
+[ICON_BULLET] Another religion is expelled and its temple is destroyed (except for Wonders of the World), see Religious Expulsion
 [ICON_BULLET] Holy cities can also be affected
 [ICON_BULLET] Pagan institutions such as libraries, baths, theaters, etc. are destroyed (max. 1 building per city/round)
 
@@ -10950,9 +11096,9 @@ The AI applies a religious expulsion if a city with more than one religion has m
 La religion joue un r&#244;le majeur dans l'histoire de l'Humanit&#233;.
 Une tribu sans religion restera mineure et difficile &#224; jouer. Aussi, essayez d&#232;s que possible d'en fonder une ou de vous convertir &#224; une religion d&#233;j&#224; existante.
 
-Il y a 13 religions. Celles qui sont polyth&#233;istes ne peuvent &#234;tre fond&#233;es que par certaines civilisations.
+Il y a 14 religions. Celles qui sont polyth&#233;istes ne peuvent &#234;tre fond&#233;es que par certaines civilisations.
 
-Religion polyth&#233;istes
+[H2]Religion polyth&#233;istes[\H2]
 [ICON_BULLET] Mythologie scandinave (Germains)
 [ICON_BULLET] Mythologie celtique (Celtes et Gaulois)
 [ICON_BULLET] Cultes m&#233;sopotamiens (Ph&#233;niciens)
@@ -10961,15 +11107,15 @@ Religion polyth&#233;istes
 [ICON_BULLET] Dieux sum&#233;riens (Sum&#233;riens et Babyloniens)
 [ICON_BULLET] Panth&#233;on romain (Romains et &#201;trusques)
 
-Religion dualiste
+[H2]Religion dualiste[\H2]
 [ICON_BULLET] Zoroastrisme (Perses et Assyriens)
 
-[LINK=CONCEPT_CHRISTEN]Religions monoth&#233;istes[\LINK]
+[H2][LINK=CONCEPT_CHRISTEN]Religions monoth&#233;istes[\LINK][\H2]
 [ICON_BULLET] Juda&#239;sme
 [ICON_BULLET] Christianisme
 [ICON_BULLET] Islam
 
-Religions asc&#233;tiques
+[H2]Religions asc&#233;tiques[\H2]
 [ICON_BULLET] Hindouisme
 [ICON_BULLET] Bouddhisme
 
@@ -10988,7 +11134,7 @@ Si ce nombre est d&#233;pass&#233;, les citoyens tenteront d'expulser de la vill
 D&#233;clenchement:
 [ICON_BULLET] Chaque ville avec 2 (ou 3 si le statut de la ville est une ville) religions
 [ICON_BULLET] Chance 2% par ville/tour
-[ICON_BULLET] De l'h&#233;r&#233;sie technologique 6 % par ville/tour
+[ICON_BULLET] De l'h&#233;r&#233;sie technologique 4 % par ville/tour
 
 Impact:
 [ICON_BULLET] &#201;tape 1 : Toutes les unit&#233;s de la ville sont bless&#233;es et immobilis&#233;es pendant 1 round
@@ -11015,6 +11161,7 @@ Pourquoi les Juifs et les Chr&#233;tiens ont-ils &#233;t&#233; pers&#233;cut&#23
 [ICON_BULLET] Le juda&#239;sme, ainsi que le christianisme, ont rejet&#233; le polyth&#233;isme, le syncr&#233;tisme et les cultes orientaux du dieu-roi en raison de leur croyance en un seul Dieu cr&#233;ateur (monoth&#233;isme).
 [ICON_BULLET] Ils se consid&#233;raient comme un peuple choisi par ce Dieu avec une mission pour tous les autres peuples (Gen 12:3). Cela rendait impossible pour les juifs et les chr&#233;tiens pieux de participer aux cultes des peuples environnants.
 [ICON_BULLET] Les chr&#233;tiens (y compris les juifs) ont refus&#233; le service militaire pendant longtemps en raison de leurs enseignements pacifistes et de ce qu'ils consid&#233;raient comme un dirigeant impie. Si un dirigeant impie donne un ordre qui est manifestement contraire aux commandements divins, alors le soldat ob&#233;issant sera coupable. Avec la conversion de l'empereur Constantin (r&#232;gne 307-337 apr&#232;s J.-C.) au christianisme, tout a chang&#233;. Si l'on combattait dans le bon &#233;tat d'esprit, on pourrait presque &#234;tre oblig&#233; de combattre les autres pour leur propre bien (Citation de l'enseignement chr&#233;tien).
+[ICON_BULLET] La circoncision des Juifs &#233;tait consid&#233;r&#233;e comme barbare par les dirigeants hell&#233;nistiques et romains.
 
 Pourquoi les chr&#233;tiens ont-ils pers&#233;cut&#233; les juifs ?
 
@@ -11023,15 +11170,21 @@ Pourquoi les chr&#233;tiens ont-ils pers&#233;cut&#233; les juifs ?
 
 Une ville avec une religion monoth&#233;iste ou dualiste peut d&#233;truire les institutions pa&#239;ennes :
 
-D&#233;clenchement:
-Chance par ville 1:30, puis :
-[ICON_BULLET] Ville juive : 5 %, juda&#239;sme comme religion d'&#201;tat : 20 %
-[ICON_BULLET] Ville chr&#233;tienne : 10 %, christianisme comme religion d'&#201;tat : 30 %
-[ICON_BULLET] Ville musulmane : 20 %, Islam comme religion d'&#201;tat : 40 %
+D&#233;clencheur (probabilit&#233; par ville) :
+Priorit&#233; 1 : Sous le gouvernement exclusiviste : 1:10
+Priorit&#233; 2 : Avec la technologie de l'&#201;dit de Tol&#233;rance : 1:50
+Priorit&#233; 3 : Avec la technologie de l'H&#233;r&#233;sie : 1:25
+Priorit&#233; 4 : 1:40
+
+Probabilit&#233; ult&#233;rieure :
+[ICON_BULLET] Ville zoroastrienne : 10 %, Zoroastrisme comme religion d'&#201;tat : 30 %
+[ICON_BULLET] Ville juive : 20 %, Juda&#239;sme comme religion d'&#201;tat : 50 %
+[ICON_BULLET] Ville chr&#233;tienne : 30 %, Christianisme comme religion d'&#201;tat : 50 %
+[ICON_BULLET] Ville musulmane : 40 %, Islam comme religion d'&#201;tat : 50 %
 
 Impact:
 [ICON_BULLET] Une secte et ses b&#226;timents sont expuls&#233;s (sauf les Merveilles du Monde)
-[ICON_BULLET] Une autre religion est expuls&#233;e et son temple d&#233;truit (sauf les Merveilles du Monde)
+[ICON_BULLET] Une autre religion est expuls&#233;e et son temple d&#233;truit (sauf les Merveilles du Monde), voir expulsion religieuse
 [ICON_BULLET] Les villes saintes peuvent &#233;galement &#234;tre touch&#233;es
 [ICON_BULLET] Les institutions pa&#239;ennes telles que les biblioth&#232;ques, les bains, les th&#233;&#226;tres, etc. sont d&#233;truites (max. 1 b&#226;timent par ville/tour)
 
@@ -11068,9 +11221,9 @@ L'IA applique l'expulsion religieuse lorsqu'une ville avec plus d'une religion a
 [H1]Religion[\H1]
 Religionen haben in der Geschichte der Menschheit stets eine bedeutende Rolle gespielt. Ein Stamm ohne Religion bleibt klein und daher schwerer zu spielen, deshalb sollte schon so fr&#252;h wie m&#246;glich versucht werden, eine Religion zu erhalten beziehungsweise zu gr&#252;nden.
 
-Es gibt 13 Religionen. Die polytheistischen Religionen k&#246;nnen nur von bestimmten V&#246;lkern gegr&#252;ndet werden:
+Es gibt 14 Religionen. Die polytheistischen Religionen k&#246;nnen nur von bestimmten V&#246;lkern gegr&#252;ndet werden:
 
-Polytheistische Religionen
+[H2]Polytheistische Religionen[\H2]
 [ICON_BULLET] Nordische Mythen: Germanen und Vandalen
 [ICON_BULLET] Keltische Mythen: Kelten und Gallier
 [ICON_BULLET] Vedische Mythen (Hinduismus): Inder
@@ -11080,15 +11233,15 @@ Polytheistische Religionen
 [ICON_BULLET] Sumerische G&#246;tter: Sumerer und Babylonier
 [ICON_BULLET] R&#246;mische G&#246;tter: R&#246;mer und Etrusker
 
-Dualistische Religion
+[H2]Dualistische Religion[\H2]
 [ICON_BULLET] Zoroastrismus: Perser und Assyrer
 
-[LINK=CONCEPT_CHRISTEN]Monotheistische Religionen[\LINK]
+[H2][LINK=CONCEPT_CHRISTEN]Monotheistische Religionen[\LINK][\H2]
 [ICON_BULLET] Judentum
 [ICON_BULLET] Christentum
 [ICON_BULLET] Islam
 
-Asketische Religionen
+[H2]Asketische Religionen[\H2]
 [ICON_BULLET] Hinduismus
 [ICON_BULLET] Buddhismus
 
@@ -11107,7 +11260,7 @@ Wird diese Anzahl &#252;berschritten, werden die B&#252;rger versuchen, eine and
 Ausl&#246;ser:
 [ICON_BULLET] Jede Stadt mit 2 (bzw 3 bei Stadtstatus Stadt) Religionen
 [ICON_BULLET] Chance 2% pro Stadt/Runde
-[ICON_BULLET] Ab der Technologie H&#228;resie 6% pro Stadt/Runde
+[ICON_BULLET] Ab der Technologie H&#228;resie 4% pro Stadt/Runde
 
 Auswirkung:
 [ICON_BULLET] Schritt 1: Alle Stadteinheiten werden verletzt und sind 1 Runde unbeweglich
@@ -11133,6 +11286,7 @@ Warum wurden Juden und Christen verfolgt?
 [ICON_BULLET] Das Judentum, sowie Christentum lehnte den Polytheismus, Synkretismus und die orientalischen Gottk&#246;nigskulte aufgrund ihres Glaubens an den einzigen Sch&#246;pfergott (Monotheismus) ab. 
 [ICON_BULLET] Es verstand sich als von diesem Gott erw&#228;hltes Volk mit einem Auftrag f&#252;r alle &#252;brigen V&#246;lker (Gen 12,3). Dies machte gl&#228;ubige Juden und Christen die Teilnahme an den Kulten der umgebenden V&#246;lker unm&#246;glich.
 [ICON_BULLET] Christen (auch Juden) verweigerten lange Zeit den Kriegsdienst auf Grund ihrer pazifistischen Lehre und dem ihrer Ansicht nach gottlosen Herrscher. Wenn ein gottloser Herrscher einen Befehl erteilt, der offensichtlich den g&#246;ttlichen Geboten entgegensteht, dann w&#228;re der gehorsame Soldat schuldig. Mit der Bekehrung des Kaisers Konstantin (Regierungszeit 307-337 n.Chr.) zum Christentum, &#228;nderte sich alles. Wenn man im richtigen Seelenzustand k&#228;mpfte, dann konnte man beinahe dazu verpflichtet sein, andere zu ihrem eigenen Wohl zu bek&#228;mpfen (Zitat aus der christlichen Lehre).
+[ICON_BULLET] Die Beschneidung der Juden wurde von der hellenistischen und r&#246;mischen Herrschaft als barbarisch angesehen.
 
 Warum haben Christen Juden verfolgt?
 
@@ -11141,15 +11295,21 @@ Warum haben Christen Juden verfolgt?
 
 Jede Stadt mit einer monotheistischen bzw. dualistischen Religion kann pagane Einrichtungen zerst&#246;ren:
 
-Ausl&#246;ser:
-Chance pro Stadt 1:30, danach:
-[ICON_BULLET] J&#252;dische Stadt: 5%, Judentum als Staatsreligion: 20%
-[ICON_BULLET] Christliche Stadt: 10%, Christentum als Staatsreligion: 30%
-[ICON_BULLET] Muslimische Stadt: 20%, Islam als Staatsreligion: 40%
+Ausl&#246;ser (Chance pro Stadt):
+Priorit&#228;t 1: Unter der Staatsform Exklusivismus: 1:10
+Priorit&#228;t 2: Mit der Technologie Toleranzedikt: 1:50
+Priorit&#228;t 3: Mit der Technologie H&#228;resie: 1:25
+Priorit&#228;t 4: 1:40
+
+Chance danach:
+[ICON_BULLET] Zoroastrische Stadt: 10%, Zoroastrismus als Staatsreligion: 30%
+[ICON_BULLET] J&#252;dische Stadt: 20%, Judentum als Staatsreligion: 50%
+[ICON_BULLET] Christliche Stadt: 30%, Christentum als Staatsreligion: 50%
+[ICON_BULLET] Muslimische Stadt: 40%, Islam als Staatsreligion: 50%
 
 Auswirkung:
 [ICON_BULLET] Ein Kult und dessen Geb&#228;ude werden vertrieben (ausgenommen Weltwunder)
-[ICON_BULLET] Eine andere Religion wird vertrieben und dessen Tempel zerst&#246;rt (ausgenommen Weltwunder)
+[ICON_BULLET] Eine andere Religion wird vertrieben und dessen Tempel zerst&#246;rt (ausgenommen Weltwunder), siehe Religionsaustreibung
 [ICON_BULLET] Auch Heilige St&#228;dte k&#246;nnen davon betroffen sein
 [ICON_BULLET] Pagane Einrichtungen, wie Bibliotheken, B&#228;der, Theater, etc. werden zerst&#246;rt (max. 1 Geb&#228;ude pro Stadt/Runde)
 
@@ -11187,9 +11347,9 @@ Die KI wendet eine Religionsaustreibung an, wenn in einer Stadt mit mehr als ein
 Le religioni hanno giocato un ruolo significativo nella storia dell'umanit&#224; mai .
 Una trib&#249; senza religione resta piccolo e difficile da giocare, quindi dovrebbe gi&#224; il pi&#249; presto possibile per cercare di ottenere / fondare una religione .
 
-Ci sono 13 religioni. Le religioni politeiste possono essere fondate solo su alcuni popoli :
+Ci sono 14 religioni. Le religioni politeiste possono essere fondate solo su alcuni popoli :
 
-religioni politeiste
+[H2]religioni politeiste[\H2]
 [ICON_BULLET] miti nordici : Vandali germanici
 [ICON_BULLET] miti celtici : Celti , Galli
 [ICON_BULLET] miti vedici (induismo) : indiana
@@ -11199,15 +11359,15 @@ religioni politeiste
 [ICON_BULLET] d&#232;i sumeri : Sumeri e Babilonesi
 [ICON_BULLET] dei romani , etruschi e romani
 
-Religione dualistica
+[H2]Religione dualistica[\H2]
 [ICON_BULLET] Zoroastrismo : persiana e assiro
 
-[LINK=CONCEPT_CHRISTEN]Religioni monoteiste[\LINK]
+[H2][LINK=CONCEPT_CHRISTEN]Religioni monoteiste[\LINK][\H2]
 [ICON_BULLET] Giudaismo
 [ICON_BULLET] Cristianesimo
 [ICON_BULLET] Islam
 
-Religioni ascetiche
+[H2]Religioni ascetiche[\H2]
 [ICON_BULLET] Induismo 
 [ICON_BULLET] Buddismo
 
@@ -11226,7 +11386,7 @@ Se questo numero viene superato, i cittadini cercheranno di espellere dalla citt
 Grilletto:
 [ICON_BULLET] Ogni citt&#224; con 2 (o 3 se lo stato della citt&#224; &#232; citt&#224;) religioni
 [ICON_BULLET] Probabilit&#224; 2% per citt&#224;/round
-[ICON_BULLET] Dall'eresia tecnologica 6% per citt&#224;/round
+[ICON_BULLET] Dall'eresia tecnologica 4% per citt&#224;/round
 
 Impatto:
 [ICON_BULLET] Fase 1: tutte le unit&#224; cittadine vengono ferite e immobilizzate per 1 round
@@ -11253,6 +11413,7 @@ Perch&#233; ebrei e cristiani furono perseguitati?
 [ICON_BULLET] L'ebraismo, cos&#236; come il cristianesimo, rifiutavano il politeismo, il sincretismo e i culti orientali del dio-re a causa della loro fede in un unico Dio creatore (monoteismo).
 [ICON_BULLET] Si consideravano un popolo scelto da questo Dio con una missione verso tutti gli altri popoli (Gen 12:3). Ci&#242; rese impossibile per gli ebrei e i cristiani devoti partecipare ai culti dei popoli circostanti.
 [ICON_BULLET] I cristiani (compresi gli ebrei) rifiutarono per lungo tempo il servizio militare a causa dei loro insegnamenti pacifisti e di quello che consideravano un governante empio. Se un governante empio impartisce un ordine palesemente contrario ai comandamenti divini, allora il soldato obbediente sarebbe colpevole. Con la conversione dell'imperatore Costantino (regno 307-337 d.C.) al cristianesimo, tutto cambi&#242;. Se si combattesse con il giusto stato d'animo, si potrebbe quasi essere obbligati a combattere contro gli altri per il loro bene (Citazione dall'insegnamento cristiano).
+[ICON_BULLET] La circoncisione degli ebrei era considerata una pratica barbara dai sovrani ellenistici e romani.
 
 Perch&#233; i cristiani perseguitavano gli ebrei?
 
@@ -11261,15 +11422,21 @@ Perch&#233; i cristiani perseguitavano gli ebrei?
 
 Una citt&#224; con una religione monoteista o dualistica pu&#242; distruggere le istituzioni pagane:
 
-Grilletto:
-Probabilit&#224; per citt&#224; 1:30, quindi:
-[ICON_BULLET] Citt&#224; ebraica: 5%, Ebraismo come religione di Stato: 20%
-[ICON_BULLET] Citt&#224; cristiana: 10%, cristianesimo come religione di stato: 30%
-[ICON_BULLET] Citt&#224; musulmana: 20%, Islam come religione di stato: 40%
+Trigger (probabilit&#224; per citt&#224;):
+Priorit&#224; 1: Sotto il governo esclusivista: 1:10
+Priorit&#224; 2: Con la tecnologia dell'Editto di Tolleranza: 1:50
+Priorit&#224; 3: Con la tecnologia dell'Eresia: 1:25
+Priorit&#224; 4: 1:40
+
+Probabilit&#224; successiva:
+[ICON_BULLET] Citt&#224; zoroastriana: 10%, Zoroastrismo come religione di stato: 30%
+[ICON_BULLET] Citt&#224; ebraica: 20%, Ebraismo come religione di stato: 50%
+[ICON_BULLET] Citt&#224; cristiana: 30%, Cristianesimo come religione di stato: 50%
+[ICON_BULLET] Citt&#224; musulmana: 40%, Islam come religione di stato: 50%
 
 Impatto:
 [ICON_BULLET] Un culto e i suoi edifici vengono espulsi (tranne le Meraviglie del Mondo)
-[ICON_BULLET] Un'altra religione viene espulsa e il suo tempio distrutto (tranne Meraviglie del Mondo)
+[ICON_BULLET] Un'altra religione viene espulsa e il suo tempio distrutto (tranne Meraviglie del Mondo), vedi espulsione religiosa
 [ICON_BULLET] Anche le citt&#224; sante possono essere colpite
 [ICON_BULLET] Le istituzioni pagane come biblioteche, bagni, teatri, ecc. vengono distrutte (max. 1 edificio per citt&#224;/round)
 
@@ -11307,9 +11474,9 @@ L'IA applica l'espulsione religiosa quando una citt&#224; con pi&#249; di una re
 La religi&#243;n siempre ha jugado un papel cr&#237;tico en la historia de la Humanidad.
 Una tribu sin religi&#243;n se mantiene peque&#241;a y es dif&#237;cil de jugar con ella, por esta raz&#243;n deber&#237;as atrapar/fundar una religi&#243;n lo m&#225;s pronto posible.
 
-Hay 13 religiones. Las religiones polite&#237;stas s&#243;lo pueden ser fundadas por ciertas civilizaciones.
+Hay 14 religiones. Las religiones polite&#237;stas s&#243;lo pueden ser fundadas por ciertas civilizaciones.
 
-Religiones polite&#237;stas
+[H2]Religiones polite&#237;stas[\H2]
 [ICON_BULLET] Mito N&#243;rdico (Germ&#225;nicos)
 [ICON_BULLET] Mito Celta (Celtas y Galos)
 [ICON_BULLET] Mito V&#233;dico/Hinduismo(Indios)
@@ -11319,15 +11486,15 @@ Religiones polite&#237;stas
 [ICON_BULLET] Culto Sumerio (Sumerios y Babilonios)
 [ICON_BULLET] Culto Romano (Romanos y Etruscos)
 
-Religi&#243;n dualista
+[H2]Religi&#243;n dualista[\H2]
 [ICON_BULLET] Zoroastrismo (Persas y Asirios)
 
-[LINK=CONCEPT_CHRISTEN]Religiones monote&#237;stas[\LINK]
+[H2][LINK=CONCEPT_CHRISTEN]Religiones monote&#237;stas[\LINK][\H2]
 [ICON_BULLET] Juda&#237;smo
 [ICON_BULLET] Cristianismo
 [ICON_BULLET] Islam
 
-Religiones asc&#233;ticas
+[H2]Religiones asc&#233;ticas[\H2]
 [ICON_BULLET] Hinduismo
 [ICON_BULLET] Budismo
 
@@ -11346,7 +11513,7 @@ Si se supera esta cifra, los ciudadanos intentar&#225;n expulsar de la ciudad cu
 Desencadenar:
 [ICON_BULLET] Cada ciudad con 2 religiones (o 3 si el estado de la ciudad es ciudad)
 [ICON_BULLET] Probabilidad del 2 % por ciudad/ronda
-[ICON_BULLET] De la Herej&#237;a Tecnol&#243;gica 6% por ciudad/ronda
+[ICON_BULLET] De la Herej&#237;a Tecnol&#243;gica 4% por ciudad/ronda
 
 Impacto:
 [ICON_BULLET] Paso 1: Todas las unidades de la ciudad resultan heridas y quedan inmovilizadas durante 1 ronda.
@@ -11373,6 +11540,7 @@ Una vez que una religi&#243;n monote&#237;sta se ha establecido en una ciudad co
 [ICON_BULLET] El juda&#237;smo, al igual que el cristianismo, rechaz&#243; el polite&#237;smo, el sincretismo y los cultos orientales al dios-rey debido a su creencia en el &#250;nico Dios creador (monote&#237;smo).
 [ICON_BULLET] Se ve&#237;an a s&#237; mismos como un pueblo elegido por este Dios con una misi&#243;n para todos los dem&#225;s pueblos (Gn 12,3). Esto hizo imposible que los jud&#237;os y cristianos devotos participaran en los cultos de los pueblos circundantes.
 [ICON_BULLET] Los cristianos (incluidos los jud&#237;os) rechazaron el servicio militar durante mucho tiempo debido a sus ense&#241;anzas pacifistas y a lo que consideraban un gobernante imp&#237;o. Si un gobernante imp&#237;o da una orden que es obviamente contraria a los mandamientos divinos, entonces el soldado obediente ser&#237;a culpable. Con la conversi&#243;n del emperador Constantino (reinado 307-337 d.C.) al cristianismo, todo cambi&#243;. Si uno luchaba con el estado mental adecuado, casi pod&#237;a verse obligado a luchar contra otros por su propio bien (Cita de la ense&#241;anza cristiana).
+[ICON_BULLET] La circuncisi&#243;n de los jud&#237;os era considerada b&#225;rbara por los gobernantes helen&#237;sticos y romanos.
 
 &#191;Por qu&#233; los cristianos persiguieron a los jud&#237;os?
 
@@ -11381,15 +11549,21 @@ Una vez que una religi&#243;n monote&#237;sta se ha establecido en una ciudad co
 
 Cada ciudad con religi&#243;n monote&#237;sta o dualista puede destruir las instituciones paganas:
 
-Desencadenar:
-Probabilidad por ciudad 1:30, luego:
-[ICON_BULLET] Ciudad jud&#237;a: 5%, Juda&#237;smo como religi&#243;n estatal: 20%
-[ICON_BULLET] Ciudad cristiana: 10%, cristianismo como religi&#243;n estatal: 30%
-[ICON_BULLET] Ciudad musulmana: 20%, Islam como religi&#243;n de Estado: 40%
+Desencadenante (probabilidad por ciudad):
+Prioridad 1: Bajo el gobierno exclusivista: 1:10
+Prioridad 2: Con la tecnolog&#237;a del Edicto de Tolerancia: 1:50
+Prioridad 3: Con la tecnolog&#237;a de la Herej&#237;a: 1:25
+Prioridad 4: 1:40
+
+Probabilidad posterior:
+[ICON_BULLET] Ciudad zoroastriana: 10%, Zoroastrismo como religi&#243;n estatal: 30%
+[ICON_BULLET] Ciudad jud&#237;a: 20%, Juda&#237;smo como religi&#243;n estatal: 50%
+[ICON_BULLET] Ciudad cristiana: 30%, Cristianismo como religi&#243;n estatal: 50%
+[ICON_BULLET] Ciudad musulmana: 40%, Islam como religi&#243;n estatal: 50%
 
 Impacto:
 [ICON_BULLET] Un culto y sus edificios son expulsados (excepto Maravillas del Mundo)
-[ICON_BULLET] Otra religi&#243;n es expulsada y su templo destruido (excepto Maravillas del Mundo)
+[ICON_BULLET] Otra religi&#243;n es expulsada y su templo destruido (excepto Maravillas del Mundo), ver expulsi&#243;n religiosa
 [ICON_BULLET] Las ciudades santas tambi&#233;n pueden verse afectadas
 [ICON_BULLET] Se destruyen instituciones paganas como bibliotecas, ba&#241;os, teatros, etc. (m&#225;ximo 1 edificio por ciudad/ronda).
 
@@ -13328,17 +13502,28 @@ Buy goods in one of your cities (only regional resources possible) and sell them
 [ICON_BULLET]Hint: with Bronze you can build appropriate units without having to create bronze yourself
 [ICON_BULLET]Hint: load cultivable items into a wagon right after a trade and distribute them in your own realm
 
-Modifiers:
+Base Value (Purchase &#38; Sale):
+Livestock, Grain, and Cultivable Resources: 10 [ICON_GOLD]
+Luxury Goods: 20 [ICON_GOLD]
+Rarities: 30 [ICON_GOLD]
+Common Goods: 15 [ICON_GOLD]
+
+If a bonus good is not within the city's radius but is available through the trade network: Purchase Price = Base Value * 2
+
+Modifiers for sales:
 [ICON_BULLET] +1% per population
 [ICON_BULLET] +5% per positive attitude to the civilization
-[ICON_BULLET] +5% per world wonder in the city
-[ICON_BULLET] +20% if the trading partner does not own the resource
+[ICON_BULLET] +10% per world wonder in the city
+[ICON_BULLET] +50% if the trading partner does not own the bonus good
+[ICON_BULLET] -25% if the trading partner already owns the bonus good
+[ICON_BULLET] +25% for merchant ships and caravans
+[ICON_BULLET] +1 [ICON_GOLD] per 5 plots distance
 
 Formula:
-Sum = Base value * (Modifier + 100) / 100 + Base value * Distance // (75-Base value)
-Corruption = maintenance costs of the city * 2
+Sum = base value * (modifiers + 100) / 100 + distance / 5
+Corruption = maintenance costs of the city
 
-Proceeds = Sum-Corruption
+Profit= Sum - Corruption
 
 [ICON_BULLET] The civilization of the trading city also receives a research bonus, provided that the sold goods come from another civilization.
 [ICON_BULLET] For Bronze, Iron or Horse the attitude towards the trading partner can be improved by 1 (Chance 5%)
@@ -13367,9 +13552,9 @@ Chance to build a trade route:
 The trading partner owns the resource: 5%
 Otherwise:
 [ICON_BULLET]Normal: 10%
-[ICON_BULLET]Luxury: 20%
-[ICON_BULLET]Strategic: 25%
-[ICON_BULLET]Rarity: 30%
+[ICON_BULLET]Luxury: 15%
+[ICON_BULLET]Strategic: 20%
+[ICON_BULLET]Rarity: 25%
 
 
 [H1]Trade centers[\H1]
@@ -13424,17 +13609,28 @@ Achetez une ressource locale dans une de vos villes et vendez-la ailleurs. Maxim
 [ICON_BULLET]Conseil : &#233;changer du bronze permet de recruter les unit&#233;s correspondantes sans en poss&#233;der soi-m&#234;me
 [ICON_BULLET]Conseil : chargez directement des biens cultivables d'une Charrette commerciale &#224; un Chariot de c&#233;r&#233;ales et diffusez-les dans votre empire
 
-Modificateurs :
-[ICON_BULLET] +1% par population
-[ICON_BULLET] +5% par point d'appr&#233;ciation envers votre civilisation
-[ICON_BULLET] +5% par merveille mondiale dans la ville
-[ICON_BULLET] +20% si le partenaire d'&#233;change n'a pas acc&#232;s &#224; la ressource
+Valeur de base (achat et vente) :
+B&#233;tail, c&#233;r&#233;ales et ressources cultivables : 10 [ICON_GOLD]
+Articles de luxe : 20 [ICON_GOLD]
+Raret&#233;s : 30 [ICON_GOLD]
+Articles courants : 15 [ICON_GOLD]
+
+Si un article bonus n'est pas disponible dans le rayon de la ville, mais est disponible via le r&#233;seau commercial : Prix d'achat = Valeur de base * 2
+
+Modificateurs de vente :
+[ICON_BULLET] +1 % par population
+[ICON_BULLET] +5 % par point d'appr&#233;ciation envers votre civilisation
+[ICON_BULLET] +10 % par merveille mondiale dans la ville
+[ICON_BULLET] +50 % si le partenaire d'&#233;change n'a pas acc&#232;s &#224; la ressource
+[ICON_BULLET] -25 % si le partenaire commercial poss&#232;de d&#233;j&#224; la ressource
+[ICON_BULLET] +25 % pour les navires marchands et les caravanes
+[ICON_BULLET] +1 [ICON_GOLD] par tranche de 5 cases de distance
 
 Formule :
-Co&#251;t = valeur de base * (Modificateur + 100) / 100 + valeur de base * Distance // (75-valeur de base)
-Corruption = co&#251;t de maintenance de la ville * 2
+Somme = valeur de base * (modificateurs + 100) / 100 + distance / 5
+Corruption = co&#251;t de maintenance de la ville
 
-Recette = Co&#251;t-Corruption
+B&#233;n&#233;fice = somme - corruption
 
 [ICON_BULLET] La civilisation &#224; laquelle appartient la ville marchande re&#231;oit en suppl&#233;ment de l'or et des points de recherche, pourvu que les biens vendus proviennent d'une autre civilisation
 [ICON_BULLET] Le bronze, le fer ou les chevaux ont 5% de chance d'am&#233;liorer les relations du partenaire commercial de +1 
@@ -13463,9 +13659,9 @@ Possibilit&#233; de construire une route commerciale :
 Le partenaire commercial est propri&#233;taire de la ressource : 5 %
 Autrement:
 [ICON_BULLET]Normale : 10 %
-[ICON_BULLET]Luxe : 20 %
-[ICON_BULLET]Strat&#233;gique : 25 %
-[ICON_BULLET]Raret&#233; : 30 %
+[ICON_BULLET]Luxe : 15 %
+[ICON_BULLET]Strat&#233;gique : 20 %
+[ICON_BULLET]Raret&#233; : 25 %
 
 
 [H1]Centres de n&#233;goce[\H1]
@@ -13521,17 +13717,28 @@ Kaufe Waren in einer deiner St&#228;dte (nur regionale Ressourcen m&#246;glich) 
 [ICON_BULLET] Tipp: mit Bronze kannst du entsprechende Einheiten bauen ohne selbst Bronze erzeugen zu m&#252;ssen
 [ICON_BULLET] Tipp: lade kultivierbare G&#252;ter direkt nach einem Handel in ein Fuhrwerk und verbreite sie selbst in deinem Reich
 
-Modifikatoren: 
+Basiswert (Einkauf &#38; Verkauf):
+Vieh, Getreide und kultivierbare Ressourcen: 10 [ICON_GOLD]
+Luxusg&#252;ter: 20 [ICON_GOLD]
+Rarit&#228;ten: 30 [ICON_GOLD]
+Allgemeine Waren: 15 [ICON_GOLD]
+
+Liegt ein Bonusgut nicht im Umkreis der Stadt, sondern ist durch das Handelsnetz verf&#252;gbar: Einkaufspreis = Basiswert * 2
+
+Modifikatoren f&#252;r den Verkauf:
 [ICON_BULLET] +1% pro Population
 [ICON_BULLET] +5% pro positiver Haltung zur Zivilisation
-[ICON_BULLET] +5% pro Weltwunder in der Stadt
-[ICON_BULLET] +20% wenn der Handelspartner das Bonusgut nicht besitzt
+[ICON_BULLET] +10% pro Weltwunder in der Stadt
+[ICON_BULLET] +50% wenn der Handelspartner das Bonusgut nicht besitzt
+[ICON_BULLET] -25% wenn der Handelspartner das Bonusgut bereits besitzt
+[ICON_BULLET] +25% f&#252;r Handelsschiffe und Karawanen
+[ICON_BULLET] +1 [ICON_GOLD] pro 5 Felder Distanz
 
 Formel:
-Summe = Basiswert * (Modifikator+100)/100 + Basiswert * Distanz // (75-Basiswert)
-Korruption = Unterhaltskosten der Stadt * 2
+Summe = Basiswert * (Modifikatoren + 100) / 100 + Distanz / 5
+Korruption = Unterhaltskosten der Stadt
 
-Erl&#246;s = Summe-Korruption
+Profit = Summe - Korruption
 
 [ICON_BULLET] Die Zivilisation der Handelsstadt bekommt zus&#228;tzlich einen Forschungs- und Goldbonus, sofern die verkauften G&#252;ter von einer anderen Zivilisation stammen.
 [ICON_BULLET] F&#252;r Bronze, Eisen oder Pferd kann die Haltung zum Handelspartner um 1 verbessert werden (Chance 5%)
@@ -13560,9 +13767,9 @@ Chance f&#252;r den Bau einer Handelsstra&#223;e:
 Der Handelspartner besitzt die Resource: 5%
 Andernfalls:
 [ICON_BULLET]Normal: 10%
-[ICON_BULLET]Luxus: 20%
-[ICON_BULLET]Strategisch: 25%
-[ICON_BULLET]Rarit&#228;t: 30%
+[ICON_BULLET]Luxus: 15%
+[ICON_BULLET]Strategisch: 20%
+[ICON_BULLET]Rarit&#228;t: 25%
 
 
 [H1]Handelszentren[\H1]
@@ -13618,17 +13825,28 @@ Acquista beni in una delle tue citt&#224; (sono possibili solo le risorse locali
 [ICON_BULLET]Suggerimento: con il Bronzo puoi costruire unit&#224; appropriate senza dover possedere la risorsa Bronzo sul tuo territorio
 [ICON_BULLET]Suggerimento: carica gli oggetti coltivabili in un carro subito dopo uno scambio e posizionali nel tuo regno
 
-Modificatori:
+Valore base (acquisto e vendita):
+Bestiame, grano e risorse coltivabili: 10 [ICON_GOLD]
+Beni di lusso: 20 [ICON_GOLD]
+Rarit&#224;: 30 [ICON_GOLD]
+Beni comuni: 15 [ICON_GOLD]
+
+Se un bene bonus non si trova nel raggio della citt&#224; ma &#232; disponibile tramite la rete commerciale: Prezzo di acquisto = Valore base * 2
+
+Modificatori di vendita:
 [ICON_BULLET] +1% per popolazione
 [ICON_BULLET] +5% per atteggiamento positivo nei confronti della civilt&#224;
-[ICON_BULLET] +5% per meraviglia del mondo nella citt&#224;
-[ICON_BULLET] +20% se il partner commerciale non possiede la risorsa
+[ICON_BULLET] +10% per meraviglia del mondo nella citt&#224;
+[ICON_BULLET] +50% se il partner commerciale non possiede la risorsa
+[ICON_BULLET] -25% se il partner commerciale possiede gi&#224; il bene bonus
+[ICON_BULLET] +25 % per navi mercantili e carovane
+[ICON_BULLET] +1 [ICON_GOLD] ogni 5 spazi di distanza
 
 Formula:
-Somma = Valore base * (Modificatore + 100) / 100 + Valore base * Distanza // (75-Valore base)
+Somma = Valore base * (Modificatore + 100) / 100 + Distanza / 5
 Corruzione = costi di manutenzione della citt&#224; * 2
 
-Proventi = Somma-Corruzione
+Profitto = somma - corruzione
 
 [ICON_BULLET] La civilt&#224; della citt&#224; commerciale riceve anche un bonus in ricerca e oro, a condizione che le merci vendute provengano da un'altra civilt&#224;.
 [ICON_BULLET] Per Bronzo, Ferro o Cavallo l'atteggiamento nei confronti del partner commerciale pu&#242; essere migliorato di 1 (probabilit&#224; del 5%)
@@ -13655,9 +13873,9 @@ Possibilit&#224; di costruire una rotta commerciale:
 Il partner commerciale possiede la risorsa: 5%
 Altrimenti:
 [ICON_BULLET]Normale: 10%
-[ICON_BULLET]Lusso: 20%
-[ICON_BULLET]Strategico: 25%
-[ICON_BULLET]Rarit&#224;: 30%
+[ICON_BULLET]Lusso: 15%
+[ICON_BULLET]Strategico: 20%
+[ICON_BULLET]Rarit&#224;: 25%
 
 
 [H1] Centri commerciali [\H1]
@@ -13713,17 +13931,28 @@ Compra productos en una de tus ciudades (solo son posibles recursos regionales) 
 [ICON_BULLET]Pista: con Bronce puedes construir unidades apropiadas sin tener que crear bronce t&#250; mismo
 [ICON_BULLET]Pista: carga art&#237;culos cultivables en un carro de granos justo despu&#233;s de un intercambio y distrib&#250;yelos en tu propio reino.
 
-Modificadores:
+Valor base (compra y venta):
+Gano, grano y recursos cultivables: 10 [ICON_GOLD]
+Art&#237;culos de lujo: 20 [ICON_GOLD]
+Art&#237;culos raros: 30 [ICON_GOLD]
+Art&#237;culos comunes: 15 [ICON_GOLD]
+
+Si un art&#237;culo adicional no est&#225; dentro del radio de la ciudad, pero est&#225; disponible a trav&#233;s de la red comercial: Precio de compra = Valor base * 2
+
+Modificadores de venta:
 [ICON_BULLET] +1% por poblaci&#243;n
 [ICON_BULLET] +5% por actitud positiva hacia la civilizaci&#243;n
 [ICON_BULLET] +5% por maravilla del mundo en la ciudad
-[ICON_BULLET] +20 % si el socio comercial no es propietario del recurso
+[ICON_BULLET] +20% si el socio comercial no es propietario del recurso
+[ICON_BULLET] -25% si el socio comercial ya posee del recurso
+[ICON_BULLET] +25% para barcos mercantes y caravanas
+[ICON_BULLET] +1 [ICON_GOLD] por cada 5 espacios de distancia
 
 F&#243;rmula:
-Suma = Valor base * (Modificador + 100) / 100 + Valor base * Distancia // (75-Valor base)
+Suma = Valor base * (Modificador + 100) / 100 + Distancia / 5
 Corrupci&#243;n = costos de mantenimiento de la ciudad * 2
 
-Ingresos = Suma de Corrupci&#243;n
+Beneficio = suma - corrupci&#243;n
 
 [ICON_BULLET] La civilizaci&#243;n de la ciudad comercial tambi&#233;n recibe una bonificaci&#243;n de investigaci&#243;n y oro, siempre que los bienes vendidos provengan de otra civilizaci&#243;n.
 [ICON_BULLET] Para Bronce, Hierro o Caballo, la actitud hacia el socio comercial se puede mejorar en 1 (posibilidad 5%)
@@ -13752,9 +13981,9 @@ Posibilidad de construir una ruta comercial:
 El socio comercial posee el recurso: 5%
 De lo contrario:
 [ICON_BULLET]Normal: 10 %
-[ICON_BULLET]Lujo: 20 %
-[ICON_BULLET]Estrat&#233;gico: 25 %
-[ICON_BULLET]Rareza: 30 %
+[ICON_BULLET]Lujo: 15 %
+[ICON_BULLET]Estrat&#233;gico: 20 %
+[ICON_BULLET]Rareza: 25 %
 
 
 [H1]Centros comerciales[\H1]
@@ -15392,7 +15621,7 @@ In PAE, usurpers appear when a great general dies in battle. Then it can happen 
 If you are in the "Polyarchy" government, this event will not trigger. If you no longer own any provincial palaces, this event cannot be triggered either.
 
 
-A second way usurpers can arise is through standing generals. If you have more than one general in your country, a demand for money may arise. This general demands one-third of the state treasury. If you don't comply with this request, the general and his army will become barbaric. If there are fewer than 10 units, they will be reinforced with the appropriate auxiliary troops. The probability of the tribute demand is number of generals : 200. This event is prevented if the general is in a city.
+A second way usurpers can arise is through standing generals. If you have more than one general in your country, a demand for money may arise. This general demands one-third of the state treasury. If you don't comply with this request, the general and his army will become barbaric. If there are fewer than 10 units, they will be reinforced with the appropriate auxiliary troops. The probability of the tribute demand is "number of generals" : 400. This event is prevented if the general is in a city or a fortress.
 
 
 Usurpers were not only found in the Roman Empire; in Egypt, China, Persia, the Greek city-states, the Diadochi, etc., there were also several rulers who came to power through seizure of power or intrigue.</English>
@@ -15406,7 +15635,7 @@ Dans PAE, les usurpateurs apparaissent lorsqu'un grand g&#233;n&#233;ral meurt a
 Si vous &#234;tes membre du gouvernement "Polyarchie", cet &#233;v&#233;nement ne se d&#233;clenchera pas. Si vous ne poss&#233;dez plus de palais provinciaux, cet &#233;v&#233;nement ne se d&#233;clenchera pas non plus.
 
 
-Une deuxi&#232;me fa&#231;on pour les usurpateurs de se manifester est par l'interm&#233;diaire des g&#233;n&#233;raux permanents. Si votre pays compte plus d'un g&#233;n&#233;ral, une demande d'argent peut survenir. Ce g&#233;n&#233;ral exige un tiers du tr&#233;sor public. Si vous n'acc&#233;dez pas &#224; cette demande, le g&#233;n&#233;ral et son arm&#233;e deviendront barbares. S'il y a moins de 10 unit&#233;s, elles seront renforc&#233;es par les troupes auxiliaires appropri&#233;es. La probabilit&#233; de la demande de tribut est le nombre de g&#233;n&#233;raux : 200. Cet &#233;v&#233;nement est &#233;vit&#233; si le g&#233;n&#233;ral est en ville.
+Une deuxi&#232;me fa&#231;on pour les usurpateurs de se manifester est par l'interm&#233;diaire des g&#233;n&#233;raux permanents. Si votre pays compte plus d'un g&#233;n&#233;ral, une demande d'argent peut survenir. Ce g&#233;n&#233;ral exige un tiers du tr&#233;sor public. Si vous n'acc&#233;dez pas &#224; cette demande, le g&#233;n&#233;ral et son arm&#233;e deviendront barbares. S'il y a moins de 10 unit&#233;s, elles seront renforc&#233;es par les troupes auxiliaires appropri&#233;es. La probabilit&#233; de la demande de tribut est le "nombre de g&#233;n&#233;raux" : 400. Cet &#233;v&#233;nement est &#233;vit&#233; si le g&#233;n&#233;ral est dans une ville ou forteresse.
 
 
 Les usurpateurs ne se trouvaient pas seulement dans l'Empire romain ; en &#201;gypte, en Chine, en Perse, dans les cit&#233;s-&#201;tats grecques, chez les Diadoques, etc., il y avait aussi plusieurs dirigeants qui arrivaient au pouvoir par prise de pouvoir ou par intrigue.
@@ -15421,7 +15650,7 @@ In PAE tauchen Usurpatoren auf, wenn ein Gro&#223;er General in einer Schlacht s
 Sollte man sich in der Staatsform "Polyarchie" befinden, wird dieses Event nicht ausgel&#246;st. Wenn man keine Provinzpal&#228;ste (mehr) besitzt, kann dieses Event ebenfalls nicht ausgel&#246;st werden.
 
 
-Eine zweite M&#246;glichkeit, wie es zu Usurpatoren kommen kann, sind stehende Gener&#228;le. Wenn man mehr als einen General in seinem Land stehen hat, kann es zu einer Geldforderung kommen. Dieser verlangt ein Drittel des Staatsschatzes. Sollte man seinem Bitten nicht nachkommen, wird dieser mit samt seiner Armee barbarisch. Sollten es weniger als 10 Einheiten sein, wird mit entsprechenden Hilfstrupps aufgestockt. Die Wahrscheinlichkeit f&#252;r die Tributaufforderung betr&#228;gt Anzahl der Gener&#228;le : 200. Das Event wird verhindert, wenn der General in einer Stadt steht.
+Eine zweite M&#246;glichkeit, wie es zu Usurpatoren kommen kann, sind stehende Gener&#228;le. Wenn man mehr als einen General in seinem Land stehen hat, kann es zu einer Geldforderung kommen. Dieser verlangt ein Drittel des Staatsschatzes. Sollte man seinem Bitten nicht nachkommen, wird dieser mit samt seiner Armee barbarisch. Sollten es weniger als 10 Einheiten sein, wird mit entsprechenden Hilfstrupps aufgestockt. Die Wahrscheinlichkeit f&#252;r die Tributaufforderung betr&#228;gt "Anzahl der Gener&#228;le" : 400. Das Event wird verhindert, wenn der General in einer Stadt oder einer Festung steht.
 
 
 Usurpatoren gab es nicht nur im r&#246;mischen Reich, auch in &#196;gypten, China, Persien, den griechischen Stadtstaaten, Diadochen usw. gab es mehrere Herrscher, die sich durch Macht&#252;bernahme oder Intrigen an die Spitze setzten.
@@ -15436,7 +15665,7 @@ In PAE, gli usurpatori compaiono quando un grande generale muore in battaglia. I
 Se ti trovi nel governo "Poliarchia", questo evento non si attiver&#224;. Anche se non possiedi pi&#249; alcun palazzo provinciale, questo evento non si attiver&#224;.
 
 
-Un secondo modo in cui gli usurpatori possono emergere &#232; attraverso generali permanenti. Se hai pi&#249; di un generale nel tuo paese, potrebbe sorgere una richiesta di denaro. Questo generale richiede un terzo del tesoro dello Stato. Se non accogli questa richiesta, il generale e il suo esercito diventeranno barbari. Se ci sono meno di 10 unit&#224;, saranno rinforzate con le truppe ausiliarie appropriate. La probabilit&#224; che venga richiesto un tributo &#232; pari al numero di generali : 200. Questo evento &#232; impedito se il generale si trova in una citt&#224;.
+Un secondo modo in cui gli usurpatori possono emergere &#232; attraverso generali permanenti. Se hai pi&#249; di un generale nel tuo paese, potrebbe sorgere una richiesta di denaro. Questo generale richiede un terzo del tesoro dello Stato. Se non accogli questa richiesta, il generale e il suo esercito diventeranno barbari. Se ci sono meno di 10 unit&#224;, saranno rinforzate con le truppe ausiliarie appropriate. La probabilit&#224; che venga richiesto un tributo &#232; pari al "numero di generali" : 400. Questo evento &#232; impedito se il generale si trova in una citt&#224; o una fortezza.
 
 
 Gli usurpatori non si trovavano solo nell'Impero romano; anche in Egitto, Cina, Persia, nelle citt&#224;-stato greche, nei Diadochi, ecc., vi furono diversi sovrani che giunsero al potere attraverso la presa del potere o l'intrigo.
@@ -15451,7 +15680,7 @@ En PAE, los usurpadores aparecen cuando un gran general muere en batalla. Entonc
 Si perteneces al gobierno de la "Poliarqu&#237;a", este evento no se activar&#225;. Si ya no posees palacios provinciales, este evento tampoco se activar&#225;.
 
 
-Una segunda forma de que surjan usurpadores es a trav&#233;s de generales permanentes. Si tienes m&#225;s de un general en tu pa&#237;s, podr&#237;a surgir una demanda de dinero. Este general exige un tercio del tesoro estatal. Si no cumples con esta petici&#243;n, el general y su ej&#233;rcito se volver&#225;n b&#225;rbaros. Si hay menos de 10 unidades, se reforzar&#225;n con las tropas auxiliares correspondientes. La probabilidad de la demanda de tributo es el n&#250;mero de generales : 200. Este evento se evita si el general se encuentra en una ciudad.
+Una segunda forma de que surjan usurpadores es a trav&#233;s de generales permanentes. Si tienes m&#225;s de un general en tu pa&#237;s, podr&#237;a surgir una demanda de dinero. Este general exige un tercio del tesoro estatal. Si no cumples con esta petici&#243;n, el general y su ej&#233;rcito se volver&#225;n b&#225;rbaros. Si hay menos de 10 unidades, se reforzar&#225;n con las tropas auxiliares correspondientes. La probabilidad de la demanda de tributo es el "n&#250;mero de generales" : 400. Este evento se evita si el general se encuentra en una ciudad o una fortaleza.
 
 
 Los usurpadores no s&#243;lo se encontraron en el Imperio Romano; en Egipto, China, Persia, las ciudades-estado griegas, los di&#225;docos, etc., tambi&#233;n hubo varios gobernantes que llegaron al poder mediante la toma del poder o la intriga.

@@ -15,9 +15,9 @@ import sys
 
 # For Civ game code access
 from CvPythonExtensions import (CyGlobalContext, CyTranslator, CyPythonMgr,
-										CyInterface, CyGame, CardinalDirectionTypes,
-										UnitAITypes, FontSymbols, YieldTypes,
-										CommerceTypes, shuffleList, DirectionTypes)
+								CyInterface, CyGame, CardinalDirectionTypes,
+								UnitAITypes, FontSymbols, YieldTypes,
+								CommerceTypes, shuffleList, DirectionTypes)
 
 # For ScriptData dict
 import simplejson as json
@@ -525,8 +525,7 @@ def initDynamicFontIcons():
 				# print key
 				FontIconMap[key] = (u"%c" %
 														CyGame().getSymbolID(OtherFontIcons.get(key)))
-
-	# print FontIconMap
+		# print FontIconMap
 
 
 def addIconToMap(infoChar, desc):
@@ -539,44 +538,44 @@ def addIconToMap(infoChar, desc):
 
 
 OtherFontIcons = {'happy': FontSymbols.HAPPY_CHAR,
-									'unhappy': FontSymbols.UNHAPPY_CHAR,
-									'healthy': FontSymbols.HEALTHY_CHAR,
-									'unhealthy': FontSymbols.UNHEALTHY_CHAR,
-									'bullet': FontSymbols.BULLET_CHAR,
-									'strength': FontSymbols.STRENGTH_CHAR,
-									'moves': FontSymbols.MOVES_CHAR,
-									'religion': FontSymbols.RELIGION_CHAR,
-									'star': FontSymbols.STAR_CHAR,
-									'silver star': FontSymbols.SILVER_STAR_CHAR,
-									'trade': FontSymbols.TRADE_CHAR,
-									'defense': FontSymbols.DEFENSE_CHAR,
-									'greatpeople': FontSymbols.GREAT_PEOPLE_CHAR,
-									'badgold': FontSymbols.BAD_GOLD_CHAR,
-									'badfood': FontSymbols.BAD_FOOD_CHAR,
-									'eatenfood': FontSymbols.EATEN_FOOD_CHAR,
-									'goldenage': FontSymbols.GOLDEN_AGE_CHAR,
-									'angrypop': FontSymbols.ANGRY_POP_CHAR,
-									'openBorders': FontSymbols.OPEN_BORDERS_CHAR,
-									'defensivePact': FontSymbols.DEFENSIVE_PACT_CHAR,
-									'map': FontSymbols.MAP_CHAR,
-									'occupation': FontSymbols.OCCUPATION_CHAR,
-									'power': FontSymbols.POWER_CHAR,
-									}
+						'unhappy': FontSymbols.UNHAPPY_CHAR,
+						'healthy': FontSymbols.HEALTHY_CHAR,
+						'unhealthy': FontSymbols.UNHEALTHY_CHAR,
+						'bullet': FontSymbols.BULLET_CHAR,
+						'strength': FontSymbols.STRENGTH_CHAR,
+						'moves': FontSymbols.MOVES_CHAR,
+						'religion': FontSymbols.RELIGION_CHAR,
+						'star': FontSymbols.STAR_CHAR,
+						'silver star': FontSymbols.SILVER_STAR_CHAR,
+						'trade': FontSymbols.TRADE_CHAR,
+						'defense': FontSymbols.DEFENSE_CHAR,
+						'greatpeople': FontSymbols.GREAT_PEOPLE_CHAR,
+						'badgold': FontSymbols.BAD_GOLD_CHAR,
+						'badfood': FontSymbols.BAD_FOOD_CHAR,
+						'eatenfood': FontSymbols.EATEN_FOOD_CHAR,
+						'goldenage': FontSymbols.GOLDEN_AGE_CHAR,
+						'angrypop': FontSymbols.ANGRY_POP_CHAR,
+						'openBorders': FontSymbols.OPEN_BORDERS_CHAR,
+						'defensivePact': FontSymbols.DEFENSIVE_PACT_CHAR,
+						'map': FontSymbols.MAP_CHAR,
+						'occupation': FontSymbols.OCCUPATION_CHAR,
+						'power': FontSymbols.POWER_CHAR,
+						}
 
 GlobalInfosMap = {'bonus': {'NUM': gc.getNumBonusInfos, 'GET': gc.getBonusInfo},
-									'improvement': {'NUM': gc.getNumImprovementInfos, 'GET': gc.getImprovementInfo},
-									'yield': {'NUM': YieldTypes.NUM_YIELD_TYPES, 'GET': gc.getYieldInfo},
-									'religion': {'NUM': gc.getNumReligionInfos, 'GET': gc.getReligionInfo},
-									'tech': {'NUM': gc.getNumTechInfos, 'GET': gc.getTechInfo},
-									'unit': {'NUM': gc.getNumUnitInfos, 'GET': gc.getUnitInfo},
-									'civic': {'NUM': gc.getNumCivicInfos, 'GET': gc.getCivicInfo},
-									'building': {'NUM': gc.getNumBuildingInfos, 'GET': gc.getBuildingInfo},
-									'terrain': {'NUM': gc.getNumTerrainInfos, 'GET': gc.getTerrainInfo},
-									'trait': {'NUM': gc.getNumTraitInfos, 'GET': gc.getTraitInfo},
-									'feature': {'NUM': gc.getNumFeatureInfos, 'GET': gc.getFeatureInfo},
-									'route': {'NUM': gc.getNumRouteInfos, 'GET': gc.getRouteInfo},
-									'promotion': {'NUM': gc.getNumPromotionInfos, 'GET': gc.getPromotionInfo},
-									}
+						'improvement': {'NUM': gc.getNumImprovementInfos, 'GET': gc.getImprovementInfo},
+						'yield': {'NUM': YieldTypes.NUM_YIELD_TYPES, 'GET': gc.getYieldInfo},
+						'religion': {'NUM': gc.getNumReligionInfos, 'GET': gc.getReligionInfo},
+						'tech': {'NUM': gc.getNumTechInfos, 'GET': gc.getTechInfo},
+						'unit': {'NUM': gc.getNumUnitInfos, 'GET': gc.getUnitInfo},
+						'civic': {'NUM': gc.getNumCivicInfos, 'GET': gc.getCivicInfo},
+						'building': {'NUM': gc.getNumBuildingInfos, 'GET': gc.getBuildingInfo},
+						'terrain': {'NUM': gc.getNumTerrainInfos, 'GET': gc.getTerrainInfo},
+						'trait': {'NUM': gc.getNumTraitInfos, 'GET': gc.getTraitInfo},
+						'feature': {'NUM': gc.getNumFeatureInfos, 'GET': gc.getFeatureInfo},
+						'route': {'NUM': gc.getNumRouteInfos, 'GET': gc.getRouteInfo},
+						'promotion': {'NUM': gc.getNumPromotionInfos, 'GET': gc.getPromotionInfo},
+						}
 
 
 # Ramk - Helperfunctions to en- and decode script data strings
@@ -718,8 +717,10 @@ def _decode_dict(data):
 						value = _decode_dict(value)
 				rv[key] = value
 		return rv
+# Ramk - End
 
 
+# PitbossHost
 __isPitbossHost = None
 def isPitbossHost():
 	global __isPitbossHost
@@ -733,4 +734,3 @@ def isPitbossHost():
 		__isPitbossHost = False
 
 	return __isPitbossHost
-#### Ramk - End

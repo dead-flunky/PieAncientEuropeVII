@@ -308,8 +308,8 @@ def doReligionsKonflikt(pCity):
 				if i != iStateReligion:
 					LOtherReligions.append(i)
 
-		# größere Städte dürfen mehr Religionen gleichzeitig haben
-		# friedvolle Anzahl: je nach Stadtgröße 1-3 verschiedene Religionen
+		# Große Städte dürfen mehr Religionen gleichzeitig haben
+		# friedvolle Anzahl:
 		# PAE 7.12: Maximal 2 (wegen Verbreitungsmöglichkeit)!! Alles andere wäre noch unrealistischer für damalige Zeiten!
 		iPuffer = 1
 		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")): iPuffer += 1
@@ -359,8 +359,8 @@ def doReligionsKonflikt(pCity):
 					pPlayer.trigger(iEvent)
 					pPlayer.resetEventOccured(iEvent)
 
-			# Stufe 4a: 1:4 Stadt verliert Pop und ggf Religion
-			if CvUtil.myRandom(4, "ReligionsKonflikt6") == 1:
+			# Stufe 4a: 3:4 Stadt verliert Pop und ggf Religion
+			if CvUtil.myRandom(4, "ReligionsKonflikt6") < 3:
 				# Pop abziehen
 				iPop = pCity.getPopulation() // 5
 				iPop = max(1,iPop)
@@ -390,7 +390,7 @@ def doReligionsKonflikt(pCity):
 					# PAE 7.12a: Gläubiger wandern aus
 					doDiaspora(pCity, iReligion)
 
-			# Stufe 4b: 1:5 Bürgerkrieg
+			# Stufe 4b: 1:4 Bürgerkrieg
 			else:
 				PAE_City.doStartCivilWar(pCity, 20)
 
@@ -404,66 +404,47 @@ def doReligionsKonflikt(pCity):
 		return False
 
 
-# PAE 7.12a
-# Ausgetriebene Gläubige im Umkreis von x in eine Stadt ansiedeln (80%)
-# Wenn in diesem Umkreis bereits eine Stadt mit dieser Religion ist: break
-# if Stadt < 5: Pop +1 else +Food
-def doDiaspora(pCity, iReligion):
-	if pCity.isNone(): return
+# ------- Religionskonflikte PHASE 2 -------------------- #
+# Eventmanager onUnitBuilt
+# Wenn eine monotheistische Religion in der Stadt ist, aber diese nicht als Staatsreligion deklariert ist, verweigert die Einheit den Kriegsdienst
+# Feature wird mit Toleranzedikt beendet (ausser bei Staatsform Exklusivismus)
+def doRefuseUnitBuilt(pCity, pUnit):
+		if not pUnit.isMilitaryHappiness():
+				return
 
-	# 20% Chance, dass keine Auswanderung zustande kommt
-	if CvUtil.myRandom(10, "doDiaspora") < 2: return
+		iPlayer = pCity.getOwner()
+		pPlayer = gc.getPlayer(iPlayer)
 
-	iRange = 10
-	iX = pCity.getX()
-	iY = pCity.getY()
-	lCities1 = [] #  mit iReligion (Prio 1)
-	lCities2 = [] # ohne iReligion (Prio 2)
-	for i in range(-iRange, iRange+1):
-		for j in range(-iRange, iRange+1):
-			loopPlot = plotXY(iX, iY, i, j)
-			if loopPlot is not None and not loopPlot.isNone():
-				if loopPlot.isCity():
-					loopCity = loopPlot.getPlotCity()
-					if loopCity.isHasReligion(iReligion):
-						lCities1.append(loopCity)
-					else:
-						lCities2.append(loopCity)
+		if not pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_EXCLUSIVE")) and gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_TOLERANZ")):
+				return
 
-	# Primär Städte mit dieser Religion (Gemeinschaft)
-	if len(lCities1):
-		iRand = CvUtil.myRandom(len(lCities1), "doDiasporaCities1")
-		loopCity = lCities1[iRand]
-	# Sekundär Neuanfang
-	elif len(lCities2):
-		iRand = CvUtil.myRandom(len(lCities2), "doDiasporaCities2")
-		loopCity = lCities2[iRand]
-	else:
-		return
+		LText = []
+		bRefuse = False
+		for i in L.LMonoReligions:
+				if pCity.isHasReligion(i) and pPlayer.getStateReligion() != i:
+					bRefuse = True
+					if i == gc.getInfoTypeForString("RELIGION_JUDAISM"):
+						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_1")
+						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_2")
+						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_3")
+					elif i == gc.getInfoTypeForString("RELIGION_CHRISTIANITY"):
+						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_4")
+						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_5")
+						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_6")
+					elif i == gc.getInfoTypeForString("RELIGION_ISLAM"):
+						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_7")
 
-	iOwner = loopCity.getOwner()
-	pOwner = gc.getPlayer(iOwner)
-	if loopCity.isHasReligion(iReligion):
-		if pOwner.isHuman():
-			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_1", (pCity.getName(),loopCity.getName(),iReligion)),
-			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
-	else:
-		loopCity.setHasReligion(iReligion, 1, 0, 0)
-		if pOwner.isHuman():
-			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_2", (pCity.getName(),loopCity.getName(),iReligion)),
-			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
-
-	if loopCity.getPopulation() < 4:
-		loopCity.changePopulation(1)
-		PAE_City.doCheckCityState(loopCity)
-	else:
-		iFoodChange = (loopCity.growthThreshold() - loopCity.getFood()) / 2
-		loopCity.changeFood(iFoodChange)
+		if bRefuse and CvUtil.myRandom(10, "iRandReligionUnitBuiltRefuse") == 1:
+				iRandText = CvUtil.myRandom(len(LText), "iRandReligionUnitBuiltRefuseText")
+				pUnit.kill(True, -1)
+				if pPlayer.isHuman():
+						szText = u"%s(%s): " % (pCity.getName(),pUnit.getName()) + CyTranslator().getText(LText[iRandText], ())
+						CyInterface().addMessage(iPlayer, True, 10, szText, None, 2, pUnit.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 
 
 # ------- Religionskonflikte PHASE 3 -------------------- #
-# Staatsreligionen weisen alle anderen Religionen ab (ab Tech Heresy)
+# Monotheistische Staatsreligionen weisen alle anderen Religionen ab
 
 # CvEventManager: onCityDoTurn
 def removePagans(pCity):
@@ -473,48 +454,51 @@ def removePagans(pCity):
 
 		if pCity is None or pCity.isNone() or pCity.getName() == "": return False
 
-		# 1. Check: 1:30
-		if CvUtil.myRandom(30, "removePagans") > 0: return False
-
 		iPlayer = pCity.getOwner()
 		pPlayer = gc.getPlayer(iPlayer)
 		pTeam = gc.getTeam(pPlayer.getTeam())
 
-		if not pTeam.isHasTech(gc.getInfoTypeForString("TECH_HERESY")): return False
+		# 1. Check:
+		iChance = 40
+		if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HERESY")): iChance = 25
+		if pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_EXCLUSIVE")): iChance = 10
+		elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_TOLERANZ")): iChance = 50
+		if CvUtil.myRandom(iChance, "removePagans") > 0: return False
 
 		# Dogmatische Religionen
 		iJudentum = gc.getInfoTypeForString("RELIGION_JUDAISM")
 		iChristentum = gc.getInfoTypeForString("RELIGION_CHRISTIANITY")
 		iIslam = gc.getInfoTypeForString("RELIGION_ISLAM")
-		#LReligions = [iIslam, iChristentum, iJudentum]
+		iZoro = gc.getInfoTypeForString("RELIGION_ZORO")
+		LReligions = [iIslam, iChristentum, iJudentum, iZoro]
 		iStateReligion = pPlayer.getStateReligion()
 		lCorp = []
 		lReli = []
 
-		#for iReligion in LReligions:
-		for iReligion in range(gc.getNumReligionInfos()):
+		#for iReligion in range(gc.getNumReligionInfos()):
+		for iReligion in LReligions:
 				#if gc.getGame().isReligionFounded(iReligion):
 				if pCity.isHasReligion(iReligion):
 
 					# 2. Check: Chance to abort
 					iChance = 0
-					iRand = CvUtil.myRandom(20, "removePagans")
-					# 20% bzw 40%
+					iRand = CvUtil.myRandom(10, "removePagans")
+					# Islam: 40% bzw 50%
 					if iReligion == iIslam:
 						iChance = 4
 						if iStateReligion == iReligion:
-							iChance = 8
-					# 10% bzw 30%
+							iChance = 5
+					# Christentum: 30% bzw 50%
 					elif iReligion == iChristentum:
+						iChance = 3
+						if iStateReligion == iReligion:
+							iChance = 5
+					# Judentum: 20% bzw 50%
+					elif iReligion == iJudentum:
 						iChance = 2
 						if iStateReligion == iReligion:
-							iChance = 6
-					# 5% bzw 20%
-					elif iReligion == iJudentum:
-						iChance = 1
-						if iStateReligion == iReligion:
-							iChance = 4
-					# 5% bzw 15%
+							iChance = 5
+					# Zoroastrismus: 10% bzw 20%
 					else:
 						iChance = 1
 						if iStateReligion == iReligion:
@@ -618,7 +602,7 @@ def removePagans(pCity):
 							# "Art/Interface/Buttons/Actions/button_kreuz.dds"
 						return True
 
-					# danach pagane Gebäude zerstören (wenn Relis und Kulte weg sind)
+					# wenn keine Kulte oder pagane Religionen mehr in der Stadt sind -> andere pagane Gebäude zerstören
 					if doRemovePaganBuilding(iPlayer,pCity,iReligion): return True
 
 		return False
@@ -842,38 +826,58 @@ def canSpreadChristentumOverall():
 		return False
 
 
-# Eventmanager onUnitBuilt
-# Wenn eine monotheistische Religionen in der Stadt ist, aber diese nicht als Staatsreligion deklariert ist, verweigert die Einheit den Kriegsdienst
-# Feature wird mit Toleranzedikt beendet (ausser bei Staatsform Exklusivismus)
-def doRefuseUnitBuilt(pCity, pUnit):
-		if not pUnit.isMilitaryHappiness():
-				return
+# PAE 7.12a
+# Ausgetriebene Gläubige im Umkreis von x in eine Stadt ansiedeln (80%)
+# Wenn in diesem Umkreis bereits eine Stadt mit dieser Religion ist: break
+# if Stadt < 5: Pop +1 else +Food
+def doDiaspora(pCity, iReligion):
+	if pCity.isNone(): return
 
-		iPlayer = pCity.getOwner()
-		pPlayer = gc.getPlayer(iPlayer)
+	# 20% Chance, dass keine Auswanderung zustande kommt
+	if CvUtil.myRandom(10, "doDiaspora") < 2: return
 
-		if not pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_EXCLUSIVE")) and gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_TOLERANZ")):
-				return
+	iRange = 10
+	iX = pCity.getX()
+	iY = pCity.getY()
+	lCities1 = [] #  mit iReligion (Prio 1)
+	lCities2 = [] # ohne iReligion (Prio 2)
+	for i in range(-iRange, iRange+1):
+		for j in range(-iRange, iRange+1):
+			loopPlot = plotXY(iX, iY, i, j)
+			if loopPlot is not None and not loopPlot.isNone():
+				if loopPlot.isCity():
+					loopCity = loopPlot.getPlotCity()
+					if loopCity.isHasReligion(iReligion):
+						lCities1.append(loopCity)
+					else:
+						lCities2.append(loopCity)
 
-		LText = []
-		bRefuse = False
-		for i in L.LMonoReligions:
-				if pCity.isHasReligion(i) and pPlayer.getStateReligion() != i:
-					bRefuse = True
-					if i == gc.getInfoTypeForString("RELIGION_JUDAISM"):
-						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_1")
-						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_2")
-						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_3")
-					elif i == gc.getInfoTypeForString("RELIGION_CHRISTIANITY"):
-						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_4")
-						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_5")
-						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_6")
-					elif i == gc.getInfoTypeForString("RELIGION_ISLAM"):
-						LText.append("TXT_RELIGION_UNIT_BUILT_INFO_7")
+	# Primär Städte mit dieser Religion (Gemeinschaft)
+	if len(lCities1):
+		iRand = CvUtil.myRandom(len(lCities1), "doDiasporaCities1")
+		loopCity = lCities1[iRand]
+	# Sekundär Neuanfang
+	elif len(lCities2):
+		iRand = CvUtil.myRandom(len(lCities2), "doDiasporaCities2")
+		loopCity = lCities2[iRand]
+	else:
+		return
 
-		if bRefuse and CvUtil.myRandom(10, "iRandReligionUnitBuiltRefuse") == 1:
-				iRandText = CvUtil.myRandom(len(LText), "iRandReligionUnitBuiltRefuseText")
-				pUnit.kill(True, -1)
-				if pPlayer.isHuman():
-						szText = u"%s: " % (pCity.getName()) + CyTranslator().getText(LText[iRandText], ())
-						CyInterface().addMessage(iPlayer, True, 10, szText, None, 2, pUnit.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+	iOwner = loopCity.getOwner()
+	pOwner = gc.getPlayer(iOwner)
+	if loopCity.isHasReligion(iReligion):
+		if pOwner.isHuman():
+			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_1", (pCity.getName(),loopCity.getName(),iReligion)),
+			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
+	else:
+		loopCity.setHasReligion(iReligion, 1, 0, 0)
+		if pOwner.isHuman():
+			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_2", (pCity.getName(),loopCity.getName(),iReligion)),
+			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
+
+	if loopCity.getPopulation() < 4:
+		loopCity.changePopulation(1)
+		PAE_City.doCheckCityState(loopCity)
+	else:
+		iFoodChange = (loopCity.growthThreshold() - loopCity.getFood()) / 2
+		loopCity.changeFood(iFoodChange)

@@ -183,7 +183,7 @@
 			<Yields>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-				<iYield>1</iYield>
+				<iYield>2</iYield>
 			</Yields>
 			<Commerces/>
 			<iExperience>0</iExperience>
@@ -374,7 +374,7 @@
 			<Yields>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
-				<iYield>1</iYield>
+				<iYield>2</iYield>
 			</Yields>
 			<Commerces>
 				<iCommerce>0</iCommerce>

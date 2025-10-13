@@ -166,7 +166,7 @@ def stackDoTurn(iPlayer, iGameTurn):
 		iPromoFort = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS")
 		iPromoFort2 = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2")
 		eSupplyUnit = gc.getInfoTypeForString("UNIT_SUPPLY_WAGON")
-		# PAE 7.12 Usurpatoren
+		# PAE 7.12 Usurpatoren (nicht in Städten und Festungen)
 		lLeaders = []
 		iPromoLeader = gc.getInfoTypeForString("PROMOTION_LEADER")
 
@@ -200,9 +200,10 @@ def stackDoTurn(iPlayer, iGameTurn):
 								if tmpA not in lHealerPlots:
 										lHealerPlots.append(tmpA)
 
-						# PAE 7.12 Usurpatoren
-						if tmpPlot.getOwner() == iPlayer and sUnit.isHasPromotion(iPromoLeader):
-								lLeaders.append(sUnit)
+						# PAE 7.12 Usurpatoren (nicht in Städten oder Festungen)
+						if not tmpPlot.isCity() and tmpPlot.getOwner() == iPlayer and sUnit.isHasPromotion(iPromoLeader):
+								if tmpPlot.getImprovementType() not in L.LImprFortSentry:
+										lLeaders.append(sUnit)
 
 						# PAE V: bei den Staedten gibts ne eigene funktion bei city supply
 						if not tmpPlot.isCity():
@@ -3128,8 +3129,8 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 				iPromoMercenary = gc.getInfoTypeForString("PROMOTION_MERCENARY")
 				iPlayer = pUnit.getOwner()
 				pPlayer = gc.getPlayer(iPlayer)
-				# PAE 7.12
-				bNoUsurpator = pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_POLYARCHIE"))
+				# PAE 6.14
+				bNoCivilWar = pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_POLYARCHIE"))
 				eBuildingStadt = gc.getInfoTypeForString("BUILDING_STADT")
 				eBuildingClass = gc.getBuildingInfo(eBuildingStadt).getBuildingClassType()
 				eBuildingProvinzPalast = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
@@ -3196,7 +3197,7 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 										#		)
 
 								# PAE 7.12: Usurpatoren 1:4
-								if not bNoUsurpator:
+								if not bNoCivilWar:
 									if gc.getPlayer(gc.getGame().getActivePlayer()).getName() == "Apocalypto":
 										iChance = 2
 									else:
@@ -3227,9 +3228,8 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 											iDamage = int(iDefense * 2 / 3)
 											loopCity.changeDefenseDamage(-iDamage)
 
-								# Civil War (ab PAE 6.3.2, 100%)
-								# PAE 7.12a: kein Bürgerkrieg wegen Generalstod
-								#PAE_City.doStartCivilWar(loopCity, 10)
+								# Civil War (ab PAE 6.3.2)
+								PAE_City.doStartCivilWar(loopCity, 33)
 
 						(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
@@ -3429,7 +3429,7 @@ def doUsurpator(pCity):
 # PAE 7.12
 # chance ab 0.5%, je mehr Leader, desto höher die Chance
 def doUsurpatorCheck(lLeaders):
-		if CvUtil.myRandom(200, "Leader check for usurpation") < len(lLeaders):
+		if CvUtil.myRandom(400, "Leader check for usurpation") < len(lLeaders):
 			# choose unit
 			iRand = CvUtil.myRandom(len(lLeaders), "Get leader for usurpation")
 			pUnit = lLeaders[iRand]
@@ -3462,7 +3462,7 @@ def doUsurpatorCheck(lLeaders):
 
 			# AI
 			else:
-				if CvUtil.myRandom(20, "AI leader gets usurper") == 1:
+				if CvUtil.myRandom(25, "AI leader gets usurper") == 1:
 					doUsurpatorGeneral(pUnit)
 				else:
 					iGold = pPlayer.getGold() // 3
@@ -3479,7 +3479,7 @@ def doUsurpatorGeneral(pUnit):
 		if pUnit.getName() == "":
 			txtName = CyTranslator().getText("TXT_KEY_UNIT_USURPATOR", ()) + u" " + getGGName(pPlayer)
 		else:
-			txtName = CyTranslator().getText("TXT_KEY_UNIT_USURPATOR", ()) + u" " + pUnit.getName()
+			txtName = CyTranslator().getText("TXT_KEY_UNIT_USURPATOR", ()) + u" " + pUnit.getName().split(" (")[0].strip()
 		pUnit.setName(txtName)
 
 		# Einheiten auslesen und auf einen anderen Plot setzen

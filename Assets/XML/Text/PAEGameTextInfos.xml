@@ -6977,7 +6977,7 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 		<English>The Silk Road brings caravans to your city, fully loaded with the finest goods the East has to offer. The caravans are now available for new trade routes.</English>
 		<French>La Route de la Soie am&#232;ne des caravanes dans votre ville, lourdement charg&#233;es des meilleurs produits que l'Orient a &#224; offrir. Les caravanes sont d&#233;sormais disponibles pour de nouvelles routes commerciales.</French>
 		<German>Die Seidenstra&#223;e bringt Karawanen in Eure Stadt, voll beladen mit den feinsten G&#252;tern, die der Osten zu bieten hat. Die Karawanen stehen ab jetzt f&#252;r neue Handelswege zur Verf&#252;gung.</German>
-		<Italian>La Via della Seta porta carri commerciali nella tua citt&#224;, caricati con le migliori merci che l'Oriente ha da offrire. I carri sono ora disponibili per nuove rotte commerciali.</Italian>
+		<Italian>La Via della Seta porta nella tua citt&#224; carovane cariche delle merci pi&#249; pregiate che l'Oriente ha da offrire. Queste carovane sono ora disponibili per nuove rotte commerciali.</Italian>
 		<Spanish>La Ruta de la Seda trae caravanas a su ciudad, totalmente cargadas con los mejores productos que Oriente tiene para ofrecer. Las caravanas ahora est&#225;n disponibles para nuevas rutas comerciales.</Spanish>
 	</TEXT>
 	<TEXT>
@@ -8758,11 +8758,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WONDER_ZEUS_HELP</Tag>
-		<English>[ICON_BULLET]Pilgrims can improve their morale in this city (+15%[ICON_STRENGTH]). Greek religion as state religion required.</English>
-		<French>[ICON_BULLET]Les p&#232;lerins peuvent am&#233;liorer leur moral dans cette ville (+15%[ICON_STRENGTH]). La religion grecque requise comme religion d'&#201;tat.</French>
-		<German>[ICON_BULLET]Pilger k&#246;nnen in dieser Stadt ihre Kampfmoral verbessern (+15%[ICON_STRENGTH]). Griechische Religion als Staatsreligion notwendig.</German>
-		<Italian>[ICON_BULLET]I pellegrini possono migliorare il loro morale in questa citt&#224; (+15%[ICON_STRENGTH]). Religione greca richiesta come religione di stato.</Italian>
-		<Spanish>[ICON_BULLET]Los peregrinos pueden mejorar su moral en esta ciudad (+15%[ICON_STRENGTH]). Se requiere la religi&#243;n griega como religi&#243;n de estado.</Spanish>
+		<English>[ICON_BULLET]Pilgrims can improve their morale in this city (+15%[ICON_STRENGTH]).[NEWLINE][ICON_BULLET]Greek religion as state religion required.[NEWLINE][ICON_BULLET]This Great Building is one of the 7 Wonders of the Ancient World (Wonder Victory)</English>
+		<French>[ICON_BULLET]Les p&#232;lerins peuvent am&#233;liorer leur moral dans cette ville (+15%[ICON_STRENGTH]).[NEWLINE][ICON_BULLET]La religion grecque requise comme religion d'&#201;tat.[NEWLINE][ICON_BULLET]Ce b&#226;timent est l'une des 7 merveilles du monde antique (Merveille de la Victoire)</French>
+		<German>[ICON_BULLET]Pilger k&#246;nnen in dieser Stadt ihre Kampfmoral verbessern (+15%[ICON_STRENGTH]).[NEWLINE][ICON_BULLET]Griechische Religion als Staatsreligion notwendig.[NEWLINE][ICON_BULLET]Dieses Bauwerk geh&#246;rt zu den 7 Weltwundern der Antike (Weltwundersieg)</German>
+		<Italian>[ICON_BULLET]I pellegrini possono migliorare il loro morale in questa citt&#224; (+15%[ICON_STRENGTH]).[NEWLINE][ICON_BULLET]Religione greca richiesta come religione di stato.[NEWLINE][ICON_BULLET]Questo edificio &#232; una delle 7 meraviglie del mondo antico (Meraviglia Vittoria)</Italian>
+		<Spanish>[ICON_BULLET]Los peregrinos pueden mejorar su moral en esta ciudad (+15%[ICON_STRENGTH]).[NEWLINE][ICON_BULLET]Se requiere la religi&#243;n griega como religi&#243;n de estado.[NEWLINE][ICON_BULLET]Este edificio es una de las 7 Maravillas del Mundo Antiguo (Maravilla Victoria)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_WORST_ENEMY_OF</Tag>

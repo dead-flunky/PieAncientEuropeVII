@@ -7134,11 +7134,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIBERIAN_CAVALRY</Tag>
-		<English>Celtiberian Cavalry</English>
+		<English>Celtiberian Horseman</English>
 		<French>Cavalier celtib&#232;re</French>
-		<German>Keltiberische Kavallerie</German>
-		<Italian>Cavalleria Celtibera</Italian>
-		<Spanish><Text>Caballer&#237;a Celt&#237;bera:Caballer&#237;as Celt&#237;beras</Text><Gender>Female:Female</Gender><Plural>0:1</Plural></Spanish>
+		<German>Keltiberischer Reiter</German>
+		<Italian>Cavaliere Celtiberico</Italian>
+		<Spanish><Text>Jinete Celt&#237;bero:Jinetes Celt&#237;beros</Text><Gender>Male:Male</Gender><Plural>0:1</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CELTIC_MISSIONARY</Tag>

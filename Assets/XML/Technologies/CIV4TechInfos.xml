@@ -1753,7 +1753,12 @@
 			<iGridY>7</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
-			<TerrainTrades/>
+			<TerrainTrades>
+				<TerrainTrade>
+					<TerrainType>TERRAIN_COAST</TerrainType>
+					<bTerrainTrade>1</bTerrainTrade>
+				</TerrainTrade>
+			</TerrainTrades>
 			<bRiverTrade>1</bRiverTrade>
 			<Flavors>
 				<Flavor>
@@ -1764,7 +1769,9 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_STAATENBILDUNG</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
+			<AndPreReqs>
+				<PrereqTech>TECH_FISHING</PrereqTech>
+			</AndPreReqs>
 			<Quote>TXT_KEY_PAE_QUOTE_28</Quote>
 			<Sound>AS2D_TECH_PAE_QUOTE_28</Sound>
 			<SoundMP/>
@@ -5435,12 +5442,7 @@
 			<iGridY>11</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
-			<TerrainTrades>
-				<TerrainTrade>
-					<TerrainType>TERRAIN_COAST</TerrainType>
-					<bTerrainTrade>1</bTerrainTrade>
-				</TerrainTrade>
-			</TerrainTrades>
+			<TerrainTrades/>
 			<bRiverTrade>0</bRiverTrade>
 			<Flavors>
 				<Flavor>
@@ -6757,12 +6759,7 @@
 			<iGridY>13</iGridY>
 			<DomainExtraMoves/>
 			<CommerceFlexible/>
-			<TerrainTrades>
-				<TerrainTrade>
-					<TerrainType>TERRAIN_COAST</TerrainType>
-					<bTerrainTrade>1</bTerrainTrade>
-				</TerrainTrade>
-			</TerrainTrades>
+			<TerrainTrades/>
 			<bRiverTrade>0</bRiverTrade>
 			<Flavors>
 				<Flavor>
