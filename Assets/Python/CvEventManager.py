@@ -4012,7 +4012,7 @@ class CvEventManager:
 								szText = CyTranslator().getText("TXT_KEY_POPUP_PROJECT_SEIDENSTRASSE2", ())
 
 						lBonusgut = [
-								gc.getInfoTypeForString("BONUS_INCENSE"),
+								gc.getInfoTypeForString("BONUS_MYRRHE"),
 								gc.getInfoTypeForString("BONUS_GEMS"),
 								gc.getInfoTypeForString("BONUS_SILK")
 						]
@@ -5478,7 +5478,8 @@ class CvEventManager:
 				# PAE Debug Mark 10 begin
 				if not bPAEDebugMark10:
 
-					if pCity.getOwner() == gc.getBARBARIAN_PLAYER():
+					if iPlayer == gc.getBARBARIAN_PLAYER():
+							PAE_City.doUnitSupply(pCity, iPlayer)
 							return
 
 					# PAE 7.11d: Reset Statthaltertribut
@@ -5516,7 +5517,7 @@ class CvEventManager:
 					PAE_City.removeCivicBuilding(pCity)
 
 					# Emigrants leave city when unhappy / Auswanderer verlassen die Stadt, wenn unzufrieden
-					if iPlayer != gc.getBARBARIAN_PLAYER() and popCity > 3:
+					if popCity > 3:
 							if pTeam.isHasTech(gc.getInfoTypeForString("TECH_COLONIZATION")):
 									PAE_City.doEmigrantSpawn(pCity)
 

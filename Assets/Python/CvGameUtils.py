@@ -2179,10 +2179,10 @@ class CvGameUtils:
 										if pPlot.isCity() and pPlot.getOwner() == iOwner:
 
 												# Pferd verkaufen
-												if pUnit.getGroup().getLengthMissionQueue() == 0 and pOwner.getUnitClassCount(pUnit.getUnitClassType()) > 2:
-														pOwner.changeGold(25)
-														pUnit.kill(True, -1)
-														return True
+												if pUnit.getGroup().getLengthMissionQueue() == 0: # and pOwner.getUnitClassCount(pUnit.getUnitClassType()) > 2:
+													pOwner.changeGold(30)
+													pUnit.kill(True, -1)
+													return True
 
 										# auf zur naechsten Stadt
 										else:

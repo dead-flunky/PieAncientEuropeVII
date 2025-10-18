@@ -13915,7 +13915,7 @@
 			<Type>ART_DEF_UNIT_LANGSCHIFF</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_langschiff.dds</Button>
 			<fScale>0.17</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Ships/Langschiff/Pentekonter_Galley.nif</NIF>
@@ -13954,7 +13954,7 @@
 			<Type>ART_DEF_UNIT_GALLEY_VIKING</Type>
 			<Button>,Art/Interface/Buttons/Units/Galley.dds,Art/Interface/Buttons/Unit_Resource_Atlas.dds,3,9</Button>
 			<fScale>0.18</fScale>
-			<fInterfaceScale>0.8</fInterfaceScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Ships/Galley_Viking/galley.nif</NIF>
@@ -13993,7 +13993,7 @@
 			<Type>ART_DEF_UNIT_LONGSHIP_CIV5</Type>
 			<Button>Art/Interface/Buttons/Units/button_unit_drachenschiff.dds</Button>
 			<fScale>0.22</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fInterfaceScale>1.2</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Ships/Viking_Longboat_CIV5/Viking_Longboat_CIV5.nif</NIF>

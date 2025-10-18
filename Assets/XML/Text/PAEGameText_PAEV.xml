@@ -4666,19 +4666,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_TRADE_ROUTE_CHOOSE_BONUS</Tag>
-		<English>Choose bonus which shall be bought in %s1_city.</English>
+		<English>Bonus item which shall be bought in %s1_city:</English>
 		<French>Choisissez la marchandise achet&#233;e &#224; %s1_city :</French>
-		<German>W&#228;hlt Bonusgut, das in %s1_city gekauft werden soll.</German>
-		<Italian>Scegli il bonus che deve essere acquistato a %s1_city.</Italian>
-		<Spanish>Elige el recurso que ser&#225; comprado en %s1_city.</Spanish>
+		<German>Bonusgut, das in %s1_city gekauft werden soll:</German>
+		<Italian>Scegli il bonus che deve essere acquistato a %s1_city:</Italian>
+		<Spanish>Elige el recurso que ser&#225; comprado en %s1_city:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_TRADE_ROUTE_CHOOSE_CITY</Tag>
-		<English>Choose city.</English>
-		<French>Choisissez la ville :</French>
-		<German>W&#228;hlt Stadt.</German>
-		<Italian>Scegli la citt&#224;.</Italian>
-		<Spanish>Elegir ciudad.</Spanish>
+		<English>Choose city:</English>
+		<French>Choisissez la ville:</French>
+		<German>Stadt w&#228;hlen:</German>
+		<Italian>Scegli la citt&#224;:</Italian>
+		<Spanish>Elige ciudad:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_TRADE_ROUTE_CHOOSE_CIV_1</Tag>

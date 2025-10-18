@@ -322,11 +322,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HUNTING_CAMP</Tag>
-		<English>Build a [LINK=IMPROVEMENT_CAMP]Camp[\LINK] at no cost</English>
-		<French>Construire un [LINK=IMPROVEMENT_CAMP]Camp[\LINK] sans frais</French>
-		<German>[LINK=IMPROVEMENT_CAMP]Lager[\LINK] ohne Kosten errichten</German>
-		<Italian>Costruire un [LINK=IMPROVEMENT_CAMP]Campo[\LINK] senza costi</Italian>
-		<Spanish>Construir un [LINK=IMPROVEMENT_CAMP]Campamento [\LINK] sin coste</Spanish>
+		<English>Build a [LINK=IMPROVEMENT_CAMP]Camp[\LINK] (hunter gets consumed)</English>
+		<French>Construire un [LINK=IMPROVEMENT_CAMP]Camp[\LINK] (chasseur est consomm&#233;)</French>
+		<German>[LINK=IMPROVEMENT_CAMP]Lager[\LINK] errichten (J&#228;ger wird verbraucht)</German>
+		<Italian>Costruire un [LINK=IMPROVEMENT_CAMP]Campo[\LINK] (cacciatore viene consumato)</Italian>
+		<Spanish>Construir un [LINK=IMPROVEMENT_CAMP]Campamento [\LINK] (cazador est&#225; consumido)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_LUMBERMILL</Tag>
@@ -495,6 +495,14 @@
 		<German>[ICON_BULLET]%D1_Change%F2_Icon Unterhaltskosten pro Milit&#228;reinheit</German>
 		<Italian>[ICON_BULLET]%D1_Change%F2_Icon Costo di supporto per le unit&#224; militari</Italian>
 		<Spanish>[ICON_BULLET]%D1_Change %F2_Icon de coste de abastecimiento por cada unidad militar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_SCREEN_UPKEEP</Tag>
+		<English>Upkeep: %d1 [ICON_GOLD] per turn</English>
+		<French>Entretien : %d1 [ICON_GOLD] par tour</French>
+		<German>Unterhalt: %d1 [ICON_GOLD] pro Runde</German>
+		<Italian>Mantenimento: %d1 [ICON_GOLD] per turno</Italian>
+		<Spanish>Mantenimiento: %d1 [ICON_GOLD] por turno</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_TOLERANZ_HELP</Tag>
@@ -3679,7 +3687,7 @@
 	<TEXT>
 		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_3</Tag>
 		<English>The so-called "chosen ones" refuse military service due to their pacifist teachings. (Ends with the technological Edict of Toleration or with Judaism as the state religion)</English>
-		<French>Les soi-disant &#171; &#233;lus &#187; refusent le service militaire en raison de leurs enseignements pacifistes. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le juda&#239;sme comme religion d'&#201;tat)</French>
+		<French>Les soi-disant "&#233;lus" refusent le service militaire en raison de leurs enseignements pacifistes. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le juda&#239;sme comme religion d'&#201;tat)</French>
 		<German>Die sogenannten "Auserw&#228;hlten" verweigern den Kriegsdienst auf Grund ihrer pazifistischen Lehre. (endet mit der Technologie Toleranzedikt oder mit Judentum als Staatsreligion)</German>
 		<Italian>I cosiddetti "eletti" rifiutano il servizio militare a causa dei loro insegnamenti pacifisti. (si conclude con l'editto tecnologico della tolleranza o con l'ebraismo come religione di Stato)</Italian>
 		<Spanish>Los llamados "elegidos" rechazan el servicio militar debido a sus ense&#241;anzas pacifistas. (termina con el edicto tecnol&#243;gico de tolerancia o con el juda&#237;smo como religi&#243;n de Estado)</Spanish>
@@ -3703,7 +3711,7 @@
 	<TEXT>
 		<Tag>TXT_RELIGION_UNIT_BUILT_INFO_6</Tag>
 		<English>So-called "members of the way" refuse military service due to their pacifist teachings. (ends with the technological edict of tolerance or with Christianity as the state religion)</English>
-		<French>Les soi-disant &#171; membres de la Voie &#187; refusent le service militaire en raison de leurs enseignements pacifistes. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le christianisme comme religion d'&#201;tat)</French>
+		<French>Les soi-disant "membres de la Voie" refusent le service militaire en raison de leurs enseignements pacifistes. (se termine par la technologie de l'&#233;dit de tol&#233;rance ou par le christianisme comme religion d'&#201;tat)</French>
 		<German>Sogenannte "Angeh&#246;rige des rechten Weges" verweigern den Kriegsdienst auf Grund ihrer pazifistischen Lehre. (endet mit der Technologie Toleranzedikt oder mit Christentum als Staatsreligion)</German>
 		<Italian>I cosiddetti "membri della via" rifiutano il servizio militare a causa dei loro insegnamenti pacifisti. (si conclude con l'editto di tolleranza della tecnologia o con il cristianesimo come religione di Stato)</Italian>
 		<Spanish>Los llamados "miembros del camino" rechazan el servicio militar debido a sus ense&#241;anzas pacifistas. (termina con el edicto tecnol&#243;gico de tolerancia o con el cristianismo como religi&#243;n de Estado)</Spanish>

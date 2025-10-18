@@ -2901,7 +2901,7 @@ class CvMainInterface:
 																# Gladiator in der Stadt
 																elif iUnitType == gc.getInfoTypeForString("UNIT_GLADIATOR"):
 																		if not pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_MERCENARY")):
-																				if not pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL5")) and pTeam.isHasTech(gc.getInfoTypeForString("TECH_GLADIATOR2")):
+																				if not pTeam.isHasTech(gc.getInfoTypeForString("TECH_KONZIL3")) and pTeam.isHasTech(gc.getInfoTypeForString("TECH_GLADIATOR2")):
 																						iBuilding1 = gc.getInfoTypeForString("BUILDING_STADT")
 																						iBuilding2 = gc.getInfoTypeForString("BUILDING_GLADIATORENSCHULE")
 																						if pCity.isHasBuilding(iBuilding1) and not pCity.isHasBuilding(iBuilding2):
@@ -6277,31 +6277,33 @@ class CvMainInterface:
 												sBonusDesc = gc.getBonusInfo(iBonus).getDescription()
 												iBonusChar = gc.getBonusInfo(iBonus).getChar()
 												szText += localText.getText("TXT_UNIT_INFO_BAR_4", (iBonusChar, sBonusDesc))
-
-												# PAE VII
-												iValue = CvUtil.getScriptData(pHeadSelectedUnit, ["autA"], 0)
-												if iValue:
-													iCity1X = CvUtil.getScriptData(pHeadSelectedUnit, ["autX1"], -1)
-													iCity1Y = CvUtil.getScriptData(pHeadSelectedUnit, ["autY1"], -1)
-													iCity1B = CvUtil.getScriptData(pHeadSelectedUnit, ["autB1"], -1)
-													iCity2X = CvUtil.getScriptData(pHeadSelectedUnit, ["autX2"], -1)
-													iCity2Y = CvUtil.getScriptData(pHeadSelectedUnit, ["autY2"], -1)
-													iCity2B = CvUtil.getScriptData(pHeadSelectedUnit, ["autB2"], -1)
-													if iCity1X != -1 and iCity2X != -1:
-														pCityPlot = gc.getMap().plot(iCity1X, iCity1Y)
-														pCity1 = pCityPlot.getPlotCity()
-														pCityPlot = gc.getMap().plot(iCity2X, iCity2Y)
-														pCity2 = pCityPlot.getPlotCity()
-														if iBonus == iCity1B:
-															szText += u" (" + pCity1.getName() + u" " + localText.getText("TXT_UNIT_INFO_NACH", ()) + u" " + pCity2.getName() + u")"
-														elif iBonus == iCity2B:
-															szText += u" (" + pCity2.getName() + u" " + localText.getText("TXT_UNIT_INFO_NACH", ()) + u" " + pCity1.getName() + u")"
-												else:
-													iValue = CvUtil.getScriptData(pHeadSelectedUnit, ["originCiv"], -1)
-													if iValue != -1:
-														szText += u" (" + gc.getPlayer(iValue).getCivilizationShortDescription(0) + u")"
 											else:
 												szText += localText.getText("TXT_KEY_NO_BONUS_STORED", ())
+
+											# PAE VII
+											if CvUtil.getScriptData(pHeadSelectedUnit, ["autA"], 0):
+												iCity1X = CvUtil.getScriptData(pHeadSelectedUnit, ["autX1"], -1)
+												iCity1Y = CvUtil.getScriptData(pHeadSelectedUnit, ["autY1"], -1)
+												#iCity1B = CvUtil.getScriptData(pHeadSelectedUnit, ["autB1"], -1)
+												iCity2X = CvUtil.getScriptData(pHeadSelectedUnit, ["autX2"], -1)
+												iCity2Y = CvUtil.getScriptData(pHeadSelectedUnit, ["autY2"], -1)
+												#iCity2B = CvUtil.getScriptData(pHeadSelectedUnit, ["autB2"], -1)
+												iFromX = CvUtil.getScriptData(pHeadSelectedUnit, ["x"], -1)
+												iFromY = CvUtil.getScriptData(pHeadSelectedUnit, ["y"], -1)
+												if iCity1X != -1 and iCity2X != -1:
+													pCityPlot = gc.getMap().plot(iCity1X, iCity1Y)
+													pCity1 = pCityPlot.getPlotCity()
+													pCityPlot = gc.getMap().plot(iCity2X, iCity2Y)
+													pCity2 = pCityPlot.getPlotCity()
+													if iCity1X == iFromX and iCity1Y == iFromY:
+														szText += u" (" + pCity1.getName() + u" " + localText.getText("TXT_UNIT_INFO_NACH", ()) + u" " + pCity2.getName() + u")"
+													else:
+														szText += u" (" + pCity2.getName() + u" " + localText.getText("TXT_UNIT_INFO_NACH", ()) + u" " + pCity1.getName() + u")"
+											else:
+												iValue = CvUtil.getScriptData(pHeadSelectedUnit, ["originCiv"], -1)
+												if iValue != -1:
+													szText += u" (" + gc.getPlayer(iValue).getCivilizationShortDescription(0) + u")"
+
 
 										# PAE Statthaltereigenschaften (siehe PAE_Unit.initStatthalter)
 										if pHeadSelectedUnit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_STATTHALTER"):

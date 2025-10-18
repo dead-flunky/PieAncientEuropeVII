@@ -297,7 +297,8 @@ class CvDomesticAdvisor:
 				screen.setTableColumnHeader("CityListBackground", 0, "", (20 * self.nTableWidth) / self.nNormalizedTableWidth)
 
 				# Name Column
-				screen.setTableColumnHeader("CityListBackground", 1, "<font=2>" + localText.getText("TXT_KEY_DOMESTIC_ADVISOR_NAME", ()) + "</font>", (120 * self.nTableWidth) / self.nNormalizedTableWidth)
+				szText = localText.getText("TXT_KEY_DOMESTIC_ADVISOR_NAME", ()) + u" (" + localText.getText("TXT_KEY_CONCEPT_CITIES", ()) + u": %d)" % gc.getPlayer(iPlayer).getNumCities()
+				screen.setTableColumnHeader("CityListBackground", 1, "<font=2>" + szText + "</font>", (120 * self.nTableWidth) / self.nNormalizedTableWidth)
 
 				# Population Column
 				# BTS: localText.getText("TXT_KEY_POPULATION", ())
@@ -396,7 +397,8 @@ class CvDomesticAdvisor:
 				iAnz1 = PAE_Cultivation.getCityCultivatedBonuses(pLoopCity,0)
 				iAnz2 = PAE_Cultivation.getCityCultivationAmount(pLoopCity,0)
 				text = u"%d/%d" % (iAnz1, iAnz2) # Limit bei CityStatus
-				if iAnz1 < iAnz2: text = localText.getText("TXT_KEY_COLOR_POSITIVE", ()) + text + localText.getText("TXT_KEY_COLOR_REVERT", ())
+				if iAnz1 < iAnz2:
+					text = localText.getText("TXT_KEY_COLOR_POSITIVE", ()) + text + localText.getText("TXT_KEY_COLOR_REVERT", ())
 				#text = u"%d" % PAE_Cultivation.getCityCultivatedBonuses(pLoopCity, -1)
 				screen.setTableInt("CityListBackground", 4, i, text, "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 

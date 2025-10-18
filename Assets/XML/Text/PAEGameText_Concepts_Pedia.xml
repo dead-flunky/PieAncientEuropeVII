@@ -1005,7 +1005,7 @@ Exemple: Les villes peuvent partager une ressource &#233;questre pour construire
 
 [H1]Voler des biens bonus[\H1]
 
-On peut &#171; voler &#187; des ressources bonus distribuables sur des terres ext&#233;rieures &#224; sa propre culture. Cependant, la ressource reste sur le terrain et le v&#233;hicule est charg&#233; de la marchandise.
+On peut "voler" des ressources bonus distribuables sur des terres ext&#233;rieures &#224; sa propre culture. Cependant, la ressource reste sur le terrain et le v&#233;hicule est charg&#233; de la marchandise.
 
 
 [H1]Villes[\H1]
@@ -1468,11 +1468,11 @@ Consequences to the city:
 
 Christianity as state religion prevents these revolts.</English>
 		<French>
-Une fois qu'une religion monoth&#233;iste est &#233;tablie, elle peut automatiquement se propager aux villes voisines ou aux villes partenaires commerciales (routes commerciales). Voir &#171; Propagation &#187; pour le christianisme ci-dessous.
+Une fois qu'une religion monoth&#233;iste est &#233;tablie, elle peut automatiquement se propager aux villes voisines ou aux villes partenaires commerciales (routes commerciales). Voir Propagation pour le christianisme ci-dessous.
 
 [H1]JUDAISME[\H1]
 
-Le juda&#239;sme est fond&#233; en utilisant la technologie du &#171; monoth&#233;isme &#187;.
+Le juda&#239;sme est fond&#233; en utilisant la technologie du monoth&#233;isme.
 
 [H1]R&#233;volte des juifs[\H1]
 A partir de 200 av J.C., la ville sainte juive peut subir le soul&#232;vement de combattants libres juifs (probabilit&#233; de 2% par tour)
@@ -2894,7 +2894,7 @@ Combat sur terre :
 
 1) Exp&#233;rience de guerre : A chaque victoire, une unit&#233; est en mesure d'augmenter son degr&#233;s d'exp&#233;rience. Les diff&#233;rents degr&#233;s sont : entra&#238;n&#233;, exp&#233;riment&#233;, aguerri, v&#233;t&#233;ran, &#233;lite et l&#233;gendaire. Voir les concepts de [LINK=CONCEPT_COMBAT3]Unit&#233;s-Rang d'exp&#233;rience[\LINK]
 
-2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir - [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
+2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir – [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
 
 3) Mercenaires : les v&#233;t&#233;rans qui combattent pour eux-m&#234;mes peuvent se d&#233;faire de cette promotion apr&#232;s un combat (20% de chance). S'il y a un h&#233;ros ou un g&#233;n&#233;ral dans la pile de l'unit&#233;, m&#234;me 50 %.
 
@@ -2922,7 +2922,7 @@ Combat sur terre :
 
 15) Combat contre des [LINK=CONCEPT_MERCENARY]mercenaires en mission[\LINK] : L'un d'entre eux est le chef. S'il est vaincu, vous pouvez le faire torturer. Il est probable qu'il r&#233;v&#232;le un ou plusieurs de ses potentiels commanditaires.
 
-16) Mort du meneur d'homme : voir - [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
+16) Mort du meneur d'homme : voir – [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
 
 17) Culture : la culture d'une unit&#233; victorieuse influence la case du combat. Parfois, des territoires ennemis voisins sont convertis &#224; la culture de l'unit&#233;. Seulement valable si ces cases sont aussi influenc&#233;es par une ville de m&#234;me culture.
 
@@ -4344,7 +4344,7 @@ Le mod n'a probablement pas &#233;t&#233; charg&#233; enti&#232;rement. Essayez 
 Ce message peut appara&#238;tre quand vous jouez vos propres sc&#233;narios et changez des options. Il faut changer ces options directement dans le fichier du sc&#233;nario.
 
 [ICON_BULLET] CIV4 plante !
- Jouez en mode fen&#234;tr&#233; (plus stable - Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
+ Jouez en mode fen&#234;tr&#233; (plus stable – Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
 
 [ICON_BULLET] Je ne vois pas l'interface du jeu !
 1) Soyez s&#251;r d'avoir install&#233; le patch 3.19

@@ -15801,7 +15801,9 @@
 			<OrPreReqs>
 				<PrereqTech>TECH_THEOLOGY</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
+			<AndPreReqs>
+				<PrereqTech>TECH_PROZESSION</PrereqTech>
+			</AndPreReqs>
 			<Quote>TXT_KEY_PAE_QUOTE_218</Quote>
 			<Sound/>
 			<SoundMP/>
@@ -16598,7 +16600,9 @@
 				<PrereqTech>TECH_POLYARCHY</PrereqTech>
 				<PrereqTech>TECH_PANZERREITER</PrereqTech>
 			</OrPreReqs>
-			<AndPreReqs/>
+			<AndPreReqs>
+				<PrereqTech>TECH_LIMES</PrereqTech>
+			</AndPreReqs>
 			<Quote>TXT_KEY_PAE_QUOTE_46</Quote>
 			<Sound>AS2D_TECH_PAE_QUOTE_46</Sound>
 			<SoundMP/>
@@ -16788,7 +16792,7 @@
 				<PrereqTech>TECH_DEFENCES_2</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
-			<Quote>TXT_KEY_PAE_QUOTE_161</Quote>
+			<Quote>TXT_KEY_PAE_QUOTE_229</Quote>
 			<Sound/>
 			<SoundMP/>
 			<Button>Art/Interface/Buttons/Techs/tech_erdbestattung.dds</Button>

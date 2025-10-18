@@ -37932,8 +37932,8 @@
 			<Type>BUILDING_JEWISH_TEMPLE</Type>
 			<SpecialBuildingType/>
 			<Description>TXT_KEY_BUILDING_JEWISH_TEMPLE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_JEWISH_TEMPLE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_JEWISH_TEMPLE_STRATEGY</Strategy>
+			<Civilopedia>TXT_KEY_BUILDING_VERSAMMLUNG_PEDIA</Civilopedia>
+			<Strategy/>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_TEMPLE</ArtDefineTag>
 			<MovieDefineTag/>

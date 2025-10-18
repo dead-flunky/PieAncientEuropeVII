@@ -297,14 +297,6 @@ Scuola di retorica
 		<Spanish>Sal&#243;n de actos</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_VERSAMMLUNG_ISRAEL</Tag>
-		<English>Sanhedrin</English>
-		<French>Sanh&#233;drin</French>
-		<German>Sanhedrin</German>
-		<Italian>Sinedrio</Italian>
-		<Spanish>Sanedr&#237;n</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WINDOFEN</Tag>
 		<English>Wind kiln</English>
 		<French>Four &#224; vent</French>
@@ -338,11 +330,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_TURM_HUNTER</Tag>
-		<English>Build a [LINK=IMPROVEMENT_TURM]Look-out[\LINK] at no cost</English>
-		<French>Construire un [LINK=IMPROVEMENT_TURM]poste d'observation[\LINK] sans frais</French>
-		<German>[LINK=IMPROVEMENT_TURM]Sp&#228;hturm[\LINK] ohne Kosten errichten</German>
-		<Italian>Costruisci un [LINK=IMPROVEMENT_TURM]posto d'osservazione[\LINK] senza costi</Italian>
-		<Spanish>Construir un [LINK=IMPROVEMENT_TURM]vig&#237;a[\LINK] sin coste</Spanish>
+		<English>Build a [LINK=IMPROVEMENT_TURM]Look-out[\LINK] (hunter gets consumed)</English>
+		<French>Construire un [LINK=IMPROVEMENT_TURM]poste d'observation[\LINK] (chasseur est consomm&#233;)</French>
+		<German>[LINK=IMPROVEMENT_TURM]Sp&#228;hturm[\LINK] errichten (J&#228;ger wird verbraucht)</German>
+		<Italian>Costruisci un [LINK=IMPROVEMENT_TURM]posto d'osservazione[\LINK] (cacciatore viene consumato)</Italian>
+		<Spanish>Construir un [LINK=IMPROVEMENT_TURM]vig&#237;a[\LINK] (cazador est&#225; consumido)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_GO2CITY</Tag>
@@ -391,6 +383,14 @@ Scuola di retorica
 		<German>Das Geb&#228;ude %s1_building wurde zerst&#246;rt.</German>
 		<Italian>L'edificio %s1_building &#232; stato distrutto.</Italian>
 		<Spanish>El edificio %s1_building ha quedado destruido.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FREE</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GRAPHICOPTION_HIRES_TERRAIN</Tag>

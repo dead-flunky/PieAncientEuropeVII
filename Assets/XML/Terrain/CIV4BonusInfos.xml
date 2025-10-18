@@ -461,7 +461,7 @@
 			<Civilopedia>TXT_KEY_BONUS_ZEDERNHOLZ_PEDIA</Civilopedia>
 			<BonusClassType>BONUSCLASS_GENERAL</BonusClassType>
 			<ArtDefineTag>ART_DEF_BONUS_ZEDERNHOLZ</ArtDefineTag>
-			<TechReveal>TECH_BOOTSBAU</TechReveal>
+			<TechReveal>TECH_BRONZE_WORKING</TechReveal>
 			<TechCityTrade>NONE</TechCityTrade>
 			<TechObsolete>NONE</TechObsolete>
 			<YieldChanges>
