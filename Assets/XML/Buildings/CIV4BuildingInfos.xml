@@ -22,7 +22,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_BRONZE</MaxStartEra>
 			<ObsoleteTech>TECH_DEFENCES</ObsoleteTech>
 			<PrereqTech>TECH_FENCES</PrereqTech>
 			<TechTypes/>
@@ -184,7 +184,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_BRONZE</MaxStartEra>
 			<ObsoleteTech>TECH_DEFENCES</ObsoleteTech>
 			<PrereqTech>TECH_FENCES</PrereqTech>
 			<TechTypes/>
@@ -14944,7 +14944,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_BRONZE</MaxStartEra>
 			<ObsoleteTech>TECH_BLASEBALG</ObsoleteTech>
 			<PrereqTech>TECH_METAL_SMELTING</PrereqTech>
 			<TechTypes/>
@@ -15141,7 +15141,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_BRONZE</MaxStartEra>
 			<ObsoleteTech>TECH_SCHMIEDEKUNST</ObsoleteTech>
 			<PrereqTech>TECH_METAL_SMELTING</PrereqTech>
 			<TechTypes/>
@@ -15347,7 +15347,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_IRON</MaxStartEra>
 			<ObsoleteTech>TECH_RENNOFEN</ObsoleteTech>
 			<PrereqTech>TECH_BLASEBALG</PrereqTech>
 			<TechTypes/>
@@ -19357,7 +19357,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_BRONZE</MaxStartEra>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_HOLZWEHRANLAGEN</PrereqTech>
 			<TechTypes>
@@ -19713,7 +19713,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_IRON</MaxStartEra>
 			<ObsoleteTech>TECH_DENKMAL</ObsoleteTech>
 			<PrereqTech>TECH_SCHAMANISMUS</PrereqTech>
 			<TechTypes/>
@@ -51956,7 +51956,7 @@
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
 			<FreeStartEra/>
-			<MaxStartEra/>
+			<MaxStartEra>ERA_BRONZE</MaxStartEra>
 			<ObsoleteTech>TECH_MATHEMATICS</ObsoleteTech>
 			<PrereqTech>TECH_MASONRY2</PrereqTech>
 			<TechTypes>

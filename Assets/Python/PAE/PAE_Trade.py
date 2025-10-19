@@ -3,12 +3,12 @@
 # From BoggyB
 # Imports
 from CvPythonExtensions import (CyGlobalContext, CyInterface, CyGame, plotXY,
-																CyTranslator, CyMap, DirectionTypes,
-																ColorTypes, UnitAITypes, CyPopupInfo,
-																ButtonPopupTypes, plotDirection,
-																CyAudioGame, InterfaceDirtyBits,
-																plotDistance, FontSymbols, DomainTypes,
-																MissionTypes, MissionAITypes, OrderTypes)
+											CyTranslator, CyMap, DirectionTypes,
+											ColorTypes, UnitAITypes, CyPopupInfo,
+											ButtonPopupTypes, plotDirection,
+											CyAudioGame, InterfaceDirtyBits,
+											plotDistance, FontSymbols, DomainTypes,
+											MissionTypes, MissionAITypes, OrderTypes)
 # import CvEventInterface
 import CvUtil
 import PAE_Unit
@@ -1458,27 +1458,28 @@ def doAutomateMerchant(pUnit):
 						lCitySaleableGoods = getCitySaleableGoods(pCurrentCity, iBuyer)
 						lCitySaleableGoods2 = getCitySaleableGoodsAll(pCurrentCity)
 
+
 						if eBonusBuy == -1:
 								CvUtil.addScriptData(pUnit, "x", pUnit.getX())
 								CvUtil.addScriptData(pUnit, "y", pUnit.getY())
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == -1 ", None, 2, None, ColorTypes(7), 0, 0, False, False)
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-						#elif bOriginalCity:
-						#		# if iPlayer == 0:
+						# Wenn bereits die Ware aus dieser Stadt geladen ist
+
+						elif bOriginalCity and eStoredBonus != -1:
 						#		#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == eStoredBonus | going to " + pNewCity.getName(), None, 2, None, ColorTypes(7), 0, 0, False, False)
-						#		pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+
 						elif eBonusBuy in lCitySaleableGoods + lCitySaleableGoods2 and eStoredBonus == -1:
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy in lCitySaleable ", None, 2, None, ColorTypes(7), 0, 0, False, False)
 								#if not bOriginalCity or eStoredBonus == -1:
 								# if not already acquired / Wenn Bonus nicht bereits gekauft wurde
 								# if not pUnit.hasMoved():
 								doBuyBonus(pUnit, eBonusBuy, pCurrentCity.getOwner())
-								pUnit.finishMoves()
+								#pUnit.finishMoves()
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy MOVE to new city ", None, 2, None, ColorTypes(7), 0, 0, False, False)
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-						# Wenn bereits die Ware aus dieser Stadt geladen ist
-						elif bOriginalCity and eStoredBonus != -1:
-								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+
 						else:
 								# bonus is no longer available (or player does not have enough money) => cancel automated trade route
 								CvUtil.addScriptData(pUnit, "autA", 0)  # deactivate route
