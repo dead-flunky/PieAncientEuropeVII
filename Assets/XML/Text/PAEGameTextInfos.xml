@@ -675,50 +675,49 @@
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_TEXT</Tag>
 		<English>The sun rises on the year %s1_year. %s3_leader, your people have vested absolute power in you, hoping the gentle grace of the gods will never leave you! Try to build a Civilization to stand the test of time!
-1) In the course of the game, try to found a religion (using certain technologies) or get it from neighbors.
-2) Build a palace as soon as you can (Tech: Leadership). After that, you can afford the upkeep costs of other cities.
-3) You can only create settlers, who can found additional cities, with Internal Colonization (technology).
-4) Produce culture to expand your influence (Religion, Palace, Cult, etc.)
+1) Utilize hunting, research technologies suited to your environment, and build a palace as early as possible (Tech: Leadership).
+2) Try to found a religion or acquire one from your neighbors.
+3) Settlers can only be created with internal colonization (Technology). Found your cities on rivers or coasts until you discover road construction.
+4) Generate culture to expand your sphere of influence (Religion, Palace, Cults, Slaves, etc.).
 5) Improvements cost money!
 6) It is recommended to read the concept text [LINK=CONCEPT_IMPORTANT_FACTS]Important Facts[\LINK] before playing.
 [H2]All features can be found in the civilopedia under PAE concepts.[\H2]</English>
 		<French>
 Le soleil se l&#232;ve sur l'an %s1_year. %s3_leader, votre peuple vous a confi&#233; le pouvoir absolu et s'en remet &#224; vous pour b&#226;tir une civilisation qui r&#233;sistera &#224; l'&#233;preuve du temps !
-1) Au cours du jeu, essayez de fonder une religion (en utilisant certaines technologies) ou de l'obtenir aupr&#232;s de voisins.
-2) Construisez un palais d&#232;s que possible pour r&#233;duire les co&#251;ts d'entretien des autres villes (Tech. : 	
-Principe d'autorit&#233;)
-3) Vous ne pouvez cr&#233;er que des colons, qui peuvent fonder des villes suppl&#233;mentaires, avec une colonisation interne (technologie).
-4) Produisez de la culture pour &#233;tendre votre zone d'influence (Religion, Palais, Cultes, Monument, etc.)
+1) Exploitez la chasse, recherchez des technologies adapt&#233;es &#224; votre environnement et construisez un palais d&#232;s que possible (Tech : Principe d'autorit&#233;).
+2) Tentez de fonder une religion ou d'en adopter une aupr&#232;s de vos voisins.
+3) La cr&#233;ation de colons est possible uniquement par colonisation interne (Technologie). Fondez vos villes sur les rivi&#232;res ou les c&#244;tes jusqu'&#224; ce que vous d&#233;couvriez la construction de routes.
+4) D&#233;veloppez votre culture pour &#233;tendre votre sph&#232;re d'influence (Religion, Palais, Cultes, Esclaves, etc.).
 5) Les am&#233;nagements co&#251;tent de l'or !
 6) Il est conseill&#233; de lire le concept [LINK=CONCEPT_IMPORTANT_FACTS]A lire ![\LINK] avant de jouer
 [H2]Toutes les sp&#233;cificit&#233;s de ce MOD sont d&#233;crites dans la Civilop&#233;dia (Concepts du Pie's Mod)[\H2]
 		</French>
 		<German>
 Die Sonne erhellt das Jahr %s1_year. %s3_leader, Euer Volk hat Euch absolute Macht verliehen und hofft, dass Euch die G&#246;tter wohlgesonnen bleiben! Versuche eine Zivilisation zu errichten, welche die Zeit &#252;berdauern wird!
-1) Versuche im Laufe des Spiels eine Religion zu gr&#252;nden (mittels bestimmter Technologien) oder von Nachbarn zu erhalten.
-2) Baue so bald wie m&#246;glich einen Palast (Tech: F&#252;hrerschaft). Danach kann man sich auch den Unterhalt weiterer St&#228;dte leisten.
-3) Siedler, die weitere St&#228;dte gr&#252;nden k&#246;nnen, kannst du erst mit Binnenkolonisierung (Technologie) erstellen.
-4) Erzeuge Kultur, um deinen Machtbereich auszudehnen (Religion, Palast, Kulte, etc.)
+1) Nutze die Jagd, erforsche Technologien, die zu deiner Umgebung passen und errichte so fr&#252;h wie m&#246;glich einen Palast (Tech: F&#252;hrerschaft)
+2) Versuche eine Religion zu gr&#252;nden oder von Nachbarn zu erhalten
+3) Siedler k&#246;nnen erst mit Binnenkolonisierung (Technologie) erstellt werden. Gr&#252;nde deine St&#228;dte an Fl&#252;ssen oder K&#252;sten, bis du Stra&#223;enbau entdeckt hast
+4) Erwirtschafte Kultur, um deinen Machtbereich auszudehnen (Religion, Palast, Kulte, Sklaven, etc.)
 5) Modernisierungen kosten Geld!
-6) Es wird empfohlen, vor dem Spielen [LINK=CONCEPT_IMPORTANT_FACTS]Wichtige Fakten[\LINK] in den PAE Spielkonzepten zu lesen.
+6) Ich empfehle, vor dem Start [LINK=CONCEPT_IMPORTANT_FACTS]Wichtige Fakten[\LINK] in den PAE Spielkonzepten nachzulesen
 [H2]Alle Features werden in der Zivilop&#228;die unter PAE Konzepte erkl&#228;rt.[\H2]
 		</German>
 		<Italian>
 Il sole sorge sull'anno %s1_year. %s3_leader, il tuo popolo ha acquisito potere assoluto in te, sperando che la gentile grazia degli dei non ti lascer&#224; mai! Prova a costruire una civilt&#224; per resistere alla prova del tempo!
-1) Nel corso del gioco, cerca di fondare una religione (usando determinate tecnologie) o di ottenerla dai vicini.
-2) Costruisci un palazzo appena puoi (Tech: Comando). Successivamente, puoi permetterti i costi di manutenzione di altre citt&#224;.
-3) Puoi solo creare coloni, che possono fondare citt&#224; aggiuntive, con colonizzazione interna (tecnologia).
-4) Produci cultura per espandere la tua influenza (Religione, Palazzo, Culto, ecc.)
+1) Utilizza la caccia, ricerca tecnologie adatte al tuo ambiente e costruisci un palazzo il prima possibile (Tec: Comando).
+2) Cerca di fondare una religione o acquisirne una dai tuoi vicini.
+3) I coloni possono essere creati solo con la colonizzazione interna (Tecnologia). Fonda le tue citt&#224; su fiumi o coste finch&#233; non scopri la costruzione di strade.
+4) Genera cultura per espandere la tua sfera di influenza (Religione, Palazzo, Culti, Schiavi, ecc.).
 5) I miglioramenti costano denaro!
 6) Si consiglia di leggere il testo del concetto [LINK=CONCEPT_IMPORTANT_FACTS] Fatti importanti [\LINK] prima di giocare.
 [H2]Tutte le funzionalit&#224; possono essere trovate nella civilopedia sotto concetti PAE.[\H2]
 		</Italian>
 		<Spanish>
 El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferido poder absoluto, &#161;esperando en que la noble gracia de los dioses nunca te abandone!
-1) En el transcurso del juego, trata de fundar una religi&#243;n (usando ciertas tecnolog&#237;as) o cons&#237;guela de los vecinos.
-2) Construye un palacio tan pronto como puedas (Tec: Liderazgo). Despu&#233;s de eso, ser&#225;s capaz de afrontar los costes de mantenimiento de otras ciudades.
-3) Solo puedes crear colonos, que pueden fundar ciudades adicionales, con colonizaci&#243;n interna (tecnolog&#237;a).
-4) Produce cultura para expandir tu influencia (Religi&#243;n, Palacio, Culto, etc.)
+1) Aprovecha la caza, investiga tecnolog&#237;as adaptadas a tu entorno y construye un palacio cuanto antes (Tec: Liderazgo).
+2) Intenta fundar una religi&#243;n o adquirir una de tus vecinos.
+3) Los colonos solo se pueden crear mediante colonizaci&#243;n interna (Tecnolog&#237;a). Funda tus ciudades en r&#237;os o costas hasta que descubras la construcci&#243;n de carreteras.
+4) Genera cultura para expandir tu esfera de influencia (Religi&#243;n, Palacio, Cultos, Esclavos, etc.).
 5) &#161;Las mejoras cuestan dinero!
 6) Es recomendado leer texto del concepto [LINK=CONCEPT_IMPORTANT_FACTS]Datos importantes[\LINK] antes de jugar.
 [H2]Todas las caracter&#237;sticas pueden ser encontradas en la civilopedia sobre los conceptos del PAE.[\H2]

@@ -2726,7 +2726,7 @@
 		<French>Mineurs</French>
 		<German><Text>Kleinstaat:Kleinstaat:Kleinstaat</Text><Gender>Neuter:Neuter:Neuter</Gender><Plural>0:0:0</Plural></German>
 		<Italian><Text>Nazione minore</Text><Gender>Female</Gender><Plural>0</Plural></Italian>
-		<Spanish><Text>pa&#237;s menor</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
+		<Spanish><Text>Pa&#237;s menor</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MINOR_SHORT_DESC</Tag>
@@ -3532,7 +3532,7 @@
 		<Tag>TXT_KEY_GREAT_PERSON_GEN_08</Tag>
 		<English>Chnodomar of the Alamanni</English>
 		<French>Chnodomar des Alamans</French>
-		<German>Chnodomar von Alamannen</German>
+		<German>Chnodomar der Alemanne</German>
 		<Italian>Cnodomario degli Alemanni</Italian>
 		<Spanish>Chonodomario de los Alamanes</Spanish>
 	</TEXT>

@@ -897,7 +897,7 @@ Besides of increasing the food storage of other cities, wagons can also spread c
 [ICON_BULLET] Dates
 [H2]Seafood:[\H2]
 [ICON_BULLET] Crabs
-[ICON_BULLET] Glams
+[ICON_BULLET] Clams
 
 [ICON_BULLET] A resource can be spread as soon as it is in a city's trade network, where it has to be loaded with a wagon. If the resource is in the surrounding area of the city, the purchase is cheaper. Green circles on the map make a possible cultivation onto this plot visible. The wagon will be disbanded during a cultivation.
 
@@ -922,7 +922,7 @@ You can "steal" spreadable bonus resources from lands outside your own culture. 
 
 Each city can have up to four livestock or grain resources within its reach. The size of the city determines how many bonus goods can be distributed. A settlement (Pop 1) can have one resource. From a city (Pop 6) onwards it is two, from a provincial city (Pop 12) three and only a metropolis (Pop 20) can have four resources in its reach.
 
-Donkeys, horses, camels, grapes, olives, dates, crabs and glams are excluded. These can be distributed once in each city's reach, regardless of its size. This means that cities that are placed too close together sometimes have to share a resource.
+Donkeys, horses, camels, grapes, olives, dates, crabs and clams are excluded. These can be distributed once in each city's reach, regardless of its size. This means that cities that are placed too close together sometimes have to share a resource.
 
 
 [H1]Climate conditions[\H1]
@@ -9308,6 +9308,199 @@ Puede ocurrir una de estas variantes:
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_NEWTRIBES_PEDIA</Tag>
+		<English>After the collapse of the Western Roman Empire in the 5th century AD, a period of profound upheaval began in Europe. The so-called Migration Period had already set numerous Germanic, Iranian, and Hunnic groups in motion. But with the end of the Roman order, new political realities emerged: peoples such as the Lombards, Visigoths, Franks, Slavs, Bulgarians, Sassanids, and others settled in areas previously dominated by other cultures.
+
+These new groups not only took over land but also parts of the infrastructure, religion, and administration of their predecessors. Often, they merged with the local population or established their own kingdoms on Roman soil, like the Visigoths in Spain, the Lombards in Italy, or the Franks in Gaul. The ethnic map of Europe was redrawn. Old names disappeared, and new identities arose.
+
+[ICON_BULLET] Britons: Picts (300-600, Coroticus), Anglo-Saxons (from 600, Alfred the Great (871-899))
+[ICON_BULLET] Parthians: Alans (from 300, Goar)
+[ICON_BULLET] Persians: Sassanids (300-700, Sasan), Abbasids (from 700, Abu l-Abbas as-Saffah)
+[ICON_BULLET] Phoenicians: Ghassanids (from 300, Arethas)
+
+[ICON_BULLET] Celts: Bavarians (from 400, Garibald)
+[ICON_BULLET] Vandals: Visigoths (from 400, Alaric I)
+[ICON_BULLET] Dacians: Sarmatians (from 400, Rausimod)
+
+[ICON_BULLET] Gauls or Germanic tribes:
+If only one of the two exists: Franks from 400 (400 Childeric, 500 Clovis, from 800 Charlemagne)
+Otherwise:
+[ICON_BULLET] Gauls: Merovingians Childeric (400 to 500), Merovingian Clovis (500-700), Carolingian Charlemagne (700-800), West Franks (800-1000, Charles the Bald)
+[ICON_BULLET] Germanic tribes: Alemanni (400-800), East Franks (800-1000, Louis the German)
+
+[ICON_BULLET] Scythians: Bulgars (from 500, Khan Asparukh)
+[ICON_BULLET] Etruscans: Lombards (from 500, Alboin)
+[ICON_BULLET] Rome: Ostrogoths (from 500, Theodoric the Great), Otto the Great (912-1024)
+
+[ICON_BULLET] Huns: Avars (600-800, Bayan Khagan), Magyars (from 800, &#193;rp&#225;d)
+[ICON_BULLET] Carthaginians: Umayyads (from 600, Muawiya I)
+[ICON_BULLET] Illyrians: Slavs (from 600, Dusan the Mighty)
+[ICON_BULLET] Lydians: Turkmen (from 600, Arkadag ("Protector"))
+[ICON_BULLET] Sumers: Lakhmids (from 600, al-Mundhir III)
+
+[ICON_BULLET] Arabs: Saracens (from 700, People of the East, Abd ar-Rahman)
+[ICON_BULLET] Berbers: Moors (from 700, Tariq ibn Ziyad)
+[ICON_BULLET] Iberians: Asturians (from 700, Pelayo)
+[ICON_BULLET] Assyrians: Kurds (from 700, Babak Khorramdin)
+
+[ICON_BULLET] Hittites: Seljuks (800, Suleiman ibn Kutalmis)
+
+If multiple tribes of the same type exist on a map, the race of that type with the most points will be renamed.</English>
+		<French>
+Apr&#232;s la chute de l'Empire romain d'Occident au Ve si&#232;cle, une p&#233;riode de profonds bouleversements s'ouvrit en Europe. Les Grandes Invasions avaient d&#233;j&#224; entra&#238;n&#233; la migration de nombreux peuples germaniques, iraniens et hunniques. Mais avec la fin de l'ordre romain, de nouvelles r&#233;alit&#233;s politiques &#233;merg&#232;rent : des peuples tels que les Lombards, les Wisigoths, les Francs, les Slaves, les Bulgares, les Sassanides et d'autres encore s'install&#232;rent dans des r&#233;gions auparavant domin&#233;es par d'autres cultures.
+
+Ces nouveaux groupes s'empar&#232;rent non seulement des terres, mais aussi d'une partie des infrastructures, de la religion et de l'administration de leurs pr&#233;d&#233;cesseurs. Souvent, ils se fondirent dans la population locale ou &#233;tablirent leurs propres royaumes sur le sol romain, comme les Wisigoths en Espagne, les Lombards en Italie ou les Francs en Gaule. La carte ethnique de l'Europe fut redessin&#233;e. D'anciens noms disparurent et de nouvelles identit&#233;s apparurent.
+
+[ICON_BULLET] Bretons : Pictes (300-600, Coroticus), Anglo-Saxons (&#224; partir de 600, Alfred le Grand (871-899))
+[ICON_BULLET] Parthes : Alains (&#224; partir de 300, Goar)
+[ICON_BULLET] Perses : Sassanides (300-700, Sasan), Abbassides (&#224; partir de 700, Abou l'Abbas as-Saffah)
+[ICON_BULLET] Ph&#233;niciens : Ghassanides (&#224; partir de 300, Ar&#233;thas)
+
+[ICON_BULLET] Celtes : Bavarois (&#224; partir de 400, Garibald)
+[ICON_BULLET] Vandales : Wisigoths (&#224; partir de 400, Alaric Ier)
+[ICON_BULLET] Daces : Sarmates (&#224; partir de 400, Rausimod)
+[ICON_BULLET] Gaulois ou tribus germaniques :
+Si une seule des deux tribus existe : Francs &#224; partir de 400 (400, Child&#233;ric ; 500, Clovis ; &#224; partir de 800). Charlemagne)
+Autres :
+[ICON_BULLET] Gaulois : M&#233;rovingiens Child&#233;ric (400-500), M&#233;rovingien Clovis (500-700), Carolingien Charlemagne (700-800), Francs occidentaux (800-1000, Charles le Chauve)
+[ICON_BULLET] Tribus germaniques : Alamans (400-800), Francs orientaux (800-1000, Louis le Germanique)
+
+[ICON_BULLET] Scythes : Bulgares (&#224; partir de 500, khan Asparoukh)
+[ICON_BULLET] &#201;trusques : Lombards (&#224; partir de 500, Albo&#239;n)
+[ICON_BULLET] Rome : Ostrogoths (&#224; partir de 500, Th&#233;odoric le Grand), Otton le Grand (912-1024)
+
+[ICON_BULLET] Huns : Avars (600-800, Bayan Khagan), Magyars (&#224; partir de 800) &#193;rp&#225;d)
+[ICON_BULLET] Carthaginois : Omeyyades (&#224; partir de 600, Muawiya Ier)
+[ICON_BULLET] Illyriens : Slaves (&#224; partir de 600, Dusan le Puissant)
+[ICON_BULLET] Lydiens : Turkm&#232;nes (&#224; partir de 600, Arkadag ("Protecteur"))
+[ICON_BULLET] Sumers : Lakhmides (&#224; partir de 600, al-Mundhir III)
+
+[ICON_BULLET] Arabes : Sarrasins (&#224; partir de 700, Peuples de l'Orient, Abd ar-Rahman)
+[ICON_BULLET] Berb&#232;res : Maures (&#224; partir de 700, Tariq ibn Ziyad)
+[ICON_BULLET] Ib&#232;res : Asturiens (&#224; partir de 700, P&#233;layo)
+[ICON_BULLET] Assyriens : Kurdes (&#224; partir de 700, Babak Khorramdin)
+
+[ICON_BULLET] Hittites : Seldjoukides (800, Soliman ibn Kutalmis)
+
+Si plusieurs tribus du m&#234;me type existent sur une carte, la race de ce type ayant le plus de points sera renomm&#233;e.
+		</French>
+		<German>
+Nach dem Zusammenbruch des Westr&#246;mischen Reiches im 5. Jahrhundert nach Christus begann eine Zeit tiefgreifender Umbr&#252;che in Europa. Die sogenannte V&#246;lkerwanderung hatte bereits zahlreiche germanische, iranische und hunnische Gruppen in Bewegung gesetzt. Doch mit dem Ende der r&#246;mischen Ordnung entstanden neue politische Realit&#228;ten: V&#246;lker wie die Langobarden, Westgoten, Franken, Slawen, Bulgarien, Sassaniden usw. siedelten sich in Gebieten an, die zuvor von anderen Kulturen gepr&#228;gt waren.
+
+Diese neuen Gruppen &#252;bernahmen nicht nur Land, sondern auch Teile der Infrastruktur, Religion und Verwaltung ihrer Vorg&#228;nger. Oft verschmolzen sie mit der lokalen Bev&#246;lkerung oder etablierten eigene Reiche auf r&#246;mischem Boden, wie die Westgoten in Spanien, die Langobarden in Italien oder die Franken in Gallien. Die ethnische Karte Europas wurde neu gezeichnet. Alte Namen verschwanden und neue Identit&#228;ten entstanden.
+
+[ICON_BULLET] Britonen: Pikten (300-600, Coroticus), Angelsachsen (ab 600, Alfred der Gro&#223;e (871-899))
+[ICON_BULLET] Parther: Alanen (ab 300, Goar)
+[ICON_BULLET] Perser: Sassaniden (300-700, Sasan), Abbasiden (ab 700, Abu l-Abbas as-Saffah)
+[ICON_BULLET] Ph&#246;nizier: Ghassaniden (ab 300, Arethas)
+
+[ICON_BULLET] Kelten: Bajuwaren (ab 400, Garibald)
+[ICON_BULLET] Vandalen: Westgoten (ab 400, Alarich I)
+[ICON_BULLET] Dakien: Sarmaten (ab 400, Rausimod)
+
+[ICON_BULLET] Gallier oder Germanen:
+Wenn nur ein Volk von beiden existiert: Franken ab 400 (400 Childerich, 500 Chlodwig, ab 800 Karl der Gro&#223;e)
+Andernfalls:
+[ICON_BULLET] Gallien: Merowinger Childerich (400 bis 500), Merowinger Chlodwig (500-700), Karolinger Karl der Gro&#223;e (700-800), Westfranken (800-1000, Karl der Kahle)
+[ICON_BULLET] Germanen: Alemannen (400-800), Ostfranken (800-1000, Ludwig der Deutsche)
+
+[ICON_BULLET] Skythen: Bulgaren (ab 500, Khan Asparuch)
+[ICON_BULLET] Etrusker: Langobarden (ab 500 , Alboin)
+[ICON_BULLET] Rom: Ostgoten (ab 500, Theoderich der Gro&#223;e), Otto der Gro&#223;e (912-1024)
+
+[ICON_BULLET] Hunnen: Awaren (600-800, Bajan Khagan), Magyaren (ab 800, Arpad)
+[ICON_BULLET] Karthager: Umayyaden (ab 600, Muawiya I.)
+[ICON_BULLET] Illyrer: Slawen (ab 600, Dusan der M&#228;chtige)
+[ICON_BULLET] Lyder: Turkmenen (ab 600, Arkadag ("Besch&#252;tzer"))
+[ICON_BULLET] Sumer: Lachmiden (ab 600, al-Mundhir III.)
+
+[ICON_BULLET] Araber: Sarazenen (ab 700, Menschen des Ostens, Abd ar-Rahman)
+[ICON_BULLET] Berber: Mauren (ab 700, Tariq ibn Ziyad)
+[ICON_BULLET] Iberer: Asturien ab (700, Pelayo)
+[ICON_BULLET] Assyrer: Kurden (ab 700, Babak Khorramdin)
+
+[ICON_BULLET] Hethiter: Seldschuken (800, Suleiman ibn Kutalmis)
+
+Falls mehrere gleiche V&#246;lker auf einer Karte existieren, wird das Volk dieses Typs mit den meisten Punkten umbenannt.
+		</German>
+		<Italian>
+Dopo il crollo dell'Impero Romano d'Occidente nel V secolo d.C., inizi&#242; in Europa un periodo di profondi sconvolgimenti. Il cosiddetto periodo delle migrazioni aveva gi&#224; messo in moto numerosi gruppi germanici, iranici e unni. Ma con la fine dell'ordine romano, emersero nuove realt&#224; politiche: popoli come Longobardi, Visigoti, Franchi, Slavi, Bulgari, Sassanidi e altri si insediarono in aree precedentemente dominate da altre culture.
+
+Questi nuovi gruppi non solo conquistarono territori, ma anche parti delle infrastrutture, della religione e dell'amministrazione dei loro predecessori. Spesso si fondevano con la popolazione locale o fondavano i propri regni sul suolo romano, come i Visigoti in Spagna, i Longobardi in Italia o i Franchi in Gallia. La mappa etnica dell'Europa fu ridisegnata. I vecchi nomi scomparvero e nacquero nuove identit&#224;.
+
+[ICON_BULLET] Britanni: Pitti (300-600, Corotico), Anglosassoni (dal 600, Alfredo il Grande (871-899))
+[ICON_BULLET] Parti: Alani (dal 300, Goar)
+[ICON_BULLET] Persiani: Sasanidi (300-700, Sasan), Abbasidi (dal 700, Abu l-Abbas as-Saffah)
+[ICON_BULLET] Fenici: Ghassanidi (dal 300, Areta)
+
+[ICON_BULLET] Celti: Bavari (dal 400, Garibaldi)
+[ICON_BULLET] Vandali: Visigoti (dal 400, Alarico I)
+[ICON_BULLET] Daci: Sarmati (dal 400, Rausimod)
+[ICON_BULLET] Galli o trib&#249; germaniche:
+Se esiste solo una delle due: Franchi dal 400 (400 Childerico, 500 Clodoveo, dall'800 Carlo Magno)
+Altrimenti:
+[ICON_BULLET] Galli: Childerico Merovingio (400-500), Clodoveo Merovingio (500-700), Carlo Magno Carolingio (700-800), Franchi Occidentali (800-1000, Carlo il Calvo)
+[ICON_BULLET] Trib&#249; Germaniche: Alemanni (400-800), Franchi Orientali (800-1000, Ludovico il Germanico)
+
+[ICON_BULLET] Sciti: Bulgari (dal 500, Khan Asparukh)
+[ICON_BULLET] Etruschi: Longobardi (dal 500, Alboino)
+[ICON_BULLET] Roma: Ostrogoti (dal 500, Teodorico il Grande), Ottone il Grande (912-1024)
+
+[ICON_BULLET] Unni: Avari (600-800, Bayan Khagan), Magiari (dall'800, &#193;rp&#225;d)
+[ICON_BULLET] Cartaginesi: Omayyadi (dal 600, Mu'awiya I)
+[ICON_BULLET] Illiri: Slavi (dal 600, Dusan il Potente)
+[ICON_BULLET] Lidi: Turkmeni (dal 600, Arkadag ("Protettore"))
+[ICON_BULLET] Sumeri: Lakhmidi (dal 600, al-Mundhir III)
+
+[ICON_BULLET] Arabi: Saraceni (dal 700, Popolo dell'Oriente, Abd ar-Rahman)
+[ICON_BULLET] Berberi: Mori (dal 700, Tariq ibn Ziyad)
+[ICON_BULLET] Iberi: Asturiani (dal 700, Pelayo)
+[ICON_BULLET] Assiri: Curdi (dal 700, Babak Khorramdin)
+
+[ICON_BULLET] Ittiti: Selgiuchidi (800, Suleiman ibn Kutalmis)
+
+Se su una mappa sono presenti pi&#249; trib&#249; dello stesso tipo, verr&#224; rinominata la razza di quel tipo con il maggior numero di punti.
+		</Italian>
+		<Spanish>
+Tras el colapso del Imperio romano de Occidente en el siglo V d. C., comenz&#243; en Europa un per&#237;odo de profunda convulsi&#243;n. El llamado per&#237;odo de las migraciones ya hab&#237;a puesto en marcha a numerosos grupos germ&#225;nicos, iranios y hunos. Pero con el fin del orden romano, surgieron nuevas realidades pol&#237;ticas: pueblos como los lombardos, visigodos, francos, eslavos, b&#250;lgaros, sas&#225;nidas y otros se asentaron en zonas previamente dominadas por otras culturas.
+
+Estos nuevos grupos no solo se apoderaron de tierras, sino tambi&#233;n de parte de la infraestructura, la religi&#243;n y la administraci&#243;n de sus predecesores. A menudo, se fusionaron con la poblaci&#243;n local o establecieron sus propios reinos en territorio romano, como los visigodos en Hispania, los lombardos en Italia o los francos en la Galia. El mapa &#233;tnico de Europa se transform&#243;. Antiguos nombres desaparecieron y surgieron nuevas identidades.
+
+[ICON_BULLET] Britanos: Pictos (300-600, Coroticus), anglosajones (desde 600, Alfredo el Grande (871-899))
+[ICON_BULLET] Partos: Alanos (desde 300, Goar)
+[ICON_BULLET] Persas: Sas&#225;nidas (300-700, Sasan), abas&#237;es (desde 700, Abu l-Abbas as-Saffah)
+[ICON_BULLET] Fenicios: Gas&#225;nidas (desde 300, Arethas)
+
+[ICON_BULLET] Celtas: B&#225;varos (desde 400, Garibaldo)
+[ICON_BULLET] V&#225;ndalos: Visigodos (desde 400, Alarico I)
+[ICON_BULLET] Dacios: S&#225;rmatas (desde 400, Rausimod)
+[ICON_BULLET] Garios o tribus germ&#225;nicas:
+Si solo existe uno de los dos: Francos desde 400 (400 Childerico, 500 Clodoveo, desde 800) Carlomagno)
+Otros:
+[ICON_BULLET] Gales: Merovingios Childerico (400-500), Merovingio Clodoveo (500-700), Carolingio Carlomagno (700-800), Francos occidentales (800-1000, Carlos el Calvo)
+[ICON_BULLET] Tribus germ&#225;nicas: Alamanes (400-800), Francos orientales (800-1000, Luis el Germ&#225;nico)
+
+[ICON_BULLET] Escitas: B&#250;lgaros (desde 500, Kan Asparukh)
+[ICON_BULLET] Etruscos: Lombardos (desde 500, Alboino)
+[ICON_BULLET] Roma: Ostrogodos (desde 500, Teodorico el Grande), Ot&#243;n el Grande (912-1024)
+
+[ICON_BULLET] Hunos: &#193;varos (600-800, Bayan Khagan), Magiares (desde 800, &#193;rp&#225;d)
+[ICON_BULLET] Cartagineses: Omeyas (desde 600, Muawiya I)
+[ICON_BULLET] Ilirios: Eslavos (desde 600, Dusan el Poderoso)
+[ICON_BULLET] Lidios: Turcomanos (desde 600, Arkadag ("Protector"))
+[ICON_BULLET] Sumerios: L&#225;jmidas (desde 600, al-Mundhir III)
+
+[ICON_BULLET] &#193;rabes: Sarracenos (desde 700, Pueblos del Este, Abd ar-Rahman)
+[ICON_BULLET] Bereberes: Moros (desde 700, Tariq ibn Ziyad)
+[ICON_BULLET] Iberios: Asturianos (desde 700, Pelayo)
+[ICON_BULLET] Asirios: Kurdos (desde 700, Babak Khorramdin)
+
+[ICON_BULLET] Hititas: Sely&#250;cidas (800, Solim&#225;n ibn Kutalm&#237;s)
+
+Si en un mapa existen varias tribus del mismo tipo, la raza de ese tipo con mayor puntuaci&#243;n ser&#225; renombrada.
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_OLYMPIC_GAMES_PEDIA</Tag>
 		<English>[H1]The panhellenic Games[\H1]
 
@@ -14536,8 +14729,8 @@ Chance: 100%
 -- Spartiates -- 
 1. Demi-Phylearchos (officier pour 6 hommes)
 2. Phylearchos (officier pour 12 hommes)
-3. Hyperetes (aide de l'en&#333;motarche)
-4. Ouragos (aide de l'en&#333;motarche)
+3. Hyperetes (aide de l'en?motarche)
+4. Ouragos (aide de l'en?motarche)
 -- Spartiates --
 5. Enomotarches (officier pour 36 hommes)
 6. Pentekonter (officier pour 180 hommes)

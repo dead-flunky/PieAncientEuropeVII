@@ -2563,8 +2563,8 @@ def bonusMissingCity(pCity, eBuilding):
 						loopPlot = pCity.getCityIndexPlot(iI)
 						if loopPlot is not None and not loopPlot.isNone():
 								if loopPlot.getBonusType(-1) == eBonus:
-										iImprovement = loopPlot.getImprovementType()
-										if iImprovement != -1 and gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(eBonus):
+										iImp = loopPlot.getImprovementType()
+										if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusTrade(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
 												bBonus1Missing = False
 		if bBonus1Missing:
 				return eBonus
@@ -2590,8 +2590,8 @@ def bonusMissingCity(pCity, eBuilding):
 										eBonusPlot = loopPlot.getBonusType(-1)
 										if eBonusPlot in lBonus2:
 												eBonus2 = eBonusPlot
-												iImprovement = loopPlot.getImprovementType()
-												if iImprovement != -1 and gc.getImprovementInfo(iImprovement).isImprovementBonusTrade(eBonusPlot):
+												iImp = loopPlot.getImprovementType()
+												if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusTrade(eBonusPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
 														return -1
 
 				#if len(lBonus2) > 1: return -2
@@ -2616,7 +2616,7 @@ def bonusMissingCity3x3(pCity, eBuilding):
 								if loopPlot is not None and not loopPlot.isNone():
 										if loopPlot.getBonusType(-1) == eBonus:
 												iImp = loopPlot.getImprovementType()
-												if iImp != -1 and gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus):
+												if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
 														bBonus1Missing = False
 		if bBonus1Missing:
 				return eBonus
@@ -2643,7 +2643,7 @@ def bonusMissingCity3x3(pCity, eBuilding):
 												if eBonusPlot in lBonus2:
 														eBonus2 = eBonusPlot
 														iImp = loopPlot.getImprovementType()
-														if iImp != -1 and gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonusPlot):
+														if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonusPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
 																return -1
 				#if len(lBonus2) > 1: return -2
 				#else:

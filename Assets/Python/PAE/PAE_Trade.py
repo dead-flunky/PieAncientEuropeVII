@@ -74,8 +74,15 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 		if not pUnit.getUnitType() in L.LTradeUnits:
 				return
 
-		# PAE 7.11
-		if not pUnit.canMove(): return
+		# PAE 7.11 (if not pUnit.canMove(): return)
+		# PAE 7.12d
+		#if not pUnit.canMove():
+		#		bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0))
+		#		if not bTradeRouteActive: return
+		# PAe 7.12e:
+		if not pUnit.canMove():
+				pUnit.getGroup().pushMission(MissionTypes.MISSION_SKIP, 0, 0, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+				return
 
 		if eBonus != -1:
 				iBuyer = pUnit.getOwner()
@@ -122,6 +129,7 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 				pUnit.finishMoves()
 				if pUnit.isHuman():
 						PAE_Unit.doGoToNextUnit(pUnit)
+				return
 
 
 def doSellBonus(pUnit, pCity):
@@ -1464,10 +1472,10 @@ def doAutomateMerchant(pUnit):
 								CvUtil.addScriptData(pUnit, "y", pUnit.getY())
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == -1 ", None, 2, None, ColorTypes(7), 0, 0, False, False)
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-						# Wenn bereits die Ware aus dieser Stadt geladen ist
 
+						# Wenn bereits die Ware aus dieser Stadt geladen ist
 						elif bOriginalCity and eStoredBonus != -1:
-						#		#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == eStoredBonus | going to " + pNewCity.getName(), None, 2, None, ColorTypes(7), 0, 0, False, False)
+								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy == eStoredBonus | going to " + pNewCity.getName(), None, 2, None, ColorTypes(7), 0, 0, False, False)
 								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 
 						elif eBonusBuy in lCitySaleableGoods + lCitySaleableGoods2 and eStoredBonus == -1:
@@ -1478,7 +1486,8 @@ def doAutomateMerchant(pUnit):
 								doBuyBonus(pUnit, eBonusBuy, pCurrentCity.getOwner())
 								#pUnit.finishMoves()
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Mission eBonusBuy MOVE to new city ", None, 2, None, ColorTypes(7), 0, 0, False, False)
-								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+								if pUnit.canMove():
+									pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, pNewCity.getX(), pNewCity.getY(), 1, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 
 						else:
 								# bonus is no longer available (or player does not have enough money) => cancel automated trade route

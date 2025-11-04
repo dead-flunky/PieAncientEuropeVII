@@ -513,12 +513,516 @@
 		<Spanish>(eso significa: en lugar de 2 [ICON_UNHAPPY], no [ICON_UNHAPPY] por religi&#243;n)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ABBASIDEN</Tag>
+		<English>Abbasids</English>
+		<French>Abbassides</French>
+		<German>Abbasiden</German>
+		<Italian>Abbasidi</Italian>
+		<Spanish>Abas&#237;es</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ABBASIDEN_ADJ</Tag>
+		<English>Abbasid</English>
+		<French>abbasside</French>
+		<German>abbasidisch/e/r</German>
+		<Italian>abbaside</Italian>
+		<Spanish>abas&#237;</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ALANEN</Tag>
+		<English>Alans</English>
+		<French>Alains</French>
+		<German>Alanen</German>
+		<Italian>Alani</Italian>
+		<Spanish>Alanos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ALANEN_ADJ</Tag>
+		<English>Alanian</English>
+		<French>alanien</French>
+		<German>alanisch/e/r</German>
+		<Italian>alaniano</Italian>
+		<Spanish>alan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ANGELSACHSEN</Tag>
+		<English>Anglo-Saxons</English>
+		<French>Anglo-Saxons</French>
+		<German>Angelsachsen</German>
+		<Italian>Anglosassoni</Italian>
+		<Spanish>Anglosajones</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ANGELSACHSEN_ADJ</Tag>
+		<English>Anglo-Saxon</English>
+		<French>anglo-saxon</French>
+		<German>angels&#228;chsische/r</German>
+		<Italian>anglosassone</Italian>
+		<Spanish>anglosaj&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ANGELSACHSEN_LEADER</Tag>
+		<English>Alfred the Great</English>
+		<French>Alfred le Grand</French>
+		<German>Alfred der Gro&#223;e</German>
+		<Italian>Alfredo il Grande</Italian>
+		<Spanish>Alfredo el Grande</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AWAREN_ADJ</Tag>
+		<English>Avar</English>
+		<French>avar</French>
+		<German>awarisch/e/r</German>
+		<Italian>avar</Italian>
+		<Spanish>&#225;var</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BAJUWAREN</Tag>
+		<English>Bavarians</English>
+		<French>Bavarois</French>
+		<German>Bajuwaren</German>
+		<Italian>Bavaresi</Italian>
+		<Spanish>B&#225;varos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BAJUWAREN_ADJ</Tag>
+		<English>Bavarian</English>
+		<French>bavarois</French>
+		<German>bajuwarisch/e/r</German>
+		<Italian>bavarese</Italian>
+		<Spanish>b&#225;varo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BAJUWAREN_LEADER</Tag>
+		<English>Garibald</English>
+		<French>Garibald</French>
+		<German>Garibald</German>
+		<Italian>Garibaldi</Italian>
+		<Spanish>Garibald</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BULGAREN</Tag>
+		<English>Bulgarians</English>
+		<French>Bulgares</French>
+		<German>Bulgaren</German>
+		<Italian>Bulgari</Italian>
+		<Spanish>B&#250;lgaros</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BULGAREN_ADJ</Tag>
+		<English>Bulgarian</English>
+		<French>bulgare</French>
+		<German>bulgarisch/e/r</German>
+		<Italian>bulgaro</Italian>
+		<Spanish>b&#250;lgaro</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BULGAREN_LEADER</Tag>
+		<English>Khan Asparukh</English>
+		<French>Khan Asparoukhe</French>
+		<German>Khan Asparuch</German>
+		<Italian>Khan Asparukh</Italian>
+		<Spanish>Kan Asparuj</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN</Tag>
+		<English>Franks</English>
+		<French>Francs</French>
+		<German>Franken</German>
+		<Italian>Franchi</Italian>
+		<Spanish>Francos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_ADJ</Tag>
+		<English>Franconian</English>
+		<French>franconien</French>
+		<German>fr&#228;nkisch/e/r</German>
+		<Italian>francone</Italian>
+		<Spanish>franconio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_LEADER1</Tag>
+		<English>Childeric</English>
+		<French>Child&#233;ric</French>
+		<German>Childerich</German>
+		<Italian>Childerico</Italian>
+		<Spanish>Childerico</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_LEADER2</Tag>
+		<English>Clovis</English>
+		<French>Clovis</French>
+		<German>Chlodwig</German>
+		<Italian>Clodoveo</Italian>
+		<Spanish>Clovis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_LEADER3</Tag>
+		<English>Charlemagne</English>
+		<French>Charlemagne</French>
+		<German>Karl der Gro&#223;e</German>
+		<Italian>Carlo Magno</Italian>
+		<Spanish>Carlomagno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_LEADER4</Tag>
+		<English>Charles the Bald</English>
+		<French>Charles le Chauve</French>
+		<German>Karl der Kahle</German>
+		<Italian>Carlo il Calvo</Italian>
+		<Spanish>Carlos el Calvo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_LEADER5</Tag>
+		<English>Louis the German</English>
+		<French>Louis l'Allemand</French>
+		<German>Ludwig der Deutsche</German>
+		<Italian>Luigi il Tedesco</Italian>
+		<Spanish>Luis el Alem&#225;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_LEADER6</Tag>
+		<English>Otto the Great</English>
+		<French>Otton le Grand</French>
+		<German>Otto der Gro&#223;e</German>
+		<Italian>Ottone il Grande</Italian>
+		<Spanish>Ot&#243;n el Grande</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_OST</Tag>
+		<English>East Franconia</English>
+		<French>Franconie orientale</French>
+		<German>Ostfranken</German>
+		<Italian>Franconia orientale</Italian>
+		<Spanish>Franconia Oriental</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_OST_ADJ</Tag>
+		<English>East Franconian</English>
+		<French>franconie orientale</French>
+		<German>ostfr&#228;nkisch/e/r</German>
+		<Italian>franconia orientale</Italian>
+		<Spanish>franconia oriental</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_WEST</Tag>
+		<English>Western Franconia</English>
+		<French>Franconie occidentale</French>
+		<German>Westfranken</German>
+		<Italian>Franconia occidentale</Italian>
+		<Spanish>Franconia occidental</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_FRANKEN_WEST_ADJ</Tag>
+		<English>West Franconian</English>
+		<French>franconie occidentale</French>
+		<German>westfr&#228;nkisch/e/r</German>
+		<Italian>franconia occidentale</Italian>
+		<Spanish>franconia occidental</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GHASSANIDEN</Tag>
+		<English>Ghassanids</English>
+		<French>Ghassanides</French>
+		<German>Ghassaniden</German>
+		<Italian>Ghassanidi</Italian>
+		<Spanish>Gas&#225;nidas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_GHASSANIDEN_ADJ</Tag>
+		<English>Ghassanid</English>
+		<French>ghassanide</French>
+		<German>ghassanidisch/e/r</German>
+		<Italian>ghassanid</Italian>
+		<Spanish>ghassanid</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_HABEN_BEREITS</Tag>
 		<English>own</English>
 		<French>ont</French>
 		<German>haben</German>
 		<Italian>hanno</Italian>
 		<Spanish>tienen</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KALIFAT</Tag>
+		<English>Caliphate of</English>
+		<French>Califat de</French>
+		<German>Kalifat von</German>
+		<Italian>Califfato di</Italian>
+		<Spanish>Califato de</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KAROLINGER</Tag>
+		<English>Carolingians</English>
+		<French>Carolingiens</French>
+		<German>Karolinger</German>
+		<Italian>Carolingi</Italian>
+		<Spanish>Carolingios</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KAROLINGER_ADJ</Tag>
+		<English>carolingian</English>
+		<French>Carolingien</French>
+		<German>karolingisch/e/r</German>
+		<Italian>carolingio</Italian>
+		<Spanish>carolingio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KURDEN</Tag>
+		<English>Kurds</English>
+		<French>Kurdes</French>
+		<German>Kurden</German>
+		<Italian>Curdi</Italian>
+		<Spanish>Kurdos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KURDEN_ADJ</Tag>
+		<English>Kurdish</English>
+		<French>kurde</French>
+		<German>kurdisch/e/r</German>
+		<Italian>curdo</Italian>
+		<Spanish>kurdo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LACHMIDEN</Tag>
+		<English>Lachmides</English>
+		<French>Lacmides</French>
+		<German>Lachmiden</German>
+		<Italian>Lachmides</Italian>
+		<Spanish>L&#225;cmidas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LACHMIDEN_ADJ</Tag>
+		<English>Lachmidian</English>
+		<French>lachmidien</French>
+		<German>lachmidisch/e/r</German>
+		<Italian>lachmidiano</Italian>
+		<Spanish>lachmidio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LANGOBARDEN</Tag>
+		<English>Longobards</English>
+		<French>Longobards</French>
+		<German>Langobarden</German>
+		<Italian>Longobardi</Italian>
+		<Spanish>Longobardos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LANGOBARDEN_ADJ</Tag>
+		<English>Longobard</English>
+		<French>longobarde</French>
+		<German>langobardisch/e/r</German>
+		<Italian>longobardo</Italian>
+		<Spanish>longobardo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LANGOBARDEN_LEADER</Tag>
+		<English>Alboin</English>
+		<French>Albo&#239;n</French>
+		<German>Alboin</German>
+		<Italian>Alboino</Italian>
+		<Spanish>Alboin</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_LOMBARDEN</Tag>
+		<English>Lombards</English>
+		<French>Lombards</French>
+		<German>Lombarden</German>
+		<Italian>Lombardi</Italian>
+		<Spanish>Lombardos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAGYAREN</Tag>
+		<English>Magyars</English>
+		<French>Magyars</French>
+		<German>Magyaren</German>
+		<Italian>Magiari</Italian>
+		<Spanish>Magiares</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAGYAREN_ADJ</Tag>
+		<English>magyar</English>
+		<French>magyar</French>
+		<German>magyarisch/e/r</German>
+		<Italian>ungherese</Italian>
+		<Spanish>magiar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MAUREN_ADJ</Tag>
+		<English>moorish</English>
+		<French>mauresque</French>
+		<German>maurische/r/n</German>
+		<Italian>moresco</Italian>
+		<Spanish>moruno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEROWINGER</Tag>
+		<English>Merovingians</English>
+		<French>M&#233;rovingiens</French>
+		<German>Merowinger</German>
+		<Italian>Merovingi</Italian>
+		<Spanish>Merovingios</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MEROWINGER_ADJ</Tag>
+		<English>Merovingian</English>
+		<French>m&#233;rovingien</French>
+		<German>merowingisch/e/r</German>
+		<Italian>merovingio</Italian>
+		<Spanish>merovingio</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SARAZENEN</Tag>
+		<English>Saracens</English>
+		<French>Sarrasins</French>
+		<German>Sarazenen</German>
+		<Italian>Saraceni</Italian>
+		<Spanish>Sarracenos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SARAZENEN_ADJ</Tag>
+		<English>Saracen</English>
+		<French>sarrasin</French>
+		<German>sarazenisch/e/r</German>
+		<Italian>saraceno</Italian>
+		<Spanish>sarraceno</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SARMATEN_ADJ</Tag>
+		<English>sarmatian</English>
+		<French>sarmate</French>
+		<German>sarmatisch/e/r</German>
+		<Italian>sarmato</Italian>
+		<Spanish>s&#225;rmata</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SARMATEN_LEADER</Tag>
+		<English>Rausimod</English>
+		<French>Rausimod</French>
+		<German>Rausimod</German>
+		<Italian>Rausimod</Italian>
+		<Spanish>Rausimod</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SASSANIDEN</Tag>
+		<English>Sassanids</English>
+		<French>Sassanides</French>
+		<German>Sassaniden</German>
+		<Italian>Sasanidi</Italian>
+		<Spanish>Sas&#225;nidas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SASSANIDEN_ADJ</Tag>
+		<English>Sassanid</English>
+		<French>sassanide</French>
+		<German>sassanidisch/e/r</German>
+		<Italian>sasanide</Italian>
+		<Spanish>sas&#225;nida</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SELDSCHUKEN</Tag>
+		<English>Seljuks</English>
+		<French>Seldjoukides</French>
+		<German>Seldschuken</German>
+		<Italian>Selgiuchidi</Italian>
+		<Spanish>Sely&#250;cidas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SELDSCHUKEN_ADJ</Tag>
+		<English>Seljuk</English>
+		<French>seldjoukide</French>
+		<German>seldschukisch/e/r</German>
+		<Italian>selgiuchide</Italian>
+		<Spanish>sely&#250;cidas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SELDSCHUKEN_LEADER</Tag>
+		<English>Suleiman ibn Kutalmis</English>
+		<French>Suleiman ibn Kutalmis</French>
+		<German>Suleiman ibn Kutalmis</German>
+		<Italian>Suleiman ibn Kutalmis</Italian>
+		<Spanish>Suleim&#225;n ibn Kutalmis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SLAWEN</Tag>
+		<English>Slavs</English>
+		<French>Slaves</French>
+		<German>Slawen</German>
+		<Italian>Slavi</Italian>
+		<Spanish>Eslavos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SLAWEN_ADJ</Tag>
+		<English>Slavic</English>
+		<French>slave</French>
+		<German>slawisch/e/r</German>
+		<Italian>slavo</Italian>
+		<Spanish>eslavo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_SLAWEN_LEADER</Tag>
+		<English>Dusan the Mighty</English>
+		<French>Dusan le Puissant</French>
+		<German>Dusan der M&#228;chtige</German>
+		<Italian>Dusan il Potente</Italian>
+		<Spanish>Dusan el Poderoso</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKMENEN</Tag>
+		<English>Turkmen</English>
+		<French>Turkm&#232;nes</French>
+		<German>Turkmenen</German>
+		<Italian>Turkmen</Italian>
+		<Spanish>Turcomanos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKMENEN_ADJ</Tag>
+		<English>Turkmen</English>
+		<French>turkm&#232;nes</French>
+		<German>turkmenisch/e/r</German>
+		<Italian>turkmen</Italian>
+		<Spanish>turcomanos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UMAYYADEN</Tag>
+		<English>Umayyads</English>
+		<French>Omeyyades</French>
+		<German>Umayyaden</German>
+		<Italian>Omayyadi</Italian>
+		<Spanish>Omeyas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_UMAYYADEN_ADJ</Tag>
+		<English>Umayyad</English>
+		<French>omeyyade</French>
+		<German>umayyadisch/e/r</German>
+		<Italian>omayyade</Italian>
+		<Spanish>omeyas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WESTGOTEN</Tag>
+		<English>Visigoths</English>
+		<French>Wisigoths</French>
+		<German>Westgoten</German>
+		<Italian>Visigoti</Italian>
+		<Spanish>Visigodos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WESTGOTEN_ADJ</Tag>
+		<English>Visigothic</English>
+		<French>wisigothique</French>
+		<German>westgotisch/e/r</German>
+		<Italian>visigoto</Italian>
+		<Spanish>visigodo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_WESTGOTEN_LEADER</Tag>
+		<English>Alaric I</English>
+		<French>Alaric I</French>
+		<German>Alarich I</German>
+		<Italian>Alarico I</Italian>
+		<Spanish>Alarico I</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_COLOR_GRAY</Tag>
@@ -1009,6 +1513,38 @@
 		<Spanish>Sin erupciones volc&#225;nicas, diluvios, terremotos o impactos de meteoritos y cometas durante el juego.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_GLOBELAYER_RESOURCES_FOOD</Tag>
+		<English>[ICON_FOOD] Food</English>
+		<French>[ICON_FOOD] Nourriture</French>
+		<German>[ICON_FOOD] Nahrung</German>
+		<Italian>[ICON_FOOD] Cibo</Italian>
+		<Spanish>[ICON_FOOD] Alimentos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GLOBELAYER_RESOURCES_HEALTH</Tag>
+		<English>[ICON_HEALTHY] Health</English>
+		<French>[ICON_HEALTHY] Sant&#233;</French>
+		<German>[ICON_HEALTHY] Gesundheit</German>
+		<Italian>[ICON_HEALTHY] Salute</Italian>
+		<Spanish>[ICON_HEALTHY] Salud</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GLOBELAYER_RESOURCES_LUXURIES</Tag>
+		<English>[ICON_GOLD] Luxuries</English>
+		<French>[ICON_GOLD] Produits de luxe</French>
+		<German>[ICON_GOLD] Luxusg&#252;ter</German>
+		<Italian>[ICON_GOLD] Beni di lusso</Italian>
+		<Spanish>[ICON_GOLD] Lujos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GLOBELAYER_RESOURCES_STRATEGIC</Tag>
+		<English>[ICON_PRODUCTION] Strategic</English>
+		<French>[ICON_PRODUCTION] Strat&#233;gique</French>
+		<German>[ICON_PRODUCTION] Strategisch</German>
+		<Italian>[ICON_PRODUCTION] Strategico</Italian>
+		<Spanish>[ICON_PRODUCTION] Estrat&#233;gico</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GOODY_EMIGRANT</Tag>
 		<English>The residents have decided to join you!</English>
 		<French>Les villageois ont d&#233;cid&#233; de vous rejoindre !</French>
@@ -1340,7 +1876,7 @@
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS1_2</Tag>
 		<English>Followers of the Way (Christians) have destroyed holy sites (%s1_cult) in %s2_city.</English>
 		<French>Adeptes du Chemin (chr&#233;tiens) ont saccag&#233; des lieux sacr&#233;s (%s1_cult) &#224; %s2_city.</French>
-		<German>Anh&#228;nger des Weges (Christen) haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
+		<German>Anh&#228;nger des Weges (Christen) haben heilige St&#228;tten (%s1_cult) in %s2_city zerst&#246;rt.</German>
 		<Italian>Seguaci del Cammino (cristiani) hanno distrutto luoghi sacri (%s1_cult) a %s2_city.</Italian>
 		<Spanish>Seguidores del Camino (cristianos) han destru&#237;do lugares santos (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
@@ -1351,6 +1887,22 @@
 		<German>Christliche Glaubensfanatiker haben heilige St&#228;tten (%s1_cult) in %s2_city entweiht.</German>
 		<Italian>I fanatici religiosi cristiani hanno profanato luoghi sacri (%s1_cult) a %s2_city.</Italian>
 		<Spanish>Fan&#225;ticos religiosos cristianos han profanado lugares santos (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS1_4</Tag>
+		<English>Devout Christians have destroyed holy sites (%s1_cult) in %s2_city.</English>
+		<French>Les chr&#233;tiens fervents ont d&#233;truit des lieux saints (%s1_cult) dans la ville de %s2_city.</French>
+		<German>Fromme Anh&#228;nger des Christentums haben heilige St&#228;tten (%s1_cult) in %s2_city in Schutt und Asche gelegt.</German>
+		<Italian>I cristiani devoti hanno distrutto i luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Cristianos devotos han destruido lugares sagrados (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS1_5</Tag>
+		<English>God-fearing Christians have razed holy sites (%s1_cult) in %s2_city.</English>
+		<French>Les chr&#233;tiens craignant Dieu ont ras&#233; les lieux saints (%s1_cult) &#224; %s2_city.</French>
+		<German>Gottesf&#252;rchtige Anh&#228;nger des Christentums haben heilige St&#228;tten (%s1_cult) in %s2_city dem Erdboden gleich gemacht.</German>
+		<Italian>I cristiani timorati di Dio hanno raso al suolo i luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Los cristianos temerosos de Dios han arrasado lugares sagrados (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS2_1</Tag>
@@ -1364,7 +1916,7 @@
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS2_2</Tag>
 		<English>The Chosen Ones (Judaism) have destroyed holy sites (%s1_cult) in %s2_city.</English>
 		<French>Les &#233;lus (Juda&#239;sme) ont saccag&#233; des lieux sacr&#233;s (%s1_cult) &#224; %s2_city.</French>
-		<German>Die Auserw&#228;hlten (Judentum) haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
+		<German>Die Auserw&#228;hlten (Judentum) haben heilige St&#228;tten (%s1_cult) in %s2_city zerst&#246;rt.</German>
 		<Italian>Gli eletti (Ebraismo) hanno distrutto luoghi sacri (%s1_cult) a %s2_city.</Italian>
 		<Spanish>Los Elegidos (Juda&#237;smo) han destru&#237;do lugares santos (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
@@ -1375,6 +1927,22 @@
 		<German>J&#252;dische Glaubensfanatiker haben heilige St&#228;tten (%s1_cult) in %s2_city entweiht.</German>
 		<Italian>I fanatici religiosi ebrei hanno profanato luoghi sacri (%s1_cult) a %s2_city.</Italian>
 		<Spanish>Fan&#225;ticos religiosos jud&#237;os han profanado lugares santos (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS2_4</Tag>
+		<English>Devout followers of Judaism (Hasidim) have reduced holy sites (%s1_cult) in %s2_city to rubble and ashes.</English>
+		<French>Les fervents adeptes du juda&#239;sme (hassidim) ont r&#233;duit les lieux saints (%s1_cult) de %s2_city en d&#233;combres et en cendres.</French>
+		<German>Fromme Anh&#228;nger des Judentums (Chassidim) haben heilige St&#228;tten (%s1_cult) in %s2_city in Schutt und Asche gelegt.</German>
+		<Italian>I devoti seguaci dell'ebraismo (Chassidim) hanno ridotto i luoghi sacri (%s1_cult) in %s2_city a macerie e cenere.</Italian>
+		<Spanish>Los devotos seguidores del juda&#237;smo (jas&#237;dicos) han reducido los lugares sagrados (%s1_cult) en %s2_city a escombros y cenizas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS2_5</Tag>
+		<English>God-fearing followers of Judaism (Hasidim) have razed holy sites (%s1_cult) in %s2_city to the ground.</English>
+		<French>Les fid&#232;les du juda&#239;sme (hassidim) ont ras&#233; des lieux saints (%s1_cult) &#224; %s2_city.</French>
+		<German>Gottesf&#252;rchtige Anh&#228;nger des Judentums (Chassidim) haben heilige St&#228;tten (%s1_cult) in %s2_city dem Erdboden gleich gemacht.</German>
+		<Italian>I seguaci timorati di Dio dell'ebraismo (Chassidim) hanno raso al suolo i luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Los seguidores del juda&#237;smo temerosos de Dios (jas&#237;dicos) han arrasado lugares sagrados (%s1_cult) en %s2_city por completo.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS3_1</Tag>
@@ -1388,7 +1956,7 @@
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS3_2</Tag>
 		<English>Followers of Islam have destroyed holy sites (%s1_cult) in %s2_city.</English>
 		<French>Des Islamistes ont saccag&#233; des lieux sacr&#233;s (%s1_cult) &#224; %s2_city.</French>
-		<German>Anh&#228;nger des Islam haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
+		<German>Anh&#228;nger des Islam haben heilige St&#228;tten (%s1_cult) in %s2_city zerst&#246;rt.</German>
 		<Italian>I seguaci dell'Islam hanno distrutto luoghi sacri (%s1_cult) a %s2_city.</Italian>
 		<Spanish>Seguidores del Islam han destru&#237;do lugares santos (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
@@ -1401,6 +1969,22 @@
 		<Spanish>Fan&#225;ticos religiosos islamistas han profanado lugares santos (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS3_4</Tag>
+		<English>Devout followers of Islam (Kharijites) have reduced holy sites (%s1_cult) in %s2_city to rubble.</English>
+		<French>Les fervents adeptes de l'Islam (Kharijites) ont r&#233;duit en ruines les lieux saints (%s1_cult) de %s2_city.</French>
+		<German>Fromme Anh&#228;nger des Islam (Kharijiten) haben heilige St&#228;tten (%s1_cult) in %s2_city in Schutt und Asche gelegt.</German>
+		<Italian>I devoti seguaci dell'Islam (Kharijiti) hanno ridotto in macerie i luoghi sacri (%s1_cult) in %s2_city.</Italian>
+		<Spanish>Los devotos seguidores del Islam (jariyitas) han reducido a escombros los lugares sagrados (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS3_5</Tag>
+		<English>God-fearing followers of Islam (Kharijites) have destroyed holy sites (%s1_cult) in %s2_city to their foundations.</English>
+		<French>Les adeptes de l'Islam craignant Dieu (Kharijites) ont d&#233;truit les lieux saints (%s1_cult) de %s2_city jusqu'&#224; leurs fondations.</French>
+		<German>Gottesf&#252;rchtige Anh&#228;nger des Islam (Kharijiten) haben heilige St&#228;tten (%s1_cult) in %s2_city bis auf die Grundmauern zerst&#246;rt.</German>
+		<Italian>I seguaci timorati di Dio dell'Islam (Kharijiti) hanno distrutto dalle fondamenta i luoghi sacri (%s1_cult) in %s2_city.</Italian>
+		<Spanish>Los seguidores del Islam temerosos de Dios (jariyitas) han destruido lugares sagrados (%s1_cult) en %s2_city hasta sus cimientos.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_1</Tag>
 		<English>%s1_cult was expelled from %s2_city by staunch believers of your state religion.</English>
 		<French>%s1_cult a &#233;t&#233; expuls&#233; de %s2_city par de fervents croyants de votre religion d'&#201;tat.</French>
@@ -1410,11 +1994,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_2</Tag>
-		<English>Followers of your state religion have destroyed holy sites (%s1_cult) in %s2city.</English>
-		<French>Les adeptes de votre religion d'&#201;tat ont d&#233;truit des lieux saints (%s1_cult) dans %s2city.</French>
-		<German>Anh&#228;nger Eurer Staatsreligion haben heilige St&#228;tten (%s1_cult) in %s2city zerst&#246;rt.</German>
-		<Italian>I seguaci della tua religione di stato hanno distrutto i luoghi sacri (%s1_cult) a %s2city.</Italian>
-		<Spanish>Los seguidores de tu religi&#243;n estatal han destruido lugares sagrados (%s1_cult) en %s2city.</Spanish>
+		<English>Followers of your state religion have destroyed holy sites (%s1_cult) in %s2_city.</English>
+		<French>Les adeptes de votre religion d'&#201;tat ont d&#233;truit des lieux saints (%s1_cult) dans %s2_city.</French>
+		<German>Anh&#228;nger Eurer Staatsreligion haben heilige St&#228;tten (%s1_cult) in %s2_city zerst&#246;rt.</German>
+		<Italian>I seguaci della tua religione di stato hanno distrutto i luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Los seguidores de tu religi&#243;n estatal han destruido lugares sagrados (%s1_cult) en %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_3</Tag>
@@ -1423,6 +2007,150 @@
 		<German>Glaubensfanatiker haben heilige St&#228;tten (%s1_cult) in %s2_city entweiht.</German>
 		<Italian>I fanatici religiosi hanno profanato luoghi sacri (%s1_cult) a %s2_city.</Italian>
 		<Spanish>Fan&#225;ticos religiosos han profanado lugares santos (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_4</Tag>
+		<English>Superstitious followers of your state religion have destroyed holy sites (%s1_cult) in %s2_city.</English>
+		<French>Les fid&#232;les superstitieux de votre religion d'&#201;tat ont d&#233;truit des lieux saints (%s1_cult) dans %s2_city.</French>
+		<German>Abergl&#228;ubische Anh&#228;nger Eurer Staatsreligion haben heilige St&#228;tten (%s1_cult) in %s2_city zerst&#246;rt.</German>
+		<Italian>I seguaci superstiziosi della tua religione di stato hanno distrutto i luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Los seguidores supersticiosos de tu religi&#243;n estatal han destruido lugares sagrados (%s1_cult) en %s2city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_HERESY_CULTS_5</Tag>
+		<English>Advocates of your state religion have destroyed holy sites (%s1_cult) in %s2_city.</English>
+		<French>Les d&#233;fenseurs de votre religion d'&#201;tat ont d&#233;truit des lieux saints (%s1_cult) dans %s2_city.</French>
+		<German>Verfechter Eurer Staatsreligion haben heilige St&#228;tten (%s1_cult) in %s2_city zerst&#246;rt.</German>
+		<Italian>I sostenitori della tua religione di stato hanno distrutto i luoghi sacri (%s1_cult) a %s2_city.</Italian>
+		<Spanish>Los defensores de tu religi&#243;n estatal han destruido lugares sagrados (%s1_cult) en %s2_city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES1</Tag>
+		<English>The %s2 have spread throughout the land of the %s1.</English>
+		<French>Les %s2 se sont r&#233;pandus sur tout le territoire des %s1.</French>
+		<German>Die %s2 haben sich im Land der %s1 breit gemacht.</German>
+		<Italian>Gli %s2 si sono diffusi in tutto il territorio degli %s1.</Italian>
+		<Spanish>Los %s2 se han extendido por toda la tierra de los %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES10</Tag>
+		<English>The %s1 are now ruled by the %s2 people.</English>
+		<French>Les %s1 sont d&#233;sormais gouvern&#233;s par le peuple %s2.</French>
+		<German>Die %s1 werden nun vom Volk der %s2 beherrscht.</German>
+		<Italian>Gli %s1 sono ora governati dalle persone %s2.</Italian>
+		<Spanish>El pueblo %s1 ahora est&#225; gobernado por el pueblo %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES11</Tag>
+		<English>The empire of %s2 arose from the land of %s1.</English>
+		<French>L'empire de %s2 est n&#233; du pays de %s1.</French>
+		<German>Das Reich der %s2 ist aus dem Land der %s1 entstanden.</German>
+		<Italian>L'impero di %s2 nacque dalla terra di %s1.</Italian>
+		<Spanish>El imperio de %s2 surgi&#243; de la tierra de %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES12</Tag>
+		<English>%s1 is now ruled by the people of %s2.</English>
+		<French>%s1 est d&#233;sormais gouvern&#233; par les habitants de %s2.</French>
+		<German>%s1 wird nun vom Volk der %s2 beherrscht.</German>
+		<Italian>%s1 &#232; ora governato dal popolo di %s2.</Italian>
+		<Spanish>%s1 ahora est&#225; gobernado por la gente de %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES13</Tag>
+		<English>The %s1 now live in the country of %s2.</English>
+		<French>Les %s1 vivent maintenant dans le pays de %s2.</French>
+		<German>Die %s1 leben nun im Land von %s2.</German>
+		<Italian>Gli %s1 ora vivono nel paese di %s2.</Italian>
+		<Spanish>Los %s1 ahora viven en el pa&#237;s de %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES14</Tag>
+		<English>From %s1 a new kingdom emerges: %s2.</English>
+		<French>De %s1 &#233;merge un nouveau royaume : %s2.</French>
+		<German>Aus %s1 entsteht ein neues Reich: %s2.</German>
+		<Italian>Da %s1 emerge un nuovo regno: %s2.</Italian>
+		<Spanish>De %s1 surge un nuevo reino: %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES2</Tag>
+		<English>The %s2 have settled in the country of the %s1.</English>
+		<French>Les %s2 se sont install&#233;s dans le pays des %s1.</French>
+		<German>Die %s2 haben sich im Land der %s1 niedergelassen.</German>
+		<Italian>Gli %s2 si sono stabiliti nel paese degli %s1.</Italian>
+		<Spanish>Los %s2 se han establecido en el pa&#237;s de los %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES3</Tag>
+		<English>The %s2 now appear as %s1.</English>
+		<French>Le %s2 appara&#238;t maintenant comme %s1.</French>
+		<German>Die %s2 treten nun als %s1 auf.</German>
+		<Italian>Ora %s2 appare come %s1.</Italian>
+		<Spanish>Ahora, %s2 aparece como %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES4</Tag>
+		<English>The %s2 now dominate the %s1 countries.</English>
+		<French>Les %s2 dominent d&#233;sormais les pays %s1.</French>
+		<German>Die %s2 dominieren nun die L&#228;nder der %s1.</German>
+		<Italian>I %s2 ora dominano i paesi %s1.</Italian>
+		<Spanish>Los %s2 ahora dominan los pa&#237;ses %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES5</Tag>
+		<English>The %s2 have occupied the lands of the %s1.</English>
+		<French>Les %s2 ont occup&#233; les terres des %s1.</French>
+		<German>Die %s2 haben die L&#228;ndereien der %s1 okkupiert.</German>
+		<Italian>Gli %s2 hanno occupato le terre degli %s1.</Italian>
+		<Spanish>Los %s2 han ocupado las tierras de los %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES6</Tag>
+		<English>%s1 has now given way to the new people of %s2.</English>
+		<French>%s1 a maintenant c&#233;d&#233; la place aux nouveaux habitants de %s2.</French>
+		<German>%s1 ist nun dem neuen Volk der %s2 gewichen.</German>
+		<Italian>%s1 ha ora lasciato il posto ai nuovi abitanti di %s2.</Italian>
+		<Spanish>%s1 ha dado paso a los nuevos habitantes de %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES7</Tag>
+		<English>The country of %s1 is now considered the country of %s2.</English>
+		<French>Le pays de %s1 est maintenant consid&#233;r&#233; comme le pays de %s2.</French>
+		<German>Das Land der %s1 gilt nun als das Land der %s2.</German>
+		<Italian>Il paese %s1 &#232; ora considerato il paese %s2.</Italian>
+		<Spanish>El pa&#237;s de %s1 ahora se considera el pa&#237;s de %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES8</Tag>
+		<English>The %s2 have found a new home in the country of the %s1.</English>
+		<French>Les %s2 ont trouv&#233; un nouveau foyer dans le pays des %s1.</French>
+		<German>Die %s2 haben im Land der %s1 eine neue Heimat gefunden.</German>
+		<Italian>Gli %s2 hanno trovato una nuova casa nel paese degli %s1.</Italian>
+		<Spanish>Los %s2 han encontrado un nuevo hogar en el pa&#237;s de los %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES9</Tag>
+		<English>The %s1 have brought about a new order with the %s2.</English>
+		<French>Les %s1 ont instaur&#233; un nouvel ordre avec les %s2.</French>
+		<German>Die %s1 haben mit den %s2 eine neue Ordnung herbeigerufen.</German>
+		<Italian>Gli %s1 hanno portato un nuovo ordine con gli %s2.</Italian>
+		<Spanish>Los %s1 han instaurado un nuevo orden con los %s2.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES_BODY</Tag>
+		<English>As time passes, new peoples rise while others fade away. Borders shift, names change, cultures merge. What once was becomes history, and history becomes the present. These peoples are now writing a new chapter.</English>
+		<French>Au fil du temps, de nouveaux peuples &#233;mergent tandis que d'autres disparaissent. Les fronti&#232;res se d&#233;placent, les noms changent, les cultures fusionnent. Ce qui fut devient histoire, et l'histoire devient pr&#233;sent. Ces peuples &#233;crivent aujourd'hui un nouveau chapitre.</French>
+		<German>Mit dem Lauf der Zeit erheben sich neue V&#246;lker, w&#228;hrend andere verblassen. Grenzen verschieben sich, Namen wandeln sich, Kulturen verschmelzen. Was einst war, wird Geschichte und aus Geschichte wird Gegenwart. Diese V&#246;lker schreiben nun ein neues Kapitel.</German>
+		<Italian>Col passare del tempo, nuovi popoli sorgono mentre altri svaniscono. I confini si spostano, i nomi cambiano, le culture si fondono. Ci&#242; che una volta era diventa storia, e la storia diventa presente. Questi popoli stanno ora scrivendo un nuovo capitolo.</Italian>
+		<Spanish>Con el paso del tiempo, surgen nuevos pueblos mientras otros desaparecen. Las fronteras se transforman, los nombres cambian, las culturas se fusionan. Lo que fue se convierte en historia, y la historia en presente. Estos pueblos est&#225;n escribiendo un nuevo cap&#237;tulo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_NEWTRIBES_HEAD</Tag>
+		<English>The world is changing...</English>
+		<French>Le monde est en train de changer...</French>
+		<German>Die Welt ver&#228;ndert sich...</German>
+		<Italian>Il mondo sta cambiando...</Italian>
+		<Spanish>El mundo est&#225; cambiando...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_POPUP_GETTING_TECH_2</Tag>

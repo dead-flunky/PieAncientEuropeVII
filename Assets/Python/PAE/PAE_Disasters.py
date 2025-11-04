@@ -12,8 +12,6 @@ import CvUtil
 
 import PAE_City
 import PAE_Unit
-
-# for popups with dds
 import PAE_Popup
 
 # Defines

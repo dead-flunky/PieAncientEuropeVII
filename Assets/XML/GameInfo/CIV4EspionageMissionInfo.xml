@@ -44,7 +44,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_VISIBILITY</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_VISIBILITY</Description>
-			<iCost>100</iCost>
+			<iCost>150</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
@@ -79,7 +79,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_INVESTIGATE_CITY</Type>
 			<Description>TXT_KEY_ESPIONAGE_INVESTIGATE_CITY</Description>
-			<iCost>150</iCost>
+			<iCost>200</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
@@ -394,7 +394,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_POISON_WATER</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_POISON_WATER</Description>
-			<iCost>125</iCost>
+			<iCost>100</iCost>
 			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
@@ -464,7 +464,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_REVOLT</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_REVOLT</Description>
-			<iCost>600</iCost>
+			<iCost>800</iCost>
 			<bIsPassive>0</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
@@ -546,7 +546,7 @@
 			<bNoActiveMissions>0</bNoActiveMissions>
 			<bSeeResearch>0</bSeeResearch>
 			<bDestroyImprovement>0</bDestroyImprovement>
-			<iDifficultyMod>50</iDifficultyMod>
+			<iDifficultyMod>100</iDifficultyMod>
 			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
 			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
 			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>

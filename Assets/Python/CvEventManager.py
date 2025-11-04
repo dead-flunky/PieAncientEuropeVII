@@ -93,6 +93,7 @@ import PAE_Sklaven
 import PAE_Vassal
 import PAE_Disasters
 import PAE_Turn_Features
+import PAE_RenameCIVs
 import PAE_Lists as L
 
 # Flunky: Scenario files
@@ -1927,7 +1928,7 @@ class CvEventManager:
 								# Stehlen
 								if iData3 == 3:
 										pPlot = pUnit.plot()
-										gc.getTeam(pPlayer.getTeam()).changeEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam(), -100)
+										gc.getTeam(pPlayer.getTeam()).changeEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam(), -50)
 						# im Popup ausgewaehlt, iData2 = BonusType
 						else:
 								PAE_Cultivation.doBuyBonus4Cultivation(pUnit, iData2)
@@ -2744,7 +2745,6 @@ class CvEventManager:
 					# Christentum gruenden
 					if sScenarioName == "WegDerGoten":
 						if gc.getGame().getGameTurnYear() >= -10 and not PAE_Christen.bChristentum:
-							if CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_SEASON_WINTER",("",)) or CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_MONTH_DECEMBER",("",)):
 								WegDerGoten.setChristentum()
 					else:
 						if gc.getGame().getGameTurnYear() >= 0:
@@ -2753,10 +2753,12 @@ class CvEventManager:
 
 					# Religionsverbreitung monotheistischer Religionen
 					if sScenarioName == "WegDerGoten" and PAE_Christen.bChristentum:
-						if CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_SEASON_SUMMER",("",)) or CyGameTextMgr().getInterfaceTimeStr(0) == CyTranslator().getText("TXT_KEY_MONTH_MAY",("",)):
 							WegDerGoten.doSpreadReligion()
 					else:
 						PAE_Christen.doSpreadReligion()
+
+					# PAE 7.13 Rename CIVs (changePlayer,changeTeam,changeCiv,setPlayer,setTeam,setCiv) in Late Antiquity for Early Middle Ages
+					PAE_RenameCIVs.doRenameCIVs()
 
 				# PAE Debug Mark 1 end
 
@@ -2948,13 +2950,6 @@ class CvEventManager:
 				'Called at the end of a players turn'
 				iGameTurn, iPlayer = argsList
 				pPlayer = gc.getPlayer(iPlayer)
-
-				# XXX TEST PIE
-				#pPlayer.changeLeader(x) # change to XML leader
-				#pPlayer.changeCiv(x) # change to XML Civ
-				#pPlayer.setName(x) # Leader's name
-				#pPlayer.setCivName("AAA", "BBB", "CCC") # CivDesc, CivShortDesc, CivAdjective
-
 
 				# ***TEST***
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pPlayer.getName(),pPlayer.calculateGoldRate())), None, 2, None, ColorTypes(10), 0, 0, False, False)

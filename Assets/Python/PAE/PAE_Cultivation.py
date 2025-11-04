@@ -678,7 +678,7 @@ def getCollectableGoods4Cultivation(pUnit):
 				pCity = pPlot.getPlotCity()
 				lGoods = _getCollectableGoods4Cultivation(pCity, pUnit)
 		else:
-				ePlotBonus = pPlot.getBonusType(pPlot.getTeam())
+				ePlotBonus = pPlot.getBonusType(pUnit.getTeam())
 				if ePlotBonus != -1 and ePlotBonus in L.LBonusCultivatable + L.LBonusCultivatableCoast:
 						lGoods = [ePlotBonus]
 
@@ -711,10 +711,10 @@ def _calculateBonusBuyingPrice4Cultivation(eBonus, iBuyer, pPlot):
 				# Bonus on plot: regional price
 				if pPlot.getBonusType(pPlot.getTeam()) == eBonus:
 						return iPrice
-				return -1
+				return iPrice * 3
 
 		if not pCity.hasBonus(eBonus):
-				return -1
+				return iPrice * 3
 
 		# Bonus in city radius: regional price
 		for iI in range(gc.getNUM_CITY_PLOTS()):

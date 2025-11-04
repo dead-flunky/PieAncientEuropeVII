@@ -225,6 +225,14 @@
 		<Spanish>Desastres naturales</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_NEWTRIBES</Tag>
+		<English>Migration Period</English>
+		<French>P&#233;riode de migration</French>
+		<German>V&#246;lkerwanderung</German>
+		<Italian>Periodo di migrazione</Italian>
+		<Spanish>Per&#237;odo de migraci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_OLYMPIC_GAMES</Tag>
 		<English>Panhellenic Games</English>
 		<French>Jeux panhell&#233;niques</French>

@@ -1666,11 +1666,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_COLLECT_BONUS3</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Steal and charge goods[COLOR_REVERT]-100[ICON_ESPIONAGE]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Voler et charger les ressources[COLOR_REVERT]-100[ICON_ESPIONAGE]</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Stehle und lade Bonusgut auf[COLOR_REVERT]-100[ICON_ESPIONAGE]</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Ruba et carica merci[COLOR_REVERT]-100[ICON_ESPIONAGE]</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Robar y cargar mercanc&#237;a[COLOR_REVERT]-100[ICON_ESPIONAGE]</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Steal and charge goods[COLOR_REVERT] (-50 [ICON_ESPIONAGE])</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Voler et charger les ressources[COLOR_REVERT] (-50 [ICON_ESPIONAGE])</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Stehle und lade Bonusgut auf[COLOR_REVERT] (-50 [ICON_ESPIONAGE])</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Ruba et carica merci[COLOR_REVERT] (-50 [ICON_ESPIONAGE])</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Robar y cargar mercanc&#237;a[COLOR_REVERT] (-50 [ICON_ESPIONAGE])</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_COLLECT_BONUS_CITY</Tag>
@@ -4667,7 +4667,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_TRADE_ROUTE_CHOOSE_BONUS</Tag>
 		<English>Bonus item which shall be bought in %s1_city:</English>
-		<French>Choisissez la marchandise achet&#233;e &#224; %s1_city :</French>
+		<French>Choisissez la marchandise achet&#233;e ? %s1_city :</French>
 		<German>Bonusgut, das in %s1_city gekauft werden soll:</German>
 		<Italian>Scegli il bonus che deve essere acquistato a %s1_city:</Italian>
 		<Spanish>Elige el recurso que ser&#225; comprado en %s1_city:</Spanish>
@@ -6810,11 +6810,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CARAVAN_HELP</Tag>
-		<English>[ICON_BULLET]Double movement on desert[NEWLINE][ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire (max 9 merchants)</English>
-		<French>[ICON_BULLET]Mouvement doubl&#233; dans le d&#233;sert[NEWLINE][ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 9)</French>
-		<German>[ICON_BULLET]Doppelte Fortbewegung auf W&#252;ste[NEWLINE][ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer Einheiten entspricht der Anzahl der Handelsposten im Reich (max 9 H&#228;ndler)</German>
-		<Italian>[ICON_BULLET]Doppio movimento nel deserto[NEWLINE][ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 9 commercianti)</Italian>
-		<Spanish>[ICON_BULLET]Dobles movimientos en los desiertos[NEWLINE][ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 9 comerciantes)</Spanish>
+		<English>[ICON_BULLET]Cannot be loaded onto ships[NEWLINE][ICON_BULLET]Double movement on desert[NEWLINE][ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire (max 9 merchants)</English>
+		<French>[ICON_BULLET]Ne peut pas &#234;tre charg&#233; sur les navires[NEWLINE][ICON_BULLET]Mouvement doubl&#233; dans le d&#233;sert[NEWLINE][ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 9)</French>
+		<German>[ICON_BULLET]Kann nicht auf Schiffe geladen werden[NEWLINE][ICON_BULLET]Doppelte Fortbewegung auf W&#252;ste[NEWLINE][ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer Einheiten entspricht der Anzahl der Handelsposten im Reich (max 9 H&#228;ndler)</German>
+		<Italian>[ICON_BULLET]Non pu&#242; essere caricato sulle navi[NEWLINE][ICON_BULLET]Doppio movimento nel deserto[NEWLINE][ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 9 commercianti)</Italian>
+		<Spanish>[ICON_BULLET]No se puede cargar en los barcos[NEWLINE][ICON_BULLET]Dobles movimientos en los desiertos[NEWLINE][ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 9 comerciantes)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CARTH_SACRED_BAND_HOPLIT</Tag>
@@ -7850,11 +7850,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TRADE_MERCHANT_HELP</Tag>
-		<English>[ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire (max 9 merchants)</English>
-		<French>[ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 9)</French>
-		<German>[ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer Einheiten entspricht der Anzahl der Handelsposten im Reich (max 9 H&#228;ndler)</German>
-		<Italian>[ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 9 commercianti)</Italian>
-		<Spanish>[ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 9 comerciantes)</Spanish>
+		<English>[ICON_BULLET]Cannot be loaded onto ships[NEWLINE][ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units (max 10) corresponds to the number of trading posts in the empire</English>
+		<French>[ICON_BULLET]Ne peut pas &#234;tre charg&#233; sur les navires[NEWLINE][ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands (max 10) que vous n'avez de comptoirs</French>
+		<German>[ICON_BULLET]Kann nicht auf Schiffe geladen werden[NEWLINE][ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer Einheiten (max 10) entspricht der Anzahl der Handelsposten im Reich</German>
+		<Italian>[ICON_BULLET]Non pu&#242; essere caricato sulle navi[NEWLINE][ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili (max 10) corrisponde al numero di stazioni commerciali nell'impero</Italian>
+		<Spanish>[ICON_BULLET]No se puede cargar en los barcos[NEWLINE][ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles (max 10) corresponde al n&#250;mero de puestos comerciales en el imperio</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TRADE_MERCHANT_MAN</Tag>

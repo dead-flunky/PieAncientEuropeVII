@@ -5,7 +5,7 @@ from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap,
 											CyTranslator, DirectionTypes, CommerceTypes,
 											ColorTypes, UnitAITypes, CyPopupInfo,
 											ButtonPopupTypes, plotXY, plotDirection,
-											GameOptionTypes)
+											GameOptionTypes, CyGame)
 # import CvEventInterface
 import CvUtil
 import PAE_Barbaren
@@ -1194,6 +1194,7 @@ def doThing():
 										CyInterface().addMessage(iPlayer, True, 15, sText, xSound, 2, "Art/Interface/Buttons/Buildings/button_thing.dds", ColorTypes(iColor), pCity.plot().getX(), pCity.plot().getY(), bShow, bShow)
 # -- Besonderes Thing Ende --
 
+
 # Kultur bei Forts (Feature deaktiviert: nur Vorteil für HI)
 def doCheckFortCulture(pPlot):
 		iPlotData = int(CvUtil.getScriptData(pPlot, ["p", "t"], pPlot.getOwner()))
@@ -1239,6 +1240,7 @@ def doCheckFortCulture(pPlot):
 						CvUtil.addScriptData(pPlot, "p", iPlayer)
 						pPlot.setCulture(iPlayer, 1, True)
 						pPlot.setOwner(iPlayer)
+
 
 # -- PAE VI, Patch 15: nicht kultivierte Bonusressourcen (Tiere) sollen den Standort wechseln
 def doMoveBonus(BonusPlots):
@@ -1300,3 +1302,4 @@ def doMoveBonus(BonusPlots):
 																text = "TXT_KEY_INFO_MOVE_ANIMAL_BONUS"
 														CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText(text, (gc.getBonusInfo(eBonus).getDescription(),)), None, 2,
 																										 gc.getBonusInfo(eBonus).getButton(), ColorTypes(10), pNewPlot.getX(), pNewPlot.getY(), True, True)
+

@@ -1,37 +1,16 @@
 # Scenario Weg der Goten by brettschmitt
+# Spieler-IDs:
+# Goten (Spieler): 0
+# Germanen: [1,2,3,4]
+# GerVandalen: [0,1,2,3,4,9]
+# Rom: 14
+# Byzanz: 12
 
 # ----------------------------------------------------
 # ############# Hinweise von mir (Pie): ##############
 # ----------------------------------------------------
 
-# Frage zu 13.1:
-#[EVENT-13.1] - onCityAcquired; Wenn der Spieler (zum ersten Mal) eine Stadt eines Germanen (Player 1, 2, 3, 4) erobert:
-	#[ABFRAGE] Lebt Alarich noch? -> DANN
-	#Plot (0,1): pPlot.setScriptData() für EVENT-13.1
-
-	# Pie: DAS ÜBERSCHNEIDET SICH MIT [EVENT-10.3] Wenn der Gote die erste Stadt erobert
-
-# Fragen zu 15.1:
-#[EVENT-15.1] - onPlayerKilled => (ÄNDERN!! siehe unten bei den Fragen) Wenn der Spieler einen KI-Gegner (nicht MinorCiv) vasallisiert oder vernichtet:
-	#Immer, wenn der Spieler eine KI-Gegner vasallisiert oder vernichtet, gibt es eine 33% Chance auf dieses Ereignis -> DANN
-	#Plot (0,1): pPlot.setScriptData() für EVENT-15.1
-	#1 Großer Spion "Speculatore" wird in der Hauptstadt des neuen Vasallen erstellt. Bei Vernichtung in der letzten eroberten Stadt
-	#1 Spion wird in der römischen Hauptstadt erstellt
-
-	# Pie: onPlayerKilled ändern zu => onCityAcquired & onVassalState
-	# Pie: nur der Spieler als Gote oder auch als Spieler der GerVandalen ?
-	# Pie: Wenn der Spieler einen Spieler vernichtet, gibt es keine Vasallenhauptstadt mehr. Wohin mit dem Großen Spion?
-	# Pie: Wenn ich 1x das setScriptData() setze, dann widerspricht das deinen Vorstellungen: Immer, wenn der Spieler einen KI-Gegner .... oder soll das nur für den Spion in Rom gelten?
-	# Pie: Oder ist das setScriptData() für jeden gegnerischen Spieler gemeint ? daher Chance für 1 Großer Spion pro Gegner und wenn dieser gesetzt, dann gibts den kleinen in Rom?
-	# Pie: braucht es dafür nicht 2 Texte? Einmal für den Großen Spion und dann das eine Mal wo der Spion in Rom auftauchen soll?
-
-# Frage zu 15.2: (Bild muss ich noch machen)
-	# Pie: ist das Bild nicht etwas zu unscharf? Im Gegensatz zu den anderen. Ja, auch wenn Alarich jedesmal anders aussieht... aber was solls. Dieses fällt auf, wenn die anderen Bilder scharf sind.
-	# Warum erstellt sich das Gefolge nicht in der Hauptstadt des zuletzt eroberten Vasallen?
-
-# Frage zu 16.1 und 17.1
-	# Pie: Man kann keine Siegpunkte vergeben, weil es verschiedenste Siegvarianten gibt: Bevölkerung, Landmasse, Weltwunder, Religion... und diese Siegpunkte werden aus diesen Gegebeneinheiten zusammengezählt.
-
+# ab Zeile 40 kannst du dir die Chancen für deine Zufallswerte selbst bestimmten. Bei 100 passierts immer.
 
 # ----------------------------------------------------
 # ################# Hinweise Ende ####################
@@ -59,8 +38,11 @@ import Popup as PyPopup
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
-# Internes für einmalige Events
-GotenErsteProvinzstadt = False
+# Internes (Chancen in %)
+iChanceSettlerOnCityAcquired = 10	# 10
+iChanceGreatSpyOnConquer = 33			# 33
+iChanceSetChristentum = 5				# 5
+iChanceSpreadChristentum = 2			# 2
 
 #[EVENT-1.2] Jagdgebiet wird erweitert:
 #8 Plots um eigene Städte kann Nahrung erjagt werden
@@ -262,13 +244,17 @@ def onBeginPlayerTurn(iGameTurn, iPlayer):
 
 
 def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
+	global iChanceSettlerOnCityAcquired
+	global iChanceGreatSpyOnConquer
 
+	lGermanen = [1,2,3,4]
 	lGerVandalen = [0,1,2,3,4,9]
 	pNewOwner = gc.getPlayer(iNewOwner)
 	iNumCities = pNewOwner.getNumCities()
-	if iNumCities > 1:
+
 #[EVENT-3.1] Es gibt Siedler: Ab der 2. eroberten Stadt gibt es bei jeder Eroberung eine 10% Chance
-		if CvUtil.myRandom(10, "WDG_SettlerOnCityAcquired") == 1:
+	if iNumCities > 1:
+		if CvUtil.myRandom(100, "WDG_SettlerOnCityAcquired") < iChanceSettlerOnCityAcquired:
 			pNewOwner.initUnit(gc.getInfoTypeForString("UNIT_SETTLER"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_SETTLE, DirectionTypes.DIRECTION_SOUTH)
 
 			# Kultur setzen
@@ -284,46 +270,100 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_SETTLER", ("", )))
 				popupInfo.addPopup(iNewOwner)
 
-#[EVENT-10.3] Wenn der Gote die erste Stadt erobert
+
+#[EVENT-10.3] Wenn der Gote die erste Stadt erobert (vom Alten Goten)
 	#Der Palast, Monolith und Heldendenkmal wird gesetzt.
 	# Die heilige Stadt der Nordischen Mythen wird 1x aufgedeckt
-	elif iNewOwner == 0 and iNumCities == 1:
-		pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_PALACE"), 1)
-		pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_MONOLITH"), 1)
-		pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_MONUMENT"), 1)
+	if iNewOwner == 0 and iPreviousOwner == 20:
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["10_3"], "")
+		if iCheck == "":
 
-		# Die Gotenhauptstadt bekommt 80% Kultur.
-		iPreviousCulture = pCity.getCulture(iPreviousOwner) / 10
-		pCity.setCulture(iPreviousOwner, iPreviousCulture * 2, 1)
-		pCity.setCulture(iNewOwner, iPreviousCulture * 8, 1)
+			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_PALACE"), 1)
+			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_MONOLITH"), 1)
+			pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_MONUMENT"), 1)
 
-		# Die Heilige Stadt der Nordischen Mythen wird 1x aufgedeckt (aus [Event-1.1])
-		pHolyCity = gc.getGame().getHolyCity(gc.getInfoTypeForString("RELIGION_NORDIC"))
-		if pHolyCity is not None:
-			doRevealPlot(0, pHolyCity.plot(), False)
+			# Die Gotenhauptstadt bekommt 80% Kultur.
+			iPreviousCulture = pCity.getCulture(iPreviousOwner) / 10
+			pCity.setCulture(iPreviousOwner, iPreviousCulture * 2, 1)
+			pCity.setCulture(iNewOwner, iPreviousCulture * 8, 1)
 
-		# Der erste Schritt ist getan. Ihr habt [get.cityname] erobert!
-		# Dies wird die Hauptstadt eines neuen, geeinten Gotenreiches sein. Es soll das größte Reich aller Zeiten in Germanien werden, das sich am Ende mit dem der Römer messen kann.
-		#Ihr lasst die Leute alle Schäden reparieren und hier unsere Heimat aufbauen. Wir sollten auch bald einen Tempel errichten, um den Göttern zu huldigen. Der Älteste und seine Sippe haben scheinbar geschlafen die letzten Jahre, viele Gebäude sind noch nichtmal geplant.
-		#Die heilige Donareiche steht schon seit den Ahnen unter Kontrolle von [get.Leadername], das Zentrum der Götter in [get.cityname] sollten wir irgendwann unter gotische Kontrolle bringen..
-		#Das Überraschungsmoment ist jetzt auf unserer Seite. Es empfielt sich, schnell weiter zu ziehen und die umliegenden Dörfer zu erobern.
-		#<EROBERT WEITERE STÄDTE>
-		#<EROBERT DIE HEILIGE STADT>
-		szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_HEAD", (pCity.getName(), ))
-		szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY", (pHolyCity.getName(), gc.getPlayer(pHolyCity.getOwner()).getName(), pHolyCity.getName()))
-		PopUpDDS("Art/Scenarios/WegDerGoten/WDG02.dds",szTextHead,szTextBody,"RIGHT")
+			# Die Heilige Stadt der Nordischen Mythen wird 1x aufgedeckt (aus [Event-1.1])
+			pHolyCity = gc.getGame().getHolyCity(gc.getInfoTypeForString("RELIGION_NORDIC"))
+			if pHolyCity is not None:
+				doRevealPlot(0, pHolyCity.plot(), False)
 
-		# Zoom zur neuen Hauptstadt
-		CyCamera().JustLookAtPlot(pCity.plot())
-		CyCamera().ZoomIn(0.5)
+			# Der erste Schritt ist getan. Ihr habt [get.cityname] erobert!
+			# Dies wird die Hauptstadt eines neuen, geeinten Gotenreiches sein. Es soll das größte Reich aller Zeiten in Germanien werden, das sich am Ende mit dem der Römer messen kann.
+			#Ihr lasst die Leute alle Schäden reparieren und hier unsere Heimat aufbauen. Wir sollten auch bald einen Tempel errichten, um den Göttern zu huldigen. Der Älteste und seine Sippe haben scheinbar geschlafen die letzten Jahre, viele Gebäude sind noch nichtmal geplant.
+			#Die heilige Donareiche steht schon seit den Ahnen unter Kontrolle von [get.Leadername], das Zentrum der Götter in [get.cityname] sollten wir irgendwann unter gotische Kontrolle bringen..
+			#Das Überraschungsmoment ist jetzt auf unserer Seite. Es empfielt sich, schnell weiter zu ziehen und die umliegenden Dörfer zu erobern.
+			#<EROBERT WEITERE STÄDTE>
+			#<EROBERT DIE HEILIGE STADT>
+			if gc.getPlayer(iNewOwner).isHuman():
+				szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_HEAD", (pCity.getName(), ))
+				szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY", (pHolyCity.getName(), gc.getPlayer(pHolyCity.getOwner()).getName(), pHolyCity.getName()))
+				PopUpDDS("Art/Scenarios/WegDerGoten/WDG02.dds",szTextHead,szTextBody,"RIGHT")
+
+			# setScriptData
+			CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_3", "x")
+
+			# Zoom zur neuen Hauptstadt
+			CyCamera().JustLookAtPlot(pCity.plot())
+			CyCamera().ZoomIn(0.5)
+
+#[EVENT-10.4] - onCityAcquired; Wenn der Spieler die drei Städte der Alten Goten (Hagelsberg, Gnesen und Gotonen) im Besitz hat:
+		#Plot (0,1): pPlot.setScriptData() für EVENT-10.4
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["10_4"], "")
+		if iCheck == "":
+			#Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht.
+			#Nun lasst uns Vorbereitungen treffen, um die umliegenden Stämme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren müssen, um zu gegebener Zeit mit einer großen Armee vor den Göttern nach Westen zu marschieren.
+			#Die vier großen Germanenstämme sollen hinter euch versammelt sein, euch als Vasallen die Treue schwören!
+
+			#Denkt daran, schon früh Straßen in die weiten Wälder zu schlagen. Auch das wurde vom Ältesten immer vernachlässigt!
+
+			#<VEREINT DIE GERMANENSTÄMME IM WESTEN UNTER EUREM BANNER>
+			#Hagelsberg: x=95,y=83
+			#Gnesen: x=91,y=77
+			#Gotonen: x=102,y=71
+			if (gc.getMap().plot(95, 83).getOwner() == 0 and
+				 gc.getMap().plot(91, 77).getOwner() == 0 and
+				 gc.getMap().plot(102,71).getOwner() == 0
+				):
+				if gc.getPlayer(iNewOwner).isHuman():
+					popupInfo = CyPopupInfo()
+					popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+					popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS", ("", )))
+					popupInfo.addPopup(iNewOwner)
+				# setScriptData
+				CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_4", "x")
 
 
 
 #[EVENT-13.1] - onCityAcquired; Wenn der Spieler (zum ersten Mal) eine Stadt eines Germanen (Player 1, 2, 3, 4) erobert:
 	#[ABFRAGE] Lebt Alarich noch? -> DANN
 	#Plot (0,1): pPlot.setScriptData() für EVENT-13.1
+	if iNewOwner == 0 and pNewOwner.isHuman() and iPreviousOwner in lGermanen:
+		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["13_1"], "")
+		if iCheck == "":
+			iRange = pNewOwner.getNumUnits()
+			for i in range(iRange):
+				if pNewOwner.getUnit(i) is not None:
+					if pNewOwner.getUnit(i).getScriptData() == "Alarich":
 
-	# => DAS ÜBERSCHNEIDET SICH MIT [EVENT-10.3] Wenn der Gote die erste Stadt erobert
+						#Mit der Einnahme von [get.cityname] habt ihr wahrlich ein Zeichen gesetzt.
+						#Die Welt soll erfahren, dass die große Vereinigung aller Germanenvölker begonnen hat! Diese Kunde wird von den Barden in alle Himmelsrichtungen getragen. Euer Name wird schon bald in aller Munde sein!
+						#
+						#Eine Ballade dieser Zeit:
+						#"Auf dass ihr es alle seht - Alarich der Gote - wer auf der falsche Seite steht - verzeichnet Tote"
+
+						#Denkt daran, dass die Stämme euch als Vasallen dienen sollen. Vereinigung der Völker bedeutet nicht ihre Auslöschung!
+						popupInfo = CyPopupInfo()
+						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_GERMAN_CITY", (pCity.getName(), )))
+						popupInfo.addPopup(iNewOwner)
+
+						# setScriptData
+						CvUtil.addScriptData(gc.getMap().plot(0, 1), "13_1", "x")
 
 
 #[EVENT-14.1] - onCityAcquired; Wenn der Spieler die Heilige Stadt (Donareiche aus Event-1.1) erobert
@@ -385,35 +425,9 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 			popupInfo = CyPopupInfo()
 			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iPreviousOwner).getName(), )))
-			popupInfo.addPopup(iPlayer)
-			gc.getPlayer(iPlayer).changeGold(1000)
+			popupInfo.addPopup(iNewOwner)
+			gc.getPlayer(iNewOwner).changeGold(1000)
 			CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", "x")
-
-#[EVENT-10.4] - onCityAcquired; Wenn der Spieler die drei Städte der Alten Goten (Hagelsberg, Gnesen und Gotonen) im Besitz hat:
-		#Plot (0,1): pPlot.setScriptData() für EVENT-10.4
-	if iNewOwner == 0 and iPreviousOwner == 20:
-		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["10_4"], "")
-		if iCheck == "":
-			#Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht.
-			#Nun lasst uns Vorbereitungen treffen, um die umliegenden Stämme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren müssen, um zu gegebener Zeit mit einer großen Armee vor den Göttern nach Westen zu marschieren.
-			#Die vier großen Germanenstämme sollen hinter euch versammelt sein, euch als Vasallen die Treue schwören!
-
-			#Denkt daran, schon früh Straßen in die weiten Wälder zu schlagen. Auch das wurde vom Ältesten immer vernachlässigt!
-
-			#<VEREINT DIE GERMANENSTÄMME IM WESTEN UNTER EUREM BANNER>
-			#Hagelsberg: x=95,y=83
-			#Gnesen: x=91,y=77
-			#Gotonen: x=102,y=71
-			if (gc.getMap().plot(95, 83).getOwner() == 0 and
-				 gc.getMap().plot(91, 77).getOwner() == 0 and
-				 gc.getMap().plot(102,71).getOwner() == 0
-				):
-				popupInfo = CyPopupInfo()
-				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS", ("", )))
-				popupInfo.addPopup(iPlayer)
-				# setScriptData
-				CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_4", "x")
 
 
 #[EVENT-15.1] - onCityAcquired & onVassalState; Wenn der Spieler einen KI-Gegner (nicht MinorCiv) vasallisiert oder vernichtet:
@@ -421,28 +435,54 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 	#Plot (0,1): pPlot.setScriptData() für EVENT-15.1
 	#1 Großer Spion "Speculatore" wird in der Hauptstadt des neuen Vasallen erstellt. Bei Vernichtung in der letzten eroberten Stadt
 	#1 Spion wird in der römischen Hauptstadt erstellt
+	if iNewOwner == 0:
+		if not gc.getPlayer(iPreviousOwner).isMinorCiv():
+			if gc.getPlayer(iPreviousOwner).getNumCities() == 0:
+				if CvUtil.getScriptData(gc.getMap().plot(0, 1), ["15_1"], "") == "":
+					if CvUtil.myRandom(100, "WDG Great Spy onVassalState") < iChanceGreatSpyOnConquer:
 
-	#if iNewOwner in lGerVandalen:
+						CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_1", "x")
+
+						pNewUnit = gc.getPlayer(iNewOwner).initUnit(gc.getInfoTypeForString("UNIT_GREAT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_MERCHANT, DirectionTypes.DIRECTION_SOUTH)
+
+						#1 Spion wird in der römischen Hauptstadt erstellt (Rom: 14)
+						pCityRome = gc.getPlayer(14).getCapitalCity()
+						pNewUnit = gc.getPlayer(iNewOwner).initUnit(gc.getInfoTypeForString("UNIT_SPY"), pCityRome.getX(), pCityRome.getY(), UnitAITypes.UNITAI_SPY, DirectionTypes.DIRECTION_SOUTH)
+
+						#Ihr habt euch als erfolgreicher Feldherr erwiesen und schon so einige Stämme unterworfen! Ein eher unscheinbarer Kerl, der uns schon länger folgt, offenbart sich als Kundschafter aus Rom und bietet seine Dienste an.
+						#Er nennt sich selbst Speculatore, hat mit [get.LeadernameRömer] noch eine Rechnung offen und will dabei helfen, eine Macht aufzubauen, die den römischen Legionen gewachsen ist!
+						#Ein Komplize des Speculatore ist in [get.CapitalnameRömer] geblieben, um über die Lage vor Ort zu berichten.
+						#<IHR ERHALTET 1 GROSSER SPION>
+						#<IHR ERHALTET 1 SPION IN [get.CapitalnameRömer]>
+						if gc.getPlayer(iNewOwner).isHuman():
+							popupInfo = CyPopupInfo()
+							popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+							popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_SPECULATORE", (gc.getPlayer(14).getName(), pCityRome.getName(), pCityRome.getName())))
+							popupInfo.addPopup(iNewOwner)
+
+
+
 	if iNewOwner == 0:
 		if not gc.getPlayer(iConqueredPlayer).isMinorCiv():
 			if gc.getPlayer(iConqueredPlayer).getNumCities() == 0:
 				iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["15_1"], "")
 				if iCheck == "":
-					CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_1", "x")
-					pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GREAT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_MERCHANT, DirectionTypes.DIRECTION_SOUTH)
-					pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_SPY, DirectionTypes.DIRECTION_SOUTH)
+					if CvUtil.myRandom(100, "WDG Great Spy onVassalState") < iChanceGreatSpyOnConquer:
+						CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_1", "x")
+						pNewUnit = pNewOwner.initUnit(gc.getInfoTypeForString("UNIT_GREAT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_MERCHANT, DirectionTypes.DIRECTION_SOUTH)
+						pNewUnit = pNewOwner.initUnit(gc.getInfoTypeForString("UNIT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_SPY, DirectionTypes.DIRECTION_SOUTH)
 
-					#Ihr habt euch als erfolgreicher Feldherr erwiesen und schon so einige Stämme unterworfen! Ein eher unscheinbarer Kerl, der uns schon länger folgt, offenbart sich als Kundschafter aus Rom und bietet seine Dienste an.
-					#Er nennt sich selbst Speculatore, hat mit [get.LeadernameRömer] noch eine Rechnung offen und will dabei helfen, eine Macht aufzubauen, die den römischen Legionen gewachsen ist!
-					#Ein Komplize des Speculatore ist in [get.CapitalnameRömer] geblieben, um über die Lage vor Ort zu berichten.
-					#<IHR ERHALTET 1 GROSSER SPION>
-					#<IHR ERHALTET 1 SPION IN [get.CapitalnameRömer]>
+						#Ihr habt euch als erfolgreicher Feldherr erwiesen und schon so einige Stämme unterworfen! Ein eher unscheinbarer Kerl, der uns schon länger folgt, offenbart sich als Kundschafter aus Rom und bietet seine Dienste an.
+						#Er nennt sich selbst Speculatore, hat mit [get.LeadernameRömer] noch eine Rechnung offen und will dabei helfen, eine Macht aufzubauen, die den römischen Legionen gewachsen ist!
+						#Ein Komplize des Speculatore ist in [get.CapitalnameRömer] geblieben, um über die Lage vor Ort zu berichten.
+						#<IHR ERHALTET 1 GROSSER SPION>
+						#<IHR ERHALTET 1 SPION IN [get.CapitalnameRömer]>
 
-					if pPlayer.isHuman():
-						popupInfo = CyPopupInfo()
-						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-						popupInfo.setText(CyTranslator().getText("Speculatore", ()))
-						popupInfo.addPopup(iNewOwner)
+						if pNewOwner.isHuman():
+							popupInfo = CyPopupInfo()
+							popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+							popupInfo.setText(CyTranslator().getText("Speculatore", ()))
+							popupInfo.addPopup(iNewOwner)
 
 
 
@@ -792,9 +832,13 @@ def onPlayerKilled(iConqueredPlayer):
 # wenn man einen Spieler erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
 def onVassalState(argsList):
 	iMaster, iVassal, bVassal = argsList
+	global iChanceGreatSpyOnConquer
 
 	lGerVandalen = [0,1,2,3,4,9]
 	lGermanen = [0,1,2,3,4]
+
+	pMaster = gc.getPlayer(iMaster)
+	pVassal = gc.getPlayer(iVassal)
 
 	if iMaster == 0 and bVassal:
 
@@ -805,7 +849,7 @@ def onVassalState(argsList):
 			if CvUtil.getScriptData(gc.getMap().plot(0, 1), ["22_3"], "") == "":
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (gc.getPlayer(iVassal).getName(), )))
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN", (pVassal.getName(), )))
 				popupInfo.addPopup(0)
 				gc.getPlayer(0).changeGold(1000)
 				CvUtil.addScriptData(gc.getMap().plot(0, 1), "22_3", "x")
@@ -820,15 +864,16 @@ def onVassalState(argsList):
 				for iRivalTeam in lGermanen:
 					if iRivalTeam == iMaster:
 						continue
-					if not gc.getTeam(iRivalTeam).isVassal(gc.getPlayer(iMaster).getTeam()):
+					if gc.getTeam(iRivalTeam).isVassal(pMaster.getTeam()):
 						iAnzVassals += 1
+					else:
 						break
 
 				if iAnzVassals == 4:
 					CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_2", "x")
-					pCity = gc.getPlayer(iMaster).getCapitalCity()
+					pCity = pMaster.getCapitalCity()
 					if not pCity.isNone():
-						gc.getPlayer(iMaster).initUnit(gc.getInfoTypeForString("UNIT_WARBAND"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+						pMaster.initUnit(gc.getInfoTypeForString("UNIT_WARBAND"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 					#Ein historischer Tag. Die Germanenvölker sind vereint!
 					#
 					#Ihr sitzt mit den Clanfürsten in [get.Capitalname] zusammen, um die Zukunft zu besprechen. Es stehen, wie schon immer, diese beiden Fragen im Raum: WIE können wir die Römer besiegen und WANN sind wir dazu in der Lage?
@@ -852,9 +897,9 @@ def onVassalState(argsList):
 				#Ein Berserker (Stärke 14) wird in der Hauptstadt des Spielers erstellt
 				elif iAnzVassals == 2 and CvUtil.getScriptData(gc.getMap().plot(0, 1), ["15_3"], "") == "":
 					CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_3", "x")
-					pCity = gc.getPlayer(iMaster).getCapitalCity()
+					pCity = pMaster.getCapitalCity()
 					if not pCity.isNone():
-						gc.getPlayer(iMaster).initUnit(gc.getInfoTypeForString("UNIT_BERSERKER_GERMAN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+						pMaster.initUnit(gc.getInfoTypeForString("UNIT_BERSERKER_GERMAN"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 						#Gratulation! Die Germanenvölker sind vereint. Wenn auch nicht mehr alle Clanführer mit am Feuer sitzen, so ist es doch ein historischer Tag.
 						#Es stehen, wie schon immer, diese beiden Fragen im Raum: WIE können wir die Römer besiegen und WANN sind wir dazu in der Lage?
 						#Es gibt auch Stimmen die sagen, dass wir die Römer ignorieren sollten, die Götter würden uns schon schützen. Doch da erinnert ihr euch noch gut an den Ältesten, der mit genau diesen Worten seine jahrelange Untätigkeit zu rechtfertigen versuchte…#
@@ -864,18 +909,14 @@ def onVassalState(argsList):
 						#<IHR ERHALTET 1 BERSERKER>
 						#<ERKUNDET DIE RÖMER>
 						# xxx
-						if pPlayer.isHuman():
+						if pMaster.isHuman():
 							popupInfo = CyPopupInfo()
 							popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 							popupInfo.setText(CyTranslator().getText("Event_15_3_Berserker", (pCity.getName(),)))
-							popupInfo.addPopup(iNewOwner)
+							popupInfo.addPopup(iMaster)
 						
 						#KAMERA ZOOM AUF DIE STADT
 						CyCamera().JustLookAtPlot(pCity.plot())
-
-
-
-
 
 
 #[EVENT-15.1] - onCityAcquired & onVassalState; Wenn der Spieler einen KI-Gegner (nicht MinorCiv) vasallisiert oder vernichtet:
@@ -883,41 +924,33 @@ def onVassalState(argsList):
 		#Plot (0,1): pPlot.setScriptData() für EVENT-15.1
 		#1 Großer Spion "Speculatore" wird in der Hauptstadt des neuen Vasallen erstellt. Bei Vernichtung in der letzten eroberten Stadt
 		#1 Spion wird in der römischen Hauptstadt erstellt
+		if not pVassal.isMinorCiv():
+			if CvUtil.getScriptData(gc.getMap().plot(0, 1), ["15_1"], "") == "":
+				if CvUtil.myRandom(100, "WDG Great Spy onVassalState") < iChanceGreatSpyOnConquer:
 
-		#if iNewOwner in lGerVandalen:
-		iConqueredPlayer = iVassal
-		if not gc.getPlayer(iConqueredPlayer).isMinorCiv():
-			if CvUtil.myRandom(3, "WDG Great Spy onVassalState") == 1:
-				bPopUp = False
-				if gc.getPlayer(iConqueredPlayer).getNumCities() > 0:
-					CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_1", "x")
+					pCity = pVassal.getCapitalCity()
+					if pCity.isNone():
+						pCity = pMaster.getCapitalCity()
 
-					pCity = gc.getPlayer(iConqueredPlayer).getCapitalCity()
 					if not pCity.isNone():
-						pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_GREAT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_MERCHANT, DirectionTypes.DIRECTION_SOUTH)
-						bPopUp = True
+						CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_1", "x")
 
-				else:
-					if CvUtil.getScriptData(gc.getMap().plot(0, 1), ["15_1"], "") == "x":
-						pCity = gc.getPlayer(14).getCapitalCity()
-						if pCity.isNone():
-							pCity = gc.getPlayer(12).getCapitalCity()
-						if not pCity.isNone():
-							pNewUnit = pPlayer.initUnit(gc.getInfoTypeForString("UNIT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_SPY, DirectionTypes.DIRECTION_SOUTH)
-							pPopUp = True
+						pNewUnit = pMaster.initUnit(gc.getInfoTypeForString("UNIT_GREAT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_MERCHANT, DirectionTypes.DIRECTION_SOUTH)
 
-				if pPopUp:
-					#Ihr habt euch als erfolgreicher Feldherr erwiesen und schon so einige Stämme unterworfen! Ein eher unscheinbarer Kerl, der uns schon länger folgt, offenbart sich als Kundschafter aus Rom und bietet seine Dienste an.
-					#Er nennt sich selbst Speculatore, hat mit [get.LeadernameRömer] noch eine Rechnung offen und will dabei helfen, eine Macht aufzubauen, die den römischen Legionen gewachsen ist!
-					#Ein Komplize des Speculatore ist in [get.CapitalnameRömer] geblieben, um über die Lage vor Ort zu berichten.
-					#<IHR ERHALTET 1 GROSSER SPION>
-					#<IHR ERHALTET 1 SPION IN [get.CapitalnameRömer]>
-					# xxx
-					if pPlayer.isHuman():
-						popupInfo = CyPopupInfo()
-						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-						popupInfo.setText(CyTranslator().getText("Event_15_1_Speculatore", (pCity.getName(),)))
-						popupInfo.addPopup(iNewOwner)
+						#1 Spion wird in der römischen Hauptstadt erstellt (Rom: 14)
+						pCityRome = gc.getPlayer(14).getCapitalCity()
+						pNewUnit = pMaster.initUnit(gc.getInfoTypeForString("UNIT_SPY"), pCityRome.getX(), pCityRome.getY(), UnitAITypes.UNITAI_SPY, DirectionTypes.DIRECTION_SOUTH)
+
+						#Ihr habt euch als erfolgreicher Feldherr erwiesen und schon so einige Stämme unterworfen! Ein eher unscheinbarer Kerl, der uns schon länger folgt, offenbart sich als Kundschafter aus Rom und bietet seine Dienste an.
+						#Er nennt sich selbst Speculatore, hat mit [get.LeadernameRömer] noch eine Rechnung offen und will dabei helfen, eine Macht aufzubauen, die den römischen Legionen gewachsen ist!
+						#Ein Komplize des Speculatore ist in [get.CapitalnameRömer] geblieben, um über die Lage vor Ort zu berichten.
+						#<IHR ERHALTET 1 GROSSER SPION>
+						#<IHR ERHALTET 1 SPION IN [get.CapitalnameRömer]>
+						if pMaster.isHuman():
+							popupInfo = CyPopupInfo()
+							popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+							popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_SPECULATORE", (gc.getPlayer(14).getName(), pCityRome.getName(), pCityRome.getName())))
+							popupInfo.addPopup(iMaster)
 
 
 
@@ -952,8 +985,11 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 #[EVENT-2.1] Christentum Gründung:
 #Ab Jahr 5 v.Chr. gibt es eine 5% Chance, dass es entsteht (also innerhalb von 20 Jahren, NICHT Runden!)
 #Entstehen soll es dann in Byzanz (80%) oder Rom (20%) -> DANN
+# check im CvEventManager unter onEndGameTurn
 def setChristentum():
-		if CvUtil.myRandom(20, "WDG Christentum") != 1: return
+		global iChanceSetChristentum
+
+		if CvUtil.myRandom(100, "WDG Christentum") > iChanceSetChristentum: return
 
 		pCity = None
 		iChance = CvUtil.myRandom(10, "WDG Christentum HolyCity")
@@ -987,8 +1023,9 @@ def setChristentum():
 #[EVENT-2.2] Christentum verbreitet sich:
 #Ab Gründung gibt es eine 2% Chance pro Jahr, dass die Verbreitung beginnt -> DANN
 def doSpreadReligion():
+		global iChanceSpreadChristentum
 
-		if CvUtil.myRandom(100, "WDG Christentum Verbreitung") < 2:
+		if CvUtil.myRandom(100, "WDG Christentum Verbreitung") < iChanceSpreadChristentum:
 
 			iBuilding = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
 			iChristentum = gc.getInfoTypeForString("RELIGION_CHRISTIANITY")
@@ -1062,7 +1099,6 @@ def doSpreadReligion():
 
 
 def onCityGrowth(pCity,iPlayer):
-	global GotenErsteProvinzstadt
 	pPlayer = gc.getPlayer(iPlayer)
 
 #[EVENT-12.2] - onCityGrowth; Wenn der Spieler mehr als 2 Städte mit Stadtstatus (Größe 6) hat:

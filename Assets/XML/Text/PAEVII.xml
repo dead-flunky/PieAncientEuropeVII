@@ -137,6 +137,14 @@
 		<Spanish>[ICON_BULLET] Los canales de riego protegen a las ciudades de los incendios hasta los 11 habitantes.[NEWLINE][ICON_BULLET]S&#243;lo se puede construir en ciudades pr&#243;ximas a r&#237;os</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_LIBRARY_BAGDAD</Tag>
+		<English>Great Library of Babylon</English>
+		<French>Grande Biblioth&#232;que de Babylone</French>
+		<German>Gro&#223;e Bibliothek von Babylon</German>
+		<Italian>Grande Biblioteca di Babilonia</Italian>
+		<Spanish>Gran Biblioteca de Babilonia</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MILIT_LAGER_ISLAM</Tag>
 		<English>Misr</English>
 		<French>Misr</French>
@@ -175,6 +183,22 @@
 		<German>[ICON_BULLET]Stadt ben&#246;tigt [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</German>
 		<Italian>[ICON_BULLET]La citt&#224; ha bisogno [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</Italian>
 		<Spanish>[ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REL_STEUER</Tag>
+		<English>Fiscus Hall (Capitatio)</English>
+		<French>Salle fiscal (Capitatio)</French>
+		<German>Abgabenstelle (Capitatio)</German>
+		<Italian>Sala fiscale (capitatio)</Italian>
+		<Spanish>Sala fiscal (capitatio)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_BUDDHISM</Tag>
+		<English>Theravada school</English>
+		<French>&#201;cole Theravada</French>
+		<German>Theravada-Schule</German>
+		<Italian>Scuola Theravada</Italian>
+		<Spanish>Escuela Theravada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCHULE_CHRISTEN</Tag>
@@ -383,14 +407,6 @@ Scuola di retorica
 		<German>Das Geb&#228;ude %s1_building wurde zerst&#246;rt.</German>
 		<Italian>L'edificio %s1_building &#232; stato distrutto.</Italian>
 		<Spanish>El edificio %s1_building ha quedado destruido.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_FREE</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GRAPHICOPTION_HIRES_TERRAIN</Tag>
@@ -1305,6 +1321,14 @@ Scuola di retorica
 		<Spanish>7. Concilio Ecum&#233;nico</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_KONZIL_BUDDHA</Tag>
+		<English>Buddhist councils</English>
+		<French>Conseils bouddhistes</French>
+		<German>Buddhistische Konzile</German>
+		<Italian>Consigli buddisti</Italian>
+		<Spanish>Consejos budistas</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL_INFO</Tag>
 		<English>[ICON_BULLET]All players receive this technology as soon as it is researched by a civilization.</English>
 		<French>[ICON_BULLET]Tous les joueurs re&#231;oivent cette technologie d&#232;s qu'elle est recherch&#233;e par une civilisation.</French>
@@ -1497,6 +1521,14 @@ Scuola di retorica
 		<Spanish>[ICON_BULLET] Evite los bosques, la nieve y los paisajes de tundra.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_NO_CARGO</Tag>
+		<English>[ICON_BULLET]Cannot be loaded onto ships</English>
+		<French>[ICON_BULLET]Ne peut pas &#234;tre charg&#233; sur les navires</French>
+		<German>[ICON_BULLET]Kann nicht auf Schiffe geladen werden</German>
+		<Italian>[ICON_BULLET]Non pu&#242; essere caricato sulle navi</Italian>
+		<Spanish>[ICON_BULLET]No se puede cargar en los barcos</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROME_EXCUBITORES</Tag>
 		<English>Excubitores</English>
 		<French>Excubitores</French>
@@ -1562,11 +1594,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TRADE_MERCHANT_MAN_HELP</Tag>
-		<English>[ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire and is limited by 10[NEWLINE][ICON_BULLET]Low inventory capacity and therefore low profit margin</English>
-		<French>[ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 10)[NEWLINE][ICON_BULLET]Faible capacit&#233; de marchandises et donc faible marge b&#233;n&#233;ficiaire</French>
-		<German>[ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer H&#228;ndler entspricht der Anzahl der Handelsposten im Reich und ist limitiert auf 10[NEWLINE][ICON_BULLET]Geringe Warenkapazit&#228;t und daher geringe Gewinnspanne</German>
-		<Italian>[ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 10 commercianti)[NEWLINE][ICON_BULLET]Scarsa capacit&#224; di merce e quindi basso margine di profitto</Italian>
-		<Spanish>[ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 10 comerciantes)[NEWLINE][ICON_BULLET]Baja capacidad de mercanc&#237;as y, por tanto, bajo margen de beneficio</Spanish>
+		<English>[ICON_BULLET]Cannot be loaded onto ships[NEWLINE][ICON_BULLET]Can establish external trading posts[NEWLINE][ICON_BULLET]The number of buildable units corresponds to the number of trading posts in the empire and is limited by 10[NEWLINE][ICON_BULLET]Low inventory capacity and therefore low profit margin</English>
+		<French>[ICON_BULLET]Ne peut pas &#234;tre charg&#233; sur les navires[NEWLINE][ICON_BULLET]Peut &#233;tablir des postes de traite &#233;trangers[NEWLINE][ICON_BULLET]Vous ne pouvez construire plus de marchands que vous n'avez de comptoirs (max 10)[NEWLINE][ICON_BULLET]Faible capacit&#233; de marchandises et donc faible marge b&#233;n&#233;ficiaire</French>
+		<German>[ICON_BULLET]Kann nicht auf Schiffe geladen werden[NEWLINE][ICON_BULLET]Kann externe Handelsposten errichten[NEWLINE][ICON_BULLET]Die Anzahl baubarer H&#228;ndler entspricht der Anzahl der Handelsposten im Reich und ist limitiert auf 10[NEWLINE][ICON_BULLET]Geringe Warenkapazit&#228;t und daher geringe Gewinnspanne</German>
+		<Italian>[ICON_BULLET]Non pu&#242; essere caricato sulle navi[NEWLINE][ICON_BULLET]Pu&#242; stabilire postazioni di trading esterne[NEWLINE][ICON_BULLET]Il numero di unit&#224; costruibili corrisponde al numero di stazioni commerciali nell'impero (massimo 10 commercianti)[NEWLINE][ICON_BULLET]Scarsa capacit&#224; di merce e quindi basso margine di profitto</Italian>
+		<Spanish>[ICON_BULLET]No se puede cargar en los barcos[NEWLINE][ICON_BULLET]Puede crear puestos de comercio exterior[NEWLINE][ICON_BULLET]El n&#250;mero de unidades construibles corresponde al n&#250;mero de puestos comerciales en el imperio (m&#225;ximo 10 comerciantes)[NEWLINE][ICON_BULLET]Baja capacidad de mercanc&#237;as y, por tanto, bajo margen de beneficio</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TROJAN_HORSE_HELP</Tag>

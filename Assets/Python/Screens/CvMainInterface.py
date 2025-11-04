@@ -2033,6 +2033,11 @@ class CvMainInterface:
 														if pHeadSelectedUnit.isMilitaryHappiness():
 																screen.disableMultiListButton("BottomButtonContainer", 0, iCount, gc.getActionInfo(i).getButton())
 
+												# PAE some units cannot be loaded onto ships
+												if gc.getActionInfo(i).getCommandType() == gc.getInfoTypeForString("COMMAND_LOAD"):
+														if not pHeadSelectedUnit.canMove() or pHeadSelectedUnit.getUnitType() in L.LTradeUnits or gc.getUnitInfo(pHeadSelectedUnit.getUnitType()).getCargoSpace() == -1:
+																screen.disableMultiListButton("BottomButtonContainer", 0, iCount, gc.getActionInfo(i).getButton())
+
 												# funkt leider nicht
 												#if gc.getActionInfo(i).getMissionType() == MissionTypes.MISSION_RANGE_ATTACK and not pHeadSelectedUnit.canMove():
 												#		screen.disableMultiListButton("BottomButtonContainer", 0, iCount, gc.getActionInfo(i).getButton())
@@ -2453,113 +2458,113 @@ class CvMainInterface:
 
 												# ------------------
 												# BEGIN Merchant trade/cultivation/collect Bonus (738-741) (Boggy)
-												if pUnit.canMove():  # and not pUnit.hasMoved():
+												#if pUnit.canMove():  # and not pUnit.hasMoved():
 
-														if iUnitType in L.LCultivationUnits + L.LTradeUnits:
-																# if pPlot.getOwner() == iUnitOwner or pPlot.getOwner() != -1 and gc.getTeam(gc.getPlayer(pPlot.getOwner()).getTeam()).isVassal(pUnitOwner.getTeam()):
-																eBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
-																iTechAqua = gc.getInfoTypeForString("TECH_AQUA")
+												if iUnitType in L.LCultivationUnits + L.LTradeUnits:
+														# if pPlot.getOwner() == iUnitOwner or pPlot.getOwner() != -1 and gc.getTeam(gc.getPlayer(pPlot.getOwner()).getTeam()).isVassal(pUnitOwner.getTeam()):
+														eBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
+														iTechAqua = gc.getInfoTypeForString("TECH_AQUA")
 
-																# Collect bonus from plot or city
-																# ePlotBonus = pPlot.getBonusType(iUnitOwner)  # Invisible bonuses can NOT be collected
-																ePlotBonus = pPlot.getBonusType(pUnit.getOwner())
-																if iUnitType == gc.getInfoTypeForString("UNIT_WORKBOAT") and not pTeam.isHasTech(iTechAqua):
-																		# getoutofhere = 1  # get out of LCultivationUnits
-																		pass
-																# Handelsschiffe sollen keine Güter im Meer kaufen können
-																elif pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not bCity:
-																		pass
-																# remove from plot => iData2 = 0. 1 = charge all goods without removing. Nur bei leerem Karren.
-																elif eBonus == -1:
-																		if ePlotBonus != -1 and (ePlotBonus in L.LBonusCultivatable + L.LBonusStratCultivatable + L.LBonusCultivatableCoast):
-																				# Kaufen
-																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																						"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 2, True)
-																				screen.show("BottomButtonContainer")
-																				iCount += 1
-																				# Bonusgut aufnehmen (Eigenes Terrain, Neutrales Terrain, Feindliches Terrain)
-																				if pPlot.getOwner() == iUnitOwner or pPlot.getOwner() == -1 or gc.getTeam(pPlot.getOwner()).isAtWar(pUnitOwner.getTeam()):
-																						if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
-																								iData = -1
-																						else:
-																								iData = 0
-																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																								"INTERFACE_TRADE_COLLECT").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, iData, True)
-																						screen.show("BottomButtonContainer")
-																						iCount += 1
-																				# Bonusgut kaufen oder stehlen (freundliches Terrain, Vasallenterrain)
-																				elif not bCity:
-																						# Stehlen
-																						if pTeam.getEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam()) > 100:
-																								screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																										"INTERFACE_TRADE_COLLECT_SPY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 3, True)
-																								screen.show("BottomButtonContainer")
-																								iCount += 1
-																		if bCity and iUnitType in L.LCultivationUnits:
-																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																						"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 1, True)
-																				screen.show("BottomButtonContainer")
-																				iCount += 1
-																elif bCity:
-																		# DERTUEK (otherwise the sell button is displayed twice for all trade units)
-																		if iUnitType in L.LCultivationUnits:
-																				iPrice = PAE_Trade.calculateBonusSellingPrice(pUnit, pPlot.getPlotCity(), 0)
-																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																						"INTERFACE_TRADE_SELL").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 741, int(iPrice), False)
-																				screen.show("BottomButtonContainer")
-																				screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
-																				iCount += 1
-																# Wenn der Karren ein Bonusgut aufgeladen hat
-																# Bonus ersetzen, nur auf eigenem Terrain (iData1: 738, iData2: 0 normal, 1 replace)
-																# Fix by Dertuek (message for INTERFACE_TRADE_COLLECT_IMPOSSIBLE only on plots with bonus resources)
-																elif ePlotBonus != -1 and pPlot.getOwner() == iUnitOwner:
-																		if ePlotBonus in L.LBonusCorn and eBonus in L.LBonusCorn or ePlotBonus in L.LBonusLivestock and eBonus in L.LBonusLivestock:
-																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																						"INTERFACE_TRADE_CULTIVATE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 738, 1, False)
-																				screen.show("BottomButtonContainer")
-																				iCount += 1
-																		else:
-																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																						"INTERFACE_TRADE_COLLECT_IMPOSSIBLE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 739, False)
-																				screen.show("BottomButtonContainer")
-																				iCount += 1
-
-																# Cultivate bonus onto plot (iData1: 738, iData2: 0 normal, 1 replace)
-																if eBonus != -1 and PAE_Cultivation.isBonusCultivatable(pUnit):
-																	if pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not pTeam.isHasTech(iTechAqua):
-																		pass
-																	else:
+														# Collect bonus from plot or city
+														# ePlotBonus = pPlot.getBonusType(iUnitOwner)  # Invisible bonuses can NOT be collected
+														ePlotBonus = pPlot.getBonusType(pUnit.getOwner())
+														if iUnitType == gc.getInfoTypeForString("UNIT_WORKBOAT") and not pTeam.isHasTech(iTechAqua):
+																# getoutofhere = 1  # get out of LCultivationUnits
+																pass
+														# Handelsschiffe sollen keine Güter im Meer kaufen können
+														elif pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not bCity:
+																pass
+														# remove from plot => iData2 = 0. 1 = charge all goods without removing. Nur bei leerem Karren.
+														elif eBonus == -1:
+																if ePlotBonus != -1 and (ePlotBonus in L.LBonusCultivatable + L.LBonusStratCultivatable + L.LBonusCultivatableCoast):
+																		# Kaufen
 																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																				"INTERFACE_TRADE_CULTIVATE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 738, 0, bCity)
+																				"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 2, True)
+																		screen.show("BottomButtonContainer")
+																		iCount += 1
+																		# Bonusgut aufnehmen (Eigenes Terrain, Neutrales Terrain, Feindliches Terrain)
+																		if pPlot.getOwner() == iUnitOwner or pPlot.getOwner() == -1 or gc.getTeam(pPlot.getOwner()).isAtWar(pUnitOwner.getTeam()):
+																				if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
+																						iData = -1
+																				else:
+																						iData = 0
+																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																						"INTERFACE_TRADE_COLLECT").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, iData, True)
+																				screen.show("BottomButtonContainer")
+																				iCount += 1
+																		# Bonusgut kaufen oder stehlen (freundliches Terrain, Vasallenterrain)
+																		elif not bCity:
+																				# Stehlen
+																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																						"INTERFACE_TRADE_COLLECT_SPY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 3, True)
+																				screen.show("BottomButtonContainer")
+																				if pTeam.getEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam()) < 100:
+																						screen.disableMultiListButton("BottomButtonContainer", 0, iCount, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TRADE_COLLECT_SPY").getPath())
+																				iCount += 1
+																if bCity and iUnitType in L.LCultivationUnits:
+																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																				"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 1, True)
+																		screen.show("BottomButtonContainer")
+																		iCount += 1
+														elif bCity:
+																# DERTUEK (otherwise the sell button is displayed twice for all trade units)
+																if iUnitType in L.LCultivationUnits:
+																		iPrice = PAE_Trade.calculateBonusSellingPrice(pUnit, pPlot.getPlotCity(), 0)
+																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																				"INTERFACE_TRADE_SELL").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 741, int(iPrice), False)
 																		screen.show("BottomButtonContainer")
 																		screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																		iCount += 1
+														# Wenn der Karren ein Bonusgut aufgeladen hat
+														# Bonus ersetzen, nur auf eigenem Terrain (iData1: 738, iData2: 0 normal, 1 replace)
+														# Fix by Dertuek (message for INTERFACE_TRADE_COLLECT_IMPOSSIBLE only on plots with bonus resources)
+														elif ePlotBonus != -1 and pPlot.getOwner() == iUnitOwner:
+																if ePlotBonus in L.LBonusCorn and eBonus in L.LBonusCorn or ePlotBonus in L.LBonusLivestock and eBonus in L.LBonusLivestock:
+																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																				"INTERFACE_TRADE_CULTIVATE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 738, 1, False)
+																		screen.show("BottomButtonContainer")
+																		iCount += 1
+																else:
+																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																				"INTERFACE_TRADE_COLLECT_IMPOSSIBLE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 739, False)
+																		screen.show("BottomButtonContainer")
+																		iCount += 1
 
-														# Buy / sell goods in cities (domestic or foreign)
-														if bCity:
-																if iUnitType in L.LTradeUnits:
-																		bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA"], 0))
-																		if not bTradeRouteActive:
-																				eBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
-																				# Sell
-																				if eBonus != -1:
-																						iPrice = PAE_Trade.calculateBonusSellingPrice(pUnit, pPlot.getPlotCity(), 0)
-																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																								"INTERFACE_TRADE_SELL").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 741, int(iPrice), False)
-																						screen.show("BottomButtonContainer")
-																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
-																						iCount += 1
-																				# Buy
-																				else:
-																						screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																								"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 740, 740, False)
-																						screen.show("BottomButtonContainer")
-																						screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
-																						iCount += 1
+														# Cultivate bonus onto plot (iData1: 738, iData2: 0 normal, 1 replace)
+														if eBonus != -1 and PAE_Cultivation.isBonusCultivatable(pUnit):
+															if pUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not pTeam.isHasTech(iTechAqua):
+																pass
+															else:
+																screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																		"INTERFACE_TRADE_CULTIVATE").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 738, 0, bCity)
+																screen.show("BottomButtonContainer")
+																screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
+																iCount += 1
+
 
 												# Set or Cancel automated trade route
 												if iUnitType in L.LTradeUnits:
 														bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA"], 0))
+
+														# Buy / sell goods in cities (domestic or foreign)
+														if bCity and not bTradeRouteActive:
+																eBonus = CvUtil.getScriptData(pUnit, ["b"], -1)
+																# Sell
+																if eBonus != -1:
+																		iPrice = PAE_Trade.calculateBonusSellingPrice(pUnit, pPlot.getPlotCity(), 0)
+																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																				"INTERFACE_TRADE_SELL").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 741, int(iPrice), False)
+																		screen.show("BottomButtonContainer")
+																		screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
+																		iCount += 1
+																# Buy
+																else:
+																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																				"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 740, 740, False)
+																		screen.show("BottomButtonContainer")
+																		screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
+																		iCount += 1
+
 														if bTradeRouteActive:
 																screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
 																		"INTERFACE_TRADE_AUTO_STOP").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 748, 748, False)

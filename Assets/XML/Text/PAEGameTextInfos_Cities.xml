@@ -1514,11 +1514,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_NAME_B75</Tag>
-		<English>Lombards</English>
-		<French>Lombards</French>
+		<English>Longobards</English>
+		<French>Longobards</French>
 		<German>Langobarden</German>
-		<Italian>Lombards</Italian>
-		<Spanish>Lombardos</Spanish>
+		<Italian>Longobardi</Italian>
+		<Spanish>Longobardos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_NAME_B76</Tag>
@@ -1637,7 +1637,7 @@
 		<English>Moors</English>
 		<French>Maures</French>
 		<German>Mauren</German>
-		<Italian>Moors</Italian>
+		<Italian>Mori</Italian>
 		<Spanish>Moros</Spanish>
 	</TEXT>
 	<TEXT>
@@ -3114,11 +3114,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_NAME_C75</Tag>
-		<English>Tribe of Lombards</English>
-		<French>Tribu des Lombards</French>
+		<English>Tribe of Longobards</English>
+		<French>Tribu des Longobards</French>
 		<German>Stamm der Langobarden</German>
-		<Italian>Trib&#249; dei Lombardi</Italian>
-		<Spanish>Tribu de los Lombardos</Spanish>
+		<Italian>Trib&#249; dei Longobardi</Italian>
+		<Spanish>Tribu de los Longobardos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_NAME_C76</Tag>
@@ -4108,7 +4108,7 @@
 		<Tag>TXT_KEY_CITY_NAME_GERMANIA_06</Tag>
 		<English>Tribe of Alamanns</English>
 		<French>Tribu des Alamans</French>
-		<German>Stamm der Alamannen</German>
+		<German>Stamm der Alemannen</German>
 		<Italian>Trib&#249; degli Alamani</Italian>
 		<Spanish>Tribu de los Alamanes</Spanish>
 	</TEXT>
@@ -4309,8 +4309,8 @@
 		<English>Tribe of Langobards</English>
 		<French>Tribu des Ruges</French>
 		<German>Stamm der Langobarden</German>
-		<Italian>Trib&#249; dei Langobardi</Italian>
-		<Spanish>Tribu de los Lombardos</Spanish>
+		<Italian>Trib&#249; dei Longobardi</Italian>
+		<Spanish>Tribu de los Longobardos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_NAME_GERMANIA_32</Tag>

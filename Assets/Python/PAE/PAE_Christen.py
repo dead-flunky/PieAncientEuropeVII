@@ -588,7 +588,7 @@ def removePagans(pCity):
 					# Meldung
 					if txtReligionOrKult != "":
 						if pPlayer.isHuman():
-							iRand = 1 + CvUtil.myRandom(3, "TXT_KEY_MESSAGE_HERESY_CULTS")
+							iRand = 1 + CvUtil.myRandom(5, "TXT_KEY_MESSAGE_HERESY_CULTS")
 							if iReligion == iJudentum:
 								text = "TXT_KEY_MESSAGE_HERESY_CULTS2_"
 							elif iReligion == iChristentum:
