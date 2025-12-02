@@ -9,7 +9,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_DEMOGRAPHICS</Type>
 			<Description>TXT_KEY_ESPIONAGE_CAN_SEE_DEMOGRAPHICS</Description>
-			<iCost>50</iCost>
+			<iCost>75</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>0</bTargetsCity>
@@ -44,7 +44,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_CITY_VISIBILITY</Type>
 			<Description>TXT_KEY_ESPIONAGE_CITY_VISIBILITY</Description>
-			<iCost>150</iCost>
+			<iCost>100</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>1</bTargetsCity>
@@ -114,7 +114,7 @@
 		<EspionageMissionInfo>
 			<Type>ESPIONAGEMISSION_SEE_RESEARCH</Type>
 			<Description>TXT_KEY_ESPIONAGE_SEE_RESEARCH</Description>
-			<iCost>75</iCost>
+			<iCost>150</iCost>
 			<bIsPassive>1</bIsPassive>
 			<bIsTwoPhases>0</bIsTwoPhases>
 			<bTargetsCity>0</bTargetsCity>
@@ -305,7 +305,7 @@
 			<iDestroyBuildingCostFactor>0</iDestroyBuildingCostFactor>
 			<iDestroyUnitCostFactor>0</iDestroyUnitCostFactor>
 			<iDestroyProjectCostFactor>0</iDestroyProjectCostFactor>
-			<iDestroyProductionCostFactor>300</iDestroyProductionCostFactor>
+			<iDestroyProductionCostFactor>200</iDestroyProductionCostFactor>
 			<iBuyUnitCostFactor>0</iBuyUnitCostFactor>
 			<iBuyCityCostFactor>0</iBuyCityCostFactor>
 			<iStealTreasuryTypes>0</iStealTreasuryTypes>

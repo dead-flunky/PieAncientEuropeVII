@@ -1922,7 +1922,7 @@ class CvEventManager:
 								# Kaufen vom Plot
 								elif iData3 == 2:
 										PAE_Cultivation.doPopupChooseBonus4Cultivation(pUnit)
-								# Collect
+								# Collect (0 und 4)
 								else:
 										PAE_Cultivation.doCollectBonus4Cultivation(pUnit)
 								# Stehlen
@@ -3508,6 +3508,7 @@ class CvEventManager:
 							bUnitFlucht, pLoserFlucht = PAE_Unit.flee(pLoser, pWinner, iWinnerDamage)
 							if bUnitFlucht and pLoserFlucht is not None:
 									PAE_Unit.doUnitGetsPromo(pLoserFlucht, pWinner, pLoserPlot, False, bWinnerAnimal)
+									pWinner.changeExperience(-1, -1, 0, 0, 0) # Gewinner soll um 1 XP weniger bekommen als normal
 							else:
 									# Feature: Wenn die Generalseinheit stirbt, ist in jeder Stadt Civil War! (GG Great General dies)
 									# Richtet sich nach der Anzahl der lebenden Generals

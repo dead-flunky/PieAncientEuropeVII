@@ -3430,6 +3430,11 @@ bool CvUnit::canLoadUnit(const CvUnit* pUnit, const CvPlot* pPlot) const
 		}
 	}
 
+	// PAE - don't load certain units. eg: merchants into merchant ships (trade exploit)
+	// in UnitInfo.xml: <iCargo>-1</iCargo>
+	if (pUnit->getUnitInfo().getCargoSpace() == -1) return false;
+
+
 	return true;
 }
 

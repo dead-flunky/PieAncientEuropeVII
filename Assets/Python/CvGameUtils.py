@@ -3337,14 +3337,14 @@ class CvGameUtils:
 								return CyTranslator().getText("TXT_KEY_BUTTON_CULTIVATE_BONUS", ())
 						elif iData1 == 739:
 								if bOption:
-										if iData2 == -1:
+										if iData2 == 1:
+												return CyTranslator().getText("TXT_KEY_BUTTON_COLLECT_BONUS_CITY", ())
+										elif iData2 == 2:
 												return CyTranslator().getText("TXT_KEY_BUTTON_COLLECT_BONUS2", ())
-										elif iData2 == 0:
-												return CyTranslator().getText("TXT_KEY_BUTTON_COLLECT_BONUS", ())
 										elif iData2 == 3:
 												return CyTranslator().getText("TXT_KEY_BUTTON_COLLECT_BONUS3", ())
 										else:
-												return CyTranslator().getText("TXT_KEY_BUTTON_COLLECT_BONUS_CITY", ())
+												return CyTranslator().getText("TXT_KEY_BUTTON_COLLECT_BONUS", ())
 								else:
 										return CyTranslator().getText("TXT_KEY_BUTTON_COLLECT_BONUS_IMPOSSIBLE", ())
 						elif iData1 == 740:

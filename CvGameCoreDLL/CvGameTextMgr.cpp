@@ -5853,6 +5853,12 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 			szBuffer.append(gDLL->getText("TXT_KEY_UNIT_CARRIES", GC.getSpecialUnitInfo((SpecialUnitTypes) GC.getUnitInfo(eUnit).getSpecialCargo()).getTextKeyWide()));
 		}
 	}
+	// PAE this unit is not allowed to load on a ship (info is in unit's HELP text)
+	//else if (GC.getUnitInfo(eUnit).getCargoSpace() < 0)
+	//{
+	//	szBuffer.append(NEWLINE);
+	//	szBuffer.append(gDLL->getText("TXT_KEY_UNIT_NO_CARGO", 0));
+	//}
 
 	szTempBuffer.Format(L"%s%s ", NEWLINE, gDLL->getText("TXT_KEY_UNIT_CANNOT_ENTER").GetCString());
 
@@ -14250,14 +14256,19 @@ void CvGameTextMgr::getGlobeLayerName(GlobeLayerTypes eType, int iOption, CvWStr
 			strName = gDLL->getText("TXT_KEY_GLOBELAYER_RESOURCES_EVERYTHING");
 			break;
 		case SHOW_STRATEGIC_RESOURCES:
-			strName = gDLL->getText("TXT_KEY_GLOBELAYER_RESOURCES_GENERAL");
+			strName = gDLL->getText("TXT_KEY_GLOBELAYER_RESOURCES_STRATEGIC"); // PAE: GENERAL -> STRATEGIC
 			break;
 		case SHOW_HAPPY_RESOURCES:
 			strName = gDLL->getText("TXT_KEY_GLOBELAYER_RESOURCES_LUXURIES");
 			break;
 		case SHOW_HEALTH_RESOURCES:
+			strName = gDLL->getText("TXT_KEY_GLOBELAYER_RESOURCES_HEALTH"); // PAE: FOOD -> HEALTH
+			break;
+		// PAE ---
+		case SHOW_FOOD_RESOURCES:
 			strName = gDLL->getText("TXT_KEY_GLOBELAYER_RESOURCES_FOOD");
 			break;
+		// -------
 		}
 		break;
 	case GLOBE_LAYER_RELIGION:

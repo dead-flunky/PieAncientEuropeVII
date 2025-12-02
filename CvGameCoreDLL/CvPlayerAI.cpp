@@ -15849,7 +15849,7 @@ CvPlot* CvPlayerAI::AI_advancedStartFindCapitalPlot() const
 	//Execution should almost never reach here.
 	
 	//Update found values just in case - particulary important for simultaneous turns.
-	AI_updateFoundValues();
+	//AI_updateFoundValues();
 	
 	pBestPlot = NULL;
 	iBestValue = -1;

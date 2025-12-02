@@ -4251,7 +4251,7 @@
 			<FreeStartEra/>
 			<MaxStartEra/>
 			<ObsoleteTech/>
-			<PrereqTech>TECH_KUESTE</PrereqTech>
+			<PrereqTech>TECH_DEICHBAU</PrereqTech>
 			<TechTypes/>
 			<Bonus/>
 			<PrereqBonuses/>
@@ -27314,7 +27314,7 @@
 			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_SPECIAL4</BuildingClass>
+			<BuildingClass>BUILDINGCLASS_SPECIAL3</BuildingClass>
 			<Type>BUILDING_GARDEN</Type>
 			<SpecialBuildingType/>
 			<Description>TXT_KEY_BUILDING_BABYLON_GARDEN</Description>
@@ -53286,7 +53286,7 @@
 			<FreeStartEra/>
 			<MaxStartEra/>
 			<ObsoleteTech/>
-			<PrereqTech>TECH_KUESTE</PrereqTech>
+			<PrereqTech>TECH_HELIO</PrereqTech>
 			<TechTypes/>
 			<Bonus>BONUS_BRONZE</Bonus>
 			<PrereqBonuses/>

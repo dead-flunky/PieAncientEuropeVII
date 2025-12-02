@@ -4081,10 +4081,14 @@ bool CvGame::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionSub
 {
 	if (GC.getVoteInfo(kData.eVote).isVictory())
 	{
+		int iVotesRequired = getVoteRequired(kData.eVote, eVoteSource); // K-Mod - for efficiency
 		for (int iTeam = 0; iTeam < MAX_CIV_TEAMS; ++iTeam)
 		{
 			CvTeam& kTeam = GET_TEAM((TeamTypes)iTeam);
 
+			if (kTeam.getVotes(kData.eVote, eVoteSource) >= iVotesRequired) // K-Mod. same, but faster.
+				return false;
+			/* original bts code
 			if (kTeam.isVotingMember(eVoteSource))
 			{
 				if (kTeam.getVotes(kData.eVote, eVoteSource) >= getVoteRequired(kData.eVote, eVoteSource))
@@ -4092,7 +4096,7 @@ bool CvGame::canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionSub
 					// Can't vote on a winner if one team already has all the votes necessary to win
 					return false;
 				}
-			}
+			} */
 		}
 	}
 
@@ -4593,7 +4597,8 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
 		int iActiveNetId = ((NO_PLAYER != eOldActivePlayer) ? GET_PLAYER(eOldActivePlayer).getNetID() : -1);
 		GC.getInitCore().setActivePlayer(eNewValue);
 
-		if (GET_PLAYER(eNewValue).isHuman() && (isHotSeat() || isPbem() || bForceHotSeat))
+		//if (GET_PLAYER(eNewValue).isHuman() && (isHotSeat() || isPbem() || bForceHotSeat))
+		if (eNewValue != NO_PLAYER && GET_PLAYER(eNewValue).isHuman() && (isHotSeat() || isPbem() || bForceHotSeat)) // K-Mod
 		{
 			gDLL->getPassword(eNewValue);
 			setHotPbemBetweenTurns(false);
@@ -5628,7 +5633,7 @@ bool CvGame::isDestroyedCityName(CvWString& szName) const
 {
 	std::vector<CvWString>::const_iterator it;
 
-	for (it = m_aszDestroyedCities.begin(); it != m_aszDestroyedCities.end(); it++)
+	for (it = m_aszDestroyedCities.begin(); it != m_aszDestroyedCities.end(); ++it)
 	{
 		if (*it == szName)
 		{
@@ -5648,7 +5653,7 @@ bool CvGame::isGreatPersonBorn(CvWString& szName) const
 {
 	std::vector<CvWString>::const_iterator it;
 
-	for (it = m_aszGreatPeopleBorn.begin(); it != m_aszGreatPeopleBorn.end(); it++)
+	for (it = m_aszGreatPeopleBorn.begin(); it != m_aszGreatPeopleBorn.end(); ++it)
 	{
 		if (*it == szName)
 		{
@@ -6282,10 +6287,11 @@ void CvGame::createBarbarianCities()
 				
 					if (iTargetCitiesMultiplier > 100)
 					{
-						iValue *= pLoopPlot->area()->getNumOwnedTiles();
+						iValue *= /* f1rpo (bugfix): */ std::max(1,
+								pLoopPlot->area()->getNumOwnedTiles());
 					}
-
-					iValue += (100 + getSorenRandNum(50, "Barb City Found"));
+					// f1rpo (bugfix): was +=
+					iValue *= (100 + getSorenRandNum(50, "Barb City Found"));
 					iValue /= 100;
 
 					if (iValue > iBestValue)
@@ -6334,7 +6340,8 @@ void CvGame::createBarbarianUnits()
 		return;
 	}
 
-	bAnimals = false;
+	// PAE animals forever
+	bAnimals = true;
 
 	if (GC.getEraInfo(getCurrentEra()).isNoBarbUnits())
 	{
@@ -6386,6 +6393,36 @@ void CvGame::createBarbarianUnits()
 				if (iNeededBarbs > 0)
 				{
 					iNeededBarbs = ((iNeededBarbs / 4) + 1);
+
+					/********************************************************************************/
+					/* 	BETTER_BTS_AI_MOD						9/25/08				jdog5000	*/
+					/* 																			*/
+					/* 	Barbarian AI															*/
+					/********************************************************************************/
+					// Limit construction of barb ships based on player navies
+					// Keeps barb ship count in check in early game since generation is greatly increased for BTS 3.17
+					if( pLoopArea->isWater() )
+					{
+						int iPlayerSeaUnits = 0;
+						for( int iI = 0; iI < MAX_CIV_PLAYERS; iI++ )
+						{
+							if( GET_PLAYER((PlayerTypes)iI).isAlive() )
+							{
+								iPlayerSeaUnits += GET_PLAYER((PlayerTypes)iI).AI_totalWaterAreaUnitAIs(pLoopArea,UNITAI_ATTACK_SEA);
+								iPlayerSeaUnits += GET_PLAYER((PlayerTypes)iI).AI_totalWaterAreaUnitAIs(pLoopArea,UNITAI_EXPLORE_SEA);
+								iPlayerSeaUnits += GET_PLAYER((PlayerTypes)iI).AI_totalWaterAreaUnitAIs(pLoopArea,UNITAI_ASSAULT_SEA);
+								iPlayerSeaUnits += GET_PLAYER((PlayerTypes)iI).AI_totalWaterAreaUnitAIs(pLoopArea,UNITAI_SETTLER_SEA);
+							}
+						}
+
+						if( pLoopArea->getUnitsPerPlayer(BARBARIAN_PLAYER) > (iPlayerSeaUnits/3 + 1) )
+						{
+							iNeededBarbs = 0;
+						}
+					}
+					/********************************************************************************/
+					/* 	BETTER_BTS_AI_MOD						END								*/
+					/********************************************************************************/
 
 					for (iI = 0; iI < iNeededBarbs; iI++)
 					{
@@ -7962,13 +7999,13 @@ void CvGame::write(FDataStreamBase* pStream)
 		std::vector<CvWString>::iterator it;
 
 		pStream->Write(m_aszDestroyedCities.size());
-		for (it = m_aszDestroyedCities.begin(); it != m_aszDestroyedCities.end(); it++)
+		for (it = m_aszDestroyedCities.begin(); it != m_aszDestroyedCities.end(); ++it)
 		{
 			pStream->WriteString(*it);
 		}
 
 		pStream->Write(m_aszGreatPeopleBorn.size());
-		for (it = m_aszGreatPeopleBorn.begin(); it != m_aszGreatPeopleBorn.end(); it++)
+		for (it = m_aszGreatPeopleBorn.begin(); it != m_aszGreatPeopleBorn.end(); ++it)
 		{
 			pStream->WriteString(*it);
 		}
@@ -7984,7 +8021,7 @@ void CvGame::write(FDataStreamBase* pStream)
 	ReplayMessageList::_Alloc::size_type iSize = m_listReplayMessages.size();
 	pStream->Write(iSize);
 	ReplayMessageList::const_iterator it;
-	for (it = m_listReplayMessages.begin(); it != m_listReplayMessages.end(); it++)
+	for (it = m_listReplayMessages.begin(); it != m_listReplayMessages.end(); ++it)
 	{
 		const CvReplayMessage* pMessage = *it;
 		if (NULL != pMessage)
@@ -8234,6 +8271,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 
 bool CvGame::isCompetingCorporation(CorporationTypes eCorporation1, CorporationTypes eCorporation2) const
 {
+
 	bool bShareResources = false;
 
 	for (int i = 0; i < GC.getNUM_CORPORATION_PREREQ_BONUSES() && !bShareResources; ++i)
@@ -9069,6 +9107,7 @@ void CvGame::doVoteSelection()
 								VoteSelectionSubData kOptionData;
 								kOptionData.iCityId = -1;
 								kOptionData.ePlayer = NO_PLAYER;
+								kOptionData.eOtherPlayer = NO_PLAYER;
 								kOptionData.eVote = (VoteTypes)iJ;
 								kOptionData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_OPTION", GC.getVoteInfo((VoteTypes)iJ).getTextKeyWide(), getVoteRequired((VoteTypes)iJ, eVoteSource), countPossibleVote((VoteTypes)iJ, eVoteSource));
 								addVoteTriggered(eVoteSource, kOptionData);

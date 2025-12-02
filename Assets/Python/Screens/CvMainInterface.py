@@ -2477,35 +2477,61 @@ class CvMainInterface:
 														# remove from plot => iData2 = 0. 1 = charge all goods without removing. Nur bei leerem Karren.
 														elif eBonus == -1:
 																if ePlotBonus != -1 and (ePlotBonus in L.LBonusCultivatable + L.LBonusStratCultivatable + L.LBonusCultivatableCoast):
-																		# Kaufen
-																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																				"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 2, True)
-																		screen.show("BottomButtonContainer")
-																		iCount += 1
-																		# Bonusgut aufnehmen (Eigenes Terrain, Neutrales Terrain, Feindliches Terrain)
-																		if pPlot.getOwner() == iUnitOwner or pPlot.getOwner() == -1 or gc.getTeam(pPlot.getOwner()).isAtWar(pUnitOwner.getTeam()):
-																				if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
-																						iData = -1
-																				else:
-																						iData = 0
+
+																	if bCity:
+
+																		if iUnitType in L.LCultivationUnits:
+																			# Kaufen in der Stadt
+																			screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																					"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 1, True)
+																			screen.show("BottomButtonContainer")
+																			iCount += 1
+
+																		# Bonusgut aufnehmen (Eigene Stadt)
+																		if pPlot.getOwner() == iUnitOwner:
 																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																						"INTERFACE_TRADE_COLLECT").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, iData, True)
+																						"INTERFACE_TRADE_COLLECT").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 0, True)
+																				screen.show("BottomButtonContainer")
+																				iCount += 1
+																		else:
+																			# Stehlen  (iData2 = 3)
+																			screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																					"INTERFACE_TRADE_COLLECT_SPY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 3, True)
+																			screen.show("BottomButtonContainer")
+																			if pTeam.getEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam()) < 50:
+																					screen.disableMultiListButton("BottomButtonContainer", 0, iCount, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TRADE_COLLECT_SPY").getPath())
+																			iCount += 1
+
+																	else:
+
+																		# Kaufen vom Plot
+																		if pPlot.getOwner() != -1:
+																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																						"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 2, True)
+																				screen.show("BottomButtonContainer")
+																				iCount += 1
+																		# Bonusgut aufnehmen (Eigenes Terrain)
+																		if pPlot.getOwner() == iUnitOwner:
+																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																						"INTERFACE_TRADE_COLLECT").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 0, True)
+																				screen.show("BottomButtonContainer")
+																				iCount += 1
+																		# Bonusgut aufnehmen (Neutrales Terrain, Feindliches Terrain)
+																		elif pPlot.getOwner() == -1 or gc.getTeam(pPlot.getOwner()).isAtWar(pUnitOwner.getTeam()):
+																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																						"INTERFACE_TRADE_COLLECT").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 4, True)
 																				screen.show("BottomButtonContainer")
 																				iCount += 1
 																		# Bonusgut kaufen oder stehlen (freundliches Terrain, Vasallenterrain)
-																		elif not bCity:
+																		else:
 																				# Stehlen
 																				screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
 																						"INTERFACE_TRADE_COLLECT_SPY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 3, True)
 																				screen.show("BottomButtonContainer")
-																				if pTeam.getEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam()) < 100:
+																				if pTeam.getEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam()) < 50:
 																						screen.disableMultiListButton("BottomButtonContainer", 0, iCount, ArtFileMgr.getInterfaceArtInfo("INTERFACE_TRADE_COLLECT_SPY").getPath())
 																				iCount += 1
-																if bCity and iUnitType in L.LCultivationUnits:
-																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																				"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 1, True)
-																		screen.show("BottomButtonContainer")
-																		iCount += 1
+
 														elif bCity:
 																# DERTUEK (otherwise the sell button is displayed twice for all trade units)
 																if iUnitType in L.LCultivationUnits:

@@ -56,10 +56,10 @@ enum CameraAnimationTypes
 
 enum ZoomLevelTypes					// Exposed to Python
 {
-	ZOOM_UNKNOWN							= 0x00000000,
-	ZOOM_DETAIL								= 0x00000001,
-	ZOOM_NORMAL								= 0x00000002,
-	ZOOM_GLOBEVIEW_TRANSITION	= 0x00000004,
+	ZOOM_UNKNOWN						= 0x00000000,
+	ZOOM_DETAIL							= 0x00000001,
+	ZOOM_NORMAL							= 0x00000002,
+	ZOOM_GLOBEVIEW_TRANSITION		= 0x00000004,
 	ZOOM_GLOBEVIEW						= 0x00000008
 };
 
@@ -92,7 +92,7 @@ enum DirectionTypes					// Exposed to Python
 	FIRST_DIRECTION = 0, // PAE
 };
 
-enum CardinalDirectionTypes			// Exposed to Python
+enum CardinalDirectionTypes		// Exposed to Python
 {
 	NO_CARDINALDIRECTION = -1,
 
@@ -141,7 +141,7 @@ enum WrapDirection
 	WRAP_DOWN_MASK = 1 << WRAP_DOWN,
 };
 
-enum ColorTypes						// Exposed to Python
+enum ColorTypes					// Exposed to Python
 {
 	NO_COLOR = -1,
 };
@@ -152,7 +152,7 @@ enum PlayerColorTypes			// Exposed to Python
 };
 
 //Warning: these values correspond to locations in the plot texture [JW]
-enum PlotStyles						// Exposed to Python
+enum PlotStyles					// Exposed to Python
 {
 	PLOT_STYLE_NONE = -1,
 
@@ -372,7 +372,7 @@ enum CityTabTypes			// Exposed to Python
 #endif
 };
 
-enum WidgetTypes					// Exposed to Python
+enum WidgetTypes			// Exposed to Python
 {
 	WIDGET_PLOT_LIST,
 	WIDGET_PLOT_LIST_SHIFT,
@@ -2739,6 +2739,7 @@ enum GlobeLayerResourceOptionTypes
 	SHOW_STRATEGIC_RESOURCES,
 	SHOW_HAPPY_RESOURCES,
 	SHOW_HEALTH_RESOURCES,
+	SHOW_FOOD_RESOURCES,
 
 #ifdef _USRDLL
 	NUM_RESOURCE_OPTION_TYPES

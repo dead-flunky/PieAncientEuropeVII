@@ -1869,7 +1869,8 @@ def doUnitSupply(pCity, iPlayer):
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iMaintainUnits",iMaintainUnits)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 		# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
-		if gc.getGame().getHandicapType() < 5 or pPlayer.isHuman():
+		# Handicap > -1: always
+		if gc.getGame().getHandicapType() > -1 or pPlayer.isHuman():
 				# choose units
 				# calculate food supply from SUPPLY_WAGON
 				iExtraSupply = 0
@@ -1912,11 +1913,11 @@ def doUnitSupply(pCity, iPlayer):
 				# lUnitIndex.append(iRand)
 
 				# Betrifft Stadt
-				# 20%: -1 Pop
+				# 20%: -1 Pop wenn Pop > 3, 10% wenn Pop <= 3
 				# 10%: FEATURE_SEUCHE
 				iRand = CvUtil.myRandom(10, "seuche")
 				# - 1 Pop
-				if iRand < 2 and popCity > 1:
+				if iRand < 2 and popCity > 3 or iRand < 1:
 						pCity.changePopulation(-1)
 						# bCheckCityState = True
 						if pPlayer.isHuman():
@@ -1939,15 +1940,14 @@ def doUnitSupply(pCity, iPlayer):
 				# ------
 
 				# Betrifft Einheiten
+				bCanJumpOutFromCity = canJumpOutFromCity(pCity)
 				iJumpedOut = 0
-				iRand = 0
-				lRauswurf = []
 				iMax = min(iMaintainUnits, len(lUnitsAll))
+				lUnits = lUnitsAll
 				for iI in range(iMax):
-						while iRand not in lRauswurf:
-								iRand = CvUtil.myRandom(len(lUnitsAll), "city unit supply: unit index harm")
-								lRauswurf.append(iRand)
-						pUnit = lUnitsAll[iRand]
+						iRand = CvUtil.myRandom(len(lUnits), "city unit supply: unit index harm")
+						pUnit = lUnits[iRand]
+						lUnits.remove(pUnit)
 						# Unit nicht mehr killen (Weihnachtsbonus :D ab 7.12.2012)
 						iDamage = pUnit.getDamage()
 						if iDamage < 70:
@@ -1959,29 +1959,56 @@ def doUnitSupply(pCity, iPlayer):
 								iJumpedOut += 1
 								if pUnit.getDamage() < 85:
 										pUnit.setDamage(85, pUnit.getOwner())
-								pUnit.jumpToNearestValidPlot()
-								if gc.getPlayer(pUnit.getOwner()).isHuman():
-										CyInterface().addMessage(pUnit.getOwner(), True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_UNITS_STARVATION_4",
-										(pCity.getName(), pUnit.getName())), None, 2, pUnit.getButton(), ColorTypes(12), pUnit.getX(), pUnit.getY(), True, True)
+								if bCanJumpOutFromCity:
+										pUnit.jumpToNearestValidPlot()
+										if gc.getPlayer(pUnit.getOwner()).isHuman():
+												CyInterface().addMessage(pUnit.getOwner(), True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_UNITS_STARVATION_4",
+												(pCity.getName(), pUnit.getName())), None, 2, pUnit.getButton(), ColorTypes(12), pUnit.getX(), pUnit.getY(), True, True)
+								else:
+										pUnit.setDamage(90, pUnit.getOwner())
 
 				# Wenn die Stadt durch Buildings stark heilt
-				if iJumpedOut == 0:
+				if iJumpedOut == 0 and bCanJumpOutFromCity:
 						# Chance rauszuwerfen 33%
 						if CvUtil.myRandom(3, "toomany1") == 1:
 								iAnzahl = max(1, CvUtil.myRandom(iMaintainUnits, "toomany2"))
 								#lUnitIndex2 = CvUtil.shuffle(iMaintainUnits, gc.getGame().getSorenRand())[:iAnzahl]
-								iRand = 0
-								lRauswurf = []
+								lUnits = lUnitsAll
 								iAnzahl = min(iAnzahl, len(lUnitsAll))
 								for iI in range(iAnzahl):
-										while iRand not in lRauswurf:
-												iRand = CvUtil.myRandom(len(lUnitsAll), "city unit supply: unit index jump")
-												lRauswurf.append(iRand)
-										pUnit = lUnitsAll[iRand]
+										iRand = CvUtil.myRandom(len(lUnits), "city unit supply: unit index jump")
+										pUnit = lUnits[iRand]
+										lUnits.remove(pUnit)
 										pUnit.jumpToNearestValidPlot()
 										if pPlayer.isHuman():
 												CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_UNITS_STARVATION_4",
 												(pCity.getName(), pUnit.getName())), "AS2D_STRIKE", 2, pUnit.getButton(), ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+
+
+def canJumpOutFromCity(pCity):
+		pPlayer = gc.getPlayer(pCity.getOwner())
+		pTeam = gc.getTeam(pPlayer.getTeam())
+
+		# Die Plots rund um die Stadt werden auf gegnerische Einheiten gecheckt
+		iRange = 1
+		iX = pCity.getX()
+		iY = pCity.getY()
+		for x in range(-iRange, iRange+1):
+			for y in range(-iRange, iRange+1):
+				loopPlot = plotXY(iX, iY, x, y)
+				if loopPlot is not None and not loopPlot.isNone():
+					if not loopPlot.isPeak() and not loopPlot.isWater() and not loopPlot.isImpassable():
+						iNumUnits = loopPlot.getNumUnits()
+						bEnemyUnits = False
+						for i in range(iNumUnits):
+							iOwner = loopPlot.getUnit(i).getOwner()
+							if pTeam.isAtWar(gc.getPlayer(iOwner).getTeam()):
+								if not loopPlot.getUnit(i).isInvisible(pPlayer.getTeam(), 0):
+									bEnemyUnits = True
+						if not bEnemyUnits:
+							return True
+
+		return False
 
 
 def doJewRevolt(pCity):
@@ -2558,45 +2585,45 @@ def bonusMissingCity(pCity, eBuilding):
 		bBonus1Missing = False
 		eBonus = gc.getBuildingInfo(eBuilding).getPrereqAndBonus()
 		if eBonus != -1:
-				bBonus1Missing = True
-				for iI in range(gc.getNUM_CITY_PLOTS()):
-						loopPlot = pCity.getCityIndexPlot(iI)
-						if loopPlot is not None and not loopPlot.isNone():
-								if loopPlot.getBonusType(-1) == eBonus:
-										iImp = loopPlot.getImprovementType()
-										if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusTrade(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
-												bBonus1Missing = False
-		if bBonus1Missing:
+			bBonus1Missing = True
+			for iI in range(gc.getNUM_CITY_PLOTS()):
+				loopPlot = pCity.getCityIndexPlot(iI)
+				if loopPlot is not None and not loopPlot.isNone():
+					if loopPlot.getBonusType(-1) == eBonus:
+						iImp = loopPlot.getImprovementType()
+						if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusTrade(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
+							bBonus1Missing = False
+			if bBonus1Missing:
 				return eBonus
 
 		# Zweite Abhängigkeit: bonus1 AND (bonus2 OR bonus3 OR ...)
 		lBonus2 = []
 		for iI in range(gc.getNUM_BUILDING_PREREQ_OR_BONUSES()):
-				eBonus2 = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
-				if eBonus2 != -1:
-						lBonus2.append(eBonus2)
+			eBonus2 = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
+			if eBonus2 != -1:
+				lBonus2.append(eBonus2)
 
 		if lBonus2:
-				# wenn Bonus1 notwendig ist, dann reicht es, wenn die OR-Boni im Handelsnetz sind
-				eBonus2 = lBonus2[0]
-				if eBonus != -1:
-						for eBonus2 in lBonus2:
-								if pCity.hasBonus(eBonus2):
-										return -1
-				else:
-						for iI in range(gc.getNUM_CITY_PLOTS()):
-								loopPlot = pCity.getCityIndexPlot(iI)
-								if loopPlot is not None and not loopPlot.isNone():
-										eBonusPlot = loopPlot.getBonusType(-1)
-										if eBonusPlot in lBonus2:
-												eBonus2 = eBonusPlot
-												iImp = loopPlot.getImprovementType()
-												if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusTrade(eBonusPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
-														return -1
+			# wenn Bonus1 notwendig ist, dann reicht es, wenn die OR-Boni im Handelsnetz sind
+			eBonus2 = lBonus2[0]
+			if eBonus != -1:
+				for eBonus2 in lBonus2:
+					if pCity.hasBonus(eBonus2):
+						return -1
+			else:
+				for iI in range(gc.getNUM_CITY_PLOTS()):
+					loopPlot = pCity.getCityIndexPlot(iI)
+					if loopPlot is not None and not loopPlot.isNone():
+						eBonusPlot = loopPlot.getBonusType(-1)
+						if eBonusPlot in lBonus2:
+							eBonus2 = eBonusPlot
+							iImp = loopPlot.getImprovementType()
+							if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusTrade(eBonusPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
+								return -1
 
-				#if len(lBonus2) > 1: return -2
-				#else:
-				return eBonus2
+			#if len(lBonus2) > 1: return -2
+			#else:
+			return eBonus2
 
 		return -1
 
@@ -2609,45 +2636,46 @@ def bonusMissingCity3x3(pCity, eBuilding):
 		bBonus1Missing = False
 		eBonus = gc.getBuildingInfo(eBuilding).getPrereqAndBonus()
 		if eBonus != -1:
-				bBonus1Missing = True
-				for i in range(-iRange, iRange+1):
-						for j in range(-iRange, iRange+1):
-								loopPlot = plotXY(iX, iY, i, j)
-								if loopPlot is not None and not loopPlot.isNone():
-										if loopPlot.getBonusType(-1) == eBonus:
-												iImp = loopPlot.getImprovementType()
-												if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
-														bBonus1Missing = False
-		if bBonus1Missing:
+			bBonus1Missing = True
+			for i in range(-iRange, iRange+1):
+				for j in range(-iRange, iRange+1):
+					loopPlot = plotXY(iX, iY, i, j)
+					if loopPlot is not None and not loopPlot.isNone():
+						if loopPlot.getBonusType(-1) == eBonus:
+							iImp = loopPlot.getImprovementType()
+							if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
+								bBonus1Missing = False
+			if bBonus1Missing:
 				return eBonus
-		# Zweite Abhängigkeit: bonus1 AND (bonus2 OR bonus3 OR ...)
+
+		# Zweite Abhängigkeit: (bonus1 AND) (bonus2 OR bonus3 OR ...) OR (bonus2 or bonus3)
 		lBonus2 = []
 		for iI in range(gc.getNUM_BUILDING_PREREQ_OR_BONUSES()):
-				eBonus2 = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
-				if eBonus2 != -1:
-						lBonus2.append(eBonus2)
+			eBonus2 = gc.getBuildingInfo(eBuilding).getPrereqOrBonuses(iI)
+			if eBonus2 != -1:
+				lBonus2.append(eBonus2)
 
 		if lBonus2:
-				# wenn Bonus1 notwendig ist, dann reicht es, wenn die OR-Boni im Handelsnetz sind
-				eBonus2 = lBonus2[0]
-				if eBonus != -1:
-						for eBonus2 in lBonus2:
-								if pCity.hasBonus(eBonus2):
-										return -1
-				else:
-						for i in range(-iRange, iRange+1):
-								for j in range(-iRange, iRange+1):
-										loopPlot = plotXY(iX, iY, i, j)
-										if loopPlot is not None and not loopPlot.isNone():
-												eBonusPlot = loopPlot.getBonusType(-1)
-												if eBonusPlot in lBonus2:
-														eBonus2 = eBonusPlot
-														iImp = loopPlot.getImprovementType()
-														if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonusPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
-																return -1
-				#if len(lBonus2) > 1: return -2
-				#else:
-				return eBonus2
+			# wenn Bonus1 notwendig ist, dann reicht es, wenn die OR-Boni im Handelsnetz sind
+			eBonus2 = lBonus2[0]
+			if eBonus != -1:
+				for eBonus2 in lBonus2:
+					if pCity.hasBonus(eBonus2):
+						return -1
+			else:
+				for i in range(-iRange, iRange+1):
+					for j in range(-iRange, iRange+1):
+						loopPlot = plotXY(iX, iY, i, j)
+						if loopPlot is not None and not loopPlot.isNone():
+							eBonusPlot = loopPlot.getBonusType(-1)
+							if eBonusPlot in lBonus2:
+								eBonus2 = eBonusPlot
+								iImp = loopPlot.getImprovementType()
+								if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonusPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
+									return -1
+			#if len(lBonus2) > 1: return -2
+			#else:
+			return eBonus2
 
 		return -1
 

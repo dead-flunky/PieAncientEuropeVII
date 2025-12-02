@@ -1,9 +1,9 @@
 # Sid Meier's Civilization 4
 # Copyright Firaxis Games 2005
 from CvPythonExtensions import (CyGlobalContext, CyArtFileMgr, CyTranslator,
-																FontTypes, CivilopediaPageTypes, YieldTypes,
-																WidgetTypes, PanelStyles, TableStyles,
-																CyGameTextMgr, GenericButtonSizes)
+											FontTypes, CivilopediaPageTypes, YieldTypes,
+											WidgetTypes, PanelStyles, TableStyles,
+											CyGameTextMgr, GenericButtonSizes)
 import CvUtil
 # import ScreenInput
 import CvScreenEnums
@@ -295,11 +295,73 @@ class CvPediaBonus:
 				iTech = gc.getBonusInfo(self.iBonus).getTechReveal()
 				if (iTech > -1):
 						screen.attachImageButton(panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
-						screen.attachLabel(panelName, "", u"(" + localText.getText("TXT_KEY_PEDIA_BONUS_APPEARANCE", ()) + u")")
+						#screen.attachLabel(panelName, "", u"(" + localText.getText("TXT_KEY_CONCEPT_TECHNOLOGY", ()) + u")") # BTS: TXT_KEY_PEDIA_BONUS_APPEARANCE
 				iTech = gc.getBonusInfo(self.iBonus).getTechCityTrade()
 				if (iTech > -1):
 						screen.attachImageButton(panelName, "", gc.getTechInfo(iTech).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_TECH, iTech, 1, False)
 						screen.attachLabel(panelName, "", u"(" + localText.getText("TXT_KEY_PEDIA_BONUS_TRADE", ()) + u")")
+
+				# PAE: metal manufactoring:
+
+				# BRONZE
+				if self.iBonus == gc.getInfoTypeForString("BONUS_BRONZE"):
+						screen.attachLabel(panelName, "", u" + ")
+						eBuilding = gc.getInfoTypeForString("BUILDING_SCHMIEDE_BRONZE")
+						screen.attachImageButton(panelName, "", gc.getBuildingInfo(eBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eBuilding, 1, False)
+						screen.attachLabel(panelName, "", u" + ")
+						eBonus = gc.getInfoTypeForString("BONUS_COPPER")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", u" + (")
+						eBonus = gc.getInfoTypeForString("BONUS_COAL")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+						eBonus = gc.getInfoTypeForString("BONUS_ZINN")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", u")")
+
+				# IRON
+				if self.iBonus == gc.getInfoTypeForString("BONUS_IRON2"):
+						screen.attachLabel(panelName, "", u" + ")
+						eBuilding = gc.getInfoTypeForString("BUILDING_GUSS_IRON")
+						screen.attachImageButton(panelName, "", gc.getBuildingInfo(eBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eBuilding, 1, False)
+						screen.attachLabel(panelName, "", u" + ")
+						eBonus = gc.getInfoTypeForString("BONUS_IRON")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+
+				# BRASS/MESSING
+				if self.iBonus == gc.getInfoTypeForString("BONUS_MESSING"):
+						screen.attachLabel(panelName, "", u" + ")
+						eBuilding = gc.getInfoTypeForString("BUILDING_SCHMIEDE_MESSING")
+						screen.attachImageButton(panelName, "", gc.getBuildingInfo(eBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eBuilding, 1, False)
+						screen.attachLabel(panelName, "", u" + ")
+						eBonus = gc.getInfoTypeForString("BONUS_COPPER")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", u" + ")
+						eBonus = gc.getInfoTypeForString("BONUS_ZINK")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+
+				# JEWELRY/SCHMUCK
+				if self.iBonus == gc.getInfoTypeForString("BONUS_SCHMUCK"):
+						screen.attachLabel(panelName, "", u" + ")
+						eBuilding = gc.getInfoTypeForString("BUILDING_GOLDSCHMIED")
+						screen.attachImageButton(panelName, "", gc.getBuildingInfo(eBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, eBuilding, 1, False)
+						screen.attachLabel(panelName, "", u" + (")
+						eBonus = gc.getInfoTypeForString("BONUS_GOLD")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+						eBonus = gc.getInfoTypeForString("BONUS_SILVER")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+						eBonus = gc.getInfoTypeForString("BONUS_PEARL")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+						eBonus = gc.getInfoTypeForString("BONUS_GEMS")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", localText.getText("TXT_KEY_OR", ()))
+						eBonus = gc.getInfoTypeForString("BONUS_BERNSTEIN")
+						screen.attachImageButton(panelName, "", gc.getBonusInfo(eBonus).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, eBonus, 1, False)
+						screen.attachLabel(panelName, "", u")")
+
 
 		def placeHistory(self):
 
@@ -328,18 +390,24 @@ class CvPediaBonus:
 
 				for iBuilding in range(gc.getNumBuildingInfos()):
 						pBuildingInfo = gc.getBuildingInfo(iBuilding)
+						bShowIt = True # PAE don't show buildings twice
 						# BTS Standard
 						if pBuildingInfo.getFreeBonus() == self.iBonus:
 								screen.attachImageButton(panelName, "", pBuildingInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, 1, False)
+								bShowIt = False
 
 						# PAE: Buildings that give yield Bonus for that resource
 						for iYield in range(3):
+							if bShowIt:
 								if pBuildingInfo.getBonusYieldModifier(self.iBonus, iYield):
 										screen.attachImageButton(panelName, "", pBuildingInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, 1, False)
+										bShowIt = False
 
 						# PAE: Buildings that give health or happiness change
-						if pBuildingInfo.getBonusHealthChanges(self.iBonus) or pBuildingInfo.getBonusHappinessChanges(self.iBonus):
+						if bShowIt:
+							if pBuildingInfo.getBonusHealthChanges(self.iBonus) or pBuildingInfo.getBonusHappinessChanges(self.iBonus):
 								screen.attachImageButton(panelName, "", pBuildingInfo.getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, 1, False)
+
 
 		def placeAllows(self):
 

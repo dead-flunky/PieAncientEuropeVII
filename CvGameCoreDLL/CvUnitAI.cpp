@@ -7098,7 +7098,8 @@ bool CvUnitAI::AI_guardCityMinDefender(bool bSearch)
 		{
 			if ((iCityDefenderCount <= 2) || (GC.getGame().getSorenRandNum(5, "AI shuffle defender") != 0))
 			{
-				getGroup()->pushMission(MISSION_SKIP, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
+				// BTS: MISSION_SKIP, PAE: MISSION_FORTIFY
+				getGroup()->pushMission(MISSION_FORTIFY, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				return true;
 			}
 		}
@@ -7158,7 +7159,8 @@ bool CvUnitAI::AI_guardCityMinDefender(bool bSearch)
 			if (atPlot(pBestGuardPlot))
 			{
 				FAssert(pBestGuardPlot == pBestPlot);
-				getGroup()->pushMission(MISSION_SKIP, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
+				// BTS: MISSION_SKIP, PAE: MISSION_FORTIFY
+				getGroup()->pushMission(MISSION_FORTIFY, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				return true;
 			}
 			FAssert(!atPlot(pBestPlot));
@@ -7282,7 +7284,8 @@ bool CvUnitAI::AI_guardCity(bool bLeave, bool bSearch, int iMaxPath)
 						pEjectedUnit->AI_setUnitAIType(UNITAI_CITY_DEFENSE);
 					}
 				}
-				pEjectedUnit->getGroup()->pushMission(MISSION_SKIP, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
+				// BTS: MISSION_SKIP, PAE: MISSION_FORTIFY
+				pEjectedUnit->getGroup()->pushMission(MISSION_FORTIFY, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				if (pEjectedUnit->getGroup() == pOldGroup || pEjectedUnit == this)
 				{
 					return true;
@@ -7352,6 +7355,7 @@ bool CvUnitAI::AI_guardCity(bool bLeave, bool bSearch, int iMaxPath)
 		{
 			FAssert(!atPlot(pBestPlot));
 			// split up group if we are going to defend, so rest of group has opportunity to do something else
+			// this is deactivated, why?
 //			if (getGroup()->getNumUnits() > 1)
 //			{
 //				getGroup()->AI_separate();	// will change group
@@ -11034,17 +11038,21 @@ bool CvUnitAI::AI_rangeAttack(int iRange)
 
 			if (pLoopPlot != NULL)
 			{
-				if (pLoopPlot->isVisibleEnemyUnit(this) || (pLoopPlot->isCity() && AI_potentialEnemy(pLoopPlot->getTeam())))
+				// PAE 7.13
+				if (!pLoopPlot->isPeak())
 				{
-					if (!atPlot(pLoopPlot) && canRangeStrikeAt(plot(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE()))
+					if (pLoopPlot->isVisibleEnemyUnit(this) || (pLoopPlot->isCity() && AI_potentialEnemy(pLoopPlot->getTeam())))
 					{
-						int iValue = getGroup()->AI_attackOdds(pLoopPlot, true);
-
-						 // BTS: iValue > iBestValue, PAE: hit the strongest enemy from the distance, not the weakest!
-						if (iValue < iBestValue)
+						if (!atPlot(pLoopPlot) && canRangeStrikeAt(plot(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE()))
 						{
-							iBestValue = iValue;
-							pBestPlot = pLoopPlot;
+							int iValue = getGroup()->AI_attackOdds(pLoopPlot, true);
+
+							 // BTS: iValue > iBestValue, PAE: hit the strongest enemy from the distance, not the weakest!
+							if (iValue < iBestValue)
+							{
+								iBestValue = iValue;
+								pBestPlot = pLoopPlot;
+							}
 						}
 					}
 				}

@@ -434,7 +434,7 @@
 			<fInterfaceScale>0.57</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/ThreeGorgesDam/HooverDam.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/ThreeGorgesDam.dds,Art/Interface/Buttons/Buildings_Atlas.dds,2,10</Button>
+			<Button>Art/Interface/Buttons/Buildings/button_building_damofmarib.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_ZION</Type>

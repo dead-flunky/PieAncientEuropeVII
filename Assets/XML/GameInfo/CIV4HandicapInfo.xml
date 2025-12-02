@@ -639,8 +639,8 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>100</iCivicUpkeepPercent>
 			<iInflationPercent>100</iInflationPercent>
-			<iHealthBonus>1</iHealthBonus>
-			<iHappyBonus>2</iHappyBonus>
+			<iHealthBonus>2</iHealthBonus>
+			<iHappyBonus>3</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>30</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
@@ -730,8 +730,8 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>100</iCivicUpkeepPercent>
 			<iInflationPercent>100</iInflationPercent>
-			<iHealthBonus>1</iHealthBonus>
-			<iHappyBonus>2</iHappyBonus>
+			<iHealthBonus>2</iHealthBonus>
+			<iHappyBonus>3</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>20</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>

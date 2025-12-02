@@ -65727,7 +65727,12 @@
 			<bSuicide>0</bSuicide>
 			<bHiddenNationality>0</bHiddenNationality>
 			<bAlwaysHostile>0</bAlwaysHostile>
-			<UnitClassUpgrades/>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_SPY</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
 			<UnitClassTargets/>
 			<UnitCombatTargets/>
 			<UnitClassDefenders/>
@@ -65746,10 +65751,6 @@
 			<GreatPeoples>
 				<GreatPeople>
 					<GreatPeopleType>SPECIALIST_CITIZEN2</GreatPeopleType>
-					<bGreatPeople>1</bGreatPeople>
-				</GreatPeople>
-				<GreatPeople>
-					<GreatPeopleType>SPECIALIST_PRIEST</GreatPeopleType>
 					<bGreatPeople>1</bGreatPeople>
 				</GreatPeople>
 				<GreatPeople>

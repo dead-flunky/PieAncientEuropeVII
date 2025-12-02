@@ -222,11 +222,11 @@ public:
 	bool isNoNukes() const;																				// Exposed to Python
 	void changeNoNukesCount(int iChange);													// Exposed to Python
 
-	int getSecretaryGeneralTimer(VoteSourceTypes eVoteSource) const;													// Exposed to Python
+	int getSecretaryGeneralTimer(VoteSourceTypes eVoteSource) const;						// Exposed to Python
 	void setSecretaryGeneralTimer(VoteSourceTypes eVoteSource, int iNewValue);
 	void changeSecretaryGeneralTimer(VoteSourceTypes eVoteSource, int iChange);
 
-	int getVoteTimer(VoteSourceTypes eVoteSource) const;													// Exposed to Python
+	int getVoteTimer(VoteSourceTypes eVoteSource) const;										// Exposed to Python
 	void setVoteTimer(VoteSourceTypes eVoteSource, int iNewValue);
 	void changeVoteTimer(VoteSourceTypes eVoteSource, int iChange);
 
@@ -259,14 +259,14 @@ public:
 	void makeCircumnavigated();																		// Exposed to Python
 	bool circumnavigationAvailable() const;
 
-	bool isDiploVote(VoteSourceTypes eVoteSource) const;																			// Exposed to Python
+	bool isDiploVote(VoteSourceTypes eVoteSource) const;													// Exposed to Python
 	int getDiploVoteCount(VoteSourceTypes eVoteSource) const;
-	void changeDiploVote(VoteSourceTypes eVoteSource, int iChange);																					// Exposed to Python
+	void changeDiploVote(VoteSourceTypes eVoteSource, int iChange);									// Exposed to Python
 	bool canDoResolution(VoteSourceTypes eVoteSource, const VoteSelectionSubData& kData) const;
 	bool isValidVoteSelection(VoteSourceTypes eVoteSource, const VoteSelectionSubData& kData) const;
 
 	DllExport bool isDebugMode() const;																			// Exposed to Python
-	DllExport void toggleDebugMode();																				// Exposed to Python
+	DllExport void toggleDebugMode();																			// Exposed to Python
 	DllExport void updateDebugModeCache();
 
 	DllExport int getPitbossTurnTime() const;																			// Exposed to Python
@@ -486,7 +486,7 @@ public:
 	DllExport virtual void AI_reset() = 0;
 	DllExport virtual void AI_makeAssignWorkDirty() = 0;
 	DllExport virtual void AI_updateAssignWork() = 0;
-	DllExport virtual int AI_combatValue(UnitTypes eUnit) = 0;
+	DllExport virtual int AI_combatValue(UnitTypes eUnit) const = 0; // a BTS fix
 
 	CvReplayInfo* getReplayInfo() const;
 	DllExport void setReplayInfo(CvReplayInfo* pReplay);
@@ -639,9 +639,9 @@ protected:
 
 	CvString m_szScriptData;
 
-	int* m_aiRankPlayer;        // Ordered by rank...
-	int* m_aiPlayerRank;        // Ordered by player ID...
-	int* m_aiPlayerScore;       // Ordered by player ID...
+	int* m_aiRankPlayer;						// Ordered by rank...
+	int* m_aiPlayerRank;						// Ordered by player ID...
+	int* m_aiPlayerScore;					// Ordered by player ID...
 	int* m_aiRankTeam;						// Ordered by rank...
 	int* m_aiTeamRank;						// Ordered by team ID...
 	int* m_aiTeamScore;						// Ordered by team ID...

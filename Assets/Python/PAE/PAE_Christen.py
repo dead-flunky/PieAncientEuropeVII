@@ -190,7 +190,7 @@ def doSpreadReligion():
 					if not pCapitalCity is None:
 						convertCity(pCapitalCity, iReligion)
 
-					elif len(lCities):
+					elif len(lCities) > 0:
 						iRand = CvUtil.myRandom(len(lCities), "doSpreadReligionChooseCity")
 						convertCity(lCities[iRand], iReligion)
 
@@ -205,7 +205,12 @@ def doSpreadReligion():
 
 def convertCity(pCity, iReligion):
 		iPlayer = pCity.getOwner()
+		if iPlayer == -1: return
 		pPlayer = gc.getPlayer(iPlayer)
+
+		# TEST
+		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iPlayer",iPlayer)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+
 
 		if pCity.isHasReligion(iReligion): return
 

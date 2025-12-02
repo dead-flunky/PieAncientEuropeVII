@@ -638,14 +638,14 @@ def doCollectBonus4Cultivation(pUnit):
 		iPrice = 0
 		# Bonusgut vom Plot entfernen, ausgenommen Handelsposten, um die Waren nicht "stehlen" zu können
 		# PAE 6.4: vom Vasall: nix entfernen, Vasall bekommt Gold
-		if pPlot.getOwner() != pUnit.getOwner():
-				
-				if pPlot.getOwner() != -1:
-					iPrice = PAE_Trade.getBonusValue(eBonus)
-					gc.getPlayer(pPlot.getOwner()).changeGold(iPrice)
-					gc.getPlayer(pUnit.getOwner()).changeGold(-iPrice)
+		#if pPlot.getOwner() != pUnit.getOwner():
+		#		
+		#		if pPlot.getOwner() != -1:
+		#			iPrice = PAE_Trade.getBonusValue(eBonus)
+		#			gc.getPlayer(pPlot.getOwner()).changeGold(iPrice)
+		#			gc.getPlayer(pUnit.getOwner()).changeGold(-iPrice)
 
-		elif pPlot.getImprovementType() != gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
+		if pPlot.getOwner() == pUnit.getOwner() and pPlot.getImprovementType() != gc.getInfoTypeForString("IMPROVEMENT_HANDELSPOSTEN"):
 				pPlot.setBonusType(-1)  # remove bonus
 
 				# Modernisierung entfernen
@@ -660,9 +660,10 @@ def doCollectBonus4Cultivation(pUnit):
 				if pPlot.getImprovementType() in lImprovements:
 						pPlot.setImprovementType(-1)
 
+
 		if gc.getPlayer(pUnit.getOwner()).isHuman():
 				CyInterface().addMessage(pUnit.getOwner(), True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_COLLECT_GOODS", (gc.getBonusInfo(
-						eBonus).getDescription(), -iPrice)), "AS2D_COINS", 2, None, ColorTypes(13), pUnit.getX(), pUnit.getY(), False, False)
+						eBonus).getDescription(), -iPrice)), "", 2, None, ColorTypes(13), pUnit.getX(), pUnit.getY(), False, False)
 
 		pUnit.finishMoves()
 		PAE_Unit.doGoToNextUnit(pUnit)
@@ -679,7 +680,7 @@ def getCollectableGoods4Cultivation(pUnit):
 				lGoods = _getCollectableGoods4Cultivation(pCity, pUnit)
 		else:
 				ePlotBonus = pPlot.getBonusType(pUnit.getTeam())
-				if ePlotBonus != -1 and ePlotBonus in L.LBonusCultivatable + L.LBonusCultivatableCoast:
+				if ePlotBonus != -1 and ePlotBonus in L.LBonusCultivatable + L.LBonusStratCultivatable + L.LBonusCultivatableCoast:
 						lGoods = [ePlotBonus]
 
 		return lGoods

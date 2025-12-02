@@ -1502,7 +1502,7 @@ int CvPlayer::startingPlotRange() const
 
 bool CvPlayer::startingPlotWithinRange(CvPlot* pPlot, PlayerTypes ePlayer, int iRange, int iPass) const
 {
-	PROFILE_FUNC();
+	//PROFILE_FUNC();
 
 	//XXX changes to AI_foundValue (which are far more flexible) make this function 
 	//    redundant but it is still called from Python. 
@@ -2840,14 +2840,14 @@ const wchar* CvPlayer::getNameKey() const
 
 /************************************************************************************************/
 /* REVOLUTION_MOD                         01/01/08                                jdog5000      */
-/*                                                                                              */
+/* changed by Pie for PAE with !empty()                                                                                        */
 /* dynamic civ names                                                                            */
 /************************************************************************************************/
 void CvPlayer::setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)
 {
-	m_szCivDesc = szNewDesc;
-	m_szCivShort = szNewShort;
-	m_szCivAdj = szNewAdj;
+	if (!szNewDesc.empty())  m_szCivDesc = szNewDesc;
+	if (!szNewShort.empty()) m_szCivShort = szNewShort;
+	if (!szNewAdj.empty())   m_szCivAdj = szNewAdj;
 	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
 	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
@@ -3589,7 +3589,7 @@ bool CvPlayer::hasAutoUnit() const
 
 bool CvPlayer::hasBusyUnit() const
 {
-	PROFILE_FUNC();
+	//PROFILE_FUNC();
 
 	CvSelectionGroup* pLoopSelectionGroup;
 	int iLoop;
@@ -3598,11 +3598,12 @@ bool CvPlayer::hasBusyUnit() const
 	{
 		if (pLoopSelectionGroup->isBusy())
 		{
+			/* original bts code
 		    if (pLoopSelectionGroup->getNumUnits() == 0)
 		    {
-					pLoopSelectionGroup->kill();
-					return false;
-		    }
+		        pLoopSelectionGroup->kill();
+		        return false;
+		    } */ // disabled by K-Mod. isBusy returns false if there are no units in the group.
 
 			return true;
 		}
@@ -6655,7 +6656,7 @@ int CvPlayer::getBuildCost(const CvPlot* pPlot, BuildTypes eBuild) const
 
 
 
-RouteTypes CvPlayer::getBestRoute(CvPlot* pPlot) const
+RouteTypes CvPlayer::getBestRoute(const CvPlot* pPlot) const
 {
 	PROFILE_FUNC();
 
@@ -20434,10 +20435,14 @@ bool CvPlayer::isValidTriggerCorporation(const CvEventTriggerInfo& kTrigger, CvC
 	}
 	else
 	{
-		if (getHasCorporationCount(eCorporation) > 0)
+		/* if (getHasCorporationCount(eCorporation) > 0)
 		{
 			return true;
-		}
+		} */
+		// K-Mod. (bugfix)
+		if (getHasCorporationCount(eCorporation) == 0)
+			return false;
+		// K-Mod end
 
 		if (kTrigger.isHeadquarters())
 		{
@@ -20449,7 +20454,8 @@ bool CvPlayer::isValidTriggerCorporation(const CvEventTriggerInfo& kTrigger, CvC
 		}
 	}
 
-	return false;
+	//return false;
+	return true; // K-Mod. (bugfix)
 }
 
 void CvPlayer::launch(VictoryTypes eVictory)
@@ -20949,7 +20955,19 @@ bool CvPlayer::canDefyResolution(VoteSourceTypes eVoteSource, const VoteSelectio
 	{
 		if (!::atWar(getTeam(), GET_PLAYER(kData.ePlayer).getTeam()))
 		{
-			return true;
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                      12/31/08                                jdog5000      */
+/*                                                                                              */
+/*                                                                                              */
+/************************************************************************************************/
+			// Vassals can't defy declarations of war
+			if( !GET_TEAM(getTeam()).isAVassal() )
+			{
+				return true;
+			}
+/************************************************************************************************/
+/* BETTER_BTS_AI_MOD                       END                                                  */
+/************************************************************************************************/
 		}
 	}
 	else if (GC.getVoteInfo(kData.eVote).isForcePeace())

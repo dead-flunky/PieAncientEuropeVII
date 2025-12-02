@@ -107,8 +107,9 @@ def doGenerateDisaster(iGameTurn):
 		if iGameTurn % (iTurnDisastersModulo / iTeiler + 20) == 0:
 				undoVulkan()
 
-		# PAE 7.12b: Globale Katastrophen (1:500)
-		if CvUtil.myRandom(500, "doGlobalDisaster") == 1:
+		# PAE 7.12b: Globale Katastrophen (1:1000)
+		# you will need to call 112 if you're able to
+		if CvUtil.myRandom(1000, "doGlobalDisaster") == 112:
 				doGlobalDisaster()
 
 def doSandsturm():

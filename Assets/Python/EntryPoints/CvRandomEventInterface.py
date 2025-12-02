@@ -801,6 +801,7 @@ def applyInfluenza2(argsList):
 				szBuffer = localText.getText("TXT_KEY_EVENT_INFLUENZA_HIT_CITY", (loopCity.getNameKey(), ))
 				CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_PILLAGE",
 																 InterfaceMessageTypes.MESSAGE_TYPE_INFO, None, gc.getInfoTypeForString("COLOR_RED"), loopCity.getX(), loopCity.getY(), True, True)
+				PAE_City.doCheckCityState(loopCity)
 
 
 def getHelpInfluenza2(argsList):
