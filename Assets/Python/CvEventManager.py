@@ -3216,7 +3216,8 @@ class CvEventManager:
 					if sScenarioName == "FirstPunicWar":
 							FirstPunicWar.onCombatResult(pWinner, pLoser)
 					elif sScenarioName == "WegDerGoten":
-							WegDerGoten.onCombatResult(pWinner, pLoser)
+							bUnitDone = WegDerGoten.onCombatResult(pWinner, pLoser)
+							if bUnitDone: return
 
 					# ---- Blessed Units
 					# Blessed promo only helps one time
@@ -3614,6 +3615,16 @@ class CvEventManager:
 											if not bUnitRenegades and pLoser.getUnitCombatType() in [gc.getInfoTypeForString("UNITCOMBAT_MOUNTED"), gc.getInfoTypeForString("UNITCOMBAT_CHARIOT")]:
 													PAE_Unit.doLoserLoseHorse(pLoser, iWinnerPlayer)
 
+									# PAE 7.12g: Beast and Men-Eater / Biest und Menschenverschlinger
+									if bWinnerAnimal:
+										iPromo2 = gc.getInfoTypeForString("PROMOTION_BEAST2")
+										if not pWinner.isHasPromotion(iPromo2): # and CvUtil.myRandom(2, "Animal gets a beast (promo)") == 1:
+											iPromo1 = gc.getInfoTypeForString("PROMOTION_BEAST")
+											if not pWinner.isHasPromotion(iPromo1):
+												pWinner.setHasPromotion(iPromo1, True)
+											else:
+												pWinner.setHasPromotion(iPromo2, True)
+
 				# PAE Debug Mark 4 end
 
 				if not self.__LOG_COMBAT:
@@ -3869,6 +3880,10 @@ class CvEventManager:
 									iSecTeam = pSecondPlayer.getTeam()
 									if gc.getTeam(iSecTeam).isHasMet(pPlayer.getTeam()):
 											pSecondPlayer.AI_changeAttitudeExtra(iPlayer, +4)
+
+					# Gobekli Tepe: +2 Pop
+					elif iBuildingType == gc.getInfoTypeForString("BUILDING_GOBEKLI_TEPE"):
+							pCity.changePopulation(2)
 
 					# Wonder: 10 Gebote => adds 1 prophet and 10 jewish cities
 					elif iBuildingType == gc.getInfoTypeForString("BUILDING_10GEBOTE"):
@@ -4417,8 +4432,8 @@ class CvEventManager:
 
 							# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
 							iHandicap = gc.getGame().getHandicapType()
-							# 2nd Settler for AI (Immortal, Deity) (PAE V)
-							if iHandicap > 6 and iUnitType == gc.getInfoTypeForString("UNIT_SETTLER"):
+							# 2nd Settler for AI (Immortal, Deity: PAE V, Emperor: PAE VII)
+							if iHandicap > 5 and iUnitType == gc.getInfoTypeForString("UNIT_SETTLER"):
 									CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
 
 							# Experienced units on higher handicap level (PAE V Patch 3)

@@ -1143,7 +1143,7 @@ def doCommissionMercenaries(iTargetPlayer, iFaktor, iPlayer):
 										iUnitSpear = gc.getInfoTypeForString("UNIT_SPEARMAN")
 
 								# Axt
-								if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BUERGERSOLDATEN")):
+								if pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_EISENWAFFEN")):
 										iUnitAxe = gc.getInfoTypeForString("UNIT_AXEMAN2")
 								elif pNeighborTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG2")):
 										iUnitAxe = gc.getInfoTypeForString("UNIT_AXEMAN")

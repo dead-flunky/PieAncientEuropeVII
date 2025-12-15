@@ -305,6 +305,14 @@ Scuola di retorica
 		<Spanish><Text>G&#246;bekli Tepe</Text><Gender>Male</Gender><Plural>0</Plural></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TEPE_HELP</Tag>
+		<English>[ICON_BULLET] This building brings +2 population to the city</English>
+		<French>[ICON_BULLET] Ce b&#226;timent apporte +2 habitants &#224; la ville</French>
+		<German>[ICON_BULLET] Dieses Geb&#228;ude bringt der Stadt +2 Bev&#246;lkerung</German>
+		<Italian>[ICON_BULLET] Questo edificio aumenta di +2 la popolazione della citt&#224;</Italian>
+		<Spanish>[ICON_BULLET] Este edificio aporta +2 de poblaci&#243;n a la ciudad</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VERSAMMLUNG</Tag>
 		<English>Meeting Place</English>
 		<French>Lieu de r&#233;union</French>
@@ -335,6 +343,14 @@ Scuola di retorica
 		<German>Bergfeste Zion</German>
 		<Italian>Fortezza Sion</Italian>
 		<Spanish>Fortaleza Si&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZOLLPOSTEN</Tag>
+		<English>Customs posts</English>
+		<French>Poste de p&#233;age</French>
+		<German>Wegezollposten</German>
+		<Italian>Posto di pedaggio</Italian>
+		<Spanish>Puesto de peaje</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZORO_SHRINE</Tag>
@@ -969,6 +985,14 @@ Scuola di retorica
 		<Spanish>[COLOR_NEGATIVE_TEXT](herido)[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_233</Tag>
+		<English>Everything we are arises from our thoughts. With our thoughts, we shape the world. Gautama Buddha</English>
+		<French>Tout ce que nous sommes provient de nos pens&#233;es. Par nos pens&#233;es, nous fa&#231;onnons le monde. Gautama Bouddha</French>
+		<German>Alles, was wir sind, entsteht aus unseren Gedanken. Mit unseren Gedanken formen wir die Welt. Gautama Buddha</German>
+		<Italian>Tutto ci&#242; che siamo nasce dai nostri pensieri. Con i nostri pensieri, plasmiamo il mondo. Gautama Buddha</Italian>
+		<Spanish>Todo lo que somos surge de nuestros pensamientos. Con ellos, moldeamos el mundo. Gautama Buda</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CAN_CONSTRUCT</Tag>
 		<English>Can construct following buildings</English>
 		<French>Peut construire les b&#226;timents suivants</French>
@@ -985,36 +1009,36 @@ Scuola di retorica
 		<Spanish>Equipo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_AGGRESSIVE_ANIMALS</Tag>
-		<English>Show movements of dangerous animals</English>
-		<French>Montrer les mouvements d'animaux dangereux</French>
-		<German>Zeige Bewegungen gef&#228;hrlicher Tiere</German>
-		<Italian>Mostra il movimento di animali pericolosi</Italian>
-		<Spanish>Mostrar movimiento de animales peligrosos</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_AGGRESSIVE_ANIMALS</Tag>
+		<English>Ignore the movements of dangerous animals</English>
+		<French>Ignorez les mouvements des animaux dangereux</French>
+		<German>Bewegungen gef&#228;hrlicher Tiere ignorieren</German>
+		<Italian>Ignorare i movimenti degli animali pericolosi</Italian>
+		<Spanish>Ignorar los movimientos de animales peligrosos</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_AGGRESSIVE_ANIMALS_HELP</Tag>
-		<English>Show the moves of dangerous wild animals between turns</English>
-		<French>Montrez les mouvements des animaux sauvages dangereux entre les tours</French>
-		<German>Fortbewegung gef&#228;hrlicher wilder Tiere zwischen den Runden anzeigen</German>
-		<Italian>Mostra le mosse degli animali selvatici pericolosi tra un turno e l'altro</Italian>
-		<Spanish>Muestra los movimientos de animales salvajes peligrosos entre turnos</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_AGGRESSIVE_ANIMALS_HELP</Tag>
+		<English>Do not show the moves of dangerous wild animals between turns</English>
+		<French>Ne montrez pas les mouvements des animaux sauvages dangereux entre les tours</French>
+		<German>Fortbewegung gef&#228;hrlicher wilder Tiere zwischen den Runden nicht anzeigen</German>
+		<Italian>Non mostrare il movimento di animali selvatici pericolosi tra i turni</Italian>
+		<Spanish>No mostrar el movimiento de animales salvajes peligrosos entre turnos.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_FRIENDLY_ANIMALS</Tag>
-		<English>Show movements of harmless animals</English>
-		<French>Montrer les mouvements d'animaux inoffensifs</French>
-		<German>Zeige Bewegungen harmloser Tiere</German>
-		<Italian>Mostra i movimenti di animali innocui</Italian>
-		<Spanish>Mostrar movimientos de animales inofensivos</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_FRIENDLY_ANIMALS</Tag>
+		<English>Ignore the movements of harmless animals</English>
+		<French>Ignorez les mouvements des animaux inoffensifs</French>
+		<German>Bewegungen harmloser Tiere ignorieren</German>
+		<Italian>Ignorare i movimenti degli animali innocui</Italian>
+		<Spanish>Ignorar los movimientos de animales inofensivos</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_PAE_FRIENDLY_ANIMALS_HELP</Tag>
-		<English>Show the moves of harmless wild animals between turns</English>
-		<French>Montrez les mouvements des animaux sauvages inoffensifs entre les tours</French>
-		<German>Fortbewegung harmloser wilder Tiere zwischen den Runden anzeigen</German>
-		<Italian>Mostra le mosse degli animali selvatici innocui tra un turno e l'altro</Italian>
-		<Spanish>Muestra los movimientos de animales salvajes inofensivos entre turnos</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_FRIENDLY_ANIMALS_HELP</Tag>
+		<English>Do not show the moves of harmless wild animals between turns</English>
+		<French>Ne montrez pas les mouvements des animaux sauvages inoffensifs entre les tours</French>
+		<German>Fortbewegung harmloser wilder Tiere zwischen den Runden nicht anzeigen</German>
+		<Italian>Non mostrare il movimento di animali selvatici innocui tra i turno</Italian>
+		<Spanish>No mostrar el movimiento de animales salvajes inofensivos entre turnos.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOTINFO_ACT_AS_CITY</Tag>
@@ -1111,6 +1135,38 @@ Scuola di retorica
 		<German>Gebt ihm die Summe, die er verlangt.</German>
 		<Italian>Dategli la cifra che chiede.</Italian>
 		<Spanish>Dale la cantidad que pide.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_BEAST</Tag>
+		<English>Beast</English>
+		<French>B&#234;te</French>
+		<German>Bestie</German>
+		<Italian>Bestia</Italian>
+		<Spanish>Bestia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_BEAST2</Tag>
+		<English>Man?Eater</English>
+		<French>D&#233;voreur d'hommes</French>
+		<German>Menschenverschlinger</German>
+		<Italian>Divoratore di uomini</Italian>
+		<Spanish>Devorador de hombres</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_BEAST2_HELP</Tag>
+		<English>[ICON_BULLET] Receives a wild animal after a second successful battle</English>
+		<French>[ICON_BULLET] Re&#231;oit un animal sauvage apr&#232;s une deuxi&#232;me victoire au combat</French>
+		<German>[ICON_BULLET] Erh&#228;lt ein wildes Tier nach einem zweiten erfolgreichen Kampf</German>
+		<Italian>[ICON_BULLET] Riceve un animale selvatico dopo una seconda battaglia vinta</Italian>
+		<Spanish>[ICON_BULLET] Recibe un animal salvaje despu&#233;s de una segunda batalla exitosa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_BEAST_HELP</Tag>
+		<English>[ICON_BULLET] Receives a wild animal after a successful battle</English>
+		<French>[ICON_BULLET] Re&#231;oit un animal sauvage apr&#232;s une bataille r&#233;ussie</French>
+		<German>[ICON_BULLET] Erh&#228;lt ein wildes Tier nach einem erfolgreichen Kampf</German>
+		<Italian>[ICON_BULLET] Riceve un animale selvatico dopo una battaglia vinta</Italian>
+		<Spanish>[ICON_BULLET] Recibe un animal salvaje despu&#233;s de una batalla exitosa</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_COMES_HELP</Tag>
@@ -1217,6 +1273,14 @@ Scuola di retorica
 		<Spanish>Di&#225;spora</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_DRAKON</Tag>
+		<English>Draconian punishments</English>
+		<French>Ch&#226;timents draconiens</French>
+		<German>Drakonische Strafen</German>
+		<Italian>Punizioni draconiane</Italian>
+		<Spanish>Castigos draconianos</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_FUTURE_TECH_HELP</Tag>
 		<English>[ICON_BULLET] Re-researchable technology</English>
 		<French>[ICON_BULLET] Technologie re-recherchable</French>
@@ -1306,7 +1370,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL6</Tag>
-		<English>6. Ecumenical Council</English>
+		<English>6th Ecumenical Council</English>
 		<French>6&#232;me Concile oecum&#233;nique</French>
 		<German>6. &#214;kumenisches Konzil</German>
 		<Italian>6. Consiglio ecumenico</Italian>
@@ -1314,7 +1378,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL7</Tag>
-		<English>7. Ecumenical Council</English>
+		<English>7th Ecumenical Council</English>
 		<French>7&#232;me Concile oecum&#233;nique</French>
 		<German>7. &#214;kumenisches Konzil</German>
 		<Italian>7. Consiglio ecumenico</Italian>
@@ -1343,6 +1407,14 @@ Scuola di retorica
 		<German>Kuppelbau</German>
 		<Italian>Costruzione di cupole</Italian>
 		<Spanish>Construcci&#243;n de c&#250;pulas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_LIGHTHOUSE</Tag>
+		<English>Lighthouses</English>
+		<French>Phares</French>
+		<German>Leuchtt&#252;rme</German>
+		<Italian>Fari</Italian>
+		<Spanish>Faros</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MOENCHTUM2</Tag>
@@ -1407,6 +1479,14 @@ Scuola di retorica
 		<German>Tempelbau</German>
 		<Italian>Costruzione del tempio</Italian>
 		<Spanish>Construcci&#243;n del templo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_WEGZOLL</Tag>
+		<English>Road Toll</English>
+		<French>P&#233;ages routiers</French>
+		<German>Wegezoll</German>
+		<Italian>Pedaggio stradale</Italian>
+		<Spanish>Peaje de carretera</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_FOUND_INFO</Tag>

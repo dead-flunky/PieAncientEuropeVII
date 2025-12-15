@@ -1161,6 +1161,30 @@
 		<Spanish>"Roma existir&#225; tanto como lo haga el Coliseo; cuando el Coliseo caiga lo har&#225; Roma; &#161;cuando Roma caiga lo har&#225; el mundo!" Beda, siglo VII d. C.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_230</Tag>
+		<English>Dracon's laws are written not in ink, but in blood. Demades (Athenian orator)</English>
+		<French>Les lois de Dracon ne sont pas &#233;crites &#224; l'encre, mais dans le sang. D&#233;mades (orateur ath&#233;nien)</French>
+		<German>Drakons Gesetze sind nicht mit Tinte, sondern mit Blut geschrieben. Demades (athenischer Redner)</German>
+		<Italian>Le leggi di Dracone non sono scritte con l'inchiostro, ma con il sangue. Demade (oratore ateniese)</Italian>
+		<Spanish>Las leyes de Dracon no est&#225;n escritas con tinta, sino con sangre. Demades (orador ateniense)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_231</Tag>
+		<English>A small light dispels great darkness. Sophocles</English>
+		<French>Une petite lumi&#232;re dissipe les grandes t&#233;n&#232;bres. Sophocle</French>
+		<German>Ein kleines Licht vertreibt gro&#223;e Finsternis. Sophokles</German>
+		<Italian>Una piccola luce dissipa una grande oscurit&#224;. Sofocle</Italian>
+		<Spanish>Una peque&#241;a luz disipa una gran oscuridad. S&#243;focles</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_232</Tag>
+		<English>The knights lived by improvisation and extorted tolls from the merchants, in other words: they robbed them. Johann Nestroy</English>
+		<French>Les chevaliers vivaient d'improvisation et extorquaient des p&#233;ages aux marchands, autrement dit: ils les volaient. Johann Nestroy</French>
+		<German>Die Ritter haben vom Stegreif gelebt und den Kr&#228;mern Zoll abgenommen, auf deutsch: sie ausgeraubt. Johann Nestroy</German>
+		<Italian>I cavalieri vivevano di improvvisazione ed estorcevano pedaggi ai mercanti, in altre parole: li derubavano. Johann Nestroy</Italian>
+		<Spanish>Los caballeros viv&#237;an de la improvisaci&#243;n y extorsionaban a los comerciantes, es decir, les robaban. Johann Nestroy</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_24</Tag>
 		<English>"Proof is the idol before whom the pure mathematician tortures himself." Sir Arthur Eddington</English>
 		<French>"La preuve est une idole devant laquelle les math&#233;maticiens se torturent." Sir Arthur Eddington</French>

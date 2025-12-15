@@ -868,7 +868,8 @@ void CvCityAI::AI_chooseProduction()
 	
 	if (isBarbarian())
 	{
-		if (!AI_isDefended(plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()))) // XXX check for other team's units?
+
+		if (!AI_isDefended(plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE())))
 		{
 			if (AI_chooseDefender())
 			{
@@ -879,6 +880,16 @@ void CvCityAI::AI_chooseProduction()
 			{
 				return;
 			}
+		}
+
+		// PAE (otherwise all cities create workers from the start (at least in scenarios))
+		switch (GC.getGameINLINE().getSorenRandNum(4, "AI Barbar Builds Attacker"))
+		{
+			case 1:
+			case 2:
+				if (AI_chooseUnit(UNITAI_ATTACK)) return;
+			case 3:
+				if (AI_chooseUnit(UNITAI_PILLAGE)) return;
 		}
 
 /************************************************************************************************/
@@ -897,9 +908,9 @@ void CvCityAI::AI_chooseProduction()
 			if (AI_chooseUnit(UNITAI_WORKER))
 			{
 				return;
-			}			
+			}
 		}
-		
+
 		if (!bDanger && (iNeededSeaWorkers > 0))
 		{
 			if (AI_chooseUnit(UNITAI_WORKER_SEA))
@@ -907,27 +918,27 @@ void CvCityAI::AI_chooseProduction()
 				return;
 			}
 		}
-		
+
 		bChooseUnit = false;
 		if (GC.getGameINLINE().getSorenRandNum(100, "AI Build Unit Production") > AI_buildUnitProb())
 		{
-			
+
 			int iBarbarianFlags = 0;
 			iBarbarianFlags |= BUILDINGFOCUS_FOOD;
 			iBarbarianFlags |= BUILDINGFOCUS_PRODUCTION;
 			iBarbarianFlags |= BUILDINGFOCUS_EXPERIENCE;
-			
+
 			if (AI_chooseBuilding(iBarbarianFlags))
 			{
 				return;
 			}
-			
+
 			if (AI_chooseBuilding())
 			{
 				return;
 			}
 		}
-		
+
 		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ASSAULT_SEA, -1, getOwnerINLINE()) > 0)
 		{
 			if (AI_chooseUnit(UNITAI_ATTACK_CITY))
@@ -935,7 +946,7 @@ void CvCityAI::AI_chooseProduction()
 				return;
 			}
 		}
-		
+
 		if ((pWaterArea != NULL) && (iWaterPercent > 30))
 		{
 			if (GC.getGameINLINE().getSorenRandNum(2, "AI Coast Raiders!") == 0)
@@ -957,7 +968,7 @@ void CvCityAI::AI_chooseProduction()
 						return;
 					}
 				}
-				
+
 				if (kPlayer.AI_totalAreaUnitAIs(pWaterArea, UNITAI_ATTACK_SEA) < iNumCitiesInArea)
 				{
 					if (AI_chooseUnit(UNITAI_ATTACK_SEA))
@@ -967,15 +978,22 @@ void CvCityAI::AI_chooseProduction()
 				}
 			}
 		}
-		
+
+		// PAE (Barbaren)
+		if (AI_chooseUnit(UNITAI_ATTACK))
+		{
+			return;
+		}
+
+		// BTS
 		if (AI_chooseUnit())
 		{
 			return;
 		}
-		
+
 		return;
 	}
-    
+
 	if (((iTargetCulturePerTurn > 0) || (getPopulation() > 5)) && (getCommerceRate(COMMERCE_CULTURE) == 0))
 	{
 		if (AI_chooseBuilding(BUILDINGFOCUS_CULTURE, 30))
@@ -983,8 +1001,8 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-      
-    if ((iExistingWorkers == 0) && (!bDanger) && ((AI_getWorkersNeeded() > 0) || ((isCapital() && (GC.getGame().getElapsedGameTurns() < ((30 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100))))))
+
+	if ((iExistingWorkers == 0) && (!bDanger) && ((AI_getWorkersNeeded() > 0) || ((isCapital() && (GC.getGame().getElapsedGameTurns() < ((30 * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent()) / 100))))))
 	{
 		int iLandBonuses = AI_countNumBonuses(NO_BONUS, /*bIncludeOurs*/ true, /*bIncludeNeutral*/ true, -1, /*bLand*/ true, /*bWater*/ false);
 		if ((iLandBonuses > 1) || (getPopulation() > 3))
@@ -1003,18 +1021,18 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 		if ((iLandBonuses == 1) || (AI_getWorkersNeeded() > 0))
-    	{
+		{
 			if (!bChooseWorker && AI_chooseUnit(UNITAI_WORKER))
 			{
 				return;
 			}
 			bChooseWorker = true;
-    	}
-    }
-	
+		}
+	}
+
 	int iPercentOfDomination = 0;
 	int iOurPopPercent = 100 * GET_TEAM(getTeam()).getTotalPopulation() / std::max(1, GC.getGameINLINE().getTotalPopulation());
-	
+
 	for (int iI = 0; iI < GC.getNumVictoryInfos(); iI++)
 	{
 		if (GC.getVictoryInfo((VictoryTypes)iI).getPopulationPercentLead() > 0)
@@ -1025,7 +1043,7 @@ void CvCityAI::AI_chooseProduction()
 
 	if (iPercentOfDomination >= 90)
 	{
-        if ((goodHealth() - badHealth(true, 0)) < 1)
+		if ((goodHealth() - badHealth(true, 0)) < 1)
 		{
 			if (AI_chooseBuilding(BUILDINGFOCUS_HEALTHY))
 			{
@@ -1033,16 +1051,16 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 	}
-    	
-    if (bDanger && kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_ATTACK) < 2)
-    {
-    	if (AI_chooseUnit(UNITAI_ATTACK))
-    	{
-    		return;
-    	}
-    }
-    
-    if (bMaybeWaterArea)
+
+	if (bDanger && kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_ATTACK) < 2)
+	{
+		if (AI_chooseUnit(UNITAI_ATTACK))
+		{
+			return;
+		}
+	}
+
+	if (bMaybeWaterArea)
 	{
 		if (kPlayer.AI_getNumTrainAIUnits(UNITAI_ATTACK_SEA) + kPlayer.AI_getNumTrainAIUnits(UNITAI_PIRATE_SEA) + kPlayer.AI_getNumTrainAIUnits(UNITAI_RESERVE_SEA) < 3)
 		{
@@ -1088,15 +1106,14 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 	}
-    
-    if ((getDomainFreeExperience(DOMAIN_LAND) == 0) && (getYieldRate(YIELD_PRODUCTION) > 4))
-    {
-    	if (AI_chooseBuilding(BUILDINGFOCUS_EXPERIENCE, (kPlayer.getCurrentEra() > 1) ? 0 : 7, 33))
+
+	if ((getDomainFreeExperience(DOMAIN_LAND) == 0) && (getYieldRate(YIELD_PRODUCTION) > 4))
+	{
+		if (AI_chooseBuilding(BUILDINGFOCUS_EXPERIENCE, (kPlayer.getCurrentEra() > 1) ? 0 : 7, 33))
 		{
 			return;
 		}
-    }
-	
+	}
 
 	int iPlotSettlerCount = (iNumSettlers == 0) ? 0 : plot()->plotCount(PUF_isUnitAIType, UNITAI_SETTLE, -1, getOwnerINLINE());
 	int iPlotCityDefenderCount = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE());
@@ -1108,7 +1125,7 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
+
 	if (!bPrimaryArea)
 	{
 		if (AI_chooseBuilding(BUILDINGFOCUS_FOOD, 60, 10))
@@ -1116,12 +1133,12 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
+
 	if (!bDanger && ((kPlayer.getCurrentEra() > (GC.getGame().getStartEra() + iProductionRank / 2))) || (kPlayer.getCurrentEra() > (GC.getNumEraInfos() / 2)))
 	{
 		if (AI_chooseBuilding(BUILDINGFOCUS_PRODUCTION, 20, 15))
 		{
-			return;	
+			return;
 		}
 		if ((iExistingWorkers < ((iNeededWorkers + 1) / 2)))
 		{
@@ -1132,7 +1149,7 @@ void CvCityAI::AI_chooseProduction()
 			bChooseWorker = true;
 		}
 	}
-	
+
 	bool bCrushStrategy = kPlayer.AI_isDoStrategy(AI_STRATEGY_CRUSH);
 	int iNeededFloatingDefenders = (isBarbarian() || bCrushStrategy) ?  0 : kPlayer.AI_getTotalFloatingDefendersNeeded(pArea);
  	int iTotalFloatingDefenders = (isBarbarian() ? 0 : kPlayer.AI_getTotalFloatingDefenders(pArea));
@@ -1143,7 +1160,7 @@ void CvCityAI::AI_chooseProduction()
 	//floatingDefenderTypes.push_back(std::make_pair(UNITAI_CITY_SPECIAL, 0));
 	floatingDefenderTypes.push_back(std::make_pair(UNITAI_RESERVE, 100));
 	floatingDefenderTypes.push_back(std::make_pair(UNITAI_COLLATERAL, 100));
-	
+
 	if (iTotalFloatingDefenders < ((iNeededFloatingDefenders + 1) / (bGetBetterUnits ? 3 : 2)))
 	{
 		if (AI_chooseLeastRepresentedUnit(floatingDefenderTypes))
@@ -1154,7 +1171,7 @@ void CvCityAI::AI_chooseProduction()
 
 	if (!(iExistingWorkers == 0))
 	{
-        if (!bDanger && (iExistingWorkers < ((iNeededWorkers + 1) / 2)))
+		if (!bDanger && (iExistingWorkers < ((iNeededWorkers + 1) / 2)))
 		{
 			if (!bChooseWorker && AI_chooseUnit(UNITAI_WORKER))
 			{
@@ -1165,18 +1182,18 @@ void CvCityAI::AI_chooseProduction()
 	}
 	
 	//do a check for one tile island type thing?
-    //this can be overridden by "wait and grow more"
-    if (bDanger && (iExistingWorkers == 0) && (isCapital() || (iNeededWorkers > 0) || (iNeededSeaWorkers > 0)))
-    {
-	if ((AI_countNumBonuses(NO_BONUS, /*bIncludeOurs*/ true, /*bIncludeNeutral*/ true, -1, /*bLand*/ true, /*bWater*/ false) > 0) || 
+	//this can be overridden by "wait and grow more"
+	if (bDanger && (iExistingWorkers == 0) && (isCapital() || (iNeededWorkers > 0) || (iNeededSeaWorkers > 0)))
+	{
+		if ((AI_countNumBonuses(NO_BONUS, /*bIncludeOurs*/ true, /*bIncludeNeutral*/ true, -1, /*bLand*/ true, /*bWater*/ false) > 0) || 
 		(isCapital() && (getPopulation() > 3)))
-    	{
+		{
 			if (!bChooseWorker && AI_chooseUnit(UNITAI_WORKER))
 			{
 				return;
 			}
 			bChooseWorker = true;
-    	}
+		}
 		if (iNeededSeaWorkers > 0)
 		{
 			if (AI_chooseUnit(UNITAI_WORKER_SEA))
@@ -1184,7 +1201,7 @@ void CvCityAI::AI_chooseProduction()
 				return;
 			}
 		}
-    }
+	}
 
 	if (pWaterArea != NULL)
 	{
@@ -1200,7 +1217,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 	}
 
-	if	(!bLandWar && !bAssault && (iTargetCulturePerTurn > getCommerceRate(COMMERCE_CULTURE)))
+	if (!bLandWar && !bAssault && (iTargetCulturePerTurn > getCommerceRate(COMMERCE_CULTURE)))
 	{
 		if (GC.getGameINLINE().getSorenRandNum(bAggressiveAI ? 3 : 2, "AI Culture Build") == 0)
 		{
@@ -1210,14 +1227,14 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 	}
-	
+
 	int iMinFoundValue = kPlayer.AI_getMinFoundValue();
 	if (bDanger)
 	{
 		iMinFoundValue *= 3;
 		iMinFoundValue /= 2;
 	}
-	
+
 	if (!bGetBetterUnits && (bIsCapitalArea) && (iAreaBestFoundValue < (iMinFoundValue * 2)))
 	{
 		//Building an early city hunting stack.
@@ -1254,7 +1271,7 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 	}
-        
+
 	//oppurunistic wonder build (1)
 	if (!bDanger && (!hasActiveWorldWonder()) && (kPlayer.getNumCities() <= 3))
 	{
@@ -1266,7 +1283,7 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
+
 	if (!bDanger && !bIsCapitalArea && area()->getCitiesPerPlayer(getOwnerINLINE()) > iNumCapitalAreaCities)
 	{
 		if (AI_chooseBuilding(BUILDINGFOCUS_CAPITAL, 15))
@@ -1274,19 +1291,19 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
+
 	if (AI_chooseBuilding(BUILDINGFOCUS_FOOD, isCapital() ? 5 : 30, 30))
 	{
 		return;
 	}
-	
+
 
 	int iSpreadUnitThreshold = 1000;
 	iSpreadUnitThreshold += bLandWar ? 1000 : 0;
-	
+
 	UnitTypes eBestSpreadUnit = NO_UNIT;
 	int iBestSpreadUnitValue = -1;
-	
+
 	{
 		int iSpreadUnitRoll = (100 - iBuildUnitProb) / 3;
 		iSpreadUnitRoll += bLandWar ? 0 : 10;
@@ -1303,7 +1320,7 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 	}
-	
+
 	if (!bDanger && (iProductionRank <= ((kPlayer.getNumCities() / 5) + 1)))
 	{
 		if (AI_chooseProject())
@@ -1311,7 +1328,7 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
+
 	//minimal defense.
 	if (plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE()) < (AI_minDefenders() + iPlotSettlerCount))
 	{
@@ -1320,10 +1337,10 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
-	
+
+
 	if ((iAreaBestFoundValue > iMinFoundValue) || (iWaterAreaBestFoundValue > iMinFoundValue))
-	{		
+	{
 		if (pWaterArea != NULL)
 		{
 			int iTotalCities = kPlayer.getNumCities();
@@ -1344,7 +1361,7 @@ void CvCityAI::AI_chooseProduction()
 			{
 				iSettlerSeaNeeded = std::min(1, iSettlerSeaNeeded);
 			}
-			
+
 			if (kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_SETTLER_SEA) < iSettlerSeaNeeded)
 			{
 				if (AI_chooseUnit(UNITAI_SETTLER_SEA))
@@ -1353,7 +1370,7 @@ void CvCityAI::AI_chooseProduction()
 				}
 			}
 		}
-		
+
 		if (iPlotSettlerCount == 0)
 		{
 			if ((iNumSettlers < iMaxSettlers) && (!bLandWar || (GC.getGameINLINE().getSorenRandNum(2, "AI War Settler") == 0)))
@@ -1372,45 +1389,44 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 	}
-	
+
 	//this is needed to build the cathedrals quickly
 	//also very good for giving cultural cities first dibs on wonders
-    if (bImportantCity && (iCultureRateRank <= iCulturalVictoryNumCultureCities))
-    {
-        if (iCultureRateRank == iCulturalVictoryNumCultureCities)
-        {
-            if (AI_chooseBuilding(BUILDINGFOCUS_BIGCULTURE | BUILDINGFOCUS_CULTURE | BUILDINGFOCUS_WONDEROK, 40))
-            {
-                return;
-            }
-        }
-        
-        else if (GC.getGameINLINE().getSorenRandNum(((iCultureRateRank == 1) ? 4 : 1) + iCulturalVictoryNumCultureCities * 2 , "AI Build up Culture") < iCultureRateRank)
-        {
-            if (AI_chooseBuilding(BUILDINGFOCUS_BIGCULTURE | BUILDINGFOCUS_CULTURE | BUILDINGFOCUS_WONDEROK, 40))
-            {
-                return;
-            }
-        }
-    }
+	if (bImportantCity && (iCultureRateRank <= iCulturalVictoryNumCultureCities))
+	{
+		if (iCultureRateRank == iCulturalVictoryNumCultureCities)
+		{
+			if (AI_chooseBuilding(BUILDINGFOCUS_BIGCULTURE | BUILDINGFOCUS_CULTURE | BUILDINGFOCUS_WONDEROK, 40))
+			{
+				 return;
+			}
+		}
+		else if (GC.getGameINLINE().getSorenRandNum(((iCultureRateRank == 1) ? 4 : 1) + iCulturalVictoryNumCultureCities * 2 , "AI Build up Culture") < iCultureRateRank)
+		{
+			if (AI_chooseBuilding(BUILDINGFOCUS_BIGCULTURE | BUILDINGFOCUS_CULTURE | BUILDINGFOCUS_WONDEROK, 40))
+			{
+				 return;
+			}
+		}
+	}
 
 	// don't build frivolous things if this is an important city unless we at war
-    if (!bImportantCity || bLandWar || bAssault)
-    {
-        if (bPrimaryArea)
-        {
-            if (kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_ATTACK) == 0)
-            {
-                if (AI_chooseUnit(UNITAI_ATTACK))
-                {
-                    return;
-                }
-            }
-        }
+	if (!bImportantCity || bLandWar || bAssault)
+	{
+		if (bPrimaryArea)
+		{
+			if (kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_ATTACK) == 0)
+			{
+				if (AI_chooseUnit(UNITAI_ATTACK))
+				{
+					 return;
+				}
+			}
+		}
 
 		// PAE scouts: && kPlayer.getCurrentEra() > 1
-        if (!bLandWar && !bDanger) // && kPlayer.getCurrentEra() > 1)
-        {
+		if (!bLandWar && !bDanger) // && kPlayer.getCurrentEra() > 1)
+		{
 			if (kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_EXPLORE) < (kPlayer.AI_neededExplorers(pArea)))
 			{
 				if (AI_chooseUnit(UNITAI_EXPLORE))
@@ -1418,30 +1434,30 @@ void CvCityAI::AI_chooseProduction()
 					return;
 				}
 			}
-        }
-        
-        if (bDefenseWar)
-        {
-        	if (GC.getGameINLINE().getSorenRandNum(100, "AI Train Defensive Unit (Panic)") > (bGetBetterUnits ? 60 : 40))
-        	{
+		}
+
+		if (bDefenseWar)
+		{
+			if (GC.getGameINLINE().getSorenRandNum(100, "AI Train Defensive Unit (Panic)") > (bGetBetterUnits ? 60 : 40))
+			{
 				UnitTypeWeightArray panicDefenderTypes;
 				panicDefenderTypes.push_back(std::make_pair(UNITAI_RESERVE, 100));
 				panicDefenderTypes.push_back(std::make_pair(UNITAI_COUNTER, 100));
 				panicDefenderTypes.push_back(std::make_pair(UNITAI_COLLATERAL, 100));
 				panicDefenderTypes.push_back(std::make_pair(UNITAI_ATTACK, 100));
-        		if (AI_chooseLeastRepresentedUnit(panicDefenderTypes))
-        		{
-        			return;
-        		}
-        	}
-        }
-    }
-        
+				if (AI_chooseLeastRepresentedUnit(panicDefenderTypes))
+				{
+					return;
+				}
+			}
+		}
+	}
+
 	if (AI_chooseBuilding(BUILDINGFOCUS_FOOD, 60, 10))
 	{
 		return;
 	}
-	
+
 	//oppurunistic wonder build
 	if (!bDanger && (!hasActiveWorldWonder() || (kPlayer.getNumCities() > 3)))
 	{
@@ -1453,7 +1469,7 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
+
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       09/19/09                                jdog5000      */
 /*                                                                                              */
@@ -1476,13 +1492,13 @@ void CvCityAI::AI_chooseProduction()
 			bChooseWorker = true;
 		}
 	}
-    
+
 	//essential economic builds
 	if (AI_chooseBuilding(iEconomyFlags, 10, 25))
 	{
 		return;
 	}
-	
+
 	if (iBestSpreadUnitValue > ((iSpreadUnitThreshold * 60) / 100))
 	{
 		if (AI_chooseUnit(eBestSpreadUnit, UNITAI_MISSIONARY))
@@ -1491,7 +1507,7 @@ void CvCityAI::AI_chooseProduction()
 		}
 		FAssertMsg(false, "AI_bestSpreadUnit should provide a valid unit when it returns true");
 	}
-	
+
 	int iMaxUnitSpending = (bAggressiveAI ? 7 : 3) + iBuildUnitProb / 3;
     if (bAlwaysPeace)
 	{
@@ -2217,8 +2233,8 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		{
 			aiUnitAIVal[UNITAI_WORKER_SEA] += AI_neededSeaWorkers();
 
-			// PAE && getCurrentEra > 1
-			if (GET_PLAYER(getOwnerINLINE()).getCurrentEra() > 1 && ((GET_PLAYER(getOwnerINLINE()).getNumCities() > 3) || (area()->getNumUnownedTiles() < 10)))
+			// PAE && getCurrentEra > 1 (removed)
+			if (((GET_PLAYER(getOwnerINLINE()).getNumCities() > 3) || (area()->getNumUnownedTiles() < 10)))
 			{
 				if (bPrimaryArea)
 				{
@@ -4423,10 +4439,9 @@ int CvCityAI::AI_neededDefenders()
 	if (isBarbarian())
 	{
 		iDefenders = 2 + ((getPopulation() - 2) / 7);
+		if (AI_isDanger()) iDefenders++; // PAE
 		return iDefenders;
 	}
-		
-		
 
 	iDefenders = 1;
 	
@@ -4519,6 +4534,7 @@ int CvCityAI::AI_neededDefenders()
 int CvCityAI::AI_minDefenders()
 {
 	// BTS ++++++++++++++++++
+	/*
 	int iDefenders = 1;
 	int iEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
 	if (iEra > 0)
@@ -4529,15 +4545,14 @@ int CvCityAI::AI_minDefenders()
 	{
 		iDefenders++;
 	}
+	*/
 
 	// PAE ++++++++++++++++++
-	/*
 	int iDefenders = 1;
 	int iEra = GET_PLAYER(getOwnerINLINE()).getCurrentEra();
 	if (iEra > 0) iDefenders++;
 	if (iEra > 2 && isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN())) iDefenders++;
 	if (getPopulation() >= 6) iDefenders++;
-	*/
 
 	return iDefenders;
 }
@@ -4548,21 +4563,21 @@ int CvCityAI::AI_neededFloatingDefenders()
 	{
 		AI_updateNeededFloatingDefenders();
 	}
-	return m_iNeededFloatingDefenders;	
+	return m_iNeededFloatingDefenders;
 }
 
 void CvCityAI::AI_updateNeededFloatingDefenders()
 {
 	int iFloatingDefenders = GET_PLAYER(getOwnerINLINE()).AI_getTotalFloatingDefendersNeeded(area());
-		
+
 	int iTotalThreat = std::max(1, GET_PLAYER(getOwnerINLINE()).AI_getTotalAreaCityThreat(area()));
-	
+
 	iFloatingDefenders -= area()->getCitiesPerPlayer(getOwnerINLINE());
-	
+
 	iFloatingDefenders *= AI_cityThreat();
 	iFloatingDefenders += (iTotalThreat / 2);
 	iFloatingDefenders /= iTotalThreat;
-	
+
 	m_iNeededFloatingDefenders = iFloatingDefenders;
 	m_iNeededFloatingDefendersCacheTurn = GC.getGame().getGameTurn();
 }
@@ -5826,7 +5841,7 @@ void CvCityAI::AI_doHurry(bool bForce)
 			{
 				if (plot()->plotCheck(PUF_isUnitAIType, UNITAI_SETTLE, -1, getOwnerINLINE()) != NULL)
 				{
-					if (!AI_isDefended(-2)) // XXX check for other team's units? // PAE -1, BTS -2
+					if (!AI_isDefended(-2)) // XXX check for other team's units?
 					{
 						iMinTurns = std::min(iMinTurns, 5);
 					}
@@ -6151,6 +6166,25 @@ bool CvCityAI::AI_chooseUnit(UnitAITypes eUnitAI)
 
 	if (eBestUnit != NO_UNIT)
 	{
+		
+		// PAE Test
+		/*
+		gDLL->getInterfaceIFace()->addMessage(
+			GC.getGameINLINE().getActivePlayerInternal(), false, GC.getEVENT_MESSAGE_TIME(),
+			CvWString::format(L"XXX"),"", MESSAGE_TYPE_INFO
+		);
+		// PAE Test
+		gDLL->getInterfaceIFace()->addMessage(
+			GC.getGameINLINE().getActivePlayerInternal(), false, GC.getEVENT_MESSAGE_TIME(),
+			CvWString::format(L"Stadt %s waehlt Einheit: %s (%d)",
+            getName().GetCString(),
+            GC.getUnitInfo(eBestUnit).getDescription(),
+			(int)eUnitAI
+			),
+			"", MESSAGE_TYPE_INFO
+		);
+		*/
+
 		pushOrder(ORDER_TRAIN, eBestUnit, eUnitAI, false, false, false);
 		return true;
 	}
@@ -6172,6 +6206,7 @@ bool CvCityAI::AI_chooseUnit(UnitTypes eUnit, UnitAITypes eUnitAI)
 
 bool CvCityAI::AI_chooseDefender()
 {
+
 	if (plot()->plotCheck(PUF_isUnitAIType, UNITAI_CITY_SPECIAL, -1, getOwnerINLINE()) == NULL)
 	{
 		if (AI_chooseUnit(UNITAI_CITY_SPECIAL))

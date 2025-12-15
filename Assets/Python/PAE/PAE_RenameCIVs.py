@@ -42,7 +42,7 @@ gc = CyGlobalContext()
 #Assyrer - Kurden (700, Babak Khorramdin)
 #Babylon - if Islam: Kalifat von [capital], ab 700
 
-#Hethiter - Seldschuken (800, Suleiman ibn Kutalmis)
+#Hethiter - Seldschuken (800, Suleiman ibn Kutalmis) oder Byzantinisches Reich ab 400 AD (Theodosius I., Justinian ab 500, Leo III. 700)?
 
 #---- if Christentum: Heiliges [civ_adj] Reich
 #---- if Islam: Kalifat von [capital]

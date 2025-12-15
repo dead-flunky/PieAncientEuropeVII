@@ -1142,15 +1142,17 @@ class CvGameUtils:
 
 						# 1. Jagd (Lager)
 						lTechs.append(gc.getInfoTypeForString('TECH_HUNTING'))
-						# 2+3. Fischen oder Viehzucht
+						# 2 Research & first world wonder
+						lTechs.append(gc.getInfoTypeForString('TECH_MYSTICISM'))
+						# 3+4. Fischen oder Viehzucht
 						if pPlayer.countNumCoastalCities() > 0:
 								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
 						else:
 								lTechs.append(gc.getInfoTypeForString('TECH_ANIMAL_HUSBANDRY'))
 								lTechs.append(gc.getInfoTypeForString('TECH_FENCES'))
-						# 4. Bogenschiessen
+						# 5. Bogenschiessen
 						lTechs.append(gc.getInfoTypeForString('TECH_ARCHERY'))
-						# 5. Fuehrerschaft
+						# 6. Fuehrerschaft
 						lTechs.append(gc.getInfoTypeForString('TECH_LEADERSHIP'))
 
 				# vor Binnenkolonisierung
@@ -1171,7 +1173,6 @@ class CvGameUtils:
 						lTechs.append(gc.getInfoTypeForString('TECH_STAATENBILDUNG'))
 
 						# Polytheismus (Monolith und Kleines Orakel)
-						lTechs.append(gc.getInfoTypeForString('TECH_MYSTICISM'))
 						lTechs.append(gc.getInfoTypeForString('TECH_SCHAMANISMUS'))
 						lTechs.append(gc.getInfoTypeForString('TECH_POLYTHEISM'))
 

@@ -383,5 +383,17 @@
 			<Type>ART_DEF_MOVIE_ZORO_SHRINE</Type>
 			<Path>Art/Movies/Wonders/AdurFarnbag.bik</Path>
 		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_BAALTEMPEL</Type>
+			<Path>Art/Movies/Wonders/BaalHammon.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GREAT_SERAPEION</Type>
+			<Path>Art/Movies/Wonders/GreatSerapeion.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_MENHIRS_OF_CARNAC</Type>
+			<Path>Art/Movies/Wonders/MenhirsOfCarnac.bik</Path>
+		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

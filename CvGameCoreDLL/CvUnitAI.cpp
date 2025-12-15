@@ -1584,8 +1584,6 @@ void CvUnitAI::AI_barbAttackMove()
 		}
 	}
 
-	// PAE (not necessary), BTS: active
-	/*
 	if (GC.getGameINLINE().getSorenRandNum(2, "AI Barb") == 0)
 	{
 		if (AI_pillageRange(1))
@@ -1593,7 +1591,7 @@ void CvUnitAI::AI_barbAttackMove()
 			return;
 		}
 	}
-	*/
+
 
 	if (AI_anyAttack(1, 20))
 	{
@@ -1648,16 +1646,14 @@ void CvUnitAI::AI_barbAttackMove()
 	}
 	// PBMod
 	// BTS
-	//else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive(true) * 2))
-	// PAE
-	else
+	else if (GC.getGameINLINE().getNumCivCities() > (GC.getGameINLINE().countCivPlayersAlive() * 2))
 	{
-		if (AI_pillageRange(4)) // BTS 2
+		if (AI_pillageRange(2))
 		{
 			return;
 		}
 
-		if (AI_cityAttack(2, 10))
+		if (AI_cityAttack(1, 10))
 		{
 			return;
 		}
@@ -7098,8 +7094,7 @@ bool CvUnitAI::AI_guardCityMinDefender(bool bSearch)
 		{
 			if ((iCityDefenderCount <= 2) || (GC.getGame().getSorenRandNum(5, "AI shuffle defender") != 0))
 			{
-				// BTS: MISSION_SKIP, PAE: MISSION_FORTIFY
-				getGroup()->pushMission(MISSION_FORTIFY, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
+				getGroup()->pushMission(MISSION_SKIP, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				return true;
 			}
 		}
@@ -7254,7 +7249,7 @@ bool CvUnitAI::AI_guardCity(bool bLeave, bool bSearch, int iMaxPath)
 									{
 										if (pLoopUnit->getGroup()->getMissionType(0) != MISSION_SKIP)
 										{
-											iCount++;											
+											iCount++;
 										}
 									}
 								}
@@ -7391,7 +7386,7 @@ bool CvUnitAI::AI_guardCity(bool bLeave, bool bSearch, int iMaxPath)
 				{
 					getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				}
-				return true;				
+				return true;
 			}
 		}
 	}
@@ -11084,27 +11079,26 @@ bool CvUnitAI::AI_leaveAttack(int iRange, int iOddsThreshold, int iStrengthThres
 	FAssert(canMove());
 
 	iSearchRange = iRange;
-	
+
 	iBestValue = 0;
 	pBestPlot = NULL;
-	
-	
+
 	pCity = plot()->getPlotCity();
-	
+
 	if ((pCity != NULL) && (pCity->getOwnerINLINE() == getOwnerINLINE()))
 	{
 		int iOurStrength = GET_PLAYER(getOwnerINLINE()).AI_getOurPlotStrength(plot(), 0, false, false);
-    	int iEnemyStrength = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(), 2, false, false);
+		int iEnemyStrength = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(), 2, false, false);
 		if (iEnemyStrength > 0)
 		{
-    		if (((iOurStrength * 100) / iEnemyStrength) < iStrengthThreshold)
-    		{
-    			return false;    		    		
-    		}
-    		if (plot()->plotCount(PUF_canDefendGroupHead, -1, -1, getOwnerINLINE()) <= getGroup()->getNumUnits())
-    		{
-    			return false;    		
-    		}
+			if (((iOurStrength * 100) / iEnemyStrength) < iStrengthThreshold)
+			{
+				return false;
+			}
+			if (plot()->plotCount(PUF_canDefendGroupHead, -1, -1, getOwnerINLINE()) <= getGroup()->getNumUnits())
+			{
+				return false;
+			}
 		}
 	}
 
@@ -11151,7 +11145,7 @@ bool CvUnitAI::AI_leaveAttack(int iRange, int iOddsThreshold, int iStrengthThres
 	}
 
 	return false;
-	
+
 }
 
 // Returns true if a mission was pushed...

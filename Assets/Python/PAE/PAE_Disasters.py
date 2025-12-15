@@ -2009,7 +2009,7 @@ def doGlobalDisaster():
 								"AS2D_PLAGUE", 2, "Art/Interface/Buttons/Actions/button_skull.dds", ColorTypes(13), loopCity.getX(),  loopCity.getY(), True, True)
 
 						# Pest
-						elif iPop > 5:
+						elif iPop > 3:
 								PAE_City.doSpawnPestToCity(loopCity)
 
 					(loopCity, pIter) = pPlayer.nextCity(pIter, False)

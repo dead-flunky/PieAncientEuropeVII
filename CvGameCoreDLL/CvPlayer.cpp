@@ -1736,6 +1736,15 @@ CvCity* CvPlayer::initCity(int iX, int iY, bool bBumpUnits, bool bUpdatePlotGrou
 	return pCity;
 }
 
+// PAE: Schiffe kapern 1/4
+/*
+struct CapturedShipInfo {
+	UnitTypes eUnitType;
+	int iExperience;
+	std::vector<PromotionTypes> vPromotions;
+	int iDamage;
+};
+*/
 
 void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool bUpdatePlotGroups)
 {
@@ -1777,6 +1786,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	int iI;
 	CLinkList<IDInfo> oldUnits;
 	std::vector<int> aeFreeSpecialists;
+	// PAE: Schiffe kapern 2/4
+	//std::vector<CapturedShipInfo> vCapturedShips;
+	// ------------------------------------------
 
 	pCityPlot = pOldCity->plot();
 
@@ -1797,6 +1809,28 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 
 		if (pLoopUnit && pLoopUnit->getTeam() != getTeam())
 		{
+			// PAE: Schiffe kapern 3/4
+			/*
+			if (pLoopUnit->getDomainType() == DOMAIN_SEA)
+			{
+				CapturedShipInfo info;
+				info.eUnitType = pLoopUnit->getUnitType();
+				info.iExperience = pLoopUnit->getExperience();
+				info.iDamage = pLoopUnit->getDamage();
+
+				for (int i = 0; i < GC.getNumPromotionInfos(); ++i)
+				{
+					if (pLoopUnit->isHasPromotion((PromotionTypes)i))
+						info.vPromotions.push_back((PromotionTypes)i);
+				}
+
+				vCapturedShips.push_back(info);
+
+				pLoopUnit->kill(false, getID());
+			} // -------------------------------
+			*/
+
+			// BTS
 			if (pLoopUnit->getDomainType() == DOMAIN_IMMOBILE)
 			{
 				pLoopUnit->kill(false, getID());
@@ -2048,6 +2082,28 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 		pNewCity->setEverOwned(((PlayerTypes)iI), abEverOwned[iI]);
 		pNewCity->setCultureTimes100(((PlayerTypes)iI), aiCulture[iI], false, false);
 	}
+
+	// PAE: Schiffe kapern 4/4
+	/*
+	for (size_t i = 0; i < vCapturedShips.size(); ++i)
+	{
+		CapturedShipInfo& info = vCapturedShips[i];
+
+		CvUnit* pNewShip = initUnit(info.eUnitType, pNewCity->plot()->getX(), pNewCity->plot()->getY(), UNITAI_ATTACK_SEA);
+
+		if (pNewShip != NULL)
+		{
+			pNewShip->setExperience(info.iExperience, -1);
+			pNewShip->setDamage(info.iDamage, NO_PLAYER);
+
+			for (size_t j = 0; j < info.vPromotions.size(); ++j)
+			{
+				pNewShip->setHasPromotion(info.vPromotions[j], true);
+			}
+		}
+	} 
+	*/
+	// --------------------------------------------
 
 	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
@@ -2514,7 +2570,7 @@ void CvPlayer::disbandUnit(bool bAnnounce)
 							break;
 
 						case UNITAI_EXPLORE:
-							//iValue *= 15; // PAE
+							iValue *= 2; // BTS: 15, PAE (2, necessary for AI to pillage?)
 							break;
 
 						case UNITAI_MISSIONARY:
@@ -2547,7 +2603,7 @@ void CvPlayer::disbandUnit(bool bAnnounce)
 							break;
 
 						case UNITAI_EXPLORE_SEA:
-							//iValue *= 25; // PAE
+							iValue *= 1; // BTS: 25, PAE: 1 (because AI explores with workboats massively)
 							break;
 
 						case UNITAI_ASSAULT_SEA:
@@ -12594,8 +12650,8 @@ int CvPlayer::findPathLength(TechTypes eTech, bool bCost) const
 		iPathLength += iShortestPath;
 	}
 
-	return (iPathLength + ((bCost) ? GET_TEAM(getTeam()).getResearchCost(eTech) : 0)); // PAE
-	//return (iPathLength + ((bCost) ? GET_TEAM(getTeam()).getResearchCost(eTech) : 1)); // BTS
+	//return (iPathLength + ((bCost) ? GET_TEAM(getTeam()).getResearchCost(eTech) : 0)); // PAE
+	return (iPathLength + ((bCost) ? GET_TEAM(getTeam()).getResearchCost(eTech) : 1)); // BTS
 }
 
 

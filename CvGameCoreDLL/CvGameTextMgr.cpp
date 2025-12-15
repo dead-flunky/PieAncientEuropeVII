@@ -1621,7 +1621,7 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, CvPlot* pPlot, bo
 
 
 	CvUnit* pLoopUnit;
-	static const uint iMaxNumUnits = 10; // PAE, BTS: 15
+	static const uint iMaxNumUnits = 15; // PAE 10, BTS: 15
 	static std::vector<CvUnit*> apUnits;
 	static std::vector<int> aiUnitNumbers;
 	static std::vector<int> aiUnitStrength;
@@ -3118,6 +3118,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		RouteTypes eRoute = pPlot->getRevealedRouteType(GC.getGameINLINE().getActiveTeam(), true);
 
 		// Chariots: no movement on forests, jungle without roads
+		/*
 		if (eRoute == NO_ROUTE && pPlot->getFeatureType() != NO_FEATURE) {
 			if (pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_FOREST") ||
 				 pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
@@ -3127,6 +3128,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				szString.append(gDLL->getText("TXT_KEY_UNIT_IMPASSABLE_FEATURE"));
 			}
 		}
+		*/
 
 		// Settler: cannot found cities
 		if (!pPlot->isPeak() && !pPlot->isWater() && !GC.getTerrainInfo(pPlot->getTerrainType()).isFound())

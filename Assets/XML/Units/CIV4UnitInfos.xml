@@ -10695,7 +10695,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_INDIAN_LONGBOW</Description>
@@ -14540,7 +14540,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_WARRIOR</Description>
@@ -14602,11 +14602,19 @@
 			<FlankingStrikes/>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
@@ -25965,11 +25973,11 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
@@ -26167,11 +26175,11 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<UnitAIType>UNITAI_RESERVE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
@@ -30607,7 +30615,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_LIGHT_ARCHER</Description>
@@ -30795,7 +30803,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ARCHER</Description>
@@ -30987,7 +30995,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ARCHER_NUBIA</Description>
@@ -31179,7 +31187,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_SKIRMISHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_JAVELIN</Description>
@@ -31367,7 +31375,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_COMPOSITE_ARCHER</Description>
@@ -31558,7 +31566,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_REFLEX_ARCHER</Description>
@@ -31744,7 +31752,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ARCHER_ROME</Description>
@@ -31932,7 +31940,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ARCHER_LEGION</Description>
@@ -32118,7 +32126,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ARCHER_REFLEX_GREEK</Description>
@@ -32304,7 +32312,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ARCHER_REFLEX_GREEK2</Description>
@@ -32490,7 +32498,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_ARCHER_KRETA</Description>
@@ -33046,7 +33054,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_SKIRMISHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_SLINGSHOOTER</Description>
@@ -33255,7 +33263,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_SKIRMISHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_PELTIST_ROME</Description>
@@ -33662,7 +33670,7 @@
 			<Capture>NONE</Capture>
 			<Combat>UNITCOMBAT_SKIRMISHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_ATTACK_CITY</DefaultUnitAI>
 			<Invisible>NONE</Invisible>
 			<SeeInvisible>NONE</SeeInvisible>
 			<Description>TXT_KEY_UNIT_BALEAREN</Description>
@@ -35395,20 +35403,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>6</iCombat>
@@ -35648,20 +35643,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>7</iCombat>
@@ -35945,20 +35927,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>8</iCombat>
@@ -36234,20 +36203,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>10</iCombat>
@@ -36526,20 +36482,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>10</iCombat>
@@ -36816,20 +36759,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>7</iCombat>
@@ -37112,20 +37042,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>12</iCombat>
@@ -37152,13 +37069,13 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainAttack>-50</iTerrainAttack>
+					<iTerrainAttack>-40</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainDefense>-50</iTerrainDefense>
+					<iTerrainDefense>-40</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<FeatureAttacks>
@@ -37172,7 +37089,7 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>-25</iFeatureAttack>
+					<iFeatureAttack>-30</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
 			<FeatureDefenses>
@@ -37186,7 +37103,7 @@
 				</FeatureDefense>
 				<FeatureDefense>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureDefense>-25</iFeatureDefense>
+					<iFeatureDefense>-30</iFeatureDefense>
 				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitClassAttackMods/>
@@ -37400,20 +37317,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>14</iCombat>
@@ -37440,13 +37344,13 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainAttack>-50</iTerrainAttack>
+					<iTerrainAttack>-40</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainDefense>-50</iTerrainDefense>
+					<iTerrainDefense>-40</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<FeatureAttacks>
@@ -37460,7 +37364,7 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>-25</iFeatureAttack>
+					<iFeatureAttack>-30</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
 			<FeatureDefenses>
@@ -37474,7 +37378,7 @@
 				</FeatureDefense>
 				<FeatureDefense>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureDefense>-25</iFeatureDefense>
+					<iFeatureDefense>-30</iFeatureDefense>
 				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitClassAttackMods/>
@@ -37683,20 +37587,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>15</iCombat>
@@ -37723,13 +37614,13 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainAttack>-50</iTerrainAttack>
+					<iTerrainAttack>-40</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainDefense>-50</iTerrainDefense>
+					<iTerrainDefense>-40</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<FeatureAttacks>
@@ -37743,7 +37634,7 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>-25</iFeatureAttack>
+					<iFeatureAttack>-30</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
 			<FeatureDefenses>
@@ -37757,7 +37648,7 @@
 				</FeatureDefense>
 				<FeatureDefense>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureDefense>-25</iFeatureDefense>
+					<iFeatureDefense>-30</iFeatureDefense>
 				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitClassAttackMods/>
@@ -38002,20 +37893,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>12</iCombat>
@@ -38042,13 +37920,13 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainAttack>-50</iTerrainAttack>
+					<iTerrainAttack>-40</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainDefense>-50</iTerrainDefense>
+					<iTerrainDefense>-40</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<FeatureAttacks>
@@ -38062,7 +37940,7 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>-25</iFeatureAttack>
+					<iFeatureAttack>-30</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
 			<FeatureDefenses>
@@ -38076,7 +37954,7 @@
 				</FeatureDefense>
 				<FeatureDefense>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureDefense>-25</iFeatureDefense>
+					<iFeatureDefense>-30</iFeatureDefense>
 				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitClassAttackMods/>
@@ -38285,20 +38163,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>12</iCombat>
@@ -38325,13 +38190,13 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainAttack>-50</iTerrainAttack>
+					<iTerrainAttack>-40</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainDefense>-50</iTerrainDefense>
+					<iTerrainDefense>-40</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<FeatureAttacks>
@@ -38345,7 +38210,7 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>-25</iFeatureAttack>
+					<iFeatureAttack>-30</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
 			<FeatureDefenses>
@@ -38359,7 +38224,7 @@
 				</FeatureDefense>
 				<FeatureDefense>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureDefense>-25</iFeatureDefense>
+					<iFeatureDefense>-30</iFeatureDefense>
 				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitClassAttackMods/>
@@ -38568,20 +38433,7 @@
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
-			<FeatureImpassables>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_FOREST</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-				<FeatureImpassable>
-					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<bFeatureImpassable>1</bFeatureImpassable>
-				</FeatureImpassable>
-			</FeatureImpassables>
+			<FeatureImpassables/>
 			<TerrainPassableTechs/>
 			<FeaturePassableTechs/>
 			<iCombat>12</iCombat>
@@ -38608,13 +38460,13 @@
 			<TerrainAttacks>
 				<TerrainAttack>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainAttack>-50</iTerrainAttack>
+					<iTerrainAttack>-40</iTerrainAttack>
 				</TerrainAttack>
 			</TerrainAttacks>
 			<TerrainDefenses>
 				<TerrainDefense>
 					<TerrainType>TERRAIN_SWAMP</TerrainType>
-					<iTerrainDefense>-50</iTerrainDefense>
+					<iTerrainDefense>-40</iTerrainDefense>
 				</TerrainDefense>
 			</TerrainDefenses>
 			<FeatureAttacks>
@@ -38628,7 +38480,7 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>-25</iFeatureAttack>
+					<iFeatureAttack>-30</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
 			<FeatureDefenses>
@@ -38642,7 +38494,7 @@
 				</FeatureDefense>
 				<FeatureDefense>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureDefense>-25</iFeatureDefense>
+					<iFeatureDefense>-30</iFeatureDefense>
 				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitClassAttackMods/>
@@ -67687,11 +67539,11 @@
 			<FlankingStrikes/>
 			<UnitAIs>
 				<UnitAI>
-					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>
-					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
@@ -68362,6 +68214,10 @@
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 				<UnitAI>

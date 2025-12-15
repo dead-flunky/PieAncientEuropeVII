@@ -418,11 +418,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BONUS_NEARBY_HELP</Tag>
-		<English>[ICON_BULLET]This building can only be created in cities in close proximity to the necessary bonus resources.</English>
-		<French>[ICON_BULLET]Ce b&#226;timent ne peut &#234;tre cr&#233;&#233; que dans des villes proches des ressources bonus n&#233;cessaires.</French>
-		<German>[ICON_BULLET]Dieses Geb&#228;ude kann nur in St&#228;dten in unmittelbarer N&#228;he der notwendigen Bonusressourcen erstellt werden.</German>
-		<Italian>[ICON_BULLET]Questo edificio pu&#242; essere creato solo nelle citt&#224; vicine alle risorse bonus necessarie.</Italian>
-		<Spanish>[ICON_BULLET]Este edificio solo se puede crear en ciudades cercanas a los recursos de bonificaci&#243;n necesarios.</Spanish>
+		<English>[ICON_BULLET]This building can only be created in cities in close proximity to the necessary bonus resources. The bonus resource must be available in the city's trade network.</English>
+		<French>[ICON_BULLET]Ce b&#226;timent ne peut &#234;tre cr&#233;&#233; que dans des villes proches des ressources bonus n&#233;cessaires. La ressource bonus doit &#234;tre disponible dans le r&#233;seau commercial de la ville.</French>
+		<German>[ICON_BULLET]Dieses Geb&#228;ude kann nur in St&#228;dten in unmittelbarer N&#228;he der notwendigen Bonusressourcen erstellt werden. Das Bonusgut muss im Handelsnetz der Stadt verf&#252;gbar sein.</German>
+		<Italian>[ICON_BULLET]Questo edificio pu&#242; essere creato solo nelle citt&#224; vicine alle risorse bonus necessarie. La risorsa bonus deve essere disponibile nella rete commerciale della citt&#224;.</Italian>
+		<Spanish>[ICON_BULLET]Este edificio solo se puede crear en ciudades cercanas a los recursos de bonificaci&#243;n necesarios. El recurso adicional debe estar disponible en la red comercial de la ciudad.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BROTMANUFAKTUR</Tag>
@@ -2274,11 +2274,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HELP_GETREIDE_ABLIEFERN</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Deliver grain / livestock[COLOR_REVERT][NEWLINE]Deliver this city with the goods and thereby increase their food supply (+%d1[ICON_FOOD])</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Livrer c&#233;r&#233;ales/b&#233;tail[COLOR_REVERT][NEWLINE]Ajoute la cargaison aux stocks de nourriture de la ville (+%d1[ICON_FOOD])</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Korn / Vieh abliefern[COLOR_REVERT][NEWLINE]Beliefere diese Stadt mit den Waren und erh&#246;he dadurch ihren Nahrungsvorrat (+%d1[ICON_FOOD])</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Consegna grano / bestiame[COLOR_REVERT][NEWLINE]Consegnare a questa citt&#224; le merci e quindi aumentare il loro approvvigionamento di cibo (+%d1[ICON_FOOD])</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Abastecer con grano / ganado.[COLOR_REVERT][NEWLINE]Abastecer esta ciudad con los productos y as&#237; aumentar su aprovisionamiento de comida (+%d1[ICON_FOOD])</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Deliver grain / livestock[COLOR_REVERT][NEWLINE]Deliver this city with the goods and thereby increase their food supply (+%d1[ICON_FOOD], unit will be removed)</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Livrer c&#233;r&#233;ales/b&#233;tail[COLOR_REVERT][NEWLINE]Ajoute la cargaison aux stocks de nourriture de la ville (+%d1[ICON_FOOD], l'unit&#233; sera supprim&#233;e)</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Korn / Vieh abliefern[COLOR_REVERT][NEWLINE]Beliefere diese Stadt mit den Waren und erh&#246;he dadurch ihren Nahrungsvorrat (+%d1[ICON_FOOD], Einheit wird verbraucht)</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Consegna grano / bestiame[COLOR_REVERT][NEWLINE]Consegnare a questa citt&#224; le merci e quindi aumentare il loro approvvigionamento di cibo (+%d1[ICON_FOOD], l'unit&#224; verr&#224; distrutta)</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Abastecer con grano / ganado.[COLOR_REVERT][NEWLINE]Abastecer esta ciudad con los productos y as&#237; aumentar su aprovisionamiento de comida (+%d1[ICON_FOOD], la unidad ser&#225; destruida)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HELP_GO2PIRATE</Tag>
@@ -5930,11 +5930,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_INFO_10</Tag>
-		<English>~600 AD-Early Middle Ages</English>
-		<French>~600 ap JC.-D&#233;but du moyen &#226;ge</French>
-		<German>~600 n. Chr.-Fr&#252;hmittelalter</German>
-		<Italian>~600 d.C.-Alto medioevo</Italian>
-		<Spanish>~600 d.C.-Edad media temprana</Spanish>
+		<English>~500 AD-Early Middle Ages</English>
+		<French>~500 ap JC.-D&#233;but du moyen &#226;ge</French>
+		<German>~500 n. Chr.-Fr&#252;hmittelalter</German>
+		<Italian>~500 d.C.-Alto medioevo</Italian>
+		<Spanish>~500 d.C.-Edad media temprana</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ISLAM</Tag>
@@ -5978,7 +5978,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL1</Tag>
-		<English>1. Ecumenical Council</English>
+		<English>1st Ecumenical Council</English>
 		<French>1er Concile oecum&#233;nique</French>
 		<German>1. &#214;kumenisches Konzil</German>
 		<Italian>1. Consiglio ecumenico</Italian>
@@ -5986,7 +5986,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL2</Tag>
-		<English>2. Ecumenical Council</English>
+		<English>2nd Ecumenical Council</English>
 		<French>2&#232;me Concile oecum&#233;nique</French>
 		<German>2. &#214;kumenisches Konzil</German>
 		<Italian>2. Consiglio ecumenico</Italian>
@@ -5994,7 +5994,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL3</Tag>
-		<English>3. Ecumenical Council</English>
+		<English>3rd Ecumenical Council</English>
 		<French>3&#232;me Concile oecum&#233;nique</French>
 		<German>3. &#214;kumenisches Konzil</German>
 		<Italian>3. Consiglio ecumenico</Italian>
@@ -6002,7 +6002,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL4</Tag>
-		<English>4. Ecumenical Council</English>
+		<English>4th Ecumenical Council</English>
 		<French>4&#232;me Concile oecum&#233;nique</French>
 		<German>4. &#214;kumenisches Konzil</German>
 		<Italian>4. Consiglio ecumenico</Italian>
@@ -6010,7 +6010,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL5</Tag>
-		<English>5. Ecumenical Council</English>
+		<English>5th Ecumenical Council</English>
 		<French>5&#232;me Concile oecum&#233;nique</French>
 		<German>5. &#214;kumenisches Konzil</German>
 		<Italian>5. Consiglio ecumenico</Italian>

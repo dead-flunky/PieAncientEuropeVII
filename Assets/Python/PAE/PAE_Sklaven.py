@@ -666,7 +666,7 @@ def doCheckSlavesAfterPillage(pUnit, pPlot):
 						if pUnit.getOwner() == gc.getGame().getActivePlayer() or pCity.getOwner() == gc.getGame().getActivePlayer():
 								szButton = ",Art/Interface/Buttons/Actions/Pillage.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,2"
 								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_PILLAGE_SLAVES",
-																																																					(pCity.getName(),)), None, 2, szButton, ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
+								(pCity.getName(),)), None, 2, szButton, ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
 
 
 def freeSlaves(pCity, pPlayer):
@@ -688,10 +688,9 @@ def freeSlaves(pCity, pPlayer):
 						lUnits = [
 								[gc.getInfoTypeForString('UNIT_SPY'), UnitAITypes.UNITAI_SPY],
 								[gc.getInfoTypeForString('UNIT_AMAZONE'), UnitAITypes.UNITAI_COUNTER],
-								[gc.getInfoTypeForString('UNIT_AXEMAN2'), UnitAITypes.UNITAI_ATTACK],
+								[gc.getInfoTypeForString('UNIT_AXEMAN'), UnitAITypes.UNITAI_ATTACK],
 								[gc.getInfoTypeForString('UNIT_ARCHER_NUBIA'), UnitAITypes.UNITAI_CITY_COUNTER],
 								[gc.getInfoTypeForString('UNIT_JAVELIN_GERMAN'), UnitAITypes.UNITAI_ATTACK],
-								[gc.getInfoTypeForString('UNIT_COMPOSITE_ARCHER'), UnitAITypes.UNITAI_CITY_DEFENSE],
 								[gc.getInfoTypeForString('UNIT_PELTIST'), UnitAITypes.UNITAI_CITY_COUNTER],
 								[gc.getInfoTypeForString('UNIT_BALEAREN'), UnitAITypes.UNITAI_ATTACK]
 						]
@@ -700,7 +699,7 @@ def freeSlaves(pCity, pPlayer):
 								[gc.getInfoTypeForString('UNIT_SPY'), UnitAITypes.UNITAI_SPY],
 								[gc.getInfoTypeForString('UNIT_ARCHER_KRETA'), UnitAITypes.UNITAI_CITY_DEFENSE],
 								[gc.getInfoTypeForString('UNIT_LIBYAN_AMAZON'), UnitAITypes.UNITAI_COUNTER],
-								[gc.getInfoTypeForString('UNIT_AXEMAN2'), UnitAITypes.UNITAI_ATTACK],
+								[gc.getInfoTypeForString('UNIT_AXEMAN'), UnitAITypes.UNITAI_ATTACK],
 								[gc.getInfoTypeForString('UNIT_ARCHER_NUBIA'), UnitAITypes.UNITAI_CITY_COUNTER],
 								[gc.getInfoTypeForString('UNIT_JAVELIN_GERMAN'), UnitAITypes.UNITAI_ATTACK],
 								[gc.getInfoTypeForString('UNIT_COMPOSITE_ARCHER'), UnitAITypes.UNITAI_CITY_DEFENSE],
@@ -724,6 +723,7 @@ def freeSlaves(pCity, pPlayer):
 								[gc.getInfoTypeForString('UNIT_THRAKIEN_WARRIOR'), UnitAITypes.UNITAI_ATTACK],
 								[gc.getInfoTypeForString('UNIT_MARS'), UnitAITypes.UNITAI_ATTACK],
 								[gc.getInfoTypeForString('UNIT_SPEARMAN_GERMAN'), UnitAITypes.UNITAI_ATTACK],
+								[gc.getInfoTypeForString('UNIT_COMPOSITE_ARCHER'), UnitAITypes.UNITAI_CITY_DEFENSE],
 								[gc.getInfoTypeForString('UNIT_REFLEX_ARCHER'), UnitAITypes.UNITAI_CITY_DEFENSE],
 								[gc.getInfoTypeForString('UNIT_ARCHER_KRETA'), UnitAITypes.UNITAI_CITY_DEFENSE],
 								[gc.getInfoTypeForString('UNIT_THRAKIEN_PELTAST'), UnitAITypes.UNITAI_ATTACK],

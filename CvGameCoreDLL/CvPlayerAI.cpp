@@ -13802,7 +13802,7 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 	int iBestValue;
 	int iLoop;
 
-	iBestValue = MAX_INT;
+	iBestValue = 1; // BTS: MAX_INT
 	pBestUnit = NULL;
 
 	for(pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
@@ -13940,10 +13940,13 @@ bool CvPlayerAI::AI_disbandUnit(int iExpThreshold, bool bObsolete)
 
 							if (pLoopUnit->getUnitInfo().getExtraCost() > 0)
 							{
-								iValue /= (pLoopUnit->getUnitInfo().getExtraCost() + 1);
+								//iValue /= (pLoopUnit->getUnitInfo().getExtraCost() + 1); // BTS
+								iValue *= (pLoopUnit->getUnitInfo().getExtraCost() + 1); // PAE
 							}
 
-							if (iValue < iBestValue)
+							// BTS: iValue < iBestValue, PAE: iValue > iBestValue
+							// Pie: settlers, explorers, workers shall be killed before all others!
+							if (iValue > iBestValue)
 							{
 								iBestValue = iValue;
 								pBestUnit = pLoopUnit;

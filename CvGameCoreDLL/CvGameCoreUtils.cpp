@@ -1029,6 +1029,12 @@ bool PUF_isVisibleDebug(const CvUnit* pUnit, int iData1, int iData2)
 	return !(pUnit->isInvisible(GET_PLAYER((PlayerTypes)iData1).getTeam(), true));
 }
 
+// PAE (used in CvPlot::getNumDefenders)
+bool PUF_isSiege(const CvUnit* pUnit, int iData1, int iData2)
+{
+	return pUnit->bombardRate() > 0;
+}
+
 bool PUF_canSiege(const CvUnit* pUnit, int iData1, int iData2)
 {
 	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");

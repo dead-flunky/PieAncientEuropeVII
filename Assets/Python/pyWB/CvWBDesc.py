@@ -197,7 +197,7 @@ class CvGameDesc:
 				self.maxCityElimination = 0
 				self.numAdvancedStartPoints = 0
 				self.targetScore = 0
-				self.iStartYear = -4000
+				self.iStartYear = -5000
 				self.szDescription = ""
 				self.szModPath = ""
 				self.iRandom = 0

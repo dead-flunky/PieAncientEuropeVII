@@ -6266,11 +6266,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_MESSING</Tag>
-		<English>Brass</English>
-		<French>Laiton</French>
-		<German>Messing</German>
-		<Italian>Ottone</Italian>
-		<Spanish>Lat&#243;n</Spanish>
+		<English>Brass Manufacturing</English>
+		<French>Fabrication de laiton</French>
+		<German>Messingherstellung</German>
+		<Italian>Lavorazione dell'ottone</Italian>
+		<Spanish>Fabricaci&#243;n de lat&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_METALL</Tag>

@@ -463,8 +463,8 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 
 
 	if iNewOwner == 0:
-		if not gc.getPlayer(iConqueredPlayer).isMinorCiv():
-			if gc.getPlayer(iConqueredPlayer).getNumCities() == 0:
+		if not gc.getPlayer(iPreviousOwner).isMinorCiv():
+			if gc.getPlayer(iPreviousOwner).getNumCities() == 0:
 				iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["15_1"], "")
 				if iCheck == "":
 					if CvUtil.myRandom(100, "WDG Great Spy onVassalState") < iChanceGreatSpyOnConquer:
@@ -710,15 +710,14 @@ def onCombatResult(pWinner, pLoser):
 	#Großer Spion "Oswald" wird erstellt. Er bekommt die Beförderung Wald III (doppelte Fortbewegung im Wald)
 	#(B)
 	#Der Älteste ist gefallen! Wo auch immer er sich versteckt hatte, sein Schicksal hat ihn eingeholt!
-	iPromoLeader = gc.getInfoTypeForString("PROMOTION_LEADER")
-	if iLoser == 20 and pLoser.isHasPromotion(iPromoLeader) and (pLoser.getName() == "The Elder" or pLoser.getScriptData() == "The Elder"):
+	if iLoser == 20 and pLoser.getScriptData() == "TheElder":
 		#[ABFRAGE] Hat der Spieler ihn besiegt? -> DANN (A)
 		if iWinner == 0:
 			pNewUnit = gc.getPlayer(iWinner).initUnit(gc.getInfoTypeForString("UNIT_GREAT_SPY"), pWinner.getX(), pWinner.getY(), UnitAITypes.UNITAI_SPY, DirectionTypes.DIRECTION_SOUTH)
 			pNewUnit.setName("Oswald")
 			#pNewUnit.setScriptData("Oswald")
 			pNewUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMMANDO"), True)
-			CyCamera().LookAtUnit(pNewUnit)
+			#CyCamera().LookAtUnit(pNewUnit)
 
 			if gc.getPlayer(iWinner).isHuman():
 				popupInfo = CyPopupInfo()
@@ -731,15 +730,18 @@ def onCombatResult(pWinner, pLoser):
 			if gc.getPlayer(0).isHuman():
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_THE_ELDER", (gc.getPlayer(iLoser).getName(), )))
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_THE_ELDER_2", (gc.getPlayer(iLoser).getName(), )))
 				popupInfo.addPopup(0)
+
+		# keine weiteren PAE features nach dem Kampf (zB Flucht)
+		return True
 
 #[EVENT-11.1] - onCombatResult; Wenn Alarich stirbt:
 	#Die Startarmee des Spielers wird von Stammesfürst mit General "Alarich" angeführt. Nach dessen Tod gibt es einen neuen Leader der Goten (Athaulf)
 	#[ABFRAGE] Ist pPlot.setScriptData() für EVENT-12.2 gesetzt? -> DANN -1 Zufriedenheit im Palast
 	#[ABFRAGE] Gibt es schon eine Hauptstadt? -> DANN
 	#In [get.Capitalname] wird ein Obelisk gesetzt
-	if iLoser == 0 and pLoser.isHasPromotion(iPromoLeader) and pLoser.getScriptData() == "Alarich":
+	if iLoser == 0 and pLoser.getScriptData() == "Alarich":
 		#Die Startarmee des Spielers wird von Stammesfürst mit General "Alarich" angeführt.
 		#Nach dessen Tod gibt es einen neuen Leader der Goten (X oder Y)
 		#<[get.Leadername] ÜBERNIMMT DIE FÜHRUNG DER GOTEN>
@@ -767,7 +769,11 @@ def onCombatResult(pWinner, pLoser):
 			szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ALARICH_BODY", (pCity.getName().upper(), ))
 			PopUpDDS("Art/Scenarios/WegDerGoten/WDG07.dds",szTextHead,szTextBody,"RIGHT")
 
+		# keine weiteren PAE features nach dem Kampf (zB Flucht)
+		return True
 
+	# bUnitDone (weitere PAE onCombatResult features erlaubt)
+	return False
 
 def onCityBuilt(pCity):
 	iPlayer = pCity.getOwner()

@@ -31,7 +31,7 @@
 			<iAttitudeChange>2</iAttitudeChange>
 			<iNoTechTradeModifier>100</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-100</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>15</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>10</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>25</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -49,7 +49,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>3</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>25</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>120</iAIGrowthPercent>
@@ -113,7 +113,7 @@
 			<iAttitudeChange>1</iAttitudeChange>
 			<iNoTechTradeModifier>90</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-75</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>12</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>8</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>25</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -131,7 +131,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>3</iBarbarianDefenders>
+			<iBarbarianDefenders>1</iBarbarianDefenders>
 			<iAIDeclareWarProb>50</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>110</iAIGrowthPercent>
@@ -197,7 +197,7 @@
 			<iAttitudeChange>0</iAttitudeChange>
 			<iNoTechTradeModifier>80</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-50</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>10</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>6</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>25</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -215,7 +215,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>3</iBarbarianDefenders>
+			<iBarbarianDefenders>2</iBarbarianDefenders>
 			<iAIDeclareWarProb>75</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>100</iAIGrowthPercent>
@@ -284,7 +284,7 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>70</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-25</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>8</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>4</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>20</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -302,7 +302,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>4</iBarbarianDefenders>
+			<iBarbarianDefenders>2</iBarbarianDefenders>
 			<iAIDeclareWarProb>100</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>90</iAIGrowthPercent>
@@ -372,7 +372,7 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>70</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>8</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>4</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>20</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -390,7 +390,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>4</iBarbarianDefenders>
+			<iBarbarianDefenders>2</iBarbarianDefenders>
 			<iAIDeclareWarProb>110</iAIDeclareWarProb>
 			<iAIWorkRateModifier>10</iAIWorkRateModifier>
 			<iAIGrowthPercent>80</iAIGrowthPercent>
@@ -462,7 +462,7 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>50</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>8</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>4</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>18</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>20</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -480,7 +480,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>4</iBarbarianDefenders>
+			<iBarbarianDefenders>3</iBarbarianDefenders>
 			<iAIDeclareWarProb>120</iAIDeclareWarProb>
 			<iAIWorkRateModifier>20</iAIWorkRateModifier>
 			<iAIGrowthPercent>80</iAIGrowthPercent>
@@ -553,7 +553,7 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>40</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>8</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>4</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>16</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>20</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -571,7 +571,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>4</iBarbarianDefenders>
+			<iBarbarianDefenders>3</iBarbarianDefenders>
 			<iAIDeclareWarProb>100</iAIDeclareWarProb>
 			<iAIWorkRateModifier>30</iAIWorkRateModifier>
 			<iAIGrowthPercent>70</iAIGrowthPercent>
@@ -644,7 +644,7 @@
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>30</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>0</iTechTradeKnownModifier>
-			<iUnownedTilesPerGameAnimal>8</iUnownedTilesPerGameAnimal>
+			<iUnownedTilesPerGameAnimal>6</iUnownedTilesPerGameAnimal>
 			<iUnownedTilesPerBarbarianUnit>15</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>20</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
@@ -753,7 +753,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>5</iBarbarianDefenders>
+			<iBarbarianDefenders>4</iBarbarianDefenders>
 			<iAIDeclareWarProb>150</iAIDeclareWarProb>
 			<iAIWorkRateModifier>50</iAIWorkRateModifier>
 			<iAIGrowthPercent>50</iAIGrowthPercent>

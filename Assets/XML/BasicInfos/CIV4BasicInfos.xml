@@ -276,5 +276,10 @@
 			<Description>TXT_KEY_CONCEPT_USURPATOR</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_USURPATOR_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_NEWTRIBES</Type>
+			<Description>TXT_KEY_CONCEPT_NEWTRIBES</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_NEWTRIBES_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

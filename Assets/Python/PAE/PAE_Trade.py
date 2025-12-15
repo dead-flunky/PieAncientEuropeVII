@@ -80,9 +80,9 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 		#		bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0))
 		#		if not bTradeRouteActive: return
 		# PAe 7.12e:
-		if not pUnit.canMove():
-				pUnit.getGroup().pushMission(MissionTypes.MISSION_SKIP, 0, 0, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-				return
+		#if not pUnit.canMove():
+		#		pUnit.getGroup().pushMission(MissionTypes.MISSION_SKIP, 0, 0, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+		#		return
 
 		if eBonus != -1:
 				iBuyer = pUnit.getOwner()
@@ -94,7 +94,7 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 				#		return
 				if eUnitBonus != -1:
 						# Geladene Ressource automatisch verkaufen
-						#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Die Einheit hat bereits eine Ressource geladen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+						#CyInterface().addMessage(iBuyer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Geladene Ressource verkaufen.",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 						if pUnit.plot().isCity():
 								doSellBonus(pUnit, pUnit.plot().getPlotCity())
 
@@ -127,8 +127,9 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 											(gc.getBonusInfo(eBonus).getDescription(), -iPrice)), "AS2D_COINS", 2, None, ColorTypes(13), 0, 0, False, False)
 
 				#pUnit.finishMoves()
-				if pUnit.isHuman():
-						PAE_Unit.doGoToNextUnit(pUnit)
+				#if pUnit.isHuman():
+				#		PAE_Unit.doGoToNextUnit(pUnit)
+				#pUnit.changeMoves(-60)
 				return
 
 
@@ -198,7 +199,7 @@ def doSellBonus(pUnit, pCity):
 				CyInterface().setDirty(InterfaceDirtyBits.InfoPane_DIRTY_BIT, True)
 
 				pUnit.finishMoves()
-				PAE_Unit.doGoToNextUnit(pUnit)
+				#PAE_Unit.doGoToNextUnit(pUnit)
 
 # Handelsstrasse erstellen
 
@@ -230,7 +231,7 @@ def doBuildTradeRoad(pUnit, pCity):
 						iChance = 20
 				else:
 						iChance = 10
-		iChance = 100
+		#iChance = 100
 
 		iRand = CvUtil.myRandom(100, "Handelsstrasse")
 		# Debug
@@ -1456,7 +1457,7 @@ def doAutomateMerchant(pUnit):
 								eBonusBuy = eBonus2
 								eBonusSell = eBonus1
 
-						# if iPlayer == iHumanPlayer:
+						#if iPlayer == iHumanPlayer:
 						#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit is in City", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 
 						bOriginalCity = False
@@ -1467,8 +1468,13 @@ def doAutomateMerchant(pUnit):
 						if not bOriginalCity and eStoredBonus != -1:
 								doSellBonus(pUnit, pCurrentCity)
 								eStoredBonus = -1
-								# if iPlayer == iHumanPlayer:
+								# PAE 7.12e
+								if eBonusBuy != -1:
+									doBuyBonus(pUnit, eBonusBuy, pCurrentCity.getOwner())
+								#if iPlayer == iHumanPlayer:
 								#CyInterface().addMessage(iHumanPlayer, True, 10, "Unit sold bonus in city", None, 2, None, ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+								PAE_Unit.doGoToNextUnit(pUnit)
+								return
 
 						# HI: if player does not have enough money, trade route is cancelled
 						# AI: if AI does not have enough money, AI buys bonus nonetheless (causes no known errors)

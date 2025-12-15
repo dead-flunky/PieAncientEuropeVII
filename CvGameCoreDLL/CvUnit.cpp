@@ -2711,7 +2711,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 						return false;
 					}
 
-					if (pPlot->isVisibleEnemyUnit(this))
+					// BTS: if (pPlot->isVisibleEnemyUnit(this))
+					// PAE: if (pPlot->isVisibleEnemyUnit(this) && !isAnimal())
+					if (pPlot->isVisibleEnemyUnit(this) && !isAnimal())
 					{
 						return false;
 					}

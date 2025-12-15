@@ -684,11 +684,16 @@ def init():
 			gc.getInfoTypeForString("FEATURE_WIND_NW")
 		]
 
-		# Für UNITAI-Vergabe in onBuild
+		# Für UNITAI-Vergabe in onUnitBuilt
 		LBuildArchers = [
 			gc.getInfoTypeForString("UNIT_LIGHT_ARCHER"),
 			gc.getInfoTypeForString("UNIT_ARCHER"),
-			gc.getInfoTypeForString("UNIT_COMPOSITE_ARCHER")
+			gc.getInfoTypeForString("UNIT_ARCHER_NUBIA"),
+			gc.getInfoTypeForString("UNIT_JAVELIN_GERMAN"),
+			gc.getInfoTypeForString("UNIT_COMPOSITE_ARCHER"),
+			gc.getInfoTypeForString("UNIT_REFLEX_ARCHER"),
+			gc.getInfoTypeForString("UNIT_ARCHER_ROME"),
+			gc.getInfoTypeForString("UNIT_ARCHER_REFLEX_GREEK")
 		]
 		LBuildCatapults = [
 			gc.getInfoTypeForString("UNIT_ONAGER"),

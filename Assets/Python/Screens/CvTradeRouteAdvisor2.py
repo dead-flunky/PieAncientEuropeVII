@@ -224,8 +224,20 @@ class CvTradeRouteAdvisor2:
 										if iBonus != -1:
 												screen.setImageButton("L7_"+str(i), gc.getBonusInfo(iBonus).getButton(), 510, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus, -1)
 
+
+								szArrowLeft = "Art/Interface/Buttons/button_arrow_left4.dds"
+								szArrowRight = "Art/Interface/Buttons/button_arrow_right4.dds"
+								# Unit comes from...
+								if bTradeRouteActive:
+									iFromX = CvUtil.getScriptData(pUnit, ["x"], -1)
+									iFromY = CvUtil.getScriptData(pUnit, ["y"], -1)
+									if iFromX == iCityX and iFromY == iCityY:
+										szArrowRight = "Art/Interface/Buttons/button_arrow_right3.dds"
+									else:
+										szArrowLeft = "Art/Interface/Buttons/button_arrow_left3.dds"
+
 								# Buttons Arrow to left
-								screen.setImageButton("L8_"+str(i), "Art/Interface/Buttons/arrow_left.tga", 580, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
+								screen.setImageButton("L8_"+str(i), szArrowLeft, 580, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 								# Promotion Escort / Begleitschutz
 								iPromo = gc.getInfoTypeForString("PROMOTION_SCHUTZ")
@@ -233,7 +245,7 @@ class CvTradeRouteAdvisor2:
 										screen.setImageButton("L14_"+str(i), gc.getPromotionInfo(iPromo).getButton(), 615, iY+9, 32, 32, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iPromo, -1)
 
 								# Button Arrow to right
-								screen.setImageButton("L9_"+str(i), "Art/Interface/Buttons/arrow_right.tga", 650, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
+								screen.setImageButton("L9_"+str(i), szArrowRight, 650, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 
 								# City 2

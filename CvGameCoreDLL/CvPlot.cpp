@@ -2664,28 +2664,34 @@ CvUnit* CvPlot::getBestDefender(PlayerTypes eOwner, PlayerTypes eAttackingPlayer
 		pLoopUnit = ::getUnit(pUnitNode->m_data);
 		pUnitNode = nextUnitNode(pUnitNode);
 
-		if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
-		{
-			if ((eAttackingPlayer == NO_PLAYER) || !(pLoopUnit->isInvisible(GET_PLAYER(eAttackingPlayer).getTeam(), false)))
+		// PAE
+		//if (pLoopUnit->getDomainType() != DOMAIN_SEA)
+		//{
+
+			if ((eOwner == NO_PLAYER) || (pLoopUnit->getOwnerINLINE() == eOwner))
 			{
-				if (!bTestAtWar || eAttackingPlayer == NO_PLAYER || pLoopUnit->isEnemy(GET_PLAYER(eAttackingPlayer).getTeam(), this) || (NULL != pAttacker && pAttacker->isEnemy(GET_PLAYER(pLoopUnit->getOwnerINLINE()).getTeam(), this)))
+				if ((eAttackingPlayer == NO_PLAYER) || !(pLoopUnit->isInvisible(GET_PLAYER(eAttackingPlayer).getTeam(), false)))
 				{
-					if (!bTestPotentialEnemy || (eAttackingPlayer == NO_PLAYER) ||  pLoopUnit->isPotentialEnemy(GET_PLAYER(eAttackingPlayer).getTeam(), this) || (NULL != pAttacker && pAttacker->isPotentialEnemy(GET_PLAYER(pLoopUnit->getOwnerINLINE()).getTeam(), this)))
+					if (!bTestAtWar || eAttackingPlayer == NO_PLAYER || pLoopUnit->isEnemy(GET_PLAYER(eAttackingPlayer).getTeam(), this) || (NULL != pAttacker && pAttacker->isEnemy(GET_PLAYER(pLoopUnit->getOwnerINLINE()).getTeam(), this)))
 					{
-						if (!bTestCanMove || (pLoopUnit->canMove() && !(pLoopUnit->isCargo())))
+						if (!bTestPotentialEnemy || (eAttackingPlayer == NO_PLAYER) ||  pLoopUnit->isPotentialEnemy(GET_PLAYER(eAttackingPlayer).getTeam(), this) || (NULL != pAttacker && pAttacker->isPotentialEnemy(GET_PLAYER(pLoopUnit->getOwnerINLINE()).getTeam(), this)))
 						{
-							if ((pAttacker == NULL) || (pAttacker->getDomainType() != DOMAIN_AIR) || (pLoopUnit->getDamage() < pAttacker->airCombatLimit()))
+							if (!bTestCanMove || (pLoopUnit->canMove() && !(pLoopUnit->isCargo())))
 							{
-								if (pLoopUnit->isBetterDefenderThan(pBestUnit, pAttacker))
+								if ((pAttacker == NULL) || (pAttacker->getDomainType() != DOMAIN_AIR) || (pLoopUnit->getDamage() < pAttacker->airCombatLimit()))
 								{
-									pBestUnit = pLoopUnit;
+									if (pLoopUnit->isBetterDefenderThan(pBestUnit, pAttacker))
+									{
+										pBestUnit = pLoopUnit;
+									}
 								}
 							}
 						}
 					}
 				}
 			}
-		}
+
+		//} // PAE: DOMAIN_SEA
 	}
 
 	return pBestUnit;
@@ -3647,8 +3653,8 @@ int CvPlot::getNumDefenders(PlayerTypes ePlayer) const
 {
 	// BTS
 	//return plotCount(PUF_canDefend, -1, -1, ePlayer);
-	// PAE
-	return plotCount(PUF_canDefend, -1, -1, ePlayer) - plotCount(PUF_canSiege, -1, -1, ePlayer);
+	// PAE (new: PUF_isSiege in CvGameCoreUtils)
+	return plotCount(PUF_canDefend, -1, -1, ePlayer) - plotCount(PUF_isSiege, -1, -1, ePlayer);
 }
 
 
