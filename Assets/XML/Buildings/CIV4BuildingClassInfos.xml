@@ -812,15 +812,15 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ZOLLPOSTEN</Type>
-			<Description>TXT_KEY_BUILDING_ZOLLPOSTEN</Description>
+			<Type>BUILDINGCLASS_WEGZOLL</Type>
+			<Description>TXT_KEY_BUILDING_WEGZOLL</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
-			<DefaultBuilding>BUILDING_ZOLLPOSTEN</DefaultBuilding>
+			<DefaultBuilding>BUILDING_WEGZOLL</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>

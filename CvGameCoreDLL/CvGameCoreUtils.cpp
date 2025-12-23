@@ -1030,10 +1030,12 @@ bool PUF_isVisibleDebug(const CvUnit* pUnit, int iData1, int iData2)
 }
 
 // PAE (used in CvPlot::getNumDefenders)
+/*
 bool PUF_isSiege(const CvUnit* pUnit, int iData1, int iData2)
 {
 	return pUnit->bombardRate() > 0;
 }
+*/
 
 bool PUF_canSiege(const CvUnit* pUnit, int iData1, int iData2)
 {

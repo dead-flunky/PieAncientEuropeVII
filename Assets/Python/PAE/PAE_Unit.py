@@ -1843,7 +1843,7 @@ def doCityUnitPromotions(pCity, pUnit):
 						if pLoopPlot.getFeatureType() == gc.getInfoTypeForString("FEATURE_FOREST"):
 								iForest += 1
 						elif pLoopPlot.getFeatureType() == gc.getInfoTypeForString("FEATURE_DICHTERWALD"):
-								iForest += 1
+								iForest += 2
 						elif pLoopPlot.getFeatureType() == gc.getInfoTypeForString("FEATURE_JUNGLE"):
 								iJungle += 1
 
@@ -4675,7 +4675,7 @@ def move2nextPlot(pUnit, bWater):
 		pUnit.finishMoves()
 	return
 
-# Wald niederbrennen (765)
+# Wald niederbrennen (765) sowie Verbrannte Erde hinterlassen
 def doBurnDownForest(pUnit):
 	pPlot = pUnit.plot()
 	# Verbrannten Wald erzeugen
@@ -4683,7 +4683,7 @@ def doBurnDownForest(pUnit):
 	# Modernisierung entfernen
 	pPlot.setImprovementType(-1)
 	pUnit.getGroup().setActivityType(-1)  # to reload the map!
-	pUnit.finishMoves()
+	#pUnit.finishMoves()
 	return
 
 # Einheit Kultur geben

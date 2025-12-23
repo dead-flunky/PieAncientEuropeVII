@@ -587,6 +587,7 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 				pPlot = CyMap().plot(59, 57)  # City: Antium
 				if pPlot.getOwner() == iCivRome:
 						if iPlayer == iCivRome:
+								pCarthage = gc.getPlayer(iCivCarthage)
 								# Schiffe erstellen
 								LNewUnits = [
 										gc.getInfoTypeForString("UNIT_QUINQUEREME"),

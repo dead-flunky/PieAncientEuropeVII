@@ -57425,14 +57425,14 @@
 			<iHotKeyPriority>0</iHotKeyPriority>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_ZOLLPOSTEN</BuildingClass>
-			<Type>BUILDING_ZOLLPOSTEN</Type>
+			<BuildingClass>BUILDINGCLASS_WEGZOLL</BuildingClass>
+			<Type>BUILDING_WEGZOLL</Type>
 			<SpecialBuildingType/>
-			<Description>TXT_KEY_BUILDING_ZOLLPOSTEN</Description>
-			<Civilopedia>TXT_KEY_BUILDING_ZOLLPOSTEN_PEDIA</Civilopedia>
+			<Description>TXT_KEY_BUILDING_WEGZOLL</Description>
+			<Civilopedia>TXT_KEY_TECH_WEGZOLL_PEDIA</Civilopedia>
 			<Strategy/>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_ZOLLPOSTEN</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_WEGZOLL</ArtDefineTag>
 			<MovieDefineTag/>
 			<HolyCity/>
 			<ReligionType/>
@@ -57444,7 +57444,7 @@
 			<GlobalReligionCommerce/>
 			<GlobalCorporationCommerce/>
 			<VictoryPrereq/>
-			<FreeStartEra>ERA_IRON</FreeStartEra>
+			<FreeStartEra/>
 			<MaxStartEra/>
 			<ObsoleteTech/>
 			<PrereqTech>TECH_WEGZOLL</PrereqTech>
@@ -57522,7 +57522,7 @@
 			<iHealth>0</iHealth>
 			<iAreaHealth>0</iAreaHealth>
 			<iGlobalHealth>0</iGlobalHealth>
-			<iHappiness>0</iHappiness>
+			<iHappiness>-1</iHappiness>
 			<iAreaHappiness>0</iAreaHappiness>
 			<iGlobalHappiness>0</iGlobalHappiness>
 			<iStateReligionHappiness>0</iStateReligionHappiness>
@@ -57533,7 +57533,7 @@
 			<iTradeRoutes>0</iTradeRoutes>
 			<iCoastalTradeRoutes>0</iCoastalTradeRoutes>
 			<iGlobalTradeRoutes>0</iGlobalTradeRoutes>
-			<iTradeRouteModifier>50</iTradeRouteModifier>
+			<iTradeRouteModifier>0</iTradeRouteModifier>
 			<iForeignTradeRouteModifier>0</iForeignTradeRouteModifier>
 			<iGlobalPopulationChange>0</iGlobalPopulationChange>
 			<iFreeTechs>0</iFreeTechs>

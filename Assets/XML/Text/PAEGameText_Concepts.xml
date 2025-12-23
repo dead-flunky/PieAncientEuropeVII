@@ -145,6 +145,14 @@
 		<Spanish>Luchadores de espect&#225;culo y gladiadores</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_GREAT_GENERAL_ACTIONS</Tag>
+		<English>Units-General actions</English>
+		<French>Unit&#233;s-Actions g&#233;n&#233;rales</French>
+		<German>Einheiten-Generalsaktionen</German>
+		<Italian>Unit&#224;-Azioni generali</Italian>
+		<Spanish>Unidades-Acciones generales</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_IMPORTANT_FACTS</Tag>
 		<English>Important Facts</English>
 		<French>!!! A lire !!!</French>

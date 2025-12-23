@@ -2483,7 +2483,7 @@ class CvGameUtils:
 														if gc.getTeam(gc.getPlayer(pPlot.getOwner()).getTeam()).isAtWar(pUnit.getTeam()):
 																if CvUtil.myRandom(4, "AI_Leader_BurnDownTheForest") == 1:
 																		PAE_Unit.doBurnDownForest(pUnit)
-																		return True
+																		#return True
 
 
 						# Governor / Statthalter
@@ -3535,14 +3535,19 @@ class CvGameUtils:
 
 						# General: Verbrannte Erde
 						elif iData1 == 765:
-								return CyTranslator().getText("TXT_KEY_ACTION_BURN_FOREST", ())
+								if iData2 == 0:
+									return CyTranslator().getText("TXT_KEY_ACTION_BURN_FOREST", ())
+								elif iData2 == 1:
+									return CyTranslator().getText("TXT_KEY_ACTION_FOREST_RAM", ())
+								elif iData2 == 2:
+									return CyTranslator().getText("TXT_KEY_ACTION_VERBRANNTE_ERDE", ())
 
 						# Pferdewechsel / Horse Swap
 						elif iData1 == 766:
 								if iData2 == 1:
-										return CyTranslator().getText("TXT_KEY_ACTION_CAMEL_SWAP", ())
+									return CyTranslator().getText("TXT_KEY_ACTION_CAMEL_SWAP", ())
 								else:
-										return CyTranslator().getText("TXT_KEY_ACTION_HORSE_SWAP", ())
+									return CyTranslator().getText("TXT_KEY_ACTION_HORSE_SWAP", ())
 
 						# Magnetkompass
 						elif iData1 == 767:
@@ -3556,9 +3561,9 @@ class CvGameUtils:
 						elif iData1 == 769:
 								return CyTranslator().getText("TXT_KEY_BUTTON_GREAT_PROPHET_HOLY_CITY", ()) + u" %c" % (gc.getReligionInfo(iData2).getChar())
 
-						# General: Ramme bauen
-						elif iData1 == 770:
-								return CyTranslator().getText("TXT_KEY_ACTION_FOREST_RAM", ())
+						# frei
+						#elif iData1 == 770:
+
 
 						# Hunter: Lager oder Beobachtungsturm
 						elif iData1 == 771:

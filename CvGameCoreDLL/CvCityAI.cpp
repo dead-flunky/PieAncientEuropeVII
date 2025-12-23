@@ -4438,8 +4438,9 @@ int CvCityAI::AI_neededDefenders()
 	
 	if (isBarbarian())
 	{
-		iDefenders = 2 + ((getPopulation() - 2) / 7);
-		if (AI_isDanger()) iDefenders++; // PAE
+		//iDefenders = 2 + ((getPopulation() - 2) / 7); // BTS
+		iDefenders = std::max(3, (2 + getPopulation() / 4)); // PAE
+		if (hasActiveWorldWonder()) iDefenders++; // PAE
 		return iDefenders;
 	}
 

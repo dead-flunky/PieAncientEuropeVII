@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
+		<Tag>TXT_KEY_ACTION_VERBRANNTE_ERDE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Leaves scorched earth[COLOR_REVERT][NEWLINE][ICON_BULLET]Creates a scorched forest[NEWLINE][ICON_BULLET]Destroys the modernization[NEWLINE][ICON_BULLET]Unit does not lose any movement points</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Laisse la terre br&#251;l&#233;e[COLOR_REVERT][NEWLINE][ICON_BULLET]Cr&#233;e une for&#234;t br&#251;l&#233;e[NEWLINE][ICON_BULLET]D&#233;truit la modernisation[NEWLINE][ICON_BULLET]L'unit&#233; ne perd aucun point de mouvement</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Verbrannte Erde[COLOR_REVERT] zur&#252;cklassen[NEWLINE][ICON_BULLET]Verbrannter Wald wird erstellt[NEWLINE][ICON_BULLET]Modernisierung wird zerst&#246;rt[NEWLINE][ICON_BULLET]Einheit verliert dabei keine Bewegungspunkte</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Lascia terra bruciata[COLOR_REVERT][NEWLINE][ICON_BULLET]Crea una foresta bruciata[NEWLINE][ICON_BULLET]Distrugge la modernizzazione[NEWLINE][ICON_BULLET]L'unit&#224; non perde punti movimento</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Deja tierra quemada[COLOR_REVERT][NEWLINE][ICON_BULLET]Crea un bosque quemado[NEWLINE][ICON_BULLET]Destruye la modernizaci&#243;n[NEWLINE][ICON_BULLET]La unidad no pierde puntos de movimiento</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_7WONDERS_HELP</Tag>
 		<English>[ICON_BULLET]This Great Building is one of the 7 Wonders of the Ancient World (Wonder Victory)</English>
 		<French>[ICON_BULLET]Ce b&#226;timent est l'une des 7 merveilles du monde antique (Merveille de la Victoire)</French>
@@ -119,6 +127,22 @@
 		<German>Athenaeum</German>
 		<Italian>Athenaeum</Italian>
 		<Spanish>Athenaeum</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KARAWANENLAGER</Tag>
+		<English>Caravan Camp</English>
+		<French>Campement caravanier</French>
+		<German>Karawanenlager</German>
+		<Italian>Accampamento carovaniero</Italian>
+		<Spanish>Campamento caravanero</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KARAWANENLAGER_PEDIA</Tag>
+		<English>A caravan camp was the earliest form of rest stop for traders and travelers in the desert and steppe regions of Western Asia, Arabia, and Persia. It was usually an unfortified campsite located near water sources, oases, or crossroads, where caravans tended to their animals, replenished their supplies, and spent the night.[NEWLINE][NEWLINE]These camps typically consisted of tents, fire pits, and an open area where the animals were tethered in a circle. They offered only limited protection from the elements and raids, but formed the basis for early long-distance trade. These simple rest stops later evolved into fortified caravanserais and eventually the architecturally sophisticated caravanserais of the Islamic world.</English>
+		<French>Le campement caravanier constituait la premi&#232;re forme d'&#233;tape pour les marchands et les voyageurs dans les r&#233;gions d&#233;sertiques et steppiques d'Asie occidentale, d'Arabie et de Perse. Il s'agissait g&#233;n&#233;ralement d'un campement non fortifi&#233; situ&#233; pr&#232;s de points d'eau, d'oasis ou de carrefours, o&#249; les caravanes soignaient leurs animaux, se ravitaillaient et passaient la nuit.[NEWLINE][NEWLINE]Ces camps se composaient typiquement de tentes, de foyers et d'un espace ouvert o&#249; les animaux &#233;taient attach&#233;s en cercle. Ils n'offraient qu'une protection limit&#233;e contre les intemp&#233;ries et les raids, mais ont jet&#233; les bases du commerce &#224; longue distance. Ces simples haltes ont ensuite &#233;volu&#233; en caravans&#233;rails fortifi&#233;s, puis en caravans&#233;rails &#224; l'architecture sophistiqu&#233;e du monde islamique.</French>
+		<German>Ein Karawanenlager war die fr&#252;heste Form einer Raststation f&#252;r H&#228;ndler und Reisende in den W&#252;sten- und Steppengebieten Vorderasiens, Arabiens und Persiens. Es handelte sich meist um einen unbefestigten Lagerplatz an Wasserstellen, Oasen oder Wegkreuzungen, an dem Karawanen ihre Tiere versorgten, Vorr&#228;te auff&#252;llten und &#252;bernachteten. [NEWLINE][NEWLINE]Diese Lager bestanden typischerweise aus Zelten, Feuerstellen und einem offenen Bereich, in dem die Tiere im Kreis angebunden wurden. Sie boten nur begrenzten Schutz vor Witterung und &#220;berf&#228;llen, bildeten jedoch die Grundlage f&#252;r den fr&#252;hen Fernhandel. Aus diesen einfachen Rastpl&#228;tzen entwickelten sich sp&#228;ter befestigte Karawanenh&#246;fe und schlie&#223;lich die architektonisch ausgepr&#228;gten Karawansereien der islamischen Welt.</German>
+		<Italian>Un accampamento carovaniere fu la prima forma di sosta per commercianti e viaggiatori nelle regioni desertiche e steppiche dell'Asia occidentale, dell'Arabia e della Persia. Di solito si trattava di un accampamento non fortificato situato vicino a fonti d'acqua, oasi o incroci, dove le carovane si prendevano cura dei loro animali, rifornivano le loro provviste e trascorrevano la notte.[NEWLINE][NEWLINE]Questi accampamenti consistevano tipicamente in tende, bracieri e un'area aperta dove gli animali venivano legati in cerchio. Offrivano solo una protezione limitata dagli elementi e dalle incursioni, ma costituirono la base per i primi commerci a lunga distanza. Queste semplici aree di sosta si evolsero in seguito in caravanserragli fortificati e infine nei caravanserragli architettonicamente sofisticati del mondo islamico.</Italian>
+		<Spanish>Un campamento de caravanas fue la primera forma de parada de descanso para comerciantes y viajeros en las regiones des&#233;rticas y esteparias de Asia Occidental, Arabia y Persia. Generalmente se trataba de un campamento no fortificado situado cerca de fuentes de agua, oasis o cruces de caminos, donde las caravanas cuidaban de sus animales, repon&#237;an provisiones y pasaban la noche.[NEWLINE][NEWLINE]Estos campamentos sol&#237;an consistir en tiendas de campa&#241;a, fogatas y un espacio abierto donde los animales se ataban en c&#237;rculo. Ofrec&#237;an una protecci&#243;n limitada contra los elementos y las incursiones, pero sentaron las bases para el comercio a larga distancia. Estas sencillas paradas de descanso evolucionaron posteriormente en caravasares fortificados y, con el tiempo, en los caravasares arquitect&#243;nicamente sofisticados del mundo isl&#225;mico.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEVEE2_HELP</Tag>
@@ -297,6 +321,22 @@ Scuola di retorica
 		<Spanish>Ski&#225;s</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SPICE_MARKET</Tag>
+		<English>Spice Market</English>
+		<French>March&#233; aux &#233;pices</French>
+		<German>Gew&#252;rzmarkt</German>
+		<Italian>Mercato delle spezie</Italian>
+		<Spanish>Mercado de especias</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STADTZOLL</Tag>
+		<English>City toll</English>
+		<French>P&#233;age de la ville</French>
+		<German>Stadtzoll</German>
+		<Italian>Pedaggio cittadino</Italian>
+		<Spanish>Peaje de la ciudad</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TEPE</Tag>
 		<English>G&#246;bekli Tepe</English>
 		<French>G&#246;bekli Tepe</French>
@@ -329,6 +369,14 @@ Scuola di retorica
 		<Spanish>Sal&#243;n de actos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WEGZOLL</Tag>
+		<English>Road Toll</English>
+		<French>P&#233;ages routiers</French>
+		<German>Wegezoll</German>
+		<Italian>Pedaggio stradale</Italian>
+		<Spanish>Peaje de carretera</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WINDOFEN</Tag>
 		<English>Wind kiln</English>
 		<French>Four &#224; vent</French>
@@ -343,14 +391,6 @@ Scuola di retorica
 		<German>Bergfeste Zion</German>
 		<Italian>Fortezza Sion</Italian>
 		<Spanish>Fortaleza Si&#243;n</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_ZOLLPOSTEN</Tag>
-		<English>Customs posts</English>
-		<French>Poste de p&#233;age</French>
-		<German>Wegezollposten</German>
-		<Italian>Posto di pedaggio</Italian>
-		<Spanish>Puesto de peaje</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZORO_SHRINE</Tag>
@@ -695,6 +735,54 @@ Scuola di retorica
 		<German>Eine massenhafte Bilderfurcht fegt durch die Stra&#223;en von %s1. Die B&#252;rger zerst&#246;ren willk&#252;rlich Statuen und Ikonen. Stoppt bitte diesen Wahn mit einer endg&#252;ltigen Synode!</German>
 		<Italian>Una paura di massa delle immagini sta dilagando per le strade di %s1. I cittadini distruggono arbitrariamente statue e icone. Per favore, fermate questa follia con un sinodo finale!</Italian>
 		<Spanish>Un miedo masivo a las im&#225;genes est&#225; recorriendo las calles de %s1. Los ciudadanos destruyen arbitrariamente estatuas e iconos. &#161;Por favor, detengamos esta locura con un s&#237;nodo final!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ABU_BAKR</Tag>
+		<English>Abu Bakr the Arab</English>
+		<French>Abou Bakr l'Arabe</French>
+		<German>Abu Bakr der Araber</German>
+		<Italian>Abu Bakr l'Arabo</Italian>
+		<Spanish>Abu Bakr el &#225;rabe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ALI</Tag>
+		<English>Ali the Arab</English>
+		<French>Ali l'Arabe</French>
+		<German>Ali der Araber</German>
+		<Italian>Ali l'Arabo</Italian>
+		<Spanish>Al&#237; el &#225;rabe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SABA</Tag>
+		<English>Bilqis, Queen of Sheba</English>
+		<French>Bilqis, reine de Saba</French>
+		<German>Bilqis, K&#246;nigin von Saba</German>
+		<Italian>Bilqis, regina di Saba</Italian>
+		<Spanish>Bilqis, reina de Saba</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_SALADIN</Tag>
+		<English>Saladin the Arab</English>
+		<French>Saladin l'Arabe</French>
+		<German>Saladin der Araber</German>
+		<Italian>Saladino l'Arabo</Italian>
+		<Spanish>Saladino el &#225;rabe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_UMAR</Tag>
+		<English>Umar the Arab</English>
+		<French>Omar l'Arabe</French>
+		<German>Umar der Araber</German>
+		<Italian>Omar l'Arabo</Italian>
+		<Spanish>Umar el &#225;rabe</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_UTHMAN</Tag>
+		<English>Uthman the Arab</English>
+		<French>Othm&#226;n l'Arabe</French>
+		<German>Uthman der Araber</German>
+		<Italian>Othm&#224;n l'Arabo</Italian>
+		<Spanish>Uthm&#225;n el &#225;rabe</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAIN_BRANDGEFAHR_1</Tag>
@@ -1482,11 +1570,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_WEGZOLL</Tag>
-		<English>Road Toll</English>
-		<French>P&#233;ages routiers</French>
-		<German>Wegezoll</German>
-		<Italian>Pedaggio stradale</Italian>
-		<Spanish>Peaje de carretera</Spanish>
+		<English>Customs</English>
+		<French>Douane</French>
+		<German>Zollwesen</German>
+		<Italian>Dogana</Italian>
+		<Spanish>Aduanas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_FOUND_INFO</Tag>
@@ -1530,11 +1618,19 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM</Tag>
-		<English>Faris</English>
-		<French>Faris</French>
-		<German>Faris</German>
-		<Italian>Faris</Italian>
-		<Spanish>Faris</Spanish>
+		<English>Faris (sword)</English>
+		<French>Faris (&#233;p&#233;e)</French>
+		<German>Faris (Schwert)</German>
+		<Italian>Faris (spada)</Italian>
+		<Spanish>Faris (espada)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM_ARCHER</Tag>
+		<English>Faris (bow)</English>
+		<French>Faris (arc)</French>
+		<German>Faris (Bogen)</German>
+		<Italian>Faris (arco)</Italian>
+		<Spanish>Faris (arco)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM_KALIF</Tag>
@@ -1543,6 +1639,14 @@ Scuola di retorica
 		<German>Kalif</German>
 		<Italian>Califfo</Italian>
 		<Spanish>Califa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM_LANCE</Tag>
+		<English>Faris (lance)</English>
+		<French>Faris (lance)</French>
+		<German>Faris (Lanze)</German>
+		<Italian>Faris (lancia)</Italian>
+		<Spanish>Faris (lanza)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IMPASSABLE_FEATURE</Tag>
@@ -1599,6 +1703,14 @@ Scuola di retorica
 		<German>[ICON_BULLET] Meidet W&#228;lder, Schnee- und Tundra-Landschaften</German>
 		<Italian>[ICON_BULLET] Evita foreste, neve e paesaggi di tundra</Italian>
 		<Spanish>[ICON_BULLET] Evite los bosques, la nieve y los paisajes de tundra.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MERCHANT_DAU</Tag>
+		<English>Dhow trading ship</English>
+		<French>Navire marchand dhow</French>
+		<German>Dau-Handelsschiff</German>
+		<Italian>Nave mercantile dhow</Italian>
+		<Spanish>Barco mercante dhow</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_NO_CARGO</Tag>

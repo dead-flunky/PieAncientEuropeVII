@@ -2017,8 +2017,11 @@ class CvMainInterface:
 														#				continue
 												# Ore Camp (wird obsolet)
 												if gc.getActionInfo(i).getMissionData() == gc.getInfoTypeForString("BUILD_ORE_CAMP"):
+													# PAE 7.13 fix, same ActionID: settle SPECIALIST_GREAT_PRIEST & BUILD_ORE_CAMP
+													if pHeadSelectedUnit.getUnitType() == gc.getInfoTypeForString("UNIT_WORKER"):
 														if pTeam.isHasTech(gc.getInfoTypeForString("TECH_BEWAFFNUNG2")):
-																continue
+															continue
+
 												# Limes
 												if gc.getActionInfo(i).getMissionData() in L.LBuildLimes:
 														continue
@@ -2476,16 +2479,20 @@ class CvMainInterface:
 																pass
 														# remove from plot => iData2 = 0. 1 = charge all goods without removing. Nur bei leerem Karren.
 														elif eBonus == -1:
+
+																if bCity:
+
+																	if iUnitType in L.LCultivationUnits:
+																		# Kaufen in der Stadt
+																		screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
+																				"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 1, True)
+																		screen.show("BottomButtonContainer")
+																		iCount += 1
+
+
 																if ePlotBonus != -1 and (ePlotBonus in L.LBonusCultivatable + L.LBonusStratCultivatable + L.LBonusCultivatableCoast):
 
 																	if bCity:
-
-																		if iUnitType in L.LCultivationUnits:
-																			# Kaufen in der Stadt
-																			screen.appendMultiListButton("BottomButtonContainer", ArtFileMgr.getInterfaceArtInfo(
-																					"INTERFACE_TRADE_BUY").getPath(), 0, WidgetTypes.WIDGET_GENERAL, 739, 1, True)
-																			screen.show("BottomButtonContainer")
-																			iCount += 1
 
 																		# Bonusgut aufnehmen (Eigene Stadt)
 																		if pPlot.getOwner() == iUnitOwner:
@@ -2687,6 +2694,11 @@ class CvMainInterface:
 																																		 0, WidgetTypes.WIDGET_GENERAL, 757, 0, False)
 																				screen.show("BottomButtonContainer")
 																				iCount += 1
+																		# sell buildings of the city
+																		#screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_statthalter_main.dds",
+																		#										0, WidgetTypes.WIDGET_GENERAL, 775, 0, False)
+																		#screen.show("BottomButtonContainer")
+																		#iCount += 1
 																elif pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_HERO")) or pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER")):
 																		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")) or pCity.canConstruct(gc.getInfoTypeForString("BUILDING_PROVINZPALAST"), False, False, True):
 																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_building_statthalter.dds",
@@ -3112,7 +3124,7 @@ class CvMainInterface:
 																				screen.show("BottomButtonContainer")
 																				iCount += 1
 
-																# LEADER Special Abilities
+																# LEADER Special Abilities / Great_General / Great General
 																if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER")):
 																		# In forests
 																		if pPlot.getFeatureType() in L.LForests:
@@ -3127,9 +3139,18 @@ class CvMainInterface:
 																				# Ramme bauen lassen (nur auf feindlichem Territorium)
 																				if pPlot.getOwner() >= 0 and gc.getTeam(pPlot.getOwner()).isAtWar(pUnitOwner.getTeam()):
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_ramme.dds",
-																								0, WidgetTypes.WIDGET_GENERAL, 770, 0, False)
+																								0, WidgetTypes.WIDGET_GENERAL, 765, 1, False)
 																						screen.show("BottomButtonContainer")
 																						iCount += 1
+																		# Verbrannte Erde hinterlassen
+																		else:
+																			iPlotOwner = pPlot.getOwner()
+																			if iPlotOwner == iUnitOwner or iPlotOwner != -1 and gc.getTeam(gc.getPlayer(iPlotOwner).getTeam()).isAtWar(gc.getPlayer(iUnitOwner).getTeam()):
+																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_burn.dds",
+																								0, WidgetTypes.WIDGET_GENERAL, 765, 2, False)
+																						screen.show("BottomButtonContainer")
+																						iCount += 1
+
 
 																# Forts/Handelsposten erobern 763
 																# if pPlot.getImprovementType() in L.LImprFortShort:
@@ -7681,10 +7702,15 @@ class CvMainInterface:
 										elif iData1 == 764:
 												CyMessageControl().sendModNetMessage(iData1, iOwner, -1, -1, -1)
 
-										# General: Wald verbrennen
+										# Generals Aktionen
 										elif iData1 == 765:
+											# Wald niederbrennen / Verbrannte Erde hinterlassen
+											if iData2 == 0 or iData2 == 2:
 												CyAudioGame().Play2DSound("AS2D_PILLAGE")
-												CyMessageControl().sendModNetMessage(iData1, pPlot.getX(), pPlot.getY(), iOwner, iUnitID)
+											# Bau einer Ramme
+											elif iData2 == 1:
+												CyAudioGame().Play2DSound("AS2D_CHOP_WOOD")
+											CyMessageControl().sendModNetMessage(iData1, iData2, -1, iOwner, iUnitID)
 
 										# Pferdewechsel
 										elif iData1 == 766:
@@ -7705,10 +7731,8 @@ class CvMainInterface:
 										elif iData1 == 769:
 												CyMessageControl().sendModNetMessage(iData1, iData2, pPlot.getPlotCity().getID(), iOwner, iUnitID)
 
-										# General: Bau einer Ramme
-										elif iData1 == 770:
-												CyAudioGame().Play2DSound("AS2D_CHOP_WOOD")
-												CyMessageControl().sendModNetMessage(iData1, -1, -1, iOwner, iUnitID)
+										# frei
+										#elif iData1 == 770:
 
 										# Hunter: Lager oder Beobachtungsturm
 										# Worker and Hunter: Ore Camp
@@ -7723,12 +7747,18 @@ class CvMainInterface:
 												CyMessageControl().sendModNetMessage(iData1, -1, pPlot.getPlotCity().getID(), iOwner, iUnitID)
 
 										# PAE 7.7: Go to city popup(go2city)
-										if iData1 == 773:
+										elif iData1 == 773:
 												CyMessageControl().sendModNetMessage(773, iData2, -1, iOwner, iUnitID)
 
 										# PAE 7.9: Terraforming (Great Prophet)
-										if iData1 == 774:
+										elif iData1 == 774:
 												CyMessageControl().sendModNetMessage(774, iData2, -1, iOwner, iUnitID)
+
+										# PAE 7.13: sell buildings of a city
+										elif iData1 == 775:
+												CyMessageControl().sendModNetMessage(775, pPlot.getPlotCity().getID(), iOwner, -1, -1)
+
+										# 770 ist frei
 
 								# ID 718 Unit Formations
 								# Zusatz: Eigenes Widget for Formations!

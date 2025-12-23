@@ -399,6 +399,71 @@ def onModNetMessage(argsList):
 								if iData3 == gc.getGame().getActivePlayer():
 										CyAudioGame().Play2DSound("AS2D_SS_CITY_ANCIENT_LARGE_BED")
 
+		# Statthalter: sell buildings
+		if iData1 == 775:
+				# iData1, iData2, ... , iData5
+				# First:  737, iCityID, iPlayer, -1, -1
+				# Second: 737, iCityID, iPlayer, iButtonID (iBuilding), -1
+				# Third:  737, iCityID, iPlayer, iBuilding, iButtonID (yes or no)
+				pPlayer = gc.getPlayer(iData3)
+				pCity = pPlayer.getCity(iData2)
+
+				# Choose Building
+				if iData4 == -1:
+						# Dies soll doppelte Popups in PB-Spielen vermeiden.
+						if iData3 == gc.getGame().getActivePlayer():
+								popupInfo = CyPopupInfo()
+								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+								popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL", (pCity.getName(),)))
+								popupInfo.setData1(iData2)  # CityID
+								popupInfo.setData2(iData3)  # iPlayer
+								popupInfo.setData3(-1)
+								popupInfo.setOnClickedPythonCallback("popupStatthalterSellBuilding")
+
+								# Button 0: Cancel button
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
+
+								iRange = gc.getNumBuildingInfos()
+								for iBuilding in range(iRange):
+										if pCity.isHasBuilding(iBuilding):
+												pBuildingInfo = gc.getBuildingInfo(iBuilding)
+												szText = pBuildingInfo.getDescription()
+
+												if pBuildingInfo.getPrereqReligion() != -1:
+													szText += u" %c" % gc.getReligionInfo(pBuildingInfo.getPrereqReligion()).getChar()
+												if pBuildingInfo.getHappiness() > 0:
+													szText += u" +%d" % pBuildingInfo.getHappiness() + CyTranslator().getText("[ICON_HAPPY]", ("", ))
+												if pBuildingInfo.getHappiness() < 0:
+													szText += u" %d" % pBuildingInfo.getHappiness() + CyTranslator().getText("[ICON_UNHAPPY]", ("", ))
+
+												szText + u" Unterhalt: " + u" %d%%" % pBuildingInfo.getMaintainanceCost()
+
+												popupInfo.addPythonButton(szText, pBuildingInfo.getButton())
+
+								# Cancel button
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
+								popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
+								popupInfo.addPopup(iData3)
+				else:
+						iBuilding = iData4
+						if iData5 == -1:
+								popupInfo = CyPopupInfo()
+								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+								popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL", (pCity.getName(),)))
+								popupInfo.setData1(iData2)  # CityID
+								popupInfo.setData2(iData3)  # iPlayer
+								popupInfo.setData3(iData4)  # iBuilding
+								popupInfo.setOnClickedPythonCallback("popupStatthalterSellBuilding")
+
+								# Button 0: YES
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_YES2", ()), "Art/Interface/Buttons/General/CheckMark.dds")
+								# Button 1: YES
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_YES2", ()), "Art/Interface/Buttons/General/CheckMark.dds")
+								# Cancel button
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
+								popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
+								popupInfo.addPopup(iData3)
+
 
 def doMessageCityGrowing(pCity):
 		if pCity is None or pCity.isNone():
@@ -2952,13 +3017,15 @@ def doPlagueEffects(pCity):
 						elif iImprovement == improv5: loopPlot.setImprovementType(-1)
 
 						# PAE 7.11: Vieh
+						# PAE 7.13: extra chance
 						iBonus = loopPlot.getBonusType(pPlayer.getTeam())
 						if iBonus != -1 and iBonus in L.LMovingBonus and iBonus != gc.getInfoTypeForString("BONUS_FISH"):
-							loopPlot.setBonusType(-1)
-							loopPlot.setImprovementType(-1)
-							if pPlayer.isHuman():
-								CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_VIEH", (pCity.getName(), gc.getBonusInfo(iBonus).getDescription())),
-								None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(13), loopPlot.getX(), loopPlot.getY(), True, True)
+							if CvUtil.myRandom(10, "doPlagueEffects4Cattle") == 1:
+								loopPlot.setBonusType(-1)
+								loopPlot.setImprovementType(-1)
+								if pPlayer.isHuman():
+									CyInterface().addMessage(iPlayer, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST_VIEH", (pCity.getName(), gc.getBonusInfo(iBonus).getDescription())),
+									None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(13), loopPlot.getX(), loopPlot.getY(), True, True)
 
 
 		# decline City pop
@@ -4201,7 +4268,7 @@ def doCheckCityName(pCity):
 				Filename = "Cities_BarbaricumRiseOfGreece.txt"
 		elif sScenarioName == "EuropeMini":
 				Filename = "Cities_Europe_Mini.txt"
-		elif sScenarioName == "EuropeLarge" or sScenarioName == "SchmelzEuro":
+		elif sScenarioName == "EuropeLarge" or sScenarioName == "EuropeLargeCities" or sScenarioName == "SchmelzEuro":
 				Filename = "Cities_Europe_Large.txt"
 		elif sScenarioName == "CivIIIRiseOfRome":
 				Filename = "Cities_CivIIIRiseOfRome.txt"

@@ -704,7 +704,8 @@ class CvEventManager:
 						# iData2 = iPlayer , iData3 = unitID
 						gc.getPlayer(iData2).changeGold(-100)
 						pUnit = gc.getPlayer(gc.getBARBARIAN_PLAYER()).getUnit(iData3)
-						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
+						#pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
+						pUnit.kill(True, -1)
 						pUnit = None
 						CyInterface().addMessage(iData2, True, 10, CyTranslator().getText("TXT_KEY_POPUP_HUNS_PAID", ()), None, 2, None, ColorTypes(14), 0, 0, False, False)
 				# City Revolten
@@ -754,7 +755,8 @@ class CvEventManager:
 								iGold = 10 + CvUtil.myRandom(30, "677")
 								pPlayer.changeGold(iGold)
 								CyInterface().addMessage(iData4, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_GOLDKARREN_ADD_GOLD", (iGold,)), "AS2D_BUILD_BANK", 2, None, ColorTypes(8), 0, 0, False, False)
-								pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
+								#pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
+								pUnit.kill(True, -1)
 								pUnit = None
 						elif iData2 == 2:
 								PAE_Unit.move2GovCenter(pUnit)
@@ -1826,12 +1828,12 @@ class CvEventManager:
 														NewUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_MORAL_NEG1"), False)
 
 														CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_BARBAR", ("",)), None, InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																										 "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), NewUnit.getX(), NewUnit.getY(), True, True)
+																						"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), NewUnit.getX(), NewUnit.getY(), True, True)
 														pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 														pUnit = None
 												else:
 														CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_OUT", ("",)), None, InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																										 "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+																						"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 														pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 														pUnit = None
 
@@ -1869,14 +1871,14 @@ class CvEventManager:
 																break
 
 												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_POS", (gc.getPromotionInfo(iPromo).getDescription(),)), None,
-																								 InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
+																				InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
 												pUnit.finishMoves()
 												PAE_Unit.doGoToNextUnit(pUnit)
 
 										# Keine Auswirkung
 										else:
 												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_NEG", ("",)), None, InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																								 "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+																				"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 												pUnit.finishMoves()
 												PAE_Unit.doGoToNextUnit(pUnit)
 
@@ -2137,12 +2139,26 @@ class CvEventManager:
 				elif iData1 == 764:
 						PAE_Vassal.onModNetMessage(iData1, iData2, iData3, iData4, iData5)
 
-				# Wald verbrennen
+				# Generals Aktionen
 				elif iData1 == 765:
 						pPlayer = gc.getPlayer(iData4)
 						pUnit = pPlayer.getUnit(iData5)
-						PAE_Unit.doBurnDownForest(pUnit)
-						PAE_Unit.doGoToNextUnit(pUnit)
+
+						# General: Wald verbrennen / Verbrannte Erde hinterlassen
+						if iData2 == 0 or iData2 == 2:
+							PAE_Unit.doBurnDownForest(pUnit)
+							#PAE_Unit.doGoToNextUnit(pUnit)
+
+						# General: Ramme bauen
+						elif iData2 == 1:
+							if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_WEHRTECHNIK")):
+									iNewUnit = gc.getInfoTypeForString("UNIT_BATTERING_RAM")
+							else:
+									iNewUnit = gc.getInfoTypeForString("UNIT_RAM")
+							pNewUnit = pPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.UNITAI_UNKNOWN, DirectionTypes.DIRECTION_SOUTH)
+							pNewUnit.finishMoves()
+							pUnit.finishMoves()
+							PAE_Unit.doGoToNextUnit(pUnit)
 
 				# Horse change / Pferdewechsel (Held, General oder bestimmte Einheiten mit sehr hohem Rang)
 				elif iData1 == 766:
@@ -2188,18 +2204,8 @@ class CvEventManager:
 											CyTranslator().getText("TXT_KEY_MESSAGE_GREAT_PROPHET_HOLY_CITY", (pCity.getName(),gc.getReligionInfo(iData2).getDescription())),
 											"AS2D_WELOVEKING", 2, "Art/Interface/Buttons/Actions/button_action_holycity.dds", ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
-				# General: Ramme bauen
-				elif iData1 == 770:
-						pPlayer = gc.getPlayer(iData4)
-						pUnit = pPlayer.getUnit(iData5)
-						if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_WEHRTECHNIK")):
-								iNewUnit = gc.getInfoTypeForString("UNIT_BATTERING_RAM")
-						else:
-								iNewUnit = gc.getInfoTypeForString("UNIT_RAM")
-						pNewUnit = pPlayer.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.UNITAI_UNKNOWN, DirectionTypes.DIRECTION_SOUTH)
-						pNewUnit.finishMoves()
-						pUnit.finishMoves()
-						PAE_Unit.doGoToNextUnit(pUnit)
+				# frei
+				#elif iData1 == 770:
 
 				# Hunter/Worker: Lager oder Beobachtungsturm bauen
 				elif iData1 == 771:
@@ -2262,6 +2268,28 @@ class CvEventManager:
 
 						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 						pUnit = None
+
+				# sell buildings of a city
+				elif iData1 == 775:
+						if iData4 != -1 and (iData5 == 0 or iData5 == 1):
+							pPlayer = gc.getPlayer(iData3)
+							pCity = pPlayer.getCity(iData2)
+							if pCity.isHasBuilding(iData4):
+								pCity.setNumRealBuilding(iData4, 0)
+								iValue = gc.getBuildingInfo(iData4).getProductionCost() / 2
+								# für Geld verkaufen
+								if iData5 == 0:
+									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TERRAFORMING", ()),
+									"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iData4).getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
+									pPlayer.changeGold(iValue)
+								# für Prod verkaufen
+								if iData5 == 1:
+									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TERRAFORMING", ()),
+									"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iData4).getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
+								iData4 = -1
+						PAE_City.onModNetMessage(argsList)
+
+				# 770 ist frei
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -3472,6 +3500,8 @@ class CvEventManager:
 											iTech = gc.getInfoTypeForString("TECH_KAMELZUCHT")
 									elif iLoserUnitType == gc.getInfoTypeForString("UNIT_ELEFANT"):
 											iTech = gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")
+									#elif iLoserUnitType == gc.getInfoTypeForString("UNIT_ESEL"):
+									#		iTech = gc.getInfoTypeForString("TECH_FENCES")
 
 									if iTech != -1:
 											iThisTeam = pWinnerPlayer.getTeam()
@@ -3615,7 +3645,7 @@ class CvEventManager:
 											if not bUnitRenegades and pLoser.getUnitCombatType() in [gc.getInfoTypeForString("UNITCOMBAT_MOUNTED"), gc.getInfoTypeForString("UNITCOMBAT_CHARIOT")]:
 													PAE_Unit.doLoserLoseHorse(pLoser, iWinnerPlayer)
 
-									# PAE 7.12g: Beast and Men-Eater / Biest und Menschenverschlinger
+									# PAE 7.13: Beast and Men-Eater / Biest und Menschenverschlinger
 									if bWinnerAnimal:
 										iPromo2 = gc.getInfoTypeForString("PROMOTION_BEAST2")
 										if not pWinner.isHasPromotion(iPromo2): # and CvUtil.myRandom(2, "Animal gets a beast (promo)") == 1:
@@ -3884,6 +3914,7 @@ class CvEventManager:
 					# Gobekli Tepe: +2 Pop
 					elif iBuildingType == gc.getInfoTypeForString("BUILDING_GOBEKLI_TEPE"):
 							pCity.changePopulation(2)
+							PAE_City.doCheckCityState(pCity)
 
 					# Wonder: 10 Gebote => adds 1 prophet and 10 jewish cities
 					elif iBuildingType == gc.getInfoTypeForString("BUILDING_10GEBOTE"):
@@ -4586,8 +4617,8 @@ class CvEventManager:
 				# PAE Debug Mark 8 begin
 				if not bPAEDebugMark8:
 					if iImprovement > -1:
-							# XP nur bei enemy plots
-							if pPlot.getOwner() != iPlayer:
+							# XP nur bei enemy plots, auch nicht in neutralem Gebiet (exploit)
+							if pPlot.getOwner() != -1 and pPlot.getOwner() != iPlayer:
 									pUnit.changeExperience(1, -1, 0, 0, 0)
 
 							# Versorger aufladen / Supply Wagon recharge

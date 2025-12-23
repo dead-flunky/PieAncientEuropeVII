@@ -1019,7 +1019,7 @@ def setChristentum():
 
 				# 2. Religion den Barbaren zukommen (sonst kommt Religionswahl bei Theologie)
 				pBarbTeam = gc.getTeam(gc.getPlayer(gc.getBARBARIAN_PLAYER()).getTeam())
-				pBarbTeam.setHasTech(gc.getInfoTypeForString("TECH_THEOLOGY"), True, gc.getBARBARIAN_PLAYER(), True, False)
+				pBarbTeam.setHasTech(gc.getInfoTypeForString("TECH_THEOLOGY"), True, gc.getBARBARIAN_PLAYER(), 0, 0)
 
 				# 3. globale Variable bChristentum auf true setzen
 				PAE_Christen.init()

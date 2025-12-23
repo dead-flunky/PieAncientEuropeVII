@@ -213,7 +213,9 @@ def doPlotFeatures():
 														# Horse
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_horse:
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(45, "horse") == 1:
+																		if iPlotOwner != -1: iChance = 100
+																		else: iChance = 40
+																		if CvUtil.myRandom(iChance, "horse") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1 and iPlotOwner != iBarbPlayer:
@@ -227,7 +229,9 @@ def doPlotFeatures():
 														# Camel
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_camel:
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(40, "camel") == 1:
+																		if iPlotOwner != -1: iChance = 100
+																		else: iChance = 40
+																		if CvUtil.myRandom(iChance, "camel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1:
@@ -241,7 +245,9 @@ def doPlotFeatures():
 														# Elefant (ab Eisenzeit)
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_ivory and pBarbPlayer.getCurrentEra() >= 2:
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(50, "ele") == 1:
+																		if iPlotOwner != -1: iChance = 100
+																		else: iChance = 50
+																		if CvUtil.myRandom(iChance, "ele") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1:
@@ -255,7 +261,9 @@ def doPlotFeatures():
 														# Esel
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_esel:
 																if loopPlot.getNumUnits() == 0:
-																		if CvUtil.myRandom(45, "esel") == 1:
+																		if iPlotOwner != -1: iChance = 100
+																		else: iChance = 45
+																		if CvUtil.myRandom(iChance, "esel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
 																				if iPlotOwner != -1 and iPlotOwner != iBarbPlayer:

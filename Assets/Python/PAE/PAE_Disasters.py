@@ -109,7 +109,7 @@ def doGenerateDisaster(iGameTurn):
 
 		# PAE 7.12b: Globale Katastrophen (1:1000)
 		# you will need to call 112 if you're able to
-		if CvUtil.myRandom(1000, "doGlobalDisaster") == 112:
+		if CvUtil.myRandom(2000, "doGlobalDisaster") == 112:
 				doGlobalDisaster()
 
 def doSandsturm():
@@ -1986,7 +1986,7 @@ def doOracleShowsDisaster(iX, iY):
 # Globale Naturkastastrophe / Klima / Pandemie
 # 2 Varianten:
 # A: Hungersnot: -25% Weltbevölkerung
-# B: Pest: Cities Pop > 5
+# B: Pest: Cities Pop > 3
 def doGlobalDisaster():
 		iVariant = CvUtil.myRandom(2, "doGlobalDisasterVariant")
 		iRange = gc.getMAX_PLAYERS()
@@ -2022,3 +2022,44 @@ def doGlobalDisaster():
 							Bild = "Art/PAE/GlobalDisaster1.dds"
 					else: Bild = "Art/PAE/GlobalDisaster2.dds"
 					PAE_Popup.PopUpDDS(Bild,szTextHead,szTextBody,"CENTER")
+
+		# Remove Improvements
+		iDarkIce = gc.getInfoTypeForString("FEATURE_DARK_ICE")
+		LFarms = [
+			gc.getInfoTypeForString("IMPROVEMENT_FARM"),
+			gc.getInfoTypeForString("IMPROVEMENT_PLANTATION"),
+			gc.getInfoTypeForString("IMPROVEMENT_OLIVE_PRESS"),
+			gc.getInfoTypeForString("IMPROVEMENT_WINERY"),
+			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE"),
+			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL"),
+			gc.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM1"),
+			gc.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM2")
+		]
+		iTerrainPlains = gc.getInfoTypeForString("TERRAIN_PLAINS")
+		iTerrainGrass  = gc.getInfoTypeForString("TERRAIN_GRASS")
+		iFeatureForest  = gc.getInfoTypeForString("FEATURE_FOREST")
+		iFeatureSavanna = gc.getInfoTypeForString("FEATURE_SAVANNA")
+		iMapW = gc.getMap().getGridWidth()
+		iMapH = gc.getMap().getGridHeight()
+		for x in range(iMapW):
+			for y in range(iMapH):
+				loopPlot = gc.getMap().plot(x, y)
+				if loopPlot is not None and not loopPlot.isNone():
+
+					iPlotFeature = loopPlot.getFeatureType()
+					iPlotTerrain = loopPlot.getTerrainType()
+					iPlotImprovement = loopPlot.getImprovementType()
+
+					if iPlotFeature == iDarkIce:
+						continue
+
+					if CvUtil.myRandom(2, "Global disaster destroy improvement") > 0:
+						continue
+
+					if iPlotImprovement in LFarms:
+						loopPlot.setImprovementType(-1)
+						if iPlotTerrain == iTerrainPlains:
+							loopPlot.setFeatureType(iFeatureSavanna,0)
+						if iPlotTerrain == iTerrainGrass:
+							loopPlot.setFeatureType(iFeatureForest,0)
+

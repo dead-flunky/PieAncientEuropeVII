@@ -6215,6 +6215,14 @@ Ver concepto [LINK=CONCEPT_SLAVES]esclavos y esclavos liberados[\LINK].
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_GREAT_GENERAL_ACTIONS_PEDIA</Tag>
+		<English>[H1]General Actions[\H1][NEWLINE][NEWLINE]Standing or fallen generals can pose a threat to your own realm (civil war, usurpers, see LINK=CONCEPT_GENERALDEATH]General Death[\LINK]), but in times of war, they can perform tasks that no other unit is capable of:[NEWLINE][NEWLINE][H2]Create Siege Rams[\H2][NEWLINE][NEWLINE][ICON_BULLET] If a general is on a forest tile, they can have one ram constructed per turn. This is very helpful if you don't have to lug around slow siege engines during long campaigns.[NEWLINE][NEWLINE][H2]Scorched Earth[\H2][NEWLINE][NEWLINE][ICON_BULLET] Generals can order "scorched earth" to be left behind. If you are facing an invincible army, it can be helpful to leave chokepoints or the area surrounding a city scorched and retreat. If the opponent enters such a field, he suffers damage and has a defense penalty.</English>
+		<French>[H1]Actions g&#233;n&#233;rales[\H1][NEWLINE][NEWLINE]Les g&#233;n&#233;raux, qu'ils soient en fonction ou tomb&#233;s au combat, peuvent repr&#233;senter une menace pour votre royaume (guerre civile, usurpateurs, voir LINK=CONCEPT_GENERALDEATH]Mort d'un g&#233;n&#233;ral[\LINK]), mais en temps de guerre, ils peuvent accomplir des t&#226;ches qu'aucune autre unit&#233; ne peut r&#233;aliser :[NEWLINE][NEWLINE][H2]Cr&#233;er des b&#233;liers de si&#232;ge[\H2][NEWLINE][NEWLINE][ICON_BULLET] Si un g&#233;n&#233;ral se trouve sur une case For&#234;t, il peut faire construire un b&#233;lier par tour. C'est tr&#232;s utile pour &#233;viter de transporter de lourds engins de si&#232;ge lors de longues campagnes.[NEWLINE][NEWLINE][H2]Terre br&#251;l&#233;e[\H2][NEWLINE][NEWLINE][ICON_BULLET] Les g&#233;n&#233;raux peuvent ordonner la mise en place d'une strat&#233;gie de &#171; terre br&#251;l&#233;e &#187;. Face &#224; une arm&#233;e invincible, il peut &#234;tre judicieux de laisser des points de passage strat&#233;giques ou la zone autour d'une ville en ruines et de battre en retraite. Si l'adversaire p&#233;n&#232;tre dans une telle zone, il subit des d&#233;g&#226;ts et un malus de d&#233;fense.</French>
+		<German>[H1]Generalsaktionen[\H1][NEWLINE][NEWLINE]Stehende Gener&#228;le oder gefallene Gener&#228;le k&#246;nnen eine Gefahr f&#252;r das eigene Reich sein (B&#252;rgerkrieg, Usurbatoren, siehe LINK=CONCEPT_GENERALDEATH]Generalstod[\LINK]), aber in Kriegszeiten kann er Aufgaben erledigen, wof&#252;r sonst keine andere Einheit f&#228;hig ist:[NEWLINE][NEWLINE][H2]Belagerungsrammen erstellen[\H2][NEWLINE][NEWLINE][ICON_BULLET] Steht ein General auf einem Waldfeld, kann er pro Runde eine Ramme erstellen lassen. Das ist sehr hilfreich falls man bei weiten Feldz&#252;gen die langsamen Belagerungsger&#228;te nicht mitschleppen muss.[NEWLINE][NEWLINE][H2]Verbrannte Erde[\H2][NEWLINE][NEWLINE][ICON_BULLET] Gener&#228;le k&#246;nnen veranlassen "Verbrannte Erde" zur&#252;ckzulassen. Falls man einem unbezwingbaren Heer gegen&#252;bersteht, k&#246;nnte es hilfreich sein, Engstellen oder das Umland einer Stadt mit verbrannter Erde zur&#252;ckzulassen und einen R&#252;ckzug macht. Falls der Gegner ein solches Feld betritt, erleidet er Schaden und hat einen Verteidigungsmalus.</German>
+		<Italian>[H1]Azioni Generali[\H1][NEWLINE][NEWLINE]I generali, in piedi o caduti, possono rappresentare una minaccia per il tuo regno (guerra civile, usurpatori, vedi LINK=CONCEPT_GENERALDEATH]Morte Generale[\LINK]), ma in tempo di guerra possono svolgere compiti che nessun'altra unit&#224; &#232; in grado di svolgere:[NEWLINE][NEWLINE][H2]Creare Arieti d'Assedio[\H2][NEWLINE][NEWLINE][ICON_BULLET] Se un generale si trova in una casella foresta, pu&#242; costruire un ariete per turno. Questo &#232; molto utile se non devi trascinarti dietro lente macchine d'assedio durante lunghe campagne.[NEWLINE][NEWLINE][H2]Terra Bruciata[\H2][NEWLINE][NEWLINE][ICON_BULLET] I generali possono ordinare di lasciare la "terra bruciata". Se stai affrontando un esercito invincibile, pu&#242; essere utile lasciare bruciati i punti critici o l'area circostante una citt&#224; e ritirarsi. Se l'avversario entra in uno di questi campi, subisce danni e una penalit&#224; alla difesa.</Italian>
+		<Spanish>[H1]Acciones Generales[\H1][NEWLINE][NEWLINE]Los generales, tanto en pie como ca&#237;dos, pueden representar una amenaza para tu propio reino (guerra civil, usurpadores, v&#233;ase LINK=CONCEPT_GENERALDEATH]Muerte General[\LINK]), pero en tiempos de guerra, pueden realizar tareas que ninguna otra unidad es capaz de realizar:[NEWLINE][NEWLINE][H2]Crear Arietes de Asedio[\H2][NEWLINE][NEWLINE][ICON_BULLET] Si un general est&#225; en una casilla de bosque, puede construir un ariete por turno. Esto es muy &#250;til si no tienes que cargar con lentas m&#225;quinas de asedio durante campa&#241;as largas.[NEWLINE][NEWLINE][H2]Tierra Quemada[\H2][NEWLINE][NEWLINE][ICON_BULLET] Los generales pueden ordenar que se abandone la "tierra quemada". Si te enfrentas a un ej&#233;rcito invencible, puede ser &#250;til dejar los cuellos de botella o el &#225;rea que rodea una ciudad quemada y retirarse. Si el oponente entra en dicho campo, sufre da&#241;o y tiene una penalizaci&#243;n de defensa.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_IMPORTANT_FACTS_PEDIA</Tag>
 		<English>[ICON_BULLET] Early exploration almost impossible due to lots of wild animals
 [ICON_BULLET] Fishing boats (Workboats) can sink in foreign waters
@@ -8673,7 +8681,7 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET]can cause a tsunami if it strikes water
 
 
-[H1]Global Natural Disasters Caused by Climate Fluctuations (1:1000)[\H1]
+[H1]Global Natural Disasters Caused by Climate Fluctuations (1:2000)[\H1]
 
 In extremely rare cases, global natural disasters can occur that severely disrupt the balance of the game world. These include worldwide pandemics, often associated with famines-triggered by climatic anomalies, which in turn are caused by devastating volcanic eruptions in distant regions such as Alaska, Iceland, or Central America.
 
@@ -8685,6 +8693,7 @@ One of these variants occur:
 
 [ICON_BULLET] Pandemic: Plague in every city with a population of 4 or more
 
+In both cases, farms, plantations, large estates, vineyards, olive presses, and (mountain) huts are also destroyed. Forests grow on the empty fields. (Chance 1:2)
 
 [H2]Historical examples:[\H2]
 [ICON_BULLET] 3500 BC: Plague in Europe and Asia
@@ -8825,7 +8834,7 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET] Peut provoquer un tsunami si elle s'ab&#238;me en mer
 
 
-[H1]Catastrophes naturelles mondiales caus&#233;es par les fluctuations climatiques (1:1000)[\H1]
+[H1]Catastrophes naturelles mondiales caus&#233;es par les fluctuations climatiques (1:2000)[\H1]
 
 Dans des cas extr&#234;mement rares, des catastrophes naturelles mondiales peuvent survenir et perturber gravement l'&#233;quilibre du monde du jeu. Il s'agit notamment de pand&#233;mies mondiales, souvent associ&#233;es &#224; des famines, d&#233;clench&#233;es par des anomalies climatiques, elles-m&#234;mes caus&#233;es par des &#233;ruptions volcaniques d&#233;vastatrices dans des r&#233;gions lointaines comme l'Alaska, l'Islande ou l'Am&#233;rique centrale.
 
@@ -8837,6 +8846,7 @@ L'un de ces variantes ne se produit :
 
 [ICON_BULLET] Pand&#233;mie : peste dans chaque ville de 4 habitants ou plus
 
+Dans les deux cas, les fermes, les plantations, les grands domaines, les vignobles, les pressoirs &#224; olives et les cabanes (de montagne) sont &#233;galement d&#233;truits. La for&#234;t pousse sur les champs d&#233;vast&#233;s. (Chance 1:2)
 
 [H2]Exemples historiques :[\H2]
 [ICON_BULLET] 3 500 av. J.-C. : peste en Europe et en Asie
@@ -8978,7 +8988,7 @@ In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hl
 [ICON_BULLET]kann, wenn er im Wasser einschl&#228;gt, einen Tsunami ausl&#246;sen
 
 
-[H1]Globale Naturkatastrophen durch Klimaschwankungen (1:1000)[\H1]
+[H1]Globale Naturkatastrophen durch Klimaschwankungen (1:2000)[\H1]
 
 In &#228;u&#223;erst seltenen F&#228;llen k&#246;nnen globale Naturkatastrophen auftreten, die das Gleichgewicht der Spielwelt empfindlich st&#246;ren. Dazu z&#228;hlen weltweite Pandemien, die oft im Zusammenhang mit Hungersn&#246;ten stehen - ausgel&#246;st durch klimatische Anomalien, die wiederum auf verheerende Vulkanausbr&#252;che in weit entfernten Regionen wie Alaska, Island oder Mittelamerika zur&#252;ckgehen.
 
@@ -8990,6 +9000,7 @@ Eine dieser Varianten wird auftreten:
 
 [ICON_BULLET] Pandemie: Pest in jeder Stadt ab einer Population von 4
 
+In beiden F&#228;llen werden Bauernh&#246;fe, Plantagen, Latifundien, Weing&#228;rten, Olivenpressen, und (Berg-)H&#252;tten ebenfalls zerst&#246;rt. Auf den leeren Feldern entstehen W&#228;lder. (Chance 1:2)
 
 [H2]Historische Beispiele:[\H2]
 [ICON_BULLET] 3500 v.Chr.: Pest in Europa und Asien
@@ -9131,7 +9142,7 @@ In questo intervallo , uno di questi disastri naturali saranno selezionati a cas
 [ICON_BULLET] pu&#242; , se colpisce l'acqua , provocare uno tsunami
 
 
-[H1]Disastri naturali globali causati da fluttuazioni climatiche (1:1000)[\H1]
+[H1]Disastri naturali globali causati da fluttuazioni climatiche (1:2000)[\H1]
 
 In casi estremamente rari, possono verificarsi disastri naturali globali che compromettono gravemente l'equilibrio del mondo di gioco. Tra questi, pandemie mondiali, spesso associate a carestie, innescate da anomalie climatiche, a loro volta causate da devastanti eruzioni vulcaniche in regioni remote come l'Alaska, l'Islanda o l'America Centrale.
 
@@ -9143,6 +9154,7 @@ Pu&#242; verificarsi una di queste varianti:
 
 [ICON_BULLET] Pandemia: peste in ogni citt&#224; con una popolazione di 4 o pi&#249; abitanti
 
+In entrambi i casi, vengono distrutti anche fattorie, piantagioni, grandi tenute, vigneti, frantoi e rifugi (di montagna). Le foreste crescono sui campi deserti. (Probabilit&#224; 1:2)
 
 [H2]Esempi storici:[\H2]
 [ICON_BULLET] 3500 a.C.: peste in Europa e Asia
@@ -9283,7 +9295,7 @@ En este intervalo, uno de las cuatro cat&#225;strofes ser&#225; elegida aleatori
 [ICON_BULLET]puede causar un tsunami si golpea el agua
 
 
-[H1] Desastres naturales globales causados por fluctuaciones clim&#225;ticas (1:1000)[\H1]
+[H1] Desastres naturales globales causados por fluctuaciones clim&#225;ticas (1:2000)[\H1]
 
 En casos extremadamente raros, pueden ocurrir desastres naturales globales que alteren gravemente el equilibrio del mundo del juego. Estos incluyen pandemias mundiales, a menudo asociadas con hambrunas, desencadenadas por anomal&#237;as clim&#225;ticas, que a su vez son causadas por devastadoras erupciones volc&#225;nicas en regiones distantes como Alaska, Islandia o Centroam&#233;rica.
 
@@ -9295,6 +9307,7 @@ Puede ocurrir una de estas variantes:
 
 [ICON_BULLET] Pandemia: Peste en todas las ciudades con una poblaci&#243;n de 4 o m&#225;s habitantes
 
+En ambos casos, se destruyen granjas, plantaciones, latifundios, vi&#241;edos, almazaras y caba&#241;as de monta&#241;a. Los bosques crecen en los campos vac&#237;os. (Oportunidad 1:2)
 
 [H2]Ejemplos hist&#243;ricos:[\H2]
 [ICON_BULLET] 3500 a. C.: Peste en Europa y Asia
