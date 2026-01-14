@@ -550,39 +550,40 @@ def doOnUnitMove(pUnit, pPlot, pOldPlot):
 
 		# Elephants can spread the bonus resource
 		if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_ELEFANT"):
-			if CvUtil.myRandom(10, "ElephantSpreadsBonus") == 1:
+			if CvUtil.myRandom(75, "ElephantSpreadsBonus") == 1:
 				iJungle = gc.getInfoTypeForString("FEATURE_JUNGLE")
 				iBonus = gc.getInfoTypeForString("BONUS_IVORY")
 				if pPlot.getFeatureType() == iJungle:
-					iX = pPlot.getX()
-					iY = pPlot.getY()
-					iRange = 2
-					iAnzJungle = 0
-					iAnzWhatever = 0
-					lPlayers = []
-					for x in range(-iRange, iRange):
-							for y in range(-iRange, iRange):
-									loopPlot = plotXY(iX, iY, x, y)
-									if not loopPlot.isNone() and not loopPlot.isWater() and not loopPlot.isPeak():
+					if pPlot.getBonusType(-1) == -1:
+						iX = pPlot.getX()
+						iY = pPlot.getY()
+						iRange = 3
+						iAnzJungle = 0
+						iAnzWhatever = 0
+						lPlayers = []
+						for x in range(-iRange, iRange):
+								for y in range(-iRange, iRange):
+										loopPlot = plotXY(iX, iY, x, y)
+										if not loopPlot.isNone() and not loopPlot.isWater() and not loopPlot.isPeak():
 
-										if loopPlot.getBonusType(-1) == iBonus or loopPlot.getBonusType(loopPlot.getOwner()) == iBonus:
-											return False
+											if loopPlot.getBonusType(-1) == iBonus or loopPlot.getBonusType(loopPlot.getOwner()) == iBonus:
+												return False
 
-										if loopPlot.getFeatureType() == iJungle: iAnzJungle += 1
-										else: iAnzWhatever += 1
-										
-										if loopPlot.getOwner() != -1:
-											if loopPlot.getOwner() not in lPlayers:
-												lPlayers.append(loopPlot.getOwner())
+											if loopPlot.getFeatureType() == iJungle: iAnzJungle += 1
+											else: iAnzWhatever += 1
+											
+											if loopPlot.getOwner() != -1:
+												if loopPlot.getOwner() not in lPlayers:
+													lPlayers.append(loopPlot.getOwner())
 
-					if iAnzJungle >= iAnzWhatever / 2:
-						pPlot.setBonusType(iBonus)
-						if len(lPlayers):
-							for iPlayer in lPlayers:
-								CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_POPUP_ELEPHANT_SPREADS_BONUS", (gc.getBonusInfo(iBonus).getDescription(),)),
-												None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(8), pPlot.getX(), pPlot.getY(), True, True)
-						pUnit.kill(True, -1)
-						return True
+						if iAnzJungle > iAnzWhatever / 2:
+							pPlot.setBonusType(iBonus)
+							if len(lPlayers):
+								for iPlayer in lPlayers:
+									CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_POPUP_ELEPHANT_SPREADS_BONUS", (gc.getBonusInfo(iBonus).getDescription(),)),
+													None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(8), pPlot.getX(), pPlot.getY(), True, True)
+							pUnit.kill(True, -1)
+							return True
 
 		return False
 

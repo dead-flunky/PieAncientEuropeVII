@@ -1578,6 +1578,26 @@ def doUnitGetsPromo(pUnitTarget, pUnitSource, pPlot, bMadeAttack, bOpponentAnima
 									CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_GETS_PROMOTION", (pUnitTarget.getName(), gc.getPromotionInfo(iNewPromo).getDescription())),
 									"AS2D_IF_LEVELUP", 2, gc.getPromotionInfo(iNewPromo).getButton(), ColorTypes(13), pUnitTarget.getX(), pUnitTarget.getY(), True, True)
 
+
+		# PAE 7.14: special promotions for Siege Units (barrage and accuracy)
+		if pUnitTarget.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_SIEGE"):
+			if iNewPromo != -1:
+				return True
+			if iChanceCityDefense > CvUtil.myRandom(100, "SiegePromo"):
+				lPromos = L.LSiegePromos
+				for iPromo in lPromos:
+					if not pUnitTarget.isHasPromotion(iPromo):
+						iNewPromo = iPromo
+						pUnitTarget.setHasPromotion(iNewPromo, True)
+						if gc.getPlayer(pUnitTarget.getOwner()).isHuman():
+								CyInterface().addMessage(pUnitTarget.getOwner(), True, 10,
+									CyTranslator().getText("TXT_KEY_MESSAGE_UNIT_GETS_PROMOTION", (pUnitTarget.getName(), gc.getPromotionInfo(iNewPromo).getDescription())),
+									"AS2D_IF_LEVELUP", 2, gc.getPromotionInfo(iNewPromo).getButton(), ColorTypes(13), pUnitTarget.getX(), pUnitTarget.getY(), True, True)
+						return True
+			# PAE 7.14: no unit combat promotions for Siege Units: so go out of this function
+			return False
+
+
 		# 2. chance: enemy combat type
 		iNewPromo = -1
 		iRand = CvUtil.myRandom(100, "combatTypePromo")

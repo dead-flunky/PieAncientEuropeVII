@@ -5002,7 +5002,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_FORM_TREFFEN</Tag>
-		<English>Encounting-Tactics</English>
+		<English>Encounting Tactics</English>
 		<French>Piquier</French>
 		<German>Treffen-Taktik</German>
 		<Italian>Tattiche di combattimento</Italian>
@@ -5586,11 +5586,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BEWAFFNUNG5</Tag>
-		<English>La T&#232;ne Swords</English>
-		<French>Les &#233;p&#233;es de La T&#232;ne</French>
+		<English>La-T&#232;ne Swords</English>
+		<French>Les &#233;p&#233;es de La-T&#232;ne</French>
 		<German>La-T&#232;ne-Schwerter</German>
-		<Italian>Spade di La T&#232;ne</Italian>
-		<Spanish>Espadas de La T&#232;ne</Spanish>
+		<Italian>Spade di La-T&#232;ne</Italian>
+		<Spanish>Espadas de La-T&#232;ne</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BEWEIS</Tag>
@@ -5946,7 +5946,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HERESY</Tag>
-		<English>Prohibition &#38; persecution</English>
+		<English>Prohibition &#38; Persecution</English>
 		<French>Interdiction &#38; pers&#233;cution</French>
 		<German>Verbot &#38; Verfolgung</German>
 		<Italian>Proibizione e persecuzione</Italian>
@@ -6002,7 +6002,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_HUFEISEN</Tag>
-		<English>Hoof boots</English>
+		<English>Hoof Boots</English>
 		<French>Bottes &#224; sabots</French>
 		<German>Hufschuhe</German>
 		<Italian>Stivali da zoccolo</Italian>
@@ -6474,11 +6474,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_REPUBLIC</Tag>
-		<English>Res publica</English>
-		<French>Res publica</French>
-		<German>Res publica</German>
-		<Italian>Res publica</Italian>
-		<Spanish>Res publica</Spanish>
+		<English>Res Publica</English>
+		<French>Res Publica</French>
+		<German>Res Publica</German>
+		<Italian>Res Publica</Italian>
+		<Spanish>Res Publica</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ROMAN</Tag>

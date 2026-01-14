@@ -9,6 +9,7 @@ from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap, CyGame,
 								ColorTypes, CyPopupInfo, isWorldWonderClass,
 								ButtonPopupTypes, plotXY, plotDirection)
 import CvUtil
+import PyHelpers
 
 import PAE_City
 import PAE_Unit
@@ -16,6 +17,7 @@ import PAE_Popup
 
 # Defines
 gc = CyGlobalContext()
+PyPlayer = PyHelpers.PyPlayer
 
 # ---- MAP SIZE ------------
 # gc.getMap().getWorldSize()
@@ -1984,11 +1986,9 @@ def doOracleShowsDisaster(iX, iY):
 								return
 
 # Globale Naturkastastrophe / Klima / Pandemie
-# 2 Varianten:
-# A: Hungersnot: -25% Weltbevölkerung
-# B: Pest: Cities Pop > 3
+# Hungersnot: -50% Weltbevölkerung
+# Pest: Cities Pop > 5 (if such cities exist after 50% pop loss)
 def doGlobalDisaster():
-		iVariant = CvUtil.myRandom(2, "doGlobalDisasterVariant")
 		iRange = gc.getMAX_PLAYERS()
 		for iPlayer in range(iRange):
 			pPlayer = gc.getPlayer(iPlayer)
@@ -2000,16 +2000,18 @@ def doGlobalDisaster():
 						iPop = loopCity.getPopulation()
 						loopCity.setFood(0)
 
-						# Hungersnot
-						if iVariant == 1:
-							iPop = iPop // 4
-							loopCity.changePopulation(-iPop)
-							if pPlayer.isHuman():
-								CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_HUNGERSNOT", (loopCity.getName(),)),
-								"AS2D_PLAGUE", 2, "Art/Interface/Buttons/Actions/button_skull.dds", ColorTypes(13), loopCity.getX(),  loopCity.getY(), True, True)
+						# Hungertod
+						iPop = iPop // 2
+						loopCity.changePopulation(-iPop)
+						if pPlayer.isHuman():
+							CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_HUNGERSNOT", (loopCity.getName(),)),
+							"AS2D_PLAGUE", 2, "Art/Interface/Buttons/Actions/button_skull.dds", ColorTypes(13), loopCity.getX(),  loopCity.getY(), True, True)
 
 						# Pest
-						elif iPop > 3:
+						if iPop > 5:
+							# 18, 28, 40, 54, 70, etc
+							iChance = iPop * (iPop - 3)
+							if iChance > CvUtil.myRandom(100, "Global disaster city"):
 								PAE_City.doSpawnPestToCity(loopCity)
 
 					(loopCity, pIter) = pPlayer.nextCity(pIter, False)
@@ -2031,14 +2033,25 @@ def doGlobalDisaster():
 			gc.getInfoTypeForString("IMPROVEMENT_OLIVE_PRESS"),
 			gc.getInfoTypeForString("IMPROVEMENT_WINERY"),
 			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE"),
-			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL"),
+			gc.getInfoTypeForString("IMPROVEMENT_VILLAGE_HILL"),
 			gc.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM1"),
 			gc.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM2")
 		]
+		LVillages = [
+			gc.getInfoTypeForString("IMPROVEMENT_HAMLET"),
+			gc.getInfoTypeForString("IMPROVEMENT_VILLAGE"),
+			gc.getInfoTypeForString("IMPROVEMENT_TOWN")
+		]
+		iCottage = gc.getInfoTypeForString("IMPROVEMENT_COTTAGE")
+
 		iTerrainPlains = gc.getInfoTypeForString("TERRAIN_PLAINS")
 		iTerrainGrass  = gc.getInfoTypeForString("TERRAIN_GRASS")
 		iFeatureForest  = gc.getInfoTypeForString("FEATURE_FOREST")
 		iFeatureSavanna = gc.getInfoTypeForString("FEATURE_SAVANNA")
+
+		iRouteType = gc.getInfoTypeForString("ROUTE_TRADE_ROAD")
+		iRouteType2 = gc.getInfoTypeForString("ROUTE_ROMAN_ROAD")
+
 		iMapW = gc.getMap().getGridWidth()
 		iMapH = gc.getMap().getGridHeight()
 		for x in range(iMapW):
@@ -2046,20 +2059,50 @@ def doGlobalDisaster():
 				loopPlot = gc.getMap().plot(x, y)
 				if loopPlot is not None and not loopPlot.isNone():
 
-					iPlotFeature = loopPlot.getFeatureType()
-					iPlotTerrain = loopPlot.getTerrainType()
-					iPlotImprovement = loopPlot.getImprovementType()
-
-					if iPlotFeature == iDarkIce:
+					if loopPlot.getFeatureType() == iDarkIce:
 						continue
 
-					if CvUtil.myRandom(2, "Global disaster destroy improvement") > 0:
-						continue
+					iRand = CvUtil.myRandom(2, "Global disaster improvement destroying")
+					iLoopImp = loopPlot.getImprovementType()
 
-					if iPlotImprovement in LFarms:
+					# Farms and plantations (50%)
+					if iRand > 0 and iLoopImp in LFarms:
 						loopPlot.setImprovementType(-1)
+						iPlotTerrain = loopPlot.getTerrainType()
 						if iPlotTerrain == iTerrainPlains:
 							loopPlot.setFeatureType(iFeatureSavanna,0)
 						if iPlotTerrain == iTerrainGrass:
 							loopPlot.setFeatureType(iFeatureForest,0)
+
+					# Villages (100%)
+					if iLoopImp in LVillages:
+						loopPlot.setImprovementType(iCottage)
+
+					# Roads (50%)
+					if iRand > 0:
+						iLoopRoute = loopPlot.getRouteType()
+						#if iLoopRoute != iRouteType and iLoopRoute != iRouteType2:
+						if iLoopRoute != iRouteType2:
+							loopPlot.setRouteType(-1)
+
+		# let's kill some units
+		lKillUnits = [
+			#gc.getInfoTypeForString("UNIT_TRADE_MERCHANT"),
+			#gc.getInfoTypeForString("UNIT_TRADE_MERCHANTMAN"),
+			gc.getInfoTypeForString("UNIT_EMIGRANT"),
+			gc.getInfoTypeForString("UNIT_HORSE"),
+			gc.getInfoTypeForString("UNIT_ESEL"),
+			gc.getInfoTypeForString("UNIT_SUPPLY_FOOD")
+		]
+		iRange = gc.getMAX_PLAYERS()
+		for iPlayer in range(iRange):
+			pPlayer = gc.getPlayer(iPlayer)
+			if pPlayer is not None and not pPlayer.isNone() and pPlayer.isAlive():
+				lUnits = PyPlayer(pPlayer.getID()).getUnitList()
+				for pUnit in lUnits:
+					if pUnit is not None and not pUnit.isNone():
+						if pUnit.getUnitType() in lKillUnits:
+							#pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
+							pUnit.kill(True, -1)
+
 

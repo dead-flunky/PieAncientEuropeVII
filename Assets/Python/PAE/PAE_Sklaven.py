@@ -749,12 +749,14 @@ def freeSlaves(pCity, pPlayer):
 						iRand = CvUtil.myRandom(iSumUnits * 3, "freedSlaveType")
 						# Beim letzten Umlauf einen befreiten Sklaven bekommen (damit nur max 1 pro Stadt erobert werden kann)
 						if i == iFreedSlaves-1 and bGetFreedSlave:
-								CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_FREED_SLAVE"), pCity.plot(), pPlayer)
+								NewUnit = CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_FREED_SLAVE"), pCity.plot(), pPlayer)
+								NewUnit.finishMoves()
 								text = CyTranslator().getText("TXT_KEY_MESSAGE_FREED_SLAVES_0", (0, 0))
 						elif iRand < iSumUnits:
 								NewUnit = pPlayer.initUnit(lUnits[iRand][0], iX, iY, lUnits[iRand][1], DirectionTypes.DIRECTION_SOUTH)
 								NewUnit.setHasPromotion(iPromoCombat1, True)  # Combat 1
 								NewUnit.setHasPromotion(iPromoCombat2, True)  # Combat 2
+								NewUnit.finishMoves()
 								text = CyTranslator().getText("TXT_KEY_MESSAGE_FREED_SLAVES_1", (gc.getUnitInfo(lUnits[iRand][0]).getText(), 0))
 						else:
 								bGetFreedSlave = True

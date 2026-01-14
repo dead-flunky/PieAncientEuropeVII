@@ -2824,6 +2824,13 @@ class CvEventManager:
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("MaxPlayers",gc.getMAX_PLAYERS())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pPlayer.getName(),pPlayer.getCurrentResearch())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
+				# Testsachen zu Testwecken:
+				#if iPlayer == gc.getGame().getActivePlayer():
+				#	# test events
+				#	iEvent = gc.getInfoTypeForString("EVENTTRIGGER_CITY_FIRE") #EVENTTRIGGER_NORDIC_MOOR
+				#	pPlayer.trigger(iEvent)
+
+
 				# PAE Debug Mark 2 begin
 				if not bPAEDebugMark2:
 
@@ -4141,16 +4148,23 @@ class CvEventManager:
 						if pPlayer.isHuman() and lUnits:
 								if pPlayer.getCivilizationType() not in L.LFernangriffNoCosts:
 										iGold = 0
+										DFern = L.DFernangriffCosts
+
+										# PAE 7.14: ab Bronzezeit
+										if pPlayer.getCurrentEra() > 0:
+											DFern[gc.getInfoTypeForString("UNITCLASS_HUNTER")] = 1
+											DFern[gc.getInfoTypeForString("UNITCLASS_LIGHT_ARCHER")] = 1
+
 										for unit in lUnits:
 												iUnitType = unit.getUnitType()
 												iUnitClass = unit.getUnitClassType()
 												iUnitCombat = unit.getUnitCombatType()
-												if iUnitClass in L.DFernangriffCosts:
-														iGold += L.DFernangriffCosts[iUnitClass]
-												elif iUnitType in L.DFernangriffCosts:
-														iGold += L.DFernangriffCosts[iUnitType]
-												elif iUnitCombat in L.DFernangriffCosts:
-														iGold += L.DFernangriffCosts[iUnitCombat]
+												if iUnitClass in DFern:
+														iGold += DFern[iUnitClass]
+												elif iUnitType in DFern:
+														iGold += DFern[iUnitType]
+												elif iUnitCombat in DFern:
+														iGold += DFern[iUnitCombat]
 												else:
 														iGold += 1
 
@@ -5368,7 +5382,18 @@ class CvEventManager:
 									if bConquest and (bAssimilation or pCity.getPopulation() > 2):
 											PAE_City.getTechOnConquer(pCity, iPreviousOwner, iNewOwner)
 
-									if not bAssimilation:
+									# Ab Tech Assimilation
+									if bAssimilation:
+											for _ in range(2):
+													pNewUnit = CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.plot(), pPlayer)
+													pNewUnit.finishMoves()
+
+											# Stadtpop soll min. 5 sein (PAE V Patch 4)
+											# TODO: was wenn die vorher schon kleiner war?
+											if pCity.getPopulation() < 5:
+													pCity.setPopulation(5)
+
+									else:
 											# --- Getting goldkarren / treasure / Beutegold ------
 											# --- Kein Goldkarren bei Assimilierung
 											if iNewOwner != gc.getBARBARIAN_PLAYER():
@@ -5380,10 +5405,6 @@ class CvEventManager:
 											if not bTrade:
 													PAE_Sklaven.doEnslaveCity(pCity)
 
-									# Ab Tech Assimilation soll die Stadtpop mind. 5 sein (PAE V Patch 4)
-									# TODO: was wenn die vorher schon kleiner war?
-									if bAssimilation and pCity.getPopulation() < 5:
-											pCity.setPopulation(5)
 
 									# --- Vasallen-Feature / Vassal feature
 									# iPreviousOwner,iNewOwner,pCity,bConquest,bTrade = argsList

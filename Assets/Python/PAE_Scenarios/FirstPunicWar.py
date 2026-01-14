@@ -22,6 +22,8 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 		iCivMessana = 4
 		iCivSyrakus = 12
 
+		iActivePlayer = gc.getGame().getActivePlayer()
+
 		# Runde 1: In der ersten Runde soll sich Messana an Rom als Vasall anbieten
 		if iGameTurn == 0:
 
@@ -69,9 +71,9 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 		# HI Syrakus
 		# Bedingung Syrakus mit Rom im Krieg
 		elif iGameTurn == 2:
-				pPlot = CyMap().plot(86, 36)
-				pSyrakus = gc.getPlayer(iCivSyrakus)
-				if iPlayer == iCivSyrakus and pSyrakus.isHuman() and gc.getTeam(iCivSyrakus).isAtWar(iCivRome):
+				if iPlayer == iCivSyrakus and gc.getTeam(iCivSyrakus).isAtWar(iCivRome):
+						pPlot = CyMap().plot(86, 36)
+						pSyrakus = gc.getPlayer(iCivSyrakus)
 						LNewUnits = [
 								gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"),
 								gc.getInfoTypeForString("UNIT_HOPLIT"),
@@ -90,17 +92,18 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN2", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN2", ("", )), None, 2,
+						popupInfo.addPopup(iActivePlayer)
+						CyInterface().addMessage(iActivePlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN2", ("", )), None, 2,
 																		 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
-						CyInterface().doPing(pPlot.getX(), pPlot.getY(), iPlayer)
-						CyCamera().JustLookAtPlot(pPlot)
+						CyInterface().doPing(pPlot.getX(), pPlot.getY(), iActivePlayer)
+						if gc.getPlayer(iPlayer).isHuman():
+								CyCamera().JustLookAtPlot(pPlot)
 
 		# Runde 3: Im Kampf gegen Rom sendet unser makedonischer Freund Alexander II Männer und Schiffe für den Freiheitskampf der Griechen auf Sizilien.
 		# HI Syrakus
 		elif iGameTurn == 3:
-				pSyrakus = gc.getPlayer(iCivSyrakus)
-				if iPlayer == iCivSyrakus and pSyrakus.isHuman():
+				if iPlayer == iCivSyrakus:
+						pSyrakus = gc.getPlayer(iCivSyrakus)
 						# Plot für die Landungseinheiten
 						lPlots = [
 								CyMap().plot(84, 37),
@@ -139,13 +142,15 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 								pUnit.finishMoves()
 
 						# Meldung
-						popupInfo = CyPopupInfo()
-						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN3", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN3", ("", )), None, 2,
-																		 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), Landungsplot.getX(), Landungsplot.getY(), True, True)
-						CyCamera().JustLookAtPlot(Landungsplot)
+						if pSyrakus.isHuman():
+								popupInfo = CyPopupInfo()
+								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+								popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN3", ("",)))
+								popupInfo.addPopup(iPlayer)
+								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN3", ("", )), None, 2,
+																				 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), Landungsplot.getX(), Landungsplot.getY(), True, True)
+								if gc.getPlayer(iPlayer).isHuman():
+										CyCamera().JustLookAtPlot(Landungsplot)
 
 		# Im Jahr 261 BC beschließt der Senat von Rom den Bau einer Kriegsflotte auf Basis eines gekenterten punischen Schiffes.
 		# Mit Hilfe von Enterbrücken und größeren Schiffsbesatzungen erringen die Römer einen spektakulären Seesieg am Kap Economus (256 BC)."
@@ -174,263 +179,269 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 						popupInfo.addPopup(iPlayer)
 						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN50", ("", )), None, 2,
 																		 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
-						CyCamera().JustLookAtPlot(pPlot)
+						if gc.getPlayer(iPlayer).isHuman():
+								CyCamera().JustLookAtPlot(pPlot)
 
 		# Konsul Lucius Cornelius Scipio landet 259 BC auf Korsika und Sardinien. Er kann die Inseln jedoch nicht dauerhaft besetzen.
 		elif iGameTurn == 65 and iPlayer == iCivCarthage:
-				if gc.getPlayer(iPlayer).isHuman():
-						pRome = gc.getPlayer(iCivRome)
 
-						# Landung der Römer auf Korsika
-						# Plot für die Landungseinheiten
-						lPlots = [
-								CyMap().plot(46, 49),
-								CyMap().plot(46, 48),
-								CyMap().plot(46, 47)
-						]
-						Landungsplot = getRandomPlot(lPlots)
+				pRome = gc.getPlayer(iCivRome)
 
-						# Plot für die Schiffe
-						lPlots = [
-								CyMap().plot(47, 49),
-								CyMap().plot(49, 47),
-								CyMap().plot(47, 47)
-						]
-						Schiffsplot = getRandomPlot(lPlots)
+				# Landung der Römer auf Korsika
+				# Plot für die Landungseinheiten
+				lPlots = [
+						CyMap().plot(46, 49),
+						CyMap().plot(46, 48),
+						CyMap().plot(46, 47)
+				]
+				Landungsplot = getRandomPlot(lPlots)
 
-						# Einheiten erstellen
-						LNewUnits = [
-								gc.getInfoTypeForString("UNIT_TRIARII"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME")
-						]
-						for i in LNewUnits:
-								pUnit = pRome.initUnit(i, Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-								pUnit.setExperience(2, -1)
+				# Plot für die Schiffe
+				lPlots = [
+						CyMap().plot(47, 49),
+						CyMap().plot(49, 47),
+						CyMap().plot(47, 47)
+				]
+				Schiffsplot = getRandomPlot(lPlots)
 
-						# Schiffe erstellen
-						for _ in range(2):
-								pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_QUADRIREME"), Schiffsplot.getX(), Schiffsplot.getY(), UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTHWEST)
-								pUnit.setExperience(2, -1)
-								pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
-								pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CORVUS1"), True)
+				# Einheiten erstellen
+				LNewUnits = [
+						gc.getInfoTypeForString("UNIT_TRIARII"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME")
+				]
+				for i in LNewUnits:
+						pUnit = pRome.initUnit(i, Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+						pUnit.setExperience(2, -1)
 
-						# Ping
-						CyInterface().doPing(Landungsplot.getX(), Landungsplot.getY(), iPlayer)
-
-						# Landung der Römer auf Sizilien
-						# Plot für die Landungseinheiten
-						lPlots = [
-								CyMap().plot(48, 44),
-								CyMap().plot(48, 45),
-								CyMap().plot(49, 44),
-								CyMap().plot(47, 45)
-						]
-						Landungsplot = getRandomPlot(lPlots)
-
-						# Plot für die Schiffe
-						lPlots = [
-								CyMap().plot(49, 45),
-								CyMap().plot(49, 46),
-								CyMap().plot(48, 46),
-								CyMap().plot(47, 46)
-						]
-						Schiffsplot = getRandomPlot(lPlots)
-
-						# Einheiten erstellen
-						LNewUnits = [
-								gc.getInfoTypeForString("UNIT_TRIARII"),
-								gc.getInfoTypeForString("UNIT_TRIARII"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_EQUITES"),
-								gc.getInfoTypeForString("UNIT_EQUITES"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM")
-						]
-						for i in LNewUnits:
-								pUnit = pRome.initUnit(i, Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-								pUnit.setExperience(2, -1)
-
-						pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-						PAE_Unit.initSupply(pUnit)
-
-						pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_LEGION_TRIBUN"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+				# Schiffe erstellen
+				for _ in range(2):
+						pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_QUADRIREME"), Schiffsplot.getX(), Schiffsplot.getY(), UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTHWEST)
 						pUnit.setExperience(2, -1)
 						pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
-						pUnit.setName("Lucius Cornelius Scipio")
+						pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CORVUS1"), True)
 
-						# Schiffe erstellen
-						for _ in range(5):
-								pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_QUADRIREME"), Schiffsplot.getX(), Schiffsplot.getY(), UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTHWEST)
-								pUnit.setExperience(2, -1)
-								pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
-								pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CORVUS1"), True)
+				# Ping
+				CyInterface().doPing(Landungsplot.getX(), Landungsplot.getY(), iPlayer)
 
-						# Ping
-						CyInterface().doPing(Landungsplot.getX(), Landungsplot.getY(), iPlayer)
+				# Landung der Römer auf Sizilien
+				# Plot für die Landungseinheiten
+				lPlots = [
+						CyMap().plot(48, 44),
+						CyMap().plot(48, 45),
+						CyMap().plot(49, 44),
+						CyMap().plot(47, 45)
+				]
+				Landungsplot = getRandomPlot(lPlots)
 
-						pPlot = Landungsplot
-						# Meldung
-						popupInfo = CyPopupInfo()
-						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN65", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN65", ("", )), None, 2,
-																		 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
+				# Plot für die Schiffe
+				lPlots = [
+						CyMap().plot(49, 45),
+						CyMap().plot(49, 46),
+						CyMap().plot(48, 46),
+						CyMap().plot(47, 46)
+				]
+				Schiffsplot = getRandomPlot(lPlots)
+
+				# Einheiten erstellen
+				LNewUnits = [
+						gc.getInfoTypeForString("UNIT_TRIARII"),
+						gc.getInfoTypeForString("UNIT_TRIARII"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_EQUITES"),
+						gc.getInfoTypeForString("UNIT_EQUITES"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM")
+				]
+				for i in LNewUnits:
+						pUnit = pRome.initUnit(i, Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+						pUnit.setExperience(2, -1)
+
+				pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+				PAE_Unit.initSupply(pUnit)
+
+				pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_LEGION_TRIBUN"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+				pUnit.setExperience(2, -1)
+				pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
+				pUnit.setName("Lucius Cornelius Scipio")
+
+				# Schiffe erstellen
+				for _ in range(5):
+						pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_QUADRIREME"), Schiffsplot.getX(), Schiffsplot.getY(), UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTHWEST)
+						pUnit.setExperience(2, -1)
+						pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
+						pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CORVUS1"), True)
+
+				# Ping
+				CyInterface().doPing(Landungsplot.getX(), Landungsplot.getY(), iPlayer)
+
+				pPlot = Landungsplot
+				# Meldung
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN65", ("",)))
+				popupInfo.addPopup(iActivePlayer)
+				CyInterface().addMessage(iActivePlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN65", ("", )), None, 2,
+																 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
+
+				if gc.getPlayer(iPlayer).isHuman():
 						CyCamera().JustLookAtPlot(pPlot)
 
 		# Numideraufstand
 		# Die Schwäche von Karthago ausnutzend, erheben sich die lokalen Numiderstämme zu einem Aufstand um die Vorherrschaft der Punier abzuschütteln.
 		elif iGameTurn == 75 and iPlayer == iCivCarthage:
-				if gc.getPlayer(iPlayer).isHuman():
-						pBarbs = gc.getPlayer(gc.getBARBARIAN_PLAYER())
-						# 4x Rebellen
-						for i in range(4):
-								if i == 0:
-										lPlots = [
-												CyMap().plot(71, 13),
-												CyMap().plot(71, 12),
-												CyMap().plot(70, 12),
-												CyMap().plot(70, 13)
-										]
-								elif i == 1:
-										lPlots = [
-												CyMap().plot(65, 15),
-												CyMap().plot(66, 15),
-												CyMap().plot(65, 14),
-												CyMap().plot(64, 13)
-										]
-								elif i == 2:
-										lPlots = [
-												CyMap().plot(54, 14),
-												CyMap().plot(54, 15),
-												CyMap().plot(53, 13)
-										]
-								elif i == 3:
-										lPlots = [
-												CyMap().plot(35, 4),
-												CyMap().plot(36, 4),
-												CyMap().plot(37, 4),
-												CyMap().plot(38, 4)
-										]
-								pPlot = getRandomPlot(lPlots)
-								# Einheiten erstellen
-								LNewUnits = [
-										gc.getInfoTypeForString("UNIT_HORSEMAN_NUMIDIA"),
-										gc.getInfoTypeForString("UNIT_KRUMMSAEBEL"),
-										gc.getInfoTypeForString("UNIT_SKIRMISHER"),
-										gc.getInfoTypeForString("UNIT_REBELL")
-								]
-								for i in LNewUnits:
-										pUnit = pBarbs.initUnit(i, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-										pUnit.setExperience(2, -1)
 
-						# Meldung
-						popupInfo = CyPopupInfo()
-						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN75", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN75", ("", )), None, 2,
-																		 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
+				pBarbs = gc.getPlayer(gc.getBARBARIAN_PLAYER())
+				# 4x Rebellen
+				for i in range(4):
+						if i == 0:
+								lPlots = [
+										CyMap().plot(71, 13),
+										CyMap().plot(71, 12),
+										CyMap().plot(70, 12),
+										CyMap().plot(70, 13)
+								]
+						elif i == 1:
+								lPlots = [
+										CyMap().plot(65, 15),
+										CyMap().plot(66, 15),
+										CyMap().plot(65, 14),
+										CyMap().plot(64, 13)
+								]
+						elif i == 2:
+								lPlots = [
+										CyMap().plot(54, 14),
+										CyMap().plot(54, 15),
+										CyMap().plot(53, 13)
+								]
+						elif i == 3:
+								lPlots = [
+										CyMap().plot(35, 4),
+										CyMap().plot(36, 4),
+										CyMap().plot(37, 4),
+										CyMap().plot(38, 4)
+								]
+						pPlot = getRandomPlot(lPlots)
+						# Einheiten erstellen
+						LNewUnits = [
+								gc.getInfoTypeForString("UNIT_HORSEMAN_NUMIDIA"),
+								gc.getInfoTypeForString("UNIT_KRUMMSAEBEL"),
+								gc.getInfoTypeForString("UNIT_SKIRMISHER"),
+								gc.getInfoTypeForString("UNIT_REBELL")
+						]
+						for i in LNewUnits:
+								pUnit = pBarbs.initUnit(i, pPlot.getX(), pPlot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+								pUnit.setExperience(2, -1)
+
+				# Meldung
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN75", ("",)))
+				popupInfo.addPopup(iActivePlayer)
+				CyInterface().addMessage(iActivePlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN75", ("", )), None, 2,
+																 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
+				if gc.getPlayer(iPlayer).isHuman():
 						CyCamera().JustLookAtPlot(pPlot)
 
 		# Landung von Regulus in Nordafrika  (2 Legionen)
 		# Im Jahr 256 BC landet der Konsul Marcus Atilius Regulus bei Aspis in Nordafrika und bedroht Karthago direkt.
 		# Mit Hilfe des Söldnerführers Xanthippos gelingt es den Puniern die römische Invasion zurück zu schlagen (Schlacht von Tunis 255 BC).
 		elif iGameTurn == 110 and iPlayer == iCivCarthage:
-				if gc.getPlayer(iPlayer).isHuman():
-						pRome = gc.getPlayer(iCivRome)
 
-						# Landung der Römer vor Karthago
-						# Plot für die Landungseinheiten
-						lPlots = [
-								CyMap().plot(72, 22),
-								CyMap().plot(73, 22),
-								CyMap().plot(72, 23)
-						]
-						Landungsplot = getRandomPlot(lPlots)
+				pRome = gc.getPlayer(iCivRome)
 
-						# Plot für die Schiffe
-						lPlots = [
-								CyMap().plot(73, 23),
-								CyMap().plot(72, 24),
-								CyMap().plot(71, 24)
-						]
-						Schiffsplot = getRandomPlot(lPlots)
+				# Landung der Römer vor Karthago
+				# Plot für die Landungseinheiten
+				lPlots = [
+						CyMap().plot(72, 22),
+						CyMap().plot(73, 22),
+						CyMap().plot(72, 23)
+				]
+				Landungsplot = getRandomPlot(lPlots)
 
-						# Einheiten erstellen
-						LNewUnits = [
-								gc.getInfoTypeForString("UNIT_TRIARII"),
-								gc.getInfoTypeForString("UNIT_TRIARII"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_PRINCIPES"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_HASTATI"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
-								gc.getInfoTypeForString("UNIT_EQUITES"),
-								gc.getInfoTypeForString("UNIT_EQUITES"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
-								gc.getInfoTypeForString("UNIT_BATTERING_RAM")
-						]
-						for i in LNewUnits:
-								pUnit = pRome.initUnit(i, Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-								pUnit.setExperience(2, -1)
+				# Plot für die Schiffe
+				lPlots = [
+						CyMap().plot(73, 23),
+						CyMap().plot(72, 24),
+						CyMap().plot(71, 24)
+				]
+				Schiffsplot = getRandomPlot(lPlots)
 
-						pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-						PAE_Unit.initSupply(pUnit)
-
-						pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_LEGION_TRIBUN"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+				# Einheiten erstellen
+				LNewUnits = [
+						gc.getInfoTypeForString("UNIT_TRIARII"),
+						gc.getInfoTypeForString("UNIT_TRIARII"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_PRINCIPES"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_HASTATI"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_SKIRMISHER_ROME"),
+						gc.getInfoTypeForString("UNIT_EQUITES"),
+						gc.getInfoTypeForString("UNIT_EQUITES"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM"),
+						gc.getInfoTypeForString("UNIT_BATTERING_RAM")
+				]
+				for i in LNewUnits:
+						pUnit = pRome.initUnit(i, Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 						pUnit.setExperience(2, -1)
-						pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
-						pUnit.setName("Marcus Atilius Regulus")
 
-						# Schiffe erstellen
-						LNewUnits = [
-								gc.getInfoTypeForString("UNIT_TRIREME"),
-								gc.getInfoTypeForString("UNIT_BIREME"),
-								gc.getInfoTypeForString("UNIT_QUINQUEREME")
-						]
-						for i in LNewUnits:
-								for _ in range(2):
-										pUnit = pRome.initUnit(i, Schiffsplot.getX(), Schiffsplot.getY(), UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
-										pUnit.setExperience(2, -1)
-										pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
-										pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CORVUS1"), True)
+				pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+				PAE_Unit.initSupply(pUnit)
 
-						pPlot = Landungsplot
-						# Meldung
-						popupInfo = CyPopupInfo()
-						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN110", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN110", ("", )), None,
-																		 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
+				pUnit = pRome.initUnit(gc.getInfoTypeForString("UNIT_LEGION_TRIBUN"), Landungsplot.getX(), Landungsplot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
+				pUnit.setExperience(2, -1)
+				pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
+				pUnit.setName("Marcus Atilius Regulus")
+
+				# Schiffe erstellen
+				LNewUnits = [
+						gc.getInfoTypeForString("UNIT_TRIREME"),
+						gc.getInfoTypeForString("UNIT_BIREME"),
+						gc.getInfoTypeForString("UNIT_QUINQUEREME")
+				]
+				for i in LNewUnits:
+						for _ in range(2):
+								pUnit = pRome.initUnit(i, Schiffsplot.getX(), Schiffsplot.getY(), UnitAITypes.UNITAI_ASSAULT_SEA, DirectionTypes.DIRECTION_SOUTH)
+								pUnit.setExperience(2, -1)
+								pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
+								pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_CORVUS1"), True)
+
+				pPlot = Landungsplot
+				# Meldung
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN110", ("",)))
+				popupInfo.addPopup(iActivePlayer)
+				CyInterface().addMessage(iActivePlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN110", ("", )), None,
+																 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
+
+				if gc.getPlayer(iPlayer).isHuman():
 						CyCamera().JustLookAtPlot(pPlot)
 
 		# Landung der Punier bei Agrigent
@@ -438,7 +449,7 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 		# Im Jahr 251 BC gelingt Karthago die Rückeroberung von Agrigent
 		elif iGameTurn == 160 and iPlayer == iCivRome:
 				pPlot = CyMap().plot(77, 36)  # City: Agrigentum
-				if pPlot.getOwner() == iCivRome and gc.getPlayer(iPlayer).isHuman():
+				if pPlot.getOwner() == iCivRome:
 						pCarthage = gc.getPlayer(iCivCarthage)
 
 						# Landung der Karthager vor Agrigentum
@@ -505,16 +516,17 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN160", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN160", ("", )), None,
+						popupInfo.addPopup(iActivePlayer)
+						CyInterface().addMessage(iActivePlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN160", ("", )), None,
 																		 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
-						CyCamera().JustLookAtPlot(pPlot)
+						if gc.getPlayer(iPlayer).isHuman():
+								CyCamera().JustLookAtPlot(pPlot)
 
 		# Privater Kaperkrieg vor den Küsten Karthagos
 		# Nach der verlorenen Seeschlacht von Drepana 249 v.Chr und schweren Verlusten in Stürmen (Kamarina, 255 v.Chr.) stellt Rom sein Flottenprogramm ein,
 		# ermuntert aber wohlhabende Römer zu privaten Kaperfahrten vor den Küsten der Punier.
 		elif iGameTurn == 185 and iPlayer == iCivCarthage:
-				if gc.getPlayer(iPlayer).isHuman():
+
 						pRome = gc.getPlayer(iCivRome)
 
 						# Fixe Plots für die Piraten
@@ -540,13 +552,13 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN185", ("",)))
-						popupInfo.addPopup(iPlayer)
+						popupInfo.addPopup(iActivePlayer)
 
 		# Plünderung der ital. Südküste
 		# Nachdem der Krieg zu Land und zur See stagniert, unternimmt die punische Flotte Plünderungszüge an der italienischen Südküste.
 		elif iGameTurn == 195 and iPlayer == iCivRome:
 				pPlot = CyMap().plot(77, 36)  # City: Agrigentum
-				if pPlot.getOwner() == iCivRome and gc.getPlayer(iPlayer).isHuman():
+				if pPlot.getOwner() == iCivRome:
 						pCarthage = gc.getPlayer(iCivCarthage)
 
 						# Fixe Plots für die Schiffe
@@ -578,7 +590,7 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN195", ("",)))
-						popupInfo.addPopup(iPlayer)
+						popupInfo.addPopup(iActivePlayer)
 
 		# Flottenbau, Bed. Antium = röm.
 		# In einem letzten Kraftakt baut Rom eine neue Kriegsflotte um den Konflikt nach 23 Jahren endlich zu beenden.
@@ -604,17 +616,18 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 						popupInfo = CyPopupInfo()
 						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN265", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN265", ("", )), None,
+						popupInfo.addPopup(iActivePlayer)
+						CyInterface().addMessage(iActivePlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN265", ("", )), None,
 																		 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
-						CyCamera().JustLookAtPlot(pPlot)
+						if gc.getPlayer(iPlayer).isHuman():
+								CyCamera().JustLookAtPlot(pPlot)
 
 		# Die Stadt Falerii rebelliert gegen Rom
 		# Bedingung: Falerii = Römisch
 		# Die Einwohner von der ehemals etruskischen Stadt Falerii erheben sich im Jahr 240 BC gegen die römische Vorherrschaft
 		elif iGameTurn == 280 and iPlayer == iCivRome:
 				pPlot = CyMap().plot(54, 61)  # City: Faleria
-				if pPlot.getOwner() == iCivRome and gc.getPlayer(iPlayer).isHuman():
+				if pPlot.getOwner() == iCivRome:
 						if pPlot.isCity():
 
 								# Stadt wird barbarisch + Einheiten (4-6)
@@ -644,10 +657,11 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 								popupInfo = CyPopupInfo()
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 								popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN280", ("",)))
-								popupInfo.addPopup(iPlayer)
-								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN280", ("", )), None,
+								popupInfo.addPopup(iActivePlayer)
+								CyInterface().addMessage(iActivePlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_1STPUNICWAR_TURN280", ("", )), None,
 																				 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(2), pPlot.getX(), pPlot.getY(), True, True)
-								CyCamera().JustLookAtPlot(pPlot)
+								if gc.getPlayer(iPlayer).isHuman():
+										CyCamera().JustLookAtPlot(pPlot)
 
 
 def onCombatResult(pWinner, pLoser):

@@ -2003,6 +2003,10 @@
 					<UnitType>UNIT_HORSEMAN_CELTIC</UnitType>
 				</Unit>
 				<Unit>
+					<UnitClassType>UNITCLASS_CATAPHRACT</UnitClassType>
+					<UnitType>UNIT_IBERIAN_CAVALRY</UnitType>
+				</Unit>
+				<Unit>
 					<UnitClassType>UNITCLASS_BIREME</UnitClassType>
 					<UnitType>UNIT_LANGBOOT</UnitType>
 				</Unit>
@@ -3206,6 +3210,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
 					<UnitType>UNIT_HORSEMAN_CELTIC</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_CATAPHRACT</UnitClassType>
+					<UnitType>UNIT_IBERIAN_CAVALRY</UnitType>
 				</Unit>
 				<Unit>
 					<UnitClassType>UNITCLASS_BIREME</UnitClassType>
@@ -4844,7 +4852,7 @@
 					<UnitType>UNIT_SCHILDTRAEGER_IBERIA</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_HORSEMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_CATAPHRACT</UnitClassType>
 					<UnitType>UNIT_IBERIAN_CAVALRY</UnitType>
 				</Unit>
 			</Units>

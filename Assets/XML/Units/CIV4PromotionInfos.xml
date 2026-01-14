@@ -1635,10 +1635,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -1746,10 +1742,6 @@
 				</UnitCombat>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
@@ -1861,10 +1853,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -1971,10 +1959,6 @@
 				</UnitCombat>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
@@ -2086,10 +2070,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -2199,10 +2179,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -2309,10 +2285,6 @@
 				</UnitCombat>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
@@ -2424,10 +2396,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -2537,10 +2505,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -2647,10 +2611,6 @@
 				</UnitCombat>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
@@ -2762,10 +2722,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -2875,10 +2831,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -2985,10 +2937,6 @@
 				</UnitCombat>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
@@ -3100,10 +3048,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -3211,10 +3155,6 @@
 				</UnitCombat>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
@@ -3674,10 +3614,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -3787,10 +3723,6 @@
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
 			</UnitCombats>
 			<HotKey/>
 			<bAltDown>0</bAltDown>
@@ -3898,10 +3830,6 @@
 				</UnitCombat>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<bUnitCombat>1</bUnitCombat>
-				</UnitCombat>
-				<UnitCombat>
-					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<bUnitCombat>1</bUnitCombat>
 				</UnitCombat>
 			</UnitCombats>
@@ -15158,11 +15086,11 @@
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
-					<iUnitCombatMod>-50</iUnitCombatMod>
+					<iUnitCombatMod>-35</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_ELEPHANT</UnitCombatType>
-					<iUnitCombatMod>-50</iUnitCombatMod>
+					<iUnitCombatMod>-35</iUnitCombatMod>
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
@@ -15302,7 +15230,7 @@
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<iUnitCombatMod>-25</iUnitCombatMod>
+					<iUnitCombatMod>-35</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<DomainMods/>
@@ -15430,7 +15358,7 @@
 				</UnitCombatMod>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
-					<iUnitCombatMod>-25</iUnitCombatMod>
+					<iUnitCombatMod>-35</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<DomainMods/>
@@ -15563,6 +15491,10 @@
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_CHARIOT</UnitCombatType>
 					<iUnitCombatMod>20</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
+					<iUnitCombatMod>-25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<DomainMods/>

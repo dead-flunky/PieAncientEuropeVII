@@ -200,7 +200,7 @@ def doPlotFeatures():
 																				# ***TEST***
 																				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "Barb. Atlasloewe erschaffen", None, 2, None, ColorTypes(10), 0, 0, False, False)
 																				continue
-														# Bear of Wolf
+														# Bear or Wolf
 														elif loopPlot.getBonusType(-1) == bonus_deer and iPlotImprovement == -1:
 																if loopPlot.getNumUnits() == 0:
 																		iRand = CvUtil.myRandom(25, "bear or wolf")
@@ -214,7 +214,7 @@ def doPlotFeatures():
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_horse:
 																if loopPlot.getNumUnits() == 0:
 																		if iPlotOwner != -1: iChance = 100
-																		else: iChance = 40
+																		else: iChance = 60
 																		if CvUtil.myRandom(iChance, "horse") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
@@ -230,7 +230,7 @@ def doPlotFeatures():
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_camel:
 																if loopPlot.getNumUnits() == 0:
 																		if iPlotOwner != -1: iChance = 100
-																		else: iChance = 40
+																		else: iChance = 50
 																		if CvUtil.myRandom(iChance, "camel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
@@ -246,7 +246,7 @@ def doPlotFeatures():
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_ivory and pBarbPlayer.getCurrentEra() >= 2:
 																if loopPlot.getNumUnits() == 0:
 																		if iPlotOwner != -1: iChance = 100
-																		else: iChance = 50
+																		else: iChance = 70
 																		if CvUtil.myRandom(iChance, "ele") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer
@@ -262,7 +262,7 @@ def doPlotFeatures():
 														elif loopPlot.getBonusType(iPlotOwner) == bonus_esel:
 																if loopPlot.getNumUnits() == 0:
 																		if iPlotOwner != -1: iChance = 100
-																		else: iChance = 45
+																		else: iChance = 55
 																		if CvUtil.myRandom(iChance, "esel") == 1:
 																				# Check Owner
 																				iNewUnitOwner = iBarbPlayer

@@ -141,8 +141,8 @@
 			<iFood>0</iFood>
 			<iFoodPercent>0</iFoodPercent>
 			<FreeSpecialistCounts/>
-			<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-			<iFeatureChange>1</iFeatureChange>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<iFeatureChange>-1</iFeatureChange>
 			<ImprovementType>NONE</ImprovementType>
 			<iImprovementChange>0</iImprovementChange>
 			<BonusType>NONE</BonusType>
@@ -162,7 +162,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyForest_Fire</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -222,8 +222,8 @@
 			<iFood>0</iFood>
 			<iFoodPercent>0</iFoodPercent>
 			<FreeSpecialistCounts/>
-			<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-			<iFeatureChange>1</iFeatureChange>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<iFeatureChange>-1</iFeatureChange>
 			<ImprovementType>NONE</ImprovementType>
 			<iImprovementChange>0</iImprovementChange>
 			<BonusType>NONE</BonusType>
@@ -243,7 +243,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyForest_Fire</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -5299,7 +5299,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>
@@ -5461,7 +5461,7 @@
 			<bQuest>0</bQuest>
 			<bGlobal>0</bGlobal>
 			<bTeam>0</bTeam>
-			<bPickCity>1</bPickCity>
+			<bPickCity>0</bPickCity>
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bDeclareWar>0</bDeclareWar>
 			<iGold>0</iGold>

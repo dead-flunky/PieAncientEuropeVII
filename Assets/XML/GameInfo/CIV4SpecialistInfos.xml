@@ -98,7 +98,7 @@
 			<GreatPeopleUnitClass>UNITCLASS_SCIENTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<Yields>
-				<iYield>0</iYield>
+				<iYield>-1</iYield>
 				<iYield>0</iYield>
 				<iYield>0</iYield>
 			</Yields>

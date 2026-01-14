@@ -130,6 +130,10 @@ def doBuyBonus(pUnit, eBonus, iCityOwner):
 				#if pUnit.isHuman():
 				#		PAE_Unit.doGoToNextUnit(pUnit)
 				#pUnit.changeMoves(-60)
+
+				# Dertuek : Refresh the unit info panel
+				CyInterface().setDirty(InterfaceDirtyBits.InfoPane_DIRTY_BIT, True)
+
 				return
 
 
@@ -902,7 +906,8 @@ def calculateBonusSellingPrice(pUnit, pCity, bCalcOnly, iBonus2=-1):
 				iY = CvUtil.getScriptData(pUnit, ["y"], -1)
 		if eBonus == -1:
 				return -1
-		iSeller = CvUtil.getScriptData(pUnit, ["originCiv"], pUnit.getOwner())
+		#iSeller = CvUtil.getScriptData(pUnit, ["originCiv"], pUnit.getOwner())
+		iSeller = pUnit.getOwner() # PAE 7.14
 		iBuyer = pCity.getOwner()
 		iBasis = getBonusValue(eBonus)  # Grundwert
 		iModifier = 100
@@ -921,17 +926,14 @@ def calculateBonusSellingPrice(pUnit, pCity, bCalcOnly, iBonus2=-1):
 		iPop = pCity.getPopulation()
 
 		# Stadt hat dieses Bonusgut nicht im Handelsnetz
-		if not pCity.hasBonus(eBonus):
-				iModifier += 50
+		if not pCity.hasBonus(eBonus): iModifier += 50
 		# PAE 7.11e
-		else:
-				iModifier -= 25
+		else: iModifier -= 25
 
 		# Wunderbonus
 		iModifier += pCity.getNumWorldWonders() * 10
 		# Furious = 0, Annoyed = 1, Cautious = 2, Pleased = 3, Friendly = 4
-		if iSeller != iBuyer:
-				iModifier += 5 * gc.getPlayer(iSeller).AI_getAttitude(iBuyer)
+		if iSeller != iBuyer: iModifier += 5 * gc.getPlayer(iSeller).AI_getAttitude(iBuyer)
 
 		# Zwischensumme
 		# Distanz: pro 5 Felder +1 Gold
@@ -961,9 +963,10 @@ def calcBonusProfit(pCityFrom, pCityTo, iBonus, pUnit):
 		iBuyValue = checkBonusImport(pCityFrom, iBonus, iBasis) # PAE 7.11e
 
 		iBuyer = pCityTo.getOwner()
-		iSeller = pCityFrom.getOwner()
+		iSeller = pCityFrom.getOwner() # not pUnit.getOwner
 		# Kauf und Verkauf in der gleichen Stadt
 		if iBuyer == iSeller and pCityTo.getID() == pCityFrom.getID(): return iBuyValue
+
 
 		iModifier = 100
 
@@ -976,7 +979,8 @@ def calcBonusProfit(pCityFrom, pCityTo, iBonus, pUnit):
 		# Wunderbonus
 		iModifier += pCityTo.getNumWorldWonders() * 10
 		# Furious = 0, Annoyed = 1, Cautious = 2, Pleased = 3, Friendly = 4
-		if iSeller != iBuyer: iModifier += 5 * gc.getPlayer(iSeller).AI_getAttitude(iBuyer)
+		iMerchant = pUnit.getOwner() # PAE 7.14 (instead iSeller)
+		if iMerchant != iBuyer: iModifier += 5 * gc.getPlayer(iMerchant).AI_getAttitude(iBuyer)
 
 		# Zwischensumme
 		# Distanz: pro 5 Felder +1 Gold
@@ -996,7 +1000,11 @@ def calcBonusProfit(pCityFrom, pCityTo, iBonus, pUnit):
 
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Karren/Caravan",iSellValue)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
+
 		iSellValue -= iBuyValue
+
+		# PAE 7.14 Korrektur bei auto routes
+		iSellValue -= 1
 
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Profit",iSellValue)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
@@ -1193,6 +1201,8 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 												iProfit1 = calcBonusProfit(pCityPlot1.getPlotCity(), pCity, iBonus, pUnit) # Bonus 1
 												iProfit2 = calcBonusProfit(pCity, pCityPlot1.getPlotCity(), eBonus, pUnit) # möglicher Bonus hier
 												iProfit = iProfit1 + iProfit2
+												# Test
+												#sText += u"%d %d %d " % (iProfit1, iProfit2, iProfit)
 
 												# Anzeige mit Profit des Handels (Bonus1<->Bonus2)
 												if iData1 != iUnitOwner:

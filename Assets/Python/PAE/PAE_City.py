@@ -3255,7 +3255,8 @@ def doCaptureSlaves(pCity, iNewOwner, iPreviousOwner):
 			iUnit = gc.getInfoTypeForString("UNIT_SLAVE")
 			pPlot = pCity.plot()
 			for _ in range(iSlaves):
-				CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+				pNewUnit = CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+				pNewUnit.finishMoves()
 
 			# PAE VII: Gebildete Sklaven
 			if pTeam.isHasTech(gc.getInfoTypeForString("TECH_MATHEMATICS")):
@@ -3265,16 +3266,14 @@ def doCaptureSlaves(pCity, iNewOwner, iPreviousOwner):
 						bReligion = True
 				if bReligion or gc.getPlayer(iPreviousOwner).getCivilizationType() in L.LCivsWithSchools:
 					iUnit = gc.getInfoTypeForString("UNIT_SLAVE_EDUCATED")
-					# Chance: 100% + 1:2 + 1:4
-					CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+					# Chance: 100% + 1:4
+					NewUnit = CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+					NewUnit.finishMoves()
 					iSlaves += 1
-					iRand = CvUtil.myRandom(10, "doCaptureEducatedSlaves1")
+					iRand = CvUtil.myRandom(20, "doCaptureMoreEducatedSlaves")
 					if iRand < 5:
-						CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
-						iSlaves += 1
-					iRand = CvUtil.myRandom(20, "doCaptureEducatedSlaves2")
-					if iRand < 5:
-						CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+						NewUnit = CvUtil.spawnUnit(iUnit, pPlot, pPlayer)
+						NewUnit.finishMoves()
 						iSlaves += 1
 
 			if pPlayer.isHuman():
@@ -3307,11 +3306,13 @@ def doDeportation(pCity, iNewOwner, iPreviousOwner):
 
 		# Einheit eine Religion geben
 		PAE_Unit.setUnitReligion(NewUnit)
+		NewUnit.finishMoves()
 
 		# Versorger erstellen 33.3%
 		if CvUtil.myRandom(10, "PAE_City:doDeportation Create Suppy Wagon") < 3:
 				NewUnit = CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"), pCity.plot(), pPlayer)
 				PAE_Unit.initSupply(NewUnit)
+				NewUnit.finishMoves()
 
 
 def doSettledSlavesAndReservists(pCity):
@@ -3822,7 +3823,8 @@ def catchGreatPeople(pCity, iNewOwner, iPreviousOwner, bAssimilation):
 				for _ in range(iCityGP):
 						iRand = CvUtil.myRandom(10, "catchGreatPeople")
 						if iRand < 5:
-								CvUtil.spawnUnit(iNewUnit, pCityPlot, pNewOwner)
+								NewUnit = CvUtil.spawnUnit(iNewUnit, pCityPlot, pNewOwner)
+								NewUnit.finishMoves()
 								if bText:
 										iRand = 1 + CvUtil.myRandom(lUnit[1], "TXT_KEY_MESSAGE_CATCH_GP")
 										text = CyTranslator().getText("TXT_KEY_MESSAGE_CATCH_GP"+str(i+1)+"_"+str(iRand), (0, 0))
@@ -4145,7 +4147,8 @@ def getGoldkarren(pCity, pPlayer):
 		iBeute = min(10,iBeute) # maximal 10 Goldkarren
 		if iBeute > 0:
 				for _ in range(iBeute):
-						CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.plot(), pPlayer)
+						pUnit = CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pCity.plot(), pPlayer)
+						pUnit.finishMoves()
 
 
 def doRefugeeToNeighborCity(pCity, iPreviousOwner, iNewOwner):
@@ -4613,10 +4616,11 @@ def getHolyRelic(pCity, iPlayer):
 								bRelic = True
 
 						if bRelic:
-								CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_RELIC"), pCity.plot(), pPlayer)
 								if pPlayer.isHuman():
 										CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_INFO_RELIC", (pCity.getName(),)), None, 2,
 														gc.getUnitInfo(gc.getInfoTypeForString("UNIT_RELIC")).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
+								NewUnit = CvUtil.spawnUnit(gc.getInfoTypeForString("UNIT_RELIC"), pCity.plot(), pPlayer)
+								NewUnit.finishMoves()
 
 # onCityRazed: Missionar erstellen
 def getCityMissionar(pCity, iPlayer):

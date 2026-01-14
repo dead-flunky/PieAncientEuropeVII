@@ -21,6 +21,7 @@ LWoodsman = []
 LJungle = []
 LSwamp = []
 LDesert = []
+LSiegePromos = []
 LTradeUnits = []
 LCultivationUnits = []
 LBonusCultivatable = []
@@ -132,6 +133,7 @@ def init():
 		global LJungle
 		global LSwamp
 		global LDesert
+		global LSiegePromos
 		global LTradeUnits
 		global LCultivationUnits
 		global LBonusCultivatable
@@ -852,6 +854,16 @@ def init():
 			gc.getInfoTypeForString("PROMOTION_DESERT3"),
 			gc.getInfoTypeForString("PROMOTION_DESERT4"),
 			gc.getInfoTypeForString("PROMOTION_DESERT5")
+		]
+		LSiegePromos = [
+			gc.getInfoTypeForString("PROMOTION_BARRAGE1"),
+			gc.getInfoTypeForString("PROMOTION_ACCURACY1"),
+			gc.getInfoTypeForString("PROMOTION_BARRAGE2"),
+			gc.getInfoTypeForString("PROMOTION_ACCURACY2"),
+			gc.getInfoTypeForString("PROMOTION_BARRAGE3"),
+			gc.getInfoTypeForString("PROMOTION_ACCURACY3"),
+			gc.getInfoTypeForString("PROMOTION_BARRAGE4"),
+			gc.getInfoTypeForString("PROMOTION_BARRAGE5")
 		]
 		LCityGarrison = [
 			gc.getInfoTypeForString("PROMOTION_CITY_GARRISON1"),

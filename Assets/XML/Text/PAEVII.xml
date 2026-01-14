@@ -1418,7 +1418,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ISLAM_EXPANSION</Tag>
-		<English>Islamic expansion</English>
+		<English>Islamic Expansion</English>
 		<French>L'expansion islamique</French>
 		<German>Islamische Expansion</German>
 		<Italian>Espansione islamica</Italian>
@@ -1490,7 +1490,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_KUPPEL</Tag>
-		<English>Dome construction</English>
+		<English>Dome Construction</English>
 		<French>Construction de d&#244;mes</French>
 		<German>Kuppelbau</German>
 		<Italian>Costruzione di cupole</Italian>
@@ -1546,7 +1546,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_SKLAVENMARKT</Tag>
-		<English>Slave markets</English>
+		<English>Slave Markets</English>
 		<French>March&#233;s aux esclaves</French>
 		<German>Sklavenm&#228;rkte</German>
 		<Italian>Mercati degli schiavi</Italian>
@@ -1562,7 +1562,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_TEMPELBAU</Tag>
-		<English>Temple construction</English>
+		<English>Temple Construction</English>
 		<French>Construction du temple</French>
 		<German>Tempelbau</German>
 		<Italian>Costruzione del tempio</Italian>
@@ -1647,6 +1647,14 @@ Scuola di retorica
 		<German>Faris (Lanze)</German>
 		<Italian>Faris (lancia)</Italian>
 		<Spanish>Faris (lanza)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_PERSIA</Tag>
+		<English>Persian Lancer</English>
+		<French>Lanceur persan</French>
+		<German>Persischer Lanzenreiter</German>
+		<Italian>Lanciere persiano</Italian>
+		<Spanish>Jinete Perso:Jinetes Persos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IMPASSABLE_FEATURE</Tag>

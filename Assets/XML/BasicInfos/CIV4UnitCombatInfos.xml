@@ -43,11 +43,6 @@
 				<Button>,Art/Interface/Buttons/Promotions/Cover.dds,Art/Interface/Buttons/Promotions_Atlas.dds,2,5</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>
-				<Type>UNITCOMBAT_SIEGE</Type>
-				<Description>TXT_KEY_UNITCOMBAT_SIEGE</Description>
-				<Button>,Art/Interface/Buttons/Promotions/Charge.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,5</Button>
-		</UnitCombatInfo>
-		<UnitCombatInfo>
 				<Type>UNITCOMBAT_CHARIOT</Type>
 				<Description>TXT_KEY_UNITCOMBAT_CHARIOT</Description>
 				<Button>Art/Interface/Buttons/Promotions/button_unittype_chariots.dds</Button>
@@ -61,6 +56,11 @@
 				<Type>UNITCOMBAT_ELEPHANT</Type>
 				<Description>TXT_KEY_UNITCOMBAT_ELEPHANT</Description>
 				<Button>Art/Interface/Buttons/Promotions/button_unittype_elephants.dds</Button>
+		</UnitCombatInfo>
+		<UnitCombatInfo>
+				<Type>UNITCOMBAT_SIEGE</Type>
+				<Description>TXT_KEY_UNITCOMBAT_SIEGE</Description>
+				<Button>,Art/Interface/Buttons/Promotions/Charge.dds,Art/Interface/Buttons/Promotions_Atlas.dds,1,5</Button>
 		</UnitCombatInfo>
 		<UnitCombatInfo>
 				<Type>UNITCOMBAT_NAVAL</Type>

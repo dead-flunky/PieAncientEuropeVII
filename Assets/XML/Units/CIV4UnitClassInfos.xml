@@ -1174,7 +1174,7 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>100</iInstanceCostModifier>
+			<iInstanceCostModifier>50</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BALEAREN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -1201,7 +1201,7 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>100</iInstanceCostModifier>
+			<iInstanceCostModifier>50</iInstanceCostModifier>
 			<DefaultUnit>UNIT_BAKTRIEN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -1210,7 +1210,7 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>100</iInstanceCostModifier>
+			<iInstanceCostModifier>75</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HORSE_ARCHER_BAKTRIEN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -1219,7 +1219,7 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>100</iInstanceCostModifier>
+			<iInstanceCostModifier>50</iInstanceCostModifier>
 			<DefaultUnit>UNIT_THRAKIEN_PELTAST</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -1228,7 +1228,7 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>100</iInstanceCostModifier>
+			<iInstanceCostModifier>50</iInstanceCostModifier>
 			<DefaultUnit>UNIT_THRAKIEN_WARRIOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
@@ -1237,7 +1237,7 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>100</iInstanceCostModifier>
+			<iInstanceCostModifier>75</iInstanceCostModifier>
 			<DefaultUnit>UNIT_THRAKIEN_WAR_HORSE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>

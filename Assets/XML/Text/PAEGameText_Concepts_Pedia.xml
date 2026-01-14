@@ -1818,11 +1818,10 @@ The buildings that have been constructed are displayed in different colors accor
 
 [H2]City Fires[\H2]
 City fires were very common in ancient times. Fires can break out in a city starting at village status (Pop 3).
-[ICON_BULLET] Villages up to Pop 2 are unaffected.
-[ICON_BULLET] Wells protect cities up to Pop 5.
-[ICON_BULLET] Irrigation canals protect cities up to Pop 11.
-[ICON_BULLET] Aqueducts protect cities up to Pop 17.
-[ICON_BULLET] (Roman) fire departments protect cities 100%.
+[ICON_BULLET] Wells protect cities 30%
+[ICON_BULLET] Irrigation canals protect cities 50%
+[ICON_BULLET] Aqueducts protect cities 70%
+[ICON_BULLET] (Roman) fire departments protect cities 90%
 
 
 [H2]Unhealthy cities[\H2]
@@ -1959,11 +1958,10 @@ Les b&#226;timents construits sont affich&#233;s en diff&#233;rentes couleurs se
 
 [H2]Incendies urbains[\H2]
 Les incendies de ville &#233;taient tr&#232;s courants dans l'Antiquit&#233;. Des incendies peuvent se d&#233;clarer dans une ville &#224; partir du statut de village (Pop 3).
-[ICON_BULLET] Les villages jusqu'&#224; Pop 2 ne sont pas affect&#233;s.
-[ICON_BULLET] Les fontaines prot&#232;gent les villes jusqu'&#224; 5 populations.
-[ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes jusqu'&#224; 11 ans.
-[ICON_BULLET] Les aqueducs prot&#232;gent les villes jusqu'&#224; la population 17.
-[ICON_BULLET] Les pompiers (romains) prot&#232;gent les villes &#224; 100 %.
+[ICON_BULLET] Les fontaines prot&#232;gent les villes &#224; 30 %
+[ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes &#224; 50 %
+[ICON_BULLET] Les aqueducs prot&#232;gent les villes &#224; 70 %
+[ICON_BULLET] Les pompiers (romains) prot&#232;gent les villes &#224; 90 %
 
 
 [H2]Insalubrit&#233;[\H2]
@@ -2100,11 +2098,10 @@ Die erbauten Geb&#228;ude werden nach ihrer Bedeutung in unterschiedlichen Farbe
 
 [H2]Stadtbr&#228;nde[\H2]
 Stadtbr&#228;nde kommen in der Antike sehr h&#228;ufig vor. Ab dem Dorfstatus (Pop 3) k&#246;nnen in einer Stadt Br&#228;nde entstehen.
-[ICON_BULLET] D&#246;rfer bis Pop 2 sind nicht betroffen.
-[ICON_BULLET] Brunnen sch&#252;tzen St&#228;dte bis Pop 5.
-[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte bis Pop 11.
-[ICON_BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte bis Pop 17.
-[ICON_BULLET] (R&#246;mische) Feuerwehren sch&#252;tzen St&#228;dte zu 100%.
+[ICON_BULLET] Brunnen sch&#252;tzen St&#228;dte zu 30%
+[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte zu 50%
+[ICON_BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte zu 70%
+[ICON_BULLET] (R&#246;mische) Feuerwehren sch&#252;tzen St&#228;dte zu 90%
 
 
 [H2]Ungesunde St&#228;dte[\H2]
@@ -2245,11 +2242,10 @@ Gli edifici costruiti sono visualizzati in colori diversi a seconda della loro i
 
 [H2]Incendi cittadini[\H2]
 Gli incendi nelle citt&#224; erano molto comuni nell'antichit&#224;. In una citt&#224; possono scoppiare incendi anche se si &#232; in un villaggio (Pop 3).
-[ICON_BULLET] I villaggi fino a Pop 2 non sono interessati.
-[ICON_BULLET] Le fontane proteggono le citt&#224; fino a Pop 5.
-[ICON_BULLET] I canali di irrigazione proteggono le citt&#224; fino all'11&#186; anno di popolazione.
-[ICON_BULLET] Gli acquedotti proteggono le citt&#224; fino alla popolazione 17.
-[ICON_BULLET] (Roman) I vigili del fuoco proteggono le citt&#224; al 100%.
+[ICON_BULLET] Le fontane proteggono le citt&#224; al 30%
+[ICON_BULLET] I canali di irrigazione proteggono le citt&#224; al 50%
+[ICON_BULLET] Gli acquedotti proteggono le citt&#224; al 70%
+[ICON_BULLET] (Roman) I vigili del fuoco proteggono le citt&#224; al 90%
 
 
 Citt&#224; [H2] salutare [\H2]
@@ -2389,11 +2385,10 @@ Los edificios construidos se muestran en diferentes colores seg&#250;n su import
 
 [H2]Incendios urbanos[\H2]
 Los incendios urbanos eran muy comunes en la antig&#252;edad. Los incendios pueden estallar en una ciudad desde el estado de aldea (Poblaci&#243;n 3).
-[ICON_BULLET] Las aldeas hasta una poblaci&#243;n de 2 no se ver&#225;n afectadas.
-[ICON_BULLET] Las fuentes protegen ciudades hasta una poblaci&#243;n de 5.
-[ICON_BULLET] Los canales de irrigaci&#243;n protegen las ciudades hasta la poblaci&#243;n 11.
-[ICON_BULLET] Los acueductos protegen las ciudades hasta poblaci&#243;n 17.
-[ICON_BULLET] Los departamentos de bomberos (romanos) protegen las ciudades al 100%.
+[ICON_BULLET] Las fuentes protegen ciudades al 30%
+[ICON_BULLET] Los canales de irrigaci&#243;n protegen las ciudades al 50%
+[ICON_BULLET] Los acueductos protegen las ciudades al 70%
+[ICON_BULLET] Los departamentos de bomberos (romanos) protegen las ciudades al 90%
 
 
 [H2]Ciudades insalubres[\H2]
@@ -2827,6 +2822,12 @@ Battle on land:
 
 27) Ranking system: Some CIVs have a strictly hierarchical system in their army. For each battle won, such a unit increases in military rank. See [LINK=CONCEPT_UNIT_RANKING]Units: Military Rank[\LINK]
 
+28) Combat experience on specific terrain: Units can automatically receive terrain-specific promotions (forest, hill, swamp, etc.)
+
+29) Combat experience against unit classes: Units can automatically receive parry promotions against specific unit classes
+
+30) Combat experience for siege units: Units can automatically receive higher levels for barrage fire and accuracy after victorious battles
+
 
 Battle on water:
 
@@ -2946,6 +2947,12 @@ Combat sur terre :
 
 27) Syst&#232;me de classement : Certaines races ont un syst&#232;me strictement hi&#233;rarchique dans leur arm&#233;e. Pour chaque bataille gagn&#233;e, une telle unit&#233; augmente son rang militaire. Voir [LINK=CONCEPT_UNIT_RANKING]Unit&#233;s : rang militaire[\LINK]
 
+28) Exp&#233;rience de combat sur terrain sp&#233;cifique : Les unit&#233;s peuvent automatiquement b&#233;n&#233;ficier de bonus li&#233;s au terrain (for&#234;t, colline, marais, etc.).
+
+29) Exp&#233;rience de combat contre certaines classes d'unit&#233;s : Les unit&#233;s peuvent automatiquement b&#233;n&#233;ficier de bonus de parade contre certaines classes d'unit&#233;s.
+
+30) Exp&#233;rience de combat pour les unit&#233;s de si&#232;ge : Apr&#232;s une victoire, les unit&#233;s peuvent automatiquement am&#233;liorer leurs comp&#233;tences de tir de barrage et de pr&#233;cision.
+
 
 Combat sur mer:
 
@@ -3064,6 +3071,12 @@ Kampf zu Land:
 26) Deportationen: Eroberte oder vernichtete St&#228;dte erzeugen Auswanderer, die ins eigene Reich gebracht und angesiedelt werden k&#246;nnen. Diese Feature ist nur bis zur Technologie Assimilation aktiv.
 
 27) Rangsystem: Einige V&#246;lker haben in ihrer Armee ein streng hierarchisches System. F&#252;r jeden gewonnenen Kampf steigt eine solche Einheit in ihrem milit&#228;rischen Rang auf. Siehe [LINK=CONCEPT_UNIT_RANKING]Einheiten: Milit&#228;rrang[\LINK]
+
+28) Kampferfahrung auf bestimmtem Terrain: Einheiten k&#246;nnen automatisch terrainspezifische Bef&#246;rderungen erhalten (Wald, H&#252;gel, Sumpf, etc.)
+
+29) Kampferfahrung gegen Einheitenklassen: Einheiten k&#246;nnen automatisch Parade-Bef&#246;rderungen gegen bestimmte Einheitenklassen erhalten
+
+30) Kampferfahrung f&#252;r Belagerungseinheiten: k&#246;nnen bei siegreichen K&#228;mpfen automatisch eine h&#246;here Stufe f&#252;r Sperrfeuer und Genauigkeit erhalten
 
 
 Kampf zu Wasser:
@@ -3186,6 +3199,12 @@ Unit&#224;-Classifica esperienza[\LINK]
 
 27) Sistema di classificazione: alcune razze hanno un sistema strettamente gerarchico nel proprio esercito. Per ogni battaglia vinta, tale unit&#224; aumenta di rango militare. Vedi [LINK=CONCEPT_UNIT_RANKING]Unit&#224;: grado militare[\LINK]
 
+28) Esperienza di combattimento su un terreno specifico: le unit&#224; possono ricevere automaticamente promozioni specifiche per il terreno (foresta, collina, palude, ecc.)
+
+29) Esperienza di combattimento contro classi di unit&#224;: le unit&#224; possono ricevere automaticamente promozioni di parata contro classi di unit&#224; specifiche
+
+30) Esperienza di combattimento per unit&#224; d'assedio: le unit&#224; possono ricevere automaticamente livelli pi&#249; alti di fuoco di sbarramento e precisione dopo battaglie vittoriose
+
 
 Combattimento in mare:
 
@@ -3304,6 +3323,12 @@ Batallas terrestres:
 
 27) Sistema de clasificaci&#243;n: Algunas razas tienen un sistema estrictamente jer&#225;rquico en su ej&#233;rcito. Por cada batalla ganada, dicha unidad aumenta en rango militar. Ver [LINK=CONCEPT_UNIT_RANKING]Unidades: Rango militar[\LINK]
 
+28) Experiencia de combate en terrenos espec&#237;ficos: Las unidades pueden recibir autom&#225;ticamente mejoras espec&#237;ficas del terreno (bosque, colina, pantano, etc.).
+
+29) Experiencia de combate contra clases de unidad: Las unidades pueden recibir autom&#225;ticamente mejoras de parada contra clases de unidad espec&#237;ficas.
+
+30) Experiencia de combate para unidades de asedio: Las unidades pueden recibir autom&#225;ticamente niveles m&#225;s altos de fuego de barrera y precisi&#243;n tras victorias en batallas.
+
 
 Batalla en el agua:
 
@@ -3374,8 +3399,8 @@ PAE includes its own experience system (ranking) where certain types can be succ
 2nd rank: Experienced (+5% strength, 70% chance*)
 3rd rank: Seasoned   (+5% strength, 60% chance*)
 4th rank: Veteran    (+5% strength, 50% chance*)
-5th rank: Elite       (+5% strength, 30% chance*)
-6th rank: Legendary  (+5% strength, 10% chance*)
+5th rank: Elite       (+5% strength, 40% chance*)
+6th rank: Legendary  (+5% strength, 30% chance*)
 
 *The chance that the unit receives this promotion automatically in a victorious battle.
 
@@ -3437,8 +3462,8 @@ PAE a son propre syst&#232;me de rang, qui avance automatiquement apr&#232;s une
 2nd rang : exp&#233;riment&#233; (+5% force, 70% de chance*)
 3&#232; rang :  aguerri  (+5% force, 60% de chance*)
 4&#232; rang :  v&#233;t&#233;ran    (+5% force, 50% de chance*)
-5&#232; rang :  &#233;lite       (+5% force, 30% de chance*)
-6&#232; rang :  l&#233;gendaire  (+5% force, 10% de chance*)
+5&#232; rang :  &#233;lite       (+5% force, 40% de chance*)
+6&#232; rang :  l&#233;gendaire  (+5% force, 30% de chance*)
 
 *Chance que l'unit&#233; gagne la promotion apr&#232;s une victoire.
 
@@ -3501,8 +3526,8 @@ PAE beinhaltet ein eigenes Erfahrungssystem (Rang), wo bestimmte Bef&#246;rderun
 2. Rang: Erfahren  (+5% St&#228;rke, 70% Chance*)
 3. Rang: Routiniert (+5% St&#228;rke, 60% Chance*)
 4. Rang: Veteran  (+5% St&#228;rke, 50% Chance*)
-5. Rang: Elite     (+5% St&#228;rke, 30% Chance*)
-6. Rang: Legend&#228;r (+5% St&#228;rke, 10% Chance*)
+5. Rang: Elite     (+5% St&#228;rke, 40% Chance*)
+6. Rang: Legend&#228;r (+5% St&#228;rke, 30% Chance*)
 
 *Die Chance, dass die Einheit bei siegreichem Kampf diese Bef&#246;rderung automatisch erh&#228;lt. 
 
@@ -3561,12 +3586,12 @@ Bei "unzuverl&#228;ssigen" Einheiten wird zuerst diese Eigenschaft entfernt. Dan
 
 PAE ha un sistema di un'esperienza privata ( Rank) , in cui alcuni tipi possono essere successivamente acquisita automaticamente nella battaglia vittoriosa . Fino a 1 Palcoscenico , questi non sono selezionabili come al solito con punti XP .
 
-1 Classifica : Trains     ( forza +5 % , il 80 % di probabilit&#224; * )
-2 Classifica : Experienced ( forza +5 % , il 70 % di probabilit&#224; * )
-3 Classifica : Experienced ( forza +5 % , 60% possibilit&#224; * )
-4 Classifica : Veteran    ( forza +5 % , 50% possibilit&#224; * )
-5 Classifica : Elite      ( forza +5 % , il 30 % di probabilit&#224; * )
-6 Classifica : Legendary  ( forza +5 % , 10% di possibilit&#224; * )
+1 Classifica : Trains     ( forza +5 % , 80 % di probabilit&#224; * )
+2 Classifica : Experienced ( forza +5 % , 70 % di probabilit&#224; * )
+3 Classifica : Experienced ( forza +5 % , 60 % possibilit&#224; * )
+4 Classifica : Veteran    ( forza +5 % , 50 % possibilit&#224; * )
+5 Classifica : Elite      ( forza +5 % , 40 % di probabilit&#224; * )
+6 Classifica : Legendary  ( forza +5 % , 30 % di possibilit&#224; * )
 
 * La possibilit&#224; che l'apparecchio ricever&#224; automaticamente questa promozione in una battaglia vittoriosa.
 
@@ -3628,8 +3653,8 @@ Rango 1º: Entrenada    (+5% fuerza, 80% de probabilidad*)
 Rango 2º: Experimentada (+5% fuerza, 70% de probabilidad*)
 Rango 3º: Aguerrida     (+5% fuerza, 60% de probabilidad*)
 Rango 4º: Veterana     (+5% fuerza, 50% de probabilidad*)
-Rango 5º: &#201;lite         (+5% fuerza, 30% de probabilidad*)
-Rango 6º: Legendaria    (+5% fuerza, 10% de probabilidad*)
+Rango 5º: &#201;lite         (+5% fuerza, 40% de probabilidad*)
+Rango 6º: Legendaria    (+5% fuerza, 30% de probabilidad*)
 
 *La probabilidad que la unidad recibe este ascenso en un combate victorioso.
 
@@ -3698,8 +3723,8 @@ Berbers, Huns and Scyths have no costs.
 Listing:
 Unit: Strength / Charge / Max. coll. damage / Other units hitten by the collateral damage
 
-[ICON_BULLET] Hunter: 2 / 0 / 50% / 2
-[ICON_BULLET] Basket archer: 2 / 0 / 50% / 2
+[ICON_BULLET] Hunter: 2 / 0 (from Bronze Age: 1) / 50% / 2
+[ICON_BULLET] Basket archer: 2 / 0 (from Bronze Age: 1) / 50% / 2
 [ICON_BULLET] Shortbowman: 4 / 1 / 50% / 2
 [ICON_BULLET] Nubian Bowman: 5 / 2 / 50% / 2
 [ICON_BULLET] Compositebowman: 5 / 2 / 50% / 2
@@ -3737,8 +3762,8 @@ Les Berb&#232;res, les Huns et les Scythes n'ont aucun co&#251;t.
 
 Liste (Unit&#233; : Puissance / Tarif / D&#233;g&#226;ts coll. max / Nb unit&#233;s touch&#233;es par les dgts coll.)
 
-[ICON_BULLET] Chasseur: 2 / 0 / 50% / 2
-[ICON_BULLET] Archer de fortune : 2 / 0 / 50% / 2
+[ICON_BULLET] Chasseur: 2 / 0 (de l'&#226;ge du bronze : 1) / 50% / 2
+[ICON_BULLET] Archer de fortune : 2 / 0 (de l'&#226;ge du bronze : 1) / 50% / 2
 [ICON_BULLET] Archer : 4 / 1 / 50% / 2
 [ICON_BULLET] Archer nubien : 5 / 2 / 50% / 2
 [ICON_BULLET] Archer composite : 5 / 2 / 50% / 2
@@ -3779,8 +3804,8 @@ Berber, Hunnen und Skythen haben keine Kosten.
 Auflistung:
 Einheit: Kampfst&#228;rke / Kosten / Max. Koll.schaden / Zus&#228;tzliche Einheiten, die verletzt werden
 
-[ICON_BULLET] J&#228;ger: 2 / 0 / 50% / 2
-[ICON_BULLET] Flachbogensch&#252;tze: 2 / 0 / 50% / 2
+[ICON_BULLET] J&#228;ger: 2 / 0 (ab Bronzezeit: 1) / 50% / 2
+[ICON_BULLET] Flachbogensch&#252;tze: 2 / 0 (ab Bronzezeit: 1) / 50% / 2
 [ICON_BULLET] Kurzbogensch&#252;tze: 4 / 1 / 50% / 2
 [ICON_BULLET] Nubischer Bogensch&#252;tze: 5 / 2 / 50% / 2
 [ICON_BULLET] Kompositbogensch&#252;tze: 5 / 2 / 50% / 2
@@ -3821,8 +3846,8 @@ Berberi, Unni e Falci non hanno costi.
 di annuncio:
 Unit&#224; : Combat Forza / Gabella / Max Koll.schaden / unit&#224; aggiuntive che sono feriti
 
-[ICON_BULLET] Cacciatore: 2 / 0 / 50% / 2
-[ICON_BULLET] Appartamento Archer : 2 / 0 / 50 % / 2
+[ICON_BULLET] Cacciatore: 2 / 0 (dall'et&#224; del bronzo: 1) / 50% / 2
+[ICON_BULLET] Appartamento Archer : 2 / 0 (dall'et&#224; del bronzo: 1) / 50 % / 2
 [ICON_BULLET] Corta Archer : 4 / 1 / 50 % / 2
 [ICON_BULLET] Nubian Archer : 5 / 2 / 50 % / 2
 [ICON_BULLET] Compositebowman : 5 / 2 / 50 % / 2
@@ -3863,8 +3888,8 @@ Berbers, Huns y Scyths no tienen costo.
 Lista:
 Unidad: Fuerza / Coste / M&#225;x. da&#241;os colaterales / Otras unidades que pueden ser heridas
 
-[ICON_BULLET] Cazador: 2 / 0 / 50% / 2
-[ICON_BULLET] Arquero con cesto: 2 / 0 / 50% / 2
+[ICON_BULLET] Cazador: 2 / 0 (de la Edad del Bronce: 1) / 50% / 2
+[ICON_BULLET] Arquero con cesto: 2 / 0 (de la Edad del Bronce: 1) / 50% / 2
 [ICON_BULLET] Arquero con arco corto: 4 / 1 / 50% / 2
 [ICON_BULLET] Arquero nubio: 5 / 2 / 50% / 2
 [ICON_BULLET] Arquero con arco compuesto: 5 / 2 / 50% / 2
@@ -6216,11 +6241,210 @@ Ver concepto [LINK=CONCEPT_SLAVES]esclavos y esclavos liberados[\LINK].
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_GREAT_GENERAL_ACTIONS_PEDIA</Tag>
-		<English>[H1]General Actions[\H1][NEWLINE][NEWLINE]Standing or fallen generals can pose a threat to your own realm (civil war, usurpers, see LINK=CONCEPT_GENERALDEATH]General Death[\LINK]), but in times of war, they can perform tasks that no other unit is capable of:[NEWLINE][NEWLINE][H2]Create Siege Rams[\H2][NEWLINE][NEWLINE][ICON_BULLET] If a general is on a forest tile, they can have one ram constructed per turn. This is very helpful if you don't have to lug around slow siege engines during long campaigns.[NEWLINE][NEWLINE][H2]Scorched Earth[\H2][NEWLINE][NEWLINE][ICON_BULLET] Generals can order "scorched earth" to be left behind. If you are facing an invincible army, it can be helpful to leave chokepoints or the area surrounding a city scorched and retreat. If the opponent enters such a field, he suffers damage and has a defense penalty.</English>
-		<French>[H1]Actions g&#233;n&#233;rales[\H1][NEWLINE][NEWLINE]Les g&#233;n&#233;raux, qu'ils soient en fonction ou tomb&#233;s au combat, peuvent repr&#233;senter une menace pour votre royaume (guerre civile, usurpateurs, voir LINK=CONCEPT_GENERALDEATH]Mort d'un g&#233;n&#233;ral[\LINK]), mais en temps de guerre, ils peuvent accomplir des t&#226;ches qu'aucune autre unit&#233; ne peut r&#233;aliser :[NEWLINE][NEWLINE][H2]Cr&#233;er des b&#233;liers de si&#232;ge[\H2][NEWLINE][NEWLINE][ICON_BULLET] Si un g&#233;n&#233;ral se trouve sur une case For&#234;t, il peut faire construire un b&#233;lier par tour. C'est tr&#232;s utile pour &#233;viter de transporter de lourds engins de si&#232;ge lors de longues campagnes.[NEWLINE][NEWLINE][H2]Terre br&#251;l&#233;e[\H2][NEWLINE][NEWLINE][ICON_BULLET] Les g&#233;n&#233;raux peuvent ordonner la mise en place d'une strat&#233;gie de &#171; terre br&#251;l&#233;e &#187;. Face &#224; une arm&#233;e invincible, il peut &#234;tre judicieux de laisser des points de passage strat&#233;giques ou la zone autour d'une ville en ruines et de battre en retraite. Si l'adversaire p&#233;n&#232;tre dans une telle zone, il subit des d&#233;g&#226;ts et un malus de d&#233;fense.</French>
-		<German>[H1]Generalsaktionen[\H1][NEWLINE][NEWLINE]Stehende Gener&#228;le oder gefallene Gener&#228;le k&#246;nnen eine Gefahr f&#252;r das eigene Reich sein (B&#252;rgerkrieg, Usurbatoren, siehe LINK=CONCEPT_GENERALDEATH]Generalstod[\LINK]), aber in Kriegszeiten kann er Aufgaben erledigen, wof&#252;r sonst keine andere Einheit f&#228;hig ist:[NEWLINE][NEWLINE][H2]Belagerungsrammen erstellen[\H2][NEWLINE][NEWLINE][ICON_BULLET] Steht ein General auf einem Waldfeld, kann er pro Runde eine Ramme erstellen lassen. Das ist sehr hilfreich falls man bei weiten Feldz&#252;gen die langsamen Belagerungsger&#228;te nicht mitschleppen muss.[NEWLINE][NEWLINE][H2]Verbrannte Erde[\H2][NEWLINE][NEWLINE][ICON_BULLET] Gener&#228;le k&#246;nnen veranlassen "Verbrannte Erde" zur&#252;ckzulassen. Falls man einem unbezwingbaren Heer gegen&#252;bersteht, k&#246;nnte es hilfreich sein, Engstellen oder das Umland einer Stadt mit verbrannter Erde zur&#252;ckzulassen und einen R&#252;ckzug macht. Falls der Gegner ein solches Feld betritt, erleidet er Schaden und hat einen Verteidigungsmalus.</German>
-		<Italian>[H1]Azioni Generali[\H1][NEWLINE][NEWLINE]I generali, in piedi o caduti, possono rappresentare una minaccia per il tuo regno (guerra civile, usurpatori, vedi LINK=CONCEPT_GENERALDEATH]Morte Generale[\LINK]), ma in tempo di guerra possono svolgere compiti che nessun'altra unit&#224; &#232; in grado di svolgere:[NEWLINE][NEWLINE][H2]Creare Arieti d'Assedio[\H2][NEWLINE][NEWLINE][ICON_BULLET] Se un generale si trova in una casella foresta, pu&#242; costruire un ariete per turno. Questo &#232; molto utile se non devi trascinarti dietro lente macchine d'assedio durante lunghe campagne.[NEWLINE][NEWLINE][H2]Terra Bruciata[\H2][NEWLINE][NEWLINE][ICON_BULLET] I generali possono ordinare di lasciare la "terra bruciata". Se stai affrontando un esercito invincibile, pu&#242; essere utile lasciare bruciati i punti critici o l'area circostante una citt&#224; e ritirarsi. Se l'avversario entra in uno di questi campi, subisce danni e una penalit&#224; alla difesa.</Italian>
-		<Spanish>[H1]Acciones Generales[\H1][NEWLINE][NEWLINE]Los generales, tanto en pie como ca&#237;dos, pueden representar una amenaza para tu propio reino (guerra civil, usurpadores, v&#233;ase LINK=CONCEPT_GENERALDEATH]Muerte General[\LINK]), pero en tiempos de guerra, pueden realizar tareas que ninguna otra unidad es capaz de realizar:[NEWLINE][NEWLINE][H2]Crear Arietes de Asedio[\H2][NEWLINE][NEWLINE][ICON_BULLET] Si un general est&#225; en una casilla de bosque, puede construir un ariete por turno. Esto es muy &#250;til si no tienes que cargar con lentas m&#225;quinas de asedio durante campa&#241;as largas.[NEWLINE][NEWLINE][H2]Tierra Quemada[\H2][NEWLINE][NEWLINE][ICON_BULLET] Los generales pueden ordenar que se abandone la "tierra quemada". Si te enfrentas a un ej&#233;rcito invencible, puede ser &#250;til dejar los cuellos de botella o el &#225;rea que rodea una ciudad quemada y retirarse. Si el oponente entra en dicho campo, sufre da&#241;o y tiene una penalizaci&#243;n de defensa.</Spanish>
+		<English>[H1]General Actions[\H1]
+
+Standing or fallen generals can pose a threat to your own realm (civil war, usurpers, see [LINK=CONCEPT_GENERALDEATH]General Death[\LINK]), but in times of war, they can perform tasks that no other unit is capable of:
+
+[H2]Create Siege Rams[\H2]
+If a general is on a forest tile, they can have one ram constructed per turn. This is very helpful if you don't have to lug around slow siege engines during long campaigns.
+
+[H2]Scorched Earth[\H2]
+Generals can order "scorched earth" to be left behind. If you are facing an invincible army, it can be helpful to leave chokepoints or the area surrounding a city scorched and retreat. If the opponent enters such a field, he suffers damage and has a defense penalty.
+
+[H2]Burn Forests[\H2]
+On enemy territory, forests can be set on fire. Burnt forest remains, weakening the health and economy of the nearby city. This can also be used to thwart the enemy's military retreat zones.
+
+[H2]End City Revolts[\H2]
+A general embodies order and discipline, and heroes enjoy high prestige. If a general unit or hero is moved to a revolting city (e.g., immediately after its conquest), the remaining revolt is immediately reduced to one turn.
+
+[H2]Become Governor[\H2]
+General units and heroes can establish themselves as governors in a provincial capital: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+[H2]Change Horses or Camels[\H2]
+General units and heroes can change their mount in cities with stables. After this action, all movement points are immediately available to them again.
+
+[H2]Improve Morale[\H2]
+General units with Rhetoric can improve troop morale and remove war weariness.
+
+
+[H1]Great Generals who have not yet joined a unit can perform the following tasks:[\H1]
+
+[H2]Build Heroic Epic[\H2]
+Great Generals possess the prestige and authority to build the Heroic Epic National Wonder.
+
+[H2]Build Military Academy[\H2]
+Great Generals can be assigned as instructors to establish a Military Academy in a city. This institution grants all newly recruited units additional experience points.
+
+[H2]Build Statues, Monuments, and Triumphal Arches[\H2]
+Great Generals do not immortalize their deeds through permanent stationing, but rather through monumental structures: They can erect buildings such as victory statues, victory columns, and triumphal arches. These memorials take on the role of the military instructors from BTS, but in a controlled manner. In PAE, each city can only house one such structure to prevent an unrealistic concentration of military trainers.
+
+[H2]Sacred Shrine to the Roman Gods[\H2]
+Only a Great General possesses the authority and honor to establish the Sacred Shrine to the Roman Gods. He alone can erect the Great Temple of Mars, a sanctuary dedicated to the war god Mars, which is reserved for no other unit.</English>
+		<French>
+[H1]Actions g&#233;n&#233;rales[\H1]
+
+Les g&#233;n&#233;raux, qu'ils soient en fonction ou tomb&#233;s au combat, peuvent repr&#233;senter une menace pour votre royaume (guerre civile, usurpateurs, voir [LINK=CONCEPT_GENERALDEATH]Mort d'un g&#233;n&#233;ral[\LINK]), mais en temps de guerre, ils peuvent accomplir des t&#226;ches qu'aucune autre unit&#233; ne peut r&#233;aliser :
+
+[H2]Cr&#233;er des b&#233;liers de si&#232;ge[\H2]
+Si un g&#233;n&#233;ral se trouve sur une case For&#234;t, il peut faire construire un b&#233;lier par tour. C'est tr&#232;s utile pour &#233;viter de transporter de lourds engins de si&#232;ge lors de longues campagnes.
+
+[H2]Terre br&#251;l&#233;e[\H2]
+Les g&#233;n&#233;raux peuvent ordonner la mise en place d'une strat&#233;gie de "terre br&#251;l&#233;e". Face &#224; une arm&#233;e invincible, il peut &#234;tre judicieux de laisser des points de passage strat&#233;giques ou la zone autour d'une ville en ruines et de battre en retraite. Si l'adversaire p&#233;n&#232;tre dans une telle zone, il subit des d&#233;g&#226;ts et un malus de d&#233;fense.
+
+[H2]Incendie des for&#234;ts[\H2]
+En territoire ennemi, les for&#234;ts peuvent &#234;tre incendi&#233;es. Les for&#234;ts br&#251;l&#233;es affaiblissent la sant&#233; et l'&#233;conomie de la ville voisine. Cela peut &#233;galement servir &#224; perturber les zones de retraite militaire ennemies.
+
+[H2]Mettre fin aux r&#233;voltes[\H2]
+Un g&#233;n&#233;ral incarne l'ordre et la discipline, et les h&#233;ros jouissent d'un grand prestige. Si une unit&#233; g&#233;n&#233;rale ou un h&#233;ros est d&#233;plac&#233; vers une ville en r&#233;volte (par exemple, imm&#233;diatement apr&#232;s sa conqu&#234;te), la r&#233;volte restante est imm&#233;diatement r&#233;duite &#224; un tour.
+
+[H2]Devenir gouverneur[\H2]
+Les unit&#233;s g&#233;n&#233;rales et les h&#233;ros peuvent s'&#233;tablir comme gouverneurs d'une capitale provinciale : +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+[H2]Changer de monture[\H2]
+Les unit&#233;s g&#233;n&#233;rales et les h&#233;ros peuvent changer de monture dans les villes disposant d'&#233;curies. Apr&#232;s cette action, tous leurs points de mouvement sont imm&#233;diatement disponibles.
+
+[H2]Am&#233;liorer le moral[\H2]
+Les unit&#233;s g&#233;n&#233;rales dot&#233;es de la comp&#233;tence Rh&#233;torique peuvent am&#233;liorer le moral des troupes et att&#233;nuer la lassitude de la guerre.
+
+
+[H1]Les Grands G&#233;n&#233;raux n'ayant pas encore rejoint d'unit&#233; peuvent accomplir les t&#226;ches suivantes :[\H1]
+
+[H2]Construire une Merveille Nationale H&#233;ro&#239;que[\H2]
+Les Grands G&#233;n&#233;raux poss&#232;dent le prestige et l'autorit&#233; n&#233;cessaires pour construire la Merveille Nationale H&#233;ro&#239;que.
+
+[H2]Construire une Acad&#233;mie Militaire[\H2]
+Les Grands G&#233;n&#233;raux peuvent &#234;tre affect&#233;s comme instructeurs pour &#233;tablir une Acad&#233;mie Militaire dans une ville. Cette institution octroie des points d'exp&#233;rience suppl&#233;mentaires &#224; toutes les unit&#233;s nouvellement recrut&#233;es.
+
+[H2]Construire des Statues, des Monuments et des Arcs de Triomphe[\H2] Les Grands G&#233;n&#233;raux n'immortalisent pas leurs exploits par une affectation permanente, mais plut&#244;t par des structures monumentales : ils peuvent &#233;riger des &#233;difices tels que des statues de la victoire, des colonnes de la victoire et des arcs de triomphe. Ces monuments comm&#233;moratifs jouent le r&#244;le des instructeurs militaires de BTS, mais de mani&#232;re contr&#244;l&#233;e. Dans PAE, chaque ville ne peut abriter qu'une seule structure de ce type afin d'&#233;viter une concentration irr&#233;aliste d'instructeurs militaires.
+
+[H2]Sanctuaire sacr&#233; des dieux romains[\H2]
+
+Seul un Grand G&#233;n&#233;ral poss&#232;de l'autorit&#233; et l'honneur d'&#233;tablir le Sanctuaire sacr&#233; des dieux romains. Lui seul peut &#233;riger le Grand Temple de Mars, un sanctuaire d&#233;di&#233; au dieu de la guerre Mars, r&#233;serv&#233; &#224; aucune autre unit&#233;.
+		</French>
+		<German>
+[H1]Generalsaktionen[\H1]
+
+Stehende Gener&#228;le oder gefallene Gener&#228;le k&#246;nnen eine Gefahr f&#252;r das eigene Reich sein (B&#252;rgerkrieg, Usurbatoren, siehe [LINK=CONCEPT_GENERALDEATH]Generalstod[\LINK]), aber in Kriegszeiten kann er Aufgaben erledigen, wof&#252;r sonst keine andere Einheit f&#228;hig ist:
+
+[H2]Belagerungsrammen erstellen[\H2]
+Steht ein General auf einem Waldfeld, kann er pro Runde eine Ramme erstellen lassen. Es ist sehr hilfreich bei weiten Feldz&#252;gen die langsamen Belagerungsger&#228;te nicht mitschleppen zu m&#252;ssen.
+
+[H2]Verbrannte Erde[\H2]
+Gener&#228;le k&#246;nnen veranlassen "Verbrannte Erde" zur&#252;ckzulassen. Falls man einem unbezwingbaren Heer gegen&#252;bersteht, k&#246;nnte es hilfreich sein, Engstellen oder das Umland einer Stadt mit verbrannter Erde zur&#252;ckzulassen und einen geordneten R&#252;ckzug antritt. Falls der Gegner ein solches Feld betritt, erleidet er Schaden pro Runde und bekommt nebenbei einen Verteidigungsmalus.
+
+[H2]W&#228;lder abbrennen[\H2]
+Auf gegnerischem Gebiet k&#246;nnen die W&#228;lder in Brand gesteckt werden. Zur&#252;ck bleibt verbrannter Wald, was die Gesundheit und die Wirtschaft der nahegelegenen Stadt schw&#228;cht. Weiters k&#246;nnen damit milit&#228;rische R&#252;ckzugszonen f&#252;r den Gegner vereitelt werden.
+
+[H2]Stadtrevolten beenden[\H2]
+Ein General verk&#246;rpert Ordnung und Disziplin, und Helden genie&#223;en hohes Ansehen. Wird eine Generalseinheit oder ein Held in eine revoltierende Stadt verlegt (z.B. unmittelbar nach deren Eroberung) reduziert sich die verbleibende Revolte sofort auf eine Runde.
+
+[H2]Statthalter werden[\H2]
+Generalseinheiten und Helden sind f&#228;hig sich als Statthalter in einer Provinzhauptstadt niederzulassen: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+
+[H2]Pferde oder Kamele wechseln[\H2]
+Generalseinheiten und Helden sind in St&#228;dten mit Stallungen in der Lage, ihr Reittier zu wechseln. Nach dieser Aktion stehen ihnen sofort wieder alle Bewegungspunkte zur Verf&#252;gung.
+
+[H2]Moral verbessern[\H2]
+Generalseinheiten mit Rhetorik k&#246;nnen die Moral der Truppen verbessern und Kriegsm&#252;digkeit entfernen.
+
+
+[H1]Gro&#223;e Gener&#228;le, die sich noch keiner Einheit angeschlossen haben, k&#246;nnen folgende Aufgaben erledigen:[\H1]
+
+[H2]Heroic Epic bauen[\H2]
+Gro&#223;e Gener&#228;le verf&#252;gen &#252;ber das Ansehen und die Autorit&#228;t das Nationalwunder Heroic Epic zu bauen.
+
+[H2]Milit&#228;rakademie bauen[\H2]
+Gro&#223;e Gener&#228;le k&#246;nnen als Ausbilder eingesetzt werden, um in einer Stadt eine Milit&#228;rakademie zu errichten. Diese Einrichtung verleiht allen neu ausgehobenen Einheiten zus&#228;tzliche Erfahrungspunkte.
+
+[H2]Statuen, Monumente und Triumpfb&#246;gen bauen[\H2]
+Gro&#223;e Gener&#228;le verewigen ihre Taten nicht durch dauerhafte Stationierung, sondern durch monumentale Bauwerke: Sie k&#246;nnen Geb&#228;ude wie Siegesstatuen, Siegess&#228;ulen und Triumpfb&#246;gen errichten. Diese Ehrenmale &#252;bernehmen die Rolle der Milit&#228;rausbilder aus BTS, jedoch in kontrollierter Form. In PAE kann jede Stadt nur ein solches Bauwerk beherbergen, um einer utopischen H&#228;ufung milit&#228;rischer Ausbildner vorzubeugen.
+
+[H2]Heiliger Schrein f&#252;r die R&#246;mischen G&#246;tter[\H2]
+Nur ein Gro&#223;er General besitzt die Autorit&#228;t und Ehre, den Heiligen Schrein der r&#246;mischen G&#246;tter zu begr&#252;nden. Er allein kann den Gro&#223;en Marstempel errichten, ein dem Kriegsgott Mars geweihtes Heiligtum, das keiner anderen Einheit vorbehalten ist.
+		</German>
+		<Italian>
+[H1]Azioni Generali[\H1]
+
+I generali, in piedi o caduti, possono rappresentare una minaccia per il tuo regno (guerra civile, usurpatori, vedi [LINK=CONCEPT_GENERALDEATH]Morte Generale[\LINK]), ma in tempo di guerra possono svolgere compiti che nessun'altra unit&#224; &#232; in grado di svolgere:
+
+[H2]Creare Arieti d'Assedio[\H2]
+Se un generale si trova in una casella foresta, pu&#242; costruire un ariete per turno. Questo &#232; molto utile se non devi trascinarti dietro lente macchine d'assedio durante lunghe campagne.
+
+[H2]Terra Bruciata[\H2]
+I generali possono ordinare di lasciare la "terra bruciata". Se stai affrontando un esercito invincibile, pu&#242; essere utile lasciare bruciati i punti critici o l'area circostante una citt&#224; e ritirarsi. Se l'avversario entra in uno di questi campi, subisce danni e una penalit&#224; alla difesa.
+
+[H2]Brucia le foreste[\H2]
+In territorio nemico, le foreste possono essere incendiate. Le foreste bruciate rimangono, indebolendo la salute e l'economia della citt&#224; vicina. Questo pu&#242; anche essere usato per ostacolare le zone di ritirata militare nemiche.
+
+[H2]Porre fine alle rivolte cittadine[\H2]
+Un generale incarna l'ordine e la disciplina, e gli eroi godono di grande prestigio. Se un'unit&#224; generale o un eroe viene spostato in una citt&#224; in rivolta (ad esempio, subito dopo la sua conquista), la rivolta rimanente viene immediatamente ridotta a un turno.
+
+[H2]Diventa governatore[\H2]
+Unit&#224; generali ed eroi possono insediarsi come governatori in un capoluogo di provincia: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+[H2]Cambia cavalli o cammelli[\H2]
+Unit&#224; generali ed eroi possono cambiare la loro cavalcatura nelle citt&#224; con stalle. Dopo questa azione, tutti i punti movimento sono immediatamente disponibili.
+
+[H2]Migliora il morale[\H2]
+Le unit&#224; generali con Retorica possono migliorare il morale delle truppe e rimuovere la stanchezza della guerra.
+
+
+[H1]I Grandi Generali che non si sono ancora uniti a un'unit&#224; possono svolgere i seguenti compiti:[\H1]
+
+[H2]Costruire l'Epica Eroica[\H2]
+I Grandi Generali possiedono il prestigio e l'autorit&#224; per costruire la Meraviglia Nazionale Epica Eroica.
+
+[H2]Costruire l'Accademia Militare[\H2]
+I Grandi Generali possono essere assegnati come istruttori per fondare un'Accademia Militare in una citt&#224;. Questa istituzione garantisce a tutte le unit&#224; appena reclutate punti esperienza aggiuntivi.
+
+[H2]Costruire Statue, Monumenti e Archi di Trionfo[\H2]
+I Grandi Generali non immortalano le loro gesta attraverso un incarico permanente, ma piuttosto attraverso strutture monumentali: possono erigere edifici come statue della vittoria, colonne della vittoria e archi di trionfo. Questi monumenti commemorativi svolgono il ruolo degli istruttori militari di BTS, ma in modo controllato. In PAE, ogni citt&#224; pu&#242; ospitare solo una di queste strutture per evitare una concentrazione irrealistica di istruttori militari.
+
+[H2]Sacro Santuario degli Dei Romani[\H2]
+Solo un Grande Generale possiede l'autorit&#224; e l'onore di istituire il Sacro Santuario degli Dei Romani. Solo lui pu&#242; erigere il Grande Tempio di Marte, un santuario dedicato al dio della guerra Marte, che non &#232; riservato ad altre unit&#224;.
+		</Italian>
+		<Spanish>
+[H1]Acciones Generales[\H1]
+
+Los generales, tanto en pie como ca&#237;dos, pueden representar una amenaza para tu propio reino (guerra civil, usurpadores, v&#233;ase [LINK=CONCEPT_GENERALDEATH]Muerte General[\LINK]), pero en tiempos de guerra, pueden realizar tareas que ninguna otra unidad es capaz de realizar:
+
+[H2]Crear Arietes de Asedio[\H2]
+Si un general est&#225; en una casilla de bosque, puede construir un ariete por turno. Esto es muy &#250;til si no tienes que cargar con lentas m&#225;quinas de asedio durante campa&#241;as largas.
+
+[H2]Tierra Quemada[\H2]
+Los generales pueden ordenar que se abandone la "tierra quemada". Si te enfrentas a un ej&#233;rcito invencible, puede ser &#250;til dejar los cuellos de botella o el &#225;rea que rodea una ciudad quemada y retirarse. Si el oponente entra en dicho campo, sufre da&#241;o y tiene una penalizaci&#243;n de defensa.
+
+[H2]Quemar Bosques[\H2]
+En territorio enemigo, se pueden incendiar bosques. El bosque quemado permanece, debilitando la salud y la econom&#237;a de la ciudad cercana. Esto tambi&#233;n puede usarse para frustrar las zonas de retirada militar del enemigo.
+
+[H2]Fin de Revueltas en la Ciudad[\H2]
+Un general representa el orden y la disciplina, y los h&#233;roes gozan de gran prestigio. Si una unidad de general o un h&#233;roe se mueve a una ciudad en rebeli&#243;n (por ejemplo, inmediatamente despu&#233;s de su conquista), la revuelta restante se reduce inmediatamente a un turno.
+
+[H2]Convertirse en Gobernador[\H2]
+Las unidades de general y los h&#233;roes pueden establecerse como gobernadores en una capital provincial: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+
+[H2]Cambiar Caballos o Camellos[\H2]
+Las unidades de general y los h&#233;roes pueden cambiar de montura en ciudades con establos. Tras esta acci&#243;n, todos los puntos de movimiento vuelven a estar disponibles de inmediato.
+
+[H2]Mejorar la moral[\H2]
+Las unidades generales con Ret&#243;rica pueden mejorar la moral de las tropas y eliminar el cansancio de la guerra.
+
+
+[H1]Los Grandes Generales que a&#250;n no se han unido a una unidad pueden realizar las siguientes tareas:[\H1]
+
+[H2]Construir Epopeya Heroica[\H2]
+Los Grandes Generales poseen el prestigio y la autoridad para construir la Maravilla Nacional de la Epopeya Heroica.
+
+[H2]Construir Academia Militar[\H2]
+Los Grandes Generales pueden ser asignados como instructores para establecer una Academia Militar en una ciudad. Esta instituci&#243;n otorga puntos de experiencia adicionales a todas las unidades reci&#233;n reclutadas.
+
+[H2]Construir Estatuas, Monumentos y Arcos de Triunfo[\H2]
+Los Grandes Generales no inmortalizan sus haza&#241;as mediante estacionamientos permanentes, sino mediante estructuras monumentales: pueden erigir edificios como estatuas de la victoria, columnas de la victoria y arcos de triunfo. Estos monumentos asumen la funci&#243;n de los instructores militares de la BTS, pero de forma controlada. En PAE, cada ciudad solo puede albergar una estructura de este tipo para evitar una concentraci&#243;n excesiva de instructores militares.
+
+[H2]Santuario Sagrado de los Dioses Romanos[\H2]
+Solo un Gran General posee la autoridad y el honor de establecer el Santuario Sagrado de los Dioses Romanos. Solo &#233;l puede erigir el Gran Templo de Marte, un santuario dedicado al dios de la guerra Marte, que no est&#225; reservado para ninguna otra unidad.
+		</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_IMPORTANT_FACTS_PEDIA</Tag>
@@ -8687,16 +8911,24 @@ In extremely rare cases, global natural disasters can occur that severely disrup
 
 These disasters directly impact the population and thus influence the economic and political stability of empires and cultures. They serve as a reminder that civilizations can be shaken by external shocks and that adaptability often determines power.
 
-One of these variants occur:
+Effects:
 
-[ICON_BULLET] Famine: 25% population decline in every city
+[ICON_BULLET] Famine: 50% population decline in every city
 
-[ICON_BULLET] Pandemic: Plague in every city with a population of 4 or more
+[ICON_BULLET] Pandemic: All cities with a population of 6 or more after this decline have a chance of succumbing to the plague (Pop x (Pop-3)%)
 
-In both cases, farms, plantations, large estates, vineyards, olive presses, and (mountain) huts are also destroyed. Forests grow on the empty fields. (Chance 1:2)
+[ICON_BULLET] Farms, plantations, estates, vineyards, olive presses, and mountain villages are 50% destroyed. Forests grow on the empty fields.
+
+[ICON_BULLET] Hamlets, villages, and towns are reduced to huts
+
+[ICON_BULLET] Roads are 50% destroyed. Paved Roman Roads are exempt.
+
+[ICON_BULLET] Units such as emigrants, horses, donkeys, camels and carts are destroyed.
+
 
 [H2]Historical examples:[\H2]
 [ICON_BULLET] 3500 BC: Plague in Europe and Asia
+[ICON_BULLET] 1612 BC: Minoan eruption (Santorini)
 [ICON_BULLET] 1400 BC: Plague in Eurasia
 [ICON_BULLET] 1250 BC: Drought, famine, and a chain of earthquakes lead to the spread of the Sea Peoples
 [ICON_BULLET] 165 AD: Antonine Plague: 7-10 million victims
@@ -8840,17 +9072,25 @@ Dans des cas extr&#234;mement rares, des catastrophes naturelles mondiales peuve
 
 Ces catastrophes ont un impact direct sur la population et, par cons&#233;quent, influencent la stabilit&#233; &#233;conomique et politique des empires et des cultures. Elles rappellent que les civilisations peuvent &#234;tre &#233;branl&#233;es par des chocs ext&#233;rieurs et que la capacit&#233; d'adaptation d&#233;termine souvent la puissance.
 
-L'un de ces variantes ne se produit :
+Effets :
 
-[ICON_BULLET] Famine : baisse de population de 25 % dans chaque ville
+[ICON_BULLET] Famine : D&#233;clin de 50 % de la population dans chaque ville.
 
-[ICON_BULLET] Pand&#233;mie : peste dans chaque ville de 4 habitants ou plus
+[ICON_BULLET] Pand&#233;mie : Toutes les villes comptant 6 habitants ou plus apr&#232;s ce d&#233;clin ont une probabilit&#233; de Pop x (Pop - 3) % de succomber &#224; une &#233;pid&#233;mie.
 
-Dans les deux cas, les fermes, les plantations, les grands domaines, les vignobles, les pressoirs &#224; olives et les cabanes (de montagne) sont &#233;galement d&#233;truits. La for&#234;t pousse sur les champs d&#233;vast&#233;s. (Chance 1:2)
+[ICON_BULLET] Les fermes, plantations, domaines, vignobles, pressoirs &#224; olives et villages de montagne sont d&#233;truits &#224; 50 %. La for&#234;t recouvre les champs.
+
+[ICON_BULLET] Les hameaux, villages et communaut&#233;s sont r&#233;duits &#224; des cabanes.
+
+[ICON_BULLET] Les routes sont d&#233;truites &#224; 50 %. Les voies romaines pav&#233;es sont &#233;pargn&#233;es.
+
+[ICON_BULLET] Les unit&#233;s telles que les &#233;migrants, les chevaux, les &#226;nes, les chameaux et les charrettes sont d&#233;truites.
+
 
 [H2]Exemples historiques :[\H2]
 [ICON_BULLET] 3 500 av. J.-C. : peste en Europe et en Asie
 [ICON_BULLET] 1 400 av. J.-C. : peste en Eurasie
+[ICON_BULLET] 1 612 av. J.-C. : &#201;ruption minoenne (Santorin)
 [ICON_BULLET] 1 250 av. J.-C. : s&#233;cheresse, famine et une s&#233;rie de tremblements de terre entra&#238;nent la propagation des Peuples de la Mer
 [ICON_BULLET] 165 apr. J.-C. : peste antonine : 7 &#224; 10 millions de victimes
 [ICON_BULLET] 250 apr. J.-C. : peste chypriote : plusieurs millions de victimes
@@ -8990,20 +9230,28 @@ In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hl
 
 [H1]Globale Naturkatastrophen durch Klimaschwankungen (1:2000)[\H1]
 
-In &#228;u&#223;erst seltenen F&#228;llen k&#246;nnen globale Naturkatastrophen auftreten, die das Gleichgewicht der Spielwelt empfindlich st&#246;ren. Dazu z&#228;hlen weltweite Pandemien, die oft im Zusammenhang mit Hungersn&#246;ten stehen - ausgel&#246;st durch klimatische Anomalien, die wiederum auf verheerende Vulkanausbr&#252;che in weit entfernten Regionen wie Alaska, Island oder Mittelamerika zur&#252;ckgehen.
+In &#228;u&#223;erst seltenen F&#228;llen k&#246;nnen globale Naturkatastrophen auftreten, die das Gleichgewicht der Spielwelt empfindlich st&#246;ren. Dazu z&#228;hlen weltweite Pandemien, die oft im Zusammenhang mit Hungersn&#246;ten stehen - ausgel&#246;st durch klimatische Anomalien, die wiederum auf verheerende Vulkanausbr&#252;che in weit entfernten Regionen wie Alaska, Island, Mittelamerika oder Ozeanien zur&#252;ckgehen.
 
 Diese Katastrophen wirken sich direkt auf die Bev&#246;lkerung aus und beeinflussen damit die wirtschaftliche und politische Stabilit&#228;t von Reichen und Kulturen. Sie erinnern daran, dass Zivilisationen durch externe Schocks ins Wanken geraten k&#246;nnen und dass Anpassungsf&#228;higkeit oft &#252;ber Macht entscheidet.
 
-Eine dieser Varianten wird auftreten:
+Auswirkungen:
 
-[ICON_BULLET] Hungersnot: 25% Bev&#246;lkerungsr&#252;ckgang in jeder Stadt
+[ICON_BULLET] Hungersnot: 50% Bev&#246;lkerungsr&#252;ckgang in jeder Stadt
 
-[ICON_BULLET] Pandemie: Pest in jeder Stadt ab einer Population von 4
+[ICON_BULLET] Pandemie: alle St&#228;dte, die nach diesem Bev&#246;lkerungsr&#252;ckgang gleich oder mehr als 6 Pop haben, bekommen eine Chance von Pop x (Pop-3) % einer Pest zu unterliegen
 
-In beiden F&#228;llen werden Bauernh&#246;fe, Plantagen, Latifundien, Weing&#228;rten, Olivenpressen, und (Berg-)H&#252;tten ebenfalls zerst&#246;rt. Auf den leeren Feldern entstehen W&#228;lder. (Chance 1:2)
+[ICON_BULLET] Bauernh&#246;fe, Plantagen, Latifundien, Weing&#228;rten, Olivenpressen und Bergd&#246;rfer werden zu 50% zerst&#246;rt. Auf den leeren Feldern entstehen W&#228;lder.
+
+[ICON_BULLET] Weiler, D&#246;rfer und Gemeinden werden zu H&#252;tten
+
+[ICON_BULLET] Stra&#223;en werden zu 50% zerst&#246;rt. Gepflasterte R&#246;mische Stra&#223;en ausgenommen.
+
+[ICON_BULLET] Einheiten wie Auswanderer, Pferde, Esel, Kamele und Fuhrwerke werden vernichtet
+
 
 [H2]Historische Beispiele:[\H2]
 [ICON_BULLET] 3500 v.Chr.: Pest in Europa und Asien
+[ICON_BULLET] 1612 v.Chr.: Minoische Eruption (Santorin)
 [ICON_BULLET] 1400 v.Chr.: Pest in Eurasien
 [ICON_BULLET] 1250 v.Chr.: D&#252;rre, Hungersn&#246;te und Erdbebenketten f&#252;hren zur Ausbreitung der Seev&#246;lker
 [ICON_BULLET] 165 n.Chr.: Antoninische Pest: 7-10 Mio. Opfer
@@ -9148,17 +9396,25 @@ In casi estremamente rari, possono verificarsi disastri naturali globali che com
 
 Questi disastri hanno un impatto diretto sulla popolazione e quindi influenzano la stabilit&#224; economica e politica di imperi e culture. Servono a ricordare che le civilt&#224; possono essere scosse da shock esterni e che l'adattabilit&#224; spesso determina il potere.
 
-Pu&#242; verificarsi una di queste varianti:
+Effetti:
 
-[ICON_BULLET] Carestia: calo demografico del 25% in ogni citt&#224;
+[ICON_BULLET] Carestia: calo demografico del 50% in ogni citt&#224;
 
-[ICON_BULLET] Pandemia: peste in ogni citt&#224; con una popolazione di 4 o pi&#249; abitanti
+[ICON_BULLET] Pandemia: tutte le citt&#224; con una popolazione di 6 o pi&#249; abitanti dopo questo calo hanno una probabilit&#224; di soccombere a una pestilenza pari a Pop x (Pop - 3) %
 
-In entrambi i casi, vengono distrutti anche fattorie, piantagioni, grandi tenute, vigneti, frantoi e rifugi (di montagna). Le foreste crescono sui campi deserti. (Probabilit&#224; 1:2)
+[ICON_BULLET] Fattorie, piantagioni, tenute, vigneti, frantoi e villaggi di montagna vengono distrutti al 50%. Le foreste crescono sui campi vuoti.
+
+[ICON_BULLET] Borghi, villaggi e comunit&#224; vengono ridotti a capanne
+
+[ICON_BULLET] Le strade vengono distrutte al 50%. Le strade romane lastricate sono esenti.
+
+[ICON_BULLET] Unit&#224; come emigranti, cavalli, asini, cammelli e carri vengono distrutte.
+
 
 [H2]Esempi storici:[\H2]
 [ICON_BULLET] 3500 a.C.: peste in Europa e Asia
 [ICON_BULLET] 1400 a.C.: peste in Eurasia
+[ICON_BULLET] 1612 a.C.: Eruzione minoica (Santorini)
 [ICON_BULLET] 1250 a.C.: siccit&#224;, carestia e una serie di terremoti portano alla diffusione dei Popoli del Mare
 [ICON_BULLET] 165 d.C.: peste antonina: 7-10 milioni di vittime
 [ICON_BULLET] 250 d.C.: peste cipriota: diversi milioni di vittime
@@ -9301,17 +9557,25 @@ En casos extremadamente raros, pueden ocurrir desastres naturales globales que a
 
 Estos desastres impactan directamente a la poblaci&#243;n y, por lo tanto, influyen en la estabilidad econ&#243;mica y pol&#237;tica de imperios y culturas. Sirven como recordatorio de que las civilizaciones pueden verse afectadas por choques externos y que la adaptabilidad a menudo determina el poder.
 
-Puede ocurrir una de estas variantes:
+Efectos:
 
-[ICON_BULLET] Hambruna: Disminuci&#243;n del 25% de la poblaci&#243;n en todas las ciudades
+[ICON_BULLET] Hambruna: Disminuci&#243;n del 50% de la poblaci&#243;n en todas las ciudades.
 
-[ICON_BULLET] Pandemia: Peste en todas las ciudades con una poblaci&#243;n de 4 o m&#225;s habitantes
+[ICON_BULLET] Pandemia: Todas las ciudades con una poblaci&#243;n de 6 o m&#225;s habitantes tras esta disminuci&#243;n tienen una probabilidad de sucumbir a una plaga de Pob x (Pob - 3) %.
 
-En ambos casos, se destruyen granjas, plantaciones, latifundios, vi&#241;edos, almazaras y caba&#241;as de monta&#241;a. Los bosques crecen en los campos vac&#237;os. (Oportunidad 1:2)
+[ICON_BULLET] Granjas, plantaciones, fincas, vi&#241;edos, almazaras y pueblos de monta&#241;a quedan destruidos en un 50%. Los bosques crecen en los campos vac&#237;os.
+
+[ICON_BULLET] Aldeas, pueblos y comunidades quedan reducidas a chozas.
+
+[ICON_BULLET] Las carreteras quedan destruidas en un 50%. Las calzadas romanas pavimentadas est&#225;n exentas.
+
+[ICON_BULLET] Se destruyen unidades como emigrantes, caballos, burros, camellos y carros.
+
 
 [H2]Ejemplos hist&#243;ricos:[\H2]
 [ICON_BULLET] 3500 a. C.: Peste en Europa y Asia
 [ICON_BULLET] 1400 a. C.: Peste en Eurasia
+[ICON_BULLET] 1612 a. C.: Erupci&#243;n minoica (Santorini)
 [ICON_BULLET] 1250 a. C.: Sequ&#237;a, hambruna y una serie de terremotos provocan la expansi&#243;n de los Pueblos del Mar
 [ICON_BULLET] 165 d. C.: Peste Antonina: 7-10 millones de v&#237;ctimas
 [ICON_BULLET] 250 d. C.: Peste Cipriana: varios millones de v&#237;ctimas
@@ -12607,8 +12871,9 @@ Instead of settling them down in your cities, you can also use your slaves to bu
 [ICON_BULLET]provides the slave resource (usable in every city connected to this city)
 [ICON_BULLET]New slave units can appear in every city with a slave market and/or settled slaves (1.5%/round, 3% with Tyranny)
 
-[H1]Educated slaves:[\H1]
-Educated slaves can be settled into a city as teachers: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
+[H1]Educated Slaves:[\H1]
+[ICON_BULLET] Educated slaves can be settled into a city as teachers: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE], -1 [ICON_FOOD]
+[ICON_BULLET] Educated slaves are not considered rebellious slaves.
 
 
 [H1]Slaves become Christians[\H1]
@@ -12616,7 +12881,7 @@ Educated slaves can be settled into a city as teachers: +2 [ICON_RESEARCH], +1 [
 
 
 [H1]Slave revolt[\H1]
-Calculation: 20% every turn, if number of slaves and gladiators is higher than city population:
+Calculation: 20% every turn, if number of slaves (Educated Slaves excepted) and gladiators is higher than city population:
 2nd calculation: (number of slaves + gladiators - city population) * 10 (in %) per city
 
 Additional factors:
@@ -12741,15 +13006,15 @@ D&#232;s qu'un esclave est affect&#233; &#224; une ville, un march&#233; aux esc
 [ICON_BULLET] Un esclave peut &#234;tre cr&#233;&#233; dans les villes avec un march&#233; aux esclaves et/ou au moins un esclave install&#233; (1,5% chance/tour, 3% avec la doctrine Tyrannie)
 
 [H1]Des esclaves instruits :[\H1]
-Les esclaves instruits peuvent s'installer comme enseignants dans une ville : +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
-
+[ICON_BULLET] Les esclaves instruits peuvent s'installer comme enseignants dans une ville : +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE], -1 [ICON_FOOD]
+[ICON_BULLET] Les esclaves instruits ne sont pas consid&#233;r&#233;s comme des esclaves rebelles.
 
 [H1]Les esclaves deviennent chr&#233;tiens[\H1]
 [ICON_BULLET] Le christianisme peut automatiquement se propager dans les villes o&#249; vivent des esclaves s&#233;dentaires : chance 1:5
 
 
 [H1]R&#233;volte d'esclaves[\H1]
-20% par tour, si le nombre d'esclaves et de gladiateurs est sup&#233;rieur &#224; la population de la ville:
+20% par tour, si le nombre d'esclaves (les esclaves instruits except&#233;s) et de gladiateurs est sup&#233;rieur &#224; la population de la ville:
 2&#232;me calculation: (nombre d'esclaves + de gladiateurs - population) * 10 (en %) par ville
 
 Facteurs additionnels :
@@ -12876,7 +13141,8 @@ Statt die Sklaven in einer Stadt anzusiedeln, k&#246;nnen sie auch einen Sklaven
 [ICON_BULLET]Neue Sklaveneinheiten k&#246;nnen in St&#228;dten mit einem Sklavenmarkt und/oder angesiedelten Sklaven auftauchen (1.5%/Runde, 3% mit Tyrannis)
 
 [H1]Gebildete Sklaven:[\H1]
-Gebildete Sklaven k&#246;nnen sich als Lehrer einer Stadt ansiedeln: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
+[ICON_BULLET] Gebildete Sklaven k&#246;nnen sich als Lehrer einer Stadt ansiedeln: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE], -1 [ICON_FOOD]
+[ICON_BULLET] Gebildete Sklaven z&#228;hlen nicht zu den aufst&#228;ndischen Sklaven.
 
 
 [H1]Sklaven werden Christen[\H1]
@@ -12884,7 +13150,7 @@ Gebildete Sklaven k&#246;nnen sich als Lehrer einer Stadt ansiedeln: +2 [ICON_RE
 
 
 [H1]Sklavenaufstand[\H1]
-Berechnung pro Runde 20%, wenn die Anzahl der Sklaven und Schauk&#228;mpfer/Gladiatoren gr&#246;&#223;er als die Stadtbev&#246;lkerung ist:
+Berechnung pro Runde 20%, wenn die Anzahl der Sklaven (Gebildete Sklaven ausgenommen) und Schauk&#228;mpfer/Gladiatoren gr&#246;&#223;er als die Stadtbev&#246;lkerung ist:
 2te Berechnung: (Anzahl der Sklaven + Schauk&#228;mpfer - Stadtgr&#246;&#223;e) * 10 (in %)
 
 Zus&#228;tzliche Faktoren:
@@ -13011,7 +13277,8 @@ Uno schiavo pu&#242; costruire un mercato di schiavi sacrificandolo. Il mercato 
 [ICON_BULLET] Uno schiavo pu&#242; essere creato in citt&#224; con un mercato di schiavi e/o almeno uno schiavo assegnato (1,5% probabilit&#224;/turno, 3% con dottrina Tirannia)
 
 [H1]Schiavi istruiti:[\H1]
-Gli schiavi istruiti possono stabilirsi come insegnanti in una citt&#224;: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
+[ICON_BULLET] Gli schiavi istruiti possono stabilirsi come insegnanti in una citt&#224;: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE], -1 [ICON_FOOD]
+[ICON_BULLET] Gli schiavi istruiti non sono considerati schiavi ribelli.
 
 
 [H1]Gli schiavi diventano cristiani[\H1]
@@ -13019,7 +13286,7 @@ Gli schiavi istruiti possono stabilirsi come insegnanti in una citt&#224;: +2 [I
 
 
 [H1]Rivolta degli schiavi[\H1]
-20% a turno, se il numero di schiavi e gladiatori &#232; superiore alla popolazione della citt&#224;:
+20% a turno, se il numero di schiavi (schiavi istruiti esclusi) e gladiatori &#232; superiore alla popolazione della citt&#224;:
 2. calcolo: (numero di schiavi + gladiatori - popolazione) * 10 (in%) per citt&#224;
 
 Fattori aggiuntivi:
@@ -13146,7 +13413,8 @@ En vez de asentarlos en tus ciudades, tambi&#233;n puedes usar tus esclavos para
 [ICON_BULLET]Nuevas unidades de esclavos pueden aparecer en cada ciudad con un mercado de esclavos y/o esclavos asentados (2% por turno, 4% con tiran&#237;a)
 
 [H1]Esclavos educados:[\H1]
-Los esclavos educados pueden establecerse como profesores en una ciudad: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE]
+[ICON_BULLET] Los esclavos educados pueden establecerse como profesores en una ciudad: +2 [ICON_RESEARCH], +1 [ICON_GREATPEOPLE], -1 [ICON_FOOD]
+[ICON_BULLET] Los esclavos educados no son considerados esclavos rebeldes.
 
 
 [H1]Los esclavos se convierten en cristianos[\H1]
@@ -13154,7 +13422,7 @@ Los esclavos educados pueden establecerse como profesores en una ciudad: +2 [ICO
 
 
 [H1]Revuelta de esclavos[\H1]
-C&#225;lculo: 20% por turno, si el n&#250;mero de esclavos y gladiadores es mayor que la poblaci&#243;n de la ciudad:
+C&#225;lculo: 20% por turno, si el n&#250;mero de esclavos (se except&#250;an los esclavos educados) y gladiadores es mayor que la poblaci&#243;n de la ciudad:
 2do c&#225;lculo: (n&#250;mero de esclavos + gladiadores - poblaci&#243;n) * 10 (en %)
 
 Factores adicionales:
@@ -13537,7 +13805,7 @@ Each governor has a specific property that is assigned when the unit is created.
 [ICON_BULLET] organizes: +2 [ICON_HAPPY]
 [ICON_BULLET] expansive: +2 [ICON_HEALTHY]
 
-[ICON_BULLET] Hero: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+[ICON_BULLET] Hero or General unit: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
 
 These provincial capitals should not be lightly built, as they call up for a [ICON_GOLD]-tribute with a probability of 10% (every 10th turn).
 The weight of the tribute is generated based on the city size (population * 10 + random number of half of this value).
@@ -13557,7 +13825,7 @@ Chaque gouverneur poss&#232;de une qualit&#233; pr&#233;f&#233;rentielle exprim&
 [ICON_BULLET] organis&#233; : +2 [ICON_HAPPY]
 [ICON_BULLET] accessible : +2 [ICON_HEALTHY]
 
-[ICON_BULLET] H&#233;ros: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+[ICON_BULLET] H&#233;ros ou Unit&#233; G&#233;n&#233;rale: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
 
 Les palais provinciaux ne doivent pas &#234;tre construit &#224; la l&#233;g&#232;re car leur gouverneur r&#233;clamera r&#233;guli&#232;rement un tribut en [ICON_GOLD] avec une probabilit&#233; de 10% (tous les 10 tours). Calcul du tribut : (population de la ville x 10) + (un nombre al&#233;atoire compris entre 0 et la "valeur pr&#233;c&#233;dente / 2"). Par exemple, pour une ville de 9 : (9 x 10) + (nombre al&#233;atoire entre 0 et 45) soit un tribut compris entre 90 et 135 [ICON_GOLD]. Leur construction n'est donc rentable que si l'&#233;conomie r&#233;alis&#233;e sur la maintenance des villes avoisinantes permet de couvrir le paiement des tributs.
 		</French>
@@ -13576,7 +13844,7 @@ Jeder Statthalter hat eine bestimmte Eigenschaft, die beim Erstellen der Einheit
 [ICON_BULLET] organisiert: +2 [ICON_HAPPY]
 [ICON_BULLET] expansiv: +2 [ICON_HEALTHY]
 
-[ICON_BULLET] Held: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+[ICON_BULLET] Held oder Generalseinheit: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
 
 Solche Provinzhauptst&#228;dte sollten aber nicht leichtfertig gebaut werden, da sie bei einer Wahrscheinlichkeit von 10% (jede 10. Runde) Tribut fordern. Die H&#246;he des Tributs richtet sich nach der Gr&#246;&#223;e der fordernden Provinzhauptstadt (Bev&#246;lkerung * 10 + Zufallswert von der H&#228;lfte dieser Zahl). Durch den r&#252;ndlichen Profit dieser Stadt (vergleichbar mit dem Unterhaltsbonus der Hauptstadt und angrenzender St&#228;dte), sollte das leistbar sein.
 		</German>
@@ -13595,7 +13863,7 @@ Ogni governatore ha una propriet&#224; specifica che viene assegnata quando l'un
 [ICON_BULLET] organizza: +2 [ICON_HAPPY]
 [ICON_BULLET] espansivo: +2 [ICON_HEALTHY]
 
-[ICON_BULLET] Eroe: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+[ICON_BULLET] Eroe o Generale: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
 
 
 Ma tali capoluoghi di provincia non dovrebbero essere costruiti con leggerezza, che prendono il loro pedaggio con una probabilit&#224; del 10% ( ogni 10&#186; turno ). La quantit&#224; di tributo dipende dalla dimensione del esigenti capitale provinciale ( popolazione * 10 + valore casuale dalla met&#224; di quel numero ). Dal profitto r&#252;ndlichen questa citt&#224; (paragonabile alla capitale bonus di manutenzione e le citt&#224; limitrofe ), che deve essere accessibile.
@@ -13615,7 +13883,7 @@ Cada gobernador tiene una propiedad espec&#237;fica que se asigna cuando se crea
 [ICON_BULLET] organiza: +2 [ICON_HAPPY]
 [ICON_BULLET] expansivo: +2 [ICON_HEALTHY]
 
-[ICON_BULLET] H&#233;roe: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
+[ICON_BULLET] H&#233;roe o Unidad General: +5 [ICON_COMMERCE] + 1 [ICON_HAPPY]
 
 Ma tali capoluoghi di provincia non dovrebbero essere costruiti con leggerezza, che prendono il loro pedaggio con una probabilit&#224; del 10% ( ogni 10&#186; turno ). La quantit&#224; di tributo dipende dalla dimensione del esigenti capitale provinciale ( popolazione * 10 + valore casuale dalla met&#224; di quel numero ). Dal profitto r&#252;ndlichen questa citt&#224; (paragonabile alla capitale bonus di manutenzione e le citt&#224; limitrofe ), che deve essere accessibile.
 		</Spanish>

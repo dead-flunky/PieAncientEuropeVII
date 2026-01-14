@@ -17,7 +17,7 @@ from CvPythonExtensions import (CyGlobalContext, CyTranslator, UnitAITypes,
 											CyCamera, BuildingTypes, CyInterface,
 											InterfaceMessageTypes, CommerceTypes,
 											ReligionTypes, CyPopupInfo, ButtonPopupTypes,
-											WarPlanTypes, DomainTypes, plotDistance,
+											WarPlanTypes, DomainTypes, plotDistance,ColorTypes,
 											MemoryTypes, plotXY, isLimitedWonderClass, OrderTypes)
 import CvUtil
 import PAE_City
@@ -26,6 +26,7 @@ import PAE_Lists as L
 gc = CyGlobalContext()
 localText = CyTranslator()
 
+# Pie: important fact:
 # EventTriggerInfos.xml: kTriggeredData = argsList[0]
 # EventInfos.xml: kTriggeredData = argsList[1]
 
@@ -446,30 +447,26 @@ def canTriggerCityFire(argsList):
 		if city.plot().getLatitude() <= 0:
 			return False
 
-		if iCityPop < 3:
-			return False
-
-		# Mit Feuerwehr 100% Schutz
+		iChance = 0
+		# Feuerwehr: 90% Schutz
 		if city.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
-			return False
-
-		# Mit Brunnen Schutz bis Pop 5
-		if iCityPop < 6:
-			if city.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
-				return False
-
-		# Mit Bewässerung Schutz bis Pop 11
-		if iCityPop < 12:
-			if (city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
-				 city.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) or
-				 city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
+			iChance = 9
+		# Aquaedukt: 70% Schutz
+		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
+			iChance = 7
+		# Bewässerung: 50% Schutz
+		elif (
+			city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
+			city.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) or
+			city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
 			):
-				return False
+			iChance = 5
+		# Brunnen: 30% Schutz
+		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
+			iChance = 3
 
-		# Mit Aquaedukt Schutz bis Pop 17
-		if iCityPop < 18:
-			if city.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
-				return False
+		if iChance < gc.getGame().getSorenRandNum(10, "City Fire"):
+			return False
 
 		return True
 
@@ -479,8 +476,8 @@ def canApplyCityFire1(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
 
-		# Chance 1:3: Brand unter Kontrolle
-		return (gc.getGame().getGameTurn() * kTriggeredData.iCityId) % 3 == 0
+		# Chance 1:2: Brand unter Kontrolle
+		return (gc.getGame().getGameTurn() * kTriggeredData.iCityId) % 2 == 0
 
 def canApplyCityFire2(argsList):
 		return not canApplyCityFire1(argsList)
@@ -561,22 +558,20 @@ def applyHurricane1(argsList):
 		if listCheapBuildings:
 			for _ in range(iDestroy):
 				iBuilding = listCheapBuildings[gc.getGame().getSorenRandNum(len(listCheapBuildings), "Hurricane event cheap building destroyed")]
-				if city.isHasBuilding(iBuilding):
-					szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
-					CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-									gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
-					city.setNumRealBuilding(iBuilding, 0)
-					iDestroy -= 1
-					break
+				szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
+				CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+								gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
+				city.setNumRealBuilding(iBuilding, 0)
+				iDestroy -= 1
+				break
 
 		# PAE (only destroy 1 expensive building)
 		if iDestroy > 0 and listExpensiveBuildings:
 				iBuilding = listExpensiveBuildings[gc.getGame().getSorenRandNum(len(listExpensiveBuildings), "Hurricane event expensive building destroyed")]
-				if city.isHasBuilding(iBuilding):
-					szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
-					CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-									gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
-					city.setNumRealBuilding(iBuilding, 0)
+				szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
+				CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+								gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
+				city.setNumRealBuilding(iBuilding, 0)
 
 def applyCityFire(argsList):
 		kTriggeredData = argsList[1]
