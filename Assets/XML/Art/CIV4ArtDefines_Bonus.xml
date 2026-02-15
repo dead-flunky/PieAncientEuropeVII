@@ -663,8 +663,8 @@
 			<Type>ART_DEF_BONUS_DATTELN</Type>
 			<fScale>0.7</fScale>
 			<fInterfaceScale>1.5</fInterfaceScale>
-			<NIF>Art/Terrain/Resources/figs/fig.nif</NIF>
-			<KFM/>
+			<NIF>Art/Terrain/Resources/dates/banana.nif</NIF>
+			<KFM>Art/Terrain/Resources/dates/banana.kfm</KFM>
 			<Button>Art/Interface/Buttons/Bonus/bonus_datteln.dds</Button>
 			<FontButtonIndex>72</FontButtonIndex>
 		</BonusArtInfo>

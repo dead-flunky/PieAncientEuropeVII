@@ -3710,6 +3710,14 @@ Para las unidades "poco confiables", este rasgo se elimina primero. Despu&#233;s
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_COMBAT4_PEDIA</Tag>
+		<English>[H1]Combat Simulation[\H1][NEWLINE][NEWLINE]In PAE, melee combat at full health is not depicted as immediate all-out confrontations, but as short, realistic skirmishes lasting only a limited number of combat rounds (2-4). Each combat round represents an intense exchange of blows before the units disengage, regroup, or retreat. This system reflects historical battle dynamics of antiquity much more realistically. Most battles did not end with the complete annihilation of a unit, but rather with retreat, regrouping, flight, or enslavement.[NEWLINE][NEWLINE][H2]Unit Classes and Battle Duration[\H2][NEWLINE]The length of a melee battle depends on the type of unit classes involved.[NEWLINE][NEWLINE][ICON_BULLET] Heavy Infantry (Spearmen, Axemen, Swordsmen)[NEWLINE]These troops fight in tight formations and can endure for extended periods.[NEWLINE][NEWLINE]Battles between heavy units last the longest.[NEWLINE][NEWLINE][NEWLINE][ICON_BULLET] [ICON_BULLET] Light Infantry and Ranged Units (Skirmishers, Archers)[NEWLINE][NEWLINE]They avoid close combat and retreat quickly.[NEWLINE][NEWLINE]Battles with light units are very short.[NEWLINE][NEWLINE][ICON_BULLET] Cavalry and Chariots[NEWLINE]Quick attacks, retreat, re-engage.[NEWLINE][NEWLINE]Cavalry battles are short, unless both sides are mobile.[NEWLINE][NEWLINE][ICON_BULLET] Elephants[NEWLINE]Heavy shock troops that can remain engaged in close combat for longer periods.[NEWLINE]Medium to long battle duration.[NEWLINE][NEWLINE][ICON_BULLET] Siege Engines[NEWLINE]Not suitable for close combat.[NEWLINE][NEWLINE]As attackers: short and effective, because they attack protected by the background and are designed to lose few hit points.[NEWLINE][NEWLINE]As defenders: long, usually until the unit is lost.[NEWLINE][NEWLINE]Ships[NEWLINE]On coasts: Boarding and ramming maneuvers take longer.[NEWLINE][NEWLINE]On the high seas: short battles due to poor combat conditions (high waves)[NEWLINE][NEWLINE][ICON_BULLET]Attacker and Defender Combinations[\H2][NEWLINE]The battle duration depends not only on the unit type but also on who is attacking whom.[NEWLINE][NEWLINE][ICON_BULLET] Same unit class against each other: Same conditions: long, intense battle[NEWLINE][NEWLINE][ICON_BULLET] Heavy infantry against light infantry: The light unit retreats faster: few combat rounds[NEWLINE][NEWLINE][ICON_BULLET] Cavalry against infantry: Hit and run by the cavalry: few combat rounds[NEWLINE][NEWLINE][ICON_BULLET]Terrain and Battle Duration[\H2][NEWLINE][NEWLINE][ICON_BULLET] Plains: Open terrain: normal battle duration[NEWLINE][NEWLINE][ICON_BULLET] Forest / Jungle / Swamp: Difficult terrain, retreat made more difficult: longer battles (+1 round)</English>
+		<French>[H1]Simulation des combats[\H1][NEWLINE][NEWLINE]Dans PAE, les combats au corps &#224; corps &#224; pleine sant&#233; ne sont pas repr&#233;sent&#233;s comme des affrontements directs et massifs, mais comme de courtes escarmouches r&#233;alistes d'une dur&#233;e limit&#233;e (2 &#224; 4 rounds). Chaque round repr&#233;sente un &#233;change de coups intense avant que les unit&#233;s ne se d&#233;sengagent, se regroupent ou battent en retraite. Ce syst&#232;me refl&#232;te bien mieux la dynamique des batailles antiques. La plupart des batailles ne se terminaient pas par l'an&#233;antissement complet d'une unit&#233;, mais plut&#244;t par la retraite, le regroupement, la fuite ou la r&#233;duction en esclavage.[NEWLINE][NEWLINE][H2]Classes d'unit&#233;s et dur&#233;e des batailles[\H2][NEWLINE][NEWLINE]La dur&#233;e d'un combat au corps &#224; corps d&#233;pend du type d'unit&#233;s impliqu&#233;es.[NEWLINE][NEWLINE][ICON_BULLET] Infanterie lourde (Lanciers, Haches, &#201;p&#233;istes)[NEWLINE][NEWLINE]Ces troupes combattent en formations serr&#233;es et peuvent tenir longtemps.[NEWLINE][NEWLINE]Les batailles entre unit&#233;s lourdes sont les plus longues.[NEWLINE][NEWLINE][ICON_BULLET] [ICON_BULLET] Infanterie l&#233;g&#232;re et unit&#233;s &#224; distance (escarmoucheurs, archers)[NEWLINE][NEWLINE]Elles &#233;vitent le corps &#224; corps et battent rapidement en retraite.[NEWLINE][NEWLINE]Les batailles avec des unit&#233;s l&#233;g&#232;res sont tr&#232;s courtes.[NEWLINE][NEWLINE][ICON_BULLET] Cavalerie et chars[NEWLINE]Attaques rapides, retraite, r&#233;engagement.[NEWLINE][NEWLINE]Les batailles de cavalerie sont courtes, sauf si les deux camps sont mobiles.[NEWLINE][NEWLINE][ICON_BULLET] &#201;l&#233;phants[NEWLINE]Troupes de choc lourdes capables de rester engag&#233;es au corps &#224; corps pendant de longues p&#233;riodes.[NEWLINE][NEWLINE]Dur&#233;e des batailles moyenne &#224; longue.[NEWLINE][NEWLINE][ICON_BULLET] Engins de si&#232;ge[NEWLINE]Inadapt&#233;s au corps &#224; corps.[NEWLINE][NEWLINE]En attaque : batailles courtes et efficaces, car ils attaquent prot&#233;g&#233;s par le terrain et sont con&#231;us pour subir peu de pertes.[NEWLINE][NEWLINE]En d&#233;fense : batailles longues, g&#233;n&#233;ralement jusqu'&#224; la perte de l'unit&#233;.[NEWLINE][NEWLINE]Navires[NEWLINE][NEWLINE]Sur les c&#244;tes : les manoeuvres d'abordage et d'&#233;peronnage sont plus longues.[NEWLINE][NEWLINE]En haute mer : batailles courtes dues aux mauvaises conditions de combat (forte houle)[NEWLINE][NEWLINE][ICON_BULLET]Combinaisons Attaquant/D&#233;fenseur[\H2][NEWLINE][NEWLINE]La dur&#233;e de la bataille d&#233;pend non seulement du type d'unit&#233;, mais aussi de l'attaquant.[NEWLINE][NEWLINE][ICON_BULLET] Unit&#233;s de m&#234;me classe contre unit&#233;s identiques : m&#234;mes conditions : bataille longue et intense[NEWLINE][NEWLINE][ICON_BULLET] Infanterie lourde contre infanterie l&#233;g&#232;re : l'unit&#233; l&#233;g&#232;re bat en retraite plus rapidement : peu de tours de combat[NEWLINE][NEWLINE][ICON_BULLET] Cavalerie contre infanterie : tactiques de harc&#232;lement de la cavalerie : peu de tours de combat[NEWLINE][NEWLINE][ICON_BULLET]Terrain et dur&#233;e des batailles[\H2][NEWLINE][NEWLINE][ICON_BULLET] Plaines : terrain d&#233;gag&#233; : dur&#233;e de bataille normale[NEWLINE][NEWLINE][ICON_BULLET] For&#234;t/Jungle/Marais : terrain difficile, retraite plus ardue : batailles plus longues (+1 tour)</French>
+		<German>[H1]Kampfsimulation[\H1][NEWLINE][NEWLINE]In PAE werden Nahk&#228;mpfe bei voller Gesundheit nicht nur als sofortige Totalkonfrontationen dargestellt, sondern als kurze, realistische Gefechte, die nur eine begrenzte Anzahl von Kampfrunden (2-4) dauern. Jede Kampfrunde repr&#228;sentiert einen intensiven Schlagabtausch, bevor sich die Einheiten wieder l&#246;sen, neu formieren oder zur&#252;ckweichen. Dieses System bildet historische Gefechtsdynamiken der Antike wesentlich glaubw&#252;rdiger ab. Die meisten K&#228;mpfe endeten nicht mit der v&#246;lligen Vernichtung einer Einheit, sondern mit R&#252;ckzug, Re-Formation, Flucht oder Versklavung.[NEWLINE][NEWLINE][H2]Einheitenklassen und Gefechtsdauer[\H2][NEWLINE]Die L&#228;nge eines Nahkampfes h&#228;ngt von der Art der beteiligten Einheitenklassen ab.[NEWLINE][NEWLINE][ICON_BULLET] Schwere Infanterie (Speertr&#228;ger, Axtk&#228;mpfer, Schwertk&#228;mpfer)[NEWLINE]Diese Truppen k&#228;mpfen in geschlossenen Formationen und halten lange durch.[NEWLINE]Gefechte zwischen schweren Einheiten dauern am l&#228;ngsten.[NEWLINE][NEWLINE][ICON_BULLET] Leichte Infanterie und Fernk&#228;mpfer (Pl&#228;nkler, Bogensch&#252;tzen)[NEWLINE]Sie vermeiden Nahkampf und ziehen sich schnell zur&#252;ck.[NEWLINE]Gefechte mit leichten Einheiten sind sehr kurz.[NEWLINE][NEWLINE][ICON_BULLET] Reiter und Streitwagen[NEWLINE]Schnelle Angriffe, R&#252;ckzug, erneutes Ansetzen.[NEWLINE]Reitergefechte sind kurz, au&#223;er wenn beide Seiten mobil sind.[NEWLINE][NEWLINE][ICON_BULLET] Elefanten[NEWLINE]Schwere Schocktruppen, die im Nahkampf l&#228;nger gebunden bleiben k&#246;nnen.[NEWLINE]Mittlere bis l&#228;ngere Gefechtsdauer.[NEWLINE][NEWLINE][ICON_BULLET] Belagerungsger&#228;te[NEWLINE]Nicht f&#252;r Nahkampf geeignet.[NEWLINE]Als Angreifer: kurz und effektiv, weil sie gesch&#252;tzt vom Hintergrund angreifen und dabei kaum Lebenspunkte verlieren sollen[NEWLINE]Als Verteidiger: lang, meist bis zum Verlust der Einheit[NEWLINE][NEWLINE]Schiffe[NEWLINE]Auf K&#252;sten: Enter- und Ramm-Man&#246;ver dauern l&#228;nger.[NEWLINE]Auf hoher See: kurze K&#228;mpfe, wegen schlechten Kampfbedingungen (hoher Wellengang)[NEWLINE][NEWLINE][NEWLINE][H2]Angreifer und Verteidiger-Kombinationen[\H2][NEWLINE]Die Gefechtsdauer h&#228;ngt nicht nur vom Einheitentyp ab, sondern auch davon, wer wen angreift.[NEWLINE][NEWLINE][ICON_BULLET] Gleiche Einheitenklassen gegeneinander: Gleiche Bedingungen: langer, intensiver Kampf[NEWLINE][NEWLINE][ICON_BULLET] Schwere Infanterie gegen leichte Infanterie: Die leichte Einheit weicht schneller zur&#252;ck: wenig Kampfrunden[NEWLINE][NEWLINE][ICON_BULLET] Reiter gegen Infanterie: Hit and run der Reiterei: wenig Kampfrunden[NEWLINE][NEWLINE][NEWLINE][H2]Gel&#228;nde und Gefechtsdauer[\H2][NEWLINE][NEWLINE][ICON_BULLET] Ebene: Offenes Gel&#228;nde: normale Gefechtsdauer[NEWLINE][NEWLINE][ICON_BULLET] Wald / Dschungel / Sumpf: Un&#252;bersichtliches Gel&#228;nde, R&#252;ckzug erschwert: l&#228;ngere Gefechte (+1 Runde)</German>
+		<Italian>[H1]Simulazione di combattimento[\H1][NEWLINE][NEWLINE]In PAE, il combattimento corpo a corpo a corpo a piena salute non &#232; rappresentato come scontri immediati e totali, ma come brevi e realistiche schermaglie che durano solo un numero limitato di round di combattimento (2-4). Ogni round di combattimento rappresenta un intenso scambio di colpi prima che le unit&#224; si disimpegnino, si riorganizzino o si ritirino. Questo sistema riflette le dinamiche di battaglia storiche dell'antichit&#224; in modo molto pi&#249; realistico. La maggior parte delle battaglie non si concludeva con l'annientamento completo di un'unit&#224;, ma piuttosto con la ritirata, il riorganizzarsi, la fuga o la schiavit&#249;.[NEWLINE][NEWLINE][H2]Classi di unit&#224; e durata della battaglia[\H2][NEWLINE]La durata di una battaglia corpo a corpo dipende dal tipo di classe di unit&#224; coinvolta.[NEWLINE][NEWLINE][ICON_BULLET] Fanteria pesante (Lancieri, Guerrieri con ascia, Spadaccini)[NEWLINE]Queste truppe combattono in formazioni serrate e possono resistere per periodi prolungati.[NEWLINE][NEWLINE]Le battaglie tra unit&#224; pesanti sono quelle che durano pi&#249; a lungo.[NEWLINE][NEWLINE][ICON_BULLET] [ICON_BULLET] Fanteria leggera e unit&#224; a distanza (Schermagliatori, Arcieri)[NEWLINE][NEWLINE]Evitano il combattimento ravvicinato e si ritirano rapidamente.[NEWLINE][NEWLINE]Le battaglie con unit&#224; leggere sono molto brevi.[NEWLINE][NEWLINE][ICON_BULLET] Cavalleria e carri[NEWLINE]Attacchi rapidi, ritirata, reingaggio.[NEWLINE][NEWLINE]Le battaglie di cavalleria sono brevi, a meno che entrambe le parti non siano mobili.[NEWLINE][NEWLINE][ICON_BULLET] Elefanti[NEWLINE]Truppe d'assalto pesanti che possono rimanere impegnate in combattimento ravvicinato per periodi pi&#249; lunghi.[NEWLINE]Durata della battaglia da media a lunga.[NEWLINE][NEWLINE][ICON_BULLET] Macchine d'assedio[NEWLINE]Non adatte al combattimento ravvicinato.[NEWLINE][NEWLINE]Come attaccanti: brevi ed efficaci, perch&#233; attaccano protetti dallo sfondo e sono progettati per perdere pochi punti ferita.[NEWLINE][NEWLINE]Come difensori: lunghe, di solito fino alla perdita dell'unit&#224;.[NEWLINE][NEWLINE]Navi[NEWLINE]Sulle coste: le manovre di abbordaggio e speronamento richiedono pi&#249; tempo.[NEWLINE][NEWLINE]In alto mare: battaglie brevi a causa delle cattive condizioni di combattimento (onde alte)[NEWLINE][NEWLINE][ICON_BULLET]Combinazioni di attaccanti e difensori[\H2][NEWLINE]La durata della battaglia dipende non solo dal tipo di unit&#224;, ma anche da chi sta attaccando chi.[NEWLINE][NEWLINE][ICON_BULLET] Unit&#224; della stessa classe l'una contro l'altra: stesse condizioni: battaglia lunga e intensa[NEWLINE][NEWLINE][ICON_BULLET] Fanteria pesante contro fanteria leggera: l'unit&#224; leggera si ritira pi&#249; velocemente: pochi round di combattimento[NEWLINE][NEWLINE][ICON_BULLET] Cavalleria contro fanteria: colpisci e scappa dalla cavalleria: pochi round di combattimento[NEWLINE][NEWLINE][ICON_BULLET]Terreno e durata della battaglia[\H2][NEWLINE][NEWLINE][ICON_BULLET] Pianure: terreno aperto: durata della battaglia normale[NEWLINE][NEWLINE][ICON_BULLET] Foresta/Giungla/Palude: terreno difficile, ritirata resa pi&#249; difficile: battaglie pi&#249; lunghe (+1 round)</Italian>
+		<Spanish>[H1]Simulaci&#243;n de Combate[\H1][NEWLINE][NEWLINE]En PAE, el combate cuerpo a cuerpo con la salud al m&#225;ximo no se representa como enfrentamientos totales inmediatos, sino como escaramuzas cortas y realistas que duran solo un n&#250;mero limitado de rondas de combate (2-4). Cada ronda de combate representa un intenso intercambio de golpes antes de que las unidades se desmarquen, se reagrupen o se retiren. Este sistema refleja la din&#225;mica de batalla hist&#243;rica de la antig&#252;edad con mucho m&#225;s realismo. La mayor&#237;a de las batallas no terminaban con la aniquilaci&#243;n completa de una unidad, sino con la retirada, el reagrupamiento, la huida o la esclavitud.[NEWLINE][NEWLINE][H2]Clases de Unidad y Duraci&#243;n de la Batalla[\H2][NEWLINE]La duraci&#243;n de una batalla cuerpo a cuerpo depende del tipo de clase de unidad involucrada.[NEWLINE][NEWLINE][ICON_BULLET] Infanter&#237;a Pesada (Lanceros, Hacheros, Espadachines)[NEWLINE]Estas tropas luchan en formaciones compactas y pueden resistir durante largos periodos.[NEWLINE][NEWLINE]Las batallas entre unidades pesadas son las m&#225;s largas.[NEWLINE][NEWLINE][ICON_BULLET] [ICON_BULLET] Infanter&#237;a Ligera y Unidades a Distancia (Escaramuzadores, Arqueros)[NEWLINE][NEWLINE]Evitan el combate cuerpo a cuerpo y se retiran r&#225;pidamente.[NEWLINE][NEWLINE]Las batallas con unidades ligeras son muy cortas.[NEWLINE][NEWLINE][ICON_BULLET] Caballer&#237;a y Carros[NEWLINE]Ataques r&#225;pidos, retirada, reenganche.[NEWLINE][NEWLINE]Las batallas de caballer&#237;a son cortas, a menos que ambos bandos sean m&#243;viles.[NEWLINE][NEWLINE][ICON_BULLET] Elefantes[NEWLINE]Tropas pesadas de choque que pueden permanecer en combate cuerpo a cuerpo durante periodos m&#225;s largos.[NEWLINE]Duraci&#243;n de batalla de media a larga.[NEWLINE][NEWLINE][ICON_BULLET] M&#225;quinas de Asedio[NEWLINE]No son aptas para el combate cuerpo a cuerpo.[NEWLINE][NEWLINE]Como atacantes: cortas y efectivas, ya que atacan protegidos por el fondo y est&#225;n dise&#241;adas para perder pocos puntos de vida.[NEWLINE][NEWLINE]Como defensores: largas, generalmente hasta que la unidad se pierde.[NEWLINE][NEWLINE]Barcos[NEWLINE]En la costa: Las maniobras de abordaje y embestida son m&#225;s largas.[NEWLINE][NEWLINE]En alta mar: Batallas cortas debido a las malas condiciones de combate (olas altas).[NEWLINE][NEWLINE][ICON_BULLET]Combinaciones de Atacante y Defensor[\H2][NEWLINE]La duraci&#243;n de la batalla depende no solo del tipo de unidad, sino tambi&#233;n de qui&#233;n ataca a qui&#233;n.[NEWLINE][NEWLINE][ICON_BULLET] Unidades de la misma clase entre s&#237;: Mismas condiciones: Batalla larga e intensa.[NEWLINE][NEWLINE][ICON_BULLET] Infanter&#237;a pesada contra infanter&#237;a ligera: La unidad ligera se retira m&#225;s r&#225;pido: pocas rondas de combate.[NEWLINE][NEWLINE][ICON_BULLET] Caballer&#237;a contra infanter&#237;a: Ataque y fuga de la caballer&#237;a: pocas rondas de combate.[NEWLINE][NEWLINE][ICON_BULLET]Terreno y duraci&#243;n de la batalla[\H2][NEWLINE][NEWLINE][ICON_BULLET] Llanuras: Terreno abierto: Duraci&#243;n de batalla normal.[NEWLINE][NEWLINE][ICON_BULLET] Bosque/Jungla/Pantano: Terreno dif&#237;cil, retirada m&#225;s dif&#237;cil: Batallas m&#225;s largas (+1 ronda).</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_COMBAT_PEDIA</Tag>
 		<English>[H1]Ranged Attack[\H1]
 In this mod there are no kamikaze archers or catapults!
@@ -6830,7 +6838,7 @@ A city with more than 12 pop will become a provincial city. More buildings will 
 A provincial city with more than 20 pop will become a metropolis. More buildings will be unlocked. A metropolis falls back to a provincial city status if the pop drops under 20 again.
 
 [H1]Provincial capital[\H1]
-A provincial palace can only be built in provinces (per x cities) and lowers the maintenance cost of all the surrounding cities (just like the Palace).
+A provincial palace can only be built in Cities (Pop 6) (per x cities) and lowers the maintenance cost of all the surrounding cities (just like the Palace).
 The city in which it is built gains advantages:
 [ICON_BULLET] Can set a specialist spy
 [ICON_BULLET] War weariness is reduced by 25%
@@ -6853,7 +6861,7 @@ Une ville avec une population de 12 ou plus devient une grande ville. De nouveau
 Une grande ville avec une population de 20 ou plus devient une m&#233;tropole. De nouveaux b&#226;timents sont d&#233;bloqu&#233;s et ce statut est perdu si la population diminue &#224; 19 ou moins.
 
 [H1]Capitale provinciale[\H1]
-Un palais provincial peut &#234;tre construit dans une ville. Il a le m&#234;me effet qu'un palais en r&#233;duisant les co&#251;ts de maintenance des villes alentours.
+Un palais provincial peut &#234;tre construit dans une ville (Pop 6). Il a le m&#234;me effet qu'un palais en r&#233;duisant les co&#251;ts de maintenance des villes alentours.
 Il donne &#233;galement des bonus sp&#233;cifiques &#224; la ville o&#249; il est construit :
 [ICON_BULLET] Possibilit&#233; d'affecter un sp&#233;cialiste espion
 [ICON_BULLET] R&#233;duction de 25% du m&#233;contentement d&#251; &#224; la guerre
@@ -6877,12 +6885,12 @@ Ab Gr&#246;&#223;e 12 wird eine Stadt zur Provinzstadt. Weitere Geb&#228;ude wer
 Ab Gr&#246;&#223;e 20 wird eine Provinzstadt zur Metropole. Weitere Geb&#228;ude werden freigeschaltet. Sinkt eine Metropole unter Pop 20, f&#228;llt sie in den Status einer Provinzstadt zur&#252;ck.
 
 [H1]Provinzhauptstadt[\H1]
-Ein Provinzpalast kann in einer Stadt gebaut werden (pro x St&#228;dte) und senkt die Unterhaltkosten aller umliegender St&#228;dte (wie der Palast).
+Ein Provinzpalast kann in einer Stadt (Pop 6) gebaut werden (pro x St&#228;dte) und senkt die Unterhaltkosten aller umliegender St&#228;dte (wie der Palast).
 Diese Stadt hat weiters folgende Vorteile:
 [ICON_BULLET] Kann einen Spion als Spezialisten einstellen
 [ICON_BULLET] Senkt den Kriegsverdruss um weitere 25%
 [ICON_BULLET] K&#246;nnen Hilfstruppen ausbilden
-[ICON_BULLET] K&#246;nnen von [LINK=CONCEPT_STATTHALTER]Provinzstatthaltern[\LINK] administriert werden
+[ICON_BULLET] K&#246;nnen von [LINK=CONCEPT_STATTHALTER]Statthaltern[\LINK] administriert werden
 		</German>
 		<Italian>
 [H1] Regolamento [\H1]
@@ -6901,7 +6909,7 @@ Dalla taglia 12 a una citt&#224; a citt&#224; di provincia. Saranno sbloccati al
 Dalla taglia 20 &#232; una citt&#224; di provincia in una metropoli. Saranno sbloccati altri edifici. Rientra in una metropoli Pop 20, si ricade nello stato di una citt&#224; di provincia.
 
 [H1] provinciale [\H1]
-Un palazzo provinciale pu&#242; essere costruito solo in una citt&#224; di provincia (per x citt&#224; ) e riduce i costi di tutte le citt&#224; circostanti ( tra cui il Palazzo di manutenzione ).
+Un palazzo provinciale pu&#242; essere costruito solo in una citt&#224; (Pop 6) (per x citt&#224; ) e riduce i costi di tutte le citt&#224; circostanti ( tra cui il Palazzo di manutenzione ).
 Questa citt&#224; ha anche i seguenti vantaggi:
 [ICON_BULLET] Possibile impostare una spia come specialisti
 [ICON_BULLET] Abbassa il fastidio di guerra di un ulteriore 25 %
@@ -6925,7 +6933,7 @@ Una ciudad con m&#225;s de 12 de pob crecer&#225; a una ciudad provincial. M&#22
 Una provincia con m&#225;s de 20 de pob crecer&#225; a una metr&#243;polis. M&#225;s edificios ser&#225;n desbloqueados. Una metr&#243;polis regresar&#225; a ciudad provincial si la pob de la ciudad cae por debajo de 20 otra vez. 
 
 [H1]Capital de provincia[\H1]
-Un palacio provincial s&#243;lo puede ser construido en provincias (por cada x ciudades) y baja el coste de mantenimiento de todas las ciudades circundantes (al igual que el Palacio).
+Un palacio provincial s&#243;lo puede ser construido en Cuidades (Pob 6) (por cada x ciudades) y baja el coste de mantenimiento de todas las ciudades circundantes (al igual que el Palacio).
 La ciudad en la que es construida gana las ventajas:
 [ICON_BULLET] Puede poner un esp&#237;a especialista
 [ICON_BULLET] El hast&#237;o b&#233;lico es reducido en un 25%
@@ -10795,6 +10803,203 @@ Si no tienes la suerte de aprender una tecnolog&#237;a, puedes aprender al menos
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_PIRACY_PEDIA</Tag>
+		<English>[H1]Piracy[\H1]
+
+Piracy was a widespread and often accepted phenomenon in the ancient world. Long before the heyday of classical civilizations, small groups plundered coastal cities, ships, and trade routes to enrich themselves. In an era of limited state control over seas and coasts, pirates could operate over long distances and often carry out their actions with impunity.
+
+The earliest accounts of piracy come from the eastern Mediterranean, particularly from the seafarers of the Aegean islands, Asia Minor, and the Levant. Pirates used the numerous bays and hidden harbors as bases from which to attack merchant ships. Their violence was frequently directed against the merchant fleets of wealthy city-states like Athens or Corinth, which depended on imported grain supplies and luxury goods.
+
+Piracy was not always purely criminal: In many cultures, pirates were used as mercenaries, privateers, or even political tools. In Rome, for example, pirates at times gained such great power that they threatened parts of the Mediterranean coast and severely restricted trade. Around 67 BC, the Roman general Pompey conducted a comprehensive anti-piracy campaign that destroyed pirate strongholds and brought the seas back under state control.
+
+[H2]Pirate Ships[\H2]
+
+The following ships can switch to pirates (black flag) and back again (national flag):
+
+[ICON_BULLET] Penteconter
+[ICON_BULLET] Bireme
+[ICON_BULLET] Trireme
+[ICON_BULLET] Liburna
+
+Requirements:
+
+[ICON_BULLET] technology of [LINK=TECH_PIRACY]Piracy[\LINK]
+[ICON_BULLET] only outside a city
+[ICON_BULLET] only out of foreign sight (except barbarians)
+[ICON_BULLET] one movement point will be reduced with every shift
+
+[H2]Pirate Levels I-III[\H2]
+
+Pirate ships can passively advance through a ranking system by plundering coastal settlements (huts, hamlets, villages, towns). They must be moved directly next to the settlement on the coast to perform this action.
+
+[ICON_BULLET] Pirates of levels 0-I can only plunder. This yields some gold and a 10% chance that the coastal village will decrease by one level.
+[ICON_BULLET] Level II grants more gold and the ability to massacre the inhabitants. The upgrade level is also automatically reduced by one.
+[ICON_BULLET] Level III provides the most gold and the ability to enslave inhabitants instead of massacring them. You receive one slave. If the ship has no storage space, a barbarian slave is created on the land plot.
+
+Raiding a coastal village has a 20% chance of prompting its inhabitants to leave the coastal area and settle in a neighboring city. This increases the city's population by one.
+
+[H2]Pirate Nests[\H2]
+
+Certain civilizations can build a Pirate Nest in their cities. This building can fully repair damaged pirate ships in one turn.</English>
+		<French>
+[H1]Piraterie[\H1]
+
+La piraterie &#233;tait un ph&#233;nom&#232;ne r&#233;pandu et souvent accept&#233; dans le monde antique. Bien avant l'apog&#233;e des civilisations classiques, de petits groupes pillaient les villes c&#244;ti&#232;res, les navires et les routes commerciales pour s'enrichir. &#192; une &#233;poque o&#249; le contr&#244;le des &#201;tats sur les mers et les c&#244;tes &#233;tait limit&#233;, les pirates pouvaient op&#233;rer sur de longues distances et souvent agir en toute impunit&#233;.
+
+Les premiers r&#233;cits de piraterie proviennent de la M&#233;diterran&#233;e orientale, notamment des marins des &#238;les de la mer &#201;g&#233;e, d'Asie Mineure et du Levant. Les pirates utilisaient les nombreuses baies et les ports cach&#233;s comme bases pour attaquer les navires marchands. Leurs attaques visaient fr&#233;quemment les flottes marchandes de cit&#233;s-&#201;tats prosp&#232;res comme Ath&#232;nes ou Corinthe, qui d&#233;pendaient des importations de c&#233;r&#233;ales et de produits de luxe.
+
+La piraterie n'&#233;tait pas toujours un acte purement criminel : dans de nombreuses cultures, les pirates &#233;taient employ&#233;s comme mercenaires, corsaires, voire comme instruments politiques. &#192; Rome, par exemple, les pirates acquirent parfois une telle puissance qu'ils menac&#232;rent certaines parties du littoral m&#233;diterran&#233;en et restreignirent fortement le commerce. Aux alentours de 67 av. J.-C., le g&#233;n&#233;ral romain Pomp&#233;e mena une vaste campagne anti-piraterie qui d&#233;truisit les repaires de pirates et ramena les mers sous le contr&#244;le de l'&#201;tat.
+
+[H2]Navires pirates[\H2]
+
+Les navires suivants peuvent devenir pirates (pavillon noir) et redevenir des navires pirates (pavillon national) :
+
+[ICON_BULLET] Pent&#233;cont&#232;re
+[ICON_BULLET] Bir&#232;me
+[ICON_BULLET] Trir&#232;me
+[ICON_BULLET] Liburne
+
+Pr&#233;-requis :
+
+[ICON_BULLET] La technologie [LINK=TECH_PIRACY]Piraterie[\LINK]
+[ICON_BULLET] Hors d'une ville
+[ICON_BULLET] Hors de vue de nations &#233;trang&#232;res (sauf les barbares)
+[ICON_BULLET] Le bateau perd un point de mouvement &#224; chaque changement
+
+[H2]Niveaux de pirates I &#224; III[\H2]
+
+Les navires pirates peuvent progresser passivement dans un syst&#232;me de classement en pillant les &#233;tablissements c&#244;tiers (cabanes, hameaux, villages, villes). Ils doivent se trouver directement &#224; proximit&#233; de l'&#233;tablissement sur la c&#244;te pour effectuer cette action.
+
+[ICON_BULLET] Les pirates de niveaux 0 &#224; I peuvent uniquement piller. Cela rapporte de l'or et offre 10 % de chances de faire baisser le niveau du village c&#244;tier.
+[ICON_BULLET] Le niveau II octroie plus d'or et la possibilit&#233; de massacrer les habitants. Le niveau d'am&#233;lioration est &#233;galement automatiquement r&#233;duit de un.
+[ICON_BULLET] Le niveau III offre le plus d'or et la possibilit&#233; de r&#233;duire les habitants en esclavage au lieu de les massacrer. Vous recevez un esclave. Si le navire n'a pas d'espace de stockage, un esclave barbare est cr&#233;&#233; sur la parcelle terrestre.
+
+Piller un village c&#244;tier offre 20 % de chances d'inciter ses habitants &#224; quitter la zone c&#244;ti&#232;re et &#224; s'installer dans une ville voisine. Cela augmente la population de la ville de un.
+
+[H2]Repaires de pirates[\H2]
+
+Certaines civilisations peuvent construire un repaire de pirates dans leur ville. Ce b&#226;timent permet de r&#233;parer enti&#232;rement les navires pirates endommag&#233;s en un seul tour.
+		</French>
+		<German>
+[H1]Piraterie[\H1]
+
+Piraterie war in der antiken Welt ein weit verbreitetes und oft akzeptiertes Ph&#228;nomen. Schon lange vor der Bl&#252;tezeit der klassischen Hochkulturen pl&#252;nderten kleinere Gruppen K&#252;stenst&#228;dte, Schiffe und Handelsrouten, um sich zu bereichern. In einer Zeit, in der staatliche Kontrolle &#252;ber Meere und K&#252;sten nur begrenzt existierte, konnten Piraten &#252;ber lange Strecken operieren und ihre Aktionen oft ungestraft durchf&#252;hren.
+
+Die fr&#252;hesten Berichte &#252;ber Piraterie stammen aus dem &#246;stlichen Mittelmeerraum, insbesondere von den Seefahrern der &#228;g&#228;ischen Inseln, Kleinasiens und der Levante. Piraten nutzten die zahlreichen Buchten und versteckten H&#228;fen als St&#252;tzpunkte, von denen aus sie Handelsschiffe &#252;berfielen. H&#228;ufig richtete sich ihre Gewalt gegen die Handelsflotten wohlhabender Stadtstaaten wie Athen oder Korinth, die abh&#228;ngig von importierten Getreidevorr&#228;ten und Luxusg&#252;tern waren.
+
+Piraterie war nicht immer nur kriminell: In vielen Kulturen wurden Piraten als S&#246;ldner, private Freibeuter oder sogar politische Werkzeuge genutzt. In Rom zum Beispiel erlangten Piraten zeitweise so gro&#223;e Macht, dass sie Teile der Mittelmeerk&#252;ste bedrohten und den Handel erheblich einschr&#228;nkten. Der r&#246;mische Feldherr Pompeius f&#252;hrte um 67 v.Chr. eine umfassende Anti-Piraterie-Kampagne durch, die Piratenst&#252;tzpunkte zerst&#246;rte und die Meere wieder unter staatliche Kontrolle brachte.
+
+[H2]Piratenschiffe[\H2]
+
+Folgende Schiffe k&#246;nnen zu Piraten (unter Schwarzer Flagge) und wieder zur&#252;ck wechseln (Nationalbanner):
+
+[ICON_BULLET] Kontere
+[ICON_BULLET] Bireme
+[ICON_BULLET] Triere
+[ICON_BULLET] Liburne
+
+Voraussetzungen:
+
+[ICON_BULLET] Technologie der [LINK=TECH_PIRACY]Piraterie[\LINK]
+[ICON_BULLET] nur au&#223;erhalb einer Stadt m&#246;glich
+[ICON_BULLET] nur au&#223;erhalb der Sichtweite fremder Einheiten (ausgenommen Barbaren)
+[ICON_BULLET] bei jedem Bannerwechsel wird ein Bewegungspunkt abgezogen
+
+
+[H2]Piraten-Stufen I-III[\H2]
+
+Piratenschiffe k&#246;nnen sich passiv einem Rangsystem hinaufarbeiten, indem sie K&#252;stensiedlungen (H&#252;tten, Weiler, D&#246;rfer, Gemeinden) pl&#252;ndern. Dabei m&#252;ssen sie direkt neben der Siedlung an die K&#252;ste bewegt werden, wo sie dann diese Aktion ausf&#252;hren k&#246;nnen.
+
+[ICON_BULLET] Piraten der Stufe 0-I k&#246;nnen lediglich pl&#252;ndern. Das bringt etwas Gold und eine 10% Chance, dass das K&#252;stendorf um eine Stufe schrumpft.
+[ICON_BULLET] Stufe II bedeutet mehr Gold und die M&#246;glichkeit die Einwohner zu massakrieren. Die Stufe der Modernisierung wird dabei fix um eine Stufe verringert.
+[ICON_BULLET] Stufe III liefert am meisten Gold und die M&#246;glichkeit Einwohner nicht zu massakrieren, sondern zu versklaven. Man erh&#228;lt einen Sklaven. Sollte das Schiff keinen Lagerplatz haben, wird ein barbarischer Sklave auf dem Landplot erstellt.
+
+Eine Pl&#252;nderung eines K&#252;stendorfs kann die hiesigen Einwohner dazu veranlassen, mit einer Chance von 20% den K&#252;stenabschnitt zu verlassen, um sich in einer benachbarten Stadt anzusiedeln. Dabei wird die Stadt-Pop um eins erh&#246;ht.
+
+[H2]Piratennester[\H2]
+
+Bestimmte Zivilisationen k&#246;nnen ein Piraten-Nest in ihren St&#228;dten bauen. Dieses Geb&#228;ude kann besch&#228;digte Piratenschiffe in einer Runde komplett reparieren.
+		</German>
+		<Italian>
+[H1]Pirateria[\H1]
+
+La pirateria era un fenomeno diffuso e spesso accettato nel mondo antico. Molto prima dell'apogeo delle civilt&#224; classiche, piccoli gruppi saccheggiavano citt&#224; costiere, navi e rotte commerciali per arricchirsi. In un'epoca di limitato controllo statale su mari e coste, i pirati potevano operare su lunghe distanze e spesso compiere le loro azioni impunemente.
+
+I primi resoconti di pirateria provengono dal Mediterraneo orientale, in particolare dai marinai delle isole dell'Egeo, dell'Asia Minore e del Levante. I pirati usavano le numerose baie e i porti nascosti come basi da cui attaccare le navi mercantili. La loro violenza era spesso rivolta contro le flotte mercantili di ricche citt&#224;-stato come Atene o Corinto, che dipendevano dalle importazioni di grano e beni di lusso.
+
+La pirateria non era sempre puramente criminale: in molte culture, i pirati venivano usati come mercenari, corsari o persino strumenti politici. A Roma, ad esempio, i pirati a volte acquisirono un potere cos&#236; grande da minacciare parti della costa mediterranea e limitare fortemente il commercio. Intorno al 67 a.C., il generale romano Pompeo condusse una vasta campagna antipirateria che distrusse le roccaforti dei pirati e riport&#242; i mari sotto il controllo dello Stato.
+
+[H2]Navi pirata[\H2]
+
+Le seguenti navi possono passare da una nave pirata (con bandiera nera) a una nave nazionale:
+
+[ICON_BULLET] Storta
+[ICON_BULLET] Bireme
+[ICON_BULLET] Trireme
+[ICON_BULLET] Liburne
+
+Requisiti:
+
+[ICON_BULLET] la tecnologia della [LINK=TECH_PIRACY]Pirateria[\LINK]
+[ICON_BULLET] appena fuori di una citt&#224; possibile
+[ICON_BULLET] appena fuori dalla vista di altre unit&#224; ( ad eccezione di barbari )
+[ICON_BULLET] Su ogni un punto movimento sar&#224; detratto
+
+[H2]Livelli Pirata I-III[\H2]
+
+Le navi pirata possono avanzare passivamente attraverso un sistema di classificazione saccheggiando gli insediamenti costieri (capanne, villaggi, borghi, citt&#224;). Devono essere spostate direttamente accanto all'insediamento sulla costa per eseguire questa azione.
+
+[ICON_BULLET] I pirati di livello 0-I possono solo saccheggiare. Questo produce oro e una probabilit&#224; del 10% che il villaggio costiero diminuisca di un livello.
+[ICON_BULLET] Il livello II garantisce pi&#249; oro e la possibilit&#224; di massacrare gli abitanti. Anche il livello di potenziamento viene automaticamente ridotto di uno.
+[ICON_BULLET] Il livello III fornisce pi&#249; oro e la possibilit&#224; di schiavizzare gli abitanti invece di massacrarli. Si riceve uno schiavo. Se la nave non ha spazio di stoccaggio, viene creato uno schiavo barbaro sul terreno.
+
+Razziare un villaggio costiero ha una probabilit&#224; del 20% di indurre i suoi abitanti ad abbandonare la zona costiera e a stabilirsi in una citt&#224; vicina. Questo aumenta la popolazione della citt&#224; di uno.
+
+[H2]Covi dei Pirati[\H2]
+
+Alcune civilt&#224; possono costruire un Covo dei Pirati nelle loro citt&#224;. Questo edificio pu&#242; riparare completamente le navi pirata danneggiate in un turno.
+		</Italian>
+		<Spanish>
+[H1]Pirater&#237;a[\H1]
+
+La pirater&#237;a era un fen&#243;meno generalizado y a menudo aceptado en el mundo antiguo. Mucho antes del apogeo de las civilizaciones cl&#225;sicas, peque&#241;os grupos saqueaban ciudades costeras, barcos y rutas comerciales para enriquecerse. En una &#233;poca de control estatal limitado sobre mares y costas, los piratas pod&#237;an operar a largas distancias y, a menudo, llevar a cabo sus actos con impunidad.
+
+Los primeros testimonios de pirater&#237;a provienen del Mediterr&#225;neo oriental, en particular de los navegantes de las islas del Egeo, Asia Menor y el Levante. Los piratas utilizaban las numerosas bah&#237;as y puertos ocultos como bases para atacar a los buques mercantes. Su violencia se dirig&#237;a con frecuencia contra las flotas mercantes de ciudades-estado ricas como Atenas o Corinto, que depend&#237;an de la importaci&#243;n de grano y bienes de lujo.
+
+La pirater&#237;a no siempre fue puramente criminal: en muchas culturas, los piratas eran utilizados como mercenarios, corsarios o incluso como instrumentos pol&#237;ticos. En Roma, por ejemplo, los piratas alcanzaron en ocasiones tal poder que amenazaron partes de la costa mediterr&#225;nea y restringieron gravemente el comercio. Alrededor del a&#241;o 67 a. C., el general romano Pompeyo llev&#243; a cabo una amplia campa&#241;a antipirater&#237;a que destruy&#243; las fortalezas piratas y puso los mares nuevamente bajo control estatal.
+
+[H2]Barcos Piratas[\H2]
+
+Los siguientes barcos pueden cambiar a piratas (ondeando una bandera negra) y viceversa (ondeando una bandera nacional):
+
+[ICON_BULLET] Pentec&#243;ntero
+[ICON_BULLET] Birreme
+[ICON_BULLET] Trirreme
+[ICON_BULLET] Liburna
+
+Requisitos:
+
+[ICON_BULLET] la tecnolog&#237;a de [LINK=TECH_PIRACY]Pirater&#237;a[\LINK]
+[ICON_BULLET] s&#243;lo posible fuera de una ciudad
+[ICON_BULLET] s&#243;lo fuera de la vista de territorio extranjero (excepto b&#225;rbaros)
+[ICON_BULLET] Por cada movimiento se reducir&#225; un punto de movimiento.
+
+[H2]Niveles Pirata I-III[\H2]
+
+Los barcos piratas pueden avanzar pasivamente a trav&#233;s de un sistema de clasificaci&#243;n saqueando asentamientos costeros (caba&#241;as, aldeas, pueblos, ciudades). Deben estar junto al asentamiento costero para realizar esta acci&#243;n.
+
+[ICON_BULLET] Los piratas de niveles 0-1 solo pueden saquear. Esto proporciona algo de oro y un 10% de probabilidad de que la aldea costera baje de nivel.
+[ICON_BULLET] El nivel II otorga m&#225;s oro y la capacidad de masacrar a los habitantes. El nivel de mejora tambi&#233;n se reduce autom&#225;ticamente en uno.
+[ICON_BULLET] El nivel III proporciona la mayor cantidad de oro y la capacidad de esclavizar a los habitantes en lugar de masacrarlos. Recibes un esclavo. Si el barco no tiene espacio de almacenamiento, se crea un esclavo b&#225;rbaro en la parcela.
+
+Asaltar una aldea costera tiene un 20% de probabilidad de que sus habitantes abandonen la zona costera y se establezcan en una ciudad vecina. Esto aumenta la poblaci&#243;n de la ciudad en una unidad.
+
+[H2]Guaridas Piratas[\H2]
+
+Ciertas civilizaciones pueden construir una Guarida Pirata en sus ciudades. Este edificio puede reparar completamente los barcos piratas da&#241;ados en un solo turno.
+		</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_PROMOTIONS_PEDIA</Tag>
 		<English>[H1]Promotion system[\H1]
 The promotion system in PAE has been reworked completely. The first level of each terrain specific promotion cannot be achieved by experience points but will be assigned randomly after a fight in this terrain/the training of a unit in a city surrounded by this terrain. Every following promotion level can be reached the same way (apart from the movement promotions), the levels 2 and 3 can also be assigned by experience points (levels 4 and 5 not). The city attack/defence promotions work in the same way; units trained in a city can get city raider I/city garrison I (depending on the unit type) immediately.
@@ -11481,6 +11686,7 @@ Trigger:
 [ICON_BULLET] Any city with 2 (or 3 if city status is City) religions
 [ICON_BULLET] 2% chance per city/turn
 [ICON_BULLET] From the Heresy technology, 4% per city/turn
+[ICON_BULLET] With the [LINK=BUILDING_REL_STEUER]Fiscus Hall (Capitatio)[/LINK] only 1% per city/round
 
 Effect:
 [ICON_BULLET] Step 1: All city units are injured and immobilized for 1 round
@@ -11605,6 +11811,7 @@ D&#233;clenchement:
 [ICON_BULLET] Chaque ville avec 2 (ou 3 si le statut de la ville est une ville) religions
 [ICON_BULLET] Chance 2% par ville/tour
 [ICON_BULLET] De l'h&#233;r&#233;sie technologique 4 % par ville/tour
+[ICON_BULLET] Avec la [LINK=BUILDING_REL_STEUER]Salle fiscal (Capitatio)[/LINK], seulement 1 % par ville/tour
 
 Impact:
 [ICON_BULLET] &#201;tape 1 : Toutes les unit&#233;s de la ville sont bless&#233;es et immobilis&#233;es pendant 1 round
@@ -11731,6 +11938,7 @@ Ausl&#246;ser:
 [ICON_BULLET] Jede Stadt mit 2 (bzw 3 bei Stadtstatus Stadt) Religionen
 [ICON_BULLET] Chance 2% pro Stadt/Runde
 [ICON_BULLET] Ab der Technologie H&#228;resie 4% pro Stadt/Runde
+[ICON_BULLET] Mit der [LINK=BUILDING_REL_STEUER]Abgabenstelle (Capitatio)[/LINK] nur 1% pro Stadt/Runde
 
 Auswirkung:
 [ICON_BULLET] Schritt 1: Alle Stadteinheiten werden verletzt und sind 1 Runde unbeweglich
@@ -11857,6 +12065,7 @@ Grilletto:
 [ICON_BULLET] Ogni citt&#224; con 2 (o 3 se lo stato della citt&#224; &#232; citt&#224;) religioni
 [ICON_BULLET] Probabilit&#224; 2% per citt&#224;/round
 [ICON_BULLET] Dall'eresia tecnologica 4% per citt&#224;/round
+[ICON_BULLET] Con la [LINK=BUILDING_REL_STEUER]Sala fiscale (capitatio)[/LINK] solo l'1% per citt&#224;/round
 
 Impatto:
 [ICON_BULLET] Fase 1: tutte le unit&#224; cittadine vengono ferite e immobilizzate per 1 round
@@ -11984,6 +12193,7 @@ Desencadenar:
 [ICON_BULLET] Cada ciudad con 2 religiones (o 3 si el estado de la ciudad es ciudad)
 [ICON_BULLET] Probabilidad del 2 % por ciudad/ronda
 [ICON_BULLET] De la Herej&#237;a Tecnol&#243;gica 4% por ciudad/ronda
+[ICON_BULLET] Con el [LINK=BUILDING_REL_STEUER]Sala fiscal (Capitatio)[/LINK] solo el 1% por ciudad/ronda
 
 Impacto:
 [ICON_BULLET] Paso 1: Todas las unidades de la ciudad resultan heridas y quedan inmovilizadas durante 1 ronda.
@@ -12702,17 +12912,7 @@ If we take the example of a vessel with 6 [ICON_MOVES] that has suffered 50% dam
 [ICON_BULLET] For large Polyremen the ends of the oars were made of lead, otherwise you could not lift the oars. For this reason, lead is required for the construction of those big vessels.
 
 [H1]Pirates[\H1]
-The following ships can be switched to a pirate and back again:
-[ICON_BULLET] Penteconter
-[ICON_BULLET] Bireme
-[ICON_BULLET] Trireme
-[ICON_BULLET] Liburna
-
-Requirements:
-[ICON_BULLET] the technology of Piracy
-[ICON_BULLET] only outside a city
-[ICON_BULLET] only out of foreign sight (except barbarians)
-[ICON_BULLET] one movement point will be reduced with every shift</English>
+Ships can make the seas unsafe as pirates ([LINK=CONCEPT_PIRACY]Concept: Piracy[\LINK]).</English>
 		<French>
 [H1]Navigation[\H1]
 [ICON_BULLET] Les brouillards et les temp&#234;tes sont infranchissables
@@ -12722,38 +12922,17 @@ Si nous prenons l'exemple d'un navire avec 6 [ICON_MOVES] qui a subi 50% de d&#2
 [ICON_BULLET] Pour les grands Polyremen, les extr&#233;mit&#233;s des rames &#233;taient en plomb, sinon on ne pouvait pas soulever les rames. Pour cette raison, le plomb est n&#233;cessaire &#224; la construction de ces grands navires.
 
 [H1]Pirates[\H1]
-Les bateaux suivants peuvent &#234;tre transform&#233;s en pirate, ou inversement :
-[ICON_BULLET]Pent&#233;cont&#232;re
-[ICON_BULLET]Bir&#232;me
-[ICON_BULLET]Trir&#232;me
-[ICON_BULLET]Liburne
-
-Pr&#233;-requis :
-[ICON_BULLET]La technologie piraterie
-[ICON_BULLET]Hors d'une ville
-[ICON_BULLET]Hors de vue de nations &#233;trang&#232;res (sauf les barbares)
-[ICON_BULLET]Le bateau perd un point de mouvement &#224; chaque changement
+Les navires peuvent rendre les mers dangereuses en tant que pirates ([LINK=CONCEPT_PIRACY]Concept : Piraterie[\LINK]).
 		</French>
 		<German>
 [H1]Schifffahrt[\H1]
 [ICON_BULLET] Nebel und St&#252;rme sind unpassierbar
-[ICON_BULLET] Besch&#228;digte Schiffe werden verlangsamt (Bewegungskosten erh&#246;hen sich durch Schaden)
-Nehmen wir das Beispiel eines Schiffes mit 6 [ICON_MOVES], das 50 % Schaden erlitten hat. Bezogen auf seine insgesamt 6 [ICON_MOVES] kann diese Seeeinheit nur 3 Felder pro Runde bewegen.
-
+[ICON_BULLET] Besch&#228;digte Schiffe werden verlangsamt (Bewegungsmalus wird durch Schaden erh&#246;ht)
+Ein Schiffes mit 6 [ICON_MOVES], das 50% Schaden erlitten hat, kann nur 3 [ICON_MOVES] Felder pro Runde ziehen.
 [ICON_BULLET] Bei gro&#223;en Polyremen (Mehrruderer) wurden die Enden der Ruder aus Blei gefertigt, da man die Ruder sonst nicht anheben konnte. Aus diesem Grund wird f&#252;r den Bau dieser gro&#223;en Schiffe Blei ben&#246;tigt.
 
 [H1]Piraten[\H1]
-Folgende Schiffe k&#246;nnen zu Piraten und wieder zur&#252;ck wechseln:
-[ICON_BULLET] Kontere
-[ICON_BULLET] Bireme
-[ICON_BULLET] Triere
-[ICON_BULLET] Liburne
-
-Voraussetzungen:
-[ICON_BULLET] die Technologie der Piraterie
-[ICON_BULLET] nur au&#223;erhalb einer Stadt m&#246;glich
-[ICON_BULLET] nur au&#223;erhalb der Sichtweite fremder Einheiten (ausgenommen Barbaren)
-[ICON_BULLET] Bei jedem Wechsel wird ein Bewegungspunkt abgezogen
+Schiffe k&#246;nnen als Piraten ([LINK=CONCEPT_PIRACY]Konzept: Piraterie[\LINK]) die Meere unsicher machen.
 		</German>
 		<Italian>
 [H1]Marine[\H1]
@@ -12763,18 +12942,8 @@ Se prendiamo l'esempio di una nave con 6 [ICON_MOVES] che ha subito il 50% di da
 
 [ICON_BULLET] Per i grandi Polyremen le estremit&#224; dei remi erano fatte di piombo, altrimenti non potevi sollevare i remi. Per questo motivo, il piombo &#232; necessario per la costruzione di quelle grandi navi.
 
-[H1]Pirate[\H1]
-Le seguenti navi possono essere pirati e tornare ad esso :
-[ICON_BULLET] storta
-[ICON_BULLET] bireme
-[ICON_BULLET] trireme
-[ICON_BULLET] liburne
-
-Requisiti:
-[ICON_BULLET] la tecnologia della pirateria
-[ICON_BULLET] appena fuori di una citt&#224; possibile
-[ICON_BULLET] appena fuori dalla vista di altre unit&#224; ( ad eccezione di barbari )
-[ICON_BULLET] Su ogni un punto movimento sar&#224; detratto
+[H1]Pirati[\H1]
+Le navi possono rendere i mari pericolosi come pirati ([LINK=CONCEPT_PIRACY]Concetto: Pirateria[\LINK]).
 		</Italian>
 		<Spanish>
 [H1]Navegaci&#243;n[\H1]
@@ -12785,17 +12954,7 @@ Si tomamos el ejemplo de un barco con 6 [ICON_MOVES] que ha sufrido un da&#241;o
 [ICON_BULLET] En el caso de los grandes Polyremen, los extremos de los remos estaban hechos de plomo, de lo contrario no se pod&#237;an levantar. Por este motivo, se necesita plomo para la construcci&#243;n de esos grandes barcos.
 
 [H1]Piratas[\H1]
-Los siguientes barcos pueden intercambiarse entre ser pirata o no:
-[ICON_BULLET] Pentec&#243;ntero
-[ICON_BULLET] Birreme
-[ICON_BULLET] Trirreme
-[ICON_BULLET] Liburna
-
-Requisitos:
-[ICON_BULLET] la tecnolog&#237;a de pirater&#237;a
-[ICON_BULLET] s&#243;lo posible fuera de una ciudad
-[ICON_BULLET] s&#243;lo fuera de la vista de territorio extranjero (excepto b&#225;rbaros)
-[ICON_BULLET] Por cada movimiento se reducir&#225; un punto de movimiento.
+Los barcos pueden hacer que los mares sean inseguros como los piratas ([LINK=CONCEPT_PIRACY]Concepto: Pirater&#237;a[\LINK]).
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -14887,7 +15046,25 @@ Units: all
 Chance: 1:15
 
 1. Khagan (Army leader)
-2. Scourge of God (Tech: Armored Riders)</English>
+2. Scourge of God (Tech: Armored Riders)
+
+
+[H1]Naval Units[\H1]
+
+There is also a hierarchy in the navy. PAE uses a general and familiar term for this. The original historical term is listed below for the sake of completeness.
+
+[ICON_BULLET] I. Helmsman
+[ICON_BULLET] II. Captain
+[ICON_BULLET] III. Shipmaster
+[ICON_BULLET] IV. Fleet Commander
+[ICON_BULLET] V. Admiral
+
+[H2]This corresponds to the following ranks:[\H2]
+
+[ICON_BULLET] Greeks: Kybernetes, Naukleros, Trierarchos, Nauarchos, Strategos
+[ICON_BULLET] Romans: Gubernator, Magister navis, Triarchus, Navarchus, Praefectus classis
+[ICON_BULLET] Carthaginians: Siptu, Rab Sipti, Naggid, Rab-Mahanet, Rab-Hel
+[ICON_BULLET] Arabs: Mulah, Qa'id al-Safina, Ra'is, Qa'id al-Askar al-Bahri, Amir al-Bahr</English>
 		<French>
 PAE pr&#233;sente un syst&#232;me de grades (militaires) original pour certaines unit&#233;s ou civilisations dont l'organisation en une hi&#233;rarchie militaire sp&#233;cifique est av&#233;r&#233;e. Ces grades diff&#232;rent entre chaque culture. Tandis que pour de nombreuses tribus, les seules distinctions relevaient de la force ou du courage, les Romains d&#233;velopp&#232;rent un syst&#232;me de 150 rangs. PAE permet de jouer avec un grand nombre des hi&#233;rarchies militaires parmi les plus prestigieuses de ces cultures.
 
@@ -15187,6 +15364,24 @@ Chance : 1:15
 
 1. Khagan (chef d'arm&#233;e)
 2. Fl&#233;au de Dieu (Tech. : Cavaliers cuirass&#233;s)
+
+
+[H1]Unit&#233;s navales[\H1]
+
+La marine est organis&#233;e hi&#233;rarchiquement. PAE utilise un terme g&#233;n&#233;rique et courant pour d&#233;signer cette hi&#233;rarchie. La terminologie historique d'origine est indiqu&#233;e ci-dessous par souci d'exhaustivit&#233;.
+
+[ICON_BULLET] I. Timonnier
+[ICON_BULLET] II. Capitaine
+[ICON_BULLET] III. Ma&#238;tre d'&#233;quipage
+[ICON_BULLET] IV. Commandant de flotte
+[ICON_BULLET] V. Amiral
+
+[H2]Cela correspond aux rangs suivants :[\H2]
+
+[ICON_BULLET] Grecs : Kybernetes, Naukleros, Trierarchos, Nauarchos, Strategos
+[ICON_BULLET] Romains : Gubernator, Magister navis, Triarchus, Navarchus, Praefectus classis
+[ICON_BULLET] Carthaginois : Siptu, Rab Sipti, Naggid, Rab-Mahanet, Rab-Hel
+[ICON_BULLET] Arabes : Mulah, Qa'id al-Safina, Ra'is, Qa'id al-Askar al-Bahri, Amir al-Bahr
 		</French>
 		<German>
 In PAE gibt es ein einzigartiges Rangsystem (Dienstgrade) f&#252;r bestimmte Einheiten und V&#246;lker, die nachweislich Bestandteil einer milit&#228;rischen Hierarchie waren. Die Stufen dieser Hierarchien waren von Volk zu Volk unterschiedlich. W&#228;hrend es bei manchen St&#228;mmen kaum Stufen gab (zB der tapferste und st&#228;rkste Krieger nur) nutzten die R&#246;mer ein System von bis zu 150 Titeln. In PAE lassen sich ein Gro&#223;teil der wichtigsten v&#246;lkerspezifischen Dienstgrade und Titel nachspielen.
@@ -15486,6 +15681,24 @@ Chance: 1:15
 
 1&#186; Khagan (Heerf&#252;hrer)
 2&#186; Gei&#223;el Gottes (Tech: Panzerreiter)
+
+
+[H1]Marine-Einheiten[\H1]
+
+Auch in der Marine gibt es eine Hierarchie. Hierf&#252;r verwendet PAE eine allgemeine und vertraute Bezeichnung. Der geschichtliche Originalbegriff wird der Vollst&#228;ndigkeit halber darunter angef&#252;hrt.
+
+[ICON_BULLET] I. Steuermann
+[ICON_BULLET] II. Kapit&#228;n
+[ICON_BULLET] III. Schiffsherr
+[ICON_BULLET] IV. Flottenkommandant
+[ICON_BULLET] V. Admiral
+
+[H2]Dies entspricht folgenden R&#228;ngen:[\H2]
+
+[ICON_BULLET] Griechen: Kybernetes, Naukleros, Trierarchos, Nauarchos, Strategos
+[ICON_BULLET] R&#246;mer: Gubernator, Magister navis, Triarchus, Navarchus, Praefectus classis
+[ICON_BULLET] Karthager: Siptu, Rab Sipti, Naggid, Rab-Mahanet, Rab-Hel
+[ICON_BULLET] Araber: Mulah, Qa'id al-Safina, Ra'is, Qa'id al-Askar al-Bahri, Amir al-Bahr
 		</German>
 		<Italian>
 In PAE esiste un sistema di classificazione unico (ranghi) per determinate unit&#224; e razze che hanno dimostrato di aver fatto parte di una gerarchia militare. I livelli di queste gerarchie differivano da persona a persona. Mentre alcune trib&#249; non avevano quasi alcun livello (ad esempio solo il guerriero pi&#249; coraggioso e forte), i romani usavano un sistema fino a 150 titoli. Gran parte dei pi&#249; importanti gradi e titoli specifici per razza possono essere riprodotti in PAE.
@@ -15784,6 +15997,24 @@ Possibilit&#224;: 1:15
 
 1. Khagan (Generale)
 2. Flagello di Dio (Tecnologia: Cavaliere corazzato)
+
+
+[H1]Unit&#224; Navali[\H1]
+
+Anche nella Marina esiste una gerarchia. Il PAE utilizza un termine generale e familiare per questo. Il termine storico originale &#232; elencato di seguito per completezza.
+
+[ICON_BULLET] I. Timoniere
+[ICON_BULLET] II. Capitano
+[ICON_BULLET] III. Capitano di Vascello
+[ICON_BULLET] IV. Comandante di Flotta
+[ICON_BULLET] V. Ammiraglio
+
+[H2]Corrisponde ai seguenti ranghi:[\H2]
+
+[ICON_BULLET] Greci: Kybernetes, Naukleros, Trierarchos, Nauarchos, Strategos
+[ICON_BULLET] Romani: Gubernator, Magister navis, Triarchus, Navarchus, Praefectus classis
+[ICON_BULLET] Cartaginesi: Siptu, Rab Sipti, Naggid, Rab-Mahanet, Rab-Hel
+[ICON_BULLET] Arabi: Mulah, Qa'id al-Safina, Ra'is, Qa'id al-Askar al-Bahri, Amir al-Bahr
 		</Italian>
 		<Spanish>
 En PAE, hay un sistema de ranking (rangos militares) &#250;nico para determinadas unidades y tribus, que era una parte verificable de una jerarqu&#237;a militar. Los niveles de estas jerarqu&#237;as difieren de una naci&#243;n a otro. Mientras hab&#237;an pocos pasos en algunas tribus (ej: el m&#225;s bravo y fuerte guerrero solamente), los romanos tuvieron un sistema de 150 funciones. En PAE, una gran parte de los rangos m&#225;s importantes se puede reproducir de una manera espec&#237;fica.
@@ -16082,6 +16313,24 @@ Probabilidad: 3%
 
 1. Khagan (L&#237;der del ej&#233;rcito)
 2. Azote de Dios (Tech: Coraceros)
+
+
+[H1]Unidades Navales[\H1]
+
+Tambi&#233;n existe una jerarqu&#237;a en la armada. PAE utiliza un t&#233;rmino general y familiar para esto. El t&#233;rmino hist&#243;rico original se incluye a continuaci&#243;n para mayor claridad.
+
+[ICON_BULLET] I. Timonel
+[ICON_BULLET] II. Capit&#225;n
+[ICON_BULLET] III. Capit&#225;n de Nav&#237;o
+[ICON_BULLET] IV. Comandante de Flota
+[ICON_BULLET] V. Almirante
+
+[H2]Esto corresponde a los siguientes rangos:[\H2]
+
+[ICON_BULLET] Griegos: Kybernetes, Naukleros, Trierarchos, Nauarchos, Strategos
+[ICON_BULLET] Romanos: Gobernador, Magister navis, Triarchus, Navarchus, Praefectus classis
+[ICON_BULLET] Cartagineses: Siptu, Rab Sipti, Naggid, Rab-Mahanet, Rab-Hel
+[ICON_BULLET] &#193;rabes: Mulah, Qa'id al-Safina, Ra'is, Qa'id al-Askar al-Bahri, Amir al-Bahr
 		</Spanish>
 	</TEXT>
 	<TEXT>

@@ -5633,6 +5633,9 @@ class CvEventManager:
 					# Weiterführende Aktionen...
 					if not bRevolt:
 
+							# PAE 7.15: remove Fiscus Hall (Capitatio) / Abgabenstelle / Kopfsteuer
+							PAE_Christen.doCheckFiscusHall(pCity)
+
 							# ab PAE 6.14: Allgemeine Religionskonflikte
 							# Religionskonflikt PHASE 3
 							if not PAE_Christen.removePagans(pCity):

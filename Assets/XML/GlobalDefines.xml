@@ -923,11 +923,11 @@
 	</Define>
 	<Define>
 		<DefineName>UPKEEP_POPULATION_OFFSET</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>-8</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>UPKEEP_CITY_OFFSET</DefineName>
-		<iDefineIntVal>3</iDefineIntVal>
+		<iDefineIntVal>-1</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CIRCUMNAVIGATE_FREE_MOVES</DefineName>

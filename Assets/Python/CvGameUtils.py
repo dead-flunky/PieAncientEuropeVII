@@ -1084,6 +1084,20 @@ class CvGameUtils:
 														return False
 						return True
 
+				# PAE 7.15: Religion Kopfsteuer (monotheistische Religionen)
+				elif eBuilding == gc.getInfoTypeForString("BUILDING_REL_STEUER"):
+						pPlayer = gc.getPlayer(pCity.getOwner())
+						iStateReligion = pPlayer.getStateReligion()
+						if iStateReligion in L.LMonoReligions:
+							iNumReligions = 0
+							for i in range(gc.getNumReligionInfos()):
+								if pCity.isHasReligion(i):
+									iNumReligions += 1
+								if iNumReligions > 1:
+									return False
+						return True
+
+
 				# Buildings, die ihre notwendige Ressource im Stadtradius brauchen
 				# Listen stehen auch in PAE_City (!)
 				lBonusBuildings = [

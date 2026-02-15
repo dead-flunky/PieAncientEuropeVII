@@ -289,7 +289,8 @@ def doReligionsKonflikt(pCity):
 		pPlayer = gc.getPlayer(iPlayer)
 		pTeam = gc.getTeam(pPlayer.getTeam())
 
-		if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HERESY")): iChance = 4
+		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_REL_STEUER")): iChance = 1
+		elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_HERESY")): iChance = 4
 		else: iChance = 2
 
 		# Chance to abort
@@ -886,3 +887,33 @@ def doDiaspora(pCity, iReligion):
 	else:
 		iFoodChange = (loopCity.growthThreshold() - loopCity.getFood()) / 2
 		loopCity.changeFood(iFoodChange)
+
+
+# PAE 7.15: remove Fiscus Hall (Capitatio) / Abgabenstelle / Kopfsteuer
+# CvEventManager: onCityDoTurn
+def doCheckFiscusHall(pCity):
+	pPlayer = gc.getPlayer(pCity.getOwner())
+	iStateReligion = pPlayer.getStateReligion()
+	iBuilding = gc.getInfoTypeForString("BUILDING_REL_STEUER")
+
+	if not pCity.isHasBuilding(iBuilding): return
+	if pPlayer.getAnarchyTurns() > 0: return
+
+	if iStateReligion in L.LMonoReligions:
+		iNumReligions = 0
+		for i in range(gc.getNumReligionInfos()):
+			if pCity.isHasReligion(i):
+				iNumReligions += 1
+			if iNumReligions > 1:
+				return
+		if pPlayer.isHuman():
+			CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_BUILDING_REL_STEUER_REMOVE", (pCity.getName(),)),
+			None, 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+
+	else:
+		if pPlayer.isHuman():
+			CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_BUILDING_REL_STEUER_REMOVE2", (pCity.getName(),)),
+			None, 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+
+	# Remove Building
+	pCity.setNumRealBuilding(iBuilding, 0)

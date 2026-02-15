@@ -266,11 +266,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REL_STEUER_HELP</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>[ICON_BULLET] A poll tax becomes possible once several religions are represented in the city and the empire follows a monotheistic state religion.[NEWLINE][ICON_BULLET] The building will be automatically removed if you no longer follow a monotheistic state religion or if you only have one religion in your city.[NEWLINE][ICON_BULLET] Religious conflicts are reduced to 1%.</English>
+		<French>[ICON_BULLET] Une taxe par t&#234;te devient possible lorsque plusieurs religions sont repr&#233;sent&#233;es dans la ville et que l'empire suit une religion d'&#201;tat monoth&#233;iste.[NEWLINE][ICON_BULLET] Le b&#226;timent sera automatiquement d&#233;moli si vous ne suivez plus une religion d'&#201;tat monoth&#233;iste ou si votre ville ne compte qu'une seule religion.[NEWLINE][ICON_BULLET] Les conflits religieux sont r&#233;duits &#224; 1 %.</French>
+		<German>[ICON_BULLET] Eine Kopfsteuer wird m&#246;glich, sobald in der Stadt mehrere Religionen vertreten sind und das Reich einer monotheistischen Staatsreligion folgt.[NEWLINE][ICON_BULLET] Das Geb&#228;ude wird automatisch entfernt, wenn man keiner monotheistischen Staatsreligion mehr folgt oder man nur mehr eine Religion in der Stadt beherbergt.[NEWLINE][ICON_BULLET] Religionskonflikte werden auf 1% reduziert.</German>
+		<Italian>[ICON_BULLET] Una tassa pro capite diventa possibile quando nella citt&#224; sono rappresentate diverse religioni e l'impero segue una religione di stato monoteistica.[NEWLINE][ICON_BULLET] L'edificio verr&#224; rimosso automaticamente se non segui pi&#249; una religione monoteista di stato o se nella tua citt&#224; hai una sola religione.[NEWLINE][ICON_BULLET] I conflitti religiosi sono ridotti all'1%.</Italian>
+		<Spanish>[ICON_BULLET] El impuesto electoral se hace posible cuando varias religiones est&#225;n representadas en la ciudad y el imperio sigue una religi&#243;n estatal monote&#237;sta.[NEWLINE][ICON_BULLET] El edificio se eliminar&#225; autom&#225;ticamente si ya no sigues una religi&#243;n estatal monote&#237;sta o si solo tienes una religi&#243;n en tu ciudad.[NEWLINE][ICON_BULLET] Los conflictos religiosos se reducen al 1%.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REL_STEUER_REMOVE</Tag>
+		<English>With the disappearance of all foreign religions in %s1_city, the basis for the poll tax no longer exists. The Fiscus Hall was therefore closed and demolished.</English>
+		<French>Avec la disparition de toutes les religions &#233;trang&#232;res &#224; %s1_city, le fondement de la capitation n'existe plus. Le Fiscus Hall fut donc ferm&#233; et d&#233;moli.</French>
+		<German>Mit dem Verschwinden aller fremden Religionen in %s1_city entf&#228;llt die Grundlage f&#252;r die Kopfsteuer. Die Abgabenstelle wurde daher geschlossen und abgetragen.</German>
+		<Italian>Con la scomparsa di tutte le religioni straniere a %s1_city, la base per la tassa pro capite non esiste pi&#249;. La Sala Fiscus fu quindi chiusa e demolita.</Italian>
+		<Spanish>Con la desaparici&#243;n de todas las religiones extranjeras en %s1_city, la base del impuesto de capitaci&#243;n dej&#243; de existir. Por lo tanto, el Sala fiscal fue clausurado y demolido.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REL_STEUER_REMOVE2</Tag>
+		<English>With the transition to a polytheistic state religion, the basis for the poll tax no longer exists in %s1_city. The Fiscus Hall was therefore closed.</English>
+		<French>Avec le passage &#224; une religion d'&#201;tat polyth&#233;iste, le fondement de la capitation dispara&#238;t &#224; %s1_city. La Salle fiscal est donc ferm&#233;.</French>
+		<German>Mit dem &#220;bergang zu einer polytheistischen Staatsreligion entf&#228;llt in %s1_city die Grundlage f&#252;r die Kopfsteuer. Die Abgabenstelle wurde daher geschlossen.</German>
+		<Italian>Con il passaggio a una religione di stato politeista, la base per la tassa pro capite non esiste pi&#249; a %s1_city. La Sala fiscale &#232; stata quindi chiusa.</Italian>
+		<Spanish>Con la transici&#243;n a una religi&#243;n estatal polite&#237;sta, la base del impuesto de capitaci&#243;n ya no existe en %s1_city. Por lo tanto, el Sala fiscal fue clausurado.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCHULE_BUDDHISM</Tag>
