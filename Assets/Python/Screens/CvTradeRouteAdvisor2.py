@@ -170,6 +170,8 @@ class CvTradeRouteAdvisor2:
 						screen.setLabel("Label1_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, 100, iY+20, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 				else:
 						for j in range(iRange):
+								City1 = None
+								City2 = None
 								pUnit = lHandelseinheiten[j]
 								bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA"], 0))
 
@@ -181,7 +183,7 @@ class CvTradeRouteAdvisor2:
 
 								# Unit name
 								szText = pUnit.getName()
-								screen.setLabel("L2_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, 100, iY+5, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, pUnit.getID(), -1)
+								screen.setLabel("L2_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, 100, iY+5, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, 1, pUnit.getID())
 
 								# Unit load
 								szText = localText.getText("TXT_UNIT_INFO_BAR_5", ()) + u" "
@@ -201,28 +203,29 @@ class CvTradeRouteAdvisor2:
 										iCityY = int(CvUtil.getScriptData(pUnit, ["autY1"], -1))
 										tmpPlot = CyMap().plot(iCityX, iCityY)
 										if tmpPlot and not tmpPlot.isNone() and tmpPlot.isCity():
-												szText = tmpPlot.getPlotCity().getName()
+												City1 = tmpPlot.getPlotCity()
+												szText = City1.getName()
 												if tmpPlot.getOwner() == CyGame().getActivePlayer():
-														iTmpX = 470
+														iTmpX = 490
 												else:
-														iTmpX = 500
+														iTmpX = 520
 												screen.setLabel("L4_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_RIGHT_JUSTIFY, iTmpX, iY+5, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 										if tmpPlot.getOwner() != -1:
 												iCiv = gc.getPlayer(tmpPlot.getOwner()).getCivilizationType()
 												# Flagge
 												if tmpPlot.getOwner() == CyGame().getActivePlayer():
-														screen.addFlagWidgetGFC("L5_"+str(i), 480, iY, 24, 54, tmpPlot.getOwner(), WidgetTypes.WIDGET_FLAG, tmpPlot.getOwner(), -1)
+														screen.addFlagWidgetGFC("L5_"+str(i), 500, iY, 24, 54, tmpPlot.getOwner(), WidgetTypes.WIDGET_FLAG, tmpPlot.getOwner(), -1)
 												# Civ-Button
 												else:
-														screen.setImageButton("L5_"+str(i), gc.getCivilizationInfo(iCiv).getButton(), 476, iY+24, 24, 24, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
+														screen.setImageButton("L5_"+str(i), gc.getCivilizationInfo(iCiv).getButton(), 496, iY+24, 24, 24, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
 												szText = gc.getPlayer(tmpPlot.getOwner()).getCivilizationDescription(0)
 												screen.setLabel("L6_"+str(i), "Background", u"<font=2>" + szText + u"</font>", CvUtil.FONT_RIGHT_JUSTIFY,
-																				470, iY+28, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
+																				490, iY+28, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
 
 										# Button Bonus 1
-										iBonus = CvUtil.getScriptData(pUnit, ["autB1"], -1)
-										if iBonus != -1:
-												screen.setImageButton("L7_"+str(i), gc.getBonusInfo(iBonus).getButton(), 510, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus, -1)
+										iBonus1 = CvUtil.getScriptData(pUnit, ["autB1"], -1)
+										if iBonus1 != -1:
+												screen.setImageButton("L7_"+str(i), gc.getBonusInfo(iBonus1).getButton(), 530, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus1, -1)
 
 
 								szArrowLeft = "Art/Interface/Buttons/button_arrow_left4.dds"
@@ -237,15 +240,15 @@ class CvTradeRouteAdvisor2:
 										szArrowLeft = "Art/Interface/Buttons/button_arrow_left3.dds"
 
 								# Buttons Arrow to left
-								screen.setImageButton("L8_"+str(i), szArrowLeft, 580, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
+								screen.setImageButton("L8_"+str(i), szArrowLeft, 600, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 								# Promotion Escort / Begleitschutz
 								iPromo = gc.getInfoTypeForString("PROMOTION_SCHUTZ")
 								if pUnit.isHasPromotion(iPromo):
-										screen.setImageButton("L14_"+str(i), gc.getPromotionInfo(iPromo).getButton(), 615, iY+9, 32, 32, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iPromo, -1)
+										screen.setImageButton("L14_"+str(i), gc.getPromotionInfo(iPromo).getButton(), 635, iY+9, 32, 32, WidgetTypes.WIDGET_PEDIA_JUMP_TO_PROMOTION, iPromo, -1)
 
 								# Button Arrow to right
-								screen.setImageButton("L9_"+str(i), szArrowRight, 650, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
+								screen.setImageButton("L9_"+str(i), szArrowRight, 670, iY+9, 32, 32, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 
 								# City 2
@@ -254,38 +257,45 @@ class CvTradeRouteAdvisor2:
 										iCityY = int(CvUtil.getScriptData(pUnit, ["autY2"], -1))
 								
 										# Button Bonus 2
-										iBonus = CvUtil.getScriptData(pUnit, ["autB2"], -1)
-										if iBonus != -1:
-												screen.setImageButton("L10_"+str(i), gc.getBonusInfo(iBonus).getButton(), 700, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus, -1)
+										iBonus2 = CvUtil.getScriptData(pUnit, ["autB2"], -1)
+										if iBonus2 != -1:
+												screen.setImageButton("L10_"+str(i), gc.getBonusInfo(iBonus2).getButton(), 720, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BONUS, iBonus2, -1)
 
 										tmpPlot = CyMap().plot(iCityX, iCityY)
 										if tmpPlot and not tmpPlot.isNone() and tmpPlot.isCity():
-												szText = tmpPlot.getPlotCity().getName()
+												City2 = tmpPlot.getPlotCity()
+												szText = City2.getName()
 												if tmpPlot.getOwner() == CyGame().getActivePlayer():
-														iTmpX = 790
+														iTmpX = 810
 												else:
-														iTmpX = 760
+														iTmpX = 780
 												screen.setLabel("L11_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY, iTmpX, iY+5, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 										if tmpPlot.getOwner() != -1:
 												iCiv = gc.getPlayer(tmpPlot.getOwner()).getCivilizationType()
 												# Flagge
 												if tmpPlot.getOwner() == CyGame().getActivePlayer():
-														screen.addFlagWidgetGFC("L12_"+str(i), 756, iY, 24, 54, tmpPlot.getOwner(), WidgetTypes.WIDGET_FLAG, tmpPlot.getOwner(), -1)
+														screen.addFlagWidgetGFC("L12_"+str(i), 776, iY, 24, 54, tmpPlot.getOwner(), WidgetTypes.WIDGET_FLAG, tmpPlot.getOwner(), -1)
 												# Civ-Button
 												else:
-														screen.setImageButton("L12_"+str(i), gc.getCivilizationInfo(iCiv).getButton(), 760, iY+24, 24, 24, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
+														screen.setImageButton("L12_"+str(i), gc.getCivilizationInfo(iCiv).getButton(), 780, iY+24, 24, 24, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
 												szText = gc.getPlayer(tmpPlot.getOwner()).getCivilizationDescription(0)
 												screen.setLabel("L13_"+str(i), "Background", u"<font=2>" + szText + u"</font>", CvUtil.FONT_LEFT_JUSTIFY,
-																				790, iY+28, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
+																				810, iY+28, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, iCiv, -1)
 
+										# Profit ausrechnen
+										iProfit1 = PAE_Trade.calcBonusProfit(City1, City2, iBonus1, pUnit) # Bonus 1
+										iProfit2 = PAE_Trade.calcBonusProfit(City2, City1, iBonus2, pUnit) # möglicher Bonus hier
+										iProfit = iProfit1 + iProfit2
+										szText = localText.getText("TXT_KEY_TRADE_ADVISOR_INFO4", (iProfit,))
+										screen.setLabel("L16_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_CENTER_JUSTIFY, 350, iY+24, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 								if bTradeRouteActive:
 										# Cancel Button
 										screen.setImageButton("L15_"+str(i), ArtFileMgr.getInterfaceArtInfo("INTERFACE_TRADE_AUTO_STOP").getPath(),
-																					900, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, 748, pUnit.getID())
+																					920, iY, BUTTON_SIZE, BUTTON_SIZE, WidgetTypes.WIDGET_GENERAL, 748, pUnit.getID())
 								else:
 										szText = localText.getText("TXT_KEY_TRADE_ADVISOR_INFO3", ())
-										screen.setLabel("L6_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_RIGHT_JUSTIFY, 900+BUTTON_SIZE, iY+14, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
+										screen.setLabel("L6_"+str(i), "Background", u"<font=3>" + szText + u"</font>", CvUtil.FONT_RIGHT_JUSTIFY, 920+BUTTON_SIZE, iY+14, 0.0, FontTypes.GAME_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 								# ----
 								i += 1

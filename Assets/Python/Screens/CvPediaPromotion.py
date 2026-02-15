@@ -156,7 +156,8 @@ class CvPediaPromotion:
 								gc.getInfoTypeForString("PROMOTION_RANG_EGYPT_1"),
 								gc.getInfoTypeForString("PROMOTION_RANG_CARTHAGE_1"),
 								gc.getInfoTypeForString("PROMOTION_RANG_ASSUR_1"),
-								gc.getInfoTypeForString("PROMOTION_RANG_SUMER_1")
+								gc.getInfoTypeForString("PROMOTION_RANG_SUMER_1"),
+								gc.getInfoTypeForString("PROMOTION_RANG_NAVI_1")
 						]
 						if self.iPromotion not in lFirst:
 								str_text = gc.getPromotionInfo(self.iPromotion).getType()[:-2]
@@ -208,7 +209,8 @@ class CvPediaPromotion:
 								gc.getInfoTypeForString("PROMOTION_RANG_EGYPT_10"),
 								gc.getInfoTypeForString("PROMOTION_RANG_CARTHAGE_6"),
 								gc.getInfoTypeForString("PROMOTION_RANG_ASSUR_12"),
-								gc.getInfoTypeForString("PROMOTION_RANG_SUMER_10")
+								gc.getInfoTypeForString("PROMOTION_RANG_SUMER_10"),
+								gc.getInfoTypeForString("PROMOTION_RANG_NAVI_5")
 						]
 						if self.iPromotion not in lLast:
 								str_text = gc.getPromotionInfo(self.iPromotion).getType()[:-2]

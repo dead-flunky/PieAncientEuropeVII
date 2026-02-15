@@ -297,8 +297,9 @@ class CvGameUtils:
 														else: bOK = False
 														if loopCity.isHasBuilding(iBuildingStadt):
 															if not loopCity.isHasBuilding(iSklavenmarkt):
-																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
-																bOK = False
+																if gc.getTeam(loopPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_SKLAVENMARKT")):
+																	CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_WHITE", 1)
+																	bOK = False
 														if bOK:
 															CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
 
@@ -644,6 +645,28 @@ class CvGameUtils:
 																				continue
 																		if loopPlot.canBuild(iBuild, iPlayer, False):
 																				CyEngine().addColoredPlotAlt(x, y, PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
+
+								# PAE 7.15: Pirates pillage coastal villages (726)
+								elif pHeadSelectedUnit.getUnitType() in L.DCaptureFromPirate:
+									iX = pHeadSelectedUnit.getX()
+									iY = pHeadSelectedUnit.getY()
+									# Umkreis von 8 Feldern
+									iRange = 8
+									for i in range(-iRange, iRange+1):
+										for j in range(-iRange, iRange+1):
+											loopPlot = plotXY(iX, iY, i, j)
+											if loopPlot.isNone() or not loopPlot.isActiveVisible(0): continue
+											if loopPlot.isCoastalLand() and loopPlot.getOwner() != iPlayer:
+												if loopPlot.getImprovementType() in L.DCottages:
+													CyEngine().addColoredPlotAlt(iX+i, iY+j, PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
+													# N, O, S, W only
+													directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
+													for (dx, dy) in directions:
+														loopPlot2 = CyMap().plot(iX+i + dx, iY+j + dy)
+														if loopPlot2.isNone(): continue
+														if loopPlot2.isWater():
+															CyEngine().addColoredPlotAlt(loopPlot2.getX(), loopPlot2.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_PLAYER_DARK_GREEN", 1)
+
 
 				return False
 
@@ -1615,7 +1638,7 @@ class CvGameUtils:
 								#						pPlot.setImprovementType(gc.getInfoTypeForString("IMPROVEMENT_CAMP"))
 								#						pUnit.finishMoves()
 								#						return True
-								# Beobachtungsturm / Spähturm / Look-out
+								# Beobachtungsturm / Look-out
 								if pTeam.isHasTech(gc.getInfoTypeForString("TECH_HOLZWEHRANLAGEN")):
 										if pPlot.isHills() and pPlot.getImprovementType() == -1 and pPlot.getBonusType(-1) == -1 and not pPlot.isCity():
 												if pPlot.getOwner() == -1 or pPlot.getOwner() == pUnit.getOwner() and not pPlot.isCultureRangeCity(iOwner, 2):
@@ -2311,6 +2334,49 @@ class CvGameUtils:
 														(loopCity, pIter) = pOwner.nextCity(pIter, False)
 						# -----------------
 
+						# Druide soll Sklaven opfern
+						elif iUnitType == gc.getInfoTypeForString("UNIT_DRUIDE"):
+								# Checken, ob es Einheiten ohne Moral gibt und ob sich ein Sklave auf dem Plot befindet
+								bSlaves = False
+								bMorale = False
+								iUnitSlave = gc.getInfoTypeForString("UNIT_SLAVE")
+								iPromo = gc.getInfoTypeForString("PROMOTION_MORALE")
+
+								for iUnit in range(pPlot.getNumUnits()):
+										loopUnit = pPlot.getUnit(iUnit)
+										if loopUnit.getOwner() == iOwner:
+												if loopUnit.getUnitType() == iUnitSlave:
+														bSlaves = True
+												if loopUnit.isMilitaryHappiness():
+														if not loopUnit.isHasPromotion(iPromo):
+																if pUnit.getID() != loopUnit.getID():
+																		bMorale = True
+
+										if bSlaves and bMorale:
+												PAE_Unit.doMoralUnits(pUnit, 2)
+												PAE_Unit.doKillSlaveFromPlot(pUnit)
+												pUnit.finishMoves()
+												return True
+
+						# Pirate pillages villages
+						elif iUnitType in L.DCaptureFromPirate:
+							iX = pUnit.getX()
+							iY = pUnit.getY()
+							# N, O, S, W only
+							directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
+							for (dx, dy) in directions:
+								loopPlot = CyMap().plot(iX + dx, iY + dy)
+								if loopPlot.isNone(): continue
+								if loopPlot.isCoastalLand() and loopPlot.getOwner() != iOwner:
+									if loopPlot.getImprovementType() in L.DCottages:
+										if CvUtil.myRandom(10, "do_ai_pirate_pillage_village") < 4:
+											argsList = (726, 1, 0, iOwner, pUnit.getID())
+											PAE_Unit.onModNetMessage(argsList)
+											return True
+
+
+						# Promotions ------------------
+
 						# Legend can become a Great General
 						if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT6")):
 								if not pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER")):
@@ -2345,30 +2411,6 @@ class CvGameUtils:
 								# nur phasenweise machen
 								if CvUtil.myRandom(5, "AI_doChanceGiveMoralePromo") == 1:
 										PAE_Unit.doMoralUnits(pUnit, 1)
-
-						# Druide soll Sklaven opfern
-						if iUnitType == gc.getInfoTypeForString("UNIT_DRUIDE"):
-								# Checken, ob es Einheiten ohne Moral gibt und ob sich ein Sklave auf dem Plot befindet
-								bSlaves = False
-								bMorale = False
-								iUnitSlave = gc.getInfoTypeForString("UNIT_SLAVE")
-								iPromo = gc.getInfoTypeForString("PROMOTION_MORALE")
-
-								for iUnit in range(pPlot.getNumUnits()):
-										loopUnit = pPlot.getUnit(iUnit)
-										if loopUnit.getOwner() == iOwner:
-												if loopUnit.getUnitType() == iUnitSlave:
-														bSlaves = True
-												if loopUnit.isMilitaryHappiness():
-														if not loopUnit.isHasPromotion(iPromo):
-																if pUnit.getID() != loopUnit.getID():
-																		bMorale = True
-
-										if bSlaves and bMorale:
-												PAE_Unit.doMoralUnits(pUnit, 2)
-												PAE_Unit.doKillSlaveFromPlot(pUnit)
-												pUnit.finishMoves()
-												return True
 
 						# Kaufbare Promotions ------------------
 
@@ -2437,6 +2479,25 @@ class CvGameUtils:
 																pUnit.setDamage(0, -1)
 																pUnit.finishMoves()
 																return True
+
+										# Crew austauschen
+										if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_ANGST_SEA")):
+											if gc.getTeam(pOwner.getTeam()).getAtWarCount(True):
+												if CvUtil.myRandom(5, "AI_Ship_Change_Crew") == 1:
+													iRange = gc.getNumPromotionInfos()
+													for j in range(iRange):
+														if "_FORM_" in gc.getPromotionInfo(j).getType():
+															continue
+														if pUnit.isHasPromotion(j):
+															pUnit.setHasPromotion(j, False)
+													if pOwner.hasTrait(gc.getInfoTypeForString("TRAIT_AGGRESSIVE")):
+														pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_TRAIT_AGGRESSIVE"), True)
+													pUnit.setLevel(0)
+													iCost = pUnit.baseCombatStr() * 4 + pUnit.baseMoves() * 2 # cheaper for AI
+													pOwner.changeGold(-iCost)
+													pUnit.finishMoves()
+													return True
+
 
 								# Bless units (PAE V Patch 4)
 								if pUnit.isMilitaryHappiness():
@@ -3277,9 +3338,9 @@ class CvGameUtils:
 						# Reservist -> Veteran
 						elif iData1 == 725:
 								return CyTranslator().getText("TXT_KEY_HELP_RESERVIST_TO_VETERAN", ())
-						# Bonusverbreitung (FREI?)
+						# Pirate pillages villages
 						elif iData1 == 726:
-								return CyTranslator().getText("TXT_KEY_HELP_BONUSVERBREITUNG", ())
+								return CyTranslator().getText("TXT_KEY_MISSION_PIRACY_COASTALVILLAGE", ())
 						# iData2 = 1: UNIT_SUPPLY_FOOD: Nahrung abliefern
 						# iData2 = 2: UNIT_SUPPLY_WAGON: Nahrung aufnehmen
 						elif iData1 == 727:
@@ -3553,17 +3614,20 @@ class CvGameUtils:
 						elif iData1 == 767:
 								return CyTranslator().getText("TXT_KEY_BUTTON_BUY_KOMPASS", ())
 
-						# Schiff reparieren
+						# Schiff reparieren / Crew austauschen
 						elif iData1 == 768:
+							if bOption:
 								return CyTranslator().getText("TXT_KEY_BUTTON_REPAIR_SHIP", (iData2,))
+							else:
+								return CyTranslator().getText("TXT_KEY_BUTTON_UNSET_PROMO_ANGST_SEA", ())
 
 						# Great Prophet Holy City
 						elif iData1 == 769:
 								return CyTranslator().getText("TXT_KEY_BUTTON_GREAT_PROPHET_HOLY_CITY", ()) + u" %c" % (gc.getReligionInfo(iData2).getChar())
 
-						# frei
-						#elif iData1 == 770:
-
+						# Statthalter: sell buildings
+						elif iData1 == 770:
+								return CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_0", ())
 
 						# Hunter: Lager oder Beobachtungsturm
 						elif iData1 == 771:

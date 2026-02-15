@@ -1795,7 +1795,7 @@ def doDestroyCityBuildings(pCity, iChance):
 												pOwner = gc.getPlayer(iOwner)
 												if pOwner.isHuman():
 														CyInterface().addMessage(pOwner.getID(), True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING", (pCity.getName(),
-																																																																						 pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+																						pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 				PAE_City.doCheckCityState(pCity)
 				PAE_City.doCheckTraitBuildings(pCity)
 				PAE_City.doCheckGlobalTraitBuildings(iOwner)
@@ -2038,17 +2038,18 @@ def doGlobalDisaster():
 			gc.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM2")
 		]
 		LVillages = [
-			gc.getInfoTypeForString("IMPROVEMENT_HAMLET"),
 			gc.getInfoTypeForString("IMPROVEMENT_VILLAGE"),
 			gc.getInfoTypeForString("IMPROVEMENT_TOWN")
 		]
 		iCottage = gc.getInfoTypeForString("IMPROVEMENT_COTTAGE")
+		iHamlet = gc.getInfoTypeForString("IMPROVEMENT_HAMLET")
 
 		iTerrainPlains = gc.getInfoTypeForString("TERRAIN_PLAINS")
 		iTerrainGrass  = gc.getInfoTypeForString("TERRAIN_GRASS")
 		iFeatureForest  = gc.getInfoTypeForString("FEATURE_FOREST")
 		iFeatureSavanna = gc.getInfoTypeForString("FEATURE_SAVANNA")
 
+		iRoutePfad = gc.getInfoTypeForString("ROUTE_PATH")
 		iRouteType = gc.getInfoTypeForString("ROUTE_TRADE_ROAD")
 		iRouteType2 = gc.getInfoTypeForString("ROUTE_ROMAN_ROAD")
 
@@ -2075,15 +2076,17 @@ def doGlobalDisaster():
 							loopPlot.setFeatureType(iFeatureForest,0)
 
 					# Villages (100%)
-					if iLoopImp in LVillages:
+					if iLoopImp == iHamlet:
 						loopPlot.setImprovementType(iCottage)
+					elif iLoopImp in LVillages:
+						loopPlot.setImprovementType(iHamlet)
 
 					# Roads (50%)
 					if iRand > 0:
 						iLoopRoute = loopPlot.getRouteType()
 						#if iLoopRoute != iRouteType and iLoopRoute != iRouteType2:
 						if iLoopRoute != iRouteType2:
-							loopPlot.setRouteType(-1)
+							loopPlot.setRouteType(iRoutePfad)
 
 		# let's kill some units
 		lKillUnits = [
@@ -2091,6 +2094,7 @@ def doGlobalDisaster():
 			#gc.getInfoTypeForString("UNIT_TRADE_MERCHANTMAN"),
 			gc.getInfoTypeForString("UNIT_EMIGRANT"),
 			gc.getInfoTypeForString("UNIT_HORSE"),
+			gc.getInfoTypeForString("UNIT_CAMEL"),
 			gc.getInfoTypeForString("UNIT_ESEL"),
 			gc.getInfoTypeForString("UNIT_SUPPLY_FOOD")
 		]

@@ -40,6 +40,7 @@ LUnitWarAnimals = []
 LUnitLootLessSeaUnits = []
 LUnitCanBeDomesticated = []
 LUnitWildAnimals = []
+LUnitSeaMonsters = []
 DJagd = {}
 LArcherCombats = []
 LMeleeCombats = []
@@ -125,6 +126,8 @@ LMovingBonus = []
 LRammen = []
 LInquisitors = []
 LGlobalTechs = []
+DCottages = {}
+DCottageDowngrade = {}
 
 
 def init():
@@ -152,6 +155,7 @@ def init():
 		global LUnitLootLessSeaUnits
 		global LUnitCanBeDomesticated
 		global LUnitWildAnimals
+		global LUnitSeaMonsters
 		global DJagd
 		global LArcherCombats
 		global LMeleeCombats
@@ -237,6 +241,8 @@ def init():
 		global LRammen
 		global LInquisitors
 		global LGlobalTechs
+		global DCottages
+		global DCottageDowngrade
 
 		if gc.getInfoTypeForString("COLOR_EMPTY") == -1:
 			raise Exception("Called init() to early. getInfoTypeForString() returns -1.")
@@ -289,8 +295,13 @@ def init():
 			gc.getInfoTypeForString("UNIT_LEOPARD"),
 			gc.getInfoTypeForString("UNIT_HYENA"),
 			gc.getInfoTypeForString("UNIT_DEER"),
-			gc.getInfoTypeForString("UNIT_UR"),
-			gc.getInfoTypeForString("UNIT_BERGZIEGE")
+			gc.getInfoTypeForString("UNIT_UR")
+		]
+		LUnitSeaMonsters = [
+			gc.getInfoTypeForString("UNIT_KRAKEN"),
+			gc.getInfoTypeForString("UNIT_SEASERPENT"),
+			gc.getInfoTypeForString("UNIT_WHALE"),
+			gc.getInfoTypeForString("UNIT_ORCA")
 		]
 
 		# Value = (iFoodMin, iFoodRand)
@@ -1686,6 +1697,23 @@ def init():
 			gc.getInfoTypeForString("TECH_KONZIL7"),
 			gc.getInfoTypeForString("TECH_KLOSTERSCHULEN")
 		]
+
+		DCottages = {
+			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE"): 1,
+			gc.getInfoTypeForString("IMPROVEMENT_HAMLET"): 2,
+			gc.getInfoTypeForString("IMPROVEMENT_VILLAGE"): 3,
+			gc.getInfoTypeForString("IMPROVEMENT_TOWN"): 4,
+			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL"): 1,
+			gc.getInfoTypeForString("IMPROVEMENT_HAMLET_HILL"): 2
+		}
+		DCottageDowngrade = {
+			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE"): -1,
+			gc.getInfoTypeForString("IMPROVEMENT_HAMLET"): gc.getInfoTypeForString("IMPROVEMENT_COTTAGE"),
+			gc.getInfoTypeForString("IMPROVEMENT_VILLAGE"): gc.getInfoTypeForString("IMPROVEMENT_HAMLET"),
+			gc.getInfoTypeForString("IMPROVEMENT_TOWN"): gc.getInfoTypeForString("IMPROVEMENT_VILLAGE"),
+			gc.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL"): -1,
+			gc.getInfoTypeForString("IMPROVEMENT_HAMLET_HILL"): gc.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL")
+		}
 
 		# # Transfer local defined variables into module ones.
 		# lnames = [l for l in locals().keys() if l[0] != "_" and l != "gc"]

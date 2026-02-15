@@ -1,12 +1,13 @@
 # Imports
 import os
-from CvPythonExtensions import (CyGlobalContext, CyInterface,
+from CvPythonExtensions import (CyGlobalContext, CyInterface, CyGame,
 											CyTranslator, CyMap, DirectionTypes,
 											ColorTypes, UnitAITypes, CyPopupInfo,
 											ButtonPopupTypes, plotDirection, UnitTypes,
 											CyAudioGame, plotDistance, plotXY,
 											isWorldWonderClass, isTeamWonderClass,
-											isNationalWonderClass, InterfaceMessageTypes)
+											isNationalWonderClass, InterfaceMessageTypes,
+											CommerceTypes, YieldTypes, FontSymbols)
 # import CvEventInterface
 import CvUtil
 
@@ -400,70 +401,248 @@ def onModNetMessage(argsList):
 										CyAudioGame().Play2DSound("AS2D_SS_CITY_ANCIENT_LARGE_BED")
 
 		# Statthalter: sell buildings
-		if iData1 == 775:
+		if iData1 == 770:
 				# iData1, iData2, ... , iData5
-				# First:  737, iCityID, iPlayer, -1, -1
-				# Second: 737, iCityID, iPlayer, iButtonID (iBuilding), -1
-				# Third:  737, iCityID, iPlayer, iBuilding, iButtonID (yes or no)
+				# First:  770, iCityID, iPlayer, -1, -1
+				# Second: 770, iCityID, iPlayer, iButton, -1
+				# Third:  770, iCityID, iPlayer, iBuilding, iButton
 				pPlayer = gc.getPlayer(iData3)
 				pCity = pPlayer.getCity(iData2)
 
+				# Dies soll doppelte Popups in PB-Spielen vermeiden.
+				if iData3 != gc.getGame().getActivePlayer(): return
+
 				# Choose Building
-				if iData4 == -1:
-						# Dies soll doppelte Popups in PB-Spielen vermeiden.
-						if iData3 == gc.getGame().getActivePlayer():
-								popupInfo = CyPopupInfo()
-								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-								popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL", (pCity.getName(),)))
-								popupInfo.setData1(iData2)  # CityID
-								popupInfo.setData2(iData3)  # iPlayer
-								popupInfo.setData3(-1)
-								popupInfo.setOnClickedPythonCallback("popupStatthalterSellBuilding")
+				if iData4 == -1 and iData5 == -1:
+						popupInfo = CyPopupInfo()
+						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+						popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_1", (pCity.getName(),)))
+						popupInfo.setData1(iData2)  # CityID
+						popupInfo.setData2(iData3)  # iPlayer
+						popupInfo.setData3(-1)
+						popupInfo.setOnClickedPythonCallback("popupStatthalterSellBuilding")
 
-								# Button 0: Cancel button
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
+						# Button 0: Cancel button
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ()), "Art/Interface/Buttons/Actions/Cancel.dds")
 
-								iRange = gc.getNumBuildingInfos()
-								for iBuilding in range(iRange):
-										if pCity.isHasBuilding(iBuilding):
-												pBuildingInfo = gc.getBuildingInfo(iBuilding)
-												szText = pBuildingInfo.getDescription()
+						iRange = gc.getNumBuildingInfos()
+						for iBuilding in range(iRange):
+							if pCity.isHasBuilding(iBuilding):
+								BuildingInfo = gc.getBuildingInfo(iBuilding)
+								if (	BuildingInfo.getProductionCost() > 0 and 
+										not isWorldWonderClass(BuildingInfo.getBuildingClassType()) and
+										(	BuildingInfo.getMaintenanceModifier() > 0 or 
+											pCity.getBuildingHappiness(iBuilding) < 0 or
+											pCity.getBuildingHealth(iBuilding) < 0
+										)
+									):
+									szText = BuildingInfo.getDescription()
 
-												if pBuildingInfo.getPrereqReligion() != -1:
-													szText += u" %c" % gc.getReligionInfo(pBuildingInfo.getPrereqReligion()).getChar()
-												if pBuildingInfo.getHappiness() > 0:
-													szText += u" +%d" % pBuildingInfo.getHappiness() + CyTranslator().getText("[ICON_HAPPY]", ("", ))
-												if pBuildingInfo.getHappiness() < 0:
-													szText += u" %d" % pBuildingInfo.getHappiness() + CyTranslator().getText("[ICON_UNHAPPY]", ("", ))
+									i = iBuilding
+									szRightBuffer = u": "
+									bFirst = True
 
-												szText + u" Unterhalt: " + u" %d%%" % pBuildingInfo.getMaintainanceCost()
+									# Religion
+									if BuildingInfo.getPrereqReligion() != -1:
+										bFirst = False
+										szRightBuffer += u"%c" % gc.getReligionInfo(BuildingInfo.getPrereqReligion()).getChar()
 
-												popupInfo.addPythonButton(szText, pBuildingInfo.getButton())
+									# Bonus der Buildings
+									if pCity.getNumActiveBuilding(i) > 0:
 
-								# Cancel button
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
-								popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
-								popupInfo.addPopup(iData3)
-				else:
+											# Trade
+											iValue = BuildingInfo.getTradeRoutes()
+											if iValue > 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													szTempBuffer = u"+%d%c" % (iValue, CyGame().getSymbolID(FontSymbols.TRADE_CHAR))
+													szRightBuffer = szRightBuffer + szTempBuffer
+											# Trade modifier in %
+											iValue = BuildingInfo.getTradeRouteModifier()
+											if iValue > 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													szTempBuffer = u"+%d%s%c" % (iValue, "%", CyGame().getSymbolID(FontSymbols.TRADE_CHAR))
+													szRightBuffer = szRightBuffer + szTempBuffer
+
+											# XP
+											iValue = BuildingInfo.getFreeExperience()
+											if iValue > 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													szTempBuffer = u"+%d%s" % (iValue, "XP")
+													szRightBuffer = szRightBuffer + szTempBuffer
+
+											# Gesundheit
+											iHealth = pCity.getBuildingHealth(i)
+											if iHealth != 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													if iHealth > 0:
+															szTempBuffer = u"+%d%c" % (iHealth, CyGame().getSymbolID(FontSymbols.HEALTHY_CHAR))
+													else:
+															szTempBuffer = u"+%d%c" % (-(iHealth), CyGame().getSymbolID(FontSymbols.UNHEALTHY_CHAR))
+													szRightBuffer = szRightBuffer + szTempBuffer
+
+											# Zufriedenheit
+											iHappiness = pCity.getBuildingHappiness(i)
+											if iHappiness != 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													if iHappiness > 0:
+															szTempBuffer = u"+%d%c" % (iHappiness, CyGame().getSymbolID(FontSymbols.HAPPY_CHAR))
+													else:
+															szTempBuffer = u"+%d%c" % (-(iHappiness), CyGame().getSymbolID(FontSymbols.UNHAPPY_CHAR))
+													szRightBuffer = szRightBuffer + szTempBuffer
+
+											# Yieldbonus (Food, Prod, Commerce)
+											for j in range(YieldTypes.NUM_YIELD_TYPES):
+													# Fixwerte
+													iYield = BuildingInfo.getYieldChange(j) + pCity.getNumBuilding(i) * \
+															pCity.getBuildingYieldChange(BuildingInfo.getBuildingClassType(), j)
+													if iYield != 0:
+															if not bFirst: szRightBuffer = szRightBuffer + ", "
+															else: bFirst = False
+															if iYield > 0:
+																	szTempBuffer = u"+%d%c" % (iYield, gc.getYieldInfo(j).getChar())
+															else:
+																	szTempBuffer = u"%d%c" % (iYield, gc.getYieldInfo(j).getChar())
+															szRightBuffer = szRightBuffer + szTempBuffer
+
+													# Prozent
+													iYield = BuildingInfo.getYieldModifier(j)
+													if iYield != 0:
+															if not bFirst: szRightBuffer = szRightBuffer + ", "
+															else: bFirst = False
+															if iYield > 0:
+																	szTempBuffer = u"+%d%s%c" % (iYield, "%", gc.getYieldInfo(j).getChar())
+															else:
+																	szTempBuffer = u"%d%s%c" % (iYield, "%", gc.getYieldInfo(j).getChar())
+															szRightBuffer = szRightBuffer + szTempBuffer
+
+											# Defense/Defence
+											iValue = BuildingInfo.getDefenseModifier()
+											if iValue > 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													szTempBuffer = u"+%d%%%c" % (iValue, CyGame().getSymbolID(FontSymbols.DEFENSE_CHAR))
+													szRightBuffer = szRightBuffer + szTempBuffer
+
+
+									# betrifft hier auch obsolete Buildings
+									# Commercebonus (Gold, Wissen, Kultur, Spionage)
+									for j in range(CommerceTypes.NUM_COMMERCE_TYPES):
+
+											# Fixwerte
+											iCommerce = pCity.getBuildingCommerceByBuilding(j, i) / pCity.getNumBuilding(i)
+											if iCommerce != 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													if iCommerce > 0:
+															szTempBuffer = u"+%d%c" % (iCommerce, gc.getCommerceInfo(j).getChar())
+													else:
+															szTempBuffer = u"%d%c" % (iCommerce, gc.getCommerceInfo(j).getChar())
+													szRightBuffer = szRightBuffer + szTempBuffer
+
+											# in Prozent
+											iCommerce = BuildingInfo.getCommerceModifier(j)
+											if iCommerce != 0:
+													if not bFirst: szRightBuffer = szRightBuffer + ", "
+													else: bFirst = False
+													if iCommerce > 0:
+															szTempBuffer = u"+%d%s%c" % (iCommerce, "%", gc.getCommerceInfo(j).getChar())
+													else:
+															szTempBuffer = u"%d%s%c" % (iCommerce, "%", gc.getCommerceInfo(j).getChar())
+													szRightBuffer = szRightBuffer + szTempBuffer
+
+									#if BuildingInfo.getHappiness() > 0:
+									#	szRightBuffer += u" +%d" % BuildingInfo.getHappiness() + CyTranslator().getText("[ICON_HAPPY]", ("", ))
+									#if BuildingInfo.getHappiness() < 0:
+									#	szRightBuffer += u" %d" % BuildingInfo.getHappiness() + CyTranslator().getText("[ICON_UNHAPPY]", ("", ))
+									# Maintenance
+									if BuildingInfo.getMaintenanceModifier() > 0:
+										if not bFirst: szRightBuffer = szRightBuffer + ", "
+										else: bFirst = False
+										iBuildingMaintenance = BuildingInfo.getMaintenanceModifier()
+										szRightBuffer += u"<color=230,40,20>%d%% " % iBuildingMaintenance
+										szRightBuffer +=	CyTranslator().getText("TXT_KEY_PEDIA_CATEGORY_UPKEEP2", ())
+										iMaintenance = 1.0 * pCity.getMaintenance() / (100 + pCity.getMaintenanceModifier()) * iBuildingMaintenance
+										szRightBuffer += u" (%.2f%c)</color>" % (iMaintenance, gc.getCommerceInfo(0).getChar())
+
+									popupInfo.addPythonButton(szText + szRightBuffer, BuildingInfo.getButton())
+
+						# Cancel button
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ()), "Art/Interface/Buttons/Actions/Cancel.dds")
+						popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
+						popupInfo.addPopup(iData3)
+
+				elif iData5 == -1:
+						iBuildingButton = 0 # erster Button ist CANCEL(!)
+						iRange = gc.getNumBuildingInfos()
+						for iBuilding in range(iRange):
+							if pCity.isHasBuilding(iBuilding):
+								BuildingInfo = gc.getBuildingInfo(iBuilding)
+								if (	BuildingInfo.getProductionCost() > 0 and 
+										not isWorldWonderClass(BuildingInfo.getBuildingClassType()) and
+										(	BuildingInfo.getMaintenanceModifier() > 0 or 
+											pCity.getBuildingHappiness(iBuilding) < 0 or
+											pCity.getBuildingHealth(iBuilding) < 0
+										)
+									):
+									iBuildingButton += 1
+									if iBuildingButton == iData4:
+										break
+
+						popupInfo = CyPopupInfo()
+						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
+						popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_2", (gc.getBuildingInfo(iBuilding).getDescription(),)))
+						popupInfo.setData1(iData2)  # CityID
+						popupInfo.setData2(iData3)  # iPlayer
+						popupInfo.setData3(iBuilding)  # iBuilding
+						popupInfo.setOnClickedPythonCallback("popupStatthalterSellBuilding")
+
+						iValue = gc.getBuildingInfo(iBuilding).getProductionCost() // 4
+
+						# Button 0: sell for Gold
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_3", (iValue,)), "Art/Interface/Buttons/Process/ProcessWealth.dds")
+						# Button 1: sell for Prod
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_4", (iValue,)), ",Art/Interface/Buttons/Civics/Despotism.dds,Art/Interface/Buttons/mainmenu_techscreen_worldbuilder_popups_atlas.dds,6,8")
+						# Button 2: sell for both
+						iValue //= 2
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_5", (iValue,iValue)), "Art/Interface/Buttons/Actions/button_statthalter_einfluss.dds")
+						# Cancel button
+						popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
+						popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
+						popupInfo.addPopup(iData3)
+
+				elif iData4 != -1 and iData5 != -1:
+						pPlayer = gc.getPlayer(iData3)
+						pCity = pPlayer.getCity(iData2)
 						iBuilding = iData4
-						if iData5 == -1:
-								popupInfo = CyPopupInfo()
-								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-								popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL", (pCity.getName(),)))
-								popupInfo.setData1(iData2)  # CityID
-								popupInfo.setData2(iData3)  # iPlayer
-								popupInfo.setData3(iData4)  # iBuilding
-								popupInfo.setOnClickedPythonCallback("popupStatthalterSellBuilding")
 
-								# Button 0: YES
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_YES2", ()), "Art/Interface/Buttons/General/CheckMark.dds")
-								# Button 1: YES
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_YES2", ()), "Art/Interface/Buttons/General/CheckMark.dds")
-								# Cancel button
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
-								popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
-								popupInfo.addPopup(iData3)
+						if pCity.isHasBuilding(iBuilding):
+								iValue = gc.getBuildingInfo(iBuilding).getProductionCost() // 4
 
+								# für Geld verkaufen
+								if iData5 == 0:
+									pPlayer.changeGold(iValue)
+									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_6", (gc.getBuildingInfo(iBuilding).getDescription(),pCity.getName(),iValue)),
+									"AS2D_COINS", 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(10), pCity.getX(), pCity.getY(), True, True)
+								# für Prod verkaufen
+								elif iData5 == 1:
+									pCity.changeProduction(iValue)
+									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_7", (gc.getBuildingInfo(iBuilding).getDescription(),pCity.getName(),iValue)),
+									"AS2D_BUILD_FORGE", 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(10), pCity.getX(), pCity.getY(), True, True)
+								# teils teils
+								elif iData5 == 2:
+									iValue //= 2
+									pPlayer.changeGold(iValue)
+									pCity.changeProduction(iValue)
+									CyAudioGame().Play2DSound("AS2D_COINS")
+									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_8", (gc.getBuildingInfo(iBuilding).getDescription(),pCity.getName(),iValue,iValue)),
+									"AS2D_BUILD_FORGE", 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(10), pCity.getX(), pCity.getY(), True, True)
+
+								pCity.setNumRealBuilding(iBuilding, 0)
 
 def doMessageCityGrowing(pCity):
 		if pCity is None or pCity.isNone():
@@ -1208,29 +1387,37 @@ def doDesertification(pCity, pUnit):
 # Emigrant -----------------
 def doEmigrant(pCity, pUnit):
 		pPlot = pCity.plot()
-		# Kultur auslesen
+
+		# Kultur der Unit auslesen
 		txt = CvUtil.getScriptData(pUnit, ["p", "t"])
 		if txt != "":
-				iPlayerCulture = int(txt)
+				iUnitCulture = int(txt)
 		else:
-				iPlayerCulture = pUnit.getOwner()
-		# Kultur
-		iPlayerHC = pCity.findHighestCulture()
-		if iPlayerHC == -1:
-				iPlayerHC = pCity.getOwner()
-		iCulture = pPlot.getCulture(iPlayerHC) / pCity.getPopulation()
-		if pCity.getPopulation() == 1: iCulture /= 2
+				iUnitCulture = pUnit.getOwner()
+
+		# Kultur der Stadt auslesen
+		iMaxCulture = 0
+		iMaxPlayers = gc.getMAX_PLAYERS()
+		for iPlayer in range(iMaxPlayers):
+			iMaxCulture += pPlot.getCulture(iPlayer)
+			# ***TEST***
+			#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iPlayer",iPlayer)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+			#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iCulture",pPlot.getCulture(iPlayer))), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 		# ***TEST***
-		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("PlayerHC",iPlayerHC)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("PlayerHC Kultur",pPlot.getCulture(iPlayerHC))), None, 2, None, ColorTypes(10), 0, 0, False, False)
-		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iCulture",iCulture)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iMaxCulture",iMaxCulture)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-		# der Stadt Kultur nehmen und geben
-		if pPlot.getCulture(iPlayerHC) > iCulture:
-				#pPlot.changeCulture(iPlayerHC, -iCulture, 1)
-				pPlot.changeCulture(iPlayerCulture, iCulture, 1)
-				# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
+		# Kultur der Stadt anpassen
+		iCultureProportion = 1.0 - (1.0 / (pCity.getPopulation() + 1))
+		for iPlayer in range(iMaxPlayers):
+			iCulture = pPlot.getCulture(iPlayer)
+			if iCulture > 0:
+				iCulture = int(iCulture * iCultureProportion)
+				pPlot.setCulture(iPlayer, iCulture, True)
+		iCulture = int(iCultureProportion * iMaxCulture)
+		# ***TEST***
+		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("iUnitCulture",iCulture)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+		pPlot.setCulture(iUnitCulture, iCulture, True)
 
 		# Religion (ab PAE VII)
 		txt = CvUtil.getScriptData(pUnit, ["rel", "t"])
@@ -4685,3 +4872,23 @@ def getCityReligion(pCity):
 			#else:
 			#	iPlayerReligion = iStateReligion
 		return iPlayerReligion
+
+# PAE 7.15: Piratennester heilen Piraten in einer Runde (auch von fremden Nationen)
+def doHealPirates(pCity):
+		if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PIRATENNEST")):
+			return
+
+		pPlot = pCity.plot()
+		iNumUnits = pPlot.getNumUnits()
+		if iNumUnits > 0:
+			for k in range(iNumUnits):
+				pLoopUnit = pPlot.getUnit(k)
+				if pLoopUnit.getUnitType() in L.LFormationNoNaval and pLoopUnit.getUnitType() != gc.getInfoTypeForString("UNIT_WORKBOAT"):
+					iDamage = pLoopUnit.getDamage()
+					if iDamage > 0:
+						pLoopUnit.setDamage(0, -1)
+						if gc.getPlayer(pLoopUnit.getOwner()).isHuman():
+							CyInterface().addMessage(pLoopUnit.getOwner(), True, 15, CyTranslator().getText("TXT_KEY_INFO_HEAL_PIRATE", (pCity.getName(), 0)),
+										"AS2D_BUILD_DRYDOCK", 2, "Art/Interface/Buttons/Actions/button_action_merc_elite.dds", ColorTypes(11), pCity.getX(), pCity.getY(), True, True)
+
+

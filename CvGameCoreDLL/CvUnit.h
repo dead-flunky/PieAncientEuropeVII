@@ -472,13 +472,13 @@ public:
 
 	int getExperience() const;																											// Exposed to Python
 	void setExperience(int iNewValue, int iMax = -1);																// Exposed to Python
-	void changeExperience(int iChange, int iMax = -1, bool bFromCombat = false, bool bInBorders = false, bool bUpdateGlobal = false);																				// Exposed to Python
+	void changeExperience(int iChange, int iMax = -1, bool bFromCombat = false, bool bInBorders = false, bool bUpdateGlobal = false);	// Exposed to Python
 
-	int getLevel() const;																														// Exposed to Python					
+	int getLevel() const;																														// Exposed to Python
 	void setLevel(int iNewValue);
 	void changeLevel(int iChange);
 
-	int getCargo() const;																														// Exposed to Python					
+	int getCargo() const;																														// Exposed to Python
 	void changeCargo(int iChange);
 	void getCargoUnits(std::vector<CvUnit*>& aUnits) const;
 
@@ -494,62 +494,62 @@ public:
 	void setCombatFirstStrikes(int iNewValue);			
 	void changeCombatFirstStrikes(int iChange);			
 
-	int getFortifyTurns() const;																															// Exposed to Python
+	int getFortifyTurns() const;																										// Exposed to Python
 	void setFortifyTurns(int iNewValue);
 	void changeFortifyTurns(int iChange);
 
 	int getBlitzCount() const;			
-	bool isBlitz() const;																														// Exposed to Python					
+	bool isBlitz() const;																														// Exposed to Python
 	void changeBlitzCount(int iChange);																												
-																																														
-	int getAmphibCount() const;																																
-	bool isAmphib() const;																													// Exposed to Python					
+
+	int getAmphibCount() const;																														
+	bool isAmphib() const;																													// Exposed to Python
 	void changeAmphibCount(int iChange);																											
-																																														
-	int getRiverCount() const;																																
-	bool isRiver() const;																														// Exposed to Python					
+
+	int getRiverCount() const;																															
+	bool isRiver() const;																														// Exposed to Python
 	void changeRiverCount(int iChange);																												
-																																														
+
 	int getEnemyRouteCount() const;																									
-	bool isEnemyRoute() const;																											// Exposed to Python					
+	bool isEnemyRoute() const;																											// Exposed to Python
 	void changeEnemyRouteCount(int iChange);																									
-																																														
+
 	int getAlwaysHealCount() const;																														
-	bool isAlwaysHeal() const;																											// Exposed to Python					
+	bool isAlwaysHeal() const;																											// Exposed to Python
 	void changeAlwaysHealCount(int iChange);																									
-																																														
+
 	int getHillsDoubleMoveCount() const;																											
-	bool isHillsDoubleMove() const;																									// Exposed to Python					
+	bool isHillsDoubleMove() const;																									// Exposed to Python
 	void changeHillsDoubleMoveCount(int iChange);																							
-																																														
-	int getImmuneToFirstStrikesCount() const;																									
-	void changeImmuneToFirstStrikesCount(int iChange);																				
-																																														
-	int getExtraVisibilityRange() const;																						// Exposed to Python					
+
+	int getImmuneToFirstStrikesCount() const;
+	void changeImmuneToFirstStrikesCount(int iChange);
+
+	int getExtraVisibilityRange() const;																						// Exposed to Python
 	void changeExtraVisibilityRange(int iChange);
 
-	int getExtraMoves() const;																																// Exposed to Python
+	int getExtraMoves() const;																										// Exposed to Python
 	void changeExtraMoves(int iChange);
 
-	int getExtraMoveDiscount() const;																								// Exposed to Python
+	int getExtraMoveDiscount() const;																							// Exposed to Python
 	void changeExtraMoveDiscount(int iChange);
 
-	int getExtraAirRange() const;																																// Exposed to Python
+	int getExtraAirRange() const;																														// Exposed to Python
 	void changeExtraAirRange(int iChange);
 
-	int getExtraIntercept() const;																																// Exposed to Python
+	int getExtraIntercept() const;																													// Exposed to Python
 	void changeExtraIntercept(int iChange);
 
-	int getExtraEvasion() const;																																// Exposed to Python
+	int getExtraEvasion() const;																														// Exposed to Python
 	void changeExtraEvasion(int iChange);
 
-	int getExtraFirstStrikes() const;																													// Exposed to Python
+	int getExtraFirstStrikes() const;																												// Exposed to Python
 	void changeExtraFirstStrikes(int iChange);
 
 	int getExtraChanceFirstStrikes() const;																										// Exposed to Python
 	void changeExtraChanceFirstStrikes(int iChange);
 
-	int getExtraWithdrawal() const;																														// Exposed to Python
+	int getExtraWithdrawal() const;																													// Exposed to Python
 	void changeExtraWithdrawal(int iChange);
 
 	int getExtraCollateralDamage() const;																											// Exposed to Python
@@ -558,52 +558,52 @@ public:
 	int getExtraBombardRate() const;																													// Exposed to Python
 	void changeExtraBombardRate(int iChange);
 
-	int getExtraEnemyHeal() const;																									// Exposed to Python					
-	void changeExtraEnemyHeal(int iChange);																										
-																																														
-	int getExtraNeutralHeal() const;																								// Exposed to Python					
-	void changeExtraNeutralHeal(int iChange);																									
-																																														
-	int getExtraFriendlyHeal() const;																								// Exposed to Python					
-	void changeExtraFriendlyHeal(int iChange);																								
-																																														
-	int getSameTileHeal() const;																										// Exposed to Python					
-	void changeSameTileHeal(int iChange);																											
-																																														
-	int getAdjacentTileHeal() const;																								// Exposed to Python					
-	void changeAdjacentTileHeal(int iChange);																									
-																																														
-	int getExtraCombatPercent() const;																							// Exposed to Python					
+	int getExtraEnemyHeal() const;																									// Exposed to Python
+	void changeExtraEnemyHeal(int iChange);
+
+	int getExtraNeutralHeal() const;																								// Exposed to Python
+	void changeExtraNeutralHeal(int iChange);
+
+	int getExtraFriendlyHeal() const;																							// Exposed to Python
+	void changeExtraFriendlyHeal(int iChange);
+
+	int getSameTileHeal() const;																									// Exposed to Python
+	void changeSameTileHeal(int iChange);
+
+	int getAdjacentTileHeal() const;																								// Exposed to Python
+	void changeAdjacentTileHeal(int iChange);
+
+	int getExtraCombatPercent() const;																							// Exposed to Python
 	void changeExtraCombatPercent(int iChange);
 
-	int getExtraCityAttackPercent() const;																										// Exposed to Python
+	int getExtraCityAttackPercent() const;														// Exposed to Python
 	void changeExtraCityAttackPercent(int iChange);
 
-	int getExtraCityDefensePercent() const;																										// Exposed to Python
+	int getExtraCityDefensePercent() const;													// Exposed to Python
 	void changeExtraCityDefensePercent(int iChange);
 
-	int getExtraHillsAttackPercent() const;																									// Exposed to Python
+	int getExtraHillsAttackPercent() const;													// Exposed to Python
 	void changeExtraHillsAttackPercent(int iChange);
 
-	int getExtraHillsDefensePercent() const;																									// Exposed to Python
+	int getExtraHillsDefensePercent() const;													// Exposed to Python
 	void changeExtraHillsDefensePercent(int iChange);
 
-	int getRevoltProtection() const;																									// Exposed to Python
+	int getRevoltProtection() const;																// Exposed to Python
 	void changeRevoltProtection(int iChange);
 
-	int getCollateralDamageProtection() const;																									// Exposed to Python
+	int getCollateralDamageProtection() const;												// Exposed to Python
 	void changeCollateralDamageProtection(int iChange);
 
-	int getPillageChange() const;																									// Exposed to Python
+	int getPillageChange() const;																	// Exposed to Python
 	void changePillageChange(int iChange);
 
-	int getUpgradeDiscount() const;																									// Exposed to Python
+	int getUpgradeDiscount() const;																// Exposed to Python
 	void changeUpgradeDiscount(int iChange);
 
-	int getExperiencePercent() const;																									// Exposed to Python
+	int getExperiencePercent() const;															// Exposed to Python
 	void changeExperiencePercent(int iChange);
 
-	int getKamikazePercent() const;																									// Exposed to Python
+	int getKamikazePercent() const;																// Exposed to Python
 	void changeKamikazePercent(int iChange);
 
 	DllExport DirectionTypes getFacingDirection(bool checkLineOfSightProperty) const;
@@ -611,17 +611,17 @@ public:
 	void rotateFacingDirectionClockwise();
 	void rotateFacingDirectionCounterClockwise();
 
-	DllExport bool isSuicide() const;																											// Exposed to Python
+	DllExport bool isSuicide() const;															// Exposed to Python
 	int getDropRange() const;
 
-	bool isMadeAttack() const;																																// Exposed to Python
-	void setMadeAttack(bool bNewValue);																							// Exposed to Python
+	bool isMadeAttack() const;																		// Exposed to Python
+	void setMadeAttack(bool bNewValue);															// Exposed to Python
 
-	bool isMadeInterception() const;																													// Exposed to Python
-	void setMadeInterception(bool bNewValue);																				// Exposed to Python
+	bool isMadeInterception() const;																// Exposed to Python
+	void setMadeInterception(bool bNewValue);													// Exposed to Python
 
-	DllExport bool isPromotionReady() const;																									// Exposed to Python
-	void setPromotionReady(bool bNewValue);																					// Exposed to Python
+	DllExport bool isPromotionReady() const;													// Exposed to Python
+	void setPromotionReady(bool bNewValue);													// Exposed to Python
 	void testPromotionReady();
 
 	bool isDelayedDeath() const;
@@ -637,21 +637,21 @@ public:
 	void setBlockading(bool bNewValue);
 	void collectBlockadeGold();
 
-	DllExport PlayerTypes getOwner() const;																									// Exposed to Python
+	DllExport PlayerTypes getOwner() const;													// Exposed to Python
 #ifdef _USRDLL
 	inline PlayerTypes getOwnerINLINE() const
 	{
 		return m_eOwner;
 	}
 #endif
-	DllExport PlayerTypes getVisualOwner(TeamTypes eForTeam = NO_TEAM) const;																									// Exposed to Python
-	PlayerTypes getCombatOwner(TeamTypes eForTeam, const CvPlot* pPlot) const;																									// Exposed to Python
-	DllExport TeamTypes getTeam() const;																										// Exposed to Python
+	DllExport PlayerTypes getVisualOwner(TeamTypes eForTeam = NO_TEAM) const;		// Exposed to Python
+	PlayerTypes getCombatOwner(TeamTypes eForTeam, const CvPlot* pPlot) const;		// Exposed to Python
+	DllExport TeamTypes getTeam() const;														// Exposed to Python
 
 	PlayerTypes getCapturingPlayer() const;
 	void setCapturingPlayer(PlayerTypes eNewValue);
 
-	DllExport const UnitTypes getUnitType() const;																					// Exposed to Python
+	DllExport const UnitTypes getUnitType() const;											// Exposed to Python
 	CvUnitInfo &getUnitInfo() const;
 	UnitClassTypes getUnitClassType() const;	// Exposed to Python
 
@@ -661,47 +661,47 @@ public:
 	DllExport CvUnit* getCombatUnit() const;
 	void setCombatUnit(CvUnit* pUnit, bool bAttacking = false);
 
-	CvUnit* getTransportUnit() const;																							// Exposed to Python
-	bool isCargo() const;																													// Exposed to Python
-	void setTransportUnit(CvUnit* pTransportUnit);																							// Exposed to Python
+	CvUnit* getTransportUnit() const;															// Exposed to Python
+	bool isCargo() const;																			// Exposed to Python
+	void setTransportUnit(CvUnit* pTransportUnit);											// Exposed to Python
 
-	int getExtraDomainModifier(DomainTypes eIndex) const;																		// Exposed to Python
+	int getExtraDomainModifier(DomainTypes eIndex) const;									// Exposed to Python
 	void changeExtraDomainModifier(DomainTypes eIndex, int iChange);
 
-	DllExport const CvWString getName(uint uiForm = 0) const;																// Exposed to Python
-	DllExport const wchar* getNameKey() const;																							// Exposed to Python
-	const CvWString& getNameNoDesc() const;																				// Exposed to Python
-	void setName(const CvWString szNewValue);																			// Exposed to Python
+	DllExport const CvWString getName(uint uiForm = 0) const;							// Exposed to Python
+	DllExport const wchar* getNameKey() const;												// Exposed to Python
+	const CvWString& getNameNoDesc() const;													// Exposed to Python
+	void setName(const CvWString szNewValue);													// Exposed to Python
 
 	// Script data needs to be a narrow string for pickling in Python
-	std::string getScriptData() const;																											// Exposed to Python
-	void setScriptData(std::string szNewValue);																							// Exposed to Python
+	std::string getScriptData() const;															// Exposed to Python
+	void setScriptData(std::string szNewValue);												// Exposed to Python
 
 	int getTerrainDoubleMoveCount(TerrainTypes eIndex) const;
-	bool isTerrainDoubleMove(TerrainTypes eIndex) const;													// Exposed to Python 
+	bool isTerrainDoubleMove(TerrainTypes eIndex) const;									// Exposed to Python 
 	void changeTerrainDoubleMoveCount(TerrainTypes eIndex, int iChange);
 
 	int getFeatureDoubleMoveCount(FeatureTypes eIndex) const;
-	bool isFeatureDoubleMove(FeatureTypes eIndex) const;													// Exposed to Python 
+	bool isFeatureDoubleMove(FeatureTypes eIndex) const;									// Exposed to Python 
 	void changeFeatureDoubleMoveCount(FeatureTypes eIndex, int iChange);
 
-	int getExtraTerrainAttackPercent(TerrainTypes eIndex) const;														// Exposed to Python
-	void changeExtraTerrainAttackPercent(TerrainTypes eIndex, int iChange);						
-	int getExtraTerrainDefensePercent(TerrainTypes eIndex) const;														// Exposed to Python
-	void changeExtraTerrainDefensePercent(TerrainTypes eIndex, int iChange);						
-	int getExtraFeatureAttackPercent(FeatureTypes eIndex) const;														// Exposed to Python
+	int getExtraTerrainAttackPercent(TerrainTypes eIndex) const;						// Exposed to Python
+	void changeExtraTerrainAttackPercent(TerrainTypes eIndex, int iChange);
+	int getExtraTerrainDefensePercent(TerrainTypes eIndex) const;						// Exposed to Python
+	void changeExtraTerrainDefensePercent(TerrainTypes eIndex, int iChange);
+	int getExtraFeatureAttackPercent(FeatureTypes eIndex) const;						// Exposed to Python
 	void changeExtraFeatureAttackPercent(FeatureTypes eIndex, int iChange);
-	int getExtraFeatureDefensePercent(FeatureTypes eIndex) const;														// Exposed to Python
+	int getExtraFeatureDefensePercent(FeatureTypes eIndex) const;						// Exposed to Python
 	void changeExtraFeatureDefensePercent(FeatureTypes eIndex, int iChange);
 
-	int getExtraUnitCombatModifier(UnitCombatTypes eIndex) const;														// Exposed to Python
+	int getExtraUnitCombatModifier(UnitCombatTypes eIndex) const;						// Exposed to Python
 	void changeExtraUnitCombatModifier(UnitCombatTypes eIndex, int iChange);
 
-	bool canAcquirePromotion(PromotionTypes ePromotion) const;															// Exposed to Python 
-	bool canAcquirePromotionAny() const;																										// Exposed to Python
-	bool isPromotionValid(PromotionTypes ePromotion) const;															// Exposed to Python 
-	bool isHasPromotion(PromotionTypes eIndex) const;															// Exposed to Python
-	void setHasPromotion(PromotionTypes eIndex, bool bNewValue);									// Exposed to Python
+	bool canAcquirePromotion(PromotionTypes ePromotion) const;							// Exposed to Python 
+	bool canAcquirePromotionAny() const;														// Exposed to Python
+	bool isPromotionValid(PromotionTypes ePromotion) const;								// Exposed to Python 
+	bool isHasPromotion(PromotionTypes eIndex) const;										// Exposed to Python
+	void setHasPromotion(PromotionTypes eIndex, bool bNewValue);						// Exposed to Python
 
 	DllExport int getSubUnitCount() const;
 	DllExport int getSubUnitsAlive() const;
@@ -721,7 +721,7 @@ public:
 	void applyEvent(EventTypes eEvent);
 
 	int getImmobileTimer() const;															// Exposed to Python
-	void setImmobileTimer(int iNewValue);													// Exposed to Python
+	void setImmobileTimer(int iNewValue);												// Exposed to Python
 	void changeImmobileTimer(int iChange);
 
 	bool potentialWarAction(const CvPlot* pPlot) const;
@@ -731,8 +731,8 @@ public:
 
 	bool verifyStackValid();
 
-	DllExport const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;										// Exposed to Python
-	DllExport const TCHAR* getButton() const;										// Exposed to Python
+	DllExport const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;	// Exposed to Python
+	DllExport const TCHAR* getButton() const;											// Exposed to Python
 	DllExport int getGroupSize() const;
 	DllExport int getGroupDefinitions() const;
 	DllExport int getUnitGroupRequired(int i) const;
@@ -767,11 +767,16 @@ public:
 	virtual int AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const = 0;
 	virtual bool AI_bestCityBuild(CvCity* pCity, CvPlot** ppBestPlot = NULL, BuildTypes* peBestBuild = NULL, CvPlot* pIgnorePlot = NULL, CvUnit* pUnit = NULL) = 0;
 	virtual bool AI_isCityAIType() const = 0;
-	virtual UnitAITypes AI_getUnitAIType() const = 0;																				// Exposed to Python
+	virtual UnitAITypes AI_getUnitAIType() const = 0;					// Exposed to Python
 	virtual void AI_setUnitAIType(UnitAITypes eNewValue) = 0;
-    virtual int AI_sacrificeValue(const CvPlot* pPlot) const = 0;
+	virtual int AI_sacrificeValue(const CvPlot* pPlot) const = 0;
 
 	int getPAEmoveDamage(); // PAE damaged units and ships are slower
+	bool hasUsedDefensiveRangedStrike() const;                      // PAE defend with ranged strike
+	void setUsedDefensiveRangedStrike(bool bNewValue);              // PAE defend with ranged strike
+	void doDefensiveRangedStrike(bool bQuick = false); // PAE defend with ranged strike
+	static int getCombatClass(UnitCombatTypes eCombat);                                    // PAE battle rounds matrix
+	static int getCombatRounds(int iAttackerType, int iDefenderType, const CvPlot* pPlot); // PAE battle rounds matrix
 
 protected:
 
@@ -842,6 +847,7 @@ protected:
 	bool m_bInfoBarDirty;
 	bool m_bBlockading;
 	bool m_bAirCombat;
+	bool m_bHasUsedDefensiveRangedStrike; // PAE defend with ranged strike
 
 	PlayerTypes m_eOwner;
 	PlayerTypes m_eCapturingPlayer;
@@ -888,6 +894,7 @@ protected:
 	void resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle);
 	void resolveAirCombat(CvUnit* pInterceptor, CvPlot* pPlot, CvAirMissionDefinition& kBattle);
 	void checkRemoveSelectionAfterAttack();
+	void resolveCombatRanged(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle); // PAE
 };
 
 #endif

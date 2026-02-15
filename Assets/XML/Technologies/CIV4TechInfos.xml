@@ -4874,6 +4874,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
+				<PrereqTech>TECH_WEGZOLL</PrereqTech>
 				<PrereqTech>TECH_SOELDNERTUM</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>

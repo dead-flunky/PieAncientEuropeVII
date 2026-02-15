@@ -883,7 +883,7 @@ void CvCity::doTurn()
 	setPlundered(false);
 	setDrafted(false);
 	setAirliftTargeted(false);
-//Multiple Production: Added by Denev 07/10/2009
+//Multiple Production: by Denev 07/10/2009
 	setBuiltFoodProducedUnit(false);
 //Multiple Production: End Add	setCurrAirlift(0);
 
@@ -2277,7 +2277,7 @@ bool CvCity::isProductionProcess() const
 }
 
 
-//Multiple Production: Added by Denev 07/01/2009
+//Multiple Production: by Denev 07/01/2009
 bool CvCity::isProductionWonder() const
 {
 	CLLNode<OrderData>* pOrderNode = headOrderQueueNode();
@@ -3164,7 +3164,7 @@ int CvCity::getProductionModifier(ProjectTypes eProject) const
 }
 
 
-//Multiple Production: Added by Denev 07/01/2009
+//Multiple Production: by Denev 07/01/2009
 int CvCity::getOverflowProductionDifference() const
 {
 	return getProductionDifference(getProductionNeeded(), getProduction(), getProductionModifier(), false, true, false);
@@ -3186,7 +3186,7 @@ int CvCity::getProductionDifference(int iProductionNeeded, int iProduction, int 
 
 	int iOverflow = ((bOverflow) ? (getOverflowProduction() + getFeatureProduction()) : 0);
 
-//Multiple Production: Added by Denev 07/03/2009
+//Multiple Production: by Denev 07/03/2009
 	int iYield = ((bYield) ? (getBaseYieldRate(YIELD_PRODUCTION)) : 0);
 //Multiple Production: End Add
 
@@ -3230,7 +3230,7 @@ int CvCity::getExtraProductionDifference(int iExtra, int iModifier) const
 }
 
 
-//Multiple Production: Added by Denev 07/01/2009
+//Multiple Production: by Denev 07/01/2009
 void CvCity::clearLostProduction()
 {
 	m_iLostProductionBase = 0;
@@ -7309,7 +7309,7 @@ void CvCity::setPlundered(bool bNewValue)
 }
 
 
-//Multiple Production: Added by Denev 07/10/2009
+//Multiple Production: by Denev 07/10/2009
 bool CvCity::isBuiltFoodProducedUnit() const
 {
 	return m_bBuiltFoodProducedUnit;
@@ -10931,7 +10931,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 	bool bMessage;
 	int iCount;
 	int iProductionNeeded;
-	int iOverflow; //Multiple Production: Added by Denev 07/01/2009
+	int iOverflow; //Multiple Production: by Denev 07/01/2009
 
 	bWasFoodProduction = isFoodProduction();
 
@@ -10989,7 +10989,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 			// max overflow is the value of the item produced (to eliminate prebuild exploits)
 			// BTS ----
-			if (!GC.getGameINLINE().isOption(GAMEOPTION_MULTIPLE_PRODUCTION))
+			if (GC.getGameINLINE().isOption(GAMEOPTION_NO_MULTIPLE_PRODUCTION))
 			{
 				iOverflow = getUnitProduction(eTrainUnit) - iProductionNeeded;
 				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
@@ -11117,7 +11117,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 			iProductionNeeded = getProductionNeeded(eConstructBuilding);
 
 			// max overflow is the value of the item produced (to eliminate prebuild exploits)
-			if (!GC.getGameINLINE().isOption(GAMEOPTION_MULTIPLE_PRODUCTION))
+			if (GC.getGameINLINE().isOption(GAMEOPTION_NO_MULTIPLE_PRODUCTION))
 			{
 				int iOverflow = getBuildingProduction(eConstructBuilding) - iProductionNeeded;
 				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
@@ -11246,7 +11246,7 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 
 			iProductionNeeded = getProductionNeeded(eCreateProject);
 			// max overflow is the value of the item produced (to eliminate pre-build exploits)
-			if (!GC.getGameINLINE().isOption(GAMEOPTION_MULTIPLE_PRODUCTION))
+			if (GC.getGameINLINE().isOption(GAMEOPTION_NO_MULTIPLE_PRODUCTION))
 			{
 				iOverflow = getProjectProduction(eCreateProject) - iProductionNeeded;
 				int iMaxOverflow = std::max(iProductionNeeded, getCurrentProductionDifference(false, false));
@@ -11829,7 +11829,7 @@ void CvCity::doProduction(bool bAllowNoProduction)
 		changeProduction(getCurrentProductionDifference(false, true));
 		setOverflowProduction(0);
 		setFeatureProduction(0);
-//Multiple Production: Added by Denev 07/10/2009
+//Multiple Production: by Denev 07/10/2009
 		setBuiltFoodProducedUnit(isFoodProduction());
 		clearLostProduction();
 //Multiple Production: End Add
@@ -11843,7 +11843,7 @@ void CvCity::doProduction(bool bAllowNoProduction)
 
 //Multiple Production: Modified by Denev 07/02/2009
 
-		if (!GC.getGameINLINE().isOption(GAMEOPTION_MULTIPLE_PRODUCTION))
+		if (GC.getGameINLINE().isOption(GAMEOPTION_NO_MULTIPLE_PRODUCTION))
 		{
 			if (getProduction() >= getProductionNeeded())
 			{

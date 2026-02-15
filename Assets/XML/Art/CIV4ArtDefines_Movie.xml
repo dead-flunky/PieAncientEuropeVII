@@ -368,6 +368,10 @@
 			<Path>Art/Movies/Wonders/Mahabodhi.bik</Path>
 		</MovieArtInfo>
 		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HEROIC_EPIC_SUMER</Type>
+			<Path>Art/Movies/Wonders/gilgamesh.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_LUDUS_MAGNUS</Type>
 			<Path>Art/Movies/Wonders/LudusMagnusBarabbas.bik</Path>
 		</MovieArtInfo>
@@ -394,6 +398,14 @@
 		<MovieArtInfo>
 			<Type>ART_DEF_MOVIE_MENHIRS_OF_CARNAC</Type>
 			<Path>Art/Movies/Wonders/MenhirsOfCarnac.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_HEROIC_EPIC_EGYPT</Type>
+			<Path>Art/Movies/Wonders/Heroic_Epic_Egypt.bik</Path>
+		</MovieArtInfo>
+		<MovieArtInfo>
+			<Type>ART_DEF_MOVIE_GOBEKLI_TEPE</Type>
+			<Path>Art/Movies/Wonders/Gobekli_Tepe.bik</Path>
 		</MovieArtInfo>
 	</MovieArtInfos>
 </Civ4ArtDefines>

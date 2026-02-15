@@ -90,6 +90,7 @@ public:
 	
 	// PAE
 	bool isAdjacentToWater() const;
+	CvUnit* getAvailableDefensiveRangedUnit(TeamTypes eDefendingTeam) const;
 	
 	// Flunky for PAE from WtP
 	//bool hasAnyOtherWaterPlotsThanJustLargeRivers() const;

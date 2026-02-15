@@ -80,7 +80,7 @@ public:
 	bool isProductionBuilding() const;																						// Exposed to Python
 	bool isProductionProject() const;																							// Exposed to Python
 	bool isProductionProcess() const;																		// Exposed to Python
-//Multiple Production: Added by Denev 07/01/2009
+//Multiple Production: by Denev 07/01/2009
 	bool isProductionWonder() const;
 //Multiple Production: End Add
 
@@ -130,7 +130,7 @@ public:
 //Multiple Production: End Modify
 	int getCurrentProductionDifference(bool bIgnoreFood, bool bOverflow) const;				// Exposed to Python
 	int getExtraProductionDifference(int iExtra) const;																					// Exposed to Python
-//Multiple Production: Added by Denev 07/01/2009
+//Multiple Production: by Denev 07/01/2009
 	void clearLostProduction();
 //Multiple Production: End Add
 
@@ -569,7 +569,7 @@ public:
 	bool isPlundered() const;																		// Exposed to Python
 	void setPlundered(bool bNewValue);																// Exposed to Python
 
-//Multiple Production: Added by Denev 07/10/2009
+//Multiple Production: by Denev 07/10/2009
 	bool isBuiltFoodProducedUnit() const;
 	void setBuiltFoodProducedUnit(bool bNewValue);
 //Multiple Production: End Add
@@ -1017,7 +1017,7 @@ protected:
 	int m_iMaxFoodKeptPercent;
 	int m_iOverflowProduction;
 	int m_iFeatureProduction;
-//Multiple Production: Added by Denev 07/01/2009
+//Multiple Production: by Denev 07/01/2009
 	int m_iLostProductionBase;
 	int m_iLostProductionModified;
 	int m_iGoldFromLostProduction;
@@ -1057,7 +1057,7 @@ protected:
 	bool m_bInfoDirty;
 	bool m_bLayoutDirty;
 	bool m_bPlundered;
-//Multiple Production: Added by Denev 07/10/2009
+//Multiple Production: by Denev 07/10/2009
 	bool m_bBuiltFoodProducedUnit;
 //Multiple Production: End Add
 /************************************************************************************************/

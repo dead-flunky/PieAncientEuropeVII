@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
+		<Tag> TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN4</Tag>
+		<English></English>
+		<French></French>
+		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag> TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN5</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Warnen wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJ_SARDINIEN</Tag>
 		<English>sardian</English>
 		<French>sarde</French>
@@ -108,7 +124,7 @@
 		<Tag>TXT_KEY_BUILDING_REL_STEUER_PEDIA</Tag>
 		<English>The poll tax was a widespread means of financing and controlling religious minorities in ancient and medieval societies. Whether as a jizya in the Islamic Caliphate, as a special levy for Jews in Christian Europe, or as tribute in Hinduism under Mughal rule, it marked the status of non-believers and regulated coexistence in multi-religious societies. In return for paying taxes, these groups were usually exempt from military service and received limited protection and the right to religious practice. For rulers, the poll tax was a lucrative instrument. It secured revenue without risking the loyalty of minorities through military service. But the tax was not only economic; it was also symbolic. Those who paid it declared themselves outsiders, and its introduction could bring stability, but unfortunately, it could also cause unrest.[NEWLINE][NEWLINE]After the destruction of the Jerusalem Temple in the Jewish War (66-70 AD), Vespasian decreed that all Jews in the empire had to pay an annual tax of two drachmas to the Roman state (Fiscus Judaicus), the same amount that had previously been paid to Jerusalem as a temple tax.[NEWLINE][NEWLINE]During the Islamic expansion under the first caliphs, the tax was introduced in conquered territories such as Syria, Egypt, and Persia. It applied to adult male non-Muslims (dhimmi), especially Jews, Christians, and later also Zoroastrians.[NEWLINE][NEWLINE]In the Jewish-ruled Himyarite Empire (Yemen) of the 6th century under Dhu Nuwas, Christians were not integrated through a poll tax, but rather oppressed through persecution and violence.</English>
 		<French>La capitation &#233;tait un moyen r&#233;pandu de financer et de contr&#244;ler les minorit&#233;s religieuses dans les soci&#233;t&#233;s antiques et m&#233;di&#233;vales. Qu'il s'agisse de jizya dans le califat islamique, de pr&#233;l&#232;vement sp&#233;cial pour les Juifs dans l'Europe chr&#233;tienne ou de tribut dans l'hindouisme sous la domination moghole, elle marquait le statut des non-croyants et r&#233;gulait la coexistence dans les soci&#233;t&#233;s multireligieuses. En contrepartie du paiement de ces imp&#244;ts, ces groupes &#233;taient g&#233;n&#233;ralement exempt&#233;s du service militaire et b&#233;n&#233;ficiaient d'une protection limit&#233;e ainsi que du droit de pratiquer leur religion. Pour les dirigeants, la capitation &#233;tait un instrument lucratif. Elle garantissait des revenus sans mettre en p&#233;ril la loyaut&#233; des minorit&#233;s par le service militaire. Mais cet imp&#244;t n'&#233;tait pas seulement &#233;conomique ; il &#233;tait aussi symbolique. Ceux qui le payaient se d&#233;claraient &#233;trangers, et son introduction pouvait apporter la stabilit&#233;, mais malheureusement, elle pouvait aussi &#234;tre source de troubles.[NEWLINE][NEWLINE]Apr&#232;s la destruction du Temple de J&#233;rusalem lors de la guerre juive (66-70 apr. J.-C.), Vespasien d&#233;cr&#233;ta que tous les Juifs de l'empire devaient payer un imp&#244;t annuel de deux drachmes &#224; l'&#201;tat romain (Fiscus Judaicus), soit le m&#234;me montant que celui pr&#233;c&#233;demment vers&#233; &#224; J&#233;rusalem au titre de l'imp&#244;t du Temple.[NEWLINE][NEWLINE]Lors de l'expansion islamique sous les premiers califes, l'imp&#244;t fut introduit dans les territoires conquis comme la Syrie, l'&#201;gypte et la Perse. Il s'appliquait aux hommes adultes non musulmans (dhimmis), en particulier les juifs, les chr&#233;tiens et, plus tard, les zoroastriens.[NEWLINE][NEWLINE]Dans l'Empire himyarite (Y&#233;men) sous domination juive au VIe si&#232;cle, sous Dhu Nuwas, les chr&#233;tiens n'&#233;taient pas int&#233;gr&#233;s par un imp&#244;t de capitation, mais plut&#244;t opprim&#233;s par la pers&#233;cution et la violence.</French>
-		<German>Die Kopfsteuer war ein verbreitetes Mittel zur Finanzierung und Kontrolle religi&#246;ser Minderheiten in antiken und mittelalterlichen Gesellschaften. Ob als Dschizya im islamischen Kalifat, als Sonderabgabe f&#252;r Juden im christlichen Europa oder als Tribut im Hinduismus unter der Mogulherrschaft. Sie markierte den Status des Andersgl&#228;ubigen und regelte das Zusammenleben in multireligi&#246;sen Gesellschaften. Im Gegenzug zur Steuerpflicht waren diese Gruppen meist vom Milit&#228;rdienst befreit und erhielten begrenzten Schutz sowie das Recht auf religi&#246;se Praxis. F&#252;r Herrscher war die Kopfsteuer ein lukratives Instrument. Sie sicherte Einnahmen ohne die Loyalit&#228;t der Minderheiten durch Waffendienst zu riskieren. Doch die Steuer war nicht nur &#246;konomisch, sie war auch ein Symbol. Wer sie zahlte, bekannte sich als Au&#223;enseiter und ihre Einf&#252;hrung kann Stabilit&#228;t bringen, aber leider auch Unruhe stiften.[NEWLINE][NEWLINE]Nach der Zerst&#246;rung des Jerusalemer Tempels im J&#252;dischen Krieg (66-70 n.?Chr.) verf&#252;gte Vespasian, dass alle Juden im Reich eine j&#228;hrliche Abgabe von zwei Drachmen an den r&#246;mischen Staat zahlen mussten (Fiscus Judaicus), dieselbe Summe die zuvor als Tempelsteuer nach Jerusalem ging.[NEWLINE][NEWLINE]W&#228;hrend der islamischen Expansion unter den ersten Kalifen wurde die Steuer in eroberten Gebieten wie Syrien, &#196;gypten und Persien eingef&#252;hrt. Sie galt f&#252;r erwachsene, m&#228;nnliche Nichtmuslime (Dhimmi), insbesondere Juden, Christen und sp&#228;ter auch Zoroastrier.[NEWLINE][NEWLINE]Im j&#252;disch regierten Himyaritischen Reich (Jemen) des 6. Jahrhunderts unter Dhu Nuwas wurden Christen nicht durch eine Kopfsteuer integriert, sondern durch Verfolgung und Gewalt unterdr&#252;ckt.</German>
+		<German>Die Kopfsteuer war ein verbreitetes Mittel zur Finanzierung und Kontrolle religi&#246;ser Minderheiten in antiken und mittelalterlichen Gesellschaften. Ob als Dschizya im islamischen Kalifat, als Sonderabgabe f&#252;r Juden im christlichen Europa oder als Tribut im Hinduismus unter der Mogulherrschaft. Sie markierte den Status des Andersgl&#228;ubigen und regelte das Zusammenleben in multireligi&#246;sen Gesellschaften. Im Gegenzug zur Steuerpflicht waren diese Gruppen meist vom Milit&#228;rdienst befreit und erhielten begrenzten Schutz sowie das Recht auf religi&#246;se Praxis. F&#252;r Herrscher war die Kopfsteuer ein lukratives Instrument. Sie sicherte Einnahmen ohne die Loyalit&#228;t der Minderheiten durch Waffendienst zu riskieren. Doch die Steuer war nicht nur &#246;konomisch, sie war auch ein Symbol. Wer sie zahlte, bekannte sich als Au&#223;enseiter und ihre Einf&#252;hrung kann Stabilit&#228;t bringen, aber leider auch Unruhe stiften.[NEWLINE][NEWLINE]Nach der Zerst&#246;rung des Jerusalemer Tempels im J&#252;dischen Krieg (66-70 n.Chr.) verf&#252;gte Vespasian, dass alle Juden im Reich eine j&#228;hrliche Abgabe von zwei Drachmen an den r&#246;mischen Staat zahlen mussten (Fiscus Judaicus), dieselbe Summe die zuvor als Tempelsteuer nach Jerusalem ging.[NEWLINE][NEWLINE]W&#228;hrend der islamischen Expansion unter den ersten Kalifen wurde die Steuer in eroberten Gebieten wie Syrien, &#196;gypten und Persien eingef&#252;hrt. Sie galt f&#252;r erwachsene, m&#228;nnliche Nichtmuslime (Dhimmi), insbesondere Juden, Christen und sp&#228;ter auch Zoroastrier.[NEWLINE][NEWLINE]Im j&#252;disch regierten Himyaritischen Reich (Jemen) des 6. Jahrhunderts unter Dhu Nuwas wurden Christen nicht durch eine Kopfsteuer integriert, sondern durch Verfolgung und Gewalt unterdr&#252;ckt.</German>
 		<Italian>La tassa pro capite era un mezzo diffuso per finanziare e controllare le minoranze religiose nelle societ&#224; antiche e medievali. Che si trattasse di una jizya nel Califfato islamico, di un'imposta speciale per gli ebrei nell'Europa cristiana o di un tributo nell'Induismo sotto il dominio Moghul, essa sanciva lo status dei non credenti e regolava la convivenza nelle societ&#224; multireligiose. In cambio del pagamento delle tasse, questi gruppi erano solitamente esentati dal servizio militare e ricevevano una protezione limitata e il diritto alla pratica religiosa. Per i governanti, la tassa pro capite era uno strumento redditizio. Garantiva entrate senza mettere a repentaglio la lealt&#224; delle minoranze attraverso il servizio militare. Ma la tassa non aveva solo un valore economico; era anche simbolica. Chi la pagava si dichiarava estraneo e la sua introduzione poteva portare stabilit&#224;, ma purtroppo poteva anche causare disordini.[NEWLINE][NEWLINE]Dopo la distruzione del Tempio di Gerusalemme durante la Guerra Giudaica (66-70 d.C.), Vespasiano decret&#242; che tutti gli ebrei dell'impero dovessero pagare una tassa annuale di due dracme allo Stato romano (Fiscus Judaicus), lo stesso importo che era stato precedentemente pagato a Gerusalemme come tassa per il tempio.[NEWLINE][NEWLINE]Durante l'espansione islamica sotto i primi califfi, la tassa fu introdotta nei territori conquistati come Siria, Egitto e Persia. Si applicava ai maschi adulti non musulmani (dhimmi), in particolare ebrei, cristiani e, in seguito, anche zoroastriani.[NEWLINE][NEWLINE]Nell'Impero Himyarita (Yemen) governato dagli ebrei nel VI secolo, sotto Dhu Nuwas, i cristiani non furono integrati tramite una tassa pro capite, ma piuttosto oppressi con persecuzioni e violenze.</Italian>
 		<Spanish>El impuesto de capitaci&#243;n era un medio generalizado para financiar y controlar a las minor&#237;as religiosas en las sociedades antiguas y medievales. Ya fuera como yizya en el califato isl&#225;mico, como impuesto especial para los jud&#237;os en la Europa cristiana o como tributo en el hinduismo bajo el dominio mogol, marcaba el estatus de los no creyentes y regulaba la coexistencia en sociedades multirreligiosas. A cambio del pago de impuestos, estos grupos sol&#237;an estar exentos del servicio militar y recib&#237;an una protecci&#243;n limitada y el derecho a la pr&#225;ctica religiosa. Para los gobernantes, el impuesto de capitaci&#243;n era un instrumento lucrativo. Aseguraba ingresos sin arriesgar la lealtad de las minor&#237;as mediante el servicio militar. Pero el impuesto no era solo econ&#243;mico, sino tambi&#233;n simb&#243;lico. Quienes lo pagaban se declaraban forasteros, y su introducci&#243;n pod&#237;a traer estabilidad, pero, por desgracia, tambi&#233;n pod&#237;a causar agitaci&#243;n.[NEWLINE][NEWLINE]Tras la destrucci&#243;n del Templo de Jerusal&#233;n en la Guerra de los Jud&#237;os (66-70 d. C.), Vespasiano decret&#243; que todos los jud&#237;os del imperio deb&#237;an pagar un impuesto anual de dos dracmas al estado romano (Fiscus Judaicus), la misma cantidad que se pagaba previamente a Jerusal&#233;n como impuesto del templo. Durante la expansi&#243;n isl&#225;mica bajo los primeros califas, el impuesto se introdujo en territorios conquistados como Siria, Egipto y Persia. Se aplicaba a los varones adultos no musulmanes (dhimmi), especialmente jud&#237;os, cristianos y, posteriormente, tambi&#233;n zoroastrianos.[NEWLINE][NEWLINE]En el Imperio himyarita (Yemen), gobernado por los jud&#237;os en el siglo VI, bajo el reinado de Dhu Nuwas, los cristianos no se integraron mediante un impuesto de capitaci&#243;n, sino que fueron oprimidos mediante la persecuci&#243;n y la violencia.</Spanish>
 	</TEXT>
@@ -2889,10 +2905,98 @@
 		<Spanish>Despu&#233;s de la batalla de Cannas (216 a. C.), Capua se aleja de Roma y se al&#237;a con An&#237;bal.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_15_2</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr sitzt mit den Clanf&#252;rsten in %s1 zusammen, um die Zukunft zu besprechen. Es stehen, wie schon immer, diese beiden Fragen im Raum: WIE k&#246;nnen wir die R&#246;mer besiegen und WANN sind wir dazu in der Lage?[NEWLINE]Es gibt auch Stimmen die sagen, dass wir die R&#246;mer ignorieren sollten, die G&#246;tter w&#252;rden uns schon sch&#252;tzen. Doch da erinnert ihr euch noch gut an den &#196;ltesten, der mit genau diesen Worten seine jahrelange Unt&#228;tigkeit zu rechtfertigen versuchte…[NEWLINE][NEWLINE]Beschlossen wurde dann zun&#228;chst die Zusammenstellung einer Einheit, die alle St&#228;rken der Clans in sich vereint. Unabh&#228;ngig der Waffengattung. Und es sollen Spione geschickt werden, um die wahre St&#228;rke der R&#246;mer zu erkunden.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GEFOLGE</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_15_2_HEAD</Tag>
+		<English></English>
+		<French></French>
+		<German>Ein historischer Tag. Die Germanenv&#246;lker sind vereint!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_15_3</Tag>
+		<English></English>
+		<French></French>
+		<German>Gratulation! Die Germanenv&#246;lker sind vereint. Wenn auch nicht mehr alle Clanf&#252;hrer mit am Feuer sitzen, so ist es doch ein historischer Tag.[NEWLINE]Es stehen, wie schon immer, diese beiden Fragen im Raum: WIE k&#246;nnen wir die R&#246;mer besiegen und WANN sind wir dazu in der Lage?[NEWLINE]Es gibt auch Stimmen die sagen, dass wir die R&#246;mer ignorieren sollten, die G&#246;tter w&#252;rden uns schon sch&#252;tzen. Doch da erinnert ihr euch noch gut an den &#196;ltesten, der mit genau diesen Worten seine jahrelange Unt&#228;tigkeit zu rechtfertigen versuchte...[NEWLINE][NEWLINE]Durch die Zusammenlegung ausgesuchter Axtk&#228;mpfer der &#252;brigen Clans wurde eine Einheit Berserker mobilisiert. Und es sollen Spione geschickt werden, um die wahre St&#228;rke der R&#246;mer zu erkunden.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 BERSERKER</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_20_2</Tag>
+		<English></English>
+		<French></French>
+		<German>Diese hinterh&#228;ltige Kriegserkl&#228;rung von %s1 stellt einen unverzeihlichen Vertrauensbruch dar. Wer sich gegen die Goten stellt, besiegelt seinen eigenen Untergang! Lasst die Truppen sammeln!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_21_2A</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Damit kommt er uns also zuvor. Wir m&#252;ssen die Truppen sammeln und den Norden sichern!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_21_2B</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Das kann nur bedeuten, dass er sich unterwerfen will, seine Armee ist der unseren niemals gewachsen.[NEWLINE]Sichert den Norden!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_22_2A</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Damit kommt er uns also zuvor. Wir m&#252;ssen die Grenzen sichern!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_22_2B</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Ein Akt der Verzweiflung. Wir sammeln die Truppen und marschieren umgehend Richtung %s2!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_23_2A</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Damit kommt er uns also zuvor. Ihn muss man ernst nehmen!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_23_2B</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Eine gute Gelegenheit, ihn zu unterwerfen!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_24_2</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat euch Krieg erkl&#228;rt.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ALARICH_BODY</Tag>
 		<English></English>
 		<French></French>
-		<German>Zeit f&#252;r Trauer bleibt jedoch nicht viel, das Leben muss weitergehen. Zu euren Ehren wird in %s1_city ein Monument errichtet, wie es noch keins zuvor gab. Ein riesiger Obelisk, der mit einer Inschrift an Alarich den Goten erinnert.[NEWLINE][NEWLINE]Doch wer soll eure Nachfolge antreten? Die Adligen kommen zusammen, um eine Entscheidung zu treffen.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF &#220;BERNIMMT DIE F&#220;HRUNG DER GOTEN[NEWLINE][ICON_BULLET] DIE STELE DES ALARICH WIRD IN %s1_city ERRICHTET</German>
+		<German>Zeit f&#252;r Trauer bleibt jedoch nicht viel, das Leben muss weitergehen. Zu euren Ehren wird in %s1 ein Monument errichtet, wie es noch keins zuvor gab. Ein riesiger Obelisk, der mit einer Inschrift an Alarich den Goten erinnert.[NEWLINE][NEWLINE]Doch wer soll eure Nachfolge antreten? Die Adligen kommen zusammen, um eine Entscheidung zu treffen.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF &#220;BERNIMMT DIE F&#220;HRUNG DER GOTEN[NEWLINE][ICON_BULLET] DIE STELE DES ALARICH WIRD IN %s1_city ERRICHTET</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2901,6 +3005,30 @@
 		<English></English>
 		<French></French>
 		<German>Der Herr &#252;ber das Gotenreich ist gefallen! Ihr seid tot!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT1</Tag>
+		<English></English>
+		<French></French>
+		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod von Arminius![NEWLINE]Sein Nachfolger, der %s1 war schon lange gegen die sogenannte Unterdr&#252;ckung seines Stammes. Er &#252;berzeugt seine Getreuen, das Vasallenverh&#228;ltnis mit Euch aufzuk&#252;ndigen![NEWLINE][NEWLINE][ICON_BULLET] Der %s2 k&#252;ndigt den Vasallenstatus</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT2</Tag>
+		<English></English>
+		<French></French>
+		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod ihres F&#252;rsten![NEWLINE]In %s1 kommt es bei der Bestimmung eines Nachfolgers f&#252;r Arminius zu schweren Aufst&#228;nden. Viele f&#252;hlen sich hintergangen mit der F&#252;hrung durch den %s2.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT3</Tag>
+		<English></English>
+		<French></French>
+		<German>Arminius ist tot!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2964,7 +3092,39 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK</Tag>
 		<English></English>
 		<French></French>
-		<German>Gratulation! Ihr habt %s1 unter Euer Banner gezwungen. Er wird von nun an als Heeresf&#252;hrer an eurer Seite dienen.</German>
+		<German>Gratulation! Ihr habt %s1 unter Euer Banner gezwungen.[NEWLINE]Er wird von nun an als Heeresf&#252;hrer an eurer Seite dienen. Sein Reich wird von seinem engsten Vertrauten, dem Statthalter von %s2 in seinem Namen weitergef&#252;hrt.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET GENERAL ARMINIUS</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK2</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat die Cherusker unter sein Banner gezwungen.[NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt, und das seid Ihr!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK3</Tag>
+		<English></English>
+		<French></French>
+		<German>Der Cherusker hat sich %s1 unterworfen.[NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK4</Tag>
+		<English></English>
+		<French></French>
+		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK5</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Cherusker wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2972,7 +3132,39 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN</Tag>
 		<English></English>
 		<French></French>
-		<German>Gratulation! Ihr habt %s1 unterworfen.[NEWLINE]Er schw&#246;rt bei den G&#246;ttern, euch als Vasall keine Schande zu machen. Um das zu unterstreichen, gew&#228;hrt er euch Zugang zu seiner geheimen Schatzkammer.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1000 [ICON_GOLD]</German>
+		<German>Gratulation! Ihr habt %s1 unterworfen.[NEWLINE]Er schw&#246;rt bei den G&#246;ttern, euch als Vasall keine Schande zu machen. Um das zu unterstreichen, gew&#228;hrt er euch Zugang zu seiner geheimen Schatzkammer.[NEWLINE][NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1000 [ICON_GOLD]</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN2</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat die Hermunduren unter sein Banner gezwungen.[NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt, und das seid Ihr!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN3</Tag>
+		<English></English>
+		<French></French>
+		<German>Der Hermundure hat sich %s1 unterworfen.[NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN4</Tag>
+		<English></English>
+		<French></French>
+		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN5</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Hermunduren wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2980,7 +3172,31 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO</Tag>
 		<English></English>
 		<French></French>
-		<German>Gratulation! %s1 steht nun auf unserer Seite. Ein vor Jahren zu ihm &#252;bergelaufener Legion&#228;r schlie&#223;t sich uns an.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 LEGION&#196;R</German>
+		<German>Gratulation! %s1 steht nun auf unserer Seite.[NEWLINE]Er versichert, dass er euch ein verl&#228;sslicher Vasall sein wird. Als Vertrauensbeweis unterstellt er einen &#252;bergelaufenen r&#246;mischen Legion&#228;r eurem Kommando, der die letzten Jahre als seine pers&#246;nliche Leibwache diente.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 LEGION&#196;R</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO2</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat die Markomannen vasallisiert.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO4</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt %s1 besiegt.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO5</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Markomannen wurden von %s1 besiegt.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2988,7 +3204,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS</Tag>
 		<English></English>
 		<French></French>
-		<German>Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht.[NEWLINE]Nun lasst uns Vorbereitungen treffen, um die umliegenden St&#228;mme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren m&#252;ssen, um zu gegebener Zeit mit einer gro&#223;en Armee vor den G&#246;ttern nach Westen zu marschieren.[NEWLINE]Die vier gro&#223;en Germanenst&#228;mme sollen hinter euch versammelt sein, euch als Vasallen die Treue schw&#246;ren![NEWLINE][NEWLINE]Denkt daran, schon fr&#252;h Stra&#223;en in die weiten W&#228;lder zu schlagen. Auch das wurde vom &#196;ltesten immer vernachl&#228;ssigt![NEWLINE][NEWLINE][ICON_BULLET] VEREINT DIE GERMANENST&#196;MME IM WESTEN UNTER EUREM BANNER</German>
+		<German>Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht.[NEWLINE]Nun lasst uns Vorbereitungen treffen, um die umliegenden St&#228;mme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren m&#252;ssen, um zu gegebener Zeit mit einer gro&#223;en Armee vor den G&#246;ttern nach Westen zu marschieren.[NEWLINE]Die vier gro&#223;en Germanenst&#228;mme sollen hinter euch versammelt sein, euch als Vasallen die Treue schw&#246;ren![NEWLINE][NEWLINE]Denkt daran, schon fr&#252;h Stra&#223;en in die weiten W&#228;lder zu schlagen. Auch das wurde vom &#196;ltesten immer vernachl&#228;ssigt![NEWLINE][NEWLINE][ICON_BULLET] VEREINT DIE 4 GERMANENST&#196;MME IM WESTEN UNTER EUREM BANNER</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -2996,7 +3212,55 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS_OTHERS</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 wurde besiegt! Wir sollten das Gebiet umgehend zur&#252;ckerobern.</German>
+		<German>%s1 hat %s2 eingenommen.[NEWLINE][NEWLINE]Das ist gotisches Gebiet! Wir sollten es umgehend zur&#252;ckerobern, um als vereintes Gotenland Vorbereitungen f&#252;r die Vereinigung der Germanen zu treffen. Denn euer langfristiger Plan ist es, die Germanenst&#228;mme im Westen als Vasallen zu gewinnen![NEWLINE][NEWLINE][ICON_BULLET] EROBERT DIE ALTE HEIMAT</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_ROME</Tag>
+		<English></English>
+		<French></French>
+		<German>Rom wurde vernichtet!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_ROME_CAPITAL</Tag>
+		<English></English>
+		<French></French>
+		<German>Rom wurde erobert!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt %s1 vasallisiert.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS2</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat die Vandalen vasallisiert.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS3</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt %s1 besiegt.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS4</Tag>
+		<English></English>
+		<French></French>
+		<German>Die Vandalen wurden von %s1 besiegt.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3004,7 +3268,23 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN</Tag>
 		<English></English>
 		<French></French>
-		<German>Gratulation! %s1 ist unterworfen. Seine besten Krieger k&#228;mpfen von nun an f&#252;r uns.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 2 TEUTONEN</German>
+		<German>Gratulation! %s1 ist unterworfen. Er versichert euch, treu zu dienen und all eure Entscheidungen mitzutragen.[NEWLINE]Au&#223;erdem stellt er seine besten Krieger unter euer Kommando.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 2 TEUTONEN</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN2</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat die Warnen unter sein Banner gezwungen.[NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt, und das seid Ihr!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN3</Tag>
+		<English></English>
+		<French></French>
+		<German>Der Warne hat sich %s1 unterworfen.[NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3029,6 +3309,22 @@
 		<English></English>
 		<French></French>
 		<German>Der erste Schritt ist getan. Ihr habt %s1_city erobert!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_ARVERNER1</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt %s1 getroffen. Er f&#252;hrt die Galler weit im Westen an.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_ARVERNER2</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt %s1 getroffen, er f&#252;hrt die Gallier weit im Westen an.[NEWLINE]Dass er bereits Krieg gegen %s2 f&#252;hrt, sollte uns zu denken geben. Vielleicht k&#246;nnen wir uns mit ihm zusammentun? Oder ihn zumindest politisch unterst&#252;tzen?</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3073,18 +3369,10 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GALLIA_1</Tag>
+		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_FRIESEN</Tag>
 		<English></English>
 		<French></French>
-		<German>Ihr habt %s1 getroffen. Er f&#252;hrt die Gallier weit im Westen an und ist bereits im Krieg mit Rom. Vielleicht k&#246;nnen wir uns mit ihnen zusammentun oder zumindest unsere Pl&#228;ne anpassen?</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GALLIA_2</Tag>
-		<English></English>
-		<French></French>
-		<German>Ihr habt %s1 getroffen. Er f&#252;hrt die Gallier weit im Westen an.</German>
+		<German>Ihr habt %s1 kennengelernt.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3141,6 +3429,14 @@
 		<English></English>
 		<French></French>
 		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_RAETER</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt %s1 kennengelernt.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3257,10 +3553,26 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_GERVANDALS_DECLARES_WAR_ON_EACH_OTHER</Tag>
+		<English></English>
+		<French></French>
+		<German>%s1 hat %s2 den Krieg erkl&#228;rt! Wir sollten diesen Umstand f&#252;r unsere Pl&#228;ne ausnutzen!</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_GERVANDALS_DECLARES_WAR_ROME</Tag>
 		<English></English>
 		<French></French>
 		<German>%s1 hat Rom den Krieg erkl&#228;rt! Man muss ihm viel Gl&#252;ck w&#252;nschen.[NEWLINE]Vielleicht k&#246;nnen wir ihn unterst&#252;tzen? Zumindest sollten wir unsere Pl&#228;ne anpassen.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_GERVANDALS_DEFENSIVEPACT</Tag>
+		<English></English>
+		<French></French>
+		<German>Beim Thing wurde bekannt, dass %s1 mit %s2 ein Verteidigungsb&#252;ndnis geschlossen hat!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3284,7 +3596,15 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_GOTEN_ERSTERPROVINZPALAST</Tag>
 		<English></English>
 		<French></French>
-		<German>Hier, von %s1_city aus wird unsere erste Provinz verwaltet.[NEWLINE]Schon seit den Ahnen gilt: Mit der Entfernung zu %s2_city nimmt die Motivation des Adels ab! Provinzpal&#228;ste sind der Schl&#252;ssel zu einem gro&#223;en Reich. Von dort aus k&#246;nnen Gauf&#252;rsten eures Vertrauens in der Gegend f&#252;r Ruhe sorgen.[NEWLINE][NEWLINE]Einer der ans&#228;ssigen Adligen erkl&#228;rt sich bereit, euch zu begleiten. Er will die Verantwortung in der n&#228;chsten Provinz &#252;bernehmen und euch bis dahin unterst&#252;tzen wo er kann.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GAUF&#220;RST</German>
+		<German>In %s1 wurde ein Provinzpalast fertiggestellt.[NEWLINE]Schon seit den Ahnen gilt: Mit der Entfernung zum Palast nimmt die Motivation des Adels ab! Die Gr&#252;ndung von Provinzen ist der Schl&#252;ssel zu einem gro&#223;en Reich. Jede Provinz wird von einem Gauf&#252;rsten eures Vertrauens verwaltet, der in der Gegend f&#252;r Ruhe sorgt.[NEWLINE][NEWLINE]Einer der ans&#228;ssigen Adligen erkl&#228;rt sich bereit, euch zu begleiten. Er will die Verantwortung in der n&#228;chsten Provinz &#252;bernehmen und euch bis dahin unterst&#252;tzen wo er kann.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GAUF&#220;RST</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_HEROENKULTIST</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr habt interessante Ressourcen im Handelsnetz. Ein Anh&#228;nger des Heroenkultes will sich bei euch ansiedeln.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3316,7 +3636,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_ROME_DECLARES_WAR_GERVANDALS</Tag>
 		<English></English>
 		<French></French>
-		<German>Die R&#246;mer mischen sich in unsere Angelegenheiten ein, sie haben %s1 den Krieg erkl&#228;rt! Das ist eine Provokation, auf die wir reagieren sollten. Vielleicht k&#246;nnen wir ihnen zu Hilfe eilen oder dem R&#246;mer wenigstens zuvorzukommen?</German>
+		<German>%s1 hat %s2 Krieg erkl&#228;rt.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3684,7 +4004,7 @@
 		<Tag>TXT_KEY_SCENARIO_WDG_DAWNOFMAN</Tag>
 		<English></English>
 		<French></French>
-		<German>Hagelsberg 100 v.Chr.[NEWLINE]Beim Thing zur Sonnenwende eskalierte es. Mehrere Gruppen, die unterschiedliche Ziele verfolgen, man kennt das. Aber diesmal war es ernst! Die Gemeinschaft der Goten stand wohl kurz vor dem Zusammenbruch...[NEWLINE][NEWLINE]Die Rede war davon, dass sich weit im S&#252;dwesten ein Gegner zeigt, der &#252;ber die letzten Jahrzehnte gesehen immer m&#228;chtiger wurde: Die R&#246;mer! Viele Geschichten erz&#228;hlt man sich in Tavernen und auf den Marktpl&#228;tzen. Die R&#246;mer breiten sich aus, haben schon diverse V&#246;lker unterworfen! Sie beanspruchen alles Land f&#252;r sich, das sie nur betreten.[NEWLINE]Auch wenn unser Stamm noch weit entfernt scheint und die tiefen W&#228;lder uns Schutz bieten, gibt es schon seit Jahren die Bef&#252;rchtung, dass die Zeiten sich &#228;ndern k&#246;nnten.[NEWLINE][NEWLINE]Ihr seid der Meinung: Sie WERDEN sich &#228;ndern! Die f&#252;hrenden Germanenst&#228;mme im Westen treffen schon lange Vorbereitungen. Nur unser &#196;ltester und die ihm treuergebenen Clanf&#252;rsten wollen die Lage nicht erkennen, sie sind schwach! Und sie sind faul! Sie meinen, dass unser Volk schon genug getan h&#228;tte, dass die G&#246;tter uns sch&#252;tzen w&#252;rden... Es ist j&#228;mmerlich![NEWLINE][NEWLINE]Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!" rief der &#196;lteste noch hinterher. Dank eures Standes konntet ihr immerhin euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.</German>
+		<German>Hagelsberg 100 v.Chr.[NEWLINE]Beim Thing zur Sonnenwende eskalierte es. Mehrere Gruppen, die unterschiedliche Ziele verfolgen, man kennt das. Aber diesmal war es ernst! Die Gemeinschaft der Goten stand wohl kurz vor dem Zusammenbruch.[NEWLINE][NEWLINE]Die Rede war davon, dass sich weit im S&#252;dwesten ein Gegner zeigt, der &#252;ber die letzten Jahrzehnte gesehen immer m&#228;chtiger wurde: Die R&#246;mer! Viele Geschichten erz&#228;hlt man sich in Tavernen und auf den Marktpl&#228;tzen. Die R&#246;mer breiten sich aus, haben schon diverse V&#246;lker unterworfen! Sie beanspruchen alles Land f&#252;r sich, das sie nur betreten.[NEWLINE]Auch wenn unser Stamm noch weit entfernt scheint und die tiefen W&#228;lder uns Schutz bieten, gibt es schon seit Jahren die Bef&#252;rchtung, dass die Zeiten sich &#228;ndern k&#246;nnten.[NEWLINE][NEWLINE]Ihr seid der Meinung: Sie WERDEN sich &#228;ndern! Die f&#252;hrenden Germanenst&#228;mme im Westen treffen schon lange Vorbereitungen. Nur unser F&#252;hrer Alfred und die ihm treuergebenen Clanf&#252;rsten wollen die Lage nicht erkennen, sie sind schwach! Und sie sind faul! Sie meinen, dass unser Volk schon genug getan h&#228;tte, dass die G&#246;tter uns sch&#252;tzen w&#252;rden... Es ist j&#228;mmerlich![NEWLINE][NEWLINE]Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!" rief der &#196;lteste noch hinterher. Dank eures Standes konntet ihr immerhin euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3700,7 +4020,7 @@
 		<Tag>TXT_KEY_SCENARIO_WEG_DER_GOTEN</Tag>
 		<English></English>
 		<French></French>
-		<German>WEG DER GOTEN[NEWLINE]Kartengr&#246;&#223;e: Riesig[NEWLINE]Dies ist eine fiktive Kampagne f&#252;r PAE. &#196;hnlichkeiten mit historischen Personen oder Begebenheiten sind rein zuf&#228;llig.[NEWLINE]WICHTIG: Es k&#246;nnen keine Siedler gebaut werden[NEWLINE]...der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!". Immerhin konntet ihr euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.[NEWLINE]by brettschmitt</German>
+		<German>Dies ist eine fiktive Kampagne f&#252;r PAE. &#196;hnlichkeiten mit historischen Personen oder Begebenheiten sind rein zuf&#228;llig.[NEWLINE]WICHTIG: Es k&#246;nnen keine Siedler gebaut werden![NEWLINE]…der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!". Immerhin konntet ihr euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.[NEWLINE]by brettschmitt[NEWLINE]Kartengr&#246;&#223;e: Riesig</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>

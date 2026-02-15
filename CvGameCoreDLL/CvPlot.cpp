@@ -10467,3 +10467,23 @@ bool CvPlot::checkLateEra() const
 	return (GET_PLAYER(ePlayer).getCurrentEra() > GC.getNumEraInfos() / 2);
 }
 
+// PAE defend with ranged strike
+CvUnit* CvPlot::getAvailableDefensiveRangedUnit(TeamTypes eDefendingTeam) const
+{
+	for (CLLNode<IDInfo>* pUnitNode = headUnitNode(); pUnitNode != NULL; pUnitNode = nextUnitNode(pUnitNode))
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+
+		if (pLoopUnit != NULL &&
+			pLoopUnit->getTeam() == eDefendingTeam &&
+			pLoopUnit->isRanged() &&
+			!pLoopUnit->hasUsedDefensiveRangedStrike())
+		{
+			return pLoopUnit;
+		}
+	}
+
+	return NULL;
+}
+// -------------
+

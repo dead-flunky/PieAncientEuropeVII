@@ -854,6 +854,13 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 								bMounted = True
 								iTech = gc.getInfoTypeForString("TECH_KRIEGERETHOS")
 								iCiv = gc.getInfoTypeForString("CIVILIZATION_HUNNEN")
+						elif item[1] == gc.getInfoTypeForString("PROMOTION_RANG_NAVI_1"):
+								screen.appendTableRow(tableName)
+								screen.setTableText(tableName, 0, iRow+1, u"<font=4>%s</font>" % localText.getText("TXT_KEY_UNITCOMBAT_NAVAL", ()).upper(), "", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
+								screen.appendTableRow(tableName)
+								screen.appendTableRow(tableName)
+								iRow += 3
+
 
 						# CIV
 						if iCiv != -1:

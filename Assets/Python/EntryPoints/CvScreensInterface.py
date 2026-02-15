@@ -1710,6 +1710,19 @@ def popupReservists(argsList):
 				CyMessageControl().sendModNetMessage(725, iData1, iData2, iButtonId, 0)
 
 
+def popupPiratePillageVillage(argsList):
+		# iData1 (iUnitID), iData2 (iPlayer)
+		iButtonId = argsList[0]
+		iData1 = argsList[1]
+		iData2 = argsList[2]
+		# iData3 = argsList[3]
+		iData4 = argsList[4]
+
+		# iButtonID = Unit
+		if iButtonId != iData4:
+				CyMessageControl().sendModNetMessage(726, 1, iButtonId, iData2, iData1)
+
+
 def popupBonusverbreitung(argsList):
 		# iData1 (iPlayer), iData2 (iUnitId), iData3 (Page)
 		# Page: 0: First Page, 1: Getreide, 2: Vieh, ...)
@@ -1940,6 +1953,22 @@ def popupStatthalterTribut(argsList):
 		# NetID, iCity, iOwner, iTyp, iButton
 		elif iButtonId != iData4:
 				CyMessageControl().sendModNetMessage(737, iData1, iData2, iData3, iButtonId)
+
+# Statthalter can sell buildings
+def popupStatthalterSellBuilding(argsList):
+		iButtonId = argsList[0]
+		iData1 = argsList[1]
+		iData2 = argsList[2]
+		iData3 = argsList[3]
+		iData4 = argsList[4]
+
+		# iCity, iPlayer, iBuilding
+		if iData3 == -1 and iButtonId != iData4 and iButtonId > 0:
+				CyMessageControl().sendModNetMessage(770, iData1, iData2, iButtonId, -1)
+		elif iData3 != -1 and iButtonId != iData4:
+				CyMessageControl().sendModNetMessage(770, iData1, iData2, iData3, iButtonId)
+
+
 
 # Vasallen kuendigen oder Staedte schenken
 # -1, iPlayer, iVasall
@@ -2712,6 +2741,18 @@ def popupGo2City(argsList):
 
 		if iButtonId != -1 and iButtonId != iData4:
 				CyMessageControl().sendModNetMessage(773, iButtonId, -1, iData1, iData2)
+
+# --------------------
+
+# Schiffe: Crew austauschen
+# iOwner, iUnitID
+def popupSellCrew(argsList):
+		iButtonId = argsList[0]
+		iData1 = argsList[1]
+		iData2 = argsList[2]
+		if iButtonId == 0:
+			# iData3 = 1 = confirm
+			CyMessageControl().sendModNetMessage(768, 1, 1, iData1, iData2)
 
 # --------------------
 

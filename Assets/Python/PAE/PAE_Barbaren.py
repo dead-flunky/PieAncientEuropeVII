@@ -638,3 +638,27 @@ def getPartisan(pPlayer):
 
 	iRand = CvUtil.myRandom(len(lPartisans), "getPartisan")
 	return lPartisans[iRand]
+
+# PAE 7.15 hide sea monsters and make them rare/mystical
+# Kraken: 20%
+# Sea Serpent: 40%
+# Whales: 10%
+def doHideSeaMonsters():
+		iBarbPlayer = gc.getBARBARIAN_PLAYER()
+		pBarbPlayer = gc.getPlayer(iBarbPlayer)
+		eUnitKraken = gc.getInfoTypeForString("UNIT_KRAKEN")
+		eUnitSerpent = gc.getInfoTypeForString("UNIT_SEASERPENT")
+		(loopUnit, pIter) = pBarbPlayer.firstUnit(False)
+		while loopUnit:
+			if not loopUnit.isDead():
+				iUnitType = loopUnit.getUnitType()
+				if iUnitType == eUnitKraken or iUnitType == eUnitSerpent:
+					iRand = CvUtil.myRandom(10, "hideSeaMonster")
+					if iUnitType == eUnitKraken and iRand < 2:
+						loopUnit.kill(True, -1)
+					elif iUnitType == eUnitSerpent and iRand < 4:
+						loopUnit.kill(True, -1)
+					elif iRand < 1:
+						loopUnit.kill(True, -1)
+			(loopUnit, pIter) = pBarbPlayer.nextUnit(pIter, False)
+

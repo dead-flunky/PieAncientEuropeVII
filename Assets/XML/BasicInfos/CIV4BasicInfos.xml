@@ -281,5 +281,20 @@
 			<Description>TXT_KEY_CONCEPT_NEWTRIBES</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_NEWTRIBES_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_GREAT_GENERAL_ACTIONS</Type>
+			<Description>TXT_KEY_CONCEPT_GREAT_GENERAL_ACTIONS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_GREAT_GENERAL_ACTIONS_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_COMBAT4</Type>
+			<Description>TXT_KEY_CONCEPT_COMBAT4</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_COMBAT4_PEDIA</Civilopedia>
+		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_PIRACY</Type>
+			<Description>TXT_KEY_CONCEPT_PIRACY</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_PIRACY_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

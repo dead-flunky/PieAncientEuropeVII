@@ -94,15 +94,15 @@
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
 			<iStartPercent>9</iStartPercent>
-			<iGrowthPercent>110</iGrowthPercent>
-			<iTrainPercent>110</iTrainPercent>
-			<iConstructPercent>110</iConstructPercent>
-			<iCreatePercent>110</iCreatePercent>
-			<iResearchPercent>110</iResearchPercent>
-			<iBuildPercent>110</iBuildPercent>
+			<iGrowthPercent>100</iGrowthPercent>
+			<iTrainPercent>100</iTrainPercent>
+			<iConstructPercent>100</iConstructPercent>
+			<iCreatePercent>100</iCreatePercent>
+			<iResearchPercent>100</iResearchPercent>
+			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
-			<iGreatPeoplePercent>110</iGreatPeoplePercent>
-			<iCulturePercent>110</iCulturePercent>
+			<iGreatPeoplePercent>100</iGreatPeoplePercent>
+			<iCulturePercent>100</iCulturePercent>
 			<iAnarchyPercent>75</iAnarchyPercent>
 			<iEventChancePerTurn>6</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
@@ -165,15 +165,15 @@
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
 			<iStartPercent>24</iStartPercent>
-			<iGrowthPercent>125</iGrowthPercent>
-			<iTrainPercent>125</iTrainPercent>
-			<iConstructPercent>125</iConstructPercent>
-			<iCreatePercent>125</iCreatePercent>
-			<iResearchPercent>125</iResearchPercent>
-			<iBuildPercent>125</iBuildPercent>
+			<iGrowthPercent>90</iGrowthPercent>
+			<iTrainPercent>90</iTrainPercent>
+			<iConstructPercent>90</iConstructPercent>
+			<iCreatePercent>90</iCreatePercent>
+			<iResearchPercent>90</iResearchPercent>
+			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
-			<iGreatPeoplePercent>125</iGreatPeoplePercent>
-			<iCulturePercent>125</iCulturePercent>
+			<iGreatPeoplePercent>90</iGreatPeoplePercent>
+			<iCulturePercent>90</iCulturePercent>
 			<iAnarchyPercent>100</iAnarchyPercent>
 			<iEventChancePerTurn>8</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
@@ -239,16 +239,16 @@
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
 			<iStartPercent>38</iStartPercent>
-			<iGrowthPercent>125</iGrowthPercent>
-			<iTrainPercent>125</iTrainPercent>
-			<iConstructPercent>125</iConstructPercent>
-			<iCreatePercent>125</iCreatePercent>
-			<iResearchPercent>100</iResearchPercent>
-			<iBuildPercent>125</iBuildPercent>
+			<iGrowthPercent>80</iGrowthPercent>
+			<iTrainPercent>80</iTrainPercent>
+			<iConstructPercent>80</iConstructPercent>
+			<iCreatePercent>80</iCreatePercent>
+			<iResearchPercent>75</iResearchPercent>
+			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
-			<iGreatPeoplePercent>125</iGreatPeoplePercent>
-			<iCulturePercent>125</iCulturePercent>
-			<iAnarchyPercent>125</iAnarchyPercent>
+			<iGreatPeoplePercent>80</iGreatPeoplePercent>
+			<iCulturePercent>80</iCulturePercent>
+			<iAnarchyPercent>100</iAnarchyPercent>
 			<iEventChancePerTurn>10</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>
@@ -335,16 +335,16 @@
 			<iStartingGold>10</iStartingGold>
 			<iFreePopulation>0</iFreePopulation>
 			<iStartPercent>75</iStartPercent>
-			<iGrowthPercent>150</iGrowthPercent>
-			<iTrainPercent>150</iTrainPercent>
-			<iConstructPercent>150</iConstructPercent>
-			<iCreatePercent>150</iCreatePercent>
-			<iResearchPercent>150</iResearchPercent>
-			<iBuildPercent>150</iBuildPercent>
+			<iGrowthPercent>75</iGrowthPercent>
+			<iTrainPercent>75</iTrainPercent>
+			<iConstructPercent>75</iConstructPercent>
+			<iCreatePercent>75</iCreatePercent>
+			<iResearchPercent>50</iResearchPercent>
+			<iBuildPercent>100</iBuildPercent>
 			<iImprovementPercent>100</iImprovementPercent>
-			<iGreatPeoplePercent>150</iGreatPeoplePercent>
-			<iCulturePercent>150</iCulturePercent>
-			<iAnarchyPercent>150</iAnarchyPercent>
+			<iGreatPeoplePercent>75</iGreatPeoplePercent>
+			<iCulturePercent>75</iCulturePercent>
+			<iAnarchyPercent>100</iAnarchyPercent>
 			<iEventChancePerTurn>10</iEventChancePerTurn>
 			<iSoundtrackSpace>200</iSoundtrackSpace>
 			<bFirstSoundtrackFirst>0</bFirstSoundtrackFirst>

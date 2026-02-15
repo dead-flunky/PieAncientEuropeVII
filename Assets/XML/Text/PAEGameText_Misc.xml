@@ -466,11 +466,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_REPAIR_SHIP</Tag>
-		<English>Repair the damaged ship in the shipyard immediately (1 turn, -%d1 [ICON_GOLD]).</English>
-		<French>R&#233;parez imm&#233;diatement le navire endommag&#233; dans le chantier naval (1 tour, -%d1 [ICON_GOLD]).</French>
-		<German>Das besch&#228;digte Schiff in der Werft sofort reparieren (1 Runde, -%d1 [ICON_GOLD]).</German>
-		<Italian>Ripara immediatamente la nave danneggiata nel cantiere navale (1 turno, -%d1 [ICON_GOLD]).</Italian>
-		<Spanish>Repara inmediatamente el barco da&#241;ado en el astillero (1 turno, -%d1 [ICON_GOLD]).</Spanish>
+		<English>Repair the [COLOR_HIGHLIGHT_TEXT]damaged ship[COLOR_REVERT] in the shipyard immediately (1 turn, -%d1 [ICON_GOLD]).</English>
+		<French>R&#233;parez imm&#233;diatement le [COLOR_HIGHLIGHT_TEXT]navire endommag&#233;[COLOR_REVERT] dans le chantier naval (1 tour, -%d1 [ICON_GOLD]).</French>
+		<German>Das [COLOR_HIGHLIGHT_TEXT]besch&#228;digte Schiff[COLOR_REVERT] in der Werft sofort reparieren (1 Runde, -%d1 [ICON_GOLD]).</German>
+		<Italian>Ripara immediatamente la [COLOR_HIGHLIGHT_TEXT]nave danneggiata[COLOR_REVERT] nel cantiere navale (1 turno, -%d1 [ICON_GOLD]).</Italian>
+		<Spanish>Repara inmediatamente el [COLOR_HIGHLIGHT_TEXT]barco da&#241;ado[COLOR_REVERT] en el astillero (1 turno, -%d1 [ICON_GOLD]).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_UNSET_PROMO_ANGST_SEA</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Swap crew[COLOR_REVERT][NEWLINE][ICON_BULLET] Removes Thalassophobia (fear of the depths of the sea)</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Changer d'&#233;quipage[COLOR_REVERT][NEWLINE][ICON_BULLET] Supprime la thalassophobie (peur des profondeurs marines)</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Mannschaft austauschen[COLOR_REVERT][NEWLINE][ICON_BULLET] Entfernt Thalassophobie (Furcht vor den Tiefen des Meeres)</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Cambia equipaggio[COLOR_REVERT][NEWLINE][ICON_BULLET] Rimuove la Talassofobia (paura delle profondit&#224; marine)</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Intercambio de tripulaci&#243;n[COLOR_REVERT][NEWLINE][ICON_BULLET] Elimina la talasofobia (miedo a las profundidades marinas)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_ANIMISM_HELP</Tag>
@@ -1505,12 +1513,28 @@
 		<Spanish>Felicidades, hab&#233;is entrenado en %s2City_Name a vuestra primera unidad de asedio, [NUM1:un:una:unos:unas] [COLOR_UNIT_TEXT]%s1Unit_Name[COLOR_REVERT]. Estas unidades pueden causar da&#241;os colaterales en las casillas que ataquen y alcanzar as&#237; a varios enemigos a la vez.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FREE</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FREE</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_MULTIPLE_PRODUCTION</Tag>
-		<English>Multiple production</English>
-		<French>Production multiple</French>
-		<German>Multiple Produktion</German>
-		<Italian>Produzione multipla</Italian>
-		<Spanish>Producci&#243;n m&#250;ltiple</Spanish>
+		<English>No multiple production (Standard BTS)</English>
+		<French>Pas de production multiple (Norme BTS)</French>
+		<German>Keine multiple Produktion (Standard BTS)</German>
+		<Italian>Nessuna produzione multipla (Standard BTS)</Italian>
+		<Spanish>No hay producci&#243;n m&#250;ltiple (Est&#225;ndar BTS)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_MULTIPLE_PRODUCTION_HELP</Tag>
@@ -2273,6 +2297,14 @@
 		<Spanish>El poder abrumador del enemigo (%s3_civ2) oblig&#243; a la ciudad de %s1_city (%s2_civ) a rendirse.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_UNSET_PROMO_ANGST_SEA</Tag>
+		<English>The crew is gripped by superstition. Lurking creatures in the depths of the sea weaken their morale. Only a complete crew replacement can eradicate the fear on board. This resets the crew's experience level (promotions).[NEWLINE][NEWLINE]Would you like to hire a new crew for %d1 [ICON_GOLD]?</English>
+		<French>L'&#233;quipage est en proie &#224; la superstition. Des cr&#233;atures tapies dans les profondeurs marines minent leur moral. Seul un remplacement complet de l'&#233;quipage peut dissiper la peur &#224; bord. Cela r&#233;initialise le niveau d'exp&#233;rience de l'&#233;quipage (promotions).[NEWLINE][NEWLINE]Souhaiteriez-vous embaucher un nouvel &#233;quipage pour %d1 [ICON_GOLD] ?</French>
+		<German>Die Mannschaft ist von Aberglauben ergriffen. Lauernde Wesen in den Tiefen des Meeres schw&#228;chen ihre Kampfmoral. Nur ein vollst&#228;ndiger Austausch der Besatzung kann die Furcht an Bord tilgen. Dabei wird das Erfahrungslevel der Crew zur&#252;ckgesetzt (Bef&#246;rderungen).[NEWLINE][NEWLINE]M&#246;chtet Ihr f&#252;r %d1 [ICON_GOLD] eine neue Crew anheuern?</German>
+		<Italian>L'equipaggio &#232; preda della superstizione. Creature in agguato nelle profondit&#224; del mare indeboliscono il loro morale. Solo una sostituzione completa dell'equipaggio pu&#242; sradicare la paura a bordo. Questo ripristina il livello di esperienza dell'equipaggio (promozioni).[NEWLINE][NEWLINE]Vuoi assumere un nuovo equipaggio per %d1 [ICON_GOLD]?</Italian>
+		<Spanish>La tripulaci&#243;n est&#225; dominada por la superstici&#243;n. Criaturas acechantes en las profundidades marinas debilitan su moral. Solo un reemplazo completo de la tripulaci&#243;n puede erradicar el miedo a bordo. Esto restablece el nivel de experiencia de la tripulaci&#243;n (promociones).[NEWLINE][NEWLINE]&#191;Te gustar&#237;a contratar una nueva tripulaci&#243;n para %d1 [ICON_GOLD]?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_CIV_DESTROYED</Tag>
 		<English>The %s1_CivAdj Civilization has been destroyed!!!</English>
 		<French>Les %s1:3_CivAdj ont &#233;t&#233; &#233;cras&#233;s !</French>
@@ -2298,11 +2330,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PAE_VERSION</Tag>
-		<English>Pie's Ancient Europe VII (7.11)</English>
-		<French>Pie's Ancient Europe VII (7.11)</French>
-		<German>Pie's Ancient Europe VII (7.11)</German>
-		<Italian>Pie's Ancient Europe VII (7.11)</Italian>
-		<Spanish>Pie's Ancient Europe VII (7.11)</Spanish>
+		<English>Pie's Ancient Europe VII (7.15)</English>
+		<French>Pie's Ancient Europe VII (7.15)</French>
+		<German>Pie's Ancient Europe VII (7.15)</German>
+		<Italian>Pie's Ancient Europe VII (7.15)</Italian>
+		<Spanish>Pie's Ancient Europe VII (7.15)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROGRESS_TOWARDS_TECH</Tag>
@@ -2361,6 +2393,54 @@
 		<Spanish>Esta orden hace que esta unidad se una a la ciudad como un especialista, consumi&#233;ndose en el proceso.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO</Tag>
+		<English>Combat rounds: %d1_Value</English>
+		<French>Rounds de combat: %d1_Value</French>
+		<German>Kampfrunden: %d1_Value</German>
+		<Italian>Proiettili da combattimento: %d1_Value</Italian>
+		<Spanish>Rondas de combate: %d1_Value</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INJURY</Tag>
+		<English>Degree of injury:</English>
+		<French>Degr&#233; de blessure :</French>
+		<German>Verletzungsgrad:</German>
+		<Italian>Grado di lesione:</Italian>
+		<Spanish>Grado de lesi&#243;n:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_HIGH</Tag>
+		<English>high</English>
+		<French>&#233;lev&#233;e</French>
+		<German>hoch</German>
+		<Italian>alta</Italian>
+		<Spanish>alta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_LOW</Tag>
+		<English>low</English>
+		<French>faible</French>
+		<German>gering</German>
+		<Italian>basso</Italian>
+		<Spanish>bajo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_MEDIUM</Tag>
+		<English>moderate</English>
+		<French>mod&#233;r&#233;e</French>
+		<German>mittel</German>
+		<Italian>moderata</Italian>
+		<Spanish>moderada</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_SURVIVE</Tag>
+		<English>Chance of survival:</English>
+		<French>Chances de survie :</French>
+		<German>&#220;berlebenschance:</German>
+		<Italian>Possibilit&#224; di sopravvivenza:</Italian>
+		<Spanish>Posibilidad de supervivencia:</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PEDIA_ALL_MELEE</Tag>
 		<English>All melee units</English>
 		<French>Tous des unit&#233;s de m&#234;l&#233;e</French>
@@ -2397,6 +2477,14 @@
 		<English>Upkeep</English>
 		<French>Entretien</French>
 		<German>Unterhaltskosten</German>
+		<Italian>Mantenimento</Italian>
+		<Spanish>Mantenimiento</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_CATEGORY_UPKEEP2</Tag>
+		<English>Upkeep</English>
+		<French>Entretien</French>
+		<German>Unterhalt</German>
 		<Italian>Mantenimento</Italian>
 		<Spanish>Mantenimiento</Spanish>
 	</TEXT>
@@ -2583,6 +2671,14 @@
 		<German>[COLOR_HIGHLIGHT_TEXT]Entlasse Vasallen[COLOR_REVERT] oder [COLOR_HIGHLIGHT_TEXT]schenke ihnen St&#228;dte[COLOR_REVERT][NEWLINE]</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Rilascia vassalli[COLOR_REVERT] o [COLOR_HIGHLIGHT_TEXT]dai loro citt&#224;[COLOR_REVERT][NEWLINE]</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Libera vasallos[COLOR_REVERT] o [COLOR_HIGHLIGHT_TEXT]dales ciudades[COLOR_REVERT][NEWLINE]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_YES1</Tag>
+		<English>Yes, it has to be.</English>
+		<French>Oui, &#231;a doit l'&#234;tre.</French>
+		<German>Ja, es muss sein.</German>
+		<Italian>S&#236;, deve esserlo.</Italian>
+		<Spanish>S&#237;, tiene que serlo.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_YES2</Tag>

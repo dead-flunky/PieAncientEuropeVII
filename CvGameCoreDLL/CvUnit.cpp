@@ -49,7 +49,6 @@ CvUnit::CvUnit()
 	reset(0, NO_UNIT, NO_PLAYER, true);
 }
 
-
 CvUnit::~CvUnit()
 {
 	if (!gDLL->GetDone() && GC.IsGraphicsInitialized())						// don't need to remove entity when the app is shutting down, or crash can occur
@@ -340,6 +339,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_bInfoBarDirty = false;
 	m_bBlockading = false;
 	m_bAirCombat = false;
+	m_bHasUsedDefensiveRangedStrike = false; // PAE defend with ranged strike
 
 	m_eOwner = eOwner;
 	m_eCapturingPlayer = NO_PLAYER;
@@ -733,6 +733,9 @@ void CvUnit::doTurn()
 		}
 	}
 
+	// PAE defend with ranged strike
+	m_bHasUsedDefensiveRangedStrike = false;
+
 	// PAE: damaged units and ships are slower, TEIL 1/4
 	// Bewegungspunkte der verletzten Einheit checken
 	int iBaseMoves = baseMoves();
@@ -1125,6 +1128,308 @@ void CvUnit::updateAirCombat(bool bQuick)
 	}
 }
 
+
+
+// PAE defend with ranged strike ---------------------
+void CvUnit::doDefensiveRangedStrike(bool bQuick)
+{
+
+	CvWString szBuffer;
+
+	bool bFinish = false;
+	bool bVisible = false;
+
+	CvPlot* pPlot = getAttackPlot();
+
+	if (pPlot == NULL) return;
+
+	if (getDomainType() == DOMAIN_AIR) return;
+
+	CvUnit* pDefender = NULL;
+	pDefender = pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true);
+	pDefender = pPlot->getAvailableDefensiveRangedUnit(pDefender->getTeam());
+
+	if (pDefender == NULL) return;
+
+	//check if quick combat
+	if (!bQuick) bVisible = isCombatVisible(pDefender);
+
+	FAssertMsg((pPlot == pDefender->plot()), "There is not expected to be a defender or the defender's plot is expected to be pPlot (the attack plot)");
+
+	//if not finished and not fighting yet, set up combat damage and mission
+	if (!bFinish)
+	{
+		if (!isFighting())
+		{
+			if (plot()->isFighting() || pPlot->isFighting()) return;
+
+			//setMadeAttack(true);
+
+			//rotate to face plot
+			DirectionTypes newDirection = estimateDirection(this->plot(), pDefender->plot());
+			if (newDirection != NO_DIRECTION) setFacingDirection(newDirection);
+
+			//rotate enemy to face us
+			newDirection = estimateDirection(pDefender->plot(), this->plot());
+			if (newDirection != NO_DIRECTION) pDefender->setFacingDirection(newDirection);
+
+			setCombatUnit(pDefender, true);
+			pDefender->setCombatUnit(this, false);
+
+			pDefender->getGroup()->clearMissionQueue();
+
+			bool bFocused = (bVisible && isCombatFocus() && gDLL->getInterfaceIFace()->isCombatFocus());
+
+			if (bFocused)
+			{
+				DirectionTypes directionType = directionXY(plot(), pPlot);
+				//								N			NE				E				SE					S				SW					W				NW
+				NiPoint2 directions[8] = {NiPoint2(0, 1), NiPoint2(1, 1), NiPoint2(1, 0), NiPoint2(1, -1), NiPoint2(0, -1), NiPoint2(-1, -1), NiPoint2(-1, 0), NiPoint2(-1, 1)};
+				NiPoint3 attackDirection = NiPoint3(directions[directionType].x, directions[directionType].y, 0);
+				float plotSize = GC.getPLOT_SIZE();
+				NiPoint3 lookAtPoint(plot()->getPoint().x + plotSize / 2 * attackDirection.x, plot()->getPoint().y + plotSize / 2 * attackDirection.y, (plot()->getPoint().z + pPlot->getPoint().z) / 2);
+				attackDirection.Unitize();
+				gDLL->getInterfaceIFace()->lookAt(lookAtPoint, (((getOwnerINLINE() != GC.getGameINLINE().getActivePlayerInternal()) || gDLL->getGraphicOption(GRAPHICOPTION_NO_COMBAT_ZOOM)) ? CAMERALOOKAT_BATTLE : CAMERALOOKAT_BATTLE_ZOOM_IN), attackDirection);
+			}
+			else
+			{
+				PlayerTypes eAttacker = getVisualOwner(pDefender->getTeam());
+				CvWString szMessage;
+				if (BARBARIAN_PLAYER != eAttacker)
+				{
+					szMessage = gDLL->getText("TXT_KEY_MISC_YOU_UNITS_UNDER_ATTACK", GET_PLAYER(getOwnerINLINE()).getNameKey());
+				}
+				else
+				{
+					szMessage = gDLL->getText("TXT_KEY_MISC_YOU_UNITS_UNDER_ATTACK_UNKNOWN");
+				}
+
+				gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szMessage, "AS2D_COMBAT", MESSAGE_TYPE_DISPLAY_ONLY, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true);
+			}
+		}
+
+		FAssertMsg(pDefender != NULL, "Defender is not assigned a valid value");
+
+		FAssertMsg(plot()->isFighting(), "Current unit instance plot is not fighting as expected");
+		FAssertMsg(pPlot->isFighting(), "pPlot is not fighting as expected");
+
+
+		CvBattleDefinition kBattle;
+		kBattle.setUnit(BATTLE_UNIT_ATTACKER, this);
+		kBattle.setUnit(BATTLE_UNIT_DEFENDER, pDefender);
+		kBattle.setDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_BEGIN, getDamage());
+		kBattle.setDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_BEGIN, pDefender->getDamage());
+
+		resolveCombatRanged(pDefender, pPlot, kBattle);
+
+		if (!bVisible) bFinish = true;
+		else
+		{
+			kBattle.setDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_END, getDamage());
+			kBattle.setDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_END, pDefender->getDamage());
+			kBattle.setAdvanceSquare(canAdvance(pPlot, 1));
+
+			if (isRanged() && pDefender->isRanged())
+			{
+				kBattle.setDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_END));
+				kBattle.setDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_END));
+			}
+			else
+			{
+				kBattle.addDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_BEGIN));
+				kBattle.addDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_BEGIN));
+			}
+
+			int iTurns = planBattle( kBattle);
+			kBattle.setMissionTime(iTurns * gDLL->getSecsPerTurn());
+			setCombatTimer(iTurns);
+
+			GC.getGameINLINE().incrementTurnTimer(getCombatTimer());
+
+			if (pPlot->isActiveVisible(false))
+			{
+				ExecuteMove(0.5f, true);
+				gDLL->getEntityIFace()->AddMission(&kBattle);
+			}
+		}
+
+	}
+
+	if (bFinish)
+	{
+		if (bVisible)
+		{
+			if (isCombatFocus() && gDLL->getInterfaceIFace()->isCombatFocus())
+			{
+				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
+				{
+					gDLL->getInterfaceIFace()->releaseLockedCamera();
+				}
+			}
+		}
+
+
+		//end the combat mission if this code executes first
+		gDLL->getEntityIFace()->RemoveUnitFromBattle(this);
+		gDLL->getEntityIFace()->RemoveUnitFromBattle(pDefender);
+
+		setAttackPlot(NULL, false);
+		setCombatUnit(NULL);
+		pDefender->setCombatUnit(NULL);
+		NotifyEntity(MISSION_DAMAGE);
+		pDefender->NotifyEntity(MISSION_DAMAGE);
+
+
+		/***** PAE ******/
+		if (withdrawalProbability() > 0)
+		{
+			szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)19, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
+			gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)20, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+		}
+		/****************/
+
+		//changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
+		//checkRemoveSelectionAfterAttack();
+
+		//getGroup()->clearMissionQueue();
+
+	}
+}
+
+
+
+// PAE - new battle system (internal rounds)
+int CvUnit::getCombatClass(UnitCombatTypes eCombat)
+{
+	static bool bInit = false;
+	static int eSPEARMAN, eMELEE, eAXEMAN, eSWORDSMAN;
+	static int eSKIRMISHER, eARCHER;
+	static int eCHARIOT, eMOUNTED;
+	static int eELEPHANT;
+	static int eSIEGE;
+	static int eNAVAL;
+	static int eHEALER;
+
+	if (!bInit)
+	{
+		eSPEARMAN   = GC.getInfoTypeForString("UNITCOMBAT_SPEARMAN");
+		eMELEE      = GC.getInfoTypeForString("UNITCOMBAT_MELEE");
+		eAXEMAN     = GC.getInfoTypeForString("UNITCOMBAT_AXEMAN");
+		eSWORDSMAN  = GC.getInfoTypeForString("UNITCOMBAT_SWORDSMAN");
+		eSKIRMISHER = GC.getInfoTypeForString("UNITCOMBAT_SKIRMISHER");
+		eARCHER     = GC.getInfoTypeForString("UNITCOMBAT_ARCHER");
+		eCHARIOT    = GC.getInfoTypeForString("UNITCOMBAT_CHARIOT");
+		eMOUNTED    = GC.getInfoTypeForString("UNITCOMBAT_MOUNTED");
+		eELEPHANT   = GC.getInfoTypeForString("UNITCOMBAT_ELEPHANT");
+		eSIEGE      = GC.getInfoTypeForString("UNITCOMBAT_SIEGE");
+		eNAVAL      = GC.getInfoTypeForString("UNITCOMBAT_NAVAL");
+		bInit = true;
+	}
+
+	if (eCombat == eSPEARMAN || eCombat == eMELEE || eCombat == eAXEMAN || eCombat == eSWORDSMAN) return 0; // Heavy
+	if (eCombat == eSKIRMISHER || eCombat == eARCHER) return 1; // Light
+	if (eCombat == eCHARIOT || eCombat == eMOUNTED) return 2; // Mobile (Horses and Chariots)
+	if (eCombat == eELEPHANT) return 3; // Shock (Elephants)
+	if (eCombat == eSIEGE) return 4; // Siege
+	if (eCombat == eNAVAL) return 5; // Naval
+	return 1; // Default
+
+}
+
+int CvUnit::getCombatRounds(int iAttackerType, int iDefenderType, const CvPlot* pPlot)
+{
+	static const int CombatRoundsMatrix[6][6] =
+	{
+		// Defending: Heavy, Light, Mounted, Shock, Siege, Naval
+		{3, 2, 2, 2, 3, 2}, // Heavy attacker
+		{2, 3, 2, 2, 2, 2}, // Light attacker
+		{2, 3, 2, 2, 3, 2}, // Mounted attacker
+		{3, 2, 2, 3, 3, 2}, // Shock attacker
+		{2, 2, 2, 2, 3, 2}, // Siege attacker
+		{2, 2, 2, 2, 2, 2}  // Naval attacker
+	};
+
+	int iRounds = CombatRoundsMatrix[iAttackerType][iDefenderType];
+
+	if (pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_FOREST") ||
+		pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
+		pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_DICHTERWALD"))
+	{
+		// not for mounted vs mounted
+		if (iAttackerType != 2 && iDefenderType != 2) iRounds++;
+	}
+
+	// Swamp long and difficult fight
+	if (pPlot->getTerrainType() == GC.getInfoTypeForString("TERRAIN_DESERT") ||
+		pPlot->getTerrainType() == GC.getInfoTypeForString("TERRAIN_SWAMP"))
+		iRounds++;
+	// Open sea difficult to fight
+	if (pPlot->getTerrainType() == GC.getInfoTypeForString("TERRAIN_OCEAN") ||
+		pPlot->getTerrainType() == GC.getInfoTypeForString("TERRAIN_DEEP_OCEAN"))
+		iRounds--;
+
+	return iRounds;
+}
+// PAE new battle system -------------------
+
+
+
+void CvUnit::resolveCombatRanged(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle)
+{
+	CombatDetails cdAttackerDetails;
+	CombatDetails cdDefenderDetails;
+
+	int iAttackerStrength = currCombatStr(NULL, NULL, &cdAttackerDetails);
+	int iAttackerFirepower = currFirepower(NULL, NULL);
+	int iDefenderStrength;
+	int iAttackerDamage;
+	int iDefenderDamage;
+	int iDefenderOdds;
+
+	getDefenderCombatValues(*pDefender, pPlot, iAttackerStrength, iAttackerFirepower, iDefenderOdds, iDefenderStrength, iAttackerDamage, iDefenderDamage, &cdDefenderDetails);
+	int iAttackerKillOdds = iDefenderOdds * (100 - withdrawalProbability()) / 100;
+
+	if (isHuman() || pDefender->isHuman())
+	{
+		//Added ST
+		CyArgsList pyArgsCD;
+		pyArgsCD.add(gDLL->getPythonIFace()->makePythonObject(&cdAttackerDetails));
+		pyArgsCD.add(gDLL->getPythonIFace()->makePythonObject(&cdDefenderDetails));
+		pyArgsCD.add(getCombatOdds(this, pDefender));
+		CvEventReporter::getInstance().genericEvent("combatLogCalc", pyArgsCD.makeFunctionArgs());
+	}
+
+	//while (true)
+	//{
+
+				if (std::min(GC.getMAX_HIT_POINTS(), pDefender->getDamage() + iDefenderDamage) > combatLimit())
+				{
+					changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
+					pDefender->setDamage(combatLimit(), getOwnerINLINE());
+					return;
+				}
+
+				pDefender->changeDamage(iDefenderDamage, getOwnerINLINE());
+
+
+				cdDefenderDetails.iCurrHitPoints=pDefender->currHitPoints();
+
+				if (isHuman() || pDefender->isHuman())
+				{
+					CyArgsList pyArgs;
+					pyArgs.add(gDLL->getPythonIFace()->makePythonObject(&cdAttackerDetails));
+					pyArgs.add(gDLL->getPythonIFace()->makePythonObject(&cdDefenderDetails));
+					pyArgs.add(0);
+					pyArgs.add(iDefenderDamage);
+					CvEventReporter::getInstance().genericEvent("combatLogHit", pyArgs.makeFunctionArgs());
+				}
+
+	//}
+
+}
+
 void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle)
 {
 	CombatDetails cdAttackerDetails;
@@ -1152,12 +1457,64 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 
 	collateralCombat(pPlot, pDefender);
 
+	// Init some vars
+	int iFirstStrikeDamage = 0;
+	int iCap = 0;
+	int iAttackerFirstStrikes = getCombatFirstStrikes();
+	int iDefenderFirstStrikes = pDefender->getCombatFirstStrikes();
+
+	// PAE: First Strikes before the battle begins (do not count as battle rounds)
+	if (iAttackerFirstStrikes > 0)
+	{
+		iCap = pDefender->maxHitPoints() - 1 - pDefender->getDamage();
+		iCap = std::max(0, iCap);
+		iFirstStrikeDamage = iAttackerFirstStrikes * (iAttackerDamage / 2);
+		iFirstStrikeDamage = std::min(iFirstStrikeDamage, iCap);
+		
+		pDefender->changeDamage(iFirstStrikeDamage, getOwnerINLINE());
+
+		// Animation
+		kBattle.addFirstStrikes(BATTLE_UNIT_ATTACKER, iAttackerFirstStrikes);
+		BattleTimeTypes eTime = isRanged() ? BATTLE_TIME_RANGED : BATTLE_TIME_BEGIN;
+		kBattle.addDamage(BATTLE_UNIT_DEFENDER, eTime, iFirstStrikeDamage);
+	}
+	if (iDefenderFirstStrikes > 0)
+	{
+		iCap = maxHitPoints() - 1 - getDamage();
+		iCap = std::max(0, iCap);
+		iFirstStrikeDamage = iDefenderFirstStrikes * (iDefenderDamage / 2);
+		iFirstStrikeDamage = std::min(iFirstStrikeDamage, iCap);
+
+		changeDamage(iFirstStrikeDamage, pDefender->getOwnerINLINE());
+
+		// Animation
+		kBattle.addFirstStrikes(BATTLE_UNIT_DEFENDER, iDefenderFirstStrikes);
+		BattleTimeTypes eTime = pDefender->isRanged() ? BATTLE_TIME_RANGED : BATTLE_TIME_BEGIN;
+		kBattle.addDamage(BATTLE_UNIT_ATTACKER, eTime, iFirstStrikeDamage);
+	}
+	// PAE end First Strikes
+
+
+	// PAE new battle system: battle rounds instead of fighting until death (GAMEOPTION_NO_PAE_COMBAT)
+	// getCombatClass & getCombatRounds needed (right above)
+	int iRounds = 0;
+	int iMaxRounds = 0;
+	bool bCombatAborted = false;
+	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT))
+	{
+		int a = CvUnit::getCombatClass(getUnitCombatType());
+		int d = CvUnit::getCombatClass(pDefender->getUnitCombatType());
+		iMaxRounds = CvUnit::getCombatRounds(a, d, pPlot);
+	}
+	// ---
+
 	while (true)
 	{
 		if (GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("COMBAT_DIE_SIDES"), "Combat") < iDefenderOdds)
 		{
-			if (getCombatFirstStrikes() == 0)
-			{
+			// ATTACKER DAMAGE
+			// if (getCombatFirstStrikes() == 0)
+			// {
 				if (getDamage() + iAttackerDamage >= maxHitPoints() && GC.getGameINLINE().getSorenRandNum(100, "Withdrawal") < withdrawalProbability())
 				{
 					flankingStrikeCombat(pPlot, iAttackerStrength, iAttackerFirepower, iAttackerKillOdds, iDefenderDamage, pDefender);
@@ -1168,11 +1525,13 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 
 				changeDamage(iAttackerDamage, pDefender->getOwnerINLINE());
 
+				/* PAE: not necessary anymore
 				if (pDefender->getCombatFirstStrikes() > 0 && pDefender->isRanged())
 				{
 					kBattle.addFirstStrikes(BATTLE_UNIT_DEFENDER, 1);
 					kBattle.addDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_RANGED, iAttackerDamage);
 				}
+				*/
 
 				cdAttackerDetails.iCurrHitPoints = currHitPoints();
 
@@ -1185,12 +1544,14 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 					pyArgs.add(iAttackerDamage);
 					CvEventReporter::getInstance().genericEvent("combatLogHit", pyArgs.makeFunctionArgs());
 				}
-			}
+			// }
+
 		}
 		else
 		{
-			if (pDefender->getCombatFirstStrikes() == 0)
-			{
+			// DEFENDER DAMAGE
+			// if (pDefender->getCombatFirstStrikes() == 0)
+			// {
 				if (std::min(GC.getMAX_HIT_POINTS(), pDefender->getDamage() + iDefenderDamage) > combatLimit())
 				{
 					changeExperience(GC.getDefineINT("EXPERIENCE_FROM_WITHDRAWL"), pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
@@ -1200,11 +1561,13 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 
 				pDefender->changeDamage(iDefenderDamage, getOwnerINLINE());
 
+				/* PAE: not necessary anymore
 				if (getCombatFirstStrikes() > 0 && isRanged())
 				{
 					kBattle.addFirstStrikes(BATTLE_UNIT_ATTACKER, 1);
 					kBattle.addDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_RANGED, iDefenderDamage);
 				}
+				*/
 
 				cdDefenderDetails.iCurrHitPoints=pDefender->currHitPoints();
 
@@ -1217,9 +1580,11 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 					pyArgs.add(iDefenderDamage);
 					CvEventReporter::getInstance().genericEvent("combatLogHit", pyArgs.makeFunctionArgs());
 				}
-			}
+			// }
+
 		}
 
+		/* PAE: not necessary anymore
 		if (getCombatFirstStrikes() > 0)
 		{
 			changeCombatFirstStrikes(-1);
@@ -1229,6 +1594,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 		{
 			pDefender->changeCombatFirstStrikes(-1);
 		}
+		*/
 
 		if (isDead() || pDefender->isDead())
 		{
@@ -1251,7 +1617,22 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 
 			break;
 		}
+
+		// PAE
+		iRounds++;
+		if (iMaxRounds > 0 && iRounds > iMaxRounds) {
+			bCombatAborted = true;
+			break;
+		}
+		// ---
 	}
+
+	// PAE
+	if (bCombatAborted)
+	{
+		return;
+	}
+
 }
 
 
@@ -1412,6 +1793,7 @@ void CvUnit::updateCombat(bool bQuick)
 		}
 		else
 		{
+
 			CvBattleDefinition kBattle;
 			kBattle.setUnit(BATTLE_UNIT_ATTACKER, this);
 			kBattle.setUnit(BATTLE_UNIT_DEFENDER, pDefender);
@@ -1580,10 +1962,13 @@ void CvUnit::updateCombat(bool bQuick)
 			******************/
 
 			/***** PAE ******/
-			szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
-			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)19, pPlot->getX_INLINE(), pPlot->getY_INLINE());
-			szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
-			gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)20, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			if (withdrawalProbability() > 0)
+			{
+				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)19, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+				szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
+				gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)20, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			}
 			/****************/
 
 			changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
@@ -2800,8 +3185,14 @@ void CvUnit::attack(CvPlot* pPlot, bool bQuick)
 
 	setAttackPlot(pPlot, false);
 
+	// PAE defend with ranged attack first
+	//if (getCombatFirstStrikes() == 0 || getMoves() < 3)
+	//	doDefensiveRangedStrike(bQuick);
+
+	// BTS & PAE
 	updateCombat(bQuick);
 }
+
 
 void CvUnit::fightInterceptor(const CvPlot* pPlot, bool bQuick)
 {
@@ -10340,13 +10731,13 @@ int CvUnit::getCombatFirstStrikes() const
 	return m_iCombatFirstStrikes;
 }
 
-void CvUnit::setCombatFirstStrikes(int iNewValue)			
+void CvUnit::setCombatFirstStrikes(int iNewValue)
 {
 	m_iCombatFirstStrikes = iNewValue;
 	FAssert(getCombatFirstStrikes() >= 0);
 }
 
-void CvUnit::changeCombatFirstStrikes(int iChange)			
+void CvUnit::changeCombatFirstStrikes(int iChange)
 {
 	setCombatFirstStrikes(getCombatFirstStrikes() + iChange);
 }
@@ -10924,6 +11315,18 @@ void CvUnit::setMadeAttack(bool bNewValue)
 {
 	m_bMadeAttack = bNewValue;
 }
+
+
+// PAE defend with ranged strike ----------------
+bool CvUnit::hasUsedDefensiveRangedStrike() const
+{
+	return m_bHasUsedDefensiveRangedStrike;
+}
+void CvUnit::setUsedDefensiveRangedStrike(bool bNewValue)
+{
+	m_bHasUsedDefensiveRangedStrike = bNewValue;
+}
+// ---------------------------------------------
 
 
 bool CvUnit::isMadeInterception() const
@@ -11855,6 +12258,8 @@ void CvUnit::read(FDataStreamBase* pStream)
 		pStream->Read(&m_bAirCombat);
 	}
 
+	pStream->Read(&m_bHasUsedDefensiveRangedStrike); // PAE
+
 	pStream->Read((int*)&m_eOwner);
 	pStream->Read((int*)&m_eCapturingPlayer);
 	pStream->Read((int*)&m_eUnitType);
@@ -11955,6 +12360,8 @@ void CvUnit::write(FDataStreamBase* pStream)
 	// m_bInfoBarDirty not saved...
 	pStream->Write(m_bBlockading);
 	pStream->Write(m_bAirCombat);
+
+	pStream->Write(m_bHasUsedDefensiveRangedStrike); // PAE
 
 	pStream->Write(m_eOwner);
 	pStream->Write(m_eCapturingPlayer);

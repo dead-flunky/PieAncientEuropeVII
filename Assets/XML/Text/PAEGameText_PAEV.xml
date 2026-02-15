@@ -2202,11 +2202,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_NO_DISASTERS</Tag>
-		<English>No natural disasters</English>
-		<French>Pas de catastrophes naturelles</French>
-		<German>Keine Naturkatastrophen</German>
-		<Italian>Nessun disastro naturale</Italian>
-		<Spanish>Sin desastres naturales</Spanish>
+		<English>No natural disasters (Standard BTS)</English>
+		<French>Pas de catastrophes naturelles (Norme BTS)</French>
+		<German>Keine Naturkatastrophen (Standard BTS)</German>
+		<Italian>Nessun disastro naturale (Standard BTS)</Italian>
+		<Spanish>Sin desastres naturales (Est&#225;ndar BTS)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_NO_DISASTERS_HELP</Tag>

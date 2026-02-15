@@ -2691,18 +2691,18 @@ class CvMainInterface:
 																if pUnit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_STATTHALTER"):
 																		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")) or pCity.canConstruct(gc.getInfoTypeForString("BUILDING_PROVINZPALAST"), False, False, True):
 																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_building_statthalter.dds",
-																																		 0, WidgetTypes.WIDGET_GENERAL, 757, 0, False)
+																						 0, WidgetTypes.WIDGET_GENERAL, 757, 0, False)
 																				screen.show("BottomButtonContainer")
 																				iCount += 1
-																		# sell buildings of the city
-																		#screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_statthalter_main.dds",
-																		#										0, WidgetTypes.WIDGET_GENERAL, 775, 0, False)
-																		#screen.show("BottomButtonContainer")
-																		#iCount += 1
+																		# PAE 7.15: sell buildings of the city
+																		screen.appendMultiListButton("BottomButtonContainer", "Art/Units/Diverses/verwalter/button_unit_statthalter_greco.dds",
+																				 0, WidgetTypes.WIDGET_GENERAL, 770, 0, False)
+																		screen.show("BottomButtonContainer")
+																		iCount += 1
 																elif pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_HERO")) or pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER")):
 																		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_PROVINZPALAST")) or pCity.canConstruct(gc.getInfoTypeForString("BUILDING_PROVINZPALAST"), False, False, True):
 																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Buildings/button_building_statthalter.dds",
-																																		 0, WidgetTypes.WIDGET_GENERAL, 757, 1, False)
+																						 0, WidgetTypes.WIDGET_GENERAL, 757, 1, False)
 																				screen.show("BottomButtonContainer")
 																				iCount += 1
 																# --------------------------------------------------------
@@ -3087,9 +3087,16 @@ class CvMainInterface:
 																		if iCost > 0:
 																				if pUnitOwner.getGold() >= iCost:
 																						screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_werft.dds",
-																								0, WidgetTypes.WIDGET_GENERAL, 768, iCost, False)
+																								0, WidgetTypes.WIDGET_GENERAL, 768, iCost, True)
 																						screen.show("BottomButtonContainer")
 																						iCount += 1
+
+																# PAE 7.15: Crew austauschen
+																if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_ANGST_SEA")):
+																		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_sell_crew.dds",
+																				0, WidgetTypes.WIDGET_GENERAL, 768, -1, False)
+																		screen.show("BottomButtonContainer")
+																		iCount += 1
 
 														# Versorgungswagen und Heldendenkmal / Siegesdenkmal / monument
 														# Nur Versorgungskarren, nicht Druiden! (iUnitType anstatt iUnitclassType)
@@ -3184,6 +3191,16 @@ class CvMainInterface:
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_pirat.dds", 0, WidgetTypes.WIDGET_GENERAL, 722, 1, False)
 																								screen.show("BottomButtonContainer")
 																								iCount += 1
+
+																		# PAE VII: pillage coastal villages
+																		if pUnit.getUnitType() in L.DCaptureFromPirate:
+																			best_plot = PAE_Unit.getPillageVillage(pUnit,False)
+																			if best_plot != None:
+																				screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Techs/button_brandschatzen.dds", 0, WidgetTypes.WIDGET_GENERAL, 726, 0, False)
+																				screen.show("BottomButtonContainer")
+																				screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
+																				iCount += 1
+
 
 														# Limes
 														elif iUnitType == gc.getInfoTypeForString("UNIT_LEGION") or iUnitType == gc.getInfoTypeForString("UNIT_LEGION2") or \
@@ -6129,7 +6146,7 @@ class CvMainInterface:
 
 								# PAE VII: Info ob die Einheit verletzt bzw beschädigt ist
 								if pHeadSelectedUnit.isHurt():
-									if pHeadSelectedUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
+									if pHeadSelectedUnit.getDomainType() == DomainTypes.DOMAIN_SEA and not pHeadSelectedUnit.isAnimal():
 										szBuffer += u" " + localText.getText("TXT_KEY_PAE_DAMAGED", ())
 									else:
 										szBuffer += u" " + localText.getText("TXT_KEY_PAE_HURT", ())
@@ -7520,9 +7537,16 @@ class CvMainInterface:
 										elif iData1 == 725:
 												CyMessageControl().sendModNetMessage(725, pPlot.getPlotCity().getID(), iOwner, -1, 0)
 
-										# ID 726 Bonusverbreitung (Obsolete)
-										# elif iData1 == 726:
-										#  CyMessageControl().sendModNetMessage( 726, -1, -1, iOwner, iUnitID )
+										# ID 726 Piraten-Feature
+										# Pillage village
+										elif iData1 == 726:
+											# Beginn (kein button gedrueckt)
+											if iData2 == 0:
+												CyMessageControl().sendModNetMessage(726, 0, 0, iOwner, iUnitID)
+											# Auswahl
+											elif iData2 == 1:
+												# iData3 == iButtonID
+												CyMessageControl().sendModNetMessage(726, 1, iData3, iOwner, iUnitID)
 
 										# ID 727
 										# iData2: Nahrung an Stadt liefern
@@ -7722,17 +7746,23 @@ class CvMainInterface:
 												CyAudioGame().Play2DSound("AS2D_COINS")
 												CyMessageControl().sendModNetMessage(iData1, pPlot.getX(), pPlot.getY(), iOwner, iUnitID)
 
-										# Kauf eines Magnetkompasses
+										# Schiffe
 										elif iData1 == 768:
+											# Schiff reparieren
+											if bOption:
 												CyAudioGame().Play2DSound("AS2D_COINS")
-												CyMessageControl().sendModNetMessage(iData1, pPlot.getX(), pPlot.getY(), iOwner, iUnitID)
+												CyMessageControl().sendModNetMessage(iData1, 0, -1, iOwner, iUnitID)
+											# Crew austauschen
+											else:
+												CyMessageControl().sendModNetMessage(iData1, 1, -1, iOwner, iUnitID)
 
 										# Great Prophet Holy City
 										elif iData1 == 769:
 												CyMessageControl().sendModNetMessage(iData1, iData2, pPlot.getPlotCity().getID(), iOwner, iUnitID)
 
-										# frei
-										#elif iData1 == 770:
+										# PAE 7.15: sell buildings of a city
+										elif iData1 == 770:
+												CyMessageControl().sendModNetMessage(iData1, pPlot.getPlotCity().getID(), iOwner, -1, -1)
 
 										# Hunter: Lager oder Beobachtungsturm
 										# Worker and Hunter: Ore Camp
@@ -7748,17 +7778,13 @@ class CvMainInterface:
 
 										# PAE 7.7: Go to city popup(go2city)
 										elif iData1 == 773:
-												CyMessageControl().sendModNetMessage(773, iData2, -1, iOwner, iUnitID)
+												CyMessageControl().sendModNetMessage(iData1, iData2, -1, iOwner, iUnitID)
 
 										# PAE 7.9: Terraforming (Great Prophet)
 										elif iData1 == 774:
-												CyMessageControl().sendModNetMessage(774, iData2, -1, iOwner, iUnitID)
+												CyMessageControl().sendModNetMessage(iData1, iData2, -1, iOwner, iUnitID)
 
-										# PAE 7.13: sell buildings of a city
-										elif iData1 == 775:
-												CyMessageControl().sendModNetMessage(775, pPlot.getPlotCity().getID(), iOwner, -1, -1)
-
-										# 770 ist frei
+										# ab 775 ist frei
 
 								# ID 718 Unit Formations
 								# Zusatz: Eigenes Widget for Formations!

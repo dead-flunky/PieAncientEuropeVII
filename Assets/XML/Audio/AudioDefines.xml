@@ -7,6 +7,34 @@
 <AudioDefines xmlns="x-schema:AudioDefinesSchema.xml">
 	<SoundDatas>
 		<SoundData>
+			<SoundID>SND_PAE_FEAR1</SoundID>
+			<Filename>Sounds/Units/AncEngActVox</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_PAE_FEAR2</SoundID>
+			<Filename>Sounds/Units/CbmnDieVox-003</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_PAE_FEAR3</SoundID>
+			<Filename>Sounds/Units/FastWrkSurr-000</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_PAE_FEAR4</SoundID>
+			<Filename>Sounds/Units/HArcherAttkVox-002</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SND_HORSE_DOWN</SoundID>
 			<Filename>Sounds/Actions/HorseDieVox-003</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
@@ -11923,6 +11951,13 @@
 		<SoundData>
 			<SoundID>SND_UNIT_ESEL</SoundID>
 			<Filename>Sounds/Actions/Donkey</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_SEA_SERPENT</SoundID>
+			<Filename>Sounds/Units/SeaSerpent</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

@@ -290,11 +290,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_EMIGRANT</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Take up residence in this city[COLOR_REVERT][NEWLINE]+1 Population</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]S'&#233;tablir dans cette ville[COLOR_REVERT][NEWLINE]+1 &#224; la population de la ville</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]In dieser Stadt niederlassen[COLOR_REVERT][NEWLINE]+1 Stadtbev&#246;lkerung</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Risiedi in questa citt&#224;[COLOR_REVERT][NEWLINE]+1 abitanti della citt&#224;</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Establecer residencia en esta ciudad[COLOR_REVERT][NEWLINE]+1 Poblaci&#243;n</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Take up residence in this city[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Population[NEWLINE][ICON_BULLET] Spreads his culture</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]S'&#233;tablir dans cette ville[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 &#224; la population de la ville[NEWLINE][ICON_BULLET] Diffuse sa culture</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]In dieser Stadt niederlassen[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Stadtbev&#246;lkerung[NEWLINE][ICON_BULLET] Verbreitet seine Kultur</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Risiedi in questa citt&#224;[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 abitanti della citt&#224;[NEWLINE][ICON_BULLET] Diffonde la sua cultura</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Establecer residencia en esta ciudad[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Poblaci&#243;n[NEWLINE][ICON_BULLET] Difunde su cultura</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_GLADIATOR</Tag>
@@ -1389,9 +1389,9 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HISTORY_1200BC_2</Tag>
-		<English>About 1200 BC. Anatolia was devastated by the attacks of the Sea Peoples in a way, that the memory of the Hittites gets lost until to the 19th century.</English>
+		<English>About 1200 BC. Anatolia was devastated by the attacks of the Sea Peoples in a way, that the memory of the Hittites got lost until to the 19th century.</English>
 		<French>Environ 1200 av JC. L'Anatolie est d&#233;vast&#233;e par les attaques des peuples des mers.</French>
-		<German>Um 1200 v. Chr.: Anatolien wurde durch die Angriffe der Seev&#246;lker derart ersch&#252;ttert, dass die Erinnerung an die Hethiter bis ins 19 Jh. verloren geht.</German>
+		<German>Um 1200 v. Chr.: Anatolien wurde durch die Angriffe der Seev&#246;lker derart ersch&#252;ttert, dass die Erinnerung an die Hethiter bis ins 19 Jh. verloren ging.</German>
 		<Italian>Intorno al 1200 a.C. L'Anatolia fu distrutta dagli attacchi dei Popoli del Mare tanto che la memoria degli Ittiti si perse fino al XIX secolo.</Italian>
 		<Spanish>Sobre el 1200 a.C. Anatolia fue destru&#237;da por los ataques de los Pueblos del Mar de manera, que la memoria de los hititas se perdi&#243; hasta el siglo XIX.</Spanish>
 	</TEXT>
@@ -5813,11 +5813,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_UNIT_GETS_HERO_6</Tag>
-		<English>Your unit %s1 is now a reliable fighter!</English>
-		<French>L'unit&#233; (%s1) est maintenant un combattant fiable!</French>
-		<German>Eure Einheit %s1 ist nun ein zuverl&#228;ssiger K&#228;mpfer!</German>
-		<Italian>La tua unit&#224; %s1 ora &#232; un combattente affidabile!</Italian>
-		<Spanish>&#161;tu unidad %s1 es ahora un luchador confiable!</Spanish>
+		<English>Your unit %s1 is now a reliable fighter! (Loss of "Unreliable" promotion)</English>
+		<French>L'unit&#233; (%s1) est maintenant un combattant fiable! (Perte de la promotion "peu fiable")</French>
+		<German>Eure Einheit %s1 ist nun ein zuverl&#228;ssiger K&#228;mpfer! (Verlust der "Unzuverl&#228;ssig"-Bef&#246;rderung)</German>
+		<Italian>La tua unit&#224; %s1 ora &#232; un combattente affidabile! (Perdita della promozione "Inaffidabile")</Italian>
+		<Spanish>&#161;tu unidad %s1 es ahora un luchador confiable! (P&#233;rdida de la promoci&#243;n "No confiable")</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_UNIT_GETS_MORALE</Tag>

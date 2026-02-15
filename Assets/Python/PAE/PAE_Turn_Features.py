@@ -149,16 +149,17 @@ def doPlotFeatures():
 								if loopPlot.isWater():
 
 										# Treibgut nur alle 10 Runden erstellen (wenn aktiv)
-										if bFlotsam and gc.getGame().getGameTurn() % 10 == 0:
-												if bFlot and bGoodyHuts:
-														if loopPlot.getOwner() == -1:
-																if iPlotTerrain == terrOzean:
-																		if loopPlot.getNumUnits() > 0:
-																				Ocean.append(loopPlot)
-								# isPeak
-								elif loopPlot.isPeak():
-										if loopPlot.getOwner() == -1:
-												Peaks.append(loopPlot)
+										# PAE 7.15: betrifft auch Seeungeheuer
+										if gc.getGame().getGameTurn() % 10 == 0:
+												if loopPlot.getOwner() == -1:
+														if iPlotTerrain == terrOzean:
+																if loopPlot.getNumUnits() == 0:
+																		Ocean.append(loopPlot)
+								# isPeak (not used atm)
+								#elif loopPlot.isPeak():
+								#		if loopPlot.getOwner() == -1:
+								#				Peaks.append(loopPlot)
+
 								# isLand
 								else:
 										iPlotOwner = loopPlot.getOwner()
@@ -286,8 +287,8 @@ def doPlotFeatures():
 														if loopPlot.getNumUnits() == 0:
 																# Verteidiger setzen
 																PAE_Barbaren.setFortDefence(loopPlot)
-														elif loopPlot.getNumUnits() > 5:
-																iNum = loopPlot.getNumUnits() - 5
+														elif loopPlot.getNumUnits() > 4:
+																iNum = loopPlot.getNumUnits() - 4
 																for k in range(iNum):
 																		loopPlot.getUnit(k).kill(True, -1)
 
@@ -384,13 +385,23 @@ def doPlotFeatures():
 				elif iChance == 3: setAnimals(gc.getInfoTypeForString("UNIT_BOAR"), Forest)
 				elif iChance == 4: setAnimals(gc.getInfoTypeForString("UNIT_DEER"), Forest)
 				elif iChance == 5: setAnimals(gc.getInfoTypeForString("UNIT_ESEL"), Forest)
+		if len(Ocean):
+				iChance = CvUtil.myRandom(10, "setAnimals4Ocean")
+				for iUnit in L.LUnitSeaMonsters:
+					if iUnit == gc.getInfoTypeForString("UNIT_KRAKEN"):
+						if iChance < 6:
+							setAnimals(iUnit, Ocean)
+					elif iUnit == gc.getInfoTypeForString("UNIT_SEASERPENT"):
+						if iChance < 2:
+							setAnimals(iUnit, Ocean)
+					else: setAnimals(iUnit, Ocean)
 		# if len(Plains):
 		#	if CvUtil.myRandom(33, "setAnimals4Plains") == 1:
 		#		setAnimals(gc.getInfoTypeForString("UNIT_LEOPARD"),Plains)
 		#		#setAnimals(gc.getInfoTypeForString("UNIT_HORSE"),Plains)
-		if len(Peaks):
-				if CvUtil.myRandom(50, "setAnimals4Peaks") == 1:
-						setAnimals(gc.getInfoTypeForString("UNIT_BERGZIEGE"),Peaks)
+		#if len(Peaks):
+		#		if CvUtil.myRandom(50, "setAnimals4Peaks") == 1:
+		#				setAnimals(gc.getInfoTypeForString("UNIT_BERGZIEGE"),Peaks)
 
 		# Goody huts setzen
 		if bGoodyHuts:
@@ -443,8 +454,10 @@ def setAnimals(eAnimal, plots):
 		iAnimals = iMapSize + 1 - iBarbUnits
 
 		# Ausnahmen
-		if eAnimal == gc.getInfoTypeForString("UNIT_UR"):
+		if eAnimal == gc.getInfoTypeForString("UNIT_UR") or eAnimal == gc.getInfoTypeForString("UNIT_WHALE"):
 				iAnimals = 2 - iBarbUnits  # maximal 2
+		elif eAnimal in L.LUnitSeaMonsters:
+				iAnimals = 1 - iBarbUnits  # maximal 1
 		if iAnimals <= 0:
 				return
 
@@ -779,11 +792,13 @@ def doFogOfWar(iPlayer, iGameTurn):
 				bDontGoBlackAnymore = False
 				bShowCoasts = False
 				bShowPeaksAndRivers = False
+				bShowOcean = False
 				if pTeam.isHasTech(gc.getInfoTypeForString("TECH_KARTOGRAPHIE2")):  # Strassenkarten
 						bDontGoBlackAnymore = True
 				elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_KARTEN")):  # Karte zeichnen
 						bShowCoasts = True
 						bShowPeaksAndRivers = True
+						bShowOcean = True
 				elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_KARTOGRAPHIE")):  # Kartographie: Erste Karten
 						bShowCoasts = True
 
@@ -808,9 +823,8 @@ def doFogOfWar(iPlayer, iGameTurn):
 										# if bGoBlack:
 										#  if pPlot.getImprovementType() == improv1 or pPlot.getImprovementType() == improv2: bGoBlack = False
 										# 50% Chance Verdunkelung
-										if bGoBlack:
-												if CvUtil.myRandom(2, "bGoBlack") == 0:
-														bGoBlack = False
+										if bGoBlack and CvUtil.myRandom(2, "bGoBlack") == 0:
+												bGoBlack = False
 										# Black fog
 										if bGoBlack:
 												if pPlot.isRevealed(iTeam, 0):
@@ -819,6 +833,8 @@ def doFogOfWar(iPlayer, iGameTurn):
 														# River and coast (land and water)
 														#if pPlot.isRevealed (iTeam, 0) and not (pPlot.isRiverSide() or pPlot.isCoastalLand() or (pPlot.isAdjacentToLand() and pPlot.isWater())): pPlot.setRevealed (iTeam,0,0,-1)
 														if bShowCoasts:
+																if bShowOcean and pPlot.isWater():
+																	continue
 																if pPlot.isCoastalLand() or pPlot.isAdjacentToLand() and pPlot.isWater():
 																		continue
 														if bShowPeaksAndRivers:

@@ -13,7 +13,7 @@
 			<Help>TXT_KEY_WORLD_DUEL_HELP</Help>
 			<iDefaultPlayers>2</iDefaultPlayers>
 			<iUnitNameModifier>50</iUnitNameModifier>
-			<iTargetNumCities>3</iTargetNumCities>
+			<iTargetNumCities>4</iTargetNumCities>
 			<iNumFreeBuildingBonuses>1</iNumFreeBuildingBonuses>
 			<iBuildingClassPrereqModifier>0</iBuildingClassPrereqModifier>
 			<iMaxConscriptModifier>-50</iMaxConscriptModifier>
@@ -22,20 +22,20 @@
 			<iGridHeight>6</iGridHeight>
 			<iTerrainGrainChange>-1</iTerrainGrainChange>
 			<iFeatureGrainChange>-1</iFeatureGrainChange>
-			<iResearchPercent>75</iResearchPercent>
+			<iResearchPercent>80</iResearchPercent>
 			<iTradeProfitPercent>80</iTradeProfitPercent>
-			<iDistanceMaintenancePercent>25</iDistanceMaintenancePercent>
-			<iNumCitiesMaintenancePercent>35</iNumCitiesMaintenancePercent>
-			<iColonyMaintenancePercent>50</iColonyMaintenancePercent>
-			<iCorporationMaintenancePercent>500</iCorporationMaintenancePercent>
-			<iNumCitiesAnarchyPercent>9</iNumCitiesAnarchyPercent>
+			<iDistanceMaintenancePercent>50</iDistanceMaintenancePercent>
+			<iNumCitiesMaintenancePercent>75</iNumCitiesMaintenancePercent>
+			<iColonyMaintenancePercent>67</iColonyMaintenancePercent>
+			<iCorporationMaintenancePercent>400</iCorporationMaintenancePercent>
+			<iNumCitiesAnarchyPercent>11</iNumCitiesAnarchyPercent>
 			<iAdvancedStartPointsMod>80</iAdvancedStartPointsMod>
 		</WorldInfo>
 		<WorldInfo>
 			<Type>WORLDSIZE_TINY</Type>
 			<Description>TXT_KEY_WORLD_TINY</Description>
 			<Help>TXT_KEY_WORLD_TINY_HELP</Help>
-			<iDefaultPlayers>5</iDefaultPlayers>
+			<iDefaultPlayers>4</iDefaultPlayers>
 			<iUnitNameModifier>40</iUnitNameModifier>
 			<iTargetNumCities>4</iTargetNumCities>
 			<iNumFreeBuildingBonuses>1</iNumFreeBuildingBonuses>
@@ -48,11 +48,11 @@
 			<iFeatureGrainChange>-1</iFeatureGrainChange>
 			<iResearchPercent>100</iResearchPercent>
 			<iTradeProfitPercent>70</iTradeProfitPercent>
-			<iDistanceMaintenancePercent>50</iDistanceMaintenancePercent>
-			<iNumCitiesMaintenancePercent>30</iNumCitiesMaintenancePercent>
-			<iColonyMaintenancePercent>45</iColonyMaintenancePercent>
-			<iCorporationMaintenancePercent>400</iCorporationMaintenancePercent>
-			<iNumCitiesAnarchyPercent>8</iNumCitiesAnarchyPercent>
+			<iDistanceMaintenancePercent>60</iDistanceMaintenancePercent>
+			<iNumCitiesMaintenancePercent>70</iNumCitiesMaintenancePercent>
+			<iColonyMaintenancePercent>60</iColonyMaintenancePercent>
+			<iCorporationMaintenancePercent>300</iCorporationMaintenancePercent>
+			<iNumCitiesAnarchyPercent>10</iNumCitiesAnarchyPercent>
 			<iAdvancedStartPointsMod>85</iAdvancedStartPointsMod>
 		</WorldInfo>
 		<WorldInfo>
@@ -61,8 +61,8 @@
 			<Help>TXT_KEY_WORLD_SMALL_HELP</Help>
 			<iDefaultPlayers>8</iDefaultPlayers>
 			<iUnitNameModifier>30</iUnitNameModifier>
-			<iTargetNumCities>4</iTargetNumCities>
-			<iNumFreeBuildingBonuses>2</iNumFreeBuildingBonuses>
+			<iTargetNumCities>5</iTargetNumCities>
+			<iNumFreeBuildingBonuses>3</iNumFreeBuildingBonuses>
 			<iBuildingClassPrereqModifier>0</iBuildingClassPrereqModifier>
 			<iMaxConscriptModifier>0</iMaxConscriptModifier>
 			<iWarWearinessModifier>10</iWarWearinessModifier>
@@ -72,11 +72,11 @@
 			<iFeatureGrainChange>0</iFeatureGrainChange>
 			<iResearchPercent>100</iResearchPercent>
 			<iTradeProfitPercent>60</iTradeProfitPercent>
-			<iDistanceMaintenancePercent>50</iDistanceMaintenancePercent>
-			<iNumCitiesMaintenancePercent>25</iNumCitiesMaintenancePercent>
-			<iColonyMaintenancePercent>40</iColonyMaintenancePercent>
-			<iCorporationMaintenancePercent>300</iCorporationMaintenancePercent>
-			<iNumCitiesAnarchyPercent>7</iNumCitiesAnarchyPercent>
+			<iDistanceMaintenancePercent>70</iDistanceMaintenancePercent>
+			<iNumCitiesMaintenancePercent>60</iNumCitiesMaintenancePercent>
+			<iColonyMaintenancePercent>50</iColonyMaintenancePercent>
+			<iCorporationMaintenancePercent>200</iCorporationMaintenancePercent>
+			<iNumCitiesAnarchyPercent>9</iNumCitiesAnarchyPercent>
 			<iAdvancedStartPointsMod>90</iAdvancedStartPointsMod>
 		</WorldInfo>
 		<WorldInfo>
@@ -86,7 +86,7 @@
 			<iDefaultPlayers>10</iDefaultPlayers>
 			<iUnitNameModifier>20</iUnitNameModifier>
 			<iTargetNumCities>5</iTargetNumCities>
-			<iNumFreeBuildingBonuses>3</iNumFreeBuildingBonuses>
+			<iNumFreeBuildingBonuses>5</iNumFreeBuildingBonuses>
 			<iBuildingClassPrereqModifier>0</iBuildingClassPrereqModifier>
 			<iMaxConscriptModifier>25</iMaxConscriptModifier>
 			<iWarWearinessModifier>-10</iWarWearinessModifier>
@@ -96,11 +96,11 @@
 			<iFeatureGrainChange>0</iFeatureGrainChange>
 			<iResearchPercent>150</iResearchPercent>
 			<iTradeProfitPercent>50</iTradeProfitPercent>
-			<iDistanceMaintenancePercent>75</iDistanceMaintenancePercent>
-			<iNumCitiesMaintenancePercent>20</iNumCitiesMaintenancePercent>
-			<iColonyMaintenancePercent>35</iColonyMaintenancePercent>
-			<iCorporationMaintenancePercent>200</iCorporationMaintenancePercent>
-			<iNumCitiesAnarchyPercent>6</iNumCitiesAnarchyPercent>
+			<iDistanceMaintenancePercent>80</iDistanceMaintenancePercent>
+			<iNumCitiesMaintenancePercent>50</iNumCitiesMaintenancePercent>
+			<iColonyMaintenancePercent>50</iColonyMaintenancePercent>
+			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
+			<iNumCitiesAnarchyPercent>8</iNumCitiesAnarchyPercent>
 			<iAdvancedStartPointsMod>100</iAdvancedStartPointsMod>
 		</WorldInfo>
 		<WorldInfo>
@@ -110,21 +110,21 @@
 			<iDefaultPlayers>14</iDefaultPlayers>
 			<iUnitNameModifier>10</iUnitNameModifier>
 			<iTargetNumCities>6</iTargetNumCities>
-			<iNumFreeBuildingBonuses>3</iNumFreeBuildingBonuses>
+			<iNumFreeBuildingBonuses>6</iNumFreeBuildingBonuses>
 			<iBuildingClassPrereqModifier>25</iBuildingClassPrereqModifier>
 			<iMaxConscriptModifier>50</iMaxConscriptModifier>
 			<iWarWearinessModifier>-30</iWarWearinessModifier>
 			<iGridWidth>26</iGridWidth>
 			<iGridHeight>16</iGridHeight>
-			<iTerrainGrainChange>1</iTerrainGrainChange>
-			<iFeatureGrainChange>1</iFeatureGrainChange>
+			<iTerrainGrainChange>0</iTerrainGrainChange>
+			<iFeatureGrainChange>0</iFeatureGrainChange>
 			<iResearchPercent>200</iResearchPercent>
 			<iTradeProfitPercent>40</iTradeProfitPercent>
-			<iDistanceMaintenancePercent>75</iDistanceMaintenancePercent>
-			<iNumCitiesMaintenancePercent>15</iNumCitiesMaintenancePercent>
-			<iColonyMaintenancePercent>30</iColonyMaintenancePercent>
-			<iCorporationMaintenancePercent>150</iCorporationMaintenancePercent>
-			<iNumCitiesAnarchyPercent>5</iNumCitiesAnarchyPercent>
+			<iDistanceMaintenancePercent>90</iDistanceMaintenancePercent>
+			<iNumCitiesMaintenancePercent>40</iNumCitiesMaintenancePercent>
+			<iColonyMaintenancePercent>40</iColonyMaintenancePercent>
+			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
+			<iNumCitiesAnarchyPercent>7</iNumCitiesAnarchyPercent>
 			<iAdvancedStartPointsMod>110</iAdvancedStartPointsMod>
 		</WorldInfo>
 		<WorldInfo>
@@ -134,21 +134,21 @@
 			<iDefaultPlayers>18</iDefaultPlayers>
 			<iUnitNameModifier>0</iUnitNameModifier>
 			<iTargetNumCities>6</iTargetNumCities>
-			<iNumFreeBuildingBonuses>4</iNumFreeBuildingBonuses>
+			<iNumFreeBuildingBonuses>7</iNumFreeBuildingBonuses>
 			<iBuildingClassPrereqModifier>50</iBuildingClassPrereqModifier>
 			<iMaxConscriptModifier>75</iMaxConscriptModifier>
 			<iWarWearinessModifier>-50</iWarWearinessModifier>
 			<iGridWidth>32</iGridWidth>
 			<iGridHeight>20</iGridHeight>
-			<iTerrainGrainChange>2</iTerrainGrainChange>
-			<iFeatureGrainChange>2</iFeatureGrainChange>
+			<iTerrainGrainChange>0</iTerrainGrainChange>
+			<iFeatureGrainChange>0</iFeatureGrainChange>
 			<iResearchPercent>300</iResearchPercent>
 			<iTradeProfitPercent>30</iTradeProfitPercent>
 			<iDistanceMaintenancePercent>100</iDistanceMaintenancePercent>
-			<iNumCitiesMaintenancePercent>10</iNumCitiesMaintenancePercent>
-			<iColonyMaintenancePercent>25</iColonyMaintenancePercent>
+			<iNumCitiesMaintenancePercent>34</iNumCitiesMaintenancePercent>
+			<iColonyMaintenancePercent>30</iColonyMaintenancePercent>
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
-			<iNumCitiesAnarchyPercent>4</iNumCitiesAnarchyPercent>
+			<iNumCitiesAnarchyPercent>6</iNumCitiesAnarchyPercent>
 			<iAdvancedStartPointsMod>120</iAdvancedStartPointsMod>
 		</WorldInfo>
 	</WorldInfos>

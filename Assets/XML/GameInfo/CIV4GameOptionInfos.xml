@@ -182,9 +182,16 @@
 			<bVisible>1</bVisible>
 		</GameOptionInfo>
 		<GameOptionInfo>
-			<Type>GAMEOPTION_MULTIPLE_PRODUCTION</Type>
+			<Type>GAMEOPTION_NO_MULTIPLE_PRODUCTION</Type>
 			<Description>TXT_KEY_GAMEOPTION_MULTIPLE_PRODUCTION</Description>
 			<Help>TXT_KEY_GAMEOPTION_MULTIPLE_PRODUCTION_HELP</Help>
+			<bDefault>0</bDefault>
+			<bVisible>1</bVisible>
+		</GameOptionInfo>
+		<GameOptionInfo>
+			<Type>GAMEOPTION_NO_PAE_COMBAT</Type>
+			<Description>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT</Description>
+			<Help>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT_HELP</Help>
 			<bDefault>0</bDefault>
 			<bVisible>1</bVisible>
 		</GameOptionInfo>

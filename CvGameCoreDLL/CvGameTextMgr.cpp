@@ -1902,12 +1902,16 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 
 		if (pDefender != NULL && pDefender != pAttacker && pDefender->canDefend(pPlot) && pAttacker->canAttack(*pDefender))
 		{
+			// PAE: set out for new battle combat system
+			int iCombatOdds = 0;
+			int iWithdrawal = 0;
 			if (pAttacker->getDomainType() != DOMAIN_AIR)
 			{
-				int iCombatOdds = getCombatOdds(pAttacker, pDefender);
+				iCombatOdds = getCombatOdds(pAttacker, pDefender);
 
-				if (pAttacker->combatLimit() >= GC.getMAX_HIT_POINTS())
-				{
+				// BTS: removed for PAE
+				//if (pAttacker->combatLimit() >= GC.getMAX_HIT_POINTS())
+				//{
 					if (iCombatOdds > 999)
 					{
 						szTempBuffer = L"&gt; 99.9";
@@ -1921,10 +1925,14 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 						szTempBuffer.Format(L"%.1f", ((float)iCombatOdds) / 10.0f);
 					}
 					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_ODDS", szTempBuffer.GetCString()));
-				}
+					
+					// PAE
+					if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT))
+					{
+						szString.append(CvWString::format(L" %s(BTS)%s", CvWString::format(SETCOLR, TEXT_COLOR("COLOR_GREY")).c_str(), CvWString::format(ENDCOLR).c_str()));
+					}
+				//}
 
-
-				int iWithdrawal = 0;
 
 				if (pAttacker->combatLimit() < GC.getMAX_HIT_POINTS())
 				{
@@ -1960,6 +1968,71 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 			szDefenseOdds.Format(L"%.2f", pDefender->currCombatStrFloat(pPlot, pAttacker));
 			szString.append(NEWLINE);
 			szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_ODDS_VS", szOffenseOdds.GetCString(), szDefenseOdds.GetCString()));
+
+			// PAE battle rounds
+			if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT) && pAttacker->getDomainType() != DOMAIN_AIR)
+			{
+				// Combat Rounds
+				int a = CvUnit::getCombatClass(pAttacker->getUnitCombatType());
+				int d = CvUnit::getCombatClass(pDefender->getUnitCombatType());
+				int iRounds = CvUnit::getCombatRounds(a, d, pPlot);
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INFO", iRounds));
+				szString.append(CvWString::format(L" %s(PAE)%s", CvWString::format(SETCOLR, TEXT_COLOR("COLOR_GREY")).c_str(), CvWString::format(ENDCOLR).c_str()));
+
+				// Survive chance
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_SURVIVE") + L" ");
+				if (pDefender->getDamage() + iRounds * GC.getDefineINT("COMBAT_DAMAGE") > 100) {
+					if (iCombatOdds < 1) {
+						szString.append(gDLL->getText("TXT_KEY_COLOR_NEGATIVE"));
+						szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_LOW"));
+						szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+					} else {
+						szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_ORANGE_TEXT")));
+						szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_MEDIUM"));
+						szString.append(CvWString::format(ENDCOLR));
+					}
+				} else {
+					szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
+					szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_HIGH"));
+					szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+				}
+				szString.append(CvWString::format(L" %s(PAE)%s", CvWString::format(SETCOLR, TEXT_COLOR("COLOR_GREY")).c_str(), CvWString::format(ENDCOLR).c_str()));
+
+				// Injury
+				szString.append(NEWLINE);
+				szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INJURY"));
+				szString.append(L" ");
+				// Injury: 0 = high, 1 = medium, 2 = low
+				int iInjury = 0;
+
+				if (iCombatOdds > 400) iInjury++;
+				if (iCombatOdds > 700) iInjury++;
+				if (iCombatOdds > 900) iInjury++;
+				if (!pDefender->immuneToFirstStrikes() && pAttacker->firstStrikes()) iInjury++;
+				if (iWithdrawal > 40000) iInjury++;
+				if (iRounds > 2) iInjury--;
+
+				if (iInjury > 1) {
+					szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
+					szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_LOW"));
+					szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+				}
+				else if (iInjury == 1) {
+					szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_PLAYER_ORANGE_TEXT")));
+					szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_MEDIUM"));
+					szString.append(CvWString::format(ENDCOLR));
+				}
+				else {
+					szString.append(gDLL->getText("TXT_KEY_COLOR_NEGATIVE"));
+					szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INJURY_HIGH"));
+					szString.append(gDLL->getText("TXT_KEY_COLOR_REVERT"));
+				}
+				szString.append(CvWString::format(L" %s(PAE)%s", CvWString::format(SETCOLR, TEXT_COLOR("COLOR_GREY")).c_str(), CvWString::format(ENDCOLR).c_str()));
+
+			}
+			// ------------------------
 
 			szString.append(L' ');//XXX
 

@@ -231,11 +231,11 @@
 	</Define>
 	<Define>
 		<DefineName>FREE_CITY_ADJACENT_CULTURE</DefineName>
-		<iDefineIntVal>2</iDefineIntVal>
+		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CITY_FREE_CULTURE_GROWTH_FACTOR</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>GREAT_WORKS_CULTURE_TURNS</DefineName>
@@ -347,7 +347,7 @@
 	</Define>
 	<Define>
 		<DefineName>NEW_HURRY_MODIFIER</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>
+		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CONSCRIPT_MIN_CITY_POPULATION</DefineName>
@@ -355,7 +355,7 @@
 	</Define>
 	<Define>
 		<DefineName>CONSCRIPT_POPULATION_PER_COST</DefineName>
-		<iDefineIntVal>90</iDefineIntVal>
+		<iDefineIntVal>60</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CONSCRIPT_MIN_CULTURE_PERCENT</DefineName>
@@ -395,7 +395,7 @@
 	</Define>
 	<Define>
 		<DefineName>COMBAT_DAMAGE</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>AIR_COMBAT_DAMAGE</DefineName>
@@ -415,11 +415,11 @@
 	</Define>
 	<Define>
 		<DefineName>RANGE_COMBAT_DAMAGE</DefineName>
-		<iDefineIntVal>25</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>COLLATERAL_COMBAT_DAMAGE</DefineName>
-		<iDefineIntVal>15</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MAX_HIT_POINTS</DefineName>
@@ -495,7 +495,7 @@
 	</Define>
 	<Define>
 		<DefineName>BASE_SPY_DESTROY_COST</DefineName>
-		<iDefineIntVal>25</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>SPY_DESTROY_COST_MULTIPLIER_LIMITED</DefineName>
@@ -547,11 +547,11 @@
 	</Define>
 	<Define>
 		<DefineName>INITIAL_FREE_UNITS_POPULATION_PERCENT</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>INITIAL_FREE_MILITARY_UNITS_POPULATION_PERCENT</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>8</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>INITIAL_GOLD_PER_UNIT</DefineName>
@@ -559,11 +559,11 @@
 	</Define>
 	<Define>
 		<DefineName>INITIAL_FREE_OUTSIDE_UNITS</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>INITIAL_OUTSIDE_UNIT_GOLD_PERCENT</DefineName>
-		<iDefineIntVal>25</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>ANIMAL_MAX_XP_VALUE</DefineName>
@@ -747,7 +747,7 @@
 	</Define>
 	<Define>
 		<DefineName>TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
+		<iDefineIntVal>75</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>TECH_COST_KNOWN_PREREQ_MODIFIER</DefineName>
@@ -759,15 +759,15 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_ANARCHY_TURNS</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
+		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MIN_REVOLUTION_TURNS</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>MIN_CONVERSION_TURNS</DefineName>
-		<iDefineIntVal>5</iDefineIntVal>
+		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>OCCUPATION_CULTURE_PERCENT_THRESHOLD</DefineName>
@@ -779,7 +779,7 @@
 	</Define>
 	<Define>
 		<DefineName>OCCUPATION_TURNS_POPULATION_PERCENT</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
+		<iDefineIntVal>75</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>BASE_REVOLT_OCCUPATION_TURNS</DefineName>
@@ -823,7 +823,7 @@
 	</Define>
 	<Define>
 		<DefineName>AT_WAR_CULTURE_ANGER_MODIFIER</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CULTURE_PERCENT_ANGER</DefineName>
@@ -875,7 +875,7 @@
 	</Define>
 	<Define>
 		<DefineName>PERCENT_ANGER_DIVISOR</DefineName>
-		<iDefineIntVal>800</iDefineIntVal>
+		<iDefineIntVal>1000</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>BASE_FEATURE_PRODUCTION_PERCENT</DefineName>
@@ -923,11 +923,11 @@
 	</Define>
 	<Define>
 		<DefineName>UPKEEP_POPULATION_OFFSET</DefineName>
-		<iDefineIntVal>-8</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>UPKEEP_CITY_OFFSET</DefineName>
-		<iDefineIntVal>-1</iDefineIntVal>
+		<iDefineIntVal>3</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CIRCUMNAVIGATE_FREE_MOVES</DefineName>
@@ -947,7 +947,7 @@
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_PER_POPULATION</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>CAPTURE_GOLD_RAND1</DefineName>
@@ -971,15 +971,15 @@
 	</Define>
 	<Define>
 		<DefineName>MAX_EXPERIENCE_PER_COMBAT</DefineName>
-		<iDefineIntVal>3</iDefineIntVal>
-	</Define>
-	<Define>
-		<DefineName>EXPERIENCE_FROM_WITHDRAWL</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>EXPERIENCE_FROM_WITHDRAWL</DefineName>
+		<iDefineIntVal>1</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>MAX_EXPERIENCE_AFTER_UPGRADE</DefineName>
-		<iDefineIntVal>999</iDefineIntVal>
+		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>BUILDING_PRODUCTION_DECAY_TIME</DefineName>
@@ -991,7 +991,7 @@
 	</Define>
 	<Define>
 		<DefineName>UNIT_PRODUCTION_DECAY_TIME</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>UNIT_PRODUCTION_DECAY_PERCENT</DefineName>
@@ -1066,7 +1066,7 @@
 	</Define>
 	<Define>
 		<DefineName>DIPLOMACY_VALUE_REMAINDER</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>INITIAL_STATE_RELIGION_HAPPINESS</DefineName>
@@ -1086,7 +1086,7 @@
 	</Define>
 	<Define>
 		<DefineName>CORPORATION_FOREIGN_SPREAD_COST_PERCENT</DefineName>
-		<iDefineIntVal>200</iDefineIntVal>
+		<iDefineIntVal>100</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>HOLY_CITY_INFLUENCE</DefineName>
@@ -1094,11 +1094,11 @@
 	</Define>
 	<Define>
 		<DefineName>WE_LOVE_THE_KING_RAND</DefineName>
-		<iDefineIntVal>1000</iDefineIntVal>
+		<iDefineIntVal>750</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>WE_LOVE_THE_KING_POPULATION_MIN_POPULATION</DefineName>
-		<iDefineIntVal>8</iDefineIntVal>
+		<iDefineIntVal>6</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>PLOT_SIZE</DefineName>
@@ -1431,7 +1431,7 @@
 	</Define>
 	<Define>
 		<DefineName>MIN_CITY_ATTACK_MODIFIER_FOR_SIEGE_TOWER</DefineName>
-		<iDefineIntVal>10</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<!-- Each 'whatever' modifies cost of espionage Missions by this % -->
 	<Define>
@@ -1544,7 +1544,7 @@
 	</Define>
 	<Define>
 		<DefineName>RANGED_ATTACKS_USE_MOVES</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>
+		<iDefineIntVal>1</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>AI_SHOULDNT_MANAGE_PLOT_ASSIGNMENT</DefineName>
@@ -1652,7 +1652,7 @@
 	</Define>
 	<Define>
 		<DefineName>PATH_DAMAGE_WEIGHT</DefineName>
-		<iDefineIntVal>0</iDefineIntVal>
+		<iDefineIntVal>40</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>USE_SPIES_NO_ENTER_BORDERS</DefineName>
@@ -1665,10 +1665,5 @@
 	<Define>
 		<DefineName>FORCE_UNOWNED_CITY_TIMER</DefineName>
 		<iDefineIntVal>2</iDefineIntVal>
-	</Define>
-	<Define>
-		<!-- PAE cults/corporations: max amount of bonuses (yield bonus and maintenance) -->
-		<DefineName>CORPORATION_MAX_BONUS</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
 	</Define>
 </Civ4Defines>

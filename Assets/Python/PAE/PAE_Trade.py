@@ -910,7 +910,7 @@ def calculateBonusSellingPrice(pUnit, pCity, bCalcOnly, iBonus2=-1):
 		iSeller = pUnit.getOwner() # PAE 7.14
 		iBuyer = pCity.getOwner()
 		iBasis = getBonusValue(eBonus)  # Grundwert
-		iModifier = 100
+		iModifier = 125
 
 		# if CvUtil.hasBonusIgnoreFreeBonuses(pCity, eBonus): # allows "cancellation" of buying / Bonus direkt nach Einkauf wieder verkaufen (ohne Gewinn)
 		#    return _calculateBonusBuyingPrice(eBonus, iSeller, iBuyer, pUnit.plot()) # Switch positions of seller and buyer
@@ -968,7 +968,7 @@ def calcBonusProfit(pCityFrom, pCityTo, iBonus, pUnit):
 		if iBuyer == iSeller and pCityTo.getID() == pCityFrom.getID(): return iBuyValue
 
 
-		iModifier = 100
+		iModifier = 125
 
 		iDistance = plotDistance(pCityFrom.getX(), pCityFrom.getY(), pCityTo.getX(), pCityTo.getY()) - 1
 		iPop = pCityTo.getPopulation()

@@ -1203,8 +1203,11 @@ class CvEventManager:
 								popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
 								popupInfo.addPopup(iData3)
 
-				# Alte Bonusverbreitung UNIT_SUPPLY_FOOD (Obsolete)
-				##    if iData1 == 726:  frei
+
+				# Pirate Pillages Villages
+				elif iData1 == 726:
+						PAE_Unit.onModNetMessage(argsList)
+
 
 				# iData3 = 1: UNIT_SUPPLY_FOOD Getreidelieferung
 				# iData3 = 2: UNIT_SUPPLY_WAGON Getreideaufnahme
@@ -2169,26 +2172,11 @@ class CvEventManager:
 
 				# Magnetkompass
 				elif iData1 == 767:
-						#pPlot = CyMap().plot(iData2, iData3)
-						#pCity = pPlot.getPlotCity()
-						pPlayer = gc.getPlayer(iData4)
-						pUnit = pPlayer.getUnit(iData5)
-						iCost = iData2
-						pPlayer.changeGold(-iCost)
-						iPromo = gc.getInfoTypeForString("PROMOTION_KOMPASS")
-						pUnit.setHasPromotion(iPromo, True)
-						pUnit.finishMoves()
-						PAE_Unit.doGoToNextUnit(pUnit)
+						PAE_Unit.onModNetMessage(argsList)
 
-				# Schiff reparieren
+				# Schiff reparieren / Crew austauschen
 				elif iData1 == 768:
-						pPlayer = gc.getPlayer(iData4)
-						pUnit = pPlayer.getUnit(iData5)
-						iCost = pUnit.getDamage()
-						pPlayer.changeGold(-iCost)
-						pUnit.setDamage(0,-1)
-						pUnit.finishMoves()
-						PAE_Unit.doGoToNextUnit(pUnit)
+						PAE_Unit.onModNetMessage(argsList)
 
 				# Great Prophet Holy City
 				elif iData1 == 769:
@@ -2204,8 +2192,9 @@ class CvEventManager:
 											CyTranslator().getText("TXT_KEY_MESSAGE_GREAT_PROPHET_HOLY_CITY", (pCity.getName(),gc.getReligionInfo(iData2).getDescription())),
 											"AS2D_WELOVEKING", 2, "Art/Interface/Buttons/Actions/button_action_holycity.dds", ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
-				# frei
-				#elif iData1 == 770:
+				# sell buildings of a city
+				elif iData1 == 770:
+						PAE_City.onModNetMessage(argsList)
 
 				# Hunter/Worker: Lager oder Beobachtungsturm bauen
 				elif iData1 == 771:
@@ -2269,27 +2258,7 @@ class CvEventManager:
 						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 						pUnit = None
 
-				# sell buildings of a city
-				elif iData1 == 775:
-						if iData4 != -1 and (iData5 == 0 or iData5 == 1):
-							pPlayer = gc.getPlayer(iData3)
-							pCity = pPlayer.getCity(iData2)
-							if pCity.isHasBuilding(iData4):
-								pCity.setNumRealBuilding(iData4, 0)
-								iValue = gc.getBuildingInfo(iData4).getProductionCost() / 2
-								# für Geld verkaufen
-								if iData5 == 0:
-									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TERRAFORMING", ()),
-									"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iData4).getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
-									pPlayer.changeGold(iValue)
-								# für Prod verkaufen
-								if iData5 == 1:
-									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TERRAFORMING", ()),
-									"AS2D_WELOVEKING", 2, gc.getBuildingInfo(iData4).getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
-								iData4 = -1
-						PAE_City.onModNetMessage(argsList)
-
-				# 770 ist frei
+				# ab 775 ist frei
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -2907,7 +2876,8 @@ class CvEventManager:
 					# Sklaven und Gladiatoren (REBELLEN) Ende ---
 
 					# -- Missionare fuer verwandte CIVs ---------
-					PAE_City.doMissionaryForCivs(iPlayer)
+					if gc.getGame().getGameTurnYear() == -1200:
+							PAE_City.doMissionaryForCivs(iPlayer)
 
 					# ***TEST***
 					#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pPlayer.getName(),pPlayer.getAnarchyTurns())), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -3065,7 +3035,7 @@ class CvEventManager:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_MOOR")
 					elif iRand < 4:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_MOORPROMO")
-					elif iRand < 8:
+					elif iRand < 6:
 							iEvent = gc.getInfoTypeForString("EVENTTRIGGER_BORDELL")
 
 					if iEvent != -1: 
@@ -3136,6 +3106,10 @@ class CvEventManager:
 													#loopUnit.finishMoves()
 					
 									(loopUnit, pIter) = pPlayer.nextUnit(pIter, False)
+
+					# PAE 7.15 Seeungeheuer
+					if pPlayer.isBarbarian():
+							PAE_Barbaren.doHideSeaMonsters()
 
 				# PAE Debug Mark 3 end
 
@@ -3625,6 +3599,10 @@ class CvEventManager:
 													# ---- Script DATAs in Units
 													PAE_Mercenaries.startMercTorture(pLoser, iWinnerPlayer)
 
+											# PAE 7.15: Seeungeheuer
+											if iLoserUnitType in L.LUnitSeaMonsters and pLoser.isDead():
+													PAE_Unit.doRankPromo(pWinner)
+
 									# Stadtverteidigung
 									if pLoserPlot.isCity():
 											pCity = pLoserPlot.getPlotCity()
@@ -3655,7 +3633,7 @@ class CvEventManager:
 									# PAE 7.13: Beast and Men-Eater / Biest und Menschenverschlinger
 									if bWinnerAnimal:
 										iPromo2 = gc.getInfoTypeForString("PROMOTION_BEAST2")
-										if not pWinner.isHasPromotion(iPromo2): # and CvUtil.myRandom(2, "Animal gets a beast (promo)") == 1:
+										if not pWinner.isHasPromotion(iPromo2) and CvUtil.myRandom(2, "Animal gets a beast (promo)") == 1:
 											iPromo1 = gc.getInfoTypeForString("PROMOTION_BEAST")
 											if not pWinner.isHasPromotion(iPromo1):
 												pWinner.setHasPromotion(iPromo1, True)
@@ -5648,6 +5626,9 @@ class CvEventManager:
 									# Stadt wird barbarisch (pCity Pointer weg!)
 									bRevolt = PAE_City.doJewRevolt(pCity)
 									if bRevolt: pCity = None
+
+					# PAE 7.15
+					PAE_City.doHealPirates(pCity)
 
 					# Weiterführende Aktionen...
 					if not bRevolt:

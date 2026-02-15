@@ -624,9 +624,10 @@
 			</GameTurnInfos>
 		</GameSpeedInfo>
 		<GameSpeedInfo>
+<!-- brettschmitt 18.12.2025 ++++++++++++++++++++++++++++++++++ -->
 			<Type>GAMESPEED_WEG_DER_GOTEN</Type>
 			<Description>TXT_KEY_GAMESPEED_WEG_DER_GOTEN</Description>
-			<Help/>
+			<Help>TXT_KEY_GAMESPEED_SPECIAL</Help>
 			<iGrowthPercent>150</iGrowthPercent>
 			<iTrainPercent>200</iTrainPercent>
 			<iConstructPercent>150</iConstructPercent>
@@ -649,12 +650,12 @@
 			<iInflationPercent>10</iInflationPercent>
 			<iInflationOffset>-660</iInflationOffset>
 			<iVictoryDelayPercent>200</iVictoryDelayPercent>
-<!--  12 Monate -100 bis 0 -->
-<!--  6 Monate:    0 bis 50 -->
-<!--  12 Monate   50 bis 300 -->
-<!--  6 Monate:  300 bis 400 -->
-<!--  3 Monate:  400 bis 750 -->
-<!--  1950 Runden -->
+<!--  12 Monate  -100 bis 0 -->
+<!--  6 Monate: 0 bis 50 -->
+<!--  12 Monate  50 bis 400 -->
+<!--  6 Monate: 400 bis 500 -->
+<!--  3 Monate:  500 bis 750 -->
+<!--  1750 Runden -->
 			<GameTurnInfos>
 				<GameTurnInfo>
 					<iMonthIncrement>12</iMonthIncrement>
@@ -666,15 +667,15 @@
 				</GameTurnInfo>
 				<GameTurnInfo>
 					<iMonthIncrement>12</iMonthIncrement>
-					<iTurnsPerIncrement>250</iTurnsPerIncrement>
+					<iTurnsPerIncrement>350</iTurnsPerIncrement>
 				</GameTurnInfo>
 				<GameTurnInfo>
 					<iMonthIncrement>6</iMonthIncrement>
-					<iTurnsPerIncrement>300</iTurnsPerIncrement>
+					<iTurnsPerIncrement>200</iTurnsPerIncrement>
 				</GameTurnInfo>
 				<GameTurnInfo>
 					<iMonthIncrement>3</iMonthIncrement>
-					<iTurnsPerIncrement>1200</iTurnsPerIncrement>
+					<iTurnsPerIncrement>1000</iTurnsPerIncrement>
 				</GameTurnInfo>
 			</GameTurnInfos>
 		</GameSpeedInfo>

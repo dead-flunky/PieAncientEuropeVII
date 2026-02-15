@@ -3191,13 +3191,19 @@ void CvDLLWidgetData::parseTechTreeHelp(CvWidgetDataStruct &widgetDataStruct, Cv
 
 void CvDLLWidgetData::parseChangePercentHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
+	// PAE
+	CvWString szTemp;
+	szBuffer.assign(GC.getCommerceInfo((CommerceTypes) widgetDataStruct.m_iData1).getText());
+	szTemp.Format(L" %c ", GC.getCommerceInfo((CommerceTypes) widgetDataStruct.m_iData1).getChar());
+	szBuffer.append(szTemp);
+	szBuffer.append(NEWLINE);
 	if (widgetDataStruct.m_iData2 > 0)
-	{
-		szBuffer.assign(gDLL->getText("TXT_KEY_MISC_INCREASE_RATE", GC.getCommerceInfo((CommerceTypes) widgetDataStruct.m_iData1).getTextKeyWide(), widgetDataStruct.m_iData2));
+	{	
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_INCREASE_RATE", GC.getCommerceInfo((CommerceTypes) widgetDataStruct.m_iData1).getTextKeyWide(), widgetDataStruct.m_iData2));
 	}
 	else
 	{
-		szBuffer.assign(gDLL->getText("TXT_KEY_MISC_DECREASE_RATE", GC.getCommerceInfo((CommerceTypes) widgetDataStruct.m_iData1).getTextKeyWide(), -(widgetDataStruct.m_iData2)));
+		szBuffer.append(gDLL->getText("TXT_KEY_MISC_DECREASE_RATE", GC.getCommerceInfo((CommerceTypes) widgetDataStruct.m_iData1).getTextKeyWide(), -(widgetDataStruct.m_iData2)));
 	}
 }
 

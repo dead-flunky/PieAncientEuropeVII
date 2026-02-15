@@ -10,4 +10,9 @@
 		<iDefineIntVal>100</iDefineIntVal>
 		<!-- 100 percent means disabling of feature -->
 	</Define>
+	<Define>
+		<!-- PAE cults/corporations: max amount of bonuses (yield bonus and maintenance) -->
+		<DefineName>CORPORATION_MAX_BONUS</DefineName>
+		<iDefineIntVal>20</iDefineIntVal>
+	</Define>
 </Civ4Defines>

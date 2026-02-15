@@ -883,14 +883,8 @@ void CvCityAI::AI_chooseProduction()
 		}
 
 		// PAE (otherwise all cities create workers from the start (at least in scenarios))
-		switch (GC.getGameINLINE().getSorenRandNum(4, "AI Barbar Builds Attacker"))
-		{
-			case 1:
-			case 2:
-				if (AI_chooseUnit(UNITAI_ATTACK)) return;
-			case 3:
-				if (AI_chooseUnit(UNITAI_PILLAGE)) return;
-		}
+		if (AI_chooseUnit(UNITAI_ATTACK)) return;
+
 
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       09/19/09                                jdog5000      */
@@ -2321,7 +2315,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 	aiUnitAIVal[UNITAI_ATTACK] *= 3;
 	aiUnitAIVal[UNITAI_ATTACK_CITY] *= 4;
 	aiUnitAIVal[UNITAI_COLLATERAL] *= 5;
-	aiUnitAIVal[UNITAI_PILLAGE] *= 3;
+	aiUnitAIVal[UNITAI_PILLAGE] *= 2;
 	aiUnitAIVal[UNITAI_RESERVE] *= 3;
 	aiUnitAIVal[UNITAI_COUNTER] *= 3;
 	aiUnitAIVal[UNITAI_COUNTER] *= 2;

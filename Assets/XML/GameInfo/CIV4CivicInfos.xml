@@ -419,7 +419,7 @@
 			<Button>Art/Interface/Buttons/Civics/civic_barbarei.dds</Button>
 			<TechPrereq>NONE</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
+			<Upkeep>UPKEEP_NONE</Upkeep>
 			<iAIWeight>-5</iAIWeight>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -859,7 +859,7 @@
 			<Button>Art/Interface/Buttons/Civics/button_civic_blutrecht.dds</Button>
 			<TechPrereq>NONE</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_LOW</Upkeep>
+			<Upkeep>UPKEEP_NONE</Upkeep>
 			<iAIWeight>-5</iAIWeight>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>
@@ -924,7 +924,7 @@
 			<Button>Art/Interface/Buttons/Civics/civic_hohepriester.dds</Button>
 			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
 			<iAnarchyLength>1</iAnarchyLength>
-			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<Upkeep>UPKEEP_LOW</Upkeep>
 			<iAIWeight>2</iAIWeight>
 			<iGreatPeopleRateModifier>0</iGreatPeopleRateModifier>
 			<iGreatGeneralRateModifier>0</iGreatGeneralRateModifier>

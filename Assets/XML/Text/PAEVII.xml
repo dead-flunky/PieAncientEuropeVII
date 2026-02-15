@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
+		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_1</Tag>
+		<English>Helmsman</English>
+		<French>Timonnier</French>
+		<German>Steuermann</German>
+		<Italian>Timoniere</Italian>
+		<Spanish>Timonel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_2</Tag>
+		<English>Captain</English>
+		<French>Capitaine</French>
+		<German>Kapit&#228;n</German>
+		<Italian>Capitano</Italian>
+		<Spanish>Capit&#225;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_3</Tag>
+		<English>Shipmaster</English>
+		<French>Ma&#238;tre d'&#233;quipage</French>
+		<German>Schiffsherr</German>
+		<Italian>Capitano di Vascello</Italian>
+		<Spanish>Capit&#225;n de Nav&#237;o</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_4</Tag>
+		<English>Fleet Commander</English>
+		<French>Commandant de flotte</French>
+		<German>Flottenf&#252;hrer</German>
+		<Italian>Comandante di Flotta</Italian>
+		<Spanish>Comandante de Flota</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_5</Tag>
+		<English>Admiral</English>
+		<French>Amiral</French>
+		<German>Admiral</German>
+		<Italian>Ammiraglio</Italian>
+		<Spanish>Almirante</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ACTION_VERBRANNTE_ERDE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Leaves scorched earth[COLOR_REVERT][NEWLINE][ICON_BULLET]Creates a scorched forest[NEWLINE][ICON_BULLET]Destroys the modernization[NEWLINE][ICON_BULLET]Unit does not lose any movement points</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Laisse la terre br&#251;l&#233;e[COLOR_REVERT][NEWLINE][ICON_BULLET]Cr&#233;e une for&#234;t br&#251;l&#233;e[NEWLINE][ICON_BULLET]D&#233;truit la modernisation[NEWLINE][ICON_BULLET]L'unit&#233; ne perd aucun point de mouvement</French>
@@ -162,11 +202,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LIBRARY_BAGDAD</Tag>
-		<English>Great Library of Babylon</English>
-		<French>Grande Biblioth&#232;que de Babylone</French>
-		<German>Gro&#223;e Bibliothek von Babylon</German>
-		<Italian>Grande Biblioteca di Babilonia</Italian>
-		<Spanish>Gran Biblioteca de Babilonia</Spanish>
+		<English>House of Wisdom</English>
+		<French>Maison de la Sagesse</French>
+		<German>Haus der Weisheit</German>
+		<Italian>Casa della Saggezza</Italian>
+		<Spanish>Casa de la Sabidur&#237;a</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MILIT_LAGER_ISLAM</Tag>
@@ -209,12 +249,28 @@
 		<Spanish>[ICON_BULLET]La ciudad necesita [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] %F2</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_PIRATENNEST_HELP</Tag>
+		<English>[ICON_BULLET] Damaged pirate ships are repaired in one turn</English>
+		<French>[ICON_BULLET] Les navires pirates endommag&#233;s sont r&#233;par&#233;s en un tour</French>
+		<German>[ICON_BULLET] Besch&#228;digte Piratenschiffe werden in einer Runde repariert</German>
+		<Italian>[ICON_BULLET] Le navi pirata danneggiate vengono riparate in un round</Italian>
+		<Spanish>[ICON_BULLET] Los barcos piratas da&#241;ados se reparan en una ronda.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REL_STEUER</Tag>
 		<English>Fiscus Hall (Capitatio)</English>
 		<French>Salle fiscal (Capitatio)</French>
 		<German>Abgabenstelle (Capitatio)</German>
 		<Italian>Sala fiscale (capitatio)</Italian>
 		<Spanish>Sala fiscal (capitatio)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REL_STEUER_HELP</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCHULE_BUDDHISM</Tag>
@@ -385,6 +441,14 @@ Scuola di retorica
 		<Spanish>Horno de viento</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WONDER_JEBEL_BARKAL</Tag>
+		<English>Jebel Barkal</English>
+		<French>Gebel Barkal</French>
+		<German>Jebel Barkal</German>
+		<Italian>Gebel Barkal</Italian>
+		<Spanish>Gebel Barkal</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZION</Tag>
 		<English>Fortress Zion</English>
 		<French>Forteresse de Sion</French>
@@ -465,6 +529,22 @@ Scuola di retorica
 		<Spanish>El edificio %s1_building ha quedado destruido.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT</Tag>
+		<English>No combat rounds (Standard BTS)</English>
+		<French>Pas de tours de combat (Norme BTS)</French>
+		<German>Keine Kampfrunden (Standard BTS)</German>
+		<Italian>Nessun turni di combattimento (Standard BTS)</Italian>
+		<Spanish>No hay turnos de combate (Est&#225;ndar BTS)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT_HELP</Tag>
+		<English>Units fight for a maximum of 2-4 rounds. Depending on the severity of injuries, the fight can last for several rounds. (BTS always fights until death or retreat. This corresponds to 4-6 rounds at full health.)</English>
+		<French>Les unit&#233;s s'affrontent pendant 2 &#224; 4 tours maximum. Selon la gravit&#233; des blessures, le combat peut durer plusieurs tours . (BTS combat toujours jusqu'&#224; la mort ou la retraite, ce qui correspond &#224; 4 &#224; 6 tours &#224; pleine sant&#233;.)</French>
+		<German>Einheiten k&#228;mpfen maximal 2-4 Runden. Je nach Verletzungsgrad kann der Kampf auch zum Tod f&#252;hren. (BTS k&#228;mpft immer bis zum Tod oder R&#252;ckzug. Das entspricht bei voller Gesundheit 4-6 Runden.)</German>
+		<Italian>Le unit&#224; combattono per un massimo di 2-4 turni. A seconda della gravit&#224; delle ferite, la battaglia pu&#242; durare diversi turni. (I BTS combattono sempre fino alla morte o alla ritirata, il che corrisponde a 4-6 turni a piena salute.)</Italian>
+		<Spanish>Las unidades luchan un m&#225;ximo de 2 a 4 turnos. Dependiendo de la gravedad de las heridas, la batalla puede durar varios turnos. (El BTS siempre lucha hasta la muerte o la retirada, lo que equivale a 4 a 6 turnos con la salud completa).</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GRAPHICOPTION_HIRES_TERRAIN</Tag>
 		<English>High Detail Terrain</English>
 		<French>D&#233;tail terrains haut</French>
@@ -487,6 +567,22 @@ Scuola di retorica
 		<German>[COLOR_WARNING_TEXT]Nicht genug Gold in der Schatzkammer![COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Non c'&#232; abbastanza oro nel tuo tesoro![COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]&#161;No hay suficiente oro en tu tesoro![COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INFO_AVAILABLE</Tag>
+		<English>(available with %s1)</English>
+		<French>(disponible avec %s1)</French>
+		<German>(verf&#252;gbar mit %s1)</German>
+		<Italian>(disponibile con %s1)</Italian>
+		<Spanish>(disponible con %s1)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_INFO_HEAL_PIRATE</Tag>
+		<English>Your pirate ship in %s1 has been completely repaired.</English>
+		<French>Votre bateau pirate dans %s1 a &#233;t&#233; enti&#232;rement r&#233;par&#233;.</French>
+		<German>Euer Piratenschiff in %s1 wurde wieder komplett instand gesetzt.</German>
+		<Italian>La tua nave pirata in %s1 &#232; stata completamente riparata.</Italian>
+		<Spanish>Su barco pirata en %s1 ha sido completamente reparado.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INFO_OLYMPIC_GAMES_WINNER_BONUS</Tag>
@@ -753,6 +849,14 @@ Scuola di retorica
 		<Spanish>Al&#237; el &#225;rabe</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_PRINCE_OF</Tag>
+		<English>Prince of %s1</English>
+		<French>Prince de %s1</French>
+		<German>F&#252;rst von %s1</German>
+		<Italian>Principe di %s1</Italian>
+		<Spanish>Pr&#237;ncipe de %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_SABA</Tag>
 		<English>Bilqis, Queen of Sheba</English>
 		<French>Bilqis, reine de Saba</French>
@@ -945,12 +1049,388 @@ Scuola di retorica
 		<Spanish>&#161;Un atraco fallido! Gracias por tu escolta. Cuando los ladrones intentaron robar sus bienes, decidieron huir.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A1</Tag>
+		<English>There's a prosperous village on the coast. Why not pay it a short visit?</English>
+		<French>Il y a un village prosp&#232;re sur la c&#244;te. Pourquoi ne pas y faire un petit tour ?</French>
+		<German>An der K&#252;ste liegt ein wohlhabendes Dorf. Wollt ihr diesem nicht einen kurzen Besuch abstatten?</German>
+		<Italian>C'&#232; un prospero villaggio sulla costa. Perch&#233; non fargli una breve visita?</Italian>
+		<Spanish>Hay un pr&#243;spero pueblo en la costa. &#191;Por qu&#233; no le haces una visita r&#225;pida?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A10</Tag>
+		<English>The coastal village appears to be unguarded. What do you think, should we continue sailing or knock briefly?</English>
+		<French>Le village c&#244;tier semble sans surveillance. &#192; votre avis, devrions-nous poursuivre notre navigation ou frapper bri&#232;vement &#224; la porte ?</French>
+		<German>Das K&#252;stendorf scheint unbewacht zu sein. Was meint ihr, weitersegeln oder kurz anklopfen?</German>
+		<Italian>Il villaggio costiero sembra essere incustodito. Che ne dici, dovremmo continuare a navigare o bussare brevemente?</Italian>
+		<Spanish>El pueblo costero parece estar desprotegido. &#191;Qu&#233; opinas? &#191;Seguimos navegando o llamamos brevemente?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A11</Tag>
+		<English>That village on the coast looks quite inviting. Would it be impolite to simply sail past without taking some of their belongings?</English>
+		<French>Ce village c&#244;tier a l'air bien accueillant. Serait-il impoli de simplement passer devant sans emporter quelques-uns de leurs biens ?</French>
+		<German>Das Dorf dort an der K&#252;ste wirkt recht einladend. W&#228;re es unh&#246;flich, einfach vorbeizusegeln, ohne ihnen ein paar ihrer Besitzt&#252;mer abzunehmen?</German>
+		<Italian>Quel villaggio sulla costa sembra davvero invitante. Sarebbe scortese passare oltre senza prendere qualcosa dei loro averi?</Italian>
+		<Spanish>Ese pueblo costero parece muy acogedor. &#191;Ser&#237;a de mala educaci&#243;n pasar de largo sin llevarse algunas de sus pertenencias?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A12</Tag>
+		<English>The coast is unguarded. Its treasures are ours, if we only reach out and take them.</English>
+		<French>La c&#244;te est sans surveillance. Ses tr&#233;sors sont &#224; nous, il suffit de tendre la main et de les prendre.</French>
+		<German>Die K&#252;ste ist nicht bewacht. Ihre Sch&#228;tze geh&#246;ren uns, wenn wir nur zugreifen.</German>
+		<Italian>La costa &#232; incustodita. I suoi tesori sono nostri, se solo ci facciamo avanti e li prendiamo.</Italian>
+		<Spanish>La costa est&#225; desprotegida. Sus tesoros son nuestros, si tan solo nos acercamos y los tomamos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A13</Tag>
+		<English>There on the coast lies prey, as sure as sea monsters in the depths of the ocean. Shall we retrieve it?</English>
+		<French>L&#224;, sur la c&#244;te, g&#238;t une proie, aussi certaine que les monstres marins dans les profondeurs de l'oc&#233;an. Allons-nous la r&#233;cup&#233;rer ?</French>
+		<German>Dort an der K&#252;ste liegt Beute, so sicher wie die Seeungeheuer in der Tiefe des Meeres. Wollen wir sie holen?</German>
+		<Italian>L&#236; sulla costa giace una preda, sicura come i mostri marini nelle profondit&#224; dell'oceano. Vogliamo recuperarla?</Italian>
+		<Spanish>All&#237;, en la costa, yace una presa, tan segura como monstruos marinos en las profundidades del oc&#233;ano. &#191;La recuperamos?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A14</Tag>
+		<English>This coastal village is brimming with riches. One breath and it's all ours. Let's not waste any time.</English>
+		<French>Ce village c&#244;tier regorge de richesses. Un seul souffle et elles sont &#224; nous. N'attendons pas.</French>
+		<German>Dieses Dorf an der K&#252;ste ist voller Reicht&#252;mer. Ein Atemzug und alles geh&#246;rt uns. Verschwenden wir keine Zeit.</German>
+		<Italian>Questo villaggio costiero trabocca di ricchezze. Un respiro e sar&#224; tutto nostro. Non perdiamo tempo.</Italian>
+		<Spanish>Este pueblo costero rebosa de riquezas. Con solo un respiro, todo es nuestro. No perdamos el tiempo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A15</Tag>
+		<English>The sea is silent today. Old sailors say it only does that when something valuable is waiting.</English>
+		<French>La mer est silencieuse aujourd'hui. Les vieux marins disent qu'elle ne l'est que lorsqu'un tr&#233;sor pr&#233;cieux l'attend.</French>
+		<German>Die See schweigt heute. Alte Seeleute sagen, das tut sie nur, wenn etwas Wertvolles wartet.</German>
+		<Italian>Il mare &#232; silenzioso oggi. I vecchi marinai dicono che lo fa solo quando c'&#232; qualcosa di prezioso in agguato.</Italian>
+		<Spanish>El mar est&#225; en silencio hoy. Dicen los viejos marineros que solo lo hace cuando hay algo valioso esper&#225;ndolo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A16</Tag>
+		<English>The wind carries a whisper from the land. That could be a good sign.</English>
+		<French>Le vent porte un murmure venu de la terre. Cela pourrait &#234;tre bon signe.</French>
+		<German>Der Wind tr&#228;gt ein Fl&#252;stern vom Land her&#252;ber. Das k&#246;nnte ein gutes Zeichen sein.</German>
+		<Italian>Il vento porta un sussurro dalla terraferma. Potrebbe essere un buon segno.</Italian>
+		<Spanish>El viento trae un susurro de la tierra. Eso podr&#237;a ser una buena se&#241;al.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A17</Tag>
+		<English>The seagulls are circling low and noisily. A sailor would see that as an omen. Where there's much noise, there's much profit.</English>
+		<French>Les mouettes tournoient en rasant le sol et en criant bruyamment. Un marin y verrait un bon pr&#233;sage : l&#224; o&#249; il y a du bruit, il y a souvent du profit.</French>
+		<German>Die M&#246;wen kreisen tief und laut. Ein Seemann w&#252;rde darin ein Vorzeichen sehen. Wo viel L&#228;rm, da viel Gewinn.</German>
+		<Italian>I gabbiani volteggiano bassi e rumorosi. Un marinaio lo interpreterebbe come un presagio. Dove c'&#232; molto rumore, c'&#232; molto profitto.</Italian>
+		<Spanish>Las gaviotas vuelan en c&#237;rculos bajos y ruidosos. Un marinero lo interpretar&#237;a como un presagio. Donde hay mucho ruido, hay mucha ganancia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A18</Tag>
+		<English>The coast lies still, like a breath before a storm. The hour seems auspicious.</English>
+		<French>La c&#244;te est immobile, comme un souffle avant la temp&#234;te. L'heure semble propice.</French>
+		<German>Die K&#252;ste liegt still wie ein Atemzug vor dem Sturm. Die Stunde scheint g&#252;nstig zu sein.</German>
+		<Italian>La costa &#232; immobile, come un respiro prima di una tempesta. L'ora sembra propizia.</Italian>
+		<Spanish>La costa yace quieta, como un soplo antes de la tormenta. La hora parece propicia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A19</Tag>
+		<English>The sea is calm today. Old stories warn against such calm places. But old stories warn against almost everything.</English>
+		<French>La mer est calme aujourd'hui. Les vieux contes mettent en garde contre les lieux aussi calmes. Mais les vieux contes mettent en garde contre presque tout.</French>
+		<German>Die See ist ruhig heute. Alte Geschichten warnen vor solch ruhigen Orten. Aber die alten Geschichten warnen vor fast allem.</German>
+		<Italian>Oggi il mare &#232; calmo. Vecchie storie mettono in guardia contro luoghi cos&#236; calmi. Ma vecchie storie mettono in guardia contro quasi tutto.</Italian>
+		<Spanish>El mar est&#225; en calma hoy. Las historias antiguas advierten contra esos lugares tranquilos. Pero las historias antiguas advierten contra casi todo.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A2</Tag>
+		<English>The village on the coast seems peaceful. Perhaps a little too peaceful. Wouldn't it be polite to give them a little excitement?</English>
+		<French>Le village c&#244;tier semble paisible. Un peu trop paisible, peut-&#234;tre. Ne serait-il pas poli de leur offrir un peu d'animation ?</French>
+		<German>Das Dorf an der K&#252;ste wirkt friedlich. Vielleicht etwas zu friedlich. W&#228;re es nicht h&#246;flich, ihnen ein wenig Aufregung zu schenken?</German>
+		<Italian>Il villaggio sulla costa sembra tranquillo. Forse un po' troppo tranquillo. Non sarebbe educato dargli un po' di entusiasmo?</Italian>
+		<Spanish>El pueblo de la costa parece tranquilo. Quiz&#225;s demasiado tranquilo. &#191;No ser&#237;a de buena educaci&#243;n darles un poco de emoci&#243;n?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A20</Tag>
+		<English>The coast lies open like a treasure chest. And every sailor knows: you don't leave an open chest unattended.</English>
+		<French>La c&#244;te s'offre &#224; vous comme un coffre au tr&#233;sor. Et tout marin le sait : on ne laisse pas un coffre ouvert sans surveillance.</French>
+		<German>Die K&#252;ste liegt offen wie eine Schatztruhe. Und jeder Seemann wei&#223;: Eine offene Truhe l&#228;sst man nicht liegen.</German>
+		<Italian>La costa &#232; aperta come uno scrigno del tesoro. E ogni marinaio lo sa: non si lascia uno scrigno aperto incustodito.</Italian>
+		<Spanish>La costa est&#225; abierta como un cofre del tesoro. Y todo marinero lo sabe: no se deja un cofre abierto sin vigilancia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A3</Tag>
+		<English>The residents on the coast seem busy. Perhaps we could take some of the burden off their shoulders, for example, by taking care of their valuables?</English>
+		<French>Les habitants du littoral semblent tr&#232;s occup&#233;s. Pourrions-nous les soulager un peu, par exemple en prenant soin de leurs objets de valeur ?</French>
+		<German>Die Bewohner an der K&#252;ste scheinen besch&#228;ftigt. Vielleicht k&#246;nnten wir ihnen etwas Arbeit abnehmen, zum Beispiel ihre Wertgegenst&#228;nde?</German>
+		<Italian>Gli abitanti della costa sembrano molto impegnati. Forse potremmo alleggerirli un po' del loro carico, ad esempio prendendoci cura dei loro oggetti di valore?</Italian>
+		<Spanish>Los residentes de la costa parecen ocupados. &#191;Quiz&#225;s podr&#237;amos aliviarles un poco la carga, por ejemplo, cuidando sus objetos de valor?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A4</Tag>
+		<English>A pretty village lies there on the coast, doesn't it? Almost as if it's asking to be visited.</English>
+		<French>Il y a un joli village l&#224;-bas, sur la c&#244;te, n'est-ce pas ? Presque comme s'il invitait &#224; la visite.</French>
+		<German>Ein h&#252;bsches Dorf liegt da an der K&#252;ste, nicht wahr? Fast so, als w&#252;rde es darum bitten, besucht zu werden.</German>
+		<Italian>C'&#232; un grazioso villaggio l&#236; sulla costa, non &#232; vero? Quasi che chieda di essere visitato.</Italian>
+		<Spanish>Hay un pueblo precioso en la costa, &#191;verdad? Casi como si pidiera ser visitado.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A5</Tag>
+		<English>The surf is still, the village sleeps. Shall we wake it?</English>
+		<French>La mer est calme, le village dort. Et si on le r&#233;veillait ?</French>
+		<German>Die Brandung ist still, das Dorf schl&#228;ft. Wollen wir es wecken?</German>
+		<Italian>La risacca &#232; calma, il villaggio dorme. Vogliamo svegliarlo?</Italian>
+		<Spanish>El oleaje est&#225; quieto, el pueblo duerme. &#191;Lo despertamos?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A6</Tag>
+		<English>Something is glittering there on the coast. Gold? Silver? We should take a look!</English>
+		<French>Quelque chose brille sur la c&#244;te. De l'or ? De l'argent ? Allons voir !</French>
+		<German>Dort an der K&#252;ste gl&#228;nzt etwas. Gold? Silber? Wir sollten nachsehen!</German>
+		<Italian>Qualcosa luccica laggi&#249; sulla costa. Oro? Argento? Dovremmo dare un'occhiata!</Italian>
+		<Spanish>Algo brilla en la costa. &#191;Oro? &#191;Plata? &#161;Deber&#237;amos echarle un vistazo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A7</Tag>
+		<English>The coastal residents seem content. Perhaps we should show them how quickly that can change?</English>
+		<French>Les habitants du littoral semblent satisfaits. Peut-&#234;tre devrions-nous leur montrer &#224; quel point cela peut changer rapidement ?</French>
+		<German>Die Bewohner der K&#252;ste wirken zufrieden. Vielleicht sollten wir ihnen zeigen, wie schnell sich das &#228;ndern kann?</German>
+		<Italian>Gli abitanti della costa sembrano soddisfatti. Forse dovremmo mostrare loro quanto velocemente la situazione pu&#242; cambiare?</Italian>
+		<Spanish>Los residentes de la costa parecen contentos. &#191;Quiz&#225;s deber&#237;amos mostrarles lo r&#225;pido que puede cambiar eso?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A8</Tag>
+		<English>A village without guards? Either very brave or very forgetful. Shall we remind them of that?</English>
+		<French>Un village sans gardes ? Soit c'est un signe de grande bravoure, soit c'est un signe de grande distraction. Devrions-nous le leur rappeler ?</French>
+		<German>Ein Dorf ohne Wachen? Entweder sehr mutig oder sehr vergesslich. Wollen wir ihnen das in Erinnerung rufen?</German>
+		<Italian>Un villaggio senza guardie? O molto coraggioso o molto smemorato. Vogliamo ricordarglielo?</Italian>
+		<Spanish>&#191;Un pueblo sin guardias? O muy valientes o muy olvidadizos. &#191;Se lo recordamos?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_A9</Tag>
+		<English>The alleys along the coast seem full of life. Shall we bring a little order to them?</English>
+		<French>Les ruelles c&#244;ti&#232;res semblent pleines de vie. Devrions-nous y apporter un peu d'ordre ?</French>
+		<German>Die Gassen an der K&#252;ste scheinen voller Leben. Wollen wir ein wenig Ordnung hineinbringen?</German>
+		<Italian>I vicoli lungo la costa sembrano pieni di vita. Vogliamo riportare un po' d'ordine?</Italian>
+		<Spanish>Los callejones de la costa parecen estar llenos de vida. &#191;Les ponemos un poco de orden?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_B1</Tag>
+		<English>Loot it!</English>
+		<French>Pillez-le !</French>
+		<German>Pl&#252;ndert es!</German>
+		<Italian>Saccheggiatelo!</Italian>
+		<Spanish>&#161;Saquearlo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_B2</Tag>
+		<English>The pirates plundered the coastal village and captured %d1 [ICON_GOLD].</English>
+		<French>Les pirates ont pill&#233; le village c&#244;tier et ont captur&#233; %d1 [ICON_GOLD].</French>
+		<German>Die Piraten pl&#252;nderten das K&#252;stendorf und erbeuteten %d1 [ICON_GOLD].</German>
+		<Italian>I pirati saccheggiarono il villaggio costiero e catturarono %d1 [ICON_GOLD].</Italian>
+		<Spanish>Los piratas saquearon la aldea costera y capturaron %d1 [ICON_GOLD].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_B3</Tag>
+		<English>Pirates plundered a coastal village!</English>
+		<French>Des pirates ont pill&#233; un village c&#244;tier !</French>
+		<German>Piraten pl&#252;nderten ein K&#252;stendorf!</German>
+		<Italian>I pirati hanno saccheggiato un villaggio costiero!</Italian>
+		<Spanish>&#161;Los piratas saquearon un pueblo costero!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_B4</Tag>
+		<English>Several residents were forced to flee this unsafe area and moved to the surrounding city of %s1.</English>
+		<French>Plusieurs habitants ont &#233;t&#233; contraints de fuir cette zone dangereuse et de se d&#233;placer vers la ville voisine de %s1.</French>
+		<German>Etliche Einwohner sahen sich gezwungen aus diesem unsicheren Gebiet zu fliehen und zogen in die umliegende Stadt %s1.</German>
+		<Italian>Molti residenti sono stati costretti ad abbandonare questa zona pericolosa e si sono trasferiti nella cittadina circostante di %s1.</Italian>
+		<Spanish>Varios residentes se vieron obligados a huir de esta zona insegura y se trasladaron a la ciudad cercana de %s1.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_C1</Tag>
+		<English>Plunder and massacre! (Level -1)</English>
+		<French>Pillage et massacre ! (Niveau -1)</French>
+		<German>Pl&#252;ndert und massakriert! (Stufe -1)</German>
+		<Italian>Saccheggia e massacra! (Livello -1)</Italian>
+		<Spanish>&#161;Saqueo y masacre! (Nivel -1)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_C2</Tag>
+		<English>The pirates captured %d1 [ICON_GOLD] with great bloodshed.</English>
+		<French>Les pirates ont captur&#233; %d1 [ICON_GOLD] au milieu d'un grand bain de sang.</French>
+		<German>Die Piraten erbeuteten unter gro&#223;em Blutvergie&#223;en %d1 [ICON_GOLD].</German>
+		<Italian>I pirati catturarono %d1 [ICON_GOLD] in mezzo a un grande spargimento di sangue.</Italian>
+		<Spanish>Los piratas capturaron %d1 [ICON_GOLD] en medio de un gran derramamiento de sangre.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_C3</Tag>
+		<English>Pirates plundered a coastal village, leaving behind a bloodbath!</English>
+		<French>Des pirates ont pill&#233; un village c&#244;tier, semant le chaos et le sang !</French>
+		<German>Piraten pl&#252;nderten ein K&#252;stendorf und hinterlie&#223;en dabei ein gro&#223;es Blutbad!</German>
+		<Italian>I pirati hanno saccheggiato un villaggio costiero, lasciandosi alle spalle un bagno di sangue!</Italian>
+		<Spanish>&#161;Los piratas saquearon un pueblo costero y dejaron tras de s&#237; un ba&#241;o de sangre!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_D1</Tag>
+		<English>Plunder and enslave! (Level -1, +1 slave)</English>
+		<French>Pillez et r&#233;duisez en esclavage ! (Niveau -1, +1 esclave)</French>
+		<German>Pl&#252;ndert und versklavt! (Stufe -1, +1 Sklave)</German>
+		<Italian>Saccheggia e schiavizza! (Livello -1, +1 schiavo)</Italian>
+		<Spanish>&#161;Saquea y esclaviza! (Nivel -1, +1 esclavo)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_D2</Tag>
+		<English>The pirates enslaved some inhabitants and captured %d1 [ICON_GOLD].</English>
+		<French>Les pirates ont r&#233;duit en esclavage certains habitants et ont captur&#233; %d1 [ICON_GOLD].</French>
+		<German>Die Piraten versklavten einige Einwohner und erbeuteten %d1 [ICON_GOLD].</German>
+		<Italian>I pirati hanno ridotto in schiavit&#249; alcuni abitanti e catturato %d1 [ICON_GOLD].</Italian>
+		<Spanish>Los piratas esclavizaron a algunos habitantes y capturaron a %d1 [ICON_GOLD].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_D3</Tag>
+		<English>Pirates plundered and enslaved a coastal village!</English>
+		<French>Des pirates ont pill&#233; et r&#233;duit en esclavage un village c&#244;tier !</French>
+		<German>Piraten pl&#252;nderten und versklavten ein K&#252;stendorf!</German>
+		<Italian>I pirati hanno saccheggiato e ridotto in schiavit&#249; un villaggio costiero!</Italian>
+		<Spanish>&#161;Los piratas saquearon y esclavizaron un pueblo costero!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E1</Tag>
+		<English>Stay on board!</English>
+		<French>Restez &#224; bord !</French>
+		<German>Bleibt an Bord!</German>
+		<Italian>Rimani a bordo!</Italian>
+		<Spanish>&#161;Permanezca a bordo!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E10</Tag>
+		<English>Let's remain cautious and hold back!</English>
+		<French>Restons prudents et retenons-nous !</French>
+		<German>Bleiben wir vorsichtig und halten uns zur&#252;ck!</German>
+		<Italian>Restiamo cauti e tratteniamoci!</Italian>
+		<Spanish>&#161;Sigamos siendo cautelosos y conteni&#233;ndonos!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E11</Tag>
+		<English>We'll stay near water and keep our weapons dry!</English>
+		<French>Nous resterons pr&#232;s de l'eau et garderons nos armes au sec !</French>
+		<German>Wir bleiben an Wasser und unsere Waffen trocken!</German>
+		<Italian>Resteremo vicino all'acqua e terremo le nostre armi asciutte!</Italian>
+		<Spanish>&#161;Nos quedaremos cerca del agua y mantendremos nuestras armas secas!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E12</Tag>
+		<English>It's best to avoid a city tour today!</English>
+		<French>Il vaut mieux &#233;viter une visite de la ville aujourd'hui !</French>
+		<German>Heute besser keine Stadtf&#252;hrung!</German>
+		<Italian>Meglio evitare un giro turistico della citt&#224; oggi!</Italian>
+		<Spanish>&#161;Es mejor evitar hacer un recorrido por la ciudad hoy!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E13</Tag>
+		<English>Nobody goes ashore! Land is lava!</English>
+		<French>Personne ne d&#233;barque ! La terre est en lave !</French>
+		<German>Niemand geht an Land! Land ist Lava!</German>
+		<Italian>Nessuno sbarca! La terra &#232; lava!</Italian>
+		<Spanish>&#161;Que nadie baje a tierra! &#161;La tierra es lava!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E14</Tag>
+		<English>Only go ashore when the wine is gone!</English>
+		<French>Ne d&#233;barquez que lorsque le vin est termin&#233; !</French>
+		<German>Erst an Land gehen, wenn der Wein alle ist!</German>
+		<Italian>Scendere a terra solo quando il vino &#232; finito!</Italian>
+		<Spanish>&#161;S&#243;lo desembarque cuando se acabe el vino!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E2</Tag>
+		<English>Let's set sail instead!</English>
+		<French>Levons l'ancre !</French>
+		<German>Setzen wir lieber Segel!</German>
+		<Italian>Salpiamo piuttosto!</Italian>
+		<Spanish>&#161;En lugar de eso, zarpemos!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E3</Tag>
+		<English>The wind is changing direction, we'd better do too!</English>
+		<French>Le vent change de direction, nous ferions mieux d'en faire autant !</French>
+		<German>Der Wind dreht, wir besser auch!</German>
+		<Italian>Il vento sta cambiando direzione, faremo meglio a fare lo stesso!</Italian>
+		<Spanish>El viento est&#225; cambiando de direcci&#243;n, &#161;ser&#225; mejor que nosotros tambi&#233;n lo hagamos!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E4</Tag>
+		<English>Let's drop it, the country reeks of trouble!</English>
+		<French>Laissons tomber, le pays empeste les probl&#232;mes !</French>
+		<German>Lassen wirs, das Land stinkt nach &#196;rger!</German>
+		<Italian>Lasciamo perdere, il paese puzza di guai!</Italian>
+		<Spanish>&#161;Dej&#233;moslo ya, el pa&#237;s apesta a problemas!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E5</Tag>
+		<English>Let's not even set foot on land!</English>
+		<French>N'allons m&#234;me pas poser le pied &#224; terre !</French>
+		<German>Setzen wir lieber keinen Fu&#223; an Land!</German>
+		<Italian>Non mettiamo nemmeno piede sulla terraferma!</Italian>
+		<Spanish>&#161;Ni siquiera pongamos un pie en tierra!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E6</Tag>
+		<English>Let the city sleep, we're sailing on!</English>
+		<French>Laissez la ville dormir, nous poursuivons notre route !</French>
+		<German>Lasst die Stadt schlafen, wir segeln weiter!</German>
+		<Italian>Lasciamo dormire la citt&#224;, noi continuiamo a navigare!</Italian>
+		<Spanish>&#161;Dejad que la ciudad duerma, nosotros seguimos navegando!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E7</Tag>
+		<English>Set sail and head away from the coast!</English>
+		<French>Levez l'ancre et &#233;loignez-vous des c&#244;tes !</French>
+		<German>Segel setzen und weg von der K&#252;ste!</German>
+		<Italian>Salpate e allontanatevi dalla costa!</Italian>
+		<Spanish>&#161;Zarpa y al&#233;jate de la costa!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E8</Tag>
+		<English>Let's hijack a few ships instead!</English>
+		<French>Et si on d&#233;tournait quelques navires &#224; la place ?</French>
+		<German>Lasst uns lieber ein paar Schiffe kapern!</German>
+		<Italian>Piuttosto, dirottiamo qualche nave!</Italian>
+		<Spanish>&#161;En lugar de eso, secuestremos algunos barcos!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_E9</Tag>
+		<English>Let's keep the gold ashore this time!</English>
+		<French>Gardons l'or sur terre cette fois-ci !</French>
+		<German>Belassen wir diesmal das Gold an Land!</German>
+		<Italian>Questa volta teniamo l'oro sulla terraferma!</Italian>
+		<Spanish>&#161;Mantengamos el oro en tierra esta vez!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_F1</Tag>
+		<English>(with Pirate I and Pirate II, further options become available)</English>
+		<French>(Avec Pirate I et Pirate II, d'autres options deviennent disponibles)</French>
+		<German>(mit Pirat I und Pirat II werden weitere Optionen verf&#252;gbar)</German>
+		<Italian>(con Pirate I e Pirate II, diventano disponibili ulteriori opzioni)</Italian>
+		<Spanish>(con Pirata I y Pirata II, estar&#225;n disponibles m&#225;s opciones)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_PIRACY_F2</Tag>
+		<English>(with Pirate II another option becomes available)</English>
+		<French>(Avec Pirate II, une autre option devient disponible)</French>
+		<German>(mit Pirat II wird eine weitere Option verf&#252;gbar)</German>
+		<Italian>(con Pirate II diventa disponibile un'altra opzione)</Italian>
+		<Spanish>(con Pirata II se hace disponible otra opci&#243;n)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RELIGIONSKONFLIKT_5</Tag>
 		<English>The Jewish community in %s1 is a thorn in the side of residents of other faiths. Their presence is tolerated by social exclusion.</English>
 		<French>La communaut&#233; juive de %s1 est une source d'irritation pour les r&#233;sidents d'autres confessions. Leur pr&#233;sence est tol&#233;r&#233;e par l'exclusion sociale.</French>
 		<German>Die j&#252;dische Gemeinde in %s1 sind den andersgl&#228;ubigen Einwohnern ein Dorn im Auge. Man duldet ihre Anwesenheit, indem man sie von der Gesellschaft ausgrenzt.</German>
 		<Italian>La comunit&#224; ebraica di %s1 &#232; una spina nel fianco per i residenti di altre fedi. La loro presenza &#232; tollerata dall'esclusione sociale.</Italian>
 		<Spanish>La comunidad jud&#237;a de %s1 es una molestia para los residentes de otras confesiones. Su presencia se tolera mediante la exclusi&#243;n social.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_SPOTTING_SEAMONSTER</Tag>
+		<English>Your crew has spotted a sea monster! Fear is spreading on deck.</English>
+		<French>Votre &#233;quipage a aper&#231;u un monstre marin ! La peur se r&#233;pand sur le pont.</French>
+		<German>Eure Mannschaft hat ein Seeungeheuer entdeckt! Angst verbreitet sich an Deck.</German>
+		<Italian>Il tuo equipaggio ha avvistato un mostro marino! La paura si diffonde sul ponte.</Italian>
+		<Spanish>&#161;Tu tripulaci&#243;n ha avistado un monstruo marino! El miedo se extiende por la cubierta.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_TERRAFORMING</Tag>
@@ -1047,6 +1527,14 @@ Scuola di retorica
 		<German>Liefert einer umliegenden Stadt +%d1%%[ICON_HEALTHY]</German>
 		<Italian>Consegna in una citt&#224; circostante +%d1%%[ICON_HEALTHY]</Italian>
 		<Spanish>Entrega a una ciudad circundante +%d1%%[ICON_HEALTHY]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISSION_PIRACY_COASTALVILLAGE</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Plundering a coastal village[COLOR_REVERT][NEWLINE]Plunder the coastal village and obtain gold.</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Piller un village c&#244;tier[COLOR_REVERT][NEWLINE]Pillez le village c&#244;tier et empochez l'or.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]K&#252;stendorf pl&#252;ndern[COLOR_REVERT][NEWLINE]Pl&#252;ndere das K&#252;stendorf und erhalte Gold.</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Saccheggio di un villaggio costiero[COLOR_REVERT][NEWLINE]Saccheggia il villaggio costiero e ottieni oro.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Saqueando un pueblo costero[COLOR_REVERT][NEWLINE]Saquea el pueblo costero y obt&#233;n oro.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_NEW_LAKE</Tag>
@@ -1169,6 +1657,78 @@ Scuola di retorica
 		<Spanish>&#161;Un ni&#241;o llamado Jes&#250;s naci&#243; en %s1!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_0</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Demolish/sell[COLOR_REVERT] a building in this city</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]D&#233;molir/vendre[COLOR_REVERT] un b&#226;timent dans cette ville</French>
+		<German>Ein Geb&#228;ude aus dieser Stadt [COLOR_HIGHLIGHT_TEXT]abrei&#223;en/verkaufen[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Demolisci/vendi[COLOR_REVERT] un edificio in questa citt&#224;</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Demoler/vender[COLOR_REVERT] un edificio en esta ciudad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_1</Tag>
+		<English>Which building in [COLOR_HIGHLIGHT_TEXT]%s1_city[COLOR_REVERT] is to be demolished?</English>
+		<French>Quel b&#226;timent de [COLOR_HIGHLIGHT_TEXT]%s1_city[COLOR_REVERT] doit &#234;tre d&#233;moli ?</French>
+		<German>Welches Geb&#228;ude in [COLOR_HIGHLIGHT_TEXT]%s1_city[COLOR_REVERT] soll abgerissen werden?</German>
+		<Italian>Quale edificio in [COLOR_HIGHLIGHT_TEXT]%s1_city[COLOR_REVERT] deve essere demolito?</Italian>
+		<Spanish>&#191;Qu&#233; edificio en [COLOR_HIGHLIGHT_TEXT]%s1_city[COLOR_REVERT] se va a demoler?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_2</Tag>
+		<English>How should the construction waste (%s1) be disposed of?</English>
+		<French>Comment les d&#233;chets de construction (%s1) doivent-ils &#234;tre &#233;limin&#233;s ?</French>
+		<German>Wie soll der Bauschutt (%s1) verwertet werden?</German>
+		<Italian>Come devono essere smaltiti i rifiuti edili (%s1)?</Italian>
+		<Spanish>&#191;C&#243;mo deben eliminarse los residuos de construcci&#243;n (%s1)?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_3</Tag>
+		<English>Sell ??cheaply to the citizens (+%d1 [ICON_GOLD])</English>
+		<French>Vendre &#224; bas prix aux citoyens (+%d1 [ICON_GOLD])</French>
+		<German>Billig an die B&#252;rger verkaufen (+%d1 [ICON_GOLD])</German>
+		<Italian>Vendi a basso costo ai cittadini (+%d1 [ICON_GOLD])</Italian>
+		<Spanish>Vender barato a los ciudadanos (+%d1 [ICON_GOLD])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_4</Tag>
+		<English>Use it for the current construction project (+%d1 [ICON_PRODUCTION])</English>
+		<French>Utilisez-le pour le projet de construction en cours (+%d1 [ICON_PRODUCTION])</French>
+		<German>F&#252;r das aktuelle Bauprojekt nutzen (+%d1 [ICON_PRODUCTION])</German>
+		<Italian>Utilizzalo per il progetto di costruzione corrente (+%d1 [ICON_PRODUCTION])</Italian>
+		<Spanish>&#218;selo para el proyecto de construcci&#243;n actual (+%d1 [ICON_PRODUCTION])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_5</Tag>
+		<English>Both (+%d1 [ICON_GOLD], +%d2 [ICON_PRODUCTION])</English>
+		<French>Les deux (+%d1 [ICON_GOLD], +%d2 [ICON_PRODUCTION])</French>
+		<German>Beides (+%d1 [ICON_GOLD], +%d2 [ICON_PRODUCTION])</German>
+		<Italian>Entrambi (+%d1 [ICON_GOLD], +%d2 [ICON_PRODUCTION])</Italian>
+		<Spanish>Ambos (+%d1 [ICON_GOLD], +%d2 [ICON_PRODUCTION])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_6</Tag>
+		<English>The building %s1 in %s2 was sold for %d3 [ICON_GOLD].</English>
+		<French>Le b&#226;timent %s1 dans %s2 a &#233;t&#233; vendu pour %d3 [ICON_GOLD].</French>
+		<German>Das Geb&#228;ude %s1 in %s2 wurde f&#252;r %d3 [ICON_GOLD] verkauft.</German>
+		<Italian>L'edificio %s1 in %s2 &#232; stato venduto per %d3 [ICON_GOLD].</Italian>
+		<Spanish>El edificio %s1 en %s2 se vendi&#243; por %d3 [ICON_GOLD].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_7</Tag>
+		<English>The demolition of %s1 in %s2 resulted in %d3 [ICON_PRODUCTION] being added to the current construction contract.</English>
+		<French>La d&#233;molition de %s1 dans %s2 a entra&#238;n&#233; l'ajout de %d3 [ICON_PRODUCTION] au contrat de construction actuel.</French>
+		<German>Der Abriss von %s1 in %s2 brachte dem aktuellen Bauauftrag %d3 [ICON_PRODUCTION] ein.</German>
+		<Italian>La demolizione di %s1 in %s2 ha comportato l'aggiunta di %d3 [ICON_PRODUCTION] al contratto di costruzione corrente.</Italian>
+		<Spanish>La demolici&#243;n de %s1 en %s2 dio como resultado que se agregara %d3 [ICON_PRODUCTION] al contrato de construcci&#243;n actual.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_8</Tag>
+		<English>The building %s1 in %s2 was used for %d3 [ICON_GOLD] and %d4 [ICON_PRODUCTION].</English>
+		<French>Le b&#226;timent %s1 dans %s2 a &#233;t&#233; utilis&#233; pour %d3 [ICON_GOLD] et %d4 [ICON_PRODUCTION].</French>
+		<German>Das Geb&#228;ude %s1 in %s2 wurde f&#252;r %d3 [ICON_GOLD] und %d4 [ICON_PRODUCTION] verwertet.</German>
+		<Italian>L'edificio %s1 in %s2 &#232; stato utilizzato per %d3 [ICON_GOLD] e %d4 [ICON_PRODUCTION].</Italian>
+		<Spanish>El edificio %s1 en %s2 se utiliz&#243; para %d3 [ICON_GOLD] y %d4 [ICON_PRODUCTION].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_POPUP_USURPATOR_1</Tag>
 		<English>General %s1 demands a massive sum of gold (%d2 [ICON_GOLD]) or he will raise the banner of rebellion and overthrow the throne.</English>
 		<French>Le g&#233;n&#233;ral %s1 exige une &#233;norme somme d'or (%d2 [ICON_GOLD]) ou il l&#232;vera la banni&#232;re de la r&#233;bellion et renversera le tr&#244;ne.</French>
@@ -1223,6 +1783,22 @@ Scuola di retorica
 		<German>Gebt ihm die Summe, die er verlangt.</German>
 		<Italian>Dategli la cifra che chiede.</Italian>
 		<Spanish>Dale la cantidad que pide.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ANGST_SEA</Tag>
+		<English>Thalassophobia</English>
+		<French>Thalassophobie</French>
+		<German>Thalassophobie</German>
+		<Italian>Talassofobia</Italian>
+		<Spanish>Talasofobia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_ANGST_SEA_HELP</Tag>
+		<English>The crew succumbs to thalassophobia if they sight a massive sea creature in close proximity or are attacked by one. Thalassophobia can only be reversed by completely replacing the crew in a port. From the rank of Fleet Commander upwards, one is immune.</English>
+		<French>L'&#233;quipage est atteint de thalassophobie s'il aper&#231;oit une cr&#233;ature marine gigantesque &#224; proximit&#233; ou s'il est attaqu&#233; par elle. La thalassophobie ne peut &#234;tre gu&#233;rie qu'en rempla&#231;ant int&#233;gralement l'&#233;quipage dans un port. &#192; partir du grade de commandant de flotte, on est immunis&#233;.</French>
+		<German>Die Besatzung verf&#228;llt in Thalassophobie, wenn sie in unmittelbarer N&#228;he ein gewaltiges Meereswesen sichtet oder davon angegriffen wird. Thalassophobie kann nur durch das vollst&#228;ndige Ersetzen der Crew in einem Hafen r&#252;ckg&#228;ngig gemacht werden. Ab dem Rang Flottenkommandant ist man dagegen immun.</German>
+		<Italian>L'equipaggio soccombe alla talassofobia se avvista un'enorme creatura marina nelle vicinanze o ne viene attaccato. La talassofobia pu&#242; essere invertita solo sostituendo completamente l'equipaggio in un porto. Dal grado di Comandante della Flotta in su, si &#232; immuni.</Italian>
+		<Spanish>La tripulaci&#243;n sucumbe a la talasofobia si avista una criatura marina enorme cerca o es atacada por una. La talasofobia solo puede revertirse reemplazando completamente a la tripulaci&#243;n en un puerto. A partir del rango de Comandante de Flota, uno es inmune.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_BEAST</Tag>
@@ -1281,12 +1857,60 @@ Scuola di retorica
 		<Spanish>[ICON_BULLET]Aumenta la capacidad de un carro de suministros en 100.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PIRAT1</Tag>
+		<English>Pirate I (Privateer)</English>
+		<French>Pirate I (Corsaire)</French>
+		<German>Pirat I (Freibeuter)</German>
+		<Italian>Pirata I (Corsaro)</Italian>
+		<Spanish>Pirata I (Corsario)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PIRAT2</Tag>
+		<English>Pirate II (Sea Raider)</English>
+		<French>Pirate II (Ecumeur des mers)</French>
+		<German>Pirat II (Seer&#228;uber)</German>
+		<Italian>Pirata II (Predone del mare)</Italian>
+		<Spanish>Pirata II (Saqueador del mar)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PIRAT3</Tag>
+		<English>Pirate III (Terror of the Seas)</English>
+		<French>Pirate III (Terreur des mers)</French>
+		<German>Pirat III (Schrecken der Meere)</German>
+		<Italian>Pirata III (Terrore dei mari)</Italian>
+		<Spanish>Pirata III (Terror de los mares)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_PIRAT_HELP</Tag>
+		<English>[ICON_BULLET] can be acquired under a black flag by raiding a coastal village (20% chance)[NEWLINE][ICON_BULLET] Pirate I: Loot: 5-10 gold per village level[NEWLINE][ICON_BULLET] Pirate II: Loot: 8-16 gold per level, massacres one level[NEWLINE][ICON_BULLET] Pirate III: Loot: Enslavement instead of massacre</English>
+		<French>[ICON_BULLET] Peut &#234;tre obtenu sous pavillon noir en pillant un village c&#244;tier (20 % de chances).[NEWLINE][ICON_BULLET] Pirate I : Butin : 5 &#224; 10 pi&#232;ces d'or par niveau de village.[NEWLINE][ICON_BULLET] Pirate II : Butin : 8 &#224; 16 pi&#232;ces d'or par niveau, massacre un niveau de village.[NEWLINE][ICON_BULLET] Pirate III : Butin : L'esclavage plut&#244;t que le massacre</French>
+		<German>[ICON_BULLET] kann unter schwarzer Flagge beim Pl&#252;ndern eines K&#252;stendorfs erworben werden (Chance 20%)[NEWLINE][ICON_BULLET] Pirat I: Beute: 5-10 Gold pro Dorfstufe[NEWLINE][ICON_BULLET] Pirat II: Beute: 8-16 Gold pro Stufe, massakriert eine Stufe[NEWLINE][ICON_BULLET] Pirat III: Beute: Versklavung statt Massaker</German>
+		<Italian>[ICON_BULLET] Pu&#242; essere acquisito sotto bandiera nera razziando un villaggio costiero (probabilit&#224; del 20%)[NEWLINE][ICON_BULLET] Pirata I: Bottino: 5-10 oro per livello villaggio[NEWLINE][ICON_BULLET] Pirata II: Bottino: 8-16 oro per livello, massacra un livello[NEWLINE][ICON_BULLET] Pirata III: Bottino: Schiavit&#249; invece di massacro</Italian>
+		<Spanish>[ICON_BULLET] Se puede obtener bajo bandera negra asaltando una aldea costera (20% de probabilidad).[NEWLINE][ICON_BULLET] Pirata I: Bot&#237;n: 5-10 de oro por nivel de aldea.[NEWLINE][ICON_BULLET] Pirata II: Bot&#237;n: 8-16 de oro por nivel; masacra un nivel.[NEWLINE][ICON_BULLET] Pirata III: Bot&#237;n: Esclavitud en lugar de masacre.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_PROTECTOR</Tag>
 		<English>Comes Domesticorum</English>
 		<French>Comes Domesticorum</French>
 		<German>Comes Domesticorum</German>
 		<Italian>Comes Domesticorum</Italian>
 		<Spanish>Comes Domesticorum</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_3_HELP</Tag>
+		<English>[ICON_BULLET] Immune to fear of sea monsters (thalassophobia)</English>
+		<French>[ICON_BULLET] Immunis&#233; contre la peur des monstres marins (thalassophobie)</French>
+		<German>[ICON_BULLET] Immun gegen Angst vor Seeungeheuer (Thalassophobie)</German>
+		<Italian>[ICON_BULLET] Immune alla paura dei mostri marini (talassofobia)</Italian>
+		<Spanish>[ICON_BULLET] Inmune al miedo a los monstruos marinos (talasofobia)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_4_HELP</Tag>
+		<English>[ICON BULLET] Immune to damage on the high seas</English>
+		<French>[BALLE IC&#212;NE] Immunis&#233; contre les d&#233;g&#226;ts en haute mer</French>
+		<German>[ICON_BULLET] Immun gegen Schaden auf Hoher See</German>
+		<Italian>[ICONA PROIETTILE] Immune ai danni in alto mare</Italian>
+		<Spanish>[ICON BULLET] Inmune a da&#241;os en alta mar</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ROAD_MOVEMENT_COST</Tag>
@@ -1585,6 +2209,14 @@ Scuola di retorica
 		<Spanish>[ICON_BULLET]%s1 no se puede completar</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRADE_ADVISOR_INFO4</Tag>
+		<English>Profit: %d1 [ICON_GOLD]</English>
+		<French>B&#233;n&#233;fice : %d1 [ICON_GOLD]</French>
+		<German>Profit: %d1 [ICON_GOLD]</German>
+		<Italian>Profitto: %d1 [ICON_GOLD]</Italian>
+		<Spanish>Beneficio: %d1 [ICON_GOLD]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTE_ADVISOR2_TAB1</Tag>
 		<English>Merchants</English>
 		<French>Marchands</French>
@@ -1689,6 +2321,14 @@ Scuola di retorica
 		<Spanish>Rabino:Rabinos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_KRAKEN</Tag>
+		<English>Giant Octopus</English>
+		<French>Pieuvre g&#233;ante</French>
+		<German>Riesenkrake</German>
+		<Italian>Polpo gigante</Italian>
+		<Spanish>Pulpo gigante</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SPEARMAN_MEDIEVAL</Tag>
 		<English>Spear burgher</English>
 		<French>Citoyen lancier</French>
@@ -1729,6 +2369,14 @@ Scuola di retorica
 		<Spanish>[ICON_BULLET]No se puede cargar en los barcos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ORCA</Tag>
+		<English>Orca</English>
+		<French>Orque</French>
+		<German>Orca</German>
+		<Italian>Orca</Italian>
+		<Spanish>Orca</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROME_EXCUBITORES</Tag>
 		<English>Excubitores</English>
 		<French>Excubitores</French>
@@ -1751,6 +2399,14 @@ Scuola di retorica
 		<German>Schola Palatina</German>
 		<Italian>Schola Palatina</Italian>
 		<Spanish>Schola Palatina</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SEASERPENT</Tag>
+		<English>Sea Serpent</English>
+		<French>Serpent de mer</French>
+		<German>Seeschlange</German>
+		<Italian>Serpente di mare</Italian>
+		<Spanish>Serpiente marina</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLAVE_EDUCATED</Tag>
@@ -1815,6 +2471,14 @@ Scuola di retorica
 		<German>Usurpator</German>
 		<Italian>Usurpatore</Italian>
 		<Spanish>Usurpador</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WHALE</Tag>
+		<English>Humpback Whale</English>
+		<French>Baleine &#224; bosse</French>
+		<German>Buckelwal</German>
+		<Italian>Megattera</Italian>
+		<Spanish>Ballena jorobada</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_UNIT_INFO_NACH</Tag>
