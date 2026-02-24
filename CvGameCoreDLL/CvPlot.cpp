@@ -2536,7 +2536,13 @@ int CvPlot::getBuildTime(BuildTypes eBuild) const
 
 	if (getFeatureType() != NO_FEATURE)
 	{
-		iTime += GC.getBuildInfo(eBuild).getFeatureTime(getFeatureType());
+		// PAE
+		int iFaktor = 1;
+		if (GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getInfoTypeForString("TECH_IRON_WORKING")))) iFaktor = 2;
+		iTime += GC.getBuildInfo(eBuild).getFeatureTime(getFeatureType()) / iFaktor;
+		// BTS
+		//iTime += GC.getBuildInfo(eBuild).getFeatureTime(getFeatureType());
+
 	}
 
 	iTime *= std::max(0, (GC.getTerrainInfo(getTerrainType()).getBuildModifier() + 100));

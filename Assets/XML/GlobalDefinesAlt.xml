@@ -15,4 +15,9 @@
 		<DefineName>CORPORATION_MAX_BONUS</DefineName>
 		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
+	<Define>
+		<!-- PAE AI tech bonus in %-->
+		<DefineName>PAE_AI_TECH_BONUS</DefineName>
+		<iDefineIntVal>25</iDefineIntVal>
+	</Define>
 </Civ4Defines>

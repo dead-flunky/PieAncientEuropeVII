@@ -321,6 +321,14 @@
 		<Spanish>No espere hasta poder construir granjas o minas. Aprovecha los almacenes baratos de inmediato para que tu ciudad crezca m&#225;s r&#225;pido. A medida que avanza el juego, puedes actualizar los campamentos con mejores actualizaciones en cualquier momento. Piensa tambi&#233;n en las canteras. Estos pueden sacar a la luz minerales importantes.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HINT_141</Tag>
+		<English>Iron Working halves the time required to clear forests.</English>
+		<French>Le travail du fer divise par deux le temps n&#233;cessaire au d&#233;frichage des for&#234;ts.</French>
+		<German>Eisenverarbeitung halbiert die Dauer f&#252;r das Roden von W&#228;ldern.</German>
+		<Italian>La lavorazione del ferro dimezza il tempo necessario per disboscare le foreste.</Italian>
+		<Spanish>Forja del hierro reduce a la mitad el tiempo necesario para talar los bosques.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_HINT_45</Tag>
 		<English>If you are having trouble spreading a Cult, make sure the city you are spreading it to has the appropriate resources and that your treasury has enough gold to fund the expansion. Keep in mind it costs significantly more to spread a Cult to a foreign city than to your own.</English>
 		<French>Si vous n'arrivez pas &#224; d&#233;velopper un culte, assurez-vous que la ville dans laquelle vous voulez l'implanter dispose des ressources n&#233;cessaires et que vous avez assez d'or dans votre tr&#233;sor pour financer son d&#233;veloppement. N'oubliez pas que cela co&#251;te bien plus cher d'implanter un culte dans une ville &#233;trang&#232;re que de l'implanter dans l'une des v&#244;tres.</French>

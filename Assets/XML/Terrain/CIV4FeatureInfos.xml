@@ -850,9 +850,9 @@
 			</YieldChanges>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
-			<iMovement>2</iMovement>
+			<iMovement>1</iMovement>
 			<iSeeThrough>0</iSeeThrough>
-			<iHealthPercent>-20</iHealthPercent>
+			<iHealthPercent>-10</iHealthPercent>
 			<iDefense>-25</iDefense>
 			<iAppearance>0</iAppearance>
 			<iDisappearance>0</iDisappearance>

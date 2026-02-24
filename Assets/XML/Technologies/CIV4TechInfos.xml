@@ -6059,7 +6059,7 @@
 			<Type>TECH_IRON_WORKING</Type>
 			<Description>TXT_KEY_TECH_IRON_WORKING</Description>
 			<Civilopedia>TXT_KEY_TECH_IRON_WORKING_PEDIA</Civilopedia>
-			<Help/>
+			<Help>TXT_KEY_TECH_IRON_WORKING_HELP</Help>
 			<Strategy/>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<iAIWeight>0</iAIWeight>
@@ -17306,6 +17306,7 @@
 			</Flavors>
 			<OrPreReqs>
 				<PrereqTech>TECH_MARTYRIUM</PrereqTech>
+				<PrereqTech>TECH_GNOSIS</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs/>
 			<Quote>TXT_KEY_PAE_QUOTE_212</Quote>
@@ -17625,7 +17626,7 @@
 				</Flavor>
 			</Flavors>
 			<OrPreReqs>
-				<PrereqTech>TECH_TOLERANZ</PrereqTech>
+				<PrereqTech>TECH_BISCHOFSTUM</PrereqTech>
 			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_DIOECESIS</PrereqTech>

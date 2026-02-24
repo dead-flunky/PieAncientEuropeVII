@@ -2451,6 +2451,9 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 	iCost *= std::max(0, ((GC.getDefineINT("TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER") * (getNumMembers() - 1)) + 100));
 	iCost /= 100;
 
+	// PAE
+	if (!isHuman()) iCost -= iCost / 100 * GC.getDefineINT("PAE_AI_TECH_BONUS");
+
 	return std::max(1, iCost);
 }
 

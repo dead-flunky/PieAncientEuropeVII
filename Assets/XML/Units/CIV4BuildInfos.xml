@@ -112,29 +112,29 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>300</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -217,35 +217,35 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>100</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>10</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<PrereqTech>TECH_FENCES</PrereqTech>
 					<iTime>300</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -272,36 +272,36 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>100</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>10</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>300</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
@@ -327,36 +327,36 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>100</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>10</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>300</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -439,36 +439,36 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>100</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>10</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>300</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -494,36 +494,36 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>100</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>10</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>300</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -549,36 +549,36 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>100</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>200</iTime>
 					<iProduction>10</iProduction>
 					<bRemove>0</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>300</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
@@ -832,7 +832,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
@@ -859,14 +859,14 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<PrereqTech>TECH_FENCES</PrereqTech>
 					<iTime>200</iTime>
 					<iProduction>25</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<PrereqTech>TECH_FENCES</PrereqTech>
 					<iTime>300</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
@@ -893,7 +893,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
 					<iTime>400</iTime>
 					<iProduction>40</iProduction>
 					<bRemove>1</bRemove>
@@ -920,7 +920,7 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<PrereqTech>TECH_FENCES</PrereqTech>
 					<iTime>100</iTime>
 					<iProduction>10</iProduction>
 					<bRemove>1</bRemove>
@@ -947,29 +947,29 @@
 			<FeatureStructs>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
-					<iTime>50</iTime>
+					<PrereqTech>TECH_FENCES</PrereqTech>
+					<iTime>100</iTime>
 					<iProduction>5</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>200</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>300</iTime>
 					<iProduction>20</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
 				<FeatureStruct>
 					<FeatureType>FEATURE_DICHTERWALD</FeatureType>
-					<PrereqTech>TECH_BEWAFFNUNG2</PrereqTech>
-					<iTime>300</iTime>
+					<PrereqTech>TECH_BEWAFFNUNG</PrereqTech>
+					<iTime>400</iTime>
 					<iProduction>30</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>

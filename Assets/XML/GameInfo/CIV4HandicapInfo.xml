@@ -35,13 +35,13 @@
 			<iUnownedTilesPerBarbarianUnit>25</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>10</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>-10</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>25</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -117,13 +117,13 @@
 			<iUnownedTilesPerBarbarianUnit>25</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>10</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>-10</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>25</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -201,13 +201,13 @@
 			<iUnownedTilesPerBarbarianUnit>25</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>20</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>25</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -288,13 +288,13 @@
 			<iUnownedTilesPerBarbarianUnit>20</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>20</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>50</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -376,13 +376,13 @@
 			<iUnownedTilesPerBarbarianUnit>20</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>25</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>30</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>50</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -466,13 +466,13 @@
 			<iUnownedTilesPerBarbarianUnit>18</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>20</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>30</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>50</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -557,13 +557,13 @@
 			<iUnownedTilesPerBarbarianUnit>16</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>20</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>40</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>75</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -648,13 +648,13 @@
 			<iUnownedTilesPerBarbarianUnit>15</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>20</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>40</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>75</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-75</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -739,13 +739,13 @@
 			<iUnownedTilesPerBarbarianUnit>14</iUnownedTilesPerBarbarianUnit>
 			<iUnownedWaterTilesPerBarbarianUnit>20</iUnownedWaterTilesPerBarbarianUnit>
 			<iUnownedTilesPerBarbarianCity>10</iUnownedTilesPerBarbarianCity>
-			<iBarbarianCreationTurnsElapsed>500</iBarbarianCreationTurnsElapsed>
-			<iBarbarianCityCreationTurnsElapsed>400</iBarbarianCityCreationTurnsElapsed>
+			<iBarbarianCreationTurnsElapsed>400</iBarbarianCreationTurnsElapsed>
+			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>50</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
 			<iAIAnimalBonus>0</iAIAnimalBonus>
-			<iAIBarbarianBonus>75</iAIBarbarianBonus>
+			<iAIBarbarianBonus>-75</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
