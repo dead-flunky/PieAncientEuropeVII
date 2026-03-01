@@ -290,9 +290,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_EMIGRANT</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Take up residence in this city[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Population[NEWLINE][ICON_BULLET] Spreads his culture</English>
+		<English>[COLOR_HIGHLIGHT_TEXT]Take up residence in this city[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Population[NEWLINE][ICON_BULLET] Spreads its culture</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]S'&#233;tablir dans cette ville[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 &#224; la population de la ville[NEWLINE][ICON_BULLET] Diffuse sa culture</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]In dieser Stadt niederlassen[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Stadtbev&#246;lkerung[NEWLINE][ICON_BULLET] Verbreitet seine Kultur</German>
+		<German>[COLOR_HIGHLIGHT_TEXT]In dieser Stadt niederlassen[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Stadtbev&#246;lkerung[NEWLINE][ICON_BULLET] Verbreitet dessen Kultur</German>
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Risiedi in questa citt&#224;[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 abitanti della citt&#224;[NEWLINE][ICON_BULLET] Diffonde la sua cultura</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Establecer residencia en esta ciudad[COLOR_REVERT][NEWLINE][ICON_BULLET] +1 Poblaci&#243;n[NEWLINE][ICON_BULLET] Difunde su cultura</Spanish>
 	</TEXT>

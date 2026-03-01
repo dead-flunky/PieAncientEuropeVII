@@ -1642,11 +1642,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_BUY_KOMPASS</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Equip your ship with a [COLOR_BUILDING_TEXT]Magnetic Compass[COLOR_REVERT][NEWLINE][ICON_BULLET]No movement penalty on ocean and deep sea[NEWLINE]Cost : 20 [ICON_GOLD]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]&#201;quiper votre navire d'une [COLOR_BUILDING_TEXT]Boussole magn&#233;tique[COLOR_REVERT][NEWLINE][ICON_BULLET]Double le mouvement en mer et haute mer[NEWLINE]Co&#251;t : 20 [ICON_GOLD]</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]R&#252;ste dein Schiff mit einem [COLOR_BUILDING_TEXT]Magnetkompass[COLOR_HIGHLIGHT_TEXT] aus[COLOR_REVERT][NEWLINE][ICON_BULLET]Kein Bewegungsmalus auf Ozean und Tiefsee[NEWLINE]Kosten: 20 [ICON_GOLD]</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Equipaggia la tua nave con una [COLOR_BUILDING_TEXT]Bussola Magnetica[COLOR_REVERT][NEWLINE][ICON_BULLET]Nessuna penalit&#224; di movimento su oceano e mare profondo[NEWLINE]Costo: 20 [ICON_GOLD]</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Equipa tu barco con una [COLOR_BUILDING_TEXT]Br&#250;jula Magn&#233;tica[COLOR_REVERT][NEWLINE][ICON_BULLET]Sin penalizaci&#243;n de movimiento en el oc&#233;ano y en aguas profundas[NEWLINE]Coste: 20 [ICON_GOLD]</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Equip your ship[COLOR_REVERT] with a [COLOR_BUILDING_TEXT]Magnetic Compass[COLOR_REVERT][NEWLINE][ICON_BULLET] No movement penalty on ocean and deep sea[NEWLINE]Cost : 20 [ICON_GOLD]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]&#201;quiper votre navire[COLOR_REVERT] d'une [COLOR_BUILDING_TEXT]Boussole magn&#233;tique[COLOR_REVERT][NEWLINE][ICON_BULLET] Double le mouvement en mer et haute mer[NEWLINE]Co&#251;t : 20 [ICON_GOLD]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]R&#252;ste dein Schiff[COLOR_REVERT] mit einem [COLOR_BUILDING_TEXT]Magnetkompass[COLOR_REVERT] aus[NEWLINE][ICON_BULLET] Kein Bewegungsmalus auf Ozean und Tiefsee[NEWLINE]Kosten: 20 [ICON_GOLD]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Equipaggia la tua nave[COLOR_REVERT] con una [COLOR_BUILDING_TEXT]Bussola Magnetica[COLOR_REVERT][NEWLINE][ICON_BULLET] Nessuna penalit&#224; di movimento su oceano e mare profondo[NEWLINE]Costo: 20 [ICON_GOLD]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Equipa tu barco[COLOR_REVERT] con una [COLOR_BUILDING_TEXT]Br&#250;jula Magn&#233;tica[COLOR_REVERT][NEWLINE][ICON_BULLET] Sin penalizaci&#243;n de movimiento en el oc&#233;ano y en aguas profundas[NEWLINE]Coste: 20 [ICON_GOLD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_COLLECT_BONUS</Tag>
@@ -1810,11 +1810,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SETTLE_STATTHALTER</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Settle / change[COLOR_REVERT] provincial governor[NEWLINE]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Installer / changer[COLOR_REVERT] le gouverneur provincial[NEWLINE]</French>
-		<German>Provinzstatthalter [COLOR_HIGHLIGHT_TEXT]ansiedeln / austauschen[COLOR_REVERT][NEWLINE]</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Stabilire / cambiare[COLOR_REVERT] governatore provincial[NEWLINE]</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Asentar / cambiar[COLOR_REVERT] gobernador provincial[NEWLINE]</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Settle as / Change[COLOR_REVERT] Provincial Governor[NEWLINE]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Installer comme / Changer[COLOR_REVERT] le Gouverneur Provincial[NEWLINE]</French>
+		<German>Als Provinzstatthalter [COLOR_HIGHLIGHT_TEXT]ansiedeln / austauschen[COLOR_REVERT][NEWLINE]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Stabilire come / Cambiare[COLOR_REVERT] Governatore Provincial[NEWLINE]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Asentar como / Cambiar[COLOR_REVERT] Gobernador Provincial[NEWLINE]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_SETTLE_STATTHALTER2</Tag>
@@ -5484,7 +5484,7 @@
 		<Tag>TXT_KEY_RELIGION_ORTHODOX_ADJECTIVE</Tag>
 		<English>Orthodox</English>
 		<French><Text>orthodoxe:orthodoxe:orthodoxes:orthodoxes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German><Text>Orthodoxisch:orthodoxischen:orthodoxische:orthodoxischer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
+		<German><Text>Orthodox:orthodoxen:orthodoxe:orthodoxer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
 		<Italian><Text>ortodosso:ortodossa:ortodossi</Text><Gender>Male:Female:Neuter</Gender><Plural>0:0:1</Plural></Italian>
 		<Spanish><Text>ortodoxo:ortodoxa:ortodoxos:ortodoxas</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Spanish>
 	</TEXT>
@@ -7698,11 +7698,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_STATTHALTER</Tag>
-		<English>Provincial governor</English>
-		<French>Gouverneur provincial</French>
-		<German>Provinzstatthalter</German>
-		<Italian>Governatore della Provincia</Italian>
-		<Spanish>Gobernador provincial</Spanish>
+		<English>Governor</English>
+		<French>Gouverneur</French>
+		<German>Statthalter</German>
+		<Italian>Governatore</Italian>
+		<Spanish>Gobernador</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_STATTHALTER_EGYPT</Tag>

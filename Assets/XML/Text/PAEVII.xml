@@ -545,6 +545,14 @@ Scuola di retorica
 		<Spanish>El edificio %s1_building ha quedado destruido.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FREE</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT</Tag>
 		<English>No combat rounds (Standard BTS)</English>
 		<French>Pas de tours de combat (Norme BTS)</French>
@@ -2031,14 +2039,6 @@ Scuola di retorica
 		<German>Diese Technologie ist allen griechischen Zivilisationen vorbehalten. Damit k&#246;nnen diese Zivilisationen ganz bestimmte Technologien erforschen, Einheiten erstellen oder milit&#228;rische Formationen durchf&#252;hren. Manche Technologien und deren Eigenschaften sind sogar eroberbar.</German>
 		<Italian>Questa tecnologia &#232; riservata a tutte le civilt&#224; greche. Ci&#242; consente a queste civilt&#224; di ricercare tecnologie specifiche, creare unit&#224; o istituire formazioni militari. Alcune tecnologie e le loro propriet&#224; possono addirittura essere conquistate.</Italian>
 		<Spanish>Esta tecnolog&#237;a est&#225; reservada a todas las civilizaciones griegas. Esto permite a estas civilizaciones investigar tecnolog&#237;as espec&#237;ficas, crear unidades o establecer formaciones militares. Algunas tecnolog&#237;as y sus propiedades pueden incluso ser conquistadas.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TECH_IRON_WORKING_HELP</Tag>
-		<English>[ICON_BULLET] Halves the time it takes to clear forests</English>
-		<French>[ICON_BULLET] R&#233;duit de moiti&#233; le temps n&#233;cessaire au d&#233;broussaillage des for&#234;ts</French>
-		<German>[ICON_BULLET] Halbiert die Dauer f&#252;r das Roden von W&#228;ldern</German>
-		<Italian>[ICON_BULLET] Dimezza il tempo necessario per ripulire le foreste</Italian>
-		<Spanish>[ICON_BULLET] Reduce a la mitad el tiempo que lleva talar los bosques</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ISLAMISIERUNG</Tag>

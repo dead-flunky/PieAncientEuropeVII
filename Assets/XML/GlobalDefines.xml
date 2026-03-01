@@ -395,7 +395,7 @@
 	</Define>
 	<Define>
 		<DefineName>COMBAT_DAMAGE</DefineName>
-		<iDefineIntVal>25</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>AIR_COMBAT_DAMAGE</DefineName>
@@ -415,7 +415,7 @@
 	</Define>
 	<Define>
 		<DefineName>RANGE_COMBAT_DAMAGE</DefineName>
-		<iDefineIntVal>20</iDefineIntVal>
+		<iDefineIntVal>18</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>COLLATERAL_COMBAT_DAMAGE</DefineName>
@@ -495,7 +495,7 @@
 	</Define>
 	<Define>
 		<DefineName>BASE_SPY_DESTROY_COST</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>33</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>SPY_DESTROY_COST_MULTIPLIER_LIMITED</DefineName>
@@ -1094,7 +1094,7 @@
 	</Define>
 	<Define>
 		<DefineName>WE_LOVE_THE_KING_RAND</DefineName>
-		<iDefineIntVal>750</iDefineIntVal>
+		<iDefineIntVal>1000</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>WE_LOVE_THE_KING_POPULATION_MIN_POPULATION</DefineName>
@@ -1544,7 +1544,7 @@
 	</Define>
 	<Define>
 		<DefineName>RANGED_ATTACKS_USE_MOVES</DefineName>
-		<iDefineIntVal>1</iDefineIntVal>
+		<iDefineIntVal>0</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>AI_SHOULDNT_MANAGE_PLOT_ASSIGNMENT</DefineName>

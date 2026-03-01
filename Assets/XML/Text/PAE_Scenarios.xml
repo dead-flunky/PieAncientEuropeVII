@@ -1980,9 +1980,9 @@
 		<Tag>TXT_KEY_GOTEN_ADJECTIVE</Tag>
 		<English>Gothic</English>
 		<French><Text>goth:gothe:goths:gothes</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></French>
-		<German>gotisch/e/r</German>
-		<Italian>gotico</Italian>
-		<Spanish>g&#243;tico</Spanish>
+		<German><Text>Gotisch:gotischen:gotische:gotischer</Text><Gender>Neuter:Neuter:Neuter:Male</Gender><Plural>0:0:0:0</Plural></German>
+		<Italian><Text>gotico:gotica:gotici:gotiche</Text><Gender>Male:Female:Male:Female</Gender><Plural>0:0:1:1</Plural></Italian>
+		<Spanish><Text>g&#243;tico:g&#243;ticos</Text><Plural>0:1</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GOTEN_DESC</Tag>

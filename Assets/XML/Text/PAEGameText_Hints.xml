@@ -322,11 +322,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_141</Tag>
-		<English>Iron Working halves the time required to clear forests.</English>
-		<French>Le travail du fer divise par deux le temps n&#233;cessaire au d&#233;frichage des for&#234;ts.</French>
-		<German>Eisenverarbeitung halbiert die Dauer f&#252;r das Roden von W&#228;ldern.</German>
-		<Italian>La lavorazione del ferro dimezza il tempo necessario per disboscare le foreste.</Italian>
-		<Spanish>Forja del hierro reduce a la mitad el tiempo necesario para talar los bosques.</Spanish>
+		<English>Possession of iron halves the duration of forest clearing.</English>
+		<French>La possession de fer r&#233;duit de moiti&#233; la dur&#233;e du d&#233;frichage.</French>
+		<German>Der Besitz von Eisen halbiert die Dauer von Waldrodungen.</German>
+		<Italian>Il possesso di ferro dimezza la durata del disboscamento.</Italian>
+		<Spanish>La posesi&#243;n de hierro reduce a la mitad la duraci&#243;n de la tala del bosque.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_45</Tag>

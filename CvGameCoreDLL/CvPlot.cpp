@@ -2538,7 +2538,10 @@ int CvPlot::getBuildTime(BuildTypes eBuild) const
 	{
 		// PAE
 		int iFaktor = 1;
-		if (GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getInfoTypeForString("TECH_IRON_WORKING")))) iFaktor = 2;
+		if (getSelectedUnit() != NULL) {
+			//if (GET_TEAM(getSelectedUnit()->getTeam()).isHasTech((TechTypes)(GC.getInfoTypeForString("TECH_IRON_WORKING")))) iFaktor = 2;
+			if (GET_TEAM(getSelectedUnit()->getTeam()).hasBonus((BonusTypes)(GC.getInfoTypeForString("BONUS_IRON2")))) iFaktor = 2;
+		}
 		iTime += GC.getBuildInfo(eBuild).getFeatureTime(getFeatureType()) / iFaktor;
 		// BTS
 		//iTime += GC.getBuildInfo(eBuild).getFeatureTime(getFeatureType());
