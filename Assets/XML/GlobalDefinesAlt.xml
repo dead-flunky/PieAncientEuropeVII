@@ -20,4 +20,14 @@
 		<DefineName>PAE_AI_TECH_BONUS</DefineName>
 		<iDefineIntVal>25</iDefineIntVal>
 	</Define>
+	<Define>
+		<!-- PAE chance of removing unworked improvements 1:10 (CvPlot.cpp) -->
+		<DefineName>PAE_UNWORKED_PLOT_REMOVE_CHANCE</DefineName>
+		<iDefineIntVal>20</iDefineIntVal>
+	</Define>
+	<Define>
+		<!-- PAE chance of removing city ruins 1:50 (CvCity.cpp) -->
+		<DefineName>PAE_CITY_RUINS_REMOVE_CHANCE</DefineName>
+		<iDefineIntVal>50</iDefineIntVal>
+	</Define>
 </Civ4Defines>

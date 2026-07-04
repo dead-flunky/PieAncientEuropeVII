@@ -465,7 +465,7 @@ def canTriggerCityFire(argsList):
 		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
 			iChance = 3
 
-		if iChance < gc.getGame().getSorenRandNum(10, "City Fire"):
+		if gc.getGame().getSorenRandNum(10, "City Fire") < iChance:
 			return False
 
 		return True

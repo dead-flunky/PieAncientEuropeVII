@@ -814,6 +814,11 @@ bool CvUnitAI::AI_bestCityBuild(CvCity* pCity, CvPlot** ppBestPlot, BuildTypes* 
 					{
 						if ((pLoopPlot->getImprovementType() == NO_IMPROVEMENT) || !(GET_PLAYER(getOwnerINLINE()).isOption(PLAYEROPTION_SAFE_AUTOMATION) && !(pLoopPlot->getImprovementType() == (GC.getDefineINT("RUINS_IMPROVEMENT")))))
 						{
+
+							// PAE: KI ignoriert unbewirtschaftete Plots
+							if (!pLoopPlot->isBeingWorked() && pLoopPlot->getBonusType(getTeam()) == NO_BONUS) continue;
+							// ------
+
 							iValue = pCity->AI_getBestBuildValue(iI);
 
 							if (iValue > iBestValue)
@@ -844,7 +849,7 @@ bool CvUnitAI::AI_bestCityBuild(CvCity* pCity, CvPlot** ppBestPlot, BuildTypes* 
 												}
 												else if (iPathTurns <= 1)
 												{
-													iMaxWorkers = AI_calculatePlotWorkersNeeded(pLoopPlot, eBuild);										
+													iMaxWorkers = AI_calculatePlotWorkersNeeded(pLoopPlot, eBuild);
 												}
 												if (pUnit != NULL)
 												{
@@ -898,7 +903,7 @@ bool CvUnitAI::AI_bestCityBuild(CvCity* pCity, CvPlot** ppBestPlot, BuildTypes* 
 					}
 					else if (iPathTurns <= 1)
 					{
-						iMaxWorkers = AI_calculatePlotWorkersNeeded(pBestPlot, eBestBuild);										
+						iMaxWorkers = AI_calculatePlotWorkersNeeded(pBestPlot, eBestBuild);
 					}
 					int iWorkerCount = GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pBestPlot, MISSIONAI_BUILD, getGroup());
 					if (iWorkerCount < iMaxWorkers)
@@ -1260,6 +1265,8 @@ void CvUnitAI::AI_workerMove()
 		}
 	}
 
+	// PAE: disabled (weiter unten aktiv)
+	/*
 	if (!isHuman())
 	{
 		if (plot()->getOwnerINLINE() == getOwnerINLINE())
@@ -1270,6 +1277,7 @@ void CvUnitAI::AI_workerMove()
 			}
 		}
 	}
+	*/
 
 	if (!(getGroup()->canDefend()))
 	{
@@ -1313,7 +1321,9 @@ void CvUnitAI::AI_workerMove()
 		return;
 	}
 
-	if (bCanRoute && !isBarbarian())
+	// BTS: if (bCanRoute && !isBarbarian())
+		// PAE:
+	if (bCanRoute)
 	{
 		if (AI_connectCity())
 		{
@@ -1393,7 +1403,8 @@ void CvUnitAI::AI_workerMove()
 		bool bCanal = ((100 * area()->getNumCities()) / std::max(1, GC.getGame().getNumCities()) < 85);
 		CvPlayerAI& kPlayer = GET_PLAYER(getOwnerINLINE());
 		bool bAirbase = false;
-		bAirbase = (kPlayer.AI_totalUnitAIs(UNITAI_PARADROP) || kPlayer.AI_totalUnitAIs(UNITAI_ATTACK_AIR) || kPlayer.AI_totalUnitAIs(UNITAI_MISSILE_AIR));
+		// PAE: disabled
+		//bAirbase = (kPlayer.AI_totalUnitAIs(UNITAI_PARADROP) || kPlayer.AI_totalUnitAIs(UNITAI_ATTACK_AIR) || kPlayer.AI_totalUnitAIs(UNITAI_MISSILE_AIR));
 		
 		if (bCanal || bAirbase)
 		{
@@ -1406,6 +1417,8 @@ void CvUnitAI::AI_workerMove()
 	}
 
 
+	// PAE: disabled (kommt oben schon vor mit !isBarbarian)
+	/*
 	if (bCanRoute && isBarbarian())
 	{
 		if (AI_connectCity())
@@ -1413,6 +1426,7 @@ void CvUnitAI::AI_workerMove()
 			return;
 		}
 	}
+	*/
 
 	if ((pCity == NULL) || (pCity->AI_getWorkersNeeded() == 0) || ((pCity->AI_getWorkersHave() > (pCity->AI_getWorkersNeeded() + 1))))
 	{
@@ -1461,6 +1475,8 @@ void CvUnitAI::AI_workerMove()
 		}
 	}
 
+	// BTS:
+	/*
 	if (bCanRoute)
 	{
 		if (AI_routeTerritory(true))
@@ -1474,6 +1490,15 @@ void CvUnitAI::AI_workerMove()
 		}
 
 		if (AI_routeCity())
+		{
+			return;
+		}
+	}
+	*/
+	// PAE:
+	if (bCanRoute)
+	{
+		if (AI_connectBonus(false))
 		{
 			return;
 		}
@@ -1500,6 +1525,8 @@ void CvUnitAI::AI_workerMove()
 		}
 	}
 
+	// PAE: disabled
+	/*
 	if (bCanRoute)
 	{
 		if (AI_routeTerritory())
@@ -1507,9 +1534,13 @@ void CvUnitAI::AI_workerMove()
 			return;
 		}
 	}
+	*/
+
 
 	if (!isHuman() || (isAutomated() && GET_TEAM(getTeam()).getAtWarCount(true) == 0))
 	{
+		// PAE: disabled
+		/*
 		if (!isHuman() || (getGameTurnCreated() < GC.getGame().getGameTurn()))
 		{
 			if (AI_nextCityToImproveAirlift())
@@ -1517,6 +1548,7 @@ void CvUnitAI::AI_workerMove()
 				return;
 			}
 		}
+		*/
 		if (!isHuman())
 		{
 			if (AI_load(UNITAI_SETTLER_SEA, MISSIONAI_LOAD_SETTLER, NO_UNITAI, -1, -1, -1, -1, MOVE_SAFE_TERRITORY))
@@ -5783,16 +5815,21 @@ void CvUnitAI::AI_networkAutomated()
 		return;
 	}
 
+	// PAE: disabled
+	/*
 	if (AI_routeTerritory(true))
 	{
 		return;
 	}
+	*/
 
 	if (AI_connectBonus(false))
 	{
 		return;
 	}
 
+	// PAE: disabled
+	/*
 	if (AI_routeCity())
 	{
 		return;
@@ -5802,6 +5839,7 @@ void CvUnitAI::AI_networkAutomated()
 	{
 		return;
 	}
+	*/
 	
 	if (AI_retreatToCity())
 	{
@@ -13250,6 +13288,10 @@ bool CvUnitAI::AI_improveLocalPlot(int iRange, CvCity* pIgnoreCity)
 				CvCity* pCity = pLoopPlot->getWorkingCity();
 				if ((NULL != pCity) && (pCity->getOwnerINLINE() == getOwnerINLINE()))
 				{
+
+					// PAE: Only improve plots that are being worked, except bonus plots
+					if (!pLoopPlot->isBeingWorked() && pLoopPlot->getBonusType(getTeam()) == NO_BONUS) continue;
+
 					if ((NULL == pIgnoreCity) || (pCity != pIgnoreCity))
 					{
 						if (AI_plotValid(pLoopPlot))
@@ -13309,7 +13351,7 @@ bool CvUnitAI::AI_improveLocalPlot(int iRange, CvCity* pIgnoreCity)
 													{
 														iBestValue = iValue;
 														pBestPlot = pLoopPlot;
-														eBestBuild = pCity->AI_getBestBuild(iIndex);											
+														eBestBuild = pCity->AI_getBestBuild(iIndex);
 													}
 												}
 											}
@@ -14051,6 +14093,11 @@ bool CvUnitAI::AI_improvePlot(CvPlot* pPlot, BuildTypes eBuild)
 	
 	if (eBuild != NO_BUILD)
 	{
+
+		// PAE: KI ignoriert unbewirtschaftete Plots
+		if (pPlot->getWorkingCity() == NULL) return false;
+		// ------
+
 		FAssertMsg(eBuild < GC.getNumBuildInfos(), "BestBuild is assigned a corrupt value");
 		
 		eBuild = AI_betterPlotBuild(pPlot, eBuild);
@@ -14102,7 +14149,22 @@ BuildTypes CvUnitAI::AI_betterPlotBuild(CvPlot* pPlot, BuildTypes eBuild)
 		CvFeatureInfo& kFeatureInfo = GC.getFeatureInfo(eFeature);
 		if (kOriginalBuildInfo.isFeatureRemove(eFeature))
 		{
+			// BTS
+			/*
 			if ((kOriginalBuildInfo.getImprovement() == NO_IMPROVEMENT) || (!pPlot->isBeingWorked() || (kFeatureInfo.getYieldChange(YIELD_FOOD) + kFeatureInfo.getYieldChange(YIELD_PRODUCTION)) <= 0))
+			{
+				bClearFeature = true;
+			}
+			*/
+			// PAE
+			if (kOriginalBuildInfo.getImprovement() == NO_IMPROVEMENT &&
+					(
+						kFeatureInfo.getYieldChange(YIELD_FOOD) < 0 ||
+						kFeatureInfo.getYieldChange(YIELD_PRODUCTION) < 0 ||
+						kFeatureInfo.getDefenseModifier() < 0 ||
+						kFeatureInfo.getHealthPercent() < 0
+					)
+				)
 			{
 				bClearFeature = true;
 			}

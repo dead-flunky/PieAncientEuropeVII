@@ -895,7 +895,7 @@ Besides of increasing the food storage of other cities, wagons can also spread c
 [ICON_BULLET] Grapes
 [ICON_BULLET] Olives
 [ICON_BULLET] Dates
-[H2]Seafood:[\H2]
+[H2]Seafood (only with fishing boats):[\H2]
 [ICON_BULLET] Crabs
 [ICON_BULLET] Clams
 
@@ -985,7 +985,7 @@ En plus de livrer de la nourriture &#224; d'autres villes, les chariots peuvent 
 [ICON_BULLET] Raisins
 [ICON_BULLET] Olives
 [ICON_BULLET] Dattes
-[H2]Fruits de mer :[\H2]
+[H2]Fruits de mer (uniquement avec les bateaux de p&#234;che):[\H2]
 [ICON_BULLET] Crabes
 [ICON_BULLET] Moules
 
@@ -1077,7 +1077,7 @@ Neben der Nahrungsmittellieferung kann das Fuhrwerk zum Verbreiten von kultivier
 [ICON_BULLET] Trauben
 [ICON_BULLET] Oliven
 [ICON_BULLET] Datteln
-[H2]Meeresfr&#252;chte:[\H2]
+[H2]Meeresfr&#252;chte (nur mit Fischerbooten):[\H2]
 [ICON_BULLET] Krabben
 [ICON_BULLET] Muscheln
 
@@ -1167,7 +1167,7 @@ Oltre a consegnare cibo, il carro pu&#242; essere utilizzato per distribuire ris
 [ICON_BULLET] Uva
 [ICON_BULLET] Olive
 [ICON_BULLET] Date
-[H2]Frutti di mare:[\H2]
+[H2]Frutti di mare (solo con barche da pesca):[\H2]
 [ICON_BULLET] Granchi
 [ICON_BULLET] Cozze
 
@@ -1258,7 +1258,7 @@ Adem&#225;s del incremento de la comida almacenada de las ciudades, las carruajo
 [ICON_BULLET] Aceitunas
 [ICON_BULLET] D&#225;tiles
 [ICON_BULLET] Uvas
-[H2]Mariscos:[\H2]
+[H2]Mariscos (solo con barcos de pesca):[\H2]
 [ICON_BULLET] Cangrejos
 [ICON_BULLET] Mejillones
 
@@ -2886,7 +2886,9 @@ Escaping units in open fields will move to another plot. Units that are located 
 
 [H2]Plague on the battlefield[\H2]
 
-After every battle, there is a chance of 3% that a plague appears on the battlefield (loser's plot and winner's plot) when more than 3 units are stacked on the loser's plot.</English>
+After every battle, there is a chance that a plague appears on the battlefield (loser's plot and winner's plot) when more than 3 units are stacked on the loser's plot.
+[ICON_BULLET] The BTS battle system (fight to annihilation, except retreating when attacking) has a 3% chance.
+[ICON_BULLET] The PAE battle system (round-based combat) has a 2% chance.</English>
 		<French>
 [H1]Combat[\H1]
 Les combats entre unit&#233;s dans PAE s'accompagnent d'effets tr&#232;s vari&#233;s :
@@ -2895,7 +2897,7 @@ Combat sur terre :
 
 1) Exp&#233;rience de guerre : A chaque victoire, une unit&#233; est en mesure d'augmenter son degr&#233;s d'exp&#233;rience. Les diff&#233;rents degr&#233;s sont : entra&#238;n&#233;, exp&#233;riment&#233;, aguerri, v&#233;t&#233;ran, &#233;lite et l&#233;gendaire. Voir les concepts de [LINK=CONCEPT_COMBAT3]Unit&#233;s-Rang d'exp&#233;rience[\LINK]
 
-2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir – [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
+2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir - [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
 
 3) Mercenaires : les v&#233;t&#233;rans qui combattent pour eux-m&#234;mes peuvent se d&#233;faire de cette promotion apr&#232;s un combat (20% de chance). S'il y a un h&#233;ros ou un g&#233;n&#233;ral dans la pile de l'unit&#233;, m&#234;me 50 %.
 
@@ -2923,7 +2925,7 @@ Combat sur terre :
 
 15) Combat contre des [LINK=CONCEPT_MERCENARY]mercenaires en mission[\LINK] : L'un d'entre eux est le chef. S'il est vaincu, vous pouvez le faire torturer. Il est probable qu'il r&#233;v&#232;le un ou plusieurs de ses potentiels commanditaires.
 
-16) Mort du meneur d'homme : voir – [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
+16) Mort du meneur d'homme : voir - [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
 
 17) Culture : la culture d'une unit&#233; victorieuse influence la case du combat. Parfois, des territoires ennemis voisins sont convertis &#224; la culture de l'unit&#233;. Seulement valable si ces cases sont aussi influenc&#233;es par une ville de m&#234;me culture.
 
@@ -3010,7 +3012,9 @@ Les unit&#233;s qui s'&#233;chappent en terrain d&#233;gag&#233; sont d&#233;pla
 
 [H2]Epid&#233;mie sur le champ de bataille[\H2]
 
-Apr&#232;s chaque bataille, il y a un risque de 3% d'apparition d'une &#233;pid&#233;mie sur le champ de bataille (dans la case du perdant et du vainqueur) quand il y a 3 unit&#233;s ou plus dans la case du perdant.
+Apr&#232;s chaque bataille, il y a un risque d'apparition d'une &#233;pid&#233;mie sur le champ de bataille (dans la case du perdant et du vainqueur) quand il y a 3 unit&#233;s ou plus dans la case du perdant.
+[ICON_BULLET] Le syst&#232;me de combat BTS (combat jusqu'&#224; l'annihilation, sauf en cas de retraite pendant une attaque) a 3 % de chances d'&#234;tre utilis&#233;.
+[ICON_BULLET] Le syst&#232;me de combat PAE (combat au tour par tour) a 2 % de chances d'&#234;tre utilis&#233;.
 		</French>
 		<German>
 [H1]Kampf[\H1]
@@ -3136,7 +3140,9 @@ Fl&#252;chtende Einheiten, die auf offenem Feld stehen werden auf ein anderes Fe
 
 [H2]Seuche auf dem Schlachtfeld[\H2]
 
-Es besteht nach jedem Kampf eine Chance von 3%, dass auf dem Schlachtfeld (Plot des Angreifers und Plot des Verlierers) eine Seuche ausbricht, sobald mehr als 3 Einheiten auf dem Verliererplot stehen.
+Nach jedem Kampf besteht die Chance, dass auf dem Schlachtfeld (Plot des Angreifers und Plot des Verlierers) eine Seuche ausbricht, sobald mehr als 3 Einheiten auf dem Verliererplot stehen.
+[ICON_BULLET] F&#252;r das BTS Kampfsystem (Kampf bis zur Vernichtung, ausgenommen R&#252;ckzug bei Angriff) besteht die Chance 3%.
+[ICON_BULLET] F&#252;r das PAE Kampfsystem (Kampfrunden) besteht die Chance 2%.
 		</German>
 		<Italian>
 [H1]Combat[\H1]
@@ -3261,7 +3267,9 @@ La fuga delle unit&#224; in campo aperto le sposter&#224; su un'altra casella. L
 
 [H2]Malattie sul campo di battaglia[\H2]
 
-Dopo ogni battaglia, c'&#232; la probabilit&#224; del 3% che una malattia appaia sul campo di battaglia (sia nella casella del vincitore che in quella dello sconfitto).
+Dopo ogni battaglia, c'&#232; la probabilit&#224; che una malattia appaia sul campo di battaglia (sia nella casella del vincitore che in quella dello sconfitto).
+[ICON_BULLET] Il sistema di combattimento BTS (combattimento fino all'annientamento, tranne la ritirata in fase di attacco) ha una probabilit&#224; del 3%.
+[ICON_BULLET] Il sistema di combattimento PAE (combattimento a turni) ha una probabilit&#224; del 2%.
 		</Italian>
 		<Spanish>
 [H1]Combate[\H1]
@@ -3386,7 +3394,9 @@ Las unidades huidas en campo abierto se mover&#225;n a otra casilla. Las unidas 
 
 [H2]Peste en el campo de batalla[\H2]
 
-Despu&#233;s de cada combate, hay una posibilidad del 3% de que una peste aparezca en el campo de batalla (tanto en la casilla del ganador como en el del perdedor) cuando m&#225;s de 3 unidades est&#225;n apiladas en la casilla del perdedor.
+Despu&#233;s de cada combate, hay una posibilidad de que una peste aparezca en el campo de batalla (tanto en la casilla del ganador como en el del perdedor) cuando m&#225;s de 3 unidades est&#225;n apiladas en la casilla del perdedor.
+[ICON_BULLET] El sistema de batalla BTS (lucha a muerte, excepto retirada al atacar) tiene un 3 % de probabilidad.
+[ICON_BULLET] El sistema de batalla PAE (combate por rondas) tiene un 2 % de probabilidad.
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -4377,7 +4387,7 @@ Le mod n'a probablement pas &#233;t&#233; charg&#233; enti&#232;rement. Essayez 
 Ce message peut appara&#238;tre quand vous jouez vos propres sc&#233;narios et changez des options. Il faut changer ces options directement dans le fichier du sc&#233;nario.
 
 [ICON_BULLET] CIV4 plante !
- Jouez en mode fen&#234;tr&#233; (plus stable – Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
+ Jouez en mode fen&#234;tr&#233; (plus stable - Menu => Options => Graphiques). ALT+TAB peut aussi provoquer des plantages.
 
 [ICON_BULLET] Je ne vois pas l'interface du jeu !
 1) Soyez s&#251;r d'avoir install&#233; le patch 3.19
@@ -8458,7 +8468,7 @@ Le poste de mercenaire vous permet d'acheter des troupes (en fonction du niveau 
 Jede Armee damals bestand aus S&#246;ldnern.
 
 In PAE wurde die Idee des S&#246;ldnertums wie folgt umgesetzt:
-[ICON_BULLET] Sie ben&#246;tigen keine klassischen Ressourcen (Pferde, Eisen, Bronze, …)
+[ICON_BULLET] Sie ben&#246;tigen keine klassischen Ressourcen (Pferde, Eisen, Bronze, ...)
 [ICON_BULLET] Sie haben hohe Wartungskosten, +1[ICON_GOLD] oder mehr pro Runde
 [ICON_BULLET] Ihre Effizienz ist h&#246;her als die von Einheiten desselben Levels
 [ICON_BULLET] Sie haben die Bef&#246;rderung "Unzuverl&#228;ssig" (-20%[ICON_STRENGTH]), die sie im Kampf verlieren k&#246;nnen.
@@ -8897,7 +8907,7 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET]damage decreases with the distance of the epicentre (=volcano)
 [ICON_BULLET]with a probability of 33%, no resources appear, otherwise magnetite or obsidian (same probability, never both at the same time). Then appears at least one resource of that kind
 [ICON_BULLET]every tile in the area of influence can get +1[ICON_FOOD] (probability 25% at every tile)
-[ICON_BULLET]a volcano eruption causes acid rain (see acid rain)
+[ICON_BULLET]a volcano eruption causes acid rain (see acid rain), ellipse to the east or west and 12 plots range
 [ICON_BULLET]a strength 9 eruption will demolish the volcano (tile becomes coast) if there are more than three nearby coast tiles which causes a tsunami
 
 [H2]Meteorites (2:8)[\H2]
@@ -8913,7 +8923,10 @@ In this interval, one of the four catastrophes will be chosen randomly.
 [ICON_BULLET]can cause a tsunami if it strikes water
 
 
-[H1]Global Natural Disasters Caused by Climate Fluctuations (1:2000)[\H1]
+[H1]Global Natural Disasters Caused by Climate Fluctuations[\H1]
+
+[ICON_BULLET] Chance 1:2000
+[ICON_BULLET] not before 300 turns
 
 In extremely rare cases, global natural disasters can occur that severely disrupt the balance of the game world. These include worldwide pandemics, often associated with famines-triggered by climatic anomalies, which in turn are caused by devastating volcanic eruptions in distant regions such as Alaska, Iceland, or Central America.
 
@@ -9058,7 +9071,7 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET] Diminution des d&#233;g&#226;ts proportionnellement &#224; l'&#233;loignement du volcan
 [ICON_BULLET] Chance de 33% qu'aucune ressource n'apparaisse, sinon magn&#233;tite ou d'obsidienne (probabilit&#233;s &#233;gales, jamais les deux en m&#234;me temps). Appara&#238;t alors au moins une ressource, avec de la chance plusieurs
 [ICON_BULLET] n'importe quelle case dans la sph&#232;re affect&#233;e par le volcan peut recevoir +1 [ICON_FOOD] (probabilit&#233; de 25 % par case)
-[ICON_BULLET] une &#233;ruption volcanique provoque des pluies acides (voir Pluie acide)
+[ICON_BULLET] une &#233;ruption volcanique provoque des pluies acides (voir Pluie acide), ellipse vers l'est ou l'ouest et une port&#233;e de 12 cases
 [ICON_BULLET] un volcan c&#244;tier (adjacent &#224; plus de 3 cases d'eau) qui entre en &#233;ruption de magnitude 9 est aras&#233; et sa case se transforme en case de c&#244;te, ce qui d&#233;clenche un tsunami
 
 [H2]M&#233;t&#233;orites (2:8)[\H2]
@@ -9074,7 +9087,10 @@ A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#23
 [ICON_BULLET] Peut provoquer un tsunami si elle s'ab&#238;me en mer
 
 
-[H1]Catastrophes naturelles mondiales caus&#233;es par les fluctuations climatiques (1:2000)[\H1]
+[H1]Catastrophes naturelles mondiales caus&#233;es par les fluctuations climatiques[\H1]
+
+[ICON_BULLET] Chance 1:2000
+[ICON_BULLET] au plus t&#244;t apr&#232;s 300 tours de jeu
 
 Dans des cas extr&#234;mement rares, des catastrophes naturelles mondiales peuvent survenir et perturber gravement l'&#233;quilibre du monde du jeu. Il s'agit notamment de pand&#233;mies mondiales, souvent associ&#233;es &#224; des famines, d&#233;clench&#233;es par des anomalies climatiques, elles-m&#234;mes caus&#233;es par des &#233;ruptions volcaniques d&#233;vastatrices dans des r&#233;gions lointaines comme l'Alaska, l'Islande ou l'Am&#233;rique centrale.
 
@@ -9220,7 +9236,7 @@ In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hl
 [ICON_BULLET]Schaden nimmt mit Entfernung vom Epizentrum (=Vulkan) ab
 [ICON_BULLET]mit einer Wahrscheinlichkeit von 33% entsteht: Magnetit, Obsidian oder nichts
 [ICON_BULLET]jedes Gel&#228;ndefeld im Einflussbereich kann +1[ICON_FOOD] erhalten (Wahrscheinlichkeit 25% auf jedem Feld)
-[ICON_BULLET]ein Vulkanausbruch verursacht Sauren Regen (siehe Saurer Regen)
+[ICON_BULLET]ein Vulkanausbruch verursacht Sauren Regen (siehe Saurer Regen), Ellipse nach Osten oder Westen und 12 Plots Reichweite
 [ICON_BULLET]ein Ausbruch der St&#228;rke 9 sprengt den Vulkan, wenn er in K&#252;stenn&#228;he (mehr als drei angrenzende Felder Wasser) ist, weg (Feld wird zu K&#252;ste) und l&#246;st einen Tsunami aus
 
 [H2]Meteoriten (2:8)[\H2]
@@ -9236,7 +9252,10 @@ In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hl
 [ICON_BULLET]kann, wenn er im Wasser einschl&#228;gt, einen Tsunami ausl&#246;sen
 
 
-[H1]Globale Naturkatastrophen durch Klimaschwankungen (1:2000)[\H1]
+[H1]Globale Naturkatastrophen durch Klimaschwankungen[\H1]
+
+[ICON_BULLET] Chance 1:2000
+[ICON_BULLET] fr&#252;hestens nach 300 Spielrunden
 
 In &#228;u&#223;erst seltenen F&#228;llen k&#246;nnen globale Naturkatastrophen auftreten, die das Gleichgewicht der Spielwelt empfindlich st&#246;ren. Dazu z&#228;hlen weltweite Pandemien, die oft im Zusammenhang mit Hungersn&#246;ten stehen - ausgel&#246;st durch klimatische Anomalien, die wiederum auf verheerende Vulkanausbr&#252;che in weit entfernten Regionen wie Alaska, Island, Mittelamerika oder Ozeanien zur&#252;ckgehen.
 
@@ -9269,150 +9288,154 @@ Auswirkungen:
 [ICON_BULLET] 1346 n.Chr.: Der Schwarze Tod: 1/3 der Bev&#246;lkerung
 		</German>
 		<Italian>
-[H1] Disastri Naturali [\H1]
+[H1]Disastri naturali[\H1]
 
-[H2]Fog ( tutti i 25 turni ) [\H2]
-[ICON_BULLET] fino al 600 aC .
-[ICON_BULLET] 25 % di bonus difesa
-[ICON_BULLET] solo sulle aree marine e costiere
-[ICON_BULLET] lente che navi
+[H2]Nebbia (ogni 25 turni)[\H2]
+[ICON_BULLET]Solo dal 600 a.C.
+[ICON_BULLET]Bonus di difesa del 25%
+[ICON_BULLET]Solo sulle caselle oceano e costa
+[ICON_BULLET]Rallenta le navi
 
-[H2] Sea Storm ( tutti i 60 turni ) [\H2]
-[ICON_BULLET] dal 600 aC . tutti i 30 giri
-[ICON_BULLET] -2 [ICON_FOOD] -2 [ICON_COMMERCE]
-[ICON_BULLET] 50 danni per round di unit&#224;
-[ICON_BULLET] solo sulle aree marine e costiere
-[ICON_BULLET] lente che navi
+[H2]Tempesta marina (ogni 60 turni)[\H2]
+[ICON_BULLET]Ogni 30 turni dal 600 a.C.
+[ICON_BULLET]-2 [ICON_FOOD], -2 [ICON_COMMERCE]
+[ICON_BULLET]Le unit&#224; subiscono 50 danni per turno
+[ICON_BULLET]Solo sulle caselle oceano e costa
+[ICON_BULLET]Rallenta le navi
 
-[H2] tempesta [\H2]
-[ICON_BULLET] serie di tornado ( raggio 1 )
-[ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
-[ICON_BULLET] 20 danni per round di unit&#224;
+[H2]Temporale[\H2]
+[ICON_BULLET]Conseguenza dei tornado (raggio 1)
+[ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
+[ICON_BULLET]le unit&#224; subiscono 20 danni per round
 
-[H2] Acid Rain [\H2]
-[ICON_BULLET] serie di eruzioni vulcaniche
-- A forza 8 : circolare , raggio 3 ( il vulcano )
-- A forza 9 : ellittica dal vulcano in uno dei punti cardinali , fino a 20 appezzamenti lontano
-[ICON_BULLET] -2 [ICON_FOOD] -2 [ICON_PRODUCTION] -2 [ICON_COMMERCE]
-[ICON_BULLET] 10 danni per round di unit&#224;
-[ICON_BULLET] -0.25 [ICON_UNHEALTHY] nelle citt&#224;
+[H2]Pioggia acida[\H2]
+[ICON_BULLET]conseguenza delle eruzioni vulcaniche
+- forza 8: circolare, raggio 3 (intorno al vulcano)
+- forza 9: ellissoidale in una delle direzioni cardinali, fino a 20 di distanza dalle eruzioni
+[ICON_BULLET]-2 [ICON_FOOD], -2 [ICON_PRODUCTION], -2 [ICON_COMMERCE]
+[ICON_BULLET]le unit&#224; subiscono 10 danni per round
+[ICON_BULLET]-0,25 [ICON_UNHEALTHY] in citt&#224;
 
-[H2] Malattia [\H2]
-[ICON_BULLET] serie di battaglie
-- Dal 4 unit&#224; sul campo
-- 2 % di probabilit&#224; per battaglia
-- Non si verifica in citt&#224;
-[ICON_BULLET] conseguenza delle citt&#224; malsane
-- Chance 10 %
-[ICON_BULLET] frutto di una piaga
-- Raggio 1 giro per la citt&#224;
-[ICON_BULLET] serie di tsunami
-- On campi Paese nell'area di influenza
-[ICON_BULLET] -2 [ICON_FOOD] -2 [ICON_PRODUCTION] -2 [ICON_COMMERCE]
-[ICON_BULLET] 20 danni per round di unit&#224;
-[ICON_BULLET] -0,5 [ICON_UNHEALTHY] nelle citt&#224;
-[ICON_BULLET] -25 % difesa
-[ICON_BULLET] pu&#242; diffondersi
+[H2]Epidemia[\H2]
+[ICON_BULLET]conseguenza delle battaglie
+- almeno 4 unit&#224; sulla casella
+- probabilit&#224; 2% per combattimento
+- non si verifica nelle citt&#224;
+[ICON_BULLET]conseguenza di citt&#224; insalubri
+- probabilit&#224; 10%
+[ICON_BULLET]conseguenza di una pestilenza
+- raggio 1 intorno alla citt&#224;
+[ICON_BULLET]conseguenza degli tsunami
+- sulle caselle di terra nell'area di influenza
+[ICON_BULLET]-2 [ICON_FOOD], -2 [ICON_PRODUCTION], -2 [ICON_COMMERCE]
+[ICON_BULLET]le unit&#224; subiscono 20 danni per turno
+[ICON_BULLET]-0,5 [ICON_UNHEALTHY] nelle citt&#224;
+[ICON_BULLET]-25% di difesa
+[ICON_BULLET]pu&#242; Diffusione
 
-[H2] Tornado ( tutti i 60 turni ) [\H2]
-[ICON_BULLET] dal 600 aC . tutti i 30 turni
-[ICON_BULLET] -1 [ICON_FOOD] -2 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
-[ICON_BULLET] 40 danni per round di unit&#224;
-[ICON_BULLET] unit&#224; lente che
+[H2]Tornado (ogni 60 turni)[\H2]
+[ICON_BULLET]ogni 30 turni dal 600 a.C.
+[ICON_BULLET]-1 [ICON_FOOD], -2 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
+[ICON_BULLET]le unit&#224; subiscono 40 danni per turno
+[ICON_BULLET]rallenta le unit&#224;
 
-[H2] Sandstorm ( tutti i 90 turni ) [\H2]
-[ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
-[ICON_BULLET] 20 danni per round di unit&#224;
-[ICON_BULLET] -0.25 [ICON_UNHEALTHY] nelle citt&#224;
-[ICON_BULLET] unit&#224; lente che
-[ICON_BULLET] solo su terreni desertici , cos&#236; come le coste vicine e trame di livello
-[ICON_BULLET] pu&#242; diffondersi
+[H2]Tempesta di sabbia (ogni 90 turni)[\H2]
+[ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
+[ICON_BULLET]le unit&#224; subiscono 20 danni per turno
+[ICON_BULLET]-0,25 [ICON_UNHEALTHY] nelle citt&#224;
+[ICON_BULLET]rallenta le unit&#224; gi&#249;
+[ICON_BULLET]solo sulle caselle del deserto e sulle caselle costiere e pianeggianti vicine
+[ICON_BULLET]pu&#242; diffondersi
 
-[H2] Locuste ( tutti i 60 turni ) [\H2]
-[ICON_BULLET] dal 600 aC . tutti i 30 turni
-[ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
-[ICON_BULLET] 10 danni per round di unit&#224;
-[ICON_BULLET] -0,5 [ICON_UNHEALTHY] nelle citt&#224;
-[ICON_BULLET] unit&#224; lente che
-[ICON_BULLET] sui deserti e le trame di livello
-[ICON_BULLET] pu&#242; diffondersi
+[H2]Infestazione del locus (ogni 60 round)[\H2]
+[ICON_BULLET]ogni 30 round dal 600 a.C.
+[ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
+[ICON_BULLET]le unit&#224; subiscono 10 danni per round
+[ICON_BULLET]-0,5 [ICON_UNHEALTHY] nelle citt&#224;
+[ICON_BULLET]rallenta le unit&#224;
+[ICON_BULLET]sulle caselle del deserto e delle pianure
+[ICON_BULLET]pu&#242; diffondersi
 
-[H2] wildfire [\H2]
-[ICON_BULLET] di terremoti, eruzioni vulcaniche , meteoriti e comete
-[ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION] , -1 [ICON_COMMERCE]
-[ICON_BULLET] 20 danni per round di unit&#224;
-[ICON_BULLET] -0,5 [ICON_UNHEALTHY] nelle citt&#224;
-[ICON_BULLET] unit&#224; lente che
-[ICON_BULLET] pu&#242; diffondersi
-[ICON_BULLET] copre superfici libere
+[H2]Conflagrazione[\H2]
+[ICON_BULLET]conseguenza di terremoti, eruzioni vulcaniche, meteoriti e comete
+[ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
+[ICON_BULLET]le unit&#224; subiscono 20 danni per turno
+[ICON_BULLET]-0,5 [ICON_UNHEALTHY] nelle citt&#224;
+[ICON_BULLET]rallenta le unit&#224;
+[ICON_BULLET]pu&#242; diffondersi
+[ICON_BULLET]colpisce le aree senza foreste ecc.
 
-[H2]Foresta Bruciato[\H2]
-[ICON_BULLET] di terremoti, eruzioni vulcaniche , meteoriti e comete
-[ICON_BULLET] -1 [ICON_FOOD] , -1 [ICON_PRODUCTION]
-[ICON_BULLET] -0.25 [ICON_UNHEALTHY] nelle citt&#224;
-[ICON_BULLET] si riferisce alle foreste
-[ICON_BULLET] pu&#242; rigenerarsi
+[H2]Foresta Bruciata[\H2]
+[ICON_BULLET]conseguenza di terremoti, eruzioni vulcaniche, meteoriti e comete
+[ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION]
+[ICON_BULLET]-0,25 [ICON_UNHEALTHY] nelle citt&#224;
+[ICON_BULLET]colpisce foreste
+[ICON_BULLET]possono rigenerarsi
 
-[H2]Flood[\H2]
-[ICON_BULLET] di terremoti, eruzioni vulcaniche , meteoriti e comete
-[ICON_BULLET] tsunami ha tre campi ampia e va fino a quattro campi dell'entroterra
-[ICON_BULLET] collina vetta e fermare lo tsunami
-[ICON_BULLET] unit&#224; possono essere danneggiati / distrutti e la modernizzazione sono distrutti
-[ICON_BULLET] cittadine perdere fino a met&#224; dei loro abitanti , unit&#224; nelle citt&#224; pu&#242; ( meno al di fuori della citt&#224; ) e gli edifici sono danneggiati / distrutti distrutti . Il danno alla citt&#224; diminuisce con la distanza dalla costa ( per le unit&#224; al di fuori della citt&#224; e non ) ; meno danni sulle citt&#224; che sono state costruite su una collina e avere un muro della citt&#224; .
+[H2]Diluvio[\H2]
+[ICON_BULLET]conseguenza di terremoti, eruzioni vulcaniche, meteoriti e comete
+[ICON_BULLET]lo tsunami &#232; largo tre caselle e si estende fino a quattro caselle nell'entroterra
+[ICON_BULLET]picchi e colline fermano lo tsunami
+[ICON_BULLET]le unit&#224; possono essere danneggiate/uccise e le costruzioni distrutte
+[ICON_BULLET]le citt&#224; perdono fino al 50% della loro popolazione, le unit&#224; possono essere danneggiate/uccise (meno che fuori dalle citt&#224;) e gli edifici distrutti. Il danno alle citt&#224; diminuisce con la distanza dalla costa; le citt&#224; costruite su colline E dotate di mura subiscono meno danni.
 
+[H1]Terremoti, eruzioni vulcaniche, comete e meteoriti[\H1]
+si verificano ogni 120 turni fino al 400 a.C., poi ogni 60 turni. Se giochi con il nome "Apocalypto", la frequenza di queste catastrofi raddoppia (ogni 60/30 turni) (Apocalypto non ha effetto nelle partite multigiocatore).
 
-[H1] terremoti, eruzioni vulcaniche , comete e meteoriti [\H1]
-sostenute fino all'anno 400 aC . tutti i 120 giri e poi ogni 60 giri . Se si gioca con il nome di " Apocalypto ", la frequenza raddoppia ( ad esempio ogni 60 o 30 giri ) ( Apocalypto funziona solo in modalit&#224; single player e non ha alcun effetto in modalit&#224; multiplayer ) .
-In questo intervallo , uno di questi disastri naturali saranno selezionati a caso .
+In questo intervallo, una delle quattro catastrofi verr&#224; scelta casualmente.
 
-[H2]Terremoti ( 3:8 ) [\H2]
-[ICON_BULLET] ha magnitudo 6 , 7 , 8 o 9
-[ICON_BULLET] 6 e 7 , un raggio di 1 , 8 : raggio di 2 , 9 : raggio di 3 campi
-[ICON_BULLET] pu&#242; modernizzazione e distruggere gli edifici , danni / distruggere le unit&#224; , ridurre la popolazione e la conservazione degli alimenti delle citt&#224; e genera conflagrazione
-[ICON_BULLET] danni aumenta con la distanza dall'epicentro
-[ICON_BULLET] in un terremoto di magnitudo 9 possono essere distrutti nei pressi delle citt&#224; epicentro con popolazione inferiore a 6 punti e perdere miracolo!
-[ICON_BULLET] con una probabilit&#224; del 20 % di essere costruito su uno dei campi nel raggio intorno all'epicentro di rame, ferro , oro, argento , pietre preziose , piombo, stagno , zinco , ossidiana , magnetite , la pietra , il marmo , il sale , o elettro .
-[ICON_BULLET] l'epicentro &#232; situato su una montagna e il terremoto ha una grandezza di 8 o 9 , un'eruzione vulcanica &#232; innescata dalla magnitudo del terremoto
-[ICON_BULLET] &#232; l'epicentro in mare e il terremoto di magnitudo 9 viene attivato al posto del terremoto , uno tsunami ( con spessore inferiore a 9, non succede nulla )
+[H2]Terremoti (3:8)[\H2]
+[ICON_BULLET]ha una forza di 6, 7, 8 o 9
+[ICON_BULLET]6 e 7: raggio di 1; 8: raggio di 2; 9: raggio di 3 caselle
+[ICON_BULLET]Pu&#242; distruggere miglioramenti ed edifici, danneggiare/uccidere unit&#224;, diminuire la popolazione e le scorte di cibo delle citt&#224; e causare incendi.
+[ICON_BULLET]I danni diminuiscono con la distanza dall'epicentro.
+[ICON_BULLET]Un terremoto di magnitudo 9 pu&#242; distruggere le meraviglie nelle citt&#224; vicine all'epicentro e persino la citt&#224; stessa se ha meno di 6 abitanti!
 
-[H2]Eruzione vulcanica ( 2:8 )[\H2]
-[ICON_BULLET] ha magnitudo 8 o 9
-[ICON_BULLET] 8 : raggio di 1 , 9 : raggio di 2 campi
-[ICON_BULLET] pu&#242; modernizzazione e distruggere gli edifici , danni / distruggere le unit&#224; , ridurre la popolazione e la conservazione degli alimenti delle citt&#224; e genera conflagrazione
-[ICON_BULLET] danni aumenta con la distanza dall'epicentro ( = vulcano ) da
-[ICON_BULLET] con una probabilit&#224; del 33 % non ci sono risorse, altrimenti magnetite o di ossidiana ( uguale probabilit&#224; , mai entrambi contemporaneamente) . Poi si pone almeno una risorsa , con la fortuna , pi&#249;
-[ICON_BULLET] qualsiasi casella nella sfera di influenza pu&#242; +1 [ICON_FOOD] ottenuto (probabilit&#224; del 25% su ogni scatola )
-[ICON_BULLET] un'eruzione vulcanica ha causato piogge acide ( vedi Acid Rain)
-[ICON_BULLET] un focolaio di magnitudo 9 &#232; al di l&#224; del vulcano quando &#232; vicino alla costa ( pi&#249; di tre campi adiacenti di acqua) , off ( box -to-coast ) e innesca uno tsunami
+[ICON_BULLET]Con una probabilit&#224; del 20%, una delle seguenti risorse appare su una delle caselle nell'area di influenza (raggio intorno all'epicentro): rame, ferro, oro, argento, gemme, piombo, stagno, zinco, ossidiana, magnetite, pietra, marmo, sale, elettro.
 
-[H2]Meteoriti ( 2:8 )[\H2]
-[ICON_BULLET] a seconda della dimensione della mappa un massimo di 1 a 12 meteoriti in un round
-[ICON_BULLET] popolazione della citt&#224; &#232; tagliata a met&#224; , la conservazione degli alimenti vuoti , le unit&#224; possono essere danneggiati / distrutti e gli edifici sono distrutti
-[ICON_BULLET] pu&#242; distruggere in un raggio di un campo per l'impatto della modernizzazione e le strade , con una probabilit&#224; del 25 % &#232; prodotto in un campo Oriharukon o magnetite
+[ICON_BULLET]Se l'epicentro si trova su una vetta e il terremoto ha magnitudo 8 o 9, si verifica un'eruzione vulcanica di pari intensit&#224;.
+[ICON_BULLET]Se l'epicentro si trova in mare e il terremoto ha magnitudo 9, si genera uno tsunami al posto del terremoto (se la magnitudo &#232; inferiore a 9, non accade nulla).
 
-[H2]Comet ( 1:8 )[\H2]
-[ICON_BULLET] a seconda della dimensione della mappa fino a 1-2 pezzi di cometa pu&#242; perseguire
-[ICON_BULLET] popolazione della citt&#224; &#232; ridotto ad un sesto , la conservazione degli alimenti vuoti , tutte le unit&#224; vengono distrutte e gli edifici cos&#236; come i miracoli possono essere distrutti
-[ICON_BULLET] entro un raggio di tre campi per l'abbattimento pu&#242; provocare incendi , le unit&#224; danneggiate / distrutte e distrutti modernizzazione
-[ICON_BULLET] con una probabilit&#224; del 50 % di essere costruito sul pannello di magnetite tuck -in o Oriharukon
-[ICON_BULLET] pu&#242; , se colpisce l'acqua , provocare uno tsunami
+[H2]Eruzioni vulcaniche (2:8)[\H2]
+[ICON_BULLET]Magnitudo 8 o 9
+[ICON_BULLET]8: raggio di 1; 9: raggio di 2 caselle
+[ICON_BULLET]pu&#242; distruggere miglioramenti ed edifici, danneggiare/uccidere unit&#224;, diminuire la popolazione e le scorte di cibo delle citt&#224; e causare incendi
+[ICON_BULLET]il danno diminuisce con la distanza dall'epicentro (=vulcano)
+[ICON_BULLET]con una probabilit&#224; del 33%, non compaiono risorse, altrimenti magnetite o ossidiana (stessa probabilit&#224;, mai entrambe contemporaneamente). Quindi appare almeno una risorsa di quel tipo
+[ICON_BULLET]Ogni casella nell'area di influenza pu&#242; ottenere +1[ICON_FOOD] (probabilit&#224; del 25% per ogni casella)
+[ICON_BULLET]Un'eruzione vulcanica provoca piogge acide (vedi piogge acide), ellisse a est o a ovest e raggio di 12 caselle
+[ICON_BULLET]Un'eruzione di forza 9 demolir&#224; il vulcano (la casella diventa costa) se ci sono pi&#249; di tre caselle costiere vicine che causano uno tsunami
 
+[H2]Meteoriti (2:8)[\H2]
+[ICON_BULLET]Massimo 1-12 impatti (a seconda delle dimensioni della mappa) in un round
+[ICON_BULLET]La popolazione della citt&#224; viene dimezzata, il magazzino del cibo svuotato, le unit&#224; possono essere danneggiate/uccise e gli edifici distrutti
+[ICON_BULLET]Miglioramenti e strade possono essere distrutti in un raggio di una casella attorno all'impatto, L'oricalco o la magnetite possono comparire su una delle caselle con una probabilit&#224; del 25%.
 
-[H1]Disastri naturali globali causati da fluttuazioni climatiche (1:2000)[\H1]
+[H2]Cometa (1:8)[\H2]
+[ICON_BULLET]Massimo 1-2 impatti (a seconda delle dimensioni della mappa) in un turno.
+[ICON_BULLET]La popolazione della citt&#224; si riduce a un sesto, le scorte di cibo si svuotano, ogni unit&#224; viene uccisa e gli edifici, cos&#236; come le meraviglie, possono essere distrutti.
+[ICON_BULLET]Pu&#242; verificarsi un incendio, con danni/uccisioni delle unit&#224; e distruzione dei miglioramenti in un raggio di tre caselle intorno al punto d'impatto.
+[ICON_BULLET]La magnetite o l'oricalco compaiono sulla casella d'impatto con una probabilit&#224; del 50%.
+[ICON_BULLET]Pu&#242; causare uno tsunami se colpisce l'acqua.
 
-In casi estremamente rari, possono verificarsi disastri naturali globali che compromettono gravemente l'equilibrio del mondo di gioco. Tra questi, pandemie mondiali, spesso associate a carestie, innescate da anomalie climatiche, a loro volta causate da devastanti eruzioni vulcaniche in regioni remote come l'Alaska, l'Islanda o l'America Centrale.
+[H1]Disastri naturali globali causati dalle fluttuazioni climatiche[\H1]
 
-Questi disastri hanno un impatto diretto sulla popolazione e quindi influenzano la stabilit&#224; economica e politica di imperi e culture. Servono a ricordare che le civilt&#224; possono essere scosse da shock esterni e che l'adattabilit&#224; spesso determina il potere.
+[ICON_BULLET] Probabilit&#224; 1:2000
+[ICON_BULLET] Non prima di 300 turni
+
+In casi estremamente rari, possono verificarsi disastri naturali globali che sconvolgono gravemente l'equilibrio del mondo di gioco. Tra questi, le pandemie mondiali, spesso associate a carestie, innescate da anomalie climatiche, a loro volta causate da devastanti eruzioni vulcaniche in regioni remote come l'Alaska, l'Islanda o l'America Centrale.
+
+Questi disastri hanno un impatto diretto sulla popolazione e quindi influenzano la stabilit&#224; economica e politica di imperi e culture. Servono a ricordare che le civilt&#224; possono essere scosse da shock esterni e che la capacit&#224; di adattamento spesso determina il potere.
 
 Effetti:
 
-[ICON_BULLET] Carestia: calo demografico del 50% in ogni citt&#224;
+[ICON_BULLET] Carestia: calo del 50% della popolazione in ogni citt&#224;
 
-[ICON_BULLET] Pandemia: tutte le citt&#224; con una popolazione di 6 o pi&#249; abitanti dopo questo calo hanno una probabilit&#224; di soccombere a una pestilenza pari a Pop x (Pop - 3) %
+[ICON_BULLET] Pandemia: tutte le citt&#224; con una popolazione di 6 o pi&#249; abitanti dopo questo calo hanno una probabilit&#224; di soccombere alla peste (Pop x (Pop-3)%)
 
-[ICON_BULLET] Fattorie, piantagioni, tenute, vigneti, frantoi e villaggi di montagna vengono distrutti al 50%. Le foreste crescono sui campi vuoti.
+[ICON_BULLET] Fattorie, piantagioni, tenute, vigneti, frantoi e villaggi di montagna vengono distrutti al 50%. Sulle terre desolate crescono foreste.
 
-[ICON_BULLET] Borghi, villaggi e comunit&#224; vengono ridotti a capanne
+[ICON_BULLET] Borghi, villaggi e citt&#224; vengono ridotti a capanne.
 
 [ICON_BULLET] Le strade vengono distrutte al 50%. Le strade romane lastricate sono esenti.
 
@@ -9420,15 +9443,15 @@ Effetti:
 
 
 [H2]Esempi storici:[\H2]
-[ICON_BULLET] 3500 a.C.: peste in Europa e Asia
-[ICON_BULLET] 1400 a.C.: peste in Eurasia
+[ICON_BULLET] 3500 a.C.: Peste in Europa e Asia
 [ICON_BULLET] 1612 a.C.: Eruzione minoica (Santorini)
-[ICON_BULLET] 1250 a.C.: siccit&#224;, carestia e una serie di terremoti portano alla diffusione dei Popoli del Mare
-[ICON_BULLET] 165 d.C.: peste antonina: 7-10 milioni di vittime
-[ICON_BULLET] 250 d.C.: peste cipriota: diversi milioni di vittime
-[ICON_BULLET] 536 d.C.: eruzioni vulcaniche in Islanda e Ilopango portano a un anno senza sole in Europa e Asia
-[ICON_BULLET] 541 d.C.: Peste di Giustiniano: almeno 25 milioni di vittime
-[ICON_BULLET] 1346 d.C.: Peste Nera: 1/3 della popolazione
+[ICON_BULLET] 1400 a.C.: Peste in Eurasia
+[ICON_BULLET] 1250 a.C.: Siccit&#224;, carestia e una serie di terremoti portano alla diffusione dei Popoli del Mare
+[ICON_BULLET] 165 d.C.: Peste antonina: 7-10 milioni di vittime
+[ICON_BULLET] 250 d.C.: Peste cipriota: diversi milioni di vittime
+[ICON_BULLET] 536 d.C.: Eruzioni vulcaniche in Islanda e a Ilopango portano a un anno senza sole in Europa e Asia
+[ICON_BULLET] 541 d.C.: Peste di Giustiniano: almeno 25 milioni di vittime vittime
+[ICON_BULLET] 1346 d.C.: La peste nera: 1/3 della popolazione
 		</Italian>
 		<Spanish>
 [H1]Desastres naturales[\H1]
@@ -9543,7 +9566,7 @@ En este intervalo, uno de las cuatro cat&#225;strofes ser&#225; elegida aleatori
 [ICON_BULLET]el da&#241;o se reduce con la distancia al epicentro (=volc&#225;n)
 [ICON_BULLET]con una probabilidad del 33%, si no hay los recursos, aparecen magnetita u obsidiana (la misma probabilidad, pero nunca al mismo tiempo). Aparece al menos un recurso de ese tipo.
 [ICON_BULLET]cada casilla en el &#225;rea de influencia puede obtener +1[ICON_FOOD] (probabilidad del 25% en cada casilla)
-[ICON_BULLET]una erupci&#243;n volc&#225;nica causa lluvia &#225;cida (ver lluvia &#225;cida)
+[ICON_BULLET]una erupci&#243;n volc&#225;nica causa lluvia &#225;cida (ver lluvia &#225;cida), elipse hacia el este o el oeste y un alcance de 12 casillas
 [ICON_BULLET]una erupci&#243;n de fuerza 9 derribar&#225; el volc&#225;n (la casilla se volver&#225; costa) si hay m&#225;s de tres casillas de costa cercanas lo que causar&#225; un tsunami
 
 [H2]Meteoritos (2:8)[\H2]
@@ -9559,7 +9582,10 @@ En este intervalo, uno de las cuatro cat&#225;strofes ser&#225; elegida aleatori
 [ICON_BULLET]puede causar un tsunami si golpea el agua
 
 
-[H1] Desastres naturales globales causados por fluctuaciones clim&#225;ticas (1:2000)[\H1]
+[H1] Desastres naturales globales causados por fluctuaciones clim&#225;ticas[\H1]
+
+[ICON_BULLET] probabilidad del 1:2000
+[ICON_BULLET] como muy pronto despu&#233;s de 300 turnos de juego
 
 En casos extremadamente raros, pueden ocurrir desastres naturales globales que alteren gravemente el equilibrio del mundo del juego. Estos incluyen pandemias mundiales, a menudo asociadas con hambrunas, desencadenadas por anomal&#237;as clim&#225;ticas, que a su vez son causadas por devastadoras erupciones volc&#225;nicas en regiones distantes como Alaska, Islandia o Centroam&#233;rica.
 
@@ -10244,12 +10270,12 @@ Own terrain:
 
 Vassal terrain:
 [ICON_BULLET] City: Food yield minus amount of units on the plot
-[ICON_BULLET] Land: chance of 30%
+[ICON_BULLET] Land: chance of 20%
 
 Friendly Terrain (depending on the attitude of the leader):
-[ICON_BULLET] Friendly: 30% chance
-[ICON_BULLET] Pleased: 20%
-[ICON_BULLET] Carefully: 10%
+[ICON_BULLET] Friendly: 15% chance
+[ICON_BULLET] Pleased: 10%
+[ICON_BULLET] Carefully: 5%
 [ICON_BULLET] Anything else: 0%
  ----------------
 [ICON_BULLET] City: Food yield minus amount of units
@@ -10352,12 +10378,12 @@ Domaine du joueur:
 
 Territoires vassaux:
 [ICON_BULLET] Ville : nourriture produite par la ville moins nombre d'unit&#233;s pr&#233;sentes en garnison
-[ICON_BULLET] Pays : 30 % de chance
+[ICON_BULLET] Pays : 20 % de chance
 
 Territoires alli&#233;s (selon l'attitude du chef de l'Etat ) :
-[ICON_BULLET] Enthousiaste : 30 % de chance
-[ICON_BULLET] Amical : 20 %
-[ICON_BULLET] Se m&#233;fie : 10 %
+[ICON_BULLET] Enthousiaste : 15 % de chance
+[ICON_BULLET] Amical : 10 %
+[ICON_BULLET] Se m&#233;fie : 5 %
 [ICON_BULLET] Tout le reste : 0 %
  ----------------
 [ICON_BULLET] Ville : revenu de moins de nourriture nombre d'unit&#233;s
@@ -10462,12 +10488,12 @@ Eigenes Terrain:
 
 Vasallengebiet:
 [ICON_BULLET] Stadt: Nahrungsertrag abz&#252;glich Anzahl der Einheiten auf dem Feld
-[ICON_BULLET] Land: 30% Chance
+[ICON_BULLET] Land: 20% Chance
 
 Befreundetes Terrain (je nach Haltung des Staatsoberhaupts):
-[ICON_BULLET] Freundlich: Chance von 30%
-[ICON_BULLET] Erfreut: 20%
-[ICON_BULLET] Vorsichtig: 10%
+[ICON_BULLET] Freundlich: Chance von 15%
+[ICON_BULLET] Erfreut: 10%
+[ICON_BULLET] Vorsichtig: 5%
 [ICON_BULLET] Alles andere: 0%
 -----------------
 [ICON_BULLET] Stadt: Nahrungsertrag abz&#252;glich Anzahl der Einheiten
@@ -10571,12 +10597,12 @@ Personalizzato terreno:
 
 Vassalli Terrain :
 [ICON_BULLET] Citt&#224; : il reddito meno cibo numero di unit&#224; sul campo
-[ICON_BULLET] Paese : 30 % di probabilit&#224;
+[ICON_BULLET] Paese : 20 % di probabilit&#224;
 
 Il terreno cordiale ( a seconda l'atteggiamento del capo dello Stato ) :
-[ICON_BULLET] Amichevole : 30 % di possibilit&#224; di
-[ICON_BULLET] Soddisfatto : 20 %
-[ICON_BULLET] Attenzione : 10 %
+[ICON_BULLET] Amichevole : 15 % di possibilit&#224; di
+[ICON_BULLET] Soddisfatto : 10 %
+[ICON_BULLET] Attenzione : 5 %
 [ICON_BULLET] Tutto il resto : 0 %
  ----------------
 [ICON_BULLET] Citt&#224; : il reddito cibo meno il numero di unit&#224;
@@ -10680,12 +10706,12 @@ Terreno propio:
 
 Terreno vasallo: 
 [ICON_BULLET] Ciudad: Producci&#243;n de comida menos la cantidad de unidades en esa casilla
-[ICON_BULLET] Pa&#237;s: probabilidad del 30%
+[ICON_BULLET] Pa&#237;s: probabilidad del 20%
 
 Terreno amistoso (dependiendo de la actitud del l&#237;der):
-[ICON_BULLET] Entusiasta: 30% de posibilidad
-[ICON_BULLET] Encantado: 20%
-[ICON_BULLET] Cauteloso: 10%
+[ICON_BULLET] Entusiasta: 15% de posibilidad
+[ICON_BULLET] Encantado: 10%
+[ICON_BULLET] Cauteloso: 5%
 [ICON_BULLET] Cualquier otro: 0%
  ----------------
 [ICON_BULLET] Ciudad: Producci&#243;n de comida menos la cantidad de unidades
@@ -11759,7 +11785,7 @@ Effects of a religious expulsion:
 [ICON_BULLET] The player receives the same number of slaves and gold carts as the city loses population.
 [ICON_BULLET] Only 1 religion is removed per expulsion.
 [ICON_BULLET] The buildings of the religion disappear, except for shrines.
-[ICON_BULLET] 1:10 chance: The city falls into unrest for 1 turn.
+[ICON_BULLET] 1:10 chance: The city falls into unrest for 1 turn. Except in the case of professional religion expellers (Inquisitors).
 [ICON_BULLET] Diaspora: chance 80%: The religion moves to a city in the area (preferably cities that already have this religion), increasing the population: +1 pop for cities under 5 pop, +food for cities with 5 or more pop.
 
 [TAB] If a dualistic or monotheistic religion is expelled:
@@ -11885,7 +11911,7 @@ Effets de l'expulsion religieuse :
 [ICON_BULLET] Le joueur re&#231;oit autant d'esclaves et de chariots d'or que la ville perd de la population.
 [ICON_BULLET] Une seule religion est supprim&#233;e par expulsion.
 [ICON_BULLET] Les b&#226;timents religieux disparaissent, &#224; l'exception des sanctuaires.
-[ICON_BULLET] 1:10 chance : La ville tombe en &#233;meute pendant 1 tour.
+[ICON_BULLET] 1:10 chance : La ville tombe en &#233;meute pendant 1 tour. Sauf dans le cas des exorcistes religieux professionnels (inquisiteurs).
 [ICON_BULLET] Diaspora : chance 80 % : La religion se d&#233;place vers une ville de la r&#233;gion (de pr&#233;f&#233;rence les villes qui ont d&#233;j&#224; cette religion), augmentant la population : +1 pop pour les villes de moins de 5 pop, +nourriture pour les villes de 5 pop ou plus.
 
 [TAB] Si une religion dualiste ou monoth&#233;iste est expuls&#233;e :
@@ -12011,7 +12037,7 @@ Auswirkungen einer Religionsaustreibung:
 [ICON_BULLET] Der Spieler erh&#228;lt genauso viel Sklaven und Goldkarren wie die Stadt an Bev&#246;lkerung verliert.
 [ICON_BULLET] Es wird immer nur 1 Religion pro Austreibung entfernt.
 [ICON_BULLET] Die Geb&#228;ude der Religion verschwinden, ausgenommen Schreine.
-[ICON_BULLET] Chance von 1:10: Die Stadt f&#228;llt 1 Runde lang in Unruhe.
+[ICON_BULLET] Chance von 1:10: Die Stadt f&#228;llt 1 Runde lang in Unruhe. Ausgenommen bei professionellen Religionsaustreibern (Inquisitoren).
 [ICON_BULLET] Diaspora: Chance 80%: Die Religion wandert in einer Stadt in der Umgebung (bevorzugt St&#228;dte mit bereits dieser Religion), dabei wird die Bev&#246;lkerung erh&#246;ht: +1 Pop f&#252;r St&#228;dte unter 5 Pop, +Nahrung f&#252;r St&#228;dte ab 5 Pop.
 
 [TAB] Falls eine dualistische oder monotheistische Religion ausgetrieben wird:
@@ -12139,7 +12165,7 @@ Effetti dell'espulsione religiosa:
 [ICON_BULLET] Il giocatore riceve tanti schiavi e carri d'oro quanti sono i decessi della citt&#224;.
 [ICON_BULLET] Viene rimossa solo 1 religione per ogni espulsione.
 [ICON_BULLET] Gli edifici religiosi scompaiono, tranne i santuari.
-[ICON_BULLET] Probabilit&#224; di 1:10: la citt&#224; &#232; in preda all'agitazione per 1 giro.
+[ICON_BULLET] Probabilit&#224; di 1:10: la citt&#224; &#232; in preda all'agitazione per 1 giro. Fatto salvo per gli espulsori professionisti di religioni (inquisitori).
 [ICON_BULLET] Diaspora: probabilit&#224; 80%: la religione si sposta in una citt&#224; nella zona (preferibilmente citt&#224; che hanno gi&#224; questa religione), aumentando la popolazione: +1 popolazione per le citt&#224; con meno di 5 abitanti, +cibo per le citt&#224; con 5 o pi&#249; abitanti.
 
 [TAB] Se una religione dualistica o monoteistica viene espulsa:
@@ -12267,7 +12293,7 @@ Efectos de la expulsi&#243;n religiosa:
 [ICON_BULLET] El jugador recibe tantos esclavos y carros de oro como poblaci&#243;n pierde la ciudad.
 [ICON_BULLET] Solo se elimina una religi&#243;n por expulsi&#243;n.
 [ICON_BULLET] Los edificios religiosos desaparecen, a excepci&#243;n de los santuarios.
-[ICON_BULLET] Probabilidad 1:10: La ciudad cae en disturbios durante 1 ronda.
+[ICON_BULLET] Probabilidad 1:10: La ciudad cae en disturbios durante 1 ronda. Excepto en el caso de los expulsadores profesionales de religiones (inquisidores).
 [ICON_BULLET] Di&#225;spora: probabilidad 80%: La religi&#243;n se muda a una ciudad en el &#225;rea (preferiblemente ciudades que ya tienen esta religi&#243;n), aumentando la poblaci&#243;n: +1 poblaci&#243;n para ciudades con menos de 5 habitantes, +comida para ciudades con 5 o m&#225;s habitantes.
 
 [TAB] Si se expulsa una religi&#243;n dualista o monote&#237;sta:
@@ -12958,6 +12984,14 @@ Los barcos pueden hacer que los mares sean inseguros como los piratas ([LINK=CON
 		</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_SEAMONSTER_PEDIA</Tag>
+		<English>In antiquity, sea monsters were an integral part of the imagination of many cultures around the Mediterranean. For seafarers and scholars, they explained the unknown and dangerous nature of the seas, which were often considered unexplored and threatening realms. In Greek and Roman myths, they appeared as gigantic creatures like Scylla or Charybdis, capable of devouring ships or endangering entire crews.[NEWLINE][NEWLINE]In PAE, these ancient ideas of sea monsters are directly translated into the game world and implemented as gameplay mechanics. They serve not only as dangerous encounters on the high seas but, above all, as an expression of the fear of the unknown depths of the ocean, known as thalassophobia.[NEWLINE][NEWLINE]Among the creatures that appear are giant squid, infamous sea serpents, humpback whales, and orcas. The giant squid and sea serpents, in particular, behave like fleeting terrors: once spotted by a fleet, they immediately disappear back into the depths of the sea. Encountering one of these creatures triggers the Thalassophobia status effect on the affected ship, resulting in a unit promotion that severely impacts the crew and reduces their effectiveness.[NEWLINE][NEWLINE]This fear can be removed as follows: Only when the ship enters a port and hires a new crew for a fee is the Thalassophobia lifted. This makes sea travel in PAE a risky undertaking where not only strategic decisions but also the psychological stress on the crew play a crucial role.</English>
+		<French>Dans l'Antiquit&#233;, les monstres marins faisaient partie int&#233;grante de l'imaginaire de nombreuses cultures m&#233;diterran&#233;ennes. Pour les marins et les &#233;rudits, ils expliquaient la nature inconnue et dangereuse des mers, souvent consid&#233;r&#233;es comme des royaumes inexplor&#233;s et mena&#231;ants. Dans les mythes grecs et romains, ils apparaissaient comme des cr&#233;atures gigantesques telles que Scylla ou Charybde, capables de d&#233;vorer des navires ou de mettre en p&#233;ril des &#233;quipages entiers.[NEWLINE][NEWLINE]Dans PAE, ces conceptions antiques des monstres marins sont directement transpos&#233;es dans l'univers du jeu et int&#233;gr&#233;es aux m&#233;caniques de jeu. Elles repr&#233;sentent non seulement des rencontres p&#233;rilleuses en haute mer, mais surtout l'expression de la peur des profondeurs abyssales, connue sous le nom de thalassophobie.[NEWLINE][NEWLINE]Parmi les cr&#233;atures pr&#233;sentes figurent le calmar g&#233;ant, le serpent de mer, la baleine &#224; bosse et l'orque. Le calmar g&#233;ant et le serpent de mer, en particulier, se comportent comme des terreurs fugaces : une fois rep&#233;r&#233;s par une flotte, ils disparaissent aussit&#244;t dans les profondeurs marines. La rencontre avec l'une de ces cr&#233;atures d&#233;clenche l'effet de statut Thalassophobie sur le navire, entra&#238;nant une promotion d'unit&#233; qui affecte gravement l'&#233;quipage et r&#233;duit son efficacit&#233;.[NEWLINE][NEWLINE]Cette peur ne peut &#234;tre dissip&#233;e que lorsque le navire entre dans un port et recrute un nouvel &#233;quipage, moyennant r&#233;mun&#233;ration. De ce fait, la navigation dans PAE est une entreprise risqu&#233;e o&#249; les d&#233;cisions strat&#233;giques, mais aussi le stress psychologique subi par l'&#233;quipage, jouent un r&#244;le crucial.</French>
+		<German>In der Antike waren Seeungeheuer ein fester Bestandteil der Vorstellungswelt vieler Kulturen rund um das Mittelmeer. F&#252;r Seefahrer und Gelehrte erkl&#228;rten sie das Unbekannte und Gef&#228;hrliche der Meere, die oft als unerforschte und bedrohliche R&#228;ume galten. In griechischen und r&#246;mischen Mythen tauchten sie als riesige Kreaturen wie die Skylla oder die Charybdis auf, die Schiffe verschlingen oder ganze Mannschaften in Gefahr bringen konnten.[NEWLINE][NEWLINE]In PAE werden diese antiken Vorstellungen von Seeungeheuern direkt in die Spielwelt &#252;bertragen und als spielmechanische Einheiten umgesetzt. Sie dienen dabei nicht nur als gef&#228;hrliche Begegnungen auf hoher See, sondern vor allem als Ausdruck der Angst vor den unbekannten Tiefen des Ozeans, der sogenannten Thalassophobie.[NEWLINE][NEWLINE]Zu den auftauchenden Kreaturen geh&#246;ren unter anderem Riesenkalmare, ber&#252;chtigte Seeschlangen, Buckelwale und Orcas. Besonders die Riesenkalmare und Seeschlangen verhalten sich dabei wie fl&#252;chtige Schrecken: Sobald sie einmal von einer Flotte entdeckt werden, verschwinden sie unmittelbar wieder in den Tiefen des Meeres. Die Begegnung mit einem dieser Wesen l&#246;st auf dem betroffenen Schiff die Statuswirkung Thalassophobie als Einheiten-Bef&#246;rderung aus, die die Mannschaft stark beeintr&#228;chtigt und ihre Effektivit&#228;t reduziert.[NEWLINE][NEWLINE]Diese Furcht kann folgenderma&#223;en beseitigt werden: Erst wenn das Schiff einen Hafen anl&#228;uft und dort gegen Bezahlung eine neue Mannschaft anheuert, wird die Thalassophobie entfernt. Dadurch wird das Reisen &#252;ber See in PAE zu einem riskanten Unterfangen, bei dem nicht nur strategische Entscheidungen, sondern auch psychologische Belastungen der Besatzung eine wichtige Rolle spielen.</German>
+		<Italian>Nell'antichit&#224;, i mostri marini erano parte integrante dell'immaginario di molte culture che si affacciavano sul Mediterraneo. Per marinai e studiosi, spiegavano la natura sconosciuta e pericolosa dei mari, spesso considerati regni inesplorati e minacciosi. Nei miti greci e romani, apparivano come creature gigantesche come Scilla o Cariddi, capaci di divorare navi o di mettere in pericolo interi equipaggi.[NEWLINE][NEWLINE]In PAE, queste antiche concezioni di mostri marini vengono trasposte direttamente nel mondo di gioco e implementate come meccaniche di gioco. Non servono solo come pericolosi incontri in alto mare, ma soprattutto come espressione della paura delle profondit&#224; oceaniche sconosciute, nota come talassofobia.[NEWLINE][NEWLINE]Tra le creature che compaiono ci sono calamari giganti, famigerati serpenti marini, megattere e orche. I calamari giganti e i serpenti marini, in particolare, si comportano come terrori effimeri: una volta avvistati da una flotta, scompaiono immediatamente nelle profondit&#224; del mare. L'incontro con una di queste creature innesca l'effetto di stato Talassofobia sulla nave colpita, con conseguente retrocessione dell'equipaggio che ne compromette gravemente l'efficacia.[NEWLINE][NEWLINE]Questa paura pu&#242; essere eliminata nel seguente modo: solo quando la nave entra in porto e assume un nuovo equipaggio a pagamento, la Talassofobia scompare. Questo rende la navigazione in PAE un'impresa rischiosa, in cui non solo le decisioni strategiche, ma anche lo stress psicologico dell'equipaggio giocano un ruolo cruciale.</Italian>
+		<Spanish>En la antig&#252;edad, los monstruos marinos formaban parte integral de la imaginaci&#243;n de muchas culturas del Mediterr&#225;neo. Para marineros y eruditos, explicaban la naturaleza desconocida y peligrosa de los mares, a menudo considerados reinos inexplorados y amenazantes. En los mitos griegos y romanos, aparec&#237;an como criaturas gigantescas como Escila o Caribdis, capaces de devorar barcos o poner en peligro tripulaciones enteras.[NEWLINE][NEWLINE]En PAE, estas antiguas ideas sobre monstruos marinos se trasladan directamente al mundo del juego y se implementan como mec&#225;nicas de juego. No solo representan encuentros peligrosos en alta mar, sino, sobre todo, una expresi&#243;n del miedo a las profundidades desconocidas del oc&#233;ano, conocido como talasofobia.[NEWLINE][NEWLINE]Entre las criaturas que aparecen se encuentran calamares gigantes, serpientes marinas temibles, ballenas jorobadas y orcas. Los calamares gigantes y las serpientes marinas, en particular, se comportan como terrores fugaces: una vez avistados por una flota, desaparecen inmediatamente en las profundidades del mar. El encuentro con una de estas criaturas desencadena el efecto de estado de talasofobia en el barco afectado, lo que resulta en un ascenso de unidad que impacta gravemente a la tripulaci&#243;n y reduce su eficacia.[NEWLINE][NEWLINE]Este miedo se puede eliminar de la siguiente manera: La talasofobia solo desaparece cuando el barco entra en un puerto y contrata una nueva tripulaci&#243;n a cambio de una tarifa. Esto convierte la navegaci&#243;n mar&#237;tima en PAE en una empresa arriesgada donde no solo las decisiones estrat&#233;gicas, sino tambi&#233;n el estr&#233;s psicol&#243;gico de la tripulaci&#243;n, desempe&#241;an un papel crucial.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SLAVE_PEDIA</Tag>
 		<English>[H1]Slaves and freed slaves[\H1]
 
@@ -12972,11 +13006,13 @@ How to get slaves:
 Advantages of slaves:
 [ICON_BULLET] Slaves can build improvements twice as fast as normal workers
 [ICON_BULLET] They can accelerate city production
+[ICON_BULLET] Can establish slave markets in large cities
+[ICON_BULLET] Can be sold for profit at slave markets
 [ICON_BULLET] They can be traded in a slave market (1-40 [ICON_GOLD])
 [ICON_BULLET] They can join a city as household, field and mine slaves (see below)
 [ICON_BULLET] They can join a (mountain) cottage, (mountain) hamlet or village and accelerate its upgrade time by 10
 [ICON_BULLET] They can join a latifundium and accelerate its upgrade time by 10
-[ICON_BULLET] A new slave unit can be available if the city contains settled slaves and/or has a slave market (chance of 1.5% every turn in every city, 3% with Tyranny), unless Christianity is not state religion
+[ICON_BULLET] A new slave unit can be automatically created due to settled slaves or from [COLOR_BUILDING_TEXT]Slave Quarters[COLOR_REVERT] (chance of 1.5% every turn in every city, 3% with Tyranny), unless Christianity is not state religion
 [ICON_BULLET] They can join a city as exhibition fighters (Tech: Exhibition Fight necessary), that adds +1 [ICON_COMMERCE], +1 [ICON_CULTURE] and +1 experience to the city. Death rate per exhibition fighter 1%, max 5%. Check every 3 turns.
 
 [ICON_BULLET] They can be assigned to the Palace (+1 [ICON_CULTURE] (no limit), death rate 10% / check every 3 turns)
@@ -13107,11 +13143,13 @@ Comment obtenir des esclaves :
 Avantages des esclaves :
 [ICON_BULLET] Ils peuvent construire les am&#233;nagements deux fois plus vite que les ouvriers
 [ICON_BULLET] Ils peuvent &#234;tre sacrifi&#233;s pour acc&#233;l&#233;rer la production dans une ville
+[ICON_BULLET] Peut &#233;tablir des march&#233;s aux esclaves dans les grandes villes
+[ICON_BULLET] Peut &#234;tre vendu &#224; profit sur les march&#233;s aux esclaves
 [ICON_BULLET] Ils peuvent &#234;tre vendus dans un march&#233; aux esclaves (1-40 [ICON_GOLD])
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s &#224; une ville en tant que domestique, paysan ou mineur (voir ci-dessous)
 [ICON_BULLET] Ils peuvent rejoindre un chalet (de montagne), un hameau (de montagne) ou un village et acc&#233;l&#233;rer sa mise &#224; niveau de 10 tours.
 [ICON_BULLET] Ils peuvent rejoindre un latifundium et acc&#233;l&#233;rer son temps de mise &#224; niveau de 10.
-[ICON_BULLET] Un nouvel esclave peut &#234;tre cr&#233;&#233; dans une ville dans laquelle se trouvent des esclaves employ&#233;s ou un march&#233; d'esclaves (probabilit&#233; de 1.5% par tour par ville, 3% avec Tyrannie), sauf si le christianisme est la religion d'&#233;tat
+[ICON_BULLET] Une nouvelle unit&#233; d'esclaves peut &#234;tre cr&#233;&#233;e automatiquement au moyen d'esclaves r&#233;sidents et &#224; partir des [COLOR_BUILDING_TEXT]Quartiers des esclaves[COLOR_REVERT] (probabilit&#233; de 1.5% par tour par ville, 3% avec Tyrannie), sauf si le christianisme est la religion d'&#233;tat
 [ICON_BULLET] Ils peuvent rejoindre une ville en tant que gladiateur (Technologie [LINK=TECH_GLADIATOR]Jeux du cirque[\LINK] n&#233;cessaire) : +1 [ICON_COMMERCE], +1 [ICON_CULTURE] et + 1 EXP aux nouvelles unit&#233;s. Taux de mortalit&#233; par gladiateur 1%, max 5%. V&#233;rifiez tous les 3 tours.
 
 [ICON_BULLET] Ils peuvent &#234;tre affect&#233;s au Palais (+1 [ICON_CULTURE] (pas de limite), taux de mort. 10% / tirage tous les 3 tours)
@@ -13241,11 +13279,13 @@ Wie man Sklaven erh&#228;lt:
 Vorteile der Sklaven:
 [ICON_BULLET] Bauen Modernisierungen doppelt so schnell wie Bautrupps
 [ICON_BULLET] K&#246;nnen die Stadtproduktion beschleunigen
+[ICON_BULLET] K&#246;nnen Sklavenm&#228;rkte in gro&#223;en St&#228;dten errichten
+[ICON_BULLET] K&#246;nnen auf Sklavenm&#228;rkten lukrativ verkauft werden
 [ICON_BULLET] K&#246;nnen als Sklaven in fremden St&#228;dten verkauft werden (1-40 [ICON_GOLD])
 [ICON_BULLET] K&#246;nnen in einer Stadt als Haus-, Feld- und Bergwerkssklaven angesiedelt werden (siehe unten)
 [ICON_BULLET] K&#246;nnen sich einer (Berg-)H&#252;tte, einem Weiler, einer Bergsiedlung oder einem Dorf anschlie&#223;en (verk&#252;rzt die Zeit zur n&#228;chsten Stufe um 10 Runden)
 [ICON_BULLET] K&#246;nnen ein Latifundium bewirtschaften (verk&#252;rzt die Zeit zur n&#228;chsten Stufe um 10 Runden)
-[ICON_BULLET] Eine neue Sklaveneinheit kann durch ans&#228;ssige Sklaven oder einen Sklavenmarkt verf&#252;gbar werden (nur wenn Christentum nicht Staatsreligion ist, 1.5% Wahrscheinlichkeit pro Runde und Stadt, 3% mit Tyrannis)
+[ICON_BULLET] Eine neue Sklaveneinheit kann durch ans&#228;ssige Sklaven und [COLOR_BUILDING_TEXT]Sklavenquartiere[COLOR_REVERT] automatisch erstellt werden (nur wenn Christentum nicht Staatsreligion ist, 1.5% Wahrscheinlichkeit pro Runde und Stadt, 3% mit Tyrannis)
 [ICON_BULLET] K&#246;nnen in einer Stadt als Schauk&#228;mpfer angesiedelt werden (Technologie Schaukampf notwendig) und bringt der Stadt +1 [ICON_COMMERCE], +1 [ICON_CULTURE] und +1 Erfahrung. Sterberate pro Schauk&#228;mpfer 1%, max 5%. Check alle 3 Runden.
 
 [ICON_BULLET] K&#246;nnen dem Palast zugeteilt werden (+1 [ICON_CULTURE] (kein Limit), Sterberate 10% / Check alle 3 Runden)
@@ -13377,11 +13417,13 @@ Come ottenere schiavi:
 Vantaggi degli schiavi:
 [ICON_BULLET] Gli schiavi apportano miglioramenti due volte pi&#249; velocemente dei normali lavoratori
 [ICON_BULLET] Possono accelerare la produzione di una citt&#224;
+[ICON_BULLET] Possono creare mercati degli schiavi nelle grandi citt&#224;
+[ICON_BULLET] Possono essere venduti a scopo di lucro nei mercati degli schiavi
 [ICON_BULLET] Possono essere scambiati in un mercato di schiavi (1-40 [ICON_GOLD])
 [ICON_BULLET] Possono unirsi a una citt&#224; come contadini, minatori o schiavi domestici. (vedi sotto)
 [ICON_BULLET] Possono unirsi a una cottage (montano), un borgo (montagna) o un villaggio e accelerare il loro tempo di aggiornamento di 10
 [ICON_BULLET] Possono unirsi a un latifundium e accelerare il tempo di aggiornamento di 10
-[ICON_BULLET] Un nuovo schiavo pu&#242; essere disponibile se la citt&#224; ha schiavi residenti e/o un mercato di schiavi (1,5% di probabilit&#224; ogni turno in ogni citt&#224;, 3% con tirannia), a meno che il cristianesimo non sia la religione ufficiale.
+[ICON_BULLET] &#200; possibile creare automaticamente una nuova unit&#224; schiava per mezzo di schiavi residenti e dagli [COLOR_BUILDING_TEXT]Alloggi degli schiavi[COLOR_REVERT] (1,5% di probabilit&#224; ogni turno in ogni citt&#224;, 3% con tirannia), a meno che il cristianesimo non sia la religione ufficiale.
 [ICON_BULLET] Possono unirsi a una citt&#224; come gladiatori per spettacoli nell'arena (tecnologia richiesta: Giochi Circensi) e dare +1 [ICON_COMMERCE], +1 [ICON_CULTURE] e +1 di esperienza alle unit&#224; costruite in questa citt&#224;. Tasso di mortalit&#224; per gladiatore 1%, massimo 5%. Applicato ogni 3 turni.
 
 [ICON_BULLET] Pu&#242; essere assegnato al palazzo (+1 [ICON_CULTURE] (nessun limite), mortalit&#224; 10% / applicato ogni 3 turni)
@@ -13513,11 +13555,13 @@ Como conseguir esclavos:
 Ventajas de los esclavos:
 [ICON_BULLET] Los esclavos hacen mejoras el doble de r&#225;pido que los trabajadores normales
 [ICON_BULLET] Pueden acelerar la producci&#243;n de una ciudad
+[ICON_BULLET] Puede establecer mercados de esclavos en grandes ciudades
+[ICON_BULLET] Puede venderse con fines de lucro en los mercados de esclavos
 [ICON_BULLET] Pueden ser comerciados en un mercado de esclavos (1-40 [ICON_GOLD])
 [ICON_BULLET] Pueden unirse a una ciudad como esclavos del campo, de la mina o dom&#233;sticos. (ver m&#225;s abajo)
 [ICON_BULLET] Pueden unirse a una caba&#241;a (de monta&#241;a), caser&#237;o (de monta&#241;a) o aldea y acelerar su tiempo de mejora en 10
 [ICON_BULLET] Pueden unirse a un latifundio y acelerar su tiempo de actualizaci&#243;n en 10
-[ICON_BULLET] Un nuevo esclavo puede estar disponible si la ciudad contiene esclavos asentados y/o tiene un mercado de esclavos (probabilidad del 1.5% cada turno en cada ciudad, 3% con tiran&#237;a), excepto si el cristianismo es la religi&#243;n oficial.
+[ICON_BULLET] Se puede crear autom&#225;ticamente una nueva unidad de esclavos mediante esclavos residentes y a partir de los [COLOR_BUILDING_TEXT]Alojamientos de esclavos[COLOR_REVERT] (probabilidad del 1.5% cada turno en cada ciudad, 3% con tiran&#237;a), excepto si el cristianismo es la religi&#243;n oficial.
 [ICON_BULLET] Pueden unirse a una ciudad como luchadores de espect&#225;culo (Tecnolog&#237;a necesaria: Lucha de espect&#225;culo) y da +1 [ICON_COMMERCE], +1 [ICON_CULTURE] y +1 de experiencia a las unidades construidas en esta ciudad. Tasa de mortalidad por luchador de exhibici&#243;n 1%, m&#225;ximo 5%. Verifique cada 3 turnos.
 
 [ICON_BULLET] Pueden ser asignados al palacio (+1 [ICON_CULTURE] (sin limite), mortalidad 10% / verificaci&#243;n cada 3 turnos)
@@ -14959,7 +15003,7 @@ Chance: 50%
 -- Nomarch --
 6. Military writer (zs ms)
 7. Overseer of troops (mr ms)
-8. Oberseer of fortresses (mr mnw)
+8. Overseer of fortresses (mr mnw)
 9. Overseer of weapons (mr ms wr)
 10. Sab-Tjati (vice vizier)
 -- Tjati (Vizier) -- (Tech: Chariots and horses required)
@@ -15187,8 +15231,8 @@ Chance: 100%
 -- Spartiates -- 
 1. Demi-Phylearchos (officier pour 6 hommes)
 2. Phylearchos (officier pour 12 hommes)
-3. Hyperetes (aide de l'en?motarche)
-4. Ouragos (aide de l'en?motarche)
+3. Hyperetes (aide de l'en motarche)
+4. Ouragos (aide de l'en motarche)
 -- Spartiates --
 5. Enomotarches (officier pour 36 hommes)
 6. Pentekonter (officier pour 180 hommes)
@@ -16110,22 +16154,22 @@ Probabilidad: 100%
 2. Protostates (1,3,5,7. l&#237;nea de falange)
 3. Epistates (2,4,6,8. l&#237;nea de falange)
 4. Ypodekaneas
-5. Dekaneas (corporal) => Promo up
--- Junior officers --
+5. Dekaneas (Corporal) => Asciende
+-- Oficiales subalternos --
 6. Lochias (Corporal)
 7. Epilochias
 8. Archilochias
 9. Anthypolochagos
-10. Ypolochagos (Lieutnant) => Promo up
--- Officers-Hippeis --
-11. Lochagos (Captain)
-12. Tagmatarches (Major/Battalion L&#237;der)
-13. Antisyntagmatarches (Lieutnant colonel)
-14. Syntagmatarches (Colonel)
-15. Taxiarchos (Brigadier general) => Promo Up
--- Comissioned officers-Strategos --
-16. Ypostrategos (Major general)
-17. Antistrategos (Lieutnant general)
+10. Ypolochagos (Teniente) => Asciende
+-- Oficiales-Hippeis --
+11. Lochagos (Capit&#225;n)
+12. Tagmatarches (Mayor/Jefe de Batall&#243;n)
+13. Antisyntagmatarches (Teniente coronel)
+14. Syntagmatarches (Coronel)
+15. Taxiarchos (General de brigada) => Asciende
+-- Oficiales comisionados-Strategos --
+16. Ypostrategos (General de divisi&#243;n)
+17. Antistrategos (Teniente general)
 18. Strategos (General)
 19. Polemarchos (General de m&#225;s alto rango)
 
@@ -16144,9 +16188,9 @@ Probabilidad: 100%
 6. Pentekonter (l&#237;der de 180)
 7. Lochagos (l&#237;der de 1000)
 -- Armored Spartiats (Hippeus Spartiatas) --
-8. Harmost (military governor)
-9. Polemarchos (leader of the army)
-10. Ephoros (highest rank of 5 men, the Ephors)
+8. Harmost (gobernador militar)
+9. Polemarchos (l&#237;der del ej&#233;rcito)
+10. Ephoros (el rango m&#225;s alto de 5 hombres, los &#201;foros)
 
 
 [H1]Macedonia[\H1]
@@ -16154,17 +16198,17 @@ Unidades: Pezhetairoi
 Probabilidad: 100%
 
 -- Pezhetairoi --
-1. Pezhetairos (Infantry companion)
-2. Protostates (1,3,5,7. line of a phalanx)
-3. Epistates (2,4,6,8. line of a phalanx)
-4. Dekastateros (2nd Leutnant)
+1. Pezhetairos (Compa&#241;ero de infanter&#237;a)
+2. Protostates (1,3,5,7. l&#237;nea de una falange)
+3. Epistates (2,4,6,8. l&#237;nea de una falange)
+4. Dekastateros (2nd Teniente)
 -- Sarissophoros --
-5. Dekadarchos (Lieutnant of 16)
-6. Tetrarchos (Lieutnant colonel of 64)
-7. Syntagmos (Colonel of 256)
+5. Dekadarchos (Teniente de 16)
+6. Tetrarchos (Teniente coronel de 64)
+7. Syntagmos (Coronel de 256)
 -- Lochagos --
-8. Lochagos (Major of 512)
-9. Taxiarchos (Brigadier general of 1536)
+8. Lochagos (Mayor de 512)
+9. Taxiarchos (General de divisi&#243;n de 1536)
 -- Pezhetairoi basilikoi --
 10. Chiliarchos (General)
 
@@ -16175,42 +16219,42 @@ Probabilidad: 100%
 Unidades: Lanceros, Inmortales y Pezoi
 Probabilidad: 100%
 
-1. Paygan: soldier
-2. Paygan-salar: chief of an infantry division
-3. Hazarmard-salar: chief of 1000
-4. Argbed: commander of a castle or fort
-5. Eran anbaraghbad: senior rank responsible for army supplies
--- Apple-Bearer --
--- Apple-Bearer can change to cavalry --
+1. Paygan: soldado
+2. Paygan-salar: jefe de una divisi&#243;n de infanter&#237;a
+3. Hazarmard-salar: jefe de 1000
+4. Argbed: comandante de un castillo o fortaleza
+5. Eran anbaraghbad: alto cargo responsable de los suministros del ej&#233;rcito
+-- Portador de manzana --
+-- Portador de manzana puede cambiar a caballer&#237;a --
 6. Hazarapatis, 1000
-7. Patyaxsa: chief military writer
+7. Patyaxsa: redactor jefe militar
 -- Azadan (Noble) --
-8. Gausaka: Ears of the Lord
-9. Didiyaka: Eyes of the Lord
-10. Vizier: reliable eye at all-overseer of 10.000 and above
+8. Gausaka: Los o&#237;dos del Se&#241;or
+9. Didiyaka: Los ojos del Se&#241;or
+10. Visir: ojo confiable en el supervisor general de 10.000 y superior
 
 [H2]Caballer&#237;a[\H2]
 Unidades: Lanceros montados
 Probabilidad: 33%
 
 1. Aswar
-2. Salar of 10
-3. Salar of 50
-4. Salar of 100
-5. Salar of 500
+2. Salar de 10
+3. Salar de 50
+4. Salar de 100
+5. Salar de 500
 -- Savaran --
-6. Savaran (Asbaran, Azadan or Aswaran): cavalry division
-7. Savaran Sardar: head of a cavalry division
--- Cataphract oder Clibanarii --
-8. Zhayedan: mounted immortals
-9. Zhayedan-salar: head of the mounted immortals
-10. Pushtigban-salar: head of the royal guard
-11. Gyan-avspar: best of the pushtigban
+6. Savaran (Asbaran, Azadan o Aswaran): divisi&#243;n de caballer&#237;a
+7. Savaran Sardar: jefe de una divisi&#243;n de caballer&#237;a
+-- Los Catafractos o los Clibanarii --
+8. Zhayedan: inmortales a caballo
+9. Zhayedan-salar: cabeza de los inmortales montados
+10. Pushtigban-salar: jefe de la guardia real
+11. Gyan-avspar: lo mejor del pushtigban
 -- Marzban --
-12. Marzban (Kanarang): equivalent to margrave and commander of frontier province
-13. Padhuspan: commander of each of the four provincial divisions
-14. Spahbed: field general
-15. Eran Spahbed: military head, defense minister
+12. Marzban (Kanarang): equivalente a margrave y comandante de provincia fronteriza
+13. Padhuspan: comandante de cada una de las cuatro divisiones provinciales
+14. Spahbed: general de campo
+15. Eran Spahbed: jefe militar, ministro de defensa
 
 
 [H1]Egipcios[\H1]
@@ -16218,33 +16262,33 @@ De Tecnolog&#237;a: Espada Corta
 Unidades: Hacha, Espadas y Lanceros
 Probabilidad: 50%
 
-1. Soldier (nfrw)
-2. Overseer of 10 (hrp nfrw)
-3. Greatest of 50 (n djw)
-4. Standart bearer (Tjah-Serut)
-5. Overseer of 500 (Heru Pa-Djet)
--- Nomarch --
-6. Military writer (zs ms)
-7. Overseer of troops (mr ms)
-8. Oberseer of fortresses (mr mnw)
-9. Overseer of weapons (mr ms wr)
-10. Sab-Tjati (vice vizier)
--- Tjati (Vizier) -- (Tech: Chariots required)
-11. Tjati (Vizier), second most important man in state
+1. Soldado (nfrw)
+2. Supervisor de 10 (hrp nfrw)
+3. El mas grande de 50 (n djw)
+4. Portaestandarte (Tjah-Serut)
+5. Supervisor de 500 (Heru Pa-Djet)
+-- Nomarca --
+6. Escritor militar (zs ms)
+7. Supervisor de tropas (mr ms)
+8. Supervisor de fortalezas (mr mnw)
+9. Supervisor de armas (mr ms wr)
+10. Sab-Tjati (vicevisir)
+-- Tjati (Visir) -- (Tecnolog&#237;a: Se requieren carros de guerra)
+11. Tjati (Visir), segundo hombre m&#225;s importante del estado
 
 
 [H1]Cartago[\H1]
 Unidades: Banda Sagrada, Escudero y Hoplitas
 Probabilidad: 33%
 
-1 Rab miat (rb m't)-greatest of 100
-2 Rab matem (rb mtm)-greatest of 200
--- Sacred Offizier --
-3 Rab darak (rb drk)-head of infantry
-4 Rab shalesi (rb slsy)-co-adjudant of general
--- Mounted Sacred Band (can dis/mount horses) --
-5 Rab sheni (rb sny)-adjudant of general
-6 Rab mahanet (rb mhnt)-general (head of army)
+1 Rab miat (rb m't): mayor de 100
+2 Rab matem (rb mtm): mayor de 200
+-- Oficial Sagrado --
+3 Rab darak (rb drk): jefe de infanter&#237;a
+4 Rab shalesi (rb slsy): co-adjutor general
+-- Banda Sagrada Montada (pueden desmontar y volver a montar a caballo) --
+5 Rab sheni (rb sny): ayudante general
+6 Rab mahanet (rb mhnt): general (jefe de ejercito)
 
 
 [H1]Asirios y babilonios[\H1]
@@ -16252,29 +16296,29 @@ De la tecnolog&#237;a: Soldados c&#237;vicos
 Unidades: Hacha, espadas y lanceros
 Probabilidad: 100%
 
-1. Huradu (soldier)
-2. Sab kasrutu (professional soldier)
-3. Rab eserte (commander of 10)
-4. Rab hanse (commander of 50)
-5. Rab kisri (cohort commander)
+1. Huradu (soldado)
+2. Sab kasrutu (soldado profesional)
+3. Rab eserte (comandante de 10)
+4. Rab hanse (comandante de 50)
+5. Rab kisri (comandante de cohorte)
 -- Turtanu (Tartan/Turtan) --
-6. Rab 5-me-at (commander of 500)
-7. Rab 1-lim (commander of 1000, Chiliarch)
-8. Turtanu nasaru (king's guard)
-9. Turtanu shumeli (king's left hand)
-10. Turtanu imni (king's right hand)
+6. Rab 5-me-at (comandante de 500)
+7. Rab 1-lim (comandante de 1000, Chiliarcho)
+8. Turtanu nasaru (guardia del rey)
+9. Turtanu shumeli (la mano izquierda del rey)
+10. Turtanu imni (la mano derecha del rey)
 -- Sa-resi --
-11. Sa-resi (eunuch, cup-bearer)
-12. Rab saqe (Rabshakeh, Chief cup-bearer)
-13. Nagir ekalli (palace herald)
-14. Rab sa-resi (Rabsaris, chief eunuch)
-15. Sartinnu (chief of justice)
-16. Masennu (chief of treasure)
+11. Sa-resi (eunuco, copero)
+12. Rab saqe (Rabshakeh, copero principal)
+13. Nagir ekalli (heraldo del palacio)
+14. Rab sa-resi (Rabsaris, jefe eunuco)
+15. Sartinnu (jefe de justicia)
+16. Masennu (jefe de tesoro)
 -- Sukallu --
-17. Sukallu (vizier, eunuch)
-18. Sukallu dannu (grand vizier)
-19. Sukallu ummanu (vice chancellor)
-20. Sukallu rabiu (chief chancellor)
+17. Sukallu (visir, eunuco)
+18. Sukallu dannu (gran visir)
+19. Sukallu ummanu (vicerrector)
+20. Sukallu rabiu (canciller jefe)
 
 
 [H1]Sumerios[\H1]
@@ -16282,18 +16326,18 @@ De Tecnolog&#237;a: Soldados C&#237;vicos
 Unidades: Hachas, Espadas y Lanceros
 Probabilidad: 50%
 
-1. aga-ush (follower of the crown, professional troops)
-2. ugula (overseer)
-3. nubanda (captain)
-4. rabi'anu (nomad chiefs)
+1. aga-ush (seguidor de la corona, tropas profesionales)
+2. ugula (capataz)
+3. nubanda (capit&#225;n)
+4. rabi'anu (jefes n&#243;madas)
 -- Ensi --
-5. ensi (prince)
+5. ensi (pr&#237;ncipe)
 6. shagina (general)
-7. shagina erin (highest general of army)
-8. sanga (Sangu, chief priest)
-9. lugal (Great man, administrator)
+7. shagina erin (general de mayor rango del ej&#233;rcito)
+8. sanga (Sangu, sumo sacerdote)
+9. lugal (Gran hombre, administrador)
 -- En --
-10. en (divine man)
+10. en (hombre divino)
 
 
 [H1]Germanos y Celtas[\H1]

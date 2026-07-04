@@ -211,7 +211,7 @@ class CvGameUtils:
 
 														# Bibliothek / Library
 														elif loopCity.isHasBuilding(iLibrary):
-															iCulture = pCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iLibrary)
+															iCulture = loopCity.getBuildingCommerceByBuilding(CommerceTypes.COMMERCE_RESEARCH, iLibrary)
 															if iCulture < 10:
 																CyEngine().addColoredPlotAlt(loopCity.getX(), loopCity.getY(), PlotStyles.PLOT_STYLE_CIRCLE, PlotLandscapeLayers.PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS, "COLOR_GREEN", 1)
 
@@ -274,7 +274,7 @@ class CvGameUtils:
 
 										# Sklavenmarkt
 										if bSlave:
-											iBuildingStadt = gc.getInfoTypeForString("BUILDING_STADT")
+											iBuildingStadt = gc.getInfoTypeForString("BUILDING_KOLONIE") # (Dorf, vormals BUILDING_STADT)
 											iSklavenmarkt = gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")
 											# Settled Slaves and Glads
 											eSpecialistGlad = gc.getInfoTypeForString("SPECIALIST_GLADIATOR")
@@ -966,29 +966,6 @@ class CvGameUtils:
 
 						return True
 
-				# Buildings für erweiterten Radius (3x3)
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_IVORY_MARKET"):
-						lBonus = [
-								gc.getInfoTypeForString("BONUS_WALRUS"),
-								gc.getInfoTypeForString("BONUS_IVORY"),
-								gc.getInfoTypeForString("BONUS_IVORY2")
-						]
-
-						# Erweiterter Radius
-						iRange = 3
-						iX = pCity.getX()
-						iY = pCity.getY()
-						for i in range(-iRange, iRange+1):
-								for j in range(-iRange, iRange+1):
-										loopPlot = plotXY(iX, iY, i, j)
-										if loopPlot is not None and not loopPlot.isNone():
-												eBonus = loopPlot.getBonusType(-1)
-												if eBonus in lBonus:
-														iImp = loopPlot.getImprovementType()
-														if iImp != -1 and gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus):
-																return False
-						return True
-
 				# Wasserrad etc. im BuildingInfos.xml als bRiver deklariert
 				# elif eBuilding in lRiverBuildings:
 				#  if not pCity.plot().isRiver(): return True
@@ -1097,6 +1074,10 @@ class CvGameUtils:
 									return False
 						return True
 
+				# PAE 7.17: Bauschutt
+				elif eBuilding == gc.getInfoTypeForString("BUILDING_BAUSCHUTT"):
+					if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS")):
+						return True
 
 				# Buildings, die ihre notwendige Ressource im Stadtradius brauchen
 				# Listen stehen auch in PAE_City (!)
@@ -1117,7 +1098,8 @@ class CvGameUtils:
 
 				lBonusBuildings3x3 = [
 						gc.getInfoTypeForString("BUILDING_FURRIER"),
-						gc.getInfoTypeForString("BUILDING_MARMOR_WERKSTATT")
+						gc.getInfoTypeForString("BUILDING_MARMOR_WERKSTATT"),
+						gc.getInfoTypeForString("BUILDING_IVORY_MARKET")
 				]
 				if eBuilding in lBonusBuildings3x3:
 						if PAE_City.bonusMissingCity3x3(pCity, eBuilding) >= 0:
@@ -1891,12 +1873,6 @@ class CvGameUtils:
 						iCivType = pUnit.getCivilizationType()
 
 						# PAE Veterans und Rank Unit Promo Features
-
-						# PAE 6.5 Katapult -> Feuerkatapult
-						if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_ACCURACY3")):
-								if pUnit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_CATAPULT"):
-										PAE_Unit.doUpgradeVeteran(pUnit, gc.getInfoTypeForString("UNIT_FIRE_CATAPULT"), True)
-										return True
 
 						# Unit Rang Promo -------
 						if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT4")):
@@ -3568,7 +3544,7 @@ class CvGameUtils:
 						# Rang Promo: Legion ins Ausbildungscamp: Increase Ranking of Legionaries
 						elif iData1 == 756:
 								if bOption:
-										return CyTranslator().getText("TXT_KEY_BUTTON_LEGION2RANG", ())
+										return CyTranslator().getText("TXT_KEY_BUTTON_LEGION2RANG", (gc.getUnitInfo(iData2).getDescription(),))
 						# Statthalter ansiedeln
 						elif iData1 == 757:
 								if iData2 == 1:
@@ -3686,6 +3662,14 @@ class CvGameUtils:
 						# Terraforming
 						elif iData1 == 774:
 								return CyTranslator().getText("TXT_KEY_BUTTON_TERRAFORMING", ())
+						# Katapulte/Catapults
+						elif iData1 == 775:
+								if iData2 == 1:
+									return CyTranslator().getText("TXT_KEY_BUTTON_ACTION_CATAPULT_1", ())
+								elif iData2 == 2:
+									return CyTranslator().getText("TXT_KEY_BUTTON_ACTION_CATAPULT_2", ())
+								else:
+									return CyTranslator().getText("TXT_KEY_BUTTON_ACTION_CATAPULT_0", ())
 
 
 						# CITY_TAB replacements

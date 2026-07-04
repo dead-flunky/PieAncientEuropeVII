@@ -442,11 +442,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_LEGION2RANG</Tag>
-		<English>Train legionnaire for 25[ICON_GOLD]</English>
-		<French>Entra&#238;ner l&#233;gionnaire pour 25[ICON_GOLD]</French>
-		<German>Legion&#228;r f&#252;r 25[ICON_GOLD] ausbilden lassen</German>
-		<Italian>Addestra il legionario per 25[ICON_GOLD]</Italian>
-		<Spanish>Entrena al legionario por 25[ICON_GOLD]</Spanish>
+		<English>Train %s1 for 25[ICON_GOLD]</English>
+		<French>Entra&#238;ner %s1 pour 25[ICON_GOLD]</French>
+		<German>%s1 f&#252;r 25[ICON_GOLD] ausbilden lassen</German>
+		<Italian>Addestra il %s1 per 25[ICON_GOLD]</Italian>
+		<Spanish>Entrena al %s1 por 25[ICON_GOLD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_MORALE_UNIT</Tag>
@@ -1049,6 +1049,14 @@
 		<Spanish>[COLOR_UNIT_TEXT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_COMBAT_MESSAGE_HIT</Tag>
+		<English>%[s1_CivName]: %[s2_UnitName] is hit for %[d3_damage] damage (%[d4]/%[d5]).</English>
+		<French>%[s1_CivName]: %[s2_UnitName] subit %[d3] points de d&#233;g&#226;ts (%[d4]/%[d5]).</French>
+		<German>%[s1_CivName]: %[s2_UnitName] erlitt %[d3_damage] Schaden (%[d4]/%[d5]).</German>
+		<Italian>%[s1_CivName]: %[s2_UnitName] subisce %[d3] punti di danno (%[d4]/%[d5]).</Italian>
+		<Spanish>%[s1_CivName]: %[s2_UnitName] recibe %[d3] puntos de da&#241;o (%[d4]/%[d5]).</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DECO_EVERGREEN</Tag>
 		<English>Evergreen</English>
 		<French>Conif&#232;res</French>
@@ -1513,22 +1521,6 @@
 		<Spanish>Felicidades, hab&#233;is entrenado en %s2City_Name a vuestra primera unidad de asedio, [NUM1:un:una:unos:unas] [COLOR_UNIT_TEXT]%s1Unit_Name[COLOR_REVERT]. Estas unidades pueden causar da&#241;os colaterales en las casillas que ataquen y alcanzar as&#237; a varios enemigos a la vez.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_FREE</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_FREE</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_MULTIPLE_PRODUCTION</Tag>
 		<English>No multiple production (Standard BTS)</English>
 		<French>Pas de production multiple (Norme BTS)</French>
@@ -1649,6 +1641,14 @@
 		<Spanish><Text>Vi&#241;edo:Vi&#241;edos</Text><Gender>Female</Gender><Plural>0:1</Plural></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_INFO_FRESHWATERMAKESVALID</Tag>
+		<English>[ICON_BULLET]Requires fresh water</English>
+		<French>[ICON_BULLET]Requiert un acc&#232;s &#224; l'eau douce</French>
+		<German>[ICON_BULLET]Zugang zu frischem Wasser notwendig</German>
+		<Italian>[ICON_BULLET]Richiede acqua dolce</Italian>
+		<Spanish>[ICON_BULLET]Requiere agua fresca</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_INFO_MOVE_ANIMAL_BONUS</Tag>
 		<English>A herd of wild animals (%s1) have moved on and are now grazing in a different place. You prevent movement by positioning a unit on the field or by farming the field.</English>
 		<French>Un troupeau d'animaux sauvages (%s1) s'est d&#233;plac&#233; et paissent maintenant dans un endroit diff&#233;rent. Vous emp&#234;chez une migration en positionnant une unit&#233; sur le champ ou en cultivant le champ.</French>
@@ -1691,10 +1691,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_LAKE_PEDIA</Tag>
 		<English>Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system. Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young. Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean. Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.</English>
-		<French>Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system. Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young. Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean. Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.</French>
+		<French>Les lacs se trouvent g&#233;n&#233;ralement dans les cha&#238;nes de montagnes ou l&#224; o&#249; leurs lits ont &#233;t&#233; creus&#233;s par les glaciers &#224; la fin de la derni&#232;re p&#233;riode glaciaire. Ce sont des &#233;tendues d'eau douce, plus vastes que les &#233;tangs, et souvent int&#233;gr&#233;es &#224; un r&#233;seau hydrographique. Les cours d'eau rayonnent souvent depuis les montagnes ou longent les ravins glaciaires. Le Canada est r&#233;put&#233; pour son r&#233;seau hydrographique complexe, car ses bassins sont encore trop jeunes. La p&#234;che y est souvent fructueuse et la navigation sur les lacs est paisible compar&#233;e aux courants tumultueux des rivi&#232;res, m&#234;me si les Grands Lacs peuvent &#234;tre aussi agit&#233;s que l'oc&#233;an. Gr&#226;ce &#224; leur capacit&#233; &#224; mod&#233;rer le climat local, les lacs ont toujours &#233;t&#233; des lieux de vie pris&#233;s.</French>
 		<German>Seen finden sich typischerweise in Gebirgsketten oder dort, wo ihr Bett am Ende der letzten Eiszeit von Gletschern ausgeschliffen wurde. Sie sind S&#252;&#223;wassergew&#228;sser, gr&#246;&#223;er als Teiche und oft Teil eines Flusssystems. Meist bieten S&#252;&#223;wasserseen hervorragende Fischfanggr&#252;nde und die Fahrt &#252;ber die Seen ist im Vergleich zu den Str&#246;mungen der Fl&#252;sse ruhig, auch wenn es in gro&#223;en Seen so st&#252;rmisch zugehen kann wie im Ozean. Da gr&#246;&#223;ere Seen genug Wasser enthalten, um das lokale Klima zu mildern, waren sie schon immer ein begehrter Lebensraum.</German>
-		<Italian>Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system. Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young. Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean. Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.</Italian>
-		<Spanish>Lakes are typically found in mountain ranges, or where their beds were hollowed out by glaciers at the end of the last ice age. They're fresh water, larger than ponds, and often are part of a river system. Waterways often radiate out from mountains or run parallel along glacial gouges. Canada famously has a deranged drainage pattern because the basins are still too young. Fishing is often good and travel across lakes is calm compared to fighting river currents, though great lakes can be as stormy as the ocean. Because lakes hold enough water to moderate the local climate, they have always been a desirable place to live.</Spanish>
+		<Italian>I laghi si trovano tipicamente nelle catene montuose o dove i loro letti sono stati scavati dai ghiacciai alla fine dell'ultima era glaciale. Sono acque dolci, pi&#249; grandi degli stagni e spesso fanno parte di un sistema fluviale. I corsi d'acqua spesso si irradiano dalle montagne o scorrono paralleli lungo le gole glaciali. Il Canada &#232; noto per avere un sistema idrografico irregolare perch&#233; i bacini sono ancora troppo giovani. La pesca &#232; spesso fruttuosa e la navigazione sui laghi &#232; tranquilla rispetto alla lotta contro le correnti fluviali, sebbene i grandi laghi possano essere tempestosi come l'oceano. Poich&#233; i laghi contengono acqua a sufficienza per mitigare il clima locale, sono sempre stati un luogo ambito in cui vivere.</Italian>
+		<Spanish>Los lagos suelen encontrarse en cadenas monta&#241;osas o en zonas donde los glaciares excavaron sus lechos al final de la &#250;ltima glaciaci&#243;n. Son de agua dulce, m&#225;s grandes que los estanques y a menudo forman parte de un sistema fluvial. Los cursos de agua suelen irradiar desde las monta&#241;as o discurrir paralelos a las gargantas glaciares. Canad&#225; es famosa por su peculiar sistema de drenaje, ya que sus cuencas a&#250;n son muy j&#243;venes. La pesca suele ser buena y la navegaci&#243;n por los lagos es tranquila en comparaci&#243;n con la lucha contra las corrientes de los r&#237;os, aunque los grandes lagos pueden ser tan turbulentos como el oc&#233;ano. Dado que los lagos contienen suficiente agua para moderar el clima local, siempre han sido un lugar deseable para vivir.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAININTERFACE_FIELDOFVIEW_TEXT</Tag>
@@ -2298,11 +2298,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_UNSET_PROMO_ANGST_SEA</Tag>
-		<English>The crew is gripped by superstition. Lurking creatures in the depths of the sea weaken their morale. Only a complete crew replacement can eradicate the fear on board. This resets the crew's experience level (promotions).[NEWLINE][NEWLINE]Would you like to hire a new crew for %d1 [ICON_GOLD]?</English>
-		<French>L'&#233;quipage est en proie &#224; la superstition. Des cr&#233;atures tapies dans les profondeurs marines minent leur moral. Seul un remplacement complet de l'&#233;quipage peut dissiper la peur &#224; bord. Cela r&#233;initialise le niveau d'exp&#233;rience de l'&#233;quipage (promotions).[NEWLINE][NEWLINE]Souhaiteriez-vous embaucher un nouvel &#233;quipage pour %d1 [ICON_GOLD] ?</French>
-		<German>Die Mannschaft ist von Aberglauben ergriffen. Lauernde Wesen in den Tiefen des Meeres schw&#228;chen ihre Kampfmoral. Nur ein vollst&#228;ndiger Austausch der Besatzung kann die Furcht an Bord tilgen. Dabei wird das Erfahrungslevel der Crew zur&#252;ckgesetzt (Bef&#246;rderungen).[NEWLINE][NEWLINE]M&#246;chtet Ihr f&#252;r %d1 [ICON_GOLD] eine neue Crew anheuern?</German>
-		<Italian>L'equipaggio &#232; preda della superstizione. Creature in agguato nelle profondit&#224; del mare indeboliscono il loro morale. Solo una sostituzione completa dell'equipaggio pu&#242; sradicare la paura a bordo. Questo ripristina il livello di esperienza dell'equipaggio (promozioni).[NEWLINE][NEWLINE]Vuoi assumere un nuovo equipaggio per %d1 [ICON_GOLD]?</Italian>
-		<Spanish>La tripulaci&#243;n est&#225; dominada por la superstici&#243;n. Criaturas acechantes en las profundidades marinas debilitan su moral. Solo un reemplazo completo de la tripulaci&#243;n puede erradicar el miedo a bordo. Esto restablece el nivel de experiencia de la tripulaci&#243;n (promociones).[NEWLINE][NEWLINE]&#191;Te gustar&#237;a contratar una nueva tripulaci&#243;n para %d1 [ICON_GOLD]?</Spanish>
+		<English>The crew is gripped by superstition. Lurking creatures in the depths of the sea weaken their morale. Only a complete crew replacement can eradicate the fear on board. This resets the crew's combat experience.[NEWLINE][NEWLINE]Would you like to hire a new crew for %d1 [ICON_GOLD]?</English>
+		<French>L'&#233;quipage est en proie &#224; la superstition. Des cr&#233;atures tapies dans les profondeurs marines minent leur moral. Seul un remplacement complet de l'&#233;quipage peut dissiper la peur &#224; bord. Cela r&#233;initialise l'exp&#233;rience de combat de l'&#233;quipage.[NEWLINE][NEWLINE]Souhaiteriez-vous embaucher un nouvel &#233;quipage pour %d1 [ICON_GOLD] ?</French>
+		<German>Die Mannschaft ist von Aberglauben ergriffen. Lauernde Wesen in den Tiefen des Meeres schw&#228;chen ihre Kampfmoral. Nur ein vollst&#228;ndiger Austausch der Besatzung kann die Furcht an Bord tilgen. Dabei wird die Kampferfahrung der Crew zur&#252;ckgesetzt.[NEWLINE][NEWLINE]M&#246;chtet Ihr f&#252;r %d1 [ICON_GOLD] eine neue Crew anheuern?</German>
+		<Italian>L'equipaggio &#232; preda della superstizione. Creature in agguato nelle profondit&#224; del mare indeboliscono il loro morale. Solo una sostituzione completa dell'equipaggio pu&#242; sradicare la paura a bordo. Questo azzera l'esperienza di combattimento dell'equipaggio.[NEWLINE][NEWLINE]Vuoi assumere un nuovo equipaggio per %d1 [ICON_GOLD]?</Italian>
+		<Spanish>La tripulaci&#243;n est&#225; dominada por la superstici&#243;n. Criaturas acechantes en las profundidades marinas debilitan su moral. Solo un reemplazo completo de la tripulaci&#243;n puede erradicar el miedo a bordo. Esto reinicia la experiencia de combate de la tripulaci&#243;n.[NEWLINE][NEWLINE]&#191;Te gustar&#237;a contratar una nueva tripulaci&#243;n para %d1 [ICON_GOLD]?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_CITY_LOST_IMPROVEMENT</Tag>
+		<English>Due to a lack of labor, the city of %s2 could no longer cultivate this piece of land. The facility (%s1) fell into disrepair and the field now lies fallow again.</English>
+		<French>Faute de main-d'oeuvre, la ville de %s2 ne put plus cultiver cette parcelle de terre. L'installation (%s1) tomba en ruine et le champ est &#224; nouveau laiss&#233; en friche.</French>
+		<German>Mangels Arbeitskr&#228;fte konnte die Stadt %s2 dieses St&#252;ck Land nicht mehr bestellen. Die Anlage (%s1) verfiel und das Feld liegt nun wieder brach.</German>
+		<Italian>A causa della mancanza di manodopera, la citt&#224; di %s2 non pot&#233; pi&#249; coltivare questo appezzamento di terreno. La struttura (%s1) cadde in rovina e il campo ora giace di nuovo incolto.</Italian>
+		<Spanish>Debido a la falta de mano de obra, la ciudad de %s2 ya no pudo cultivar este terreno. La instalaci&#243;n (%s1) se deterior&#243; y el campo ahora permanece sin cultivar.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_CIV_DESTROYED</Tag>
@@ -2394,11 +2402,99 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO</Tag>
-		<English>Combat rounds: %d1_Value</English>
-		<French>Rounds de combat: %d1_Value</French>
-		<German>Kampfrunden: %d1_Value</German>
-		<Italian>Proiettili da combattimento: %d1_Value</Italian>
-		<Spanish>Rondas de combate: %d1_Value</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Combat rounds: %d1_Value[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Rounds de combat: %d1_Value[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Kampfrunden: %d1_Value[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Proiettili da combattimento: %d1_Value[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Rondas de combate: %d1_Value[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_DAMAGE_PER_ROUND</Tag>
+		<English>Damage per round:</English>
+		<French>D&#233;g&#226;ts par tour :</French>
+		<German>Schaden pro Runde:</German>
+		<Italian>Danno per turno:</Italian>
+		<Spanish>Da&#241;o por ronda:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ENEMY</Tag>
+		<English>Opponent</English>
+		<French>Adversaire</French>
+		<German>Gegner</German>
+		<Italian>Avversario</Italian>
+		<Spanish>Oponente</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ENEMY_DEATH</Tag>
+		<English>Enemy death requires: min.</English>
+		<French>Mort ennemie requise: min.</French>
+		<German>Tod des Gegners bei min.</German>
+		<Italian>La morte del nemico richiede: min.</Italian>
+		<Spanish>La muerte del enemigo req.: m&#237;n.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_FIRST_STRIKES</Tag>
+		<English>First Strikes:</English>
+		<French>Premi&#232;res frappes :</French>
+		<German>Erstangriffe:</German>
+		<Italian>Prime mosse:</Italian>
+		<Spanish>Primeros ataques:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_HIT_CHANCE</Tag>
+		<English>Your attack chance per round:</English>
+		<French>Votre chance d'attaque par tour :</French>
+		<German>Deine Angriffschance pro Runde:</German>
+		<Italian>La tua probabilit&#224; di attacco per round:</Italian>
+		<Spanish>Tu probabilidad de ataque por ronda:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_IMMUN</Tag>
+		<English>immune</English>
+		<French>immunit&#233;</French>
+		<German>immun</German>
+		<Italian>immune</Italian>
+		<Spanish>inmune</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ROUND</Tag>
+		<English>round</English>
+		<French>tour</French>
+		<German>Runde</German>
+		<Italian>turno</Italian>
+		<Spanish>ronda</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ROUNDS</Tag>
+		<English>rounds</English>
+		<French>tours</French>
+		<German>Runden</German>
+		<Italian>turni</Italian>
+		<Spanish>rondas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_TP</Tag>
+		<English>HP</English>
+		<French>PV</French>
+		<German>TP</German>
+		<Italian>PV</Italian>
+		<Spanish>PV</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_VICTORIOUS_ROUNDS</Tag>
+		<English>Result of winning rounds:</English>
+		<French>R&#233;sultat des manches gagnantes :</French>
+		<German>Ergebnis siegreicher Runden:</German>
+		<Italian>Risultato dei round vinti:</Italian>
+		<Spanish>Resultado de las rondas ganadas:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_YOU</Tag>
+		<English>You</English>
+		<French>Vous</French>
+		<German>Du</German>
+		<Italian>Tu</Italian>
+		<Spanish>T&#250;</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INJURY</Tag>
@@ -4571,5 +4667,21 @@
 		<German>Eure islamistischen Rekruten verweigern den Dienst f&#252;r den paganen Herrscher, t&#246;ten ihre ungl&#228;ubigen Kollegen und l&#246;sen sich auf (endet mit der Technologie Toleranzedikt oder mit Islam als Staatsreligion).</German>
 		<Italian>Le tue reclute islamiste si rifiutano di servire il sovrano pagano, uccidono i loro colleghi infedeli e si dissolvono (finisce con l'editto di tolleranza tecnologica o con l'Islam come religione di Stato).</Italian>
 		<Spanish>Tus reclutas islamistas se niegan a servir al gobernante pagano, matan a sus colegas infieles y se disuelven (termina con el edicto de tolerancia tecnol&#243;gica o con el Islam como religi&#243;n de Estado).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_UNIT_INFO_BAR_7</Tag>
+		<English>Type</English>
+		<French>Type</French>
+		<German>Typ</German>
+		<Italian>Tipo</Italian>
+		<Spanish>Tipo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_UNIT_INFO_BAR_8</Tag>
+		<English>Transports</English>
+		<French>Transporte</French>
+		<German>Transportiert</German>
+		<Italian>Trasportato</Italian>
+		<Spanish>Transporte</Spanish>
 	</TEXT>
 </Civ4GameText>

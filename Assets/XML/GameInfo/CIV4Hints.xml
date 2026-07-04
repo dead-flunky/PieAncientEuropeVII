@@ -492,5 +492,14 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_141</Description>
 		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_142</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_143</Description>
+		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_144</Description>
+		</HintInfo>
 	</HintInfos>
 </Civ4Hints>

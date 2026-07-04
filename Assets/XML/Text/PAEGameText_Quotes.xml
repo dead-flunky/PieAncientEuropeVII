@@ -1185,6 +1185,38 @@
 		<Spanish>Los caballeros viv&#237;an de la improvisaci&#243;n y extorsionaban a los comerciantes, es decir, les robaban. Johann Nestroy</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_233</Tag>
+		<English>Everything we are arises from our thoughts. With our thoughts, we shape the world. Gautama Buddha</English>
+		<French>Tout ce que nous sommes provient de nos pens&#233;es. Par nos pens&#233;es, nous fa&#231;onnons le monde. Gautama Bouddha</French>
+		<German>Alles, was wir sind, entsteht aus unseren Gedanken. Mit unseren Gedanken formen wir die Welt. Gautama Buddha</German>
+		<Italian>Tutto ci&#242; che siamo nasce dai nostri pensieri. Con i nostri pensieri, plasmiamo il mondo. Gautama Buddha</Italian>
+		<Spanish>Todo lo que somos surge de nuestros pensamientos. Con ellos, moldeamos el mundo. Gautama Buda</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_234</Tag>
+		<English>Fire purifies everything, even those who think they can control it. Heraclitus</English>
+		<French>Le feu purifie tout, m&#234;me ceux qui croient pouvoir le ma&#238;triser. H&#233;raclite</French>
+		<German>Das Feuer reinigt alles, sogar jene, die glauben, sie k&#246;nnten es beherrschen. Heraklit</German>
+		<Italian>Il fuoco purifica ogni cosa, anche coloro che credono di poterlo controllare. Eraclito</Italian>
+		<Spanish>El fuego lo purifica todo, incluso a quienes creen poder controlarlo. Her&#225;clito</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_235</Tag>
+		<English>"No one is permitted to remove the colonies bound to the land from the land to which they are assigned." Codex Theodosianus 5.17.1 (dating from 332 AD)</English>
+		<French>" Nul n'est autoris&#233; &#224; d&#233;placer les colonies attach&#233;es &#224; la terre qui leur est assign&#233;e." Codex Theodosianus 5.17.1 (datant de 332 ap. J.-C.)</French>
+		<German>"Es ist niemandem erlaubt, die an den Boden gebundenen Kolonen von dem Land zu entfernen, dem sie zugewiesen sind." Codex Theodosianus 5,17,1 (aus dem Jahr 332 n. Chr.)</German>
+		<Italian>"A nessuno &#232; permesso rimuovere le colonie legate alla terra dalla terra a cui sono state assegnate." Codice Teodosiano 5.17.1 (risalente al 332 d.C.)</Italian>
+		<Spanish>"Nadie tiene permitido trasladar las colonias vinculadas a la tierra del territorio al que est&#225;n asignadas". Codex Theodosianus 5.17.1 (que data del a&#241;o 332 d. C.)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PAE_QUOTE_236</Tag>
+		<English>He who belongs to another cannot be free. Cicero</English>
+		<French>Celui qui appartient &#224; autrui ne peut &#234;tre libre. Cic&#233;ron</French>
+		<German>Wer einem anderen geh&#246;rt, kann nicht frei sein. Cicero</German>
+		<Italian>Chi appartiene a un altro non pu&#242; essere libero. Cicerone</Italian>
+		<Spanish>Quien pertenece a otro no puede ser libre. Cicer&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAE_QUOTE_24</Tag>
 		<English>"Proof is the idol before whom the pure mathematician tortures himself." Sir Arthur Eddington</English>
 		<French>"La preuve est une idole devant laquelle les math&#233;maticiens se torturent." Sir Arthur Eddington</French>

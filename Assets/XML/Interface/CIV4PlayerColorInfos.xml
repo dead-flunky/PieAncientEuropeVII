@@ -87,7 +87,7 @@
     </PlayerColorInfo>
     <PlayerColorInfo>
         <!-- Gaul -->
-      <Type>PLAYERCOLOR_DARK_GREEN</Type>     
+      <Type>PLAYERCOLOR_DARK_GREEN</Type>
       <ColorTypePrimary>COLOR_PLAYER_DARK_GREEN</ColorTypePrimary>
       <ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
       <TextColorType>COLOR_PLAYER_DARK_GREEN_TEXT</TextColorType>
@@ -99,7 +99,7 @@
       <TextColorType>COLOR_PLAYER_DARK_PINK_TEXT</TextColorType>
     </PlayerColorInfo>
     <PlayerColorInfo>
-        <!-- Carthage -->
+      <!-- Goten -->
       <Type>PLAYERCOLOR_DARK_PURPLE</Type>
       <ColorTypePrimary>COLOR_PLAYER_DARK_PURPLE</ColorTypePrimary>
       <ColorTypeSecondary>COLOR_PLAYER_YELLOW</ColorTypeSecondary>
@@ -233,6 +233,7 @@
       <TextColorType>COLOR_PLAYER_LIGHT_BLACK_TEXT</TextColorType>
     </PlayerColorInfo>
     <PlayerColorInfo>
+      <!-- Illyria -->
       <Type>PLAYERCOLOR_LIGHT_GREEN</Type>
       <ColorTypePrimary>COLOR_PLAYER_LIGHT_GREEN</ColorTypePrimary>
       <ColorTypeSecondary>COLOR_PLAYER_DARK_ORANGE</ColorTypeSecondary>
@@ -331,6 +332,13 @@
       <ColorTypePrimary>COLOR_PLAYER_DARK_ORANGE</ColorTypePrimary>
       <ColorTypeSecondary>COLOR_PLAYER_VERYDARK_RED</ColorTypeSecondary>
       <TextColorType>COLOR_PLAYER_DARK_ORANGE_TEXT</TextColorType>
+    </PlayerColorInfo>
+    <PlayerColorInfo>
+        <!-- Arabia -->
+      <Type>PLAYERCOLOR_OLIVE_GREEN</Type>
+      <ColorTypePrimary>COLOR_PLAYER_OLIVE_GREEN</ColorTypePrimary>
+      <ColorTypeSecondary>COLOR_PLAYER_WHITE</ColorTypeSecondary>
+      <TextColorType>COLOR_PLAYER_OLIVE_GREEN_TEXT</TextColorType>
     </PlayerColorInfo>
     <PlayerColorInfo>
         <!-- Assyrians -->

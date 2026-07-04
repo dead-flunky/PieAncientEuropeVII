@@ -2258,7 +2258,23 @@ class CvEventManager:
 						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 						pUnit = None
 
-				# ab 775 ist frei
+				# Katapulte/Catapults
+				elif iData1 == 775:
+						pPlayer = gc.getPlayer(iData4)
+						pUnit = pPlayer.getUnit(iData5)
+						pPlot = pUnit.plot()
+						if iData2 == 1:
+								PAE_Unit.changeUnit(pUnit, gc.getInfoTypeForString("UNIT_FIRE_CATAPULT"), False)
+						#elif iData2 == 2:
+						#		PAE_Unit.changeUnit(pUnit, gc.getInfoTypeForString("UNIT_COW_CATAPULT"), True)
+						else:
+								iNewUnit = gc.getInfoTypeForString("UNIT_CATAPULT")
+								iNewUnitClass = gc.getUnitInfo(iNewUnit).getUnitClassType()
+								iNewUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(iNewUnitClass)
+								PAE_Unit.changeUnit(pUnit, iNewUnit, False)
+
+
+				# ab 776 ist frei
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -2510,7 +2526,7 @@ class CvEventManager:
 						gc.getInfoTypeForString("TECH_TECH_INFO_8"),
 						gc.getInfoTypeForString("TECH_TECH_INFO_9"),
 						gc.getInfoTypeForString("TECH_TECH_INFO_10"),
-						gc.getInfoTypeForString("TECH_CITY_STATE"),
+						#gc.getInfoTypeForString("TECH_CITY_STATE"),
 				]
 				lTechsReli = [
 						gc.getInfoTypeForString("TECH_RELIGION_NORDIC"),
@@ -2703,7 +2719,6 @@ class CvEventManager:
 					PAE_Turn_Features.doStrandgut()
 
 					# PAE Disasters / Katastrophen
-					# Permanent Alliances entspricht = Naturkatastrophen (PAE)
 					if not (gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_DISASTERS) or gc.getGame().isGameMultiPlayer()):
 						PAE_Disasters.doGenerateDisaster(iGameTurn)
 
@@ -3248,10 +3263,16 @@ class CvEventManager:
 
 					# --------- Feature - Seuche auf dem Schlachtfeld ----------------------
 					# Wahrscheinlichkeit einer Seuche auf beiden Feldern
-					# Ab 4 Einheiten, etwa Chance 3%
+					# Ab 4 Einheiten
+					# BTS Combat System: 1:33 (3%)
+					# PAE Combat System: 1:50 (2%)
 					if pBattlePlot.getNumUnits() > 3:
 							feat_seuche = gc.getInfoTypeForString("FEATURE_SEUCHE")
-							iRand = CvUtil.myRandom(33, "Schlachtfeldseuche")
+							if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_PAE_COMBAT):
+									iChance = 33
+							else:
+									iChance = 50
+							iRand = CvUtil.myRandom(iChance, "Schlachtfeldseuche")
 							if iRand == 1:
 									#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Seuche "+pLoserPlot.getX()+"|"+pLoserPlot.getY(),1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 									if pWinnerPlot.getFeatureType() == -1 and not pWinnerPlot.isCity() and not pWinnerPlot.isWater():
@@ -3376,15 +3397,26 @@ class CvEventManager:
 								
 
 					# Einheiten, die Wälder niederbrennen können
+					# PAE 7.16: Stadtbrand
 					if pWinner.getUnitType() in L.LFireUnits or pLoser.getUnitType() in L.LFireUnits:
 
-							# Brandchance 20%
+							pBurningPlot = pBattlePlot
+							if pLoser.isMadeAttack():
+									pBurningPlot = pWinnerPlot
+
+							# Attack:
 							if pWinner.getUnitType() in L.LFireUnits:
-									if pBattlePlot.getFeatureType() in L.LForests:
+									# Forest: 20%
+									if pBurningPlot.getFeatureType() in L.LForests:
 											if CvUtil.myRandom(5, "WinnerUnitBurnsForest") == 1:
-													pBattlePlot.setFeatureType(gc.getInfoTypeForString("FEATURE_FOREST_BURNT"), 0)
+													pBurningPlot.setFeatureType(gc.getInfoTypeForString("FEATURE_FOREST_BURNT"), 0)
 													pLoser.getGroup().setActivityType(-1)  # to reload the map!
-							# Falls auch der Gegner Feuer unterm Hintern hat
+									# City: Stadtbrand
+									elif pBurningPlot.isCity():
+											pBurningPlot.getPlotCity().setNumRealBuilding(gc.getInfoTypeForString("BUILDING_FIRE"), 1)
+											#pLoser.getGroup().setActivityType(-1)  # to reload the map!
+
+							# Defense: Falls auch der Gegner Feuer unterm Hintern hat
 							if pLoser.getUnitType() in L.LFireUnits:
 									if pWinnerPlot.getFeatureType() in L.LForests:
 											if CvUtil.myRandom(5, "LoserUnitBurnsForest") == 1:
@@ -3562,6 +3594,11 @@ class CvEventManager:
 															bPromoHeroDone = PAE_Unit.doUnitGetsHero(pWinner, pLoser)
 													elif pLoser.isHasPromotion(iPromoHero):
 															bPromoHero = True
+													# Sea Monsters 08.06.2026
+													elif iLoserUnitType in L.LUnitSeaMonstersHero:
+															bPromoHero = True
+															pWinner.setHasPromotion(gc.getInfoTypeForString("PROMOTION_ANGST_SEA"), False)
+															bPromoHeroDone = PAE_Unit.doUnitGetsHero(pWinner, pLoser)
 													# for each general who accompanies the stack: +1 XP
 													# one general gets the hero promo, if not possessing
 													PAE_Unit.getExperienceForLeader(pWinner, pLoser, bPromoHero and not bPromoHeroDone)
@@ -3976,6 +4013,12 @@ class CvEventManager:
 											CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_BUILDING_PALISADE_BUILT_INFO", ("", )),
 											"AS2D_CHOP_WOOD", 2, ",Art/Interface/Buttons/Builds/BuildChopDown.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,7,8",
 											ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
+
+					# PAE 7.17
+					elif iBuildingType == gc.getInfoTypeForString("BUILDING_BAUSCHUTT"):
+						pCity.setNumRealBuilding(iBuildingType, 0)
+						pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS"), 0)
+
 
 					PAE_Cultivation.doBuildingCultivate(pCity, iBuildingType)
 
@@ -5519,9 +5562,9 @@ class CvEventManager:
 				# PAE Debug Mark 10 begin
 				if not bPAEDebugMark10:
 
-					if iPlayer == gc.getBARBARIAN_PLAYER():
-							PAE_City.doUnitSupply(pCity, iPlayer)
-							return
+					#if iPlayer == gc.getBARBARIAN_PLAYER():
+					#		PAE_City.doUnitSupply(pCity, iPlayer)
+					#		return
 
 					# PAE 7.11d: Reset Statthaltertribut
 					iBuilding = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
@@ -5562,6 +5605,15 @@ class CvEventManager:
 							if pTeam.isHasTech(gc.getInfoTypeForString("TECH_COLONIZATION")):
 									PAE_City.doEmigrantSpawn(pCity)
 
+					# Stadtbrand
+					iBuilding = gc.getInfoTypeForString("BUILDING_FIRE")
+					if pCity.isHasBuilding(iBuilding):
+							PAE_City.doStadtbrand(pCity)
+					# Stadtseuche
+					iBuilding = gc.getInfoTypeForString("BUILDING_SEUCHE")
+					if pCity.isHasBuilding(iBuilding):
+							PAE_City.doStadtseuche(pCity)
+
 					# LEPROSY (Lepra) and PLAGUE (Pest), Lepra ab 5, Pest ab 9, CIV-Event Influenza (Grippe)
 					iBuildingPlague = gc.getInfoTypeForString("BUILDING_PLAGUE")
 					bDecline = pCity.isHasBuilding(iBuildingPlague)
@@ -5578,17 +5630,17 @@ class CvEventManager:
 							bDecline = PAE_City.doLeprosy(pCity)
 
 					# Slaves (Check jede 3. Runde): freier Buerger
-					if iGameTurnFounded % 3 == 0:
+					if iPlayer != gc.getBARBARIAN_PLAYER() and iGameTurnFounded % 3 == 0:
 							# PAE 6.2: Freier Buerger in der Funktion freeCitizen deaktiviert (Funktion wird aber benoetigt)
 							iCitySlaves = PAE_Sklaven.freeCitizen(pCity)
 							# Sklavenerhalt: Available slave (2%) - Schwaechung bei christlicher Religion
-							# Wenn Sklave ansaessig ist oder bei nem Sklavenmarkt
-							if iCitySlaves > 0 or pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")) > 0:
+							# Wenn Sklave ansaessig ist oder bei nem Sklavenmarkt (ab PAE 7.17: Sklavenquartiere)
+							if iCitySlaves > 0 or pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENQUARTIERE")):
 									PAE_Sklaven.spawnSlave(pCity, iCitySlaves)
 
 					# Gladiators
 					iCityGlads = PAE_Sklaven.freeCitizenGlad(pCity)
-					if iCityGlads > 0 and not pCity.getNumBuilding(gc.getInfoTypeForString("BUILDING_GLADIATORENSCHULE")):
+					if iCityGlads > 0 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_GLADIATORENSCHULE")):
 							# Gladiator Unit (nur wenn bereits keine Gladiatorenschule in der Stadt steht)
 							pTeam = gc.getTeam(pPlayer.getTeam())
 							bTeamHasGladiators = pTeam.isHasTech(gc.getInfoTypeForString("TECH_GLADIATOR2"))
@@ -5627,11 +5679,12 @@ class CvEventManager:
 									bRevolt = PAE_City.doJewRevolt(pCity)
 									if bRevolt: pCity = None
 
-					# PAE 7.15
-					PAE_City.doHealPirates(pCity)
 
 					# Weiterführende Aktionen...
 					if not bRevolt:
+
+							# PAE 7.15
+							PAE_City.doHealPirates(pCity)
 
 							# PAE 7.15: remove Fiscus Hall (Capitatio) / Abgabenstelle / Kopfsteuer
 							PAE_Christen.doCheckFiscusHall(pCity)

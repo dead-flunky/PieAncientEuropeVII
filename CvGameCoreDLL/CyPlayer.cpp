@@ -116,6 +116,12 @@ bool CyPlayer::hasTrait(int /*TraitTypes*/ iIndex)
 	return m_pPlayer ? m_pPlayer->hasTrait((TraitTypes) iIndex) : false;
 }
 
+// PAE dynamic Traits
+void CyPlayer::setHasTrait(int iIndex, bool bNewValue)
+{
+    m_pPlayer->setHasTrait((TraitTypes) iIndex, bNewValue);
+}
+
 bool CyPlayer::isHuman()
 {
 	return m_pPlayer ? m_pPlayer->isHuman() : false;

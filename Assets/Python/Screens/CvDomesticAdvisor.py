@@ -863,7 +863,8 @@ class CvDomesticAdvisor:
 				# Slave market
 				if pLoopCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")):
 						szText = u"1"
-				elif pLoopCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_STADT")):
+				# Sklavenmarkt vormals BUILDING_STADT
+				elif pLoopCity.getNumRealBuilding(gc.getInfoTypeForString("BUILDING_KOLONIE")):
 						szText = localText.getText("TXT_KEY_COLOR_POSITIVE", ()) + u"0" + localText.getText("TXT_KEY_COLOR_REVERT", ())
 				else:
 						szText = u""

@@ -92,6 +92,7 @@ CvPlayer::CvPlayer()
 
 	m_iTechPathCosts = NULL; // Ramk
 
+	m_dynTraits = false; // PAE dynamic Traits
 
 /************************************************************************************************/
 /* AI_AUTO_PLAY_MOD                        09/01/07                                MRGENIE      */
@@ -245,7 +246,11 @@ void CvPlayer::init(PlayerTypes eID)
 		FAssertMsg((GC.getNumTraitInfos() > 0), "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvPlayer::init");
 		for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
 		{
-			if (hasTrait((TraitTypes)iI))
+			// PAE dynamic Traits
+			m_dynTraits[iI] = GC.getLeaderHeadInfo(getLeaderType()).hasTrait((TraitTypes)iI);
+
+			//if (hasTrait((TraitTypes)iI))
+			if (m_dynTraits[iI])
 			{
 				changeExtraHealth(GC.getTraitInfo((TraitTypes)iI).getHealth());
 				changeExtraHappiness(GC.getTraitInfo((TraitTypes)iI).getHappiness());
@@ -352,6 +357,9 @@ void CvPlayer::uninit()
 	SAFE_DELETE_ARRAY(m_pabLoyalMember);
 
 	SAFE_DELETE_ARRAY(m_paeCivics);
+
+	// PAE dynamic Traits
+	SAFE_DELETE_ARRAY(m_dynTraits);
 
 	m_triggersFired.clear();
 
@@ -768,6 +776,14 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 			{
 				m_ppaaiImprovementYieldChange[iI][iJ] = 0;
 			}
+		}
+
+		// PAE dynamic Traits
+		FAssertMsg(m_dynTraits==NULL, "about to leak memory, CvPlayer::m_dynTraits");
+		m_dynTraits = new bool[GC.getNumTraitInfos()];
+		for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
+		{
+			m_dynTraits[iI] = false;
 		}
 
 		m_mapEventsOccured.clear();
@@ -2793,8 +2809,115 @@ bool CvPlayer::hasTrait(TraitTypes eTrait) const
 {
 	FAssertMsg((getLeaderType() >= 0), "getLeaderType() is less than zero");
 	FAssertMsg((eTrait >= 0), "eTrait is less than zero");
-	return GC.getLeaderHeadInfo(getLeaderType()).hasTrait(eTrait);
+	// BTS
+	//return GC.getLeaderHeadInfo(getLeaderType()).hasTrait(eTrait);
+	// PAE dynamic Traits
+	return m_dynTraits[(int)eTrait];
 }
+
+
+// PAE dynamic Traits
+void CvPlayer::setHasTrait(TraitTypes eTrait, bool bNewValue)
+{
+    FAssertMsg(eTrait >= 0, "TraitType is invalid");
+    FAssertMsg(eTrait < GC.getNumTraitInfos(), "TraitType is invalid");
+
+    if (m_dynTraits[eTrait] != bNewValue)
+    {
+        m_dynTraits[eTrait] = bNewValue;
+
+		int iI = eTrait;
+		int iJ;
+		
+        if (bNewValue)
+		{
+				changeExtraHealth(GC.getTraitInfo((TraitTypes)iI).getHealth());
+				changeExtraHappiness(GC.getTraitInfo((TraitTypes)iI).getHappiness());
+
+				for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+				{
+					changeExtraBuildingHappiness((BuildingTypes)iJ, GC.getBuildingInfo((BuildingTypes)iJ).getHappinessTraits(iI));
+				}
+
+				changeUpkeepModifier(GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier());
+				changeLevelExperienceModifier(GC.getTraitInfo((TraitTypes)iI).getLevelExperienceModifier());
+				changeGreatPeopleRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatPeopleRateModifier());
+				changeGreatGeneralRateModifier(GC.getTraitInfo((TraitTypes)iI).getGreatGeneralRateModifier());
+				changeDomesticGreatGeneralRateModifier(GC.getTraitInfo((TraitTypes)iI).getDomesticGreatGeneralRateModifier());
+
+				changeMaxGlobalBuildingProductionModifier(GC.getTraitInfo((TraitTypes)iI).getMaxGlobalBuildingProductionModifier());
+				changeMaxTeamBuildingProductionModifier(GC.getTraitInfo((TraitTypes)iI).getMaxTeamBuildingProductionModifier());
+				changeMaxPlayerBuildingProductionModifier(GC.getTraitInfo((TraitTypes)iI).getMaxPlayerBuildingProductionModifier());
+
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					changeTradeYieldModifier(((YieldTypes)iJ), GC.getTraitInfo((TraitTypes)iI).getTradeYieldModifier(iJ));
+				}
+
+				for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+				{
+					changeFreeCityCommerce(((CommerceTypes)iJ), GC.getTraitInfo((TraitTypes)iI).getCommerceChange(iJ));
+					changeCommerceRateModifier(((CommerceTypes)iJ), GC.getTraitInfo((TraitTypes)iI).getCommerceModifier(iJ));
+				}
+
+				for (iJ = 0; iJ < GC.getNumCivicOptionInfos(); iJ++)
+				{
+					if (GC.getCivicOptionInfo((CivicOptionTypes) iJ).getTraitNoUpkeep(iI))
+					{
+						changeNoCivicUpkeepCount(((CivicOptionTypes)iJ), 1);
+					}
+				}
+		}
+		else
+		{
+				changeExtraHealth(-GC.getTraitInfo((TraitTypes)iI).getHealth());
+				changeExtraHappiness(-GC.getTraitInfo((TraitTypes)iI).getHappiness());
+
+				for (iJ = 0; iJ < GC.getNumBuildingInfos(); iJ++)
+				{
+					changeExtraBuildingHappiness((BuildingTypes)iJ, -GC.getBuildingInfo((BuildingTypes)iJ).getHappinessTraits(iI));
+				}
+
+				changeUpkeepModifier(-GC.getTraitInfo((TraitTypes)iI).getUpkeepModifier());
+				changeLevelExperienceModifier(-GC.getTraitInfo((TraitTypes)iI).getLevelExperienceModifier());
+				changeGreatPeopleRateModifier(-GC.getTraitInfo((TraitTypes)iI).getGreatPeopleRateModifier());
+				changeGreatGeneralRateModifier(-GC.getTraitInfo((TraitTypes)iI).getGreatGeneralRateModifier());
+				changeDomesticGreatGeneralRateModifier(-GC.getTraitInfo((TraitTypes)iI).getDomesticGreatGeneralRateModifier());
+
+				changeMaxGlobalBuildingProductionModifier(-GC.getTraitInfo((TraitTypes)iI).getMaxGlobalBuildingProductionModifier());
+				changeMaxTeamBuildingProductionModifier(-GC.getTraitInfo((TraitTypes)iI).getMaxTeamBuildingProductionModifier());
+				changeMaxPlayerBuildingProductionModifier(-GC.getTraitInfo((TraitTypes)iI).getMaxPlayerBuildingProductionModifier());
+
+				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
+				{
+					changeTradeYieldModifier(((YieldTypes)iJ), -GC.getTraitInfo((TraitTypes)iI).getTradeYieldModifier(iJ));
+				}
+
+				for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+				{
+					changeFreeCityCommerce(((CommerceTypes)iJ), -GC.getTraitInfo((TraitTypes)iI).getCommerceChange(iJ));
+					changeCommerceRateModifier(((CommerceTypes)iJ), -GC.getTraitInfo((TraitTypes)iI).getCommerceModifier(iJ));
+				}
+
+				for (iJ = 0; iJ < GC.getNumCivicOptionInfos(); iJ++)
+				{
+					if (GC.getCivicOptionInfo((CivicOptionTypes) iJ).getTraitNoUpkeep(iI))
+					{
+						changeNoCivicUpkeepCount(((CivicOptionTypes)iJ), -1);
+					}
+				}
+		}
+
+        // Update UI
+        if (isHuman())
+        {
+            gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+            gDLL->getInterfaceIFace()->setDirty(GlobeLayer_DIRTY_BIT, true);
+            gDLL->getInterfaceIFace()->setDirty(ColoredPlots_DIRTY_BIT, true);
+        }
+    }
+}
+
 
 /************************************************************************************************/
 /* AI_AUTO_PLAY_MOD                           07/09/08                            jdog5000      */

@@ -467,6 +467,26 @@ void CvPlot::doImprovement()
 				}
 			}
 		}
+
+		// PAE feature: remove improvement if a city does not work on it
+		if (isOwned() && getBonusType() == NO_BONUS)
+		{
+			if (getWorkingCity() == NULL && GC.getImprovementInfo(getImprovementType()).getDefenseModifier() == 0)
+			{
+				if(GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("PAE_UNWORKED_PLOT_REMOVE_CHANCE"), "Remove Improvement") == 0)
+				{
+					setImprovementType(NO_IMPROVEMENT);
+					pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+
+					if (pCity != NULL)
+					{
+						szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_LOST_IMPROVEMENT", GC.getImprovementInfo(getImprovementType()).getTextKeyWide(), pCity->getNameKey());
+						gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYRAZE", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+					}
+				}
+			}
+		} // -------
+
 	}
 
 	doImprovementUpgrade();
@@ -8678,6 +8698,18 @@ void CvPlot::doFeature()
 	CvWString szBuffer;
 	int iProbability;
 	int iI, iJ;
+	FeatureTypes eForestNew = NO_FEATURE; // PAE
+
+// Changed by Pie
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       03/04/10                                jdog5000      */
+/*                                                                                              */
+/* Gamespeed scaling                                                                            */
+/************************************************************************************************/
+	int iOdds = (10000*GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getVictoryDelayPercent())/100;
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 
 	if (getFeatureType() != NO_FEATURE)
 	{
@@ -8685,102 +8717,160 @@ void CvPlot::doFeature()
 
 		if (iProbability > 0)
 		{
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       03/04/10                                jdog5000      */
-/*                                                                                              */
-/* Gamespeed scaling                                                                            */
-/************************************************************************************************/
-/* original bts code
-			if (GC.getGameINLINE().getSorenRandNum(10000, "Feature Disappearance") < iProbability)
-*/
-			int iOdds = (10000*GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getVictoryDelayPercent())/100;
+			// BTS
+			//if (GC.getGameINLINE().getSorenRandNum(10000, "Feature Disappearance") < iProbability)
+
+			// PAE: UNOFFICIAL_PATCH merge
 			if (GC.getGameINLINE().getSorenRandNum(iOdds, "Feature Disappearance") < iProbability)
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 			{
 				setFeatureType(NO_FEATURE);
 			}
 		}
+
+
+		// PAE: junger Wald (FEATURE_FOREST_NEW -> FEATURE_FOREST)
+		iProbability = 0;
+		if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_NEW"))
+		{
+			eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST");
+			iProbability = GC.getFeatureInfo(eForestNew).getGrowthProbability();
+		}
+		else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNING"))
+		{
+			eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNT");
+			iProbability = 50;
+		}
+		else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNT"))
+		{
+			eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_NEW");
+			iProbability = GC.getFeatureInfo(eForestNew).getGrowthProbability();
+		}
+
+		if (eForestNew != NO_FEATURE && iProbability > 0)
+		{
+			if (GC.getGameINLINE().getSorenRandNum(iOdds, "Feature Disappearance") < iProbability)
+			{
+				setFeatureType(eForestNew);
+
+				// Tell the owner of this city.
+				pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+				if (pCity != NULL)
+				{
+					szBuffer = gDLL->getText("TXT_KEY_MISC_FEATURE_GROWN_NEAR_CITY", GC.getFeatureInfo(eForestNew).getTextKeyWide(), pCity->getNameKey());
+					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO, GC.getFeatureInfo(eForestNew).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+				}
+
+			}
+		}
+		// PAE ------------
+
+
 	}
 	else
 	{
-		if (!isUnit())
-		{
+		eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_NEW");
+		// PAE changes: Einheiten verhindern keine Waldverbreitung, Sandstürme oder Heuschreckenplagen
+		//if (!isUnit())
+		//{
 			if (getImprovementType() == NO_IMPROVEMENT)
 			{
 				for (iI = 0; iI < GC.getNumFeatureInfos(); ++iI)
 				{
-					if (canHaveFeature((FeatureTypes)iI))
+
+					// PAE (Achtung! Falls ein Feature nur mittels Improvement wachsen kann, dann muss dieser Check weg.
+					// Bei PAE sind es sowieso nur Features mit getGrowthProbability() > 0
+					int iFeatureGrowthProbability = GC.getFeatureInfo((FeatureTypes)iI).getGrowthProbability();
+					if (iFeatureGrowthProbability)
 					{
-						if ((getBonusType() == NO_BONUS) || (GC.getBonusInfo(getBonusType()).isFeature(iI)))
+
+						if (canHaveFeature((FeatureTypes)iI))
 						{
-							iProbability = 0;
 
-							for (iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
+							if ((getBonusType() == NO_BONUS) || (GC.getBonusInfo(getBonusType()).isFeature(iI)))
 							{
-								pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iJ));
+								iProbability = 0;
 
-								if (pLoopPlot != NULL)
+								for (iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
 								{
-									if (pLoopPlot->getFeatureType() == ((FeatureTypes)iI))
+									pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iJ));
+
+									if (pLoopPlot != NULL)
 									{
-										if (pLoopPlot->getImprovementType() == NO_IMPROVEMENT)
+										if (pLoopPlot->getFeatureType() == ((FeatureTypes)iI))
 										{
-											iProbability += GC.getFeatureInfo((FeatureTypes)iI).getGrowthProbability();
-										}
-										else
-										{
-											iProbability += GC.getImprovementInfo(pLoopPlot->getImprovementType()).getFeatureGrowthProbability();
+											if (pLoopPlot->getImprovementType() == NO_IMPROVEMENT) iProbability += iFeatureGrowthProbability;
+											else iProbability += GC.getImprovementInfo(pLoopPlot->getImprovementType()).getFeatureGrowthProbability();
 										}
 									}
 								}
-							}
 
-							iProbability *= std::max(0, (GC.getFEATURE_GROWTH_MODIFIER() + 100));
-							iProbability /= 100;
-
-							if (isRoute())
-							{
-								iProbability *= std::max(0, (GC.getROUTE_FEATURE_GROWTH_MODIFIER() + 100));
+								iProbability *= std::max(0, (GC.getFEATURE_GROWTH_MODIFIER() + 100));
 								iProbability /= 100;
-							}
 
-							if (iProbability > 0)
-							{
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       03/04/10                                jdog5000      */
-/*                                                                                              */
-/* Gamespeed scaling                                                                            */
-/************************************************************************************************/
-/* original bts code
-								if (GC.getGameINLINE().getSorenRandNum(10000, "Feature Growth") < iProbability)
-*/
-								int iOdds = (10000*GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getVictoryDelayPercent())/100;
-								if( GC.getGameINLINE().getSorenRandNum(iOdds, "Feature Growth") < iProbability )
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
+								if (isRoute())
 								{
-									setFeatureType((FeatureTypes)iI);
+									iProbability *= std::max(0, (GC.getROUTE_FEATURE_GROWTH_MODIFIER() + 100));
+									iProbability /= 100;
+								}
 
-									pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+								if (iProbability > 0)
+								{
 
-									if (pCity != NULL)
+									// BTS
+									//if (GC.getGameINLINE().getSorenRandNum(10000, "Feature Growth") < iProbability)
+
+									// PAE: UNOFFICIAL_PATCH merge
+									if( GC.getGameINLINE().getSorenRandNum(iOdds, "Feature Growth") < iProbability )
 									{
-										// Tell the owner of this city.
-										szBuffer = gDLL->getText("TXT_KEY_MISC_FEATURE_GROWN_NEAR_CITY", GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide(), pCity->getNameKey());
-										gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO, GC.getFeatureInfo((FeatureTypes) iI).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
-									}
+										// BTS Original ------
+										/*
+										setFeatureType((FeatureTypes)iI);
 
-									break;
+										pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+
+										if (pCity != NULL)
+										{
+											// Tell the owner of this city.
+											szBuffer = gDLL->getText("TXT_KEY_MISC_FEATURE_GROWN_NEAR_CITY", GC.getFeatureInfo((FeatureTypes) iI).getTextKeyWide(), pCity->getNameKey());
+											gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO, GC.getFeatureInfo((FeatureTypes) iI).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+										}
+										*/
+										
+										// PAE -----------
+										FeatureTypes eFeature     = (FeatureTypes)iI;
+										FeatureTypes eGrasshopper = (FeatureTypes)GC.getInfoTypeForString("FEATURE_GRASSHOPPER");
+										FeatureTypes eSandstorm   = (FeatureTypes)GC.getInfoTypeForString("FEATURE_STURM");
+										FeatureTypes eSavanna     = (FeatureTypes)GC.getInfoTypeForString("FEATURE_SAVANNA");
+
+										if (eFeature == eGrasshopper || eFeature == eSandstorm || eFeature == eSavanna) setFeatureType(eFeature);
+										else if (eForestNew != NO_FEATURE)
+										{
+											setFeatureType(eForestNew);
+											eFeature = eForestNew;
+										}
+
+										pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+										if (pCity != NULL)
+										{
+											// PAE: different sounds
+											const char* pszSound = "AS2D_FEATUREGROWTH";
+											if (eFeature == eGrasshopper)    pszSound = "AS2D_FEATURE_GRASSHOPPER";
+											else if (eFeature == eSandstorm) pszSound = "AS2D_FEATURE_STORM";
+											// Tell the owner of this city.
+											szBuffer = gDLL->getText("TXT_KEY_MISC_FEATURE_GROWN_NEAR_CITY", GC.getFeatureInfo(eFeature).getTextKeyWide(), pCity->getNameKey());
+											gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, pszSound, MESSAGE_TYPE_INFO, GC.getFeatureInfo(eFeature).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+										}
+										// PAE ------------
+
+										break;
+									}
 								}
 							}
 						}
-					}
+					} // PAE
 				}
 			}
-		}
+		//} // if (!isUnit())
 	}
 }
 

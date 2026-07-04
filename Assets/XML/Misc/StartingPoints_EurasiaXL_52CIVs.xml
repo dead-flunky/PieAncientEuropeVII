@@ -33,12 +33,15 @@
 			<StartY>51</StartY>
 			<StartX>26</StartX>
 			<StartY>59</StartY>
-			<StartX>37</StartX>
-			<StartY>52</StartY>
 			<StartX>41</StartX>
 			<StartY>56</StartY>
 			<StartX>55</StartX>
 			<StartY>50</StartY>
+		</CivilizationInfo>
+		<CivilizationInfo>
+			<Type>CIVILIZATION_GOTEN</Type>
+			<StartX>34</StartX>
+			<StartY>56</StartY>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_DAKER</Type>

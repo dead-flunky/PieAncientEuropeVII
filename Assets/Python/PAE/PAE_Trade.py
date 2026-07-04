@@ -2018,7 +2018,7 @@ def _doCheckCitySpecialBonus(pUnit, pCity, eBonus):
 				lGift.append(gc.getInfoTypeForString("UNIT_GOLDKARREN"))
 
 				# Slave
-				if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")) and not pCity.isHasReligion(gc.getInfoTypeForString("RELIGION_CHRISTIANITY")):
+				if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENQUARTIERE")) and not pCity.isHasReligion(gc.getInfoTypeForString("RELIGION_CHRISTIANITY")):
 						lGift.append(gc.getInfoTypeForString("UNIT_SLAVE"))
 				# Elefant
 				if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ELEPHANT_STABLE")):

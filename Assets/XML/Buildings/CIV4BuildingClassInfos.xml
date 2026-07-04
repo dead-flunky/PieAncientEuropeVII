@@ -2,7 +2,7 @@
 <!-- +++++++ BUILDINGCLASS_SPECIAL1 ++++++ -->
 <!-- BUILDING_HOSPITAL_ROME: Rom, Etrusker -->
 <!-- BUILDING_ACROPOLIS: Griechen, Ath, Spa, Theb -->
-<!-- BUILDING_WARFT: Kelten, Germanen, Briten, Gallier, Vandalen -->
+<!-- BUILDING_WARFT: Kelten, Germanen, Goten, Briten, Gallier, Vandalen -->
 <!-- BUILDING_TROGLODYTEN: Numider -->
 <!-- BUILDING_PIRATENNEST: Illyrer, Barbar -->
 <!-- BUILDING_NURAGHE: Iberer -->
@@ -11,18 +11,19 @@
 <!-- BUILDING_NECROPOLIS_EGYPT: Egypt, Nubia -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL2 ++++++ -->
 <!-- BUILDING_NECROPOLIS: Etrusker, Rom, Griechen (Theb, Athen, Spa), Iberer, Phoen, Karthago, Israel, Hethiter -->
-<!-- BUILDING_HAREM: Egypt, Nubia, Assyrer, Babylon, Perser -->
+<!-- BUILDING_HAREM: Egypt, Nubia, Assyrer, Babylon, Perser, Arabia -->
+<!-- BUILDING_STABLE_GOTHS: Goten -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL3 ++++++ -->
 <!-- BUILDING_GYMNASIUM: Rom, Etrusker -->
 <!-- BUILDING_GYMNASION: Griechen, Ath,Theb,Sparta, Makedon -->
-<!-- BUILDING_GARDEN: Assyrer, Phoen, Perser, Babylon, Sumer, Karthago, Egypt, Nubia, Israel -->
+<!-- BUILDING_GARDEN: Assyrer, Phoen, Perser, Babylon, Sumer, Karthago, Egypt, Nubia, Israel, Arabia -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL4 ++++++ -->
 <!-- frei -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL5 ++++++ -->
 <!-- BUILDING_NYMPHAION: Griechen, Ath,Theb,Spa, Makedon -->
 <!-- BUILDING_NYMPHAEUM: Rom -->
 <!-- BUILDING_STUFENBRUNNEN: Inder -->
-<!-- BUILDING_STEINBECKEN: Sumer, Assyrer, Perser, Babylon, Phoen, Karthago, Hethiter, Lyder -->
+<!-- BUILDING_STEINBECKEN: Sumer, Assyrer, Perser, Babylon, Phoen, Karthago, Hethiter, Lyder, Arabia -->
 <!-- BUILDING_NUBIAN_PYRAMID: Egypt, Nubia -->
 <!-- +++++++ BUILDINGCLASS_SPECIAL6 ++++++ -->
 <!-- BUILDING_ROMAN_FORUM: Etrus, Rom -->
@@ -41,7 +42,7 @@
 <!-- +++++++ BUILDINGCLASS_SPECIAL10 ++++++ -->
 <!-- frei -->
 <!-- ++++++++ BUILDINGCLASS_STEINGRAB +++++++ -->
-<!-- BUILDING_FELSENGRAB: Numid, Berber -->
+<!-- BUILDING_FELSENGRAB: Numid, Berber, Arabia -->
 <!-- BUILDING_TUMULUS: Rom, Griechen, Ath,Theb -->
 <!-- BUILDING_URNENFELDER: Kelten -->
 <!-- BUILDING_CAIRN: Briten -->
@@ -55,6 +56,18 @@
 <!-- +++++++++++++++ -->
 <Civ4BuildingClassInfos xmlns="x-schema:CIV4BuildingsSchema.xml">
 	<BuildingClassInfos>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_BAUSCHUTT</Type>
+			<Description>TXT_KEY_BUILDING_BAUSCHUTT</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_BAUSCHUTT</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_POTTERY</Type>
 			<Description>TXT_KEY_BUILDING_POTTERY</Description>
@@ -845,6 +858,18 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_SKLAVENMARKT</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SKLAVENQUARTIERE</Type>
+			<Description>TXT_KEY_BUILDING_SKLAVENQUARTIERE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_SKLAVENQUARTIERE</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
@@ -3304,6 +3329,54 @@
 			<bNoLimit>0</bNoLimit>
 			<bMonument>0</bMonument>
 			<DefaultBuilding>BUILDING_PLAGUE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SEUCHE</Type>
+			<Description>TXT_KEY_BUILDING_SEUCHE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_SEUCHE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FIRE</Type>
+			<Description>TXT_KEY_BUILDING_FIRE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_FIRE</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CITY_RUINS</Type>
+			<Description>TXT_KEY_BUILDING_CITY_RUINS</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CITY_RUINS</DefaultBuilding>
+			<VictoryThresholds/>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CITY_RUINS_WONDER</Type>
+			<Description>TXT_KEY_BUILDING_CITY_RUINS_WONDER</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bNoLimit>0</bNoLimit>
+			<bMonument>0</bMonument>
+			<DefaultBuilding>BUILDING_CITY_RUINS_WONDER</DefaultBuilding>
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>

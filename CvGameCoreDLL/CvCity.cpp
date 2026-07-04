@@ -909,6 +909,16 @@ void CvCity::doTurn()
 
 	updateEspionageVisibility(true);
 
+	// PAE: city ruins
+	BuildingTypes eBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_CITY_RUINS");
+	if (getNumRealBuilding(eBuilding) > 0)
+	{
+		if (GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("PAE_CITY_RUINS_REMOVE_CHANCE"), "PAE: removing city ruins") == 1)
+		{
+			setNumRealBuilding(eBuilding, 0);
+		}
+	} // ----
+
 	if (!isDisorder())
 	{
 		for (iI = 0; iI < NUM_CITY_PLOTS; iI++)

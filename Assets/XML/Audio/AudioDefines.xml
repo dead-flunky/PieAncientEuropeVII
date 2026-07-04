@@ -7,6 +7,20 @@
 <AudioDefines xmlns="x-schema:AudioDefinesSchema.xml">
 	<SoundDatas>
 		<SoundData>
+			<SoundID>SND_PAE_GRASSHOPPER</SoundID>
+			<Filename>Sounds/Actions/Grasshopper</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_PAE_SANDSTORM</SoundID>
+			<Filename>Sounds/Actions/Sandstorm</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
 			<SoundID>SND_PAE_FEAR1</SoundID>
 			<Filename>Sounds/Units/AncEngActVox</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
@@ -12055,7 +12069,7 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SONG_ANCIENT_SOUNDTRACK_X15</SoundID>
-			<Filename>Sounds/Soundtrack/ValleyOfSwords</Filename>
+			<Filename>Sounds/Soundtrack/PAE-AI-ForWarAndTribute</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -12224,6 +12238,104 @@
 		<SoundData>
 			<SoundID>MUSIC_PAE_MOD_7</SoundID>
 			<Filename>Sounds/Soundtrack/Wagner-Walkuerenritt</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_8</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-AshesOfThermopylae</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_9</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-GothicInvasion</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_10</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-DesertDance</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_11</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-DesertRide</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_12</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-DesertMarch</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_13</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-AsianBeauty</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_14</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-CityPurge</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_15</SoundID>
+			<Filename>Sounds/Soundtrack/PAME-AI-MainTheme</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_16</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-ToNewLands</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_17</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-ArabianDesires</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_18</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-Eurasia</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_19</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-DawnOfMen</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_20</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-BronzeAwaking</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_21</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-AriseOfMankind</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

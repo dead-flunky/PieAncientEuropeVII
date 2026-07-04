@@ -7,6 +7,26 @@
 <Civ4ArtDefines xmlns="x-schema:CIV4ArtDefinesSchema.xml">
 	<BuildingArtInfos>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CITY_RUINS</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Cities/destroyed_city.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_city_ruins.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_CITY_RUINS_WONDER</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Cities/destroyed_city.nif</NIF>
+			<KFM/>
+			<Button>,Art/Interface/Buttons/Builds/BuildCityRuins.dds,Art/Interface/Buttons/Actions_Builds_LeaderHeads_Specialists_Atlas.dds,8,9</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_CITY_STATE</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
@@ -35,6 +55,16 @@
 			<NIF/>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_building_bund.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BUND_ARABIA</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0</fScale>
+			<fInterfaceScale>0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_bund_arabia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_TAUBENSCHLAG</Type>
@@ -525,6 +555,16 @@
 			<NIF>Art/Structures/Buildings/Sklavenmarkt/sklavenmarkt.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Builds/button_sklavenmarkt.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SKLAVENQUARTIERE</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0</fScale>
+			<fInterfaceScale>0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_sklavenquartiere.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_WEGZOLL</Type>
@@ -1298,11 +1338,11 @@
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MEMNONIUM</Type>
-			<LSystem>LSYSTEM_1x1</LSystem>
+			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.0</fScale>
-			<fInterfaceScale>0.0</fInterfaceScale>
-			<NIF/>
+			<fScale>1.8</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Memnonium/egypt_temple.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_memnomium.dds</Button>
 		</BuildingArtInfo>
@@ -1555,6 +1595,26 @@
 			<NIF>Art/Structures/Buildings/plague/plague.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Civilizations/Barbarian.dds,Art/Interface/Buttons/Civics_Civilizations_Religions_Atlas.dds,4,5</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SEUCHE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>6.4</fScale>
+			<fInterfaceScale>0.06</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/plague/plague.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Actions/button_skull.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_FIRE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>30</fScale>
+			<fInterfaceScale>0.10</fInterfaceScale>
+			<NIF>Art/Effects/Flames/fx_fire_campfire.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Actions/button_stadtbrand.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BABEL</Type>
@@ -1966,6 +2026,16 @@
 			<NIF>Art/Structures/Buildings/Stable/Stable.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Barracks.dds,Art/Interface/Buttons/Warlords_Atlas_1.dds,7,1</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_STABLE_GOTHS</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.8</fScale>
+			<fInterfaceScale>0.75</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Stable/Stable.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_stable_goths.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_MONGOL_GER</Type>
@@ -2951,6 +3021,16 @@
 			<Button>Art/Interface/Buttons/Buildings/button_building_versammlung_rome.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_VERSAMMLUNG_ARABIA</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0</fScale>
+			<fInterfaceScale>0</fInterfaceScale>
+			<NIF/>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_versammlung_arabia.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_COURTHOUSE</Type>
 			<LSystem>LSYSTEM_1x1</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3099,6 +3179,16 @@
 			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/button_building_schule_christen.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SCHULE_ARIAN</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.2</fScale>
+			<fInterfaceScale>0.58</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Library/Library.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_arian_school.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_SCHULE_JUDEN</Type>
@@ -3561,6 +3651,16 @@
 			<Button>,Art/Interface/Buttons/Buildings/HeroicEpic.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,3</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_HEROIC_EPIC_ARABIA</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>0.64</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/HeroicEpic/HeroicEpic.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_heroic_epic_arabia.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_NATIONAL_EPIC</Type>
 			<LSystem>LSYSTEM_2x1</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3579,6 +3679,16 @@
 			<NIF>Art/Structures/Buildings/moses_statue/Moses.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/NationalEpic.dds,Art/Interface/Buttons/Buildings_Atlas.dds,6,8</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_NATIONAL_EPIC_ARABIA</Type>
+			<LSystem>LSYSTEM_2x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.66</fScale>
+			<fInterfaceScale>0.48</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/NationalEpic/NationalEpic.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/button_building_national_epic_arabia.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_GLOBE_THEATRE</Type>
@@ -3859,7 +3969,7 @@
 			<fInterfaceScale>1.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/gebel_barkal/GebelBarkal.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/gebel_barkal/button_gebel_barkal.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/button_building_jebel_barkal.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -205,7 +205,7 @@
 			<iBarbarianCityCreationTurnsElapsed>500</iBarbarianCityCreationTurnsElapsed>
 			<iBarbarianCityCreationProb>20</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
-			<iBarbarianBonus>0</iBarbarianBonus>
+			<iBarbarianBonus>-10</iBarbarianBonus>
 			<iAIAnimalBonus>-25</iAIAnimalBonus>
 			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
@@ -293,8 +293,8 @@
 			<iBarbarianCityCreationProb>20</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-25</iAIAnimalBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -381,8 +381,8 @@
 			<iBarbarianCityCreationProb>20</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-25</iAIAnimalBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -471,8 +471,8 @@
 			<iBarbarianCityCreationProb>30</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-25</iAIAnimalBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -653,8 +653,8 @@
 			<iBarbarianCityCreationProb>40</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-75</iAIAnimalBonus>
-			<iAIBarbarianBonus>-75</iAIBarbarianBonus>
+			<iAIAnimalBonus>-50</iAIAnimalBonus>
+			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -744,8 +744,8 @@
 			<iBarbarianCityCreationProb>50</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-75</iAIAnimalBonus>
-			<iAIBarbarianBonus>-75</iAIBarbarianBonus>
+			<iAIAnimalBonus>-50</iAIAnimalBonus>
+			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>

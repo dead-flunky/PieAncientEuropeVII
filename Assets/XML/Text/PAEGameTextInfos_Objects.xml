@@ -1170,11 +1170,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PIRATENNEST</Tag>
-		<English>Pirates Nest</English>
-		<French>Repaire de pirates</French>
+		<English>Pirate's Nest</English>
+		<French>Nid de Pirate</French>
 		<German>Piratennest</German>
-		<Italian>Covo dei Pirati</Italian>
-		<Spanish>Refugio de Piratas</Spanish>
+		<Italian>Nido dei Pirati</Italian>
+		<Spanish>Nido de Piratas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PLAGUE</Tag>
@@ -3362,11 +3362,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_SMOKE</Tag>
-		<English>Conflagration</English>
-		<French>Incendie</French>
-		<German>Fl&#228;chenbrand</German>
-		<Italian>Incendio</Italian>
-		<Spanish>Incendio</Spanish>
+		<English>Plumes of Smoke</English>
+		<French>Panaches de fum&#233;e</French>
+		<German>Rauchschwaden</German>
+		<Italian>Pennacchi di fumo</Italian>
+		<Spanish>Columnas de humo</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_STURM</Tag>
@@ -7318,11 +7318,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_EXECUTIVE_8</Tag>
-		<English>Cultist of Dionysus</English>
-		<French>Cultiste de Dionysos</French>
-		<German>Anh&#228;nger des Dionysos</German>
-		<Italian>Seguace di Dioniso</Italian>
-		<Spanish>Seguidor de Dioniso</Spanish>
+		<English>Bacchante of Dionysus</English>
+		<French>Bacchante de Dionysos</French>
+		<German>Bacchantin des Dionysos</German>
+		<Italian>Baccante di Dioniso</Italian>
+		<Spanish>Bacante de Dioniso</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FALCATA_IBERIA</Tag>
@@ -7342,11 +7342,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FIRE_CATAPULT</Tag>
-		<English>Fire Catapult</English>
-		<French><Text>Catapulte incendiaire</Text><Gender>Female</Gender><Plural>0</Plural></French>
-		<German>Feuerkatapult</German>
-		<Italian>Catapulta Incendiaria</Italian>
-		<Spanish><Text>Catapulta de Fuego:Catapultas de Fuego</Text><Gender>Female:Female</Gender><Plural>0:1</Plural></Spanish>
+		<English>Catapult (Fire)</English>
+		<French><Text>Catapulte (Feu)</Text><Gender>Female</Gender><Plural>0</Plural></French>
+		<German>Katapult (Feuer)</German>
+		<Italian>Catapulta (di fuoco)</Italian>
+		<Spanish><Text>Catapulta (Fuego):Catapultas (Fuego)</Text><Gender>Female:Female</Gender><Plural>0:1</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FREEDOM_FIGHTER</Tag>
@@ -8062,11 +8062,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PEZHETAIROI4</Tag>
-		<English>Ile Basilike</English>
-		<French>Ile Basilike</French>
-		<German>Ile Basilike</German>
-		<Italian>Ile Basilike</Italian>
-		<Spanish>Ile Basilike</Spanish>
+		<English>Pezhetaroi Basilike</English>
+		<French>Pezhetaroi Basilike</French>
+		<German>Pezhetaroi Basilike</German>
+		<Italian>Pezhetaroi Basilike</Italian>
+		<Spanish>Pezhetaroi Basilike</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PHALANX</Tag>

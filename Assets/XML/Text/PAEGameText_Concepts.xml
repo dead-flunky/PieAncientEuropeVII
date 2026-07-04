@@ -81,6 +81,14 @@
 		<Spanish>Unidades-Rango experiencia</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_COMBAT4</Tag>
+		<English>Combat simulation</English>
+		<French>Simulation de combat</French>
+		<German>Kampfsimulation</German>
+		<Italian>Simulazione di combattimento</Italian>
+		<Spanish>Simulaci&#243;n de combate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_DECIMATION</Tag>
 		<English>Units-Salary and Decimation</English>
 		<French>Unit&#233;s-Salaire et D&#233;cimation</French>
@@ -281,6 +289,14 @@
 		<Spanish>Tecnolog&#237;as</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_PIRACY</Tag>
+		<English>Piracy</English>
+		<French>Piratage</French>
+		<German>Piraterie</German>
+		<Italian>Pirateria</Italian>
+		<Spanish>Pirater&#237;a</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_POINTS_BAR</Tag>
 		<English>Points bar</English>
 		<French>Barre de points</French>
@@ -311,6 +327,14 @@
 		<German>Schifffahrt</German>
 		<Italian>Spedizione</Italian>
 		<Spanish>Navegaci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_SEAMONSTER</Tag>
+		<English>Sea monsters and Thalassophobia</English>
+		<French>Monstres marins et Thalassophobie</French>
+		<German>Seeungeheuer und Thalassophobie</German>
+		<Italian>Mostri marini e Talassofobia</Italian>
+		<Spanish>Monstruos marinos y Talasofobia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONCEPT_SLAVES</Tag>
@@ -378,9 +402,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CATEGORY_CONCEPT_PAE</Tag>
-		<English>PAE Game Concepts</English>
+		<English>PAE-Concepts</English>
 		<French>Concepts de PAE</French>
-		<German>PAE Spielkonzepte</German>
+		<German>PAE-Konzepte</German>
 		<Italian>Nozioni di PAE</Italian>
 		<Spanish>Conceptos del PAE</Spanish>
 	</TEXT>

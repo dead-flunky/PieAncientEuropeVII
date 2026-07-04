@@ -743,15 +743,15 @@
 	</Define>
 	<Define>
 		<DefineName>TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER</DefineName>
-		<iDefineIntVal>100</iDefineIntVal>
+		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER</DefineName>
-		<iDefineIntVal>75</iDefineIntVal>
+		<iDefineIntVal>90</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>TECH_COST_KNOWN_PREREQ_MODIFIER</DefineName>
-		<iDefineIntVal>50</iDefineIntVal>
+		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
 	<Define>
 		<DefineName>PEACE_TREATY_LENGTH</DefineName>

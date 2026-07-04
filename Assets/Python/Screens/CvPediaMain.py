@@ -1436,6 +1436,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 								lTraits.append(iT1)
 								lTraits.append(iT2)
 								szSpecialText += CyGameTextMgr().parseLeaderTraits(iLeader, -1, False, True)
+								#szSpecialText += u"\n"
 
 				szSpecialText = szSpecialText[1:]
 				screen.addMultilineText(self.getNextWidgetName(), szSpecialText,
@@ -1506,7 +1507,8 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 						(iRome, gc.getInfoTypeForString("UNIT_PRAETORIAN_RIDER"), gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(iRome, gc.getInfoTypeForString("UNIT_CLIBANARII_ROME"), gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(iRome, gc.getInfoTypeForString("UNIT_CATAPHRACT_ROME"), gc.getInfoTypeForString("UNIT_ROME_SCHOLAE"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
-						(iRome, gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_ROME_EXCUBITORES"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(iRome, gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(iRome, gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("UNIT_ROME_EXCUBITORES"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_GREECE"), gc.getInfoTypeForString("UNIT_SPEARMAN"), gc.getInfoTypeForString("UNIT_HOPLIT"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(gc.getInfoTypeForString("CIVILIZATION_GREECE"), gc.getInfoTypeForString("UNIT_HOPLIT"), gc.getInfoTypeForString("UNIT_HOPLIT_KALOS"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
@@ -1516,6 +1518,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 						(gc.getInfoTypeForString("CIVILIZATION_GREECE"), gc.getInfoTypeForString("UNIT_HOPLIT_2"), gc.getInfoTypeForString("UNIT_ELITE_HOPLIT"), gc.getInfoTypeForString("PROMOTION_RANG_GREEK_7")),
 						(gc.getInfoTypeForString("CIVILIZATION_GREECE"), gc.getInfoTypeForString("UNIT_ELITE_HOPLIT"), gc.getInfoTypeForString("UNIT_GREEK_STRATEGOS"), gc.getInfoTypeForString("PROMOTION_RANG_GREEK_10")),
 						(gc.getInfoTypeForString("CIVILIZATION_GREECE"), gc.getInfoTypeForString("UNIT_ARCHER_REFLEX_GREEK"), gc.getInfoTypeForString("UNIT_ARCHER_REFLEX_GREEK2"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
+						(gc.getInfoTypeForString("CIVILIZATION_GREECE"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(gc.getInfoTypeForString("CIVILIZATION_GREECE"), -2, gc.getInfoTypeForString("UNIT_GREEK_HIPPARCH"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_SPARTA"), gc.getInfoTypeForString("UNIT_HOPLIT"), gc.getInfoTypeForString("UNIT_HOPLIT_KALOS"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
@@ -1523,6 +1526,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 						(gc.getInfoTypeForString("CIVILIZATION_SPARTA"), -1, gc.getInfoTypeForString("UNIT_SPARTA_1"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(gc.getInfoTypeForString("CIVILIZATION_SPARTA"), gc.getInfoTypeForString("UNIT_SPARTA_1"), gc.getInfoTypeForString("UNIT_SPARTA_2"), gc.getInfoTypeForString("PROMOTION_RANG_SPARTA_4")),
 						(gc.getInfoTypeForString("CIVILIZATION_SPARTA"), gc.getInfoTypeForString("UNIT_SPARTA_2"), gc.getInfoTypeForString("UNIT_SPARTA_3"), gc.getInfoTypeForString("PROMOTION_RANG_SPARTA_7")),
+						(gc.getInfoTypeForString("CIVILIZATION_SPARTA"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_MACEDONIA"), gc.getInfoTypeForString("UNIT_ARCHER_REFLEX_GREEK"), gc.getInfoTypeForString("UNIT_ARCHER_REFLEX_GREEK2"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(gc.getInfoTypeForString("CIVILIZATION_MACEDONIA"), gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"), gc.getInfoTypeForString("UNIT_HYPASPIST"), gc.getInfoTypeForString("PROMOTION_RANG_MACEDON_4")),
@@ -1536,6 +1540,7 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 						(gc.getInfoTypeForString("CIVILIZATION_MACEDONIA"), gc.getInfoTypeForString("UNIT_COMPANION_CAVALRY"), gc.getInfoTypeForString("UNIT_HORSEMAN_MACEDON3"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(gc.getInfoTypeForString("CIVILIZATION_MACEDONIA"), gc.getInfoTypeForString("UNIT_HORSEMAN_MACEDON3"), gc.getInfoTypeForString("UNIT_HORSEMAN_MACEDON4"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(gc.getInfoTypeForString("CIVILIZATION_MACEDONIA"), gc.getInfoTypeForString("UNIT_HORSEMAN_MACEDON4"), gc.getInfoTypeForString("UNIT_GREEK_HIPPARCH"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
+						(gc.getInfoTypeForString("CIVILIZATION_MACEDONIA"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_PERSIA"), gc.getInfoTypeForString("UNIT_UNSTERBLICH"), gc.getInfoTypeForString("UNIT_UNSTERBLICH_2"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(gc.getInfoTypeForString("CIVILIZATION_PERSIA"), -1, gc.getInfoTypeForString("UNIT_APFELTRAEGER"), gc.getInfoTypeForString("PROMOTION_RANG_PERSIA_5")),
@@ -1584,18 +1589,34 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 						(gc.getInfoTypeForString("CIVILIZATION_INDIA"), gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"), gc.getInfoTypeForString("UNIT_INDIAN_NAYAR"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_DAKER"), gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"), gc.getInfoTypeForString("UNIT_FUERST_DAKER"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_DAKER"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_GERMANEN"), -1, gc.getInfoTypeForString("UNIT_STAMMESFUERST"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(gc.getInfoTypeForString("CIVILIZATION_GERMANEN"), gc.getInfoTypeForString("UNIT_SPEARMAN"), gc.getInfoTypeForString("UNIT_GERMAN_HARIER"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(gc.getInfoTypeForString("CIVILIZATION_GERMANEN"), gc.getInfoTypeForString("UNIT_AXEMAN2"), gc.getInfoTypeForString("UNIT_BERSERKER_GERMAN"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_GERMANEN"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(-1,0,0,0),
+						(gc.getInfoTypeForString("CIVILIZATION_GOTEN"), -1, gc.getInfoTypeForString("UNIT_STAMMESFUERST"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_GOTEN"), gc.getInfoTypeForString("UNIT_AXEMAN2"), gc.getInfoTypeForString("UNIT_BERSERKER_GERMAN"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_GOTEN"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(-1,0,0,0),
+						(gc.getInfoTypeForString("CIVILIZATION_VANDALS"), -1, gc.getInfoTypeForString("UNIT_STAMMESFUERST"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_VANDALS"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_CELT"), -1, gc.getInfoTypeForString("UNIT_STAMMESFUERST"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_CELT"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_GALLIEN"), -1, gc.getInfoTypeForString("UNIT_STAMMESFUERST"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
-						(gc.getInfoTypeForString("CIVILIZATION_VANDALS"), -1, gc.getInfoTypeForString("UNIT_STAMMESFUERST"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_GALLIEN"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(-1,0,0,0),
 						(gc.getInfoTypeForString("CIVILIZATION_BRITEN"), gc.getInfoTypeForString("UNIT_SPEARMAN"), gc.getInfoTypeForString("UNIT_CELTIC_FIANNA"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
 						(gc.getInfoTypeForString("CIVILIZATION_BRITEN"), -1, gc.getInfoTypeForString("UNIT_STAMMESFUERST"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
 						(-1,0,0,0),
-						(gc.getInfoTypeForString("CIVILIZATION_HUNNEN"), gc.getInfoTypeForString("UNIT_MONGOL_KESHIK"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN_HUN"), gc.getInfoTypeForString("PROMOTION_COMBAT5"))
+						(gc.getInfoTypeForString("CIVILIZATION_HUNNEN"), gc.getInfoTypeForString("UNIT_MONGOL_KESHIK"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN_HUN"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(gc.getInfoTypeForString("CIVILIZATION_HUNNEN"), gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN"), gc.getInfoTypeForString("UNIT_BUCELLARII"), gc.getInfoTypeForString("PROMOTION_COMBAT5")),
+						(-1,0,0,0),
+						(-2, gc.getInfoTypeForString("UNIT_HORSEMAN_ISLAM"), gc.getInfoTypeForString("UNIT_HORSEMAN_ISLAM2"), gc.getInfoTypeForString("PROMOTION_COMBAT4")),
+						(-2, gc.getInfoTypeForString("UNIT_HORSEMAN_ISLAM2"), gc.getInfoTypeForString("UNIT_HORSEMAN_ISLAM_KALIF"), gc.getInfoTypeForString("PROMOTION_COMBAT5"))
 				]
 
 				for unit in LRankUnits:
@@ -1608,9 +1629,14 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 								screen.setTableText(tableName, 2, iRow, "", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 								screen.setTableText(tableName, 3, iRow, "", "", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 						else:
-							# Civ
-							screen.setTableText(tableName, 0, iRow, gc.getCivilizationInfo(unit[0]).getDescription(), gc.getCivilizationInfo(
-									unit[0]).getButton(), WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, unit[0], 1, CvUtil.FONT_LEFT_JUSTIFY)
+							if unit[0] == -2:
+								# Alle Civs
+								screen.setTableText(tableName, 0, iRow, localText.getText("TXT_KEY_PEDIA_EVERY_CIV", ()),
+										"Art/Interface/Buttons/Techs/button_soeldner.dds", WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
+							else:
+								# Bestimmte Civ
+								screen.setTableText(tableName, 0, iRow, gc.getCivilizationInfo(unit[0]).getDescription(), gc.getCivilizationInfo(
+										unit[0]).getButton(), WidgetTypes.WIDGET_PEDIA_JUMP_TO_CIV, unit[0], 1, CvUtil.FONT_LEFT_JUSTIFY)
 
 							# Unit
 							if unit[1] == -1:

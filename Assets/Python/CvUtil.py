@@ -103,6 +103,10 @@ def changeBuildingHappyChange(pCity, iBuilding, iChange):
 		eBuildingClass = gc.getBuildingInfo(iBuilding).getBuildingClassType()
 		pCity.setBuildingHappyChange(eBuildingClass, pCity.getBuildingHappyChange(eBuildingClass) + iChange)
 
+def changeBuildingHealthChange(pCity, iBuilding, iChange):
+		eBuildingClass = gc.getBuildingInfo(iBuilding).getBuildingClassType()
+		pCity.setBuildingHealthChange(eBuildingClass, pCity.getBuildingHealthChange(eBuildingClass) + iChange)
+
 # Returns whether pCity has access to eBonus, ignoring free bonuses (from trade). Gets an own function bc. is used several times.
 def hasBonusIgnoreFreeBonuses(pCity, eBonus):
 		return (pCity.getNumBonuses(eBonus) - pCity.getFreeBonus(eBonus)) > 0
@@ -477,21 +481,23 @@ def combatDetailMessageBuilder(cdUnit, ePlayer, iChange):
 
 
 def combatMessageBuilder(cdAttacker, cdDefender, iCombatOdds):
-		combatMessage = ""
+		combatMessage = u""
+
+		# PAE adding current turn to CombatLog (thx to xist for the idea)
+		combatMessage += u"<color=50,125,200>%s %d:</color> " % (localText.getText("TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ROUND",()).capitalize(), CyGame().getGameTurn())
+
+		# PAE message 's changed to :
 		if cdAttacker.eOwner == cdAttacker.eVisualOwner:
-				combatMessage += "%s's" % (gc.getPlayer(cdAttacker.eOwner).getName(),)
-		combatMessage += " %s (%.2f)" % (cdAttacker.sUnitName,
-																		 cdAttacker.iCurrCombatStr/100.0,)
-		combatMessage += " " + localText.getText(
-				"TXT_KEY_COMBAT_MESSAGE_VS", ()) + " "
+				combatMessage += "%s:" % (gc.getPlayer(cdAttacker.eOwner).getName())
+		combatMessage += " %s (%.2f)" % (cdAttacker.sUnitName, cdAttacker.iCurrCombatStr/100.0)
+		combatMessage += " " + localText.getText("TXT_KEY_COMBAT_MESSAGE_VS", ()) + " "
 		if cdDefender.eOwner == cdDefender.eVisualOwner:
-				combatMessage += "%s's" % (gc.getPlayer(cdDefender.eOwner).getName(),)
-		combatMessage += "%s (%.2f)" % (cdDefender.sUnitName,
-																		cdDefender.iCurrCombatStr/100.0,)
+				combatMessage += "%s: " % (gc.getPlayer(cdDefender.eOwner).getName(),)
+		combatMessage += "%s (%.2f)" % (cdDefender.sUnitName, cdDefender.iCurrCombatStr/100.0)
 		CyInterface().addCombatMessage(cdAttacker.eOwner, combatMessage)
 		CyInterface().addCombatMessage(cdDefender.eOwner, combatMessage)
-		combatMessage = "%s %.1f%%" % (localText.getText(
-				"TXT_KEY_COMBAT_MESSAGE_ODDS", ()), iCombatOdds/10.0,)
+		# PAE repaired CombatLog (no space between second unit user & name)
+		combatMessage = "%s %.1f%%" % (localText.getText("TXT_KEY_COMBAT_MESSAGE_ODDS", ()), iCombatOdds/10.0)
 		CyInterface().addCombatMessage(cdAttacker.eOwner, combatMessage)
 		CyInterface().addCombatMessage(cdDefender.eOwner, combatMessage)
 		combatDetailMessageBuilder(cdAttacker, cdAttacker.eOwner, -1)

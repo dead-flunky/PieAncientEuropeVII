@@ -48,6 +48,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 
 		.def("killUnits", &CyPlayer::killUnits, "void ()")
 		.def("hasTrait", &CyPlayer::hasTrait, "bool (int (TraitTypes) iIndex) - returns True if player is the Trait Type.")
+		// PAE dynamic Traits
+		.def("setHasTrait", &CyPlayer::setHasTrait, "void (int (TraitTypes) iIndex, bool bNewValue) - gives/removes the player a Trait Type.")
+		
 		.def("isHuman", &CyPlayer::isHuman, "bool ()")
 		.def("isBarbarian", &CyPlayer::isBarbarian, "bool () - returns True if player is a Barbarian")
 		.def("getName", &CyPlayer::getName, "wstring ()")

@@ -1,8 +1,8 @@
 # Imports
 from CvPythonExtensions import (CyGlobalContext, CyPopupInfo, ButtonPopupTypes,
-																CyTranslator, CyMessageControl, CyAudioGame,
-																CyCamera, CyInterface, UnitAITypes, ColorTypes,
-																DirectionTypes)
+											CyTranslator, CyMessageControl, CyAudioGame,
+											CyCamera, CyInterface, UnitAITypes, ColorTypes,
+											DirectionTypes, InterfaceDirtyBits)
 # import CvEventInterface
 import CvUtil
 import PAE_City
@@ -297,8 +297,6 @@ def onCityAcquired(pCity, iNewOwner, iPreviousOwner):
 	#     pLoser.changeGold(iGold * (-1))
 
 # Vasall soll seinen Hegemon verlieren
-
-
 def VassalUnsetHegemon(iVassal):
 		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("TEST",iVassal)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		pVassal = gc.getPlayer(iVassal)
@@ -330,6 +328,8 @@ def VassalHegemonGetsVassal(iHegemon):
 								#pHegemonTeam.setVassal(iTeam, 0, 0)
 								pHegemonTeam.freeVassal(iTeam)
 								pTeam.setVassal(iHegemonTeam, 0, 0)  # siehe VassalUnset (=ungetestet)
+		# Refresh the score panel
+		CyInterface().setDirty(InterfaceDirtyBits.Score_DIRTY_BIT, True)
 
 
 def VassalHItoHI(iNewOwner, iPreviousOwner, pCity):

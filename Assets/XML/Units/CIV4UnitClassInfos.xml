@@ -6,14 +6,13 @@
 <!-- ++++ -->
 <!-- ++++ UNITCLASS_SPECIAL1 (max 3 units) ++++ -->
 <!-- UNIT_STAMMESFUERST: Kelten, Gallien, Briten, Germanen, Vandals -->
-<!-- UNIT_SICHELKRIEGER: Daker -->
+<!-- UNIT_SICHELKRIEGER: Daker, Skythen -->
 <!-- UNIT_SAMNIT: Rom, Etrusker -->
 <!-- UNIT_HYPASPIST: Makedon -->
 <!-- UNIT_STADTWACHE_ISRAEL: Israel -->
 <!-- UNIT_HOPLIT_PERSIA: Persia -->
 <!-- UNIT_KERMA_WARRIOR: Nubia -->
 <!-- UNIT_EGYPT_RAM_CHARIOT: Egypt -->
-<!-- UNIT_CAMP: Skythen, Hunnen, Parther -->
 <!-- UNIT_GARDE_ASSUR: Assur, Babylon, Sumer -->
 <!-- UNIT_RADSCHA: India -->
 <!-- UNIT_SEEVOLK: Neutral -->
@@ -25,6 +24,7 @@
 <!-- ++++ -->
 <!-- ++++ UNITCLASS_SPECIAL2 (max 3 units) ++++ -->
 <!-- UNIT_FALXMAN: Daker -->
+<!-- UNIT_CAMP: Skythen, Hunnen, Parther -->
 <!-- UNIT_EGYPT_CHEPESCH_RIDER: Egypt, Nubia -->
 <!-- UNIT_INDIAN_LONGBOW: India -->
 <!-- ++++ -->
@@ -881,6 +881,24 @@
 			<DefaultUnit>UNIT_HELEPOLIS</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_LIGHT_BALLISTA</Type>
+			<Description>TXT_KEY_UNIT_LIGHT_BALLISTA</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_LIGHT_BALLISTA</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_BALLISTA</Type>
+			<Description>TXT_KEY_UNIT_BALLISTA</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_BALLISTA</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_CATAPULT</Type>
 			<Description>TXT_KEY_UNIT_CATAPULT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -897,15 +915,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iInstanceCostModifier>5</iInstanceCostModifier>
 			<DefaultUnit>UNIT_FIRE_CATAPULT</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_BALLISTA</Type>
-			<Description>TXT_KEY_UNIT_BALLISTA</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>3</iInstanceCostModifier>
-			<DefaultUnit>UNIT_BALLISTA</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_BEGLEITHUND</Type>
@@ -1120,8 +1129,17 @@
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>3</iInstanceCostModifier>
+			<iInstanceCostModifier>10</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HEAVY_HORSEMAN</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_BUCELLARII</Type>
+			<Description>TXT_KEY_UNIT_BUCELLARII</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_BUCELLARII</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_HORSEMAN_ISLAM</Type>
@@ -1133,13 +1151,31 @@
 			<DefaultUnit>UNIT_HORSEMAN_ISLAM</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_HORSEMAN_ISLAM2</Type>
+			<Description>TXT_KEY_UNIT_HORSEMAN_ISLAM2</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_HORSEMAN_ISLAM2</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_HORSEMAN_ISLAM_KALIF</Type>
 			<Description>TXT_KEY_UNIT_HORSEMAN_ISLAM_KALIF</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iInstanceCostModifier>3</iInstanceCostModifier>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_HORSEMAN_ISLAM_KALIF</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
+			<Type>UNITCLASS_HORSE_ARCHER_ISLAM</Type>
+			<Description>TXT_KEY_UNIT_HORSE_ARCHER_ISLAM</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iInstanceCostModifier>0</iInstanceCostModifier>
+			<DefaultUnit>UNIT_HORSE_ARCHER_ISLAM</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CAMEL_ARCHER</Type>

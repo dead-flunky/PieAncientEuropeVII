@@ -679,27 +679,90 @@
         <VarietyButton>Art/Interface/Buttons/TerrainFeatures/button_swamp.dds</VarietyButton>
       </FeatureVariety>
     </FeatureArtInfo>
-    <FeatureArtInfo>
-                        <Type>ART_DEF_FEATURE_FOREST_BURNT</Type>
-                        <bAnimated>0</bAnimated>
-                        <bRiverArt>0</bRiverArt>
-                        <TileArtType>TILE_ART_TYPE_NONE</TileArtType>
-                        <LightType>LIGHT_TYPE_SUN</LightType>
-                        <fScale>1.0</fScale>
-                        <fInterfaceScale>1.0</fInterfaceScale>
-                        <Button>Art/Terrain/Features/burntforest/BurntForest.dds</Button>
-                        <FeatureVariety>
-                                <FeatureArtPieces>
-                                        <FeatureArtPiece>
-                                                <ModelFile>Art/Terrain/Features/burntforest/burnttrees.nif</ModelFile>
-                                                <Connections></Connections>
-                                        </FeatureArtPiece>
-                                </FeatureArtPieces>
-                                <FeatureDummyNodes/>
-                                <bGenerateRotations>0</bGenerateRotations>
-                                <VarietyButton>Art/Interface/Buttons/TerrainFeatures/Forest.dds</VarietyButton>
-                        </FeatureVariety>
-    </FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_FLAMES</Type>
+			<bAnimated>1</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>18.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>Art/Interface/Buttons/TerrainFeatures/button_brand.dds</Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/flames/tribalvillage.nif</ModelFile>
+						<Connections></Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/button_brand.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_FOREST_BURNING</Type>
+			<bAnimated>1</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>18.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>Art/Interface/Buttons/Actions/button_waldbrand.dds</Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/burningforest/tribalvillage.nif</ModelFile>
+						<Connections></Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/Actions/button_waldbrand.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_FOREST_BURNT</Type>
+			<bAnimated>0</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>Art/Terrain/Features/burntforest/BurntForest.dds</Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/burntforest/burnttrees.nif</ModelFile>
+						<Connections></Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Terrain/Features/burningforest/BurntForest.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
+		<FeatureArtInfo>
+			<Type>ART_DEF_FEATURE_FOREST_NEW</Type>
+			<bAnimated>1</bAnimated>
+			<bRiverArt>0</bRiverArt>
+			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
+			<LightType>LIGHT_TYPE_SUN</LightType>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<Button>Art/Interface/Buttons/Actions/button_jungerwald.dds</Button>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/New Forest/new forest.nif</ModelFile>
+						<Connections></Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/Actions/button_jungerwald.dds</VarietyButton>
+			</FeatureVariety>
+		</FeatureArtInfo>
     <FeatureArtInfo>
       <Type>ART_DEF_FEATURE_FALLOUT</Type>
       <bAnimated>1</bAnimated>
@@ -750,7 +813,7 @@
       <LightType>LIGHT_TYPE_SUN</LightType>
       <fScale>1.0</fScale>
       <fInterfaceScale>1.0</fInterfaceScale>
-      <Button>Art/Interface/Buttons/TerrainFeatures/button_brand.dds</Button>
+      <Button>Art/Interface/Buttons/Actions/button_rauch.dds</Button>
       <FeatureVariety>
         <FeatureArtPieces>
           <FeatureArtPiece>
@@ -760,7 +823,7 @@
         </FeatureArtPieces>
         <FeatureDummyNodes/>
         <bGenerateRotations>0</bGenerateRotations>
-        <VarietyButton>Art/Interface/Buttons/TerrainFeatures/button_brand.dds</VarietyButton>
+        <VarietyButton>Art/Interface/Buttons/Actions/button_rauch.dds</VarietyButton>
       </FeatureVariety>
     </FeatureArtInfo>
     <FeatureArtInfo>

@@ -156,7 +156,7 @@ def doSpreadReligion():
 					iY = pCity.getY()
 
 					# TEST
-					#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(gc.getReligionInfo(iReligion).getDescription(),iRand)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+					#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(gc.getReligionInfo(iReligion).getText(),iRand)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 					#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",(pCity.getName(),iRand)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 					lCities = []
@@ -222,13 +222,16 @@ def convertCity(pCity, iReligion):
 								iChance = 100 # 100%
 						elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")):
 								if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")):
-										iChance = 90
-								else:
 										iChance = 80
+								else:
+										iChance = 70
 						elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")):
-								iChance = 70
+								iChance = 60
 						else:
 								iChance = 50
+
+						if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_SKLAVENQUARTIERE")):
+								iChance += 20
 
 						# bei folgenden Civics Chance verringern
 						if pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_THEOCRACY")):
@@ -873,12 +876,12 @@ def doDiaspora(pCity, iReligion):
 	pOwner = gc.getPlayer(iOwner)
 	if loopCity.isHasReligion(iReligion):
 		if pOwner.isHuman():
-			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_1", (pCity.getName(),loopCity.getName(),iReligion)),
+			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_1", (pCity.getName(),loopCity.getName(),gc.getReligionInfo(iReligion).getText())),
 			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
 	else:
 		loopCity.setHasReligion(iReligion, 1, 0, 0)
 		if pOwner.isHuman():
-			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_2", (pCity.getName(),loopCity.getName(),iReligion)),
+			CyInterface().addMessage(iOwner, True, 15, CyTranslator().getText("TXT_KEY_MESSAGE_DIASPORA_2", (pCity.getName(),loopCity.getName(),gc.getReligionInfo(iReligion).getText())),
 			None, 2, gc.getReligionInfo(iReligion).getButton(), ColorTypes(11), loopCity.getX(), loopCity.getY(), True, True)
 
 	if loopCity.getPopulation() < 4:

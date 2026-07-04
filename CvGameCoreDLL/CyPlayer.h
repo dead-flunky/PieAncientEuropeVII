@@ -51,6 +51,10 @@ public:
 
 	void killUnits();
 	bool hasTrait(int /*TraitTypes*/ iIndex);
+
+	// PAE dynamic Traits
+	void setHasTrait(int /*TraitTypes*/ iIndex, bool bNewValue);
+
 	bool isHuman();
 	bool isBarbarian();
 	std::wstring getName();

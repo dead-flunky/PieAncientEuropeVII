@@ -885,9 +885,10 @@ def doInquisitorPersecution(pCity, pUnit):
 def doInquisitorPersecution2(iPlayer, iCity, iButton, iReligion, iUnit):
 		pPlayer = gc.getPlayer(iPlayer)
 		pCity = pPlayer.getCity(iCity)
-		szButton = gc.getUnitInfo(gc.getInfoTypeForString("UNIT_INQUISITOR")).getButton()
+		szButton = gc.getUnitInfo(pPlayer.getUnit(iUnit).getUnitType()).getButton()
 		iStateReligion = pPlayer.getStateReligion()
 		iNumReligions = gc.getNumReligionInfos()
+		bInquisitorUnit = pPlayer.getUnit(iUnit).getUnitType() == gc.getInfoTypeForString("UNIT_INQUISITOR")
 		# gets a list of all religions in the city except state religion
 		lCityReligions = []
 		for iReligionLoop in range(iNumReligions):
@@ -986,7 +987,8 @@ def doInquisitorPersecution2(iPlayer, iCity, iButton, iReligion, iUnit):
 				PAE_Christen.doDiaspora(pCity, iReligion)
 
 				# City Revolt 10%
-				if CvUtil.myRandom(10, "pers_success_changeOccupationTimer") == 1:
+				# ausgenommen ein echter Inquisitor macht die Austreibung
+				if not bInquisitorUnit and CvUtil.myRandom(10, "pers_success_changeOccupationTimer") == 1:
 					pCity.changeOccupationTimer(1)
 		# ------
 
@@ -2758,8 +2760,7 @@ def removeNoBonusNoBuilding(pCity):
 				gc.getInfoTypeForString("BUILDING_WINERY"),
 				gc.getInfoTypeForString("BUILDING_PAPYRUSPOST"),
 				gc.getInfoTypeForString("BUILDING_MUREX"),
-				#gc.getInfoTypeForString("BUILDING_GERBEREI"),
-				gc.getInfoTypeForString("BUILDING_MARMOR_WERKSTATT")
+				#gc.getInfoTypeForString("BUILDING_GERBEREI")
 		]
 		lBuildings2 = [
 				gc.getInfoTypeForString("BUILDING_GUSS_BLEI"),
@@ -2771,7 +2772,8 @@ def removeNoBonusNoBuilding(pCity):
 		# Buildings mit 3x3 Radius
 		lBuildings3x3 = [
 				gc.getInfoTypeForString("BUILDING_FURRIER"),
-				gc.getInfoTypeForString("BUILDING_IVORY_MARKET")
+				gc.getInfoTypeForString("BUILDING_IVORY_MARKET"),
+				gc.getInfoTypeForString("BUILDING_MARMOR_WERKSTATT")
 		]
 		if bLager:
 				iRand = 20
@@ -2893,10 +2895,10 @@ def bonusMissingCity3x3(pCity, eBuilding):
 				for j in range(-iRange, iRange+1):
 					loopPlot = plotXY(iX, iY, i, j)
 					if loopPlot is not None and not loopPlot.isNone():
-						if loopPlot.getBonusType(-1) == eBonus:
-							iImp = loopPlot.getImprovementType()
-							if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
-								bBonus1Missing = False
+						if loopPlot.getBonusType(loopPlot.getOwner()) == eBonus:
+							#iImp = loopPlot.getImprovementType()
+							#if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus) or gc.getImprovementInfo(iImp).isActsAsCity()):
+							bBonus1Missing = False
 			if bBonus1Missing:
 				return eBonus
 
@@ -2919,12 +2921,12 @@ def bonusMissingCity3x3(pCity, eBuilding):
 					for j in range(-iRange, iRange+1):
 						loopPlot = plotXY(iX, iY, i, j)
 						if loopPlot is not None and not loopPlot.isNone():
-							eBonusPlot = loopPlot.getBonusType(-1)
-							if eBonusPlot in lBonus2:
-								eBonus2 = eBonusPlot
-								iImp = loopPlot.getImprovementType()
-								if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonusPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
-									return -1
+							eBonusOnPlot = loopPlot.getBonusType(loopPlot.getOwner())
+							if eBonusOnPlot in lBonus2:
+								#eBonus2 = eBonusOnPlot
+								#iImp = loopPlot.getImprovementType()
+								#if iImp != -1 and (gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonusOnPlot) or gc.getImprovementInfo(iImp).isActsAsCity()):
+								return -1
 			#if len(lBonus2) > 1: return -2
 			#else:
 			return eBonus2
@@ -3336,6 +3338,84 @@ def doPlagueEffects(pCity):
 		# spread plague 10%
 		if CvUtil.myRandom(10, "spread Plague") == 1:
 				doSpreadPlague(pCity)
+
+
+def doStadtseuche(pCity):
+		iBuilding = gc.getInfoTypeForString('BUILDING_SEUCHE')
+		iPlayer = pCity.getOwner()
+		pPlayer = gc.getPlayer(iPlayer)
+
+		# Change City Culture
+		iCulture = pCity.getCulture(iPlayer)
+		iCultureNew = max(0, iCulture - 50)
+		pCity.setCulture(iPlayer, iCultureNew, 1)
+
+		# Change City Pop
+		iOldPop = pCity.getPopulation()
+		iNewPop = max(1, iOldPop - 1)
+		if pPlayer.isHuman():
+				CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_PEST", (pCity.getName(), iNewPop, iOldPop)), None, 2, None, ColorTypes(13), 0, 0, False, False)
+		pCity.setPopulation(iNewPop)
+
+		# Calculation
+		iCheck = pCity.getBuildingHealth(iBuilding)
+		if iCheck >= -1:
+				# Building erneut initialisieren. Dann entfernen. CIV BUG.
+				pCity.setBuildingHealthChange(gc.getBuildingInfo(iBuilding).getBuildingClassType(), 0)
+				pCity.setNumRealBuilding(iBuilding, 0)
+		else:
+				CvUtil.changeBuildingHealthChange(pCity, iBuilding, +1)
+
+
+def doStadtbrand(pCity):
+		iBuilding = gc.getInfoTypeForString('BUILDING_FIRE')
+		iPlayer = pCity.getOwner()
+		pPlayer = gc.getPlayer(iPlayer)
+
+		# Brand verhindern
+		iChance = 0
+		# Feuerwehr: 90% Schutz
+		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
+			iChance = 9
+		# Aquaedukt: 70% Schutz
+		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
+			iChance = 7
+		# Bewässerung: 50% Schutz
+		elif (
+			pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
+			pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) or
+			pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
+			):
+			iChance = 5
+		# Brunnen: 30% Schutz
+		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
+			iChance = 3
+
+		# Brandchance per turn
+		if iChance < gc.getGame().getSorenRandNum(10, "prevent building loss due city fire"):
+			LBuildings = []
+			iRange = gc.getNumBuildingInfos()
+			for i in range(iRange):
+					if pCity.isHasBuilding(i):
+							# Wunder sollen (noch?) nicht betroffen sein
+							iBuildingClass = gc.getBuildingInfo(i).getBuildingClassType()
+							if not isWorldWonderClass(iBuildingClass) and not isTeamWonderClass(iBuildingClass) and not isNationalWonderClass(iBuildingClass):
+									LBuildings.append(i)
+
+			iRand = CvUtil.myRandom(len(LBuildings), "Stadtbrand")
+			xBuilding = LBuildings[iRand]
+			pCity.setNumRealBuilding(xBuilding, 0)
+			if pPlayer.isHuman():
+					CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_FIRE_BUILDING", (pCity.getName(), gc.getBuildingInfo(xBuilding).getDescription())), None, 2, None, ColorTypes(13), 0, 0, False, False)
+
+		# Calculation
+		iCheck = pCity.getBuildingHappiness(iBuilding)
+		if iCheck >= -1:
+				# Building erneut initialisieren. Dann entfernen. CIV BUG.
+				pCity.setBuildingHappyChange(gc.getBuildingInfo(iBuilding).getBuildingClassType(), 0)
+				pCity.setNumRealBuilding(iBuilding, 0)
+		else:
+				CvUtil.changeBuildingHappyChange(pCity, iBuilding, +1)
 
 
 def doRevoltShrink(pCity):
@@ -4142,6 +4222,7 @@ def doFreeTechMissionary(iTechType, iPlayer):
 										lCivs = {
 												gc.getInfoTypeForString("CIVILIZATION_CELT"): "TXT_KEY_UNIT_MATRIACHAT_CELTS",
 												gc.getInfoTypeForString("CIVILIZATION_GERMANEN"): "TXT_KEY_UNIT_MATRIACHAT_GERMAN",
+												gc.getInfoTypeForString("CIVILIZATION_GOTEN"): "TXT_KEY_UNIT_MATRIACHAT_GERMAN",
 												gc.getInfoTypeForString("CIVILIZATION_ROME"): "TXT_KEY_UNIT_MATRIACHAT_ROME",
 												gc.getInfoTypeForString("CIVILIZATION_GREECE"): "TXT_KEY_UNIT_MATRIACHAT_GREEK",
 												gc.getInfoTypeForString("CIVILIZATION_ATHENS"): "TXT_KEY_UNIT_MATRIACHAT_GREEK",
@@ -4187,6 +4268,7 @@ def doFreeTechMissionary(iTechType, iPlayer):
 										lCivs = {
 												gc.getInfoTypeForString("CIVILIZATION_CELT"): "TXT_KEY_UNIT_HEROEN_CELTS",
 												gc.getInfoTypeForString("CIVILIZATION_GERMANEN"): "TXT_KEY_UNIT_HEROEN_GERMAN",
+												gc.getInfoTypeForString("CIVILIZATION_GOTEN"): "TXT_KEY_UNIT_HEROEN_GERMAN",
 												gc.getInfoTypeForString("CIVILIZATION_ROME"): "TXT_KEY_UNIT_HEROEN_ROME",
 												gc.getInfoTypeForString("CIVILIZATION_GREECE"): "TXT_KEY_UNIT_HEROEN_ROME",
 												gc.getInfoTypeForString("CIVILIZATION_ATHENS"): "TXT_KEY_UNIT_HEROEN_ROME",

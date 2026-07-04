@@ -3584,7 +3584,10 @@ void CvDLLWidgetData::parseFlagHelp(CvWidgetDataStruct &widgetDataStruct, CvWStr
 	szBuffer.append(szTempBuffer);
 	szBuffer.append(NEWLINE);
 
-	GAMETEXT.parseLeaderTraits(szBuffer, GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getLeaderType(), GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getCivilizationType());
+	// BTS
+	//GAMETEXT.parseLeaderTraits(szBuffer, GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getLeaderType(), GET_PLAYER(GC.getGameINLINE().getActivePlayerInternal()).getCivilizationType());
+	// PAE dynamic Traits
+	GAMETEXT.parseLeaderTraits(szBuffer, GC.getGameINLINE().getActivePlayer());
 }
 
 

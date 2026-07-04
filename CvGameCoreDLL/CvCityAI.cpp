@@ -865,7 +865,47 @@ void CvCityAI::AI_chooseProduction()
 			return;
 		}
 	}
-	
+
+
+	// *********** PAE ***********************************
+	// PAE: Research & Wealth Process
+	// KI soll PROCESS_RESEARCH nutzen, wenn:
+	// - Frieden herrscht
+	// - Stadt sicher ist
+	// - genug Verteidiger vorhanden sind
+	// - keine wichtigen Buildings fehlen
+	// - keine dringenden Einheiten notwendig sind
+	if (!isBarbarian() && !bDanger && !bLandWar && !bAssault)
+	{
+		// 1. Genug Verteidiger?
+		int iDefenders = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE());
+		if (iDefenders >= AI_minDefenders())
+		{
+			// 2. Notwendige Buildings?
+			bool bHasEconomy = AI_chooseBuilding(BUILDINGFOCUS_GOLD | BUILDINGFOCUS_RESEARCH, 0, 0) == false;
+			bool bHasProduction = AI_chooseBuilding(BUILDINGFOCUS_PRODUCTION, 0, 0) == false;
+			bool bHasGrowth = AI_chooseBuilding(BUILDINGFOCUS_FOOD, 0, 0) == false;
+
+			if (bHasEconomy && bHasProduction && bHasGrowth)
+			{
+				// 3. Notwendige Units?
+				if (!AI_chooseUnit(UNITAI_CITY_DEFENSE) &&
+					 !AI_chooseUnit(UNITAI_ATTACK) &&
+					 !AI_chooseUnit(UNITAI_COUNTER))
+				{
+					// 4. Forschung
+					if (GC.getGameINLINE().getSorenRandNum(10, "AI builds COMMERCE_RESEARCH") < 5)
+					{
+						if (kPlayer.AI_isFinancialTrouble() && AI_chooseProcess(COMMERCE_GOLD)) return;
+						if (AI_chooseProcess(COMMERCE_RESEARCH)) return;
+					}
+				}
+			}
+		}
+	}
+	// *********** PAE ***********************************
+
+
 	if (isBarbarian())
 	{
 

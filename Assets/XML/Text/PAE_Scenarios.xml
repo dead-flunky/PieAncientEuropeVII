@@ -2,19 +2,19 @@
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
 		<Tag> TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN4</Tag>
-		<English></English>
-		<French></French>
+		<English>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</English>
+		<French>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</French>
 		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</Italian>
+		<Spanish>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag> TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN5</Tag>
-		<English></English>
-		<French></French>
+		<English>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</English>
+		<French>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</French>
 		<German>Die Warnen wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</Italian>
+		<Spanish>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJ_SARDINIEN</Tag>
@@ -2906,27 +2906,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_15_2</Tag>
-		<English></English>
-		<French></French>
-		<German>Ihr sitzt mit den Clanf&#252;rsten in %s1 zusammen, um die Zukunft zu besprechen. Es stehen, wie schon immer, diese beiden Fragen im Raum: WIE k&#246;nnen wir die R&#246;mer besiegen und WANN sind wir dazu in der Lage?[NEWLINE]Es gibt auch Stimmen die sagen, dass wir die R&#246;mer ignorieren sollten, die G&#246;tter w&#252;rden uns schon sch&#252;tzen. Doch da erinnert ihr euch noch gut an den &#196;ltesten, der mit genau diesen Worten seine jahrelange Unt&#228;tigkeit zu rechtfertigen versuchte…[NEWLINE][NEWLINE]Beschlossen wurde dann zun&#228;chst die Zusammenstellung einer Einheit, die alle St&#228;rken der Clans in sich vereint. Unabh&#228;ngig der Waffengattung. Und es sollen Spione geschickt werden, um die wahre St&#228;rke der R&#246;mer zu erkunden.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GEFOLGE</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>You sit with the clan chieftains in %s1 to discuss the future. As always, two questions dominate the council: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE][NEWLINE]There are also voices suggesting that we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]It is then decided to first assemble a unit that embodies all the strengths of the clans, regardless of weapon type. Spies are also to be sent out to uncover the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 COHORT</English>
+		<French>You sit with the clan chieftains in %s1 to discuss the future. As always, two questions dominate the council: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE][NEWLINE]There are also voices suggesting that we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]It is then decided to first assemble a unit that embodies all the strengths of the clans, regardless of weapon type. Spies are also to be sent out to uncover the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 COHORT</French>
+		<German>Ihr sitzt mit den Clanf&#252;rsten in %s1 zusammen, um die Zukunft zu besprechen. Es stehen, wie schon immer, diese beiden Fragen im Raum: WIE k&#246;nnen wir die R&#246;mer besiegen und WANN sind wir dazu in der Lage?[NEWLINE]Es gibt auch Stimmen, die sagen, dass wir die R&#246;mer ignorieren sollten: die G&#246;tter w&#252;rden uns schon sch&#252;tzen. Doch da erinnert ihr euch noch gut an den &#196;ltesten, der mit genau diesen Worten seine jahrelange Unt&#228;tigkeit zu rechtfertigen versuchte...[NEWLINE][NEWLINE]Beschlossen wurde dann zun&#228;chst die Zusammenstellung einer Einheit, die alle St&#228;rken der Clans in sich vereint. Unabh&#228;ngig der Waffengattung. Und es sollen Spione geschickt werden, um die wahre St&#228;rke der R&#246;mer zu erkunden.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 GEFOLGE</German>
+		<Italian>You sit with the clan chieftains in %s1 to discuss the future. As always, two questions dominate the council: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE][NEWLINE]There are also voices suggesting that we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]It is then decided to first assemble a unit that embodies all the strengths of the clans, regardless of weapon type. Spies are also to be sent out to uncover the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 COHORT</Italian>
+		<Spanish>You sit with the clan chieftains in %s1 to discuss the future. As always, two questions dominate the council: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE][NEWLINE]There are also voices suggesting that we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]It is then decided to first assemble a unit that embodies all the strengths of the clans, regardless of weapon type. Spies are also to be sent out to uncover the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 COHORT</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_15_2_HEAD</Tag>
-		<English></English>
-		<French></French>
-		<German>Ein historischer Tag. Die Germanenv&#246;lker sind vereint!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>A historic day![NEWLINE][NEWLINE]The Germanic peoples are united!</English>
+		<French>Un jour historique![NEWLINE][NEWLINE]Les peuples germaniques sont unis !</French>
+		<German>Ein historischer Tag![NEWLINE][NEWLINE]Die Germanenv&#246;lker sind vereint!</German>
+		<Italian>Una giornata storica![NEWLINE][NEWLINE]I popoli germanici sono uniti!</Italian>
+		<Spanish>&#161;Un d&#237;a hist&#243;rico![NEWLINE][NEWLINE]&#161;Los pueblos germ&#225;nicos est&#225;n unidos!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_15_3</Tag>
-		<English></English>
-		<French></French>
+		<English>Congratulations! The Germanic tribes are united. Even if not all clan leaders still sit around the fire, it is nonetheless a historic day. As always, two questions remain at the forefront: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE]There are also voices saying we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]By combining selected axemen from the remaining clans, a unit of Berserkers has been assembled. Spies are also to be sent out to determine the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 BERSERKER</English>
+		<French>Congratulations! The Germanic tribes are united. Even if not all clan leaders still sit around the fire, it is nonetheless a historic day. As always, two questions remain at the forefront: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE]There are also voices saying we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]By combining selected axemen from the remaining clans, a unit of Berserkers has been assembled. Spies are also to be sent out to determine the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 BERSERKER</French>
 		<German>Gratulation! Die Germanenv&#246;lker sind vereint. Wenn auch nicht mehr alle Clanf&#252;hrer mit am Feuer sitzen, so ist es doch ein historischer Tag.[NEWLINE]Es stehen, wie schon immer, diese beiden Fragen im Raum: WIE k&#246;nnen wir die R&#246;mer besiegen und WANN sind wir dazu in der Lage?[NEWLINE]Es gibt auch Stimmen die sagen, dass wir die R&#246;mer ignorieren sollten, die G&#246;tter w&#252;rden uns schon sch&#252;tzen. Doch da erinnert ihr euch noch gut an den &#196;ltesten, der mit genau diesen Worten seine jahrelange Unt&#228;tigkeit zu rechtfertigen versuchte...[NEWLINE][NEWLINE]Durch die Zusammenlegung ausgesuchter Axtk&#228;mpfer der &#252;brigen Clans wurde eine Einheit Berserker mobilisiert. Und es sollen Spione geschickt werden, um die wahre St&#228;rke der R&#246;mer zu erkunden.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 BERSERKER</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Congratulations! The Germanic tribes are united. Even if not all clan leaders still sit around the fire, it is nonetheless a historic day. As always, two questions remain at the forefront: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE]There are also voices saying we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]By combining selected axemen from the remaining clans, a unit of Berserkers has been assembled. Spies are also to be sent out to determine the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 BERSERKER</Italian>
+		<Spanish>Congratulations! The Germanic tribes are united. Even if not all clan leaders still sit around the fire, it is nonetheless a historic day. As always, two questions remain at the forefront: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE]There are also voices saying we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction…[NEWLINE][NEWLINE]By combining selected axemen from the remaining clans, a unit of Berserkers has been assembled. Spies are also to be sent out to determine the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 BERSERKER</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_20_2</Tag>
@@ -2938,59 +2938,59 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_21_2A</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Damit kommt er uns also zuvor. Wir m&#252;ssen die Truppen sammeln und den Norden sichern!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has declared war on you?[NEWLINE]So he has beat us to the punch. We must gather our forces and secure the north!</English>
+		<French>%s1 has declared war on you?[NEWLINE]So he has beat us to the punch. We must gather our forces and secure the north!</French>
+		<German>%s1 hat euch den Krieg erkl&#228;rt?[NEWLINE]Damit kommt er uns also zuvor. Wir m&#252;ssen die Truppen sammeln und den Norden sichern!</German>
+		<Italian>%s1 has declared war on you?[NEWLINE]So he has beat us to the punch. We must gather our forces and secure the north!</Italian>
+		<Spanish>%s1 has declared war on you?[NEWLINE]So he has beat us to the punch. We must gather our forces and secure the north!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_21_2B</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Das kann nur bedeuten, dass er sich unterwerfen will, seine Armee ist der unseren niemals gewachsen.[NEWLINE]Sichert den Norden!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has declared war on you?[NEWLINE]That can only mean he seeks submission, for his army is no match for ours.[NEWLINE]Secure the north!</English>
+		<French>%s1 has declared war on you?[NEWLINE]That can only mean he seeks submission, for his army is no match for ours.[NEWLINE]Secure the north!</French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Das kann nur bedeuten, dass er sich unterwerfen will, denn seine Armee ist der unseren niemals gewachsen.[NEWLINE]Sichert den Norden!</German>
+		<Italian>%s1 has declared war on you?[NEWLINE]That can only mean he seeks submission, for his army is no match for ours.[NEWLINE]Secure the north!</Italian>
+		<Spanish>%s1 has declared war on you?[NEWLINE]That can only mean he seeks submission, for his army is no match for ours.[NEWLINE]Secure the north!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_22_2A</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Damit kommt er uns also zuvor. Wir m&#252;ssen die Grenzen sichern!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has declared war on you?[NEWLINE][NEWLINE]So he has beat us to the punch. We must secure the borders!</English>
+		<French>%s1 vous a d&#233;clar&#233; la guerre ?[NEWLINE][NEWLINE]Il nous a donc devanc&#233;s jusqu'au bout. Il faut s&#233;curiser les fronti&#232;res !</French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE][NEWLINE]Damit kommt er uns also zuvor. Wir m&#252;ssen die Grenzen sichern!</German>
+		<Italian>%s1 ti ha dichiarato guerra?[NEWLINE][NEWLINE]Ci ha anticipato. Dobbiamo mettere in sicurezza i confini!</Italian>
+		<Spanish>&#191;%s1 te ha declarado la guerra?[NEWLINE][NEWLINE]As&#237; que se nos ha adelantado. &#161;Debemos asegurar las fronteras!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_22_2B</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Ein Akt der Verzweiflung. Wir sammeln die Truppen und marschieren umgehend Richtung %s2!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has declared war on you?[NEWLINE][NEWLINE]An act of desperation. We will gather the troops and immediately march toward %s2!</English>
+		<French>%s1 vous a d&#233;clar&#233; la guerre ?[NEWLINE][NEWLINE]Un acte de d&#233;sespoir. Nous rassemblons les troupes et marchons imm&#233;diatement vers %s2 !</French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE][NEWLINE]Ein Akt der Verzweiflung. Wir sammeln die Truppen und marschieren umgehend Richtung %s2!</German>
+		<Italian>%s1 ti ha dichiarato guerra?[NEWLINE][NEWLINE]Un atto di disperazione. Raduneremo le truppe e marceremo immediatamente verso %s2!</Italian>
+		<Spanish>&#191;%s1 te ha declarado la guerra?[NEWLINE][NEWLINE]Un acto de desesperaci&#243;n. &#161;Reuniremos a las tropas y marcharemos inmediatamente hacia %s2!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_23_2A</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Damit kommt er uns also zuvor. Ihn muss man ernst nehmen!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has declared war on you?[NEWLINE][NEWLINE]So he has beat us to the punch. He must be taken seriously!</English>
+		<French>%s1 vous a d&#233;clar&#233; la guerre ?[NEWLINE][NEWLINE]Il a donc pris les devants. Il faut le prendre au s&#233;rieux !</French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE][NEWLINE]Damit kommt er uns also zuvor. Ihn muss man ernst nehmen!</German>
+		<Italian>%s1 ti ha dichiarato guerra?[NEWLINE][NEWLINE]Ci ha anticipato. Bisogna prenderlo sul serio!</Italian>
+		<Spanish>&#191;%s1 te ha declarado la guerra?[NEWLINE][NEWLINE]&#161;Se nos ha adelantado! &#161;Hay que tomarlo en serio!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_23_2B</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE]Eine gute Gelegenheit, ihn zu unterwerfen!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has declared war on you?[NEWLINE][NEWLINE]A good opportunity to subjugate him!</English>
+		<French>%s1 vous a d&#233;clar&#233; la guerre ?[NEWLINE][NEWLINE]Voil&#224; une belle occasion de le soumettre !</French>
+		<German>%s1 hat euch Krieg erkl&#228;rt?[NEWLINE][NEWLINE]Eine gute Gelegenheit, ihn zu unterwerfen!</German>
+		<Italian>%s1 ti ha dichiarato guerra?[NEWLINE][NEWLINE]Un'ottima occasione per sottometterlo!</Italian>
+		<Spanish>&#191;%s1 te ha declarado la guerra?[NEWLINE][NEWLINE]&#161;Una buena oportunidad para someterlo!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_24_2</Tag>
-		<English></English>
-		<French></French>
+		<English>%s1 has declared war on you.</English>
+		<French>%s1 vous a d&#233;clar&#233; la guerre.</French>
 		<German>%s1 hat euch Krieg erkl&#228;rt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>%s1 ti ha dichiarato guerra.</Italian>
+		<Spanish>%s1 te ha declarado la guerra.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ALARICH_BODY</Tag>
@@ -3010,27 +3010,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT1</Tag>
-		<English></English>
-		<French></French>
-		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod von Arminius![NEWLINE]Sein Nachfolger, der %s1 war schon lange gegen die sogenannte Unterdr&#252;ckung seines Stammes. Er &#252;berzeugt seine Getreuen, das Vasallenverh&#228;ltnis mit Euch aufzuk&#252;ndigen![NEWLINE][NEWLINE][ICON_BULLET] Der %s2 k&#252;ndigt den Vasallenstatus</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>The Cherusci are shocked by the death of Arminius![NEWLINE]His successor, the %s1, had long been opposed to the so-called oppression of his tribe. He convinces his followers to break off their vassalage to you![NEWLINE][NEWLINE][ICON_BULLET] The %s2 renounces vassal status</English>
+		<French>Les Ch&#233;rusques sont boulevers&#233;s par la mort d'Arminius ![NEWLINE]Son successeur, le %s1, s'&#233;tait depuis longtemps oppos&#233; &#224; la pr&#233;tendue oppression de son peuple. Il convainc ses fid&#232;les de rompre leur vassalit&#233; envers vous ![NEWLINE][NEWLINE][ICON_BULLET] Le %s2 met fin &#224; son statut de vassal</French>
+		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod von Arminius![NEWLINE]Sein Nachfolger, der %s1, war schon lange gegen die sogenannte Unterdr&#252;ckung seines Stammes. Er &#252;berzeugt seine Getreuen, das Vasallenverh&#228;ltnis mit Euch aufzuk&#252;ndigen![NEWLINE][NEWLINE][ICON_BULLET] Der %s2 k&#252;ndigt den Vasallenstatus</German>
+		<Italian>The Cherusci are shocked by the death of Arminius![NEWLINE]His successor, the %s1, had long been opposed to the so-called oppression of his tribe. He convinces his followers to break off their vassalage to you![NEWLINE][NEWLINE][ICON_BULLET] The %s2 renounces vassal status</Italian>
+		<Spanish>The Cherusci are shocked by the death of Arminius![NEWLINE]His successor, the %s1, had long been opposed to the so-called oppression of his tribe. He convinces his followers to break off their vassalage to you![NEWLINE][NEWLINE][ICON_BULLET] The %s2 renounces vassal status</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT2</Tag>
-		<English></English>
-		<French></French>
-		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod ihres F&#252;rsten![NEWLINE]In %s1 kommt es bei der Bestimmung eines Nachfolgers f&#252;r Arminius zu schweren Aufst&#228;nden. Viele f&#252;hlen sich hintergangen mit der F&#252;hrung durch den %s2.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>The Cherusci are shocked by the death of their prince![NEWLINE]In %s1, severe unrest breaks out over the appointment of a successor to Arminius. Many feel betrayed by the leadership of %s2.</English>
+		<French>Les Ch&#233;rusques sont boulevers&#233;s par la mort de leur prince ![NEWLINE]&#192; %s1, de graves troubles &#233;clatent lors de la d&#233;signation d'un successeur &#224; Arminius. Beaucoup se sentent trahis par la direction de %s2.</French>
+		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod seines F&#252;rsten![NEWLINE]In %s1 kommt es bei der Bestimmung eines Nachfolgers f&#252;r Arminius zu schweren Aufst&#228;nden. Viele f&#252;hlen sich hintergangen mit der F&#252;hrung durch den %s2.</German>
+		<Italian>The Cherusci are shocked by the death of their prince![NEWLINE]In %s1, severe unrest breaks out over the appointment of a successor to Arminius. Many feel betrayed by the leadership of %s2.</Italian>
+		<Spanish>The Cherusci are shocked by the death of their prince![NEWLINE]In %s1, severe unrest breaks out over the appointment of a successor to Arminius. Many feel betrayed by the leadership of %s2.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT3</Tag>
-		<English></English>
-		<French></French>
+		<English>Arminius is dead!</English>
+		<French>Arminius est mort !</French>
 		<German>Arminius ist tot!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Arminio &#232; morto!</Italian>
+		<Spanish>&#161;Arminio ha muerto!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_BYZANZ_CONQUER_DAKER</Tag>
@@ -3090,115 +3090,115 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK</Tag>
-		<English></English>
-		<French></French>
+		<English>Congratulations! You have forced %s1 under your banner.[NEWLINE]From now on, he will serve at your side as a commander. His realm will be governed in his name by his most trusted confidant, the governor of %s2.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE GENERAL ARMINIUS</English>
+		<French>Congratulations! You have forced %s1 under your banner.[NEWLINE]From now on, he will serve at your side as a commander. His realm will be governed in his name by his most trusted confidant, the governor of %s2.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE GENERAL ARMINIUS</French>
 		<German>Gratulation! Ihr habt %s1 unter Euer Banner gezwungen.[NEWLINE]Er wird von nun an als Heeresf&#252;hrer an eurer Seite dienen. Sein Reich wird von seinem engsten Vertrauten, dem Statthalter von %s2 in seinem Namen weitergef&#252;hrt.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET GENERAL ARMINIUS</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Congratulations! You have forced %s1 under your banner.[NEWLINE]From now on, he will serve at your side as a commander. His realm will be governed in his name by his most trusted confidant, the governor of %s2.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE GENERAL ARMINIUS</Italian>
+		<Spanish>Congratulations! You have forced %s1 under your banner.[NEWLINE]From now on, he will serve at your side as a commander. His realm will be governed in his name by his most trusted confidant, the governor of %s2.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE GENERAL ARMINIUS</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK2</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat die Cherusker unter sein Banner gezwungen.[NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt, und das seid Ihr!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has forced the Cherusci under his banner.[NEWLINE][NEWLINE]We should make it clear that there can only be one hegemon in Germania: you!</English>
+		<French>%s1 a forc&#233; les Ch&#233;rusques &#224; se rallier sous sa banni&#232;re.[NEWLINE][NEWLINE]Nous devons faire comprendre qu'il ne peut y avoir qu'un seul h&#233;g&#233;mon en Germanie: vous !</French>
+		<German>%s1 hat die Cherusker unter sein Banner gezwungen.[NEWLINE][NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt: und das seid Ihr!</German>
+		<Italian>%s1 ha costretto i Cherusci a passare sotto la sua bandiera.[NEWLINE][NEWLINE]Dobbiamo chiarire che in Germania pu&#242; esserci un solo egemone: tu!</Italian>
+		<Spanish>%s1 ha sometido a los queruscos bajo su bandera.[NEWLINE][NEWLINE]Debemos dejar claro que solo puede haber un hegem&#243;n en Germania: &#161;t&#250;!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK3</Tag>
-		<English></English>
-		<French></French>
-		<German>Der Cherusker hat sich %s1 unterworfen.[NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>The Cheruscan has submitted to %s1.[NEWLINE][NEWLINE]This constitutes a clear interference in Germanic affairs and cannot be allowed to continue!</English>
+		<French>Le Ch&#233;rusque s'est soumis &#224; %s1.[NEWLINE][NEWLINE]Ceci constitue une ing&#233;rence manifeste dans les affaires germaniques et ne saurait &#234;tre tol&#233;r&#233; !</French>
+		<German>Der Cherusker hat sich %s1 unterworfen.[NEWLINE][NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann keinesfalls so bleiben!</German>
+		<Italian>Il Cherusco si &#232; sottomesso a %s1.[NEWLINE][NEWLINE]Questo costituisce una chiara ingerenza negli affari germanici e non pu&#242; essere tollerato!</Italian>
+		<Spanish>El querusco se ha sometido a %s1.[NEWLINE][NEWLINE]&#161;Esto constituye una clara injerencia en los asuntos germ&#225;nicos y no puede permitirse que contin&#250;e!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK4</Tag>
-		<English></English>
-		<French></French>
+		<English>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</English>
+		<French>Il n'&#233;tait pas pr&#233;vu initialement de prendre enti&#232;rement %s1, mais compte tenu des circonstances, vous avez consid&#233;r&#233; que c'&#233;tait la meilleure solution.</French>
 		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Non era previsto inizialmente di occupare interamente %s1, ma viste le circostanze, l'hai ritenuta la soluzione migliore.</Italian>
+		<Spanish>No era el plan original tomar el %s1 por completo, pero dadas las circunstancias, lo consideraste la mejor soluci&#243;n.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_CHERUSK5</Tag>
-		<English></English>
-		<French></French>
-		<German>Die Cherusker wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>The Cherusci have been defeated by %s1. %s2 is history - perhaps he is already feasting with his ancestors at the table of the gods. A unification of all Germanic peoples is therefore no longer possible!</English>
+		<French>Les Ch&#233;rusques ont &#233;t&#233; vaincus par %s1. %s2 appartient d&#233;sormais &#224; l'histoire - peut-&#234;tre festoie-t-il d&#233;j&#224; avec ses anc&#234;tres &#224; la table des dieux. L'unification de tous les peuples germaniques n'est donc malheureusement plus possible !</French>
+		<German>Die Cherusker wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter. Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
+		<Italian>I Cherusci sono stati sconfitti da %s1. %s2 &#232; storia: forse sta gi&#224; banchettando con i suoi antenati alla tavola degli dei. L'unificazione di tutti i popoli germanici non &#232; quindi pi&#249; possibile!</Italian>
+		<Spanish>Los queruscos han sido derrotados por %s1. %s2 es historia; tal vez ya est&#233; festejando con sus ancestros en la mesa de los dioses. &#161;Por lo tanto, la unificaci&#243;n de todos los pueblos germ&#225;nicos ya no es posible!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN</Tag>
-		<English></English>
-		<French></French>
-		<German>Gratulation! Ihr habt %s1 unterworfen.[NEWLINE]Er schw&#246;rt bei den G&#246;ttern, euch als Vasall keine Schande zu machen. Um das zu unterstreichen, gew&#228;hrt er euch Zugang zu seiner geheimen Schatzkammer.[NEWLINE][NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1000 [ICON_GOLD]</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>Congratulations! You have subjugated %s1.[NEWLINE]He swears by the gods not to bring shame upon you as your vassal. To prove it, he grants you access to his secret treasury.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1000 [ICON_GOLD]</English>
+		<French>Congratulations! You have subjugated %s1.[NEWLINE]He swears by the gods not to bring shame upon you as your vassal. To prove it, he grants you access to his secret treasury.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1000 [ICON_GOLD]</French>
+		<German>Gratulation! Ihr habt %s1 unterworfen.[NEWLINE]Er schw&#246;rt bei den G&#246;ttern, euch als Vasall keine Schande zu machen. Um das zu unterstreichen, gew&#228;hrt er euch Zugang zu seiner geheimen Schatzkammer.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1000 [ICON_GOLD]</German>
+		<Italian>Congratulations! You have subjugated %s1.[NEWLINE]He swears by the gods not to bring shame upon you as your vassal. To prove it, he grants you access to his secret treasury.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1000 [ICON_GOLD]</Italian>
+		<Spanish>Congratulations! You have subjugated %s1.[NEWLINE]He swears by the gods not to bring shame upon you as your vassal. To prove it, he grants you access to his secret treasury.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1000 [ICON_GOLD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN2</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat die Hermunduren unter sein Banner gezwungen.[NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt, und das seid Ihr!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has forced the Hermunduri under his banner.[NEWLINE][NEWLINE]We should make it clear that there can only be one hegemon in Germania: you!</English>
+		<French>%s1 a forc&#233; les Hermundures &#224; se rallier sous sa banni&#232;re.[NEWLINE][NEWLINE]Nous devons faire comprendre qu'il ne peut y avoir qu'un seul h&#233;g&#233;mon en Germanie: vous !</French>
+		<German>%s1 hat die Hermunduren unter sein Banner gezwungen.[NEWLINE][NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt: und das seid Ihr!</German>
+		<Italian>%s1 ha costretto gli Hermunduri a passare sotto la sua bandiera.[NEWLINE][NEWLINE]Dobbiamo chiarire che in Germania pu&#242; esserci un solo egemone: tu!</Italian>
+		<Spanish>%s1 ha sometido a los Hermunduri bajo su bandera.[NEWLINE][NEWLINE]Debemos dejar claro que solo puede haber un hegem&#243;n en Germania: &#161;t&#250;!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN3</Tag>
-		<English></English>
-		<French></French>
-		<German>Der Hermundure hat sich %s1 unterworfen.[NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>The Hermunduri have submitted to %s1.[NEWLINE][NEWLINE]This is a clear interference in Germanic affairs and cannot be allowed to stand!</English>
+		<French>Les Hermundures se sont soumis &#224; %s1.[NEWLINE][NEWLINE]Il s'agit d'une ing&#233;rence claire dans les affaires germaniques et cela ne peut pas &#234;tre tol&#233;r&#233; !</French>
+		<German>Der Hermundure hat sich %s1 unterworfen.[NEWLINE][NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
+		<Italian>Gli Hermunduri si sono sottomessi a %s1.[NEWLINE][NEWLINE]Questa &#232; una chiara ingerenza negli affari germanici e non pu&#242; essere tollerata!</Italian>
+		<Spanish>Los Hermunduri se han sometido a %s1.[NEWLINE][NEWLINE]&#161;Esto es una clara injerencia en los asuntos germ&#225;nicos y no puede permitirse!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN4</Tag>
-		<English></English>
-		<French></French>
+		<English>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</English>
+		<French>Il n'&#233;tait pas pr&#233;vu de conqu&#233;rir enti&#232;rement %s1, mais au vu des circonstances, vous avez consid&#233;r&#233; que c'&#233;tait la meilleure solution.</French>
 		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Non era previsto inizialmente di occupare interamente %s1, ma viste le circostanze, l'hai ritenuta la soluzione migliore.</Italian>
+		<Spanish>No era el plan original tomar %s1 por completo, pero dadas las circunstancias, lo consideraste la mejor soluci&#243;n.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_HERMUN5</Tag>
-		<English></English>
-		<French></French>
-		<German>Die Hermunduren wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>The Hermunduri have been defeated by %s1. %s2 is history - perhaps he is already feasting with his ancestors at the table of the gods. A unification of all Germanic peoples is therefore no longer possible!</English>
+		<French>Les Hermundures ont &#233;t&#233; vaincus par %s1. %s2 appartient d&#233;sormais &#224; l'histoire - peut-&#234;tre festoie-t-il d&#233;j&#224; avec ses anc&#234;tres &#224; la table des dieux. L'unification de tous les peuples germaniques n'est donc malheureusement plus possible !</French>
+		<German>Die Hermunduren wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter. Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
+		<Italian>Gli Hermunduri sono stati sconfitti da %s1. %s2 &#232; storia: forse sta gi&#224; banchettando con i suoi antenati alla tavola degli dei. L'unificazione di tutti i popoli germanici non &#232; quindi pi&#249; possibile!</Italian>
+		<Spanish>Los Hermunduri han sido derrotados por %s1. %s2 es historia; tal vez ya est&#233; festejando con sus ancestros en la mesa de los dioses. &#161;Por lo tanto, la unificaci&#243;n de todos los pueblos germ&#225;nicos ya no es posible!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO</Tag>
-		<English></English>
-		<French></French>
+		<English>Congratulations! %s1 now stands on our side.[NEWLINE]He assures you that he will be a reliable vassal. As a sign of trust, he places a defected Roman legionary under your command - one who has served as his personal bodyguard in recent years.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 LEGIONARY</English>
+		<French>Congratulations! %s1 now stands on our side.[NEWLINE]He assures you that he will be a reliable vassal. As a sign of trust, he places a defected Roman legionary under your command - one who has served as his personal bodyguard in recent years.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 LEGIONARY</French>
 		<German>Gratulation! %s1 steht nun auf unserer Seite.[NEWLINE]Er versichert, dass er euch ein verl&#228;sslicher Vasall sein wird. Als Vertrauensbeweis unterstellt er einen &#252;bergelaufenen r&#246;mischen Legion&#228;r eurem Kommando, der die letzten Jahre als seine pers&#246;nliche Leibwache diente.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 1 LEGION&#196;R</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Congratulations! %s1 now stands on our side.[NEWLINE]He assures you that he will be a reliable vassal. As a sign of trust, he places a defected Roman legionary under your command - one who has served as his personal bodyguard in recent years.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 LEGIONARY</Italian>
+		<Spanish>Congratulations! %s1 now stands on our side.[NEWLINE]He assures you that he will be a reliable vassal. As a sign of trust, he places a defected Roman legionary under your command - one who has served as his personal bodyguard in recent years.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 LEGIONARY</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO2</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat die Markomannen vasallisiert.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has subjugated the Marcomanni.</English>
+		<French>%s1 a soumis les Marcomans.</French>
+		<German>%s1 hat die Markomannen unterworfen.</German>
+		<Italian>%s1 ha sottomesso i Marcomanni.</Italian>
+		<Spanish>%s1 ha subyugado a los marcomanos.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO4</Tag>
-		<English></English>
-		<French></French>
+		<English>You have defeated %s1.</English>
+		<French>Vous avez vaincu %s1.</French>
 		<German>Ihr habt %s1 besiegt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Hai sconfitto %s1.</Italian>
+		<Spanish>Has derrotado a %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_MARKO5</Tag>
-		<English></English>
-		<French></French>
+		<English>The Marcomanni have been defeated by %s1.</English>
+		<French>Les Marcomans ont &#233;t&#233; vaincus par %s1.</French>
 		<German>Die Markomannen wurden von %s1 besiegt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>I Marcomanni sono stati sconfitti da %s1.</Italian>
+		<Spanish>Los Marcomanni han sido derrotados por% s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS</Tag>
@@ -3210,83 +3210,83 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS_OTHERS</Tag>
-		<English></English>
-		<French></French>
+		<English>%s1 has captured %s2.[NEWLINE][NEWLINE]This is Gothic territory! We should immediately reclaim it in order to prepare, as a united Gothic realm, for the unification of the Germanic peoples. For your long-term plan is to bring the western Germanic tribes under your rule as vassals![NEWLINE][NEWLINE][ICON_BULLET] RECLAIM THE ANCIENT HOMELAND</English>
+		<French>%s1 a pris %s2.[NEWLINE][NEWLINE]C'est du territoire gothique ! Nous devrions le reconqu&#233;rir imm&#233;diatement afin de pr&#233;parer, en tant que Goths unis, l'unification des peuples germaniques. Votre objectif &#224; long terme est de faire des tribus germaniques d'ouest vos vassaux ![NEWLINE][NEWLINE][ICON_BULLET] REPRENEZ L'ANCIENNE PATRIE</French>
 		<German>%s1 hat %s2 eingenommen.[NEWLINE][NEWLINE]Das ist gotisches Gebiet! Wir sollten es umgehend zur&#252;ckerobern, um als vereintes Gotenland Vorbereitungen f&#252;r die Vereinigung der Germanen zu treffen. Denn euer langfristiger Plan ist es, die Germanenst&#228;mme im Westen als Vasallen zu gewinnen![NEWLINE][NEWLINE][ICON_BULLET] EROBERT DIE ALTE HEIMAT</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>%s1 has captured %s2.[NEWLINE][NEWLINE]This is Gothic territory! We should immediately reclaim it in order to prepare, as a united Gothic realm, for the unification of the Germanic peoples. For your long-term plan is to bring the western Germanic tribes under your rule as vassals![NEWLINE][NEWLINE][ICON_BULLET] RECLAIM THE ANCIENT HOMELAND</Italian>
+		<Spanish>%s1 has captured %s2.[NEWLINE][NEWLINE]This is Gothic territory! We should immediately reclaim it in order to prepare, as a united Gothic realm, for the unification of the Germanic peoples. For your long-term plan is to bring the western Germanic tribes under your rule as vassals![NEWLINE][NEWLINE][ICON_BULLET] RECLAIM THE ANCIENT HOMELAND</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_ROME</Tag>
-		<English></English>
-		<French></French>
+		<English>Rome has been destroyed!</English>
+		<French>Rome a &#233;t&#233; d&#233;truite !</French>
 		<German>Rom wurde vernichtet!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Roma &#232; stata distrutta!</Italian>
+		<Spanish>&#161;Roma ha sido destruida!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_ROME_CAPITAL</Tag>
-		<English></English>
-		<French></French>
+		<English>Rome was conquered!</English>
+		<French>Rome fut conquise !</French>
 		<German>Rom wurde erobert!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Roma fu conquistata!</Italian>
+		<Spanish>&#161;Roma fue conquistada!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS</Tag>
-		<English></English>
-		<French></French>
-		<German>Ihr habt %s1 vasallisiert.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>You have subjugated %s1.</English>
+		<French>Vous avez soumis %s1.</French>
+		<German>Ihr habt %s1 unterworfen.</German>
+		<Italian>Hai sottomesso %s1.</Italian>
+		<Spanish>Has subyugado a %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS2</Tag>
-		<English></English>
-		<French></French>
-		<German>%s1 hat die Vandalen vasallisiert.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>%s1 has subjugated the Vandals.</English>
+		<French>%s1 a soumis les Vandales.</French>
+		<German>%s1 hat die Vandalen unterworfen.</German>
+		<Italian>%s1 ha sottomesso i Vandali.</Italian>
+		<Spanish>%s1 ha subyugado a los v&#225;ndalos.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS3</Tag>
-		<English></English>
-		<French></French>
+		<English>You have defeated %s1.</English>
+		<French>Vous avez vaincu %s1.</French>
 		<German>Ihr habt %s1 besiegt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Hai sconfitto %s1.</Italian>
+		<Spanish>Has derrotado a %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_VANDALS4</Tag>
-		<English></English>
-		<French></French>
+		<English>The Vandals have been defeated by %s1.</English>
+		<French>Les Vandales ont &#233;t&#233; vaincus par %s1.</French>
 		<German>Die Vandalen wurden von %s1 besiegt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>I Vandals sono stati sconfitti da %s1.</Italian>
+		<Spanish>Los v&#225;ndalos han sido derrotados por %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN</Tag>
-		<English></English>
-		<French></French>
+		<English>Congratulations! %s1 has been subjugated. He pledges to serve you faithfully and to support all your decisions.[NEWLINE]He also places his finest warriors under your command.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 2 TEUTONS</English>
+		<French>Congratulations! %s1 has been subjugated. He pledges to serve you faithfully and to support all your decisions.[NEWLINE]He also places his finest warriors under your command.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 2 TEUTONS</French>
 		<German>Gratulation! %s1 ist unterworfen. Er versichert euch, treu zu dienen und all eure Entscheidungen mitzutragen.[NEWLINE]Au&#223;erdem stellt er seine besten Krieger unter euer Kommando.[NEWLINE][NEWLINE][ICON_BULLET] IHR ERHALTET 2 TEUTONEN</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Congratulations! %s1 has been subjugated. He pledges to serve you faithfully and to support all your decisions.[NEWLINE]He also places his finest warriors under your command.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 2 TEUTONS</Italian>
+		<Spanish>Congratulations! %s1 has been subjugated. He pledges to serve you faithfully and to support all your decisions.[NEWLINE]He also places his finest warriors under your command.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 2 TEUTONS</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN2</Tag>
-		<English></English>
-		<French></French>
+		<English>%s1 has forced the Varni under his banner.[NEWLINE]We should make it clear that there can only be one hegemon in Germania-and that is you!</English>
+		<French>%s1 has forced the Varni under his banner.[NEWLINE]We should make it clear that there can only be one hegemon in Germania-and that is you!</French>
 		<German>%s1 hat die Warnen unter sein Banner gezwungen.[NEWLINE]Wir sollten klar machen, dass es in Germanien nur einen Hegemon gibt, und das seid Ihr!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>%s1 has forced the Varni under his banner.[NEWLINE]We should make it clear that there can only be one hegemon in Germania-and that is you!</Italian>
+		<Spanish>%s1 has forced the Varni under his banner.[NEWLINE]We should make it clear that there can only be one hegemon in Germania-and that is you!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN3</Tag>
-		<English></English>
-		<French></French>
+		<English>The Varni have submitted to %s1.[NEWLINE][NEWLINE]This is a clear interference in Germanic affairs and cannot be allowed to stand!</English>
+		<French>The Varni have submitted to %s1.[NEWLINE][NEWLINE]This is a clear interference in Germanic affairs and cannot be allowed to stand!</French>
 		<German>Der Warne hat sich %s1 unterworfen.[NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>The Varni have submitted to %s1.[NEWLINE][NEWLINE]This is a clear interference in Germanic affairs and cannot be allowed to stand!</Italian>
+		<Spanish>The Varni have submitted to %s1.[NEWLINE][NEWLINE]This is a clear interference in Germanic affairs and cannot be allowed to stand!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_DAKER_CONQUER_VANDAL_CITY</Tag>
@@ -3300,33 +3300,33 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY</Tag>
 		<English></English>
 		<French></French>
-		<German>Dies wird die Hauptstadt eines neuen, geeinten Gotenreiches sein. Es soll das gr&#246;&#223;te Reich aller Zeiten in Germanien werden, das sich am Ende mit dem der R&#246;mer messen kann.[NEWLINE][NEWLINE]Ihr lasst alle Sch&#228;den reparieren und hier unsere Heimat aufbauen. Ein Nordischer Schrein muss errichtet werden, um den G&#246;ttern zu huldigen. Der &#196;lteste und seine Sippe haben scheinbar geschlafen die letzten Jahre, viele Geb&#228;ude sind noch nichtmal geplant.[NEWLINE][NEWLINE]Das Heiligtum unseres Glaubens, die Donareiche, steht schon seit den Ahnen in %s1. Es w&#228;re nur angemessen, wenn das Zentrum der nordischen G&#246;tter auf lange Sicht von Goten kontrolliert w&#252;rde. %s2 k&#246;nnte uns als Vasall gute Dienste leisten.[NEWLINE][NEWLINE]Das &#220;berraschungsmoment ist auf unserer Seite. Wir sollten bald weitermarschieren und die umliegenden D&#246;rfer erobern.[NEWLINE][NEWLINE][ICON_BULLET] EROBERT WEITERE ST&#196;DTE[NEWLINE][ICON_BULLET] EROBERT DIE HEILIGE STADT %s3</German>
+		<German>Dies wird die Hauptstadt eines neuen, geeinten Gotenreiches sein. Es soll das gr&#246;&#223;te Reich aller Zeiten in Germanien werden, das sich am Ende mit dem der R&#246;mer messen kann.[NEWLINE][NEWLINE]Ihr lasst alle Sch&#228;den reparieren und hier unsere Heimat aufbauen. Ein Nordischer Schrein muss errichtet werden, um den G&#246;ttern zu huldigen. Der &#196;lteste und seine Sippe haben scheinbar geschlafen die letzten Jahre, viele Geb&#228;ude sind noch nichtmal geplant.[NEWLINE][NEWLINE]Das Heiligtum unseres Glaubens, die Donareiche, steht schon seit den Ahnen in %s1. Es w&#228;re nur angemessen, wenn das Zentrum der nordischen G&#246;tter auf lange Sicht von Goten kontrolliert w&#252;rde. %s2 k&#246;nnte uns als Vasall gute Dienste leisten.[NEWLINE][NEWLINE]Das &#220;berraschungsmoment ist auf unserer Seite. Wir sollten bald weitermarschieren und die umliegenden D&#246;rfer erobern.[NEWLINE][NEWLINE][ICON_BULLET] EROBERT DIE ALTE HEIMAT[NEWLINE][ICON_BULLET] EROBERT DIE HEILIGE STADT %s3</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CITY_HEAD</Tag>
-		<English></English>
-		<French></French>
+		<English>The first step is done. You have captured %s1_city!</English>
+		<French>La premi&#232;re &#233;tape est termin&#233;e. Vous avez captur&#233; %s1_city !</French>
 		<German>Der erste Schritt ist getan. Ihr habt %s1_city erobert!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Il primo passo &#232; compiuto. Hai conquistato %s1_city!</Italian>
+		<Spanish>El primer paso est&#225; hecho. &#161;Has capturado %s1_city!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_ARVERNER1</Tag>
-		<English></English>
-		<French></French>
+		<English>You have encountered %s1. He leads the Gauls far to the west.</English>
+		<French>Vous avez rencontr&#233; %s1. Il conduit les Gaulois loin vers l'ouest.</French>
 		<German>Ihr habt %s1 getroffen. Er f&#252;hrt die Galler weit im Westen an.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Hai incontrato %s1. Egli guida i Galli molto a ovest.</Italian>
+		<Spanish>Te has encontrado con %s1. &#201;l gu&#237;a a los galos muy al oeste.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_ARVERNER2</Tag>
-		<English></English>
-		<French></French>
+		<English>You have encountered %s1. He leads the Gauls far in the west.[NEWLINE]The fact that he is already at war with %s2 should give us food for thought. Perhaps we can join forces with him? Or at least support him politically?</English>
+		<French>You have encountered %s1. He leads the Gauls far in the west.[NEWLINE]The fact that he is already at war with %s2 should give us food for thought. Perhaps we can join forces with him? Or at least support him politically?</French>
 		<German>Ihr habt %s1 getroffen, er f&#252;hrt die Gallier weit im Westen an.[NEWLINE]Dass er bereits Krieg gegen %s2 f&#252;hrt, sollte uns zu denken geben. Vielleicht k&#246;nnen wir uns mit ihm zusammentun? Oder ihn zumindest politisch unterst&#252;tzen?</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>You have encountered %s1. He leads the Gauls far in the west.[NEWLINE]The fact that he is already at war with %s2 should give us food for thought. Perhaps we can join forces with him? Or at least support him politically?</Italian>
+		<Spanish>You have encountered %s1. He leads the Gauls far in the west.[NEWLINE]The fact that he is already at war with %s2 should give us food for thought. Perhaps we can join forces with him? Or at least support him politically?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_BYZANZ</Tag>
@@ -3356,7 +3356,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_CHERUSK_3</Tag>
 		<English></English>
 		<French></French>
-		<German></German>
+		<German>FIRST_CONTACT_CHERUSK_3</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3370,17 +3370,17 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_FRIESEN</Tag>
-		<English></English>
-		<French></French>
+		<English>You have met %s1.</English>
+		<French>Vous avez rencontr&#233; %s1.</French>
 		<German>Ihr habt %s1 kennengelernt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Hai incontrato %s1.</Italian>
+		<Spanish>Has conocido a %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_GERMANEN</Tag>
 		<English></English>
 		<French></French>
-		<German>Ihr habt %s1 getroffen.[NEWLINE]Wir sollten alle vier f&#252;hrenden Germanenst&#228;mme unter unserer Flagge vereinen, um der r&#246;mischen Bedrohung ein geeintes Reich entgegenzustellen.[NEWLINE][NEWLINE][ICON_BULLET] EROBERT ODER VASALLISIERT ALLE 4 GERMANENST&#196;MME</German>
+		<German>Ihr habt %s1 getroffen.[NEWLINE]Wir sollten alle vier f&#252;hrenden Germanenst&#228;mme unter unserer Flagge vereinen, um der r&#246;mischen Bedrohung ein geeintes Reich entgegenzustellen.[NEWLINE][NEWLINE][ICON_BULLET] EROBERT ODER UNTERWERFT ALLE 4 GERMANENST&#196;MME</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3420,7 +3420,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_MARKO_2</Tag>
 		<English></English>
 		<French></French>
-		<German></German>
+		<German>FIRST_CONTACT_MARKO_2</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3428,25 +3428,25 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_MARKO_3</Tag>
 		<English></English>
 		<French></French>
-		<German></German>
+		<German>FIRST_CONTACT_MARKO_3</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_RAETER</Tag>
-		<English></English>
-		<French></French>
+		<English>You have met %s1.</English>
+		<French>Vous avez rencontr&#233; %s1.</French>
 		<German>Ihr habt %s1 kennengelernt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Hai incontrato %s1.</Italian>
+		<Spanish>Has conocido a %s1.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_ROME</Tag>
-		<English></English>
-		<French></French>
-		<German>Das ist er also: %s1! Er ist uners&#228;ttlich, seine Legionen bedrohen die gesamte zivilisiert Welt! Auch wenn es einige geben mag die meinen, Rom w&#228;re die Zivilisation, wir dagegen seien Barbaren. Solche Leute werden aber meist direkt aus der Wirtschaft gepr&#252;gelt...</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>So this is him: %s1! He is insatiable, his legions threaten the entire civilized world! Even if there are some who claim that Rome is THE civilization, and that we are merely barbarians - such people are usually beaten out of the inn rather quickly...</English>
+		<French>So this is him: %s1! He is insatiable, his legions threaten the entire civilized world! Even if there are some who claim that Rome is THE civilization, and that we are merely barbarians - such people are usually beaten out of the inn rather quickly...</French>
+		<German>Das ist er also: %s1! Er ist uners&#228;ttlich, seine Legionen bedrohen die gesamte zivilisierte Welt! Auch wenn es einige geben mag, die meinen, Rom w&#228;re DIE Zivilisation, wir dagegen seien Barbaren. Solche Leute werden aber meist direkt aus der Wirtschaft gepr&#252;gelt...</German>
+		<Italian>So this is him: %s1! He is insatiable, his legions threaten the entire civilized world! Even if there are some who claim that Rome is THE civilization, and that we are merely barbarians - such people are usually beaten out of the inn rather quickly...</Italian>
+		<Spanish>So this is him: %s1! He is insatiable, his legions threaten the entire civilized world! Even if there are some who claim that Rome is THE civilization, and that we are merely barbarians - such people are usually beaten out of the inn rather quickly...</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_VANDALEN_1</Tag>
@@ -3554,11 +3554,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_GERVANDALS_DECLARES_WAR_ON_EACH_OTHER</Tag>
-		<English></English>
-		<French></French>
+		<English>%s1 has declared war on %s2! We should exploit this situation for our plans!</English>
+		<French>%s1 a d&#233;clar&#233; la guerre &#224; %s2 ! Nous devrions profiter de cette situation pour nos plans !</French>
 		<German>%s1 hat %s2 den Krieg erkl&#228;rt! Wir sollten diesen Umstand f&#252;r unsere Pl&#228;ne ausnutzen!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>%s1 ha dichiarato guerra a %s2! Dovremmo sfruttare questa situazione per i nostri piani!</Italian>
+		<Spanish>%s1 le ha declarado la guerra a %s2. &#161;Debemos aprovechar esta situaci&#243;n para nuestros planes!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_GERVANDALS_DECLARES_WAR_ROME</Tag>
@@ -3570,11 +3570,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_GERVANDALS_DEFENSIVEPACT</Tag>
-		<English></English>
-		<French></French>
+		<English>It was announced at the Thing that %s1 has concluded a defensive alliance with %s2!</English>
+		<French>Lors du Thing, il a &#233;t&#233; annonc&#233; que %s1 a conclu une alliance d&#233;fensive avec %s2 !</French>
 		<German>Beim Thing wurde bekannt, dass %s1 mit %s2 ein Verteidigungsb&#252;ndnis geschlossen hat!</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>&#200; stato annunciato al Thing che %s1 ha concluso un'alleanza difensiva con %s2!</Italian>
+		<Spanish>En el evento se anunci&#243; que %s1 ha concluido una alianza defensiva con %s2.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_GER_DECLARE_WAR_GOTEN</Tag>
@@ -3602,11 +3602,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_HEROENKULTIST</Tag>
-		<English></English>
-		<French></French>
+		<English>You have interesting resources within your trade network. A follower of the hero cult wishes to settle among you.</English>
+		<French>Vous disposez de ressources int&#233;ressantes dans votre r&#233;seau commercial. Un adepte du culte des h&#233;ros souhaite s'installer chez vous.</French>
 		<German>Ihr habt interessante Ressourcen im Handelsnetz. Ein Anh&#228;nger des Heroenkultes will sich bei euch ansiedeln.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>You have interesting resources within your trade network. A follower of the hero cult wishes to settle among you.</Italian>
+		<Spanish>You have interesting resources within your trade network. A follower of the hero cult wishes to settle among you.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_HUNNEN</Tag>
@@ -3634,11 +3634,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ROME_DECLARES_WAR_GERVANDALS</Tag>
-		<English></English>
-		<French></French>
+		<English>%s1 has declared war on %s2.</English>
+		<French>%s1 a d&#233;clar&#233; la guerre &#224; %s2.</French>
 		<German>%s1 hat %s2 Krieg erkl&#228;rt.</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>%s1 ha dichiarato guerra a %s2.</Italian>
+		<Spanish>%s1 ha declarado la guerra a %s2.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ROME_DECLARES_WAR_GOTEN</Tag>
@@ -4004,7 +4004,7 @@
 		<Tag>TXT_KEY_SCENARIO_WDG_DAWNOFMAN</Tag>
 		<English></English>
 		<French></French>
-		<German>Hagelsberg 100 v.Chr.[NEWLINE]Beim Thing zur Sonnenwende eskalierte es. Mehrere Gruppen, die unterschiedliche Ziele verfolgen, man kennt das. Aber diesmal war es ernst! Die Gemeinschaft der Goten stand wohl kurz vor dem Zusammenbruch.[NEWLINE][NEWLINE]Die Rede war davon, dass sich weit im S&#252;dwesten ein Gegner zeigt, der &#252;ber die letzten Jahrzehnte gesehen immer m&#228;chtiger wurde: Die R&#246;mer! Viele Geschichten erz&#228;hlt man sich in Tavernen und auf den Marktpl&#228;tzen. Die R&#246;mer breiten sich aus, haben schon diverse V&#246;lker unterworfen! Sie beanspruchen alles Land f&#252;r sich, das sie nur betreten.[NEWLINE]Auch wenn unser Stamm noch weit entfernt scheint und die tiefen W&#228;lder uns Schutz bieten, gibt es schon seit Jahren die Bef&#252;rchtung, dass die Zeiten sich &#228;ndern k&#246;nnten.[NEWLINE][NEWLINE]Ihr seid der Meinung: Sie WERDEN sich &#228;ndern! Die f&#252;hrenden Germanenst&#228;mme im Westen treffen schon lange Vorbereitungen. Nur unser F&#252;hrer Alfred und die ihm treuergebenen Clanf&#252;rsten wollen die Lage nicht erkennen, sie sind schwach! Und sie sind faul! Sie meinen, dass unser Volk schon genug getan h&#228;tte, dass die G&#246;tter uns sch&#252;tzen w&#252;rden... Es ist j&#228;mmerlich![NEWLINE][NEWLINE]Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!" rief der &#196;lteste noch hinterher. Dank eures Standes konntet ihr immerhin euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.</German>
+		<German>Hagelsberg 100 v.Chr.[NEWLINE]Beim Thing zur Sonnenwende eskalierte es. Mehrere Gruppen, die unterschiedliche Ziele verfolgen, man kennt das. Aber diesmal war es ernst! Die Gemeinschaft der Goten stand wohl kurz vor dem Zusammenbruch.[NEWLINE][NEWLINE]Die Rede war davon, dass sich weit im S&#252;dwesten ein Gegner zeigt, der &#252;ber die letzten Jahrzehnte gesehen immer m&#228;chtiger wurde: Die R&#246;mer! Viele Geschichten erz&#228;hlt man sich in Tavernen und auf den Marktpl&#228;tzen. Die R&#246;mer breiten sich aus, haben schon diverse V&#246;lker unterworfen! Sie beanspruchen alles Land f&#252;r sich, das sie nur betreten.[NEWLINE]Auch wenn unser Stamm noch weit entfernt scheint und die tiefen W&#228;lder uns Schutz bieten, gibt es schon seit Jahren die Bef&#252;rchtung, dass die Zeiten sich &#228;ndern k&#246;nnten.[NEWLINE][NEWLINE]Ihr seid der Meinung: Sie WERDEN sich &#228;ndern! Die f&#252;hrenden Germanenst&#228;mme im Westen treffen schon lange Vorbereitungen. Nur unser F&#252;hrer Alfred und die ihm treuergebenen Clanf&#252;rsten wollen die Lage nicht erkennen, sie sind schwach! Und sie sind faul! Sie meinen, dass unser Volk schon genug getan h&#228;tte, dass die G&#246;tter uns sch&#252;tzen w&#252;rden... Es ist j&#228;mmerlich![NEWLINE][NEWLINE]Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!" rief der &#196;lteste noch hinterher. Dank eures Standes konntet ihr immerhin euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.[NEWLINE][NEWLINE]Mit Hilfe eures Vertrauten in Hagelsberg konnte au&#223;erdem Alfreds Schatzkammer gepl&#252;ndert werden! Er wird ausser sich sein vor Zorn. Zusammen mit eurem eigenen Verm&#246;gen steht Ihr damit auch finanziell gut im Strumpf.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -4018,11 +4018,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCENARIO_WEG_DER_GOTEN</Tag>
-		<English></English>
-		<French></French>
-		<German>Dies ist eine fiktive Kampagne f&#252;r PAE. &#196;hnlichkeiten mit historischen Personen oder Begebenheiten sind rein zuf&#228;llig.[NEWLINE]WICHTIG: Es k&#246;nnen keine Siedler gebaut werden![NEWLINE]…der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!". Immerhin konntet ihr euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.[NEWLINE]by brettschmitt[NEWLINE]Kartengr&#246;&#223;e: Riesig</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<English>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</English>
+		<French>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</French>
+		<German>Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass Ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt Ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!". Immerhin konntet Ihr euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.[NEWLINE]WICHTIG: Es k&#246;nnen keine Siedler gebaut werden![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Kartengr&#246;&#223;e: Riesig[NEWLINE][NEWLINE]Dies ist eine fiktive Kampagne f&#252;r PAE. &#196;hnlichkeiten mit historischen Personen oder Begebenheiten sind rein zuf&#228;llig.</German>
+		<Italian>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</Italian>
+		<Spanish>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SCENARIO_WESTERN_MED</Tag>

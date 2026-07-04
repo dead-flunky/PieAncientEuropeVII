@@ -58,11 +58,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_AQUEDUCT_HELP</Tag>
-		<English>[ICON_BULLET] Aqueducts protect cities from fire up to population 17.</English>
-		<French>[ICON_BULLET] Les aqueducs prot&#232;gent les villes des incendies jusqu'&#224; 17 habitants.</French>
-		<German>[ICON_BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 17.</German>
-		<Italian>[ICON_BULLET] Gli acquedotti proteggono le citt&#224; dagli incendi fino a 17 abitanti.</Italian>
-		<Spanish>[ICON_BULLET] Los acueductos protegen a las ciudades del fuego hasta una poblaci&#243;n de 17 habitantes.</Spanish>
+		<English>[ICON_BULLET] Aqueducts protect cities from fire up to population 17 and can only be built by the following civilizations: Assyrians, Babylonians, Hebrews, Greeks, Etruscans and Romans.[NEWLINE][ICON_BULLET] If an aqueduct survives a conquest, it can also be used by other nations.</English>
+		<French>[ICON_BULLET] Les aqueducs prot&#232;gent les villes des incendies jusqu'&#224; 17 habitants et ne peuvent &#234;tre construits que par les civilisations suivantes: Assyriens, Babyloniens, H&#233;breux, Grecs, Etrusques et Romains.[NEWLINE][ICON_BULLET] Si un aqueduc survit &#224; une conqu&#234;te, il peut &#233;galement &#234;tre utilis&#233; par d'autres nations.</French>
+		<German>[ICON_BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 17 und k&#246;nnen nur von folgenden Zivilisationen erbaut werden: Assyrer, Babylonier, Hebr&#228;er, Griechen, Etrusker und R&#246;mer.[NEWLINE][ICON_BULLET] Sollte ein Aqu&#228;dukt bei der Eroberung erhalten bleiben, so kann es auch von anderen Nationen genutzt werden.</German>
+		<Italian>[ICON_BULLET] Gli acquedotti proteggono le citt&#224; dagli incendi fino a 17 abitanti e possono essere costruiti solo dalle seguenti civilt&#224;: Assiri, Babilonesi, Ebrei, Greci, Etruschi e Romani.[NEWLINE][ICON_BULLET] Se un acquedotto sopravvive a una conquista, pu&#242; essere utilizzato anche da altre nazioni.</Italian>
+		<Spanish>[ICON_BULLET] Los acueductos protegen a las ciudades del fuego hasta una poblaci&#243;n de 17 habitantes y solo pueden ser construidos por las siguientes civilizaciones: Asirios, Babilonios, Hebreos, Griegos, Etruscos y Romanos.[NEWLINE][ICON_BULLET] Si un acueducto sobrevive a una conquista, tambi&#233;n puede ser utilizado por otras naciones.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAUSCHUTT</Tag>
+		<English>Remove construction debris</English>
+		<French>Enlever les d&#233;bris de construction</French>
+		<German>Bauschutt abtragen</German>
+		<Italian>Rimuovere i detriti edili</Italian>
+		<Spanish>Retire los escombros de la construcci&#243;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BAUSCHUTT_HELP</Tag>
+		<English>[ICON_BULLET] Removes city ruins</English>
+		<French>[ICON_BULLET] Supprime les ruines de la ville</French>
+		<German>[ICON_BULLET] Entfernt Stadtruinen</German>
+		<Italian>[ICON_BULLET] Rimuove le rovine della citt&#224;</Italian>
+		<Spanish>[ICON_BULLET] Elimina las ruinas de la ciudad</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BLASEBALG</Tag>
@@ -89,12 +105,36 @@
 		<Spanish>Buleuterio</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BUND_ARABIA</Tag>
+		<English>Ghassanid League</English>
+		<French>Ligue Ghassanide</French>
+		<German>Ghassanidenbund</German>
+		<Italian>Lega Ghassanide</Italian>
+		<Spanish>Liga Ghassanid</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CARNAC</Tag>
 		<English>Menhirs of Carnac</English>
 		<French>Menhirs de Carnac</French>
 		<German>Menhire von Carnac</German>
 		<Italian>Menhir di Carnac</Italian>
 		<Spanish><Text>Menhires de Carnac</Text><Gender>Male</Gender><Plural>1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CITY_RUINS</Tag>
+		<English>City ruins</English>
+		<French>Ruines de la ville</French>
+		<German>Stadtruinen</German>
+		<Italian>Rovine della citt&#224;</Italian>
+		<Spanish>Ruinas de la ciudad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_CITY_RUINS_WONDER</Tag>
+		<English>Destroyed Wonder of the World</English>
+		<French>Merveille du monde d&#233;truite</French>
+		<German>Zerst&#246;rtes Weltwunder</German>
+		<Italian>Meraviglia del mondo distrutta</Italian>
+		<Spanish>Maravilla del mundo destruida</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_COURTHOUSE</Tag>
@@ -145,6 +185,22 @@
 		<Spanish>[ICON_BULLET] Los departamentos de bomberos protegen las ciudades al 100% de los incendios.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FIRE</Tag>
+		<English>City Fire</English>
+		<French>Incendie de la ville</French>
+		<German>Stadtbrand</German>
+		<Italian>Incendio in citt&#224;</Italian>
+		<Spanish>Incendio de la ciudad</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_FIRE_HELP</Tag>
+		<English>[ICON_BULLET] One building can be burned down per turn (see PAE concepts: City).</English>
+		<French>[ICON_BULLET] Un b&#226;timent peut &#234;tre incendi&#233; par tour (voir les concepts PAE : Ville).</French>
+		<German>[ICON_BULLET] Pro Runde kann ein Geb&#228;ude niederbrennen (siehe PAE-Konzepte: Stadt).</German>
+		<Italian>[ICON_BULLET] Un edificio pu&#242; essere incendiato per round (vedi concetti PAE: Citt&#224;).</Italian>
+		<Spanish>[ICON_BULLET] Se puede quemar un edificio por ronda (ver conceptos de PAE: Ciudad).</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FREE_START_ERA</Tag>
 		<English>[ICON_BULLET]Available for free on [COLOR_HIGHLIGHT_TEXT]%s1_EraName[COLOR_REVERT] and later starts</English>
 		<French>[ICON_BULLET]Disponible gratuitement &#224; l'&#233;poque [COLOR_HIGHLIGHT_TEXT]"%s1_EraName"[COLOR_REVERT] et pour les d&#233;buts de partie plus tardifs</French>
@@ -159,6 +215,14 @@
 		<German>Bomos</German>
 		<Italian>Bomos</Italian>
 		<Spanish>Bomos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_HEROIC_EPIC_ARABIA</Tag>
+		<English>Ayyam al'Arab</English>
+		<French>Ayyam al'Arab</French>
+		<German>Ayyam al'Arab</German>
+		<Italian>Ayyam al'Arab</Italian>
+		<Spanish>Ayyam al'Arab</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HOCHSCHULE_ROME</Tag>
@@ -225,6 +289,14 @@
 		<Spanish>Montecasino</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ARABIA</Tag>
+		<English>Mu'allaqat</English>
+		<French>Mu'allaqat</French>
+		<German>Mu'allaqat</German>
+		<Italian>Mu'allaqat</Italian>
+		<Spanish>Mu'allaqat</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_NATIONAL_EPIC_ISRAEL</Tag>
 		<English>Exodus</English>
 		<French>Exode</French>
@@ -287,6 +359,14 @@
 		<German>Mit dem &#220;bergang zu einer polytheistischen Staatsreligion entf&#228;llt in %s1_city die Grundlage f&#252;r die Kopfsteuer. Die Abgabenstelle wurde daher geschlossen.</German>
 		<Italian>Con il passaggio a una religione di stato politeista, la base per la tassa pro capite non esiste pi&#249; a %s1_city. La Sala fiscale &#232; stata quindi chiusa.</Italian>
 		<Spanish>Con la transici&#243;n a una religi&#243;n estatal polite&#237;sta, la base del impuesto de capitaci&#243;n ya no existe en %s1_city. Por lo tanto, el Sala fiscal fue clausurado.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SCHULE_ARIAN</Tag>
+		<English>Arian School</English>
+		<French>&#201;cole arienne</French>
+		<German>Arianische Schule</German>
+		<Italian>Scuola Ariana</Italian>
+		<Spanish>Escuela Aria</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SCHULE_BUDDHISM</Tag>
@@ -385,6 +465,22 @@ Scuola di retorica
 		<Spanish>Escuela de Magi</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SEUCHE</Tag>
+		<English>Pestilence</English>
+		<French>&#201;pid&#233;mie</French>
+		<German>Seuche</German>
+		<Italian>Epidemia</Italian>
+		<Spanish>Epidemia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SEUCHE_HELP</Tag>
+		<English>[ICON_BULLET] The city population decreases by 1 per turn.</English>
+		<French>[ICON_BULLET] La population de la ville diminue de 1 par tour.</French>
+		<German>[ICON_BULLET] Die Stadtbev&#246;lkerung sinkt pro Runde um 1.</German>
+		<Italian>[ICON_BULLET] La popolazione della citt&#224; diminuisce di 1 per turno.</Italian>
+		<Spanish>[ICON_BULLET] La poblaci&#243;n de la ciudad disminuye en 1 por turno.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SKIAS</Tag>
 		<English>Ski&#225;s</English>
 		<French>Ski&#225;s</French>
@@ -393,12 +489,44 @@ Scuola di retorica
 		<Spanish>Ski&#225;s</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SKLAVENMARKT_HELP</Tag>
+		<English>[ICON_BULLET] Slaves can be sold</English>
+		<French>[ICON_BULLET] Les esclaves peuvent &#234;tre vendus</French>
+		<German>[ICON_BULLET] Sklaven k&#246;nnen verkauft werden</German>
+		<Italian>[ICON_BULLET] Gli schiavi possono essere venduti</Italian>
+		<Spanish>[ICON_BULLET] Los esclavos pueden ser vendidos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SKLAVENQUARTIERE</Tag>
+		<English>Slave Quarters</English>
+		<French>Quartiers des esclaves</French>
+		<German>Sklavenquartiere</German>
+		<Italian>Alloggi degli schiavi</Italian>
+		<Spanish>Alojamiento de esclavos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_SKLAVENQUARTIERE_HELP</Tag>
+		<English>[ICON_BULLET] Occasionally creates slaves (see Concepts)</English>
+		<French>[ICON_BULLET] Cr&#233;e occasionnellement des esclaves (voir Concepts)</French>
+		<German>[ICON_BULLET] Erzeugt ab und zu Sklaven (siehe Konzepte)</German>
+		<Italian>[ICON_BULLET] Occasionalmente crea degli schiavi (vedi Concetti)</Italian>
+		<Spanish>[ICON_BULLET] Ocasionalmente crea esclavos (ver Conceptos)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SPICE_MARKET</Tag>
 		<English>Spice Market</English>
 		<French>March&#233; aux &#233;pices</French>
 		<German>Gew&#252;rzmarkt</German>
 		<Italian>Mercato delle spezie</Italian>
 		<Spanish>Mercado de especias</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STABLE_GOTHS</Tag>
+		<English>Cavalry Stable</English>
+		<French>Ecurie de cavalerie</French>
+		<German>Reiterhof</German>
+		<Italian>Scuderia di cavalleria</Italian>
+		<Spanish>Establo de caballer&#237;a</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_STADTZOLL</Tag>
@@ -441,6 +569,14 @@ Scuola di retorica
 		<Spanish>Sal&#243;n de actos</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_VERSAMMLUNG_ARABIA</Tag>
+		<English>Majlis</English>
+		<French>Majlis</French>
+		<German>Majlis</German>
+		<Italian>Majlis</Italian>
+		<Spanish>Majlis</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_WEGZOLL</Tag>
 		<English>Road Toll</English>
 		<French>P&#233;ages routiers</French>
@@ -481,6 +617,14 @@ Scuola di retorica
 		<Spanish>Templo de Atas Bahram</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILD_KOLONAT</Tag>
+		<English>Build a [LINK=IMPROVEMENT_KOLONAT]Fundus Colonarius[\LINK]</English>
+		<French>Construire un [LINK=IMPROVEMENT_KOLONAT]Fundus Colonarius[\LINK]</French>
+		<German>[LINK=IMPROVEMENT_KOLONAT]Fundus Colonarius[\LINK] bauen</German>
+		<Italian>Costruire un [LINK=IMPROVEMENT_KOLONAT]Fundus Colonarius[\LINK]</Italian>
+		<Spanish>Construir un [LINK=IMPROVEMENT_KOLONAT]Fundus Colonarius[\LINK]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_ROMAN_ROAD</Tag>
 		<English>Build a [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</English>
 		<French>Construire une [LINK=CONCEPT_MOVEMENT]Via Romana[\LINK]</French>
@@ -495,6 +639,30 @@ Scuola di retorica
 		<German>[LINK=IMPROVEMENT_TURM]Sp&#228;hturm[\LINK] errichten (J&#228;ger wird verbraucht)</German>
 		<Italian>Costruisci un [LINK=IMPROVEMENT_TURM]posto d'osservazione[\LINK] (cacciatore viene consumato)</Italian>
 		<Spanish>Construir un [LINK=IMPROVEMENT_TURM]vig&#237;a[\LINK] (cazador est&#225; consumido)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_ACTION_CATAPULT_0</Tag>
+		<English>Projectile: Stone</English>
+		<French>Projectile : Pierre</French>
+		<German>Wurfgeschoss: Stein</German>
+		<Italian>Proiettile: Pietra</Italian>
+		<Spanish>Proyectil: Piedra</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_ACTION_CATAPULT_1</Tag>
+		<English>Projectile: Fire</English>
+		<French>Projectile : Feu</French>
+		<German>Wurfgeschoss: Feuer</German>
+		<Italian>Proiettile: Fuoco</Italian>
+		<Spanish>Proyectil: Fuego</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_ACTION_CATAPULT_2</Tag>
+		<English>Projectile: Carcass</English>
+		<French>Projectile : Carcasse</French>
+		<German>Wurfgeschoss: Kadaver</German>
+		<Italian>Proiettile: Carcassa</Italian>
+		<Spanish>Proyectil: Cad&#225;ver</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_GO2CITY</Tag>
@@ -537,6 +705,14 @@ Scuola di retorica
 		<Spanish>[ICON_BULLET]%D1_Num unidades gratis (%d2%% de la pob)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ARABIA_DESC</Tag>
+		<English>Arabs</English>
+		<French><Text>Arabes</Text><Gender>Male</Gender><Plural>1</Plural></French>
+		<German><Text>Araber:Araber:Arabern</Text><Gender>Female:Female:Female</Gender><Plural>0:0:0</Plural></German>
+		<Italian><Text>Arabi</Text><Gender>Male</Gender><Plural>1</Plural></Italian>
+		<Spanish><Text>&#193;rabes</Text><Gender>Male</Gender><Plural>1</Plural></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_CITY_BUILDING_DESTROYED</Tag>
 		<English>Your %s1_building has been destroyed.</English>
 		<French>Votre b&#226;timent %s1_building a &#233;t&#233; d&#233;truit.</French>
@@ -545,20 +721,36 @@ Scuola di retorica
 		<Spanish>El edificio %s1_building ha quedado destruido.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_FREE</Tag>
-		<English></English>
-		<French></French>
-		<German></German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Tag>TXT_KEY_FEATURE_FLAMES</Tag>
+		<English>Wildfire</English>
+		<French>feu de v&#233;g&#233;tation</French>
+		<German>Fl&#228;chenbrand</German>
+		<Italian>Incendio di vegetazione</Italian>
+		<Spanish>Incendio de matorrales</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_FOREST_BURNING</Tag>
+		<English>Forest Fire</English>
+		<French>Incendie de for&#234;t</French>
+		<German>Waldbrand</German>
+		<Italian>Incendio boschivo</Italian>
+		<Spanish>Incendio forestal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_FOREST_NEW</Tag>
+		<English>Young Forest</English>
+		<French>Jeune for&#234;t</French>
+		<German>Junger Wald</German>
+		<Italian>Bosco giovane</Italian>
+		<Spanish>Bosque joven</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT</Tag>
-		<English>No combat rounds (Standard BTS)</English>
-		<French>Pas de tours de combat (Norme BTS)</French>
-		<German>Keine Kampfrunden (Standard BTS)</German>
-		<Italian>Nessun turni di combattimento (Standard BTS)</Italian>
-		<Spanish>No hay turnos de combate (Est&#225;ndar BTS)</Spanish>
+		<English>No combat rounds (Standard BTS: Until death)</English>
+		<French>Pas de tours de combat (Norme BTS: Jusqu'&#224; la mort)</French>
+		<German>Keine Kampfrunden (Standard BTS: Bis zum Tod)</German>
+		<Italian>Nessun turni di combattimento (Standard BTS: Fino alla morte)</Italian>
+		<Spanish>No hay turnos de combate (Est&#225;ndar BTS: Hasta la muerte)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT_HELP</Tag>
@@ -585,12 +777,28 @@ Scuola di retorica
 		<Spanish>Se usar&#225; un nivel de detalle del terreno m&#225;s alto</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_KOLONAT</Tag>
+		<English>Fundus Colonarius</English>
+		<French>Fundus Colonarius</French>
+		<German>Fundus Colonarius</German>
+		<Italian>Fundus Colonarius</Italian>
+		<Spanish>Fundus Colonarius</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_REQUIRES_GOLD</Tag>
 		<English>[COLOR_WARNING_TEXT]Not enough gold in your treasury![COLOR_REVERT]</English>
 		<French>[COLOR_WARNING_TEXT]Pas assez d'or dans le tr&#233;sor ![COLOR_REVERT]</French>
 		<German>[COLOR_WARNING_TEXT]Nicht genug Gold in der Schatzkammer![COLOR_REVERT]</German>
 		<Italian>[COLOR_WARNING_TEXT]Non c'&#232; abbastanza oro nel tuo tesoro![COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_WARNING_TEXT]&#161;No hay suficiente oro en tu tesoro![COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_IMPROVEMENT_SMOKE</Tag>
+		<English>Smoke</English>
+		<French>Fum&#233;e</French>
+		<German>Rauch</German>
+		<Italian>Fumo</Italian>
+		<Spanish>Fumar</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INFO_AVAILABLE</Tag>
@@ -873,6 +1081,38 @@ Scuola di retorica
 		<Spanish>Al&#237; el &#225;rabe</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_LEADER_ARABIA_ARETAS</Tag>
+		<English>Aretas IV of Arabia</English>
+		<French>Ar&#233;tas IV d'Arabie</French>
+		<German>Aretas IV von Arabien</German>
+		<Italian>Aretas IV d'Arabia</Italian>
+		<Spanish>Aretas IV de Arabia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ARABIA_HARITH</Tag>
+		<English>Al-Harith of Arabia</English>
+		<French>Al-Harith d'Arabie</French>
+		<German>Al-Harith von Arabien</German>
+		<Italian>Al-Harith dell'Arabia</Italian>
+		<Spanish>Al-Harith de Arabia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ARABIA_KARIB</Tag>
+		<English>Karib'il Watar of Arabia</English>
+		<French>Karib'il Watar d'Arabie</French>
+		<German>Karib'il Watar von Arabien</German>
+		<Italian>Karib'il Watar d'Arabia</Italian>
+		<Spanish>Karib'il Watar de Arabia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_ARABIA_MUNDHIR</Tag>
+		<English>Al-Mundhir III of Arabia</English>
+		<French>Al-Mundhir III d'Arabie</French>
+		<German>Al-Mundhir III von Arabien</German>
+		<Italian>Al-Mundhir III d'Arabia</Italian>
+		<Spanish>Al-Mundhir III de Arabia</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_LEADER_PRINCE_OF</Tag>
 		<English>Prince of %s1</English>
 		<French>Prince de %s1</French>
@@ -959,6 +1199,14 @@ Scuola di retorica
 		<German>Durch die fehlende Staatsreligion in %s1 f&#252;hlt sich die ans&#228;ssige Bev&#246;lkerung unter Eurer F&#252;hrung vernachl&#228;ssigt. Einige B&#252;rger denken schon daran die Stadt zu verlassen.</German>
 		<Italian>A causa dell'assenza della tua religione di stato in %s1, la popolazione locale si sente trascurata dal tuo governo. Alcuni cittadini stanno gi&#224; pensando di lasciare la citt&#224;.</Italian>
 		<Spanish>Debido a la ausencia de su religi&#243;n estatal en %s1, la poblaci&#243;n local se siente desatendida por su gobierno. Algunos ciudadanos ya est&#225;n considerando abandonar la ciudad.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_FIRE_BUILDING</Tag>
+		<English>Your %s2_building in %s1_city was burned down.</English>
+		<French>Votre b&#226;timent %s2_building &#224; %s1_city a &#233;t&#233; incendi&#233;e.</French>
+		<German>Das Geb&#228;ude %s2_building in %s1_city wurde niedergebrannt.</German>
+		<Italian>L'edificio %s2_building a %s1_city &#232; andato distrutto in un incendio.</Italian>
+		<Spanish>El edificio %s2_building en %s1_city qued&#243; reducido a cenizas.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CITY_HUNGERSNOT</Tag>
@@ -1108,7 +1356,7 @@ Scuola di retorica
 		<Tag>TXT_KEY_MESSAGE_PIRACY_A13</Tag>
 		<English>There on the coast lies prey, as sure as sea monsters in the depths of the ocean. Shall we retrieve it?</English>
 		<French>L&#224;, sur la c&#244;te, g&#238;t une proie, aussi certaine que les monstres marins dans les profondeurs de l'oc&#233;an. Allons-nous la r&#233;cup&#233;rer ?</French>
-		<German>Dort an der K&#252;ste liegt Beute, so sicher wie die Seeungeheuer in der Tiefe des Meeres. Wollen wir sie holen?</German>
+		<German>Dort an der K&#252;ste liegt Beute, so sicher wie Seeungeheuer in der Tiefe des Meeres. Wollen wir sie holen?</German>
 		<Italian>L&#236; sulla costa giace una preda, sicura come i mostri marini nelle profondit&#224; dell'oceano. Vogliamo recuperarla?</Italian>
 		<Spanish>All&#237;, en la costa, yace una presa, tan segura como monstruos marinos en las profundidades del oc&#233;ano. &#191;La recuperamos?</Spanish>
 	</TEXT>
@@ -1465,6 +1713,46 @@ Scuola di retorica
 		<Spanish>&#161;Tu profeta ha hecho f&#233;rtil esta tierra! &#161;Que nuestro reino viva largo y pr&#243;spero!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_TRAIT3_POPUP1</Tag>
+		<English>After decades of rule, a new circle of influential figures has formed at your court.[NEWLINE][NEWLINE]Strategists, priests, scholars, and treasurers are all vying to help shape the future direction of the empire.[NEWLINE][NEWLINE]You recognize that the time has come to organize this circle and establish a new focus:</English>
+		<French>Apr&#232;s des d&#233;cennies de r&#232;gne, un nouveau cercle de personnalit&#233;s influentes s'est form&#233; &#224; votre cour.[NEWLINE][NEWLINE]Strat&#232;ges, pr&#234;tres, &#233;rudits et tr&#233;soriers rivalisent pour contribuer &#224; fa&#231;onner l'avenir de l'empire.[NEWLINE][NEWLINE]Vous comprenez que le moment est venu d'organiser ce cercle et de d&#233;finir une nouvelle orientation :</French>
+		<German>Nach Jahrzehnten der Herrschaft hat sich an Eurem Hof ein neuer Kreis aus einflussreichen Pers&#246;nlichkeiten gebildet.[NEWLINE][NEWLINE]Strategen, Priester, Gelehrte und Schatzmeister streben danach, die zuk&#252;nftige Ausrichtung des Reiches mitzubestimmen.[NEWLINE][NEWLINE]Ihr erkennt, dass die Zeit gekommen ist, diesen Kreis zu ordnen und einen neuen Schwerpunkt zu setzen:</German>
+		<Italian>Dopo decenni di dominio, alla tua corte si &#232; formato un nuovo circolo di figure influenti.[NEWLINE][NEWLINE]Strateghi, sacerdoti, studiosi e tesorieri si contendono il ruolo di protagonisti nel plasmare il futuro dell'impero.[NEWLINE][NEWLINE]Riconosci che &#232; giunto il momento di organizzare questo circolo e definire una nuova strategia:</Italian>
+		<Spanish>Tras d&#233;cadas de gobierno, un nuevo c&#237;rculo de figuras influyentes se ha formado en tu corte.[NEWLINE][NEWLINE]Estrategas, sacerdotes, eruditos y tesoreros compiten por influir en el futuro del imperio.[NEWLINE][NEWLINE]Reconoces que ha llegado el momento de organizar este c&#237;rculo y establecer un nuevo enfoque:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_TRAIT3_POPUP1_OPTION1</Tag>
+		<English>Military?</English>
+		<French>Militaire?</French>
+		<German>Milit&#228;r?</German>
+		<Italian>Militare?</Italian>
+		<Spanish>&#191;Militar?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_TRAIT3_POPUP1_OPTION2</Tag>
+		<English>Economy?</English>
+		<French>&#201;conomie?</French>
+		<German>Wirtschaft?</German>
+		<Italian>Economia?</Italian>
+		<Spanish>&#191;Econom&#237;a?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_TRAIT3_POPUP1_OPTION3</Tag>
+		<English>Culture?</English>
+		<French>Culture?</French>
+		<German>Kultur?</German>
+		<Italian>Cultura?</Italian>
+		<Spanish>&#191;Cultura?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_TRAIT3_POPUP2</Tag>
+		<English>You have chosen a focus. Now it is up to you to decide which of these approaches will determine the future path of your empire.</English>
+		<French>Vous avez choisi une orientation. Il vous appartient d&#233;sormais de d&#233;cider laquelle de ces approches d&#233;terminera l'avenir de votre empire.</French>
+		<German>Ihr habt Euch f&#252;r einen Schwerpunkt entschieden. Nun liegt es an Euch zu entscheiden, welcher dieser Ans&#228;tze den weiteren Weg Eures Reiches bestimmen wird.</German>
+		<Italian>Hai scelto un ambito di intervento. Ora sta a te decidere quale di questi approcci determiner&#224; il futuro del tuo impero.</Italian>
+		<Spanish>Has elegido un enfoque. Ahora te toca a ti decidir cu&#225;l de estos enfoques determinar&#225; el futuro de tu imperio.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_UNIT_ESCAPE</Tag>
 		<English>Our %s1 barely escaped from combat with a %s2!</English>
 		<French>Notre unit&#233; (%s1) a pu s'&#233;chapper de justesse (contre %s2)!</French>
@@ -1585,20 +1873,20 @@ Scuola di retorica
 		<Spanish>[COLOR_NEGATIVE_TEXT](herido)[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PAE_QUOTE_233</Tag>
-		<English>Everything we are arises from our thoughts. With our thoughts, we shape the world. Gautama Buddha</English>
-		<French>Tout ce que nous sommes provient de nos pens&#233;es. Par nos pens&#233;es, nous fa&#231;onnons le monde. Gautama Bouddha</French>
-		<German>Alles, was wir sind, entsteht aus unseren Gedanken. Mit unseren Gedanken formen wir die Welt. Gautama Buddha</German>
-		<Italian>Tutto ci&#242; che siamo nasce dai nostri pensieri. Con i nostri pensieri, plasmiamo il mondo. Gautama Buddha</Italian>
-		<Spanish>Todo lo que somos surge de nuestros pensamientos. Con ellos, moldeamos el mundo. Gautama Buda</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_PEDIA_CAN_CONSTRUCT</Tag>
 		<English>Can construct following buildings</English>
 		<French>Peut construire les b&#226;timents suivants</French>
 		<German>Kann folgende Geb&#228;ude errichten</German>
 		<Italian>Pu&#242; costruire i seguenti edifici</Italian>
 		<Spanish>Puede construir los siguientes edificios</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PEDIA_EVERY_CIV</Tag>
+		<English>Every CIV</English>
+		<French>Chaque CIV</French>
+		<German>Jede CIV</German>
+		<Italian>Ogni CIV</Italian>
+		<Spanish>Cada CIV</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PITBOSS_TEAM</Tag>
@@ -1706,7 +1994,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_STATTHALTER_SELL_3</Tag>
-		<English>Sell ??cheaply to the citizens (+%d1 [ICON_GOLD])</English>
+		<English>Sell cheaply to the citizens (+%d1 [ICON_GOLD])</English>
 		<French>Vendre &#224; bas prix aux citoyens (+%d1 [ICON_GOLD])</French>
 		<German>Billig an die B&#252;rger verkaufen (+%d1 [ICON_GOLD])</German>
 		<Italian>Vendi a basso costo ai cittadini (+%d1 [ICON_GOLD])</Italian>
@@ -1820,7 +2108,7 @@ Scuola di retorica
 		<Tag>TXT_KEY_PROMOTION_ANGST_SEA_HELP</Tag>
 		<English>The crew succumbs to thalassophobia if they sight a massive sea creature in close proximity or are attacked by one. Thalassophobia can only be reversed by completely replacing the crew in a port. From the rank of Fleet Commander upwards, one is immune.</English>
 		<French>L'&#233;quipage est atteint de thalassophobie s'il aper&#231;oit une cr&#233;ature marine gigantesque &#224; proximit&#233; ou s'il est attaqu&#233; par elle. La thalassophobie ne peut &#234;tre gu&#233;rie qu'en rempla&#231;ant int&#233;gralement l'&#233;quipage dans un port. &#192; partir du grade de commandant de flotte, on est immunis&#233;.</French>
-		<German>Die Besatzung verf&#228;llt in Thalassophobie, wenn sie in unmittelbarer N&#228;he ein gewaltiges Meereswesen sichtet oder davon angegriffen wird. Thalassophobie kann nur durch das vollst&#228;ndige Ersetzen der Crew in einem Hafen r&#252;ckg&#228;ngig gemacht werden. Ab dem Rang Flottenkommandant ist man dagegen immun.</German>
+		<German>Die Besatzung verf&#228;llt in Thalassophobie, wenn sie in unmittelbarer N&#228;he ein gewaltiges Meereswesen sichtet oder davon angegriffen wird. Thalassophobie kann nur durch das vollst&#228;ndige Ersetzen der Crew in einem Hafen r&#252;ckg&#228;ngig gemacht werden. Ab dem Rang eines Flottenkommandanten ist man dagegen immun.</German>
 		<Italian>L'equipaggio soccombe alla talassofobia se avvista un'enorme creatura marina nelle vicinanze o ne viene attaccato. La talassofobia pu&#242; essere invertita solo sostituendo completamente l'equipaggio in un porto. Dal grado di Comandante della Flotta in su, si &#232; immuni.</Italian>
 		<Spanish>La tripulaci&#243;n sucumbe a la talasofobia si avista una criatura marina enorme cerca o es atacada por una. La talasofobia solo puede revertirse reemplazando completamente a la tripulaci&#243;n en un puerto. A partir del rango de Comandante de Flota, uno es inmune.</Spanish>
 	</TEXT>
@@ -1922,11 +2210,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_3_HELP</Tag>
-		<English>[ICON_BULLET] Immune to fear of sea monsters (thalassophobia)</English>
-		<French>[ICON_BULLET] Immunis&#233; contre la peur des monstres marins (thalassophobie)</French>
-		<German>[ICON_BULLET] Immun gegen Angst vor Seeungeheuer (Thalassophobie)</German>
-		<Italian>[ICON_BULLET] Immune alla paura dei mostri marini (talassofobia)</Italian>
-		<Spanish>[ICON_BULLET] Inmune al miedo a los monstruos marinos (talasofobia)</Spanish>
+		<English>[ICON_BULLET] Immune to fear of the deep sea (thalassophobia)</English>
+		<French>[ICON_BULLET] Insensible &#224; la peur des profondeurs marines (thalassophobie)</French>
+		<German>[ICON_BULLET] Immun gegen Angst vor den Tiefen des Meeres (Thalassophobie)</German>
+		<Italian>[ICON_BULLET] Immune alla paura degli abissi marini (talassofobia)</Italian>
+		<Spanish>[ICON_BULLET] Inmune al miedo a las profundidades marinas (talasofobia)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_4_HELP</Tag>
@@ -1935,6 +2223,30 @@ Scuola di retorica
 		<German>[ICON_BULLET] Immun gegen Schaden auf Hoher See</German>
 		<Italian>[ICONA PROIETTILE] Immune ai danni in alto mare</Italian>
 		<Spanish>[ICON BULLET] Inmune a da&#241;os en alta mar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_UNSTOPPABLE1</Tag>
+		<English>Unstoppable I</English>
+		<French>Inarr&#234;table I</French>
+		<German>Unaufhaltsam I</German>
+		<Italian>Inarrestabile I</Italian>
+		<Spanish>Imparable I</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_UNSTOPPABLE2</Tag>
+		<English>Unstoppable II</English>
+		<French>Inarr&#234;table II</French>
+		<German>Unaufhaltsam II</German>
+		<Italian>Inarrestabile II</Italian>
+		<Spanish>Imparable II</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_UNSTOPPABLE_HELP</Tag>
+		<English>[ICON_BULLET]+1 combat round</English>
+		<French>[ICON_BULLET]+1 round de combat</French>
+		<German>[ICON_BULLET]+1 Kampfrunde</German>
+		<Italian>[ICON_BULLET]+1 round di combattimento</Italian>
+		<Spanish>[ICON_BULLET]+1 ronda de combate</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ROAD_MOVEMENT_COST</Tag>
@@ -1962,11 +2274,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_ARTES</Tag>
-		<English>Artes liberales</English>
-		<French>Artes liberales</French>
-		<German>Artes liberales</German>
-		<Italian>Artes liberales</Italian>
-		<Spanish>Artes liberales</Spanish>
+		<English>Artes Liberales</English>
+		<French>Artes Liberales</French>
+		<German>Artes Liberales</German>
+		<Italian>Artes Liberales</Italian>
+		<Spanish>Artes Liberales</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_BLASEBALG</Tag>
@@ -2105,6 +2417,14 @@ Scuola di retorica
 		<Spanish>Escuelas del monasterio</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_KOLONAT</Tag>
+		<English>Colonate</English>
+		<French>Colonat</French>
+		<German>Kolonat</German>
+		<Italian>Colonato</Italian>
+		<Spanish>Colonato</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_KONZIL6</Tag>
 		<English>6th Ecumenical Council</English>
 		<French>6&#232;me Concile oecum&#233;nique</French>
@@ -2217,6 +2537,22 @@ Scuola di retorica
 		<Spanish>Construcci&#243;n del templo</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_TORSION2</Tag>
+		<English>Single-Armed Torsion</English>
+		<French>Torsion &#224; un seul bras</French>
+		<German>Einarmige Torsionsgesch&#252;tze</German>
+		<Italian>Torsione a braccio singolo</Italian>
+		<Spanish>Torsi&#243;n de un solo brazo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TECH_TORSION3</Tag>
+		<English>Incendiary Projectiles</English>
+		<French>Projectiles incendiaires</French>
+		<German>Brandgeschosse</German>
+		<Italian>Proiettili incendiari</Italian>
+		<Spanish>Proyectiles incendiarios</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TECH_WEGZOLL</Tag>
 		<English>Customs</English>
 		<French>Douane</French>
@@ -2257,12 +2593,36 @@ Scuola di retorica
 		<Spanish>Ciudades comerciales</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ARABIAN_SAIF</Tag>
+		<English>Saif Swordsman</English>
+		<French>Guerrier Saif</French>
+		<German>Saif-Schwertk&#228;mpfer</German>
+		<Italian>Guerriero con Saif</Italian>
+		<Spanish>Guerrero con Saif</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BUCELLARII</Tag>
+		<English>Bucellarii</English>
+		<French>Bucellarii</French>
+		<German>Bucellarii</German>
+		<Italian>Bucellarii</Italian>
+		<Spanish>Bucellarii</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_BYZANTINE_CATAPHRACT</Tag>
 		<English>Kataphraktoi</English>
 		<French>Kataphraktoi</French>
 		<German>Kataphraktoi</German>
 		<Italian>Kataphraktoi</Italian>
 		<Spanish>Kataphraktoi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COW_CATAPULT</Tag>
+		<English>Catapult (Carcass)</English>
+		<French>Catapulte (carcasse)</French>
+		<German>Katapult (Kadaver)</German>
+		<Italian>Catapulta (carcassa)</Italian>
+		<Spanish>Catapulta (Cad&#225;ver)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_DROMON</Tag>
@@ -2273,20 +2633,36 @@ Scuola di retorica
 		<Spanish>Drom&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM</Tag>
-		<English>Faris (sword)</English>
-		<French>Faris (&#233;p&#233;e)</French>
-		<German>Faris (Schwert)</German>
-		<Italian>Faris (spada)</Italian>
-		<Spanish>Faris (espada)</Spanish>
+		<Tag>TXT_KEY_UNIT_FOEDERATI_GOTEN</Tag>
+		<English>Gardingus</English>
+		<French>Gardingus</French>
+		<German>Gardingus</German>
+		<Italian>Gardingus</Italian>
+		<Spanish>Gardingus</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM_ARCHER</Tag>
-		<English>Faris (bow)</English>
-		<French>Faris (arc)</French>
-		<German>Faris (Bogen)</German>
-		<Italian>Faris (arco)</Italian>
-		<Spanish>Faris (arco)</Spanish>
+		<Tag>TXT_KEY_UNIT_HEAVY_HORSEMAN_GOTEN</Tag>
+		<English>Mounted Gardingus</English>
+		<French>Gardingus mont&#233;</French>
+		<German>Berittener Gardingus</German>
+		<Italian>Gardingus a cavallo</Italian>
+		<Spanish>Gardingus montado</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM</Tag>
+		<English>Faris (Lance)</English>
+		<French>Faris (Lance)</French>
+		<German>Faris (Lanze)</German>
+		<Italian>Faris (Lancia)</Italian>
+		<Spanish>Faris (Lanza)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM2</Tag>
+		<English>Faris (Sword)</English>
+		<French>Faris (Ep&#233;e)</French>
+		<German>Faris (Schwert)</German>
+		<Italian>Faris (Spada)</Italian>
+		<Spanish>Faris (Espada)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM_KALIF</Tag>
@@ -2297,20 +2673,20 @@ Scuola di retorica
 		<Spanish>Califa</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HORSEMAN_ISLAM_LANCE</Tag>
-		<English>Faris (lance)</English>
-		<French>Faris (lance)</French>
-		<German>Faris (Lanze)</German>
-		<Italian>Faris (lancia)</Italian>
-		<Spanish>Faris (lanza)</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_HORSEMAN_PERSIA</Tag>
 		<English>Persian Lancer</English>
 		<French>Lanceur persan</French>
 		<German>Persischer Lanzenreiter</German>
 		<Italian>Lanciere persiano</Italian>
 		<Spanish>Jinete Perso:Jinetes Persos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSE_ARCHER_ISLAM</Tag>
+		<English>Faris (Archer)</English>
+		<French>Faris (Archer)</French>
+		<German>Faris (Bogensch&#252;tze)</German>
+		<Italian>Faris (Arciere)</Italian>
+		<Spanish>Faris (Arquero)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_IMPASSABLE_FEATURE</Tag>
@@ -2351,6 +2727,14 @@ Scuola di retorica
 		<German>Riesenkrake</German>
 		<Italian>Polpo gigante</Italian>
 		<Spanish>Pulpo gigante</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LIGHT_BALLISTA</Tag>
+		<English>Katapeltes</English>
+		<French>Katapeltes</French>
+		<German>Katapeltes</German>
+		<Italian>Katapeltes</Italian>
+		<Spanish>Katapeltes</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_SPEARMAN_MEDIEVAL</Tag>
@@ -2463,6 +2847,14 @@ Scuola di retorica
 		<German>Pedagoge</German>
 		<Italian>Precettore</Italian>
 		<Spanish>Preceptor</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_STATTHALTER_ARABIA</Tag>
+		<English>Malik</English>
+		<French>Malik</French>
+		<German>Malik</German>
+		<Italian>Malik</Italian>
+		<Spanish>Malik</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SWORDSMAN_LATENE</Tag>

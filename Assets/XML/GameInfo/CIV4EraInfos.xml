@@ -60,6 +60,8 @@
 				<EraInfoSoundtrack>AS2D_GOODYMUSIC</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_GOODYMUSIC2</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_DIPLO_CATHERINE_EARLY</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_19</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_21</EraInfoSoundtrack>
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
 				<CitySoundscape>
@@ -131,6 +133,10 @@
 				<EraInfoSoundtrack>AS2D_SONG_DIP_NA_LATE_WAR</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_OPENING_MENU_WARLORDS</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_1</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_13</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_19</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_20</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_21</EraInfoSoundtrack>
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
 				<CitySoundscape>
@@ -193,11 +199,11 @@
 				<EraInfoSoundtrack>AS2D_SONG_DIP_NA_LATE_PEACE</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_SONG_DIP_NA_LATE_WAR</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_OPENING_MENU_WARLORDS</EraInfoSoundtrack>
-				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_1</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X7</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X11</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X12</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X14</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X15</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X16</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X27</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X28</EraInfoSoundtrack>
@@ -205,6 +211,9 @@
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X30</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X31</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X32</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_1</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_13</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_19</EraInfoSoundtrack>
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
 				<CitySoundscape>
@@ -282,8 +291,6 @@
 				<EraInfoSoundtrack>AS2D_DIPLO_CATHERINE_LATE</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_DIPLO_CYRUS_LATE_INTRO</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_DIPLO_GENGHISKHAN_LATE_LP</EraInfoSoundtrack>
-				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_1</EraInfoSoundtrack>
-				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_2</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X5</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X6</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X7</EraInfoSoundtrack>
@@ -301,6 +308,16 @@
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X22</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X23</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X26</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_1</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_2</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_8</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_10</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_11</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_12</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_13</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_14</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_16</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_18</EraInfoSoundtrack>
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
 				<CitySoundscape>
@@ -403,6 +420,15 @@
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_5</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_6</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_7</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_8</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_9</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_10</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_11</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_12</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_14</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_15</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_17</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_18</EraInfoSoundtrack>
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
 				<CitySoundscape>
@@ -488,7 +514,6 @@
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X11</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X12</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X13</EraInfoSoundtrack>
-				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X15</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X17</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X18</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_ANCIENT_SOUNDTRACK_X19</EraInfoSoundtrack>
@@ -505,6 +530,12 @@
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_5</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_6</EraInfoSoundtrack>
 				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_7</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_10</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_11</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_12</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_15</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_17</EraInfoSoundtrack>
+				<EraInfoSoundtrack>AS2D_MUSIC_PAE_MOD_18</EraInfoSoundtrack>
 			</EraInfoSoundtracks>
 			<CitySoundscapes>
 				<CitySoundscape>

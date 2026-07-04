@@ -411,6 +411,10 @@ class CvPediaBuilding:
 
 		# PAE
 		def getBuildingType(self, iBuilding):
+				# PAE: BTS Fix: corporations listed as wonders
+				if (gc.getBuildingInfo(iBuilding).getFoundsCorporation() >= 0):
+						return 0
+
 				if (isWorldWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())):
 						return 1
 

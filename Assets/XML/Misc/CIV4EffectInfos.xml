@@ -415,6 +415,24 @@
 			<fArcValue>4.0</fArcValue>
 		</EffectInfo>
 		<EffectInfo>
+			<Type>EFFECT_CATAPULT_COW1</Type>
+			<Description>Catapult Rock</Description>
+			<fScale>1.0</fScale>
+			<fUpdateRate>1.0</fUpdateRate>
+			<Path>Art/Units/Siege/catapult_cow/CatapultRock.kfm</Path>
+			<bIsProjectile>1</bIsProjectile>
+			<fSpeed>400.0</fSpeed>
+			<fArcValue>4.0</fArcValue>
+		</EffectInfo>
+		<EffectInfo>
+			<Type>EFFECT_CATAPULT_COW1_EXPLODE</Type>
+			<Description>Boulder Explosion for Catapult Attack</Description>
+			<fScale>0.6</fScale>
+			<fUpdateRate>2.5</fUpdateRate>
+			<Path>Art/Effects/explosion_dirt_02/fx_explosion_dirt_02.nif</Path>
+			<bIsProjectile>0</bIsProjectile>
+		</EffectInfo>
+		<EffectInfo>
 			<Type>EFFECT_GRENADE_THROW</Type>
 			<Description>Grenadier Grenade</Description>
 			<fScale>1.0</fScale>

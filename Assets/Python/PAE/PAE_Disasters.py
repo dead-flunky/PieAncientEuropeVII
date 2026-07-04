@@ -109,9 +109,10 @@ def doGenerateDisaster(iGameTurn):
 		if iGameTurn % (iTurnDisastersModulo / iTeiler + 20) == 0:
 				undoVulkan()
 
-		# PAE 7.12b: Globale Katastrophen (1:1000)
+		# PAE 7.12b: Globale Katastrophen (1:2000)
 		# you will need to call 112 if you're able to
-		if CvUtil.myRandom(2000, "doGlobalDisaster") == 112:
+		if gc.getGame().getElapsedGameTurns() > 300: #300
+			if CvUtil.myRandom(2000, "doGlobalDisaster") == 112:
 				doGlobalDisaster()
 
 def doSandsturm():
@@ -957,7 +958,7 @@ def doVulkan(iX, iY, iSkala):
 										sText = CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_1", ("",))
 										popupInfo.setText(sText)
 										popupInfo.addPopup(gc.getGame().getActivePlayer())
-										CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, sText, "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+										CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, sText, "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 
 						# Staerke 2
 						else:
@@ -969,16 +970,16 @@ def doVulkan(iX, iY, iSkala):
 										sText = CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_2", ("",))
 										popupInfo.setText(sText)
 										popupInfo.addPopup(gc.getGame().getActivePlayer())
-										CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, sText, "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+										CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, sText, "AS2D_EARTHQUAKE", 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 								else:
 										# Message: Ein katastrophaler Vulkanausbruch legt ein fernes Land in Schutt und Asche.
-										CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_2_FAR_AWAY", ("",)),
+										CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_2_FAR_AWAY", ("",)),
 																						 None, 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(12), pPlot.getX(), pPlot.getY(), True, True)
 
 				# Staerke 1 (iSkala 8): 1 Plot Radius
 				#   Stadt: Pop / 2, Gebaeude 50%, Units 50%
 				#   Land:  Units 25%
-				#   Feature: Sauerer Regen: Umkreis von 5 Plots
+				#   Feature: Sauerer Regen: Umkreis von 3 Plots
 
 				# Staerke 2 (iSkala 9): 2 Plots Radius
 				#   Radius 1:
@@ -987,7 +988,7 @@ def doVulkan(iX, iY, iSkala):
 				#   Radius 2:
 				#     Stadt: Pop / 2, Gebaeude 50%, Units 50%
 				#     Land:  Units 25%
-				#   Feature: Sauerer Regen: Umkreis von 1 Plot, Ellipse nach Osten oder Westen: 15 Plots
+				#   Feature: Sauerer Regen: Umkreis von 1 Plot, Ellipse nach Osten oder Westen: 12 Plots
 
 				iRandX = iX
 				iRandY = iY
@@ -1029,7 +1030,7 @@ def doVulkan(iX, iY, iSkala):
 
 														if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
 																# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
-																CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
+																CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
 																												 None, 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
 
 														PAE_City.doCheckCityState(pCity)
@@ -1060,7 +1061,7 @@ def doVulkan(iX, iY, iSkala):
 																		gc.getGame().setPlotExtraYield(iRandX - 2 + i, iRandY - 2 + j, 0, 1)  # x,y,YieldType,iChange
 																		iOwner = loopPlot.getOwner()
 																		if iOwner != -1 and gc.getPlayer(iOwner).isHuman():
-																				CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_FOOD", ("",)), None,
+																				CyInterface().addMessage(iOwner, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_FOOD", ("",)), None,
 																																 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(8), loopPlot.getX(), loopPlot.getY(), True, True)
 																				# fuer spaeteres popup
 																				if iOwner not in PlayerPopUpFood:
@@ -1070,7 +1071,7 @@ def doVulkan(iX, iY, iSkala):
 												if loopPlot.getBonusType(loopPlot.getOwner()) > -1 or loopPlot.getBonusType(-1) > -1:
 														doEraseBonusFromDisaster(loopPlot)
 
-						# Sauerer Regen
+						# Saurer Regen
 						for i in range(7):
 								for j in range(7):
 										loopPlot = gc.getMap().plot(iRandX - 3 + i, iRandY - 3 + j)
@@ -1120,7 +1121,7 @@ def doVulkan(iX, iY, iSkala):
 
 														if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
 																# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
-																CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
+																CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
 																												 None, 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
 
 														PAE_City.doCheckCityState(pCity)
@@ -1156,7 +1157,7 @@ def doVulkan(iX, iY, iSkala):
 																		iOwner = loopPlot.getOwner()
 																		if iOwner != -1:
 																				if gc.getPlayer(iOwner).isHuman():
-																						CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_FOOD", ("",)), None,
+																						CyInterface().addMessage(iOwner, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_VOLCANO_FOOD", ("",)), None,
 																																		 2, gc.getFeatureInfo(feat_vulkan).getButton(), ColorTypes(8), loopPlot.getX(), loopPlot.getY(), True, True)
 																						# fuer spaeteres popup
 																						if gc.getPlayer(iOwner).getID() not in PlayerPopUpFood:
@@ -1166,15 +1167,15 @@ def doVulkan(iX, iY, iSkala):
 												if loopPlot.getBonusType(loopPlot.getOwner()) > -1 or loopPlot.getBonusType(-1) > -1:
 														doEraseBonusFromDisaster(loopPlot)
 
-						# Sauerer Regen
-						# Ellipse nach Osten oder Westen: 15 Plots
+						# Saurer Regen
+						# Ellipse nach Osten oder Westen: 12 Plots
 						iRand_W_O = CvUtil.myRandom(2, "doVulkan6")
-						for i in range(20):
-								for j in range(-5, 6):
+						for i in range(13):
+								for j in range(-4, 5):
 										if iRand_W_O == 1:
-												loopPlot = gc.getMap().plot(iRandX + i, iRandY + j)
+												loopPlot = gc.getMap().plot(iRandX + i + 1, iRandY + j)
 										else:
-												loopPlot = gc.getMap().plot(iRandX - i, iRandY + j)
+												loopPlot = gc.getMap().plot(iRandX - i - 1, iRandY + j)
 
 										if loopPlot is not None and not loopPlot.isNone():
 												iFeature = loopPlot.getFeatureType()
@@ -1182,17 +1183,15 @@ def doVulkan(iX, iY, iSkala):
 														continue
 												if iFeature != feat_flood_plains and iFeature != feat_oasis and iFeature != feat_vulkan and not loopPlot.isPeak():
 														bDoIt = False
-														if i > 4 and i < 15:
+														if i > 3 and i < 9:
 																bDoIt = True
-														elif (i == 0 or i == 19) and abs(j) < 2:
+														elif (i == 0 or i == 12) and abs(j) < 2:
 																bDoIt = True
-														elif (i == 1 or i == 18) and abs(j) < 3:
+														elif (i == 1 or i == 11) and abs(j) < 3:
 																bDoIt = True
-														elif (i == 2 or i == 17) and abs(j) < 4:
+														elif (i == 2 or i == 10) and abs(j) < 4:
 																bDoIt = True
-														elif (i == 3 or i == 16) and abs(j) < 5:
-																bDoIt = True
-														elif (i == 4 or i == 15) and abs(j) < 10:
+														elif (i == 3 or i == 9) and abs(j) < 4:
 																bDoIt = True
 														if bDoIt:
 																# loopPlot.setRouteType(-1)
@@ -1248,7 +1247,7 @@ def doVulkan(iX, iY, iSkala):
 												pLoopPlot.setBonusType(iBonus)
 												iOwner = pLoopPlot.getOwner()
 												if iOwner > -1 and gc.getPlayer(iOwner).isHuman():
-														CyInterface().addMessage(bonusPlotArray[iLoopPlot].getOwner(), True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iBonus).getDescription(),)), None, 2, gc.getBonusInfo(
+														CyInterface().addMessage(bonusPlotArray[iLoopPlot].getOwner(), True, 20, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iBonus).getDescription(),)), None, 2, gc.getBonusInfo(
 																iBonus).getButton(), ColorTypes(14), bonusPlotArray[iLoopPlot].getX(), bonusPlotArray[iLoopPlot].getY(), True, True)
 
 
@@ -1402,7 +1401,7 @@ def doTsunami(iX, iY):
 														sText = CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_TSUNAMI", ("",))
 														popupInfo.setText(sText)
 														popupInfo.addPopup(gc.getGame().getActivePlayer())
-														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, sText, "AS2D_TSUNAMI", 2, gc.getFeatureInfo(feat_tsunami).getButton(), ColorTypes(7), pEffectPlot.getX(), pEffectPlot.getY(), True, True)
+														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, sText, "AS2D_TSUNAMI", 2, gc.getFeatureInfo(feat_tsunami).getButton(), ColorTypes(7), pEffectPlot.getX(), pEffectPlot.getY(), True, True)
 
 										# Stadt
 										if loopPlot.isCity():
@@ -1440,7 +1439,7 @@ def doTsunami(iX, iY):
 														pCity.setPopulation(iPopNeu)
 														if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
 																# Message: Die Bevoelkerung der Stadt %s sank von %alt auf %neu!
-																CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
+																CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_CITY_SHRINKS_TO", (pCity.getName(), iPopAlt, iPopNeu)),
 																												 None, 2, gc.getFeatureInfo(feat_tsunami).getButton(), ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
 
 												PAE_City.doCheckCityState(pCity)
@@ -1540,10 +1539,10 @@ def doMeteorites():
 								if iPlayer != -1:
 										if pPlot.isVisibleToWatchingHuman():
 												if iPlayer == gc.getGame().getActivePlayer():
-														CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES_CITY", (pCity.getName(), iPop_neu, iPop_alt)),
+														CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES_CITY", (pCity.getName(), iPop_neu, iPop_alt)),
 																None, 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
 												else:
-														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES_CITY_OTHER", (gc.getPlayer(
+														CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES_CITY_OTHER", (gc.getPlayer(
 																pCity.getOwner()).getCivilizationAdjective(2), pCity.getName())), None, 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(2), iRandX, iRandY, True, True)
 
 								# City, Wahrscheinlichkeit in %
@@ -1580,7 +1579,7 @@ def doMeteorites():
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 								popupInfo.setText(CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )))
 								popupInfo.addPopup(gc.getGame().getActivePlayer())
-								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )),
+								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )),
 										"AS2D_METEORSTRIKE", 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
 
 						# Effekt
@@ -1602,7 +1601,7 @@ def doMeteorites():
 								pRandPlot.setBonusType(iNewBonus)
 								iOwner = pRandPlot.getOwner()
 								if iOwner > -1 and gc.getPlayer(iOwner).isHuman():
-										CyInterface().addMessage(iOwner, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(), )),
+										CyInterface().addMessage(iOwner, True, 20, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(), )),
 												None, 2, gc.getBonusInfo(iNewBonus).getButton(), ColorTypes(14), pRandPlot.getX(), pRandPlot.getY(), True, True)
 
 
@@ -1665,7 +1664,7 @@ def doComet():
 						iPlayer = pPlot.getOwner()
 
 						if pPlot.isVisibleToWatchingHuman():
-								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_COMET", ("",)),
+								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, CyTranslator().getText("TXT_KEY_DISASTER_COMET", ("",)),
 																				 "AS2D_BOMBARD", 2, gc.getFeatureInfo(feat_comet).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
 								CyCamera().JustLookAtPlot(pPlot)
 
@@ -1699,10 +1698,10 @@ def doComet():
 																		sText = CyTranslator().getText("TXT_KEY_DISASTER_COMET_CITY", (pCity.getName(), iPop_neu, iPop_alt))
 																		popupInfo.setText(sText)
 																		popupInfo.addPopup(iPlayer)
-																		CyInterface().addMessage(iPlayer, True, 12, sText, None, 2, gc.getFeatureInfo(feat_comet).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
+																		CyInterface().addMessage(iPlayer, True, 20, sText, None, 2, gc.getFeatureInfo(feat_comet).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
 																elif iPlayer != -1:
 																		# Message an alle
-																		CyInterface().addMessage(iSecondPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_COMET_CITY_OTHER", (gc.getPlayer(
+																		CyInterface().addMessage(iSecondPlayer, True, 20, CyTranslator().getText("TXT_KEY_DISASTER_COMET_CITY_OTHER", (gc.getPlayer(
 																				iPlayer).getCivilizationAdjective(2), pCity.getName())), None, 2, gc.getFeatureInfo(feat_comet).getButton(), ColorTypes(2), iRandX, iRandY, True, True)
 
 										# City, Wahrscheinlichkeit in %
@@ -1768,13 +1767,13 @@ def doComet():
 										iNewBonus = bonus[iRand]
 										pPlot.setBonusType(iNewBonus)
 										if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-											CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(),)),
+											CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(),)),
 											None, 2, gc.getBonusInfo(iNewBonus).getButton(), ColorTypes(14), pPlot.getX(), pPlot.getY(), True, True)
 									# See
 									elif iRand == 1:
 										pPlot.setTerrainType(terr_lake, 1, 1)
 										if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-											CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_NEW_LAKE", ("",)),
+											CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_NEW_LAKE", ("",)),
 											None, 2, gc.getTerrainInfo(terr_lake).getButton(), ColorTypes(14), pPlot.getX(), pPlot.getY(), True, True)
 
 
@@ -1794,7 +1793,7 @@ def doDestroyCityBuildings(pCity, iChance):
 												bDestroyed = True
 												pOwner = gc.getPlayer(iOwner)
 												if pOwner.isHuman():
-														CyInterface().addMessage(pOwner.getID(), True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING", (pCity.getName(),
+														CyInterface().addMessage(pOwner.getID(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING", (pCity.getName(),
 																						pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 				PAE_City.doCheckCityState(pCity)
 				PAE_City.doCheckTraitBuildings(pCity)
@@ -1832,13 +1831,13 @@ def doDestroyCityWonders(pCity, iChance, iFeatureType):
 														ThisTeam = gc.getTeam(iThisTeam)
 														if ThisTeam.isHasMet(iOwnerTeam) and ThisPlayer.isHuman():
 																if iFeatureType == iFeature_Erdbeben:
-																		CyInterface().addMessage(iThisPlayer, True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_WONDER_ERDBEBEN", (pOwner.getCivilizationAdjective(
+																		CyInterface().addMessage(iThisPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_WONDER_ERDBEBEN", (pOwner.getCivilizationAdjective(
 																				1), pCity.getName(), pBuilding.getDescription())), "AS2D_EARTHQUAKE", 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 																elif iFeatureType == iFeature_Komet:
-																		CyInterface().addMessage(iThisPlayer, True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_WONDER_KOMET", (pOwner.getCivilizationAdjective(
+																		CyInterface().addMessage(iThisPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_WONDER_KOMET", (pOwner.getCivilizationAdjective(
 																				1), pCity.getName(), pBuilding.getDescription())), "AS2D_PLAGUE", 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 																else:
-																		CyInterface().addMessage(iThisPlayer, True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_WONDER", (pOwner.getCivilizationAdjective(
+																		CyInterface().addMessage(iThisPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_WONDER", (pOwner.getCivilizationAdjective(
 																				1), pCity.getName(), pBuilding.getDescription())), "AS2D_PLAGUE", 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 				# iChance = Wahrscheinlichkeit, dass eine Unit gekillt wird
@@ -1858,8 +1857,8 @@ def doKillUnits(pPlot, iChance):
 								iOwner = pUnit.getOwner()
 								if iOwner != -1 and gc.getPlayer(iOwner).isHuman():
 										# Message: Eure Einheit %s hat diese schreckliche Naturgewalt nicht ueberlebt!
-										CyInterface().addMessage(iOwner, True, 8, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_UNIT_KILLED", (pUnit.getName(), 0)),
-																						 "AS2D_PLAGUE", 2, pUnit.getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
+										CyInterface().addMessage(iOwner, True, 12, CyTranslator().getText("TXT_KEY_MESSAGE_DISASTER_UNIT_KILLED", (pUnit.getName(), 0)),
+														"AS2D_PLAGUE", 2, pUnit.getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 								# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
 								pUnit.kill(True, -1)  # RAMK_CTD
 						else:
@@ -1885,22 +1884,22 @@ def doDestroyWalls(pCity):
 				pBuilding = gc.getBuildingInfo(iBuildingHW1)
 				pCity.setNumRealBuilding(iBuildingHW1, 0)
 				if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-						CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
-																																																		(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+						CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
+										(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 		elif pCity.isHasBuilding(iBuildingHW2) and iChance < 25:
 				bDestroyed = True
 				pBuilding = gc.getBuildingInfo(iBuildingHW2)
 				pCity.setNumRealBuilding(iBuildingHW2, 0)
 				if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-						CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
-																																																		(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+						CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
+										(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 		elif pCity.isHasBuilding(iBuildingHW3) and iChance < 25:
 				bDestroyed = True
 				pBuilding = gc.getBuildingInfo(iBuildingHW3)
 				pCity.setNumRealBuilding(iBuildingHW3, 0)
 				if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-						CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
-																																																		(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+						CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
+										(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 		if pCity.isHasBuilding(iBuildingWalls):
 				if (bDestroyed and iChance < 15) or (not bDestroyed and iChance < 50):
@@ -1908,16 +1907,16 @@ def doDestroyWalls(pCity):
 						pBuilding = gc.getBuildingInfo(iBuildingWalls)
 						pCity.setNumRealBuilding(iBuildingWalls, 0)
 						if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-								CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
-																																																				(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+								CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
+												(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 		if pCity.isHasBuilding(iBuildingPalisade):
 				if (bDestroyed and iChance < 15) or not bDestroyed:
 						pBuilding = gc.getBuildingInfo(iBuildingPalisade)
 						pCity.setNumRealBuilding(iBuildingPalisade, 0)
 						if iPlayer != -1 and gc.getPlayer(iPlayer).isHuman():
-								CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
-																																																				(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
+								CyInterface().addMessage(gc.getPlayer(iPlayer).getID(), True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BUILDING",
+												(pCity.getName(), pBuilding.getDescription())), None, 2, pBuilding.getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 		if bDestroyed and pCity.getProductionProcess() != -1:
 				pCity.clearOrderQueue()
@@ -1958,13 +1957,13 @@ def doEraseBonusFromDisaster(pPlot):
 				pPlot.setImprovementType(-1)
 				if iPlayer > -1 and gc.getPlayer(iPlayer).isHuman():
 						if iBonus in lGetreide:
-								CyInterface().addMessage(iPlayer, True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BONUS1", (gc.getBonusInfo(iBonus).getDescription(),)),
+								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BONUS1", (gc.getBonusInfo(iBonus).getDescription(),)),
 																				 None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 						elif iBonus in lVieh1 or iBonus in lTier1:
-								CyInterface().addMessage(iPlayer, True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BONUS2", (gc.getBonusInfo(iBonus).getDescription(),)),
+								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BONUS2", (gc.getBonusInfo(iBonus).getDescription(),)),
 																				 None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 						elif iBonus in lSpice:
-								CyInterface().addMessage(iPlayer, True, 8, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BONUS3", (gc.getBonusInfo(iBonus).getDescription(),)),
+								CyInterface().addMessage(iPlayer, True, 12, CyTranslator().getText("TXT_KEY_DISASTER_DESTROYED_BONUS3", (gc.getBonusInfo(iBonus).getDescription(),)),
 																				 None, 2, gc.getBonusInfo(iBonus).getButton(), ColorTypes(7), pPlot.getX(), pPlot.getY(), True, True)
 
 # CIV mit dem Orakel von Delphi darf die Stelle grau sehen
@@ -2084,8 +2083,8 @@ def doGlobalDisaster():
 					# Roads (50%)
 					if iRand > 0:
 						iLoopRoute = loopPlot.getRouteType()
-						#if iLoopRoute != iRouteType and iLoopRoute != iRouteType2:
-						if iLoopRoute != iRouteType2:
+						#if iLoopRoute != -1 and iLoopRoute != iRouteType and iLoopRoute != iRouteType2:
+						if iLoopRoute != -1 and iLoopRoute != iRouteType2:
 							loopPlot.setRouteType(iRoutePfad)
 
 		# let's kill some units

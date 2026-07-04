@@ -83,7 +83,11 @@ public:
 
 	CvSelectionGroup* cycleSelectionGroups(CvUnit* pUnit, bool bForward, bool bWorkers, bool* pbWrap);
 
-	bool hasTrait(TraitTypes eTrait) const;																																			// Exposed to Python						
+	bool hasTrait(TraitTypes eTrait) const;					// Exposed to Python
+	
+	// PAE dynamic Traits
+	void setHasTrait(TraitTypes eTrait, bool bNewValue);	// Exposed to Python
+
 /************************************************************************************************/
 /* AI_AUTO_PLAY_MOD                       07/09/08                                jdog5000      */
 /*                                                                                              */
@@ -1271,6 +1275,9 @@ protected:
 	bool* m_pabLoyalMember;
 
 	std::vector<EventTriggerTypes> m_triggersFired;
+
+	// PAE dynamic Traits
+	bool* m_dynTraits;
 
 	CivicTypes* m_paeCivics;
 

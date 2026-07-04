@@ -1338,20 +1338,28 @@ int CvUnit::getCombatClass(UnitCombatTypes eCombat)
 
 }
 
-int CvUnit::getCombatRounds(int iAttackerType, int iDefenderType, const CvPlot* pPlot)
+int CvUnit::getCombatRounds(CvUnit* pAttacker, CvUnit* pDefender, const CvPlot* pPlot)
 {
 	static const int CombatRoundsMatrix[6][6] =
 	{
 		// Defending: Heavy, Light, Mounted, Shock, Siege, Naval
-		{3, 2, 2, 2, 3, 2}, // Heavy attacker
-		{2, 3, 2, 2, 2, 2}, // Light attacker
-		{2, 3, 2, 2, 3, 2}, // Mounted attacker
+		{3, 2, 2, 2, 3, 3}, // Heavy attacker
+		{2, 3, 4, 2, 3, 2}, // Light attacker
+		{2, 4, 3, 2, 4, 2}, // Mounted attacker
 		{3, 2, 2, 3, 3, 2}, // Shock attacker
 		{2, 2, 2, 2, 3, 2}, // Siege attacker
-		{2, 2, 2, 2, 2, 2}  // Naval attacker
+		{2, 2, 2, 2, 3, 4}  // Naval attacker
 	};
 
+	int iAttackerType = CvUnit::getCombatClass(pAttacker->getUnitCombatType());
+	int iDefenderType = CvUnit::getCombatClass(pDefender->getUnitCombatType());
+
 	int iRounds = CombatRoundsMatrix[iAttackerType][iDefenderType];
+
+	int iPromo1 = GC.getInfoTypeForString("PROMOTION_UNSTOPPABLE1");
+	int iPromo2 = GC.getInfoTypeForString("PROMOTION_UNSTOPPABLE2");
+	if (pAttacker->isHasPromotion((PromotionTypes)iPromo1) || pDefender->isHasPromotion((PromotionTypes)(iPromo1))) iRounds++;
+	if (pAttacker->isHasPromotion((PromotionTypes)iPromo2) || pDefender->isHasPromotion((PromotionTypes)(iPromo2))) iRounds++;
 
 	if (pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_FOREST") ||
 		pPlot->getFeatureType() == GC.getInfoTypeForString("FEATURE_JUNGLE") ||
@@ -1502,14 +1510,35 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	bool bCombatAborted = false;
 	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT))
 	{
-		int a = CvUnit::getCombatClass(getUnitCombatType());
-		int d = CvUnit::getCombatClass(pDefender->getUnitCombatType());
-		iMaxRounds = CvUnit::getCombatRounds(a, d, pPlot);
+		iMaxRounds = CvUnit::getCombatRounds(this, pDefender, pPlot);
 	}
 	// ---
 
 	while (true)
 	{
+
+		if (isDead() || pDefender->isDead())
+		{
+			if (isDead())
+			{
+				int iExperience = defenseXPValue();
+				iExperience = ((iExperience * iAttackerStrength) / iDefenderStrength);
+				iExperience = range(iExperience, GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT"), GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT"));
+				pDefender->changeExperience(iExperience, maxXPValue(), true, pPlot->getOwnerINLINE() == pDefender->getOwnerINLINE(), !isBarbarian());
+			}
+			else
+			{
+				flankingStrikeCombat(pPlot, iAttackerStrength, iAttackerFirepower, iAttackerKillOdds, iDefenderDamage, pDefender);
+
+				int iExperience = pDefender->attackXPValue();
+				iExperience = ((iExperience * iDefenderStrength) / iAttackerStrength);
+				iExperience = range(iExperience, GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT"), GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT"));
+				changeExperience(iExperience, pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
+			}
+
+			break;
+		}
+
 		if (GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("COMBAT_DIE_SIDES"), "Combat") < iDefenderOdds)
 		{
 			// ATTACKER DAMAGE
@@ -1596,31 +1625,11 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 		}
 		*/
 
-		if (isDead() || pDefender->isDead())
-		{
-			if (isDead())
-			{
-				int iExperience = defenseXPValue();
-				iExperience = ((iExperience * iAttackerStrength) / iDefenderStrength);
-				iExperience = range(iExperience, GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT"), GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT"));
-				pDefender->changeExperience(iExperience, maxXPValue(), true, pPlot->getOwnerINLINE() == pDefender->getOwnerINLINE(), !isBarbarian());
-			}
-			else
-			{
-				flankingStrikeCombat(pPlot, iAttackerStrength, iAttackerFirepower, iAttackerKillOdds, iDefenderDamage, pDefender);
 
-				int iExperience = pDefender->attackXPValue();
-				iExperience = ((iExperience * iDefenderStrength) / iAttackerStrength);
-				iExperience = range(iExperience, GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT"), GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT"));
-				changeExperience(iExperience, pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
-			}
-
-			break;
-		}
 
 		// PAE
 		iRounds++;
-		if (iMaxRounds > 0 && iRounds > iMaxRounds) {
+		if (iMaxRounds > 0 && iRounds >= iMaxRounds) {
 			bCombatAborted = true;
 			break;
 		}
@@ -1973,6 +1982,13 @@ void CvUnit::updateCombat(bool bQuick)
 
 			changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
 			checkRemoveSelectionAfterAttack();
+
+			// PAE (used for catapults)
+			if (getUnitCombatType() == GC.getInfoTypeForString("UNITCOMBAT_SIEGE")) {
+				// report event to Python, along with some other key state
+				CvEventReporter::getInstance().combatResult(this, pDefender);
+			}
+			// ----------------------
 
 			getGroup()->clearMissionQueue();
 		}
@@ -2825,6 +2841,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	switch (getDomainType())
 	{
 	case DOMAIN_SEA:
+		// PAE (UNITAI_ANIMAL)
+		if ((isAnimal() || AI_getUnitAIType() == UNITAI_ANIMAL) && isBarbarian() && pPlot->isCity(true)) return false;
+		
 		// PAE: Rivers
 		if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
 		{
@@ -8278,7 +8297,7 @@ int CvUnit::maxHitPoints() const
 }
 
 
-int CvUnit::currHitPoints()	const
+int CvUnit::currHitPoints() const
 {
 	return (maxHitPoints() - getDamage());
 }

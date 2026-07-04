@@ -156,11 +156,16 @@
 			<GreatPeopleUnitClass>NONE</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>0</iGreatPeopleRateChange>
 			<Yields>
-				<iYield>1</iYield>
-				<iYield>1</iYield>
+				<iYield>0</iYield>
+				<iYield>0</iYield>
 				<iYield>1</iYield>
 			</Yields>
-			<Commerces/>
+			<Commerces>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</Commerces>
 			<iExperience>0</iExperience>
 			<Flavors/>
 			<HotKey/>
@@ -183,7 +188,7 @@
 			<Yields>
 				<iYield>0</iYield>
 				<iYield>1</iYield>
-				<iYield>2</iYield>
+				<iYield>1</iYield>
 			</Yields>
 			<Commerces/>
 			<iExperience>0</iExperience>

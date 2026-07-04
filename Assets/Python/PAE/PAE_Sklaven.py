@@ -520,6 +520,9 @@ def doEnslaveCity(pCity):
 		iBuilding = gc.getInfoTypeForString("BUILDING_SKLAVENMARKT")
 		if pCity.isHasBuilding(iBuilding):
 				pCity.setNumRealBuilding(iBuilding, 0)
+		iBuilding = gc.getInfoTypeForString("BUILDING_SKLAVENQUARTIERE")
+		if pCity.isHasBuilding(iBuilding):
+				pCity.setNumRealBuilding(iBuilding, 0)
 
 		# Settled glads and slaves => 0
 		pCity.setFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_GLADIATOR"), 0)

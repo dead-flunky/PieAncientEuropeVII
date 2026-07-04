@@ -28,7 +28,7 @@ gc = CyGlobalContext()
 
 #Skythen - Bulgaren (ab 500, Khan Asparuch)
 #Etrusker - Langobarden (500 , Alboin)
-#Rom - Ostgoten (500, Theoderich der Große) - Heiliges Römisches Reich (800-1800, Karolinger Otto der Große, 912-1024)
+#Goten (Rom) - Ostgoten (500, Theoderich der Große) - Heiliges Römisches Reich (800-1800, Karolinger Otto der Große, 912-1024)
 
 #Hunnen - Awaren (ab 600, Bajan Khagan) - Magyaren (ab 800, Arpad)
 #Karthager - Umayyaden (600, Muawiya I.)
@@ -44,8 +44,8 @@ gc = CyGlobalContext()
 
 #Hethiter - Seldschuken (800, Suleiman ibn Kutalmis) oder Byzantinisches Reich ab 400 AD (Theodosius I., Justinian ab 500, Leo III. 700)?
 
-#---- if Christentum: Heiliges [civ_adj] Reich
-#---- if Islam: Kalifat von [capital]
+#---- if Christentum: Heiliges [civ_adj] Reich oder Heiliges Reich der [civ_name] oder [civ_name] (Heiliges Reich)
+#---- if Islam: Kalifat von [capital] oder [civ_name] (Kalifat)
 # ---------------------------------------------
 #pPlayer.changeLeader(x) # change to XML leader
 #pPlayer.changeCiv(x) # change to XML Civ
@@ -60,6 +60,7 @@ gc = CyGlobalContext()
 def doRenameCIVs():
 	iGameYear = gc.getGame().getGameTurnYear()
 	lPlayers = []
+	bNoHumanCivs = True # keine menschlichen Spieler umbenennen
 
 	# +++++++ iGameYear +++++++++++++++++++++++++++++++++++++++++++
 	if iGameYear == 300:
@@ -78,6 +79,7 @@ def doRenameCIVs():
 			if pPlayer is not None and not pPlayer.isNone() and pPlayer.isAlive():
 				if pPlayer.isHuman():
 					lPlayers.append(iPlayer)
+					if bNoHumanCivs: continue
 				if pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_BRITEN"):
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest1:
 						iScoreBest1 = CyGame().getPlayerScore(iPlayer)
@@ -164,6 +166,7 @@ def doRenameCIVs():
 			if pPlayer is not None and not pPlayer.isNone() and pPlayer.isAlive():
 				if pPlayer.isHuman():
 					lPlayers.append(iPlayer)
+					if bNoHumanCivs: continue
 				if pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_CELT"):
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest1:
 						iScoreBest1 = CyGame().getPlayerScore(iPlayer)
@@ -286,6 +289,7 @@ def doRenameCIVs():
 			if pPlayer is not None and not pPlayer.isNone() and pPlayer.isAlive():
 				if pPlayer.isHuman():
 					lPlayers.append(iPlayer)
+					if bNoHumanCivs: continue
 				if pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_SKYTHEN"):
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest1:
 						iScoreBest1 = CyGame().getPlayerScore(iPlayer)
@@ -294,7 +298,7 @@ def doRenameCIVs():
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest2:
 						iScoreBest2 = CyGame().getPlayerScore(iPlayer)
 						pNewPlayer2 = pPlayer
-				elif pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_ROME"):
+				elif pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_GOTEN"):
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest3:
 						iScoreBest3 = CyGame().getPlayerScore(iPlayer)
 						pNewPlayer3 = pPlayer
@@ -373,6 +377,7 @@ def doRenameCIVs():
 			if pPlayer is not None and not pPlayer.isNone() and pPlayer.isAlive():
 				if pPlayer.isHuman():
 					lPlayers.append(iPlayer)
+					if bNoHumanCivs: continue
 				if pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_BRITEN"):
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest1:
 						iScoreBest1 = CyGame().getPlayerScore(iPlayer)
@@ -488,6 +493,7 @@ def doRenameCIVs():
 			if pPlayer is not None and not pPlayer.isNone() and pPlayer.isAlive():
 				if pPlayer.isHuman():
 					lPlayers.append(iPlayer)
+					if bNoHumanCivs: continue
 				if pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_PERSIA"):
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest1:
 						iScoreBest1 = CyGame().getPlayerScore(iPlayer)
@@ -600,6 +606,7 @@ def doRenameCIVs():
 			if pPlayer is not None and not pPlayer.isNone() and pPlayer.isAlive():
 				if pPlayer.isHuman():
 					lPlayers.append(iPlayer)
+					if bNoHumanCivs: continue
 				if pPlayer.getCivilizationType() == gc.getInfoTypeForString("CIVILIZATION_ROME"):
 					if CyGame().getPlayerScore(iPlayer) > iScoreBest1:
 						iScoreBest1 = CyGame().getPlayerScore(iPlayer)

@@ -329,6 +329,30 @@
 		<Spanish>La posesi&#243;n de hierro reduce a la mitad la duraci&#243;n de la tala del bosque.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HINT_142</Tag>
+		<English>Technologies become cheaper the more peoples one knows.</English>
+		<French>Plus on conna&#238;t de gens, moins les technologies co&#251;tent cher.</French>
+		<German>Technologien werden billiger, je mehr V&#246;lker man kennt.</German>
+		<Italian>Le tecnologie diventano pi&#249; economiche quanto pi&#249; persone si conoscono.</Italian>
+		<Spanish>Cuanta m&#225;s gente se conoce, m&#225;s baratas se vuelven las tecnolog&#237;as.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_143</Tag>
+		<English>You receive a research bonus for a technology if you know all directly possible prior technologies.</English>
+		<French>Vous recevez un bonus de recherche pour une technologie si vous connaissez toutes les technologies ant&#233;rieures directement possibles.</French>
+		<German>Man bekommt einen Forschungsbonus f&#252;r eine Technologie, wenn man alle direkten m&#246;glichen Vortechnologien kennt.</German>
+		<Italian>Si riceve un bonus di ricerca per una tecnologia se si conoscono tutte le tecnologie precedenti direttamente possibili.</Italian>
+		<Spanish>Recibir&#225;s una bonificaci&#243;n por investigaci&#243;n si conoces todas las tecnolog&#237;as previas directamente posibles.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_HINT_144</Tag>
+		<English>Sea monsters trigger thalassophobia. Giant octopus and sea serpent dive again in the next round as soon as they are spotted.</English>
+		<French>Les monstres marins d&#233;clenchent la thalassophobie. La pieuvre g&#233;ante et le serpent de mer replongent au tour suivant d&#232;s qu'ils sont rep&#233;r&#233;s.</French>
+		<German>Seeungeheuer l&#246;sen Thalassophobie aus. Riesenkrake und Seeschlange tauchen in der n&#228;chsten Runde wieder ab, sobald sie entdeckt wurden.</German>
+		<Italian>I mostri marini scatenano la talassofobia. Polpi giganti e serpenti marini si tuffano di nuovo nel round successivo non appena vengono avvistati.</Italian>
+		<Spanish>Los monstruos marinos desencadenan talasofobia. El pulpo gigante y la serpiente marina vuelven a sumergirse en la siguiente ronda en cuanto son avistados.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_HINT_45</Tag>
 		<English>If you are having trouble spreading a Cult, make sure the city you are spreading it to has the appropriate resources and that your treasury has enough gold to fund the expansion. Keep in mind it costs significantly more to spread a Cult to a foreign city than to your own.</English>
 		<French>Si vous n'arrivez pas &#224; d&#233;velopper un culte, assurez-vous que la ville dans laquelle vous voulez l'implanter dispose des ressources n&#233;cessaires et que vous avez assez d'or dans votre tr&#233;sor pour financer son d&#233;veloppement. N'oubliez pas que cela co&#251;te bien plus cher d'implanter un culte dans une ville &#233;trang&#232;re que de l'implanter dans l'une des v&#244;tres.</French>

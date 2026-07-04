@@ -546,11 +546,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_BERUFSARMEE_HELP</Tag>
-		<English>[ICON_BULLET]Allows the construction of [LINK=BUILDING_BARRACKS]Training camps[\LINK]</English>
-		<French>[ICON_BULLET]Permet la construction de [LINK=BUILDING_BARRACKS]Camps d'Entra&#238;nement[\LINK]</French>
-		<German>[ICON_BULLET]Erlaubt den Bau von [LINK=BUILDING_BARRACKS]Ausbildungslagern[\LINK]</German>
-		<Italian>[ICON_BULLET]Consente la costruzione di [LINK=BUILDING_BARRACKS]Campi di addestramento[\LINK]</Italian>
-		<Spanish>[ICON_BULLET]Permite la construcci&#243;n de [LINK=BUILDING_BARRACKS]Campos de entrenamiento[\LINK]</Spanish>
+		<English>[ICON_BULLET] Allows the construction of [LINK=BUILDING_BARRACKS]Training camps[\LINK]</English>
+		<French>[ICON_BULLET] Permet la construction de [LINK=BUILDING_BARRACKS]Camps d'Entra&#238;nement[\LINK]</French>
+		<German>[ICON_BULLET] Erlaubt den Bau von [LINK=BUILDING_BARRACKS]Ausbildungslagern[\LINK]</German>
+		<Italian>[ICON_BULLET] Consente la costruzione di [LINK=BUILDING_BARRACKS]Campi di addestramento[\LINK]</Italian>
+		<Spanish>[ICON_BULLET] Permite la construcci&#243;n de [LINK=BUILDING_BARRACKS]Campos de entrenamiento[\LINK]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIVIC_EXCLUSIVE</Tag>
@@ -952,7 +952,7 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 		<English>[ICON_BULLET]Creates a new source: [COLOR_HIGHLIGHT_TEXT]%s1_Bonus[COLOR_REVERT]</English>
 		<French>[ICON_BULLET]Cr&#233;e une nouvelle source: [COLOR_HIGHLIGHT_TEXT]%s1_Bonus[COLOR_REVERT]</French>
 		<German>[ICON_BULLET]Erstellt eine neue Resource: [COLOR_HIGHLIGHT_TEXT]%s1_Bonus[COLOR_REVERT]</German>
-		<Italian>[ICON_BULLET]Creates a new source: [COLOR_HIGHLIGHT_TEXT]%s1_Bonus[COLOR_REVERT]</Italian>
+		<Italian>[ICON_BULLET]Crea una nuova sorgente: [COLOR_HIGHLIGHT_TEXT]%s1_Bonus[COLOR_REVERT]</Italian>
 		<Spanish>[ICON_BULLET]Crea un nuevo recurso: [COLOR_HIGHLIGHT_TEXT]%s1_Bonus[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
@@ -8581,11 +8581,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CATAPULT_HELP</Tag>
-		<English>[ICON_BULLET]Catapults can be upgraded to a [LINK=UNIT_FIRE_CATAPULT]Fire Catapult[\LINK] with [LINK=PROMOTION_ACCURACY3]Accuracy III[\LINK] (100% city attack , bombardment 20%)</English>
-		<French>[ICON_BULLET]Catapultes peuvent &#234;tre am&#233;lior&#233;es en [LINK=UNIT_FIRE_CATAPULT]catapulte de feu[\LINK] avec [LINK=PROMOTION_ACCURACY3]Pr&#233;cision III[\LINK] (attaque de ville &#224; 100%, Bombardement 20%)</French>
-		<German>[ICON_BULLET]Katapulte k&#246;nnen mit [LINK=PROMOTION_ACCURACY3]Genauigkeit III[\LINK] zu einem [LINK=UNIT_FIRE_CATAPULT]Feuerkatapult[\LINK] verbessert werden (100% Stadtangriff, Bombardement 20%)</German>
-		<Italian>[ICON_BULLET]Catapulte possono essere trasformato in una [LINK=UNIT_FIRE_CATAPULT]catapulta antincendio[\LINK] con [LINK=PROMOTION_ACCURACY3]Precisione III[\LINK] (100% attacco cittadino, bombardamento 20%)</Italian>
-		<Spanish>[ICON_BULLET]Catapultas pueden convertir en [LINK=UNIT_FIRE_CATAPULT]catapulta de fuego[\LINK] con [LINK=PROMOTION_ACCURACY3]Precisi&#243;n III[\LINK] (100% de ataque a la ciudad, bombardeo 20%)</Spanish>
+		<English>[ICON_BULLET]Catapults can switch projectiles (fire) with certain technologies.</English>
+		<French>[ICON_BULLET]Les catapultes peuvent changer de projectiles (tir) avec certaines technologies.</French>
+		<German>[ICON_BULLET]Katapulte k&#246;nnen ab bestimmten Technologien Wurfgeschosse wechseln (Feuer)</German>
+		<Italian>[ICON_BULLET]Le catapulte possono cambiare tipo di proiettile (fuoco) con determinate tecnologie.</Italian>
+		<Spanish>[ICON_BULLET]Las catapultas pueden cambiar de proyectil (fuego) con ciertas tecnolog&#237;as.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ELEFANT_HELP</Tag>
@@ -8613,11 +8613,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FIRE_CATAPULT_HELP</Tag>
-		<English>[ICON_BULLET]Catapults can be upgraded to a [LINK=UNIT_FIRE_CATAPULT]Fire Catapult[\LINK] with [LINK=PROMOTION_ACCURACY3]Accuracy III[\LINK][NEWLINE][ICON_BULLET]Fire catapults have 100% city attack, 20% city bombardment and can kill units with ranged attack</English>
-		<French>[ICON_BULLET]Catapultes peuvent &#234;tre am&#233;lior&#233;es en [LINK=UNIT_FIRE_CATAPULT]catapulte de feu[\LINK] avec [LINK=PROMOTION_ACCURACY3]Pr&#233;cision III[\LINK][NEWLINE][ICON_BULLET]Les catapultes de feu ont 100 % d'attaque de ville, 20 % de bombardement de ville et peuvent tuer des unit&#233;s avec une attaque &#224; distance.</French>
-		<German>[ICON_BULLET]Katapulte k&#246;nnen mit [LINK=PROMOTION_ACCURACY3]Genauigkeit III[\LINK] zu einem [LINK=UNIT_FIRE_CATAPULT]Feuerkatapult[\LINK] verbessert werden[NEWLINE][ICON_BULLET]Feuerkatapulte haben 100% Stadtangriff, 20% Stadt-Bombardement und k&#246;nnen Einheiten per Fernangriff t&#246;ten</German>
-		<Italian>[ICON_BULLET]Catapulte possono essere trasformato in una [LINK=UNIT_FIRE_CATAPULT]catapulta antincendio[\LINK] con [LINK=PROMOTION_ACCURACY3]Precisione III[\LINK][NEWLINE][ICON_BULLET]Le catapulte di fuoco hanno il 100% di attacco cittadino, il 20% di bombardamento cittadino e possono uccidere unit&#224; con attacco a distanza</Italian>
-		<Spanish>[ICON_BULLET]Catapultas pueden convertir en [LINK=UNIT_FIRE_CATAPULT]catapulta de fuego[\LINK] con [LINK=PROMOTION_ACCURACY3]Precisi&#243;n III[\LINK][NEWLINE][ICON_BULLET]Las catapultas de fuego tienen un 100% de ataque a la ciudad, un 20% de bombardeo de la ciudad y pueden matar unidades con ataques a distancia.</Spanish>
+		<English>[ICON_BULLET]Fireballs ignite city fires and destroy buildings</English>
+		<French>[ICON_BULLET]Des boules de feu d&#233;clenchent des incendies de ville et d&#233;truisent des b&#226;timents</French>
+		<German>[ICON_BULLET]Feuergeschosse l&#246;sen Stadtbr&#228;nde aus und zerst&#246;ren Geb&#228;ude</German>
+		<Italian>[ICON_BULLET] Le palle di fuoco appiccano incendi in citt&#224; e distruggono edifici</Italian>
+		<Spanish>[ICON_BULLET]Las bolas de fuego provocan incendios en la ciudad y destruyen edificios.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GREAT_PROPHET_HELP</Tag>

@@ -296,5 +296,10 @@
 			<Description>TXT_KEY_CONCEPT_PIRACY</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_PIRACY_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_SEAMONSTER</Type>
+			<Description>TXT_KEY_CONCEPT_SEAMONSTER</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_SEAMONSTER_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

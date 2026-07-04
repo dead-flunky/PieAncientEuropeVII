@@ -386,15 +386,9 @@ def doPlotFeatures():
 				elif iChance == 4: setAnimals(gc.getInfoTypeForString("UNIT_DEER"), Forest)
 				elif iChance == 5: setAnimals(gc.getInfoTypeForString("UNIT_ESEL"), Forest)
 		if len(Ocean):
-				iChance = CvUtil.myRandom(10, "setAnimals4Ocean")
-				for iUnit in L.LUnitSeaMonsters:
-					if iUnit == gc.getInfoTypeForString("UNIT_KRAKEN"):
-						if iChance < 6:
-							setAnimals(iUnit, Ocean)
-					elif iUnit == gc.getInfoTypeForString("UNIT_SEASERPENT"):
-						if iChance < 2:
-							setAnimals(iUnit, Ocean)
-					else: setAnimals(iUnit, Ocean)
+				if iGameTurn % 33 == 0:
+					iRand = CvUtil.myRandom(len(L.LUnitSeaMonsters), "setAnimals4Ocean")
+					setAnimals(L.LUnitSeaMonsters[iRand], Ocean)
 		# if len(Plains):
 		#	if CvUtil.myRandom(33, "setAnimals4Plains") == 1:
 		#		setAnimals(gc.getInfoTypeForString("UNIT_LEOPARD"),Plains)

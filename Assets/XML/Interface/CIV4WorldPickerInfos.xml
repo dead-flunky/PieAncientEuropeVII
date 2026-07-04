@@ -518,19 +518,19 @@
 			<WaterLevelGloss><WaterLevelGlossPath>Art/Interface/Screens/WorldPicker/MapBlank.dds</WaterLevelGlossPath></WaterLevelGloss>
 		</WorldPickerInfo>
 		<WorldPickerInfo>
+			<MapName>PAE Europe III St 17 CIVs+Barbs</MapName>
+			<ModelFile>Art/Interface/Screens/WorldPicker/GlobeFLAT.nif</ModelFile>
+			<Sizes><Size>1.0</Size></Sizes>
+			<Climates><ClimatePath>Art/Interface/Screens/WorldPicker/MapBlank.dds</ClimatePath></Climates>
+			<WaterLevelDecals><WaterLevelDecalPath>Art/Interface/Screens/WorldPicker/PAE-Europe-Standard.dds</WaterLevelDecalPath></WaterLevelDecals>
+			<WaterLevelGloss><WaterLevelGlossPath>Art/Interface/Screens/WorldPicker/MapBlank.dds</WaterLevelGlossPath></WaterLevelGloss>
+		</WorldPickerInfo>
+		<WorldPickerInfo>
 			<MapName>PAE Europe IV Medium</MapName>
 			<ModelFile>Art/Interface/Screens/WorldPicker/GlobeFLAT.nif</ModelFile>
 			<Sizes><Size>1.0</Size></Sizes>
 			<Climates><ClimatePath>Art/Interface/Screens/WorldPicker/MapBlank.dds</ClimatePath></Climates>
 			<WaterLevelDecals><WaterLevelDecalPath>Art/Interface/Screens/WorldPicker/PAE-Europe-Medium.dds</WaterLevelDecalPath></WaterLevelDecals>
-			<WaterLevelGloss><WaterLevelGlossPath>Art/Interface/Screens/WorldPicker/MapBlank.dds</WaterLevelGlossPath></WaterLevelGloss>
-		</WorldPickerInfo>
-		<WorldPickerInfo>
-			<MapName>PAE Europe IV M 17 CIVs+Barbs</MapName>
-			<ModelFile>Art/Interface/Screens/WorldPicker/GlobeFLAT.nif</ModelFile>
-			<Sizes><Size>1.0</Size></Sizes>
-			<Climates><ClimatePath>Art/Interface/Screens/WorldPicker/MapBlank.dds</ClimatePath></Climates>
-			<WaterLevelDecals><WaterLevelDecalPath>Art/Interface/Screens/WorldPicker/PAE-Europe-Small.dds</WaterLevelDecalPath></WaterLevelDecals>
 			<WaterLevelGloss><WaterLevelGlossPath>Art/Interface/Screens/WorldPicker/MapBlank.dds</WaterLevelGlossPath></WaterLevelGloss>
 		</WorldPickerInfo>
 		<WorldPickerInfo>
