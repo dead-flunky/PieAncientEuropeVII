@@ -138,5 +138,29 @@
 			<Help>TXT_KEY_PLAYER_OPTION_MODDER_3_HELP</Help>
 			<bDefault>0</bDefault>
 		</PlayerOptionInfo>
+		<PlayerOptionInfo>
+			<Type>PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_AGGRESSIVE_ANIMALS</Type>
+			<Description>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_AGGRESSIVE_ANIMALS</Description>
+			<Help>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_AGGRESSIVE_ANIMALS_HELP</Help>
+			<bDefault>1</bDefault>
+		</PlayerOptionInfo>
+		<PlayerOptionInfo>
+			<Type>PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_FRIENDLY_ANIMALS</Type>
+			<Description>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_FRIENDLY_ANIMALS</Description>
+			<Help>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_FRIENDLY_ANIMALS_HELP</Help>
+			<bDefault>1</bDefault>
+		</PlayerOptionInfo>
+		<PlayerOptionInfo>
+			<Type>PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH</Type>
+			<Description>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH</Description>
+			<Help>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH_HELP</Help>
+			<bDefault>0</bDefault>
+		</PlayerOptionInfo>
+		<PlayerOptionInfo>
+			<Type>PLAYEROPTION_PAE_MESSAGE_CITY_NEWPROJECT</Type>
+			<Description>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_NEWPROJECT</Description>
+			<Help>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_NEWPROJECT_HELP</Help>
+			<bDefault>1</bDefault>
+		</PlayerOptionInfo>
 	</PlayerOptionInfos>
 </Civ4PlayerOptionInfos>

@@ -1470,6 +1470,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	int iCap = 0;
 	int iAttackerFirstStrikes = getCombatFirstStrikes();
 	int iDefenderFirstStrikes = pDefender->getCombatFirstStrikes();
+	m_iCombatRounds = 0;
 
 	// PAE: First Strikes before the battle begins (do not count as battle rounds)
 	if (iAttackerFirstStrikes > 0)
@@ -1630,6 +1631,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 		// PAE
 		iRounds++;
 		if (iMaxRounds > 0 && iRounds >= iMaxRounds) {
+			m_iCombatRounds = iRounds;
 			bCombatAborted = true;
 			break;
 		}
@@ -1637,10 +1639,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	}
 
 	// PAE
-	if (bCombatAborted)
-	{
-		return;
-	}
+	if (bCombatAborted) return;
 
 }
 
@@ -1971,8 +1970,12 @@ void CvUnit::updateCombat(bool bQuick)
 			******************/
 
 			/***** PAE ******/
-			if (withdrawalProbability() > 0)
-			{
+			if (m_iCombatRounds) {
+				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW2", getNameKey(), pDefender->getNameKey(), m_iCombatRounds);
+				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)19, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+				szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW2", getNameKey(), pDefender->getNameKey(), m_iCombatRounds);
+				gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)20, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+			} else {
 				szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
 				gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)19, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 				szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
@@ -7291,6 +7294,12 @@ bool CvUnit::build(BuildTypes eBuild)
 			kill(true);
 		}
 	}
+
+	// PAE
+	if (GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_COTTAGE"))
+		gDLL->getInterfaceIFace()->playGeneralSound("AS2D_BUILD_CASTLE");
+	else if (GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL"))
+		gDLL->getInterfaceIFace()->playGeneralSound("AS2D_BUILD_CASTLE");
 
 	// Python Event
 	CvEventReporter::getInstance().unitBuildImprovement(this, eBuild, bFinished);

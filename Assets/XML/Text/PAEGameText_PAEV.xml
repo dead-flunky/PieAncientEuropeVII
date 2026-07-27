@@ -5409,12 +5409,12 @@
 		<Spanish>[ICON_BULLET]Puede apoyar / fortalecer moralmente unidades en la misma parcela[NEWLINE][ICON_BULLET]Puede pacificar instant&#225;neamente ciudades en agitaci&#243;n / guerra civil</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROMOTION_SENTRY1</Tag>
-		<English>Explorer I</English>
-		<French>Eclaireur I</French>
-		<German>Kundschafter I</German>
-		<Italian>Esploratore I</Italian>
-		<Spanish>Explorador I</Spanish>
+		<Tag>TXT_KEY_PROMOTION_SENTRY</Tag>
+		<English>Watchman</English>
+		<French>Gardien</French>
+		<German>W&#228;chter</German>
+		<Italian>Guardiano</Italian>
+		<Spanish>Sereno</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SKIRMISH1</Tag>

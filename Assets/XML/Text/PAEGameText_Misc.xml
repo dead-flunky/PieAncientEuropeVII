@@ -289,6 +289,30 @@
 		<Spanish>[ICON_BULLET]%D1_Change rutas comerciales en todas las ciudades</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAIT_CREATIVE</Tag>
+		<English>Creative Head of State</English>
+		<French>Chef d'&#201;tat cr&#233;atif</French>
+		<German>Kreatives Staatsoberhaupt</German>
+		<Italian>Capo di stato creativo</Italian>
+		<Spanish>Jefe de Estado creativo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAIT_MARITIME</Tag>
+		<English>Maritime Head of State</English>
+		<French>Chef d'&#201;tat maritime</French>
+		<German>Maritimes Staatsoberhaupt</German>
+		<Italian>Capo di Stato marittimo</Italian>
+		<Spanish>Jefe de Estado Mar&#237;timo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TRAIT_PHILOSOPHICAL</Tag>
+		<English>Philosophical Head of State</English>
+		<French>Chef d'&#201;tat philosophique</French>
+		<German>Philosophisches Staatsoberhaupt</German>
+		<Italian>Capo di Stato filosofico</Italian>
+		<Spanish>Jefe de Estado filos&#243;fico</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILD_CAMP</Tag>
 		<English>Build a [LINK=IMPROVEMENT_CAMP]Camp[\LINK]</English>
 		<French>Construire un [LINK=IMPROVEMENT_CAMP]camp[\LINK]</French>
@@ -1273,6 +1297,38 @@
 		<Spanish>[ICON_BULLET][NUM2:El:La:Los:Las] %s2_unit [NUM2:recibe:recibe:reciben:reciben] %d1 PE</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FEATURE_DISAPPEARS_HELP</Tag>
+		<English>[ICON_BULLET] Disappears on its own after some time</English>
+		<French>[ICON_BULLET] Dispara&#238;t de lui-m&#234;me apr&#232;s un certain temps</French>
+		<German>[ICON_BULLET] Verschwindet nach einiger Zeit von selbst</German>
+		<Italian>[ICON_BULLET] Scompare da solo dopo un po' di tempo</Italian>
+		<Spanish>[ICON_BULLET] Desaparece por s&#237; solo al cabo de un tiempo</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_FOREST_BURNING_HELP</Tag>
+		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT]Burnt Forest[COLOR_REVERT] after some time.</English>
+		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT]For&#234;t br&#251;l&#233;e[COLOR_REVERT] apr&#232;s un certain temps.</French>
+		<German>[ICON_BULLET] Wird nach einer Zeit zu einem [COLOR_HIGHLIGHT]Verbrannten Wald[COLOR_REVERT].</German>
+		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT]Foresta bruciata[COLOR_REVERT].</Italian>
+		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT]Bosque quemado[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_FOREST_BURNT_HELP</Tag>
+		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT]Young Forest[COLOR_REVERT] after some time.[NEWLINE][ICON_BULLET] Can be felled early by a [COLOR_UNIT]Worker[COLOR_REVERT].</English>
+		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT]Jeune for&#234;t[COLOR_REVERT] apr&#232;s un certain temps.[NEWLINE][ICON_BULLET] Peut &#234;tre abattu rapidement par un [COLOR_UNIT]Ouvrier[COLOR_REVERT].</French>
+		<German>[ICON_BULLET] Wird nach einiger Zeit zu einem [COLOR_HIGHLIGHT]Jungen Wald[COLOR_REVERT].[NEWLINE][ICON_BULLET] Kann fr&#252;hzeitig von einem [COLOR_UNIT]Bautrupp[COLOR_REVERT] abgeholzt werden.</German>
+		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT]Foresta giovane[COLOR_REVERT].[NEWLINE][ICON_BULLET] Pu&#242; essere abbattuto in anticipo da un [COLOR_UNIT]Lavoratore[COLOR_REVERT].</Italian>
+		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT]Bosque joven[COLOR_REVERT].[NEWLINE][ICON_BULLET] Puede ser derribado prematuramente por un [COLOR_UNIT]Trabajador[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_FOREST_NEW_HELP</Tag>
+		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT]Forest[COLOR_REVERT] after some time.</English>
+		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT]For&#234;t[COLOR_REVERT] apr&#232;s un certain temps.</French>
+		<German>[ICON_BULLET] Wird nach einiger Zeit zu einem [COLOR_HIGHLIGHT]Wald[COLOR_REVERT].</German>
+		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT]Foresta[COLOR_REVERT].</Italian>
+		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT]Bosque[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_FEATURE_RIVER</Tag>
 		<English>Stream</English>
 		<French>Courant</French>
@@ -1519,6 +1575,14 @@
 		<German>Herzlichen Gl&#252;ckwunsch! Ihr habt Eure erste Belagerungseinheit ([COLOR_UNIT_TEXT]%s1Unit_Name[COLOR_REVERT]) in %s2City_Name errichtet! Diese Einheiten verursachen auf den Gel&#228;ndefeldern, auf denen sie angreifen, Kollateralsch&#228;den und verwunden mehrere feindliche Einheiten gleichzeitig.</German>
 		<Italian>Congratulazioni, hai realizzato la tua prima unit&#224; d'assedio ([COLOR_UNIT_TEXT]%s1Unit_Name[COLOR_REVERT]) a %s2City_Name! Queste unit&#224; infliggono danni collaterali nelle caselle attaccate, danneggiando pi&#249; nemici con un colpo.</Italian>
 		<Spanish>Felicidades, hab&#233;is entrenado en %s2City_Name a vuestra primera unidad de asedio, [NUM1:un:una:unos:unas] [COLOR_UNIT_TEXT]%s1Unit_Name[COLOR_REVERT]. Estas unidades pueden causar da&#241;os colaterales en las casillas que ataquen y alcanzar as&#237; a varios enemigos a la vez.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FREE</Tag>
+		<English>Watchman</English>
+		<French>Gardien</French>
+		<German>W&#228;chter</German>
+		<Italian>Guardiano</Italian>
+		<Spanish>Sereno</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_MULTIPLE_PRODUCTION</Tag>
@@ -2329,6 +2393,14 @@
 		<Spanish>[ICON_BULLET]Permite [LINK=CONCEPT_TRADE]intercambiar tecnolog&#237;a[\LINK] (si esta opci&#243;n est&#225; activa)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW2</Tag>
+		<English>An enemy unit %s1_EnUName has ended the battle against your unit %s2_UnitName after %d3 [NUM3:round:rounds].</English>
+		<French>L'unit&#233; de combat ennemie (%s1_EnUName) a mis fin au combat contre votre unit&#233; %s2_UnitName apr&#232;s %d3 [NUM3:tour:tours].</French>
+		<German>Eine gegnerische Einheit %s1_EnUName hat den Kampf gegen Eure Einheit %s2_UnitName nach %d3 [NUM3:Runde:Runden] beendet!</German>
+		<Italian>L'unit&#224; %s1_EnUName ha concluso la battaglia contro la tua unit&#224; %s2_UnitName dopo %d3 [NUM3:turno:turni].</Italian>
+		<Spanish>[NUM1:Un:Una:Unos:Unas] %s1_EnUName se [NUM1:ha:ha:han:han] terminado la batalla contra [NUM2:vuestro:vuestra:vuestros:vuestras] %s2_UnitName despu&#233;s de %d3 [NUM3:ronda:rondas].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_LOST_PROD_CONVERTED</Tag>
 		<English>%s1_CityName cannot transfer the [ICON_PRODUCTION] surplus. The lost %d2_NumProduction[ICON_PRODUCTION] have been converted to %d3_NumGold[ICON_GOLD].</English>
 		<French>%s1_CityName ne peut pas transf&#233;rer le surplus de [ICON_PRODUCTION]. Les %d2_NumProduction[ICON_PRODUCTION] perdus ont &#233;t&#233; convertis en %d3_NumGold[ICON_GOLD].</French>
@@ -2338,11 +2410,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PAE_VERSION</Tag>
-		<English>Pie's Ancient Europe VII (7.15)</English>
-		<French>Pie's Ancient Europe VII (7.15)</French>
-		<German>Pie's Ancient Europe VII (7.15)</German>
-		<Italian>Pie's Ancient Europe VII (7.15)</Italian>
-		<Spanish>Pie's Ancient Europe VII (7.15)</Spanish>
+		<English>Pie's Ancient Europe VII (7.18)</English>
+		<French>Pie's Ancient Europe VII (7.18)</French>
+		<German>Pie's Ancient Europe VII (7.18)</German>
+		<Italian>Pie's Ancient Europe VII (7.18)</Italian>
+		<Spanish>Pie's Ancient Europe VII (7.18)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROGRESS_TOWARDS_TECH</Tag>
@@ -2375,6 +2447,14 @@
 		<German>Ihr habt Frieden mit %s1_TeamName geschlossen!</German>
 		<Italian>Hai fatto pace con %s1_TeamName!</Italian>
 		<Spanish>Hab&#233;is firmado la paz con %s1_TeamName</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_YOU_UNIT_WITHDRAW2</Tag>
+		<English>Your %s1_UnitName has ended the battle against a unit %s2_EnUName after %d3 [NUM3:round:rounds].</English>
+		<French>Votre %s1_UnitName a termin&#233; la bataille contre [NUM2:un:une:des:des] %s2_EnUName apr&#232;s %d3 [NUM3:tour:tours].</French>
+		<German>Eure Einheit %s1_UnitName hat gegen eine Einheit %s2_EnUName den Kampf nach %d3 [NUM3:Runde:Runden] beendet.</German>
+		<Italian>La tua unit&#224; %s1_UnitName ha concluso la battaglia contro l'unit&#224; nemica %s2_EnUName dopo %d3 [NUM3:turno:turni].</Italian>
+		<Spanish>[NUM1:Vuestro:Vuestra:Vuestros:Vuestras] %s1_UnitName [NUM1:ha:ha:han:han] finalizado la batalla contra [NUM2:un:una:unos:unas] %s2_EnUName tras %d3 [NUM3:turno:turnos].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISSION_INQUISITION</Tag>
@@ -2426,11 +2506,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ENEMY_DEATH</Tag>
-		<English>Enemy death requires: min.</English>
-		<French>Mort ennemie requise: min.</French>
-		<German>Tod des Gegners bei min.</German>
-		<Italian>La morte del nemico richiede: min.</Italian>
-		<Spanish>La muerte del enemigo req.: m&#237;n.</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Enemy death requires: min.[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Mort ennemie requise: min.[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Tod des Gegners bei min.[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]La morte del nemico richiede: min.[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]La muerte del enemigo req.: m&#237;n.[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO_FIRST_STRIKES</Tag>

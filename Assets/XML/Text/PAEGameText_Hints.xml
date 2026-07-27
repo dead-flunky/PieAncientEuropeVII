@@ -116,7 +116,7 @@
 		<Tag>TXT_KEY_HINT_115</Tag>
 		<English>Already sent a hunter to hunt? Many new animals are waiting for you, which can be stored as food in a nearby town. But be careful, animals know no cultural borders. Workers should not be unprotected.</English>
 		<French>Avez-vous d&#233;j&#224; essay&#233; de chasser avec un chasseur ? De nombreux nouveaux animaux vous attendent. Leur viande pourra &#234;tre ajout&#233;e aux villes proches. Mais soyez prudent, les animaux peuvent faire des incursions &#224; la fronti&#232;re. Les travailleurs ne devraient pas &#234;tre sans protection.</French>
-		<German>Schon einen J&#228;ger zum Jagen geschickt? Viele neue Tiere erwarten dich, die als Nahrung in einer nahe gelegenen Stadt eingelagert werden k&#246;nnen. Aber Achtung, Tiere kennen keine kulturellen Grenzen.</German>
+		<German>Schon einen J&#228;ger zum Jagen geschickt? Viele neue Tiere erwarten dich, die als Nahrung in einer nahe gelegenen Stadt eingelagert werden k&#246;nnen. Aber Achtung, Tiere kennen keine kulturellen Grenzen. Bautrupps sollten nicht allein gelassen werden.</German>
 		<Italian>Anche un cacciatore inviato a cacciare? Molti nuovi animali ti aspettano, che possono essere memorizzati come cibo in una citt&#224; vicina. Ma attenzione, gli animali non conoscono confini culturali. I lavoratori non dovrebbero essere protetti.</Italian>
 		<Spanish>&#191;Ya enviaste un cazador a cazar? Nuevos animales est&#225;n esper&#225;ndote, que pueden ser almacenados como comida en una ciudad cercana. Pero ten cuidado, los animales no conocen fronteras. Los trabajadores no deben estar desprotegidos.</Spanish>
 	</TEXT>
@@ -234,11 +234,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_130</Tag>
-		<English>If you play with the player name "Apocalypto", you can look forward to greatly increased natural disasters.</English>
-		<French>Si vous jouez une partie avec le nom "Apocalypto", vous pouvez vous attendre &#224; affronter un grand nombre de catastrophes naturelles.</French>
-		<German>Spielt man mit dem Spielernamen "Apocalypto", darf man sich auf stark vermehrte Naturkatastrophen freuen.</German>
-		<Italian>Se si gioca con il nome del giocatore "Apocalypto", si pu&#242; guardare avanti per notevolmente aumentato calamit&#224; naturali.</Italian>
-		<Spanish>Si juegas con el nombre de jugador "Apocalypto", puedes esperar incrementados mayores desastres naturales.</Spanish>
+		<English>The game options Armageddon, Apocalypse, Pandora and Seth noticeably increase the difficulty level - the world becomes more chaotic, dangerous and unpredictable.</English>
+		<French>Les options de jeu Armageddon, Apocalypse, Pandora et Seth augmentent sensiblement le niveau de difficult&#233; : le monde devient plus chaotique, dangereux et impr&#233;visible.</French>
+		<German>Mit den Spieloptionen Armageddon, Apokalypse, Pandora und Seth l&#228;sst sich der Schwierigkeitsgrad sp&#252;rbar erh&#246;hen - die Welt wird chaotischer, gef&#228;hrlicher und unberechenbarer.</German>
+		<Italian>Le opzioni di gioco Armageddon, Apocalypse, Pandora e Seth aumentano sensibilmente il livello di difficolt&#224;: il mondo diventa pi&#249; caotico, pericoloso e imprevedibile.</Italian>
+		<Spanish>Las opciones de juego Armageddon, Apocalypse, Pandora y Seth aumentan notablemente el nivel de dificultad: el mundo se vuelve m&#225;s ca&#243;tico, peligroso e impredecible.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_131</Tag>

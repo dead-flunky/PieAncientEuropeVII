@@ -2897,7 +2897,7 @@ Combat sur terre :
 
 1) Exp&#233;rience de guerre : A chaque victoire, une unit&#233; est en mesure d'augmenter son degr&#233;s d'exp&#233;rience. Les diff&#233;rents degr&#233;s sont : entra&#238;n&#233;, exp&#233;riment&#233;, aguerri, v&#233;t&#233;ran, &#233;lite et l&#233;gendaire. Voir les concepts de [LINK=CONCEPT_COMBAT3]Unit&#233;s-Rang d'exp&#233;rience[\LINK]
 
-2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir - [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
+2) Lassitude de guerre : les unit&#233;s ayant atteint le statut de v&#233;t&#233;ran par un long service dans l'arm&#233;e de leur empire peuvent se fatiguer de faire la guerre. Voir – [LINK=CONCEPT_COMBAT3]Unit&#233;s : Lassitude de guerre[\LINK]
 
 3) Mercenaires : les v&#233;t&#233;rans qui combattent pour eux-m&#234;mes peuvent se d&#233;faire de cette promotion apr&#232;s un combat (20% de chance). S'il y a un h&#233;ros ou un g&#233;n&#233;ral dans la pile de l'unit&#233;, m&#234;me 50 %.
 
@@ -2925,7 +2925,7 @@ Combat sur terre :
 
 15) Combat contre des [LINK=CONCEPT_MERCENARY]mercenaires en mission[\LINK] : L'un d'entre eux est le chef. S'il est vaincu, vous pouvez le faire torturer. Il est probable qu'il r&#233;v&#232;le un ou plusieurs de ses potentiels commanditaires.
 
-16) Mort du meneur d'homme : voir - [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
+16) Mort du meneur d'homme : voir – [LINK=CONCEPT_GENERALDEATH]Unit&#233; : mort d'un g&#233;n&#233;ral[\LINK]
 
 17) Culture : la culture d'une unit&#233; victorieuse influence la case du combat. Parfois, des territoires ennemis voisins sont convertis &#224; la culture de l'unit&#233;. Seulement valable si ces cases sont aussi influenc&#233;es par une ville de m&#234;me culture.
 
@@ -8887,7 +8887,7 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 
 
 [H1]Earthquakes, Volcano eruptions, Comets and Meteorites[\H1]
-occur every 120 rounds until 400 BC, then every 60 turns. If you play with the name "Apocalypto", the frequency of these catastrophes doubles (every 60/30 turns) (Apocalypto has no effect in multiplayer games).
+Natural disasters occur every 120 turns until 400?BC, then every 60 turns. If you play with the "Armageddon" game option, this interval is cut in half.
 In this interval, one of the four catastrophes will be chosen randomly.
 
 [H2]Earthquakes (3:8)[\H2]
@@ -9051,7 +9051,7 @@ Effects:
 
 
 [H1] S&#233;ismes, &#233;ruptions volcaniques, com&#232;tes et m&#233;t&#233;orites [\H1]
-Tous les 120 tours, puis &#224; partir de 400 av. J.-C., tous les 60 tours. Si vous jouez avec le nom " Apocalypto ", la fr&#233;quence double (c'est &#224; dire tous les 60 ou 30 tours) (Apocalypto fonctionne uniquement en mode joueur unique et n'a aucun effet en mode multijoueur).
+Des catastrophes naturelles surviennent tous les 120 tours jusqu'en 400 av. J.-C., puis tous les 60 tours. Si vous activez l'option de jeu "Armageddon", cet intervalle est r&#233;duit de moiti&#233;.
 A ces intervalles, l'une de ces catastrophes naturelles sera s&#233;lectionn&#233;e au hasard.
 
 [H2]S&#233;ismes (3:8)[\H2]
@@ -9216,7 +9216,7 @@ Effets :
 
 
 [H1]Erdbeben, Vulkanausbr&#252;che, Kometen und Meteoriten[\H1]
-entstehen bis zum Jahr 400 v.Chr. alle 120 Runden und danach alle 60 Runden. Spielt man mit dem Namen "Apocalypto", verdoppelt sich deren H&#228;ufigkeit (also alle 60 bzw. 30 Runden). Apocalypto funktioniert nur im Einzelspielermodus und bleibt im Mehrspielermodus wirkungslos.
+Naturkatastrophen ereigneten sich bis 400 v. Chr. alle 120 Runden, danach alle 60 Runden. Spielt man mit der Option "Armageddon", halbiert sich dieses Intervall.
 In diesem Intervall wird eine dieser Naturkatastrophen per Zufall ausgew&#228;hlt.
 
 [H2]Erdbeben (3:8)[\H2]
@@ -9380,8 +9380,7 @@ Auswirkungen:
 [ICON_BULLET]le citt&#224; perdono fino al 50% della loro popolazione, le unit&#224; possono essere danneggiate/uccise (meno che fuori dalle citt&#224;) e gli edifici distrutti. Il danno alle citt&#224; diminuisce con la distanza dalla costa; le citt&#224; costruite su colline E dotate di mura subiscono meno danni.
 
 [H1]Terremoti, eruzioni vulcaniche, comete e meteoriti[\H1]
-si verificano ogni 120 turni fino al 400 a.C., poi ogni 60 turni. Se giochi con il nome "Apocalypto", la frequenza di queste catastrofi raddoppia (ogni 60/30 turni) (Apocalypto non ha effetto nelle partite multigiocatore).
-
+I disastri naturali si verificano ogni 120 turni fino al 400 a.C., poi ogni 60 turni. Se si gioca con l'opzione di gioco "Armageddon", questo intervallo si dimezza.
 In questo intervallo, una delle quattro catastrofi verr&#224; scelta casualmente.
 
 [H2]Terremoti (3:8)[\H2]
@@ -9545,7 +9544,7 @@ Effetti:
 [ICON_BULLET]las ciudades pierden hasta el 50% de su poblaci&#243;n, las unidades pueden ser da&#241;adas/matadas (menos que fuera de las ciudades) y los edificios destruidos. El da&#241;o en las ciudades se reduce con la distancia a la costa, las ciudades que son construidas en colinas Y tienen murallas sufren menos da&#241;os.
 
 [H1]Terremotos, erupciones volc&#225;nicas, meteoritos y cometas[\H1]
-Ocurren cada 120 turnos hasta el 400 a.C., entonces cada 60 turnos. Si juegas con el nombre "Apocalypto", la frecuencia de estas cat&#225;strofes se duplica (cada 60/30 turnos) (Apocalypto no tiene efecto en juegos multijugador).
+Los desastres naturales ocurren cada 120 turnos hasta el a&#241;o 400 a. C., y luego cada 60 turnos. Si juegas con la opci&#243;n de juego "Armaged&#243;n", este intervalo se reduce a la mitad.
 En este intervalo, uno de las cuatro cat&#225;strofes ser&#225; elegida aleatoriamente.
 
 
@@ -12926,6 +12925,242 @@ Los caballos fueron difundidos desde las estepas de Asia por los Asirios a Mesop
 [H2]Perros de guerra:[\H2]
 Los perros de guerra fueron tra&#237;dos por Alejandro Magno desde la meseta tibetana a Europa.
 Distribuci&#243;n: Si obtienes perros de guerra por intercambio, podr&#225;s construir la maravilla nacional criadero de perros de guerra, que produce perros de guerra.
+		</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CONCEPT_ROADS_PEDIA</Tag>
+		<English>Even in early antiquity, paths were not created through planning, but through use: herds of livestock, traders, and travelers gradually carved trails into the landscape over the years. It was only with the advent of settled life, growing trade, and military expansion that cultures developed systematic road-building techniques. PAE replicates this historical development in its gameplay mechanics. Roads are a dynamic system that evolves with technology, trade, and culture.
+
+
+[H2]1. Paths[\H2]
+As soon as a worker constructs an improvement on a plot (e.g., mine, farm, warehouse), a footpath is automatically created.
+
+[ICON_BULLET] No construction costs
+[ICON_BULLET] No movement penalty from hills/forests ([ICON_MOVES]* 1)
+[ICON_BULLET] Symbolize the earliest paths of humankind
+
+
+[H2]2. Early Roads (after the invention of spoked wheels)[\H2]
+[ICON_BULLET] Prerequisite: Spoked wheel technology (Bronze Age)
+
+Only with this innovation could workers intentionally build roads.
+
+[ICON_BULLET] Increased movement compared to footpaths ([ICON_MOVES]* 2)
+[ICON_BULLET] Represent the first planned dirt roads
+
+
+[H2]3. Trade Routes (dynamically generated through trade)[\H2]
+If traders conduct several successful trade transactions with cities, a trade route can automatically form.
+
+[ICON_BULLET] Paved, stable, economically valuable
+[ICON_BULLET] Offer even better movement advantages ([ICON_MOVES]* 3)
+[ICON_BULLET] Are not created by workers, but by trade activity
+[ICON_BULLET] Economy +1 [ICON_COMMERCE]
+[ICON_BULLET] Symbolize the major trade routes of antiquity (e.g., Silk Road, Amber Road, Iron Road)
+
+
+[H2]4. Persian Royal Roads (state-organized long-distance road)[\H2]
+[ICON_BULLET] Culture-specific: Persian
+[ICON_BULLET] Requirement: Persian Royal Road technology
+[ICON_BULLET] Movement equivalent to trade routes ([ICON_MOVES]* 3)
+[ICON_BULLET] Historically one of the most efficient roads of antiquity
+
+
+[H2]5. Roman Military Roads[\H2]
+[ICON_BULLET] Culture-specific: Romans
+[ICON_BULLET] Requirement: Roman Military Roads technology
+[ICON_BULLET] The best and fastest routes in antiquity (also build over trade routes)
+
+[ICON_BULLET] Extremely durable (cannot be destroyed by natural disasters)
+[ICON_BULLET] Maximum movement points for units ([ICON_MOVES]* 4)
+[ICON_BULLET] Economy +1 [ICON_COMMERCE]</English>
+		<French>
+D&#232;s l'Antiquit&#233;, les chemins n'&#233;taient pas planifi&#233;s, mais us&#233;s par le passage : troupeaux, marchands et voyageurs ont progressivement trac&#233; des sentiers dans le paysage au fil des si&#232;cles. Ce n'est qu'avec l'av&#232;nement de la s&#233;dentarisation, le d&#233;veloppement du commerce et l'expansion militaire que les civilisations ont mis au point des techniques syst&#233;matiques de construction de routes. PAE reproduit cette &#233;volution historique dans ses m&#233;canismes de jeu. Les routes constituent un syst&#232;me dynamique qui &#233;volue au gr&#233; des technologies, du commerce et de la culture.
+
+
+[H2]1. Chemins[\H2]
+D&#232;s qu'un ouvrier construit une am&#233;lioration sur une parcelle (par exemple, une mine, une ferme, un entrep&#244;t), un chemin est automatiquement cr&#233;&#233;.
+
+[ICON_BULLET] Aucun co&#251;t de construction
+[ICON_BULLET] Aucune p&#233;nalit&#233; de d&#233;placement due aux collines/for&#234;ts ([ICON_MOVES]* 1)
+[ICON_BULLET] Symbolisent les premiers chemins de l'humanit&#233;
+
+
+[H2]2. Premi&#232;res routes (apr&#232;s l'invention de la roue &#224; rayons)[\H2]
+[ICON_BULLET] Pr&#233;requis : Technologie de la roue &#224; rayons (&#194;ge du bronze)
+
+Ce n'est qu'avec cette innovation que les ouvriers ont pu construire des routes.
+
+[ICON_BULLET] D&#233;placement accru par rapport aux sentiers ([ICON_MOVES]* 2)
+[ICON_BULLET] Repr&#233;sentent les premi&#232;res routes de terre am&#233;nag&#233;es
+
+
+[H2]3. Routes commerciales (g&#233;n&#233;r&#233;es dynamiquement par le commerce)[\H2]
+Si les marchands effectuent plusieurs transactions commerciales fructueuses avec des villes, une route commerciale peut se former automatiquement.
+
+[ICON_BULLET] Pav&#233;es, stables, &#233;conomiquement pr&#233;cieuses
+[ICON_BULLET] Offrent des avantages de d&#233;placement encore plus importants ([ICON_MOVES]* 3)
+[ICON_BULLET] Ne sont pas cr&#233;&#233;es par les ouvriers, mais par l'activit&#233; commerciale
+[ICON_BULLET] &#201;conomie +1 [ICON_COMMERCE]
+[ICON_BULLET] Symbolisent les principales routes commerciales de l'Antiquit&#233; (par exemple, la Route de la Soie, la Route de l'Ambre, la Route du Fer)
+
+
+[H2]4. Routes Royales Perses (routes de grande distance organis&#233;es par l'&#201;tat)[\H2]
+[ICON_BULLET] Culture sp&#233;cifique : Perse
+[ICON_BULLET] Pr&#233;requis : Technologie des Routes Royales Perses
+[ICON_BULLET] D&#233;placement &#233;quivalent aux routes commerciales ([ICON_MOVES]* 3)
+[ICON_BULLET] Historiquement, l'une des routes les plus efficaces de l'Antiquit&#233;
+
+
+[H2]5. Routes militaires romaines[\H2]
+[ICON_BULLET] Culture sp&#233;cifique : Romains
+[ICON_BULLET] Pr&#233;requis : Technologie des routes militaires romaines
+[ICON_BULLET] Les routes les plus rapides et les plus efficaces de l'Antiquit&#233; (possibilit&#233; de construire sur les routes commerciales)
+
+[ICON_BULLET] Extr&#234;mement r&#233;sistantes (insensibles aux catastrophes naturelles)
+[ICON_BULLET] Points de mouvement maximum pour les unit&#233;s ([ICON_MOVES]* 4)
+[ICON_BULLET] &#201;conomie +1 [ICON_COMMERCE]
+		</French>
+		<German>
+Schon in der fr&#252;hen Antike entstanden Wege nicht durch Planung, sondern durch Nutzung: Viehherden, H&#228;ndler und Reisende traten &#252;ber Jahre hinweg Pfade in die Landschaft. Erst mit der Sesshaftigkeit, wachsendem Handel und milit&#228;rischen Expansionen entwickelten Kulturen systematische Stra&#223;enbau-Techniken. PAE bildet diese historische Entwicklung spielmechanisch nach. Stra&#223;en sind ein dynamisches System, das sich mit Technologie, Handel und Kultur weiterentwickelt.
+
+[H2]1. Pfade[\H2]
+Sobald ein Arbeiter eine Modernisierung auf einem Plot errichtet (z.B. Mine, Farm, Lager), entsteht automatisch ein Trampelpfad.
+
+[ICON_BULLET] Keine Baukosten
+[ICON_BULLET] Kein Bewegungsmalus durch H&#252;gel/Wald ([ICON_MOVES]* 1)
+[ICON_BULLET] Symbolisieren die fr&#252;hesten Wege der Menschheit
+
+
+[H2]2. Fr&#252;he Stra&#223;en (nach Erfindung der Speichenr&#228;der)[\H2]
+[ICON_BULLET] Voraussetzung: Technologie Speichenr&#228;der (Bronzezeit)
+
+Erst mit dieser Innovation k&#246;nnen Arbeiter bewusste Stra&#223;en bauen.
+
+[ICON_BULLET] Bewegungserh&#246;hung gegen&#252;ber Trampelpfaden ([ICON_MOVES]* 2)
+[ICON_BULLET] Repr&#228;sentieren die ersten geplanten Erdstra&#223;en
+
+
+[H2]3. Handelsstra&#223;en (dynamisch durch Handel)[\H2]
+Wenn H&#228;ndler mehrere erfolgreiche Handelsgesch&#228;fte mit St&#228;dten durchf&#252;hren, kann sich automatisch eine Handelsstra&#223;e bilden.
+
+[ICON_BULLET] Gepflastert, stabil, wirtschaftlich wertvoll
+[ICON_BULLET] Bieten noch bessere Bewegungsvorteile ([ICON_MOVES]* 3)
+[ICON_BULLET] Entstehen nicht durch Arbeiter, sondern durch Handelsaktivit&#228;t
+[ICON_BULLET] Wirtschaft +1 [ICON_COMMERCE]
+[ICON_BULLET] Symbolisieren die gro&#223;en Handelsrouten der Antike (z.B. Seidenstra&#223;e, Bernsteinstra&#223;e, Eisenstra&#223;e)
+
+
+[H2]4. Persische K&#246;nigsstra&#223;en (staatlich organisierte Fernstra&#223;e)[\H2]
+[ICON_BULLET] Kultur-spezifisch: Perser
+[ICON_BULLET] Voraussetzung: Technologie Persische K&#246;nigsstra&#223;e
+[ICON_BULLET] Bewegung gleichwertig zu Handelsstra&#223;en ([ICON_MOVES]* 3)
+[ICON_BULLET] Historisch eine der effizientesten Stra&#223;en der Antike
+
+
+
+[H2]5. R&#246;mische Heerstra&#223;en[\H2]
+[ICON_BULLET] Kultur-spezifisch: R&#246;mer
+[ICON_BULLET] Voraussetzung: Technologie R&#246;mische Heerstra&#223;en 
+[ICON_BULLET] Die besten und schnellsten Wege im Altertum (&#252;berbauen auch Handelsstra&#223;en)
+
+[ICON_BULLET] Extrem langlebig (k&#246;nnen nicht durch Naturkatastrophen zerst&#246;rt werden)
+[ICON_BULLET] Maximale Bewegungspunkte f&#252;r Einheiten ([ICON_MOVES]* 4)
+[ICON_BULLET] Wirtschaft +1 [ICON_COMMERCE]
+		</German>
+		<Italian>
+Anche nell'antichit&#224;, i sentieri non venivano creati attraverso la pianificazione, ma attraverso l'uso: mandrie di bestiame, commercianti e viaggiatori tracciavano gradualmente sentieri nel paesaggio nel corso degli anni. Fu solo con l'avvento della vita sedentaria, la crescita del commercio e l'espansione militare che le culture svilupparono tecniche sistematiche di costruzione di strade. PAE riproduce questo sviluppo storico nelle sue meccaniche di gioco. Le strade sono un sistema dinamico che si evolve con la tecnologia, il commercio e la cultura.
+
+
+[H2]1. Sentieri[\H2]
+Non appena un lavoratore costruisce un miglioramento su un appezzamento di terreno (ad esempio, miniera, fattoria, magazzino), viene creato automaticamente un sentiero.
+
+[ICON_BULLET] Nessun costo di costruzione
+[ICON_BULLET] Nessuna penalit&#224; di movimento da colline/foreste ([ICON_MOVES]* 1)
+[ICON_BULLET] Simboleggiano i primi sentieri dell'umanit&#224;
+
+
+[H2]2. Le prime strade (dopo l'invenzione delle ruote a raggi)[\H2]
+[ICON_BULLET] Prerequisito: Tecnologia delle ruote a raggi (Et&#224; del Bronzo)
+
+Solo con questa innovazione i lavoratori poterono costruire strade intenzionalmente.
+
+[ICON_BULLET] Maggiore mobilit&#224; rispetto ai sentieri ([ICON_MOVES]* 2)
+[ICON_BULLET] Rappresentano le prime strade sterrate pianificate
+
+
+[H2]3. Rotte commerciali (generate dinamicamente tramite il commercio)[\H2]
+Se i mercanti effettuano diverse transazioni commerciali di successo con le citt&#224;, si pu&#242; formare automaticamente una rotta commerciale.
+
+[ICON_BULLET] Pavimentate, stabili, economicamente vantaggiose
+[ICON_BULLET] Offrono vantaggi di movimento ancora migliori ([ICON_MOVES]* 3)
+[ICON_BULLET] Non sono create dai lavoratori, ma dall'attivit&#224; commerciale
+[ICON_BULLET] Economia +1 [ICON_COMMERCE]
+[ICON_BULLET] Simboleggiano le principali rotte commerciali dell'antichit&#224; (ad esempio, la Via della Seta, la Via dell'Ambra, la Via del Ferro)
+
+
+[H2]4. Vie Reali Persiane (strade a lunga percorrenza organizzate dallo stato)[\H2]
+[ICON_BULLET] Cultura specifica: Persiana
+[ICON_BULLET] Requisito: tecnologia delle Vie Reali Persiane
+[ICON_BULLET] Movimento equivalente alle rotte commerciali ([ICON_MOVES]* 3)
+[ICON_BULLET] Storicamente una delle strade pi&#249; efficienti dell'antichit&#224;
+
+
+[H2]5. Strade militari romane[\H2]
+[ICON_BULLET] Cultura specifica: Romani
+[ICON_BULLET] Requisito: tecnologia Strade militari romane
+[ICON_BULLET] I percorsi migliori e pi&#249; veloci dell'antichit&#224; (costruibili anche lungo le rotte commerciali)
+
+[ICON_BULLET] Estremamente resistenti (non possono essere distrutte da calamit&#224; naturali)
+[ICON_BULLET] Punti movimento massimi per le unit&#224; ([ICON_MOVES]* 4)
+[ICON_BULLET] Economia +1 [ICON_COMMERCE]
+		</Italian>
+		<Spanish>
+Incluso en la antig&#252;edad, los caminos no se creaban mediante la planificaci&#243;n, sino mediante el uso: reba&#241;os de ganado, comerciantes y viajeros fueron abriendo senderos en el paisaje a lo largo de los a&#241;os. Fue solo con la llegada de la vida sedentaria, el creciente comercio y la expansi&#243;n militar que las culturas desarrollaron t&#233;cnicas sistem&#225;ticas de construcci&#243;n de caminos. PAE reproduce este desarrollo hist&#243;rico en su mec&#225;nica de juego. Los caminos son un sistema din&#225;mico que evoluciona con la tecnolog&#237;a, el comercio y la cultura.
+
+
+[H2]1. Caminos[\H2]
+En cuanto un trabajador construye una mejora en una parcela (p. ej., mina, granja, almac&#233;n), se crea autom&#225;ticamente un sendero.
+
+[ICON_BULLET] Sin costes de construcci&#243;n
+[ICON_BULLET] Sin penalizaci&#243;n de movimiento por colinas/bosques ([ICON_MOVES]* 1)
+[ICON_BULLET] Simbolizan los primeros caminos de la humanidad
+
+
+[H2]2. Primeros caminos (tras la invenci&#243;n de la rueda de radios)[\H2]
+[ICON_BULLET] Requisito: Tecnolog&#237;a de la rueda de radios (Edad de Bronce)
+
+Solo con esta innovaci&#243;n los trabajadores pod&#237;an construir caminos intencionadamente.
+
+[ICON_BULLET] Mayor movilidad en comparaci&#243;n con los senderos ([ICON_MOVES]* 2)
+[ICON_BULLET] Representan los primeros caminos de tierra planificados
+
+
+[H2]3. Rutas comerciales (generadas din&#225;micamente mediante el comercio)[\H2]
+Si los comerciantes realizan varias transacciones comerciales exitosas con ciudades, se puede formar autom&#225;ticamente una ruta comercial.
+
+[ICON_BULLET] Pavimentadas, estables, econ&#243;micamente valiosas
+[ICON_BULLET] Ofrecen ventajas de movimiento a&#250;n mayores ([ICON_MOVES]* 3)
+[ICON_BULLET] No son creadas por trabajadores, sino por la actividad comercial
+[ICON_BULLET] Econom&#237;a +1 [ICON_COMMERCE]
+[ICON_BULLET] Simbolizan las principales rutas comerciales de la antig&#252;edad (p. ej., la Ruta de la Seda, la Ruta del &#193;mbar, la Ruta del Hierro)
+
+
+[H2]4. Caminos Reales Persas (carretera de larga distancia organizada por el estado)[\H2]
+[ICON_BULLET] Espec&#237;fico de la cultura: Persa
+[ICON_BULLET] Requisito: Tecnolog&#237;a de Caminos Reales Persas
+[ICON_BULLET] Movimiento equivalente al de las rutas comerciales ([ICON_MOVES]* 3)
+[ICON_BULLET] Hist&#243;ricamente, uno de los caminos m&#225;s eficientes de la antig&#252;edad
+
+
+[H2]5. Calzadas militares romanas[\H2]
+[ICON_BULLET] Cultura espec&#237;fica: Romanos
+[ICON_BULLET] Requisito: Tecnolog&#237;a de calzadas militares romanas
+[ICON_BULLET] Las mejores y m&#225;s r&#225;pidas rutas de la antig&#252;edad (tambi&#233;n se pueden construir sobre rutas comerciales)
+
+[ICON_BULLET] Extremadamente duraderas (no pueden ser destruidas por desastres naturales)
+[ICON_BULLET] Puntos de movimiento m&#225;ximos para unidades ([ICON_MOVES]* 4)
+[ICON_BULLET] Econom&#237;a +1 [ICON_COMMERCE]
 		</Spanish>
 	</TEXT>
 	<TEXT>

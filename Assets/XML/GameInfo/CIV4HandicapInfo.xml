@@ -84,6 +84,7 @@
 				<GoodyType>GOODY_HEALING</GoodyType>
 				<GoodyType>GOODY_HEALING</GoodyType>
 				<GoodyType>GOODY_TECH</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 			</Goodies>
 			<FreeTechs/>
 			<AIFreeTechs/>
@@ -252,8 +253,7 @@
 				<GoodyType>GOODY_TECH</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 			</Goodies>
 			<FreeTechs/>
@@ -339,10 +339,9 @@
 				<GoodyType>GOODY_TECH</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
 			</Goodies>
 			<FreeTechs/>
 			<AIFreeTechs/>
@@ -428,11 +427,11 @@
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
 			</Goodies>
 			<FreeTechs/>
 			<AIFreeTechs/>
@@ -518,12 +517,12 @@
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
 			</Goodies>
 			<FreeTechs/>
 			<AIFreeTechs/>
@@ -610,11 +609,14 @@
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
-				<GoodyType>GOODY_BARBARIANS_WEAK</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
 				<GoodyType>GOODY_BARBARIANS_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
+				<GoodyType>GOODY_BARBARIANS_VERY_STRONG</GoodyType>
 			</Goodies>
 			<FreeTechs/>
 			<AIFreeTechs/>

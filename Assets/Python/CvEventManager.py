@@ -3787,17 +3787,6 @@ class CvEventManager:
 										pPlot.getFeatureType() == gc.getInfoTypeForString("FEATURE_JUNGLE"):
 								pPlot.setFeatureType(-1, 0)
 
-				# Promo Sentry bei Forts und Towers
-				#elif iImprovement in L.LImprFortSentry:
-				#		iRange = pPlot.getNumUnits()
-				#		for k in range(iRange):
-				#				pPlot.getUnit(k).setHasPromotion(gc.getInfoTypeForString("PROMOTION_SENTRY2"), True)
-
-						# Kultur bei Forts
-						# if iImprovement in L.LImprFortShort:
-						#  PAE_Turn_Features.doCheckFortCulture(pPlot)
-				# ------
-
 				# PAE 6.15: Automatischer Trampelpfad bis zur Entdeckung der normalen Strasse (TECH_THE_WHEEL2)
 				if bAutomatischePfade:
 						iOwner = pPlot.getOwner()
@@ -4307,15 +4296,6 @@ class CvEventManager:
 													CyInterface().addMessage(iPlayer, True, 5, CyTranslator().getText("TXT_KEY_POPUP_HUNS_NO_MONEY", ()), None, 2, pUnit.getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
 
 					if pUnit is not None and not pUnit.isNone() and not pUnit.isDead() and not pUnit.isBarbarian():
-
-							# Sentry2 bei Turm und Festung: +1 Sichtweite
-							if pOldPlot.getImprovementType() in L.LImprFortSentry:
-									pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_SENTRY2"), False)
-							if pPlot.getImprovementType() in L.LImprFortSentry:
-									pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_SENTRY2"), True)
-									# Kultur bei Forts
-									# PAE_Turn_Features.doCheckFortCulture(pPlot)
-							# ------
 
 							# In der Stadt
 							if pPlot.isCity():
@@ -5526,6 +5506,7 @@ class CvEventManager:
 
 				# CvUtil.pyPrint("%s has grown to size %i" %(pCity.getName(),pCity.getPopulation()))
 				if pPlayer.isHuman():
+					if pPlayer.isOption(PlayerOptionTypes.PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH):
 						CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GROWTH",
 						(pCity.getName(), pCity.getPopulation())), None, 2, None, ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
 
@@ -5628,6 +5609,14 @@ class CvEventManager:
 					# Lepra ab 5
 					if not bDecline and pCity.getPopulation() >= 5:
 							bDecline = PAE_City.doLeprosy(pCity)
+							
+					# PAE 7.18 game option Pandora
+					if not bDecline:
+						if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PAE_PANDORA):
+							if pCity.badHealth(False) > pCity.goodHealth():
+								if CvUtil.myRandom(2, "GameOptionPandora") == 1:
+									PAE_City.doSpawnPestToCity(pCity)
+									return
 
 					# Slaves (Check jede 3. Runde): freier Buerger
 					if iPlayer != gc.getBARBARIAN_PLAYER() and iGameTurnFounded % 3 == 0:
@@ -6001,10 +5990,7 @@ def check_show_ressources():
 	iPlayer = gc.getGame().getActivePlayer()
 	# Requires implementation of doControlWithoutWidget in DLL. Comment in after implementation.
 	if PBMod:
-		if (iPlayer != -1
-			and gc.getPlayer(iPlayer).isOption(
-				PlayerOptionTypes.PLAYEROPTION_MODDER_1)
-		):
+		if (iPlayer != -1 and gc.getPlayer(iPlayer).isOption(PlayerOptionTypes.PLAYEROPTION_MODDER_1)):
 			CvUtil.pyPrint('toggle resource symbols on')
 			bResourceOn = ControlTypes.CONTROL_RESOURCE_ALL + 1001
 			CyGame().doControlWithoutWidget(bResourceOn)  # Ctrl+r

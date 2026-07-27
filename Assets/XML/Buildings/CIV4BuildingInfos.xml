@@ -67063,7 +67063,7 @@
 			<BuildingClass>BUILDINGCLASS_TRAIT_MARITIME_GLOBAL</BuildingClass>
 			<Type>BUILDING_TRAIT_MARITIME_GLOBAL</Type>
 			<SpecialBuildingType/>
-			<Description>TRAIT1</Description>
+			<Description>TXT_KEY_BUILDING_TRAIT_MARITIME</Description>
 			<Civilopedia/>
 			<Strategy/>
 			<Advisor>ADVISOR_GROWTH</Advisor>
@@ -67220,7 +67220,7 @@
 			<BuildingClass>BUILDINGCLASS_TRAIT_CREATIVE_LOCAL</BuildingClass>
 			<Type>BUILDING_TRAIT_CREATIVE_LOCAL</Type>
 			<SpecialBuildingType/>
-			<Description>TRAIT2</Description>
+			<Description>TXT_KEY_BUILDING_TRAIT_CREATIVE</Description>
 			<Civilopedia/>
 			<Strategy/>
 			<Advisor>ADVISOR_GROWTH</Advisor>
@@ -67382,7 +67382,7 @@
 			<BuildingClass>BUILDINGCLASS_TRAIT_CREATIVE_GLOBAL</BuildingClass>
 			<Type>BUILDING_TRAIT_CREATIVE_GLOBAL</Type>
 			<SpecialBuildingType/>
-			<Description>TRAIT3</Description>
+			<Description>TXT_KEY_BUILDING_TRAIT_CREATIVE</Description>
 			<Civilopedia/>
 			<Strategy/>
 			<Advisor>ADVISOR_GROWTH</Advisor>
@@ -67539,7 +67539,7 @@
 			<BuildingClass>BUILDINGCLASS_TRAIT_PHILOSOPHICAL_GLOBAL</BuildingClass>
 			<Type>BUILDING_TRAIT_PHILOSOPHICAL_GLOBAL</Type>
 			<SpecialBuildingType/>
-			<Description>TRAIT4</Description>
+			<Description>TXT_KEY_BUILDING_TRAIT_PHILOSOPHICAL</Description>
 			<Civilopedia/>
 			<Strategy/>
 			<Advisor>ADVISOR_GROWTH</Advisor>

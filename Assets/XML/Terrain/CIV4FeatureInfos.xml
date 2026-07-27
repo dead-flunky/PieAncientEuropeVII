@@ -363,6 +363,7 @@
 			<Type>FEATURE_FOREST_NEW</Type>
 			<Description>TXT_KEY_FEATURE_FOREST_NEW</Description>
 			<Civilopedia>TXT_KEY_FEATURE_FOREST_PEDIA</Civilopedia>
+			<Help>TXT_KEY_FEATURE_FOREST_NEW_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_FOREST_NEW</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
@@ -1092,6 +1093,7 @@
 			<Type>FEATURE_FOREST_BURNING</Type>
 			<Description>TXT_KEY_FEATURE_FOREST_BURNING</Description>
 			<Civilopedia>TXT_KEY_FEATURE_FOREST_PEDIA</Civilopedia>
+			<Help>TXT_KEY_FEATURE_FOREST_BURNING_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_FOREST_BURNING</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
@@ -1213,6 +1215,7 @@
 			<Type>FEATURE_FOREST_BURNT</Type>
 			<Description>TXT_KEY_FEATURE_FOREST_BURNT</Description>
 			<Civilopedia>TXT_KEY_FEATURE_FOREST_PEDIA</Civilopedia>
+			<Help>TXT_KEY_FEATURE_FOREST_BURNT_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_FOREST_BURNT</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
@@ -1334,6 +1337,7 @@
 			<Type>FEATURE_FALLOUT</Type>
 			<Description>TXT_KEY_FEATURE_DESERTSTORM</Description>
 			<Civilopedia/>
+			<Help>TXT_KEY_FEATURE_DISAPPEARS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_FALLOUT</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
@@ -1455,6 +1459,7 @@
 			<Type>FEATURE_GRASSHOPPER</Type>
 			<Description>TXT_KEY_FEATURE_GRASSHOPPER</Description>
 			<Civilopedia/>
+			<Help>TXT_KEY_FEATURE_DISAPPEARS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_GRASSHOPPER</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
@@ -1697,6 +1702,7 @@
 			<Type>FEATURE_SEUCHE</Type>
 			<Description>TXT_KEY_FEATURE_SEUCHE</Description>
 			<Civilopedia/>
+			<Help>TXT_KEY_FEATURE_DISAPPEARS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_SEUCHE</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-2</iYieldChange>
@@ -1931,6 +1937,7 @@
 			<Type>FEATURE_SEESTURM</Type>
 			<Description>TXT_KEY_FEATURE_SEESTURM</Description>
 			<Civilopedia/>
+			<Help>TXT_KEY_FEATURE_DISAPPEARS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_SEESTURM</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-2</iYieldChange>
@@ -1970,6 +1977,7 @@
 			<Type>FEATURE_STURM</Type>
 			<Description>TXT_KEY_FEATURE_STURM</Description>
 			<Civilopedia/>
+			<Help>TXT_KEY_FEATURE_DISAPPEARS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_STURM</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
@@ -2079,6 +2087,7 @@
 			<Type>FEATURE_TORNADO</Type>
 			<Description>TXT_KEY_FEATURE_TORNADO</Description>
 			<Civilopedia/>
+			<Help>TXT_KEY_FEATURE_DISAPPEARS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_TORNADO</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-1</iYieldChange>
@@ -2118,6 +2127,7 @@
 			<Type>FEATURE_SAURER_REGEN</Type>
 			<Description>TXT_KEY_FEATURE_SAURER_REGEN</Description>
 			<Civilopedia/>
+			<Help>TXT_KEY_FEATURE_DISAPPEARS_HELP</Help>
 			<ArtDefineTag>ART_DEF_FEATURE_SAURER_REGEN</ArtDefineTag>
 			<YieldChanges>
 				<iYieldChange>-2</iYieldChange>
@@ -2471,7 +2481,7 @@
 		<FeatureInfo>
 			<Type>FEATURE_DARK_ICE</Type>
 			<Description>TXT_KEY_FEATURE_DARK_ICE</Description>
-			<Civilopedia></Civilopedia>
+			<Civilopedia/>
 			<ArtDefineTag>ART_DEF_FEATURE_DARK_ICE</ArtDefineTag>
 			<YieldChanges/>
 			<RiverYieldChange/>

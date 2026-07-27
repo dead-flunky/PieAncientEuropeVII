@@ -3705,8 +3705,16 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
 			szString.append(NEWLINE);
 			szString.append(gDLL->getText("TXT_KEY_PLOT_DAMAGE", iDamage));
-			szString.append(CvWString::format( ENDCOLR));
+			szString.append(CvWString::format(ENDCOLR));
 		}
+
+		// PAE: Helptext
+		if (!CvWString(GC.getFeatureInfo(pPlot->getFeatureType()).getHelp()).empty())
+		{
+			szString.append(NEWLINE);
+			szString.append(GC.getFeatureInfo(pPlot->getFeatureType()).getHelp());
+		}
+
 	}
 	
 	// PAE
@@ -11636,6 +11644,13 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 	if (feature.isNoImprovement())
 	{
 		szBuffer.append(gDLL->getText("TXT_KEY_FEATURE_NO_IMPROVEMENT"));
+	}
+
+	// PAE: Helptext
+	if (!CvWString(feature.getHelp()).empty())
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(feature.getHelp());
 	}
 
 }

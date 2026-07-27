@@ -7,7 +7,8 @@ from CvPythonExtensions import (CyGlobalContext, CyInterface, CyGame,
 											CyAudioGame, plotDistance, plotXY,
 											isWorldWonderClass, isTeamWonderClass,
 											isNationalWonderClass, InterfaceMessageTypes,
-											CommerceTypes, YieldTypes, FontSymbols)
+											CommerceTypes, YieldTypes, FontSymbols,
+											PlayerOptionTypes, GameOptionTypes)
 # import CvEventInterface
 import CvUtil
 
@@ -666,7 +667,8 @@ def doMessageCityGrowing(pCity):
 
 				# MESSAGE: city will grow / Stadt wird wachsen
 				iPop = pCity.getPopulation() + 1
-				CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_WILL_GROW", (pCity.getName(), iPop)), None, 2, None, ColorTypes(13), 0, 0, False, False)
+				if gc.getPlayer(iPlayer).isOption(PlayerOptionTypes.PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH):
+					CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_WILL_GROW", (pCity.getName(), iPop)), None, 2, None, ColorTypes(13), 0, 0, False, False)
 
 				# MESSAGE: city gets/is unhappy / Stadt wird/ist unzufrieden
 				iBonusHealth = 0
@@ -1072,6 +1074,13 @@ def doTurnCityRevolt(pCity):
 								bCityIsInRevolt = True
 								iCityRevoltTurns = iChance
 								text = "TXT_KEY_MESSAGE_CITY_REVOLT_TAXES"
+
+		# PAE 7.18 game option Seth
+		if not bCityIsInRevolt:
+			if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PAE_SETH):
+				if pCity.happyLevel() < pCity.unhappyLevel(0):
+					doStartCivilWar(pCity, 50)
+					return
 
 		# City Revolt PopUp / Human and AI
 		if bCityIsInRevolt:

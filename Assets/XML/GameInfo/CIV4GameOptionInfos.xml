@@ -195,5 +195,33 @@
 			<bDefault>0</bDefault>
 			<bVisible>1</bVisible>
 		</GameOptionInfo>
+		<GameOptionInfo>
+			<Type>GAMEOPTION_PAE_ARMAGEDDON</Type>
+			<Description>TXT_KEY_GAMEOPTION_PAE_ARMAGEDDON</Description>
+			<Help>TXT_KEY_GAMEOPTION_PAE_ARMAGEDDON_HELP</Help>
+			<bDefault>0</bDefault>
+			<bVisible>1</bVisible>
+		</GameOptionInfo>
+		<GameOptionInfo>
+			<Type>GAMEOPTION_PAE_APOCALYPSE</Type>
+			<Description>TXT_KEY_GAMEOPTION_PAE_APOCALYPSE</Description>
+			<Help>TXT_KEY_GAMEOPTION_PAE_APOCALYPSE_HELP</Help>
+			<bDefault>0</bDefault>
+			<bVisible>1</bVisible>
+		</GameOptionInfo>
+		<GameOptionInfo>
+			<Type>GAMEOPTION_PAE_PANDORA</Type>
+			<Description>TXT_KEY_GAMEOPTION_PAE_PANDORA</Description>
+			<Help>TXT_KEY_GAMEOPTION_PAE_PANDORA_HELP</Help>
+			<bDefault>0</bDefault>
+			<bVisible>1</bVisible>
+		</GameOptionInfo>
+		<GameOptionInfo>
+			<Type>GAMEOPTION_PAE_SETH</Type>
+			<Description>TXT_KEY_GAMEOPTION_PAE_SETH</Description>
+			<Help>TXT_KEY_GAMEOPTION_PAE_SETH_HELP</Help>
+			<bDefault>0</bDefault>
+			<bVisible>1</bVisible>
+		</GameOptionInfo>
 	</GameOptionInfos>
 </Civ4GameOptionInfos>

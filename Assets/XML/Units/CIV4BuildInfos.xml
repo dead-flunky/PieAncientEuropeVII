@@ -762,7 +762,7 @@
 		<BuildInfo>
 			<Type>BUILD_TURM_HUNTER</Type>
 			<Description>TXT_KEY_BUILD_TURM_HUNTER</Description>
-			<Help/>
+			<Help>TXT_KEY_INFO_IMPROVEMENT_SENTRY</Help>
 			<PrereqTech>TECH_HOLZWEHRANLAGEN</PrereqTech>
 			<iTime>1</iTime>
 			<iCost>0</iCost>
@@ -781,7 +781,7 @@
 		<BuildInfo>
 			<Type>BUILD_TURM</Type>
 			<Description>TXT_KEY_BUILD_TURM</Description>
-			<Help/>
+			<Help>TXT_KEY_INFO_IMPROVEMENT_SENTRY</Help>
 			<PrereqTech>TECH_HOLZWEHRANLAGEN</PrereqTech>
 			<iTime>30</iTime>
 			<iCost>5</iCost>

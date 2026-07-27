@@ -506,11 +506,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CELTIC_TEMPLE</Tag>
-		<English>Nemeton (Celtic Altar)</English>
-		<French>Nemeton (Autel celtique)</French>
-		<German>Nemeton (Keltischer Altar)</German>
-		<Italian>Nemeton (Altare Celtico)</Italian>
-		<Spanish>Nemeton (Altar Celta)</Spanish>
+		<English>Celtic Cult Site</English>
+		<French>Site de culte celtique</French>
+		<German>Keltischer Kultplatz</German>
+		<Italian>Sito di culto celtico</Italian>
+		<Spanish>Lugar de culto celta</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CHRISTIAN_MONASTERY</Tag>
@@ -978,11 +978,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LABYRINTH</Tag>
-		<English>Palace of Knossos</English>
-		<French>Palais de Cnossos</French>
-		<German>Palast von Knossos</German>
-		<Italian>Palazzo di Cnosso</Italian>
-		<Spanish>Palacio de Knossos</Spanish>
+		<English>Labyrinth of Knossos</English>
+		<French>Labyrinthe de Cnossos</French>
+		<German>Labyrinth von Knossos</German>
+		<Italian>Labirinto di Cnosso</Italian>
+		<Spanish>Laberinto de Cnosos</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEPRAKOLONIE</Tag>
@@ -5231,14 +5231,6 @@
 		<German>R&#252;ckzugstaktik</German>
 		<Italian>Ritirata</Italian>
 		<Spanish>T&#225;cticas de retirada</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROMOTION_SENTRY2</Tag>
-		<English>Watchman</English>
-		<French>Gardien</French>
-		<German>W&#228;chter</German>
-		<Italian>Guardiano</Italian>
-		<Spanish>Sereno</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_SHOCK1</Tag>

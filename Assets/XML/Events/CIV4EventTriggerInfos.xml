@@ -97,7 +97,7 @@
 			<bPickOtherPlayerCity>0</bPickOtherPlayerCity>
 			<bShowPlot>1</bShowPlot>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo/>
+			<PythonCanDo>setForestFire</PythonCanDo>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
@@ -2844,7 +2844,7 @@
 			<PythonCanDo/>
 			<PythonCanDoCity>canTriggerCityFire</PythonCanDoCity>
 			<PythonCanDoUnit/>
-			<PythonCallback/>
+			<PythonCallback>setCityFire</PythonCallback>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_CITY_FIRE_CRISIS</Type>
@@ -3964,7 +3964,7 @@
 			<PythonCanDo/>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
-			<PythonCallback/>
+			<PythonCallback>setBauschutt</PythonCallback>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_BREAKTHROUGH</Type>

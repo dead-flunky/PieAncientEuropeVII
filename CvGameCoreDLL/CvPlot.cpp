@@ -1750,8 +1750,7 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 		}
 	}
 
-	// PAE: Watchtowers and forts
-	/*
+	// PAE: Watchtowers and forts (+1 Sichtweite)
 	if (getImprovementType() != NO_IMPROVEMENT)
 	{
 		std::list<int> lList;
@@ -1764,7 +1763,6 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_KASTELL")));
 		if (std::find(lList.begin(), lList.end(), getImprovementType()) != lList.end()) iLevel++;
 	}
-	*/
 	// ---------------------------
 
 	return iLevel;

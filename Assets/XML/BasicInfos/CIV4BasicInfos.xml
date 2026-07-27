@@ -301,5 +301,10 @@
 			<Description>TXT_KEY_CONCEPT_SEAMONSTER</Description>
 			<Civilopedia>TXT_KEY_CONCEPT_SEAMONSTER_PEDIA</Civilopedia>
 		</ConceptInfo>
+		<ConceptInfo>
+			<Type>CONCEPT_ROADS</Type>
+			<Description>TXT_KEY_CONCEPT_ROADS</Description>
+			<Civilopedia>TXT_KEY_CONCEPT_ROADS_PEDIA</Civilopedia>
+		</ConceptInfo>
 	</ConceptInfos>
 </Civ4BasicInfos>

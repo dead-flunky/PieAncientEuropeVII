@@ -91,6 +91,9 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 
 				self.H_LINKS_FULL_H = 650
 
+				# PAE
+				self.iRight = 0
+
 				self.nWidgetCount = 0
 
 				# screen instances
@@ -196,33 +199,33 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 				self.szCategoryTimelineUnits = localText.getText("TXT_KEY_PEDIA_CATEGORY_TIMELINE_UNITS", ())
 
 				self.listCategories = [self.szCategoryTech,
-															 self.szCategoryUnit,
-															 self.szCategoryBuilding,
-															 self.szCategoryWonder,
-															 self.szCategoryTerrain,
-															 self.szCategoryFeature,
-															 self.szCategoryBonus,
-															 self.szCategoryImprovement,
-															 self.szCategorySpecialist,
-															 self.szCategoryPromotion,
-															 self.szCategoryUnitCombat,
-															 self.szCategoryCiv,
-															 self.szCategoryLeader,
-															 self.szCategoryReligion,
-															 self.szCategoryCorporation,
-															 self.szCategoryCivic,
-															 self.szCategoryProject,
-															 self.szCategoryConcept,
-															 self.szCategoryConceptNew,
-															 self.szCategoryHints,
-															 self.szCategoryTraits,
-															 self.szCategoryForm,
-															 self.szCategoryVeterans,
-															 self.szCategoryRank,
-															 #self.szCategorySpecialBuildings,
-															 self.szCategoryNationalBuildings,
-															 self.szCategoryTimelineUnits
-															 ]
+											 self.szCategoryUnit,
+											 self.szCategoryBuilding,
+											 self.szCategoryWonder,
+											 self.szCategoryTerrain,
+											 self.szCategoryFeature,
+											 self.szCategoryBonus,
+											 self.szCategoryImprovement,
+											 self.szCategorySpecialist,
+											 self.szCategoryPromotion,
+											 self.szCategoryUnitCombat,
+											 self.szCategoryCiv,
+											 self.szCategoryLeader,
+											 self.szCategoryReligion,
+											 self.szCategoryCorporation,
+											 self.szCategoryCivic,
+											 self.szCategoryProject,
+											 self.szCategoryConcept,
+											 self.szCategoryConceptNew,
+											 self.szCategoryHints,
+											 self.szCategoryTraits,
+											 self.szCategoryForm,
+											 self.szCategoryVeterans,
+											 self.szCategoryRank,
+											 #self.szCategorySpecialBuildings,
+											 self.szCategoryNationalBuildings,
+											 self.szCategoryTimelineUnits
+											 ]
 
 				# Create a new screen
 				screen = self.getScreen()
@@ -230,11 +233,15 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 				screen.setScreenGroup(1)
 				screen.showScreen(PopupStates.POPUPSTATE_IMMEDIATE, False)
 
+				# PAE
+				#self.calculateSizesAndPositions()
+
 				# Set background
 				screen.addDDSGFC(self.BACKGROUND_ID, ArtFileMgr.getInterfaceArtInfo("SCREEN_BG_OPAQUE").getPath(), 0, 0, self.W_SCREEN, self.H_SCREEN, WidgetTypes.WIDGET_GENERAL, -1, -1)
 				screen.addPanel(self.TOP_PANEL_ID, u"", u"", True, False, 0, 0, self.W_SCREEN, 55, PanelStyles.PANEL_STYLE_TOPBAR)
 				screen.addPanel(self.BOTTOM_PANEL_ID, u"", u"", True, False, 0, 713, self.W_SCREEN, 55, PanelStyles.PANEL_STYLE_BOTTOMBAR)
 				screen.setDimensions(screen.centerX(0), screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
+				#screen.setDimensions(self.iRight, screen.centerY(0), self.W_SCREEN, self.H_SCREEN)
 
 				# Exit button
 				screen.setText(self.EXIT_ID, "Background", self.EXIT_TEXT, CvUtil.FONT_RIGHT_JUSTIFY, self.X_EXIT, self.Y_EXIT, 0, FontTypes.TITLE_FONT, WidgetTypes.WIDGET_CLOSE_SCREEN, -1, -1)
@@ -1961,3 +1968,52 @@ class CvPediaMain(CvPediaScreen.CvPediaScreen):
 						return self.pediaHistorical.handleInput(inputClass)
 
 				return 0
+
+		# PAE
+		def calculateSizesAndPositions(self):
+				screen = self.getScreen()
+				iScreenW = screen.getXResolution()
+				iScreenH = screen.getYResolution()
+
+				self.X_SCREEN = 500
+				self.Y_SCREEN = 396
+
+				if iScreenW <= 800: self.W_SCREEN = 780
+				elif iScreenW <= 1250: self.W_SCREEN = 1000
+				else: self.W_SCREEN = 1200
+				self.iRight = (iScreenW - self.W_SCREEN) / 2
+
+				self.H_SCREEN = 768
+				self.Y_TITLE = 8
+				self.DY_TEXT = 45
+
+
+				self.X_EXIT = self.W_SCREEN - 6
+				self.Y_EXIT = 730
+
+				self.X_BACK = 50
+				self.Y_BACK = 730
+
+				self.X_FORWARD = 200
+				self.Y_FORWARD = 730
+
+				self.X_MENU = 450
+				self.Y_MENU = 730
+
+				self.BUTTON_SIZE = 64
+				self.BUTTON_COLUMNS = 9
+
+				self.W_LINKS = 240 # 225
+
+				self.X_ITEMS_PANE = 10  # 30
+				self.Y_ITEMS_PANE = 57  # 80
+				self.H_ITEMS_PANE = 650  # 610
+				self.W_ITEMS_PANE = self.W_SCREEN - self.W_LINKS # 780  # 740
+				self.ITEMS_MARGIN = 18
+				self.ITEMS_SEPARATION = 2
+
+				self.X_LINKS = self.X_ITEMS_PANE + self.W_ITEMS_PANE + 10
+				self.Y_LINKS = 51
+				self.H_LINKS = 300
+
+				self.H_LINKS_FULL_H = 650

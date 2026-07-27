@@ -4,7 +4,7 @@
 
 # Imports
 from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap, CyGame,
-								CyCamera, CyEngine, PlotTypes,
+								CyCamera, CyEngine, PlotTypes, GameOptionTypes,
 								CyTranslator, DirectionTypes,
 								ColorTypes, CyPopupInfo, isWorldWonderClass,
 								ButtonPopupTypes, plotXY, plotDirection)
@@ -37,11 +37,12 @@ def doGenerateDisaster(iGameTurn):
 		# Test
 		# doNebel()
 
-		iTurnDisastersModulo = 120
-		bApocalypse = False
-		if gc.getPlayer(gc.getGame().getActivePlayer()).getName() == "Apocalypto":
-				iTurnDisastersModulo = 60
-				bApocalypse = True
+		iTurnDisastersModulo = gc.getDefineINT("PAE_NATURAL_DISASTER_INTERVAL")
+		bArmageddon = False
+		# Armageddon option halves the interval => disasters occur twice as often
+		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PAE_ARMAGEDDON):
+				iTurnDisastersModulo //= 2
+				bArmageddon = True
 
 		if gc.getGame().getGameTurnYear() > -600 and iGameTurn % 25 == 0:
 				doNebel()
@@ -87,7 +88,7 @@ def doGenerateDisaster(iGameTurn):
 										# Player gets warning message
 										CyInterface().addMessage(i, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_ORACLE_WARNING", ("",)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-		if bApocalypse:
+		if bArmageddon:
 				if iGameTurn % (86 / iTeiler) == 0:
 						doSeesturm()
 				if iGameTurn % (90 / iTeiler) == 0:
@@ -1482,6 +1483,7 @@ def doMeteorites():
 				gc.getInfoTypeForString("BONUS_IRON")
 		]
 		bonusPlotArray = []
+		bMessage2HI = False
 
 		iMapSize = gc.getMap().getWorldSize()
 		iMax = max(2, (iMapSize * 4))
@@ -1575,17 +1577,14 @@ def doMeteorites():
 
 						if pPlot.isVisibleToWatchingHuman():
 								#CyCamera().JustLookAtPlot(pPlot)
-								popupInfo = CyPopupInfo()
-								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-								popupInfo.setText(CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )))
-								popupInfo.addPopup(gc.getGame().getActivePlayer())
+								bMessage2HI = True
 								CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 20, CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )),
 										"AS2D_METEORSTRIKE", 2, gc.getFeatureInfo(feat_meteor).getButton(), ColorTypes(7), iRandX, iRandY, True, True)
+
 
 						# Effekt
 						iEffect = gc.getInfoTypeForString("EFFECT_METEORS")
 						CyEngine().triggerEffect(iEffect, pPlot.getPoint())
-
 
 		# Jeweilige Chance einer neuen Bonus Resource, 33%
 		if bonusPlotArray:
@@ -1603,6 +1602,13 @@ def doMeteorites():
 								if iOwner > -1 and gc.getPlayer(iOwner).isHuman():
 										CyInterface().addMessage(iOwner, True, 20, CyTranslator().getText("TXT_KEY_NEW_BONUS", (gc.getBonusInfo(iNewBonus).getDescription(), )),
 												None, 2, gc.getBonusInfo(iNewBonus).getButton(), ColorTypes(14), pRandPlot.getX(), pRandPlot.getY(), True, True)
+
+		# PAE 7.17: PopUp Message to HI
+		if bMessage2HI:
+				popupInfo = CyPopupInfo()
+				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+				popupInfo.setText(CyTranslator().getText("TXT_KEY_DISASTER_METEORITES", ("", )))
+				popupInfo.addPopup(gc.getGame().getActivePlayer())
 
 
 def doComet():
@@ -1985,7 +1991,7 @@ def doOracleShowsDisaster(iX, iY):
 								return
 
 # Globale Naturkastastrophe / Klima / Pandemie
-# Hungersnot: -50% Weltbevölkerung
+# Hungersnot: -50% Weltbevölkerung (Pop/2) / if GAMEOPTION_PAE_APOCALYPSE: Pop = 2
 # Pest: Cities Pop > 5 (if such cities exist after 50% pop loss)
 def doGlobalDisaster():
 		iRange = gc.getMAX_PLAYERS()
@@ -1996,12 +2002,16 @@ def doGlobalDisaster():
 				while loopCity:
 					if not loopCity.isNone():
 
-						iPop = loopCity.getPopulation()
 						loopCity.setFood(0)
 
-						# Hungertod
-						iPop = iPop // 2
-						loopCity.changePopulation(-iPop)
+						# Shrink city pop
+						if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PAE_APOCALYPSE):
+							iPop = 2
+							loopCity.setPopulation(iPop)
+						else:
+							iPop = loopCity.getPopulation() // 2
+							loopCity.changePopulation(-iPop)
+
 						if pPlayer.isHuman():
 							CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_HUNGERSNOT", (loopCity.getName(),)),
 							"AS2D_PLAGUE", 2, "Art/Interface/Buttons/Actions/button_skull.dds", ColorTypes(13), loopCity.getX(),  loopCity.getY(), True, True)

@@ -895,6 +895,9 @@ protected:
 	void resolveAirCombat(CvUnit* pInterceptor, CvPlot* pPlot, CvAirMissionDefinition& kBattle);
 	void checkRemoveSelectionAfterAttack();
 	void resolveCombatRanged(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle); // PAE
+
+private:
+	int m_iCombatRounds; // PAE new combat system
 };
 
 #endif

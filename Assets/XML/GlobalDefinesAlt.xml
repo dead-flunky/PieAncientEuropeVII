@@ -30,4 +30,9 @@
 		<DefineName>PAE_CITY_RUINS_REMOVE_CHANCE</DefineName>
 		<iDefineIntVal>50</iDefineIntVal>
 	</Define>
+	<Define>
+		<!-- PAE intervall for disasters every x turn (PAE_Disasters.py) -->
+		<DefineName>PAE_NATURAL_DISASTER_INTERVAL</DefineName>
+		<iDefineIntVal>120</iDefineIntVal>
+	</Define>
 </Civ4Defines>

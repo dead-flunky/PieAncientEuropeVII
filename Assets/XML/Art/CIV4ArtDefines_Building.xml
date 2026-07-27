@@ -3586,7 +3586,7 @@
 			<bAnimated>0</bAnimated>
 			<fScale>3.0</fScale>
 			<fInterfaceScale>0.35</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/EthiopianStele/EthiopianStele.nif</NIF>
+			<NIF>Art/Structures/Buildings/celtic_stele/celtic_stele.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Builds/button_temple_celt.dds</Button>
 		</BuildingArtInfo>

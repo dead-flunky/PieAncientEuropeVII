@@ -178,11 +178,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_FORT_HELP</Tag>
-		<English>[ICON_BULLET]Connects resources to trade network and acts as ship canal on coasts (max 2 plots upcountry)</English>
-		<French>[ICON_BULLET]Connecte les ressources au r&#233;seau commercial et joue le r&#244;le de canal de navigation sur les c&#244;tes (2 cases max &#224; l'int&#233;rieur des terres)</French>
-		<German>[ICON_BULLET]Verbindet Ressourcen ans Handelsnetz und wirkt an K&#252;sten als Kanal f&#252;r Schiffe (max. 2 Felder landeinw&#228;rts)</German>
-		<Italian>[ICON_BULLET]Connette le risorse alla rete commerciale e funge da canale marittimo sulle coste (massimo 2 lotti fuori regione)</Italian>
-		<Spanish>[ICON_BULLET]Conecta los recursos a la red comercial y act&#250;a como canal de barco en las costas (m&#225;x. 2 parcelas en el pa&#237;s)</Spanish>
+		<English>[ICON_BULLET]Connects resources to trade network and acts as ship canal on coasts (max 2 plots upcountry)[NEWLINE][ICON_BULLET]+1 visibility for units</English>
+		<French>[ICON_BULLET]Connecte les ressources au r&#233;seau commercial et joue le r&#244;le de canal de navigation sur les c&#244;tes (2 cases max &#224; l'int&#233;rieur des terres)[NEWLINE][ICON_BULLET]+1 visibilit&#233; pour les unit&#233;s</French>
+		<German>[ICON_BULLET]Verbindet Ressourcen ans Handelsnetz und wirkt an K&#252;sten als Kanal f&#252;r Schiffe (max. 2 Felder landeinw&#228;rts)[NEWLINE][ICON_BULLET]+1 Sichtweite f&#252;r Einheiten</German>
+		<Italian>[ICON_BULLET]Connette le risorse alla rete commerciale e funge da canale marittimo sulle coste (massimo 2 lotti fuori regione)[NEWLINE][ICON_BULLET]+1 visibilit&#224; per le unit&#224;</Italian>
+		<Spanish>[ICON_BULLET]Conecta los recursos a la red comercial y act&#250;a como canal de barco en las costas (m&#225;x. 2 parcelas en el pa&#237;s)[NEWLINE][ICON_BULLET]+1 visibilidad para unidades</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_HANDELSPOSTEN</Tag>
@@ -3423,7 +3423,7 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 		<Tag>TXT_KEY_MESSAGE_CITY_GETS_UNHAPPY</Tag>
 		<English>Caution! %s1 becomes unhappy next turn!</English>
 		<French>Attention ! La population de %s1 deviendra malheureuse au prochain tour !</French>
-		<German>Vorsicht! Die Bev&#246;lkerung von %s1 wird n&#228;chste Runde auch ungl&#252;cklich!</German>
+		<German>Vorsicht! Die Bev&#246;lkerung von %s1 wird n&#228;chste Runde ungl&#252;cklich!</German>
 		<Italian>Attenzione! La popolazione di %s1 diventer&#224; infelice il prossimo turno!</Italian>
 		<Spanish>&#161;Cuidado! &#161;La poblaci&#243;n de %s1 se volver&#225; infeliz el pr&#243;ximo turno!</Spanish>
 	</TEXT>
@@ -3431,7 +3431,7 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 		<Tag>TXT_KEY_MESSAGE_CITY_GETS_UNHEALTY</Tag>
 		<English>Caution! %s1 becomes unhealthy next turn!</English>
 		<French>Attention ! %s1 deviendra insalubre au prochain tour !</French>
-		<German>Vorsicht! Die Bev&#246;lkerung von %s1 wird n&#228;chste Runde auch ungesund!</German>
+		<German>Vorsicht! Die Bev&#246;lkerung von %s1 wird n&#228;chste Runde ungesund!</German>
 		<Italian>Attenzione! %s1 diventa malsano il prossimo turno!</Italian>
 		<Spanish>&#161;Cuidado! &#161;La poblaci&#243;n de %s1 se volver&#225; insalubre el pr&#243;ximo turno!</Spanish>
 	</TEXT>

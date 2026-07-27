@@ -1962,19 +1962,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOREST_FIRE_1</Tag>
-		<English>Organize a replanting effort.</English>
-		<French>Organisez une campagne de reboisement.</French>
-		<German>Pflanzt so viele neue B&#228;ume wie m&#246;glich.</German>
-		<Italian>Organizza un rimboschimento.</Italian>
-		<Spanish>Que empiecen las tareas de repoblaci&#243;n forestal.</Spanish>
+		<English>Extinguish the fire and plant as many new trees as possible. (Young forest is emerging)</English>
+		<French>&#201;teignez le feu et plantez autant de nouveaux arbres que possible. (Une jeune for&#234;t est en train d'&#233;merger)</French>
+		<German>L&#246;scht den Brand und pflanzt so viele neue B&#228;ume wie m&#246;glich. (Junger Wald entsteht)</German>
+		<Italian>Spegnete l'incendio e piantate quanti pi&#249; alberi nuovi possibile. (Sta nascendo una giovane foresta)</Italian>
+		<Spanish>Extingue el fuego y planta tantos &#225;rboles nuevos como sea posible. (Est&#225; emergiendo un bosque joven)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOREST_FIRE_2</Tag>
-		<English>Send emissaries to assist the bereaved.</English>
-		<French>Envoyez des &#233;missaires pour aider les victimes.</French>
-		<German>Schickt den Familien der unschuldigen Opfer etwas Gold.</German>
-		<Italian>Invia degli emissari per aiutare gli sfollati.</Italian>
-		<Spanish>Que se env&#237;en emisarios a ayudar a los afectados.</Spanish>
+		<English>Simply extinguish the fire. Nature should regenerate itself. (A burnt forest is created)</English>
+		<French>Il suffit d'&#233;teindre le feu. La nature devrait se r&#233;g&#233;n&#233;rer d'elle-m&#234;me. (Une for&#234;t br&#251;l&#233;e se forme)</French>
+		<German>L&#246;scht lediglich den Brand. Die Natur soll sich selber regenerieren. (Verbrannter Wald entsteht)</German>
+		<Italian>&#200; sufficiente spegnere il fuoco. La natura si rigenerer&#224; da sola. (Si crea una foresta bruciata)</Italian>
+		<Spanish>Simplemente apaga el fuego. La naturaleza se regenerar&#225;. (Se crea un bosque quemado)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FOREST_FIRE_3</Tag>

@@ -761,6 +761,70 @@ Scuola di retorica
 		<Spanish>Las unidades luchan un m&#225;ximo de 2 a 4 turnos. Dependiendo de la gravedad de las heridas, la batalla puede durar varios turnos. (El BTS siempre lucha hasta la muerte o la retirada, lo que equivale a 4 a 6 turnos con la salud completa).</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_APOCALYPSE</Tag>
+		<English>Apocalypse: Extreme global natural disasters</English>
+		<French>Apocalypse : Catastrophes naturelles mondiales extr&#234;mes</French>
+		<German>Apokalypse: Extreme globale Naturkatastrophen</German>
+		<Italian>Apocalisse: disastri naturali globali estremi</Italian>
+		<Spanish>Apocalipsis: Desastres naturales globales extremos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_APOCALYPSE_HELP</Tag>
+		<English>Apocalypse: The extremely rare global natural disasters do not halve the population of cities, but instead reset the population directly to Pop 2 (affects every city in the game).</English>
+		<French>Apocalypse : Les catastrophes naturelles mondiales extr&#234;mement rares ne r&#233;duisent pas de moiti&#233; la population des villes, mais la r&#233;initialisent directement &#224; Pop 2 (affecte toutes les villes du jeu).</French>
+		<German>Apokalypse: Die extrem seltenen globalen Naturkatastrophen halbieren die Bev&#246;lkerung der St&#228;dte nicht, sondern setzen die Bev&#246;lkerung direkt auf Pop 2 (betriff jede Stadt im Spiel).</German>
+		<Italian>Apocalisse: I disastri naturali globali, estremamente rari, non dimezzano la popolazione delle citt&#224;, ma la riportano direttamente a Pop 2 (colpiscono tutte le citt&#224; del gioco).</Italian>
+		<Spanish>Apocalipsis: Los desastres naturales globales extremadamente raros no reducen a la mitad la poblaci&#243;n de las ciudades, sino que la restablecen directamente a Pop 2 (afecta a todas las ciudades del juego).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_ARMAGEDDON</Tag>
+		<English>Armageddon: Increased number of natural disasters</English>
+		<French>Armageddon : Augmentation du nombre de catastrophes naturelles</French>
+		<German>Armageddon: Erh&#246;hte Anzahl an Naturkatastrophen</German>
+		<Italian>Armageddon: aumento del numero di disastri naturali</Italian>
+		<Spanish>Armaged&#243;n: Aumento del n&#250;mero de desastres naturales</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_ARMAGEDDON_HELP</Tag>
+		<English>Armageddon: this halves the interval for natural disasters - they occur twice as often.</English>
+		<French>Armageddon : cela divise par deux l'intervalle entre les catastrophes naturelles - elles se produisent deux fois plus souvent.</French>
+		<German>Armageddon: damit wird das Intervall f&#252;r Naturkatastrophen halbiert - sie treten doppelt so h&#228;ufig auf.</German>
+		<Italian>Armageddon: questo dimezza l'intervallo tra i disastri naturali, che si verificano con una frequenza doppia.</Italian>
+		<Spanish>Armaged&#243;n: esto reduce a la mitad el intervalo entre desastres naturales; ocurren con el doble de frecuencia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_PANDORA</Tag>
+		<English>Pandora: Unhealthy cities succumb to the plague</English>
+		<French>Pandora : Les villes insalubres succombent &#224; la peste</French>
+		<German>Pandora: Ungesunde St&#228;dte verfallen der Pest</German>
+		<Italian>Pandora: Le citt&#224; insalubri soccombono alla peste</Italian>
+		<Spanish>Pandora: Las ciudades insalubres sucumben a la peste.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_PANDORA_HELP</Tag>
+		<English>Pandora: Unhealthy cities have a 50% chance of succumbing to the plague each turn.</English>
+		<French>Pandora : Les villes insalubres ont 50 % de chances de succomber &#224; la peste &#224; chaque tour.</French>
+		<German>Pandora: Ungesunde St&#228;dte haben pro Runde eine Chance von 50%, der Pest zu verfallen.</German>
+		<Italian>Pandora: Le citt&#224; insalubri hanno il 50% di probabilit&#224; di soccombere alla peste a ogni turno.</Italian>
+		<Spanish>Pandora: Las ciudades insalubres tienen un 50% de probabilidades de sucumbir a la plaga en cada turno.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_SETH</Tag>
+		<English>Seth: Discontented cities fall into civil war</English>
+		<French>Seth : Les villes m&#233;contentes sombrent dans la guerre civile</French>
+		<German>Seth: Unzufriedene St&#228;dte fallen in B&#252;rgerkrieg</German>
+		<Italian>Seth: Le citt&#224; scontenti precipitano nella guerra civile</Italian>
+		<Spanish>Seth: Las ciudades descontentas caen en guerra civil.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_PAE_SETH_HELP</Tag>
+		<English>Seth: Dissatisfied cities have a 50% chance of falling into civil war.</English>
+		<French>Seth : Les villes m&#233;contentes ont 50 % de chances de sombrer dans la guerre civile.</French>
+		<German>Seth: Unzufriedene St&#228;dte haben eine Chance von 50%, in B&#252;rgerkrieg zu fallen.</German>
+		<Italian>Seth: Le citt&#224; insoddisfatte hanno il 50% di probabilit&#224; di precipitare in una guerra civile.</Italian>
+		<Spanish>Seth: Las ciudades insatisfechas tienen un 50% de probabilidades de caer en una guerra civil.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GRAPHICOPTION_HIRES_TERRAIN</Tag>
 		<English>High Detail Terrain</English>
 		<French>D&#233;tail terrains haut</French>
@@ -1772,7 +1836,7 @@ Scuola di retorica
 		<Tag>TXT_KEY_MESSAGE_USURPATOR_INSIDE</Tag>
 		<English>After an important general fell for you, the zealous provincial governor of %s1 rises up as a usurper and tries to seize your empire.</English>
 		<French>Apr&#232;s qu'un g&#233;n&#233;ral important soit tomb&#233; amoureux de vous, le z&#233;l&#233; gouverneur provincial de %s1 se l&#232;ve comme usurpateur et tente de s'emparer de votre empire.</French>
-		<German>Nachdem ein wichtiger General f&#252;r Euch gefallen war, erhebt sich der eifrige Provinzstatthalter von %s1 als Usurpator und versucht, Euer Reich an sich zu rei&#223;en.</German>
+		<German>Nachdem ein wichtiger General f&#252;r Euch gefallen war, erhebt sich der eifrige Provinzstatthalter von %s1 als Usurpator und versucht Euer Reich an sich zu rei&#223;en.</German>
 		<Italian>Dopo che un importante generale si &#232; innamorato di te, lo zelante governatore provinciale di %s1 si ribella come usurpatore e cerca di impossessarsi del tuo impero.</Italian>
 		<Spanish>Despu&#233;s de que un general importante se enamor&#243; de ti, el celoso gobernador provincial de %s1 se alza como un usurpador e intenta apoderarse de tu imperio.</Spanish>
 	</TEXT>
@@ -1897,36 +1961,68 @@ Scuola di retorica
 		<Spanish>Equipo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_AGGRESSIVE_ANIMALS</Tag>
-		<English>Ignore the movements of dangerous animals</English>
-		<French>Ignorez les mouvements des animaux dangereux</French>
-		<German>Bewegungen gef&#228;hrlicher Tiere ignorieren</German>
-		<Italian>Ignorare i movimenti degli animali pericolosi</Italian>
-		<Spanish>Ignorar los movimientos de animales peligrosos</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH</Tag>
+		<English>Announce city growth</English>
+		<French>Annoncer la croissance de la ville</French>
+		<German>Stadtwachstum ank&#252;ndigen</German>
+		<Italian>Annunciare la crescita della citt&#224;</Italian>
+		<Spanish>Anunciar el crecimiento de la ciudad</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_AGGRESSIVE_ANIMALS_HELP</Tag>
-		<English>Do not show the moves of dangerous wild animals between turns</English>
-		<French>Ne montrez pas les mouvements des animaux sauvages dangereux entre les tours</French>
-		<German>Fortbewegung gef&#228;hrlicher wilder Tiere zwischen den Runden nicht anzeigen</German>
-		<Italian>Non mostrare il movimento di animali selvatici pericolosi tra i turni</Italian>
-		<Spanish>No mostrar el movimiento de animales salvajes peligrosos entre turnos.</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH_HELP</Tag>
+		<English>Displays an in-game notification when a city will grow. Warnings about whether a city is becoming unhealthy or unhappy are always displayed.</English>
+		<French>Affiche une notification en jeu d&#232;s qu'une ville commence &#224; se d&#233;velopper. Des avertissements signalant un &#233;tat de sant&#233; ou de moral d&#233;faillant sont syst&#233;matiquement affich&#233;s.</French>
+		<German>Zeigt einen Ingame-Hinweis an, sobald eine Stadt wachsen wird. Warnungen, ob eine Stadt ungesund oder ungl&#252;cklich wird, werden immer angezeigt.</German>
+		<Italian>Viene visualizzata una notifica in gioco non appena una citt&#224; inizia a crescere. Gli avvisi relativi al fatto che una citt&#224; stia diventando malsana o infelice vengono sempre visualizzati.</Italian>
+		<Spanish>Muestra una notificaci&#243;n dentro del juego en cuanto una ciudad empieza a crecer. Siempre se muestran advertencias sobre si una ciudad se est&#225; volviendo insalubre o infeliz.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_FRIENDLY_ANIMALS</Tag>
-		<English>Ignore the movements of harmless animals</English>
-		<French>Ignorez les mouvements des animaux inoffensifs</French>
-		<German>Bewegungen harmloser Tiere ignorieren</German>
-		<Italian>Ignorare i movimenti degli animali innocui</Italian>
-		<Spanish>Ignorar los movimientos de animales inofensivos</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_NEWPROJECT</Tag>
+		<English>Announce construction projects</English>
+		<French>Annoncer des projets de construction</French>
+		<German>Bauprojekte ank&#252;ndigen</German>
+		<Italian>Annuncio di progetti di costruzione</Italian>
+		<Spanish>Anunciar proyectos de construcci&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PLAYEROPTION_SHOW_ENEMY_MOVES_PAE_IGNORE_FRIENDLY_ANIMALS_HELP</Tag>
-		<English>Do not show the moves of harmless wild animals between turns</English>
-		<French>Ne montrez pas les mouvements des animaux sauvages inoffensifs entre les tours</French>
-		<German>Fortbewegung harmloser wilder Tiere zwischen den Runden nicht anzeigen</German>
-		<Italian>Non mostrare il movimento di animali selvatici innocui tra i turno</Italian>
-		<Spanish>No mostrar el movimiento de animales salvajes inofensivos entre turnos.</Spanish>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_MESSAGE_CITY_NEWPROJECT_HELP</Tag>
+		<English>Displays an in-game notification as soon as a city has completed a construction project and informs about which new construction project is starting.</English>
+		<French>Affiche une notification en jeu d&#232;s qu'une ville a termin&#233; un projet de construction et indique quel nouveau projet de construction est en cours.</French>
+		<German>Zeigt einen Ingame-Hinweis an, sobald eine Stadt ein Bauprojekt abgeschlossen hat und informiert dar&#252;ber, welches neue Bauprojekt beginnt.</German>
+		<Italian>Visualizza una notifica in gioco non appena una citt&#224; completa un progetto di costruzione e informa su quale nuovo progetto di costruzione sta per iniziare.</Italian>
+		<Spanish>Muestra una notificaci&#243;n dentro del juego tan pronto como una ciudad haya completado un proyecto de construcci&#243;n e informa sobre qu&#233; nuevo proyecto de construcci&#243;n est&#225; comenzando.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_AGGRESSIVE_ANIMALS</Tag>
+		<English>Show movements of dangerous animals</English>
+		<French>Montrer mouvements des animaux dangereux</French>
+		<German>Zeige Bewegungen gef&#228;hrlicher Tiere</German>
+		<Italian>Mostra i movimenti degli animali pericolosi</Italian>
+		<Spanish>Muestra movimientos de animales peligrosos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_AGGRESSIVE_ANIMALS_HELP</Tag>
+		<English>Shows the moves of dangerous wild animals between turns (wolf, bear, lion, etc.)</English>
+		<French>Montre les mouvements des animaux sauvages dangereux entre les tours (loup, ours, lion, etc.)</French>
+		<German>Zeigt die Fortbewegung gef&#228;hrlicher wilder Tiere zwischen den Runden an (Wolf, B&#228;r, L&#246;we, etc.)</German>
+		<Italian>Mostra i movimenti di animali selvatici pericolosi tra una svolta e l'altra (lupo, orso, leone, ecc.)</Italian>
+		<Spanish>Muestra los movimientos de animales salvajes peligrosos entre turnos (lobo, oso, le&#243;n, etc.)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_FRIENDLY_ANIMALS</Tag>
+		<English>Show movements of harmless animals</English>
+		<French>Montrer mouvements d'animaux inoffensifs</French>
+		<German>Zeige Bewegungen harmloser Tiere</German>
+		<Italian>Mostra i movimenti di animali innocui</Italian>
+		<Spanish>Mostrar movimientos de animales inofensivos</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYEROPTION_PAE_SHOW_ENEMY_MOVES_FRIENDLY_ANIMALS_HELP</Tag>
+		<English>Shows the moves of harmless wild animals between turns (deer, wild boar, etc.)</English>
+		<French>Montre les mouvements d'animaux sauvages inoffensifs entre les tours (cerf, sanglier sauvage, etc.)</French>
+		<German>Zeigt die Fortbewegung harmloser wilder Tiere zwischen den Runden an (Rotwild, Schwarzwild, etc.)</German>
+		<Italian>Mostra i movimenti di animali selvatici innocui tra un turno e l'altro (cervo, cinghiale, ecc.)</Italian>
+		<Spanish>Muestra los movimientos de animales salvajes inofensivos entre turnos (ciervo, jabal&#237;, etc.)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PLOTINFO_ACT_AS_CITY</Tag>

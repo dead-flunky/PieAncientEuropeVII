@@ -5612,21 +5612,48 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	{
 		eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getGoodyInfo(eGoody).getUnitClassType());
 
+		// BTS
+		/*
 		if (eUnit != NO_UNIT)
 		{
 			initUnit(eUnit, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 		}
+		*/
+		// PAE
+		if (GC.getGoodyInfo(eGoody).getUnitClassType() == GC.getInfoTypeForString("UNITCLASS_AXEWARRIOR"))
+		{
+			if (getCurrentEra() == 1) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_AXEMAN");
+			else if (getCurrentEra() == 2) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_AXEMAN2");
+			else if (getCurrentEra() == 3) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_GLADIATOR");
+			else if (getCurrentEra() == 4) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_WURFAXT");
+			else if (getCurrentEra() > 4)  eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_LIGHT_SWORDSMAN_MEDIEVAL");
+			else eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_AXEWARRIOR");
+		}
+		else if (eUnit != NO_UNIT) initUnit(eUnit, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+		// PAE end
+
 	}
 
 	if (GC.getGoodyInfo(eGoody).getBarbarianUnitClass() != NO_UNITCLASS)
 	{
 		iBarbCount = 0;
 
-		eUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(BARBARIAN_PLAYER).getCivilizationType()).getCivilizationUnits(GC.getGoodyInfo(eGoody).getBarbarianUnitClass());
+		// BTS
+		//eUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(BARBARIAN_PLAYER).getCivilizationType()).getCivilizationUnits(GC.getGoodyInfo(eGoody).getBarbarianUnitClass());
+
+		// PAE
+		if (getCurrentEra() == 1) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_AXEMAN");
+		else if (getCurrentEra() == 2) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_AXEMAN2");
+		else if (getCurrentEra() == 3) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_GLADIATOR");
+		else if (getCurrentEra() == 4) eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_WURFAXT");
+		else if (getCurrentEra() > 4)  eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_LIGHT_SWORDSMAN_MEDIEVAL");
+		else eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_AXEWARRIOR");
+		// PAE end
 
 		if (eUnit != NO_UNIT)
 		{
-			for (iPass = 0; iPass < 2; iPass++)
+			// iPass: BTS 2, PAE 3 (because PAE has 3 different Barbarian Goody Infos instead of 2)
+			for (iPass = 0; iPass < 3; iPass++)
 			{
 				if (iBarbCount < GC.getGoodyInfo(eGoody).getMinBarbarians())
 				{

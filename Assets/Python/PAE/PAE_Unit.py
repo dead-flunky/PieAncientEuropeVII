@@ -6,7 +6,8 @@ from CvPythonExtensions import (CyGlobalContext, CyInterface, CyMap, CyGame,
 											ColorTypes, UnitAITypes, CyPopupInfo, GameOptionTypes,
 											ButtonPopupTypes, MissionTypes, MissionAITypes,
 											DomainTypes, plotXY, plotDirection, FontSymbols,
-											plotDistance, directionXYFromPlot, CyAudioGame, InterfaceDirtyBits)
+											plotDistance, directionXYFromPlot, CyAudioGame,
+											PlayerOptionTypes, InterfaceDirtyBits)
 
 import CvUtil
 import PyHelpers
@@ -4581,8 +4582,11 @@ def getUnitSupplyFood():
 
 # PAE unit costs some food from storage
 def doDecreaseFoodOnUnitBuilt(pCity, pUnit):
+		iPlayer = pUnit.getOwner()
+		pPlayer = gc.getPlayer(iPlayer)
+
 		# Civic Bauernmiliz
-		if gc.getPlayer(pUnit.getOwner()).isCivic(gc.getInfoTypeForString("CIVIC_BAUERNMILIZ")):
+		if pPlayer.isCivic(gc.getInfoTypeForString("CIVIC_BAUERNMILIZ")):
 				return
 
 		if pUnit.isMilitaryHappiness():
@@ -4596,7 +4600,7 @@ def doDecreaseFoodOnUnitBuilt(pCity, pUnit):
 										iFaktor -= 10
 
 						# PAE 6.2: KI nochmal 50% weniger Kosten
-						if not gc.getPlayer(pUnit.getOwner()).isHuman():
+						if not pPlayer.isHuman():
 								iFaktor /= 2
 
 						if iFaktor > 0:
@@ -4604,10 +4608,10 @@ def doDecreaseFoodOnUnitBuilt(pCity, pUnit):
 								if iCostFood > 0:
 										pCity.changeFood(-iCostFood)
 
-										if gc.getPlayer(pUnit.getOwner()).isHuman():
+										if pPlayer.isHuman() and pPlayer.isOption(PlayerOptionTypes.PLAYEROPTION_PAE_MESSAGE_CITY_NEWPROJECT):
 												# TXT_KEY_INFO_UNIT_FOOD: Die Einheit %s1_unit in %s2_city verbrauchte %d3% der [ICON_PRODUCTION]-Kosten: %d4[ICON_FOOD]
 												text = CyTranslator().getText("TXT_KEY_INFO_UNIT_FOOD", (pUnit.getName(), pCity.getName(), iFaktor, iCostFood))
-												CyInterface().addMessage(pUnit.getOwner(), True, 5, text, None, 2, None, ColorTypes(14), -1, -1, False, False)
+												CyInterface().addMessage(iPlayer, True, 5, text, None, 2, None, ColorTypes(14), -1, -1, False, False)
 
 # PAE supply wagon UNIT_SUPPLY_WAGON
 def getSupplyFromPlot(iPlayer, pPlot):

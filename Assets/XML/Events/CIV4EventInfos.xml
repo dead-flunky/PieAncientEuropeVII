@@ -60,8 +60,8 @@
 			<iFood>0</iFood>
 			<iFoodPercent>0</iFoodPercent>
 			<FreeSpecialistCounts/>
-			<FeatureType>NONE</FeatureType>
-			<iFeatureChange>0</iFeatureChange>
+			<FeatureType>FEATURE_FOREST_NEW</FeatureType>
+			<iFeatureChange>-1</iFeatureChange>
 			<ImprovementType>NONE</ImprovementType>
 			<iImprovementChange>0</iImprovementChange>
 			<BonusType>NONE</BonusType>
@@ -81,7 +81,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyForest1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -141,7 +141,7 @@
 			<iFood>0</iFood>
 			<iFoodPercent>0</iFoodPercent>
 			<FreeSpecialistCounts/>
-			<FeatureType>FEATURE_FOREST</FeatureType>
+			<FeatureType>FEATURE_FOREST_BURNT</FeatureType>
 			<iFeatureChange>-1</iFeatureChange>
 			<ImprovementType>NONE</ImprovementType>
 			<iImprovementChange>0</iImprovementChange>
@@ -162,7 +162,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyForest_Fire</PythonCallback>
+			<PythonCallback>applyForest2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -214,7 +214,7 @@
 			<BuildingExtraHealths/>
 			<iHappy>0</iHappy>
 			<iHealth>0</iHealth>
-			<iHurryAnger>1</iHurryAnger>
+			<iHurryAnger>0</iHurryAnger>
 			<iHappyTurns>0</iHappyTurns>
 			<iRevoltTurns>0</iRevoltTurns>
 			<iMinPillage>0</iMinPillage>
@@ -222,8 +222,8 @@
 			<iFood>0</iFood>
 			<iFoodPercent>0</iFoodPercent>
 			<FreeSpecialistCounts/>
-			<FeatureType>FEATURE_FOREST</FeatureType>
-			<iFeatureChange>-1</iFeatureChange>
+			<FeatureType>NONE</FeatureType>
+			<iFeatureChange>0</iFeatureChange>
 			<ImprovementType>NONE</ImprovementType>
 			<iImprovementChange>0</iImprovementChange>
 			<BonusType>NONE</BonusType>
@@ -243,7 +243,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyForest_Fire</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>

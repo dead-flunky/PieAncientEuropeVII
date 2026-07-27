@@ -265,6 +265,8 @@ class CvDawnOfMan:
 				self.H_TECH = 80
 
 				self.W_MAIN_PANEL = 800  # Was 550
+				# PAE 
+				if self.W_SCREEN > 900: self.W_MAIN_PANEL = 900
 
 				self.H_MAIN_PANEL = 660
 				self.X_MAIN_PANEL = (self.W_SCREEN/2) - (self.W_MAIN_PANEL/2)  # Was 250

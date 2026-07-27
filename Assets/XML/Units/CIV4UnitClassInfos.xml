@@ -728,15 +728,6 @@
 			<DefaultUnit>UNIT_SWORDSMAN_LATENE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_SWORDSMAN_MARODEUR</Type>
-			<Description>TXT_KEY_UNIT_MARODEUR</Description>
-			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>3</iMaxPlayerInstances>
-			<iInstanceCostModifier>0</iInstanceCostModifier>
-			<DefaultUnit>UNIT_SWORDSMAN_MARODEUR</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_SOLDURII</Type>
 			<Description>TXT_KEY_UNIT_SOLDURII</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -1515,7 +1506,7 @@
 			<Description>TXT_KEY_UNIT_SCOUT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iMaxPlayerInstances>2</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_SCOUT</DefaultUnit>
 		</UnitClassInfo>
@@ -1524,7 +1515,7 @@
 			<Description>TXT_KEY_UNIT_MOUNTED_SCOUT</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iMaxPlayerInstances>2</iMaxPlayerInstances>
 			<iInstanceCostModifier>0</iInstanceCostModifier>
 			<DefaultUnit>UNIT_MOUNTED_SCOUT</DefaultUnit>
 		</UnitClassInfo>
