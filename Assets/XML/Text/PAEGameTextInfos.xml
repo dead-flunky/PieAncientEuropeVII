@@ -3469,11 +3469,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CITY_IS_UNHEALTY</Tag>
-		<English>Caution! %s1 is already unhealthy!</English>
+		<English>Caution! %s1 is unhealthy!</English>
 		<French>Attention ! %s1 est insalubre !</French>
-		<German>Vorsicht! %s1 ist bereits ungesund!</German>
+		<German>Vorsicht! %s1 ist ungesund!</German>
 		<Italian>Attenzione! %s1 &#232; gi&#224; malsano!</Italian>
-		<Spanish>&#161;Cuidado! &#161;%s1 se ha vuelto insalubre!</Spanish>
+		<Spanish>&#161;Cuidado! &#161;%s1 se ha insalubre!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CITY_LEBRA_1</Tag>
@@ -4693,11 +4693,11 @@ El sol se alza en el a&#241;o %s1_year. %s3_leader, vuestro pueblo os ha conferi
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_ONLY_HORSE_LEFT</Tag>
-		<English>The unit was defeated, only the horses could escape!</English>
-		<French>L'unit&#233; a &#233;t&#233; vaincue, seuls les chevaux ont pu en r&#233;chapper !</French>
-		<German>Die Einheit wurde vernichtet, lediglich die Pferde entkamen!</German>
-		<Italian>L'unit&#224; &#232; stata sconfitta, solo i cavalli poteva sfuggire!</Italian>
-		<Spanish>&#161;La unidad fue destruida, s&#243;lo los caballos pudieron escapar!</Spanish>
+		<English>The unit was destroyed; only the horses escaped.</English>
+		<French>L'unit&#233; a &#233;t&#233; d&#233;truite ; seuls les chevaux ont surv&#233;cu.</French>
+		<German>Die Einheit wurde vernichtet, einzig die Pferde konnten entkommen.</German>
+		<Italian>L'unit&#224; fu distrutta; solo i cavalli si salvarono.</Italian>
+		<Spanish>La unidad qued&#243; destruida; solo los caballos sobrevivieron.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_ORACLE_WARNING</Tag>

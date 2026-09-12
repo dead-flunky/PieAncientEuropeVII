@@ -30,6 +30,12 @@
 #include "CvDLLEngineIFaceBase.h"
 #include "CvDLLPythonIFaceBase.h"
 
+// ============================================================
+// PAE_TIME_PROFILING (0 or 1)
+#define PAE_TIME_PROFILING 0
+#include <windows.h>
+// ============================================================
+
 // Public Functions...
 
 CvGame::CvGame()
@@ -5680,14 +5686,81 @@ void CvGame::doTurn()
 	int iLoopPlayer;
 	int iI;
 
-	// END OF TURN
-	CvEventReporter::getInstance().beginGameTurn( getGameTurn() );
+#if PAE_TIME_PROFILING
+	LARGE_INTEGER frequency;
+	LARGE_INTEGER startTime;
+	LARGE_INTEGER lastTime;
+	LARGE_INTEGER currentTime;
+
+	QueryPerformanceFrequency(&frequency);
+	QueryPerformanceCounter(&startTime);
+	lastTime = startTime;
+
+	char szBuffer[256];
+
+	#define PAE_TIME_CHECK(szName)                                      \
+		QueryPerformanceCounter(&currentTime);                         \
+		sprintf(szBuffer, "%s: %.6f sec", szName,                     \
+			(double)(currentTime.QuadPart - lastTime.QuadPart) /       \
+			(double)frequency.QuadPart);                               \
+		gDLL->logMsg("PAEProfiler.log", szBuffer);                     \
+		lastTime = currentTime;
+
+	sprintf(szBuffer,
+		"========== CvGame::doTurn START (Turn %d) ==========",
+		getGameTurn());
+
+	gDLL->logMsg("PAEProfiler.log", szBuffer);
+#endif
+
+
+	// ============================================================
+	// BEGIN GAME TURN
+	// ============================================================
+
+	CvEventReporter::getInstance().beginGameTurn(getGameTurn());
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("beginGameTurn");
+#endif
+
+
+	// ============================================================
+	// UPDATE CACHE
+	// ============================================================
 
 	doUpdateCacheOnTurn();
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("doUpdateCacheOnTurn");
+#endif
+
+
+	// ============================================================
+	// SCORE
+	// ============================================================
+
 	updateScore();
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("updateScore");
+#endif
+
+
+	// ============================================================
+	// DEALS
+	// ============================================================
+
 	doDeals();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("doDeals");
+#endif
+
+
+	// ============================================================
+	// TEAMS
+	// ============================================================
 
 	for (iI = 0; iI < MAX_TEAMS; iI++)
 	{
@@ -5697,22 +5770,103 @@ void CvGame::doTurn()
 		}
 	}
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("ALL TEAM doTurn");
+#endif
+
+
+	// ============================================================
+	// MAP
+	// ============================================================
+
 	GC.getMapINLINE().doTurn();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("Map doTurn");
+#endif
+
+
+	// ============================================================
+	// BARBARIAN CITIES
+	// ============================================================
 
 	createBarbarianCities();
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("createBarbarianCities");
+#endif
+
+
+	// ============================================================
+	// BARBARIAN UNITS
+	// ============================================================
+
 	createBarbarianUnits();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("createBarbarianUnits");
+#endif
+
+
+	// ============================================================
+	// GLOBAL WARMING
+	// ============================================================
 
 	doGlobalWarming();
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("doGlobalWarming");
+#endif
+
+
+	// ============================================================
+	// HOLY CITY
+	// ============================================================
+
 	doHolyCity();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("doHolyCity");
+#endif
+
+
+	// ============================================================
+	// HEADQUARTERS
+	// ============================================================
 
 	doHeadquarters();
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("doHeadquarters");
+#endif
+
+
+	// ============================================================
+	// DIPLO VOTE
+	// ============================================================
+
 	doDiploVote();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("doDiploVote");
+#endif
+
+
+	// ============================================================
+	// INTERFACE
+	// ============================================================
 
 	gDLL->getInterfaceIFace()->setEndTurnMessage(false);
 	gDLL->getInterfaceIFace()->setHasMovedUnit(false);
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("Interface update");
+#endif
+
+
+	// ============================================================
+	// AI AUTOPLAY
+	// ============================================================
 
 	if (getAIAutoPlay() > 0)
 	{
@@ -5724,10 +5878,37 @@ void CvGame::doTurn()
 		}
 	}
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("AIAutoPlay");
+#endif
+
+
+	// ============================================================
+	// END GAME TURN EVENT
+	// ============================================================
+
 	CvEventReporter::getInstance().endGameTurn(getGameTurn());
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("endGameTurn");
+#endif
+
+
+	// ============================================================
+	// INCREMENT TURN
+	// ============================================================
 
 	incrementGameTurn();
 	incrementElapsedGameTurns();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("increment turns");
+#endif
+
+
+	// ============================================================
+	// NEXT PLAYER / SIMULTANEOUS TURNS
+	// ============================================================
 
 	if (isMPOption(MPOPTION_SIMULTANEOUS_TURNS))
 	{
@@ -5749,6 +5930,7 @@ void CvGame::doTurn()
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
 			CvTeam& kTeam = GET_TEAM((TeamTypes)iI);
+
 			if (kTeam.isAlive())
 			{
 				kTeam.setTurnActive(true);
@@ -5758,16 +5940,18 @@ void CvGame::doTurn()
 			break;
 		}
 #else	/* PBMod */
-		for (iI = getNextTeamInTurnOrder(MAX_TEAMS); iI < MAX_TEAMS; iI = getNextTeamInTurnOrder(iI))
+		for (iI = getNextTeamInTurnOrder(MAX_TEAMS);
+			 iI < MAX_TEAMS;
+			 iI = getNextTeamInTurnOrder(iI))
 		{
 			CvTeam& kTeam = GET_TEAM((TeamTypes)iI);
+
 			if (kTeam.isAlive())
 			{
 				kTeam.setTurnActive(true);
+
 				FAssert(getNumGameTurnActive() == kTeam.getAliveCount());
 
-				// PBMod: Fix immediate turn flip in PBs with simultaneous rounds.
-				// This break was accidential after the if-branch.
 				break;
 			}
 		}
@@ -5778,7 +5962,9 @@ void CvGame::doTurn()
 #if 0	/* BTS */
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 #else	/* PBMod */
-		for (iI = getNextPlayerInTurnOrder(MAX_PLAYERS); iI < MAX_PLAYERS; iI = getNextPlayerInTurnOrder(iI))
+		for (iI = getNextPlayerInTurnOrder(MAX_PLAYERS);
+			 iI < MAX_PLAYERS;
+			 iI = getNextPlayerInTurnOrder(iI))
 #endif
 		{
 			if (GET_PLAYER((PlayerTypes)iI).isAlive())
@@ -5787,7 +5973,6 @@ void CvGame::doTurn()
 				{
 					if (iI == getActivePlayer())
 					{
-						// Nobody else left alive
 						GC.getInitCore().setType(GAME_HOTSEAT_NEW);
 						GET_PLAYER((PlayerTypes)iI).setTurnActive(true);
 					}
@@ -5799,6 +5984,7 @@ void CvGame::doTurn()
 				else
 				{
 					GET_PLAYER((PlayerTypes)iI).setTurnActive(true);
+
 					FAssert(getNumGameTurnActive() == 1);
 				}
 
@@ -5807,16 +5993,44 @@ void CvGame::doTurn()
 		}
 	}
 
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("Set next turn player");
+#endif
+
+
+	// ============================================================
+	// VICTORY
+	// ============================================================
+
 	testVictory();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("testVictory");
+#endif
+
+
+	// ============================================================
+	// ENGINE
+	// ============================================================
 
 	gDLL->getEngineIFace()->SetDirty(GlobePartialTexture_DIRTY_BIT, true);
 	gDLL->getEngineIFace()->DoTurn();
+
+#if PAE_TIME_PROFILING
+	PAE_TIME_CHECK("Engine DoTurn");
+#endif
+
+
+	// ============================================================
+	// PROFILING / AUTOSAVE
+	// ============================================================
 
 	PROFILE_END();
 
 	stopProfilingDLL();
 
 	gDLL->getEngineIFace()->AutoSave();
+
 }
 
 
@@ -6671,6 +6885,7 @@ void CvGame::updateWar()
 
 void CvGame::updateMoves()
 {
+
 	CvSelectionGroup* pLoopSelectionGroup;
 	int aiShuffle[MAX_PLAYERS];
 	int iLoop;
@@ -6698,6 +6913,7 @@ void CvGame::updateMoves()
 			{
 				if (!(player.isAutoMoves()))
 				{
+
 					player.AI_unitUpdate();
 
 					if (!(player.isHuman()))

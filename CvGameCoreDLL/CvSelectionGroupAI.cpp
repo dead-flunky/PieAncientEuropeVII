@@ -121,6 +121,9 @@ void CvSelectionGroupAI::AI_seperateAI(UnitAITypes eUnitAI)
 		}
 	}
 }
+
+
+
 // Returns true if the group has become busy...
 bool CvSelectionGroupAI::AI_update()
 {
@@ -158,12 +161,64 @@ bool CvSelectionGroupAI::AI_update()
 	int iTempHack = 0; // XXX
 
 	bDead = false;
-	
+
+	// ===== PAE ===========
+	int iTempHackLimit = 80;
+	CvUnit* pHeadUnit = getHeadUnit();
+	if (pHeadUnit != NULL)
+	{
+		switch (pHeadUnit->AI_getUnitAIType())
+		{
+			// Worker: hoch komplex
+			case UNITAI_WORKER:
+			case UNITAI_WORKER_SEA:
+				iTempHackLimit = 100;
+				break;
+
+			// Belagerer: Bombard-Loop
+			case UNITAI_ATTACK_CITY:
+			case UNITAI_COLLATERAL:
+				iTempHackLimit = 90;
+				break;
+
+			// Angriffs-AI: mittel
+			case UNITAI_ATTACK:
+			case UNITAI_PILLAGE:
+				iTempHackLimit = 70;
+				break;
+
+			// Scouts & einfache Verteidiger: sehr niedrig
+			case UNITAI_EXPLORE:
+			case UNITAI_EXPLORE_SEA:
+			case UNITAI_CITY_DEFENSE:
+			case UNITAI_RESERVE:
+				iTempHackLimit = 40;
+				break;
+
+			// Siedler & Transport: sehr hoch
+			case UNITAI_SETTLE:
+			case UNITAI_SETTLER_SEA:
+			case UNITAI_ASSAULT_SEA:
+			case UNITAI_ESCORT_SEA:
+				iTempHackLimit = 120;
+				break;
+
+			default:
+				iTempHackLimit = 80;
+				break;
+		}
+	}
+	// ==== PAE ====
+
+
 	bool bFailedAlreadyFighting = false;
 	while ((m_bGroupAttack && !bFailedAlreadyFighting) || readyToMove())
 	{
 		iTempHack++;
-		if (iTempHack > 100)
+
+		// ==== PAE ====
+		// BTS: iTempHack > 100 for all
+		if (iTempHack > iTempHackLimit)
 		{
 			//FAssert(false);
 			CvUnit* pHeadUnit = getHeadUnit();
@@ -183,6 +238,7 @@ bool CvSelectionGroupAI::AI_update()
 			}
 			break;
 		}
+		// ==== PAE ====
 
 		// if we want to force the group to attack, force another attack
 		if (m_bGroupAttack)
@@ -223,6 +279,7 @@ bool CvSelectionGroupAI::AI_update()
 			AI_separate();	// pointers could become invalid...
 			return true;
 		}
+
 	}
 
 	if (!bDead)

@@ -8698,13 +8698,15 @@ void CvPlot::doFeature()
 	int iI, iJ;
 	FeatureTypes eForestNew = NO_FEATURE; // PAE
 
-// Changed by Pie
+
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       03/04/10                                jdog5000      */
 /*                                                                                              */
 /* Gamespeed scaling                                                                            */
 /************************************************************************************************/
-	int iOdds = (10000*GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getVictoryDelayPercent())/100;
+	//int iOdds = (10000*GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getVictoryDelayPercent())/100;
+	// Changed by Pie:
+	int iOdds = (10000*GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent())/100;
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -8721,46 +8723,40 @@ void CvPlot::doFeature()
 			// PAE: UNOFFICIAL_PATCH merge
 			if (GC.getGameINLINE().getSorenRandNum(iOdds, "Feature Disappearance") < iProbability)
 			{
-				setFeatureType(NO_FEATURE);
-			}
-		}
 
-
-		// PAE: junger Wald (FEATURE_FOREST_NEW -> FEATURE_FOREST)
-		iProbability = 0;
-		if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_NEW"))
-		{
-			eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST");
-			iProbability = GC.getFeatureInfo(eForestNew).getGrowthProbability();
-		}
-		else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNING"))
-		{
-			eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNT");
-			iProbability = 50;
-		}
-		else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNT"))
-		{
-			eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_NEW");
-			iProbability = GC.getFeatureInfo(eForestNew).getGrowthProbability();
-		}
-
-		if (eForestNew != NO_FEATURE && iProbability > 0)
-		{
-			if (GC.getGameINLINE().getSorenRandNum(iOdds, "Feature Disappearance") < iProbability)
-			{
-				setFeatureType(eForestNew);
-
-				// Tell the owner of this city.
-				pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
-				if (pCity != NULL)
+				// PAE: junger Wald (FEATURE_FOREST_NEW -> FEATURE_FOREST)
+				if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_NEW"))
 				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_FEATURE_GROWN_NEAR_CITY", GC.getFeatureInfo(eForestNew).getTextKeyWide(), pCity->getNameKey());
-					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO, GC.getFeatureInfo(eForestNew).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+					eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST");
+				}
+				else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNING"))
+				{
+					eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNT");
+				}
+				else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNT"))
+				{
+					eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_NEW");
 				}
 
+				// Tell the owner of this city.
+				if (eForestNew != NO_FEATURE)
+				{
+					pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+					if (pCity != NULL)
+					{
+						szBuffer = gDLL->getText("TXT_KEY_MISC_FEATURE_GROWN_NEAR_CITY", GC.getFeatureInfo(eForestNew).getTextKeyWide(), pCity->getNameKey());
+						gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATUREGROWTH", MESSAGE_TYPE_INFO, GC.getFeatureInfo(eForestNew).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+					}
+				}
+				// PAE ------------
+				
+				// BTS
+				//setFeatureType(NO_FEATURE);
+				// PAE
+				setFeatureType(eForestNew);
+				
 			}
 		}
-		// PAE ------------
 
 
 	}

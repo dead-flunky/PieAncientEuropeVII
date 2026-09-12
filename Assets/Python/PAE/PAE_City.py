@@ -2181,7 +2181,7 @@ def doUnitSupply(pCity, iPlayer):
 				iRand = CvUtil.myRandom(10, "seuche")
 				# - 1 Pop
 				if iRand < 2 and popCity > 3 or iRand < 1:
-						pCity.changePopulation(-1)
+						if pCity.getPopulation() > 1: pCity.changePopulation(-1)
 						# bCheckCityState = True
 						if pPlayer.isHuman():
 								CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_UNITS_STARVATION_2", (pCity.getName(), (pCity.getYieldRate(
@@ -3375,9 +3375,11 @@ def doStadtseuche(pCity):
 		else:
 				CvUtil.changeBuildingHealthChange(pCity, iBuilding, +1)
 
-
+# diese Checks sind auch in CvRandomEventInterface.py (canTriggerCityFire) definiert !!
+# und in CvMainInterface bei Brandgefahr/Stadtbrand
+# Diese Funktion wird aktiviert, sobald es schon einen Stadtbrand gibt und die Auswirkungen dessen
 def doStadtbrand(pCity):
-		iBuilding = gc.getInfoTypeForString('BUILDING_FIRE')
+		iBuilding = gc.getInfoTypeForString("BUILDING_FIRE")
 		iPlayer = pCity.getOwner()
 		pPlayer = gc.getPlayer(iPlayer)
 
@@ -3390,32 +3392,40 @@ def doStadtbrand(pCity):
 		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
 			iChance = 7
 		# Bewässerung: 50% Schutz
-		elif (
-			pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
-			pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) or
-			pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
-			):
+		#elif (
+		#	pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
+		#	pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) or
+		#	pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
+		#	):
+		#	iChance = 5
+		# Zisterne: 50% Schutz
+		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
 			iChance = 5
 		# Brunnen: 30% Schutz
 		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
 			iChance = 3
 
 		# Brandchance per turn
-		if iChance < gc.getGame().getSorenRandNum(10, "prevent building loss due city fire"):
+		if iChance < 1 + gc.getGame().getSorenRandNum(10, "prevent building loss due city fire"):
 			LBuildings = []
 			iRange = gc.getNumBuildingInfos()
 			for i in range(iRange):
 					if pCity.isHasBuilding(i):
+							pBuildingInfo = gc.getBuildingInfo(i)
 							# Wunder sollen (noch?) nicht betroffen sein
-							iBuildingClass = gc.getBuildingInfo(i).getBuildingClassType()
-							if not isWorldWonderClass(iBuildingClass) and not isTeamWonderClass(iBuildingClass) and not isNationalWonderClass(iBuildingClass):
-									LBuildings.append(i)
+							iBuildingClass = pBuildingInfo.getBuildingClassType()
+							if (not isWorldWonderClass(iBuildingClass) and 
+								 not isTeamWonderClass(iBuildingClass) and 
+								 not isNationalWonderClass(iBuildingClass) and
+								 pBuildingInfo.getProductionCost() > 0
+								): LBuildings.append(i)
 
-			iRand = CvUtil.myRandom(len(LBuildings), "Stadtbrand")
-			xBuilding = LBuildings[iRand]
-			pCity.setNumRealBuilding(xBuilding, 0)
-			if pPlayer.isHuman():
-					CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_FIRE_BUILDING", (pCity.getName(), gc.getBuildingInfo(xBuilding).getDescription())), None, 2, None, ColorTypes(13), 0, 0, False, False)
+			if len(LBuildings) > 0:
+				iRand = CvUtil.myRandom(len(LBuildings), "Stadtbrand")
+				xBuilding = LBuildings[iRand]
+				pCity.setNumRealBuilding(xBuilding, 0)
+				if pPlayer.isHuman():
+						CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_FIRE_BUILDING", (pCity.getName(), gc.getBuildingInfo(xBuilding).getDescription())), None, 2, None, ColorTypes(13), 0, 0, False, False)
 
 		# Calculation
 		iCheck = pCity.getBuildingHappiness(iBuilding)
@@ -4715,12 +4725,12 @@ def doCheckCivilWar(pCity):
 								2, gc.getBuildingInfo(gc.getInfoTypeForString("BUILDING_CIVIL_WAR")).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 
 		# Chance, dass diese Runde nix passiert: HI 25%, KI 50%
-		if iChance < 25 or bHuman and iChance < 50:
+		if iChance < 25 or bHuman and iChance < 50 or iMilitaryUnits < 1:
 
 				iRand = CvUtil.myRandom(iPop + iMilitaryUnits, "iRandCityCivilWarUnitsVsPop")
 
 				# Die Einheiten gewinnen gegen Pop
-				if iRand > iMilitaryUnits:
+				if iMilitaryUnits > 0 and iRand > iMilitaryUnits:
 						if iPop > 1:
 								pCity.changePopulation(-1)
 						# Es wurden etliche Bürger in %s niedergemetzelt.
@@ -4764,9 +4774,6 @@ def doCheckCivilWar(pCity):
 				# Stadt wird barbarisch, wenn keine Einheiten mehr drin sind
 				if iMilitaryUnits <= 0:
 						pCity.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CIVIL_WAR"), 0)
-						#doRenegadeCity(pCity, gc.getBARBARIAN_PLAYER(), None)
-						# pPlayer.acquireCity (CyCity pCity, BOOL bConquest, BOOL bTrade)
-						gc.getPlayer(gc.getBARBARIAN_PLAYER()).acquireCity(pCity, False, True)
 
 						# Negative Zufriedenheit auf Grund voriger Features komplett zurücksetzen
 						iHappiness = pCity.getExtraHappiness()
@@ -4781,6 +4788,11 @@ def doCheckCivilWar(pCity):
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 								popupInfo.setText(CyTranslator().getText("TXT_KEY_INFO_CIVIL_WAR_4", (pCity.getName(),)))
 								popupInfo.addPopup(iPlayer)
+
+						#doRenegadeCity(pCity, gc.getBARBARIAN_PLAYER(), None)
+						# pPlayer.acquireCity (CyCity pCity, BOOL bConquest, BOOL bTrade)
+						gc.getPlayer(gc.getBARBARIAN_PLAYER()).acquireCity(pCity, False, True)
+
 						# ***TEST***
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("BarbarCity",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 		return True

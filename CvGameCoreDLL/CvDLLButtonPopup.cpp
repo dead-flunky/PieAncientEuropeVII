@@ -1519,6 +1519,7 @@ bool CvDLLButtonPopup::launchChooseTechPopup(CvPopup* pPopup, CvPopupInfo &info)
 	gDLL->getInterfaceIFace()->popupSetHeaderString(pPopup, szHeader, DLL_FONT_LEFT_JUSTIFY);
 
 	// PAE
+	/*
 	//if (player.getCurrentEra() > 0)
 	//{
 		if (gDLL->getCurrentLanguage() == 0) gDLL->getInterfaceIFace()->playGeneralSound("AS2D_TECH_RESEARCH_NEXT_EN");
@@ -1527,6 +1528,7 @@ bool CvDLLButtonPopup::launchChooseTechPopup(CvPopup* pPopup, CvPopupInfo &info)
 		else if (gDLL->getCurrentLanguage() == 3) gDLL->getInterfaceIFace()->playGeneralSound("AS2D_TECH_RESEARCH_NEXT_IT");
 		else if (gDLL->getCurrentLanguage() == 4) gDLL->getInterfaceIFace()->playGeneralSound("AS2D_TECH_RESEARCH_NEXT_ES");
 	//}
+	*/
 	// ---
 
 	if (iDiscover == 0)

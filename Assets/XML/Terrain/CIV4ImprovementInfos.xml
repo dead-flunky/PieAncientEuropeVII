@@ -448,6 +448,10 @@
 			<TerrainMakesValids/>
 			<FeatureMakesValids>
 				<FeatureMakesValid>
+					<FeatureType>FEATURE_FOREST_NEW</FeatureType>
+					<bMakesValid>1</bMakesValid>
+				</FeatureMakesValid>
+				<FeatureMakesValid>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<bMakesValid>1</bMakesValid>
 				</FeatureMakesValid>

@@ -1234,11 +1234,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PRAEFECTUR</Tag>
-		<English>Praefectus</English>
-		<French>Pr&#233;fecture</French>
-		<German>Praefectur</German>
-		<Italian>Prefettura</Italian>
-		<Spanish>Praefectus</Spanish>
+		<English>Praefectura</English>
+		<French>Praefectura</French>
+		<German>Praefectura</German>
+		<Italian>Praefectura</Italian>
+		<Spanish>Praefectura</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROMO_STRATEGY</Tag>
@@ -5761,12 +5761,12 @@
 		<Spanish>Decimatio</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TECH_DIOECESIS</Tag>
-		<English>Dioceses</English>
-		<French>Dioc&#232;ses</French>
-		<German>Di&#246;zesen</German>
-		<Italian>Diocesi</Italian>
-		<Spanish>Di&#243;cesis</Spanish>
+		<Tag>TXT_KEY_TECH_DOMINAT</Tag>
+		<English>Dominance</English>
+		<French>Dominat</French>
+		<German>Dominat</German>
+		<Italian>Dominato</Italian>
+		<Spanish>Dominado</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TECH_DRACHENSCHIFFE</Tag>

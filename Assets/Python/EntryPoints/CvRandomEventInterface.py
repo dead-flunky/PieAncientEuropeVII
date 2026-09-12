@@ -431,7 +431,9 @@ def canDoBrothersInNeed1(argsList):
 		return canTriggerBrothersInNeed(newArgs)
 
 ####### City Fire / Stadtbrand ######
-
+# auch in PAE_City doStadtbrand definiert
+# und in CvMainInterface bei Brandgefahr/Stadtbrand
+# City-Status (Pop): 3, 6, 12, 20
 def canTriggerCityFire(argsList):
 		# eTrigger = argsList[0]
 		ePlayer = argsList[1]
@@ -447,28 +449,33 @@ def canTriggerCityFire(argsList):
 		if city.plot().getLatitude() <= 0:
 			return False
 
-		iChance = 0
-		# Feuerwehr: 90% Schutz
+		iChance = 10
+		# Feuerwehr: immer 90% Schutz
 		if city.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
-			iChance = 9
-		# Aquaedukt: 70% Schutz
+			iChance = 1
+		# Aquaedukt: immer 70% Schutz
 		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
-			iChance = 7
-		# Bewässerung: 50% Schutz
-		elif (
-			city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
-			city.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) or
-			city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
-			):
-			iChance = 5
-		# Brunnen: 30% Schutz
-		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
 			iChance = 3
+		# Bewässerung: 50% Schutz
+		#elif (
+		#	city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
+		#	city.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) or
+		#	city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
+		#	):
+		#	iChance = 5
+		# Zisterne: 50% Schutz +/- 10% je nach Pop
+		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
+			iChance = 5
+			iChance += iCityPop - 5
+		# Brunnen: 30% Schutz +/- 10% je nach Pop
+		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
+			iChance = 7
+			iChance += iCityPop - 2
 
 		if gc.getGame().getSorenRandNum(10, "City Fire") < iChance:
-			return False
+			return True
 
-		return True
+		return False
 
 ####### City Fire Crisis ######
 
@@ -485,6 +492,8 @@ def canApplyCityFire2(argsList):
 # PAE 7.17: City Fire
 def setCityFire(argsList):
 		kTriggeredData = argsList[0]
+		ePlayer = kTriggeredData.ePlayer
+		iCity = kTriggeredData.iCityId
 		player = gc.getPlayer(ePlayer)
 		city = player.getCity(iCity)
 		city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_FIRE"), 1)
@@ -562,7 +571,7 @@ def applyHurricane1(argsList):
 
 		iDestroy = 1 + gc.getGame().getSorenRandNum(iMaxDestroy, "Hurricane event amount of building destroyed")
 
-		if listCheapBuildings:
+		if len(listCheapBuildings) > 0:
 			for _ in range(iDestroy):
 				iBuilding = listCheapBuildings[gc.getGame().getSorenRandNum(len(listCheapBuildings), "Hurricane event cheap building destroyed")]
 				szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
@@ -573,7 +582,7 @@ def applyHurricane1(argsList):
 				break
 
 		# PAE (only destroy 1 expensive building)
-		if iDestroy > 0 and listExpensiveBuildings:
+		if iDestroy > 0 and len(listExpensiveBuildings) > 0:
 				iBuilding = listExpensiveBuildings[gc.getGame().getSorenRandNum(len(listExpensiveBuildings), "Hurricane event expensive building destroyed")]
 				szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
 				CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
@@ -581,7 +590,7 @@ def applyHurricane1(argsList):
 				city.setNumRealBuilding(iBuilding, 0)
 
 		# PAE 7.17:
-		city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_BAUSCHUTT"), 1)
+		city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS"), 1)
 
 def applyCityFire(argsList):
 		kTriggeredData = argsList[1]
@@ -604,14 +613,14 @@ def applyCityFire(argsList):
 		if city.getPopulation() >= 12 and listExpensiveBuildings:
 			iRand = gc.getGame().getSorenRandNum(2, "City Fire event type of building destroyed")
 
-		if iRand == 0 and listCheapBuildings:
+		if iRand == 0 and len(listCheapBuildings) > 0:
 				iBuilding = listCheapBuildings[gc.getGame().getSorenRandNum(len(listCheapBuildings), "Hurricane event cheap building destroyed")]
 				if city.isHasBuilding(iBuilding):
 					szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
 					CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
 									gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
 					city.setNumRealBuilding(iBuilding, 0)
-		elif listExpensiveBuildings:
+		elif len(listExpensiveBuildings) > 0:
 				iBuilding = listExpensiveBuildings[gc.getGame().getSorenRandNum(len(listExpensiveBuildings), "Hurricane event expensive building destroyed")]
 				if city.isHasBuilding(iBuilding):
 					szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
@@ -619,6 +628,8 @@ def applyCityFire(argsList):
 									gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
 					city.setNumRealBuilding(iBuilding, 0)
 
+		# PAE 7.17:
+		city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS"), 1)
 
 ######## CYCLONE ###########
 
@@ -3835,11 +3846,11 @@ def applyForest2(argsList):
 
 
 # Mining Accident / earthquake next to a city
-def setBauschutt(argsList):
+def setCityRuins(argsList):
 		kTriggeredData = argsList[0]
 		player = gc.getPlayer(kTriggeredData.ePlayer)
 		city = player.getCity(kTriggeredData.iCityId)
-		city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_BAUSCHUTT"), 1)
+		city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS"), 1)
 
 
 ###### Reflexbogen #######

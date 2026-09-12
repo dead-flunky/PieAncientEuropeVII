@@ -1815,14 +1815,15 @@ The buildings that have been constructed are displayed in different colors accor
 [ICON_BULLET] Buildings that cannot be conquered: light gray
 [ICON_BULLET] Normal buildings: white
 
+[H2]City Ruins[\H2]
+City ruins can appear when buildings are destroyed (by siege or natural disasters). While they provide a small production boost, they also breed discontent. City ruins can be demolished as rubble in the building menu.
 
 [H2]City Fires[\H2]
 City fires were very common in ancient times. Fires can break out in a city starting at village status (Pop 3).
-[ICON_BULLET] Wells protect cities 30%
-[ICON_BULLET] Irrigation canals protect cities 50%
-[ICON_BULLET] Aqueducts protect cities 70%
-[ICON_BULLET] (Roman) fire departments protect cities 90%
-
+[ICON_BULLET] Wells protect cities by 30%
+[ICON_BULLET] Cisterns protect cities by 50%
+[ICON_BULLET] Aqueducts protect cities by 70%
+[ICON_BULLET] (Roman) fire departments protect cities by 90%
 
 [H2]Unhealthy cities[\H2]
 In unhealty cities diseases will emerge with a fairly high probability. These are
@@ -1955,14 +1956,15 @@ Les b&#226;timents construits sont affich&#233;s en diff&#233;rentes couleurs se
 [ICON_BULLET] B&#226;timents qui ne peuvent pas &#234;tre conquis : gris clair
 [ICON_BULLET] B&#226;timents normaux : blancs
 
+[H2]Ruines de la ville[\H2]
+Les ruines de la ville apparaissent lorsque des b&#226;timents sont d&#233;truits (par un si&#232;ge ou une catastrophe naturelle). Bien qu'elles procurent un l&#233;ger bonus de production, elles engendrent &#233;galement du m&#233;contentement. Les ruines de la ville peuvent &#234;tre d&#233;molies et r&#233;duites en gravats dans le menu de construction.
 
 [H2]Incendies urbains[\H2]
 Les incendies de ville &#233;taient tr&#232;s courants dans l'Antiquit&#233;. Des incendies peuvent se d&#233;clarer dans une ville &#224; partir du statut de village (Pop 3).
 [ICON_BULLET] Les fontaines prot&#232;gent les villes &#224; 30 %
-[ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes &#224; 50 %
+[ICON_BULLET] Les citernes prot&#232;gent les villes &#224; 50 %
 [ICON_BULLET] Les aqueducs prot&#232;gent les villes &#224; 70 %
 [ICON_BULLET] Les pompiers (romains) prot&#232;gent les villes &#224; 90 %
-
 
 [H2]Insalubrit&#233;[\H2]
 Des &#233;pid&#233;mies parmi les suivantes peuvent se d&#233;clarer dans les villes insalubres :
@@ -2095,14 +2097,15 @@ Die erbauten Geb&#228;ude werden nach ihrer Bedeutung in unterschiedlichen Farbe
 [ICON_BULLET] Geb&#228;ude, die nicht erobert werden k&#246;nnen: hellgrau
 [ICON_BULLET] Normale Geb&#228;ude: wei&#223;
 
+[H2]Stadtruinen[\H2]
+Stadtruinen k&#246;nnen auftauchen, wenn Geb&#228;ude zerst&#246;rt werden (durch Belagerung oder Naturkatastrophen). Diese geben zwar einen kleinen Produktionsboost, sch&#252;ren aber Unzufriedenheit. Im Baumen&#252; k&#246;nnen Stadtruinen als Bauschutt abgetragen werden.
 
 [H2]Stadtbr&#228;nde[\H2]
 Stadtbr&#228;nde kommen in der Antike sehr h&#228;ufig vor. Ab dem Dorfstatus (Pop 3) k&#246;nnen in einer Stadt Br&#228;nde entstehen.
 [ICON_BULLET] Brunnen sch&#252;tzen St&#228;dte zu 30%
-[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte zu 50%
+[ICON_BULLET] Zisternen sch&#252;tzen St&#228;dte zu 50%
 [ICON_BULLET] Aqu&#228;dukte sch&#252;tzen St&#228;dte zu 70%
 [ICON_BULLET] (R&#246;mische) Feuerwehren sch&#252;tzen St&#228;dte zu 90%
-
 
 [H2]Ungesunde St&#228;dte[\H2]
 In ungesunden St&#228;dten tauchen mit ziemlich gro&#223;er Wahrscheinlichkeit Seuchen auf. Diese sind
@@ -2239,14 +2242,15 @@ Gli edifici costruiti sono visualizzati in colori diversi a seconda della loro i
 [ICON_BULLET] Edifici che non possono essere conquistati: grigio chiaro
 [ICON_BULLET] Edifici normali: bianchi
 
+[H2]Rovine della citt&#224;[\H2]
+Le rovine della citt&#224; possono comparire quando gli edifici vengono distrutti (da assedio o disastri naturali). Sebbene forniscano un piccolo bonus alla produzione, generano anche malcontento. Le rovine della citt&#224; possono essere demolite come macerie nel menu degli edifici.
 
 [H2]Incendi cittadini[\H2]
 Gli incendi nelle citt&#224; erano molto comuni nell'antichit&#224;. In una citt&#224; possono scoppiare incendi anche se si &#232; in un villaggio (Pop 3).
 [ICON_BULLET] Le fontane proteggono le citt&#224; al 30%
-[ICON_BULLET] I canali di irrigazione proteggono le citt&#224; al 50%
+[ICON_BULLET] I cisterne proteggono le citt&#224; al 50%
 [ICON_BULLET] Gli acquedotti proteggono le citt&#224; al 70%
 [ICON_BULLET] (Roman) I vigili del fuoco proteggono le citt&#224; al 90%
-
 
 Citt&#224; [H2] salutare [\H2]
 Nelle citt&#224; malsane immergersi con abbastanza elevata probabilit&#224; di epidemie . questi sono
@@ -2382,14 +2386,14 @@ Los edificios construidos se muestran en diferentes colores seg&#250;n su import
 [ICON_BULLET] Edificios que no se pueden conquistar: gris claro
 [ICON_BULLET] Edificios normales: blancos
 
+[H2]Ruinas de la ciudad[\H2] Las ruinas de la ciudad pueden aparecer cuando los edificios son destruidos (por un asedio o desastres naturales). Si bien proporcionan un peque&#241;o aumento de producci&#243;n, tambi&#233;n generan descontento. Las ruinas de la ciudad se pueden demoler como escombros en el men&#250; de construcci&#243;n.
 
 [H2]Incendios urbanos[\H2]
 Los incendios urbanos eran muy comunes en la antig&#252;edad. Los incendios pueden estallar en una ciudad desde el estado de aldea (Poblaci&#243;n 3).
 [ICON_BULLET] Las fuentes protegen ciudades al 30%
-[ICON_BULLET] Los canales de irrigaci&#243;n protegen las ciudades al 50%
+[ICON_BULLET] Los cisternas protegen las ciudades al 50%
 [ICON_BULLET] Los acueductos protegen las ciudades al 70%
 [ICON_BULLET] Los departamentos de bomberos (romanos) protegen las ciudades al 90%
-
 
 [H2]Ciudades insalubres[\H2]
 En las ciudades insalubres es m&#225;s probable la aparici&#243;n de epidemias, tales como:
@@ -8862,7 +8866,7 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 [ICON_BULLET]at desert and plains tiles
 [ICON_BULLET]can spread
 
-[H2]Conflagration[\H2]
+[H2]Conflagration and forest fire[\H2]
 [ICON_BULLET]consequence of earthquakes, volcano eruptions, meteorites and comets
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]units suffer 20 damage per round
@@ -8870,6 +8874,7 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 [ICON_BULLET]slows units down
 [ICON_BULLET]can spread
 [ICON_BULLET]affects areas without forests etc.
+[ICON_BULLET]can stop on its own
 
 [H2]Burnt Forest[\H2]
 [ICON_BULLET]consequence of earthquakes, volcano eruptions, meteorites and comets
@@ -9026,7 +9031,7 @@ Effects:
 [ICON_BULLET] sur les d&#233;serts et les cases de plaine
 [ICON_BULLET] peut se propager
 
-[H2] Embrasement [\H2]
+[H2] Embrasement et incendie de for&#234;t[\H2]
 [ICON_BULLET] provoqu&#233; par tremblements de terre, &#233;ruptions volcaniques, m&#233;t&#233;orites et com&#232;tes
 [ICON_BULLET] -1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET] 20 d&#233;g&#226;ts par tour aux unit&#233;s
@@ -9034,6 +9039,7 @@ Effects:
 [ICON_BULLET] Ralentit les unit&#233;s
 [ICON_BULLET] peut se propager
 [ICON_BULLET] se propage sur les terrains &#224; d&#233;couvert
+[ICON_BULLET] peut s'arr&#234;ter tout seul
 
  [H2] For&#234;t calcin&#233;e [\H2]
 [ICON_BULLET] provoqu&#233;e par tremblements de terre, &#233;ruptions volcaniques, m&#233;t&#233;orites et com&#232;tes
@@ -9191,7 +9197,7 @@ Effets :
 [ICON_BULLET]auf W&#252;sten- und Ebenenplots
 [ICON_BULLET]k&#246;nnen sich ausbreiten
 
-[H2]Fl&#228;chenbrand[\H2]
+[H2]Fl&#228;chenbrand und Waldbrand[\H2]
 [ICON_BULLET]Folge von Erdbeben, Vulkanausbr&#252;chen, Meteoriten und Kometen
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]20 Schaden pro Runde an Einheiten
@@ -9199,6 +9205,7 @@ Effets :
 [ICON_BULLET]verlangsamt Einheiten
 [ICON_BULLET]kann sich ausbreiten
 [ICON_BULLET]betrifft freie Fl&#228;chen
+[ICON_BULLET]kann von selbst aufh&#246;ren
 
 [H2]Verbrannter Wald[\H2]
 [ICON_BULLET]Folge von Erdbeben, Vulkanausbr&#252;chen, Meteoriten und Kometen
@@ -9356,7 +9363,7 @@ Auswirkungen:
 [ICON_BULLET]sulle caselle del deserto e delle pianure
 [ICON_BULLET]pu&#242; diffondersi
 
-[H2]Conflagrazione[\H2]
+[H2]Conflagrazione e incendio boschivo[\H2]
 [ICON_BULLET]conseguenza di terremoti, eruzioni vulcaniche, meteoriti e comete
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]le unit&#224; subiscono 20 danni per turno
@@ -9364,6 +9371,7 @@ Auswirkungen:
 [ICON_BULLET]rallenta le unit&#224;
 [ICON_BULLET]pu&#242; diffondersi
 [ICON_BULLET]colpisce le aree senza foreste ecc.
+[ICON_BULLET]pu&#242; fermarsi da solo
 
 [H2]Foresta Bruciata[\H2]
 [ICON_BULLET]conseguenza di terremoti, eruzioni vulcaniche, meteoriti e comete
@@ -9520,7 +9528,7 @@ Effetti:
 [ICON_BULLET]en casillas de desierto y llanura
 [ICON_BULLET]puede propagarse
 
-[H2]Incendio[\H2]
+[H2]Incendio y incendio forestal[\H2]
 [ICON_BULLET]consecuencia de terremotos, erupciones volc&#225;nicas, meteoritos y cometas
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION], -1 [ICON_COMMERCE]
 [ICON_BULLET]Las unidades sufren 20 de da&#241;o por turno
@@ -9528,6 +9536,7 @@ Effetti:
 [ICON_BULLET]ralentiza unidades
 [ICON_BULLET]puede propagarse
 [ICON_BULLET]afecta a &#225;reas sin bosques etc.
+[ICON_BULLET]puede detenerse por s&#237; solo
 
 [H2]Bosque quemado[\H2]
 [ICON_BULLET]consecuencia de terremotos, erupciones volc&#225;nicas, meteoritos y cometas

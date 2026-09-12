@@ -3296,6 +3296,26 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			if (pPlot->isActiveVisible(true))
 			{
 				szTempBuffer.Format(L"%d%% " SETCOLR L"%s" ENDCOLR, pPlot->calculateCulturePercent(eRevealOwner), GET_PLAYER(eRevealOwner).getPlayerTextColorR(), GET_PLAYER(eRevealOwner).getPlayerTextColorG(), GET_PLAYER(eRevealOwner).getPlayerTextColorB(), GET_PLAYER(eRevealOwner).getPlayerTextColorA(), GET_PLAYER(eRevealOwner).getCivilizationAdjective());
+
+				// PAE
+				if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isAtWar(GET_PLAYER(eRevealOwner).getTeam())) {
+					szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(OCCUPATION_CHAR)));
+				} else {
+					if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isOpenBorders(GET_PLAYER(eRevealOwner).getTeam()))
+					{
+						szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(OPEN_BORDERS_CHAR)));
+					}
+					if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isDefensivePact(GET_PLAYER(eRevealOwner).getTeam()))
+					{
+						szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(DEFENSIVE_PACT_CHAR)));
+					}
+					if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isVassal(GET_PLAYER(eRevealOwner).getTeam()))
+					{
+						szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(SILVER_STAR_CHAR)));
+					}
+				}
+				// -----
+
 				szString.append(szTempBuffer);
 				szString.append(NEWLINE);
 
@@ -3307,6 +3327,26 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 						if (kPlayer.isAlive() && pPlot->getCulture((PlayerTypes)iPlayer) > 0)
 						{
 							szTempBuffer.Format(L"%d%% " SETCOLR L"%s" ENDCOLR, pPlot->calculateCulturePercent((PlayerTypes)iPlayer), kPlayer.getPlayerTextColorR(), kPlayer.getPlayerTextColorG(), kPlayer.getPlayerTextColorB(), kPlayer.getPlayerTextColorA(), kPlayer.getCivilizationAdjective());
+							
+							// PAE
+							if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isAtWar(GET_PLAYER((PlayerTypes)iPlayer).getTeam())) {
+								szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(OCCUPATION_CHAR)));
+							} else {
+								if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isOpenBorders(GET_PLAYER((PlayerTypes)iPlayer).getTeam()))
+								{
+									szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(OPEN_BORDERS_CHAR)));
+								}
+								if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isDefensivePact(GET_PLAYER((PlayerTypes)iPlayer).getTeam()))
+								{
+									szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(DEFENSIVE_PACT_CHAR)));
+								}
+								if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isVassal(GET_PLAYER((PlayerTypes)iPlayer).getTeam()))
+								{
+									szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(SILVER_STAR_CHAR)));
+								}
+							}
+							// -----
+							
 							szString.append(szTempBuffer);
 							szString.append(NEWLINE);
 						}
@@ -3317,6 +3357,26 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			else
 			{
 				szTempBuffer.Format(SETCOLR L"%s" ENDCOLR, GET_PLAYER(eRevealOwner).getPlayerTextColorR(), GET_PLAYER(eRevealOwner).getPlayerTextColorG(), GET_PLAYER(eRevealOwner).getPlayerTextColorB(), GET_PLAYER(eRevealOwner).getPlayerTextColorA(), GET_PLAYER(eRevealOwner).getCivilizationDescription());
+				
+				// PAE
+				if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isAtWar(GET_PLAYER(eRevealOwner).getTeam())) {
+					szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(OCCUPATION_CHAR)));
+				} else {
+					if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isOpenBorders(GET_PLAYER(eRevealOwner).getTeam()))
+					{
+						szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(OPEN_BORDERS_CHAR)));
+					}
+					if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isDefensivePact(GET_PLAYER(eRevealOwner).getTeam()))
+					{
+						szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(DEFENSIVE_PACT_CHAR)));
+					}
+					if (GET_TEAM(GC.getGameINLINE().getActiveTeam()).isVassal(GET_PLAYER(eRevealOwner).getTeam()))
+					{
+						szTempBuffer.append(CvWString::format(L" %c", gDLL->getSymbolID(SILVER_STAR_CHAR)));
+					}
+				}
+				// -----
+				
 				szString.append(szTempBuffer);
 				szString.append(NEWLINE);
 			}

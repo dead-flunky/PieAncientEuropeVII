@@ -1306,27 +1306,27 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_FOREST_BURNING_HELP</Tag>
-		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT]Burnt Forest[COLOR_REVERT] after some time.</English>
-		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT]For&#234;t br&#251;l&#233;e[COLOR_REVERT] apr&#232;s un certain temps.</French>
-		<German>[ICON_BULLET] Wird nach einer Zeit zu einem [COLOR_HIGHLIGHT]Verbrannten Wald[COLOR_REVERT].</German>
-		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT]Foresta bruciata[COLOR_REVERT].</Italian>
-		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT]Bosque quemado[COLOR_REVERT].</Spanish>
+		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT_TEXT]Burnt Forest[COLOR_REVERT] after some time.</English>
+		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT_TEXT]For&#234;t br&#251;l&#233;e[COLOR_REVERT] apr&#232;s un certain temps.</French>
+		<German>[ICON_BULLET] Wird nach einer Zeit zu einem [COLOR_HIGHLIGHT_TEXT]Verbrannten Wald[COLOR_REVERT].</German>
+		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT_TEXT]Foresta bruciata[COLOR_REVERT].</Italian>
+		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT_TEXT]Bosque quemado[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_FOREST_BURNT_HELP</Tag>
-		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT]Young Forest[COLOR_REVERT] after some time.[NEWLINE][ICON_BULLET] Can be felled early by a [COLOR_UNIT]Worker[COLOR_REVERT].</English>
-		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT]Jeune for&#234;t[COLOR_REVERT] apr&#232;s un certain temps.[NEWLINE][ICON_BULLET] Peut &#234;tre abattu rapidement par un [COLOR_UNIT]Ouvrier[COLOR_REVERT].</French>
-		<German>[ICON_BULLET] Wird nach einiger Zeit zu einem [COLOR_HIGHLIGHT]Jungen Wald[COLOR_REVERT].[NEWLINE][ICON_BULLET] Kann fr&#252;hzeitig von einem [COLOR_UNIT]Bautrupp[COLOR_REVERT] abgeholzt werden.</German>
-		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT]Foresta giovane[COLOR_REVERT].[NEWLINE][ICON_BULLET] Pu&#242; essere abbattuto in anticipo da un [COLOR_UNIT]Lavoratore[COLOR_REVERT].</Italian>
-		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT]Bosque joven[COLOR_REVERT].[NEWLINE][ICON_BULLET] Puede ser derribado prematuramente por un [COLOR_UNIT]Trabajador[COLOR_REVERT].</Spanish>
+		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT_TEXT]Young Forest[COLOR_REVERT] after some time.[NEWLINE][ICON_BULLET] Can be felled early by a [COLOR_UNIT_TEXT]Worker[COLOR_REVERT].</English>
+		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT_TEXT]Jeune for&#234;t[COLOR_REVERT] apr&#232;s un certain temps.[NEWLINE][ICON_BULLET] Peut &#234;tre abattu rapidement par un [COLOR_UNIT_TEXT]Ouvrier[COLOR_REVERT].</French>
+		<German>[ICON_BULLET] Wird nach einiger Zeit zu einem [COLOR_HIGHLIGHT_TEXT]Jungen Wald[COLOR_REVERT].[NEWLINE][ICON_BULLET] Kann vorzeitig von einem [COLOR_UNIT_TEXT]Bautrupp[COLOR_REVERT] abgeholzt werden.</German>
+		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT_TEXT]Foresta giovane[COLOR_REVERT].[NEWLINE][ICON_BULLET] Pu&#242; essere abbattuto in anticipo da un [COLOR_UNIT_TEXT]Lavoratore[COLOR_REVERT].</Italian>
+		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT_TEXT]Bosque joven[COLOR_REVERT].[NEWLINE][ICON_BULLET] Puede ser derribado prematuramente por un [COLOR_UNIT_TEXT]Trabajador[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_FOREST_NEW_HELP</Tag>
-		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT]Forest[COLOR_REVERT] after some time.</English>
-		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT]For&#234;t[COLOR_REVERT] apr&#232;s un certain temps.</French>
-		<German>[ICON_BULLET] Wird nach einiger Zeit zu einem [COLOR_HIGHLIGHT]Wald[COLOR_REVERT].</German>
-		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT]Foresta[COLOR_REVERT].</Italian>
-		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT]Bosque[COLOR_REVERT].</Spanish>
+		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT_TEXT]Forest[COLOR_REVERT] after some time.</English>
+		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT_TEXT]For&#234;t[COLOR_REVERT] apr&#232;s un certain temps.</French>
+		<German>[ICON_BULLET] Wird nach einiger Zeit zu einem [COLOR_HIGHLIGHT_TEXT]Wald[COLOR_REVERT].</German>
+		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT_TEXT]Foresta[COLOR_REVERT].</Italian>
+		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT_TEXT]Bosque[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_RIVER</Tag>
@@ -2410,11 +2410,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PAE_VERSION</Tag>
-		<English>Pie's Ancient Europe VII (7.18)</English>
-		<French>Pie's Ancient Europe VII (7.18)</French>
-		<German>Pie's Ancient Europe VII (7.18)</German>
-		<Italian>Pie's Ancient Europe VII (7.18)</Italian>
-		<Spanish>Pie's Ancient Europe VII (7.18)</Spanish>
+		<English>Pie's Ancient Europe VII (7.18.1)</English>
+		<French>Pie's Ancient Europe VII (7.18.1)</French>
+		<German>Pie's Ancient Europe VII (7.18.1)</German>
+		<Italian>Pie's Ancient Europe VII (7.18.1)</Italian>
+		<Spanish>Pie's Ancient Europe VII (7.18.1)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROGRESS_TOWARDS_TECH</Tag>

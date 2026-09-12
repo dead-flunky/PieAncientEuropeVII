@@ -2776,7 +2776,7 @@
 			</TriggerTexts>
 			<bSinglePlayer>0</bSinglePlayer>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>500</iWeight>
+			<iWeight>200</iWeight>
 			<bProbabilityUnitMultiply>0</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>1</bProbabilityBuildingMultiply>
 			<Civic>NONE</Civic>
@@ -3964,7 +3964,7 @@
 			<PythonCanDo/>
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
-			<PythonCallback>setBauschutt</PythonCallback>
+			<PythonCallback>setCityRuins</PythonCallback>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
 			<Type>EVENTTRIGGER_BREAKTHROUGH</Type>

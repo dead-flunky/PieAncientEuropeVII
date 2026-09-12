@@ -177,6 +177,14 @@
 		<Spanish>Curia</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DIOECESIS</Tag>
+		<English>Dioecesis</English>
+		<French>Dioecesis</French>
+		<German>Dioecesis</German>
+		<Italian>Dioecesis</Italian>
+		<Spanish>Dioecesis</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FEUERWEHR_HELP</Tag>
 		<English>[ICON_BULLET] Fire stations protect cities 100% from fires.</English>
 		<French>[ICON_BULLET] Les services d'incendie prot&#232;gent les villes &#224; 100 % contre les incendies.</French>
@@ -194,11 +202,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FIRE_HELP</Tag>
-		<English>[ICON_BULLET] One building can be burned down per turn (see PAE concepts: City).</English>
-		<French>[ICON_BULLET] Un b&#226;timent peut &#234;tre incendi&#233; par tour (voir les concepts PAE : Ville).</French>
-		<German>[ICON_BULLET] Pro Runde kann ein Geb&#228;ude niederbrennen (siehe PAE-Konzepte: Stadt).</German>
-		<Italian>[ICON_BULLET] Un edificio pu&#242; essere incendiato per round (vedi concetti PAE: Citt&#224;).</Italian>
-		<Spanish>[ICON_BULLET] Se puede quemar un edificio por ronda (ver conceptos de PAE: Ciudad).</Spanish>
+		<English>[ICON_BULLET] Burns for 2 turns. [ICON_UNHAPPY] decreases by 1 per turn.[NEWLINE][ICON_BULLET] One building can be burned down per turn (see PAE concepts: City).</English>
+		<French>[ICON_BULLET] Br&#251;lures pendant 2 tours. [ICON_UNHAPPY] diminue de 1 par tour.[NEWLINE][ICON_BULLET] Un b&#226;timent peut &#234;tre incendi&#233; par tour (voir les concepts PAE : Ville).</French>
+		<German>[ICON_BULLET] Brennt 2 Runden lang. [ICON_UNHAPPY] sinkt pro Runde um 1.[NEWLINE][ICON_BULLET] Pro Runde kann ein Geb&#228;ude niederbrennen (siehe PAE-Konzepte: Stadt).</German>
+		<Italian>[ICON_BULLET] Brucia per 2 turni. [ICON_UNHAPPY] diminuisce di 1 per turno.[NEWLINE][ICON_BULLET] Un edificio pu&#242; essere incendiato per round (vedi concetti PAE: Citt&#224;).</Italian>
+		<Spanish>[ICON_BULLET] Quema durante 2 turnos. [ICON_UNHAPPY] disminuye en 1 por turno.[NEWLINE][ICON_BULLET] Se puede quemar un edificio por turno (ver conceptos de PAE: Ciudad).</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FREE_START_ERA</Tag>
@@ -1226,11 +1234,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAIN_BRANDGEFAHR_2</Tag>
-		<English>%F1 Fire hazard! (no irrigation)</English>
-		<French>%F1 Risque d'incendie ! (p.d. canal d'irr.)</French>
-		<German>%F1 Brandgefahr! (kein Bew.kanal)</German>
-		<Italian>%F1 Pericolo di incendio! (ness. can. di irr.)</Italian>
-		<Spanish>%F1 &#161;Peligro de incendio! (sin can. de riego)</Spanish>
+		<English>%F1 Fire hazard! (no cistern)</English>
+		<French>%F1 Risque d'incendie ! (p.d. citerne)</French>
+		<German>%F1 Brandgefahr! (keine Zisterne)</German>
+		<Italian>%F1 Pericolo di incendio! (ness. cisterna)</Italian>
+		<Spanish>%F1 &#161;Peligro de incendio! (sin cisterna)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAIN_CITY_DEFENSE</Tag>

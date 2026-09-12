@@ -5552,10 +5552,11 @@ class CvMainInterface:
 												if iCityPop >= 12:
 													szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_3", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
 												else:
-													if (not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) and
-														 not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) and
-														 not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
-													):
+													#if (not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) and
+													#	 not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) and
+													#	 not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
+													#):
+													if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
 														if iCityPop >= 6:
 															szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_2", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
 														else:

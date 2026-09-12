@@ -1,5 +1,4 @@
 // playerAI.cpp
-
 #include "CvGameCoreDLL.h"
 #include "CvPlayerAI.h"
 #include "CvRandom.h"
@@ -1207,6 +1206,7 @@ void CvPlayerAI::AI_unitUpdate()
 				{
 					break; // pointers could become invalid...
 				}
+
 			}
 		}
 		else
@@ -1255,10 +1255,12 @@ void CvPlayerAI::AI_unitUpdate()
 
 				if (NULL != pLoopSelectionGroup)  // group might have been killed by a previous group update
 				{
+
 					if (pLoopSelectionGroup->AI_update())
 					{
 						break; // pointers could become invalid...
 					}
+
 				}
 
 				pCurrUnitNode = finalGroupCycle.next(pCurrUnitNode);

@@ -13166,6 +13166,27 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_33</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-NightfallCavalry</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_34</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-MarchOfTheFallen</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>MUSIC_PAE_MOD_35</SoundID>
+			<Filename>Sounds/Soundtrack/PAE-AI-UnderPunicSails</Filename>
+			<LoadType>STREAMED</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
 	</SoundDatas>
 	<ContextTypes>
 		<ContextType>Generic</ContextType>

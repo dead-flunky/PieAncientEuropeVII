@@ -984,6 +984,15 @@ class CvGameUtils:
 														return False
 						return True
 
+				# Palast / Palace
+				elif eBuilding == gc.getInfoTypeForString("BUILDING_PALACE"):
+						pPlayer = gc.getPlayer(pCity.getOwner())
+						if not gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_LEADERSHIP")):
+								return True
+						if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")):
+							if self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, gc.getInfoTypeForString("BUILDINGCLASS_PALACE")) > 0:
+								return True
+
 				# Ausbildungslager / first type of barracks
 				elif eBuilding == gc.getInfoTypeForString("BUILDING_BARRACKS"):
 						if not gc.getPlayer(pCity.getOwner()).isCivic(gc.getInfoTypeForString("CIVIC_BERUFSARMEE")):

@@ -5,6 +5,11 @@
 #include <list>
 #include <algorithm>
 // Ramk updateTechPathCache
+// ============================================================
+// PAE_TIME_PROFILING (0 or 1)
+#define PAE_TIME_PROFILING 0
+#include <windows.h>
+// ============================================================
 #include "CvGameCoreDLL.h"
 #include "CvGlobals.h"
 #include "CvArea.h"
@@ -3257,6 +3262,25 @@ const TCHAR* CvPlayer::getUnitButton(UnitTypes eUnit) const
 
 void CvPlayer::doTurn()
 {
+
+	// ============================================================
+	// PAE Timecheck
+	// ============================================================
+#if PAE_TIME_PROFILING
+	sprintf(szBuffer,
+		"PLAYER START %d: turnActive=%d numActive=%d gameTurn=%d",
+		(int)getID(),
+		(int)isTurnActive(),
+		(int)GC.getGameINLINE().getNumGameTurnActive(),
+		(int)GC.getGameINLINE().getGameTurn());
+	gDLL->logMsg("PAEProfiler.log", szBuffer);
+
+	char szBuffer[256];
+	sprintf(szBuffer,"PLAYER START %d",(int)getID());
+	gDLL->logMsg("PAEProfiler.log", szBuffer);
+#endif
+	// ============================================================
+
 	PROFILE_FUNC();
 
 	CvCity* pLoopCity;
@@ -3336,6 +3360,16 @@ void CvPlayer::doTurn()
 	AI_doTurnPost();
 
 	CvEventReporter::getInstance().endPlayerTurn( GC.getGameINLINE().getGameTurn(),  getID());
+
+	// ============================================================
+	// PAE Timecheck
+	// ============================================================
+#if PAE_TIME_PROFILING
+	sprintf(szBuffer,"PLAYER END %d",(int)getID());
+	gDLL->logMsg("PAEProfiler.log", szBuffer);
+#endif
+	// ============================================================
+
 }
 
 
@@ -7620,6 +7654,7 @@ bool CvPlayer::isCivic(CivicTypes eCivic) const
 bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 {
 	PROFILE_FUNC();
+	long lResult=0;
 
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       02/16/10                                jdog5000      */
@@ -7645,12 +7680,18 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 		CyArgsList argsList;
 		argsList.add(getID());
 		argsList.add(eCivic);
-		long lResult=0;
 		gDLL->getPythonIFace()->callFunction(PYGameModule, "canDoCivic", argsList.makeFunctionArgs(), &lResult);
 		if (lResult == 1)
 		{
 			return true;
 		}
+	}
+
+	// PAE TRAIT_IMPERIALIST
+	if (hasTrait((TraitTypes)(GC.getInfoTypeForString("TRAIT_IMPERIALIST")))) 
+	{
+		if (eCivic == (CivicTypes)(GC.getInfoTypeForString("CIVIC_IMPERATOR")) || eCivic == (CivicTypes)(GC.getInfoTypeForString("CIVIC_HERRSCHERKULT")))
+			return true;
 	}
 
 	if (!isHasCivicOption((CivicOptionTypes)(GC.getCivicInfo(eCivic).getCivicOptionType())) && !(GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getCivicInfo(eCivic).getTechPrereq()))))
@@ -7663,7 +7704,6 @@ bool CvPlayer::canDoCivics(CivicTypes eCivic) const
 		CyArgsList argsList2; // XXX
 		argsList2.add(getID());
 		argsList2.add(eCivic);
-		long lResult=0;
 		gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotDoCivic", argsList2.makeFunctionArgs(), &lResult);
 		if (lResult == 1)
 		{
@@ -10556,6 +10596,17 @@ void CvPlayer::setTurnActiveForPbem(bool bActive)
 
 void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 {
+
+// PAE_TIME_PROFILING
+	/*
+    char szBuffer[256];
+    sprintf(szBuffer,
+        "TURNACTIVE ENTER Player %d: bNewValue=%d bDoTurn=%d",
+        (int)getID(), (int)bNewValue, (int)bDoTurn);
+    gDLL->logMsg("PAEProfiler.log", szBuffer);
+	*/
+// -------------------------------------------
+
 	int iI;
 
 	if (isTurnActive() != bNewValue)
@@ -10689,10 +10740,38 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 			{
 				if (!GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS))
 				{
+
+// PAE_TIME_PROFILING
+/*
+// ============================================================
+	    char szBuffer[256];
+			sprintf(szBuffer,
+		"SETTURN BEFORE doTurn Player %d: active=%d numActive=%d",
+		(int)getID(),
+		(int)isTurnActive(),
+		(int)GC.getGameINLINE().getNumGameTurnActive());
+
+	gDLL->logMsg("PAEProfiler.log", szBuffer);
+// ============================================================
+*/
+
 					if (isAlive())
 					{
 						doTurn();
 					}
+
+// PAE_TIME_PROFILING
+/*
+// ============================================================
+	sprintf(szBuffer,
+		"SETTURN AFTER doTurn Player %d: active=%d numActive=%d",
+		(int)getID(),
+		(int)isTurnActive(),
+		(int)GC.getGameINLINE().getNumGameTurnActive());
+
+	gDLL->logMsg("PAEProfiler.log", szBuffer);
+// ============================================================
+*/
 
 					if ((GC.getGameINLINE().isPbem() || GC.getGameINLINE().isHotSeat()) && isHuman() && GC.getGameINLINE().countHumanPlayersAlive() > 1)
 					{
@@ -10734,7 +10813,44 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 								}
 								else
 								{
+									
+
+									// BTS
 									GET_PLAYER((PlayerTypes)iI).setTurnActive(true);
+
+
+// PAE_TIME_PROFILING
+/*
+// ============================================================
+    LARGE_INTEGER freq;
+    LARGE_INTEGER start;
+    LARGE_INTEGER end;
+    char szBuffer[256];
+
+    QueryPerformanceFrequency(&freq);
+    QueryPerformanceCounter(&start);
+
+    sprintf(szBuffer,
+        "NEXT PLAYER: %d -> %d BEFORE setTurnActive",
+        (int)getID(), iI);
+    gDLL->logMsg("PAEProfiler.log", szBuffer);
+
+    GET_PLAYER((PlayerTypes)iI).setTurnActive(true);
+
+    QueryPerformanceCounter(&end);
+
+    sprintf(szBuffer,
+        "NEXT PLAYER: %d -> %d AFTER setTurnActive: %.6f sec",
+        (int)getID(),
+        iI,
+        (double)(end.QuadPart - start.QuadPart) / (double)freq.QuadPart);
+    gDLL->logMsg("PAEProfiler.log", szBuffer);
+// ============================================================
+*/
+
+
+
+
 								}
 								break;
 							}
@@ -10748,6 +10864,19 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 
 		gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
 	}
+
+	/*
+#if PAE_TIME_PROFILING
+    QueryPerformanceCounter(&end);
+
+    sprintf(szBuffer,
+        "TURNACTIVE EXIT Player %d: %.6f sec",
+        (int)getID(),
+        (double)(end.QuadPart - start.QuadPart) / (double)freq.QuadPart);
+    gDLL->logMsg("PAEProfiler.log", szBuffer);
+#endif
+	*/
+
 }
 
 
@@ -10789,6 +10918,14 @@ bool CvPlayer::isEndTurn() const
 
 void CvPlayer::setEndTurn(bool bNewValue)
 {
+	// PAE_TIME_PROFILING
+	/*
+	char szBuffer[256];
+	sprintf(szBuffer,"SET END TURN Player %d: %d -> %d",(int)getID(),(int)m_bEndTurn,(int)bNewValue);
+	gDLL->logMsg("PAEProfiler.log", szBuffer);
+	*/
+	// ---------------------------------------
+
 	if (isEndTurn() != bNewValue)
 	{
 		FAssertMsg(isTurnActive(), "isTurnActive is expected to be true");

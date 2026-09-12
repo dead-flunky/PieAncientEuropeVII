@@ -59,6 +59,7 @@ import CvAdvisorUtils
 # import CvTechChooser
 from ScreenInput import ScreenInput
 import CvScreenEnums
+import time
 
 # Updater Mod (by Ramk, Flunky, Rob Anybody)
 #import CvModUpdaterScreen
@@ -148,6 +149,7 @@ PyGame = PyHelpers.PyGame
 iPlayerOptionCheck = 0  # Triggers for == 1, decrements for >= 0 -- From PB Mod
 
 # PAE Debug Marks
+bPAETimeCheck = False   # Civilization.ini: LoggingEnable=1, Log file: PythonDbg.log
 bPAEDebugMark1 = False # onEndGameTurn
 bPAEDebugMark2 = False # onBeginPlayerTurn
 bPAEDebugMark3 = False # onEndPlayerTurn
@@ -2338,6 +2340,16 @@ class CvEventManager:
 
 		def onLoadGame(self, argsList):
 
+				#for iPlayer in range(gc.getMAX_PLAYERS()):
+				#	  player = gc.getPlayer(iPlayer)
+				#	  if player.isAlive():
+				#			CvUtil.pyPrint("=== Civics for Player %d ===" % iPlayer)
+				#			for iCivicOption in range(gc.getNumCivicOptionInfos()):
+				#				 civicType = player.getCivics(iCivicOption)
+				#				 CvUtil.pyPrint("  %s: %s" %
+				#						 (gc.getCivicOptionInfo(iCivicOption).getDescription(),
+				#						  gc.getCivicInfo(civicType).getDescription()))
+
 				# +++++ PAE Debug: disband/delete things to check CtD reasons)
 				#self.onGameStartAndKickSomeAss()
 
@@ -2511,6 +2523,18 @@ class CvEventManager:
 				# Tiefsee setzen
 				if sScenarioName == "":
 						PAE_Turn_Features.doPlaceDeepOcean()
+
+				# 22.08.2026: No goody huts (even in scenarios)
+				if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_GOODY_HUTS):
+					iImprovement = gc.getInfoTypeForString("IMPROVEMENT_GOODY_HUT")
+					iMapW = gc.getMap().getGridWidth()
+					iMapH = gc.getMap().getGridHeight()
+					for x in range(iMapW):
+						for y in range(iMapH):
+							loopPlot = gc.getMap().plot(x, y)
+							if not loopPlot.isNone():
+								if loopPlot.getImprovementType() == iImprovement:
+									loopPlot.setImprovementType(-1)
 
 				# +++++ Special dawn of man texts for Szenario Maps in PAE in Screens/CvDawnOfMan.py ++++++++++++++++++++++++++++++++
 				# if (gc.getGame().getGameTurnYear() == gc.getDefineINT("START_YEAR") and not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ADVANCED_START)):
@@ -2692,6 +2716,9 @@ class CvEventManager:
 				# PAE Debug Mark 1 begin
 				if not bPAEDebugMark1:
 
+					if bPAETimeCheck:
+						start = time.clock()
+
 					# Special Scripts for PAE Scenarios
 					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
 					if sScenarioName != "":
@@ -2772,6 +2799,9 @@ class CvEventManager:
 					# PAE 7.13 Rename CIVs (changePlayer,changeTeam,changeCiv,setPlayer,setTeam,setCiv) in Late Antiquity for Early Middle Ages
 					PAE_RenameCIVs.doRenameCIVs()
 
+					if bPAETimeCheck:
+						print("Dauer (onEndGameTurn), iGameTurn: %d" % iGameTurn, time.clock() - start)
+
 				# PAE Debug Mark 1 end
 
 				## PB Mod ##
@@ -2817,6 +2847,9 @@ class CvEventManager:
 
 				# PAE Debug Mark 2 begin
 				if not bPAEDebugMark2:
+
+					if bPAETimeCheck:
+						start = time.clock()
 
 					# PAE 7.11d: PAEMercComission: Reset Söldner / Hiring Mercenaries
 					if CvUtil.getScriptData(pPlayer, ["merc"], 0):
@@ -2958,6 +2991,9 @@ class CvEventManager:
 																			# max eine Techanfrage
 																			break
 
+					if bPAETimeCheck:
+						print("Dauer (onBeginPlayerTurn), iPlayer: %d" % iPlayer, time.clock() - start)
+
 				# PAE Debug Mark 2 end
 
 				## PB Mod ## 
@@ -2990,9 +3026,11 @@ class CvEventManager:
 				#						(loopCity, pIter) = loopPlayer.nextCity(pIter, False)
 				#		CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Christliche CITIES",iSum)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
-
 				# PAE Debug Mark 3 begin
 				if not bPAEDebugMark3:
+
+					if bPAETimeCheck:
+						start = time.clock()
 
 					# --- Automated trade routes for HI (Boggy)
 					# if pPlayer.isHuman():
@@ -3126,6 +3164,9 @@ class CvEventManager:
 					if pPlayer.isBarbarian():
 							PAE_Barbaren.doHideSeaMonsters()
 
+					if bPAETimeCheck:
+						print("Dauer (onEndPlayerTurn), iPlayer: %d" % iPlayer, time.clock() - start)
+
 				# PAE Debug Mark 3 end
 
 				# ++ Standard BTS ++
@@ -3223,6 +3264,10 @@ class CvEventManager:
 
 				# PAE Debug Mark 4 begin
 				if not bPAEDebugMark4:
+
+					if bPAETimeCheck:
+						start = time.clock()
+
 					#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Loser "+pLoser.getName()+" "+str(pLoserPlot.getX())+"|"+str(pLoserPlot.getY()),1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 					#### ---- Anfang unabhaengige Ereignisse ---- ####
@@ -3677,6 +3722,9 @@ class CvEventManager:
 											else:
 												pWinner.setHasPromotion(iPromo2, True)
 
+					if bPAETimeCheck:
+						print("Dauer (onCombatResult), iWinnerPlayer: %d, iLoserPlayer: %d" % (iWinnerPlayer,iLoserPlayer), time.clock() - start)
+
 				# PAE Debug Mark 4 end
 
 				if not self.__LOG_COMBAT:
@@ -3859,8 +3907,13 @@ class CvEventManager:
 				pCity, iBuildingType = argsList
 				iPlayer = pCity.getOwner()
 				pPlayer = gc.getPlayer(iPlayer)
+
 				# PAE Debug Mark 5 begin
 				if not bPAEDebugMark5:
+
+					if bPAETimeCheck:
+						start = time.clock()
+
 					#    #If this is a wonder...
 					#    if not gc.getGame().isGameMultiPlayer() and gc.getPlayer(pCity.getOwner()).isHuman() and isWorldWonderClass(gc.getBuildingInfo(iBuildingType).getBuildingClassType()):
 					if pPlayer.isHuman() and gc.getBuildingInfo(iBuildingType).getMovieDefineTag() != "NONE":
@@ -4015,6 +4068,9 @@ class CvEventManager:
 					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
 					if sScenarioName == "WegDerGoten":
 							WegDerGoten.onBuildingBuilt(pCity, iPlayer, iBuildingType)
+
+					if bPAETimeCheck:
+						print("Dauer (onBuildingBuilt), iPlayer: %d, iBuildingType: %d" % (iPlayer,iBuildingType), time.clock() - start)
 
 				# PAE Debug Mark 5 end
 
@@ -4203,6 +4259,10 @@ class CvEventManager:
 
 				# PAE Debug mark 6 begin
 				if not bPAEDebugMark6:
+
+					if bPAETimeCheck:
+						start = time.clock()
+
 					#    if gc.getPlayer(pUnit.getOwner()).isHuman():
 					#      CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("X",pPlot.getX())), None, 2, None, ColorTypes(10), 0, 0, False, False)
 					#      CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Y",pPlot.getY())), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -4418,6 +4478,9 @@ class CvEventManager:
 											CvUtil.pyPrint('Player %d Civilization %s unit %s is moving to %d, %d'
 																		 % (player.getID(), player.getCivilizationName(), unitInfo.getDescription(), pUnit.getX(), pUnit.getY()))
 
+					if bPAETimeCheck:
+						print("Dauer (onUnitMove), iPlayer: %d, Unit: %s" % (pUnit.getOwner(),pUnit.getName()), time.clock() - start)
+
 				# PAE Debug Mark 6 end
 
 		def onUnitSetXY(self, argsList):
@@ -4451,6 +4514,9 @@ class CvEventManager:
 
 				# PAE Debug Mark 7 begin
 				if not bPAEDebugMark7:
+
+					if bPAETimeCheck:
+						start = time.clock()
 
 					# ++++ AI - Unit Built/Created
 					if not pPlayer.isHuman():
@@ -4549,6 +4615,9 @@ class CvEventManager:
 					# PAE 6.14: Religion: Einheiten verweigern Kriegsdienst - Religions PHASE 2
 					PAE_Christen.doRefuseUnitBuilt(city, unit)
 
+					if bPAETimeCheck:
+						print("Dauer (onUnitBuilt), iPlayer: %d, Unit: %s" % (iPlayer,unit.getName()), time.clock() - start)
+
 				# PAE Debug Mark 7 end
 
 				if not self.__LOG_UNITBUILD:
@@ -4631,6 +4700,10 @@ class CvEventManager:
 
 				# PAE Debug Mark 8 begin
 				if not bPAEDebugMark8:
+
+					if bPAETimeCheck:
+						start = time.clock()
+
 					if iImprovement > -1:
 							# XP nur bei enemy plots, auch nicht in neutralem Gebiet (exploit)
 							if pPlot.getOwner() != -1 and pPlot.getOwner() != iPlayer:
@@ -4677,6 +4750,10 @@ class CvEventManager:
 
 							# Unit soll sich nachher nicht mehr fortbewegen koennen
 							pUnit.finishMoves()
+
+					if bPAETimeCheck:
+						print("Dauer (onUnitPillage), iPlayer: %d, Unit: %s" % (iPlayer,pUnit.getName()), time.clock() - start)
+
 				# PAE Debug Mark 8 end
 
 				if not self.__LOG_UNITPILLAGE:
@@ -5246,6 +5323,9 @@ class CvEventManager:
 				# PAE Debug Mark 9 begin
 				if not bPAEDebugMark9:
 
+					if bPAETimeCheck:
+						start = time.clock()
+
 					# Trait-Gebaeude anpassen
 					PAE_City.doCheckTraitBuildings(pCity)
 					PAE_City.doCheckGlobalTraitBuildings(iNewOwner, pCity, iPreviousOwner)
@@ -5427,6 +5507,9 @@ class CvEventManager:
 					if pPlayer.getStateReligion() == iReligion:
 							pCity.setHasReligion(iReligion, 1, 1, 0)
 
+					if bPAETimeCheck:
+						print("Dauer (onCityAcquired), iPreviousOwner: %d, iNewOwner: %d" % (iPreviousOwner,iNewOwner), time.clock() - start)
+
 				# PAE Debug Mark 9 end
 
 		def onCityAcquiredAndKept(self, argsList):
@@ -5542,6 +5625,9 @@ class CvEventManager:
 
 				# PAE Debug Mark 10 begin
 				if not bPAEDebugMark10:
+
+					if bPAETimeCheck:
+						start = time.clock()
 
 					#if iPlayer == gc.getBARBARIAN_PLAYER():
 					#		PAE_City.doUnitSupply(pCity, iPlayer)
@@ -5697,6 +5783,9 @@ class CvEventManager:
 							if not bRevolt and bCheckCityState:
 									PAE_City.doCheckCityState(pCity)
 
+
+					if bPAETimeCheck:
+						print("Dauer (onCityDoTurn), iPlayer: %d, City: %s" % (iPlayer,pCity.getName()), time.clock() - start)
 
 				# PAE Debug Mark 10 end
 

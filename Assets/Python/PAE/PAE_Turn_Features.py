@@ -295,14 +295,14 @@ def doPlotFeatures():
 														if bRageBarbs:
 																iTurns = 6
 														else:
-																iTurns = 8
-														if pBarbPlayer.getCurrentEra() > 0:
-																iTurns = iTurns / 2
+																iTurns = 10
+														#if pBarbPlayer.getCurrentEra() > 0:
+														#		iTurns = iTurns // 2
 
 														if gc.getGame().getGameTurn() % iTurns == 0:
 																#iAnzUnits = PAE_Barbaren.countNearbyUnits(loopPlot, 2, iBarbPlayer)
 																#if iAnzUnits < 6:
-																# Einheiten) setzen
+																# Einheiten setzen
 																PAE_Barbaren.createBarbUnit(loopPlot)
 														continue
 												# Baerenhoehle

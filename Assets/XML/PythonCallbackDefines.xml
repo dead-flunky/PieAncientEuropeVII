@@ -26,7 +26,7 @@
   </Define>
   <Define>
     <DefineName>USE_CAN_DO_CIVIC_CALLBACK</DefineName>
-    <iDefineIntVal>1</iDefineIntVal>
+    <iDefineIntVal>0</iDefineIntVal>
   </Define>
   <Define>
     <DefineName>USE_CANNOT_CONSTRUCT_CALLBACK</DefineName>

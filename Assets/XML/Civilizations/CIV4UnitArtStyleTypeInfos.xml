@@ -22,6 +22,10 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_ROMAN</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_AXEMAN2</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_ROMAN_2</EarlyArtDefineTag></UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_PRINCIPES1</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
@@ -91,6 +95,10 @@
 				<StyleUnit>
 					<UnitType>UNIT_AXEMAN</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_ROMAN</EarlyArtDefineTag></UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_AXEMAN2</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_ROMAN_2</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
@@ -165,6 +173,10 @@
 				<StyleUnit>
 					<UnitType>UNIT_AXEMAN</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_GREEK</EarlyArtDefineTag></UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_AXEMAN2</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN2_GREEK</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
@@ -270,6 +282,10 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_GREEK</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_AXEMAN2</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN2_ATHEN</EarlyArtDefineTag></UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_GREEK</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
@@ -363,6 +379,10 @@
 				<StyleUnit>
 					<UnitType>UNIT_AXEMAN</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_GREEK</EarlyArtDefineTag></UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_AXEMAN2</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN2_THEBAI</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
@@ -472,6 +492,10 @@
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_GREEK</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
+					<UnitType>UNIT_AXEMAN2</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN2_SPARTA</EarlyArtDefineTag></UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_SCHILDTRAEGER_GREEK2</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
@@ -549,6 +573,10 @@
 				<StyleUnit>
 					<UnitType>UNIT_AXEMAN</UnitType>
 					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_MACEDON</EarlyArtDefineTag></UnitMeshGroup>
+				</StyleUnit>
+				<StyleUnit>
+					<UnitType>UNIT_AXEMAN2</UnitType>
+					<UnitMeshGroup><EarlyArtDefineTag>ART_DEF_UNIT_AXEMAN_IBERIA_2</EarlyArtDefineTag></UnitMeshGroup>
 				</StyleUnit>
 				<StyleUnit>
 					<UnitType>UNIT_SCHILDTRAEGER</UnitType>

@@ -224,6 +224,7 @@ protected:
 	void deactivateHeadMission();
 	
 	bool sentryAlert() const;
+
 };
 
 #endif

@@ -503,7 +503,7 @@ def doTornado():
 										if pPlot.isCity():
 												pCity = pPlot.getPlotCity()
 												iPop_alt = pCity.getPopulation()
-												iPop_neu = max(1, int(pCity.getPopulation() / 2))
+												iPop_neu = max(1, pCity.getPopulation() // 2)
 
 												pCity.setPopulation(iPop_neu)
 												if pPlot.isVisibleToWatchingHuman():
@@ -699,7 +699,7 @@ def doErdbeben(iX, iY):
 																if iBetrag < 2:
 																		doDestroyCityBuildings(pCity, 50)
 																		doKillUnits(loopPlot, 50)
-																		iPopNeu = int(iPopAlt / 2)
+																		iPopNeu = iPopAlt // 2
 																		if iPopNeu < 2:
 																				iPopNeu = 1
 																		pCity.setPopulation(iPopNeu)
@@ -792,7 +792,7 @@ def doErdbeben(iX, iY):
 																				doDestroyCityWonders(pCity, 50, feat_erdbeben)
 																				doDestroyCityBuildings(pCity, 80)
 																				doKillUnits(loopPlot, 80)
-																				iPopNeu = int(iPopAlt / 4)
+																				iPopNeu = iPopAlt // 4
 																				iPopNeu = max(iPopNeu, 1)
 																				pCity.setPopulation(iPopNeu)
 																elif iBetrag < 3:
@@ -1023,7 +1023,7 @@ def doVulkan(iX, iY, iSkala):
 
 														doDestroyCityBuildings(pCity, 50)
 														doKillUnits(loopPlot, 50)
-														iPopNeu = int(iPopAlt / 2)
+														iPopNeu = iPopAlt // 2
 														if iPopNeu < 2:
 																iPopNeu = 1
 														pCity.setPopulation(iPopNeu)
@@ -1107,7 +1107,7 @@ def doVulkan(iX, iY, iSkala):
 														if iBetrag < 2:
 																doDestroyCityBuildings(pCity, 75)
 																doKillUnits(loopPlot, 75)
-																iPopNeu = int(iPopAlt / 4)
+																iPopNeu = iPopAlt // 4
 																if iPopNeu < 1:
 																		iPopNeu = 1
 																pCity.setPopulation(iPopNeu)
@@ -1414,22 +1414,22 @@ def doTsunami(iX, iY):
 												if iDamagePlots == 0:
 														doDestroyCityBuildings(pCity, 10)
 														doKillUnits(loopPlot, 15)
-														iPopNeu = iPopAlt - int(iPopAlt / 2)
+														iPopNeu = iPopAlt - iPopAlt // 2
 												elif iDamagePlots == 1:
 														# Stadt mit Stadtmauern und Huegel
 														if loopPlot.isHills() and (pCity.isHasBuilding(iBuildingWalls) or pCity.isHasBuilding(iBuildingHW1) or pCity.isHasBuilding(iBuildingHW2) or pCity.isHasBuilding(iBuildingHW3)):
-																iPopNeu = iPopAlt - int(iPopAlt / 4)
+																iPopNeu = iPopAlt - iPopAlt // 4
 														else:
 																doDestroyCityBuildings(pCity, 5)
 																doKillUnits(loopPlot, 10)
-																iPopNeu = iPopAlt - int(iPopAlt / 3)
+																iPopNeu = iPopAlt - iPopAlt // 3
 												elif iDamagePlots == 2:
 														# Stadt mit Stadtmauern und Huegel
 														if loopPlot.isHills() and (pCity.isHasBuilding(iBuildingWalls) or pCity.isHasBuilding(iBuildingHW1) or pCity.isHasBuilding(iBuildingHW2) or pCity.isHasBuilding(iBuildingHW3)):
 																break
 														else:
 																doKillUnits(loopPlot, 5)
-																iPopNeu = iPopAlt - int(iPopAlt / 4)
+																iPopNeu = iPopAlt - iPopAlt // 4
 												pCity.setFood(0)
 
 												# Stadtmauern zerstoeren
@@ -1685,7 +1685,7 @@ def doComet():
 								if pPlot.isCity():
 										pCity = pPlot.getPlotCity()
 										iPop_alt = pCity.getPopulation()
-										iPop_neu = int(pCity.getPopulation() / 6)
+										iPop_neu = iPop_alt // 6
 										if iPop_neu < 2:
 												iPop_neu = 1
 										pCity.setPopulation(iPop_neu)
@@ -2010,7 +2010,8 @@ def doGlobalDisaster():
 							loopCity.setPopulation(iPop)
 						else:
 							iPop = loopCity.getPopulation() // 2
-							loopCity.changePopulation(-iPop)
+							iPop = max(1,iPop)
+							loopCity.setPopulation(iPop)
 
 						if pPlayer.isHuman():
 							CyInterface().addMessage(iPlayer, True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_HUNGERSNOT", (loopCity.getName(),)),

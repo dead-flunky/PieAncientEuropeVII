@@ -4100,9 +4100,12 @@ def huntingResult(pLoser, pWinner):
 				# unit will be captured, thus not butchered
 				return
 
-		iJagd = gc.getInfoTypeForString("TECH_HUNTING")
+		# PAE 7.18
+		if iWinnerUnitType != gc.getInfoTypeForString("UNIT_HUNTER"):
+				return
+
 		team = gc.getTeam(pWinnerPlayer.getTeam())
-		if team.isHasTech(iJagd):
+		if team.isHasTech(gc.getInfoTypeForString("TECH_HUNTING")):
 				
 				# Bestimmte Stadt (im Umkreis)
 				pHunterCityPlot = huntingCity(pWinner)
@@ -4111,9 +4114,9 @@ def huntingResult(pLoser, pWinner):
 
 						iFoodAdd = iFoodMin + CvUtil.myRandom(iFoodRand, "Hunt")
 
-						# Hunter gets double bonus
-						if iWinnerUnitType == gc.getInfoTypeForString("UNIT_HUNTER"):
-								iFoodAdd *= 2
+						# Hunter gets double bonus (< 7.18)
+						#if iWinnerUnitType == gc.getInfoTypeForString("UNIT_HUNTER"):
+						iFoodAdd *= 2
 
 						pHunterCity = pHunterCityPlot.getPlotCity()
 						pHunterCity.changeFood(iFoodAdd)

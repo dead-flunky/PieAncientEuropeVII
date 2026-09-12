@@ -798,13 +798,21 @@ def doPopupChooseBonus4Cultivation(pUnit):
 		popupInfo.setData2(pUnit.getID())
 
 		for eBonus in lGoods:
+				sText = ""
 				sBonusDesc = gc.getBonusInfo(eBonus).getDescription()
 				if pPlot.isCity():
 					iPrice = _calculateBonusBuyingPrice4Cultivation(eBonus, iPlayer, pPlot)
+
+					# Bonus in city radius: regional price
+					if iPrice > PAE_Trade.getBonusValue(eBonus):
+						sText += CyTranslator().getText("[ICON_TRADE]", ())
+
 				else:
 					iPrice = PAE_Trade.getBonusValue(eBonus)
+
+
 				iNumBonus = gc.getPlayer(iPlayer).countOwnedBonuses(eBonus)
-				sText = CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iNumBonus))
+				sText += CyTranslator().getText("TXT_KEY_BUY_BONUS", (sBonusDesc, iPrice, iNumBonus))
 				if not _isBonusCultivableInRealm(iPlayer, eBonus):
 						sText += u"\n<color=255,0,0,0><font=2>" + CyTranslator().getText("TXT_KEY_BONUS_NOT_CULTIVABLE", ()) + u"</font></color>"
 				sBonusButton = gc.getBonusInfo(eBonus).getButton()
