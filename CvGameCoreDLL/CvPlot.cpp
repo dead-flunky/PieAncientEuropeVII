@@ -8713,6 +8713,7 @@ void CvPlot::doFeature()
 
 	if (getFeatureType() != NO_FEATURE)
 	{
+
 		iProbability = GC.getFeatureInfo(getFeatureType()).getDisappearanceProbability();
 
 		if (iProbability > 0)
@@ -8729,7 +8730,7 @@ void CvPlot::doFeature()
 				{
 					eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST");
 				}
-				else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNING"))
+				else if (getFeatureType() == (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_FIRE"))
 				{
 					eForestNew = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_BURNT");
 				}
@@ -8756,7 +8757,40 @@ void CvPlot::doFeature()
 				setFeatureType(eForestNew);
 				
 			}
-		}
+		} // if getDisappearanceProbability
+
+
+
+		// PAE Waldbrand / Forest Fire
+		FeatureTypes eForestFire = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST_FIRE");
+		if (getFeatureType() == eForestFire)
+		{
+			if (GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("PAE_FOREST_FIRE_SPREAD_CHANCE"), "Forest Fire") == 0)
+			{
+				FeatureTypes eForest = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST");
+				for (iJ = 0; iJ < NUM_CARDINALDIRECTION_TYPES; iJ++)
+				{
+					pLoopPlot = plotCardinalDirection(getX_INLINE(), getY_INLINE(), ((CardinalDirectionTypes)iJ));
+					if (pLoopPlot != NULL)
+					{
+						if (pLoopPlot->getFeatureType() == eForest)
+						{
+
+							pLoopPlot->setFeatureType(eForestFire);
+
+							pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+							if (pCity != NULL)
+							{
+								szBuffer = gDLL->getText("TXT_KEY_FEATURE_FOREST_FIRE_NEAR_CITY", pCity->getNameKey());
+								gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATURE_FOREST_FIRE", MESSAGE_TYPE_INFO, GC.getFeatureInfo(eForestFire).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+							}
+
+							break;
+						}
+					}
+				}
+			}
+		} // if FEATURE_FOREST_FIRE
 
 
 	}

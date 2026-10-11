@@ -3012,7 +3012,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT1</Tag>
 		<English>The Cherusci are shocked by the death of Arminius![NEWLINE]His successor, the %s1, had long been opposed to the so-called oppression of his tribe. He convinces his followers to break off their vassalage to you![NEWLINE][NEWLINE][ICON_BULLET] The %s2 renounces vassal status</English>
 		<French>Les Ch&#233;rusques sont boulevers&#233;s par la mort d'Arminius ![NEWLINE]Son successeur, le %s1, s'&#233;tait depuis longtemps oppos&#233; &#224; la pr&#233;tendue oppression de son peuple. Il convainc ses fid&#232;les de rompre leur vassalit&#233; envers vous ![NEWLINE][NEWLINE][ICON_BULLET] Le %s2 met fin &#224; son statut de vassal</French>
-		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod von Arminius![NEWLINE]Sein Nachfolger, der %s1, war schon lange gegen die sogenannte Unterdr&#252;ckung seines Stammes. Er &#252;berzeugt seine Getreuen, das Vasallenverh&#228;ltnis mit Euch aufzuk&#252;ndigen![NEWLINE][NEWLINE][ICON_BULLET] Der %s2 k&#252;ndigt den Vasallenstatus</German>
+		<German>Das Volk der Cherusker ist entsetzt &#252;ber den Tod von Arminius! [NEWLINE][NEWLINE]Und dann setzt sich auch noch %s1 als Nachfolger durch, der schon immer gegen die sogenannte Unterdr&#252;ckung seines Stammes durch die Goten war. Er &#252;berzeugt seine Getreuen, das Vasallenverh&#228;ltnis mit Euch aufzuk&#252;ndigen![NEWLINE][NEWLINE][ICON_BULLET] %s1 K&#220;NDIGT DEN VASALLENSTATUS</German>
 		<Italian>The Cherusci are shocked by the death of Arminius![NEWLINE]His successor, the %s1, had long been opposed to the so-called oppression of his tribe. He convinces his followers to break off their vassalage to you![NEWLINE][NEWLINE][ICON_BULLET] The %s2 renounces vassal status</Italian>
 		<Spanish>The Cherusci are shocked by the death of Arminius![NEWLINE]His successor, the %s1, had long been opposed to the so-called oppression of his tribe. He convinces his followers to break off their vassalage to you![NEWLINE][NEWLINE][ICON_BULLET] The %s2 renounces vassal status</Spanish>
 	</TEXT>
@@ -3204,7 +3204,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS</Tag>
 		<English></English>
 		<French></French>
-		<German>Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht.[NEWLINE]Nun lasst uns Vorbereitungen treffen, um die umliegenden St&#228;mme zu unterwerfen. Wir sollten Spione ausbilden, um alle Windrichtungen zu erkunden. Und wir werden weitere Soldaten trainieren m&#252;ssen, um zu gegebener Zeit mit einer gro&#223;en Armee vor den G&#246;ttern nach Westen zu marschieren.[NEWLINE]Die vier gro&#223;en Germanenst&#228;mme sollen hinter euch versammelt sein, euch als Vasallen die Treue schw&#246;ren![NEWLINE][NEWLINE]Denkt daran, schon fr&#252;h Stra&#223;en in die weiten W&#228;lder zu schlagen. Auch das wurde vom &#196;ltesten immer vernachl&#228;ssigt![NEWLINE][NEWLINE][ICON_BULLET] VEREINT DIE 4 GERMANENST&#196;MME IM WESTEN UNTER EUREM BANNER</German>
+		<German>Ausgezeichnet! Ihr habt die alte Heimat unter Kontrolle gebracht[NEWLINE][NEWLINE]Nun lasst uns Vorbereitungen treffen, um die umliegenden D&#246;rfer zu unterwerfen. Unsere Spione sollten alle Windrichtungen erkunden. [NEWLINE]Und wir werden weitere Soldaten trainieren m&#252;ssen, um zu gegebener Zeit mit einer gro&#223;en Armee vor den G&#246;ttern nach Westen zu marschieren. Die vier gro&#223;en Germanenst&#228;mme (Warnen, Hermunduren, Cherusker und Markomannen) sollen hinter euch versammelt sein, euch als Vasallen die Treue schw&#246;ren![NEWLINE][NEWLINE]Denkt daran, schon fr&#252;h Stra&#223;en in die weiten W&#228;lder zu schlagen. Auch das wurde vom &#196;ltesten immer vernachl&#228;ssigt! Es liegt eine Menge Arbeit vor uns.[NEWLINE][NEWLINE][ICON_BULLET] VEREINT DIE 4 GERMANENST&#196;MME IM WESTEN UNTER EUREM BANNER</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3297,6 +3297,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_EVENT_27_3</Tag>
+		<English></English>
+		<French></French>
+		<German>Ihr Volk galt als ausgel&#246;scht, und doch haben sie sich wieder ehoben. In %s1_city hat %s2_leader wieder einige Krieger um sich versammelt.</German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY</Tag>
 		<English></English>
 		<French></French>
@@ -3340,7 +3348,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_CHERUSK_1</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist der angesehensten F&#252;hrer unter den Clans. Beim Thing spricht er f&#252;r gew&#246;hnlich als Letzter und seinem Wort wird gefolgt. Wir brauchen die Cherusker auf unserer Seite, wenn wir Germanien vereinen wollen.</German>
+		<German>Ihr habt die Cherusker getroffen.[NEWLINE]	[NEWLINE]%s1 ist der angesehenste F&#252;hrer unter den Clans. Beim Thing spricht er f&#252;r gew&#246;hnlich als Letzter und seinem Wort wird gefolgt. Wir brauchen die Cherusker auf unserer Seite, wenn wir Germanien vereinen wollen.[NEWLINE]Ihn zu unterwerfen, d&#252;rfte allerdings nicht leicht werden!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3348,7 +3356,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_CHERUSK_2</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist ein gro&#223;er Krieger und respektierter Clanf&#252;rst, dessen Wort beim Thing viel Gewicht hat.</German>
+		<German>Ihr habt die Cherusker getroffen.[NEWLINE][NEWLINE]%s1 ist ein gro&#223;er Krieger und respektierter Clanf&#252;rst, dessen Wort beim Thing viel Gewicht hat.[NEWLINE]Wir sollten ihn im Auge behalten und auf eine gute Gelegenheit warten. Am Ende werden wir auch ihn brauchen, um die Germanen zu vereinen.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3356,7 +3364,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_CHERUSK_3</Tag>
 		<English></English>
 		<French></French>
-		<German>FIRST_CONTACT_CHERUSK_3</German>
+		<German>Ihr habt die Cherusker getroffen.[NEWLINE][NEWLINE]%s1 ist der bekannteste F&#252;hrer aller Germanen, er hatte seinerzeit viel Einflu&#223; beim Thing. [NEWLINE]Doch in j&#252;ngster Zeit k&#252;mmert er sich nur noch wenig um Politik. Beim letzten Thing sa&#223; er am Ende vor dem Haus und hielt eine recht zusammenhangslose Rede &#252;ber die alten Zeiten. Immerhin hatte er erstaunlich viele Zuh&#246;rer, die gebannt lauschten.[NEWLINE][NEWLINE]Sein Reich ist nicht grade nebenan, aber wenn eine starke Armee vor seinen Toren steht, sollte er leicht zur Aufgabe bereit sein.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3372,7 +3380,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_FRIESEN</Tag>
 		<English>You have met %s1.</English>
 		<French>Vous avez rencontr&#233; %s1.</French>
-		<German>Ihr habt %s1 kennengelernt.</German>
+		<German>Ihr habt %s1 kennengelernt.[NEWLINE][NEWLINE]Die Friesen sind ein kleines Volk an der Nordseek&#252;ste, f&#252;r uns ohne Bedeutung.</German>
 		<Italian>Hai incontrato %s1.</Italian>
 		<Spanish>Has conocido a %s1.</Spanish>
 	</TEXT>
@@ -3388,7 +3396,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_HERMUN_1</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist ein erfahrener Mann, dessen Wort beim Thing hohes Gewicht hat. Die Legende, dass er als Junge einen Ur mit blo&#223;en H&#228;nden erlegte, eilt ihm voraus. Auch heute noch bewegt er sich trotz seines Alters geschmeidig wie ein Fuchs.[NEWLINE][NEWLINE]Auf die Hermunduren m&#252;sst ihr ein Auge haben. Vielleicht k&#246;nnen wir friedlich miteinander auskommen und dennoch die Germanenst&#228;mme vereinen?</German>
+		<German>Ihr habt die Hermunduren getroffen.[NEWLINE] [NEWLINE]%s1 ist ein erfahrener Mann, dessen Wort beim Thing hohes Gewicht hat. Die Legende, dass er als Junge einen Ur mit blo&#223;en H&#228;nden erlegte, eilt ihm voraus. Auch heute noch bewegt er sich trotz seines Alters geschmeidig wie ein Fuchs.[NEWLINE][NEWLINE]Es wird sicher nicht leicht, ihn unter unser Banner zu zwingen...</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3396,7 +3404,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_HERMUN_2</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist ein erfahrener Mann, dessen Wort beim Thing durchaus geh&#246;rt wird. Die Legende, dass er als Junge einen Ur nur mit seinem Messer erlegt haben soll, ist nicht best&#228;tigt. Aber auch heute noch bewegt er sich trotz seines Alters geschmeidig wie ein Fuchs.[NEWLINE]Wir sollten Spione schicken, um Informationen &#252;ber die wahre St&#228;rke der Hermunduren zu erhalten.</German>
+		<German>Ihr habt die Hermunduren getroffen.[NEWLINE] [NEWLINE]%s1 ist ein erfahrener Mann, dessen Wort beim Thing durchaus geh&#246;rt wird. Die Legende, dass er als Junge einen Ur nur mit seinem Messer erlegt haben soll, ist nicht best&#228;tigt. Aber auch heute noch bewegt er sich trotz seines Alters geschmeidig wie ein Fuchs.[NEWLINE]Wir sollten Spione schicken, um Informationen &#252;ber die wahre St&#228;rke der Hermunduren zu erhalten.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3404,7 +3412,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_HERMUN_3</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist in seinem fortgeschrittenen Alter immer noch ein angesehener Redner beim Thing. Jedoch merkt man wie seine Kr&#228;fte langsam schwinden. Die Legende, dass er als Junge ganz alleine einen Ur erlegt haben soll, glaubt heute keiner mehr.[NEWLINE][NEWLINE]Wir sollten sein Reich unter unsere Kontrolle bringen! Die Entscheidung, ob er als euer Vasall an Altersschw&#228;che stirbt oder ehrenhaft im Kampf f&#228;llt, bleibt euch &#252;berlassen.</German>
+		<German>Ihr habt die Hermunduren getroffen.[NEWLINE] [NEWLINE]%s1 ist in seinem fortgeschrittenen Alter immer noch ein angesehener Redner beim Thing. Jedoch merkt man wie seine Kr&#228;fte langsam schwinden. Die Legende, dass er als Junge ganz alleine einen Ur erlegt haben soll, glaubt heute keiner mehr.[NEWLINE][NEWLINE]Wir sollten sein Reich unter unsere Kontrolle bringen! Die Entscheidung, ob er als euer Vasall an Altersschw&#228;che stirbt oder ehrenhaft im Kampf f&#228;llt, bleibt euch &#252;berlassen.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3412,7 +3420,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_MARKO_1</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist einer der angesehensten F&#252;hrer unter den Germanen.</German>
+		<German>Ihr habt die Markomannen getroffen.[NEWLINE][NEWLINE]%s1 ist ein starker Anf&#252;hrer. Wenn er beim Thing mal das Wort ergreift ist ihm die Aufmerksamkeit aller Anwesenden sicher.[NEWLINE]Es wird nicht leicht, ihn zu unterwerfen.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3420,7 +3428,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_MARKO_2</Tag>
 		<English></English>
 		<French></French>
-		<German>FIRST_CONTACT_MARKO_2</German>
+		<German>Ihr habt die Markomannen getroffen.[NEWLINE][NEWLINE]%s1 ist ein angesehener Mann. Sein Reich liegt weit im Westen. Zu gegebener Zeit sollten wir Spione schicken, um seine St&#228;rke einzusch&#228;tzen.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3428,7 +3436,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_MARKO_3</Tag>
 		<English></English>
 		<French></French>
-		<German>FIRST_CONTACT_MARKO_3</German>
+		<German>Ihr habt die Markomannen getroffen.[NEWLINE][NEWLINE]%s1 ist alt geworden. Sein Reich weit im Westen sollte ein leichtes Ziel sein, wenn wir denn erstmal so weit ins Land vorgedrungen sind.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3452,7 +3460,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_VANDALEN_1</Tag>
 		<English></English>
 		<French></French>
-		<German>Ihr habt %s1 getroffen. Die Vandalen sind ein verwandtes Volk im S&#252;den, nehmen aber nur unregelm&#228;&#223;ig am Thing teil. Man darf sie jedoch keinesfalls untersch&#228;tzen, sie sind unberechenbar und neigen dazu, un&#252;berlegte Entscheidungen zu treffen. Behaltet sie im Auge und seid bereit, falls sie sich in unsere Richtung ausbreiten.</German>
+		<German>Ihr habt die Vandalen getroffen, ein verwandtes Volk im S&#252;den. Wenn sie &#252;berhaupt mal am Thing teilnehmen, sind sie nur am Saufen und Randalieren. Man darf sie keinesfalls untersch&#228;tzen, %s1 ist unberechenbar und neigt dazu, un&#252;berlegte Entscheidungen zu treffen. Behaltet ihn im Auge und seid bereit, falls sie sich in unsere Richtung ausbreiten.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3460,7 +3468,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_VANDALEN_2</Tag>
 		<English></English>
 		<French></French>
-		<German>Ihr habt %s1 getroffen. Die Vandalen sind ein verwandtes Volk im S&#252;den, nehmen aber nur unregelm&#228;&#223;ig am Thing teil. F&#252;r unsere Pl&#228;ne spielen sie im Moment noch keine Rolle. Behaltet sie jedoch im Auge, falls sie m&#228;chtiger werden.</German>
+		<German>Ihr habt die Vandalen getroffen, ein verwandtes Volk im S&#252;den. Wenn sie selten mal am Thing teilnehmen, sind sie meist nur am Saufen. F&#252;r unsere Pl&#228;ne spielen sie im Moment noch keine Rolle. Behaltet %s1 jedoch im Auge, falls er m&#228;chtiger wird. Er ist bekannt daf&#252;r, un&#252;berlegte Entscheidungen zu treffen.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3492,7 +3500,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_WARNEN_1</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist schon durch seine K&#246;rpergr&#246;&#223;e eine beeindruckende Pers&#246;nlichkeit, aber seine Stimme &#252;bertrifft diesen Eindruck noch. Wenn er das Wort beim Thing erhebt, kann er sich der Aufmerksamkeit aller Anwesenden sicher sein![NEWLINE][NEWLINE]Die Warnen sind eine ernstzunehmende Macht im Norden, die wir auf unserer Seite haben sollten. Wom&#246;glich sogar auf friedliche Weise?</German>
+		<German>Ihr habt die Warnen getroffen.[NEWLINE][NEWLINE]%s1 ist schon durch seine K&#246;rpergr&#246;&#223;e eine beeindruckende Pers&#246;nlichkeit, aber seine Stimme &#252;bertrifft diesen Eindruck noch. Wenn er das Wort beim Thing erhebt, kann er sich der Aufmerksamkeit aller Anwesenden sicher sein![NEWLINE][NEWLINE]Die Warnen sind eine ernstzunehmende Macht im Norden, die wir auf unserer Seite haben sollten!</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3500,7 +3508,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_WARNEN_2</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist eine beeindruckende Pers&#246;nlichkeit. Nicht nur was seine K&#246;rpergr&#246;&#223;e angeht, auch seine Stimme kann Lawinen ausl&#246;sen! Beim Thing ist er jedoch eher zur&#252;ckhaltend, &#252;berl&#228;sst anderen die Entscheidung.[NEWLINE][NEWLINE]F&#252;r unser Vorhaben Germanien zu vereinen spielt er eine entscheidende Rolle, da er mit uns zusammen die Ostsee kontrolliert. Wir sollten Spione schicken, um seine St&#228;rke einzusch&#228;tzen.</German>
+		<German>Ihr habt die Warnen getroffen.[NEWLINE][NEWLINE]%s1 ist eine beeindruckende Pers&#246;nlichkeit. Nicht nur was seine K&#246;rpergr&#246;&#223;e angeht, auch seine Stimme kann Lawinen ausl&#246;sen! Beim Thing ist er jedoch eher zur&#252;ckhaltend, &#252;berl&#228;sst anderen die Entscheidung.[NEWLINE][NEWLINE]F&#252;r unser Vorhaben Germanien zu vereinen spielt er eine entscheidende Rolle, da er mit uns zusammen die Ostsee kontrolliert. Wir sollten Spione schicken, um seine St&#228;rke einzusch&#228;tzen.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3508,7 +3516,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_CONTACT_WARNEN_3</Tag>
 		<English></English>
 		<French></French>
-		<German>%s1 ist trotz seiner Gr&#246;&#223;e ein eher ruhiger Bursche aus dem Norden. Er trinkt viel und redet laut, aber beim Thing enth&#228;lt er sich meist der Stimme und bekommt kein Wort heraus.[NEWLINE][NEWLINE]K&#246;nnte er vielleicht ein erstes Ziel sein? Mit seinem Land, oder ihm als Vasall, w&#252;rden wir die gesamte Ostsee kontrollieren.</German>
+		<German>Ihr habt die Warnen getroffen.[NEWLINE][NEWLINE]%s1 ist trotz seiner Gr&#246;&#223;e ein eher ruhiger Bursche aus dem Norden. Er trinkt viel und redet laut, aber beim Thing enth&#228;lt er sich meist der Stimme und bekommt kein Wort heraus.[NEWLINE][NEWLINE]K&#246;nnte er vielleicht ein erstes Ziel sein? Mit seinem Land, oder ihm als Vasall, w&#252;rden wir die gesamte Ostsee kontrollieren.</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3516,7 +3524,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_GERMAN_CITY</Tag>
 		<English></English>
 		<French></French>
-		<German>Mit der Einnahme von %s1_city habt ihr wahrlich ein Zeichen gesetzt.[NEWLINE]Die Welt soll erfahren, dass die gro&#223;e Vereinigung aller Germanenv&#246;lker begonnen hat! Diese Kunde wird von den Barden in alle Himmelsrichtungen getragen. Euer Name wird schon bald in aller Munde sein![NEWLINE][NEWLINE]Eine Ballade dieser Zeit:[NEWLINE]"Auf dass ihr es alle seht - Alarich der Gote - wer auf der falsche Seite steht - verzeichnet Tote"[NEWLINE][NEWLINE]Denkt daran, dass die St&#228;mme euch als Vasallen dienen sollen. Vereinigung der V&#246;lker bedeutet nicht ihre Ausl&#246;schung!</German>
+		<German>Mit der Einnahme von %s1_city habt ihr wahrlich ein Zeichen gesetzt.[NEWLINE]Die Welt soll erfahren, dass die gro&#223;e Vereinigung aller Germanenv&#246;lker begonnen hat! Diese Kunde wird von den Barden in alle Himmelsrichtungen getragen. Euer Name wird schon bald in aller Munde sein![NEWLINE][NEWLINE]Eine Ballade dieser Zeit:[NEWLINE]"Auf dass ihr es alle seht - Alarich der Gote - wer auf der falsche Seite steht - verzeichnet Tote"[NEWLINE][NEWLINE]Denkt daran, dass die St&#228;mme euch als Vasallen dienen sollen. Vereinigung der V&#246;lker bedeutet nicht ihre Ausl&#246;schung![NEWLINE][NEWLINE][ICON_BULLET] VEREINT DIE 4 GERMANENST&#196;MME IM WESTEN UNTER EUREM BANNER</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -3524,7 +3532,7 @@
 		<Tag>TXT_KEY_MESSAGE_WDG_FIRST_OWN_CITY</Tag>
 		<English></English>
 		<French></French>
-		<German>Die Siedler bedanken sich.[NEWLINE]Sie wollen ihre neue Heimat schnell zu einem Dorf erweitern, auf dass es bald zum Glanze des Gotenreiches beitragen m&#246;ge. Wir k&#246;nnten Fuhrwerke schicken, die hier Ressourcen verbreiten...</German>
+		<German>Die Siedler bedanken sich, dass sie hier ihre neue Heimat aufbauen d&#252;rfen.[NEWLINE][NEWLINE]Der Anf&#252;hrer verspricht, dass alle Anstrengungen unternommen werden, um so bald wie m&#246;glich zu einem Dorf heranzuwachsen. Sie wollen zum Glanze des Gotenreiches beitragen![NEWLINE]Wir k&#246;nnten Fuhrwerke schicken, die hier Ressourcen verbreiten…</German>
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
@@ -4020,7 +4028,7 @@
 		<Tag>TXT_KEY_SCENARIO_WEG_DER_GOTEN</Tag>
 		<English>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</English>
 		<French>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</French>
-		<German>Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass Ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt Ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!". Immerhin konntet Ihr euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.[NEWLINE]WICHTIG: Es k&#246;nnen keine Siedler gebaut werden![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Kartengr&#246;&#223;e: Riesig[NEWLINE][NEWLINE]Dies ist eine fiktive Kampagne f&#252;r PAE. &#196;hnlichkeiten mit historischen Personen oder Begebenheiten sind rein zuf&#228;llig.</German>
+		<German>Der Disput mit dem &#196;ltesten f&#252;hrte schlie&#223;lich dazu, dass Ihr verbannt wurdet! Die h&#246;chste Strafe im Gotenreich. Nach Osten in die endlosen W&#228;lder sollt Ihr gehen, euch nie mehr blicken lassen. "Sollen euch die B&#228;ren fressen!". Immerhin konntet Ihr euer Gefolge und die treuesten Krieger mitnehmen, was insgesamt eine ordentliche Truppe darstellt.[NEWLINE]WICHTIG: Es k&#246;nnen keine Siedler gebaut werden![NEWLINE][NEWLINE]Dies ist eine fiktive Kampagne f&#252;r PAE. &#196;hnlichkeiten mit historischen Personen oder Begebenheiten sind rein zuf&#228;llig.[NEWLINE]by brettschmitt</German>
 		<Italian>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</Italian>
 		<Spanish>The dispute with the Elder ultimately led to your exile -- the highest punishment in the Gothic realm. You are to head east into the endless forests and never show yourself again. "Let the bears devour you!" At least you were able to take your retinue and your most loyal warriors with you, forming a respectable force.[NEWLINE]IMPORTANT: You cannot build Settlers![NEWLINE][NEWLINE]by brettschmitt[NEWLINE]Map size: Huge[NEWLINE][NEWLINE]This is a fictional campaign for PAE. Any resemblance to historical persons or events is purely coincidental.</Spanish>
 	</TEXT>

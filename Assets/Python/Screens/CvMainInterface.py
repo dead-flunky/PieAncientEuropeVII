@@ -5545,12 +5545,17 @@ class CvMainInterface:
 										if szBuffer != "" and iCityPop < 4:
 												bRevoltWarning = True
 
+								if szBuffer != "":
+										bRevoltDanger = True
+
 								# Brandgefahr/Stadtbrand (PAE 7.8)
+								bBrandgefahr = False
 								if szBuffer == "" and iCityPop > 2 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
 										if iCityPop < 18:
 											if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
 												if iCityPop >= 12:
 													szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_3", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
+													bBrandgefahr = True
 												else:
 													#if (not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) and
 													#	 not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_QANAT")) and
@@ -5559,28 +5564,30 @@ class CvMainInterface:
 													if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
 														if iCityPop >= 6:
 															szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_2", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
+															bBrandgefahr = True
 														else:
 															if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
 																szBuffer = localText.getText("TXT_KEY_MAIN_BRANDGEFAHR_1", (CyGame().getSymbolID(FontSymbols.ANGRY_POP_CHAR), ()))
+																bBrandgefahr = True
 
-								if szBuffer != "":
-										bRevoltDanger = True
-								else:
+								if szBuffer == "":
 										szBuffer = localText.getText("TXT_KEY_MAIN_NO_DANGER", (CyGame().getSymbolID(FontSymbols.HAPPY_CHAR), ()))
 
 								screen.setLabel("PAE_RevoltText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, 125, yResolution - 327, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 								screen.setHitTest("PAE_RevoltText", HitTestTypes.HITTEST_NOHIT)
 								screen.show("PAE_RevoltText")
 
+
 								if bRevoltWarning:
 										screen.setStackedBarColorsRGB("PAE_RevoltBar", 0, 255, 255, 0, 100)  # yellow/orange
-								elif bRevoltDanger:
+								elif bRevoltDanger or bBrandgefahr:
 										screen.setStackedBarColorsRGB("PAE_RevoltBar", 0, 255, 0, 0, 100)  # red
 								else:
 										screen.setStackedBarColorsRGB("PAE_RevoltBar", 0, 0, 255, 0, 100)  # green
 								screen.setBarPercentage("PAE_RevoltBar", 0, 1.0)  # immer 1 !
 
 								screen.show("PAE_RevoltBar")
+
 
 								# Emigration Bar / Emigrant -----------------------------------
 								iTech = gc.getInfoTypeForString("TECH_COLONIZATION")
@@ -5609,7 +5616,7 @@ class CvMainInterface:
 														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_1", ("", iChance))
 												elif iCityUnhappy > 0:
 														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_2", ("", iChance))
-												else:
+												elif iCityUnhealthy > 0:
 														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_3", ("", iChance))
 										else:
 												szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_NO_DANGER", ("",))

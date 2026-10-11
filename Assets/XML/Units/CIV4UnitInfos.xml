@@ -7643,7 +7643,7 @@
 			<iCollateralDamageMaxUnits>0</iCollateralDamageMaxUnits>
 			<iCityAttack>0</iCityAttack>
 			<iCityDefense>0</iCityDefense>
-			<iAnimalCombat>100</iAnimalCombat>
+			<iAnimalCombat>0</iAnimalCombat>
 			<iHillsAttack>0</iHillsAttack>
 			<iHillsDefense>0</iHillsDefense>
 			<TerrainNatives/>
@@ -7825,7 +7825,7 @@
 			<iCollateralDamageMaxUnits>0</iCollateralDamageMaxUnits>
 			<iCityAttack>0</iCityAttack>
 			<iCityDefense>0</iCityDefense>
-			<iAnimalCombat>100</iAnimalCombat>
+			<iAnimalCombat>0</iAnimalCombat>
 			<iHillsAttack>0</iHillsAttack>
 			<iHillsDefense>0</iHillsDefense>
 			<TerrainNatives/>

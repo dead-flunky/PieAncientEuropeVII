@@ -3832,7 +3832,7 @@ def applyKamel(argsList):
 def setForestFire(argsList):
 		kTriggeredData = argsList[0]
 		plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-		plot.setFeatureType(gc.getInfoTypeForString("FEATURE_FOREST_BURNING"), 1)
+		plot.setFeatureType(gc.getInfoTypeForString("FEATURE_FOREST_FIRE"), 1)
 
 def applyForest1(argsList):
 		kTriggeredData = argsList[1]

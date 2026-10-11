@@ -258,19 +258,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEVEE2_HELP</Tag>
-		<English>[ICON_BULLET] Levees protect cities from fires up to pop 11.[NEWLINE][ICON_BULLET]Dries surrounding marshes/swamps</English>
-		<French>[ICON_BULLET] Les diques prot&#232;gent les villes des incendies jusqu'&#224; 11 habitants.[NEWLINE][ICON_BULLET]Ass&#232;che les mar&#233;cages aux alentours</French>
-		<German>[ICON_BULLET] Deiche sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 11.[NEWLINE][ICON_BULLET] Legt umliegende S&#252;mpfe trocken</German>
-		<Italian>[ICON_BULLET] Diga ad anello proteggono dagli incendi le citt&#224; fino a 11 abitanti.[NEWLINE][ICON_BULLET] Asciuga le paludi circostanti</Italian>
-		<Spanish>[ICON_BULLET] Dique de anillo protegen a las ciudades de los incendios hasta los 11 habitantes.[NEWLINE][ICON_BULLET]Seca las marismas de los alrededores</Spanish>
+		<English>[ICON_BULLET]Dries surrounding marshes/swamps</English>
+		<French>[ICON_BULLET]Ass&#232;che les mar&#233;cages aux alentours</French>
+		<German>[ICON_BULLET] Legt umliegende S&#252;mpfe trocken</German>
+		<Italian>[ICON_BULLET] Asciuga le paludi circostanti</Italian>
+		<Spanish>[ICON_BULLET]Seca las marismas de los alrededores</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LEVEE_HELP</Tag>
-		<English>[ICON_BULLET] Irrigation canals protect cities from fires up to pop 11.[NEWLINE][ICON_BULLET]Can only be built in cities next to rivers</English>
-		<French>[ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes des incendies jusqu'&#224; 11 habitants.[NEWLINE][ICON_BULLET]Ne peut &#234;tre construit que dans des villes au bord de rivi&#232;res</French>
-		<German>[ICON_BULLET] Bew&#228;sserungskan&#228;le sch&#252;tzen St&#228;dte vor Br&#228;nden bis Pop 11.[NEWLINE][ICON_BULLET]Kann nur in St&#228;dten an Fl&#252;ssen erstellt werden</German>
-		<Italian>[ICON_BULLET] I canali di irrigazione proteggono dagli incendi le citt&#224; fino a 11 abitanti.[NEWLINE][ICON_BULLET]Pu&#242; essere costruito solo nelle citt&#224; vicino ai fiumi</Italian>
-		<Spanish>[ICON_BULLET] Los canales de riego protegen a las ciudades de los incendios hasta los 11 habitantes.[NEWLINE][ICON_BULLET]S&#243;lo se puede construir en ciudades pr&#243;ximas a r&#237;os</Spanish>
+		<English>[ICON_BULLET]Can only be built in cities next to rivers</English>
+		<French>[ICON_BULLET]Ne peut &#234;tre construit que dans des villes au bord de rivi&#232;res</French>
+		<German>[ICON_BULLET]Kann nur in St&#228;dten an Fl&#252;ssen erstellt werden</German>
+		<Italian>[ICON_BULLET]Pu&#242; essere costruito solo nelle citt&#224; vicino ai fiumi</Italian>
+		<Spanish>[ICON_BULLET]S&#243;lo se puede construir en ciudades pr&#243;ximas a r&#237;os</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_LIBRARY_BAGDAD</Tag>
@@ -617,6 +617,14 @@ Scuola di retorica
 		<Spanish>Fortaleza Si&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_ZISTERNE_HELP</Tag>
+		<English>[ICON_BULLET] Irrigation canals protect cities from fires up to 50%.</English>
+		<French>[ICON_BULLET] Les canaux d'irrigation prot&#232;gent les villes des incendies jusqu'&#224; 50 %.</French>
+		<German>[ICON_BULLET] Zisternen sch&#252;tzen St&#228;dte vor Br&#228;nden zu 50%.</German>
+		<Italian>[ICON_BULLET] I canali di irrigazione proteggono dagli incendi le citt&#224; fino a 50 %.</Italian>
+		<Spanish>[ICON_BULLET] Los canales de riego protegen a las ciudades de los incendios hasta 50 %.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZORO_SHRINE</Tag>
 		<English>Atas Bahram Temple</English>
 		<French>Temple d'Atas Bahram</French>
@@ -737,12 +745,20 @@ Scuola di retorica
 		<Spanish>Incendio de matorrales</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_FEATURE_FOREST_BURNING</Tag>
+		<Tag>TXT_KEY_FEATURE_FOREST_FIRE</Tag>
 		<English>Forest Fire</English>
 		<French>Incendie de for&#234;t</French>
 		<German>Waldbrand</German>
 		<Italian>Incendio boschivo</Italian>
 		<Spanish>Incendio forestal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_FOREST_FIRE_NEAR_CITY</Tag>
+		<English>A devastating forest fire is raging near the city of %s1!</English>
+		<French>Un incendie de for&#234;t d&#233;vastateur fait rage pr&#232;s de la ville de %s1 !</French>
+		<German>Ein verheerender Waldbrand w&#252;tet nahe der Stadt %s1!</German>
+		<Italian>Un devastante incendio boschivo sta infuriando vicino alla citt&#224; di %s1!</Italian>
+		<Spanish>&#161;Un devastador incendio forestal arrasa cerca de la ciudad de %s1!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_FOREST_NEW</Tag>

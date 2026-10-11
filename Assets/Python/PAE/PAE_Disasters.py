@@ -546,7 +546,7 @@ def doErdbeben(iX, iY):
 		feat_oasis = gc.getInfoTypeForString('FEATURE_OASIS')
 		feat_forest = gc.getInfoTypeForString('FEATURE_FOREST')
 		feat_forest2 = gc.getInfoTypeForString('FEATURE_DICHTERWALD')
-		feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_BURNT')
+		feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_FIRE')
 
 		feat_ice = gc.getInfoTypeForString('FEATURE_ICE')
 		terr_snow = gc.getInfoTypeForString('TERRAIN_SNOW')
@@ -934,7 +934,7 @@ def doVulkan(iX, iY, iSkala):
 				feat_forest = gc.getInfoTypeForString('FEATURE_FOREST')
 				feat_forest2 = gc.getInfoTypeForString('FEATURE_DICHTERWALD')
 				feat_jungle = gc.getInfoTypeForString('FEATURE_JUNGLE')
-				feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_BURNT')
+				feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_FIRE')
 
 				bonus_magnetit = gc.getInfoTypeForString("BONUS_MAGNETIT")
 				bonus_obsidian = gc.getInfoTypeForString("BONUS_OBSIDIAN")
@@ -1470,7 +1470,7 @@ def doMeteorites():
 
 		feat_forest = gc.getInfoTypeForString('FEATURE_FOREST')
 		feat_forest2 = gc.getInfoTypeForString('FEATURE_DICHTERWALD')
-		feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_BURNT')
+		feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_FIRE')
 
 		feat_ice = gc.getInfoTypeForString('FEATURE_ICE')
 		terr_snow = gc.getInfoTypeForString('TERRAIN_SNOW')
@@ -1620,7 +1620,7 @@ def doComet():
 
 		feat_forest = gc.getInfoTypeForString('FEATURE_FOREST')
 		feat_forest2 = gc.getInfoTypeForString('FEATURE_DICHTERWALD')
-		feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_BURNT')
+		feat_forest_burnt = gc.getInfoTypeForString('FEATURE_FOREST_FIRE')
 
 		feat_ice = gc.getInfoTypeForString('FEATURE_ICE')
 		terr_snow = gc.getInfoTypeForString('TERRAIN_SNOW')

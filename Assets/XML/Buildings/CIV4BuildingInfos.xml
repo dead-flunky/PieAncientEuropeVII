@@ -12339,6 +12339,7 @@
 			<Description>TXT_KEY_BUILDING_ZISTERNE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ZISTERNE_PEDIA</Civilopedia>
 			<Strategy/>
+			<Help>TXT_KEY_BUILDING_ZISTERNE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_ZISTERNE</ArtDefineTag>
 			<MovieDefineTag/>

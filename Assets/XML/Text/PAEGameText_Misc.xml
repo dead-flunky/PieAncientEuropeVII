@@ -1305,20 +1305,20 @@
 		<Spanish>[ICON_BULLET] Desaparece por s&#237; solo al cabo de un tiempo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_FEATURE_FOREST_BURNING_HELP</Tag>
-		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT_TEXT]Burnt Forest[COLOR_REVERT] after some time.</English>
-		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT_TEXT]For&#234;t br&#251;l&#233;e[COLOR_REVERT] apr&#232;s un certain temps.</French>
-		<German>[ICON_BULLET] Wird nach einer Zeit zu einem [COLOR_HIGHLIGHT_TEXT]Verbrannten Wald[COLOR_REVERT].</German>
-		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT_TEXT]Foresta bruciata[COLOR_REVERT].</Italian>
-		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT_TEXT]Bosque quemado[COLOR_REVERT].</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_FEATURE_FOREST_BURNT_HELP</Tag>
 		<English>[ICON_BULLET] Becomes a [COLOR_HIGHLIGHT_TEXT]Young Forest[COLOR_REVERT] after some time.[NEWLINE][ICON_BULLET] Can be felled early by a [COLOR_UNIT_TEXT]Worker[COLOR_REVERT].</English>
 		<French>[ICON_BULLET] Devient une [COLOR_HIGHLIGHT_TEXT]Jeune for&#234;t[COLOR_REVERT] apr&#232;s un certain temps.[NEWLINE][ICON_BULLET] Peut &#234;tre abattu rapidement par un [COLOR_UNIT_TEXT]Ouvrier[COLOR_REVERT].</French>
 		<German>[ICON_BULLET] Wird nach einiger Zeit zu einem [COLOR_HIGHLIGHT_TEXT]Jungen Wald[COLOR_REVERT].[NEWLINE][ICON_BULLET] Kann vorzeitig von einem [COLOR_UNIT_TEXT]Bautrupp[COLOR_REVERT] abgeholzt werden.</German>
 		<Italian>[ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT_TEXT]Foresta giovane[COLOR_REVERT].[NEWLINE][ICON_BULLET] Pu&#242; essere abbattuto in anticipo da un [COLOR_UNIT_TEXT]Lavoratore[COLOR_REVERT].</Italian>
 		<Spanish>[ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT_TEXT]Bosque joven[COLOR_REVERT].[NEWLINE][ICON_BULLET] Puede ser derribado prematuramente por un [COLOR_UNIT_TEXT]Trabajador[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_FOREST_FIRE_HELP</Tag>
+		<English>[ICON_BULLET] Can spread (except in dense forest or jungle)[NEWLINE][ICON_BULLET] Becomes a [COLOR_HIGHLIGHT_TEXT]Burnt Forest[COLOR_REVERT] after some time.</English>
+		<French>[ICON_BULLET] Peut se propager (sauf dans les for&#234;ts denses ou la jungle)[NEWLINE][ICON_BULLET] Devient une [COLOR_HIGHLIGHT_TEXT]For&#234;t br&#251;l&#233;e[COLOR_REVERT] apr&#232;s un certain temps.</French>
+		<German>[ICON_BULLET] Kann sich ausbreiten (ausgenommen Dichter Wald oder Dschungel)[NEWLINE][ICON_BULLET] Wird nach einer Zeit zu einem [COLOR_HIGHLIGHT_TEXT]Verbrannten Wald[COLOR_REVERT].</German>
+		<Italian>[ICON_BULLET] Pu&#242; diffondersi (tranne che in foreste fitte o giungle)[NEWLINE][ICON_BULLET] Dopo un po' di tempo diventa una [COLOR_HIGHLIGHT_TEXT]Foresta bruciata[COLOR_REVERT].</Italian>
+		<Spanish>[ICON_BULLET] Puede propagarse (excepto en bosques densos o selvas)[NEWLINE][ICON_BULLET] Al cabo de un tiempo se convierte en un [COLOR_HIGHLIGHT_TEXT]Bosque quemado[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_FOREST_NEW_HELP</Tag>
@@ -2410,11 +2410,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PAE_VERSION</Tag>
-		<English>Pie's Ancient Europe VII (7.18.1)</English>
-		<French>Pie's Ancient Europe VII (7.18.1)</French>
-		<German>Pie's Ancient Europe VII (7.18.1)</German>
-		<Italian>Pie's Ancient Europe VII (7.18.1)</Italian>
-		<Spanish>Pie's Ancient Europe VII (7.18.1)</Spanish>
+		<English>Pie's Ancient Europe VII (7.18.3)</English>
+		<French>Pie's Ancient Europe VII (7.18.3)</French>
+		<German>Pie's Ancient Europe VII (7.18.3)</German>
+		<Italian>Pie's Ancient Europe VII (7.18.3)</Italian>
+		<Spanish>Pie's Ancient Europe VII (7.18.3)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROGRESS_TOWARDS_TECH</Tag>
@@ -2759,6 +2759,22 @@
 		<German>In PAE ist das Baumen&#252; in zwei H&#228;lften geteilt. Links werden die Einheiten und rechts die Geb&#228;ude angezeigt.</German>
 		<Italian>In PAE, il menu build &#232; diviso in due met&#224;. Le unit&#224; sono mostrate a sinistra e gli edifici a destra.</Italian>
 		<Spanish>En PAE, el men&#250; de compilaci&#243;n se divide en dos mitades. Las unidades se muestran a la izquierda y los edificios a la derecha.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_ENEMY_MOVES_HELP</Tag>
+		<English>Show the moves of enemy units between turns (excluding animals)</English>
+		<French>Voir les d&#233;placements des unit&#233;s ennemies entre deux tours (animaux exclus).</French>
+		<German>Fortbewegung feindlicher Einheiten zwischen den Runden anzeigen (ausgenommen Tiere)</German>
+		<Italian>Mostra i movimenti delle unit&#224; nemiche tra un turno e l'altro (animali esclusi)</Italian>
+		<Spanish>Muestra los movimientos de las unidades enemigas entre turno y turno (excepto animales).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLAYER_OPTION_SHOW_FRIENDLY_MOVES_HELP</Tag>
+		<English>Show the moves of friendly units between turns (excluding animals)</English>
+		<French>Voir les d&#233;placements des unit&#233;s alli&#233;es entre deux tours (animaux exclus).</French>
+		<German>Fortbewegung freundlicher Einheiten zwischen den Runden anzeigen (ausgenommen Tiere)</German>
+		<Italian>Mostra i movimenti delle unit&#224; amichevoli tra un turno e l'altro (animali esclusi)</Italian>
+		<Spanish>Muestra los movimientos de las unidades amistosas entre turno y turno (excepto animales).</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ARE_YOU_SURE_ACTION</Tag>
