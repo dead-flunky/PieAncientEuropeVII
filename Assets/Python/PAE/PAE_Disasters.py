@@ -662,7 +662,9 @@ def doErdbeben(iX, iY):
 						# ERDBEBEN 8
 						elif iSkala == 8:
 
-								if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman():
+								# statt isHuman(): Auf einem normalen Client ist der aktive Spieler immer ein Mensch.
+								# Die Abfrage != -1 hat dort also dieselbe Bedeutung, der Pitboss-Host stürzt damit aber nicht mehr ab.
+								if gc.getGame().getActivePlayer() != -1:
 										if pPlot.isVisibleToWatchingHuman():
 												CyCamera().JustLookAtPlot(pPlot)
 												# Message: Ein verheerendes Erdbeben der Staerke 8 erschuetterte das Land.
@@ -743,7 +745,7 @@ def doErdbeben(iX, iY):
 
 						# ERDBEBEN 9
 						elif iSkala > 8:
-								if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman():
+								if gc.getGame().getActivePlayer() != -1:
 										if pPlot.isVisibleToWatchingHuman():
 												CyCamera().JustLookAtPlot(pPlot)
 												# Message: Ein katastrophales Erdbeben der Staerke 9 erschuetterte das Land.
@@ -950,7 +952,7 @@ def doVulkan(iX, iY, iSkala):
 				pPlot.setFeatureType(feat_vulkan, 0)
 
 				# Meldungen -----
-				if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman():
+				if gc.getGame().getActivePlayer() != -1:
 						# Staerke 1
 						if iSkala == 8:
 								if pPlot.isVisibleToWatchingHuman():
@@ -1396,7 +1398,7 @@ def doTsunami(iX, iY):
 
 												doOracleShowsDisaster(pEffectPlot.getX(), pEffectPlot.getY())
 
-												if gc.getPlayer(gc.getGame().getActivePlayer()).isHuman() and pEffectPlot.isVisibleToWatchingHuman():
+												if gc.getGame().getActivePlayer() != -1 and pEffectPlot.isVisibleToWatchingHuman():
 														CyCamera().JustLookAtPlot(pEffectPlot)
 														# Message: Eine gigantische Flutwelle trifft die Kueste und versetzt das Land in aergste Not!
 														popupInfo = CyPopupInfo()

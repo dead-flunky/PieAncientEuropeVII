@@ -1835,7 +1835,7 @@ def doUpdateCitiesWithSpecialBonus(iGameTurn):
 														pPlayer = gc.getPlayer(iCityOwner)
 														pTeam = gc.getTeam(pPlayer.getTeam())
 														iActivePlayer = gc.getGame().getActivePlayer()
-														if pTeam.isHasMet(gc.getPlayer(iActivePlayer).getTeam()):
+														if iActivePlayer != -1 and pTeam.isHasMet(gc.getPlayer(iActivePlayer).getTeam()):
 																# Die Stadt % verlangt nicht mehr nach % und hat den Auftrag zurueckgezogen
 																sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_1", (loopCity.getName(), gc.getBonusInfo(eBonus).getDescription()))
 																CyInterface().addMessage(iActivePlayer, True, 10, sMessage, None, 2, None, ColorTypes(13), 0, 0, False, False)
@@ -1898,7 +1898,7 @@ def addCityWithSpecialBonus(iGameTurn):
 						pPlayer = gc.getPlayer(iCityOwner)
 						pTeam = gc.getTeam(pPlayer.getTeam())
 						iActivePlayer = gc.getGame().getActivePlayer()
-						if pTeam.isHasMet(gc.getPlayer(iActivePlayer).getTeam()):
+						if iActivePlayer != -1 and pTeam.isHasMet(gc.getPlayer(iActivePlayer).getTeam()):
 								# Die Stadt %s1 bietet einen Sonderauftrag an und verlangt nach %s2.
 								sMessage = CyTranslator().getText("TXT_KEY_MESSAGE_TRADE_SPECIAL_2", (pCity.getName(), gc.getBonusInfo(eBonus).getDescription()))
 								CyInterface().addMessage(iActivePlayer, True, 10, sMessage, None, 2, None, ColorTypes(11), 0, 0, False, False)
@@ -1941,7 +1941,7 @@ def _doCheckCitySpecialBonus(pUnit, pCity, eBonus):
 				#eOrigCiv = gc.getCivilizationInfo(gc.getPlayer(pCity.getOriginalOwner()).getCivilizationType())
 				lUnits = [
 						gc.getInfoTypeForString("UNIT_WAR_ELEPHANT"),
-						gc.getInfoTypeForString("UNIT_CAMEL_ARCHER"),
+						gc.getInfoTypeForString("UNIT_ARABIA_CAMELARCHER"),
 						gc.getInfoTypeForString("UNIT_CAMEL_CATAPHRACT"),
 						gc.getInfoTypeForString("UNIT_SCHILDTRAEGER"),
 						gc.getInfoTypeForString("UNIT_SWORDSMAN_LATENE"),

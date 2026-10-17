@@ -3253,7 +3253,7 @@ def doDyingGeneral(pUnit, iWinnerPlayer=-1):
 
 								# PAE 7.12: Usurpatoren 1:4
 								if not bNoCivilWar:
-									if gc.getPlayer(gc.getGame().getActivePlayer()).getName() == "Apocalypto":
+									if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_PAE_SETH):
 										iChance = 2
 									else:
 										iChance = 4
@@ -3499,7 +3499,7 @@ def doUsurpatorCheck(lLeaders):
 			if pPlayer.isHuman() and iPlayer == gc.getGame().getActivePlayer():
 
 				iGold = pPlayer.getGold() // 3
-				iRand = 1+CvUtil.myRandom(5, "Usurpator popup text")
+				iRand = 1 + gc.getASyncRand().get(5, "Usurpator popup text")
 				popupInfo = CyPopupInfo()
 				popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
 				popupInfo.setText(CyTranslator().getText("TXT_KEY_POPUP_USURPATOR_" + str(iRand), (pUnit.getName(),iGold)))
@@ -5032,6 +5032,7 @@ def onModNetMessage(argsList):
 					if iNewPromo != -1:
 						pUnit.setHasPromotion(iNewPromo, True)
 						if iData4 == gc.getGame().getActivePlayer():
+								# TXT_KEY_EVENT_UNIT_PROMOTION in CIV4GameText_BTS.xml (BTS-Textfolder) enthalten
 								CyInterface().addMessage(iData4, True, 5, CyTranslator().getText("TXT_KEY_EVENT_UNIT_PROMOTION", (pUnit.getName(),gc.getPromotionInfo(iNewPromo).getDescription())),
 													"AS2D_IF_LEVELUP", 2, gc.getPromotionInfo(iNewPromo).getButton(), ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
 

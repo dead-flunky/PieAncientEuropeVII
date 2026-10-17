@@ -4429,12 +4429,12 @@ class CvMainInterface:
 						pPlayer = gc.getActivePlayer()
 						iCityPersonRate = iCityPersonProgress = 0
 						pCity = ""
-						for i in range(pPlayer.getNumCities()):
-								if pPlayer.getCity(i).getGreatPeopleProgress() > 0 or pPlayer.getCity(i).getGreatPeopleRate() > 0:
-										if iCityPersonProgress < pPlayer.getCity(i).getGreatPeopleProgress():
-												iCityPersonRate = pPlayer.getCity(i).getGreatPeopleRate()
-												iCityPersonProgress = pPlayer.getCity(i).getGreatPeopleProgress()
-												pCity = pPlayer.getCity(i)
+						for loopCity in CvUtil.getCities(pPlayer):
+								if loopCity.getGreatPeopleProgress() > 0 or loopCity.getGreatPeopleRate() > 0:
+										if iCityPersonProgress < loopCity.getGreatPeopleProgress():
+												iCityPersonRate = loopCity.getGreatPeopleRate()
+												iCityPersonProgress = loopCity.getGreatPeopleProgress()
+												pCity = loopCity
 
 						if iCityPersonProgress > 0:
 								iPlayerTreshold = pPlayer.greatPeopleThreshold(False)
@@ -7316,12 +7316,12 @@ class CvMainInterface:
 								# iCityPersonRate = 0
 								iCityPersonProgress = 0
 								pCity = ""
-								for i in range(pPlayer.getNumCities()):
-										if pPlayer.getCity(i).getGreatPeopleProgress() > 0 or pPlayer.getCity(i).getGreatPeopleRate() > 0:
-												if iCityPersonProgress < pPlayer.getCity(i).getGreatPeopleProgress():
-														# iCityPersonRate = pPlayer.getCity(i).getGreatPeopleRate()
-														iCityPersonProgress = pPlayer.getCity(i).getGreatPeopleProgress()
-														pCity = pPlayer.getCity(i)
+								for loopCity in CvUtil.getCities(pPlayer):
+										if loopCity.getGreatPeopleProgress() > 0 or loopCity.getGreatPeopleRate() > 0:
+												if iCityPersonProgress < loopCity.getGreatPeopleProgress():
+														# iCityPersonRate = loopCity.getGreatPeopleRate()
+														iCityPersonProgress = loopCity.getGreatPeopleProgress()
+														pCity = loopCity
 
 								if pCity and not pCity.isNone():
 										CyInterface().selectCity(pCity, False)

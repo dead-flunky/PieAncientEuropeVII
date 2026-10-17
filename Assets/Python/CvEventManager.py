@@ -2754,6 +2754,7 @@ class CvEventManager:
 					# PAE Trade Cities Special Bonus
 					#if gc.getGame().getGameTurnYear() > -2400:
 					if gc.getGame().getProjectCreatedCount(gc.getInfoTypeForString("PROJECT_SILKROAD")):
+						PAE_Trade.init()  # Zaehler jede Runde aus ScriptData neu zaehlen (MP-sicher)
 						if iGameTurn % 8 == 0:
 							PAE_Trade.addCityWithSpecialBonus(iGameTurn)
 						PAE_Trade.doUpdateCitiesWithSpecialBonus(iGameTurn)

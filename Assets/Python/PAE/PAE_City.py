@@ -2455,7 +2455,7 @@ def provinceTribute(pCity):
 				if pPlayer.isHuman():
 						# Dies soll doppelte Popups in PB-Spielen vermeiden.
 						if iPlayer == gc.getGame().getActivePlayer():
-								iRand = CvUtil.myRandom(11, "TXT_KEY_POPUP_PROVINZHAUPTSTADT_DEMAND_")
+								iRand = gc.getASyncRand().get(11, "TXT_KEY_POPUP_PROVINZHAUPTSTADT_DEMAND_")
 								szText = CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_DEMAND_"+str(iRand), (pCity.getName(), iTribut))
 								szText += CyTranslator().getText("[NEWLINE][NEWLINE]", ()) + CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_HALTUNG", ())
 								szText += u": %d " % (abs(iBuildingHappiness))
@@ -2478,7 +2478,7 @@ def provinceTribute(pCity):
 										popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_ANSWER_2", (iTribut2,)), "")
 								if iGold > 0 and iGold < iTribut2:
 										popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_ANSWER_2_1", (iGold,)), "")
-								iRand = 1 + CvUtil.myRandom(10, "TXT_KEY_POPUP_PROVINZHAUPTSTADT_ANSWER_3_")
+								iRand = 1 + gc.getASyncRand().get(10, "TXT_KEY_POPUP_PROVINZHAUPTSTADT_ANSWER_3_")
 								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_POPUP_PROVINZHAUPTSTADT_ANSWER_3_"+str(iRand), ()), "")
 
 								popupInfo.addPopup(iPlayer)
