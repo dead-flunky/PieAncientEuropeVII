@@ -13,11 +13,11 @@
 	</TEXT>
  <TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_SCREEN_TITLE_ROMULUS_REMUS</Tag>
-		<English>Pie's Ancient Europe &#8211; Romulus and Remus</English>
-		<French>Pie's Ancient Europe &#8211; Romulus and Remus</French>
-		<German>Pie's Antikes Europa &#8211; Romulus and Remus</German>
-		<Italian>Pie's Ancient Europe &#8211; Romulus and Remus</Italian>
-		<Spanish>Pie's Ancient Europe &#8211; Romulus and Remus</Spanish>
+		<English>Pie's Ancient Europe - Romulus and Remus</English>
+		<French>Pie's Ancient Europe - Romulus and Remus</French>
+		<German>Pie's Antikes Europa - Romulus and Remus</German>
+		<Italian>Pie's Ancient Europe - Romulus and Remus</Italian>
+		<Spanish>Pie's Ancient Europe - Romulus and Remus</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DAWN_OF_MAN_ROMULUS_REMUS</Tag>
@@ -172,7 +172,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_CIV_ALBA_LONGA_DESC</Tag>
 		<English>Latins of Alba Longa</English>
-		<French>Latins d'Albe&#8722;la&#8722;Longue</French>
+		<French>Latins d'Albe-la-Longue</French>
 		<German>Latiner zu Alba Longa</German>
 		<Italian>Latini di Alba Longa</Italian>
 		<Spanish>Latinos de Alba Longa</Spanish>
@@ -180,7 +180,7 @@
 	 <TEXT>
 		<Tag>TXT_KEY_CIV_ALBA_LONGA_SHORT_DESC</Tag>
 		<English>Alba Longa</English>
-		<French>Albe&#8722;la&#8722;Longue</French>
+		<French>Albe-la-Longue</French>
 		<German>Alba Longa</German>
 		<Italian>Alba Longa</Italian>
 		<Spanish>Alba Longa</Spanish>

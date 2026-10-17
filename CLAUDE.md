@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.18.3.5, Commit 96e43fd)
+# PAE – Übergabe an Claude Code (Stand 7.18.3.9)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -10,9 +10,12 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - Antworten auf Deutsch, mit genauer Datei- und Zeilenangabe.
 - Multiplayer: Spielzustand nur in `onModNetMessage` ändern (über `sendModNetMessage`), kein `getActivePlayer` in Spiellogik, kein Python-Zustand außerhalb des Spielstands, globale Listen/Dicts aus `PAE_Lists` vor Änderung kopieren.
 - KI (`AI_unitUpdate`): Jeder Zweig mit `return True` muss die Züge verbrauchen (finishMoves, Mission, kill, Upgrade), sonst läuft die DLL-Schleife 40–120 Mal.
+- Pitboss: `getActivePlayer()` ist auf dem Host -1, `gc.getPlayer(-1)` liefert `None`. Nie ohne Prüfung auf -1 verwenden.
+- Zufall nur für Anzeige (Popup-Texte): `gc.getASyncRand().get(n, "...")`, nie `myRandom` in Blöcken mit `getActivePlayer`.
+- Text-XML: nur Zeichen aus Latin-1 (bis U+00FF), Sonderzeichen als `&#228;` usw. Nicht erlaubt: Gedankenstrich (–), Minuszeichen (−), Auslassungspunkte (…), Aufzählungspunkt (•), Œ, Längezeichen (ā ē ĭ ḥ), schmales Leerzeichen (U+202F) – auch nicht als `&#…;`-Code und kein  . Civ IV kann sie im Spiel nicht darstellen.
 
 ## Erledigt
-Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O7 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md).
+Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9).
 
 ## Offen
 Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
@@ -108,7 +111,7 @@ Geprüft: Commit `6f6b903`, alle Python-Dateien außer WorldBuilder (läuft nur 
 | Kategorie | Ergebnis |
 |---|---|
 | Lokaler Zufall (`random`, Uhrzeit) in Spiellogik | sauber (`random` nur Anzeige im Historiker-Bildschirm) |
-| Spiellogik abhängig von `getActivePlayer/Team/CivilizationType` | sauber bis auf Katapult (behoben) und toten Code (L1) |
+| Spiellogik abhängig von `getActivePlayer/Team/CivilizationType` | Katapult (behoben), toter Code (L1); im Nachtrag 7.18.3.5 zusätzlich **O8–O10** gefunden und behoben |
 | Popup-Callbacks ändern Zustand ohne Netzwerknachricht | **O4** (Peloponnes-Szenario), sonst sauber |
 | Lokale Events (Tastatur, Maus, Auswahl, onUpdate, onGameUpdate) | sauber (nur Cheat-Modus) |
 | UI-Callbacks der DLL (`cannot*`, Kosten, `getWidgetHelp`, `updateColoredPlots`, Pfad-Callbacks) ziehen Zufall oder ändern Zustand | sauber (Aufrufgraph geprüft) |
@@ -179,6 +182,34 @@ Fix: `bInitialized` entfernen, Zähler bei jedem `init()` auf 0 setzen.
 **O6 – Fernangriffskosten** `CvEventManager.py` ~Z. 4216: `DFern = L.DFernangriffCosts` ohne Kopie, danach Schreibzugriff → globales Dict dauerhaft verändert (Gold, sitzungsabhängig). Fix: `DFern = dict(L.DFernangriffCosts)`.
 
 **O7 – Veteranen-Upgrade** `PAE_Unit.py` Z. 816: `forbiddenPromos = L.LVeteranForbiddenPromos` ohne Kopie, danach `.extend()` → globale Liste wächst mit jedem Upgrade, Beförderungen gehen dauerhaft verloren (sitzungsabhängig). Fix: `forbiddenPromos = list(L.LVeteranForbiddenPromos)`.
+
+### Nachtrag 7.18.3.5 (Prüfung in Claude Code) – umgesetzt in 7.18.3.6
+
+Jetzt sind alle `if`-Blöcke mit `getActivePlayer`/`getActiveTeam` per Skript auf Zufall und Zustandsänderungen geprüft, ebenso alle Aufrufe von `gc.getPlayer(getActivePlayer())`.
+
+**O8 – `myRandom` nur beim aktiven Spieler** ✅ `PAE_City.py` Z. 2458, 2481 (Provinztribut), `PAE_Unit.py` Z. 3502 (Usurpator)
+Der synchronisierte Zufall lief nur auf einem Rechner weiter → OOS beim nächsten Wurf.
+Fix: `gc.getASyncRand().get(n, "...")` (nur Textauswahl).
+
+**O9 – Usurpator-Chance hing am Namen des lokalen Spielers** ✅ `PAE_Unit.py` Z. 3256
+`"Apocalypto"` → Chance 2 statt 4 nur auf diesem Rechner → OOS.
+Fix: an die Spieloption `GAMEOPTION_PAE_SETH` gekoppelt (Spieloptionen sind auf allen Rechnern gleich).
+
+**O10 – Pitboss-Host: `gc.getPlayer(getActivePlayer())` = None** ✅ `PAE_Disasters.py` Z. 665, 746, 953, 1399, `PAE_Trade.py` Z. 1838, 1901
+Python-Fehler nur auf dem Server, der Rest der Funktion (Erdbeben-/Tsunami-Schäden, Handelsaufträge) fehlte dort → OOS.
+Fix: `gc.getGame().getActivePlayer() != -1` bzw. `iActivePlayer != -1 and …`.
+
+**O11 – `iCitiesSpecialBonus` driftete** ✅ `CvEventManager.py` nach Z. 2756
+Wurde eine Stadt mit Auftrag zerstört, sank der Zähler nicht. Ein Rechner, der neu verbindet, zählte beim Laden richtig, die anderen nicht → OOS.
+Fix: `PAE_Trade.init()` jede Runde im Seidenstraßen-Block.
+
+**Nebenbei behoben (7.18.3.6–7.18.3.8):**
+- `CvMainInterface.py` Z. 4432, 7319: letzte C3-Schleifen (`getCity(i)`) → `CvUtil.getCities()` (nur Anzeige).
+- `PAE_Trade.py` Z. 1944: `UNIT_CAMEL_ARCHER` gab es nicht → `UNIT_ARABIA_CAMELARCHER`.
+- `CvWBKeys.py`: Tippfehler `BELGER_ADJECTIV` korrigiert, Duplikat entfernt.
+- O4 bleibt offen (nur Einzelspieler). Das Plataiai-Popup (`PeloponnesianWarKeinpferd.py` Z. 135–139) hat aber eigene Texte `TXT_KEY_EVENT_PLATAIAI_THEBEN_DESC/_OPTION_1–3` in `SC_PeloWarKeinpferd.xml` bekommen (7.18.3.7).
+- Gedankenstriche und andere Zeichen außerhalb von Latin-1 aus den Text-XMLs entfernt (7.18.3.8/9).
+
 
 ### Schlafende Fallen / Kleinigkeiten
 
@@ -410,6 +441,3 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 4. **Bitte bestätigen (Spielmechanik):** KI bekommt jetzt auf *allen* Schwierigkeitsgraden zu 50 % einen zweiten Siedler; globale Katastrophen hängen an `gc.getPlayer(0).getCurrentEra()` – `gc.getGame().getCurrentEra()` wäre unabhängig davon, ob Spieler 0 noch lebt.
 
 **Nachprüfung 7.18.3.2 (Commit `6f6b903`):** Punkte 2, 3 (Palisade, isNone-Reihenfolge) und 4.2 korrekt umgesetzt, Einrückungen geprüft. Offen: nur die Text-Keys (Punkt 1, kommen über das Text-Tool).
-
-O9 ist jetzt an die Spieloption GAMEOPTION_PAE_SETH gekoppelt, nicht fest auf iChance = 4 gesetzt.
-Das Plataiai-Popup hat neue Texte bekommen (7.18.3.7).
