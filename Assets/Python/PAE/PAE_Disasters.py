@@ -111,7 +111,7 @@ def doGenerateDisaster(iGameTurn):
 				undoVulkan()
 
 		# PAE 7.12b: Globale Katastrophen (1:3000)
-		if gc.getPlayer(0).getCurrentEra() > 2 and gc.getGame().getElapsedGameTurns() > 300:
+		if gc.getGame().getCurrentEra() > 2 and gc.getGame().getElapsedGameTurns() > 300:
 			if bArmageddon: iChance = 2000
 			else: iChance = 3000
 			# you will need to call 112 if you're able to

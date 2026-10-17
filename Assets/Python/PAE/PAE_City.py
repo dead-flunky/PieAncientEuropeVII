@@ -3386,7 +3386,7 @@ def doStadtbrand(pCity):
 		iCityPop = pCity.getPopulation()
 
 		# Brand verhindern
-		iChance = 5
+		iChance = 0
 		# Feuerwehr: 90% Schutz
 		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
 			iChance = 9
@@ -3402,10 +3402,10 @@ def doStadtbrand(pCity):
 		#	iChance = 5
 		# Zisterne: 50% Schutz +/- 10% je nach Pop
 		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
-			iChance += 6 - iCityPop
+			iChance += 11 - iCityPop
 		# Brunnen: 50% Schutz +/- 10% je nach Pop
 		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
-			iChance += 3 - iCityPop
+			iChance += 8 - iCityPop
 
 		# Brandchance per turn
 		if iChance < gc.getGame().getSorenRandNum(10, "City Fire in PAE_City") + 1:

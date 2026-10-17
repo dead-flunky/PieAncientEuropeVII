@@ -441,7 +441,6 @@ def canTriggerCityFire(argsList):
 
 		player = gc.getPlayer(ePlayer)
 		city = player.getCity(iCity)
-		iCityPop = city.getPopulation()
 
 		if city.isNone():
 			return False
@@ -449,7 +448,8 @@ def canTriggerCityFire(argsList):
 		if city.plot().getLatitude() <= 0:
 			return False
 
-		iChance = 5
+		iCityPop = city.getPopulation()
+		iChance = 0
 		# Feuerwehr: immer 90% Schutz
 		if city.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
 			iChance = 9
@@ -465,10 +465,10 @@ def canTriggerCityFire(argsList):
 		#	iChance = 5
 		# Zisterne: 50% Schutz +/- 10% je nach Pop
 		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
-			iChance += 6 - iCityPop
-		# Brunnen: 40% Schutz +/- 10% je nach Pop
+			iChance += 11 - iCityPop
+		# Brunnen: 50% Schutz +/- 10% je nach Pop
 		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
-			iChance += 3 - iCityPop
+			iChance += 8 - iCityPop
 
 		if iChance < gc.getGame().getSorenRandNum(10, "City Fire in RandomEventInterface") + 1:
 			return True

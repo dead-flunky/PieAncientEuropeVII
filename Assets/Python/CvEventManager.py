@@ -1069,7 +1069,7 @@ class CvEventManager:
 
 						else:
 								CyInterface().addMessage(iData4, True, 10, CyTranslator().getText("TXT_KEY_HELP_GO2PIRATE3", ("",)), None, 2,
-																				 "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(11), loopPlot.getX(), loopPlot.getY(), True, True)
+									"Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(11), loopPlot.getX(), loopPlot.getY(), True, True)
 
 				# iData1 723: EspionageMission Info im TechChooser
 
@@ -1758,12 +1758,12 @@ class CvEventManager:
 																						iPromo = gc.getInfoTypeForString("PROMOTION_MORAL_NEG1")
 												pUnit.setHasPromotion(iPromo, False)
 												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_SALAE_POS", (gc.getPromotionInfo(iPromo).getDescription(),)), None,
-																								 InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_action_salae.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
+													InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_action_salae.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
 
 										# Keine Auswirkung
 										else:
 												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_SALAE_NEG", ("",)), None, InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																								 "Art/Interface/Buttons/Actions/button_action_salae.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+													"Art/Interface/Buttons/Actions/button_action_salae.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 
 										pUnit.finishMoves()
 										PAE_Unit.doGoToNextUnit(pUnit)
@@ -1831,12 +1831,12 @@ class CvEventManager:
 														NewUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_MORAL_NEG1"), False)
 
 														CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_BARBAR", ("",)), None, InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																						"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), NewUnit.getX(), NewUnit.getY(), True, True)
+																"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), NewUnit.getX(), NewUnit.getY(), True, True)
 														pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 														pUnit = None
 												else:
 														CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_OUT", ("",)), None, InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																						"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+																"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 														pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 														pUnit = None
 
@@ -1874,14 +1874,14 @@ class CvEventManager:
 																break
 
 												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_POS", (gc.getPromotionInfo(iPromo).getDescription(),)), None,
-																				InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
+														InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
 												pUnit.finishMoves()
 												PAE_Unit.doGoToNextUnit(pUnit)
 
 										# Keine Auswirkung
 										else:
 												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_NEG", ("",)), None, InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-																				"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
+														"Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(7), pUnit.getX(), pUnit.getY(), True, True)
 												pUnit.finishMoves()
 												PAE_Unit.doGoToNextUnit(pUnit)
 
@@ -3739,14 +3739,14 @@ class CvEventManager:
 								CvUtil.pyPrint('Hidden Unit %s has defeated hidden Unit %s' % (unitX.getDescription(), unitY.getDescription()))
 						elif pWinner.getInvisibleType() != -1:
 								CvUtil.pyPrint('Hidden Unit %s has defeated Player %d Civilization %s Unit %s'
-															 % (unitX.getDescription(), playerY.getID(), playerY.getCivilizationName(), unitY.getDescription()))
+								 % (unitX.getDescription(), playerY.getID(), playerY.getCivilizationName(), unitY.getDescription()))
 						elif pLoser.getInvisibleType() != -1:
 								CvUtil.pyPrint('Player %d Civilization %s Unit %s has defeated hidden Unit %s'
-															 % (playerX.getID(), playerX.getCivilizationName(), unitX.getDescription(), unitY.getDescription()))
+								 % (playerX.getID(), playerX.getCivilizationName(), unitX.getDescription(), unitY.getDescription()))
 						else:
 								CvUtil.pyPrint('Player %d Civilization %s Unit %s has defeated Player %d Civilization %s Unit %s'
-															 % (playerX.getID(), playerX.getCivilizationName(), unitX.getDescription(),
-																	playerY.getID(), playerY.getCivilizationName(), unitY.getDescription()))
+								 % (playerX.getID(), playerX.getCivilizationName(), unitX.getDescription(),
+									playerY.getID(), playerY.getCivilizationName(), unitY.getDescription()))
 
 		def onCombatLogCalc(self, argsList):
 				'Combat Result'
@@ -4191,7 +4191,7 @@ class CvEventManager:
 												pPlotTradeRoad.setRouteType(gc.getInfoTypeForString("ROUTE_TRADE_ROAD"))
 												if pPlayer.isHuman():
 														CyInterface().addMessage(eOwner, True, 10, CyTranslator().getText("TXT_KEY_TRADE_ROUTE_BUILT", (pPlayer.getName(), pPlayer.getCivilizationShortDescriptionKey(), pCity.getName(), pSourceCity.getName())),
-																										 "AS2D_WELOVEKING", 2, "Art/Terrain/Routes/handelsstrasse/button_handelsstrasse.dds", ColorTypes(10), pPlotTradeRoad.getX(), pPlotTradeRoad.getY(), True, True)
+															 "AS2D_WELOVEKING", 2, "Art/Terrain/Routes/handelsstrasse/button_handelsstrasse.dds", ColorTypes(10), pPlotTradeRoad.getX(), pPlotTradeRoad.getY(), True, True)
 
 				# Fernangriff / Fernkampfkosten
 				# Nur 1x Fernangriff danach nur bewegen => GlobalDefines RANGED_ATTACKS_USE_MOVES=0
@@ -4476,7 +4476,7 @@ class CvEventManager:
 									unitInfo = PyInfo.UnitInfo(pUnit.getUnitType())
 									if player and unitInfo:
 											CvUtil.pyPrint('Player %d Civilization %s unit %s is moving to %d, %d'
-																		 % (player.getID(), player.getCivilizationName(), unitInfo.getDescription(), pUnit.getX(), pUnit.getY()))
+											 % (player.getID(), player.getCivilizationName(), unitInfo.getDescription(), pUnit.getX(), pUnit.getY()))
 
 					if bPAETimeCheck:
 						print("Dauer (onUnitMove), iPlayer: %d, Unit: %s" % (pUnit.getOwner(),pUnit.getName()), time.clock() - start)
@@ -5022,7 +5022,7 @@ class CvEventManager:
 				if not self.__LOG_RELIGIONSPREAD:
 						return
 				CvUtil.pyPrint('%s has spread to Player %d Civilization %s city of %s'
-											 % (gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
+				 % (gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
 
 		def onReligionRemove(self, argsList):
 				'Religion Has been removed from a City'
@@ -5035,7 +5035,7 @@ class CvEventManager:
 				if not self.__LOG_RELIGIONSPREAD:
 						return
 				CvUtil.pyPrint('%s has been removed from Player %d Civilization %s city of %s'
-											 % (gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
+				 % (gc.getReligionInfo(iReligion).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
 
 		def onCorporationFounded(self, argsList):
 				'Corporation Founded'
@@ -5052,7 +5052,7 @@ class CvEventManager:
 				if not self.__LOG_RELIGION:
 						return
 				CvUtil.pyPrint('Player %d Civilization %s has founded %s'
-											 % (iFounder, player.getCivilizationName(), gc.getCorporationInfo(iCorporation).getDescription()))
+				 % (iFounder, player.getCivilizationName(), gc.getCorporationInfo(iCorporation).getDescription()))
 
 		def onCorporationSpread(self, argsList):
 				'Corporation Has Spread to a City'
@@ -5065,7 +5065,7 @@ class CvEventManager:
 				if not self.__LOG_RELIGIONSPREAD:
 						return
 				CvUtil.pyPrint('%s has spread to Player %d Civilization %s city of %s'
-											 % (gc.getCorporationInfo(iCorporation).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
+				 % (gc.getCorporationInfo(iCorporation).getDescription(), iOwner, player.getCivilizationName(), pSpreadCity.getName()))
 
 		def onCorporationRemove(self, argsList):
 				'Corporation Has been removed from a City'
@@ -5078,7 +5078,7 @@ class CvEventManager:
 				if not self.__LOG_RELIGIONSPREAD:
 						return
 				CvUtil.pyPrint('%s has been removed from Player %d Civilization %s city of %s'
-											 % (gc.getCorporationInfo(iCorporation).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
+				 % (gc.getCorporationInfo(iCorporation).getDescription(), iOwner, player.getCivilizationName(), pRemoveCity.getName()))
 
 		def onGoldenAge(self, argsList):
 				'Golden Age'
@@ -5090,8 +5090,7 @@ class CvEventManager:
 				player = PyPlayer(iPlayer)
 				if not self.__LOG_GOLDENAGE:
 						return
-				CvUtil.pyPrint('Player %d Civilization %s has begun a golden age'
-											 % (iPlayer, player.getCivilizationName()))
+				CvUtil.pyPrint('Player %d Civilization %s has begun a golden age' % (iPlayer, player.getCivilizationName()))
 
 		def onEndGoldenAge(self, argsList):
 				'End Golden Age'
@@ -5103,8 +5102,7 @@ class CvEventManager:
 				player = PyPlayer(iPlayer)
 				if not self.__LOG_ENDGOLDENAGE:
 						return
-				CvUtil.pyPrint('Player %d Civilization %s golden age has ended'
-											 % (iPlayer, player.getCivilizationName()))
+				CvUtil.pyPrint('Player %d Civilization %s golden age has ended' % (iPlayer, player.getCivilizationName()))
 
 		def onChangeWar(self, argsList):
 				'War Status Changes'
@@ -5531,8 +5529,7 @@ class CvEventManager:
 				PAE_City.doCheckGlobalTraitBuildings(city.getOwner())
 				if not self.__LOG_CITYLOST:
 						return
-				CvUtil.pyPrint('City %s was lost by Player %d Civilization %s'
-											 % (city.getName(), player.getID(), player.getCivilizationName()))
+				CvUtil.pyPrint('City %s was lost by Player %d Civilization %s' % (city.getName(), player.getID(), player.getCivilizationName()))
 
 		def onCultureExpansion(self, argsList):
 				## Platy WorldBuilder ##
@@ -5871,19 +5868,16 @@ class CvEventManager:
 				iTeam, iVictory = argsList
 				if iVictory >= 0 and iVictory < gc.getNumVictoryInfos():
 						victoryInfo = gc.getVictoryInfo(int(iVictory))
-						CvUtil.pyPrint("Victory!  Team %d achieves a %s victory"
-													 % (iTeam, victoryInfo.getDescription()))
+						CvUtil.pyPrint("Victory!  Team %d achieves a %s victory" % (iTeam, victoryInfo.getDescription()))
 
 		def onVassalState(self, argsList):
 				'Vassal State'
 				iMaster, iVassal, bVassal = argsList
 
 				if bVassal:
-						CvUtil.pyPrint("Team %d becomes a Vassal State of Team %d"
-													 % (iVassal, iMaster))
+						CvUtil.pyPrint("Team %d becomes a Vassal State of Team %d" % (iVassal, iMaster))
 				else:
-						CvUtil.pyPrint("Team %d revolts and is no longer a Vassal State of Team %d"
-													 % (iVassal, iMaster))
+						CvUtil.pyPrint("Team %d revolts and is no longer a Vassal State of Team %d" % (iVassal, iMaster))
 
 				# Szenarien
 				sScenarioName = L.sScenarioName

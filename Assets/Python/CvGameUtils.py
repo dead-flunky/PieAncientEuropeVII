@@ -1058,11 +1058,6 @@ class CvGameUtils:
 
 				# Palisaden nur wenn Wald im angrenzenden Gebiet ist (5x5)
 				elif eBuilding == L.BUILDING_PALISADE:
-						LForests = [
-								L.FEATURE_JUNGLE,
-								L.FEATURE_FOREST,
-								L.FEATURE_DICHTERWALD
-						]
 						iRange = 2
 						iX = pCity.getX()
 						iY = pCity.getY()
@@ -1070,7 +1065,7 @@ class CvGameUtils:
 								for j in range(-iRange, iRange+1):
 										loopPlot = plotXY(iX, iY, i, j)
 										if loopPlot is not None and not loopPlot.isNone():
-												if loopPlot.getFeatureType() in LForests:
+												if loopPlot.getFeatureType() in L.LPalisadeFeatures:
 														return False
 						return True
 
@@ -1162,10 +1157,10 @@ class CvGameUtils:
 						lTechs.append(gc.getInfoTypeForString('TECH_MYSTICISM'))
 						# 3+4. Fischen oder Viehzucht
 						if pPlayer.countNumCoastalCities() > 0:
-								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+							lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
 						else:
-								lTechs.append(gc.getInfoTypeForString('TECH_ANIMAL_HUSBANDRY'))
-								lTechs.append(gc.getInfoTypeForString('TECH_FENCES'))
+							lTechs.append(gc.getInfoTypeForString('TECH_ANIMAL_HUSBANDRY'))
+							lTechs.append(gc.getInfoTypeForString('TECH_FENCES'))
 						# 5. Bogenschiessen
 						lTechs.append(gc.getInfoTypeForString('TECH_ARCHERY'))
 						# 6. Fuehrerschaft
@@ -1200,20 +1195,18 @@ class CvGameUtils:
 				if not pTeam.isHasTech(gc.getInfoTypeForString('TECH_BRONZE_WORKING')):
 
 						# Egypt und Sumer
-						if (iCiv == gc.getInfoTypeForString('CIVILIZATION_EGYPT') or
-							 iCiv == gc.getInfoTypeForString('CIVILIZATION_SUMERIA')
-							):
-								lTechs.append(gc.getInfoTypeForString('TECH_CEREMONIAL'))
-								lTechs.append(gc.getInfoTypeForString('TECH_PRIESTHOOD'))
-								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_SUMER'))
-								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_EGYPT'))
-								# Papyrus
-								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
-								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
+						if iCiv == gc.getInfoTypeForString('CIVILIZATION_EGYPT') or iCiv == gc.getInfoTypeForString('CIVILIZATION_SUMERIA'):
+							lTechs.append(gc.getInfoTypeForString('TECH_CEREMONIAL'))
+							lTechs.append(gc.getInfoTypeForString('TECH_PRIESTHOOD'))
+							lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_SUMER'))
+							lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_EGYPT'))
+							# Papyrus
+							lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+							lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 
 						if pPlayer.countNumCoastalCities() > 0:
-								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
-								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
+							lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+							lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 
 						# Food
 						lTechs.append(gc.getInfoTypeForString('TECH_TAUBENZUCHT'))
@@ -1230,7 +1223,7 @@ class CvGameUtils:
 						lTechs.append(gc.getInfoTypeForString('TECH_ASTRONOMIE'))
 						# Wein, wenn Trauben vorhanden
 						if pPlayer.countOwnedBonuses(gc.getInfoTypeForString('BONUS_GRAPES')) > 0:
-								lTechs.append(gc.getInfoTypeForString('TECH_WEINBAU'))
+							lTechs.append(gc.getInfoTypeForString('TECH_WEINBAU'))
 						# Waffen
 						lTechs.append(gc.getInfoTypeForString('TECH_THE_WHEEL'))
 						lTechs.append(gc.getInfoTypeForString('TECH_BEWAFFNUNG'))
@@ -1241,7 +1234,7 @@ class CvGameUtils:
 
 						# Inder
 						if (iCiv == gc.getInfoTypeForString('CIVILIZATION_INDIA')):
-								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_HINDU'))
+							lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_HINDU'))
 
 						# Hochkulturen
 						lTechs.append(gc.getInfoTypeForString('TECH_WRITING'))
@@ -1277,33 +1270,33 @@ class CvGameUtils:
 						lTechs.append(gc.getInfoTypeForString('TECH_SCHMIEDEKUNST'))
 
 						if pPlayer.countNumCoastalCities() > 0:
-								lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
-								lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
+							lTechs.append(gc.getInfoTypeForString('TECH_FISHING'))
+							lTechs.append(gc.getInfoTypeForString('TECH_BOOTSBAU'))
 
 						# Streitwagen
 						if pPlayer.countOwnedBonuses(gc.getInfoTypeForString('BONUS_HORSE')) > 0:
-								lTechs.append(gc.getInfoTypeForString('TECH_THE_WHEEL3'))
+							lTechs.append(gc.getInfoTypeForString('TECH_THE_WHEEL3'))
 
 						lTechs.append(gc.getInfoTypeForString('TECH_SOELDNERTUM'))
 
 						# Griechen
 						if pTeam.isHasTech(gc.getInfoTypeForString('TECH_GREEK')):
-								lTechs.append(gc.getInfoTypeForString('TECH_ASTROLOGIE'))
-								lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_GREEK'))
+							lTechs.append(gc.getInfoTypeForString('TECH_ASTROLOGIE'))
+							lTechs.append(gc.getInfoTypeForString('TECH_RELIGION_GREEK'))
 
 						lTechs.append(gc.getInfoTypeForString('TECH_ARCHERY2'))
 
 						# Perser
 						if iCiv == gc.getInfoTypeForString('CIVILIZATION_PERSIA') or iCiv == gc.getInfoTypeForString('CIVILIZATION_ASSYRIA'):
-								lTechs.append(gc.getInfoTypeForString('TECH_ASTROLOGIE'))
-								lTechs.append(gc.getInfoTypeForString('TECH_DUALISMUS'))
+							lTechs.append(gc.getInfoTypeForString('TECH_ASTROLOGIE'))
+							lTechs.append(gc.getInfoTypeForString('TECH_DUALISMUS'))
 
 						# Streitaxt
 						lTechs.append(gc.getInfoTypeForString('TECH_BEWAFFNUNG2'))
 
 						# Schiffsbau
 						if pPlayer.countNumCoastalCities() > 0:
-								lTechs.append(gc.getInfoTypeForString('TECH_SCHIFFSBAU'))
+							lTechs.append(gc.getInfoTypeForString('TECH_SCHIFFSBAU'))
 
 						# Religionen
 						lTechs.append(gc.getInfoTypeForString('TECH_ASTROLOGIE'))
