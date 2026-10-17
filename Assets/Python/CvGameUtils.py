@@ -2123,7 +2123,10 @@ class CvGameUtils:
 												# Priority 8 - Sell slave 25%
 												if bSlaveMarket:
 														if CvUtil.myRandom(4, "ai_sell_slave") == 1:
-																pUnit.getGroup().pushMission(MissionTypes.MISSION_TRADE, 0, 0, 0, False, False, MissionAITypes.NO_MISSIONAI, pPlot, pUnit)
+																iGold = CvUtil.myRandom(31, "sell_slave") + 10
+																pOwner.changeGold(iGold)
+																gc.getPlayer(gc.getBARBARIAN_PLAYER()).changeGold(iGold)
+																pUnit.kill(True, -1)
 																return True
 
 												# PAE AI City Instance

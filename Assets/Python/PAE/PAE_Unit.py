@@ -25,8 +25,6 @@ import PAE_Lists as L
 gc = CyGlobalContext()
 PyPlayer = PyHelpers.PyPlayer
 
-# PAE - Great General Names
-GG_UsedNames = []
 
 # Naval unit movement
 def onUnitMoveOnSea(pUnit):
@@ -4794,8 +4792,11 @@ def setUnitReligion(pUnit):
 		CvUtil.addScriptData(pUnit, "rel", iReligion)
 	return
 
-# Names for Great Generals
+# PAE - Great General Names
 def getGGName(pPlayer):
+
+	# Bereits vergebene Namen stehen im Spielstand (synchron auf allen Rechnern)
+	lUsed = CvUtil.getScriptData(gc.getGame(), ["gg"], [])
 
 	lUnitNames = []
 	iMaxPlayers = gc.getMAX_PLAYERS()
@@ -4818,7 +4819,7 @@ def getGGName(pPlayer):
 		# 1st: CIV names Iron Age
 		if len(listNames):
 			for iName in listNames:
-				if iName not in GG_UsedNames and iName not in lUnitNames:
+				if iName not in lUsed and iName not in lUnitNames:
 					GG_Name = iName
 					break
 
@@ -4826,13 +4827,14 @@ def getGGName(pPlayer):
 		if GG_Name == "":
 			listNames = L.LGGStandard
 			for iName in listNames:
-				if iName not in GG_UsedNames and iName not in lUnitNames:
+				if iName not in lUsed and iName not in lUnitNames:
 					GG_Name = iName
 					break
 
 	# save official names only
-	if GG_Name != "" and GG_Name not in GG_UsedNames:
-		GG_UsedNames.append(GG_Name)
+	if GG_Name != "" and GG_Name not in lUsed:
+		lUsed.append(GG_Name)
+		CvUtil.addScriptData(gc.getGame(), "gg", lUsed)
 
 	# 3rd: random names stone/bronze age
 	if GG_Name == "":

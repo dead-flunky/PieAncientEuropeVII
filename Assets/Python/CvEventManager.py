@@ -2270,7 +2270,7 @@ class CvEventManager:
 						else:
 								iNewUnit = gc.getInfoTypeForString("UNIT_CATAPULT")
 								iNewUnitClass = gc.getUnitInfo(iNewUnit).getUnitClassType()
-								iNewUnit = gc.getCivilizationInfo(gc.getGame().getActiveCivilizationType()).getCivilizationUnits(iNewUnitClass)
+								iNewUnit = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(iNewUnitClass)
 								PAE_Unit.changeUnit(pUnit, iNewUnit, False)
 
 

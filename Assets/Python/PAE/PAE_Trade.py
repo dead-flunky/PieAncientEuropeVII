@@ -18,7 +18,6 @@ import PAE_City
 gc = CyGlobalContext()
 
 # Globals
-bInitialized = False  # Whether global variables are already initialised
 iMaxCitiesSpecialBonus = 4 # Max Cities with Special Trade Bonus
 iCitiesSpecialBonus = 0  # Cities with Special Trade Bonus
 
@@ -42,27 +41,20 @@ iCitiesSpecialBonus = 0  # Cities with Special Trade Bonus
 
 
 def init():
-		global bInitialized
 		global iCitiesSpecialBonus
-		global iMaxCitiesSpecialBonus
 
-		if not bInitialized:
-				# Cities mit Special Trade Bonus herausfinden
-				iRange = gc.getMAX_PLAYERS()
-				for i in range(iRange):
-						loopPlayer = gc.getPlayer(i)
-						if loopPlayer.isAlive() and not loopPlayer.isBarbarian():
-								(loopCity, pIter) = loopPlayer.firstCity(False)
-								while loopCity:
-										if not loopCity.isNone() and loopCity.getOwner() == loopPlayer.getID():  # only valid cities
-												if CvUtil.getScriptData(loopCity, ["tsb"], -1) != -1:
-														iCitiesSpecialBonus += 1
-														if iCitiesSpecialBonus == iMaxCitiesSpecialBonus:
-																break
-										(loopCity, pIter) = loopPlayer.nextCity(pIter, False)
-						if iCitiesSpecialBonus == iMaxCitiesSpecialBonus:
-								break
-						bInitialized = True
+		# Bei jedem Laden/Start neu zaehlen (nicht nur einmal pro Civ-Sitzung)
+		iCitiesSpecialBonus = 0
+		iRange = gc.getMAX_PLAYERS()
+		for i in range(iRange):
+				loopPlayer = gc.getPlayer(i)
+				if loopPlayer.isAlive() and not loopPlayer.isBarbarian():
+						for loopCity in CvUtil.getCities(loopPlayer):
+								if CvUtil.getScriptData(loopCity, ["tsb"], -1) != -1:
+										iCitiesSpecialBonus += 1
+				if iCitiesSpecialBonus >= iMaxCitiesSpecialBonus:
+						iCitiesSpecialBonus = iMaxCitiesSpecialBonus
+						break
 
 # --- Trade in cities ---
 

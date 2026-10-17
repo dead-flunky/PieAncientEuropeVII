@@ -417,7 +417,8 @@ def onModNetMessage(iData1, iData2, iData3, iData4, iData5):
 						VassalHItoHI(iData2, iData3, None)
 				# zur Winnerauswahl
 				else:
-						CyMessageControl().sendModNetMessage(682, iData1, iData2, -1, 0)
+						#CyMessageControl().sendModNetMessage(682, iData1, iData2, -1, 0)
+						do682(iData2, iData3, -1)
 
 		# HI-HI Interaktion Ende +++++++++++++++++++++++++++++++++
 
