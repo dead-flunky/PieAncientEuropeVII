@@ -51,6 +51,7 @@ class CvGameUtils:
 				# PAE - vars for AI feature checks (for better turn times)
 				self.PAE_AI_ID = -1
 				self.PAE_AI_ID2 = -1
+				self.PAE_AI_Slaves_Owner = -1
 				self.PAE_AI_Cities_Slaves = []
 				self.PAE_AI_Cities_Slavemarket = []
 
@@ -849,7 +850,7 @@ class CvGameUtils:
 				# eCivic = argsList[1]
 
 				# Szenarien: Wechsel erst ab einer bestimmten Runde möglich
-				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				sScenarioName = L.sScenarioName
 				iRound = gc.getGame().getGameTurn() - gc.getGame().getStartTurn()
 				if sScenarioName == "PeloponnesianWarKeinpferd" or sScenarioName == "FirstPunicWar" or sScenarioName == "WarOfDiadochi":
 						if not gc.getPlayer(ePlayer).isHuman() and iRound <= 50:
@@ -878,6 +879,10 @@ class CvGameUtils:
 				# bIgnoreCost = argsList[4]
 				# bIgnoreUpgrades = argsList[5]
 
+				# PAE Performance: Einheiten ohne Sonderregel sofort freigeben
+				if eUnit not in L.SSpecialUnits:
+						return False
+
 				#pUnit = gc.getUnitInfo(eUnit)
 
 				# PAE Trade units
@@ -888,7 +893,7 @@ class CvGameUtils:
 								return True
 
 				# PAE Emigrants
-				if eUnit == gc.getInfoTypeForString("UNIT_EMIGRANT"):
+				if eUnit == L.UNIT_EMIGRANT:
 						if pCity.getPopulation() < 6:
 								return True
 						if pCity.goodHealth() - pCity.badHealth(False) > 0 and pCity.happyLevel() - pCity.unhappyLevel(0) > 0:
@@ -916,7 +921,7 @@ class CvGameUtils:
 
 
 				# Stadtstaaten sollen keine Siedler bauen dürfen / City States
-				if eUnit == gc.getInfoTypeForString("UNIT_SETTLER"):
+				if eUnit == L.UNIT_SETTLER:
 						iPlayer = pCity.getOwner()
 						pPlayer = gc.getPlayer(iPlayer)
 						if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_CITY_STATE")):
@@ -940,13 +945,12 @@ class CvGameUtils:
 				# bTestVisible = argsList[3]
 				# bIgnoreCost = argsList[4]
 
+				# PAE Performance: Gebäude ohne Sonderregel sofort freigeben
+				if eBuilding not in L.SSpecialBuildings:
+						return False
+
 				# Stallungen: Pferd, Kamel, Ele / Stables: horse, camel, ele
-				lStrategicBonusBuildings = [
-						gc.getInfoTypeForString("BUILDING_STABLE"),
-						gc.getInfoTypeForString("BUILDING_CAMEL_STABLE"),
-						gc.getInfoTypeForString("BUILDING_ELEPHANT_STABLE")
-				]
-				if eBuilding in lStrategicBonusBuildings:
+				if eBuilding in L.LStrategicBonusBuildings:
 						eBonus = gc.getBuildingInfo(eBuilding).getPrereqAndBonus()
 						# lPlots = PAE_Cultivation.getCityCultivatedPlots(pCity, eBonus)
 
@@ -971,7 +975,7 @@ class CvGameUtils:
 				#  if not pCity.plot().isRiver(): return True
 
 				# Akropolis
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_ACROPOLIS"):
+				elif eBuilding == L.BUILDING_ACROPOLIS:
 						# Um die Stadt bzw unter der Stadt muss ein Hill sein
 						iRange = 1
 						iX = pCity.getX()
@@ -985,79 +989,79 @@ class CvGameUtils:
 						return True
 
 				# Palast / Palace
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_PALACE"):
+				elif eBuilding == L.BUILDING_PALACE:
 						pPlayer = gc.getPlayer(pCity.getOwner())
-						if not gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_LEADERSHIP")):
+						if not gc.getTeam(pPlayer.getTeam()).isHasTech(L.TECH_LEADERSHIP):
 								return True
-						if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_STADT")):
-							if self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, gc.getInfoTypeForString("BUILDINGCLASS_PALACE")) > 0:
+						if not pCity.isHasBuilding(L.BUILDING_STADT):
+							if self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, L.BUILDINGCLASS_PALACE) > 0:
 								return True
 
 				# Ausbildungslager / first type of barracks
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_BARRACKS"):
-						if not gc.getPlayer(pCity.getOwner()).isCivic(gc.getInfoTypeForString("CIVIC_BERUFSARMEE")):
+				elif eBuilding == L.BUILDING_BARRACKS:
+						if not gc.getPlayer(pCity.getOwner()).isCivic(L.CIVIC_BERUFSARMEE):
 								return True
 
 				# Aqueducts
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_AQUEDUCT"):
+				elif eBuilding == L.BUILDING_AQUEDUCT:
 						if gc.getPlayer(pCity.getOwner()).getCivilizationType() not in L.LCivsWithAqueduct:
 								return True
 
 				# Wonder Gorgan Walls
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_GREAT_WALL_GORGAN"):
+				elif eBuilding == L.BUILDING_GREAT_WALL_GORGAN:
 						pPlayer = gc.getPlayer(pCity.getOwner())
 						if gc.getTeam(pPlayer.getTeam()).getAtWarCount(True) < 2:
 								return True
 
 				# Buildings, die pro Ressource baubar sind
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_SCHMIEDE_BRONZE"):
+				elif eBuilding == L.BUILDING_SCHMIEDE_BRONZE:
 						pPlayer = gc.getPlayer(pCity.getOwner())
 						#iAnzB = pPlayer.getBuildingClassCountPlusMaking(gc.getInfoTypeForString("BUILDINGCLASS_SCHMIEDE_BRONZE")) => BTS Befehl funkt nicht richtig (Gebäude wird ständig unterbrochen)
-						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, gc.getInfoTypeForString("BUILDINGCLASS_SCHMIEDE_BRONZE"))
-						iAnz1 = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_COPPER"))
-						iAnz2 = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_COAL"))
-						iAnz2 += pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_ZINN"))
+						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, L.BUILDINGCLASS_SCHMIEDE_BRONZE)
+						iAnz1 = pPlayer.getNumAvailableBonuses(L.BONUS_COPPER)
+						iAnz2 = pPlayer.getNumAvailableBonuses(L.BONUS_COAL)
+						iAnz2 += pPlayer.getNumAvailableBonuses(L.BONUS_ZINN)
 						iCheck = min(iAnz1, iAnz2)
 						if iCheck == 0 or iAnzB >= iCheck:
 								return True
 
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_SCHMIEDE_MESSING"):
+				elif eBuilding == L.BUILDING_SCHMIEDE_MESSING:
 						pPlayer = gc.getPlayer(pCity.getOwner())
-						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, gc.getInfoTypeForString("BUILDINGCLASS_SCHMIEDE_MESSING"))
-						iAnz1 = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_COPPER"))
-						iAnz2 = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_ZINK"))
+						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, L.BUILDINGCLASS_SCHMIEDE_MESSING)
+						iAnz1 = pPlayer.getNumAvailableBonuses(L.BONUS_COPPER)
+						iAnz2 = pPlayer.getNumAvailableBonuses(L.BONUS_ZINK)
 						iCheck = min(iAnz1, iAnz2)
 						if iCheck == 0 or iAnzB >= iCheck:
 								return True
 
 				# Goldschmied: nur wenn man mehr von einer Resource besitzt
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_GOLDSCHMIED"):
+				elif eBuilding == L.BUILDING_GOLDSCHMIED:
 						pPlayer = gc.getPlayer(pCity.getOwner())
-						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, gc.getInfoTypeForString("BUILDINGCLASS_GOLDSCHMIED"))
+						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, L.BUILDINGCLASS_GOLDSCHMIED)
 						sAnz = []
-						sAnz.append(pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_GOLD")))
-						sAnz.append(pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_SILVER")))
-						sAnz.append(pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_PEARL")))
-						sAnz.append(pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_GEMS")))
-						sAnz.append(pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_BERNSTEIN")))
+						sAnz.append(pPlayer.getNumAvailableBonuses(L.BONUS_GOLD))
+						sAnz.append(pPlayer.getNumAvailableBonuses(L.BONUS_SILVER))
+						sAnz.append(pPlayer.getNumAvailableBonuses(L.BONUS_PEARL))
+						sAnz.append(pPlayer.getNumAvailableBonuses(L.BONUS_GEMS))
+						sAnz.append(pPlayer.getNumAvailableBonuses(L.BONUS_BERNSTEIN))
 						if iAnzB >= max(sAnz):
 								return True
 
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_GUSS_IRON"):
+				elif eBuilding == L.BUILDING_GUSS_IRON:
 						pPlayer = gc.getPlayer(pCity.getOwner())
-						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, gc.getInfoTypeForString("BUILDINGCLASS_GUSS_IRON"))
-						iAnz = pPlayer.getNumAvailableBonuses(gc.getInfoTypeForString("BONUS_IRON"))
+						iAnzB = self.getBuildingClassCountPlusOtherCitiesMaking(pPlayer, pCity, eBuilding, L.BUILDINGCLASS_GUSS_IRON)
+						iAnz = pPlayer.getNumAvailableBonuses(L.BONUS_IRON)
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Building",iAnzB)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Bonus",iAnz)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 						if iAnzB >= iAnz:
 								return True
 
 				# Palisaden nur wenn Wald im angrenzenden Gebiet ist (5x5)
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_PALISADE"):
+				elif eBuilding == L.BUILDING_PALISADE:
 						LForests = [
-								gc.getInfoTypeForString("FEATURE_JUNGLE"),
-								gc.getInfoTypeForString("FEATURE_FOREST"),
-								gc.getInfoTypeForString("FEATURE_DICHTERWALD")
+								L.FEATURE_JUNGLE,
+								L.FEATURE_FOREST,
+								L.FEATURE_DICHTERWALD
 						]
 						iRange = 2
 						iX = pCity.getX()
@@ -1071,7 +1075,7 @@ class CvGameUtils:
 						return True
 
 				# PAE 7.15: Religion Kopfsteuer (monotheistische Religionen)
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_REL_STEUER"):
+				elif eBuilding == L.BUILDING_REL_STEUER:
 						pPlayer = gc.getPlayer(pCity.getOwner())
 						iStateReligion = pPlayer.getStateReligion()
 						if iStateReligion in L.LMonoReligions:
@@ -1084,33 +1088,17 @@ class CvGameUtils:
 						return True
 
 				# PAE 7.17: Bauschutt
-				elif eBuilding == gc.getInfoTypeForString("BUILDING_BAUSCHUTT"):
-					if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS")):
+				elif eBuilding == L.BUILDING_BAUSCHUTT:
+					if not pCity.isHasBuilding(L.BUILDING_CITY_RUINS):
 						return True
 
 				# Buildings, die ihre notwendige Ressource im Stadtradius brauchen
 				# Listen stehen auch in PAE_City (!)
-				lBonusBuildings = [
-						gc.getInfoTypeForString("BUILDING_WINERY"),
-						gc.getInfoTypeForString("BUILDING_PAPYRUSPOST"),
-						gc.getInfoTypeForString("BUILDING_MUREX"),
-						#gc.getInfoTypeForString("BUILDING_GERBEREI"),
-						gc.getInfoTypeForString("BUILDINGCLASS_WINDOFEN_NATIONAL"),
-						gc.getInfoTypeForString("BUILDING_GUSS_BLEI"),
-						gc.getInfoTypeForString("BUILDING_GUSS_COPPER"),
-						gc.getInfoTypeForString("BUILDING_GUSS_ZINN"),
-						gc.getInfoTypeForString("BUILDING_GUSS_ZINK")
-				]
-				if eBuilding in lBonusBuildings:
+				if eBuilding in L.LBonusBuildingsCity:
 						if PAE_City.bonusMissingCity(pCity, eBuilding) >= 0:
 								return True
 
-				lBonusBuildings3x3 = [
-						gc.getInfoTypeForString("BUILDING_FURRIER"),
-						gc.getInfoTypeForString("BUILDING_MARMOR_WERKSTATT"),
-						gc.getInfoTypeForString("BUILDING_IVORY_MARKET")
-				]
-				if eBuilding in lBonusBuildings3x3:
+				if eBuilding in L.LBonusBuildings3x3:
 						if PAE_City.bonusMissingCity3x3(pCity, eBuilding) >= 0:
 								return True
 
@@ -1625,11 +1613,11 @@ class CvGameUtils:
 
 				if not pOwner.isHuman():
 						iUnitType = pUnit.getUnitType()
-						lCities = PyPlayer(iOwner).getCityList()
+						lCities = None
 
 						# PAE AI Unit Instances (better turn time)
-						if self.PAE_AI_ID != iOwner:
-								#self.PAE_AI_ID = iOwner
+						if self.PAE_AI_Slaves_Owner != iOwner:
+								self.PAE_AI_Slaves_Owner = iOwner
 								self.PAE_AI_Cities_Slaves = []
 								self.PAE_AI_Cities_Slavemarket = []
 
@@ -1710,6 +1698,7 @@ class CvGameUtils:
 																						pUnit.doCommand(CommandTypes.COMMAND_UNLOAD_ALL, 0, 0)
 								if not pUnit.hasCargo():
 										pUnit.kill(True, -1)
+										return True
 
 						if iOwner == iBarbarianPlayer:
 								# Barbs vom FortDefence
@@ -2025,6 +2014,7 @@ class CvGameUtils:
 														return True
 
 												# Weitere Cities auf Sklavenmarkt checken und Sklaven zuerst dort hinschicken
+												if lCities is None: lCities = PyPlayer(iOwner).getCityList()
 												if len(lCities) > len(self.PAE_AI_Cities_Slavemarket):
 														if CvUtil.myRandom(10, "ai_sklavenmarkt") < 2:
 																(loopCity, pIter) = pOwner.firstCity(False)
@@ -2245,6 +2235,7 @@ class CvGameUtils:
 
 										lCityX = None
 										iCityPop = 0
+										if lCities is None: lCities = PyPlayer(iOwner).getCityList()
 										for lCity in lCities:
 												iPop = lCity.getPopulation()
 												if lCityX is None or iPop < iCityPop:

@@ -783,9 +783,9 @@ void CvUnit::doTurn()
 	} // -----------------------------
 
 	// PAE River Bug (unit keeps standing on a river ford)
-	if (plot()->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) {
-		jumpToNearestValidPlotFromRiver();
-	} // ------------------------
+	//if (plot()->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) {
+	//	jumpToNearestValidPlotFromRiver();
+	//} // ------------------------
 
 }
 
@@ -2841,6 +2841,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		
 	}
 
+
 	switch (getDomainType())
 	{
 	case DOMAIN_SEA:
@@ -2848,7 +2849,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		if ((isAnimal() || AI_getUnitAIType() == UNITAI_ANIMAL) && isBarbarian() && pPlot->isCity(true)) return false;
 		
 		// PAE: Rivers
-		if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+		if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))
 		{
 			//if (!isHuman() && movesLeft() < 2) return false;
 			
@@ -2897,7 +2898,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 
 	case DOMAIN_LAND:
 		// PAE: Rivers
-		if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+		if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))
 		{
 			//if (!isHuman() && baseMoves() > 1 && movesLeft() < 2) return false;
 			if (AI_getUnitAIType() == UNITAI_ANIMAL && isBarbarian()) return false;
@@ -3886,7 +3887,7 @@ bool CvUnit::shouldLoadOnMove(const CvPlot* pPlot) const
 		// Flunky for PAE: river ford
 		if (pPlot->isWater() && !canMoveAllTerrain())
 		{
-			if (pPlot->getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+			if (pPlot->getTerrainType() != (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))
 			{
 				return true;
 			}
@@ -4080,7 +4081,7 @@ void CvUnit::unloadAll()
 bool CvUnit::canHold(const CvPlot* pPlot) const
 {
 	// PAE river ford
-	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
+	if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) return false;
 
 	return true;
 }
@@ -4099,7 +4100,7 @@ bool CvUnit::canSleep(const CvPlot* pPlot) const
 	}
 
 	// PAE river ford
-	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
+	if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) return false;
 
 	return true;
 }
@@ -4118,7 +4119,7 @@ bool CvUnit::canFortify(const CvPlot* pPlot) const
 	}
 
 	// PAE river ford
-	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
+	if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) return false;
 
 	return true;
 }
@@ -4248,7 +4249,7 @@ bool CvUnit::canSentry(const CvPlot* pPlot) const
 	}
 
 	// PAE river ford
-	if (pPlot->getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))) return false;
+	if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) return false;
 
 	return true;
 }
@@ -7292,6 +7293,19 @@ bool CvUnit::build(BuildTypes eBuild)
 		if (GC.getBuildInfo(eBuild).isKill())
 		{
 			kill(true);
+		}
+
+		// PAE: CIV gets diplo bonus when building a route on other's plot
+		if (GC.getBuildInfo(eBuild).getRoute() != NO_ROUTE)
+		{
+			if (getOwnerINLINE() != plot()->getOwner())
+			{
+				if (GC.getGameINLINE().getSorenRandNum(2, "AI_changeMemoryCount on building a route") == 1) {
+					GET_PLAYER(plot()->getOwner()).AI_changeMemoryCount(getOwnerINLINE(), MEMORY_EVENT_GOOD_TO_US, 1);
+					CvWString szBuffer = gDLL->getText("TXT_KEY_MESSAGE_BUILD_ENEMY_ROUTE", GET_PLAYER(plot()->getOwner()).getNameKey());
+					gDLL->getInterfaceIFace()->addMessage((getOwnerINLINE()), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_WELOVEKING", MESSAGE_TYPE_MAJOR_EVENT, GC.getBuildInfo(eBuild).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
+				}
+			}
 		}
 	}
 

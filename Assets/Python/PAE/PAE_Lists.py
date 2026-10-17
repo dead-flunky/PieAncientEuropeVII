@@ -1792,7 +1792,77 @@ def init():
 			(2, gc.getInfoTypeForString("TRAIT_IMPERIALIST"), "Art/Interface/Buttons/Traits/button_trait_imperial.dds")
 		]
 
+		initConstants()
+
 		# # Transfer local defined variables into module ones.
 		# lnames = [l for l in locals().keys() if l[0] != "_" and l != "gc"]
 		# for l in lnames:
 		# globals()[l] = locals()[l]
+
+
+# PAE Performance: XML-IDs einmalig ermitteln (aufgerufen am Ende von init(), also nach dem Laden der XML).
+# Danach statt gc.getInfoTypeForString("BUILDING_STABLE") einfach L.BUILDING_STABLE verwenden.
+LConstantTags = (
+		# cannotTrain / cannotResearch
+		"UNIT_EMIGRANT", "UNIT_SETTLER", "TECH_CITY_STATE", "TECH_COLONIZATION",
+		# cannotConstruct: Gebäude
+		"BUILDING_STABLE", "BUILDING_CAMEL_STABLE", "BUILDING_ELEPHANT_STABLE",
+		"BUILDING_ACROPOLIS", "BUILDING_PALACE", "BUILDING_STADT", "BUILDING_BARRACKS", "BUILDING_AQUEDUCT",
+		"BUILDING_GREAT_WALL_GORGAN", "BUILDING_SCHMIEDE_BRONZE", "BUILDING_SCHMIEDE_MESSING",
+		"BUILDING_GOLDSCHMIED", "BUILDING_GUSS_IRON", "BUILDING_PALISADE", "BUILDING_REL_STEUER",
+		"BUILDING_BAUSCHUTT", "BUILDING_CITY_RUINS",
+		"BUILDING_WINERY", "BUILDING_PAPYRUSPOST", "BUILDING_MUREX", "BUILDING_WINDOFEN_NATIONAL",
+		"BUILDING_GUSS_BLEI", "BUILDING_GUSS_COPPER", "BUILDING_GUSS_ZINN", "BUILDING_GUSS_ZINK",
+		"BUILDING_FURRIER", "BUILDING_MARMOR_WERKSTATT", "BUILDING_IVORY_MARKET",
+		# cannotConstruct: Gebäudeklassen, Techs, Civics, Ressourcen, Features
+		"BUILDINGCLASS_PALACE", "BUILDINGCLASS_SCHMIEDE_BRONZE", "BUILDINGCLASS_SCHMIEDE_MESSING",
+		"BUILDINGCLASS_GOLDSCHMIED", "BUILDINGCLASS_GUSS_IRON",
+		"TECH_LEADERSHIP", "CIVIC_BERUFSARMEE",
+		"BONUS_COPPER", "BONUS_COAL", "BONUS_ZINN", "BONUS_ZINK", "BONUS_IRON",
+		"BONUS_GOLD", "BONUS_SILVER", "BONUS_PEARL", "BONUS_GEMS", "BONUS_BERNSTEIN",
+		"FEATURE_JUNGLE", "FEATURE_FOREST", "FEATURE_DICHTERWALD",
+		# getUnitCostMod / getBuildingCostMod
+		"TRAIT_AGGRESSIVE", "TRAIT_INDUSTRIOUS",
+		# onUnitMove
+		"PROMOTION_FORM_FLIGHT", "PROMOTION_RHETORIK", "PROMOTION_LEADER", "PROMOTION_HERO",
+		"PROMOTION_PROTECTOR", "PROMOTION_EXCUBITOR", "PROMOTION_FORM_FORTRESS", "PROMOTION_FORM_FORTRESS2",
+		"PROMOTION_FORM_LEADER_POSITION", "BUILDING_CIVIL_WAR", "IMPROVEMENT_CAVE", "IMPROVEMENT_BARBARENFORT",
+		"ROUTE_PATH", "UNIT_MONGOL_KESHIK", "UNIT_GOLDKARREN", "EFFECT_PACK_UP"
+)
+
+SSpecialBuildings = set()
+SSpecialUnits = set()
+LStrategicBonusBuildings = []
+LBonusBuildingsCity = []
+LBonusBuildings3x3 = []
+LPalisadeFeatures = []
+sScenarioName = ""
+
+def initConstants():
+		global SSpecialBuildings, SSpecialUnits, sScenarioName
+		global LStrategicBonusBuildings, LBonusBuildingsCity, LBonusBuildings3x3, LPalisadeFeatures
+
+		dGlobals = globals()
+		for sTag in LConstantTags:
+				dGlobals[sTag] = gc.getInfoTypeForString(sTag)
+
+		# Listen für cannotConstruct (ersetzen die dort bei jedem Aufruf neu gebauten Listen)
+		LStrategicBonusBuildings = [BUILDING_STABLE, BUILDING_CAMEL_STABLE, BUILDING_ELEPHANT_STABLE]
+		LBonusBuildingsCity = [BUILDING_WINERY, BUILDING_PAPYRUSPOST, BUILDING_MUREX, BUILDING_WINDOFEN_NATIONAL,
+				BUILDING_GUSS_BLEI, BUILDING_GUSS_COPPER, BUILDING_GUSS_ZINN, BUILDING_GUSS_ZINK]
+		LBonusBuildings3x3 = [BUILDING_FURRIER, BUILDING_MARMOR_WERKSTATT, BUILDING_IVORY_MARKET]
+		LPalisadeFeatures = [FEATURE_JUNGLE, FEATURE_FOREST, FEATURE_DICHTERWALD]
+
+		# Alle Gebäude mit Sonderregel in cannotConstruct -> alle anderen sofort "baubar"
+		SSpecialBuildings = set(LStrategicBonusBuildings + LBonusBuildingsCity + LBonusBuildings3x3 + [
+				BUILDING_ACROPOLIS, BUILDING_PALACE, BUILDING_BARRACKS, BUILDING_AQUEDUCT,
+				BUILDING_GREAT_WALL_GORGAN, BUILDING_SCHMIEDE_BRONZE, BUILDING_SCHMIEDE_MESSING,
+				BUILDING_GOLDSCHMIED, BUILDING_GUSS_IRON, BUILDING_PALISADE, BUILDING_REL_STEUER,
+				BUILDING_BAUSCHUTT])
+
+		# Alle Einheiten mit Sonderregel in cannotTrain -> alle anderen sofort "baubar"
+		SSpecialUnits = set(LTradeUnits + LRammen + [UNIT_EMIGRANT, UNIT_SETTLER])
+
+		# Szenarioname steht in der Karte (Plot 0,0) und ändert sich während des Spiels nicht
+		import CvUtil
+		sScenarioName = CvUtil.getScriptData(gc.getMap().plot(0, 0), ["S", "t"])

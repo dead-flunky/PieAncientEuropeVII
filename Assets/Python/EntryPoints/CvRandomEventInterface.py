@@ -449,13 +449,13 @@ def canTriggerCityFire(argsList):
 		if city.plot().getLatitude() <= 0:
 			return False
 
-		iChance = 10
+		iChance = 5
 		# Feuerwehr: immer 90% Schutz
 		if city.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
-			iChance = 1
-		# Aquaedukt: immer 70% Schutz
+			iChance = 9
+		# Aquaedukt: immer 80% Schutz
 		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
-			iChance = 3
+			iChance = 8
 		# Bewässerung: 50% Schutz
 		#elif (
 		#	city.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
@@ -465,14 +465,12 @@ def canTriggerCityFire(argsList):
 		#	iChance = 5
 		# Zisterne: 50% Schutz +/- 10% je nach Pop
 		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
-			iChance = 5
-			iChance += iCityPop - 5
-		# Brunnen: 30% Schutz +/- 10% je nach Pop
+			iChance += 6 - iCityPop
+		# Brunnen: 40% Schutz +/- 10% je nach Pop
 		elif city.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
-			iChance = 7
-			iChance += iCityPop - 2
+			iChance += 3 - iCityPop
 
-		if gc.getGame().getSorenRandNum(10, "City Fire") < iChance:
+		if iChance < gc.getGame().getSorenRandNum(10, "City Fire in RandomEventInterface") + 1:
 			return True
 
 		return False

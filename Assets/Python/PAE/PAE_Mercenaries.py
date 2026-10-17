@@ -654,9 +654,10 @@ def doAIPlanAssignMercenaries(iPlayer, iTargetPlayer):
 														iAttackAtSea = 0
 														iCoastalCities = 0
 														iLandCities = 0
-														iNumCities = pLoopPlayer.getNumCities()
-														for i in range(iNumCities):
-																if pLoopPlayer.getCity(i).isCoastal(20):
+														lCities = CvUtil.getCities(pLoopPlayer)
+														iNumCities = len(lCities)
+														for loopCity in lCities:
+																if loopCity.isCoastal(20):
 																		iCoastalCities += 1
 																else:
 																		iLandCities += 1

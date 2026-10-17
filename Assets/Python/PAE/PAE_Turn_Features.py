@@ -797,44 +797,33 @@ def doFogOfWar(iPlayer, iGameTurn):
 						bShowCoasts = True
 
 				if not bDontGoBlackAnymore:
-						iRange = CyMap().numPlots()
-						for iI in range(iRange):
-								pPlot = CyMap().plotByIndex(iI)
-								if not pPlot.isVisible(iTeam, 0):
-										bGoBlack = True
-										# fully black or standard fog of war
-										if pPlot.isCity():
-												pCity = pPlot.getPlotCity()
-												if pCity.isCapital():
-														bGoBlack = False
-												elif pCity.getNumWorldWonders() > 0:
-														bGoBlack = False
-										# Holy Mountain Quest
-										if bGoBlack:
-												if CvUtil.getScriptData(pPlot, ["H", "t"]) == "X":
-														bGoBlack = False
-										# Improvements (to normal fog of war)
-										# if bGoBlack:
-										#  if pPlot.getImprovementType() == improv1 or pPlot.getImprovementType() == improv2: bGoBlack = False
-										# 50% Chance Verdunkelung
-										if bGoBlack and CvUtil.myRandom(2, "bGoBlack") == 0:
-												bGoBlack = False
-										# Black fog
-										if bGoBlack:
-												if pPlot.isRevealed(iTeam, 0):
-														# River and coast (land only)
-														#if pPlot.isRevealed (iTeam, 0) and not (pPlot.isRiverSide() or pPlot.isCoastalLand()): pPlot.setRevealed (iTeam,0,0,-1)
-														# River and coast (land and water)
-														#if pPlot.isRevealed (iTeam, 0) and not (pPlot.isRiverSide() or pPlot.isCoastalLand() or (pPlot.isAdjacentToLand() and pPlot.isWater())): pPlot.setRevealed (iTeam,0,0,-1)
-														if bShowCoasts:
-																if bShowOcean and pPlot.isWater():
-																	continue
-																if pPlot.isCoastalLand() or pPlot.isAdjacentToLand() and pPlot.isWater():
-																		continue
-														if bShowPeaksAndRivers:
-																if pPlot.isRiverSide() or pPlot.isPeak():
-																		continue
-														pPlot.setRevealed(iTeam, 0, 0, -1)
+						pMap = CyMap()
+						for iI in range(pMap.numPlots()):
+								pPlot = pMap.plotByIndex(iI)
+								# 1. Nicht aufgedeckt oder sichtbar -> nichts zu tun
+								if not pPlot.isRevealed(iTeam, 0) or pPlot.isVisible(iTeam, 0):
+										continue
+								# 2. Kartenwissen (reine Plot-Abfragen)
+								if bShowCoasts:
+										if bShowOcean and pPlot.isWater():
+												continue
+										if pPlot.isCoastalLand() or pPlot.isAdjacentToLand() and pPlot.isWater():
+												continue
+								if bShowPeaksAndRivers:
+										if pPlot.isRiverSide() or pPlot.isPeak():
+												continue
+								# 3. 50 % Chance
+								if CvUtil.myRandom(2, "bGoBlack") == 0:
+										continue
+								# 4. Hauptstädte / Weltwunder-Städte bleiben sichtbar
+								if pPlot.isCity():
+										pCity = pPlot.getPlotCity()
+										if pCity.isCapital() or pCity.getNumWorldWonders() > 0:
+												continue
+								# 5. Heiliger Berg (ScriptData) ganz zuletzt
+								if CvUtil.getScriptData(pPlot, ["H", "t"]) == "X":
+										continue
+								pPlot.setRevealed(iTeam, 0, 0, -1)
 
 
 def doMoveGrasshoppers(pPlot):
@@ -997,9 +986,7 @@ def doOlympicGames():
 										iBuildingGymnasion = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationBuildings(iBuildingClassGymnasion)
 
 										# Cities
-										iNumCities = pPlayer.getNumCities()
-										for iCity in range(iNumCities):
-												pCity = pPlayer.getCity(iCity)
+										for pCity in CvUtil.getCities(pPlayer):
 												if not pCity.isNone():
 
 														# Aktuellen Olympioniken rausschmeissen
@@ -1154,9 +1141,7 @@ def doThing():
 												continue
 
 										# Cities
-										iNumCities = pPlayer.getNumCities()
-										for iCity in range(iNumCities):
-												pCity = pPlayer.getCity(iCity)
+										for pCity in CvUtil.getCities(pPlayer):
 												if not pCity.isNone():
 
 														# Aktuelles Bonusgebäude entfernen

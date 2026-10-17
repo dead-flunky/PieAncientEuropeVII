@@ -7643,7 +7643,7 @@
 			<iCollateralDamageMaxUnits>0</iCollateralDamageMaxUnits>
 			<iCityAttack>0</iCityAttack>
 			<iCityDefense>0</iCityDefense>
-			<iAnimalCombat>0</iAnimalCombat>
+			<iAnimalCombat>50</iAnimalCombat>
 			<iHillsAttack>0</iHillsAttack>
 			<iHillsDefense>0</iHillsDefense>
 			<TerrainNatives/>
@@ -7825,7 +7825,7 @@
 			<iCollateralDamageMaxUnits>0</iCollateralDamageMaxUnits>
 			<iCityAttack>0</iCityAttack>
 			<iCityDefense>0</iCityDefense>
-			<iAnimalCombat>0</iAnimalCombat>
+			<iAnimalCombat>50</iAnimalCombat>
 			<iHillsAttack>0</iHillsAttack>
 			<iHillsDefense>0</iHillsDefense>
 			<TerrainNatives/>
@@ -56777,7 +56777,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>0</iCombat>
 			<iCombatLimit>0</iCombatLimit>
@@ -56973,7 +56978,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>1</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -57169,7 +57179,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>1</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -57360,7 +57375,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>2</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -57553,6 +57573,10 @@
 			</TerrainImpassables>
 			<FeatureImpassables/>
 			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
 				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_COLONIZATION2</PassableTech>
@@ -57754,6 +57778,10 @@
 			</TerrainImpassables>
 			<FeatureImpassables/>
 			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
 				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_COLONIZATION2</PassableTech>
@@ -57973,6 +58001,10 @@
 			<FeatureImpassables/>
 			<TerrainPassableTechs>
 				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_COLONIZATION2</PassableTech>
 				</TerrainPassableTech>
@@ -58177,6 +58209,10 @@
 			<FeatureImpassables/>
 			<TerrainPassableTechs>
 				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_COLONIZATION2</PassableTech>
 				</TerrainPassableTech>
@@ -58379,6 +58415,10 @@
 			</TerrainImpassables>
 			<FeatureImpassables/>
 			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
 				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_COLONIZATION2</PassableTech>
@@ -58597,6 +58637,10 @@
 			<FeatureImpassables/>
 			<TerrainPassableTechs>
 				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_COLONIZATION2</PassableTech>
 				</TerrainPassableTech>
@@ -58802,6 +58846,10 @@
 			</TerrainImpassables>
 			<FeatureImpassables/>
 			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
 				<TerrainPassableTech>
 					<TerrainType>TERRAIN_OCEAN</TerrainType>
 					<PassableTech>TECH_COLONIZATION2</PassableTech>
@@ -59609,7 +59657,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>8</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -59803,7 +59856,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>8</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -59998,7 +60056,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>9</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -60189,7 +60252,12 @@
 				</TerrainImpassable>
 			</TerrainImpassables>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>9</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -60383,7 +60451,12 @@
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>10</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -72037,7 +72110,12 @@
 			<iEspionagePoints>0</iEspionagePoints>
 			<TerrainImpassables/>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
@@ -72806,14 +72884,14 @@
 			<iTradeMultiplier>0</iTradeMultiplier>
 			<iGreatWorkCulture>0</iGreatWorkCulture>
 			<iEspionagePoints>0</iEspionagePoints>
-			<TerrainImpassables>
-				<TerrainImpassable>
-					<TerrainType>TERRAIN_DEEP_OCEAN</TerrainType>
-					<bTerrainImpassable>1</bTerrainImpassable>
-				</TerrainImpassable>
-			</TerrainImpassables>
+			<TerrainImpassables/>
 			<FeatureImpassables/>
-			<TerrainPassableTechs/>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_RIVER_FORD</TerrainType>
+					<PassableTech>TECH_FISHING</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<FeaturePassableTechs/>
 			<iCombat>10</iCombat>
 			<iCombatLimit>0</iCombatLimit>

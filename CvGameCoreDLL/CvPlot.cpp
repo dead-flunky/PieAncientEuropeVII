@@ -4033,7 +4033,7 @@ bool CvPlot::isValidDomainForAction(const CvUnit& unit) const
 	case DOMAIN_LAND:
 	case DOMAIN_IMMOBILE:
 		// PAE: river ford
-		return (!isWater() || unit.canMoveAllTerrain() || getTerrainType() == (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")));
+		return (!isWater() || unit.canMoveAllTerrain());
 		break;
 
 	default:
@@ -5301,7 +5301,12 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 			}
 			else
 			{
-				setTerrainType(((TerrainTypes)(GC.getDefineINT("LAND_TERRAIN"))), bRecalculate, bRebuildGraphics);
+				// PAE
+				if (getTerrainType() != (TerrainTypes)(GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+				{
+					// BTS
+					setTerrainType(((TerrainTypes)(GC.getDefineINT("LAND_TERRAIN"))), bRecalculate, bRebuildGraphics);
+				}
 			}
 		}
 
@@ -5559,10 +5564,13 @@ void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bReb
 			//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
 		}
 
+
 		if (GC.getTerrainInfo(getTerrainType()).isWater() != isWater())
 		{
 			setPlotType(((GC.getTerrainInfo(getTerrainType()).isWater()) ? PLOT_OCEAN : PLOT_LAND), bRecalculate, bRebuildGraphics);
 		}
+
+
 	}
 }
 

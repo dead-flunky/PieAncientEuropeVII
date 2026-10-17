@@ -1184,9 +1184,7 @@ def doNextCityRevolt(iX, iY, iOwner, iAttacker):
 				# City with forbidden palace shall not revolt
 				# ~ if gc.getTeam(pOwner.getTeam()).isHasTech(gc.getInfoTypeForString('TECH_POLYARCHY')): iBuilding = gc.getInfoTypeForString('BUILDING_PRAEFECTUR')
 				# ~ else: iBuilding = gc.getInfoTypeForString('BUILDING_PROVINZPALAST')
-				iRange = pOwner.getNumCities()
-				for i in range(iRange):
-					pLoopCity = pOwner.getCity(i)
+				for pLoopCity in CvUtil.getCities(pOwner):
 					if pLoopCity is not None and not pLoopCity.isNone():
 						# 31.08.25: rausgenommen: and not pLoopCity.isGovernmentCenter()
 						if not pLoopCity.isCapital() and pLoopCity.getOccupationTimer() < 1 and pLoopCity.getOwner() != iAttacker:
@@ -2668,7 +2666,10 @@ def removeNoBonusNoBuilding(pCity):
 								if pPlayer.isHuman():
 										# Dies soll doppelte Popups in PB-Spielen vermeiden.
 										if iPlayer == gc.getGame().getActivePlayer():
-												szText = CyTranslator().getText(szText, (pCity.getName(), gc.getBonusInfo(bonus).getDescription(), gc.getBuildingInfo(building).getDescription()))
+												if bonus == -2:
+													szText = CyTranslator().getText(szText, (pCity.getName(), "", gc.getBuildingInfo(building).getDescription()))
+												else:
+													szText = CyTranslator().getText(szText, (pCity.getName(), gc.getBonusInfo(bonus).getDescription(), gc.getBuildingInfo(building).getDescription()))
 												# Ingame Message
 												CyInterface().addMessage(iPlayer, True, 10, szText, None, 2, gc.getBuildingInfo(building).getButton(), ColorTypes(7), pCity.getX(), pCity.getY(), True, True)
 												# Pop up
@@ -2776,7 +2777,7 @@ def removeNoBonusNoBuilding(pCity):
 				gc.getInfoTypeForString("BUILDING_GUSS_COPPER"),
 				gc.getInfoTypeForString("BUILDING_GUSS_ZINN"),
 				gc.getInfoTypeForString("BUILDING_GUSS_ZINK"),
-				gc.getInfoTypeForString("BUILDINGCLASS_WINDOFEN_NATIONAL")
+				gc.getInfoTypeForString("BUILDING_WINDOFEN_NATIONAL")
 		]
 		# Buildings mit 3x3 Radius
 		lBuildings3x3 = [
@@ -3382,15 +3383,16 @@ def doStadtbrand(pCity):
 		iBuilding = gc.getInfoTypeForString("BUILDING_FIRE")
 		iPlayer = pCity.getOwner()
 		pPlayer = gc.getPlayer(iPlayer)
+		iCityPop = pCity.getPopulation()
 
 		# Brand verhindern
-		iChance = 0
+		iChance = 5
 		# Feuerwehr: 90% Schutz
 		if pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_FEUERWEHR")):
 			iChance = 9
-		# Aquaedukt: 70% Schutz
+		# Aquaedukt: 80% Schutz
 		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_AQUEDUCT")):
-			iChance = 7
+			iChance = 8
 		# Bewässerung: 50% Schutz
 		#elif (
 		#	pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE")) or
@@ -3398,15 +3400,15 @@ def doStadtbrand(pCity):
 		#	pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_LEVEE2"))
 		#	):
 		#	iChance = 5
-		# Zisterne: 50% Schutz
+		# Zisterne: 50% Schutz +/- 10% je nach Pop
 		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
-			iChance = 5
-		# Brunnen: 30% Schutz
+			iChance += 6 - iCityPop
+		# Brunnen: 50% Schutz +/- 10% je nach Pop
 		elif pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
-			iChance = 3
+			iChance += 3 - iCityPop
 
 		# Brandchance per turn
-		if iChance < 1 + gc.getGame().getSorenRandNum(10, "prevent building loss due city fire"):
+		if iChance < gc.getGame().getSorenRandNum(10, "City Fire in PAE_City") + 1:
 			LBuildings = []
 			iRange = gc.getNumBuildingInfos()
 			for i in range(iRange):
@@ -4596,9 +4598,8 @@ def doCheckCityName(pCity):
 										iNumPlayers = gc.getMAX_PLAYERS()
 										for iPlayer in range(iNumPlayers):
 												pPlayer = gc.getPlayer(iPlayer)
-												iNumCities = pPlayer.getNumCities()
-												for iCity in range(iNumCities):
-														if pPlayer.getCity(iCity).getName() == cityName:
+												for loopCity in CvUtil.getCities(pPlayer):
+														if loopCity.getName() == cityName:
 																bRename = False
 																break  # for iCity
 												if not bRename:
@@ -4867,25 +4868,20 @@ def doCivilWarHarmUnits(pCity):
 def doPanhellenismus(iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 		iCorp = gc.getInfoTypeForString("CORPORATION_7")
-		iRange = pPlayer.getNumCities()
-		for ii in range(iRange):
-				pCity = pPlayer.getCity(ii)
+		for pCity in CvUtil.getCities(pPlayer):
 				if pCity and not pCity.isNone():
 						if not pCity.isHasCorporation(iCorp):
 								pCity.setHasCorporation(iCorp, 1, 0, 1)
 
 		iHegemonTeam = pPlayer.getTeam()
 		# pHegemonTeam = gc.getTeam(iHegemonTeam)
-		iRange = gc.getMAX_PLAYERS()
-		for ii in range(iRange):
+		for ii in range(gc.getMAX_PLAYERS()):
 				pLoopPlayer = gc.getPlayer(ii)
 				if pLoopPlayer.isAlive():
 						iTeam = pLoopPlayer.getTeam()
 						pTeam = gc.getTeam(iTeam)
 						if pTeam.isVassal(iHegemonTeam):
-								iRange = pLoopPlayer.getNumCities()
-								for jj in range(iRange):
-										pCity = pLoopPlayer.getCity(jj)
+								for pCity in CvUtil.getCities(pLoopPlayer):
 										if pCity and not pCity.isNone():
 												if not pCity.isHasCorporation(iCorp):
 														pCity.setHasCorporation(iCorp, 1, 0, 0)

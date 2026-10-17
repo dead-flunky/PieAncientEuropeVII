@@ -1584,9 +1584,7 @@ class CvEventManager:
 
 						if iReligion != -1:
 								bCanSpread = False
-								iNumCities = pPlayer.getNumCities()
-								for i in range(iNumCities):
-										pCity = pPlayer.getCity(i)
+								for pCity in CvUtil.getCities(pPlayer):
 										if not pCity.isNone():
 												if not pCity.isHasReligion(iReligion):
 														pUnit.getGroup().pushMoveToMission(pCity.getX(), pCity.getY())
@@ -2720,7 +2718,7 @@ class CvEventManager:
 						start = time.clock()
 
 					# Special Scripts for PAE Scenarios
-					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					sScenarioName = L.sScenarioName
 					if sScenarioName != "":
 						if sScenarioName == "PeloponnesianWar":
 							PeloponnesianWar.onEndGameTurn(iGameTurn)
@@ -2822,7 +2820,7 @@ class CvEventManager:
 				#PAE_City.PAEStatthalterTribut = {}    # -> onCityDoTurn
 
 				# ------- Scenario PeloponnesianWarKeinpferd Events Poteidaia, Megara, Plataiai, Syrakus
-				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				sScenarioName = L.sScenarioName
 				if sScenarioName == "PeloponnesianWarKeinpferd":
 						PeloponnesianWarKeinpferd.onBeginPlayerTurn(iGameTurn, pPlayer)
 				elif sScenarioName == "WarOfDiadochiJD":
@@ -2859,6 +2857,7 @@ class CvEventManager:
 							CvUtil.removeScriptData(pPlayer, "hire")
 
 					# -- Prevent BTS TECH BUG/Forschungsbug: AI chooses Tech if -1 -> 50% to push
+					# Checke nur die erst möglichen 5 Techs
 					if iPlayer != gc.getBARBARIAN_PLAYER() and not pPlayer.isHuman() and pPlayer.getCurrentResearch() == -1:
 							if CvUtil.myRandom(2, "Forschungsbug") == 0:
 									techs = []
@@ -2868,7 +2867,7 @@ class CvEventManager:
 													iCost = pTeam.getResearchLeft(iTech)
 													#if iCost >= 0:
 													techs.append((iCost, iTech))
-											if len(techs) > 2: break
+											if len(techs) > 4: break
 
 									if len(techs):
 											techs.sort()
@@ -3041,7 +3040,7 @@ class CvEventManager:
 					#        (pLoopUnit, pIter) = pPlayer.nextUnit(pIter, False)
 
 					# +++++ Special inits for Szenario Maps in PAE ++++++++++++++++++++++++++++++++
-					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					sScenarioName = L.sScenarioName
 					if sScenarioName == "FirstPunicWar":
 							FirstPunicWar.onEndPlayerTurn(iPlayer, iGameTurn)
 					elif sScenarioName == "SecondPunicWar":
@@ -3217,7 +3216,7 @@ class CvEventManager:
 				iTeamX, iHasMetTeamY = argsList
 
 				# Szenarien
-				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				sScenarioName = L.sScenarioName
 				if sScenarioName == "WegDerGoten":
 						WegDerGoten.onFirstContact(argsList)
 
@@ -3281,7 +3280,7 @@ class CvEventManager:
 													iLoserUnitType in L.LUnitWarAnimals)
 
 					# Szenarien
-					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					sScenarioName = L.sScenarioName
 					if sScenarioName == "FirstPunicWar":
 							FirstPunicWar.onCombatResult(pWinner, pLoser)
 					elif sScenarioName == "WegDerGoten":
@@ -4065,7 +4064,7 @@ class CvEventManager:
 					PAE_Cultivation.doBuildingCultivate(pCity, iBuildingType)
 
 					# Szenarien
-					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					sScenarioName = L.sScenarioName
 					if sScenarioName == "WegDerGoten":
 							WegDerGoten.onBuildingBuilt(pCity, iPlayer, iBuildingType)
 
@@ -4269,7 +4268,7 @@ class CvEventManager:
 
 					# ----------- Flucht Promotion (Flight/Escape)
 					if not pUnit.canMove() or pUnit.getDamage() < 70:
-							pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_FORM_FLIGHT"), False)
+							pUnit.setHasPromotion(L.PROMOTION_FORM_FLIGHT, False)
 
 					# ----------- Verletzte Schiffe / Seeeinheiten sollen langsamer werden, je verletzter sie sind
 					# ----------- Beladene Schiffe sollen ebenfalls um 0.25 langsamer werden
@@ -4292,7 +4291,7 @@ class CvEventManager:
 											# PAE 7.11 Merchants can create paths on empty plots
 											if not pPlot.isRoute() and not pPlot.isWater():
 													if CvUtil.myRandom(33, "Pfad erstellen") == 1:
-															pPlot.setRouteType(gc.getInfoTypeForString("ROUTE_PATH"))
+															pPlot.setRouteType(L.ROUTE_PATH)
 
 					# Barbaren
 					if pUnit.isBarbarian():
@@ -4304,7 +4303,7 @@ class CvEventManager:
 							# verschachtelte ifs zwecks optimaler laufzeit
 							if pPlot.getOwner() != pOldPlot.getOwner() and pPlot.getOwner() != -1:
 									iPlayer = pPlot.getOwner()
-									iHunType = gc.getInfoTypeForString("UNIT_MONGOL_KESHIK")
+									iHunType = L.UNIT_MONGOL_KESHIK
 									if gc.getBARBARIAN_PLAYER() != iPlayer and pUnit.getUnitType() == iHunType:
 											pUnit.finishMoves()
 											if gc.getPlayer(iPlayer).getGold() > 100:
@@ -4362,13 +4361,13 @@ class CvEventManager:
 									pCity = pPlot.getPlotCity()
 
 									# Unit can stop city revolt / unit city revolt
-									iCivilWar = gc.getInfoTypeForString("BUILDING_CIVIL_WAR")
+									iCivilWar = L.BUILDING_CIVIL_WAR
 									if pCity.getOccupationTimer() > 1 or pCity.getNumRealBuilding(iCivilWar):
 											if pUnit.movesLeft() >= 20:
-													bRhetorik = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_RHETORIK"))
-													bGeneral = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER"))
-													bHero = pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_HERO"))
-													bComes = ( pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_PROTECTOR")) or pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_EXCUBITOR")) )
+													bRhetorik = pUnit.isHasPromotion(L.PROMOTION_RHETORIK)
+													bGeneral = pUnit.isHasPromotion(L.PROMOTION_LEADER)
+													bHero = pUnit.isHasPromotion(L.PROMOTION_HERO)
+													bComes = ( pUnit.isHasPromotion(L.PROMOTION_PROTECTOR) or pUnit.isHasPromotion(L.PROMOTION_EXCUBITOR) )
 													if pUnit.isMilitaryHappiness() and pCity.getOccupationTimer() > 2:
 															# if pUnit.getOwner() == pCity.getOwner():  # -> allies can help ;)
 															# if pPlot.getNumUnits() > pCity.getPopulation():
@@ -4407,9 +4406,9 @@ class CvEventManager:
 															# Nur fuer Axt, Speer und Schwerteinheiten
 															if pUnit.getUnitCombatType() in L.LMeleeCombats:
 																	if PyInfo.UnitInfo(pUnit.getUnitType()).getMoves() == 1:
-																			iPromo = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS")
+																			iPromo = L.PROMOTION_FORM_FORTRESS
 																	else:
-																			iPromo = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2")
+																			iPromo = L.PROMOTION_FORM_FORTRESS2
 																	iRange = pPlot.getNumUnits()
 																	iNum = 0
 																	k = 0
@@ -4439,22 +4438,23 @@ class CvEventManager:
 									#    PAE_Unit.doUnitFormation (pUnit, -1)
 
 									# Cave entfernen
-									if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_CAVE"):
+									iImprovement = pPlot.getImprovementType()
+									if iImprovement == L.IMPROVEMENT_CAVE:
 											pPlot.setImprovementType(-1)
 											if gc.getPlayer(pUnit.getOwner()).isHuman():
-													CyEngine().triggerEffect(gc.getInfoTypeForString("EFFECT_PACK_UP"), pPlot.getPoint())
+													CyEngine().triggerEffect(L.EFFECT_PACK_UP, pPlot.getPoint())
 									# Barbarenfestung
-									if pPlot.getImprovementType() == gc.getInfoTypeForString("IMPROVEMENT_BARBARENFORT"):
+									elif iImprovement == L.IMPROVEMENT_BARBARENFORT:
 											pPlot.setImprovementType(-1)
 											if gc.getPlayer(pUnit.getOwner()).isHuman():
-													CyEngine().triggerEffect(gc.getInfoTypeForString("EFFECT_PACK_UP"), pPlot.getPoint())
-											gc.getPlayer(pUnit.getOwner()).initUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
-											gc.getPlayer(pUnit.getOwner()).initUnit(gc.getInfoTypeForString("UNIT_GOLDKARREN"), pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+													CyEngine().triggerEffect(L.EFFECT_PACK_UP, pPlot.getPoint())
+											gc.getPlayer(pUnit.getOwner()).initUnit(L.UNIT_GOLDKARREN, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
+											gc.getPlayer(pUnit.getOwner()).initUnit(L.UNIT_GOLDKARREN, pPlot.getX(), pPlot.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 									# Great General Formation (PAE 6.9)
-									if pUnit.isHasPromotion(gc.getInfoTypeForString("PROMOTION_LEADER")):
+									if pUnit.isHasPromotion(L.PROMOTION_LEADER):
 											if pPlot.getNumUnits() <= 1:
-													pUnit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_FORM_LEADER_POSITION"), False)
+													pUnit.setHasPromotion(L.PROMOTION_FORM_LEADER_POSITION, False)
 
 									# Windeffekt bei offener Tundra - sieht komisch aus
 									# if pPlot.getFeatureType() == -1 and (pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_TUNDRA") or pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_SNOW")):
@@ -4544,8 +4544,9 @@ class CvEventManager:
 
 							# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
 							iHandicap = gc.getGame().getHandicapType()
-							# 2nd Settler for AI (Immortal, Deity: PAE V, Emperor: PAE VII)
-							if iHandicap > 5 and iUnitType == gc.getInfoTypeForString("UNIT_SETTLER"):
+							# 50% or fixed 2nd Settler for AI (fix: Immortal, Deity: PAE V, Emperor: PAE VII)
+							if iUnitType == gc.getInfoTypeForString("UNIT_SETTLER"):
+								if iHandicap > 5 or CvUtil.myRandom(2, "onUnitBuilt_AIGetsSecondSettler") == 1:
 									CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
 
 							# Experienced units on higher handicap level (PAE V Patch 3)
@@ -5123,7 +5124,7 @@ class CvEventManager:
 				CvUtil.pyPrint('Team %d has %s on Team %d' % (iTeam, strStatus, iRivalTeam))
 
 				# Szenarien
-				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				sScenarioName = L.sScenarioName
 				if sScenarioName == "WegDerGoten":
 						WegDerGoten.onChangeWar(argsList)
 
@@ -5140,7 +5141,7 @@ class CvEventManager:
 
 				# Szenarien
 				if not bNewValue:
-					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					sScenarioName = L.sScenarioName
 					if sScenarioName == "WegDerGoten":
 							WegDerGoten.onPlayerKilled(iPlayerID)
 
@@ -5182,7 +5183,7 @@ class CvEventManager:
 				if iStateReligion > -1:
 						city.setHasReligion(iStateReligion, 1, 0, 0)
 
-				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				sScenarioName = L.sScenarioName
 				if sScenarioName == "WegDerGoten":
 						WegDerGoten.onCityBuilt(city)
 
@@ -5339,7 +5340,7 @@ class CvEventManager:
 							bAssimilation = gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_ASSIMILATION"))
 
 					# Szenarien
-					sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+					sScenarioName = L.sScenarioName
 					if sScenarioName == "FirstPunicWar":
 							FirstPunicWar.onCityAcquired(pCity, iNewOwner)
 					elif sScenarioName == "SecondPunicWar":
@@ -5389,10 +5390,8 @@ class CvEventManager:
 							lCityNames = []
 							iRange = gc.getMAX_PLAYERS()
 							for i in range(iRange):
-									pP = gc.getPlayer(i)
-									iNumCities = pP.getNumCities()
-									for j in range(iNumCities):
-											lCityNames.append(pP.getCity(j).getName())
+									for loopCity in CvUtil.getCities(gc.getPlayer(i)):
+											lCityNames.append(loopCity.getName())
 
 							NewCityName = ""
 							# range a,b: a <= x < b (!)
@@ -5587,11 +5586,27 @@ class CvEventManager:
 														CyInterface().addMessage(pHegemon.getID(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_GET_UNIT_SUPPLY_FOOD", (pCity.getName(),)),
 														"AS2D_BUILD_GRANARY", 2, gc.getUnitInfo(iNewUnit).getButton(), ColorTypes(8), pCity.getX(), pCity.getY(), True, True)
 
+
 				# CvUtil.pyPrint("%s has grown to size %i" %(pCity.getName(),pCity.getPopulation()))
 				if pPlayer.isHuman():
 					if pPlayer.isOption(PlayerOptionTypes.PLAYEROPTION_PAE_MESSAGE_CITY_GROWTH):
+						iPop = pCity.getPopulation()
 						CyInterface().addMessage(pCity.getOwner(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GROWTH",
-						(pCity.getName(), pCity.getPopulation())), None, 2, None, ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+						(pCity.getName(), iPop)), None, 2, None, ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+
+						# Warnung: Risk of City Fire
+						if iPop > 5 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ZISTERNE")):
+							CyInterface().addMessage(pCity.getOwner(), True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GROWTH_FIRE2",
+							(pCity.getName(),)), None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+						elif iPop > 2 and not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_BRUNNEN")):
+							CyInterface().addMessage(pCity.getOwner(), True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GROWTH_FIRE1",
+							(pCity.getName(),)), None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+
+					# Warnung: No units in city
+					if pCity.plot().getNumDefenders(iPlayer) == 0:
+						CyInterface().addMessage(pCity.getOwner(), True, 20, CyTranslator().getText("TXT_KEY_MESSAGE_CITY_GROWTH_NO_UNITS",
+						(pCity.getName(),)), None, 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(13), pCity.getX(), pCity.getY(), True, True)
+
 
 				# Kolonie / Provinz ----------
 				PAE_City.doCheckCityState(pCity)
@@ -5602,7 +5617,7 @@ class CvEventManager:
 						pCity.setFood(0)
 
 				# Szenarien
-				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				sScenarioName = L.sScenarioName
 				if sScenarioName == "WegDerGoten":
 						WegDerGoten.onCityGrowth(pCity,iPlayer)
 
@@ -5756,7 +5771,7 @@ class CvEventManager:
 
 
 					# Weiterführende Aktionen...
-					if not bRevolt:
+					if not bRevolt and not pCity.isNone():
 
 							# PAE 7.15
 							PAE_City.doHealPirates(pCity)
@@ -5785,7 +5800,10 @@ class CvEventManager:
 
 
 					if bPAETimeCheck:
-						print("Dauer (onCityDoTurn), iPlayer: %d, City: %s" % (iPlayer,pCity.getName()), time.clock() - start)
+						if pCity is None or bRevolt:
+							print("Dauer (onCityDoTurn), iPlayer: %d" % iPlayer, time.clock() - start)
+						else:
+							print("Dauer (onCityDoTurn), iPlayer: %d, City: %s" % (iPlayer, pCity.getName()), time.clock() - start)
 
 				# PAE Debug Mark 10 end
 
@@ -5868,7 +5886,7 @@ class CvEventManager:
 													 % (iVassal, iMaster))
 
 				# Szenarien
-				sScenarioName = CvUtil.getScriptData(CyMap().plot(0, 0), ["S", "t"])
+				sScenarioName = L.sScenarioName
 				if sScenarioName == "WegDerGoten":
 						WegDerGoten.onVassalState(argsList)
 

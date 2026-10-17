@@ -109,8 +109,8 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>60</iCivicUpkeepPercent>
 			<iInflationPercent>60</iInflationPercent>
-			<iHealthBonus>2</iHealthBonus>
-			<iHappyBonus>2</iHappyBonus>
+			<iHealthBonus>3</iHealthBonus>
+			<iHappyBonus>3</iHappyBonus>
 			<iAttitudeChange>1</iAttitudeChange>
 			<iNoTechTradeModifier>90</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-75</iTechTradeKnownModifier>
@@ -193,8 +193,8 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>70</iCivicUpkeepPercent>
 			<iInflationPercent>70</iInflationPercent>
-			<iHealthBonus>1</iHealthBonus>
-			<iHappyBonus>2</iHappyBonus>
+			<iHealthBonus>3</iHealthBonus>
+			<iHappyBonus>3</iHappyBonus>
 			<iAttitudeChange>0</iAttitudeChange>
 			<iNoTechTradeModifier>80</iNoTechTradeModifier>
 			<iTechTradeKnownModifier>-50</iTechTradeKnownModifier>
@@ -279,7 +279,7 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>80</iCivicUpkeepPercent>
 			<iInflationPercent>80</iInflationPercent>
-			<iHealthBonus>1</iHealthBonus>
+			<iHealthBonus>2</iHealthBonus>
 			<iHappyBonus>2</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>70</iNoTechTradeModifier>
@@ -302,7 +302,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>2</iBarbarianDefenders>
+			<iBarbarianDefenders>3</iBarbarianDefenders>
 			<iAIDeclareWarProb>100</iAIDeclareWarProb>
 			<iAIWorkRateModifier>0</iAIWorkRateModifier>
 			<iAIGrowthPercent>90</iAIGrowthPercent>
@@ -366,7 +366,7 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>90</iCivicUpkeepPercent>
 			<iInflationPercent>90</iInflationPercent>
-			<iHealthBonus>1</iHealthBonus>
+			<iHealthBonus>2</iHealthBonus>
 			<iHappyBonus>2</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>70</iNoTechTradeModifier>
@@ -389,7 +389,7 @@
 			<iAIStartingDefenseUnits>0</iAIStartingDefenseUnits>
 			<iAIStartingWorkerUnits>0</iAIStartingWorkerUnits>
 			<iAIStartingExploreUnits>0</iAIStartingExploreUnits>
-			<iBarbarianDefenders>2</iBarbarianDefenders>
+			<iBarbarianDefenders>3</iBarbarianDefenders>
 			<iAIDeclareWarProb>110</iAIDeclareWarProb>
 			<iAIWorkRateModifier>10</iAIWorkRateModifier>
 			<iAIGrowthPercent>80</iAIGrowthPercent>
@@ -456,7 +456,7 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>100</iCivicUpkeepPercent>
 			<iInflationPercent>100</iInflationPercent>
-			<iHealthBonus>1</iHealthBonus>
+			<iHealthBonus>2</iHealthBonus>
 			<iHappyBonus>2</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>50</iNoTechTradeModifier>
@@ -547,7 +547,7 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>100</iCivicUpkeepPercent>
 			<iInflationPercent>100</iInflationPercent>
-			<iHealthBonus>1</iHealthBonus>
+			<iHealthBonus>2</iHealthBonus>
 			<iHappyBonus>2</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>40</iNoTechTradeModifier>
@@ -561,8 +561,8 @@
 			<iBarbarianCityCreationProb>40</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-25</iAIAnimalBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -641,7 +641,7 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>100</iCivicUpkeepPercent>
 			<iInflationPercent>100</iInflationPercent>
-			<iHealthBonus>2</iHealthBonus>
+			<iHealthBonus>3</iHealthBonus>
 			<iHappyBonus>3</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>30</iNoTechTradeModifier>
@@ -655,8 +655,8 @@
 			<iBarbarianCityCreationProb>40</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-25</iAIAnimalBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>
@@ -732,7 +732,7 @@
 			<iCorporationMaintenancePercent>100</iCorporationMaintenancePercent>
 			<iCivicUpkeepPercent>100</iCivicUpkeepPercent>
 			<iInflationPercent>100</iInflationPercent>
-			<iHealthBonus>2</iHealthBonus>
+			<iHealthBonus>3</iHealthBonus>
 			<iHappyBonus>3</iHappyBonus>
 			<iAttitudeChange>-1</iAttitudeChange>
 			<iNoTechTradeModifier>20</iNoTechTradeModifier>
@@ -746,8 +746,8 @@
 			<iBarbarianCityCreationProb>50</iBarbarianCityCreationProb>
 			<iAnimalBonus>0</iAnimalBonus>
 			<iBarbarianBonus>0</iBarbarianBonus>
-			<iAIAnimalBonus>-50</iAIAnimalBonus>
-			<iAIBarbarianBonus>-50</iAIBarbarianBonus>
+			<iAIAnimalBonus>-40</iAIAnimalBonus>
+			<iAIBarbarianBonus>-25</iAIBarbarianBonus>
 			<iStartingDefenseUnits>0</iStartingDefenseUnits>
 			<iStartingWorkerUnits>0</iStartingWorkerUnits>
 			<iStartingExploreUnits>0</iStartingExploreUnits>

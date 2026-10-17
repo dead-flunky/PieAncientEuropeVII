@@ -2248,9 +2248,7 @@ def peloponnesianWarKeinpferd_Megara1(argsList):
 						lPlayer.append(iSuedIonien)
 				for iPlayer in lPlayer:
 						pPlayer = gc.getPlayer(iPlayer)
-						iNumCities = pPlayer.getNumCities()
-						for iCity in range(iNumCities):
-								pCity = pPlayer.getCity(iCity)
+						for pCity in CvUtil.getCities(pPlayer):
 								if pCity and not pCity.isNone():
 										if pCity.isHasBuilding(eHafen):
 												iStandard = pCity.getBuildingCommerceByBuilding(0, eHafen)  # 0 = Gold

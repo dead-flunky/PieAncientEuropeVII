@@ -1055,9 +1055,7 @@ def getCitiesOfLowCultureLevel(iPlayer):
 		pPlayer = gc.getPlayer(iPlayer)
 
 		lCities = []
-		iNumCities = pPlayer.getNumCities()
-		for iCity in range(iNumCities):
-				pCity = pPlayer.getCity(iCity)
+		for pCity in CvUtil.getCities(pPlayer):
 				if not pCity.isNone():
 						iCulture = pCity.plot().calculateTeamCulturePercent(pPlayer.getTeam())
 						if iCulture < 51:

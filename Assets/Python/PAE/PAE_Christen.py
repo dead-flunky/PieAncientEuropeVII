@@ -37,14 +37,13 @@ def setHolyCity():
 				lCities = []
 				iNumPlayers = gc.getMAX_PLAYERS()
 				for i in range(iNumPlayers):
-						loopPlayer = gc.getPlayer(i)
-						if loopPlayer.isAlive():
-								iNumCities = loopPlayer.getNumCities()
-								for j in range(iNumCities):
-										loopCity = loopPlayer.getCity(j)
-										if loopCity is not None and not loopCity.isNone():
-												if loopCity.isHasReligion(iJudentum):
-														lCities.append(loopCity)
+					loopPlayer = gc.getPlayer(i)
+					if loopPlayer.isAlive():
+						for loopCity in CvUtil.getCities(loopPlayer):
+							if not loopCity.isNone():
+								if loopCity is not None and not loopCity.isNone():
+									if loopCity.isHasReligion(iJudentum):
+										lCities.append(loopCity)
 
 				if lCities:
 						pCity = lCities[CvUtil.myRandom(len(lCities), "holy_jew")]
@@ -141,9 +140,7 @@ def doSpreadReligion():
 				for i in range(iNumPlayers):
 					loopPlayer = gc.getPlayer(i)
 					if loopPlayer.isAlive():
-						iNumCities = loopPlayer.getNumCities()
-						for j in range(iNumCities):
-							loopCity = loopPlayer.getCity(j)
+						for loopCity in CvUtil.getCities(loopPlayer):
 							if loopCity is not None and not loopCity.isNone():
 								if loopCity.isHasReligion(iReligion):
 									lCities.append(loopCity)

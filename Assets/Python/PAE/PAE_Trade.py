@@ -553,9 +553,7 @@ def setPath2City(iPlayer, pSource):
 		# Näheste Stadt anpeilen
 		iDistance = 0
 		iBestDistance = 99
-		iNumCities = pPlayer.getNumCities()
-		for iCity in range(iNumCities):
-				loopCity = pPlayer.getCity(iCity)
+		for loopCity in CvUtil.getCities(pPlayer):
 				if not loopCity.isNone():
 						iDistance = gc.getMap().calculatePathDistance(loopCity.plot(), pSource)
 						if iDistance < iBestDistance:
@@ -1223,8 +1221,13 @@ def doPopupAutomatedTradeRoute(pUnit, iType, iData1, iData2):
 								popupInfo.addPythonButton(sText, sButton)
 						else:
 								sText = CyTranslator().getText("TXT_KEY_NO_BONUS", ())
+								if iType == 6:
+										# Profit auswerten
+										iProfit = calcBonusProfit(pCityPlot1.getPlotCity(), pCity, iBonus, pUnit) # Bonus 1
+										sText += u" (" + CyTranslator().getText("TXT_KEY_TRADE_ADVISOR_INFO4", (iProfit,)) + u")"
 								sButton = "Art/Interface/Buttons/Techs/button_x.dds"
 								popupInfo.addPythonButton(sText, sButton)
+
 				popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ()), "Art/Interface/Buttons/Actions/Cancel.dds")
 				popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
 				popupInfo.addPopup(iUnitOwner)

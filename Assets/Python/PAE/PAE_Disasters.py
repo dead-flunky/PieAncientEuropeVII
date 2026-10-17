@@ -110,10 +110,12 @@ def doGenerateDisaster(iGameTurn):
 		if iGameTurn % (iTurnDisastersModulo / iTeiler + 20) == 0:
 				undoVulkan()
 
-		# PAE 7.12b: Globale Katastrophen (1:2000)
-		# you will need to call 112 if you're able to
-		if gc.getGame().getElapsedGameTurns() > 300: #300
-			if CvUtil.myRandom(2000, "doGlobalDisaster") == 112:
+		# PAE 7.12b: Globale Katastrophen (1:3000)
+		if gc.getPlayer(0).getCurrentEra() > 2 and gc.getGame().getElapsedGameTurns() > 300:
+			if bArmageddon: iChance = 2000
+			else: iChance = 3000
+			# you will need to call 112 if you're able to
+			if CvUtil.myRandom(iChance, "doGlobalDisaster") == 112:
 				doGlobalDisaster()
 
 def doSandsturm():
@@ -2071,6 +2073,8 @@ def doGlobalDisaster():
 				if loopPlot is not None and not loopPlot.isNone():
 
 					if loopPlot.getFeatureType() == iDarkIce:
+						continue
+					if loopPlot.isWater():
 						continue
 
 					iRand = CvUtil.myRandom(2, "Global disaster improvement destroying")

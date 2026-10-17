@@ -228,7 +228,10 @@ def stackDoTurn(iPlayer, iGameTurn):
 		PlotArraySupply = []
 		PlotArrayStackAI = []
 		lHealerPlots = []
-		lFormationPlots = []
+		dFormationPlots = {}
+		dHealerPlots = {}
+		dPlotsChecked = {}
+		dSupplyPlots = {}
 		iPromoFort = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS")
 		iPromoFort2 = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2")
 		# es soll nur der Versorgungskarren groessere Armeen versorgen koennen und nicht die Heiler.
@@ -259,6 +262,7 @@ def stackDoTurn(iPlayer, iGameTurn):
 
 				# tmpA: OBJECTS (tmpPlot) KANN MAN NICHT mit NOT IN in einer Liste pruefen!
 				tmpA = [sUnit.getX(), sUnit.getY()]
+				tKey = (tmpA[0], tmpA[1])
 				tmpPlot = sUnit.plot()
 				if not tmpPlot.isWater():
 
@@ -272,10 +276,13 @@ def stackDoTurn(iPlayer, iGameTurn):
 
 								# if sUnit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_HEALER"):
 								if sUnit.getUnitType() == eSupplyUnit:
-										if tmpA not in lHealerPlots:
+										if tKey not in dHealerPlots:
+												dHealerPlots[tKey] = 1
 												lHealerPlots.append(tmpA)
 
-								if tmpA not in PlotArraySupply:
+								# Jedes Feld nur einmal auswerten (statt einmal pro Einheit)
+								if tKey not in dPlotsChecked:
+										dPlotsChecked[tKey] = 1
 										# 1. Instanz - Versorgung auf Land
 										tmpAnz = tmpPlot.getNumDefenders(iPlayer)
 										if tmpAnz >= 10:
@@ -283,12 +290,12 @@ def stackDoTurn(iPlayer, iGameTurn):
 												if not pPlayer.isHuman():
 														tmpOwner = tmpPlot.getOwner()
 														if tmpOwner != -1 and tmpOwner != iPlayer:
-																if tmpA not in PlotArrayStackAI:
-																		if pTeam.isAtWar(gc.getPlayer(tmpOwner).getTeam()):
-																				PlotArrayStackAI.append(tmpA)
+																if pTeam.isAtWar(gc.getPlayer(tmpOwner).getTeam()):
+																		PlotArrayStackAI.append(tmpA)
 
 												if tmpAnz >= iStackLimit1:
 														PlotArraySupply.append(tmpA)
+														dSupplyPlots[tKey] = 1
 														# 2. Instanz - Rebellionsgefahr auf Land
 														# wird weiter unten in PlotArraySupply neu berechnet
 														# if tmpAnz > iStackLimit2:
@@ -301,10 +308,11 @@ def stackDoTurn(iPlayer, iGameTurn):
 				# AI Formations
 				if not pPlayer.isHuman():
 						if tmpPlot.getNumUnits() > 2:
-								if tmpA not in lFormationPlots:
+								if tKey not in dFormationPlots:
+										dFormationPlots[tKey] = 1
 										if not tmpPlot.isCity():
 												doAIPlotFormations(tmpPlot, iPlayer)
-										lFormationPlots.append(tmpA)
+
 						# more than 50% damage -> go defensive
 						elif sUnit.getDamage() > 50:
 								doAIUnitFormations(sUnit, False, False, False)
@@ -488,7 +496,7 @@ def stackDoTurn(iPlayer, iGameTurn):
 
 		# +++++ Aufladen der restlichen Versorger (ausgenommen PlotArraySupply) UNIT_SUPPLY_WAGON ---------------------------------------
 		for h in lHealerPlots:
-			if h not in PlotArraySupply:
+			if (h[0], h[1]) not in dSupplyPlots:
 				loopPlot = gc.getMap().plot(h[0], h[1])
 				iX = h[0]
 				iY = h[1]
