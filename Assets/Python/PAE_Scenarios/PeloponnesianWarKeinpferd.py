@@ -132,11 +132,11 @@ def onBeginPlayerTurn(iGameTurn, pPlayer):
 						if pPlayer.isHuman():
 								popupInfo = CyPopupInfo()
 								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_PYTHON)
-								popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_LOW_ATHEN", ()))
+								popupInfo.setText(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_THEBEN_DESC", ()))
 								popupInfo.setOnClickedPythonCallback("peloponnesianWarKeinpferd_Plataiai1")
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_OPTION_1_OUTCOME_MEDIUM_ATHEN", ()), "")
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_OPTION_2_OUTCOME", ()), "")
-								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_OPTION_3_OUTCOME", ()), "")
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_THEBEN_OPTION_1", ()), "")
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_THEBEN_OPTION_2", ()), "")
+								popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_EVENT_PLATAIAI_THEBEN_OPTION_3", ()), "")
 								popupInfo.addPopup(iPlayer)
 						else:
 								iAiDecision = CvUtil.myRandom(3, "peloponnesianWarKeinpferd_Plataiai1")
