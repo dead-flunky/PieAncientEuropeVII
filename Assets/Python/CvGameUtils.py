@@ -1609,8 +1609,9 @@ class CvGameUtils:
 						lCities = None
 
 						# PAE AI Unit Instances (better turn time)
-						if self.PAE_AI_Slaves_Owner != iOwner:
-								self.PAE_AI_Slaves_Owner = iOwner
+						tKey = (iOwner, gc.getGame().getGameTurn())
+						if self.PAE_AI_Slaves_Owner != tKey:
+								self.PAE_AI_Slaves_Owner = tKey
 								self.PAE_AI_Cities_Slaves = []
 								self.PAE_AI_Cities_Slavemarket = []
 
@@ -3726,17 +3727,18 @@ class CvGameUtils:
 						#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"Schritt 1: " + pUnit.getName() + " iOwner: " + str(iOwner) + " PAE_AI_ID: " + str(self.PAE_AI_ID), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 						# kultivieren wenn die Einheit auf dem korrekten Plot steht
-						if self.PAE_AI_ID2 == pUnit.getID():
-								if PAE_Cultivation._isBonusCultivationChance(pUnit.getOwner(), pUnit.plot(), eBonus, False, None):
+						if CvUtil.getScriptData(pUnit, ["aiC"], 0):
+								CvUtil.removeScriptData(pUnit, "aiC")
+								if PAE_Cultivation._isBonusCultivationChance(iOwner, pUnit.plot(), eBonus, False, None):
 										PAE_Cultivation.doCultivateBonus(pUnit.plot(), pUnit, eBonus, False)
 										pUnit.kill(True, -1)
 										return True
 
 						# Nur 1x pro Runde alle Staedte checken
 						# PAE AI Unit Instances (better turn time)
-						if self.PAE_AI_ID != iOwner:
-								self.PAE_AI_ID = iOwner
-								self.PAE_AI_ID2 = pUnit.getID()
+						tKey = (iOwner, gc.getGame().getGameTurn())
+						if self.PAE_AI_ID != tKey:
+								self.PAE_AI_ID = tKey
 
 								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"Schritt 2: iBonus: " + str(eBonus), None, 2, None, ColorTypes(10), 0, 0, False, False)
 								#eCityStatus = gc.getInfoTypeForString("BUILDING_KOLONIE")
@@ -3767,6 +3769,7 @@ class CvGameUtils:
 										if pUnit.generatePath(pPlot, 0, False, None):
 												if not pUnit.atPlot(pPlot):
 														pUnitGroup.clearMissionQueue()
+														CvUtil.addScriptData(pUnit, "aiC", 1)
 														pUnit.getGroup().pushMoveToMission(pPlot.getX(), pPlot.getY())
 														#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, u"Schritt 4: moveTo" + pCity.getName() + u" " + str(pPlot.getX()) + u":" + str(pPlot.getY()), None, 2, None, ColorTypes(10), 0, 0, False, False)
 												else:
