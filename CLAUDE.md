@@ -410,3 +410,6 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 4. **Bitte bestätigen (Spielmechanik):** KI bekommt jetzt auf *allen* Schwierigkeitsgraden zu 50 % einen zweiten Siedler; globale Katastrophen hängen an `gc.getPlayer(0).getCurrentEra()` – `gc.getGame().getCurrentEra()` wäre unabhängig davon, ob Spieler 0 noch lebt.
 
 **Nachprüfung 7.18.3.2 (Commit `6f6b903`):** Punkte 2, 3 (Palisade, isNone-Reihenfolge) und 4.2 korrekt umgesetzt, Einrückungen geprüft. Offen: nur die Text-Keys (Punkt 1, kommen über das Text-Tool).
+
+O9 ist jetzt an die Spieloption GAMEOPTION_PAE_SETH gekoppelt, nicht fest auf iChance = 4 gesetzt.
+Das Plataiai-Popup hat neue Texte bekommen (7.18.3.7).
