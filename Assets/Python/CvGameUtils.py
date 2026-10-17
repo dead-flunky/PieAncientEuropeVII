@@ -50,7 +50,6 @@ class CvGameUtils:
 
 				# PAE - vars for AI feature checks (for better turn times)
 				self.PAE_AI_ID = -1
-				self.PAE_AI_ID2 = -1
 				self.PAE_AI_Slaves_Owner = -1
 				self.PAE_AI_Cities_Slaves = []
 				self.PAE_AI_Cities_Slavemarket = []
@@ -687,20 +686,11 @@ class CvGameUtils:
 						lTeamPlayer.append(i)
 
 				eBuilding = -1
-				#eCityStatus = gc.getInfoTypeForString("BUILDING_KOLONIE")
-				#if eBonus == gc.getInfoTypeForString("BONUS_HORSE"): eBuilding = gc.getInfoTypeForString("BUILDING_STABLE")
-				#elif eBonus == gc.getInfoTypeForString("BONUS_CAMEL"): eBuilding = gc.getInfoTypeForString("BUILDING_CAMEL_STABLE")
-				# elif eBonus == gc.getInfoTypeForString("BONUS_IVORY"): eBuilding = gc.getInfoTypeForString("BUILDING_ELEPHANT_STABLE")
-				# elif eBonus == gc.getInfoTypeForString("BONUS_HUNDE"): eBuilding = gc.getInfoTypeForString("BUILDING_HUNDEZUCHT")
-
-				# iUnitX = pHeadSelectedUnit.plot().getX()
-				# iUnitY = pHeadSelectedUnit.plot().getY()
 
 				for i in lTeamPlayer:
 					pLoopPlayer = gc.getPlayer(i)
 					(loopCity, pIter) = pLoopPlayer.firstCity(False)
 					while loopCity:
-						# if loopCity.isHasBuilding(eCityStatus):
 						if eBuilding == -1 or not loopCity.isHasBuilding(eBuilding):
 
 								#iX = loopCity.getX()
@@ -1745,13 +1735,41 @@ class CvGameUtils:
 						elif pUnit.getUnitAIType() == 14:
 								self.doAIMissionReligion(pUnit)
 
-						# Elefant (Zucht/Elefantenstall)
-						# if iUnitType == gc.getInfoTypeForString("UNIT_ELEFANT"):
-						#    #CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("AI Elefant",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-						#    if pTeam.isHasTech(gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")):
-						#        #if self.doElefant_AI(pUnit):
-						#        if self.doSpreadStrategicBonus_AI(pUnit, gc.getInfoTypeForString("BUILDING_ELEPHANT_STABLE"), gc.getInfoTypeForString("BONUS_IVORY")):
-						#            return True
+						# Elefanten (Mahuts): gefangene Elefanten in eigener Stadt ausbilden, Arbeits- -> Kriegselefant im Krieg
+						elif iUnitType == gc.getInfoTypeForString("UNIT_ELEFANT") or pUnit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_WORK_ELEPHANT"):
+								if pTeam.isHasTech(gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")):
+										pCivInfo = gc.getCivilizationInfo(pOwner.getCivilizationType())
+										iWork = pCivInfo.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_WORK_ELEPHANT"))
+										iWar = pCivInfo.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_WAR_ELEPHANT"))
+										bWar = pTeam.getAtWarCount(True) > 0
+										# gefangener Elefant: in eigener Stadt fuer 50 Gold ausbilden (Krieg: Kriegselefant, Frieden: Arbeitselefant)
+										if iUnitType == gc.getInfoTypeForString("UNIT_ELEFANT"):
+												if pPlot.isCity() and pPlot.getOwner() == iOwner:
+														if pOwner.getGold() >= 50:
+																iNewUnit = iWork
+																if bWar and iWar != -1 or iWork == -1:
+																		iNewUnit = iWar
+																if iNewUnit != -1:
+																		pOwner.changeGold(-50)
+																		pNewUnit = PAE_Unit.doUpgradeVeteran(pUnit, iNewUnit, False)
+																		if pNewUnit is not None:
+																				pNewUnit.finishMoves()
+																		return True
+												else:
+														pCity = PAE_Unit.getNearestCity(pUnit)
+														if pCity is not None and not pCity.isNone():
+																pUnit.getGroup().pushMoveToMission(pCity.getX(), pCity.getY())
+																return True
+										# Arbeitselefant: im Krieg im eigenen Land gelegentlich zum Kriegselefanten umruesten
+										elif bWar and iWar != -1 and pPlot.getOwner() == iOwner:
+												if CvUtil.myRandom(4, "AI_WorkElephant2War") == 1:
+														pNewUnit = PAE_Unit.doUpgradeVeteran(pUnit, iWar, False)
+														if pNewUnit is not None:
+																pNewUnit.finishMoves()
+														return True
+								# sonst: DLL-KI (Bau beschleunigen) statt herumwandern wie ein Wildtier
+								if iUnitType == gc.getInfoTypeForString("UNIT_ELEFANT") and pUnit.getUnitAIType() == UnitAITypes.UNITAI_ANIMAL:
+										pUnit.setUnitAIType(UnitAITypes.UNITAI_ENGINEER)
 
 						# Kamel (Zucht/Kamellager)
 						elif iUnitType == gc.getInfoTypeForString("UNIT_CAMEL"):
@@ -3667,6 +3685,12 @@ class CvGameUtils:
 									return CyTranslator().getText("TXT_KEY_BUTTON_ACTION_CATAPULT_2", ())
 								else:
 									return CyTranslator().getText("TXT_KEY_BUTTON_ACTION_CATAPULT_0", ())
+						# Elefanten umwandeln
+						elif iData1 == 776:
+								pUnit = CyInterface().getHeadSelectedUnit()
+								if pUnit is not None and pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_ELEFANT"):
+										return CyTranslator().getText("TXT_KEY_BUTTON_ELEFANT_TRAIN", (gc.getUnitInfo(iData2).getDescription(), 50))
+								return CyTranslator().getText("TXT_KEY_BUTTON_ELEFANT_SWITCH", (gc.getUnitInfo(iData2).getDescription(),))
 
 
 						# CITY_TAB replacements
@@ -3705,8 +3729,8 @@ class CvGameUtils:
 
 				if not pPlayer.isHuman() and not pPlayer.isBarbarian():
 						pHandicapInfo = gc.getHandicapInfo(gc.getGame().getHandicapType())
-						iPrice *= pHandicapInfo.getAIUnitUpgradePercent() / 100
-						iPrice *= max(0, ((pHandicapInfo.getAIPerEraModifier() * pPlayer.getCurrentEra()) + 100)) / 100
+						iPrice = iPrice * pHandicapInfo.getAIUnitUpgradePercent() / 100
+						iPrice = iPrice * max(0, ((pHandicapInfo.getAIPerEraModifier() * pPlayer.getCurrentEra()) + 100)) / 100
 
 				iPrice = iPrice * (100 - pUnit.getUpgradeDiscount()) / 100
 				if pPlayer.hasTrait(gc.getInfoTypeForString("TRAIT_ORGANIZED")):

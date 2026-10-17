@@ -346,11 +346,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_144</Tag>
-		<English>Sea monsters trigger thalassophobia. Giant octopus and sea serpent dive again in the next round as soon as they are spotted.</English>
-		<French>Les monstres marins d&#233;clenchent la thalassophobie. La pieuvre g&#233;ante et le serpent de mer replongent au tour suivant d&#232;s qu'ils sont rep&#233;r&#233;s.</French>
-		<German>Seeungeheuer l&#246;sen Thalassophobie aus. Riesenkrake und Seeschlange tauchen in der n&#228;chsten Runde wieder ab, sobald sie entdeckt wurden.</German>
-		<Italian>I mostri marini scatenano la talassofobia. Polpi giganti e serpenti marini si tuffano di nuovo nel round successivo non appena vengono avvistati.</Italian>
-		<Spanish>Los monstruos marinos desencadenan talasofobia. El pulpo gigante y la serpiente marina vuelven a sumergirse en la siguiente ronda en cuanto son avistados.</Spanish>
+		<English>Sea monsters trigger thalassophobia, the fear of deep or open water. Giant octopus and sea serpent dive again in the next round as soon as they are spotted.</English>
+		<French>Les monstres marins d&#233;clenchent la thalassophobie, la peur des eaux profondes ou des &#233;tendues d'eau ouvertes. La pieuvre g&#233;ante et le serpent de mer replongent au tour suivant d&#232;s qu'ils sont rep&#233;r&#233;s.</French>
+		<German>Seeungeheuer l&#246;sen Thalassophobie aus, die Angst vor tiefem Wasser oder offenen Gew&#228;ssern. Riesenkrake und Seeschlange tauchen in der n&#228;chsten Runde wieder ab, sobald sie entdeckt wurden.</German>
+		<Italian>I mostri marini scatenano la talassofobia, ovvero la paura delle acque profonde o aperte. Polpi giganti e serpenti marini si tuffano di nuovo nel round successivo non appena vengono avvistati.</Italian>
+		<Spanish>Los monstruos marinos desencadenan talasofobia, el miedo a las aguas profundas o abiertas. El pulpo gigante y la serpiente marina vuelven a sumergirse en la siguiente ronda en cuanto son avistados.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_45</Tag>

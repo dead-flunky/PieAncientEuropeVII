@@ -813,7 +813,7 @@ def doUpgradeVeteran(pUnit, iNewUnit, bSetImmobile):
 						NewUnit = pUnitOwner.initUnit(iNewUnit, pUnit.getX(), pUnit.getY(), UnitAITypes.NO_UNITAI, DirectionTypes.DIRECTION_SOUTH)
 
 						# Einheit: max Combat 2
-						forbiddenPromos = L.LVeteranForbiddenPromos
+						forbiddenPromos = list(L.LVeteranForbiddenPromos)
 						if pUnit.getUnitCombatType() != gc.getInfoTypeForString("UNITCOMBAT_ARCHER"):
 								forbiddenPromos.extend(L.LVeteranForbiddenPromos1)
 						else:

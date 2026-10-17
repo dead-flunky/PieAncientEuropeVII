@@ -2272,59 +2272,7 @@ class CvMainInterface:
 																		screen.show("BottomButtonContainer")
 																		iCount += 1
 																return
-												"""
-												# Elefant
-												elif iUnitType == gc.getInfoTypeForString("UNIT_ELEFANT"):
-														# in city
-														if bCity and pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_KOLONIE")):
-															if not pCity.isHasBuilding(gc.getInfoTypeForString("BUILDING_ELEPHANT_STABLE")):
-																if pCity.getOwner() == iUnitOwner or gc.getTeam(pCity.getTeam()).isVassal(gc.getPlayer(iUnitOwner).getTeam()):
-																	# Check plots (Klima / climate)
-																	bOK = False
-																	eBonus = gc.getInfoTypeForString("BONUS_IVORY")
 
-																	lPlots = PAE_Cultivation.getCityCultivatedPlots(pCity, eBonus)
-																	if len(lPlots):
-																		for p in lPlots:
-																			if p.getBonusType(-1) == eBonus:
-																				iImp = p.getImprovementType()
-																				if iImp != -1 and gc.getImprovementInfo(iImp).isImprovementBonusMakesValid(eBonus):
-																					bOK = True
-																	if not bOK and PAE_Cultivation._bonusIsCultivatableFromCity(iUnitOwner, pCity, eBonus, False):
-																		 if len(lPlots) == 0: bOK = True
-
-																	if bOK:
-																			screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Builds/button_elefantenstall.dds", 0, WidgetTypes.WIDGET_GENERAL, 721, 1, False)
-																			screen.show("BottomButtonContainer")
-																			screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
-																			iCount += 1
-																	else:
-																			screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_elestall_grau.dds", 0, WidgetTypes.WIDGET_GENERAL, 721, 2, False)
-																			screen.show("BottomButtonContainer")
-																			iCount += 1
-																	return
-														# not in city
-														#else:
-														#    screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_elestall_grau.dds", 0, WidgetTypes.WIDGET_GENERAL, 721, 3, False)
-														#    screen.show("BottomButtonContainer")
-														#    iCount += 1
-														#    return
-												"""
-												# ---- End ------
-
-												# ----------
-												# PAE - Cultist cannot spread cult due to civic (749:1) => Show INFO Button ! (nocult, keinKult mit Kultist)
-												# if bCity:
-												#    Cultists = [
-												#        gc.getInfoTypeForString("UNIT_EXECUTIVE_1"),
-												#        gc.getInfoTypeForString("UNIT_EXECUTIVE_2"),
-												#        gc.getInfoTypeForString("UNIT_EXECUTIVE_3")
-												#    ]
-												#    if iUnitType in Cultists:
-												#        if pUnitOwner.isCivic(gc.getInfoTypeForString("CIVIC_ANIMISM")):
-												#            screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_cult_grey.dds", 0, WidgetTypes.WIDGET_GENERAL, 749, 1, False)
-												#            screen.show("BottomButtonContainer")
-												#            iCount += 1
 
 												# --------------------
 
@@ -2662,7 +2610,7 @@ class CvMainInterface:
 												# END Merchant -----
 
 												# Goldkarren / Treasure / Beutegold -> in die Hauptstadt / Provinzhauptstadt / Bischofssitz
-												if iUnitType == gc.getInfoTypeForString("UNIT_GOLDKARREN"):
+												elif iUnitType == gc.getInfoTypeForString("UNIT_GOLDKARREN"):
 														if pPlot.isCity():
 																pCity = pPlot.getPlotCity()
 																if pCity.getOwner() == pUnit.getOwner():
@@ -2684,7 +2632,7 @@ class CvMainInterface:
 																iCount += 1
 
 												# Katapulte/Catapults (Stein, Feuer, Kadaver)
-												if iUnitType in L.LBuildCatapults and not pUnit.hasMoved():
+												elif iUnitType in L.LBuildCatapults and not pUnit.hasMoved():
 													if pTeam.isHasTech(gc.getInfoTypeForString("TECH_TORSION2")):
 														# Stein/Stone
 														if iUnitType in (gc.getInfoTypeForString("UNIT_CATAPULT"), gc.getInfoTypeForString("UNIT_ONAGER")):
@@ -2714,6 +2662,32 @@ class CvMainInterface:
 														#		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_siege_cow_n.dds", 0, WidgetTypes.WIDGET_GENERAL, 775, 2, True)
 														#		screen.show("BottomButtonContainer")
 														#		iCount += 1
+
+												# PAE 7.18.4: Elefanten umwandeln (Mahuts)
+												# Wilder Elefant -> Arbeits-/Kriegselefant: nur in eigener Stadt, 50 Gold
+												# Arbeits- <-> Kriegselefant: ueberall, kostenlos
+												# Ohne Tech (bzw. ohne 50 Gold) wird der Knopf ausgegraut angezeigt
+												elif iUnitType == gc.getInfoTypeForString("UNIT_ELEFANT") or pUnit.getUnitClassType() in (gc.getInfoTypeForString("UNITCLASS_WORK_ELEPHANT"), gc.getInfoTypeForString("UNITCLASS_WAR_ELEPHANT")):
+														if pUnit.canMove():
+																bOK = pTeam.isHasTech(gc.getInfoTypeForString("TECH_ELEFANTENZUCHT"))
+																pCivInfo = gc.getCivilizationInfo(pUnitOwner.getCivilizationType())
+																iWork = pCivInfo.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_WORK_ELEPHANT"))
+																iWar = pCivInfo.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_WAR_ELEPHANT"))
+																lNewUnits = []
+																if iUnitType == gc.getInfoTypeForString("UNIT_ELEFANT"):
+																		lNewUnits = [iWork, iWar]
+																		# nur in eigener Stadt und mit 50 Gold moeglich, sonst ausgegraut (Tooltip erklaert es)
+																		if not pPlot.isCity() or pPlot.getOwner() != iUnitOwner or pUnitOwner.getGold() < 50:
+																				bOK = False
+																elif iUnitType == iWork: lNewUnits = [iWar]
+																elif iUnitType == iWar: lNewUnits = [iWork]
+																for iNewUnit in lNewUnits:
+																		if iNewUnit != -1:
+																				sButton = gc.getUnitInfo(iNewUnit).getButton()
+																				screen.appendMultiListButton("BottomButtonContainer", sButton, 0, WidgetTypes.WIDGET_GENERAL, 776, iNewUnit, False)
+																				screen.show("BottomButtonContainer")
+																				if not bOK: screen.disableMultiListButton("BottomButtonContainer", 0, iCount, sButton)
+																				iCount += 1
 
 
 												# --------- Einheiten in einer Stadt
@@ -7865,7 +7839,13 @@ class CvMainInterface:
 												if bOption:
 														CyMessageControl().sendModNetMessage(iData1, iData2, -1, iOwner, iUnitID)
 
-										# ab 776 ist frei
+										# PAE 7.18.4: Elefanten umwandeln
+										elif iData1 == 776:
+														CyAudioGame().Play2DSound("AS2D_UNIT_BUILD_WAR_ELEPHANT")
+														CyMessageControl().sendModNetMessage(iData1, iData2, -1, iOwner, iUnitID)
+
+										# ab 777 ist frei
+
 
 								# ID 718 Unit Formations
 								# Zusatz: Eigenes Widget for Formations!

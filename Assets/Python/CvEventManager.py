@@ -2273,8 +2273,26 @@ class CvEventManager:
 								iNewUnit = gc.getCivilizationInfo(pPlayer.getCivilizationType()).getCivilizationUnits(iNewUnitClass)
 								PAE_Unit.changeUnit(pUnit, iNewUnit, False)
 
+				# PAE 7.18.4: Elefanten umwandeln (Mahuts)
+				# 776, iNewUnit, -1, iPlayer, iUnitID
+				elif iData1 == 776:
+						pPlayer = gc.getPlayer(iData4)
+						pUnit = pPlayer.getUnit(iData5)
+						if pUnit is not None and not pUnit.isNone() and pUnit.canMove() and gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")):
+								if gc.getUnitInfo(iData2).getUnitClassType() in (gc.getInfoTypeForString("UNITCLASS_WORK_ELEPHANT"), gc.getInfoTypeForString("UNITCLASS_WAR_ELEPHANT")):
+										bOK = True
+										# wilder Elefant: nur in eigener Stadt, kostet 50 Gold
+										if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_ELEFANT"):
+												if pUnit.plot().isCity() and pUnit.plot().getOwner() == iData4 and pPlayer.getGold() >= 50:
+														pPlayer.changeGold(-50)
+												else:
+														bOK = False
+										if bOK:
+												pNewUnit = PAE_Unit.doUpgradeVeteran(pUnit, iData2, False)
+												if pNewUnit is not None:
+														pNewUnit.finishMoves()
 
-				# ab 776 ist frei
+				# ab 777 ist frei
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -4213,7 +4231,7 @@ class CvEventManager:
 						if pPlayer.isHuman() and lUnits:
 								if pPlayer.getCivilizationType() not in L.LFernangriffNoCosts:
 										iGold = 0
-										DFern = L.DFernangriffCosts
+										DFern = dict(L.DFernangriffCosts)
 
 										# PAE 7.14: ab Bronzezeit
 										if pPlayer.getCurrentEra() > 0:

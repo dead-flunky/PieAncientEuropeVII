@@ -1185,6 +1185,11 @@ def doBuildingCultivate(pCity, iBuildingType):
 		#    iImprovement = gc.getInfoTypeForString("IMPROVEMENT_CAMP")
 
 		# ELEFANT - FEATURE ---------------------
+		# Geschichte: Elefanten wurden in der Antike praktisch nie gezüchtet, auch in Indien nicht. 
+		# Sie pflanzen sich in Gefangenschaft schlecht fort und brauchen rund 15 Jahre, bis sie einsatzfähig sind. 
+		# Die Inder haben wilde Elefanten in eigenen Elefantenwäldern eingefangen und dressiert. Darin lag ihre eigentliche Spezialität: 
+		# Fang, Zähmung und die Mahuts. Die Seleukiden bekamen ihre Elefanten aus Indien, im Tausch von Chandragupta. 
+		# Ptolemäer und Karthager fingen afrikanische Waldelefanten vor Ort, in Nubien und Eritrea bzw. Nordafrika, die von Mahuts trainiert wurden.
 		# Elefantverbreitung
 		# elif iBuildingType == gc.getInfoTypeForString("BUILDING_ELEPHANT_STABLE"):
 		#    eBonus = gc.getInfoTypeForString("BONUS_IVORY")

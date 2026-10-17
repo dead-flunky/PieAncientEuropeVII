@@ -1801,6 +1801,14 @@
 		<Spanish>Este generador crea un mapa al azar con los continentes y grandes valles con cuellos de botella como defensa natural y desigual distribuci&#243;n de recursos / sin balanceo lo cual es bueno para el comercio.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_BUILD_ENEMY_ROUTE</Tag>
+		<English>The construction of the road has improved your attitude toward %s1.</English>
+		<French>La construction de la route a am&#233;lior&#233; votre attitude envers %s1.</French>
+		<German>Der Bau der Stra&#223;e hat Eure Haltung gegen&#252;ber %s1 verbessert.</German>
+		<Italian>La costruzione della strada ha migliorato il vostro atteggiamento nei confronti di %s1.</Italian>
+		<Spanish>La construcci&#243;n de la carretera ha mejorado vuestra actitud hacia %s1.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_CITY_DYING_GENERAL2_1</Tag>
 		<English>Your cities celebrate the death of the enemy general!</English>
 		<French>Vos villes c&#233;l&#232;brent la mort du g&#233;n&#233;ral ennemi !</French>
@@ -1967,6 +1975,30 @@
 		<German>[H1]Ein gegnerischer General ist gefallen![\H1]</German>
 		<Italian>[H1]Un generale nemico &#232; caduto![\H1]</Italian>
 		<Spanish>[H1]&#161;Un general enemigo ha ca&#237;do![\H1]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_GROWTH_FIRE1</Tag>
+		<English>A well can reduce the risk of a city fire (see PAE-Concepts: Cities) !</English>
+		<French>Un puits peut r&#233;duire le risque d'incendie urbain (voir concepts PAE : villes) !</French>
+		<German>Ein Brunnen kann das Risiko eines Stadtfeuers senken (siehe PAE-Konzepte: St&#228;dte)!</German>
+		<Italian>Un pozzo pu&#242; ridurre il rischio di un incendio in citt&#224; (vedi concetti PAE: citt&#224;)!</Italian>
+		<Spanish>&#161;Un pozo puede reducir el riesgo de un incendio urbano (v&#233;ase conceptos PAE: ciudades)!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_GROWTH_FIRE2</Tag>
+		<English>A cistern in %s1 can reduce the risk of a city fire!</English>
+		<French>Une citerne &#224; %s1 peut r&#233;duire le risque d'incendie urbain !</French>
+		<German>Eine Zisterne in %s1 kann das Risiko eines Stadtbrands senken!</German>
+		<Italian>Una cisterna a %s1 pu&#242; ridurre il rischio di un incendio urbano!</Italian>
+		<Spanish>&#161;Una cisterna en %s1 puede reducir el riesgo de un incendio urbano!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CITY_GROWTH_NO_UNITS</Tag>
+		<English>Attention! There are no city defenders in %s1, leaving it unprotected against enemies!</English>
+		<French>Attention ! Il n'y a aucun d&#233;fenseur dans %s1 ; la ville est donc sans protection face aux ennemis !</French>
+		<German>Achtung! In %s1 stehen keine Stadtverteidiger und ist daher vor Feinden ungesch&#252;tzt !</German>
+		<Italian>Attenzione! A %s1 non sono presenti difensori della citt&#224;; &#232; quindi priva di protezione contro i nemici!</Italian>
+		<Spanish>&#161;Atenci&#243;n! En %s1 no hay defensores de la ciudad, &#161;por lo que est&#225; desprotegida frente a los enemigos!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_GREAT_PROPHET_HOLY_CITY</Tag>
@@ -2410,11 +2442,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PAE_VERSION</Tag>
-		<English>Pie's Ancient Europe VII (7.18.3)</English>
-		<French>Pie's Ancient Europe VII (7.18.3)</French>
-		<German>Pie's Ancient Europe VII (7.18.3)</German>
-		<Italian>Pie's Ancient Europe VII (7.18.3)</Italian>
-		<Spanish>Pie's Ancient Europe VII (7.18.3)</Spanish>
+		<English>Pie's Ancient Europe VII (7.18.4)</English>
+		<French>Pie's Ancient Europe VII (7.18.4)</French>
+		<German>Pie's Ancient Europe VII (7.18.4)</German>
+		<Italian>Pie's Ancient Europe VII (7.18.4)</Italian>
+		<Spanish>Pie's Ancient Europe VII (7.18.4)</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MISC_PROGRESS_TOWARDS_TECH</Tag>

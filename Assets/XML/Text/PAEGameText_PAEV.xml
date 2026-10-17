@@ -8010,11 +8010,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_ELEPHANT_HELP</Tag>
-		<English>[ICON_BULLET]Causes collateral damage in its own stack when the unit is defeated.</English>
-		<French>[ICON_BULLET]Provoque des dommages collat&#233;raux dans ses propres rangs lorsque l'unit&#233; est mise en &#233;chec.</French>
-		<German>[ICON_BULLET]Verursacht Kollateralschaden im eigenen Stack, wenn die Einheit besiegt wird.</German>
-		<Italian>[ICON_BULLET]Provoca danni collaterali nella propria pila quando l'unit&#224; viene sconfitta.</Italian>
-		<Spanish>[ICON_BULLET]Causa da&#241;o colateral en su propia pila cuando la unidad es derrotada.</Spanish>
+		<English>[ICON_BULLET]Causes collateral damage in its own stack when the unit is defeated.[NEWLINE][ICON_BULLET]Can switch between work elephants and war elephants at any time.</English>
+		<French>[ICON_BULLET]Provoque des dommages collat&#233;raux dans ses propres rangs lorsque l'unit&#233; est mise en &#233;chec.[NEWLINE][ICON_BULLET]Peut passer &#224; tout moment d'&#233;l&#233;phant de travail &#224; &#233;l&#233;phant de guerre.</French>
+		<German>[ICON_BULLET]Verursacht Kollateralschaden im eigenen Stack, wenn die Einheit besiegt wird.[NEWLINE][ICON_BULLET]Kann jederzeit zwischen Arbeits- und Kriegselefanten wechseln.</German>
+		<Italian>[ICON_BULLET]Provoca danni collaterali nella propria pila quando l'unit&#224; viene sconfitta.[NEWLINE][ICON_BULLET]Pu&#242; passare in qualsiasi momento da elefante da lavoro a elefante da guerra.</Italian>
+		<Spanish>[ICON_BULLET]Causa da&#241;o colateral en su propia pila cuando la unidad es derrotada.[NEWLINE][ICON_BULLET]Puede cambiar en cualquier momento entre elefantes de trabajo y elefantes de guerra.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WAR_HORSE_THRAKER</Tag>

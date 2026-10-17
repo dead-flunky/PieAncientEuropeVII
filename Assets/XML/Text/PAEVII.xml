@@ -681,6 +681,22 @@ Scuola di retorica
 		<Spanish>Proyectil: Cad&#225;ver</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUTTON_ELEFANT_SWITCH</Tag>
+		<English>Re-equip as %s1[NEWLINE]Same elephant, different gear. Free and uses the remaining moves.</English>
+		<French>Convertir en %s1[NEWLINE]Le m&#234;me &#233;l&#233;phant, un &#233;quipement diff&#233;rent. Gratuit et consomme le reste du tour.</French>
+		<German>Zum %s1 umr&#252;sten[NEWLINE]Derselbe Elefant, andere Ausr&#252;stung. Kostenlos und verbraucht den restlichen Zug.</German>
+		<Italian>Converti in %s1[NEWLINE]Lo stesso elefante, equipaggiamento diverso. Gratuito e consuma il resto del turno.</Italian>
+		<Spanish>Convertir en %s1[NEWLINE]El mismo elefante, distinto equipamiento. Gratuito y consume el resto del turno.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUTTON_ELEFANT_TRAIN</Tag>
+		<English>Train elephant as %s1 (%d2 [ICON_GOLD])[NEWLINE]Indian mahouts train the captured elephant. Only possible in one of your cities. Requires the Elephant Breeding technology.</English>
+		<French>Former un &#233;l&#233;phant en %s1 (%d2 [ICON_GOLD])[NEWLINE]Des cornacs indiens dressent l'&#233;l&#233;phant captur&#233;. Possible uniquement dans l'une de vos villes. N&#233;cessite la technologie &#201;levage d'&#233;l&#233;phants.</French>
+		<German>Elefant zum %s1 ausbilden (%d2 [ICON_GOLD])[NEWLINE]Indische Mahuts richten den gefangenen Elefanten ab. Nur in einer eigenen Stadt m&#246;glich. Ben&#246;tigt die Technologie Elefantenzucht.</German>
+		<Italian>Entrenar elefante a %s1 (%d2 [ICON_GOLD])[NEWLINE]Los mahouts indios adiestran al elefante capturado. Possibile solo in una delle tue citt&#224;. Requiere la tecnolog&#237;a Cr&#237;a de elefantes.</Italian>
+		<Spanish>Entrenar elefante a %s1 (%d2 [ICON_GOLD])[NEWLINE]Los mahouts indios adiestran al elefante capturado. Solo es posible en una de tus ciudades. Requiere la tecnolog&#237;a Cr&#237;a de elefantes.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUTTON_GO2CITY</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Go To City[COLOR_REVERT][NEWLINE]Move the unit to one of your cities.</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Aller &#224; la ville[COLOR_REVERT][NEWLINE]Envoyez l'unit&#233; dans l'une de vos villes.</French>
@@ -690,11 +706,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_TERRAFORMING</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Make this land fertile![COLOR_REVERT][NEWLINE][ICON BULLET]Transforms desert into plains[NEWLINE][ICON BULLET]Transforms tundra into grassland[NEWLINE][ICON_BULLET]Will consume the unit</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Rendez cette terre fertile ![COLOR_REVERT][NEWLINE][ICON BULLET]Transforme le d&#233;sert en plaines[NEWLINE][ICON BULLET]Transforme la toundra en prairie[NEWLINE][ICON_BULLET]Consommera l'unit&#233;</French>
+		<English>[COLOR_HIGHLIGHT_TEXT]Make this land fertile![COLOR_REVERT][NEWLINE][ICON_BULLET]Transforms desert into plains[NEWLINE][ICON_BULLET]Transforms tundra into grassland[NEWLINE][ICON_BULLET]Will consume the unit</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Rendez cette terre fertile ![COLOR_REVERT][NEWLINE][ICON_BULLET]Transforme le d&#233;sert en plaines[NEWLINE][ICON_BULLET]Transforme la toundra en prairie[NEWLINE][ICON_BULLET]Consommera l'unit&#233;</French>
 		<German>[COLOR_HIGHLIGHT_TEXT]Mache dieses Land fruchtbar![COLOR_REVERT][NEWLINE][ICON_BULLET]Verwandelt W&#252;ste zu Ebenen[NEWLINE][ICON_BULLET]Verwandelt Tundra zu Grassland[NEWLINE][ICON_BULLET]Wird die Einheit verbrauchen</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT]Rendi fertile questa terra![COLOR_REVERT][NEWLINE][ICONA PUNTINO]Trasforma il deserto in pianura[NEWLINE][ICONA PUNTINO]Trasforma la tundra in prateria[NEWLINE][ICON_BULLET]Consumer&#224; l'unit&#224;</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]&#161;Haz que esta tierra sea f&#233;rtil![COLOR_REVERT][NEWLINE][ICON BULLET]Transforma el desierto en llanuras[NEWLINE][ICON BULLET]Transforma la tundra en pradera[NEWLINE][ICON_BULLET]Consumir&#225; la unidad</Spanish>
+		<Italian>[COLOR_HIGHLIGHT_TEXT]Rendi fertile questa terra![COLOR_REVERT][NEWLINE][ICON_BULLET]Trasforma il deserto in pianura[NEWLINE][ICON_BULLET]Trasforma la tundra in prateria[NEWLINE][ICON_BULLET]Consumer&#224; l'unit&#224;</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]&#161;Haz que esta tierra sea f&#233;rtil![COLOR_REVERT][NEWLINE][ICON_BULLET]Transforma el desierto en llanuras[NEWLINE][ICON_BULLET]Transforma la tundra en pradera[NEWLINE][ICON_BULLET]Consumir&#225; la unidad</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CITY_BAR_FOOD_GROWTH</Tag>
@@ -2338,11 +2354,11 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_4_HELP</Tag>
-		<English>[ICON BULLET] Immune to damage on the high seas</English>
-		<French>[BALLE IC&#212;NE] Immunis&#233; contre les d&#233;g&#226;ts en haute mer</French>
+		<English>[ICON_BULLET] Immune to damage on the high seas</English>
+		<French>[ICON_BULLET] Immunis&#233; contre les d&#233;g&#226;ts en haute mer</French>
 		<German>[ICON_BULLET] Immun gegen Schaden auf Hoher See</German>
-		<Italian>[ICONA PROIETTILE] Immune ai danni in alto mare</Italian>
-		<Spanish>[ICON BULLET] Inmune a da&#241;os en alta mar</Spanish>
+		<Italian>[ICON_BULLET] Immune ai danni in alto mare</Italian>
+		<Spanish>[ICON_BULLET] Inmune a da&#241;os en alta mar</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_UNSTOPPABLE1</Tag>
@@ -2753,6 +2769,14 @@ Scuola di retorica
 		<Spanish>Drom&#243;n</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_ELEFANT_SWAP_HELP</Tag>
+		<English>[ICON_BULLET]Trained elephants can switch between being work elephants and war elephants at any time.</English>
+		<French>[ICON_BULLET]Les &#233;l&#233;phants dress&#233;s peuvent, &#224; tout moment, passer du statut d'&#233;l&#233;phant de travail &#224; celui d'&#233;l&#233;phant de guerre.</French>
+		<German>[ICON_BULLET]Trainierte Elefanten k&#246;nnen jederzeit zwischen Arbeits- und Kriegselefanten wechseln.</German>
+		<Italian>[ICON_BULLET]Gli elefanti addestrati possono passare in qualsiasi momento da elefanti da lavoro a elefanti da guerra.</Italian>
+		<Spanish>[ICON_BULLET]Los elefantes entrenados pueden pasar en cualquier momento de ser elefantes de trabajo a elefantes de guerra.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_FOEDERATI_GOTEN</Tag>
 		<English>Gardingus</English>
 		<French>Gardingus</French>
@@ -2994,7 +3018,7 @@ Scuola di retorica
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TROJAN_HORSE_HELP</Tag>
-		<English>[ICON BULLET]Can instantly set the defense of cities to 0. The city must have over 100% defense strength.</English>
+		<English>[ICON_BULLET]Can instantly set the defense of cities to 0. The city must have over 100% defense strength.</English>
 		<French>[ICON_BULLET]Peut instantan&#233;ment d&#233;finir la d&#233;fense de la ville &#224; 0. La ville doit avoir plus de 100 % de force de d&#233;fense.</French>
 		<German>[ICON_BULLET]Kann die Verteidung von St&#228;dten sofort auf 0 setzen. Die Stadt muss &#252;ber 100% Verteidigungsst&#228;rke haben.</German>
 		<Italian>[ICON_BULLET]Pu&#242; impostare immediatamente la difesa della citt&#224; a 0. La citt&#224; deve avere una forza difensiva superiore al 100%.</Italian>
