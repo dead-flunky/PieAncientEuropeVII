@@ -5815,6 +5815,19 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 
 	if (getImprovementType() != eNewValue)
 	{
+
+		// PAE: Turm/Tower, Forts, Limes und Kastell aendern seeFromLevel() (siehe oben).
+		// Sicht vorher mit der alten Sichthoehe abziehen und danach mit der neuen addieren,
+		// sonst stimmen die Sichtzaehler nicht mehr und Felder bleiben dauerhaft schwarz.
+		int iOldSeeFromLevel = seeFromLevel((TeamTypes)0);
+		m_eImprovementType = eNewValue;
+		bool bUpdateSight = (seeFromLevel((TeamTypes)0) != iOldSeeFromLevel);
+		m_eImprovementType = eOldImprovement;
+		if (bUpdateSight)
+		{
+			updateSeeFromSight(false, true);
+		}
+
 		if (getImprovementType() != NO_IMPROVEMENT)
 		{
 			if (area())
@@ -5830,6 +5843,12 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		updatePlotGroupBonus(false);
 		m_eImprovementType = eNewValue;
 		updatePlotGroupBonus(true);
+
+		// PAE Turm/Tower
+		if (bUpdateSight)
+		{
+			updateSeeFromSight(true, true);
+		}
 
 		if (getImprovementType() == NO_IMPROVEMENT)
 		{

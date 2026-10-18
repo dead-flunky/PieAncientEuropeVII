@@ -12,7 +12,7 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - KI (`AI_unitUpdate`): Jeder Zweig mit `return True` muss die Züge verbrauchen (finishMoves, Mission, kill, Upgrade), sonst läuft die DLL-Schleife 40–120 Mal.
 - Pitboss: `getActivePlayer()` ist auf dem Host -1, `gc.getPlayer(-1)` liefert `None`. Nie ohne Prüfung auf -1 verwenden.
 - Zufall nur für Anzeige (Popup-Texte): `gc.getASyncRand().get(n, "...")`, nie `myRandom` in Blöcken mit `getActivePlayer`.
-- Text-XML: nur Zeichen aus Latin-1 (bis U+00FF), Sonderzeichen als `&#228;` usw. Nicht erlaubt: Gedankenstrich (–), Minuszeichen (−), Auslassungspunkte (…), Aufzählungspunkt (•), Œ, Längezeichen (ā ē ĭ ḥ), schmales Leerzeichen (U+202F) – auch nicht als `&#…;`-Code,  anders formatiertes Leerzeichen ` `. Civ IV kann sie im Spiel nicht darstellen.
+- Text-XML: nur Zeichen aus Latin-1 (bis U+00FF), Sonderzeichen als `&#228;` usw. Nicht erlaubt: Gedankenstrich (–), Minuszeichen (−), Auslassungspunkte (…), Aufzählungspunkt (•), Œ, Längezeichen (ā ē ĭ ḥ), schmales Leerzeichen (U+202F) – auch nicht als `&#…;`-Code. Civ IV kann sie im Spiel nicht darstellen.
 
 ## Erledigt
 Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9).

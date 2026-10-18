@@ -5552,9 +5552,9 @@ class CvMainInterface:
 								screen.show("PAE_RevoltText")
 
 
-								if bRevoltWarning:
+								if bRevoltWarning or bBrandgefahr:
 										screen.setStackedBarColorsRGB("PAE_RevoltBar", 0, 255, 255, 0, 100)  # yellow/orange
-								elif bRevoltDanger or bBrandgefahr:
+								elif bRevoltDanger:
 										screen.setStackedBarColorsRGB("PAE_RevoltBar", 0, 255, 0, 0, 100)  # red
 								else:
 										screen.setStackedBarColorsRGB("PAE_RevoltBar", 0, 0, 255, 0, 100)  # green
