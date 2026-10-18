@@ -7295,18 +7295,24 @@ bool CvUnit::build(BuildTypes eBuild)
 			kill(true);
 		}
 
-		// PAE: CIV gets diplo bonus when building a route on other's plot
+		// PAE: CIV gets diplo bonus when building a route on other's plot (nicht auf herrenlosen Feldern, nicht bei Barbaren und MinorCivs)
 		if (GC.getBuildInfo(eBuild).getRoute() != NO_ROUTE)
 		{
-			if (getOwnerINLINE() != plot()->getOwner())
+			PlayerTypes ePlotOwner = plot()->getOwnerINLINE();
+			if (ePlotOwner != NO_PLAYER && GET_PLAYER(ePlotOwner).getTeam() != getTeam())
 			{
-				if (GC.getGameINLINE().getSorenRandNum(2, "AI_changeMemoryCount on building a route") == 1) {
-					GET_PLAYER(plot()->getOwner()).AI_changeMemoryCount(getOwnerINLINE(), MEMORY_EVENT_GOOD_TO_US, 1);
-					CvWString szBuffer = gDLL->getText("TXT_KEY_MESSAGE_BUILD_ENEMY_ROUTE", GET_PLAYER(plot()->getOwner()).getNameKey());
-					gDLL->getInterfaceIFace()->addMessage((getOwnerINLINE()), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_WELOVEKING", MESSAGE_TYPE_MAJOR_EVENT, GC.getBuildInfo(eBuild).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
+				if (!isBarbarian() && !GET_PLAYER(getOwnerINLINE()).isMinorCiv() && !GET_PLAYER(ePlotOwner).isBarbarian() && !GET_PLAYER(ePlotOwner).isMinorCiv())
+				{
+					if (GC.getGameINLINE().getSorenRandNum(2, "AI_changeMemoryCount on building a route") == 1)
+					{
+						GET_PLAYER(ePlotOwner).AI_changeMemoryCount(getOwnerINLINE(), MEMORY_EVENT_GOOD_TO_US, 1);
+						CvWString szBuffer = gDLL->getText("TXT_KEY_MESSAGE_BUILD_ENEMY_ROUTE", GET_PLAYER(ePlotOwner).getNameKey());
+						gDLL->getInterfaceIFace()->addMessage((getOwnerINLINE()), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_WELOVEKING", MESSAGE_TYPE_MAJOR_EVENT, GC.getBuildInfo(eBuild).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
+					}
 				}
 			}
 		}
+
 	}
 
 	// PAE

@@ -991,8 +991,18 @@ void CvCity::doTurn()
 		setWeLoveTheKingDay(false);
 	}
 
+	// PAE: Python (onCityDoTurn) kann die Stadt abgeben (acquireCity bei Aufstand, Buergerkrieg, Tribut). Danach ist this geloescht.
+	PlayerTypes eOldOwner = getOwnerINLINE();
+	int iOldCityID = getID();
+
 	// ONEVENT - Do turn
 	CvEventReporter::getInstance().cityDoTurn(this, getOwnerINLINE());
+
+	// PAE: Stadt gehoert nicht mehr diesem Spieler -> nicht mehr auf this zugreifen
+	if (GET_PLAYER(eOldOwner).getCity(iOldCityID) != this)
+	{
+		return;
+	}
 
 	// XXX
 #ifdef _DEBUG

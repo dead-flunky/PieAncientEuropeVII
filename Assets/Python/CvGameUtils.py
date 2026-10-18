@@ -132,11 +132,10 @@ class CvGameUtils:
 
 		def getRecommendedBuilding(self, argsList):
 				pCity = argsList[0]
-				# PAE: In eroberten Staedten den Taubenschlag empfehlen
-				if pCity.getOriginalOwner() != pCity.getOwner():
-						eBuilding = gc.getInfoTypeForString("BUILDING_TAUBENSCHLAG")
-						if pCity.canConstruct(eBuilding, False, False, False):
-								return eBuilding
+				# PAE: In Staedten den Taubenschlag empfehlen
+				eBuilding = gc.getInfoTypeForString("BUILDING_TAUBENSCHLAG")
+				if pCity.canConstruct(eBuilding, False, False, False):
+						return eBuilding
 				return BuildingTypes.NO_BUILDING
 
 		def updateColoredPlots(self):
@@ -1440,6 +1439,13 @@ class CvGameUtils:
 		def AI_chooseProduction(self, argsList):
 				pCity = argsList[0]
 				iOwner = pCity.getOwner()
+				
+				# ***TEST CTD***
+				import os
+				fLog = open(os.path.join(os.path.expanduser("~"), "PAE_CTD.log"), "a");
+				fLog.write("AI_chooseProduction P%d [%d,%d] Pop%d\n" % (pCity.getOwner(), pCity.getX(), pCity.getY(), pCity.getPopulation()));
+				fLog.close()
+				
 				# Barbs ausgeschlossen
 				if iOwner == gc.getBARBARIAN_PLAYER():
 						return False
@@ -1598,6 +1604,17 @@ class CvGameUtils:
 				# eCiv = gc.getCivilizationInfo(pOwner.getCivilizationType())
 				iBarbarianPlayer = gc.getBARBARIAN_PLAYER()
 				pPlot = pUnit.plot()
+
+				# ***TEST CTD*** (danach wieder entfernen)
+				import os
+				fLog = open(os.path.join(os.path.expanduser("~"), "PAE_CTD.log"), "a")
+				fLog.write("T%d P%d %s ID%d [%d,%d] AI%d\n" % (gc.getGame().getGameTurn(), iOwner, gc.getUnitInfo(pUnit.getUnitType()).getType(), pUnit.getID(), pUnit.getX(), pUnit.getY(), pUnit.getUnitAIType()))
+				fLog.close()
+				# ***TEST CTD***: Siedler-KI testweise aussetzen
+				#if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_SETTLER"):
+				#		fLog = open(os.path.join(os.path.expanduser("~"), "PAE_CTD.log"), "a"); fLog.write("Siedler uebersprungen\n"); fLog.close()
+				#		pUnit.finishMoves()
+				#		return True
 
 				if not pOwner.isHuman():
 						iUnitType = pUnit.getUnitType()
