@@ -17219,6 +17219,20 @@ void CvPlayer::read(FDataStreamBase* pStream)
 
 	pStream->Read(&m_iPopRushHurryCount);
 	pStream->Read(&m_iInflationModifier);
+
+	// PAE dynamic Traits: ab uiFlag 2 im Spielstand, geladene Spielstaende bekommen die Eigenschaften des Leaders
+	if (uiFlag > 1)
+	{
+		pStream->Read(GC.getNumTraitInfos(), m_dynTraits);
+	}
+	else
+	{
+		for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
+		{
+			m_dynTraits[iI] = GC.getLeaderHeadInfo(getLeaderType()).hasTrait((TraitTypes)iI);
+		}
+	}
+
 }
 
 //
@@ -17229,7 +17243,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 {
 	int iI;
 
-	uint uiFlag = 1;
+	uint uiFlag = 2; // PAE, BTS = 1 (BTS Bug)
 	pStream->Write(uiFlag);		// flag for expansion
 
 	pStream->Write(m_iStartingX);
@@ -17652,6 +17666,7 @@ void CvPlayer::write(FDataStreamBase* pStream)
 
 	pStream->Write(m_iPopRushHurryCount);
 	pStream->Write(m_iInflationModifier);
+	pStream->Write(GC.getNumTraitInfos(), m_dynTraits); // PAE dynamic Traits (ab uiFlag 2)
 }
 
 void CvPlayer::createGreatPeople(UnitTypes eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience, int iX, int iY)

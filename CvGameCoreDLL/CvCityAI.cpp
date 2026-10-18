@@ -7732,6 +7732,9 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 	}
 
 	iBestValue = 0;
+	// PAE: Lager und Holzfaellerlager (siehe Bonus weiter unten)
+	ImprovementTypes eCamp = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_CAMP");
+	ImprovementTypes eLumberCamp = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_LUMBER_CAMP");
 	eBestBuild = NO_BUILD;
 	
 	int iClearFeatureValue = 0;
@@ -8109,6 +8112,16 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 					{
 						iValue *= std::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getImprovementWeightModifier(eFinalImprovement) + 200));
 						iValue /= 200;
+					}
+
+					// PAE: KI baut Lager/Holzfaellerlager auch im Wald ohne Ressource. Die DLL bewertet nur Ertraege,
+					// der Nutzen (Wald bleibt bei Rodung erhalten, Holz, Jagd) steckt in Python.
+					if (!isHuman() && eNonObsoleteBonus == NO_BONUS && pPlot->getFeatureType() != NO_FEATURE)
+					{
+						if (eFinalImprovement == eCamp || eFinalImprovement == eLumberCamp)
+						{
+							iValue += 150;
+						}
 					}
 
 					if (pPlot->getImprovementType() == NO_IMPROVEMENT)

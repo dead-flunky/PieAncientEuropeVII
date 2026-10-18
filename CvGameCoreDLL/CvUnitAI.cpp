@@ -118,6 +118,34 @@ bool CvUnitAI::AI_update()
 		return false;
 	}
 
+	// PAE: KI-Einheiten verlassen Felder, die der Einheit schaden (Seuche, Waldbrand), auch bei Belagerung oder wenn befestigt
+	if (getDomainType() == DOMAIN_LAND && !plot()->isCity() && plot()->getFeatureType() != NO_FEATURE && GC.getFeatureInfo(plot()->getFeatureType()).getTurnDamage() > 0)
+	{
+		CvPlot* pBestPlot = NULL;
+		int iBestDanger = MAX_INT;
+		for (int iDir = 0; iDir < NUM_DIRECTION_TYPES; iDir++)
+		{
+			CvPlot* pLoopPlot = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)iDir);
+			if (pLoopPlot != NULL && canMoveInto(pLoopPlot))
+			{
+				if (pLoopPlot->getFeatureType() == NO_FEATURE || GC.getFeatureInfo(pLoopPlot->getFeatureType()).getTurnDamage() == 0)
+				{
+					int iDanger = GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(pLoopPlot, 1);
+					if (iDanger < iBestDanger)
+					{
+						iBestDanger = iDanger;
+						pBestPlot = pLoopPlot;
+					}
+				}
+			}
+		}
+		if (pBestPlot != NULL)
+		{
+			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
+			return false;
+		}
+	}
+
 	if (getGroup()->isAutomated())
 	{
 		switch (getGroup()->getAutomateType())

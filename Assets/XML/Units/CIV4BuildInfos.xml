@@ -157,7 +157,7 @@
 			<Type>BUILD_HUNTING_CAMP</Type>
 			<Description>TXT_KEY_BUILD_HUNTING_CAMP</Description>
 			<Help/>
-			<PrereqTech>TECH_HUNTING</PrereqTech>
+			<PrereqTech/>
 			<iTime>1</iTime>
 			<iCost>0</iCost>
 			<bKill>1</bKill>

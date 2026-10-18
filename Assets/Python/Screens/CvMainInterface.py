@@ -5576,24 +5576,31 @@ class CvMainInterface:
 								else:
 										iCityUnhappy = pCity.unhappyLevel(0) - pCity.happyLevel()
 										iCityUnhealthy = pCity.badHealth(False) - pCity.goodHealth()
-										if bRevoltDanger:
+										# Reihenfolge und Chancen wie in PAE_City.doEmigrantSpawn
+										if iCityUnhappy > 0 or iCityUnhealthy > 0:
 												if iCityUnhappy < 0:
 														iCityUnhappy = 0
 												if iCityUnhealthy < 0:
 														iCityUnhealthy = 0
 												iChance = (iCityUnhappy + iCityUnhealthy) * 4  # * iCityPop
 
-												if iChance == 0:
-														iChance = 4
-
 												if iCityUnhappy > 0 and iCityUnhealthy > 0:
 														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_1", ("", iChance))
 												elif iCityUnhappy > 0:
 														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_2", ("", iChance))
-												elif iCityUnhealthy > 0:
+												else:
 														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_3", ("", iChance))
+										elif pPlayer.getAnarchyTurns() > 0:
+												szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_4", ("", 3))
+										elif pPlayer.getStateReligion() != -1 and not pCity.isHasReligion(pPlayer.getStateReligion()):
+												szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_5", ("", 3))
 										else:
-												szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_NO_DANGER", ("",))
+												iTaxesLimit = PAE_City.getTaxesLimit(pPlayer)
+												iChance = int((pPlayer.getCommercePercent(0) - iTaxesLimit) / 5) - pCity.happyLevel() + pCity.unhappyLevel(0)
+												if pPlayer.getCommercePercent(0) > iTaxesLimit and iChance > 0:
+														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_DANGER_6", ("", iChance))
+												else:
+														szBuffer = localText.getText("TXT_KEY_MAIN_EMIGRATE_NO_DANGER", ("",))
 
 								screen.setLabel("PAE_EmigrationText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, 125, yResolution - 303, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 								screen.setHitTest("PAE_EmigrationText", HitTestTypes.HITTEST_NOHIT)

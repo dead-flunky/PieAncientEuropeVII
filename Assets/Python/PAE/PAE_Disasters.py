@@ -1797,7 +1797,7 @@ def doDestroyCityBuildings(pCity, iChance):
 				for iBuilding in range(iRange):
 						if pCity.getNumRealBuilding(iBuilding):
 								pBuilding = gc.getBuildingInfo(iBuilding)
-								if not isWorldWonderClass(pBuilding.getBuildingClassType()):
+								if not isWorldWonderClass(pBuilding.getBuildingClassType()) and not pBuilding.isCapital():
 										if CvUtil.myRandom(100, "destroyCityBuildings") < iChance:
 												pCity.setNumRealBuilding(iBuilding, 0)
 												bDestroyed = True

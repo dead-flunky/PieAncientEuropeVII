@@ -785,6 +785,22 @@ Scuola di retorica
 		<Spanish>Bosque joven</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_NO_DEFORESTATION</Tag>
+		<English>No deforestation by unit production (desertification)</English>
+		<French>Absence de d&#233;forestation li&#233;e &#224; la production unitaire (d&#233;sertification)</French>
+		<German>Keine Waldrodung durch Einheitenbau (Desertifizierung)</German>
+		<Italian>Assenza di deforestazione legata all'unit&#224; di produzione (desertificazione)</Italian>
+		<Spanish>Sin deforestaci&#243;n por unidad de producci&#243;n (desertificaci&#243;n)</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_NO_DEFORESTATION_HELP</Tag>
+		<English>Cities do not clear forests, savannas, or jungles within their city radius when producing units. With this option enabled, however, a forest tile can be cleared for every new combat unit produced from the Bronze Age onwards (excluding basic units such as archers and skirmishers), even within a neighbor's territory (which worsens relations).</English>
+		<French>Lors de la cr&#233;ation d'unit&#233;s, les villes ne d&#233;boisent pas les for&#234;ts, savanes ou jungles situ&#233;es dans leur rayon d'action. Si cette option est activ&#233;e, il est possible, &#224; partir de l'&#226;ge du bronze, de d&#233;fricher une case foresti&#232;re pour chaque nouvelle unit&#233; de combat (&#224; l'exception des unit&#233;s simples telles que les archers et les tirailleurs), cela peut m&#234;me &#234;tre effectu&#233; sur le territoire d'un voisin (ce qui d&#233;t&#233;riore les relations).</French>
+		<German>St&#228;dte roden beim Bau von Einheiten keine W&#228;lder, Savannen oder Dschungel im Stadtradius. Ohne dieser Option kann ab der Bronzezeit f&#252;r jede neue Kampfeinheit (au&#223;er einfachen Einheiten wie Bogensch&#252;tzen und Pl&#228;nklern) ein Waldfeld gerodet werden, auch beim Nachbarn (verschlechtertdie Beziehung).</German>
+		<Italian>Le citt&#224; non disboscano foreste, savane o giungle presenti nel loro raggio d'azione durante la creazione di unit&#224;. Se questa opzione &#232; attiva, a partire dall'Et&#224; del Bronzo, per ogni nuova unit&#224; da combattimento (ad eccezione di unit&#224; semplici come arcieri e schermidori) &#232; possibile eliminare una foresta, l'operazione pu&#242; essere eseguita anche nel territorio di un vicino (il che comporta un peggioramento delle relazioni).</Italian>
+		<Spanish>Las ciudades no talan bosques, sabanas ni selvas situados dentro de su radio al crear unidades. Sin embargo, a partir de la Edad del Bronce, es posible talar una casilla de bosque para producir cada nueva unidad de combate (a excepci&#243;n de unidades b&#225;sicas, como arqueros y escaramuzadores), esto puede hacerse incluso en territorio vecino (lo que empeora las relaciones).</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT</Tag>
 		<English>No combat rounds (Standard BTS: Until death)</English>
 		<French>Pas de tours de combat (Norme BTS: Jusqu'&#224; la mort)</French>
@@ -1279,6 +1295,30 @@ Scuola di retorica
 		<German>%F1-Verteidigung: %d2/%d3</German>
 		<Italian>%F1 Difesa: %d2/%d3</Italian>
 		<Spanish>%F1 Defensa: %d2/%d3</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_EMIGRATE_DANGER_4</Tag>
+		<English>Emigration (anarchy) %d2%%</English>
+		<French>&#201;migration (anarchie) %d2%%</French>
+		<German>Auswanderung (Anarchie) %d2%%</German>
+		<Italian>Emigrazione (anarchia) %d2%%</Italian>
+		<Spanish>Emigraci&#243;n (anarqu&#237;a) %d2%%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_EMIGRATE_DANGER_5</Tag>
+		<English>Willing to emigrate (no [ICON_RELIGION]) %d2%%</English>
+		<French>Enclin &#224; &#233;migrer (sans [ICON_RELIGION]) %d2%%</French>
+		<German>Auswanderungswillig (keine [ICON_RELIGION]) %d2%%</German>
+		<Italian>Disposti a emigrare (senza [ICON_RELIGION]) %d2%%</Italian>
+		<Spanish>Dispuestos a emigrar (sin [ICON_RELIGION]) %d2%%</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAIN_EMIGRATE_DANGER_6</Tag>
+		<English>Willing to emigrate ([ICON_GOLD]) %d2%%</English>
+		<French>Enclin &#224; &#233;migrer ([ICON_GOLD]) %d2%%</French>
+		<German>Auswanderungswillig ([ICON_GOLD]) %d2%%</German>
+		<Italian>Disposti a emigrare ([ICON_GOLD]) %d2%%</Italian>
+		<Spanish>Dispuestos a emigrar ([ICON_GOLD]) %d2%%</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MAIN_REVOLT_BORDELL</Tag>

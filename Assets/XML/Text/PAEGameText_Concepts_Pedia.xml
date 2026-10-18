@@ -8872,7 +8872,7 @@ Sin escolta, el comerciante puede perder sus mercanc&#237;as o morir. Con una es
 [ICON_BULLET]units suffer 20 damage per round
 [ICON_BULLET]-0,5 [ICON_UNHEALTHY] in cities
 [ICON_BULLET]slows units down
-[ICON_BULLET]can spread
+[ICON_BULLET]can spread across dry forested plains
 [ICON_BULLET]can stop on its own
 
 [H2]Burnt Forest[\H2]
@@ -9036,8 +9036,7 @@ Effects:
 [ICON_BULLET] 20 d&#233;g&#226;ts par tour aux unit&#233;s
 [ICON_BULLET] -0,5 [ICON_UNHEALTHY] dans les villes
 [ICON_BULLET] Ralentit les unit&#233;s
-[ICON_BULLET] peut se propager
-[ICON_BULLET] se propage sur les terrains &#224; d&#233;couvert
+[ICON_BULLET]peut se propager dans des plaines s&#232;ches et bois&#233;es
 [ICON_BULLET] peut s'arr&#234;ter tout seul
 
  [H2] For&#234;t calcin&#233;e [\H2]
@@ -9202,8 +9201,8 @@ Effets :
 [ICON_BULLET]20 Schaden pro Runde an Einheiten
 [ICON_BULLET]-0,5 [ICON_UNHEALTHY] in St&#228;dten
 [ICON_BULLET]verlangsamt Einheiten
-[ICON_BULLET]kann sich ausbreiten
-[ICON_BULLET]kann von selbst aufh&#246;ren
+[ICON_BULLET]kann sich auf bewaldeten trockenen Ebenen (Plains) ausbreiten
+[ICON_BULLET]h&#246;rt von selbst wieder auf
 
 [H2]Verbrannter Wald[\H2]
 [ICON_BULLET]Folge von Erdbeben, Vulkanausbr&#252;chen, Meteoriten und Kometen
@@ -9367,7 +9366,7 @@ Auswirkungen:
 [ICON_BULLET]le unit&#224; subiscono 20 danni per turno
 [ICON_BULLET]-0,5 [ICON_UNHEALTHY] nelle citt&#224;
 [ICON_BULLET]rallenta le unit&#224;
-[ICON_BULLET]pu&#242; diffondersi
+[ICON_BULLET]pu&#242; diffondersi in pianure aride e boscose (Plains)
 [ICON_BULLET]pu&#242; fermarsi da solo
 
 [H2]Foresta Bruciata[\H2]
@@ -9531,14 +9530,14 @@ Effetti:
 [ICON_BULLET]Las unidades sufren 20 de da&#241;o por turno
 [ICON_BULLET]-0,5 [ICON_UNHEALTHY] en ciudades
 [ICON_BULLET]ralentiza unidades
-[ICON_BULLET]puede propagarse
+[ICON_BULLET]puede extenderse por llanuras secas y boscosas
 [ICON_BULLET]puede detenerse por s&#237; solo
 
 [H2]Bosque quemado[\H2]
 [ICON_BULLET]consecuencia de terremotos, erupciones volc&#225;nicas, meteoritos y cometas
 [ICON_BULLET]-1 [ICON_FOOD], -1 [ICON_PRODUCTION]
 [ICON_BULLET]-0,25 [ICON_UNHEALTHY] en ciudades
-[ICON_BULLET]afecta a bosques
+[ICON_BULLET]afecta a los bosques
 [ICON_BULLET]puede regenerarse a s&#237; mismo
 
 [H2]Inundaci&#243;n[\H2]

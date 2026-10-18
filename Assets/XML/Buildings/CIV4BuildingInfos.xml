@@ -31,7 +31,7 @@
 			<ProductionTraits/>
 			<HappinessTraits/>
 			<NoBonus/>
-			<PowerBonus/>
+			<PowerBonus/><PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<FreeBonus/>
 			<iNumFreeBonuses>0</iNumFreeBonuses>
 			<FreeBuilding/>
@@ -62780,7 +62780,7 @@
 												<ReligionType/>
 												<StateReligion/>
 												<bStateReligion>0</bStateReligion>
-												<PrereqReligion/>
+												<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 												<PrereqCorporation/>
 												<FoundsCorporation>CORPORATION_9</FoundsCorporation>
 												<GlobalReligionCommerce/>

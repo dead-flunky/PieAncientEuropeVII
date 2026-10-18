@@ -708,7 +708,7 @@ def _calculateBonusBuyingPrice4Cultivation(eBonus, iBuyer, pPlot):
 		"""
 		iPrice = PAE_Trade.getBonusValue(eBonus)
 		pCity = pPlot.getPlotCity()
-		if pCity is None:
+		if not pPlot.isCity():
 				# Bonus on plot: regional price
 				if pPlot.getBonusType(pPlot.getTeam()) == eBonus:
 						return iPrice

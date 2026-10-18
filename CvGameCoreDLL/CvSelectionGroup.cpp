@@ -183,6 +183,16 @@ void CvSelectionGroup::doTurn()
 			setActivityType(ACTIVITY_AWAKE);
 		}
 
+		// PAE: KI-Einheiten auf verseuchten oder brennenden Feldern (Waldbrand) aufwecken, damit AI_update sie wegzieht
+		if (AI_isControlled() && getDomainType() == DOMAIN_LAND && !plot()->isCity())
+		{
+			FeatureTypes eFeature = plot()->getFeatureType();
+			if (eFeature != NO_FEATURE && GC.getFeatureInfo(eFeature).getTurnDamage() > 0)
+			{
+				setActivityType(ACTIVITY_AWAKE);
+			}
+		}
+
 		if (AI_isControlled())
 		{
 			if ((getActivityType() != ACTIVITY_MISSION) || (!canFight() && (GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 2) > 0)))
@@ -3380,7 +3390,8 @@ void CvSelectionGroup::setTransportUnit(CvUnit* pTransportUnit)
 	}
 }
 
-
+// BTS Original
+/*
 bool CvSelectionGroup::isAmphibPlot(const CvPlot* pPlot) const
 {
 	bool bFriendly = true;
@@ -3392,7 +3403,40 @@ bool CvSelectionGroup::isAmphibPlot(const CvPlot* pPlot) const
 
 	return ((getDomainType() == DOMAIN_SEA) && pPlot->isCoastalLand() && !bFriendly);
 }
+*/
+// PAE
+bool CvSelectionGroup::isAmphibPlot(const CvPlot* pPlot) const
+{
+	if (getDomainType() != DOMAIN_SEA)
+	{
+		return false;
+	}
 
+	bool bFriendly = true;
+	CvUnit* pUnit = getHeadUnit();
+	if (NULL != pUnit)
+	{
+		bFriendly = pPlot->isFriendlyCity(*pUnit, true);
+	}
+
+	// PAE: isCoastalLand() zaehlt Fluesse und Seen (Suesswasser) nicht mit. Damit auch an Flussufern
+	// (TERRAIN_RIVER) per Go-To ausgeladen werden kann, reicht hier ein angrenzendes Wasserfeld.
+	bool bShore = pPlot->isCoastalLand();
+	if (!bShore && !pPlot->isWater())
+	{
+		for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+		{
+			CvPlot* pAdjacentPlot = plotDirection(pPlot->getX_INLINE(), pPlot->getY_INLINE(), ((DirectionTypes)iI));
+			if (pAdjacentPlot != NULL && pAdjacentPlot->isWater())
+			{
+				bShore = true;
+				break;
+			}
+		}
+	}
+
+	return (bShore && !bFriendly);
+}
 
 // Returns true if attempted an amphib landing...
 bool CvSelectionGroup::groupAmphibMove(CvPlot* pPlot, int iFlags)

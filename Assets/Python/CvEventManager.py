@@ -4565,7 +4565,7 @@ class CvEventManager:
 							iHandicap = gc.getGame().getHandicapType()
 							# 50% or fixed 2nd Settler for AI (fix: Immortal, Deity: PAE V, Emperor: PAE VII)
 							if iUnitType == gc.getInfoTypeForString("UNIT_SETTLER"):
-								if iHandicap > 5 or CvUtil.myRandom(2, "onUnitBuilt_AIGetsSecondSettler") == 1:
+								if iHandicap > 5 or gc.getMap().getWorldSize() >= gc.getInfoTypeForString("WORLDSIZE_LARGE") or CvUtil.myRandom(2, "onUnitBuilt_AIGetsSecondSettler") == 1:
 									CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
 
 							# Experienced units on higher handicap level (PAE V Patch 3)
@@ -4578,6 +4578,10 @@ class CvEventManager:
 															unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT3"), True)
 															if iHandicap > 7 and CvUtil.myRandom(2, "AIUnitPromoBonusHandicap8") == 1:
 																	unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT4"), True)
+					# PAE: Auf grossen Karten (Large, Huge) bekommt auch der Mensch zu jedem Siedler einen zweiten
+					else:
+							if iUnitType == gc.getInfoTypeForString("UNIT_SETTLER") and gc.getMap().getWorldSize() >= gc.getInfoTypeForString("WORLDSIZE_LARGE"):
+									CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
 
 					# Log Message (BTS)
 					CvAdvisorUtils.unitBuiltFeats(city, unit)
@@ -4596,8 +4600,9 @@ class CvEventManager:
 							PAE_City.onEmigrantBuilt(city, unit)
 
 					# ++++ Bronze-Feature / Wald roden / Waldrodung / Abholzung / Desertifizierung / betrifft nicht die Barbarenstaedte
-					if not pPlayer.isBarbarian() and not pPlayer.isMinorCiv():
-							PAE_City.doDesertification(city, unit)
+					if not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_DEFORESTATION):
+							if not pPlayer.isBarbarian() and not pPlayer.isMinorCiv():
+									PAE_City.doDesertification(city, unit)
 
 					# PAE V: Mercenary promotion
 					if iPlayer != city.getOriginalOwner():

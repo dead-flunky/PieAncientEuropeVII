@@ -192,7 +192,7 @@ def onGameStart():
 	"""
 	iPlayer = 0
 	pPlayer = gc.getPlayer(iPlayer)
-	iX = 50 #99 xxx
+	iX = 50 #99 xxx für Testzwecke auf der kleineren 70x90 Karte. Muss offiziell wieder auf 99 geändert werden.
 	iY = 79
 	# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
 	iHandicap = gc.getGame().getHandicapType()

@@ -175,6 +175,13 @@
 		<bVisible>1</bVisible>
 		</GameOptionInfo>
 		<GameOptionInfo>
+			<Type>GAMEOPTION_NO_DEFORESTATION</Type>
+			<Description>TXT_KEY_GAMEOPTION_NO_DEFORESTATION</Description>
+			<Help>TXT_KEY_GAMEOPTION_NO_DEFORESTATION_HELP</Help>
+			<bDefault>0</bDefault>
+			<bVisible>1</bVisible>
+		</GameOptionInfo>
+		<GameOptionInfo>
 			<Type>GAMEOPTION_NO_DISASTERS</Type>
 			<Description>TXT_KEY_GAMEOPTION_NO_DISASTERS</Description>
 			<Help>TXT_KEY_GAMEOPTION_NO_DISASTERS_HELP</Help>
