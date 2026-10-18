@@ -8783,17 +8783,19 @@ void CvPlot::doFeature()
 					{
 						if (pLoopPlot->getFeatureType() == eForest)
 						{
-
-							pLoopPlot->setFeatureType(eForestFire);
-
-							pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
-							if (pCity != NULL)
+							if (pLoopPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_PLAINS"))
 							{
-								szBuffer = gDLL->getText("TXT_KEY_FEATURE_FOREST_FIRE_NEAR_CITY", pCity->getNameKey());
-								gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATURE_FOREST_FIRE", MESSAGE_TYPE_INFO, GC.getFeatureInfo(eForestFire).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
-							}
+								pLoopPlot->setFeatureType(eForestFire);
 
-							break;
+								pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
+								if (pCity != NULL)
+								{
+									szBuffer = gDLL->getText("TXT_KEY_FEATURE_FOREST_FIRE_NEAR_CITY", pCity->getNameKey());
+									gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FEATURE_FOREST_FIRE", MESSAGE_TYPE_INFO, GC.getFeatureInfo(eForestFire).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), getX_INLINE(), getY_INLINE(), true, true);
+								}
+
+								break;
+							}
 						}
 					}
 				}

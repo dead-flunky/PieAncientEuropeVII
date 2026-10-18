@@ -12,7 +12,7 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - KI (`AI_unitUpdate`): Jeder Zweig mit `return True` muss die Züge verbrauchen (finishMoves, Mission, kill, Upgrade), sonst läuft die DLL-Schleife 40–120 Mal.
 - Pitboss: `getActivePlayer()` ist auf dem Host -1, `gc.getPlayer(-1)` liefert `None`. Nie ohne Prüfung auf -1 verwenden.
 - Zufall nur für Anzeige (Popup-Texte): `gc.getASyncRand().get(n, "...")`, nie `myRandom` in Blöcken mit `getActivePlayer`.
-- Text-XML: nur Zeichen aus Latin-1 (bis U+00FF), Sonderzeichen als `&#228;` usw. Nicht erlaubt: Gedankenstrich (–), Minuszeichen (−), Auslassungspunkte (…), Aufzählungspunkt (•), Œ, Längezeichen (ā ē ĭ ḥ), schmales Leerzeichen (U+202F) – auch nicht als `&#…;`-Code und kein  . Civ IV kann sie im Spiel nicht darstellen.
+- Text-XML: nur Zeichen aus Latin-1 (bis U+00FF), Sonderzeichen als `&#228;` usw. Nicht erlaubt: Gedankenstrich (–), Minuszeichen (−), Auslassungspunkte (…), Aufzählungspunkt (•), Œ, Längezeichen (ā ē ĭ ḥ), schmales Leerzeichen (U+202F) – auch nicht als `&#…;`-Code,  anders formatiertes Leerzeichen ` `. Civ IV kann sie im Spiel nicht darstellen.
 
 ## Erledigt
 Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9).
@@ -29,10 +29,7 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 Optional:
 - `CvEventManager.py` Z. 2282 (Handler 776): auch den Ausgangstyp prüfen (nur Elefanten, nicht derselbe Typ).
 - P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
-- L1: toter Zweig `iDistance2 == -1` in `PAE_Trade.doAutomateMerchant` entfernen.
-- L2: `PAE_Unit.getSupply` schreibt ScriptData beim Lesen.
-- L3: `WegDerGoten.py` Z. 331, 467, 1584: `getUnit(i)` mit Index statt ID.
-- Balance: Arbeitselefant kostet jetzt 120 (Arbeiter 40); ggf. beide Elefanten auf ~90.
+- Balance: Arbeits- und Kriegselefant auf je 110 gesenkt (vorher 120; Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
 
 
 ---
@@ -213,9 +210,9 @@ Fix: `PAE_Trade.init()` jede Runde im Seidenstraßen-Block.
 
 ### Schlafende Fallen / Kleinigkeiten
 
-- **L1** `PAE_Trade.doAutomateMerchant`: Zweig `elif iDistance2 == -1` (mit `getActivePlayer()` und `not pushMission(...)`) ist toter Code (Distanzen sind nie -1). `pushMission` liefert `None`, die Bedingung wäre immer wahr. Aufräumen.
-- **L2** `PAE_Unit.getSupply` schreibt ScriptData, auch wenn die Oberfläche liest. Deterministisch, aber Lese-Funktionen sollten nicht schreiben.
-- **L3** `WegDerGoten.py` Z. 331, 467, 1584: `getUnit(i)` mit Index statt ID (wie C3 bei Städten) → Einheiten werden übersehen. Kein OOS, aber Logikfehler.
+- **L1** `PAE_Trade.doAutomateMerchant`: Zweig `elif iDistance2 == -1` (mit `getActivePlayer()` und `not pushMission(...)`) ist toter Code (Distanzen sind nie -1). `pushMission` liefert `None`, die Bedingung wäre immer wahr. Aufräumen. ✅ (behoben in 7.18.3.10)
+- **L2** `PAE_Unit.getSupply` schreibt ScriptData, auch wenn die Oberfläche liest. Deterministisch, aber Lese-Funktionen sollten nicht schreiben. war auch eine kleine OOS-Falle, weil die Oberfläche getSupply aufruft ✅ (behoben in 7.18.3.10)
+- **L3** `WegDerGoten.py` Z. 331, 467, 1584: `getUnit(i)` mit Index statt ID (wie C3 bei Städten) → Einheiten werden übersehen. Kein OOS, aber Logikfehler. ✅ (behoben in 7.18.3.10)
 
 
 ---

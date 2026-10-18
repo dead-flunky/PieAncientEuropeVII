@@ -3755,11 +3755,10 @@ def getSupply(pUnit):
 
 		# kein Eintrag == fabriksneu
 		iCurrentSupply = CvUtil.getScriptData(pUnit, ["s"], iMaxSupply)
-		if iCurrentSupply > iMaxSupply:
-				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST", ("Current Supply is bogus", iCurrentSupply)), None, 2, None, ColorTypes(10), 0, 0, False, False)
-				setSupply(pUnit, iMaxSupply)
-				iCurrentSupply = iMaxSupply
-		return iCurrentSupply
+		#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST", ("Current Supply is bogus", iCurrentSupply)), None, 2, None, ColorTypes(10), 0, 0, False, False)
+
+		# Nur lesen (wird auch von der Oberflaeche aufgerufen): zu hohen Wert begrenzen, nicht zurueckschreiben
+		return min(iCurrentSupply, iMaxSupply)
 
 
 def getMaxSupply(pUnit):

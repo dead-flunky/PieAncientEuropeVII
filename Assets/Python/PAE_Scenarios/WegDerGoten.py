@@ -192,7 +192,7 @@ def onGameStart():
 	"""
 	iPlayer = 0
 	pPlayer = gc.getPlayer(iPlayer)
-	iX = 99
+	iX = 50 #99 xxx
 	iY = 79
 	# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
 	iHandicap = gc.getGame().getHandicapType()
@@ -328,15 +328,14 @@ def onBeginPlayerTurn(iGameTurn, iPlayer):
 		#Der Älteste "ScriptData=TheElder" ist Stammesfürst mit General der Alten Goten (Player 20) in Hagelsberg. Er hat zu Beginn des Spiels AI=CityDefence. DANN ->
 		#5% Chance jede Runde, dass er zu AI=Attack wechselt
 		if not bTheElderUnitAITypeAttack:
-			iRange = pPlayer.getNumUnits()
-			for i in range(iRange):
-				if pPlayer.getUnit(i) is not None:
-					if pPlayer.getUnit(i).getScriptData() == "TheElder":
-						if pPlayer.getUnit(i).getUnitAIType() == UnitAITypes.UNITAI_ATTACK:
+			for pLoopUnit in PyPlayer(iPlayer).getUnitList():
+				if not pLoopUnit.isNone():
+					if pLoopUnit.getScriptData() == "TheElder":
+						if pLoopUnit.getUnitAIType() == UnitAITypes.UNITAI_ATTACK:
 							bTheElderUnitAITypeAttack = True
 						else:
 							if CvUtil.myRandom(20, "WDG_Event_1.3_TheElder") == 1:
-								pPlayer.getUnit(i).setUnitAIType(UnitAITypes.UNITAI_ATTACK)
+								pLoopUnit.setUnitAIType(UnitAITypes.UNITAI_ATTACK)
 								bTheElderUnitAITypeAttack = True
 
 
@@ -464,10 +463,9 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 	if iNewOwner == 0 and pNewOwner.isHuman() and iPreviousOwner in lGermanen:
 		iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["13_1"], "")
 		if iCheck == "":
-			iRange = pNewOwner.getNumUnits()
-			for i in range(iRange):
-				if pNewOwner.getUnit(i) is not None:
-					if pNewOwner.getUnit(i).getScriptData() == "Alarich":
+			for pLoopUnit in PyPlayer(iNewOwner).getUnitList():
+				if not pLoopUnit.isNone():
+					if pLoopUnit.getScriptData() == "Alarich":
 
 						#Mit der Einnahme von [get.cityname] habt ihr wahrlich ein Zeichen gesetzt.
 						#Die Welt soll erfahren, dass die große Vereinigung aller Germanenvölker begonnen hat! Diese Kunde wird von den Barden in alle Himmelsrichtungen getragen. Euer Name wird schon bald in aller Munde sein!
@@ -1581,10 +1579,9 @@ def onCityGrowth(pCity,iPlayer):
 
 			#[ABFRAGE] Lebt Alarich noch? -> DANN
 			#iPromoLeader = gc.getInfoTypeForString("PROMOTION_LEADER")
-			iRange = pPlayer.getNumUnits()
-			for i in range(iRange):
-				if pPlayer.getUnit(i) is not None:
-					if pPlayer.getUnit(i).getScriptData() == "Alarich":
+			for pLoopUnit in PyPlayer(iPlayer).getUnitList():
+				if not pLoopUnit.isNone():
+					if pLoopUnit.getScriptData() == "Alarich":
 
 						#+1 Zufriedenheit im Palast
 						pCity = pPlayer.getCapitalCity()

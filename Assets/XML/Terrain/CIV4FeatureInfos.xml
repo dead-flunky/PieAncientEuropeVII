@@ -757,7 +757,7 @@
 			<iHealthPercent>-10</iHealthPercent>
 			<iDefense>0</iDefense>
 			<iAppearance>0</iAppearance>
-			<iDisappearance>1800</iDisappearance>
+			<iDisappearance>2000</iDisappearance>
 			<iGrowth>0</iGrowth>
 			<iTurnDamage>30</iTurnDamage>
 			<bNoCoast>0</bNoCoast>
