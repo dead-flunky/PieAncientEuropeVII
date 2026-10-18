@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.18.3.9)
+# PAE – Übergabe an Claude Code (Stand 7.18.3.14)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -13,9 +13,14 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - Pitboss: `getActivePlayer()` ist auf dem Host -1, `gc.getPlayer(-1)` liefert `None`. Nie ohne Prüfung auf -1 verwenden.
 - Zufall nur für Anzeige (Popup-Texte): `gc.getASyncRand().get(n, "...")`, nie `myRandom` in Blöcken mit `getActivePlayer`.
 - Text-XML: nur Zeichen aus Latin-1 (bis U+00FF), Sonderzeichen als `&#228;` usw. Nicht erlaubt: Gedankenstrich (–), Minuszeichen (−), Auslassungspunkte (…), Aufzählungspunkt (•), Œ, Längezeichen (ā ē ĭ ḥ), schmales Leerzeichen (U+202F) – auch nicht als `&#…;`-Code. Civ IV kann sie im Spiel nicht darstellen.
+- Python: `pPlot.getPlotCity()` liefert nie `None`, sondern ein leeres Objekt. Immer `pPlot.isCity()` oder `pCity.isNone()` prüfen.
+- DLL, KI: `AI_chooseBuilding/AI_chooseUnit/AI_chooseProcess` geben bei Erfolg sofort einen Bauauftrag (`pushOrder`). Zum reinen Prüfen `AI_bestBuildingThreshold` bzw. `AI_bestUnitAI` verwenden.
+- DLL, Sicht: `CvPlot::seeFromLevel()` hängt bei PAE vom Ausbau ab (Turm, Fort, Limes, Kastell). Wer Sichthöhe oder Sichtweite ändert, muss vorher `updateSeeFromSight(false, true)` und nachher `(true, true)` aufrufen, sonst bleiben Felder dauerhaft schwarz.
+- DLL, Spieloptionen: Reihenfolge in `CvEnums.h` (GameOptionTypes) und `CIV4GameOptionInfos.xml` muss identisch sein, Name in `CyEnumsInterface.cpp` exakt gleich. Neue Option verschiebt die gespeicherten Optionen (Spielstände inkompatibel, außer `CvInitCore::read` wird angepasst).
+- DLL, Spielstand: Neue Member-Variablen in `read`/`write` aufnehmen, mit höherem `uiFlag` (Beispiel: `m_dynTraits` in `CvPlayer`, ab `uiFlag` 2).
 
 ## Erledigt
-Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9).
+Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
 
 ## Offen
 Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
@@ -29,9 +34,33 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 Optional:
 - `CvEventManager.py` Z. 2282 (Handler 776): auch den Ausgangstyp prüfen (nur Elefanten, nicht derselbe Typ).
 - P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
-- Balance: Arbeits- und Kriegselefant auf je 110 gesenkt (vorher 120; Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
+- Balance: Arbeits- und Kriegselefant je 110 (Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
+- Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
 
+Vor der Veröffentlichung:
+- `WegDerGoten.py` Z. 195: `iX = 50` (Testwert für 70x90-Karte) zurück auf `99`.
+- Spieler informieren: Spielstände vor 7.18.3.12 laden nicht mehr (neue Spieloption, Eigenschaften im Spielstand).
 
+## Patch 7.18.3.10–14 (Claude Code)
+
+**Bugfixes**
+- **Sicht/schwarze Felder** (`CvPlot::setImprovementType`): Bau oder Verlust von Turm/Fort/Limes/Kastell änderte `seeFromLevel` ohne Neuberechnung → Sichtzähler negativ, Felder blieben schwarz. Jetzt `updateSeeFromSight` vor/nach der Änderung.
+- **Eigenschaften nach Laden weg** (`CvPlayer::read/write`): `m_dynTraits` wurde nie gespeichert → `hasTrait()` nach dem Laden immer False (z. B. TRAIT_IMPERIALIST in `canDoCivic`). Jetzt gespeichert (`uiFlag` 2).
+- **KI baute Massen an Kriegern/Flachbögen** (`CvCityAI::AI_chooseProduction`, PAE-Block Research): Die Prüfung mit `AI_chooseBuilding/AI_chooseUnit` gab jedes Mal Aufträge. Jetzt `AI_bestBuildingThreshold` + Armee-Richtwert. Folge vorher: Überfüllung → Ungesundheit → Pest.
+- **Esel aufladen auf dem Feld ×3 Preis** (`PAE_Cultivation._calculateBonusBuyingPrice4Cultivation`): `pCity is None` → `not pPlot.isCity()`.
+- **Erdbeben zerstörte Palast** (`PAE_Disasters.doDestroyCityBuildings`): Gebäude mit `isCapital()` werden verschont.
+- **Ausladen an Flussufern per Go-To** (`CvSelectionGroup::isAmphibPlot`): `isCoastalLand()` ignoriert seit PAE Süßwasser → zusätzlich jedes angrenzende Wasserfeld.
+- **Auswanderungsanzeige** (`CvMainInterface.py`, PAE_EmigrationText): zeigte den Aufstandstext. Jetzt gleiche Bedingungen wie `PAE_City.doEmigrantSpawn`, neue Texte `TXT_KEY_MAIN_EMIGRATE_DANGER_4–6` (Anarchie, ohne Staatsreligion, Steuern) in `PAEVII.xml`.
+- **Waldbrand** (`CvPlot::doFeature`): breitet sich nur noch auf Wald in Ebenen aus, `iDisappearance` 2000.
+
+**Neu**
+- Spieloption `GAMEOPTION_NO_DEFORESTATION` (nach NO_ESPIONAGE): keine Waldrodung beim Einheitenbau (`CvEventManager.onUnitBuilt` → `PAE_City.doDesertification`).
+- Zweiter Siedler auf Large/Huge für Mensch und KI (`CvEventManager.onUnitBuilt`), XML-Limit bleibt 1.
+- KI verlässt brennende Felder (`CvSelectionGroup::doTurn` weckt auf, `CvUnitAI::AI_update` zieht weg).
+- KI baut Lager/Holzfällerlager im Wald ohne Ressource (`CvCityAI::AI_bestPlotBuild`, +150).
+- KI-Mindestverteidiger je Stadt = `iBarbarianDefenders` des Schwierigkeitsgrads (`CvCityAI::AI_minDefenders`).
+- Indra-Kult braucht Hinduismus in der Stadt (`BUILDING_CORPORATION_9` PrereqReligion).
+- `BUILD_HUNTING_CAMP` ohne PrereqTech (von keiner Einheit genutzt, Jäger baut Lager für 4 Gold ohne zu sterben).
 ---
 
 ## PAE KI-Review (Python) – Stand 7.18.3.2

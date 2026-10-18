@@ -887,8 +887,8 @@ void CvCityAI::AI_chooseProduction()
 				AI_bestBuildingThreshold(BUILDINGFOCUS_PRODUCTION, 0, 0) == NO_BUILDING &&
 				AI_bestBuildingThreshold(BUILDINGFOCUS_FOOD, 0, 0) == NO_BUILDING)
 			{
-				// 3. Genug Militaer im ganzen Reich? (Richtwert: 3 Einheiten je Stadt)
-				if (kPlayer.getNumMilitaryUnits() >= 3 * kPlayer.getNumCities())
+				// 3. Genug Militaer im ganzen Reich? (Verteidiger laut Schwierigkeitsgrad + 2 je Stadt)
+				if (kPlayer.getNumMilitaryUnits() >= (GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getBarbarianInitialDefenders() + 2) * kPlayer.getNumCities())
 				{
 					// 4. Forschung (50 %), bei Geldnot Gold
 					if (GC.getGameINLINE().getSorenRandNum(10, "AI builds COMMERCE_RESEARCH") < 5)
@@ -4585,6 +4585,9 @@ int CvCityAI::AI_minDefenders()
 	if (iEra > 0) iDefenders++;
 	if (iEra > 2 && isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN())) iDefenders++;
 	if (getPopulation() >= 6) iDefenders++;
+
+	// PAE: mindestens so viele Verteidiger wie iBarbarianDefenders des Schwierigkeitsgrads (CIV4HandicapInfo.xml)
+	iDefenders = std::max(iDefenders, GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getBarbarianInitialDefenders());
 
 	return iDefenders;
 }
