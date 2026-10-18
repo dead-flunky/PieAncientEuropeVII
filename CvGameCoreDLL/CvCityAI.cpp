@@ -877,23 +877,20 @@ void CvCityAI::AI_chooseProduction()
 	// - keine dringenden Einheiten notwendig sind
 	if (!isBarbarian() && !bDanger && !bLandWar && !bAssault)
 	{
-		// 1. Genug Verteidiger?
+		// 1. Genug Verteidiger in der Stadt?
 		int iDefenders = plot()->plotCount(PUF_isUnitAIType, UNITAI_CITY_DEFENSE, -1, getOwnerINLINE());
 		if (iDefenders >= AI_minDefenders())
 		{
-			// 2. Notwendige Buildings?
-			bool bHasEconomy = AI_chooseBuilding(BUILDINGFOCUS_GOLD | BUILDINGFOCUS_RESEARCH, 0, 0) == false;
-			bool bHasProduction = AI_chooseBuilding(BUILDINGFOCUS_PRODUCTION, 0, 0) == false;
-			bool bHasGrowth = AI_chooseBuilding(BUILDINGFOCUS_FOOD, 0, 0) == false;
-
-			if (bHasEconomy && bHasProduction && bHasGrowth)
+			// 2. Fehlen wichtige Gebaeude? Nur pruefen (AI_bestBuildingThreshold), NICHT in Auftrag geben:
+			//    AI_chooseBuilding/AI_chooseUnit setzen bei Erfolg sofort einen Bauauftrag (fuehrte zu Massen an Kriegern/Flachboegen)
+			if (AI_bestBuildingThreshold(BUILDINGFOCUS_GOLD | BUILDINGFOCUS_RESEARCH, 0, 0) == NO_BUILDING &&
+				AI_bestBuildingThreshold(BUILDINGFOCUS_PRODUCTION, 0, 0) == NO_BUILDING &&
+				AI_bestBuildingThreshold(BUILDINGFOCUS_FOOD, 0, 0) == NO_BUILDING)
 			{
-				// 3. Notwendige Units?
-				if (!AI_chooseUnit(UNITAI_CITY_DEFENSE) &&
-					 !AI_chooseUnit(UNITAI_ATTACK) &&
-					 !AI_chooseUnit(UNITAI_COUNTER))
+				// 3. Genug Militaer im ganzen Reich? (Richtwert: 3 Einheiten je Stadt)
+				if (kPlayer.getNumMilitaryUnits() >= 3 * kPlayer.getNumCities())
 				{
-					// 4. Forschung
+					// 4. Forschung (50 %), bei Geldnot Gold
 					if (GC.getGameINLINE().getSorenRandNum(10, "AI builds COMMERCE_RESEARCH") < 5)
 					{
 						if (kPlayer.AI_isFinancialTrouble() && AI_chooseProcess(COMMERCE_GOLD)) return;

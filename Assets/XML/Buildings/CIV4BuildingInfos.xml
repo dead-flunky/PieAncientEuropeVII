@@ -31,7 +31,7 @@
 			<ProductionTraits/>
 			<HappinessTraits/>
 			<NoBonus/>
-			<PowerBonus/><PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
+			<PowerBonus/>
 			<FreeBonus/>
 			<iNumFreeBonuses>0</iNumFreeBonuses>
 			<FreeBuilding/>
