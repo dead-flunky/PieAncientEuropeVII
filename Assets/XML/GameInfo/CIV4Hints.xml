@@ -501,5 +501,8 @@
 		<HintInfo>
 			<Description>TXT_KEY_HINT_144</Description>
 		</HintInfo>
+		<HintInfo>
+			<Description>TXT_KEY_HINT_145</Description>
+		</HintInfo>
 	</HintInfos>
 </Civ4Hints>

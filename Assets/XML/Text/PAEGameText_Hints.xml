@@ -353,6 +353,14 @@
 		<Spanish>Los monstruos marinos desencadenan talasofobia, el miedo a las aguas profundas o abiertas. El pulpo gigante y la serpiente marina vuelven a sumergirse en la siguiente ronda en cuanto son avistados.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_HINT_145</Tag>
+		<English>On large and huge maps there is much more land to settle. Therefore every settler you build brings a second settler along for free.</English>
+		<French>Sur les grandes et immenses cartes, il y a beaucoup plus de terres &#224; coloniser. C'est pourquoi chaque colon construit est accompagn&#233; d'un deuxi&#232;me colon gratuit.</French>
+		<German>Auf gro&#223;en und riesigen Karten gibt es viel mehr Land zu besiedeln. Deshalb bringt jeder gebaute Siedler einen zweiten Siedler gratis mit.</German>
+		<Italian>Sulle mappe grandi ed enormi c'&#232; molta pi&#249; terra da colonizzare. Per questo ogni colono costruito porta con s&#233; un secondo colono gratis.</Italian>
+		<Spanish>En los mapas grandes y enormes hay mucha m&#225;s tierra que colonizar. Por eso cada colono construido trae consigo un segundo colono gratis.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_HINT_45</Tag>
 		<English>If you are having trouble spreading a Cult, make sure the city you are spreading it to has the appropriate resources and that your treasury has enough gold to fund the expansion. Keep in mind it costs significantly more to spread a Cult to a foreign city than to your own.</English>
 		<French>Si vous n'arrivez pas &#224; d&#233;velopper un culte, assurez-vous que la ville dans laquelle vous voulez l'implanter dispose des ressources n&#233;cessaires et que vous avez assez d'or dans votre tr&#233;sor pour financer son d&#233;veloppement. N'oubliez pas que cela co&#251;te bien plus cher d'implanter un culte dans une ville &#233;trang&#232;re que de l'implanter dans l'une des v&#244;tres.</French>

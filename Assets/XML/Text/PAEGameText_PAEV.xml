@@ -7618,11 +7618,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SETTLER_HELP</Tag>
-		<English>[ICON_BULLET]Can join a city (+1 pop)[NEWLINE][ICON_BULLET]Can disband a city (pop smaller 3)[NEWLINE][ICON_BULLET]Can upgrade a village to a town (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) with General Therapeutics (Tech)</English>
-		<French>[ICON_BULLET]Peut rejoindre une ville (+1 pop)[NEWLINE][ICON_BULLET]Peut dissoudre une ville (pop. inf&#233;rieure &#224; 3)[NEWLINE][ICON_BULLET]Peut am&#233;liorer un village en ville (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) avec la M&#233;decine (technologie)</French>
-		<German>[ICON_BULLET]Kann sich einer Stadt anschlie&#223;en (+1 Pop)[NEWLINE][ICON_BULLET]Kann eine Stadt aufl&#246;sen (Pop kleiner 3)[NEWLINE][ICON_BULLET]Kann ab Allgemeine Heilkunde (Tech) ein Dorf zu einer Gemeinde (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) verbessern</German>
-		<Italian>[ICON_BULLET]Pu&#242; entrare in una citt&#224; (+1 pop)[NEWLINE][ICON_BULLET]Pu&#242; sciogliere una citt&#224; (pop pi&#249; piccola 3)[NEWLINE][ICON_BULLET]Pu&#242; trasformare un villaggio in una paese (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) con Medicina (tecnologia)</Italian>
-		<Spanish>[ICON_BULLET]Puede unirse a una ciudad (+1 hab.)[NEWLINE][ICON_BULLET]Puede disolver una ciudad (pop m&#225;s peque&#241;a 3)[NEWLINE][ICON_BULLET]Puede convertir una aldea en un pueblo (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) con Terap&#233;utica General (tecnolog&#237;a)</Spanish>
+		<English>[ICON_BULLET]Can join a city (+1 pop)[NEWLINE][ICON_BULLET]Can disband a city (pop smaller 3)[NEWLINE][ICON_BULLET]Can upgrade a village to a town (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) with General Therapeutics (Tech)[NEWLINE][ICON_BULLET]On large and huge maps you get a second settler for free</English>
+		<French>[ICON_BULLET]Peut rejoindre une ville (+1 pop)[NEWLINE][ICON_BULLET]Peut dissoudre une ville (pop. inf&#233;rieure &#224; 3)[NEWLINE][ICON_BULLET]Peut am&#233;liorer un village en ville (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) avec la M&#233;decine (technologie)[NEWLINE][ICON_BULLET]Sur les grandes et immenses cartes, un deuxi&#232;me colon est offert</French>
+		<German>[ICON_BULLET]Kann sich einer Stadt anschlie&#223;en (+1 Pop)[NEWLINE][ICON_BULLET]Kann eine Stadt aufl&#246;sen (Pop kleiner 3)[NEWLINE][ICON_BULLET]Kann ab Allgemeine Heilkunde (Tech) ein Dorf zu einer Gemeinde (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) verbessern[NEWLINE][ICON_BULLET]Auf gro&#223;en und riesigen Karten gibt es einen zweiten Siedler gratis dazu</German>
+		<Italian>[ICON_BULLET]Pu&#242; entrare in una citt&#224; (+1 pop)[NEWLINE][ICON_BULLET]Pu&#242; sciogliere una citt&#224; (pop pi&#249; piccola 3)[NEWLINE][ICON_BULLET]Pu&#242; trasformare un villaggio in una paese (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) con Medicina (tecnologia)[NEWLINE][ICON_BULLET]Sulle mappe grandi ed enormi si riceve gratis un secondo colono</Italian>
+		<Spanish>[ICON_BULLET]Puede unirse a una ciudad (+1 hab.)[NEWLINE][ICON_BULLET]Puede disolver una ciudad (pop m&#225;s peque&#241;a 3)[NEWLINE][ICON_BULLET]Puede convertir una aldea en un pueblo (+1[ICON_PRODUCTION], +1[ICON_COMMERCE]) con Terap&#233;utica General (tecnolog&#237;a)[NEWLINE][ICON_BULLET]En mapas grandes y enormes se recibe gratis un segundo colono</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SICHELKRIEGER</Tag>
