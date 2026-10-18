@@ -131,7 +131,12 @@ class CvGameUtils:
 				return UnitTypes.NO_UNIT
 
 		def getRecommendedBuilding(self, argsList):
-				# pCity = argsList[0]
+				pCity = argsList[0]
+				# PAE: In eroberten Staedten den Taubenschlag empfehlen
+				if pCity.getOriginalOwner() != pCity.getOwner():
+						eBuilding = gc.getInfoTypeForString("BUILDING_TAUBENSCHLAG")
+						if pCity.canConstruct(eBuilding, False, False, False):
+								return eBuilding
 				return BuildingTypes.NO_BUILDING
 
 		def updateColoredPlots(self):
