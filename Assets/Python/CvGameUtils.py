@@ -1439,13 +1439,7 @@ class CvGameUtils:
 		def AI_chooseProduction(self, argsList):
 				pCity = argsList[0]
 				iOwner = pCity.getOwner()
-				
-				# ***TEST CTD***
-				import os
-				fLog = open(os.path.join(os.path.expanduser("~"), "PAE_CTD.log"), "a");
-				fLog.write("AI_chooseProduction P%d [%d,%d] Pop%d\n" % (pCity.getOwner(), pCity.getX(), pCity.getY(), pCity.getPopulation()));
-				fLog.close()
-				
+
 				# Barbs ausgeschlossen
 				if iOwner == gc.getBARBARIAN_PLAYER():
 						return False
@@ -1605,17 +1599,6 @@ class CvGameUtils:
 				iBarbarianPlayer = gc.getBARBARIAN_PLAYER()
 				pPlot = pUnit.plot()
 
-				# ***TEST CTD*** (danach wieder entfernen)
-				import os
-				fLog = open(os.path.join(os.path.expanduser("~"), "PAE_CTD.log"), "a")
-				fLog.write("T%d P%d %s ID%d [%d,%d] AI%d\n" % (gc.getGame().getGameTurn(), iOwner, gc.getUnitInfo(pUnit.getUnitType()).getType(), pUnit.getID(), pUnit.getX(), pUnit.getY(), pUnit.getUnitAIType()))
-				fLog.close()
-				# ***TEST CTD***: Siedler-KI testweise aussetzen
-				#if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_SETTLER"):
-				#		fLog = open(os.path.join(os.path.expanduser("~"), "PAE_CTD.log"), "a"); fLog.write("Siedler uebersprungen\n"); fLog.close()
-				#		pUnit.finishMoves()
-				#		return True
-
 				if not pOwner.isHuman():
 						iUnitType = pUnit.getUnitType()
 						lCities = None
@@ -1626,7 +1609,6 @@ class CvGameUtils:
 								self.PAE_AI_Slaves_Owner = tKey
 								self.PAE_AI_Cities_Slaves = []
 								self.PAE_AI_Cities_Slavemarket = []
-
 
 						# Hunter (771): Lager oder Beobachtungsturm
 						if iUnitType == gc.getInfoTypeForString("UNIT_HUNTER"):
@@ -1865,21 +1847,12 @@ class CvGameUtils:
 										pUnit.kill(True, -1)
 										return True
 
-
-								# if pUnit.getGroup().getLengthMissionQueue() > 0: return True
-								# if PAE_Trade.doAutomateMerchant(pUnit):
-								#    if iOwner == 12: CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "AI doAutomateMerchant", None, 2, None, ColorTypes(10), 0, 0, False, False)
-								#    return True
-								# elif PAE_Trade.doAssignTradeRoute_AI(pUnit):
-								#    if iOwner == 12: CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "AI doAssignTradeRoute_AI", None, 2, None, ColorTypes(10), 0, 0, False, False)
-								#    # try again
-								#    if PAE_Trade.doAutomateMerchant(pUnit):
-								#        if iOwner == 12: CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "AI automate merchant new trade route", None, 2, None, ColorTypes(10), 0, 0, False, False)
-								#        return True
-
 								bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0))
 								if bTradeRouteActive:
 										PAE_Trade.doAutomateMerchant(pUnit)
+										# PAE: Keine Bewegung/Mission ausgeloest -> Zuege verbrauchen, sonst ruft die DLL die Einheit bis zum Schleifenlimit erneut auf
+										if not pUnit.isDead() and pUnit.canMove() and pUnit.getGroup().getLengthMissionQueue() == 0:
+												pUnit.finishMoves()
 										return True
 								elif not PAE_Trade.doAssignTradeRoute_AI(pUnit):
 										pOwner.changeGold(25)

@@ -18,9 +18,14 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - DLL, Sicht: `CvPlot::seeFromLevel()` hängt bei PAE vom Ausbau ab (Turm, Fort, Limes, Kastell). Wer Sichthöhe oder Sichtweite ändert, muss vorher `updateSeeFromSight(false, true)` und nachher `(true, true)` aufrufen, sonst bleiben Felder dauerhaft schwarz.
 - DLL, Spieloptionen: Reihenfolge in `CvEnums.h` (GameOptionTypes) und `CIV4GameOptionInfos.xml` muss identisch sein, Name in `CyEnumsInterface.cpp` exakt gleich. Neue Option verschiebt die gespeicherten Optionen (Spielstände inkompatibel, außer `CvInitCore::read` wird angepasst).
 - DLL, Spielstand: Neue Member-Variablen in `read`/`write` aufnehmen, mit höherem `uiFlag` (Beispiel: `m_dynTraits` in `CvPlayer`, ab `uiFlag` 2).
+- DLL: `GET_PLAYER(x)` nie mit einem Wert, der `NO_PLAYER` sein kann (z. B. `plot()->getOwner()`). Index -1 schreibt in fremden Speicher -> CtD ohne Meldung, oft viel später.
+- DLL: Nach Python-Ereignissen (`CvEventReporter`) kann das Objekt geloescht sein (Stadt per `acquireCity`, Einheit per `kill`). Vorher Besitzer/ID merken und danach pruefen.
+- Debuggen: VC++ 2010 Express -> Projekt-Eigenschaften der aktiven Konfiguration, Debugging: Befehl `Civ4BeyondSword.exe`, Argument `mod=\Pie'sAncientEurope`. HEAP-Meldungen „Invalid address specified to RtlValidateHeap“ sind bei der Debug-DLL Rauschen (verschiedene C-Laufzeiten).
+
 
 ## Erledigt
 Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
+
 
 ## Offen
 Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
@@ -30,6 +35,8 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 4. Terraforming (774)
 5. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
 „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
+- Python ruft `CyPlot.getCulture(-1)` auf (Assert `CvPlot.cpp` getCulture, waehrend `cannotTrain`/Einberufung). Nur Lesezugriff, Aufrufer noch nicht gefunden.
+
 
 Optional:
 - `CvEventManager.py` Z. 2282 (Handler 776): auch den Ausgangstyp prüfen (nur Elefanten, nicht derselbe Typ).
@@ -62,6 +69,17 @@ Vor der Veröffentlichung:
 - Indra-Kult braucht Hinduismus in der Stadt (`BUILDING_CORPORATION_9` PrereqReligion).
 - `BUILD_HUNTING_CAMP` ohne PrereqTech (von keiner Einheit genutzt, Jäger baut Lager für 4 Gold ohne zu sterben).
 ---
+
+## Patch 7.18.3.15–16 (Claude Code)
+
+**Bugfixes**
+- **CtD durch Speicherfehler beim Straßenbau** (`CvUnit::build`): Straße auf herrenlosem Feld -> `GET_PLAYER(NO_PLAYER).AI_changeMemoryCount` schrieb vor das Spieler-Array -> Heap kaputt, Absturz später an zufälliger Stelle (z. B. Siedler-KI). Jetzt nur bei fremdem Team, ohne Barbaren und MinorCivs.
+- **Debug-DLL-Absturz nach Stadtwechsel** (`CvCity::doTurn`): `onCityDoTurn` kann die Stadt per `acquireCity` abgeben (Aufstand, Buergerkrieg, Tribut). Danach kein Zugriff mehr auf `this`.
+- **Handelsschiff-Schleife** (`CvGameUtils.AI_unitUpdate`, Handelsroute aktiv): ohne Mission jetzt `finishMoves`.
+
+**Neu**
+- Taubenschlag: `iAIWeight` 200, `FLAVOR_GROWTH` 30, Empfehlung im Bau-Popup (`getRecommendedBuilding`).
+
 
 ## PAE KI-Review (Python) – Stand 7.18.3.2
 
