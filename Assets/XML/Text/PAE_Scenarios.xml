@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
-		<Tag> TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN4</Tag>
-		<English>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</English>
-		<French>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</French>
-		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
-		<Italian>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</Italian>
-		<Spanish>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag> TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN5</Tag>
-		<English>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</English>
-		<French>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</French>
-		<German>Die Warnen wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
-		<Italian>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</Italian>
-		<Spanish>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_ADJ_SARDINIEN</Tag>
 		<English>sardian</English>
 		<French>sarde</French>
@@ -2929,6 +2913,14 @@
 		<Spanish>Congratulations! The Germanic tribes are united. Even if not all clan leaders still sit around the fire, it is nonetheless a historic day. As always, two questions remain at the forefront: HOW can we defeat the Romans, and WHEN will we be ready to do so?[NEWLINE]There are also voices saying we should ignore the Romans-that the gods will protect us. But you remember the Elder all too well, who used those very words to justify years of inaction...[NEWLINE][NEWLINE]By combining selected axemen from the remaining clans, a unit of Berserkers has been assembled. Spies are also to be sent out to determine the true strength of the Romans.[NEWLINE][NEWLINE][ICON_BULLET] YOU RECEIVE 1 BERSERKER</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_15_4</Tag>
+		<English>The unification of all Germanic peoples has failed. There are not enough peoples left to form a community.</English>
+		<French>L'union de tous les Germains a &#233;chou&#233;. Il ne reste pas assez de peuples pour former une communaut&#233;.</French>
+		<German>Die Vereinigung aller Germanen ist gescheitert. Es sind nicht genug V&#246;lker &#252;brig, um eine Gemeinschaft zu bilden.</German>
+		<Italian>L'unione di tutti i popoli germanici &#232; fallita. Non sono rimasti abbastanza popoli per formare una comunit&#224;.</Italian>
+		<Spanish>La unificaci&#243;n de todos los pueblos germ&#225;nicos ha fracasado. No quedan suficientes pueblos para formar una comunidad.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_20_2</Tag>
 		<English></English>
 		<French></French>
@@ -2994,11 +2986,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ALARICH_BODY</Tag>
-		<English></English>
-		<French></French>
+		<English>There is little time for mourning, however; life must go on. In your honor, a monument-unlike any seen before-will be erected in %s1. It will be a massive obelisk, bearing an inscription to commemorate Alaric the Goth.[NEWLINE][NEWLINE]But who shall succeed you? The nobles are gathering to reach a decision.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF ASSUMES LEADERSHIP OF THE GOTHS[NEWLINE][ICON_BULLET] THE STELE OF ALARIC IS ERECTED IN %s1_city</English>
+		<French>Il reste cependant peu de temps pour le deuil ; la vie doit continuer. En votre honneur, un monument in&#233;dit sera &#233;rig&#233; &#224; %s1 : un immense ob&#233;lisque portant une inscription &#224; la m&#233;moire d'Alaric le Goth.[NEWLINE][NEWLINE]Mais qui prendra votre succession ? Les nobles se r&#233;unissent pour prendre une d&#233;cision.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF PREND LA T&#202;TE DES GOTHS[NEWLINE][ICON_BULLET] LA ST&#200;LE D'ALARIC EST &#201;RIG&#201;E &#192; %s1_city</French>
 		<German>Zeit f&#252;r Trauer bleibt jedoch nicht viel, das Leben muss weitergehen. Zu euren Ehren wird in %s1 ein Monument errichtet, wie es noch keins zuvor gab. Ein riesiger Obelisk, der mit einer Inschrift an Alarich den Goten erinnert.[NEWLINE][NEWLINE]Doch wer soll eure Nachfolge antreten? Die Adligen kommen zusammen, um eine Entscheidung zu treffen.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF &#220;BERNIMMT DIE F&#220;HRUNG DER GOTEN[NEWLINE][ICON_BULLET] DIE STELE DES ALARICH WIRD IN %s1_city ERRICHTET</German>
-		<Italian></Italian>
-		<Spanish></Spanish>
+		<Italian>Non c'&#232; per&#242; molto tempo per il lutto; la vita deve andare avanti. In vostro onore, a %s1 verr&#224; eretto un monumento, unico nel suo genere: un imponente obelisco che, tramite un'iscrizione, ricorder&#224; Alarico il Goto.[NEWLINE][NEWLINE]Ma chi prender&#224; il vostro posto? I nobili si riuniscono per giungere a una decisione.[NEWLINE][NEWLINE][ICON_BULLET] ATAULFO ASSUME IL COMANDO DEI GOTI[NEWLINE][ICON_BULLET] LA STELE DI ALARICO VIENE ERETTA A %s1_city</Italian>
+		<Spanish>Sin embargo, no queda mucho tiempo para el duelo; la vida debe continuar. En vuestro honor, se erigir&#225; en %s1 un monumento sin precedentes: un enorme obelisco que, mediante una inscripci&#243;n, recordar&#225; a Alarico el Godo.[NEWLINE][NEWLINE]Pero, &#191;qui&#233;n os suceder&#225;? Los nobles se re&#250;nen para tomar una decisi&#243;n.[NEWLINE][NEWLINE][ICON_BULLET] ATA&#218;LFO ASUME EL LIDERAZGO DE LOS GODOS[NEWLINE][ICON_BULLET] LA ESTELA DE ALARICO SE ERIGE EN %s1_city</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_ALARICH_BODY_2</Tag>
+		<English>The ruler of the Gothic realm has fallen![NEWLINE][NEWLINE]But who shall succeed him? The nobles are gathering to reach a decision.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF ASSUMES LEADERSHIP OF THE GOTHS</English>
+		<French>Le souverain du royaume des Goths est tomb&#233; ![NEWLINE][NEWLINE]Mais qui lui succ&#233;dera ? Les nobles se r&#233;unissent pour prendre une d&#233;cision.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF PREND LA T&#202;TE DES GOTHS</French>
+		<German>Der Herr &#252;ber das Gotenreich ist gefallen![NEWLINE][NEWLINE]Doch wer soll eure Nachfolge antreten? Die Adligen kommen zusammen, um eine Entscheidung zu treffen.[NEWLINE][NEWLINE][ICON_BULLET] ATHAULF &#220;BERNIMMT DIE F&#220;HRUNG DER GOTEN</German>
+		<Italian>Il signore del regno dei Goti &#232; caduto![NEWLINE][NEWLINE]Ma chi prender&#224; il suo posto? I nobili si riuniscono per prendere una decisione.[NEWLINE][NEWLINE][ICON_BULLET] ATAULFO ASSUME IL COMANDO DEI GOTI</Italian>
+		<Spanish>&#161;Ha ca&#237;do el se&#241;or del Reino Godo![NEWLINE][NEWLINE]Pero, &#191;qui&#233;n le suceder&#225;? Los nobles se re&#250;nen para tomar una decisi&#243;n.[NEWLINE][NEWLINE][ICON_BULLET] ATA&#218;LFO ASUME EL LIDERAZGO DE LOS GODOS</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ALARICH_HEAD</Tag>
@@ -3287,6 +3287,22 @@
 		<German>Der Warne hat sich %s1 unterworfen.[NEWLINE]Dies stellt eine klare Einmischung in germanische Angelegenheiten dar und kann so nicht stehen bleiben!</German>
 		<Italian>The Varni have submitted to %s1.[NEWLINE][NEWLINE]This is a clear interference in Germanic affairs and cannot be allowed to stand!</Italian>
 		<Spanish>The Varni have submitted to %s1.[NEWLINE][NEWLINE]This is a clear interference in Germanic affairs and cannot be allowed to stand!</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN4</Tag>
+		<English>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</English>
+		<French>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</French>
+		<German>Es war zwar nicht der Plan, %s1 komplett einzunehmen, doch ihr hieltet es in Anbetracht der Umst&#228;nde f&#252;r die beste L&#246;sung.</German>
+		<Italian>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</Italian>
+		<Spanish>It was not the original plan to fully take %s1, but given the circumstances, you considered it the best solution.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_CONQUER_WARNEN5</Tag>
+		<English>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</English>
+		<French>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</French>
+		<German>Die Warnen wurden von %s1 besiegt. %s2 ist Geschichte, vielleicht speist er bereits mit den Ahnen an der Tafel der G&#246;tter.[NEWLINE]Eine Vereinigung aller Germanenv&#246;lker ist damit leider nicht mehr erreichbar!</German>
+		<Italian>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</Italian>
+		<Spanish>The Varni have been defeated by %s1. %s2 is history-perhaps he is already feasting with his ancestors at the table of the gods.[NEWLINE]A unification of all Germanic peoples is therefore no longer possible!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_DAKER_CONQUER_VANDAL_CITY</Tag>

@@ -5138,8 +5138,7 @@ class CvEventManager:
 				bIsWar = argsList[0]
 				iTeam = argsList[1]
 				iRivalTeam = argsList[2]
-				if not self.__LOG_WARPEACE:
-						return
+
 				if bIsWar:
 						strStatus = "declared war"
 				else:

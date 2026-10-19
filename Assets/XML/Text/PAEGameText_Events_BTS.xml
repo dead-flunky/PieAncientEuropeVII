@@ -2410,19 +2410,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HURRICANE_1</Tag>
-		<English>Buildings have been destroyed and citizens have been killed.</English>
-		<French>Des b&#226;timents ont &#233;t&#233; d&#233;truits et des citoyens ont &#233;t&#233; tu&#233;s.</French>
-		<German>Es wurden Geb&#228;ude zerst&#246;rt und es hat Opfer gegeben.</German>
-		<Italian>Sono stati distrutti degli edifici e morti dei cittadini.</Italian>
-		<Spanish>Se lamenta la p&#233;rdida de edificios y se lamenta la p&#233;rdida de ciudadanos.</Spanish>
+		<English>Leave the ruins.</English>
+		<French>Les d&#233;combres restent sur place.</French>
+		<German>Die Tr&#252;mmer bleiben liegen.</German>
+		<Italian>Le macerie restano dove sono.</Italian>
+		<Spanish>Los escombros permanecen all&#237;.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_HURRICANE_1_HELP</Tag>
+		<English>[ICON_BULLET]%s1 is destroyed</English>
+		<French>[ICON_BULLET]%s1 est d&#233;truit</French>
+		<German>[ICON_BULLET]%s1 wird zerst&#246;rt</German>
+		<Italian>[ICON_BULLET]%s1 viene distrutto</Italian>
+		<Spanish>[ICON_BULLET]%s1 es destruido</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HURRICANE_2</Tag>
-		<English>"Only" citizens have been killed.</English>
-		<French>"Seuls" des citoyens ont &#233;t&#233; tu&#233;s.</French>
-		<German>Es hat "nur" Opfer gegeben.</German>
-		<Italian>Sono stati uccisi "solo" cittadini.</Italian>
-		<Spanish>"S&#243;lo" los ciudadanos han sido asesinados.</Spanish>
+		<English>Let us rebuild the building.</English>
+		<French>Reconstruisons le b&#226;timent.</French>
+		<German>Lasst uns das Geb&#228;ude wieder aufbauen.</German>
+		<Italian>Ricostruiamo l'edificio.</Italian>
+		<Spanish>Reconstruyamos el edificio.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_HURRICANE_2_HELP</Tag>
+		<English>[ICON_BULLET]%s1 is being rebuilt for %d2[ICON_GOLD]</English>
+		<French>[ICON_BULLET]%s1 est reconstruit pour %d2[ICON_GOLD]</French>
+		<German>[ICON_BULLET]%s1 wird f&#252;r %d2[ICON_GOLD] wieder aufgebaut</German>
+		<Italian>[ICON_BULLET]%s1 viene ricostruito per %d2[ICON_GOLD]</Italian>
+		<Spanish>[ICON_BULLET]%s1 se reconstruye por %d2[ICON_GOLD]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HYMNS_AND_SCULPTURES_1</Tag>

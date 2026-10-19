@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="https://www.firaxis.com">
 	<TEXT>
-		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_1</Tag>
-		<English>Helmsman</English>
-		<French>Timonnier</French>
-		<German>Steuermann</German>
-		<Italian>Timoniere</Italian>
-		<Spanish>Timonel</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_2</Tag>
-		<English>Captain</English>
-		<French>Capitaine</French>
-		<German>Kapit&#228;n</German>
-		<Italian>Capitano</Italian>
-		<Spanish>Capit&#225;n</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_3</Tag>
-		<English>Shipmaster</English>
-		<French>Ma&#238;tre d'&#233;quipage</French>
-		<German>Schiffsherr</German>
-		<Italian>Capitano di Vascello</Italian>
-		<Spanish>Capit&#225;n de Nav&#237;o</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_4</Tag>
-		<English>Fleet Commander</English>
-		<French>Commandant de flotte</French>
-		<German>Flottenf&#252;hrer</German>
-		<Italian>Comandante di Flotta</Italian>
-		<Spanish>Comandante de Flota</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag> TXT_KEY_PROMOTION_RANG_NAVI_5</Tag>
-		<English>Admiral</English>
-		<French>Amiral</French>
-		<German>Admiral</German>
-		<Italian>Ammiraglio</Italian>
-		<Spanish>Almirante</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_ACTION_VERBRANNTE_ERDE</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Leaves scorched earth[COLOR_REVERT][NEWLINE][ICON_BULLET]Creates a scorched forest[NEWLINE][ICON_BULLET]Destroys the modernization[NEWLINE][ICON_BULLET]Unit does not lose any movement points</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Laisse la terre br&#251;l&#233;e[COLOR_REVERT][NEWLINE][ICON_BULLET]Cr&#233;e une for&#234;t br&#251;l&#233;e[NEWLINE][ICON_BULLET]D&#233;truit la modernisation[NEWLINE][ICON_BULLET]L'unit&#233; ne perd aucun point de mouvement</French>
@@ -2385,6 +2345,30 @@ Scuola di retorica
 		<Spanish>Comes Domesticorum</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_1</Tag>
+		<English>Helmsman</English>
+		<French>Timonnier</French>
+		<German>Steuermann</German>
+		<Italian>Timoniere</Italian>
+		<Spanish>Timonel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_2</Tag>
+		<English>Captain</English>
+		<French>Capitaine</French>
+		<German>Kapit&#228;n</German>
+		<Italian>Capitano</Italian>
+		<Spanish>Capit&#225;n</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_3</Tag>
+		<English>Shipmaster</English>
+		<French>Ma&#238;tre d'&#233;quipage</French>
+		<German>Schiffsherr</German>
+		<Italian>Capitano di Vascello</Italian>
+		<Spanish>Capit&#225;n de Nav&#237;o</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_3_HELP</Tag>
 		<English>[ICON_BULLET] Immune to fear of the deep sea (thalassophobia)</English>
 		<French>[ICON_BULLET] Insensible &#224; la peur des profondeurs marines (thalassophobie)</French>
@@ -2393,12 +2377,28 @@ Scuola di retorica
 		<Spanish>[ICON_BULLET] Inmune al miedo a las profundidades marinas (talasofobia)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_4</Tag>
+		<English>Fleet Commander</English>
+		<French>Commandant de flotte</French>
+		<German>Flottenf&#252;hrer</German>
+		<Italian>Comandante di Flotta</Italian>
+		<Spanish>Comandante de Flota</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_4_HELP</Tag>
 		<English>[ICON_BULLET] Immune to damage on the high seas</English>
 		<French>[ICON_BULLET] Immunis&#233; contre les d&#233;g&#226;ts en haute mer</French>
 		<German>[ICON_BULLET] Immun gegen Schaden auf Hoher See</German>
 		<Italian>[ICON_BULLET] Immune ai danni in alto mare</Italian>
 		<Spanish>[ICON_BULLET] Inmune a da&#241;os en alta mar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_RANG_NAVI_5</Tag>
+		<English>Admiral</English>
+		<French>Amiral</French>
+		<German>Admiral</German>
+		<Italian>Ammiraglio</Italian>
+		<Spanish>Almirante</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROMOTION_UNSTOPPABLE1</Tag>

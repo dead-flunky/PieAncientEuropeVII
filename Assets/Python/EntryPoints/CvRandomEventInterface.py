@@ -353,42 +353,77 @@ def canTriggerBabyBoom(argsList):
 
 		return False
 
-######## BARD TALE ###########
 
+######## BARD TALE ###########
 
 def applyBardTale3(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
-
 		player = gc.getPlayer(kTriggeredData.ePlayer)
-
 		player.changeGold(-10 * player.getNumCities())
-
 
 def canApplyBardTale3(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
-
 		player = gc.getPlayer(kTriggeredData.ePlayer)
-
 		if player.getGold() - 10 * player.getNumCities() < 0:
 				return False
-
 		return True
-
 
 def getHelpBardTale3(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
-
 		player = gc.getPlayer(kTriggeredData.ePlayer)
-
 		szHelp = localText.getText("TXT_KEY_EVENT_GOLD_LOST", (10 * player.getNumCities(), ))
-
 		return szHelp
 
-######## BROTHERS IN NEED ###########
 
+######## LOOTERS ###########
+
+def getHelpLooters3(argsList):
+	iEvent = argsList[0]
+	kTriggeredData = argsList[1]
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	city = otherPlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	szHelp = localText.getText("TXT_KEY_EVENT_LOOTERS_3_HELP", (1, 2, city.getNameKey()))
+	return szHelp
+
+def canApplyLooters3(argsList):
+	iEvent = argsList[0]
+	kTriggeredData = argsList[1]
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	city = otherPlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	iNumBuildings = 0	
+	for iBuilding in range(gc.getNumBuildingInfos()):
+		if (city.getNumRealBuilding(iBuilding) > 0 and gc.getBuildingInfo(iBuilding).getProductionCost() <= 100 and gc.getBuildingInfo(iBuilding).getProductionCost() > 0  and not isLimitedWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())):
+			iNumBuildings += 1
+	return (iNumBuildings > 0)
+
+def applyLooters3(argsList):
+	iEvent = argsList[0]
+	kTriggeredData = argsList[1]
+	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
+	city = otherPlayer.getCity(kTriggeredData.iOtherPlayerCityId)
+	iNumBuildings = gc.getGame().getSorenRandNum(2, "Looters event number of buildings destroyed")
+	iNumBuildingsDestroyed = 0
+	listBuildings = []
+	for iBuilding in range(gc.getNumBuildingInfos()):
+		if (city.getNumRealBuilding(iBuilding) > 0 and gc.getBuildingInfo(iBuilding).getProductionCost() <= 100 and gc.getBuildingInfo(iBuilding).getProductionCost() > 0  and not isLimitedWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType())):
+			listBuildings.append(iBuilding)
+	for i in range(iNumBuildings+1):
+		if len(listBuildings) > 0:
+			iBuilding = listBuildings[gc.getGame().getSorenRandNum(len(listBuildings), "Looters event building destroyed")]
+			szBuffer = localText.getText("TXT_KEY_EVENT_CITY_IMPROVEMENT_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
+			CyInterface().addMessage(kTriggeredData.eOtherPlayer, false, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO, gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), true, true)
+			city.setNumRealBuilding(iBuilding, 0)
+			iNumBuildingsDestroyed += 1
+			listBuildings.remove(iBuilding)
+	if iNumBuildingsDestroyed > 0:
+		szBuffer = localText.getText("TXT_KEY_EVENT_NUM_BUILDINGS_DESTROYED", (iNumBuildingsDestroyed, gc.getPlayer(kTriggeredData.eOtherPlayer).getCivilizationAdjectiveKey(), city.getNameKey()))
+		CyInterface().addMessage(kTriggeredData.ePlayer, false, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO, None, gc.getInfoTypeForString("COLOR_WHITE"), -1, -1, true, true)
+
+
+######## BROTHERS IN NEED ###########
 
 def canTriggerBrothersInNeed(argsList):
 		kTriggeredData = argsList[0]
@@ -521,74 +556,62 @@ def canTriggerHurricaneCity(argsList):
 
 		return True
 
-
-def canApplyHurricane1(argsList):
-		# iEvent = argsList[0]
-		kTriggeredData = argsList[1]
-
-		if gc.getGame().getSorenRandNum(2, "Hurricane event amount of building destroyed") == 0: return False
-
-		player = gc.getPlayer(kTriggeredData.ePlayer)
-		city = player.getCity(kTriggeredData.iCityId)
-
+# PAE: Der Sturm trifft ein festes Gebaeude (ohne Zufall: Popup und Ausfuehrung zeigen dasselbe, MP bleibt synchron)
+def getHurricaneBuilding(kTriggeredData):
+		city = gc.getPlayer(kTriggeredData.ePlayer).getCity(kTriggeredData.iCityId)
 		listBuildings = []
 		for iBuilding in range(gc.getNumBuildingInfos()):
 			if city.getNumRealBuilding(iBuilding) > 0 and gc.getBuildingInfo(iBuilding).getProductionCost() > 0 and not isLimitedWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType()):
 				listBuildings.append(iBuilding)
+		if not listBuildings:
+			return -1
+		return listBuildings[(kTriggeredData.iTurn + kTriggeredData.iCityId) % len(listBuildings)]
 
-		return len(listBuildings) > 0
+def getHurricaneCost(kTriggeredData):
+		iBuilding = getHurricaneBuilding(kTriggeredData)
+		if iBuilding == -1:
+			return 0
+		return gc.getPlayer(kTriggeredData.ePlayer).getBuildingProductionNeeded(iBuilding) * 2
 
+def getHelpHurricane1(argsList):
+		kTriggeredData = argsList[1]
+		iBuilding = getHurricaneBuilding(kTriggeredData)
+		if iBuilding == -1:
+			return ""
+		return localText.getText("TXT_KEY_EVENT_HURRICANE_1_HELP", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
+
+def getHelpHurricane2(argsList):
+		kTriggeredData = argsList[1]
+		iBuilding = getHurricaneBuilding(kTriggeredData)
+		if iBuilding == -1:
+			return ""
+		return localText.getText("TXT_KEY_EVENT_HURRICANE_2_HELP", (gc.getBuildingInfo(iBuilding).getTextKey(), getHurricaneCost(kTriggeredData)))
 
 def canApplyHurricane2(argsList):
-		return not canApplyHurricane1(argsList)
-
+		kTriggeredData = argsList[1]
+		if getHurricaneBuilding(kTriggeredData) == -1:
+			return False
+		return gc.getPlayer(kTriggeredData.ePlayer).getGold() >= getHurricaneCost(kTriggeredData)
 
 def applyHurricane1(argsList):
-		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
+		city = gc.getPlayer(kTriggeredData.ePlayer).getCity(kTriggeredData.iCityId)
+		iBuilding = getHurricaneBuilding(kTriggeredData)
+		if iBuilding != -1:
+			szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
+			CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
+							gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
+			city.setNumRealBuilding(iBuilding, 0)
+			# PAE 7.17:
+			city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS"), 1)
+		PAE_City.doCheckCityState(city)
 
+def applyHurricane2(argsList):
+		kTriggeredData = argsList[1]
 		player = gc.getPlayer(kTriggeredData.ePlayer)
-		city = player.getCity(kTriggeredData.iCityId)
+		player.changeGold(-getHurricaneCost(kTriggeredData))
+		PAE_City.doCheckCityState(player.getCity(kTriggeredData.iCityId))
 
-		listCheapBuildings = []
-		listExpensiveBuildings = []
-		for iBuilding in range(gc.getNumBuildingInfos()):
-			pBuildingInfo = gc.getBuildingInfo(iBuilding)
-			if city.getNumRealBuilding(iBuilding) > 0 and pBuildingInfo.getProductionCost() > 0:
-				if not isLimitedWonderClass(pBuildingInfo.getBuildingClassType()):
-					if pBuildingInfo.getProductionCost() <= 100:
-						listCheapBuildings.append(iBuilding)
-					else:
-						listExpensiveBuildings.append(iBuilding)
-
-		# PAE
-		if city.getPopulation() > 12:
-			iMaxDestroy = 2
-		else:
-			iMaxDestroy = 1
-
-		iDestroy = 1 + gc.getGame().getSorenRandNum(iMaxDestroy, "Hurricane event amount of building destroyed")
-
-		if len(listCheapBuildings) > 0:
-			for _ in range(iDestroy):
-				iBuilding = listCheapBuildings[gc.getGame().getSorenRandNum(len(listCheapBuildings), "Hurricane event cheap building destroyed")]
-				szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
-				CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-								gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
-				city.setNumRealBuilding(iBuilding, 0)
-				iDestroy -= 1
-				break
-
-		# PAE (only destroy 1 expensive building)
-		if iDestroy > 0 and len(listExpensiveBuildings) > 0:
-				iBuilding = listExpensiveBuildings[gc.getGame().getSorenRandNum(len(listExpensiveBuildings), "Hurricane event expensive building destroyed")]
-				szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
-				CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO,
-								gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
-				city.setNumRealBuilding(iBuilding, 0)
-
-		# PAE 7.17:
-		city.setNumRealBuilding(gc.getInfoTypeForString("BUILDING_CITY_RUINS"), 1)
 
 def applyCityFire(argsList):
 		kTriggeredData = argsList[1]
@@ -3694,11 +3717,10 @@ def getHelpRome_Religion_3(argsList):
 
 		return szHelp
 
+
 ######## BEDUINEN ###########
 
-
 def canTriggerBeduinen(argsList):
-
 		kTriggeredData = argsList[0]
 		# player = gc.getPlayer(kTriggeredData.ePlayer)
 
@@ -3729,7 +3751,6 @@ def canTriggerBeduinen(argsList):
 
 		return False
 
-
 def getHelpBeduinen1(argsList):
 		# iEvent = argsList[0]
 		# kTriggeredData = argsList[1]
@@ -3737,7 +3758,6 @@ def getHelpBeduinen1(argsList):
 		szHelp = localText.getText("TXT_KEY_EVENT_BEDUINEN_HELP_1", ())
 
 		return szHelp
-
 
 def applyBeduinen1(argsList):
 		# iEvent = argsList[0]

@@ -47,7 +47,7 @@ Optional:
 - Behoben: Balance: Arbeits- und Kriegselefant je 110 (Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
 - Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
 - Beobachten/feinjustieren: KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
-- Behoben: Python ruft `CyPlot.getCulture(-1)` auf (Assert `CvPlot.cpp` getCulture, waehrend `cannotTrain`/Einberufung). Nur Lesezugriff, Aufrufer noch nicht gefunden.
+- Behoben (7.18.3.20): `getCulture(-1)` – `PAE_Turn_Features.doPlotFeatures` (Handelsposten ohne Besitzer-Eintrag schrieb `changeCulture(-1)` in fremden Speicher) und `CvPlot::checkLateEra` (BTS-Fehler, aktiver Spieler -1).
 
 
 Vor der Veröffentlichung:

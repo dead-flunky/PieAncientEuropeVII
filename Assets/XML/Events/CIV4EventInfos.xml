@@ -5527,8 +5527,8 @@
 			<ClearEvents/>
 			<PythonCallback>applyHurricane1</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo>canApplyHurricane1</PythonCanDo>
-			<PythonHelp/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpHurricane1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>50</iAIValue>
 		</EventInfo>
@@ -5606,12 +5606,12 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>doCheckCityStatus</PythonCallback>
+			<PythonCallback>applyHurricane2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo>canApplyHurricane2</PythonCanDo>
-			<PythonHelp/>
+			<PythonHelp>getHelpHurricane2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
-			<iAIValue>50</iAIValue>
+			<iAIValue>100</iAIValue>
 		</EventInfo>
 		<EventInfo>
 			<Type>EVENT_CYCLONE_1</Type>
@@ -28916,7 +28916,7 @@
 			<PythonCallback>applyBeduinen1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpBeduinen</PythonHelp>
+			<PythonHelp>getHelpBeduinen1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
