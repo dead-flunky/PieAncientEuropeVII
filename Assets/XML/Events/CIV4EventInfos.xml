@@ -5689,8 +5689,8 @@
 			<ClearEvents/>
 			<PythonCallback>applyHurricane1</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo>canApplyHurricane1</PythonCanDo>
-			<PythonHelp/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpHurricane1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -5764,14 +5764,14 @@
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
 			<iAttitudeModifier>0</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
-			<iPopulationChange>-1</iPopulationChange>
+			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>doCheckCityStatus</PythonCallback>
+			<PythonCallback>applyHurricane2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo>canApplyHurricane2</PythonCanDo>
-			<PythonHelp/>
+			<PythonHelp>getHelpHurricane2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -5851,8 +5851,8 @@
 			<ClearEvents/>
 			<PythonCallback>applyHurricane1</PythonCallback>
 			<PythonExpireCheck/>
-			<PythonCanDo>canApplyHurricane1</PythonCanDo>
-			<PythonHelp/>
+			<PythonCanDo/>
+			<PythonHelp>getHelpHurricane1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -5926,14 +5926,14 @@
 			<iOurAttitudeModifier>0</iOurAttitudeModifier>
 			<iAttitudeModifier>0</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
-			<iPopulationChange>-1</iPopulationChange>
+			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>doCheckCityStatus</PythonCallback>
+			<PythonCallback>applyHurricane2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo>canApplyHurricane2</PythonCanDo>
-			<PythonHelp/>
+			<PythonHelp>getHelpHurricane2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
