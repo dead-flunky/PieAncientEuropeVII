@@ -549,7 +549,7 @@ def doSell(iPlayer, iUnit):
 		gc.getPlayer(gc.getBARBARIAN_PLAYER()).changeGold(iGold)
 		if pPlayer.isHuman():
 				CyInterface().addMessage(iPlayer, True, 8, CyTranslator().getText("TXT_KEY_BUTTON_SELL_SLAVE_SOLD", (iGold,)), None,
-																 InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
+				InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Units/button_slave.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
 		pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
 		# pUnit.kill(True, -1)  # RAMK_CTD
 

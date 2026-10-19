@@ -21,6 +21,9 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - DLL: `GET_PLAYER(x)` nie mit einem Wert, der `NO_PLAYER` sein kann (z. B. `plot()->getOwner()`). Index -1 schreibt in fremden Speicher -> CtD ohne Meldung, oft viel später.
 - DLL: Nach Python-Ereignissen (`CvEventReporter`) kann das Objekt geloescht sein (Stadt per `acquireCity`, Einheit per `kill`). Vorher Besitzer/ID merken und danach pruefen.
 - Debuggen: VC++ 2010 Express -> Projekt-Eigenschaften der aktiven Konfiguration, Debugging: Befehl `Civ4BeyondSword.exe`, Argument `mod=\Pie'sAncientEurope`. HEAP-Meldungen „Invalid address specified to RtlValidateHeap“ sind bei der Debug-DLL Rauschen (verschiedene C-Laufzeiten).
+- Python: Gebaeude zerstoeren/auswaehlen nur ueber `getNumRealBuilding(i) > 0`, nicht `isHasBuilding(i)` (das ist auch bei freien Gebaeuden durch Wunder/Konzern/Staatsform wahr, `setNumRealBuilding(i, 0)` entfernt diese nicht).
+- Zeilenangaben bei mehreren Änderungen in einer Datei immer von unten nach oben (höchste Zeilennummer zuerst), damit sich die übrigen Zeilen nicht verschieben.
+- Python: Ressourcen auf Feldern fuer Spieleraktionen mit `pPlot.getBonusType(iTeam)` abfragen, nicht `getBonusType(-1)` (das zeigt auch noch nicht erforschte Ressourcen).
 
 
 ## Erledigt

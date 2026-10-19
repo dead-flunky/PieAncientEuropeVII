@@ -533,7 +533,7 @@ def canApplyHurricane1(argsList):
 
 		listBuildings = []
 		for iBuilding in range(gc.getNumBuildingInfos()):
-			if city.isHasBuilding(iBuilding) and gc.getBuildingInfo(iBuilding).getProductionCost() > 0 and not isLimitedWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType()):
+			if city.getNumRealBuilding(iBuilding) > 0 and gc.getBuildingInfo(iBuilding).getProductionCost() > 0 and not isLimitedWonderClass(gc.getBuildingInfo(iBuilding).getBuildingClassType()):
 				listBuildings.append(iBuilding)
 
 		return len(listBuildings) > 0
@@ -554,7 +554,7 @@ def applyHurricane1(argsList):
 		listExpensiveBuildings = []
 		for iBuilding in range(gc.getNumBuildingInfos()):
 			pBuildingInfo = gc.getBuildingInfo(iBuilding)
-			if city.isHasBuilding(iBuilding) and pBuildingInfo.getProductionCost() > 0:
+			if city.getNumRealBuilding(iBuilding) > 0 and pBuildingInfo.getProductionCost() > 0:
 				if not isLimitedWonderClass(pBuildingInfo.getBuildingClassType()):
 					if pBuildingInfo.getProductionCost() <= 100:
 						listCheapBuildings.append(iBuilding)
@@ -600,7 +600,7 @@ def applyCityFire(argsList):
 		listExpensiveBuildings = []
 		for iBuilding in range(gc.getNumBuildingInfos()):
 			pBuildingInfo = gc.getBuildingInfo(iBuilding)
-			if city.isHasBuilding(iBuilding) and pBuildingInfo.getProductionCost() > 0:
+			if city.getNumRealBuilding(iBuilding) > 0 and pBuildingInfo.getProductionCost() > 0:
 				if not isLimitedWonderClass(pBuildingInfo.getBuildingClassType()):
 					if pBuildingInfo.getProductionCost() <= 100:
 						listCheapBuildings.append(iBuilding)

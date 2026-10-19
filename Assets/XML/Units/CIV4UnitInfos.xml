@@ -4092,7 +4092,7 @@
 			<Strategy>TXT_KEY_UNIT_ANIMAL_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_ELEFANT_HELP</Help>
 			<Advisor>NONE</Advisor>
-			<bAnimal>0</bAnimal>
+			<bAnimal>1</bAnimal>
 			<bFood>0</bFood>
 			<bNoBadGoodies>0</bNoBadGoodies>
 			<bOnlyDefensive>1</bOnlyDefensive>

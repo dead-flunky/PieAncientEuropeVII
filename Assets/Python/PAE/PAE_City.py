@@ -3412,7 +3412,8 @@ def doStadtbrand(pCity):
 			LBuildings = []
 			iRange = gc.getNumBuildingInfos()
 			for i in range(iRange):
-					if pCity.isHasBuilding(i):
+					# PAE: nur echt gebaute Gebaeude (nicht frei durch Wunder/Konzern/Staatsform)
+					if pCity.getNumRealBuilding(i) > 0:
 							pBuildingInfo = gc.getBuildingInfo(i)
 							# Wunder sollen (noch?) nicht betroffen sein
 							iBuildingClass = pBuildingInfo.getBuildingClassType()

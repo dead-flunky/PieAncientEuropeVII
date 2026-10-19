@@ -3281,10 +3281,10 @@ class CvMainInterface:
 																# if pUnit.plot().getOwner() == -1:
 																if not pPlot.isWater():
 																		if pPlot.getOwner() == -1 or (pPlot.getImprovementType() == -1 and pPlot.getOwner() == iUnitOwner):
-																				if pPlot.getBonusType(-1) != -1:
+																				if pPlot.getBonusType(pUnit.getTeam()) != -1:
 																						if pTeam.isHasTech(gc.getInfoTypeForString("TECH_WARENHANDEL")):
 																								screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Builds/button_build_handelsposten.dds",
-																																		0, WidgetTypes.WIDGET_GENERAL, 736, pPlot.getBonusType(-1), False)
+																										0, WidgetTypes.WIDGET_GENERAL, 736, pPlot.getBonusType(pUnit.getTeam()), False)
 																								screen.show("BottomButtonContainer")
 																								screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																								iCount += 1
