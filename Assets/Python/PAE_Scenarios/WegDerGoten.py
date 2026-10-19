@@ -1004,11 +1004,6 @@ def onCityBuilt(pCity):
 			CyCamera().ZoomIn(0.5)
 
 
-# wenn man Spieler erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
-def onPlayerKilled(iConqueredPlayer):
-	return
-
-
 
 # wenn man einen Spieler erobert oder vasallisiert: (3x vorhanden: onCityAcquired, onPlayerKilled, onVassalState)
 def onVassalState(argsList):
@@ -1399,11 +1394,6 @@ def onChangeWar(argsList):
 	else:
 	# -----------------------------
 		return
-
-
-
-def onEndPlayerTurn(iPlayer, iGameTurn):
-	return
 
 
 #[EVENT-2.1.1] Christentum Gründung:

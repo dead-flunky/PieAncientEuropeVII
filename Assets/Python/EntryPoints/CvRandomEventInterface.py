@@ -354,30 +354,6 @@ def canTriggerBabyBoom(argsList):
 		return False
 
 
-######## BARD TALE ###########
-
-def applyBardTale3(argsList):
-		# iEvent = argsList[0]
-		kTriggeredData = argsList[1]
-		player = gc.getPlayer(kTriggeredData.ePlayer)
-		player.changeGold(-10 * player.getNumCities())
-
-def canApplyBardTale3(argsList):
-		# iEvent = argsList[0]
-		kTriggeredData = argsList[1]
-		player = gc.getPlayer(kTriggeredData.ePlayer)
-		if player.getGold() - 10 * player.getNumCities() < 0:
-				return False
-		return True
-
-def getHelpBardTale3(argsList):
-		# iEvent = argsList[0]
-		kTriggeredData = argsList[1]
-		player = gc.getPlayer(kTriggeredData.ePlayer)
-		szHelp = localText.getText("TXT_KEY_EVENT_GOLD_LOST", (10 * player.getNumCities(), ))
-		return szHelp
-
-
 ######## LOOTERS ###########
 
 def getHelpLooters3(argsList):
@@ -3229,8 +3205,8 @@ def applyKastellDone2(argsList):
 		iKastell = gc.getInfoTypeForString("IMPROVEMENT_KASTELL")
 		team.changeImprovementYieldChange(iKastell, 2, 2)
 
-######## Isis ###########
 
+######## Isis ###########
 
 def canTriggerIsis(argsList):
 		kTriggeredData = argsList[0]
@@ -3260,30 +3236,13 @@ def canTriggerIsis(argsList):
 
 		return True
 
-
-def expireIsis1(argsList):
-		# iEvent = argsList[0]
-		kTriggeredData = argsList[1]
-		player = gc.getPlayer(kTriggeredData.ePlayer)
-
-		city = player.getCity(kTriggeredData.iCityId)
-		if city is None or city.isNone():
-				return True
-
-		return False
-
-
 def getHelpIsis1(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
-
 		#iNumCities = gc.getWorldInfo(gc.getMap().getWorldSize()).getDefaultPlayers() + 5
 		iNumCities = gc.getMap().getWorldSize() + 4
-
 		szHelp = localText.getText("TXT_KEY_EVENT_ISIS_HELP_1", (gc.getCorporationInfo(kTriggeredData.eCorporation).getTextKey(), iNumCities))
-
 		return szHelp
-
 
 def canTriggerIsisDone(argsList):
 		kTriggeredData = argsList[0]
@@ -3305,8 +3264,8 @@ def canTriggerIsisDone(argsList):
 
 		return True
 
-######## Mithras ###########
 
+######## Mithras ###########
 
 def canTriggerMithras(argsList):
 		kTriggeredData = argsList[0]
@@ -3336,29 +3295,12 @@ def canTriggerMithras(argsList):
 
 		return True
 
-
-def expireMithras1(argsList):
-		# iEvent = argsList[0]
-		kTriggeredData = argsList[1]
-		player = gc.getPlayer(kTriggeredData.ePlayer)
-
-		city = player.getCity(kTriggeredData.iCityId)
-		if city is None or city.isNone():
-				return True
-
-		return False
-
-
 def getHelpMithras1(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
-
 		iNumCities = gc.getMap().getWorldSize() + 4
-
 		szHelp = localText.getText("TXT_KEY_EVENT_MITHRAS_HELP_1", (gc.getCorporationInfo(kTriggeredData.eCorporation).getTextKey(), iNumCities))
-
 		return szHelp
-
 
 def canTriggerMithrasDone(argsList):
 		kTriggeredData = argsList[0]
@@ -3380,8 +3322,8 @@ def canTriggerMithrasDone(argsList):
 
 		return True
 
-######## Helle ###########
 
+######## Helle ###########
 
 def canTriggerHelle(argsList):
 		kTriggeredData = argsList[0]
@@ -3411,29 +3353,12 @@ def canTriggerHelle(argsList):
 
 		return True
 
-
-def expireHelle1(argsList):
-		# iEvent = argsList[0]
-		kTriggeredData = argsList[1]
-		player = gc.getPlayer(kTriggeredData.ePlayer)
-
-		city = player.getCity(kTriggeredData.iCityId)
-		if city is None or city.isNone():
-				return True
-
-		return False
-
-
 def getHelpHelle1(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
-
 		iNumCities = gc.getMap().getWorldSize() + 4
-
 		szHelp = localText.getText("TXT_KEY_EVENT_HELLE_HELP_1", (gc.getCorporationInfo(kTriggeredData.eCorporation).getTextKey(), iNumCities))
-
 		return szHelp
-
 
 def canTriggerHelleDone(argsList):
 		kTriggeredData = argsList[0]
@@ -3455,8 +3380,8 @@ def canTriggerHelleDone(argsList):
 
 		return True
 
-######## MEUTEREI ###########
 
+######## MEUTEREI ###########
 
 def canTriggerMeuterei(argsList):
 		kTriggeredData = argsList[0]
@@ -3685,11 +3610,6 @@ def canTriggerSoeldner(argsList):
 								return True
 
 		return False
-
-def canDoSoeldner1(argsList):
-		kTriggeredData = argsList[1]
-		newArgs = (kTriggeredData, )
-		return canTriggerSoeldner(newArgs)
 
 
 ######## THORGAL ###########

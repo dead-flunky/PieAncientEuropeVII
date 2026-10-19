@@ -3067,8 +3067,6 @@ class CvEventManager:
 							SecondPunicWar.onEndPlayerTurn(iPlayer, iGameTurn)
 					elif sScenarioName == "PeloponnesianWarKeinpferd":
 							PeloponnesianWarKeinpferd.onEndPlayerTurn(iPlayer, iGameTurn)
-					elif sScenarioName == "WegDerGoten":
-							WegDerGoten.onEndPlayerTurn(iPlayer, iGameTurn)
 
 					# +++++ MAP Reveal to black fog - Kriegsnebel - Fog of War (FoW) - Karte schwarz zurueckfaerben
 					if pPlayer is not None and not pPlayer.isBarbarian():
@@ -5160,12 +5158,6 @@ class CvEventManager:
 				iPlayerID = argsList[0]
 				bNewValue = argsList[1]
 				CvUtil.pyPrint("Player %d's alive status set to: %d" % (iPlayerID, int(bNewValue)))
-
-				# Szenarien
-				if not bNewValue:
-					sScenarioName = L.sScenarioName
-					if sScenarioName == "WegDerGoten":
-							WegDerGoten.onPlayerKilled(iPlayerID)
 
 		def onPlayerChangeStateReligion(self, argsList):
 				'Player changes his state religion'

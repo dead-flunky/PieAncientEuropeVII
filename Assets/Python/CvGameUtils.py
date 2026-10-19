@@ -3933,55 +3933,7 @@ class CvGameUtils:
 								pUnit.kill(True, -1)  # RAMK_CTD
 								return True
 
-		# Veteran -> Reservist in city for AI
-
-		def _doReservist_AI(self, pUnit):
-				pUnitGroup = pUnit.getGroup()
-
-				if pUnitGroup.getMissionType(0) != 0:
-						iOwner = pUnit.getOwner()
-						pOwner = gc.getPlayer(iOwner)
-
-						# nur im Friedensfall
-						bWar = False
-						iThisTeam = pOwner.getTeam()
-						pThisTeam = gc.getTeam(iThisTeam)
-
-						if pThisTeam.isHasTech(gc.getInfoTypeForString("TECH_RESERVISTEN")):
-								iRange = gc.getMAX_CIV_TEAMS()
-								for i in range(iRange):
-										if gc.getPlayer(i).isAlive():
-												iTeam = gc.getPlayer(i).getTeam()
-												if pThisTeam.isAtWar(iTeam):
-														bWar = True
-
-								if not bWar:
-										if pUnit.getUnitType() not in L.LUnitsNoAIReservists:
-
-												pSeekCity = None
-												iSeek = 0
-
-												(pCity, pIter) = pOwner.firstCity(False)
-												while pCity:
-														iNum = pCity.getFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_RESERVIST"))
-														if iNum <= iSeek or iNum == 0:
-																pSeekCity = pCity
-																iSeek = iNum
-														(pCity, pIter) = pOwner.nextCity(pIter, False)
-
-												# PAE Better AI soll direkt ansiedeln - rausgegeben
-												if pSeekCity is not None and not pSeekCity.isNone():
-														if pUnit.getX() != pSeekCity.getX() or pUnit.getY() != pSeekCity.getY():
-																pUnitGroup.clearMissionQueue()
-																pUnit.getGroup().pushMoveToMission(pSeekCity.getX(), pSeekCity.getY())
-														else:
-																pSeekCity.changeFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_RESERVIST"), 1)
-																# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
-																pUnit.kill(True, -1)  # RAMK_CTD
-																return True
-
 		# Promotion Trainer Building (Forest 1, Hills 1, ...) -------------------
-
 		def _AI_SettleTrainer(self, pUnit):
 				iPlayer = pUnit.getOwner()
 				pPlayer = gc.getPlayer(iPlayer)
