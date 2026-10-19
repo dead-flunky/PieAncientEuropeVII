@@ -413,14 +413,14 @@ def applyLooters3(argsList):
 	for i in range(iNumBuildings+1):
 		if len(listBuildings) > 0:
 			iBuilding = listBuildings[gc.getGame().getSorenRandNum(len(listBuildings), "Looters event building destroyed")]
-			szBuffer = localText.getText("TXT_KEY_EVENT_CITY_IMPROVEMENT_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
-			CyInterface().addMessage(kTriggeredData.eOtherPlayer, false, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO, gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), true, true)
+			szBuffer = localText.getText("TXT_KEY_EVENT_CITY_BUILDING_DESTROYED", (gc.getBuildingInfo(iBuilding).getTextKey(), ))
+			CyInterface().addMessage(kTriggeredData.eOtherPlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO, gc.getBuildingInfo(iBuilding).getButton(), gc.getInfoTypeForString("COLOR_RED"), city.getX(), city.getY(), True, True)
 			city.setNumRealBuilding(iBuilding, 0)
 			iNumBuildingsDestroyed += 1
 			listBuildings.remove(iBuilding)
 	if iNumBuildingsDestroyed > 0:
 		szBuffer = localText.getText("TXT_KEY_EVENT_NUM_BUILDINGS_DESTROYED", (iNumBuildingsDestroyed, gc.getPlayer(kTriggeredData.eOtherPlayer).getCivilizationAdjectiveKey(), city.getNameKey()))
-		CyInterface().addMessage(kTriggeredData.ePlayer, false, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO, None, gc.getInfoTypeForString("COLOR_WHITE"), -1, -1, true, true)
+		CyInterface().addMessage(kTriggeredData.ePlayer, False, gc.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_BOMBARDED", InterfaceMessageTypes.MESSAGE_TYPE_INFO, None, gc.getInfoTypeForString("COLOR_WHITE"), -1, -1, True, True)
 
 
 ######## BROTHERS IN NEED ###########
@@ -3648,8 +3648,8 @@ def applyBalearenDone(argsList):
 		for i in range(iNumUnits):
 				player.initUnit(iUnitType, plot.getX(), plot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 
-######## Soeldner ###########
 
+######## Soeldner ###########
 
 def canTriggerSoeldner(argsList):
 		kTriggeredData = argsList[0]
@@ -3686,36 +3686,47 @@ def canTriggerSoeldner(argsList):
 
 		return False
 
-
 def canDoSoeldner1(argsList):
 		kTriggeredData = argsList[1]
 		newArgs = (kTriggeredData, )
-
 		return canTriggerSoeldner(newArgs)
 
-######## THORGAL ###########
 
+######## THORGAL ###########
 
 def applyThorgal(argsList):
 		# iEvent = argsList[0]
 		kTriggeredData = argsList[1]
-
 		player = gc.getPlayer(kTriggeredData.ePlayer)
 		plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
-
 		iUnitType = gc.getInfoTypeForString('UNIT_VIKING_2')
 		NewUnit = player.initUnit(iUnitType, plot.getX(), plot.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
-
 		NewUnit.setName("Thorgal")
 
-
-def getHelpRome_Religion_3(argsList):
+def getHelpThorgal(argsList):
 		# iEvent = argsList[0]
 		# kTriggeredData = argsList[1]
-
-		szHelp = localText.getText("TXT_KEY_EVENT_THORGAL", ())
-
+		szHelp = localText.getText("TXT_KEY_EVENT_THORGAL_HELP", (gc.getUnitInfo(gc.getInfoTypeForString("UNIT_VIKING_2")).getTextKey(), ))
 		return szHelp
+
+
+######## HERESY ###########
+# PAE: Ketzerei tolerieren, die Glaeubigen eine Zeit lang mit gesenkten Steuern belohnen:
+# +1 Zufriedenheit (TEMP_HAPPY) in allen eigenen Staedten mit der Staatsreligion, 10 Runden (Spieltempo)
+def getHelpHeresy2(argsList):
+		# iEvent = argsList[0]
+		kTriggeredData = argsList[1]
+		iTurns = 4 * gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent() / 100
+		szHelp = localText.getText("TXT_KEY_EVENT_HERESY_2_HELP", (gc.getReligionInfo(kTriggeredData.eReligion).getTextKey(), iTurns))
+		return szHelp
+
+def applyHeresy2(argsList):
+		# iEvent = argsList[0]
+		kTriggeredData = argsList[1]
+		iTurns = 4 * gc.getGameSpeedInfo(gc.getGame().getGameSpeedType()).getGrowthPercent() / 100
+		for loopCity in CvUtil.getCities(gc.getPlayer(kTriggeredData.ePlayer)):
+			if loopCity.isHasReligion(kTriggeredData.eReligion):
+				loopCity.changeHappinessTimer(iTurns)
 
 
 ######## BEDUINEN ###########
@@ -3724,7 +3735,7 @@ def canTriggerBeduinen(argsList):
 		kTriggeredData = argsList[0]
 		# player = gc.getPlayer(kTriggeredData.ePlayer)
 
-		#   If Barbarians are disabled in this game, this event will not occur.
+		# If Barbarians are disabled in this game, this event will not occur.
 		if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_BARBARIANS):
 				return False
 
@@ -4050,7 +4061,7 @@ def canTriggerBordell(argsList):
 		if not gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_SYNKRETISMUS")):
 			return False
 		# 1:4 chance
-		if gc.getGame().getSorenRandNum(4, "Event:canTriggerBordell") == 0:
+		if gc.getGame().getSorenRandNum(4, "Event:canTriggerBordell") != 0:
 			return False
 		# check Order Queue in dieser Stadt
 		for iOrderCurrentCity in range(pCity.getOrderQueueLength()):

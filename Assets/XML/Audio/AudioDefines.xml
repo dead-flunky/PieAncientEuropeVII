@@ -9703,1659 +9703,1659 @@
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_1</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat1</Filename>
+			<Filename>Sounds/Tech/EN/Zitat1</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_2</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat2</Filename>
+			<Filename>Sounds/Tech/EN/Zitat2</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_3</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat3</Filename>
+			<Filename>Sounds/Tech/EN/Zitat3</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_4</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat4</Filename>
+			<Filename>Sounds/Tech/EN/Zitat4</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_5</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat5</Filename>
+			<Filename>Sounds/Tech/EN/Zitat5</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_6</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat6</Filename>
+			<Filename>Sounds/Tech/EN/Zitat6</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_7</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat7</Filename>
+			<Filename>Sounds/Tech/EN/Zitat7</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_8</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat8</Filename>
+			<Filename>Sounds/Tech/EN/Zitat8</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_9</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat9</Filename>
+			<Filename>Sounds/Tech/EN/Zitat9</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_10</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat10</Filename>
+			<Filename>Sounds/Tech/EN/Zitat10</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_11</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat11</Filename>
+			<Filename>Sounds/Tech/EN/Zitat11</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_12</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat12</Filename>
+			<Filename>Sounds/Tech/EN/Zitat12</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_13</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat13</Filename>
+			<Filename>Sounds/Tech/EN/Zitat13</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_14</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat14</Filename>
+			<Filename>Sounds/Tech/EN/Zitat14</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_15</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat15</Filename>
+			<Filename>Sounds/Tech/EN/Zitat15</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_16</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat16</Filename>
+			<Filename>Sounds/Tech/EN/Zitat16</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_17</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat17</Filename>
+			<Filename>Sounds/Tech/EN/Zitat17</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_18</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat18</Filename>
+			<Filename>Sounds/Tech/EN/Zitat18</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_19</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat19</Filename>
+			<Filename>Sounds/Tech/EN/Zitat19</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_20</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat20</Filename>
+			<Filename>Sounds/Tech/EN/Zitat20</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_21</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat21</Filename>
+			<Filename>Sounds/Tech/EN/Zitat21</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_22</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat22</Filename>
+			<Filename>Sounds/Tech/EN/Zitat22</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_23</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat23</Filename>
+			<Filename>Sounds/Tech/EN/Zitat23</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_24</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat24</Filename>
+			<Filename>Sounds/Tech/EN/Zitat24</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_25</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat25</Filename>
+			<Filename>Sounds/Tech/EN/Zitat25</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_26</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat26</Filename>
+			<Filename>Sounds/Tech/EN/Zitat26</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_27</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat27</Filename>
+			<Filename>Sounds/Tech/EN/Zitat27</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_28</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat28</Filename>
+			<Filename>Sounds/Tech/EN/Zitat28</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_29</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat29</Filename>
+			<Filename>Sounds/Tech/EN/Zitat29</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_30</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat30</Filename>
+			<Filename>Sounds/Tech/EN/Zitat30</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_31</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat31</Filename>
+			<Filename>Sounds/Tech/EN/Zitat31</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_32</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat32</Filename>
+			<Filename>Sounds/Tech/EN/Zitat32</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_33</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat33</Filename>
+			<Filename>Sounds/Tech/EN/Zitat33</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_34</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat34</Filename>
+			<Filename>Sounds/Tech/EN/Zitat34</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_35</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat35</Filename>
+			<Filename>Sounds/Tech/EN/Zitat35</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_36</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat36</Filename>
+			<Filename>Sounds/Tech/EN/Zitat36</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_37</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat37</Filename>
+			<Filename>Sounds/Tech/EN/Zitat37</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_38</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat38</Filename>
+			<Filename>Sounds/Tech/EN/Zitat38</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_39</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat39</Filename>
+			<Filename>Sounds/Tech/EN/Zitat39</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_40</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat40</Filename>
+			<Filename>Sounds/Tech/EN/Zitat40</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_41</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat41</Filename>
+			<Filename>Sounds/Tech/EN/Zitat41</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_42</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat42</Filename>
+			<Filename>Sounds/Tech/EN/Zitat42</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_43</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat43</Filename>
+			<Filename>Sounds/Tech/EN/Zitat43</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_44</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat44</Filename>
+			<Filename>Sounds/Tech/EN/Zitat44</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_45</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat45</Filename>
+			<Filename>Sounds/Tech/EN/Zitat45</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_46</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat46</Filename>
+			<Filename>Sounds/Tech/EN/Zitat46</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_47</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat47</Filename>
+			<Filename>Sounds/Tech/EN/Zitat47</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_48</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat48</Filename>
+			<Filename>Sounds/Tech/EN/Zitat48</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_49</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat49</Filename>
+			<Filename>Sounds/Tech/EN/Zitat49</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_50</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat50</Filename>
+			<Filename>Sounds/Tech/EN/Zitat50</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_51</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat51</Filename>
+			<Filename>Sounds/Tech/EN/Zitat51</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_52</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat52</Filename>
+			<Filename>Sounds/Tech/EN/Zitat52</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_53</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat53</Filename>
+			<Filename>Sounds/Tech/EN/Zitat53</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_54</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat54</Filename>
+			<Filename>Sounds/Tech/EN/Zitat54</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_55</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat55</Filename>
+			<Filename>Sounds/Tech/EN/Zitat55</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_56</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat56</Filename>
+			<Filename>Sounds/Tech/EN/Zitat56</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_57</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat57</Filename>
+			<Filename>Sounds/Tech/EN/Zitat57</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_58</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat58</Filename>
+			<Filename>Sounds/Tech/EN/Zitat58</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_59</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat59</Filename>
+			<Filename>Sounds/Tech/EN/Zitat59</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_60</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat60</Filename>
+			<Filename>Sounds/Tech/EN/Zitat60</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_61</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat61</Filename>
+			<Filename>Sounds/Tech/EN/Zitat61</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_62</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat62</Filename>
+			<Filename>Sounds/Tech/EN/Zitat62</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_63</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat63</Filename>
+			<Filename>Sounds/Tech/EN/Zitat63</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_64</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat64</Filename>
+			<Filename>Sounds/Tech/EN/Zitat64</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_65</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat65</Filename>
+			<Filename>Sounds/Tech/EN/Zitat65</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_66</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat66</Filename>
+			<Filename>Sounds/Tech/EN/Zitat66</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_67</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat67</Filename>
+			<Filename>Sounds/Tech/EN/Zitat67</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_68</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat68</Filename>
+			<Filename>Sounds/Tech/EN/Zitat68</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_69</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat69</Filename>
+			<Filename>Sounds/Tech/EN/Zitat69</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_70</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat70</Filename>
+			<Filename>Sounds/Tech/EN/Zitat70</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_71</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat71</Filename>
+			<Filename>Sounds/Tech/EN/Zitat71</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_72</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat72</Filename>
+			<Filename>Sounds/Tech/EN/Zitat72</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_73</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat73</Filename>
+			<Filename>Sounds/Tech/EN/Zitat73</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_74</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat74</Filename>
+			<Filename>Sounds/Tech/EN/Zitat74</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_75</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat75</Filename>
+			<Filename>Sounds/Tech/EN/Zitat75</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_76</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat76</Filename>
+			<Filename>Sounds/Tech/EN/Zitat76</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_77</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat77</Filename>
+			<Filename>Sounds/Tech/EN/Zitat77</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_78</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat78</Filename>
+			<Filename>Sounds/Tech/EN/Zitat78</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_79</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat79</Filename>
+			<Filename>Sounds/Tech/EN/Zitat79</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_80</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat80</Filename>
+			<Filename>Sounds/Tech/EN/Zitat80</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 				<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_81</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat81</Filename>
+			<Filename>Sounds/Tech/EN/Zitat81</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_82</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat82</Filename>
+			<Filename>Sounds/Tech/EN/Zitat82</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_83</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat83</Filename>
+			<Filename>Sounds/Tech/EN/Zitat83</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_84</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat84</Filename>
+			<Filename>Sounds/Tech/EN/Zitat84</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_85</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat85</Filename>
+			<Filename>Sounds/Tech/EN/Zitat85</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_86</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat86</Filename>
+			<Filename>Sounds/Tech/EN/Zitat86</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_87</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat87</Filename>
+			<Filename>Sounds/Tech/EN/Zitat87</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_88</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat88</Filename>
+			<Filename>Sounds/Tech/EN/Zitat88</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_89</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat89</Filename>
+			<Filename>Sounds/Tech/EN/Zitat89</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_90</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat90</Filename>
+			<Filename>Sounds/Tech/EN/Zitat90</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_91</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat91</Filename>
+			<Filename>Sounds/Tech/EN/Zitat91</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_92</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat92</Filename>
+			<Filename>Sounds/Tech/EN/Zitat92</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_93</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat93</Filename>
+			<Filename>Sounds/Tech/EN/Zitat93</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_94</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat94</Filename>
+			<Filename>Sounds/Tech/EN/Zitat94</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_95</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat95</Filename>
+			<Filename>Sounds/Tech/EN/Zitat95</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_96</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat96</Filename>
+			<Filename>Sounds/Tech/EN/Zitat96</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_97</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat97</Filename>
+			<Filename>Sounds/Tech/EN/Zitat97</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_98</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat98</Filename>
+			<Filename>Sounds/Tech/EN/Zitat98</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_99</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat99</Filename>
+			<Filename>Sounds/Tech/EN/Zitat99</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_100</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat100</Filename>
+			<Filename>Sounds/Tech/EN/Zitat100</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_101</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat101</Filename>
+			<Filename>Sounds/Tech/EN/Zitat101</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_102</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat102</Filename>
+			<Filename>Sounds/Tech/EN/Zitat102</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_103</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat103</Filename>
+			<Filename>Sounds/Tech/EN/Zitat103</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_104</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat104</Filename>
+			<Filename>Sounds/Tech/EN/Zitat104</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_105</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat105</Filename>
+			<Filename>Sounds/Tech/EN/Zitat105</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_106</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat106</Filename>
+			<Filename>Sounds/Tech/EN/Zitat106</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_107</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat107</Filename>
+			<Filename>Sounds/Tech/EN/Zitat107</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_108</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat108</Filename>
+			<Filename>Sounds/Tech/EN/Zitat108</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_109</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat109</Filename>
+			<Filename>Sounds/Tech/EN/Zitat109</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_110</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat110</Filename>
+			<Filename>Sounds/Tech/EN/Zitat110</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_111</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat111</Filename>
+			<Filename>Sounds/Tech/EN/Zitat111</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_112</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat112</Filename>
+			<Filename>Sounds/Tech/EN/Zitat112</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_113</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat113</Filename>
+			<Filename>Sounds/Tech/EN/Zitat113</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_114</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat114</Filename>
+			<Filename>Sounds/Tech/EN/Zitat114</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_115</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat115</Filename>
+			<Filename>Sounds/Tech/EN/Zitat115</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_116</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat116</Filename>
+			<Filename>Sounds/Tech/EN/Zitat116</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_117</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat117</Filename>
+			<Filename>Sounds/Tech/EN/Zitat117</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_118</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat118</Filename>
+			<Filename>Sounds/Tech/EN/Zitat118</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_119</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat119</Filename>
+			<Filename>Sounds/Tech/EN/Zitat119</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_120</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat120</Filename>
+			<Filename>Sounds/Tech/EN/Zitat120</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_121</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat121</Filename>
+			<Filename>Sounds/Tech/EN/Zitat121</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_122</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat122</Filename>
+			<Filename>Sounds/Tech/EN/Zitat122</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_123</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat123</Filename>
+			<Filename>Sounds/Tech/EN/Zitat123</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_124</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat124</Filename>
+			<Filename>Sounds/Tech/EN/Zitat124</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_125</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat125</Filename>
+			<Filename>Sounds/Tech/EN/Zitat125</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_126</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat126</Filename>
+			<Filename>Sounds/Tech/EN/Zitat126</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_127</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat127</Filename>
+			<Filename>Sounds/Tech/EN/Zitat127</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_128</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat128</Filename>
+			<Filename>Sounds/Tech/EN/Zitat128</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_129</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat129</Filename>
+			<Filename>Sounds/Tech/EN/Zitat129</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_130</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat130</Filename>
+			<Filename>Sounds/Tech/EN/Zitat130</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_131</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat131</Filename>
+			<Filename>Sounds/Tech/EN/Zitat131</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_132</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat132</Filename>
+			<Filename>Sounds/Tech/EN/Zitat132</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_133</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat133</Filename>
+			<Filename>Sounds/Tech/EN/Zitat133</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_134</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat134</Filename>
+			<Filename>Sounds/Tech/EN/Zitat134</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_135</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat135</Filename>
+			<Filename>Sounds/Tech/EN/Zitat135</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_136</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat136</Filename>
+			<Filename>Sounds/Tech/EN/Zitat136</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_137</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat137</Filename>
+			<Filename>Sounds/Tech/EN/Zitat137</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_138</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat138</Filename>
+			<Filename>Sounds/Tech/EN/Zitat138</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_139</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat139</Filename>
+			<Filename>Sounds/Tech/EN/Zitat139</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_140</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat140</Filename>
+			<Filename>Sounds/Tech/EN/Zitat140</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_141</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat141</Filename>
+			<Filename>Sounds/Tech/EN/Zitat141</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_142</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat142</Filename>
+			<Filename>Sounds/Tech/EN/Zitat142</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_143</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat143</Filename>
+			<Filename>Sounds/Tech/EN/Zitat143</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_144</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat144</Filename>
+			<Filename>Sounds/Tech/EN/Zitat144</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_145</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat145</Filename>
+			<Filename>Sounds/Tech/EN/Zitat145</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_146</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat146</Filename>
+			<Filename>Sounds/Tech/EN/Zitat146</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_147</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat147</Filename>
+			<Filename>Sounds/Tech/EN/Zitat147</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_148</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat148</Filename>
+			<Filename>Sounds/Tech/EN/Zitat148</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_149</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat149</Filename>
+			<Filename>Sounds/Tech/EN/Zitat149</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_150</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat150</Filename>
+			<Filename>Sounds/Tech/EN/Zitat150</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_151</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat151</Filename>
+			<Filename>Sounds/Tech/EN/Zitat151</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_152</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat152</Filename>
+			<Filename>Sounds/Tech/EN/Zitat152</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_153</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat153</Filename>
+			<Filename>Sounds/Tech/EN/Zitat153</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_154</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat154</Filename>
+			<Filename>Sounds/Tech/EN/Zitat154</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_155</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat155</Filename>
+			<Filename>Sounds/Tech/EN/Zitat155</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_156</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat156</Filename>
+			<Filename>Sounds/Tech/EN/Zitat156</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_157</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat157</Filename>
+			<Filename>Sounds/Tech/EN/Zitat157</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_158</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat158</Filename>
+			<Filename>Sounds/Tech/EN/Zitat158</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_159</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat159</Filename>
+			<Filename>Sounds/Tech/EN/Zitat159</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_160</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat160</Filename>
+			<Filename>Sounds/Tech/EN/Zitat160</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_161</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat161</Filename>
+			<Filename>Sounds/Tech/EN/Zitat161</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_162</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat162</Filename>
+			<Filename>Sounds/Tech/EN/Zitat162</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_163</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat163</Filename>
+			<Filename>Sounds/Tech/EN/Zitat163</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_164</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat164</Filename>
+			<Filename>Sounds/Tech/EN/Zitat164</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_165</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat165</Filename>
+			<Filename>Sounds/Tech/EN/Zitat165</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_166</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat166</Filename>
+			<Filename>Sounds/Tech/EN/Zitat166</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_167</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat167</Filename>
+			<Filename>Sounds/Tech/EN/Zitat167</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_168</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat168</Filename>
+			<Filename>Sounds/Tech/EN/Zitat168</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_169</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat169</Filename>
+			<Filename>Sounds/Tech/EN/Zitat169</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_170</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat170</Filename>
+			<Filename>Sounds/Tech/EN/Zitat170</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_171</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat171</Filename>
+			<Filename>Sounds/Tech/EN/Zitat171</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_172</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat172</Filename>
+			<Filename>Sounds/Tech/EN/Zitat172</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_173</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat173</Filename>
+			<Filename>Sounds/Tech/EN/Zitat173</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_174</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat174</Filename>
+			<Filename>Sounds/Tech/EN/Zitat174</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_175</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat175</Filename>
+			<Filename>Sounds/Tech/EN/Zitat175</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_176</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat176</Filename>
+			<Filename>Sounds/Tech/EN/Zitat176</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_177</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat177</Filename>
+			<Filename>Sounds/Tech/EN/Zitat177</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_178</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat178</Filename>
+			<Filename>Sounds/Tech/EN/Zitat178</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_179</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat179</Filename>
+			<Filename>Sounds/Tech/EN/Zitat179</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_180</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat180</Filename>
+			<Filename>Sounds/Tech/EN/Zitat180</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_181</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat181</Filename>
+			<Filename>Sounds/Tech/EN/Zitat181</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_182</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat182</Filename>
+			<Filename>Sounds/Tech/EN/Zitat182</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_183</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat183</Filename>
+			<Filename>Sounds/Tech/EN/Zitat183</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_184</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat184</Filename>
+			<Filename>Sounds/Tech/EN/Zitat184</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_185</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat185</Filename>
+			<Filename>Sounds/Tech/EN/Zitat185</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_186</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat186</Filename>
+			<Filename>Sounds/Tech/EN/Zitat186</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_187</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat187</Filename>
+			<Filename>Sounds/Tech/EN/Zitat187</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_188</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat188</Filename>
+			<Filename>Sounds/Tech/EN/Zitat188</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_189</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat189</Filename>
+			<Filename>Sounds/Tech/EN/Zitat189</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_190</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat190</Filename>
+			<Filename>Sounds/Tech/EN/Zitat190</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_191</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat191</Filename>
+			<Filename>Sounds/Tech/EN/Zitat191</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_192</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat192</Filename>
+			<Filename>Sounds/Tech/EN/Zitat192</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_193</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat193</Filename>
+			<Filename>Sounds/Tech/EN/Zitat193</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_194</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat194</Filename>
+			<Filename>Sounds/Tech/EN/Zitat194</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_195</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat195</Filename>
+			<Filename>Sounds/Tech/EN/Zitat195</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_196</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat196</Filename>
+			<Filename>Sounds/Tech/EN/Zitat196</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_197</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat197</Filename>
+			<Filename>Sounds/Tech/EN/Zitat197</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_198</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat198</Filename>
+			<Filename>Sounds/Tech/EN/Zitat198</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_199</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat199</Filename>
+			<Filename>Sounds/Tech/EN/Zitat199</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_200</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat200</Filename>
+			<Filename>Sounds/Tech/EN/Zitat200</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_201</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat201</Filename>
+			<Filename>Sounds/Tech/EN/Zitat201</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_202</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat202</Filename>
+			<Filename>Sounds/Tech/EN/Zitat202</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_203</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat203</Filename>
+			<Filename>Sounds/Tech/EN/Zitat203</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_204</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat204</Filename>
+			<Filename>Sounds/Tech/EN/Zitat204</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_205</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat205</Filename>
+			<Filename>Sounds/Tech/EN/Zitat205</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_206</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat206</Filename>
+			<Filename>Sounds/Tech/EN/Zitat206</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_207</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat207</Filename>
+			<Filename>Sounds/Tech/EN/Zitat207</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_208</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat208</Filename>
+			<Filename>Sounds/Tech/EN/Zitat208</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_209</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat209</Filename>
+			<Filename>Sounds/Tech/EN/Zitat209</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_210</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat210</Filename>
+			<Filename>Sounds/Tech/EN/Zitat210</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_211</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat211</Filename>
+			<Filename>Sounds/Tech/EN/Zitat211</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_212</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat212</Filename>
+			<Filename>Sounds/Tech/EN/Zitat212</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_213</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat213</Filename>
+			<Filename>Sounds/Tech/EN/Zitat213</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_214</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat214</Filename>
+			<Filename>Sounds/Tech/EN/Zitat214</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_215</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat215</Filename>
+			<Filename>Sounds/Tech/EN/Zitat215</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_216</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat216</Filename>
+			<Filename>Sounds/Tech/EN/Zitat216</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_217</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat217</Filename>
+			<Filename>Sounds/Tech/EN/Zitat217</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_218</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat218</Filename>
+			<Filename>Sounds/Tech/EN/Zitat218</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_219</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat219</Filename>
+			<Filename>Sounds/Tech/EN/Zitat219</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_220</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat220</Filename>
+			<Filename>Sounds/Tech/EN/Zitat220</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_221</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat221</Filename>
+			<Filename>Sounds/Tech/EN/Zitat221</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_222</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat222</Filename>
+			<Filename>Sounds/Tech/EN/Zitat222</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_223</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat223</Filename>
+			<Filename>Sounds/Tech/EN/Zitat223</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_224</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat224</Filename>
+			<Filename>Sounds/Tech/EN/Zitat224</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_225</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat225</Filename>
+			<Filename>Sounds/Tech/EN/Zitat225</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_226</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat226</Filename>
+			<Filename>Sounds/Tech/EN/Zitat226</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_227</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat227</Filename>
+			<Filename>Sounds/Tech/EN/Zitat227</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_228</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat228</Filename>
+			<Filename>Sounds/Tech/EN/Zitat228</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_229</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat229</Filename>
+			<Filename>Sounds/Tech/EN/Zitat229</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_230</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat230</Filename>
+			<Filename>Sounds/Tech/EN/Zitat230</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_231</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat231</Filename>
+			<Filename>Sounds/Tech/EN/Zitat231</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_232</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat232</Filename>
+			<Filename>Sounds/Tech/EN/Zitat232</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_233</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat233</Filename>
+			<Filename>Sounds/Tech/EN/Zitat233</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_234</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat234</Filename>
+			<Filename>Sounds/Tech/EN/Zitat234</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_235</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat235</Filename>
+			<Filename>Sounds/Tech/EN/Zitat235</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_236</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat236</Filename>
+			<Filename>Sounds/Tech/EN/Zitat236</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
 			<SoundID>SND_TECH_PAE_QUOTE_237</SoundID>
-			<Filename>Sounds/Tech/DE/Zitat237</Filename>
+			<Filename>Sounds/Tech/EN/Zitat237</Filename>
 			<LoadType>DYNAMIC_RES</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>

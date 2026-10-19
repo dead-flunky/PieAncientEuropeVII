@@ -2217,6 +2217,14 @@
 		<Spanish>Que se tolere la herej&#237;a, pero que se recompense a los fieles con impuestos reducidos durante una temporada, para dar a conocer nuestra postura.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_HERESY_2_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_HAPPY] for %d2 turns in all cities with %s1</English>
+		<French>[ICON_BULLET]+1[ICON_HAPPY] pendant %d2 tours dans toutes les villes dot&#233;es de %s1</French>
+		<German>[ICON_BULLET]+1[ICON_HAPPY] f&#252;r %d2 Runden in allen St&#228;dten mit %s1</German>
+		<Italian>[ICON_BULLET]+1[ICON_HAPPY] per %d2 turni in tutte le citt&#224; con %s1</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_HAPPY] durante %d2 turnos en todas las ciudades con %s1</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_HERESY_3</Tag>
 		<English>Ignore the heresy.</English>
 		<French>Ignorez l'h&#233;r&#233;sie.</French>

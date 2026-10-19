@@ -2162,7 +2162,7 @@
 			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp>getHelpFarmBandit2</PythonHelp>
+			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -3236,7 +3236,7 @@
 			<ImprovementType>NONE</ImprovementType>
 			<iImprovementChange>-1</iImprovementChange>
 			<BonusType>NONE</BonusType>
-			<iBonusChange>0</iBonusChange>
+			<iBonusChange>-1</iBonusChange>
 			<RouteType>NONE</RouteType>
 			<iRouteChange>0</iRouteChange>
 			<BonusRevealed>NONE</BonusRevealed>
@@ -3252,7 +3252,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyPest1</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -6269,10 +6269,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applySaltpeter</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
-			<PythonCanDo>canApplySaltpeter</PythonCanDo>
-			<PythonHelp>getHelpSaltpeter</PythonHelp>
+			<PythonCanDo/>
+			<PythonHelp/>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -9433,7 +9433,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyTowerShield</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -9519,7 +9519,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyReinforcedHull</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -14136,7 +14136,7 @@
 			<PythonCallback>applyHeresy2</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpHeresy2</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>
@@ -23194,7 +23194,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyRegen1</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -23275,7 +23275,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyRegen1</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -28341,7 +28341,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyTowerShield</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>
@@ -28427,7 +28427,7 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback>applyTowerShield</PythonCallback>
+			<PythonCallback/>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
 			<PythonHelp/>

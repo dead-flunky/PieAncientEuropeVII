@@ -1905,20 +1905,20 @@
 		<Spanish>Usando astas m&#225;s largas, la lanza es ahora especialmente efectiva contra otras unidades con lanza.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EVENT_THORGAL</Tag>
-		<English>Get a free viking unit.</English>
-		<French>Obtenir un viking gratuitement.</French>
-		<German>Eine freie Einheit Wikinger erhalten.</German>
-		<Italian>Ottenere una unit&#224; libero Vichinghi.</Italian>
-		<Spanish>Obtener una unidad vikinga gratis.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EVENT_THORGAL_1</Tag>
 		<English>A fearless warrior, who has travelled a long way to join you, appeared in the hills.</English>
 		<French>Un brave guerrier, qui a voyag&#233; de tr&#232;s loin, se joint &#224; vous. Il apparait dans les collines.</French>
 		<German>In den H&#252;geln ist ein furchtloser Krieger aufgetaucht, der einen weiten Weg zur&#252;ckgelegt hat, um sich euch anzuschlie&#223;en.</German>
 		<Italian>Nelle colline &#232; emerso un guerriero senza paura, che ha percorso una lunga strada per seguire la vostra causa.</Italian>
 		<Spanish>Un valiente guerrero, que ha viajado un largo camino para unirse a ti, apareci&#243; en las colinas cercanas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_THORGAL_HELP</Tag>
+		<English>[ICON_BULLET]You receive a %s1 named Thorgal.</English>
+		<French>[ICON_BULLET]Vous recevez un %s1 nomm&#233; Thorgal.</French>
+		<German>[ICON_BULLET]Ihr erhaltet einen %s1 mit dem Namen Thorgal.</German>
+		<Italian>[ICON_BULLET]Ricevi un %s1 di nome Thorgal.</Italian>
+		<Spanish>[ICON_BULLET]Recibes un %s1 llamado Thorgal.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_ABRAHAM_1</Tag>
