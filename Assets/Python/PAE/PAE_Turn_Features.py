@@ -181,7 +181,7 @@ def doPlotFeatures():
 																				szText = CyTranslator().getText("TXT_KEY_INFO_CLOSED_TRADEPOST", ("",))
 																				CyInterface().addMessage(iOwner, True, 15, szText, "AS2D_UNIT_BUILD_UNIT", 2, "Art/Interface/Buttons/General/button_alert_new.dds", ColorTypes(7), loopPlot.getX(), loopPlot.getY(), True, True)
 																# Kultur setzen
-																elif iPlotOwner == -1:
+																elif iPlotOwner == -1 and iOwner != -1:
 																		loopPlot.changeCulture(iOwner, 1, True)
 																		loopPlot.setOwner(iOwner)
 																		continue

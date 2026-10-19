@@ -38,16 +38,16 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 3. Feuerkatapult umrüsten (775)
 4. Terraforming (774)
 5. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
-„Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
+6. „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
 
 
 Optional:
 - `CvEventManager.py` Z. 2282 (Handler 776): auch den Ausgangstyp prüfen (nur Elefanten, nicht derselbe Typ).
 - P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
-- Balance: Arbeits- und Kriegselefant je 110 (Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
+- Behoben: Balance: Arbeits- und Kriegselefant je 110 (Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
 - Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
-- Beobachten/feinjustieren: - KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
-- Python ruft `CyPlot.getCulture(-1)` auf (Assert `CvPlot.cpp` getCulture, waehrend `cannotTrain`/Einberufung). Nur Lesezugriff, Aufrufer noch nicht gefunden.
+- Beobachten/feinjustieren: KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
+- Behoben: Python ruft `CyPlot.getCulture(-1)` auf (Assert `CvPlot.cpp` getCulture, waehrend `cannotTrain`/Einberufung). Nur Lesezugriff, Aufrufer noch nicht gefunden.
 
 
 Vor der Veröffentlichung:

@@ -10608,7 +10608,8 @@ bool CvPlot::checkLateEra() const
 	{
 		//find largest culture in this plot
 		ePlayer = GC.getGameINLINE().getActivePlayerInternal();
-		int maxCulture = getCulture(ePlayer);
+		//int maxCulture = getCulture(ePlayer); // BTS
+		int maxCulture = (ePlayer != NO_PLAYER) ? getCulture(ePlayer) : 0; // PAE (BTS Bug)
 		for (int i = 0; i < MAX_PLAYERS; i++)
 		{
 			int newCulture = getCulture((PlayerTypes) i);
@@ -10619,6 +10620,8 @@ bool CvPlot::checkLateEra() const
 			}
 		}
 	}
+
+	if (ePlayer == NO_PLAYER) return false; // PAE (BTS Bug)
 
 	return (GET_PLAYER(ePlayer).getCurrentEra() > GC.getNumEraInfos() / 2);
 }

@@ -5475,7 +5475,7 @@ class CvMainInterface:
 								else:
 										iForeignCulture = 0
 										if pCity.getOriginalOwner() != iPlayer and pCity.getOriginalOwner() != gc.getBARBARIAN_PLAYER() and gc.getPlayer(pCity.getOriginalOwner()).isAlive():
-												iForeignCulture = pCity.plot().calculateCulturePercent(gc.getPlayer(pCity.getOriginalOwner()).getTeam())
+												iForeignCulture = pCity.plot().calculateCulturePercent(pCity.getOriginalOwner())
 
 										if iForeignCulture > 19:
 												# Chance Kultur/10 - 1% pro Einheit

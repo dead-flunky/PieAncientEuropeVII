@@ -1590,6 +1590,7 @@ class CvEventManager:
 														pUnit.getGroup().pushMoveToMission(pCity.getX(), pCity.getY())
 														pUnit.getGroup().pushMission(MissionTypes.MISSION_SPREAD, iReligion, 0, 0, True, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 														bCanSpread = True
+														break
 
 								if not bCanSpread:
 										CyInterface().addMessage(iData4, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_SPREAD_RELIGION_NEG", (gc.getReligionInfo(iReligion).getDescription(), "")), None, 2, None, ColorTypes(10), 0, 0, False, False)

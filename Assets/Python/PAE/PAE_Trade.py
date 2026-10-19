@@ -549,7 +549,7 @@ def setPath2City(iPlayer, pSource):
 		for loopCity in CvUtil.getCities(pPlayer):
 				if not loopCity.isNone():
 						iDistance = gc.getMap().calculatePathDistance(loopCity.plot(), pSource)
-						if iDistance < iBestDistance:
+						if iDistance >= 0 and iDistance < iBestDistance:
 								iBestDistance = iDistance
 								pDest = loopCity.plot()
 

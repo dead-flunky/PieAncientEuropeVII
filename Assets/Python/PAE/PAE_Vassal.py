@@ -1060,7 +1060,7 @@ def getCitiesOfLowCultureLevel(iPlayer):
 				if not pCity.isNone():
 						iCulture = pCity.plot().calculateTeamCulturePercent(pPlayer.getTeam())
 						if iCulture < 51:
-								lCities.append(iCity)
+								lCities.append(pCity.getID())
 
 		return lCities
 

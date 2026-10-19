@@ -1722,11 +1722,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_HANDELSPOSTEN</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Build Trading Post[COLOR_REVERT][NEWLINE][ICON_BULLET] Creates a Trading Post[NEWLINE][ICON_BULLET] Builds a road[NEWLINE][ICON_BULLET] Unit will be removed[NEWLINE][ICON_BULLET] Delivers [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</English>
-		<French>[COLOR_HIGHLIGHT_TEXT]Construire un Poste de traite[COLOR_REVERT][NEWLINE][ICON_BULLET] Cr&#233;e un poste de traite &#233;tranger[NEWLINE][ICON_BULLET] Construit une route[NEWLINE][ICON_BULLET] L'unit&#233; sera supprim&#233;e[NEWLINE][ICON_BULLET] Fournit [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Handelsposten errichten[COLOR_REVERT][NEWLINE][ICON_BULLET] Handelsposten wird errichtet[NEWLINE][ICON_BULLET] Stra&#223;e wird errichtet[NEWLINE][ICON_BULLET] Einheit wird verbraucht[NEWLINE][ICON_BULLET] Liefert [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</German>
-		<Italian>[COLOR_HIGHLIGHT_TEXT] Crea un posto di commercio[COLOR_REVERT][NEWLINE][ICON_BULLET] Verr&#224; creato un posto di commercio[NEWLINE][ICON_BULLET] Verr&#224; costruita una strada[NEWLINE][ICON_BULLET] L'unit&#224; verr&#224; distrutta[NEWLINE][ICON_BULLET] Restituisce [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Construir un puesto de comercio[COLOR_REVERT][NEWLINE][ICON_BULLET] Se crear&#225; un puesto de comercio exterior[NEWLINE][ICON_BULLET] Se construir&#225; una carretera[NEWLINE][ICON_BULLET] La unidad ser&#225; destruida[NEWLINE][ICON_BULLET] Entrega [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Build Trading Post[COLOR_REVERT][NEWLINE][ICON_BULLET] Creates a Trading Post[NEWLINE][ICON_BULLET] Builds a trail or road[NEWLINE][ICON_BULLET] Unit will be removed[NEWLINE][ICON_BULLET] Delivers [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</English>
+		<French>[COLOR_HIGHLIGHT_TEXT]Construire un Poste de traite[COLOR_REVERT][NEWLINE][ICON_BULLET] Cr&#233;e un poste de traite &#233;tranger[NEWLINE][ICON_BULLET] Un sentier ou une route sera construit[NEWLINE][ICON_BULLET] L'unit&#233; sera supprim&#233;e[NEWLINE][ICON_BULLET] Fournit [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Handelsposten errichten[COLOR_REVERT][NEWLINE][ICON_BULLET] Handelsposten wird errichtet[NEWLINE][ICON_BULLET] Pfad oder Stra&#223;e wird errichtet[NEWLINE][ICON_BULLET] Einheit wird verbraucht[NEWLINE][ICON_BULLET] Liefert [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</German>
+		<Italian>[COLOR_HIGHLIGHT_TEXT] Crea un posto di commercio[COLOR_REVERT][NEWLINE][ICON_BULLET] Verr&#224; creato un posto di commercio[NEWLINE][ICON_BULLET] Verr&#224; costruita un sentiero o una strada[NEWLINE][ICON_BULLET] L'unit&#224; verr&#224; distrutta[NEWLINE][ICON_BULLET] Restituisce [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Construir un puesto de comercio[COLOR_REVERT][NEWLINE][ICON_BULLET] Se crear&#225; un puesto de comercio exterior[NEWLINE][ICON_BULLET] Se construir&#225; un sendero o un camino.[NEWLINE][ICON_BULLET] La unidad ser&#225; destruida[NEWLINE][ICON_BULLET] Entrega [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUTTON_HELDENDENKMAL1</Tag>
@@ -5475,10 +5475,10 @@
 	<TEXT>
 		<Tag>TXT_KEY_ROUTE_PATH</Tag>
 		<English>Trail</English>
-		<French><Text>Piste:Sentiers</Text><Gender>Male:Male</Gender><Plural>0:1</Plural></French>
+		<French><Text>Sentier:Sentiers</Text><Gender>Male:Male</Gender><Plural>0:1</Plural></French>
 		<German><Text>Pfad:Pfade</Text><Gender>Male:Male</Gender><Plural>0:1</Plural></German>
 		<Italian><Text>Sentiero:Sentieri</Text><Gender>Male:Male</Gender><Plural>0:1</Plural></Italian>
-		<Spanish><Text>Camino:Caminos</Text><Gender>Male:Male</Gender><Plural>0:1</Plural></Spanish>
+		<Spanish><Text>Sendero:Senderos</Text><Gender>Male:Male</Gender><Plural>0:1</Plural></Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ROUTE_TRADE_ROAD</Tag>

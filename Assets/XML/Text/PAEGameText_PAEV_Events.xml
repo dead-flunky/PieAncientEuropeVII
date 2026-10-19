@@ -106,11 +106,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_CITY_FIRE_4</Tag>
-		<English>A gigantic fire seemed to swallow the %s1_civ_adjective city of %s2_city.</English>
-		<French>Un gigantesque incendie semblait engloutir la ville %s1:2_civ_adjective de %s2_city.</French>
-		<German>Ein gigantischer Brand schien die %s1:3_civ_adjective Stadt %s2_city zu verschlucken.</German>
-		<Italian>Un gigantesco incendio sembr&#242; inghiottire la citt&#224; %s1_civ_adjective di %s2_city.</Italian>
-		<Spanish>Un fuego gigantesco pareci&#243; devorar la ciudad %s1:2_civ_adjective de %s2_city.</Spanish>
+		<English>A large fire has broken out in %s2_city (%s1:1_civ_adjective).</English>
+		<French>Un grand incendie s'est d&#233;clar&#233; &#224; %s2_city (%s1:1_civ_adjective).</French>
+		<German>Ein gro&#223;es Feuer ist in %s2_city (%s1:1_civ_adjective) ausgebrochen.</German>
+		<Italian>Un grande incendio &#232; scoppiato a %s2_city (%s1:1_civ_adjective).</Italian>
+		<Spanish>Se ha desatado un gran incendio en %s2_city (%s1:1_civ_adjective).</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_CITY_FIRE_5</Tag>
@@ -2106,11 +2106,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CITY_FIRE_4</Tag>
-		<English>A gigantic fire seemed to swallow the city of %s2_city.</English>
-		<French>Un gigantesque incendie semblait engloutir la ville de %s2_city.</French>
-		<German>Ein gigantischer Brand schien die Stadt %s2_city zu verschlucken.</German>
-		<Italian>Un gigantesco incendio sembr&#242; inghiottire la citt&#224; di %s2_city.</Italian>
-		<Spanish>Un fuego gigantesco pareci&#243; devorar la ciudad de %s2_city.</Spanish>
+		<English>A large fire has broken out in %s2_city.</English>
+		<French>Un grand incendie s'est d&#233;clar&#233; &#224; %s2_city.</French>
+		<German>Ein gro&#223;es Feuer ist in %s2_city ausgebrochen.</German>
+		<Italian>Un grande incendio &#232; scoppiato a %s2_city.</Italian>
+		<Spanish>Se ha desatado un gran incendio en %s2_city.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CITY_FIRE_5</Tag>
