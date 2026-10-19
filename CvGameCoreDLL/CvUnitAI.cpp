@@ -16753,6 +16753,9 @@ bool CvUnitAI::AI_stackAttackCity(int iRange, int iPowerThreshold, bool bFollow)
 
 	FAssert(canMove());
 
+	// PAE: KI greift Staedte schon ab 80 % Stapelstaerke an (BTS: 110)
+	iPowerThreshold = std::min(iPowerThreshold, 80);
+
 	if (bFollow)
 	{
 		iSearchRange = 1;

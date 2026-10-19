@@ -488,3 +488,8 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 4. **Bitte bestätigen (Spielmechanik):** KI bekommt jetzt auf *allen* Schwierigkeitsgraden zu 50 % einen zweiten Siedler; globale Katastrophen hängen an `gc.getPlayer(0).getCurrentEra()` – `gc.getGame().getCurrentEra()` wäre unabhängig davon, ob Spieler 0 noch lebt.
 
 **Nachprüfung 7.18.3.2 (Commit `6f6b903`):** Punkte 2, 3 (Palisade, isNone-Reihenfolge) und 4.2 korrekt umgesetzt, Einrückungen geprüft. Offen: nur die Text-Keys (Punkt 1, kommen über das Text-Tool).
+
+## Patch 7.18.3.18 (Claude Code)
+- KI-Schleifen: `CvSelectionGroupAI::AI_update` beendet den Zug bei Stillstand (3x gleiches Feld/gleiche Bewegungspunkte) oder Hin-und-her (A->B->A), statt bis zum Limit 40-120.
+- KI-Stadtangriff: `CvUnitAI::AI_targetCity` - steht der Stapel schon neben der Zielstadt, greift er ab 80 % an oder wartet, statt zurueckzuweichen.
+- Handelsschiffe: nur Routen zwischen Kuestenstaedten (`PAE_Trade.doAssignTradeRoute_AI`, `_getBestCity4Trade`). Route mit Inlandsstadt oder 3 Runden ohne Bewegung (`autS`) wird in `doAutomateMerchant` geloescht.
