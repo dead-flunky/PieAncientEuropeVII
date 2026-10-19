@@ -34,6 +34,7 @@ iCitiesSpecialBonus = 0  # Cities with Special Trade Bonus
 # "autB2": bonus bought in city 2/sold in city 1
 # "autA": if False, automated route is currently inactive
 # "autLTC": latest turn when "doAutomateMerchant" was called for this unit. Sometimes it is called multiple times per turn, this prevents unnecessary calculations
+# "autS": Runden ohne Bewegung zaehlen, ab 3 loescht doAutomateMerchant die Route
 
 # Used keys for CityScriptData:
 # "b": free bonuses acquired via turns and until which turn they are available,
@@ -1418,7 +1419,15 @@ def doAutomateMerchant(pUnit):
 								if not pUnitTeam.isOpenBorders(iCityTeam):
 										bOpenBorders = False
 
-				if pCity1 is None or pCity1.isNone() or pCity2 is None or pCity2.isNone() or bWar or not bOpenBorders:
+				# PAE: Schiff mit Inlandsstadt in der Route oder 3 Runden ohne Bewegung (Ziel unerreichbar) -> Route ungueltig
+				bUnreachable = False
+				if pUnit.getDomainType() == DomainTypes.DOMAIN_SEA:
+						if (not pCity1.isNone() and not pCity1.isCoastal(4)) or (not pCity2.isNone() and not pCity2.isCoastal(4)):
+								bUnreachable = True
+				if CvUtil.getScriptData(pUnit, ["autS"], 0) >= 3:
+						bUnreachable = True
+
+				if pCity1 is None or pCity1.isNone() or pCity2 is None or pCity2.isNone() or bWar or not bOpenBorders or bUnreachable:
 						# delete invalid trade route
 						CvUtil.removeScriptData(pUnit, "autA")
 						CvUtil.removeScriptData(pUnit, "autLTC")
@@ -1431,6 +1440,7 @@ def doAutomateMerchant(pUnit):
 						CvUtil.removeScriptData(pUnit, "x")
 						CvUtil.removeScriptData(pUnit, "y")
 						CvUtil.removeScriptData(pUnit, "originCiv")
+						CvUtil.removeScriptData(pUnit, "autS")
 
 						# Messages
 						if pUnit.isHuman():
@@ -1635,6 +1645,10 @@ def doAssignTradeRoute_AI(pUnit):
 								if getPlotTradingRoad(pCityPlotPlayer, pCityPlotNeighbor) is None:
 										continue
 
+								# PAE: Schiffe nur zwischen Kuestenstaedten (der Landweg sagt bei Schiffen nichts)
+								if bWater and (not pPlayerCity.isCoastal(4) or not pNeighborCity.isCoastal(4)):
+										continue
+
 								if bWater and pNeighborCity.isCoastal(4):
 										iDistance = plotDistance(pCityPlotPlayer.getX(), pCityPlotPlayer.getY(), pCityPlotNeighbor.getX(), pCityPlotNeighbor.getY()) - 1
 								else:
@@ -1687,7 +1701,11 @@ def doAssignTradeRoute_AI(pUnit):
 
 		if pBestPlayerCity != None and pBestNeighborCity != None:
 
-				if CyMap().calculatePathDistance(pBestPlayerCity.plot(), pBestNeighborCity.plot()) == -1:
+				# PAE: Schiffe brauchen zwei Kuestenstaedte, der Landweg zaehlt nur fuer Landeinheiten
+				if bWater:
+						if not pBestPlayerCity.isCoastal(4) or not pBestNeighborCity.isCoastal(4):
+								return False
+				elif CyMap().calculatePathDistance(pBestPlayerCity.plot(), pBestNeighborCity.plot()) == -1:
 						return False
 
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, "Stadt gefunden " + pBestPlayerCity.getName()+" nach "+pBestNeighborCity.getName(), None, 2, None, ColorTypes(10), 0, 0, False, False)
@@ -1772,6 +1790,11 @@ def _getBestCity4Trade(pUnit, iPlayer):
 				if not loopCity.isNone():
 						lBonuses = getCitySaleableGoods(loopCity, -1)
 						if lBonuses:
+
+								# PAE: Schiffe nur zu Kuestenstaedten
+								if bWater and not loopCity.isCoastal(4):
+										(loopCity, pIter) = pPlayer.nextCity(pIter, False)
+										continue
 
 								if bWater and loopCity.isCoastal(4):
 										iLoopCityDistance = plotDistance(pUnitPlot.getX(), pUnitPlot.getY(), loopCity.getX(), loopCity.getY()) - 1

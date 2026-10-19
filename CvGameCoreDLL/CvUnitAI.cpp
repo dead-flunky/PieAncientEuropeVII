@@ -10741,6 +10741,10 @@ bool CvUnitAI::AI_targetCity(int iFlags)
 
 								iValue /= (iPathTurns + 1);
 
+								// PAE: eigenes Feld neben der Zielstadt bevorzugen (kein Seitwaerts-Wechseln)
+								if (atPlot(pAdjacentPlot)) iValue *= 2;
+								// PAE end
+
 								if (iValue > iBestValue)
 								{
 									iBestValue = iValue;
@@ -10762,11 +10766,24 @@ bool CvUnitAI::AI_targetCity(int iFlags)
 		if (pBestPlot != NULL)
 		{
 			FAssert(!(pBestCity->at(pBestPlot)) || 0 != (iFlags & MOVE_THROUGH_ENEMY)); // no suicide missions...
+
 			if (!atPlot(pBestPlot))
 			{
 				getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), iFlags);
 				return true;
 			}
+
+			// PAE: Schon auf dem besten Feld neben der Zielstadt -> angreifen, wenn die Staerke reicht, sonst stehen bleiben statt zurueckzuweichen
+			else if (plotDistance(getX_INLINE(), getY_INLINE(), pBestCity->getX_INLINE(), pBestCity->getY_INLINE()) == 1)
+			{
+				if (AI_stackAttackCity(1, 80, true))
+				{
+					return true;
+				}
+				getGroup()->pushMission(MISSION_SKIP);
+				return true;
+			}
+
 		}
 	}
 

@@ -212,6 +212,12 @@ bool CvSelectionGroupAI::AI_update()
 
 
 	bool bFailedAlreadyFighting = false;
+	// PAE: Stillstand und Hin-und-her der KI erkennen (siehe unten bei AI_update)
+	int iNoProgress = 0;
+	int iPrevX = -1;
+	int iPrevY = -1;
+	int iPrevID = -1;
+	// PAE end
 	while ((m_bGroupAttack && !bFailedAlreadyFighting) || readyToMove())
 	{
 		iTempHack++;
@@ -259,11 +265,55 @@ bool CvSelectionGroupAI::AI_update()
 
 			resetPath();
 
+			// BTS
+			/*
 			if (pHeadUnit->AI_update())
 			{
 				// AI_update returns true when we should abort the loop and wait until next slice
 				break;
 			}
+			*/
+
+			// PAE
+			int iStartX = pHeadUnit->getX_INLINE();
+			int iStartY = pHeadUnit->getY_INLINE();
+			int iStartMoves = pHeadUnit->getMoves();
+			int iStartID = pHeadUnit->getID();
+
+			if (pHeadUnit->AI_update())
+			{
+				// AI_update returns true when we should abort the loop and wait until next slice
+				break;
+			}
+
+			// PAE: Kein Fortschritt (gleiches Feld, gleiche Bewegungspunkte) oder Hin-und-her (zurueck auf dem Feld von vor zwei Schritten) -> Zug beenden statt bis zum Schleifenlimit
+			pHeadUnit = getHeadUnit();
+			if (pHeadUnit != NULL && pHeadUnit->getID() == iStartID && !pHeadUnit->isDelayedDeath() && headMissionQueueNode() == NULL && readyToMove())
+			{
+				if (pHeadUnit->at(iStartX, iStartY) && pHeadUnit->getMoves() == iStartMoves)
+				{
+					iNoProgress++;
+				}
+				else if (iPrevID == iStartID && pHeadUnit->at(iPrevX, iPrevY))
+				{
+					iNoProgress = 3;
+				}
+				else
+				{
+					iNoProgress = 0;
+				}
+
+				if (iNoProgress >= 3)
+				{
+					pHeadUnit->finishMoves();
+					break;
+				}
+			}
+			iPrevX = iStartX;
+			iPrevY = iStartY;
+			iPrevID = iStartID;
+			// PAE end
+
 		}
 
 		if (doDelayedDeath())

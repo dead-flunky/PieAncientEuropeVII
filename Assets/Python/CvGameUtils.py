@@ -1599,6 +1599,12 @@ class CvGameUtils:
 				iBarbarianPlayer = gc.getBARBARIAN_PLAYER()
 				pPlot = pUnit.plot()
 
+				# ***TEST CTD*** (Units debugging)
+				#import os
+				#fLog = open(os.path.join(os.path.expanduser("~"), "PAE_CTD.log"), "a")
+				#fLog.write("T%d P%d %s ID%d [%d,%d] AI%d\n" % (gc.getGame().getGameTurn(), iOwner, gc.getUnitInfo(pUnit.getUnitType()).getType(), pUnit.getID(), pUnit.getX(), pUnit.getY(), pUnit.getUnitAIType()))
+				#fLog.close()
+
 				if not pOwner.isHuman():
 						iUnitType = pUnit.getUnitType()
 						lCities = None
@@ -1850,9 +1856,15 @@ class CvGameUtils:
 								bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0))
 								if bTradeRouteActive:
 										PAE_Trade.doAutomateMerchant(pUnit)
-										# PAE: Keine Bewegung/Mission ausgeloest -> Zuege verbrauchen, sonst ruft die DLL die Einheit bis zum Schleifenlimit erneut auf
-										if not pUnit.isDead() and pUnit.canMove() and pUnit.getGroup().getLengthMissionQueue() == 0:
-												pUnit.finishMoves()
+										if not pUnit.isDead():
+												# PAE: Keine Bewegung/Mission ausgeloest -> Zuege verbrauchen, sonst ruft die DLL die Einheit bis zum Schleifenlimit erneut auf
+												if pUnit.canMove() and pUnit.getGroup().getLengthMissionQueue() == 0:
+														# PAE: Runden ohne Bewegung zaehlen, ab 3 loescht doAutomateMerchant die Route
+														if int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0)):
+																CvUtil.addScriptData(pUnit, "autS", CvUtil.getScriptData(pUnit, ["autS"], 0) + 1)
+														pUnit.finishMoves()
+												elif CvUtil.getScriptData(pUnit, ["autS"], 0):
+														CvUtil.removeScriptData(pUnit, "autS")
 										return True
 								elif not PAE_Trade.doAssignTradeRoute_AI(pUnit):
 										pOwner.changeGold(25)

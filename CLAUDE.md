@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.18.3.14)
+# PAE – Übergabe an Claude Code (Stand 7.18.3.18)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -25,6 +25,7 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 
 ## Erledigt
 Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
+CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
 
 
 ## Offen
@@ -35,7 +36,6 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 4. Terraforming (774)
 5. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
 „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
-- Python ruft `CyPlot.getCulture(-1)` auf (Assert `CvPlot.cpp` getCulture, waehrend `cannotTrain`/Einberufung). Nur Lesezugriff, Aufrufer noch nicht gefunden.
 
 
 Optional:
@@ -43,6 +43,9 @@ Optional:
 - P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
 - Balance: Arbeits- und Kriegselefant je 110 (Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
 - Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
+- Beobachten/feinjustieren: - KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
+- Python ruft `CyPlot.getCulture(-1)` auf (Assert `CvPlot.cpp` getCulture, waehrend `cannotTrain`/Einberufung). Nur Lesezugriff, Aufrufer noch nicht gefunden.
+
 
 Vor der Veröffentlichung:
 - `WegDerGoten.py` Z. 195: `iX = 50` (Testwert für 70x90-Karte) zurück auf `99`.
