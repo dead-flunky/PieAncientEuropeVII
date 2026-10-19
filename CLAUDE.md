@@ -24,11 +24,18 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - Python: Gebaeude zerstoeren/auswaehlen nur ueber `getNumRealBuilding(i) > 0`, nicht `isHasBuilding(i)` (das ist auch bei freien Gebaeuden durch Wunder/Konzern/Staatsform wahr, `setNumRealBuilding(i, 0)` entfernt diese nicht).
 - Zeilenangaben bei mehreren Änderungen in einer Datei immer von unten nach oben (höchste Zeilennummer zuerst), damit sich die übrigen Zeilen nicht verschieben.
 - Python: Ressourcen auf Feldern fuer Spieleraktionen mit `pPlot.getBonusType(iTeam)` abfragen, nicht `getBonusType(-1)` (das zeigt auch noch nicht erforschte Ressourcen).
+- Python, ScriptData von Einheiten/Städten: nie roh vergleichen (`pUnit.getScriptData() == "X"`), sondern `CvUtil.getScriptData(pUnit, ["t"]) == "X"`. PAE schreibt weitere Schlüssel dazu (z. B. "P", "ifp"), danach ist der Rohtext JSON. In WBSave-Dateien: `ScriptData={"t": "Name"}`.
+- `PAE_Unit.doUpgradeVeteran` übernimmt keine ScriptData der alten Einheit (Szenario-Helden verlieren ihre Kennung beim Rang-Upgrade).
+- Events (`CvRandomEventInterface.py`): `PythonCanDo` und `PythonHelp` laufen auch nur lokal beim Popup-Aufbau → kein Zufall, keine Zustandsänderung, sonst OOS. Zufall nur in `PythonCanTrigger*` und `PythonCallback`. Jede im Event-XML genannte Python-Funktion muss existieren (fehlende `PythonCanDo` → uninitialisierter Wert in der DLL).
+- Event-XML kann viel ohne Python: `UnitCombatPromotions`/`UnitClassPromotions` (alle + künftige Einheiten), `iImprovementChange`, `iBonusChange`, `iRouteChange` (-1 = entfernen) auf dem Trigger-Feld.
+- Text-Tool: Neue Einträge bekamen ein Leerzeichen im Tag (`<Tag> TXT_KEY…`) → Key wird nicht gefunden. Nach Text-Änderungen prüfen.
+- AudioDefines im Repo können `/DE/-Pfade` oder auch `/EN/`-Pfade. Die Audiofiles (Gesprochene Tech-Zitate) dafür sind nicht im Repo.
 
 
 ## Erledigt
 Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
 CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
+7.18.3.19–7.19b: getCulture(-1)-Fix (Handelsposten, checkLateEra), getCities-Nachbesserungen (PAE_City Revolte, PAE_Vassal), Weg der Goten durchgesehen (onChangeWar war durch __LOG_WARPEACE blockiert, ScriptData-Abfragen, 15.2-Logik, 27.2 jede Runde), Event-OOS (Hurrikan/Zyklon/Monsun/Stadtbrand jetzt Wahl Trümmer oder Wiederaufbau für Gold, ohne Zufall), fehlende Event-Funktionen ersetzt (Ketzerei 2, Thorgal-Hilfe, Plünderer 3) bzw. durch XML gelöst, Bordell 1:4, tote Funktionen entfernt.
 
 
 ## Offen
@@ -50,9 +57,6 @@ Optional:
 - Behoben (7.18.3.20): `getCulture(-1)` – `PAE_Turn_Features.doPlotFeatures` (Handelsposten ohne Besitzer-Eintrag schrieb `changeCulture(-1)` in fremden Speicher) und `CvPlot::checkLateEra` (BTS-Fehler, aktiver Spieler -1).
 
 
-Vor der Veröffentlichung:
-- `WegDerGoten.py` Z. 195: `iX = 50` (Testwert für 70x90-Karte) zurück auf `99`.
-- Spieler informieren: Spielstände vor 7.18.3.12 laden nicht mehr (neue Spieloption, Eigenschaften im Spielstand).
 
 ## Patch 7.18.3.10–14 (Claude Code)
 
