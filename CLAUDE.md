@@ -8,6 +8,9 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - Einrückung mit Tabs.
 - Code inline im bestehenden Stil, möglichst wenige neue `def`-Funktionen.
 - Antworten auf Deutsch, mit genauer Datei- und Zeilenangabe.
+- Änderungen nicht selbst einbauen, nicht committen, nicht pushen. Dateien im Repo nur lesen.
+- Jede Änderung im Chat so angeben: Datei, Zeile, Funktion, darunter „Alt:“ und „Neu:“ als Codeblock.
+  Mehrere Stellen in einer Datei von unten nach oben (höchste Zeilennummer zuerst).
 - Multiplayer: Spielzustand nur in `onModNetMessage` ändern (über `sendModNetMessage`), kein `getActivePlayer` in Spiellogik, kein Python-Zustand außerhalb des Spielstands, globale Listen/Dicts aus `PAE_Lists` vor Änderung kopieren.
 - KI (`AI_unitUpdate`): Jeder Zweig mit `return True` muss die Züge verbrauchen (finishMoves, Mission, kill, Upgrade), sonst läuft die DLL-Schleife 40–120 Mal.
 - Pitboss: `getActivePlayer()` ist auf dem Host -1, `gc.getPlayer(-1)` liefert `None`. Nie ohne Prüfung auf -1 verwenden.

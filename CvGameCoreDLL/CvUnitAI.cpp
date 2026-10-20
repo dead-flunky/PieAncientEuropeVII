@@ -92,8 +92,10 @@ bool CvUnitAI::AI_update()
 
 	if (getDomainType() == DOMAIN_LAND)
 	{
-
-		if (plot()->isWater() && !canMoveAllTerrain())
+		// BTS
+		//if (plot()->isWater() && !canMoveAllTerrain())
+		// PAE: river ford ist ein Wasser-Plot, Landeinheiten duerfen von dort weiterziehen
+		if (plot()->isWater() && !canMoveAllTerrain() && plot()->getTerrainType() != (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD"))
 		{
 			getGroup()->pushMission(MISSION_SKIP);
 			return false;

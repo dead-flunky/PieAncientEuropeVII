@@ -1786,7 +1786,16 @@ int areaValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointe
 		return TRUE;
 	}
 
-	return ((GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY)->isWater() == GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY)->isWater()) ? TRUE : FALSE);
+	// BTS
+	//return ((GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY)->isWater() == GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY)->isWater()) ? TRUE : FALSE);
+
+	// PAE: river ford ist ein Wasser-Plot, zaehlt fuer Gebiete aber als Land
+	CvPlot* pParentPlot = GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY);
+	CvPlot* pNodePlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
+	TerrainTypes eFord = (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD");
+	bool bParentWater = pParentPlot->isWater() && pParentPlot->getTerrainType() != eFord;
+	bool bNodeWater = pNodePlot->isWater() && pNodePlot->getTerrainType() != eFord;
+	return ((bParentWater == bNodeWater) ? TRUE : FALSE);
 }
 
 

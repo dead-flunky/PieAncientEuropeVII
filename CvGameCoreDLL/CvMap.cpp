@@ -1360,7 +1360,10 @@ void CvMap::calculateAreas()
 		if (pLoopPlot->getArea() == FFreeList::INVALID_INDEX)
 		{
 			pArea = addArea();
-			pArea->init(pArea->getID(), pLoopPlot->isWater());
+			// BTS
+			//pArea->init(pArea->getID(), pLoopPlot->isWater());
+			// PAE
+			pArea->init(pArea->getID(), pLoopPlot->isWater() && pLoopPlot->getTerrainType() != (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD"));
 
 			iArea = pArea->getID();
 

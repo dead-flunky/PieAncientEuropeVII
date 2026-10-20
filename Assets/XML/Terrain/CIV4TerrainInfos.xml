@@ -1702,7 +1702,7 @@
 			</Yields>
 			<RiverYieldChange/>
 			<HillsYieldChange/>
-			<bWater>0</bWater>
+			<bWater>1</bWater>
 			<bImpassable>0</bImpassable>
 			<bFound>0</bFound>
 			<bFoundCoast>0</bFoundCoast>

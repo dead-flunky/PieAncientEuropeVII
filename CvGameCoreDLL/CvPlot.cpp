@@ -4032,8 +4032,8 @@ bool CvPlot::isValidDomainForAction(const CvUnit& unit) const
 
 	case DOMAIN_LAND:
 	case DOMAIN_IMMOBILE:
-		// PAE: river ford
-		return (!isWater() || unit.canMoveAllTerrain());
+		// PAE: river ford (Wasser-Plot, Landeinheiten erlaubt)
+		return (!isWater() || unit.canMoveAllTerrain() || getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD"));
 		break;
 
 	default:
@@ -5387,8 +5387,12 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 				pNewArea = NULL;
 				bRecalculateAreas = false;
 
+				// PAE: river ford ist ein Wasser-Plot, gehoert aber zum Landgebiet
+				bool bAreaWater = isWater() && getTerrainType() != (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD");
+
 				// XXX might want to change this if we allow diagonal water movement...
-				if (isWater())
+				//if (isWater()) // BTS
+				if (bAreaWater)
 				{
 					for (iI = 0; iI < NUM_CARDINALDIRECTION_TYPES; ++iI)
 					{
@@ -5493,7 +5497,10 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 					if (pNewArea == NULL)
 					{
 						pNewArea = GC.getMapINLINE().addArea();
-						pNewArea->init(pNewArea->getID(), isWater());
+						// BTS
+						//pNewArea->init(pNewArea->getID(), isWater());
+						// PAE
+						pNewArea->init(pNewArea->getID(), bAreaWater);
 					}
 
 					setArea(pNewArea->getID());
@@ -5529,6 +5536,10 @@ void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bReb
 
 	if (getTerrainType() != eNewValue)
 	{
+
+		// PAE: river ford
+		TerrainTypes eOldTerrain = getTerrainType();
+
 		if ((getTerrainType() != NO_TERRAIN) &&
 			  (eNewValue != NO_TERRAIN) &&
 			  ((GC.getTerrainInfo(getTerrainType()).getSeeFromLevel() != GC.getTerrainInfo(eNewValue).getSeeFromLevel()) ||
@@ -5564,12 +5575,15 @@ void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bReb
 			//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
 		}
 
-
 		if (GC.getTerrainInfo(getTerrainType()).isWater() != isWater())
 		{
 			setPlotType(((GC.getTerrainInfo(getTerrainType()).isWater()) ? PLOT_OCEAN : PLOT_LAND), bRecalculate, bRebuildGraphics);
 		}
-
+		// PAE: Fluss <-> Furt bleibt Wasser-Plot, die Furt gehoert aber zum Landgebiet -> Gebiete neu berechnen
+		else if (bRecalculate && isWater() && (eOldTerrain == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD") || eNewValue == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")))
+		{
+			GC.getMapINLINE().recalculateAreas();
+		}
 
 	}
 }
