@@ -1134,24 +1134,24 @@ void CvUnit::updateAirCombat(bool bQuick)
 // Spielzustand (Schaden, Blickrichtung, "hat geschossen") auf allen Rechnern gleich, die Animation nur als Grafik (wie BTS rangeStrike): OOS-sicher.
 // Kein Kampf-Status (setCombatUnit/CombatTimer), damit der anschliessende Nahkampf (updateCombat) unberuehrt bleibt.
 // Der Angreifer stirbt dabei nicht (Grenze: iAirCombatLimit des Schuetzen).
-void CvUnit::doDefensiveRangedStrike(bool bQuick)
+bool CvUnit::doDefensiveRangedStrike(bool bQuick)
 {
 	CvPlot* pPlot = getAttackPlot();
 	if (pPlot == NULL || getDomainType() != DOMAIN_LAND)
 	{
-		return;
+		return false;
 	}
 
 	CvUnit* pBestDefender = pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true);
 	if (pBestDefender == NULL)
 	{
-		return;
+		return false;
 	}
 
 	CvUnit* pRanged = pPlot->getAvailableDefensiveRangedUnit(pBestDefender->getTeam());
 	if (pRanged == NULL)
 	{
-		return;
+		return false;
 	}
 
 	pRanged->setUsedDefensiveRangedStrike(true);
@@ -1162,7 +1162,7 @@ void CvUnit::doDefensiveRangedStrike(bool bQuick)
 
 	if (iUnitDamage <= getDamage())
 	{
-		return;
+		return false;
 	}
 
 	// Blickrichtung: Schuetze zum Angreifer, Angreifer zum Schuetzen (Spielzustand, auf allen Rechnern gleich)
@@ -1187,14 +1187,16 @@ void CvUnit::doDefensiveRangedStrike(bool bQuick)
 		pPlot->setCenterUnit(pRanged);
 
 		CvMissionDefinition kDefinition;
-		// MISSION_RANGE_ATTACK hat iTime 0 (Animation sofort vorbei), daher die Dauer des Bombardierens (iTime 4, gleiches ENTITY_EVENT_BOMBARD)
-		kDefinition.setMissionTime(GC.getMissionInfo(MISSION_BOMBARD).getTime() * gDLL->getSecsPerTurn());
+		// Dauer = Pause bis zum Nahkampf (PAE_DEFENSIVE_RANGED_DELAY, siehe attack)
+		kDefinition.setMissionTime(std::max(1, 4) * gDLL->getSecsPerTurn());
 		kDefinition.setMissionType(MISSION_RANGE_ATTACK);
 		kDefinition.setPlot(plot());
 		kDefinition.setUnit(BATTLE_UNIT_ATTACKER, pRanged);
 		kDefinition.setUnit(BATTLE_UNIT_DEFENDER, this);
 		gDLL->getEntityIFace()->AddMission(&kDefinition);
 	}
+
+	return true;
 }
 // ---------------------------------------------------
 
@@ -1561,7 +1563,8 @@ void CvUnit::updateCombat(bool bQuick)
 		}
 		else
 		{
-			bFinish = true;
+			// PAE: ohne Kampfgegner war das die Pause nach dem Fernschuss des Verteidigers (attack) -> jetzt den Nahkampf beginnen
+			bFinish = (getCombatUnit() != NULL);
 		}
 	}
 
@@ -3108,8 +3111,19 @@ void CvUnit::attack(CvPlot* pPlot, bool bQuick)
 
 	setAttackPlot(pPlot, false);
 
-	// PAE defend with ranged attack first (like in Civ III)
-	doDefensiveRangedStrike(bQuick);
+	// PAE defend with ranged attack first: Fernkaempfer des Verteidigers schiesst zuerst.
+	// Bei sichtbarem Kampf Pause ueber den Kampf-Timer (gespeichert, auf allen Rechnern gleich).
+	// Laeuft der Timer ab, ruft CvSelectionGroup::updateTimers updateCombat() auf und der Nahkampf beginnt.
+	if (doDefensiveRangedStrike(bQuick))
+	{
+		if (!bQuick && isCombatVisible(pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true)))
+		{
+			int iDelay = std::max(1, 4); // 4 Seconds
+			setCombatTimer(iDelay);
+			GC.getGameINLINE().incrementTurnTimer(iDelay);
+			return;
+		}
+	}
 
 	// BTS & PAE
 	updateCombat(bQuick);

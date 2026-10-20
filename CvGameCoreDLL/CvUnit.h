@@ -774,7 +774,7 @@ public:
 	int getPAEmoveDamage(); // PAE damaged units and ships are slower
 	bool hasUsedDefensiveRangedStrike() const;                      // PAE defend with ranged strike
 	void setUsedDefensiveRangedStrike(bool bNewValue);              // PAE defend with ranged strike
-	void doDefensiveRangedStrike(bool bQuick = false); // PAE defend with ranged strike
+	bool doDefensiveRangedStrike(bool bQuick = false); // PAE defend with ranged strike (true: Schuss abgegeben)
 	static int getCombatClass(UnitCombatTypes eCombat);                                    // PAE battle rounds matrix
 	static int getCombatRounds(CvUnit* pAttacker, CvUnit* pDefender, const CvPlot* pPlot); // PAE battle rounds matrix
 
