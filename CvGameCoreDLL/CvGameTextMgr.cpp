@@ -1985,6 +1985,19 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				)
 			);
 
+			// PAE: Fernkaempfer des Gegners schiesst vor dem Kampf (siehe CvUnit::doDefensiveRangedStrike)
+			if (pAttacker->getDomainType() == DOMAIN_LAND)
+			{
+				CvUnit* pRanged = pPlot->getAvailableDefensiveRangedUnit(pDefender->getTeam());
+				if (pRanged != NULL)
+				{
+					szString.append(NEWLINE);
+					szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
+					szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_DEFENSIVE_RANGED", pRanged->getNameKey()));
+					szString.append(CvWString::format(ENDCOLR));
+				}
+			}
+
 			// PAE new combat system: battle rounds / Neues Kampfsystem 05.06.2026 (Pie)
 			if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT) && pAttacker->getDomainType() != DOMAIN_AIR)
 			{
@@ -2176,8 +2189,9 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				float pB = 100.0f - ChanceOfAttack;
 
 				// reduce possible First Strikes
-				hpA -= iFirstStrikesGegner * Damage2Attacker;
-				hpB -= iFirstStrikesPlayer * Damage2Defender;
+				// wie CvUnit::resolveCombat: halber Schaden pro Erstschlag, es bleibt mindestens 1 Trefferpunkt
+				hpA = std::max(AttackerBaseHP / 100.0f, hpA - iFirstStrikesGegner * Damage2Attacker / 2.0f);
+				hpB = std::max(float(pDefender->baseCombatStr()) / 100.0f, hpB - iFirstStrikesPlayer * Damage2Defender / 2.0f);
 
 				// Hits to kill Attacker/Defender
 				int hitsToKillA = (int)ceil(hpA / Damage2Attacker);
@@ -2217,12 +2231,12 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ENEMY_DEATH"));
 				if (hitsToKillB <= iRounds) {
 					szString.append(gDLL->getText("TXT_KEY_COLOR_POSITIVE"));
-					szString.append(CvWString::format(L" %d ", hitsToKillB + 1));
+					szString.append(CvWString::format(L" %d ", hitsToKillB));
 					szString.append(CvWString::format(ENDCOLR));
 				} else {
-					szString.append(CvWString::format(L" %d ", hitsToKillB + 1));
+					szString.append(CvWString::format(L" %d ", hitsToKillB));
 				}
-				if (hitsToKillB + 1 == 1) szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ROUND"));
+				if (hitsToKillB == 1) szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ROUND"));
 				else szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INFO_ROUNDS"));
 
 			}
@@ -3719,6 +3733,15 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 				szString.append(CvWString::format(ENDCOLR));
 			}
 
+			// PAE: Brachland-Hinweis (nur eigene Felder, siehe CvPlot::isFallowDecayPossible)
+			if (pPlot->getTeam() == GC.getGameINLINE().getActiveTeam() && pPlot->isFallowDecayPossible())
+			{
+				szString.append(NEWLINE);
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_WARNING_TEXT")));
+				szString.append(gDLL->getText("TXT_KEY_PLOT_FALLOW_DECAY"));
+				szString.append(CvWString::format(ENDCOLR));
+			}
+
 		}
 
 		// PAE: eRoute defined above at movementCosts
@@ -4392,7 +4415,7 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, PlayerTypes
 
 		for (iI = 0; iI < GC.getNumTraitInfos(); iI++)
 		{
-			if (GC.getLeaderHeadInfo(eLeader).hasTrait(iI) || GET_PLAYER(ePlayer).hasTrait((TraitTypes)iI))
+			if (GET_PLAYER(ePlayer).hasTrait((TraitTypes)iI))
 			{
 				parseTraits(szHelpString, ((TraitTypes)iI), eCiv, false);
 			}

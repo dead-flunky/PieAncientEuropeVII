@@ -6584,7 +6584,14 @@ Further information:
 [ICON_BULLET]Siege units (Catapults) increase the chance of destroying a fort to 10%.
 [ICON_BULLET]Huts and their upgrades will be destroyed step by step and huts and forts will be replaced by city ruins
 [ICON_BULLET]Goody huts and city ruins are excluded from destruction
-[ICON_BULLET]At sea fishing boats can be destroyed in the same way</English>
+[ICON_BULLET]At sea fishing boats can be destroyed in the same way
+
+[H2]Fallow land[\H2]
+
+[ICON_BULLET]An improvement in a city radius that is not worked by any citizen falls into disrepair over time: each turn with a chance of 5%.
+[ICON_BULLET]Only improvements that have existed for more than 10 turns are affected.
+[ICON_BULLET]Plots with a resource are excluded, as well as cottages and their upgrades, towers, forts, limes, castella, trading posts, latifundia and colonates.
+[ICON_BULLET]Tip: Only improve as many plots as your cities can work.</English>
 		<French>
 Les am&#233;nagements requi&#232;rent de l'argent ainsi que la technologie ad&#233;quate pour &#234;tre construits.
 
@@ -6647,6 +6654,13 @@ Informations compl&#233;mentaires :
 [ICON_BULLET]Les cottages seront r&#233;duits &#224; l'&#233;tape pr&#233;c&#233;dente jusqu'&#224; destruction, ils seront alors remplac&#233;s par des ruines (idem pour les forteresses)
 [ICON_BULLET]Les villages tribaux et les ruines ne sont jamais d&#233;truits
 [ICON_BULLET]Les bateaux de p&#234;che sont soumis au m&#234;me traitement lors d'un combat en mer
+
+[H2]Terres en friche[\H2]
+
+[ICON_BULLET]Un am&#233;nagement dans le rayon d'une ville qui n'est exploit&#233; par aucun citoyen tombe en ruine avec le temps : chaque tour avec une probabilit&#233; de 5%.
+[ICON_BULLET]Seuls les am&#233;nagements existant depuis plus de 10 tours sont concern&#233;s.
+[ICON_BULLET]Les cases avec une ressource sont exclues, ainsi que les cottages et leurs &#233;volutions, les tours, les forteresses, le limes, les castella, les comptoirs, les latifundia et les colonats.
+[ICON_BULLET]Conseil : n'am&#233;nagez que les cases que vos villes peuvent exploiter.
 		</French>
 		<German>
 Modernisierungen kosten Geld und ben&#246;tigen bestimmte Technologien!
@@ -6710,6 +6724,13 @@ Weitere Informationen:
 [ICON_BULLET]H&#252;tten und die daraus entstehenden Modernisierungen werden schrittweise zerst&#246;rt und zerst&#246;rte H&#252;tten und Festungen werden zu Stadtruinen
 [ICON_BULLET]Stammesd&#246;rfer und Stadtruinen sind von Zerst&#246;rungen ausgeschlossen
 [ICON_BULLET]Auf See k&#246;nnen Fischerboote auf die gleiche Weise zerst&#246;rt werden
+
+[H2]Brachland[\H2]
+
+[ICON_BULLET]Eine Modernisierung im Stadtradius, die von keinem B&#252;rger bewirtschaftet wird, verf&#228;llt mit der Zeit: jede Runde mit einer Chance von 5%.
+[ICON_BULLET]Betroffen sind nur Modernisierungen, die schon l&#228;nger als 10 Runden bestehen.
+[ICON_BULLET]Ausgenommen sind Felder mit einer Ressource sowie H&#252;tten und ihre Ausbaustufen, T&#252;rme, Festungen, Limes, Kastelle, Handelsposten, Latifundien und Kolonate.
+[ICON_BULLET]Tipp: Modernisiere nur so viele Felder, wie deine St&#228;dte bewirtschaften k&#246;nnen.
 		</German>
 		<Italian>
 Aggiornamenti costano e richiedono una certa tecnologia !
@@ -6771,6 +6792,13 @@ Per maggiori informazioni :
 [ICON_BULLET] Capanne e la modernizzazione risultante viene rifugi e forti gradualmente distrutta e distrutta per le rovine della citt&#224;
 [ICON_BULLET] I villaggi tribali e le rovine delle citt&#224; sono esclusi dalla distruzione
 [ICON_BULLET] Barche da pesca possono essere distrutti nello stesso modo in mare
+
+[H2]Terreni incolti[\H2]
+
+[ICON_BULLET]Un miglioramento nel raggio di una citt&#224; che non viene lavorato da nessun cittadino va in rovina col tempo: ogni turno con una probabilit&#224; del 5%.
+[ICON_BULLET]Sono interessati solo i miglioramenti che esistono da pi&#249; di 10 turni.
+[ICON_BULLET]Sono esclusi i riquadri con una risorsa, i cottage e i loro sviluppi, le torri, i forti, il limes, i castella, le stazioni commerciali, i latifondi e i colonati.
+[ICON_BULLET]Consiglio: migliora solo i riquadri che le tue citt&#224; possono lavorare.
 		</Italian>
 		<Spanish>
 &#161;Las mejoras cuestan dinero y requieren una determinada tecnolog&#237;a!
@@ -6832,6 +6860,13 @@ Informaci&#243;n &#250;til:
 [ICON_BULLET]Las aldeas y sus crecimientos ser&#225;n destruidas paso a paso y las aldeas y fuertes ser&#225;n reemplazadas a ruinas de cuidad
 [ICON_BULLET]Las aldeas tribales y las ruinas de ciudad est&#225;n excluidas de la destrucci&#243;n
 [ICON_BULLET]En el mar los barcos pesqueros pueden ser destruidos de la misma manera
+
+[H2]Tierras en barbecho[\H2]
+
+[ICON_BULLET]Una mejora en el radio de una ciudad que no es trabajada por ning&#250;n ciudadano se deteriora con el tiempo: cada turno con una probabilidad del 5%.
+[ICON_BULLET]Solo afecta a las mejoras que existen desde hace m&#225;s de 10 turnos.
+[ICON_BULLET]Quedan excluidas las casillas con un recurso, as&#237; como las caba&#241;as y sus mejoras, las torres, los fuertes, el limes, los castella, los puestos comerciales, los latifundios y los colonatos.
+[ICON_BULLET]Consejo: mejora solo las casillas que tus ciudades puedan trabajar.
 		</Spanish>
 	</TEXT>
 	<TEXT>

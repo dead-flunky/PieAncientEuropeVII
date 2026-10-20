@@ -340,6 +340,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_bBlockading = false;
 	m_bAirCombat = false;
 	m_bHasUsedDefensiveRangedStrike = false; // PAE defend with ranged strike
+	m_iCombatRounds = 0; // PAE new combat system
 
 	m_eOwner = eOwner;
 	m_eCapturingPlayer = NO_PLAYER;
@@ -644,9 +645,8 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer)
 		if (GET_PLAYER(eCapturingPlayer).isHuman() || GET_PLAYER(eCapturingPlayer).AI_captureUnit(eCaptureUnitType, pPlot) || 0 == GC.getDefineINT("AI_CAN_DISBAND_UNITS"))
 		{
 			// PAE only capture slaves when enslavement is researched
-			if (eCaptureUnitType != (UnitTypes)(GC.getInfoTypeForString("UNIT_SLAVE")) || GET_TEAM(getTeam()).isHasTech((TechTypes)(GC.getInfoTypeForString("TECH_ENSLAVEMENT"))))
+			if (eCaptureUnitType != (UnitTypes)(GC.getInfoTypeForString("UNIT_SLAVE")) || GET_TEAM(GET_PLAYER(eCapturingPlayer).getTeam()).isHasTech((TechTypes)(GC.getInfoTypeForString("TECH_ENSLAVEMENT"))))
 			{
-			// ---
 				CvUnit* pkCapturedUnit = GET_PLAYER(eCapturingPlayer).initUnit(eCaptureUnitType, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 
 				if (pkCapturedUnit != NULL)
@@ -798,8 +798,8 @@ int CvUnit::getPAEmoveDamage()
 	if (getDomainType() == DOMAIN_SEA) {
 		iMoveChange = int(iBaseMoves * iDamage / 100);
 	}
-	else if (iDamage > 25) iMoveChange = 1;
 	else if (iDamage > 75) iMoveChange = 2;
+	else if (iDamage > 25) iMoveChange = 1;
 	if (iMoveChange >= iBaseMoves) iMoveChange = iBaseMoves - 1;
 
 	/*
@@ -1129,174 +1129,74 @@ void CvUnit::updateAirCombat(bool bQuick)
 }
 
 
-
 // PAE defend with ranged strike ---------------------
+// Vor einem Nahkampfangriff schiesst ein Fernkaempfer (iAirRange > 0, keine Belagerungswaffe) des verteidigenden Teams einmal pro Runde auf den Angreifer.
+// Spielzustand (Schaden, Blickrichtung, "hat geschossen") auf allen Rechnern gleich, die Animation nur als Grafik (wie BTS rangeStrike): OOS-sicher.
+// Kein Kampf-Status (setCombatUnit/CombatTimer), damit der anschliessende Nahkampf (updateCombat) unberuehrt bleibt.
+// Der Angreifer stirbt dabei nicht (Grenze: iAirCombatLimit des Schuetzen).
 void CvUnit::doDefensiveRangedStrike(bool bQuick)
 {
-
-	CvWString szBuffer;
-
-	bool bFinish = false;
-	bool bVisible = false;
-
 	CvPlot* pPlot = getAttackPlot();
-
-	if (pPlot == NULL) return;
-
-	if (getDomainType() == DOMAIN_AIR) return;
-
-	CvUnit* pDefender = NULL;
-	pDefender = pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true);
-	pDefender = pPlot->getAvailableDefensiveRangedUnit(pDefender->getTeam());
-
-	if (pDefender == NULL) return;
-
-	//check if quick combat
-	if (!bQuick) bVisible = isCombatVisible(pDefender);
-
-	FAssertMsg((pPlot == pDefender->plot()), "There is not expected to be a defender or the defender's plot is expected to be pPlot (the attack plot)");
-
-	//if not finished and not fighting yet, set up combat damage and mission
-	if (!bFinish)
+	if (pPlot == NULL || getDomainType() != DOMAIN_LAND)
 	{
-		if (!isFighting())
-		{
-			if (plot()->isFighting() || pPlot->isFighting()) return;
-
-			//setMadeAttack(true);
-
-			//rotate to face plot
-			DirectionTypes newDirection = estimateDirection(this->plot(), pDefender->plot());
-			if (newDirection != NO_DIRECTION) setFacingDirection(newDirection);
-
-			//rotate enemy to face us
-			newDirection = estimateDirection(pDefender->plot(), this->plot());
-			if (newDirection != NO_DIRECTION) pDefender->setFacingDirection(newDirection);
-
-			setCombatUnit(pDefender, true);
-			pDefender->setCombatUnit(this, false);
-
-			pDefender->getGroup()->clearMissionQueue();
-
-			bool bFocused = (bVisible && isCombatFocus() && gDLL->getInterfaceIFace()->isCombatFocus());
-
-			if (bFocused)
-			{
-				DirectionTypes directionType = directionXY(plot(), pPlot);
-				//								N			NE				E				SE					S				SW					W				NW
-				NiPoint2 directions[8] = {NiPoint2(0, 1), NiPoint2(1, 1), NiPoint2(1, 0), NiPoint2(1, -1), NiPoint2(0, -1), NiPoint2(-1, -1), NiPoint2(-1, 0), NiPoint2(-1, 1)};
-				NiPoint3 attackDirection = NiPoint3(directions[directionType].x, directions[directionType].y, 0);
-				float plotSize = GC.getPLOT_SIZE();
-				NiPoint3 lookAtPoint(plot()->getPoint().x + plotSize / 2 * attackDirection.x, plot()->getPoint().y + plotSize / 2 * attackDirection.y, (plot()->getPoint().z + pPlot->getPoint().z) / 2);
-				attackDirection.Unitize();
-				gDLL->getInterfaceIFace()->lookAt(lookAtPoint, (((getOwnerINLINE() != GC.getGameINLINE().getActivePlayerInternal()) || gDLL->getGraphicOption(GRAPHICOPTION_NO_COMBAT_ZOOM)) ? CAMERALOOKAT_BATTLE : CAMERALOOKAT_BATTLE_ZOOM_IN), attackDirection);
-			}
-			else
-			{
-				PlayerTypes eAttacker = getVisualOwner(pDefender->getTeam());
-				CvWString szMessage;
-				if (BARBARIAN_PLAYER != eAttacker)
-				{
-					szMessage = gDLL->getText("TXT_KEY_MISC_YOU_UNITS_UNDER_ATTACK", GET_PLAYER(getOwnerINLINE()).getNameKey());
-				}
-				else
-				{
-					szMessage = gDLL->getText("TXT_KEY_MISC_YOU_UNITS_UNDER_ATTACK_UNKNOWN");
-				}
-
-				gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szMessage, "AS2D_COMBAT", MESSAGE_TYPE_DISPLAY_ONLY, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true);
-			}
-		}
-
-		FAssertMsg(pDefender != NULL, "Defender is not assigned a valid value");
-
-		FAssertMsg(plot()->isFighting(), "Current unit instance plot is not fighting as expected");
-		FAssertMsg(pPlot->isFighting(), "pPlot is not fighting as expected");
-
-
-		CvBattleDefinition kBattle;
-		kBattle.setUnit(BATTLE_UNIT_ATTACKER, this);
-		kBattle.setUnit(BATTLE_UNIT_DEFENDER, pDefender);
-		kBattle.setDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_BEGIN, getDamage());
-		kBattle.setDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_BEGIN, pDefender->getDamage());
-
-		resolveCombatRanged(pDefender, pPlot, kBattle);
-
-		if (!bVisible) bFinish = true;
-		else
-		{
-			kBattle.setDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_END, getDamage());
-			kBattle.setDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_END, pDefender->getDamage());
-			kBattle.setAdvanceSquare(canAdvance(pPlot, 1));
-
-			if (isRanged() && pDefender->isRanged())
-			{
-				kBattle.setDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_END));
-				kBattle.setDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_END));
-			}
-			else
-			{
-				kBattle.addDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_ATTACKER, BATTLE_TIME_BEGIN));
-				kBattle.addDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_RANGED, kBattle.getDamage(BATTLE_UNIT_DEFENDER, BATTLE_TIME_BEGIN));
-			}
-
-			int iTurns = planBattle( kBattle);
-			kBattle.setMissionTime(iTurns * gDLL->getSecsPerTurn());
-			setCombatTimer(iTurns);
-
-			GC.getGameINLINE().incrementTurnTimer(getCombatTimer());
-
-			if (pPlot->isActiveVisible(false))
-			{
-				ExecuteMove(0.5f, true);
-				gDLL->getEntityIFace()->AddMission(&kBattle);
-			}
-		}
-
+		return;
 	}
 
-	if (bFinish)
+	CvUnit* pBestDefender = pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true);
+	if (pBestDefender == NULL)
 	{
-		if (bVisible)
-		{
-			if (isCombatFocus() && gDLL->getInterfaceIFace()->isCombatFocus())
-			{
-				if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayerInternal())
-				{
-					gDLL->getInterfaceIFace()->releaseLockedCamera();
-				}
-			}
-		}
+		return;
+	}
 
+	CvUnit* pRanged = pPlot->getAvailableDefensiveRangedUnit(pBestDefender->getTeam());
+	if (pRanged == NULL)
+	{
+		return;
+	}
 
-		//end the combat mission if this code executes first
-		gDLL->getEntityIFace()->RemoveUnitFromBattle(this);
-		gDLL->getEntityIFace()->RemoveUnitFromBattle(pDefender);
+	pRanged->setUsedDefensiveRangedStrike(true);
 
-		setAttackPlot(NULL, false);
-		setCombatUnit(NULL);
-		pDefender->setCombatUnit(NULL);
-		NotifyEntity(MISSION_DAMAGE);
-		pDefender->NotifyEntity(MISSION_DAMAGE);
+	int iDamage = pRanged->rangeCombatDamage(this);
+	int iUnitDamage = std::max(getDamage(), std::min((getDamage() + iDamage), std::min(pRanged->airCombatLimit(), maxHitPoints() - 1)));
+	int iPercent = ((iUnitDamage - getDamage()) * 100) / maxHitPoints();
 
+	if (iUnitDamage <= getDamage())
+	{
+		return;
+	}
 
-		/***** PAE ******/
-		if (withdrawalProbability() > 0)
-		{
-			szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
-			gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_OUR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)19, pPlot->getX_INLINE(), pPlot->getY_INLINE());
-			szBuffer = gDLL->getText("TXT_KEY_MISC_ENEMY_UNIT_WITHDRAW", getNameKey(), pDefender->getNameKey());
-			gDLL->getInterfaceIFace()->addMessage(pDefender->getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIR_WITHDRAWL", MESSAGE_TYPE_INFO, NULL, (ColorTypes)20, pPlot->getX_INLINE(), pPlot->getY_INLINE());
-		}
-		/****************/
+	// Blickrichtung: Schuetze zum Angreifer, Angreifer zum Schuetzen (Spielzustand, auf allen Rechnern gleich)
+	DirectionTypes eDirection = estimateDirection(pRanged->plot(), plot());
+	if (eDirection != NO_DIRECTION) pRanged->setFacingDirection(eDirection);
+	eDirection = estimateDirection(plot(), pRanged->plot());
+	if (eDirection != NO_DIRECTION) setFacingDirection(eDirection);
 
-		//changeMoves(std::max(GC.getMOVE_DENOMINATOR(), pPlot->movementCost(this, plot())));
-		//checkRemoveSelectionAfterAttack();
+	// Schaden setzen, Lebensbalken aber erst nach der Animation aktualisieren (wie BTS rangeStrike)
+	setDamage(iUnitDamage, pRanged->getOwnerINLINE(), false);
 
-		//getGroup()->clearMissionQueue();
+	CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_ARE_ATTACKED_BY_AIR", getNameKey(), pRanged->getNameKey(), -iPercent);
+	gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_COMBAT", MESSAGE_TYPE_INFO, pRanged->getButton(), (ColorTypes)20, pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
 
+	szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_ATTACK_BY_AIR", pRanged->getNameKey(), getNameKey(), -iPercent);
+	gDLL->getInterfaceIFace()->addMessage(pRanged->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_COMBAT", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)19, getX_INLINE(), getY_INLINE(), true, true);
+
+	// Animation nur als Grafik, wenn der Kampf fuer diesen Rechner sichtbar ist (beeinflusst den Spielzustand nicht)
+	if (!bQuick && (pPlot->isActiveVisible(false) || plot()->isActiveVisible(false)))
+	{
+		// Schuetze sichtbar machen: im Stapel zeichnet die Engine nur die Center Unit des Feldes (reine Anzeige, nicht im Spielstand)
+		pPlot->setCenterUnit(pRanged);
+
+		CvMissionDefinition kDefinition;
+		// MISSION_RANGE_ATTACK hat iTime 0 (Animation sofort vorbei), daher die Dauer des Bombardierens (iTime 4, gleiches ENTITY_EVENT_BOMBARD)
+		kDefinition.setMissionTime(GC.getMissionInfo(MISSION_BOMBARD).getTime() * gDLL->getSecsPerTurn());
+		kDefinition.setMissionType(MISSION_RANGE_ATTACK);
+		kDefinition.setPlot(plot());
+		kDefinition.setUnit(BATTLE_UNIT_ATTACKER, pRanged);
+		kDefinition.setUnit(BATTLE_UNIT_DEFENDER, this);
+		gDLL->getEntityIFace()->AddMission(&kDefinition);
 	}
 }
+// ---------------------------------------------------
 
 
 
@@ -1477,7 +1377,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	{
 		iCap = pDefender->maxHitPoints() - 1 - pDefender->getDamage();
 		iCap = std::max(0, iCap);
-		iFirstStrikeDamage = iAttackerFirstStrikes * (iAttackerDamage / 2);
+		iFirstStrikeDamage = iAttackerFirstStrikes * (iDefenderDamage / 2);
 		iFirstStrikeDamage = std::min(iFirstStrikeDamage, iCap);
 		
 		pDefender->changeDamage(iFirstStrikeDamage, getOwnerINLINE());
@@ -1491,7 +1391,7 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 	{
 		iCap = maxHitPoints() - 1 - getDamage();
 		iCap = std::max(0, iCap);
-		iFirstStrikeDamage = iDefenderFirstStrikes * (iDefenderDamage / 2);
+		iFirstStrikeDamage = iDefenderFirstStrikes * (iAttackerDamage / 2);
 		iFirstStrikeDamage = std::min(iFirstStrikeDamage, iCap);
 
 		changeDamage(iFirstStrikeDamage, pDefender->getOwnerINLINE());
@@ -2976,7 +2876,7 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM")));
 			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
 			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
-			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
+			lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT2")));
 			if (std::find(lList.begin(), lList.end(), iImp) != lList.end()) return false;
 		}
 		// -----------
@@ -3208,9 +3108,8 @@ void CvUnit::attack(CvPlot* pPlot, bool bQuick)
 
 	setAttackPlot(pPlot, false);
 
-	// PAE defend with ranged attack first
-	//if (getCombatFirstStrikes() == 0 || getMoves() < 3)
-	//	doDefensiveRangedStrike(bQuick);
+	// PAE defend with ranged attack first (like in Civ III)
+	doDefensiveRangedStrike(bQuick);
 
 	// BTS & PAE
 	updateCombat(bQuick);
@@ -4080,8 +3979,8 @@ void CvUnit::unloadAll()
 
 bool CvUnit::canHold(const CvPlot* pPlot) const
 {
-	// PAE river ford
-	if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) return false;
+	// PAE river ford (war bei Bewegungskosten=0)
+	//if (pPlot->getTerrainType() == (TerrainTypes)GC.getInfoTypeForString("TERRAIN_RIVER_FORD")) return false;
 
 	return true;
 }
@@ -7315,11 +7214,13 @@ bool CvUnit::build(BuildTypes eBuild)
 
 	}
 
-	// PAE
-	if (GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_COTTAGE"))
-		gDLL->getInterfaceIFace()->playGeneralSound("AS2D_BUILD_CASTLE");
-	else if (GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL"))
-		gDLL->getInterfaceIFace()->playGeneralSound("AS2D_BUILD_CASTLE");
+	// PAE: nur fuer den eigenen Spieler und wenn fertig
+	if (bFinished && getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+	{
+		if (GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_COTTAGE") ||
+			 GC.getBuildInfo(eBuild).getImprovement() == GC.getInfoTypeForString("IMPROVEMENT_COTTAGE_HILL"))
+			gDLL->getInterfaceIFace()->playGeneralSound("AS2D_BUILD_CASTLE");
+	}
 
 	// Python Event
 	CvEventReporter::getInstance().unitBuildImprovement(this, eBuild, bFinished);
@@ -8588,15 +8489,15 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 				pCombatDetails->iFeatureDefenseModifier = iExtraModifier;
 			}
 		}
-		else
+
+		// PAE: Gelaende zaehlt auch auf Feldern mit Feature (wie bei den Bewegungskosten)
+		iExtraModifier = terrainDefenseModifier(pPlot->getTerrainType());
+		iModifier += iExtraModifier;
+		if (pCombatDetails != NULL)
 		{
-			iExtraModifier = terrainDefenseModifier(pPlot->getTerrainType());
-			iModifier += iExtraModifier;
-			if (pCombatDetails != NULL)
-			{
-				pCombatDetails->iTerrainDefenseModifier = iExtraModifier;
-			}
+			pCombatDetails->iTerrainDefenseModifier = iExtraModifier;
 		}
+
 	}
 
 	// if we are attacking to an plot with an unknown defender, the calc the modifier in reverse
@@ -8659,16 +8560,16 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 			{
 				pCombatDetails->iFeatureAttackModifier = iExtraModifier;
 			}
+			
 		}
-		else
+		// PAE: Gelaende zaehlt auch auf Feldern mit Feature (wie bei den Bewegungskosten)
+		iExtraModifier = -pAttacker->terrainAttackModifier(pAttackedPlot->getTerrainType());
+		iModifier += iExtraModifier;
+		if (pCombatDetails != NULL)
 		{
-			iExtraModifier = -pAttacker->terrainAttackModifier(pAttackedPlot->getTerrainType());
-			iModifier += iExtraModifier;
-			if (pCombatDetails != NULL)
-			{
-				pCombatDetails->iTerrainAttackModifier = iExtraModifier;
-			}
+			pCombatDetails->iTerrainAttackModifier = iExtraModifier;
 		}
+
 
 		// only compute comparisions if we are the defender with a known attacker
 		if (!bAttackingUnknownDefender)

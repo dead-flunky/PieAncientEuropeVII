@@ -373,6 +373,23 @@ void CvPlot::doTurn()
 	if (getImprovementType() != NO_IMPROVEMENT)
 	{
 		changeImprovementDuration(1);
+
+		// PAE: Brachland - Anlage verfaellt, wenn keine Stadt das Feld bewirtschaftet (Chance 1:PAE_UNWORKED_PLOT_REMOVE_CHANCE)
+		// Bedingungen in isFallowDecayPossible(), dazu nicht frisch gebaut (KI baut vor)
+		if (getImprovementDuration() > 10 && isFallowDecayPossible())
+		{
+			if (GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("PAE_UNWORKED_PLOT_REMOVE_CHANCE"), "Remove Improvement") == 0)
+			{
+				CvImprovementInfo& kImprovement = GC.getImprovementInfo(getImprovementType());
+				CvCity* pCity = getWorkingCity();
+				if (pCity != NULL)
+				{
+					CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_LOST_IMPROVEMENT", kImprovement.getTextKeyWide(), pCity->getNameKey());
+					gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYRAZE", MESSAGE_TYPE_MINOR_EVENT, kImprovement.getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
+				}
+				setImprovementType(NO_IMPROVEMENT);
+			}
+		}
 	}
 
 	doFeature();
@@ -468,25 +485,6 @@ void CvPlot::doImprovement()
 			}
 		}
 
-		// PAE feature: remove improvement if a city does not work on it
-		if (isOwned() && getBonusType() == NO_BONUS)
-		{
-			if (getWorkingCity() == NULL && GC.getImprovementInfo(getImprovementType()).getDefenseModifier() == 0)
-			{
-				if(GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("PAE_UNWORKED_PLOT_REMOVE_CHANCE"), "Remove Improvement") == 0)
-				{
-					setImprovementType(NO_IMPROVEMENT);
-					pCity = GC.getMapINLINE().findCity(getX_INLINE(), getY_INLINE(), getOwnerINLINE(), NO_TEAM, false);
-
-					if (pCity != NULL)
-					{
-						szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_LOST_IMPROVEMENT", GC.getImprovementInfo(getImprovementType()).getTextKeyWide(), pCity->getNameKey());
-						gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYRAZE", MESSAGE_TYPE_MINOR_EVENT, GC.getImprovementInfo(getImprovementType()).getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
-					}
-				}
-			}
-		} // -------
-
 	}
 
 	doImprovementUpgrade();
@@ -511,6 +509,42 @@ void CvPlot::doImprovementUpgrade()
 		}
 	}
 }
+
+// PAE: Brachland - Modernisierung im Stadtradius, die keine Stadt bewirtschaftet, kann verfallen (siehe doTurn)
+// ohne Ressource, keine Wehranlagen/Huetten (Verteidigung), kein Rauch/Dorfhuette/Markierung (Pluendergold 0), keine Latifundien/Kolonat
+bool CvPlot::isFallowDecayPossible() const
+{
+	ImprovementTypes eImprovement = getImprovementType();
+	if (eImprovement == NO_IMPROVEMENT || !isOwned() || getBonusType() != NO_BONUS)
+	{
+		return false;
+	}
+
+	if (!isPotentialCityWork() || isBeingWorked())
+	{
+		return false;
+	}
+
+	CvImprovementInfo& kImprovement = GC.getImprovementInfo(eImprovement);
+	if (kImprovement.getDefenseModifier() != 0 || kImprovement.getPillageGold() <= 0 || kImprovement.isPermanent())
+	{
+		return false;
+	}
+
+	// Latifundien und Kolonat wurden mit Sklaven aufgebaut
+	if (eImprovement == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_KOLONAT") ||
+		eImprovement == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM1") ||
+		eImprovement == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM2") ||
+		eImprovement == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM3") ||
+		eImprovement == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM4") ||
+		eImprovement == (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_LATIFUNDIUM5"))
+	{
+		return false;
+	}
+
+	return true;
+}
+
 
 void CvPlot::updateCulture(bool bBumpUnits, bool bUpdatePlotGroups)
 {
@@ -1757,7 +1791,7 @@ int CvPlot::seeFromLevel(TeamTypes eTeam) const
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_TURM2")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
-		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT")));
+		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_FORT2")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_LIMES9")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_LIMES2_9")));
 		lList.push_back((ImprovementTypes)(GC.getInfoTypeForString("IMPROVEMENT_KASTELL")));
@@ -2544,7 +2578,9 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 }
 
 
-int CvPlot::getBuildTime(BuildTypes eBuild) const
+//int CvPlot::getBuildTime(BuildTypes eBuild) const // BTS
+// PAE (+ eTeam for Iron Bonus)
+int CvPlot::getBuildTime(BuildTypes eBuild, TeamTypes eTeam) const
 {
 	int iTime;
 
@@ -2556,10 +2592,7 @@ int CvPlot::getBuildTime(BuildTypes eBuild) const
 	{
 		// PAE
 		int iFaktor = 1;
-		if (getSelectedUnit() != NULL) {
-			//if (GET_TEAM(getSelectedUnit()->getTeam()).isHasTech((TechTypes)(GC.getInfoTypeForString("TECH_IRON_WORKING")))) iFaktor = 2;
-			if (GET_TEAM(getSelectedUnit()->getTeam()).hasBonus((BonusTypes)(GC.getInfoTypeForString("BONUS_IRON2")))) iFaktor = 2;
-		}
+		if (eTeam != NO_TEAM && GET_TEAM(eTeam).hasBonus((BonusTypes)(GC.getInfoTypeForString("BONUS_IRON2")))) iFaktor = 2;
 		iTime += GC.getBuildInfo(eBuild).getFeatureTime(getFeatureType()) / iFaktor;
 		// BTS
 		//iTime += GC.getBuildInfo(eBuild).getFeatureTime(getFeatureType());
@@ -2588,6 +2621,7 @@ int CvPlot::getBuildTurnsLeft(BuildTypes eBuild, int iNowExtra, int iThenExtra) 
 	int iBuildLeft;
 	int iTurnsLeft;
 
+	TeamTypes eBuildTeam = NO_TEAM; // PAE (Iron Bonus)
 	iNowBuildRate = iNowExtra;
 	iThenBuildRate = iThenExtra;
 
@@ -2600,6 +2634,7 @@ int CvPlot::getBuildTurnsLeft(BuildTypes eBuild, int iNowExtra, int iThenExtra) 
 
 		if (pLoopUnit->getBuildType() == eBuild)
 		{
+			eBuildTeam = pLoopUnit->getTeam(); // PAE (Iron Bonus)
 			if (pLoopUnit->canMove())
 			{
 				iNowBuildRate += pLoopUnit->workRate(false);
@@ -2614,7 +2649,8 @@ int CvPlot::getBuildTurnsLeft(BuildTypes eBuild, int iNowExtra, int iThenExtra) 
 		return MAX_INT;
 	}
 
-	iBuildLeft = getBuildTime(eBuild);
+	//iBuildLeft = getBuildTime(eBuild); // BTS
+	iBuildLeft = getBuildTime(eBuild, eBuildTeam); // PAE (Iron Bonus)
 
 	iBuildLeft -= getBuildProgress(eBuild);
 	iBuildLeft -= iNowBuildRate;
@@ -8000,7 +8036,9 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 		m_paiBuildProgress[eBuild] += iChange;
 		FAssert(getBuildProgress(eBuild) >= 0);
 
-		if (getBuildProgress(eBuild) >= getBuildTime(eBuild))
+		//if (getBuildProgress(eBuild) >= getBuildTime(eBuild)) //BTS
+		// PAE
+		if (getBuildProgress(eBuild) >= getBuildTime(eBuild, eTeam))
 		{
 			m_paiBuildProgress[eBuild] = 0;
 
@@ -10649,7 +10687,9 @@ CvUnit* CvPlot::getAvailableDefensiveRangedUnit(TeamTypes eDefendingTeam) const
 
 		if (pLoopUnit != NULL &&
 			pLoopUnit->getTeam() == eDefendingTeam &&
-			pLoopUnit->isRanged() &&
+			// PAE: Spielregel statt Grafik-Merkmal (isRanged kommt aus den Art-Defines)
+			pLoopUnit->airRange() > 0 && pLoopUnit->canDefend() && !pLoopUnit->isCargo() &&
+			pLoopUnit->getUnitCombatType() != (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_SIEGE") &&
 			!pLoopUnit->hasUsedDefensiveRangedStrike())
 		{
 			return pLoopUnit;

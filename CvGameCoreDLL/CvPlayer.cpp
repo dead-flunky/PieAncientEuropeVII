@@ -5663,7 +5663,7 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 			else if (getCurrentEra() > 4)  eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_LIGHT_SWORDSMAN_MEDIEVAL");
 			else eUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_AXEWARRIOR");
 		}
-		else if (eUnit != NO_UNIT) initUnit(eUnit, pPlot->getX_INLINE(), pPlot->getY_INLINE());
+		if (eUnit != NO_UNIT) initUnit(eUnit, pPlot->getX_INLINE(), pPlot->getY_INLINE());
 		// PAE end
 
 	}

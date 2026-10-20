@@ -6554,8 +6554,7 @@ void CvGame::createBarbarianUnits()
 		return;
 	}
 
-	// PAE animals forever
-	bAnimals = true;
+	bAnimals = false;
 
 	if (GC.getEraInfo(getCurrentEra()).isNoBarbUnits())
 	{
@@ -6576,11 +6575,10 @@ void CvGame::createBarbarianUnits()
 		bAnimals = true;
 	}
 
-	if (bAnimals)
-	{
-		createAnimals();
-	}
-	else
+	// PAE: animals forever - Tiere immer, Barbaren nur nach den BTS-Bedingungen oben
+	createAnimals();
+
+	if (!bAnimals)
 	{
 		for(pLoopArea = GC.getMapINLINE().firstArea(&iLoop); pLoopArea != NULL; pLoopArea = GC.getMapINLINE().nextArea(&iLoop))
 		{
@@ -6746,7 +6744,6 @@ void CvGame::createBarbarianUnits()
 		}
 
 		// PAE: animals forever!
-		createAnimals();
 		/*
 		for (pLoopUnit = GET_PLAYER(BARBARIAN_PLAYER).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER(BARBARIAN_PLAYER).nextUnit(&iLoop))
 		{

@@ -3916,19 +3916,19 @@ class CvGameUtils:
 						pOwner = gc.getPlayer(iOwner)
 
 						pSeekCity = None
-						iSeek = 0
+						iSeek = -1
 
 						(loopCity, pIter) = pOwner.firstCity(False)
 						while loopCity:
 								iNum = loopCity.getYieldRate(1)
-								if iNum <= iSeek or iNum == 0:
+								if iSeek == -1 or iNum < iSeek:
 										pSeekCity = loopCity
 										iSeek = iNum
 								(loopCity, pIter) = pOwner.nextCity(pIter, False)
 
 						# PAE Better AI soll direkt ansiedeln
 						if pSeekCity is not None and not pSeekCity.isNone():
-								pSeekCity.changeFreeSpecialistCount(0, 1)  # Spezialist Citizen
+								pSeekCity.changeFreeSpecialistCount(gc.getInfoTypeForString("SPECIALIST_CITIZEN2"), 1)  # wie Mensch (GreatPeoples im XML)
 								# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
 								pUnit.kill(True, -1)  # RAMK_CTD
 								return True

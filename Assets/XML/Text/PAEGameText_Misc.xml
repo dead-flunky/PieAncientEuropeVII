@@ -2513,6 +2513,14 @@
 		<Spanish>Esta orden hace que esta unidad se una a la ciudad como un especialista, consumi&#233;ndose en el proceso.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PAE_COMBAT_DEFENSIVE_RANGED</Tag>
+		<English>Enemy ranged unit (%s1_UnitName) can shoot once before the battle</English>
+		<French>Une unit&#233; &#224; distance ennemie (%s1_UnitName) peut tirer une fois avant le combat</French>
+		<German>Gegnerischer Fernk&#228;mpfer (%s1_UnitName) kann vor dem Kampf einmal schie&#223;en</German>
+		<Italian>Un'unit&#224; a distanza nemica (%s1_UnitName) pu&#242; tirare una volta prima della battaglia</Italian>
+		<Spanish>Una unidad a distancia enemiga (%s1_UnitName) puede disparar una vez antes del combate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO</Tag>
 		<English>[COLOR_HIGHLIGHT_TEXT]Combat rounds: %d1_Value[COLOR_REVERT]</English>
 		<French>[COLOR_HIGHLIGHT_TEXT]Rounds de combat: %d1_Value[COLOR_REVERT]</French>
@@ -2807,6 +2815,14 @@
 		<German>Fortbewegung freundlicher Einheiten zwischen den Runden anzeigen (ausgenommen Tiere)</German>
 		<Italian>Mostra i movimenti delle unit&#224; amichevoli tra un turno e l'altro (animali esclusi)</Italian>
 		<Spanish>Muestra los movimientos de las unidades amistosas entre turno y turno (excepto animales).</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLOT_FALLOW_DECAY</Tag>
+		<English>Fallow land: not worked by a citizen, the improvement may fall into disrepair</English>
+		<French>Terre en friche : case non exploit&#233;e, l'am&#233;nagement peut tomber en ruine</French>
+		<German>Brachland: Feld wird nicht bewirtschaftet, die Modernisierung kann verfallen</German>
+		<Italian>Terreno incolto: riquadro non lavorato, il miglioramento pu&#242; andare in rovina</Italian>
+		<Spanish>Tierra en barbecho: casilla no trabajada, la mejora puede deteriorarse</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_POPUP_ARE_YOU_SURE_ACTION</Tag>

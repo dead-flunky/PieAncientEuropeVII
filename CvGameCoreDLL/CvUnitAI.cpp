@@ -1642,7 +1642,9 @@ void CvUnitAI::AI_barbAttackMove()
 	{
 		if (plot()->plotCount(PUF_isUnitAIType, UNITAI_ATTACK, -1, getOwnerINLINE()) < 2) // PAE < 2, BTS: == 1
 		{
-			getGroup()->pushMission(MISSION_FORTIFY); // PAE: MISSION_FORTIFY, BTS: MISSION_SKIP
+			// PAE: MISSION_FORTIFY, BTS: MISSION_SKIP
+			//getGroup()->pushMission(MISSION_SKIP); // BTS
+			getGroup()->pushMission(canFortify(plot()) ? MISSION_FORTIFY : MISSION_SKIP); // PAE: FORTIFY, sonst SKIP
 			return;
 		}
 	}
@@ -7224,7 +7226,8 @@ bool CvUnitAI::AI_guardCityMinDefender(bool bSearch)
 			{
 				FAssert(pBestGuardPlot == pBestPlot);
 				// BTS: MISSION_SKIP, PAE: MISSION_FORTIFY
-				getGroup()->pushMission(MISSION_FORTIFY, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
+				//getGroup()->pushMission(MISSION_SKIP, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL); // BTS
+				getGroup()->pushMission((canFortify(plot()) ? MISSION_FORTIFY : MISSION_SKIP), -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				return true;
 			}
 			FAssert(!atPlot(pBestPlot));
@@ -7349,7 +7352,8 @@ bool CvUnitAI::AI_guardCity(bool bLeave, bool bSearch, int iMaxPath)
 					}
 				}
 				// BTS: MISSION_SKIP, PAE: MISSION_FORTIFY
-				pEjectedUnit->getGroup()->pushMission(MISSION_FORTIFY, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
+				//pEjectedUnit->getGroup()->pushMission(MISSION_SKIP, -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL); // BTS
+				pEjectedUnit->getGroup()->pushMission((pEjectedUnit->canFortify(pEjectedUnit->plot()) ? MISSION_FORTIFY : MISSION_SKIP), -1, -1, 0, false, false, MISSIONAI_GUARD_CITY, NULL);
 				if (pEjectedUnit->getGroup() == pOldGroup || pEjectedUnit == this)
 				{
 					return true;
@@ -14142,7 +14146,7 @@ bool CvUnitAI::AI_improvePlot(CvPlot* pPlot, BuildTypes eBuild)
 	if (eBuild != NO_BUILD)
 	{
 
-		// PAE: KI ignoriert unbewirtschaftete Plots
+		// PAE: KI baut nur im Radius einer Stadt (getWorkingCity == NULL: Feld liegt in keinem Stadtradius; ob es bewirtschaftet wird, sagt isBeingWorked)
 		if (pPlot->getWorkingCity() == NULL) return false;
 		// ------
 
@@ -17274,7 +17278,8 @@ bool CvUnitAI::AI_solveBlockageProblem(CvPlot* pDestPlot, bool bDeclareWar)
 
 int CvUnitAI::AI_calculatePlotWorkersNeeded(CvPlot* pPlot, BuildTypes eBuild)
 {
-	int iBuildTime = pPlot->getBuildTime(eBuild) - pPlot->getBuildProgress(eBuild);
+	//int iBuildTime = pPlot->getBuildTime(eBuild) - pPlot->getBuildProgress(eBuild); // BTS
+	int iBuildTime = pPlot->getBuildTime(eBuild, getTeam()) - pPlot->getBuildProgress(eBuild); // PAE (Iron Bonus)
 	int iWorkRate = workRate(true);
 	
 	if (iWorkRate <= 0)

@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19b)
+# PAE – Übergabe an Claude Code (Stand 7.19.2)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -49,6 +49,7 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 4. Terraforming (774)
 5. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
 6. „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
+7. DLL-Check: Stellen ohne PAE-Markierung durchsehen (PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cpp erledigt, 10/2026).
 
 
 Optional:
@@ -503,3 +504,6 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 - KI-Schleifen: `CvSelectionGroupAI::AI_update` beendet den Zug bei Stillstand (3x gleiches Feld/gleiche Bewegungspunkte) oder Hin-und-her (A->B->A), statt bis zum Limit 40-120.
 - KI-Stadtangriff: `CvUnitAI::AI_targetCity` - steht der Stapel schon neben der Zielstadt, greift er ab 80 % an oder wartet, statt zurueckzuweichen.
 - Handelsschiffe: nur Routen zwischen Kuestenstaedten (`PAE_Trade.doAssignTradeRoute_AI`, `_getBestCity4Trade`). Route mit Inlandsstadt oder 3 Runden ohne Bewegung (`autS`) wird in `doAutomateMerchant` geloescht.
+
+## Patch 7.19.1 (Claude Code)
+- DLL, Furt (`TERRAIN_RIVER_FORD`, ab 7.19.1): Wasser-Plot (`bWater=1`, wird auf Flusshöhe gezeichnet), zählt für Gebiete aber als Land (`areaValid`, `CvMap::calculateAreas`, `CvPlot::setPlotType`, `setTerrainType` → `recalculateAreas`). Landeinheiten dürfen darauf (`isValidDomainForAction`, `CvUnitAI::AI_update`). Kampf von der Furt aufs Ufer bewusst nach BTS-Regeln wie vom Wasser aus (Amphibien-Abzug, keine Belagerungswaffen, kein Rückzug). Neue `isWater()`-Abfragen für Landeinheiten immer auf die Furt prüfen.

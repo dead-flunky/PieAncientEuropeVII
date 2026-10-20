@@ -919,19 +919,15 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
-		// PAE (otherwise all cities create workers from the start (at least in scenarios))
-		if (AI_chooseUnit(UNITAI_ATTACK)) return;
-
-
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                       09/19/09                                jdog5000      */
 /*                                                                                              */
 /* Bugfix                                                                                       */
 /************************************************************************************************/
-/* orginal bts code
-		if (!bDanger && (iNeededWorkers > 0) && (AI_getWorkersNeeded() > 0) && (AI_getWorkersHave() == 0))
-*/
-		if (!bDanger && (iNeededWorkers > iExistingWorkers) && (AI_getWorkersNeeded() > 0) && (AI_getWorkersHave() == 0))
+		//if (!bDanger && (iNeededWorkers > 0) && (AI_getWorkersNeeded() > 0) && (AI_getWorkersHave() == 0)) // BTS
+		//if (!bDanger && (iNeededWorkers > iExistingWorkers) && (AI_getWorkersNeeded() > 0) && (AI_getWorkersHave() == 0)) // jdog5000
+		// PAE: Barbaren bauen Bautrupps nur ab Pop 3
+		if (!bDanger && (iNeededWorkers > iExistingWorkers) && (AI_getWorkersNeeded() > 0) && (AI_getWorkersHave() == 0) && getPopulation() >= 3)
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
@@ -942,7 +938,9 @@ void CvCityAI::AI_chooseProduction()
 			}
 		}
 
-		if (!bDanger && (iNeededSeaWorkers > 0))
+		//if (!bDanger && (iNeededSeaWorkers > 0)) // BTS
+		// PAE: Barbaren bauen Arbeitsboote nur ab Pop 2
+		if (!bDanger && (iNeededSeaWorkers > 0) && getPopulation() >= 2)
 		{
 			if (AI_chooseUnit(UNITAI_WORKER_SEA))
 			{
@@ -3201,23 +3199,11 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 /* Bugfix                                                                                       */
 /************************************************************************************************/
 /* original bts code
-								if (iFoodDifference < 2)
-								{
-									iValue /= 4;
-								}
-								if (iRunnable > 0)
-								{
-									iValue /= 1 + iRunnable;
-								}
+								if (iFoodDifference < 2) {iValue /= 4;}
+								if (iRunnable > 0) {iValue /= 1 + iRunnable;}
 */
-								if (iFoodDifference < 2)
-								{
-									iTempValue /= 4;
-								}
-								if (iRunnable > 0)
-								{
-									iTempValue /= 1 + iRunnable;
-								}
+								if (iFoodDifference < 2) {iTempValue /= 4;}
+								if (iRunnable > 0) {iTempValue /= 1 + iRunnable;}
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
