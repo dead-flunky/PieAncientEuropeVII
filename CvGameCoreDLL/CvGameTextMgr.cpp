@@ -1908,7 +1908,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 
 			// PAE: Abwehrschuss eines Fernkaempfers vor dem Nahkampf (Schaden am Angreifer in Trefferpunkten, wie CvUnit::doDefensiveRangedStrike)
 			int iPreDamage = 0;
-			pAttacker->getDefensiveRangedStriker(pPlot, pDefender->getTeam(), iPreDamage);
+			CvUnit* pPreStriker = pAttacker->getDefensiveRangedStriker(pPlot, pDefender->getTeam(), iPreDamage); // NULL: kein Schuss (keiner da | Option NO_PAE_COMBAT | kein Schaden mehr moeglich)
 			int iAttackerHP = std::max(1, pAttacker->currHitPoints() - iPreDamage);
 			if (pAttacker->getDomainType() != DOMAIN_AIR)
 			{
@@ -1990,17 +1990,13 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				)
 			);
 
-			// PAE: Fernkaempfer des Gegners schiesst vor dem Kampf (siehe CvUnit::doDefensiveRangedStrike)
-			if (pAttacker->getDomainType() == DOMAIN_LAND)
+			// PAE: Fernkaempfer des Gegners schiesst vor dem Kampf (derselbe Schuetze wie in CvUnit::doDefensiveRangedStrike, siehe pPreStriker oben)
+			if (pPreStriker != NULL)
 			{
-				CvUnit* pRanged = pPlot->getAvailableDefensiveRangedUnit(pDefender->getTeam());
-				if (pRanged != NULL)
-				{
-					szString.append(NEWLINE);
-					szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
-					szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_DEFENSIVE_RANGED", pRanged->getNameKey()));
-					szString.append(CvWString::format(ENDCOLR));
-				}
+				szString.append(NEWLINE);
+				szString.append(CvWString::format(SETCOLR, TEXT_COLOR("COLOR_NEGATIVE_TEXT")));
+				szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_DEFENSIVE_RANGED", pPreStriker->getNameKey()));
+				szString.append(CvWString::format(ENDCOLR));
 			}
 
 			// PAE new combat system: battle rounds / Neues Kampfsystem 05.06.2026 (Pie)

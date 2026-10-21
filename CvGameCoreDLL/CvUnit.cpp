@@ -1217,16 +1217,31 @@ CvUnit* CvUnit::getDefensiveRangedStriker(const CvPlot* pPlot, TeamTypes eDefend
 		return NULL;
 	}
 
-	CvUnit* pRanged = pPlot->getAvailableDefensiveRangedUnit(eDefendingTeam);
-	if (pRanged == NULL)
+	// den Fernkaempfer mit dem groessten Schaden gegen diese Einheit waehlen
+	// (z. B. Katapult vor Bogenschuetze); Bedingungen wie getAvailableDefensiveRangedUnit
+	if (pPlot->getAvailableDefensiveRangedUnit(eDefendingTeam) == NULL)
 	{
 		return NULL;
 	}
 
-	int iUnitDamage = std::max(getDamage(), std::min((getDamage() + pRanged->rangeCombatDamage(this)), std::min(pRanged->airCombatLimit(), maxHitPoints() - 1)));
-	iDamage = iUnitDamage - getDamage();
+	CvUnit* pBestRanged = NULL;
+	for (CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode(); pUnitNode != NULL; pUnitNode = pPlot->nextUnitNode(pUnitNode))
+	{
+		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		if (pLoopUnit != NULL && pLoopUnit->getTeam() == eDefendingTeam &&
+			pLoopUnit->airRange() > 0 && pLoopUnit->canDefend() && !pLoopUnit->isCargo() &&
+			!pLoopUnit->hasUsedDefensiveRangedStrike())
+		{
+			int iUnitDamage = std::max(getDamage(), std::min((getDamage() + pLoopUnit->rangeCombatDamage(this)), std::min(pLoopUnit->airCombatLimit(), maxHitPoints() - 1)));
+			if (iUnitDamage - getDamage() > iDamage)
+			{
+				iDamage = iUnitDamage - getDamage();
+				pBestRanged = pLoopUnit;
+			}
+		}
+	}
 
-	return pRanged;
+	return pBestRanged;
 }
 
 
