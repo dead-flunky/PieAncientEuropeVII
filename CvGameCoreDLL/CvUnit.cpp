@@ -1148,7 +1148,8 @@ bool CvUnit::doDefensiveRangedStrike(bool bQuick)
 		return false;
 	}
 
-	CvUnit* pRanged = pPlot->getAvailableDefensiveRangedUnit(pBestDefender->getTeam());
+	int iDamage = 0;
+	CvUnit* pRanged = getDefensiveRangedStriker(pPlot, pBestDefender->getTeam(), iDamage); // gleiche Rechnung wie Vorschau und KI
 	if (pRanged == NULL)
 	{
 		return false;
@@ -1156,11 +1157,10 @@ bool CvUnit::doDefensiveRangedStrike(bool bQuick)
 
 	pRanged->setUsedDefensiveRangedStrike(true);
 
-	int iDamage = pRanged->rangeCombatDamage(this);
-	int iUnitDamage = std::max(getDamage(), std::min((getDamage() + iDamage), std::min(pRanged->airCombatLimit(), maxHitPoints() - 1)));
-	int iPercent = ((iUnitDamage - getDamage()) * 100) / maxHitPoints();
+	int iUnitDamage = getDamage() + iDamage;
+	int iPercent = (iDamage * 100) / maxHitPoints();
 
-	if (iUnitDamage <= getDamage())
+	if (iDamage <= 0)
 	{
 		return false;
 	}
@@ -1180,26 +1180,54 @@ bool CvUnit::doDefensiveRangedStrike(bool bQuick)
 	szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_ATTACK_BY_AIR", pRanged->getNameKey(), getNameKey(), -iPercent);
 	gDLL->getInterfaceIFace()->addMessage(pRanged->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_COMBAT", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)19, getX_INLINE(), getY_INLINE(), true, true);
 
-	// Animation nur als Grafik, wenn der Kampf fuer diesen Rechner sichtbar ist (beeinflusst den Spielzustand nicht)
-	if (!bQuick && (pPlot->isActiveVisible(false) || plot()->isActiveVisible(false)))
+	// Anzeige (nur Grafik, beeinflusst den Spielzustand nicht):
+	// Schuetze als sichtbare Einheit des Feldes merken und Kamera zum Kampf. Die Schuss-Animation startet in updateCombat (Pause-Takt 10).
+	// gleiche Bedingung wie die Pause in attack: nur dann setzt updateCombat den gemerkten Schuetzen wieder zurueck
+	if (!bQuick && isCombatVisible(pBestDefender))
 	{
-		// Schuetze sichtbar machen: im Stapel zeichnet die Engine nur die Center Unit des Feldes (reine Anzeige, nicht im Spielstand)
-		pPlot->setCenterUnit(pRanged);
+		pPlot->setPAEShowUnit(pRanged);
 
-		CvMissionDefinition kDefinition;
-		// Dauer = Pause bis zum Nahkampf (PAE_DEFENSIVE_RANGED_DELAY, siehe attack)
-		kDefinition.setMissionTime(std::max(1, 6) * gDLL->getSecsPerTurn()); // Takte des Kampf-Timers (auch in CvUnit::attack)
-		kDefinition.setMissionType(MISSION_RANGE_ATTACK);
-		kDefinition.setPlot(plot());
-		kDefinition.setUnit(BATTLE_UNIT_ATTACKER, pRanged);
-		kDefinition.setUnit(BATTLE_UNIT_DEFENDER, this);
-		gDLL->getEntityIFace()->AddMission(&kDefinition);
+		if (isCombatFocus() && gDLL->getInterfaceIFace()->isCombatFocus())
+		{
+			DirectionTypes directionType = directionXY(plot(), pPlot);
+			//								N			NE				E				SE					S				SW					W				NW
+			NiPoint2 directions[8] = {NiPoint2(0, 1), NiPoint2(1, 1), NiPoint2(1, 0), NiPoint2(1, -1), NiPoint2(0, -1), NiPoint2(-1, -1), NiPoint2(-1, 0), NiPoint2(-1, 1)};
+			NiPoint3 attackDirection = NiPoint3(directions[directionType].x, directions[directionType].y, 0);
+			float plotSize = GC.getPLOT_SIZE();
+			NiPoint3 lookAtPoint(plot()->getPoint().x + plotSize / 2 * attackDirection.x, plot()->getPoint().y + plotSize / 2 * attackDirection.y, (plot()->getPoint().z + pPlot->getPoint().z) / 2);
+			attackDirection.Unitize();
+			gDLL->getInterfaceIFace()->lookAt(lookAtPoint, (((getOwnerINLINE() != GC.getGameINLINE().getActivePlayerInternal()) || gDLL->getGraphicOption(GRAPHICOPTION_NO_COMBAT_ZOOM)) ? CAMERALOOKAT_BATTLE : CAMERALOOKAT_BATTLE_ZOOM_IN), attackDirection);
+		}
 	}
 
 	return true;
 }
 // ---------------------------------------------------
 
+
+
+// PAE defend with ranged strike: Fernkaempfer des Teams eDefendingTeam auf pPlot, der vor dem Nahkampf auf diese Einheit schiessen wuerde,
+// und sein Schaden in Trefferpunkten (Grenze: iAirCombatLimit des Schuetzen, nie toedlich). Kein Zufall, daher auch fuer Vorschau und KI.
+CvUnit* CvUnit::getDefensiveRangedStriker(const CvPlot* pPlot, TeamTypes eDefendingTeam, int& iDamage) const
+{
+	iDamage = 0;
+
+	if (pPlot == NULL || eDefendingTeam == NO_TEAM || getDomainType() != DOMAIN_LAND)
+	{
+		return NULL;
+	}
+
+	CvUnit* pRanged = pPlot->getAvailableDefensiveRangedUnit(eDefendingTeam);
+	if (pRanged == NULL)
+	{
+		return NULL;
+	}
+
+	int iUnitDamage = std::max(getDamage(), std::min((getDamage() + pRanged->rangeCombatDamage(this)), std::min(pRanged->airCombatLimit(), maxHitPoints() - 1)));
+	iDamage = iUnitDamage - getDamage();
+
+	return pRanged;
+}
 
 
 // PAE - new battle system (internal rounds)
@@ -1559,6 +1587,22 @@ void CvUnit::updateCombat(bool bQuick)
 
 		if (getCombatTimer() > 0)
 		{
+			// PAE: Pause nach dem Abwehrschuss (attack setzt 8 Takte, noch kein Kampfgegner):
+			// im 2. Takt die Schuss-Animation zeigen - der Schuetze wird dann schon gezeichnet (nur Grafik)
+			if (getCombatUnit() == NULL && getCombatTimer() == 6 && getAttackPlot() != NULL)
+			{
+				CvUnit* pShowUnit = getAttackPlot()->getPAEShowUnit();
+				if (pShowUnit != NULL && (getAttackPlot()->isActiveVisible(false) || plot()->isActiveVisible(false)))
+				{
+					CvMissionDefinition kDefinition;
+					kDefinition.setMissionTime(4 * gDLL->getSecsPerTurn()); // 4 Takte, vor dem Nahkampf fertig
+					kDefinition.setMissionType(MISSION_RANGE_ATTACK);
+					kDefinition.setPlot(plot());
+					kDefinition.setUnit(BATTLE_UNIT_ATTACKER, pShowUnit);
+					kDefinition.setUnit(BATTLE_UNIT_DEFENDER, this);
+					gDLL->getEntityIFace()->AddMission(&kDefinition);
+				}
+			}
 			return;
 		}
 		else
@@ -3122,7 +3166,7 @@ void CvUnit::attack(CvPlot* pPlot, bool bQuick)
 	{
 		if (!bQuick && isCombatVisible(pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true)))
 		{
-			int iDelay = std::max(1, 12); // Takte des Kampf-Timers (auch in doDefensiveRangedStrike)
+			int iDelay = std::max(1, 8); // Takte des Kampf-Timers (auch in doDefensiveRangedStrike)
 			setCombatTimer(iDelay);
 			GC.getGameINLINE().incrementTurnTimer(iDelay);
 			return;

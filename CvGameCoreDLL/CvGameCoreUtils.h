@@ -265,7 +265,8 @@ bool isTeamProject(ProjectTypes eProject);														// Exposed to Python
 bool isLimitedProject(ProjectTypes eProject);													// Exposed to Python
 
 __int64 getBinomialCoefficient(int iN, int iK);
-int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender);							// Exposed to Python
+//int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender);							// Exposed to Python (BTS)
+int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender, int iAttackerExtraDamage = 0);	// Exposed to Python (PAE: iAttackerExtraDamage = Abwehrschuss)
 
 int getEspionageModifier(TeamTypes eOurTeam, TeamTypes eTargetTeam);							// Exposed to Python
 

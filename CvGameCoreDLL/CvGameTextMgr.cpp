@@ -1905,9 +1905,14 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 			// PAE: set out for new battle combat system
 			int iCombatOdds = 0;
 			int iWithdrawal = 0;
+
+			// PAE: Abwehrschuss eines Fernkaempfers vor dem Nahkampf (Schaden am Angreifer in Trefferpunkten, wie CvUnit::doDefensiveRangedStrike)
+			int iPreDamage = 0;
+			pAttacker->getDefensiveRangedStriker(pPlot, pDefender->getTeam(), iPreDamage);
+			int iAttackerHP = std::max(1, pAttacker->currHitPoints() - iPreDamage);
 			if (pAttacker->getDomainType() != DOMAIN_AIR)
 			{
-				iCombatOdds = getCombatOdds(pAttacker, pDefender);
+				iCombatOdds = getCombatOdds(pAttacker, pDefender, iPreDamage); // PAE: inkl. Abwehrschuss
 
 				// BTS: removed for PAE
 				//if (pAttacker->combatLimit() >= GC.getMAX_HIT_POINTS())
@@ -1964,13 +1969,13 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				//szString += NEWLINE + szTempBuffer;
 			}
 
-			szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : pAttacker->currCombatStrFloat(NULL, NULL)));
+			szOffenseOdds.Format(L"%.2f", ((pAttacker->getDomainType() == DOMAIN_AIR) ? pAttacker->airCurrCombatStrFloat(pDefender) : float((pAttacker->maxCombatStr(NULL, NULL) * iAttackerHP) / pAttacker->maxHitPoints()) / 100.0f)); // PAE: nach dem Abwehrschuss
 			szDefenseOdds.Format(L"%.2f", pDefender->currCombatStrFloat(pPlot, pAttacker));
 			szString.append(NEWLINE);
 			szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_ODDS_VS", szOffenseOdds.GetCString(), szDefenseOdds.GetCString()));
 
 			// PAE: show current HP of the fighting units (06.06.2026)
-			float hpA = float(pAttacker->baseCombatStr()) / 100 * pAttacker->currHitPoints();
+			float hpA = float(pAttacker->baseCombatStr()) / 100 * iAttackerHP; // PAE: nach dem Abwehrschuss
 			float hpB = float(pDefender->baseCombatStr()) / 100 * pDefender->currHitPoints();
 			szString.append(CvWString::format(L" (%s%.1f%s%c %s %s%.1f%s%c)",
 					CvWString::format(SETCOLR, TEXT_COLOR("COLOR_POSITIVE_TEXT")).c_str(),
@@ -2007,9 +2012,9 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				szString.append(gDLL->getText("TXT_KEY_PAE_COMBAT_ROUNDS_INFO", iRounds));
 				szString.append(CvWString::format(L" %s(PAE)%s", CvWString::format(SETCOLR, TEXT_COLOR("COLOR_GREY")).c_str(), CvWString::format(ENDCOLR).c_str()));
 
-				/** Copied from BULL mod: Many thanks to DanF5771 for some of these calculations! **/
-				int iAttackerStrength  = pAttacker->currCombatStr(NULL, NULL);
-				int iAttackerFirepower = pAttacker->currFirepower(NULL, NULL);
+				/** Copied from BULL mod: Many thanks to DanF5771 for some of these calculations! Extended by Pie **/
+				int iAttackerStrength  = (pAttacker->maxCombatStr(NULL, NULL) * iAttackerHP) / pAttacker->maxHitPoints(); // PAE: nach dem Abwehrschuss
+				int iAttackerFirepower = (pAttacker->maxCombatStr(NULL, NULL) + iAttackerStrength + 1) / 2;
 				int iDefenderStrength  = pDefender->currCombatStr(pPlot, pAttacker);
 				int iDefenderFirepower = pDefender->currFirepower(pPlot, pAttacker);
 

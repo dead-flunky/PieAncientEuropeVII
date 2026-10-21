@@ -8464,6 +8464,13 @@ void CvPlot::setPAEShowUnit(const CvUnit* pUnit)
 	updateCenterUnit();
 }
 
+// PAE: gemerkter Fernkaempfer des Abwehrschusses (nur Anzeige)
+CvUnit* CvPlot::getPAEShowUnit() const
+{
+	CvUnit* pUnit = ::getUnit(m_kPAEShowUnit);
+	return (pUnit != NULL && pUnit->plot() == this) ? pUnit : NULL;
+}
+
 void CvPlot::setCenterUnit(CvUnit* pNewValue)
 {
 	CvUnit* pOldValue;
@@ -10701,6 +10708,12 @@ bool CvPlot::checkLateEra() const
 // PAE defend with ranged strike
 CvUnit* CvPlot::getAvailableDefensiveRangedUnit(TeamTypes eDefendingTeam) const
 {
+	// PAE: Abwehrschuss gehoert zum PAE-Kampfsystem (aus bei GAMEOPTION_NO_PAE_COMBAT)
+	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT))
+	{
+		return NULL;
+	}
+
 	for (CLLNode<IDInfo>* pUnitNode = headUnitNode(); pUnitNode != NULL; pUnitNode = nextUnitNode(pUnitNode))
 	{
 		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);

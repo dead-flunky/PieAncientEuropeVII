@@ -591,8 +591,8 @@ __int64 getBinomialCoefficient(int iN, int iK)
 // FUNCTION: getCombatOdds
 // Calculates combat odds, given two units
 // Returns value from 0-1000
-// Written by DeepO
-int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender)
+// Written by DeepO, extended by Pie
+int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender, int iAttackerExtraDamage)
 {
 	float fOddsEvent;
 	float fOddsAfterEvent;
@@ -624,8 +624,10 @@ int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender)
 	//////
 
 	//Added ST
-	iAttackerStrength = pAttacker->currCombatStr(NULL, NULL);
-	iAttackerFirepower = pAttacker->currFirepower(NULL, NULL);
+	// PAE: Trefferpunkte nach einem moeglichen Abwehrschuss (iAttackerExtraDamage), sonst wie currCombatStr/currFirepower
+	int iAttackerHP = std::max(1, pAttacker->currHitPoints() - iAttackerExtraDamage);
+	iAttackerStrength = (pAttacker->maxCombatStr(NULL, NULL) * iAttackerHP) / pAttacker->maxHitPoints();
+	iAttackerFirepower = (pAttacker->maxCombatStr(NULL, NULL) + iAttackerStrength + 1) / 2;
 
 	iDefenderStrength = pDefender->currCombatStr(pDefender->plot(), pAttacker);
 	iDefenderFirepower = pDefender->currFirepower(pDefender->plot(), pAttacker);
@@ -659,7 +661,7 @@ int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender)
 	iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimit();
 
 	iNeededRoundsAttacker = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - 1 ) / iDamageToDefender;
-	iNeededRoundsDefender = (pAttacker->currHitPoints() + iDamageToAttacker - 1 ) / iDamageToAttacker;
+	iNeededRoundsDefender = (iAttackerHP + iDamageToAttacker - 1 ) / iDamageToAttacker;
 	iMaxRounds = iNeededRoundsAttacker + iNeededRoundsDefender - 1;
 
 	// calculate possible first strikes distribution.

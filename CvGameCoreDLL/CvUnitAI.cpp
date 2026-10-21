@@ -761,8 +761,13 @@ int CvUnitAI::AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const
 		return 100;
 	}
 
-	iOurStrength = ((getDomainType() == DOMAIN_AIR) ? airCurrCombatStr(NULL) : currCombatStr(NULL, NULL));
-	iOurFirepower = ((getDomainType() == DOMAIN_AIR) ? iOurStrength : currFirepower(NULL, NULL));
+	// PAE: Abwehrschuss eines Fernkaempfers vor dem Nahkampf mitrechnen (siehe CvUnit::doDefensiveRangedStrike)
+	int iPreDamage = 0;
+	getDefensiveRangedStriker(pPlot, pDefender->getTeam(), iPreDamage);
+	int iOurHP = std::max(1, currHitPoints() - iPreDamage);
+
+	iOurStrength = ((getDomainType() == DOMAIN_AIR) ? airCurrCombatStr(NULL) : ((maxCombatStr(NULL, NULL) * iOurHP) / maxHitPoints()));
+	iOurFirepower = ((getDomainType() == DOMAIN_AIR) ? iOurStrength : ((maxCombatStr(NULL, NULL) + iOurStrength + 1) / 2));
 
 	if (iOurStrength == 0)
 	{
@@ -790,7 +795,7 @@ int CvUnitAI::AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const
 	iHitLimitThem = pDefender->maxHitPoints() - combatLimit();
 
 	iNeededRoundsUs = (std::max(0, pDefender->currHitPoints() - iHitLimitThem) + iDamageToThem - 1 ) / iDamageToThem;
-	iNeededRoundsThem = (std::max(0, currHitPoints()) + iDamageToUs - 1 ) / iDamageToUs;
+	iNeededRoundsThem = (std::max(0, iOurHP) + iDamageToUs - 1 ) / iDamageToUs;
 
 	if (getDomainType() != DOMAIN_AIR)
 	{

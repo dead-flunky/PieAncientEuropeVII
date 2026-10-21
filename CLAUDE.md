@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1d)
+# PAE – Übergabe an Claude Code (Stand 7.19.1e)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -49,8 +49,7 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 4. Terraforming (774)
 5. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
 6. „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
-7. DLL-Check: Stellen ohne PAE-Markierung durchsehen (PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cpp erledigt, 10/2026).
-
+7. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
 
 Optional:
 - `CvEventManager.py` Z. 2282 (Handler 776): auch den Ausgangstyp prüfen (nur Elefanten, nicht derselbe Typ).
@@ -507,3 +506,6 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 
 ## Patch 7.19.1 (Claude Code)
 - DLL, Furt (`TERRAIN_RIVER_FORD`, ab 7.19.1): Wasser-Plot (`bWater=1`, wird auf Flusshöhe gezeichnet), zählt für Gebiete aber als Land (`areaValid`, `CvMap::calculateAreas`, `CvPlot::setPlotType`, `setTerrainType` → `recalculateAreas`). Landeinheiten dürfen darauf (`isValidDomainForAction`, `CvUnitAI::AI_update`). Kampf von der Furt aufs Ufer bewusst nach BTS-Regeln wie vom Wasser aus (Amphibien-Abzug, keine Belagerungswaffen, kein Rückzug). Neue `isWater()`-Abfragen für Landeinheiten immer auf die Furt prüfen.
+
+## Patch 7.19.1d
+Erledigt (10/2026): PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cpp (Anzeige/Hilfetexte, OOS-sauber).
