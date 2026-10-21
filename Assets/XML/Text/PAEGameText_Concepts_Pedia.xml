@@ -2892,7 +2892,16 @@ Escaping units in open fields will move to another plot. Units that are located 
 
 After every battle, there is a chance that a plague appears on the battlefield (loser's plot and winner's plot) when more than 3 units are stacked on the loser's plot.
 [ICON_BULLET] The BTS battle system (fight to annihilation, except retreating when attacking) has a 3% chance.
-[ICON_BULLET] The PAE battle system (round-based combat) has a 2% chance.</English>
+[ICON_BULLET] The PAE battle system (round-based combat) has a 2% chance.
+
+[H2]Defensive volley of ranged units[\H2]
+
+Only with the PAE combat system (combat rounds).
+[ICON_BULLET] Before a land unit attacks a plot in melee, a unit with ranged attack of the defending stack (archers, slingers, javelin throwers, horse archers, catapults) shoots once at the attacker.
+[ICON_BULLET] Each ranged unit can do this once per turn. If there are several in the stack, the next attack is met by the next one.
+[ICON_BULLET] The damage is calculated like a normal ranged attack: the stronger the ranged unit compared to the attacker, the higher the damage. The volley never kills the attacker; most ranged units can inflict up to 50% damage, catapults more.
+[ICON_BULLET] After that the attacker fights the best defender of the stack as usual, but already weakened.
+[ICON_BULLET] The combat preview shows if an enemy ranged unit can shoot before the battle. The displayed combat odds already include this volley.</English>
 		<French>
 [H1]Combat[\H1]
 Les combats entre unit&#233;s dans PAE s'accompagnent d'effets tr&#232;s vari&#233;s :
@@ -3019,6 +3028,15 @@ Les unit&#233;s qui s'&#233;chappent en terrain d&#233;gag&#233; sont d&#233;pla
 Apr&#232;s chaque bataille, il y a un risque d'apparition d'une &#233;pid&#233;mie sur le champ de bataille (dans la case du perdant et du vainqueur) quand il y a 3 unit&#233;s ou plus dans la case du perdant.
 [ICON_BULLET] Le syst&#232;me de combat BTS (combat jusqu'&#224; l'annihilation, sauf en cas de retraite pendant une attaque) a 3 % de chances d'&#234;tre utilis&#233;.
 [ICON_BULLET] Le syst&#232;me de combat PAE (combat au tour par tour) a 2 % de chances d'&#234;tre utilis&#233;.
+
+[H2]Tir de d&#233;fense des unit&#233;s &#224; distance[\H2]
+
+Uniquement avec le syst&#232;me de combat PAE (rounds de combat).
+[ICON_BULLET] Avant qu'une unit&#233; terrestre n'attaque une case au corps &#224; corps, une unit&#233; avec attaque &#224; distance de la pile en d&#233;fense (archers, frondeurs, lanceurs de javelots, archers mont&#233;s, catapultes) tire une fois sur l'attaquant.
+[ICON_BULLET] Chaque unit&#233; &#224; distance peut le faire une fois par tour. S'il y en a plusieurs dans la pile, l'attaque suivante est accueillie par la suivante.
+[ICON_BULLET] Les d&#233;g&#226;ts sont calcul&#233;s comme pour une attaque &#224; distance normale : plus l'unit&#233; &#224; distance est forte par rapport &#224; l'attaquant, plus les d&#233;g&#226;ts sont &#233;lev&#233;s. Le tir ne tue jamais l'attaquant ; la plupart des unit&#233;s &#224; distance peuvent infliger jusqu'&#224; 50% de d&#233;g&#226;ts, les catapultes davantage.
+[ICON_BULLET] Ensuite, l'attaquant combat comme d'habitude le meilleur d&#233;fenseur de la pile, mais d&#233;j&#224; affaibli.
+[ICON_BULLET] L'aper&#231;u du combat indique si une unit&#233; &#224; distance ennemie peut tirer avant le combat. Les chances de combat affich&#233;es tiennent d&#233;j&#224; compte de ce tir.
 		</French>
 		<German>
 [H1]Kampf[\H1]
@@ -3147,6 +3165,15 @@ Fl&#252;chtende Einheiten, die auf offenem Feld stehen werden auf ein anderes Fe
 Nach jedem Kampf besteht die Chance, dass auf dem Schlachtfeld (Plot des Angreifers und Plot des Verlierers) eine Seuche ausbricht, sobald mehr als 3 Einheiten auf dem Verliererplot stehen.
 [ICON_BULLET] F&#252;r das BTS Kampfsystem (Kampf bis zur Vernichtung, ausgenommen R&#252;ckzug bei Angriff) besteht die Chance 3%.
 [ICON_BULLET] F&#252;r das PAE Kampfsystem (Kampfrunden) besteht die Chance 2%.
+
+[H2]Abwehrschuss von Fernk&#228;mpfern[\H2]
+
+Nur mit dem PAE-Kampfsystem (Kampfrunden).
+[ICON_BULLET] Bevor eine Landeinheit ein Feld im Nahkampf angreift, schie&#223;t eine Einheit mit Fernangriff des verteidigenden Stapels (Bogensch&#252;tzen, Schleuderer, Speerwerfer, berittene Bogensch&#252;tzen, Katapulte) einmal auf den Angreifer.
+[ICON_BULLET] Jeder Fernk&#228;mpfer kann das einmal pro Runde. Stehen mehrere im Stapel, empf&#228;ngt der n&#228;chste den n&#228;chsten Angriff.
+[ICON_BULLET] Der Schaden wird wie bei einem normalen Fernangriff berechnet: Je st&#228;rker der Fernk&#228;mpfer im Vergleich zum Angreifer, desto h&#246;her der Schaden. Der Abwehrschuss t&#246;tet den Angreifer nie; die meisten Fernk&#228;mpfer k&#246;nnen bis zu 50% Schaden anrichten, Katapulte mehr.
+[ICON_BULLET] Danach k&#228;mpft der Angreifer wie gewohnt gegen den besten Verteidiger des Stapels, aber bereits geschw&#228;cht.
+[ICON_BULLET] Die Kampfvorschau zeigt an, ob ein gegnerischer Fernk&#228;mpfer vor dem Kampf schie&#223;en kann. Die angezeigte Kampfchance ber&#252;cksichtigt diesen Abwehrschuss bereits.
 		</German>
 		<Italian>
 [H1]Combat[\H1]
@@ -3274,6 +3301,15 @@ La fuga delle unit&#224; in campo aperto le sposter&#224; su un'altra casella. L
 Dopo ogni battaglia, c'&#232; la probabilit&#224; che una malattia appaia sul campo di battaglia (sia nella casella del vincitore che in quella dello sconfitto).
 [ICON_BULLET] Il sistema di combattimento BTS (combattimento fino all'annientamento, tranne la ritirata in fase di attacco) ha una probabilit&#224; del 3%.
 [ICON_BULLET] Il sistema di combattimento PAE (combattimento a turni) ha una probabilit&#224; del 2%.
+
+[H2]Tiro difensivo delle unit&#224; a distanza[\H2]
+
+Solo con il sistema di combattimento PAE (round di combattimento).
+[ICON_BULLET] Prima che un'unit&#224; terrestre attacchi una casella in mischia, un'unit&#224; con attacco a distanza della pila in difesa (arcieri, frombolieri, lanciatori di giavellotto, arcieri a cavallo, catapulte) tira una volta sull'attaccante.
+[ICON_BULLET] Ogni unit&#224; a distanza pu&#242; farlo una volta per turno. Se nella pila ce ne sono diverse, l'attacco successivo viene accolto dalla successiva.
+[ICON_BULLET] Il danno viene calcolato come per un normale attacco a distanza: pi&#249; l'unit&#224; a distanza &#232; forte rispetto all'attaccante, maggiore &#232; il danno. Il tiro non uccide mai l'attaccante; la maggior parte delle unit&#224; a distanza pu&#242; infliggere fino al 50% di danno, le catapulte di pi&#249;.
+[ICON_BULLET] Dopo di che l'attaccante combatte come di consueto contro il miglior difensore della pila, ma gi&#224; indebolito.
+[ICON_BULLET] L'anteprima del combattimento indica se un'unit&#224; a distanza nemica pu&#242; tirare prima della battaglia. La probabilit&#224; di combattimento mostrata tiene gi&#224; conto di questo tiro.
 		</Italian>
 		<Spanish>
 [H1]Combate[\H1]
@@ -3401,6 +3437,15 @@ Las unidades huidas en campo abierto se mover&#225;n a otra casilla. Las unidas 
 Despu&#233;s de cada combate, hay una posibilidad de que una peste aparezca en el campo de batalla (tanto en la casilla del ganador como en el del perdedor) cuando m&#225;s de 3 unidades est&#225;n apiladas en la casilla del perdedor.
 [ICON_BULLET] El sistema de batalla BTS (lucha a muerte, excepto retirada al atacar) tiene un 3 % de probabilidad.
 [ICON_BULLET] El sistema de batalla PAE (combate por rondas) tiene un 2 % de probabilidad.
+
+[H2]Disparo defensivo de las unidades a distancia[\H2]
+
+Solo con el sistema de combate PAE (rondas de combate).
+[ICON_BULLET] Antes de que una unidad terrestre ataque una casilla cuerpo a cuerpo, una unidad con ataque a distancia de la pila defensora (arqueros, honderos, lanzadores de jabalina, arqueros a caballo, catapultas) dispara una vez contra el atacante.
+[ICON_BULLET] Cada unidad a distancia puede hacerlo una vez por turno. Si hay varias en la pila, el siguiente ataque lo recibe la siguiente.
+[ICON_BULLET] El da&#241;o se calcula como en un ataque a distancia normal: cuanto m&#225;s fuerte sea la unidad a distancia en comparaci&#243;n con el atacante, mayor ser&#225; el da&#241;o. El disparo nunca mata al atacante; la mayor&#237;a de las unidades a distancia pueden causar hasta un 50% de da&#241;o, las catapultas m&#225;s.
+[ICON_BULLET] Despu&#233;s, el atacante lucha como de costumbre contra el mejor defensor de la pila, pero ya debilitado.
+[ICON_BULLET] La vista previa del combate indica si una unidad a distancia enemiga puede disparar antes de la batalla. La probabilidad de combate mostrada ya incluye este disparo.
 		</Spanish>
 	</TEXT>
 	<TEXT>
@@ -6587,6 +6632,7 @@ Further information:
 [ICON_BULLET]At sea fishing boats can be destroyed in the same way
 
 [H2]Fallow land[\H2]
+Nature reclaims everything!
 
 [ICON_BULLET]An improvement in a city radius that is not worked by any citizen falls into disrepair over time: each turn with a chance of 5%.
 [ICON_BULLET]Only improvements that have existed for more than 10 turns are affected.
@@ -6656,6 +6702,7 @@ Informations compl&#233;mentaires :
 [ICON_BULLET]Les bateaux de p&#234;che sont soumis au m&#234;me traitement lors d'un combat en mer
 
 [H2]Terres en friche[\H2]
+La nature reprend tout !
 
 [ICON_BULLET]Un am&#233;nagement dans le rayon d'une ville qui n'est exploit&#233; par aucun citoyen tombe en ruine avec le temps : chaque tour avec une probabilit&#233; de 5%.
 [ICON_BULLET]Seuls les am&#233;nagements existant depuis plus de 10 tours sont concern&#233;s.
@@ -6726,6 +6773,7 @@ Weitere Informationen:
 [ICON_BULLET]Auf See k&#246;nnen Fischerboote auf die gleiche Weise zerst&#246;rt werden
 
 [H2]Brachland[\H2]
+Die Natur holt sich alles zur&#252;ck!
 
 [ICON_BULLET]Eine Modernisierung im Stadtradius, die von keinem B&#252;rger bewirtschaftet wird, verf&#228;llt mit der Zeit: jede Runde mit einer Chance von 5%.
 [ICON_BULLET]Betroffen sind nur Modernisierungen, die schon l&#228;nger als 10 Runden bestehen.
@@ -6794,6 +6842,7 @@ Per maggiori informazioni :
 [ICON_BULLET] Barche da pesca possono essere distrutti nello stesso modo in mare
 
 [H2]Terreni incolti[\H2]
+La natura si riprende tutto!
 
 [ICON_BULLET]Un miglioramento nel raggio di una citt&#224; che non viene lavorato da nessun cittadino va in rovina col tempo: ogni turno con una probabilit&#224; del 5%.
 [ICON_BULLET]Sono interessati solo i miglioramenti che esistono da pi&#249; di 10 turni.
@@ -6862,6 +6911,7 @@ Informaci&#243;n &#250;til:
 [ICON_BULLET]En el mar los barcos pesqueros pueden ser destruidos de la misma manera
 
 [H2]Tierras en barbecho[\H2]
+&#161;La naturaleza lo recupera todo!
 
 [ICON_BULLET]Una mejora en el radio de una ciudad que no es trabajada por ning&#250;n ciudadano se deteriora con el tiempo: cada turno con una probabilidad del 5%.
 [ICON_BULLET]Solo afecta a las mejoras que existen desde hace m&#225;s de 10 turnos.

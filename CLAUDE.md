@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1e)
+# PAE – Übergabe an Claude Code (Stand 7.19.1f)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -33,6 +33,7 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - Event-XML kann viel ohne Python: `UnitCombatPromotions`/`UnitClassPromotions` (alle + künftige Einheiten), `iImprovementChange`, `iBonusChange`, `iRouteChange` (-1 = entfernen) auf dem Trigger-Feld.
 - Text-Tool: Neue Einträge bekamen ein Leerzeichen im Tag (`<Tag> TXT_KEY…`) → Key wird nicht gefunden. Nach Text-Änderungen prüfen.
 - AudioDefines im Repo können `/DE/-Pfade` oder auch `/EN/`-Pfade. Die Audiofiles (Gesprochene Tech-Zitate) dafür sind nicht im Repo.
+- Texte für Text-XMLs (Konzepte, Pedia, Meldungen) im Chat als UTF-8-Klartext je Sprache liefern (Englisch, Französisch, Deutsch, Italienisch, Spanisch), nicht als XML und ohne `&#…;`-Codes. Sie werden ins Online-Text-Tool kopiert. Die Zeichenregel oben (nur Latin-1, keine Gedankenstriche usw.) gilt trotzdem.
 
 
 ## Erledigt

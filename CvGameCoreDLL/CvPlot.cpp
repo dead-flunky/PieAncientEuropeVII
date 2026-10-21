@@ -10720,9 +10720,8 @@ CvUnit* CvPlot::getAvailableDefensiveRangedUnit(TeamTypes eDefendingTeam) const
 
 		if (pLoopUnit != NULL &&
 			pLoopUnit->getTeam() == eDefendingTeam &&
-			// PAE: Spielregel statt Grafik-Merkmal (isRanged kommt aus den Art-Defines)
+			// PAE: Spielregel statt Grafik-Merkmal (isRanged kommt aus den Art-Defines). Alle Einheiten mit Fernangriff, auch Katapulte
 			pLoopUnit->airRange() > 0 && pLoopUnit->canDefend() && !pLoopUnit->isCargo() &&
-			pLoopUnit->getUnitCombatType() != (UnitCombatTypes)GC.getInfoTypeForString("UNITCOMBAT_SIEGE") &&
 			!pLoopUnit->hasUsedDefensiveRangedStrike())
 		{
 			return pLoopUnit;

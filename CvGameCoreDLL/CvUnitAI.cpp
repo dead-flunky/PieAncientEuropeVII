@@ -817,6 +817,54 @@ int CvUnitAI::AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const
 	iOdds += ((100 - iOdds) * withdrawalProbability()) / 100;
 	iOdds += GET_PLAYER(getOwnerINLINE()).AI_getAttackOddsChange();
 
+	// PAE Kampfrunden: der Kampf endet nach getCombatRounds Runden, der Angreifer ueberlebt oft sicher.
+	// Die BTS-Rechnung oben (Kampf bis zum Tod) ist dafuer zu vorsichtig. Nur mit PAE-Kampf, nur Landeinheiten.
+	if (getDomainType() == DOMAIN_LAND && !GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT))
+	{
+		// 1. ab 80 % Kampfchance immer angreifen
+		if (iOdds >= 80)
+		{
+			return 99;
+		}
+
+		// eigener Stapel: Einheiten auf unserem Feld, die verteidigen koennen; gibt es neben uns eine "starke" (mind. 2/3 unserer Verteidigung)?
+		CvPlot* pOurPlot = plot();
+		int iOurDefense = currCombatStr(pOurPlot, NULL);
+		int iStackDefenders = 0;
+		bool bOtherStrong = false;
+		for (CLLNode<IDInfo>* pUnitNode = pOurPlot->headUnitNode(); pUnitNode != NULL; pUnitNode = pOurPlot->nextUnitNode(pUnitNode))
+		{
+			CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+			if (pLoopUnit != NULL && pLoopUnit->getOwnerINLINE() == getOwnerINLINE() && pLoopUnit->canDefend(pOurPlot))
+			{
+				iStackDefenders++;
+				if (pLoopUnit != this && (pLoopUnit->currCombatStr(pOurPlot, NULL) * 3) >= (iOurDefense * 2))
+				{
+					bOtherStrong = true;
+				}
+			}
+		}
+		bool bStack = (iStackDefenders > 1);
+
+		// 2. einzige starke Einheit im Stapel: lieber verteidigen
+		if (bStack && !bOtherStrong)
+		{
+			return 1;
+		}
+
+		// 3. ueberlebt die Kampfrunden sicher (Verteidiger trifft mit allen Erstschlaegen und in jeder Runde) und steht im Stapel: immer angreifen
+		if (bStack)
+		{
+			int iRounds = CvUnit::getCombatRounds(const_cast<CvUnitAI*>(this), pDefender, pPlot);
+			int iDefenderFirstStrikes = (immuneToFirstStrikes() ? 0 : (pDefender->firstStrikes() + pDefender->chanceFirstStrikes()));
+			int iWorstDamage = iDefenderFirstStrikes * (iDamageToUs / 2) + iRounds * iDamageToUs; // wie CvUnit::resolveCombat (Erstschlag = halber Schaden)
+			if (iOurHP - iWorstDamage > 0)
+			{
+				return 99;
+			}
+		}
+	}
+
 	return std::max(1, std::min(iOdds, 99));
 }
 

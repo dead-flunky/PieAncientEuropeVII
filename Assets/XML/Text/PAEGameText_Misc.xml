@@ -2514,11 +2514,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_COMBAT_DEFENSIVE_RANGED</Tag>
-		<English>Enemy ranged unit (%s1_UnitName) can shoot once before the battle</English>
-		<French>Une unit&#233; &#224; distance ennemie (%s1_UnitName) peut tirer une fois avant le combat</French>
+		<English>Enemy ranged unit (%s1_UnitName) will shoot once before the battle</English>
+		<French>Une unit&#233; &#224; distance ennemie (%s1_UnitName) tirera une fois avant le combat.</French>
 		<German>Gegnerischer Fernk&#228;mpfer (%s1_UnitName) kann vor dem Kampf einmal schie&#223;en</German>
-		<Italian>Un'unit&#224; a distanza nemica (%s1_UnitName) pu&#242; tirare una volta prima della battaglia</Italian>
-		<Spanish>Una unidad a distancia enemiga (%s1_UnitName) puede disparar una vez antes del combate</Spanish>
+		<Italian>Un'unit&#224; a distanza nemica (%s1_UnitName) sparer&#224; una volta prima del combattimento.</Italian>
+		<Spanish>Una unidad a distancia enemiga (%s1_UnitName) disparar&#225; una vez antes del combate.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PAE_COMBAT_ROUNDS_INFO</Tag>
