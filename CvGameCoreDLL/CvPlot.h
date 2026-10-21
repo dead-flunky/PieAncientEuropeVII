@@ -468,6 +468,7 @@ public:
 	DllExport CvUnit* getCenterUnit() const;
 	DllExport CvUnit* getDebugCenterUnit() const;
 	void setCenterUnit(CvUnit* pNewValue);
+	void setPAEShowUnit(const CvUnit* pUnit); // PAE: Fernkaempfer beim Abwehrschuss zeigen (NULL = wieder normal)
 
 	int getCultureRangeCities(PlayerTypes eOwnerIndex, int iRangeIndex) const;												// Exposed to Python
 	bool isCultureRangeCity(PlayerTypes eOwnerIndex, int iRangeIndex) const;												// Exposed to Python
@@ -583,6 +584,7 @@ protected:
 	CvFlagEntity* m_pFlagSymbol;
 	CvFlagEntity* m_pFlagSymbolOffset;
 	CvUnit* m_pCenterUnit;
+	IDInfo m_kPAEShowUnit; // PAE: Fernkaempfer waehrend des Abwehrschusses zeigen (reine Anzeige, nicht im Spielstand)
 
 	CvPlotBuilder* m_pPlotBuilder;		// builds bonuses and improvements
 

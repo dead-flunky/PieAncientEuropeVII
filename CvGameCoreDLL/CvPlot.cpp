@@ -191,6 +191,7 @@ void CvPlot::reset(int iX, int iY, bool bConstructorCall)
 	m_plotCity.reset();
 	m_workingCity.reset();
 	m_workingCityOverride.reset();
+	m_kPAEShowUnit.reset(); // PAE
 
 	for (iI = 0; iI < NUM_YIELD_TYPES; ++iI)
 	{
@@ -764,6 +765,18 @@ void CvPlot::updateCenterUnit()
 	{
 		setCenterUnit(NULL);
 		return;
+	}
+
+	// PAE: Fernkaempfer waehrend seines Abwehrschusses zeigen (reine Anzeige)
+	if (m_kPAEShowUnit.iID != FFreeList::INVALID_INDEX)
+	{
+		CvUnit* pShowUnit = ::getUnit(m_kPAEShowUnit);
+		if (pShowUnit != NULL && pShowUnit->plot() == this)
+		{
+			setCenterUnit(pShowUnit);
+			return;
+		}
+		m_kPAEShowUnit.reset();
 	}
 
 	setCenterUnit(getSelectedUnit());
@@ -8443,6 +8456,13 @@ CvUnit* CvPlot::getDebugCenterUnit() const
 	return pCenterUnit;
 }
 
+
+// PAE: Fernkaempfer waehrend des Abwehrschusses als Center Unit zeigen (reine Anzeige, siehe updateCenterUnit)
+void CvPlot::setPAEShowUnit(const CvUnit* pUnit)
+{
+	m_kPAEShowUnit = (pUnit != NULL) ? pUnit->getIDInfo() : IDInfo();
+	updateCenterUnit();
+}
 
 void CvPlot::setCenterUnit(CvUnit* pNewValue)
 {

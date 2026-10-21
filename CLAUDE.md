@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1c)
+# PAE – Übergabe an Claude Code (Stand 7.19.1d)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.

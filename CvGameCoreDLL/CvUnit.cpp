@@ -1188,7 +1188,7 @@ bool CvUnit::doDefensiveRangedStrike(bool bQuick)
 
 		CvMissionDefinition kDefinition;
 		// Dauer = Pause bis zum Nahkampf (PAE_DEFENSIVE_RANGED_DELAY, siehe attack)
-		kDefinition.setMissionTime(std::max(1, 4) * gDLL->getSecsPerTurn());
+		kDefinition.setMissionTime(std::max(1, 6) * gDLL->getSecsPerTurn()); // Takte des Kampf-Timers (auch in CvUnit::attack)
 		kDefinition.setMissionType(MISSION_RANGE_ATTACK);
 		kDefinition.setPlot(plot());
 		kDefinition.setUnit(BATTLE_UNIT_ATTACKER, pRanged);
@@ -1565,6 +1565,10 @@ void CvUnit::updateCombat(bool bQuick)
 		{
 			// PAE: ohne Kampfgegner war das die Pause nach dem Fernschuss des Verteidigers (attack) -> jetzt den Nahkampf beginnen
 			bFinish = (getCombatUnit() != NULL);
+			if (!bFinish && getAttackPlot() != NULL)
+			{
+				getAttackPlot()->setPAEShowUnit(NULL); // wieder den normalen Verteidiger zeigen
+			}
 		}
 	}
 
@@ -3118,7 +3122,7 @@ void CvUnit::attack(CvPlot* pPlot, bool bQuick)
 	{
 		if (!bQuick && isCombatVisible(pPlot->getBestDefender(NO_PLAYER, getOwnerINLINE(), this, true)))
 		{
-			int iDelay = std::max(1, 4); // 4 Seconds
+			int iDelay = std::max(1, 12); // Takte des Kampf-Timers (auch in doDefensiveRangedStrike)
 			setCombatTimer(iDelay);
 			GC.getGameINLINE().incrementTurnTimer(iDelay);
 			return;
