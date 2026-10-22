@@ -10708,8 +10708,8 @@ bool CvPlot::checkLateEra() const
 // PAE defend with ranged strike
 CvUnit* CvPlot::getAvailableDefensiveRangedUnit(TeamTypes eDefendingTeam) const
 {
-	// PAE: Abwehrschuss gehoert zum PAE-Kampfsystem (aus bei GAMEOPTION_NO_PAE_COMBAT)
-	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_PAE_COMBAT))
+	// PAE: Abwehrschuss eigene Spieloption (unabhaengig vom Kampfsystem). Einziger Schalter fuer Schuss, Vorschau, Kampfchance und KI
+	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_DEFENSIVE_STRIKE))
 	{
 		return NULL;
 	}

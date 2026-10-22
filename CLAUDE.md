@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1g)
+# PAE – Übergabe an Claude Code (Stand 7.19.1h)
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -19,8 +19,8 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - Python: `pPlot.getPlotCity()` liefert nie `None`, sondern ein leeres Objekt. Immer `pPlot.isCity()` oder `pCity.isNone()` prüfen.
 - DLL, KI: `AI_chooseBuilding/AI_chooseUnit/AI_chooseProcess` geben bei Erfolg sofort einen Bauauftrag (`pushOrder`). Zum reinen Prüfen `AI_bestBuildingThreshold` bzw. `AI_bestUnitAI` verwenden.
 - DLL, Sicht: `CvPlot::seeFromLevel()` hängt bei PAE vom Ausbau ab (Turm, Fort, Limes, Kastell). Wer Sichthöhe oder Sichtweite ändert, muss vorher `updateSeeFromSight(false, true)` und nachher `(true, true)` aufrufen, sonst bleiben Felder dauerhaft schwarz.
-- DLL, Spieloptionen: Reihenfolge in `CvEnums.h` (GameOptionTypes) und `CIV4GameOptionInfos.xml` muss identisch sein, Name in `CyEnumsInterface.cpp` exakt gleich. Neue Option verschiebt die gespeicherten Optionen (Spielstände inkompatibel, außer `CvInitCore::read` wird angepasst).
-- DLL, Spielstand: Neue Member-Variablen in `read`/`write` aufnehmen, mit höherem `uiFlag` (Beispiel: `m_dynTraits` in `CvPlayer`, ab `uiFlag` 2).
+- DLL, Spieloptionen: Reihenfolge in `CvEnums.h` (GameOptionTypes) und `CIV4GameOptionInfos.xml` muss identisch sein, Name in `CyEnumsInterface.cpp` exakt gleich.
+- Alte Spielstände werden nie berücksichtigt: keine Sonderfälle in `read`/`write` (kein Umbau von `CvInitCore::read` bei neuen Spieloptionen, keine neuen `uiFlag`-Stufen für einzelne Updates). Neue Member-Variablen einfach in `read`/`write` aufnehmen. Nach solchen Änderungen sind alte Spielstände inkompatibel, das ist so gewollt.
 - DLL: `GET_PLAYER(x)` nie mit einem Wert, der `NO_PLAYER` sein kann (z. B. `plot()->getOwner()`). Index -1 schreibt in fremden Speicher -> CtD ohne Meldung, oft viel später.
 - DLL: Nach Python-Ereignissen (`CvEventReporter`) kann das Objekt geloescht sein (Stadt per `acquireCity`, Einheit per `kill`). Vorher Besitzer/ID merken und danach pruefen.
 - Debuggen: VC++ 2010 Express -> Projekt-Eigenschaften der aktiven Konfiguration, Debugging: Befehl `Civ4BeyondSword.exe`, Argument `mod=\Pie'sAncientEurope`. HEAP-Meldungen „Invalid address specified to RtlValidateHeap“ sind bei der Debug-DLL Rauschen (verschiedene C-Laufzeiten).
@@ -33,11 +33,11 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - Event-XML kann viel ohne Python: `UnitCombatPromotions`/`UnitClassPromotions` (alle + künftige Einheiten), `iImprovementChange`, `iBonusChange`, `iRouteChange` (-1 = entfernen) auf dem Trigger-Feld.
 - Text-Tool: Neue Einträge bekamen ein Leerzeichen im Tag (`<Tag> TXT_KEY…`) → Key wird nicht gefunden. Nach Text-Änderungen prüfen.
 - AudioDefines im Repo können `/DE/-Pfade` oder auch `/EN/`-Pfade. Die Audiofiles (Gesprochene Tech-Zitate) dafür sind nicht im Repo.
-- Texte für Text-XMLs (Konzepte, Pedia, Meldungen) im Chat als UTF-8-Klartext je Sprache liefern (Englisch, Französisch, Deutsch, Italienisch, Spanisch), nicht als XML und ohne `&#…;`-Codes. Sie werden ins Online-Text-Tool kopiert. Die Zeichenregel oben (nur Latin-1, keine Gedankenstriche usw.) gilt trotzdem.
+- Texte für Text-XMLs (Konzepte, Pedia, Meldungen) als XML liefern (`<TEXT>` mit `<Tag>` und allen fünf Sprachen English, French, German, Italian, Spanish), in UTF-8 und ohne `&#…;`-Codes. Das Online-Text-Tool kann auch die XML-Struktur der neuen TXT_KEYs importieren. Bei Änderungen an einem bestehenden Text ohne den `<TEXT>`-Block und TXT_KEY und Stelle (von-bis) mit Vorschautext nennen. Überall gerade Anführungszeichen ("), keine typografischen („ “ « »). Die Zeichenregel oben (nur Latin-1, keine Gedankenstriche usw.) gilt trotzdem.
 
 
 ## Erledigt
-Performance-Audit (40 s → 29 s pro Runde), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
+Performance-Audit bei einem Test im Szenario: WegDerGoten (Huge Map): (anfangs 1min 25s -> 1min 05s -> aktuell 42s (ab 2. Runde sogar nur 32s)), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
 CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
 7.18.3.19–7.19b: getCulture(-1)-Fix (Handelsposten, checkLateEra), getCities-Nachbesserungen (PAE_City Revolte, PAE_Vassal), Weg der Goten durchgesehen (onChangeWar war durch __LOG_WARPEACE blockiert, ScriptData-Abfragen, 15.2-Logik, 27.2 jede Runde), Event-OOS (Hurrikan/Zyklon/Monsun/Stadtbrand jetzt Wahl Trümmer oder Wiederaufbau für Gold, ohne Zufall), fehlende Event-Funktionen ersetzt (Ketzerei 2, Thorgal-Hilfe, Plünderer 3) bzw. durch XML gelöst, Bordell 1:4, tote Funktionen entfernt.
 
@@ -510,3 +510,10 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 
 ## Patch 7.19.1d
 Erledigt (10/2026): PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cpp (Anzeige/Hilfetexte, OOS-sauber).
+
+## Patch 7.19.1e–g (Claude Code)
+- Abwehrschuss (nur PAE-Kampf, aus bei `GAMEOPTION_NO_PAE_COMBAT`): Vor einem Nahkampfangriff einer Landeinheit schiesst der Fernkaempfer des verteidigenden Stapels mit dem groessten Schaden einmal pro Runde (`iAirRange` > 0, auch Katapulte; Rammen haben keinen Fernangriff). Nie toedlich (Grenze `iAirCombatLimit`, mind. 1 Trefferpunkt bleibt). Auswahl und Schaden zentral in `CvUnit::getDefensiveRangedStriker`, Bedingungen in `CvPlot::getAvailableDefensiveRangedUnit`.
+- Ablauf: `CvUnit::attack` -> `doDefensiveRangedStrike` -> bei sichtbarem Kampf Pause ueber den Kampf-Timer (8 Takte), Schuss-Animation in Takt 6 (4 Takte, in `updateCombat`), danach Nahkampf. Schuetze wird waehrend der Pause angezeigt (`CvPlot::setPAEShowUnit`, reine Anzeige). Zahlen fest im Code.
+- Kampfchance (`getCombatOdds` mit `iAttackerExtraDamage`), Kampfvorschau und KI (`CvUnitAI::AI_attackOdds`) rechnen den Abwehrschuss mit ein.
+- KI mit PAE-Kampfrunden (`AI_attackOdds`): ab 80 % Kampfchance immer Angriff; einzige starke Einheit im Stapel verteidigt lieber; ueberlebt sie die Kampfrunden sicher und steht im Stapel, greift sie immer an.
+- Brachland: unbewirtschaftete Modernisierung im Stadtradius verfaellt (1:20 pro Runde, erst nach 10 Runden), Bedingungen in `CvPlot::isFallowDecayPossible`, Hinweis in der Feld-Info.

@@ -196,6 +196,13 @@
 			<bVisible>1</bVisible>
 		</GameOptionInfo>
 		<GameOptionInfo>
+			<Type>GAMEOPTION_NO_DEFENSIVE_STRIKE</Type>
+			<Description>TXT_KEY_GAMEOPTION_NO_DEFENSIVE_STRIKE</Description>
+			<Help>TXT_KEY_GAMEOPTION_NO_DEFENSIVE_STRIKE</Help>
+			<bDefault>0</bDefault>
+			<bVisible>1</bVisible>
+		</GameOptionInfo>
+		<GameOptionInfo>
 			<Type>GAMEOPTION_NO_PAE_COMBAT</Type>
 			<Description>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT</Description>
 			<Help>TXT_KEY_GAMEOPTION_NO_PAE_COMBAT_HELP</Help>
