@@ -4209,12 +4209,13 @@ class CvEventManager:
 								# Normaler Handel - Handelsstrasse bauen: Chance 2%
 								if CvUtil.myRandom(100, "Handelsstrasse bauen") < 2:
 										scriptCityId = CvUtil.getScriptData(pUnit, ["c", "t"], -1)  # CityID
-										if scriptCityId != -1:
-												pSource = pPlayer.getCity(scriptCityId).plot()
-										else:
-												pSource = pPlayer.getCapitalCity().plot()
-										pSourceCity = pSource.getPlotCity()
-										pPlotTradeRoad = PAE_Trade.getPlotTradingRoad(pSource, pPlot)
+										# Ausgangsstadt kann verloren sein -> Hauptstadt; ohne Hauptstadt keine Handelsstrasse (plot() waere None)
+										pSourceCity = pPlayer.getCapitalCity()
+										if scriptCityId != -1 and not pPlayer.getCity(scriptCityId).isNone():
+												pSourceCity = pPlayer.getCity(scriptCityId)
+										pPlotTradeRoad = None
+										if not pSourceCity.isNone():
+												pPlotTradeRoad = PAE_Trade.getPlotTradingRoad(pSourceCity.plot(), pPlot)
 										if pPlotTradeRoad is not None:
 												pPlotTradeRoad.setRouteType(gc.getInfoTypeForString("ROUTE_TRADE_ROAD"))
 												if pPlayer.isHuman():

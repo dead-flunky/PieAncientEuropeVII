@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1n) => wird als öffentlicher Patch dann zu 7.19.1
+# PAE – Übergabe an Claude Code (Stand 7.19.1o) => wird als öffentlicher Patch dann zu 7.19.1
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.

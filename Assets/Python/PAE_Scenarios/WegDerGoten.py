@@ -533,7 +533,8 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		if not gc.getPlayer(iPreviousOwner).isMinorCiv() and not gc.getPlayer(iPreviousOwner).isBarbarian():
 			if gc.getPlayer(iPreviousOwner).getNumCities() == 0:
 				iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["15_1"], "")
-				if iCheck == "":
+				# ohne roemische Hauptstadt kein Event (Spion dort, Text nennt sie)
+				if iCheck == "" and not gc.getPlayer(14).getCapitalCity().isNone():
 					if CvUtil.myRandom(100, "WDG Great Spy onVassalState") < iChanceGreatSpyOnConquer:
 						CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_1", "x")
 
@@ -984,7 +985,7 @@ def onCombatResult(pWinner, pLoser):
 						szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT1", (szLeader, szLeader))
 						gc.getTeam(1).setVassal(gc.getPlayer(0).getTeam(), False, False)
 
-					elif iRand < 4:
+					elif iRand < 4 and not pCity.isNone():
 						szText = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_ARMINIUS_TOT2", (pCity.getName(), szLeader))
 						iRand = CvUtil.myRandom(6, "ArminiusDiesCityRevolt")
 						PAE_City.doCityRevolt(pCity, 5 + iRand)
@@ -1115,7 +1116,8 @@ def onVassalState(argsList):
 					if pCity.isNone():
 						pCity = pMaster.getCapitalCity()
 
-					if not pCity.isNone():
+					# ohne roemische Hauptstadt kein Event (Spion dort, Text nennt sie)
+					if not pCity.isNone() and not gc.getPlayer(14).getCapitalCity().isNone():
 						CvUtil.addScriptData(gc.getMap().plot(0, 1), "15_1", "x")
 
 						pNewUnit = pMaster.initUnit(gc.getInfoTypeForString("UNIT_GREAT_SPY"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_MERCHANT, DirectionTypes.DIRECTION_SOUTH)

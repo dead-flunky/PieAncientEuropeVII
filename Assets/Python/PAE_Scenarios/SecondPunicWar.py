@@ -515,15 +515,16 @@ def onEndPlayerTurn(iPlayer, iGameTurn):
 		if iGameTurn == 110:
 				if iPlayer == iRome:
 						pCity = gc.getPlayer(iPlayer).getCapitalCity()
+						# Rom kann seine Hauptstadt verloren haben (leeres Objekt)
+						if not pCity.isNone():
+								PAE_City.doCityRevolt(pCity, 4)
 
-						PAE_City.doCityRevolt(pCity, 4)
-
-						# Meldung an den Spieler
-						popupInfo = CyPopupInfo()
-						popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
-						popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_2NDPUNICWAR_14", ("",)))
-						popupInfo.addPopup(iPlayer)
-						CyCamera().JustLookAtPlot(pCity.plot())
+								# Meldung an den Spieler
+								popupInfo = CyPopupInfo()
+								popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+								popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_2NDPUNICWAR_14", ("",)))
+								popupInfo.addPopup(iPlayer)
+								CyCamera().JustLookAtPlot(pCity.plot())
 
 		# Schlacht von Neu-Karthago, Römer greifen Stadt an
 		# röm. Schiffe + Einheiten bei Neu-Karthago (Plot: 19,46)

@@ -1895,7 +1895,7 @@ def canTriggerMasterBlacksmithDone(argsList):
 		kOrigTriggeredData = player.getEventOccured(trigger.getPrereqEvent(0))
 
 		city = player.getCity(kOrigTriggeredData.iCityId)
-		if city is None or city.getOwner() != kTriggeredData.ePlayer:
+		if city.isNone() or city.getOwner() != kTriggeredData.ePlayer:
 				return False
 
 		kActualTriggeredDataObject = player.getEventTriggered(kTriggeredData.iId)
@@ -1912,7 +1912,7 @@ def canApplyMasterBlacksmithDone1(argsList):
 		iBonus = gc.getInfoTypeForString('BONUS_COPPER')
 		city = player.getCity(kTriggeredData.iCityId)
 
-		if city is None:
+		if city.isNone():
 				return False
 
 		map = gc.getMap()

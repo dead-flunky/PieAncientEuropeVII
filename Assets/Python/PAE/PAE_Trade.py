@@ -242,18 +242,22 @@ def doBuildTradeRoad(pUnit, pCity):
 				# Schiffe: Hafenstadt -> Hauptstadt
 				if pUnit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA"):
 						pCity2 = pBuyer.getCapitalCity()
-						pSource = pCity2.plot()
-						# Nur zur Hauptstadt, wenn diese in einem bestimmten Bereich liegt
-						#  0 = WORLDSIZE_DUEL
-						#  1 = WORLDSIZE_TINY
-						#  2 = WORLDSIZE_SMALL
-						#  3 = WORLDSIZE_STANDARD
-						#  4 = WORLDSIZE_LARGE
-						#  5 = WORLDSIZE_HUGE
-						iMapSize = gc.getMap().getWorldSize()
-						iDistance = gc.getMap().calculatePathDistance(pCity.plot(), pSource)
-						if iDistance == -1 or iDistance > 8 + iMapSize * 2:
+						# ohne Hauptstadt (z. B. Barbaren) keine Handelsstrasse, plot() waere None -> CtD in calculatePathDistance
+						if pCity2.isNone():
 								pSource = None
+						else:
+								pSource = pCity2.plot()
+								# Nur zur Hauptstadt, wenn diese in einem bestimmten Bereich liegt
+								#  0 = WORLDSIZE_DUEL
+								#  1 = WORLDSIZE_TINY
+								#  2 = WORLDSIZE_SMALL
+								#  3 = WORLDSIZE_STANDARD
+								#  4 = WORLDSIZE_LARGE
+								#  5 = WORLDSIZE_HUGE
+								iMapSize = gc.getMap().getWorldSize()
+								iDistance = gc.getMap().calculatePathDistance(pCity.plot(), pSource)
+								if iDistance == -1 or iDistance > 8 + iMapSize * 2:
+										pSource = None
 				# Landeinheiten: Stadt A -> B
 				else:
 						iOriginX = CvUtil.getScriptData(pUnit, ["x"], -1)
