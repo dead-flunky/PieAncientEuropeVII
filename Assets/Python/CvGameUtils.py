@@ -14,7 +14,7 @@ from CvPythonExtensions import (CyGlobalContext, PlotStyles, OrderTypes,
 								TechTypes, CommerceTypes, BuildingTypes,
 								CyGameTextMgr, WidgetTypes,
 								UnitTypes, isLimitedWonderClass,
-								plotDirection, MissionAITypes)
+								plotDirection, MissionAITypes, plotDistance)
 # import CvEventInterface
 # import Popup as PyPopup
 import PyHelpers

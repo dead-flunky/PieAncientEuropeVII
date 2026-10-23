@@ -1812,43 +1812,6 @@ def getHandelspostenPlot_AI(iPlayer, pPlot, pUnit):
 										pTarget = pLoopPlot
 		return pTarget
 
-# PAE 7.19.1: KI errichtet Handelsposten (wie Aktion 736) auf herrenlosen Ressourcen, die sie noch nicht hat
-# bSearch: auch im Umkreis suchen und hinziehen (nur Einheiten ohne Handelsroute)
-# True: Zug verbraucht (kill oder Mission)
-def doHandelsposten_AI(pUnit, bSearch):
-		if pUnit.getDomainType() != DomainTypes.DOMAIN_LAND:
-				return False
-		iTeam = pUnit.getTeam()
-		if not gc.getTeam(iTeam).isHasTech(gc.getInfoTypeForString("TECH_WARENHANDEL")):
-				return False
-		pPlayer = gc.getPlayer(pUnit.getOwner())
-		iX = pUnit.getX()
-		iY = pUnit.getY()
-		iRange = 0
-		if bSearch:
-				iRange = 8
-		pTarget = None
-		iBest = 999
-		for i in range(-iRange, iRange+1):
-				for j in range(-iRange, iRange+1):
-						pLoopPlot = plotXY(iX, iY, i, j)
-						if pLoopPlot is None or pLoopPlot.isNone() or pLoopPlot.isWater() or pLoopPlot.isCity() or pLoopPlot.getOwner() != -1:
-								continue
-						iBonus = pLoopPlot.getBonusType(iTeam)
-						if iBonus == -1 or pPlayer.getNumAvailableBonuses(iBonus) > 0:
-								continue
-						iDist = plotDistance(iX, iY, pLoopPlot.getX(), pLoopPlot.getY())
-						if iDist < iBest and (iDist == 0 or pUnit.generatePath(pLoopPlot, 0, False, None)):
-								iBest = iDist
-								pTarget = pLoopPlot
-		if pTarget is None:
-				return False
-		if iBest == 0:
-				doBuildHandelsposten(pUnit)
-		else:
-				pUnit.getGroup().pushMoveToMission(pTarget.getX(), pTarget.getY())
-		return True
-
 
 # isHills: PROMOTION_GUERILLA1
 # FEATURE_FOREST, FEATURE_DICHTERWALD: PROMOTION_WOODSMAN1

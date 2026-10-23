@@ -35,23 +35,18 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - TXT_KEYs: Manche Einträge bekamen ein Leerzeichen im Tag (`<Tag> TXT_KEY…`) → Key wird nicht gefunden. Nach Text-Änderungen oder ab und zu mal bei allen prüfen.
 - AudioDefines im Repo können `/DE/-Pfade` oder auch `/EN/`-Pfade. Die Audiofiles (Gesprochene Tech-Zitate) dafür sind nicht im Repo.
 - Texte für Text-XMLs (Konzepte, Pedia, Meldungen) als XML liefern (`<TEXT>` mit `<Tag>` und allen fünf Sprachen English, French, German, Italian, Spanish), in UTF-8 und ohne `&#…;`-Codes. Das Online-Text-Tool kann auch die XML-Struktur der neuen TXT_KEYs importieren. Bei Änderungen an einem bestehenden Text ohne den `<TEXT>`-Block und TXT_KEY und Stelle (von-bis) mit Vorschautext nennen. Überall gerade Anführungszeichen ("), keine typografischen („ “ « »). Die Zeichenregel oben (nur Latin-1, keine Gedankenstriche usw.) gilt trotzdem.
+- Denkweise: extrem praktisch und der Situation entsprechend. Lieber eine kleine, nachvollziehbare Lösung an Ort und Stelle (z. B. eigener kleiner Wert in Python) als eine saubere, aber aufwendige Umbaulösung (DLL-Refactoring, neue Schnittstellen, ScriptData). Erst die einfache Variante vorschlagen, die große nur, wenn es nicht anders geht. Es sei denn irgendwas kann woanders auch verwendet werden (oder ähnliches wird verwendet), dann eine eigene Funktion dafür schreiben und die andere Stelle optimieren.
 
 
-## Erledigt
-Performance-Audit bei einem Test im Szenario: WegDerGoten (Huge Map): (anfangs 1min 25s -> 1min 05s -> aktuell 42s (ab 2. Runde sogar nur 32s)), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
-CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
-7.18.3.19–7.19b: getCulture(-1)-Fix (Handelsposten, checkLateEra), getCities-Nachbesserungen (PAE_City Revolte, PAE_Vassal), Weg der Goten durchgesehen (onChangeWar war durch __LOG_WARPEACE blockiert, ScriptData-Abfragen, 15.2-Logik, 27.2 jede Runde), Event-OOS (Hurrikan/Zyklon/Monsun/Stadtbrand jetzt Wahl Trümmer oder Wiederaufbau für Gold, ohne Zufall), fehlende Event-Funktionen ersetzt (Ketzerei 2, Thorgal-Hilfe, Plünderer 3) bzw. durch XML gelöst, Bordell 1:4, tote Funktionen entfernt.
+
 
 
 ## Offen
 Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
-1. Statthalter ernennen (757) – `doStatthalterTurn_AI` ist auskommentiert
-2. Handelsposten (736)
-3. Feuerkatapult umrüsten (775)
-4. Terraforming (774)
-5. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
-6. „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
-7. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
+1. Terraforming (774)
+2. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
+3. „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
+4. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
 
 
 Optional:
@@ -61,6 +56,8 @@ Optional:
 - Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
 - Beobachten/feinjustieren: KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
 - Behoben (7.18.3.20): `getCulture(-1)` – `PAE_Turn_Features.doPlotFeatures` (Handelsposten ohne Besitzer-Eintrag schrieb `changeCulture(-1)` in fremden Speicher) und `CvPlot::checkLateEra` (BTS-Fehler, aktiver Spieler -1).
+
+
 
 
 
@@ -530,3 +527,9 @@ Erledigt (10/2026): PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cp
   3. Beides
   Zu entscheiden: Option 1, 2 oder 3? Bekommt der Mensch auf Large/Huge den Siedler weiterhin immer?
 - Danach weiter mit Statthalter (757).
+
+## Erledigt
+Performance-Audit bei einem Test im Szenario: WegDerGoten (Huge Map): (anfangs 1min 25s -> 1min 05s -> aktuell 42s (ab 2. Runde sogar nur 32s)), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).
+CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
+7.18.3.19–7.19b: getCulture(-1)-Fix (Handelsposten, checkLateEra), getCities-Nachbesserungen (PAE_City Revolte, PAE_Vassal), Weg der Goten durchgesehen (onChangeWar war durch __LOG_WARPEACE blockiert, ScriptData-Abfragen, 15.2-Logik, 27.2 jede Runde), Event-OOS (Hurrikan/Zyklon/Monsun/Stadtbrand jetzt Wahl Trümmer oder Wiederaufbau für Gold, ohne Zufall), fehlende Event-Funktionen ersetzt (Ketzerei 2, Thorgal-Hilfe, Plünderer 3) bzw. durch XML gelöst, Bordell 1:4, tote Funktionen entfernt.
+Erledigt (7.19.1i–j): Statthalter (757), Handelsposten (736, KI baut auch Händler dafür), Feuerkatapult (775, eigener kleiner Raze-Wert, Torsion 3), changeUnit nur Katapulte, Zweiter Siedler (Limit über cannotTrain, KI ab Kaiser 50 %).
