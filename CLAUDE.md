@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1k) => wird als öffentlicher Patch dann zu 7.19.1
+# PAE – Übergabe an Claude Code (Stand 7.19.1l) => wird als öffentlicher Patch dann zu 7.19.1
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -39,26 +39,15 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 
 
 
-
-
 ## Offen
-Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
-1. Terraforming (774)
-2. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
-3. „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
-4. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
-
+1. „Pirat werden“ (722): bleibt vermutlich bewusst nur für Menschen (bestätigen).
+2. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
 
 Optional:
-- `CvEventManager.py` Z. 2282 (Handler 776): auch den Ausgangstyp prüfen (nur Elefanten, nicht derselbe Typ).
 - P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
-- Behoben: Balance: Arbeits- und Kriegselefant je 110 (Arbeiter 40). Beide müssen gleich viel kosten, weil die Umwandlung (776) kostenlos ist.
 - Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
 - Beobachten/feinjustieren: KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
-- Behoben (7.18.3.20): `getCulture(-1)` – `PAE_Turn_Features.doPlotFeatures` (Handelsposten ohne Besitzer-Eintrag schrieb `changeCulture(-1)` in fremden Speicher) und `CvPlot::checkLateEra` (BTS-Fehler, aktiver Spieler -1).
-
-
-
+- Beobachten: Feuerkatapult-Schwelle (kleiner Raze-Wert ab 50, `CvGameUtils.AI_unitUpdate`), Terraforming-KI ab 3 Feldern, Pferde-/Kamelwechsel (766) ohne Rundenlimit.
 
 
 ## Patch 7.18.3.10–14 (Claude Code)
@@ -131,7 +120,7 @@ Fix: `gc.getCivilizationInfo(pPlayer.getCivilizationType())`.
 
 **Elefanten (Entscheidung 17.10.2026):** Elfenbein-Verbreitung bleibt bewusst abgeschaltet (historisch nicht verbreitet). Gezähmte Elefanten: Mensch kann Bau beschleunigen (iBaseHurry 40) oder per Upgrade zum Kriegs-/Arbeitselefanten machen (Stadt mit Elefantenstall). DLL-KI nutzt nur Beschleunigen/Arbeitselefant, nie Kriegselefant (UNITAI_ENGINEER) → eigener KI-Zweig.
 **Neu (Aktion 776, 7.18.4, Entscheidung 17.10.2026):** Wilder Elefant → Arbeits- oder Kriegselefant nur in eigener Stadt mit `TECH_ELEFANTENZUCHT`, 50 Gold (gleicher Preis), kein Metall, kein Stall/Elfenbein. Arbeits- ↔ Kriegselefant überall, kostenlos, verbraucht den Zug. Knöpfe ausgegraut statt versteckt (Tooltip erklärt Bedingungen). Inline umgesetzt (CvMainInterface, CvEventManager 776, getWidgetHelp, AI_unitUpdate) mit `PAE_Unit.doUpgradeVeteran`. `UnitClassUpgrades` von `UNIT_ELEFANT` in der XML entfernen; `iCost` Arbeits-/Kriegselefant angleichen. KI: wild → Krieg (im Krieg) bzw. Arbeit (Frieden); Arbeits- → Kriegselefant im Krieg (1:4, eigenes Land); nie zurück.
-✅ **Umgesetzt und geprüft in 7.18.3.5 (Commit `96e43fd`):** Python, Texte (`TXT_KEY_BUTTON_ELEFANT_TRAIN/_SWITCH`, `TXT_KEY_UNIT_ELEFANT_SWAP_HELP`), XML (`UnitClassUpgrades` von `UNIT_ELEFANT` leer, `iCost` Arbeits-/Kriegselefant beide 120). Alle Text-XMLs wohlgeformt, keine neuen doppelten Tags. Offen (optional): Handler 776 prüft den Ausgangstyp nicht.
+✅ **Umgesetzt und geprüft in 7.18.3.5 (Commit `96e43fd`):** Python, Texte (`TXT_KEY_BUTTON_ELEFANT_TRAIN/_SWITCH`, `TXT_KEY_UNIT_ELEFANT_SWAP_HELP`), XML (`UnitClassUpgrades` von `UNIT_ELEFANT` leer, `iCost` Arbeits-/Kriegselefant beide 120). Alle Text-XMLs wohlgeformt, keine neuen doppelten Tags. Handler 776 prüft seit 7.19.1k auch den Ausgangstyp.
 
 ### Performance
 
@@ -497,7 +486,7 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 3. **Klein:** `cannotConstruct`/Palisade baut die Waldliste weiter bei jedem Aufruf – `L.LPalisadeFeatures` existiert dafür. `canTriggerCityFire` liest `getPopulation()` vor der `isNone()`-Prüfung. `setHolyCity` prüft `isNone()` doppelt.
 4. **Bitte bestätigen (Spielmechanik):** KI bekommt jetzt auf *allen* Schwierigkeitsgraden zu 50 % einen zweiten Siedler; globale Katastrophen hängen an `gc.getPlayer(0).getCurrentEra()` – `gc.getGame().getCurrentEra()` wäre unabhängig davon, ob Spieler 0 noch lebt.
 
-**Nachprüfung 7.18.3.2 (Commit `6f6b903`):** Punkte 2, 3 (Palisade, isNone-Reihenfolge) und 4.2 korrekt umgesetzt, Einrückungen geprüft. Offen: nur die Text-Keys (Punkt 1, kommen über das Text-Tool).
+**Nachprüfung 7.18.3.2 (Commit `6f6b903`):** Punkte 2, 3 (Palisade, isNone-Reihenfolge) und 4.2 korrekt umgesetzt, Einrückungen geprüft. Punkt 1 (Text-Keys in `PAEGameText_Misc.xml`) und 4.1 (KI-Siedler, 7.19.1i) inzwischen erledigt.
 
 ## Patch 7.18.3.18 (Claude Code)
 - KI-Schleifen: `CvSelectionGroupAI::AI_update` beendet den Zug bei Stillstand (3x gleiches Feld/gleiche Bewegungspunkte) oder Hin-und-her (A->B->A), statt bis zum Limit 40-120.
@@ -522,3 +511,4 @@ Performance-Audit bei einem Test im Szenario: WegDerGoten (Huge Map): (anfangs 1
 CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
 7.18.3.19–7.19b: getCulture(-1)-Fix (Handelsposten, checkLateEra), getCities-Nachbesserungen (PAE_City Revolte, PAE_Vassal), Weg der Goten durchgesehen (onChangeWar war durch __LOG_WARPEACE blockiert, ScriptData-Abfragen, 15.2-Logik, 27.2 jede Runde), Event-OOS (Hurrikan/Zyklon/Monsun/Stadtbrand jetzt Wahl Trümmer oder Wiederaufbau für Gold, ohne Zufall), fehlende Event-Funktionen ersetzt (Ketzerei 2, Thorgal-Hilfe, Plünderer 3) bzw. durch XML gelöst, Bordell 1:4, tote Funktionen entfernt.
 Erledigt (7.19.1i–j): Statthalter (757), Handelsposten (736, KI baut auch Händler dafür), Feuerkatapult (775, eigener kleiner Raze-Wert, Torsion 3), changeUnit nur Katapulte, Zweiter Siedler (Limit über cannotTrain, KI ab Kaiser 50 %).
+Erledigt (7.19.1k–l): Terraforming (774, `PAE_Unit.doTerraforming` für Mensch und KI, ohne Schwemmland/Oase, KI nur in Wüsten-/Tundrastadt ab 3 Feldern), Handler 776 prüft Ausgangs- und Zieltyp, Heldendenkmal (758, nur echte Gebäude per `getNumRealBuilding`, sonst Verdopplung freier Denkmäler; keine KI), Duell (761, nur mit Sklave auf dem Feld; keine KI), Pferde-/Kamelwechsel (766, `setMoves(0)` statt `finishMoves`; keine KI, beliebig oft nutzbar, im Spiel beobachten).

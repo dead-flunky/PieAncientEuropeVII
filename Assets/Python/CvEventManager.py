@@ -2168,8 +2168,11 @@ class CvEventManager:
 				elif iData1 == 766:
 						pPlayer = gc.getPlayer(iData4)
 						pUnit = pPlayer.getUnit(iData5)
-						CyInterface().addMessage(iData4, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_PFERDEWECHSEL_DONE", ()), None, 2, None, ColorTypes(8), 0, 0, False, False)
-						pUnit.finishMoves()
+						if pPlayer.isHuman():
+								CyInterface().addMessage(iData4, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_PFERDEWECHSEL_DONE", ()), None, 2, None, ColorTypes(8), 0, 0, False, False)
+						# PAE 7.19.1: frisches Reittier -> volle Bewegungspunkte
+						pUnit.setMoves(0)
+						pUnit.setMadeAttack(True)
 
 				# Magnetkompass
 				elif iData1 == 767:

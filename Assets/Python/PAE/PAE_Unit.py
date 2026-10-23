@@ -2182,6 +2182,7 @@ def doSetAngst(pUnit, bSet):
 # PAE Angst Ende --------------------
 
 # onModNetMessage 760, doGetXPbySlave
+# Nur für HI, zahlt sich für KI nicht aus
 def doKillSlaveFromPlot(pUnit):
 		iUnitOwner = pUnit.getOwner()
 		iUnitSlave = gc.getInfoTypeForString("UNIT_SLAVE")
@@ -2191,12 +2192,14 @@ def doKillSlaveFromPlot(pUnit):
 				loopUnit = pPlot.getUnit(iUnit)
 				if loopUnit.getUnitType() == iUnitSlave and loopUnit.getOwner() == iUnitOwner:
 						loopUnit.kill(True, -1)
-						break
+						return True
+		return False
 
 # onModNetMessage 761
 def doGetXPbySlave(pUnit):
-		# Sklave killen
-		doKillSlaveFromPlot(pUnit)
+		# Sklave killen (PAE 7.19.1: ohne Sklaven kein Duell)
+		if not doKillSlaveFromPlot(pUnit):
+				return
 
 		# Unit gewinnt oder verliert, je nach Schaden
 		iDamage = CvUtil.myRandom(100, "doGetXPbySlave")
@@ -3556,7 +3559,10 @@ def doUsurpatorCheck(lLeaders):
 			iPlayer = pUnit.getOwner()
 			pPlayer = gc.getPlayer(iPlayer)
 
-			if pPlayer.isHuman() and iPlayer == gc.getGame().getActivePlayer():
+			if pPlayer.isHuman():
+				# Popup nur beim Spieler, die Antwort kommt als 743. Andere Rechner: nichts tun (sonst KI-Zweig -> OOS)
+				if iPlayer != gc.getGame().getActivePlayer():
+					return
 
 				iGold = pPlayer.getGold() // 3
 				iRand = 1 + gc.getASyncRand().get(5, "Usurpator popup text")
@@ -3598,9 +3604,11 @@ def doUsurpatorGeneral(pUnit):
 		pUnit.setName(txtName)
 
 		# Einheiten auslesen und auf einen anderen Plot setzen
-		iNumUnits = pPlot.getNumUnits()
-		for i in range(iNumUnits):
-			loopUnit = pPlot.getUnit(i)
+		# erst sammeln, jumpToNearestValidPlot nimmt die Einheit vom Feld
+		lPlotUnits = []
+		for i in range(pPlot.getNumUnits()):
+			lPlotUnits.append(pPlot.getUnit(i))
+		for loopUnit in lPlotUnits:
 			if loopUnit.getOwner() == iPlayer:
 				lOldUnits.append(loopUnit)
 			loopUnit.jumpToNearestValidPlot()
@@ -3620,7 +3628,7 @@ def doUsurpatorGeneral(pUnit):
 		if iNumOldUnits < 10:
 			pTeam = gc.getTeam(pPlayer.getTeam())
 			if pTeam.isHasTech(gc.getInfoTypeForString("TECH_FOEDERATI")):
-				if pCity.hasBonus(gc.getInfoTypeForString("BONUS_HORSE")):
+				if pPlayer.hasBonus(gc.getInfoTypeForString("BONUS_HORSE")):
 					iUnitType = gc.getInfoTypeForString("UNIT_HEAVY_HORSEMAN")
 				else:
 					iUnitType = gc.getInfoTypeForString("UNIT_FOEDERATI")
@@ -4611,15 +4619,15 @@ def doPopupChooseHeldendenkmal(pUnit):
 		popupInfo.setData1(iPlayer)
 		popupInfo.setData2(pUnit.getID())
 
-		for iBuilding in L.LHeldendenkmal:
-				if pCity.isHasBuilding(iBuilding):
-						popupInfo.addPythonButton(gc.getBuildingInfo(iBuilding).getDescription(), gc.getBuildingInfo(iBuilding).getButton())
+		for iBuilding in PAE_City.getHeldendenkmalList(pCity):
+				popupInfo.addPythonButton(gc.getBuildingInfo(iBuilding).getDescription(), gc.getBuildingInfo(iBuilding).getButton())
 
 		popupInfo.addPythonButton(CyTranslator().getText("TXT_KEY_ACTION_CANCEL", ("", )), "Art/Interface/Buttons/Actions/Cancel.dds")
 		popupInfo.setFlags(popupInfo.getNumPythonButtons()-1)
 		popupInfo.addPopup(iPlayer)
 
 
+# Nur für HI, zahlt sich für KI nicht aus
 def doCollectHeldendenkmal(pUnit, iBuilding):
 		if pUnit is None or pUnit.isNone():
 				return False
@@ -4627,6 +4635,9 @@ def doCollectHeldendenkmal(pUnit, iBuilding):
 				return False
 
 		pCity = CyMap().plot(pUnit.getX(), pUnit.getY()).getPlotCity()
+		# PAE 7.19.1: nur echte Denkmaeler (freie durch Wunder/Staatsform wuerden sonst verdoppelt)
+		if pCity.isNone() or pCity.getNumRealBuilding(iBuilding) == 0:
+				return False
 		pCity.setNumRealBuilding(iBuilding, 0)
 		CvUtil.addScriptData(pUnit, "hd", iBuilding)
 
@@ -5047,7 +5058,7 @@ def onModNetMessage(argsList):
 					# Meldung
 					if iData4 == gc.getGame().getActivePlayer():
 						CyInterface().addMessage(iData4, True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_PIRACY_B2", (iLoot, )), "AS2D_PILLAGE", 2, "Art/Interface/Buttons/Actions/button_action_merc_elite.dds", ColorTypes(8), pLootPlot.getX(), pLootPlot.getY(), True, True)
-					elif gc.getPlayer(pLootPlot.getOwner()).isHuman():
+					elif pLootPlot.getOwner() != -1 and gc.getPlayer(pLootPlot.getOwner()).isHuman():
 						CyInterface().addMessage(pLootPlot.getOwner(), True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_PIRACY_B3", ("",)), "AS2D_PILLAGE", 2, "Art/Interface/Buttons/Actions/button_action_merc_elite.dds", ColorTypes(7), pLootPlot.getX(), pLootPlot.getY(), True, True)
 
 				# massacre
@@ -5056,14 +5067,14 @@ def onModNetMessage(argsList):
 					# Meldung
 					if iData4 == gc.getGame().getActivePlayer():
 						CyInterface().addMessage(iData4, True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_PIRACY_C2", (iLoot, )), "AS2D_PILLAGE", 2, "Art/Interface/Buttons/Actions/button_action_merc_elite.dds", ColorTypes(8), pLootPlot.getX(), pLootPlot.getY(), True, True)
-					elif gc.getPlayer(pLootPlot.getOwner()).isHuman():
+					elif pLootPlot.getOwner() != -1 and gc.getPlayer(pLootPlot.getOwner()).isHuman():
 						CyInterface().addMessage(pLootPlot.getOwner(), True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_PIRACY_C3", ("",)), "AS2D_PILLAGE", 2, "Art/Interface/Buttons/Actions/button_action_merc_elite.dds", ColorTypes(7), pLootPlot.getX(), pLootPlot.getY(), True, True)
 
 				# enslave
 				elif iData3 == 2:
 					iDestroyChance = 10
 					pPlotSlave = pUnit.plot()
-					iSlaveOwner = iData5
+					iSlaveOwner = iData4
 					if pUnit.cargoSpace() <= pUnit.getCargo():
 						pPlotSlave = pLootPlot
 						iSlaveOwner = gc.getBARBARIAN_PLAYER()
@@ -5071,7 +5082,7 @@ def onModNetMessage(argsList):
 					# Meldung
 					if iData4 == gc.getGame().getActivePlayer():
 						CyInterface().addMessage(iData4, True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_PIRACY_D2", (iLoot, )), "AS2D_PILLAGE", 2, "Art/Interface/Buttons/Actions/button_action_merc_elite.dds", ColorTypes(8), pLootPlot.getX(), pLootPlot.getY(), True, True)
-					elif gc.getPlayer(pLootPlot.getOwner()).isHuman():
+					elif pLootPlot.getOwner() != -1 and gc.getPlayer(pLootPlot.getOwner()).isHuman():
 						CyInterface().addMessage(pLootPlot.getOwner(), True, 5, CyTranslator().getText("TXT_KEY_MESSAGE_PIRACY_D3", ("",)), "AS2D_PILLAGE", 2, "Art/Interface/Buttons/Actions/button_action_merc_elite.dds", ColorTypes(7), pLootPlot.getX(), pLootPlot.getY(), True, True)
 
 

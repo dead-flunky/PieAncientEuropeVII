@@ -1560,6 +1560,12 @@ def doHireMercenariesPopup(iCity, iTypeButton, iUnitButton, iPlayer):
 
 				# popupInfo.setData2(-1)
 		else:
+				# Typ-Auswahl: nur Typen mit Einheiten haben einen Button, Button-Nummer in den Typ umrechnen
+				if iUnitButton == -1:
+						lTypes = [i for i in range(len(lUCI)) if lUnits[i]]
+						if iTypeButton >= len(lTypes):
+								return
+						iTypeButton = lTypes[iTypeButton]
 				popupInfo.setOnClickedPythonCallback("popupMercenariesHireUnits")
 				popupInfo.setData2(iTypeButton)
 

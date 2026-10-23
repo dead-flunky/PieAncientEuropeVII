@@ -411,7 +411,8 @@ def onModNetMessage(argsList):
 				pCity = pPlayer.getCity(iData2)
 
 				# Dies soll doppelte Popups in PB-Spielen vermeiden.
-				if iData3 != gc.getGame().getActivePlayer(): return
+				# nur die Popups (iData5 == -1) beim Spieler selbst, der Verkauf laeuft auf allen Rechnern
+				if iData5 == -1 and iData3 != gc.getGame().getActivePlayer(): return
 
 				# Choose Building
 				if iData4 == -1 and iData5 == -1:
@@ -428,7 +429,7 @@ def onModNetMessage(argsList):
 
 						iRange = gc.getNumBuildingInfos()
 						for iBuilding in range(iRange):
-							if pCity.isHasBuilding(iBuilding):
+							if pCity.getNumRealBuilding(iBuilding) > 0:
 								BuildingInfo = gc.getBuildingInfo(iBuilding)
 								if (	BuildingInfo.getProductionCost() > 0 and 
 										not isWorldWonderClass(BuildingInfo.getBuildingClassType()) and
@@ -621,7 +622,7 @@ def onModNetMessage(argsList):
 						pCity = pPlayer.getCity(iData2)
 						iBuilding = iData4
 
-						if pCity.isHasBuilding(iBuilding):
+						if pCity.getNumRealBuilding(iBuilding) > 0:
 								iValue = gc.getBuildingInfo(iBuilding).getProductionCost() // 4
 
 								# für Geld verkaufen
@@ -639,7 +640,6 @@ def onModNetMessage(argsList):
 									iValue //= 2
 									pPlayer.changeGold(iValue)
 									pCity.changeProduction(iValue)
-									CyAudioGame().Play2DSound("AS2D_COINS")
 									CyInterface().addMessage(iData3, True, 10, CyTranslator().getText("TXT_KEY_POPUP_STATTHALTER_SELL_8", (gc.getBuildingInfo(iBuilding).getDescription(),pCity.getName(),iValue,iValue)),
 									"AS2D_BUILD_FORGE", 2, gc.getBuildingInfo(iBuilding).getButton(), ColorTypes(10), pCity.getX(), pCity.getY(), True, True)
 
@@ -895,7 +895,8 @@ def doInquisitorPersecution2(iPlayer, iCity, iButton, iReligion, iUnit):
 		lCityReligions = []
 		for iReligionLoop in range(iNumReligions):
 				if pCity.isHasReligion(iReligionLoop):
-						if pCity.isHolyCityByType(iReligionLoop) == 0 and iReligionLoop != iStateReligion:
+						# wie das Popup (doInquisitorPersecution): Religion des Missionars auslassen, sonst verrutschen die Buttons
+						if pCity.isHolyCityByType(iReligionLoop) == 0 and iReligionLoop != iStateReligion and iReligionLoop != gc.getUnitInfo(pPlayer.getUnit(iUnit).getUnitType()).getPrereqReligion():
 								lCityReligions.append(iReligionLoop)
 
 		# Wenn die Religion ueber PopUp kommt, muss sie mittels Buttonreihenfolge gefunden werden
@@ -4538,7 +4539,7 @@ def doMessageWonderCapture(pCity):
 def isHasHeldendenkmal(pCity):
 		if pCity and not pCity.isNone():
 				for iBuilding in L.LHeldendenkmal:
-						if pCity.isHasBuilding(iBuilding):
+						if pCity.getNumRealBuilding(iBuilding) > 0:
 								return True
 		return False
 
@@ -4546,7 +4547,7 @@ def isHasHeldendenkmal(pCity):
 def getHeldendenkmalList(pCity):
 		lBuildings = []
 		for iBuilding in L.LHeldendenkmal:
-				if pCity.isHasBuilding(iBuilding):
+				if pCity.getNumRealBuilding(iBuilding) > 0:
 						lBuildings.append(iBuilding)
 		return lBuildings
 

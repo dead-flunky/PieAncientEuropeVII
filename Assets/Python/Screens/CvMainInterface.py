@@ -7801,7 +7801,7 @@ class CvMainInterface:
 										# Kauf eines Magnetkompasses
 										elif iData1 == 767:
 												CyAudioGame().Play2DSound("AS2D_COINS")
-												CyMessageControl().sendModNetMessage(iData1, pPlot.getX(), pPlot.getY(), iOwner, iUnitID)
+												CyMessageControl().sendModNetMessage(iData1, iData2, -1, iOwner, iUnitID)
 
 										# Schiffe
 										elif iData1 == 768:
