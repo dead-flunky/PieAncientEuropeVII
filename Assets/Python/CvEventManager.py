@@ -4931,12 +4931,12 @@ class CvEventManager:
 				# PAE 7.11: Freie Einheiten bei endlos Tech
 				elif iTechType == gc.getInfoTypeForString("TECH_CHRISTIANISIERUNG"):
 					pCity = pPlayer.getCapitalCity()
-					if pCity is not None:
+					if not pCity.isNone():
 						pPlayer.initUnit(gc.getInfoTypeForString("UNIT_BYZANTINE_CATAPHRACT"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 
 				elif iTechType == gc.getInfoTypeForString("TECH_ISLAMISIERUNG"):
 					pCity = pPlayer.getCapitalCity()
-					if pCity is not None:
+					if not pCity.isNone():
 						pPlayer.initUnit(gc.getInfoTypeForString("UNIT_HORSEMAN_ISLAM_KALIF"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_ATTACK, DirectionTypes.DIRECTION_SOUTH)
 				# ----------------------------
 

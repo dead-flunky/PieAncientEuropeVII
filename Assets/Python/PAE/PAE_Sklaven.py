@@ -607,7 +607,7 @@ def doAIReleaseSlaves(pCity):
 def doCheckSlavesAfterPillage(pUnit, pPlot):
 		pCity = pPlot.getWorkingCity()
 
-		if pCity is not None:
+		if not pCity.isNone():
 				# TEST
 				#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST", (pCity.getName(), 0)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 

@@ -31,6 +31,9 @@ def setHolyCity():
 		# Prio1: Heilige Stadt des Judentums
 		if gc.getGame().isReligionFounded(iJudentum):
 				pCity = gc.getGame().getHolyCity(iJudentum)
+				# Heilige Stadt kann zerstoert sein (leeres Objekt, nie None)
+				if pCity.isNone():
+						pCity = None
 
 		# Prio 2: Juedische Stadt
 		if pCity is None:

@@ -3649,6 +3649,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_WDG_OLD_GOTHS_EXPAND</Tag>
+		<English>%s1 has captured %s2. Apparently he has realised that he should expand his realm. A little late![NEWLINE][NEWLINE]In due time we will pay him a visit there as well.</English>
+		<French>%s1 a pris %s2. Il semble avoir compris qu'il devait agrandir son royaume. Un peu tard ![NEWLINE][NEWLINE]Le moment venu, nous lui rendrons visite l&#224;-bas aussi.</French>
+		<German>%s1 hat %s2 erobert. Scheinbar hat er erkannt, dass er sein Reich erweitern sollte. Etwas sp&#228;t![NEWLINE][NEWLINE]Zu gegebener Zeit werden wir ihn auch dort besuchen.</German>
+		<Italian>%s1 ha conquistato %s2. A quanto pare ha capito che doveva espandere il suo regno. Un po' tardi![NEWLINE][NEWLINE]A tempo debito andremo a fargli visita anche l&#236;.</Italian>
+		<Spanish>%s1 ha conquistado %s2. Al parecer se ha dado cuenta de que deb&#237;a ampliar su reino. &#161;Un poco tarde![NEWLINE][NEWLINE]A su debido tiempo tambi&#233;n le haremos una visita all&#237;.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_WDG_ROME_CONQUERS_CAPITAL</Tag>
 		<English></English>
 		<French></French>

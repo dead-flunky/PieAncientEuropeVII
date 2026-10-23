@@ -1724,39 +1724,41 @@ def doMobiliseFortifiedArmy(pCity):
 		# PAE V ab Patch 3: Wenn Hauptstadt angegriffen wird, sollen alle Einheiten in Festungen remobilisiert werden (Promo FORTRESS)
 		# PAE 6.6: auch bei normalen Städten, wenn im Umkreis eine Festung ist
 
+		if pCity.isNone():
+				return
+
 		# PAE 6.6: ausser Barbaren
 		if pCity.getOwner() == gc.getBARBARIAN_PLAYER():
 				return
 
 		pPlayer = gc.getPlayer(pCity.getOwner())
-		if pCity is not None:
-				iX = pCity.getX()
-				iY = pCity.getY()
-				iPromoFort = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS")
-				iPromoFort2 = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2")
+		iX = pCity.getX()
+		iY = pCity.getY()
+		iPromoFort = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS")
+		iPromoFort2 = gc.getInfoTypeForString("PROMOTION_FORM_FORTRESS2")
 
-				if pCity.isCapital():
-						(pUnit, pIter) = pPlayer.firstUnit(False)
-						while pUnit:
-								pUnit.setHasPromotion(iPromoFort, False)
-								pUnit.setHasPromotion(iPromoFort2, False)
-								pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX, iY, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-								(pUnit, pIter) = pPlayer.nextUnit(pIter, False)
-				else:
-						iCityOwner = pCity.getOwner()
-						iRange = 4  # Radius
-						for x in range(-iRange, iRange+1):
-								for y in range(-iRange, iRange+1):
-										loopPlot = plotXY(iX, iY, x, y)
-										if loopPlot.getImprovementType() in L.LImprFortSentry:
-												iRange2 = loopPlot.getNumUnits()
-												for iLoopUnit in range(iRange2):
-														pUnit = loopPlot.getUnit(iLoopUnit)
-														if pUnit:
-																if pUnit.getOwner() == iCityOwner:
-																		pUnit.setHasPromotion(iPromoFort, False)
-																		pUnit.setHasPromotion(iPromoFort2, False)
-																		pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX, iY, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+		if pCity.isCapital():
+				(pUnit, pIter) = pPlayer.firstUnit(False)
+				while pUnit:
+						pUnit.setHasPromotion(iPromoFort, False)
+						pUnit.setHasPromotion(iPromoFort2, False)
+						pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX, iY, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
+						(pUnit, pIter) = pPlayer.nextUnit(pIter, False)
+		else:
+				iCityOwner = pCity.getOwner()
+				iRange = 4  # Radius
+				for x in range(-iRange, iRange+1):
+						for y in range(-iRange, iRange+1):
+								loopPlot = plotXY(iX, iY, x, y)
+								if loopPlot.getImprovementType() in L.LImprFortSentry:
+										iRange2 = loopPlot.getNumUnits()
+										for iLoopUnit in range(iRange2):
+												pUnit = loopPlot.getUnit(iLoopUnit)
+												if pUnit:
+														if pUnit.getOwner() == iCityOwner:
+																pUnit.setHasPromotion(iPromoFort, False)
+																pUnit.setHasPromotion(iPromoFort2, False)
+																pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX, iY, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 
 # PAE 7.19.1: Terraforming durch den Grossen Propheten (Aktion 774 und KI): Wueste -> Ebene, Tundra -> Grasland
 # True: Feld umgewandelt, Einheit getoetet

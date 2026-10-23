@@ -109,7 +109,7 @@ def onGameStart():
 		iRand = CvUtil.myRandom(3, "WDG_SettlerOnGameStart")
 		if iRand == 1:
 			pCity = gc.getPlayer(iPlayer).getCapitalCity()
-			if pCity is not None:
+			if not pCity.isNone():
 				gc.getPlayer(iPlayer).initUnit(gc.getInfoTypeForString("UNIT_SETTLER"), pCity.getX(), pCity.getY(), UnitAITypes.UNITAI_SETTLE, DirectionTypes.DIRECTION_SOUTH)
 
 
@@ -368,7 +368,7 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 
 			# Die Heilige Stadt der Nordischen Mythen wird 1x aufgedeckt (aus [Event-1.1])
 			pHolyCity = gc.getGame().getHolyCity(gc.getInfoTypeForString("RELIGION_NORDIC"))
-			if pHolyCity is not None:
+			if not pHolyCity.isNone():
 				doRevealPlot(0, pHolyCity.plot(), False)
 
 			# Der erste Schritt ist getan. Ihr habt [get.cityname] erobert!
@@ -378,7 +378,8 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 			#Das Überraschungsmoment ist jetzt auf unserer Seite. Es empfielt sich, schnell weiter zu ziehen und die umliegenden Dörfer zu erobern.
 			#<EROBERT WEITERE STÄDTE>
 			#<EROBERT DIE HEILIGE STADT>
-			if gc.getPlayer(iNewOwner).isHuman():
+			# ohne Heilige Stadt kein PopUp (der Text nennt sie und ihren Besitzer)
+			if gc.getPlayer(iNewOwner).isHuman() and not pHolyCity.isNone():
 				szTextHead = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_HEAD", (pCity.getName(), ))
 				szTextBody = CyTranslator().getText("TXT_KEY_MESSAGE_WDG_FIRST_CITY_BODY", (pHolyCity.getName(), gc.getPlayer(pHolyCity.getOwner()).getName(), pHolyCity.getName()))
 				PopUpDDS("Art/Scenarios/WegDerGoten/WDG02.dds",szTextHead,szTextBody,"RIGHT")
@@ -424,6 +425,26 @@ def onCityAcquired(iPreviousOwner, iNewOwner, pCity):
 		popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
 		popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_CONQUER_OLD_GOTHS_OTHERS", (gc.getPlayer(iNewOwner).getCivilizationDescriptionKey(),pCity.getName())))
 		popupInfo.addPopup(0)
+
+
+#[EVENT-10.9] - onCityAcquired; Wenn die Alten Goten (Player 20) eine Stadt erobern
+	#[ABFRAGE] Ist es NICHT Hagelsberg, Gnesen oder Gotonen -> DANN
+	#Die Stadt wird 1x aufgedeckt (fuer den Spieler, Team 0)
+	#Plot (0,1): pPlot.addScriptData() fuer EVENT-10.9 (Meldung nur beim ersten Mal)
+	#Hagelsberg: x=95,y=83 / Gnesen: x=91,y=77 / Gotonen: x=102,y=71
+	if iNewOwner == 20 and (pCity.getX(), pCity.getY()) not in [(95, 83), (91, 77), (102, 71)]:
+		doRevealPlot(0, pCity.plot(), False)
+		#iCheck = CvUtil.getScriptData(gc.getMap().plot(0, 1), ["10_9"], "")
+		#if iCheck == "":
+		#[get.Leadername] hat [get.Cityname] erobert. Scheinbar hat er erkannt, dass er sein Reich erweitern sollte. Etwas spät!
+		#Zu gegebener Zeit werden wir ihn auch dort besuchen.
+		if gc.getPlayer(0).isHuman():
+			popupInfo = CyPopupInfo()
+			popupInfo.setButtonPopupType(ButtonPopupTypes.BUTTONPOPUP_TEXT)
+			popupInfo.setText(CyTranslator().getText("TXT_KEY_MESSAGE_WDG_OLD_GOTHS_EXPAND", (gc.getPlayer(20).getName(), pCity.getName())))
+			popupInfo.addPopup(0)
+		#	# setScriptData
+		#	CvUtil.addScriptData(gc.getMap().plot(0, 1), "10_9", "x")
 
 
 #[EVENT-13.1] - onCityAcquired; Wenn der Spieler (zum ersten Mal) eine Stadt eines Germanen (Player 1, 2, 3, 4) erobert:
@@ -805,7 +826,7 @@ def onFirstContact(argsList):
 
 		# Show Capital
 		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
-		if pCity is not None:
+		if not pCity.isNone():
 			doRevealPlot(0, pCity.plot(), True)
 
 #[EVENT-25.1] - onFirstContact; Wenn Kontakt zum Friesen (Player21) entsteht:
@@ -851,7 +872,7 @@ def onFirstContact(argsList):
 		popupInfo.addPopup(0)
 
 		pCity = gc.getPlayer(iHasMetTeamY).getCapitalCity()
-		if pCity is not None:
+		if not pCity.isNone():
 			doRevealPlot(0, pCity.plot(), True)
 
 
