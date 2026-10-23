@@ -745,6 +745,22 @@ Scuola di retorica
 		<Spanish>Bosque joven</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_NO_DEFENSIVE_STRIKE</Tag>
+		<English>No defensive strike of ranged units</English>
+		<French>Pas de tir de d&#233;fense des unit&#233;s &#224; distance</French>
+		<German>Kein Abwehrschuss von Fernk&#228;mpfern</German>
+		<Italian>Nessun tiro difensivo delle unit&#224; a distanza</Italian>
+		<Spanish>Sin disparo defensivo de las unidades a distancia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_GAMEOPTION_NO_DEFENSIVE_STRIKE_HELP</Tag>
+		<English>Without this option, before a melee attack a ranged unit of the defending stack (archers, slingers, catapults and others) shoots once per turn at the attacker. The volley never kills. Works with both the PAE and the BTS combat system. Corresponds to the system from Civ III.</English>
+		<French>Sans cette option, avant une attaque au corps &#224; corps, une unit&#233; &#224; distance de la pile en d&#233;fense (archers, frondeurs, catapultes et autres) tire une fois par tour sur l'attaquant. Le tir ne tue jamais. Fonctionne avec le syst&#232;me de combat PAE et BTS. Correspond au syst&#232;me de Civ III.</French>
+		<German>Ohne diese Option schie&#223;t vor einem Nahkampfangriff ein Fernk&#228;mpfer des verteidigenden Stapels (Bogensch&#252;tzen, Schleuderer, Katapulte und andere) einmal pro Runde auf den Angreifer. Der Schuss t&#246;tet nie. Funktioniert mit dem PAE- und dem BTS-Kampfsystem. Entspricht dem System aus Civ III.</German>
+		<Italian>Senza questa opzione, prima di un attacco in mischia un'unit&#224; a distanza della pila in difesa (arcieri, frombolieri, catapulte e altre) tira una volta per turno sull'attaccante. Il tiro non uccide mai. Funziona sia con il sistema di combattimento PAE che con quello BTS. Corrisponde al sistema di Civ III.</Italian>
+		<Spanish>Sin esta opci&#243;n, antes de un ataque cuerpo a cuerpo una unidad a distancia de la pila defensora (arqueros, honderos, catapultas y otras) dispara una vez por turno contra el atacante. El disparo nunca mata. Funciona con el sistema de combate PAE y con el de BTS. Corresponde al sistema de Civ III.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_NO_DEFORESTATION</Tag>
 		<English>No deforestation by unit production (desertification)</English>
 		<French>Absence de d&#233;forestation li&#233;e &#224; la production unitaire (d&#233;sertification)</French>

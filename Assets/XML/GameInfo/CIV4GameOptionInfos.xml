@@ -198,7 +198,7 @@
 		<GameOptionInfo>
 			<Type>GAMEOPTION_NO_DEFENSIVE_STRIKE</Type>
 			<Description>TXT_KEY_GAMEOPTION_NO_DEFENSIVE_STRIKE</Description>
-			<Help>TXT_KEY_GAMEOPTION_NO_DEFENSIVE_STRIKE</Help>
+			<Help>TXT_KEY_GAMEOPTION_NO_DEFENSIVE_STRIKE_HELP</Help>
 			<bDefault>0</bDefault>
 			<bVisible>1</bVisible>
 		</GameOptionInfo>

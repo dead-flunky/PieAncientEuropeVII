@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1h)
+# PAE – Übergabe an Claude Code (Stand 7.19.1i) => wird öffentlich zu 7.19.1
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -31,7 +31,8 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 - `PAE_Unit.doUpgradeVeteran` übernimmt keine ScriptData der alten Einheit (Szenario-Helden verlieren ihre Kennung beim Rang-Upgrade).
 - Events (`CvRandomEventInterface.py`): `PythonCanDo` und `PythonHelp` laufen auch nur lokal beim Popup-Aufbau → kein Zufall, keine Zustandsänderung, sonst OOS. Zufall nur in `PythonCanTrigger*` und `PythonCallback`. Jede im Event-XML genannte Python-Funktion muss existieren (fehlende `PythonCanDo` → uninitialisierter Wert in der DLL).
 - Event-XML kann viel ohne Python: `UnitCombatPromotions`/`UnitClassPromotions` (alle + künftige Einheiten), `iImprovementChange`, `iBonusChange`, `iRouteChange` (-1 = entfernen) auf dem Trigger-Feld.
-- Text-Tool: Neue Einträge bekamen ein Leerzeichen im Tag (`<Tag> TXT_KEY…`) → Key wird nicht gefunden. Nach Text-Änderungen prüfen.
+- Texte kommen zeitversetzt: Neue oder geänderte TXT_KEYs werden ins Online-Text-Tool übernommen und erst später als Text-XML ins Repo exportiert. Fehlen sie nach einem Commit im Repo, ist das kein Fehler. Bei Kontrollen nur kurz als "Texte noch offen" erwähnen und mit der Liste unter "Offen" abgleichen. Neue Keys dort eintragen, sobald sie geliefert sind; nach dem Export prüfen (auch auf das Leerzeichen im Tag) und streichen.
+- TXT_KEYs: Manche Einträge bekamen ein Leerzeichen im Tag (`<Tag> TXT_KEY…`) → Key wird nicht gefunden. Nach Text-Änderungen oder ab und zu mal bei allen prüfen.
 - AudioDefines im Repo können `/DE/-Pfade` oder auch `/EN/`-Pfade. Die Audiofiles (Gesprochene Tech-Zitate) dafür sind nicht im Repo.
 - Texte für Text-XMLs (Konzepte, Pedia, Meldungen) als XML liefern (`<TEXT>` mit `<Tag>` und allen fünf Sprachen English, French, German, Italian, Spanish), in UTF-8 und ohne `&#…;`-Codes. Das Online-Text-Tool kann auch die XML-Struktur der neuen TXT_KEYs importieren. Bei Änderungen an einem bestehenden Text ohne den `<TEXT>`-Block und TXT_KEY und Stelle (von-bis) mit Vorschautext nennen. Überall gerade Anführungszeichen ("), keine typografischen („ “ « »). Die Zeichenregel oben (nur Latin-1, keine Gedankenstriche usw.) gilt trotzdem.
 
@@ -51,6 +52,7 @@ Nur-Menschen-Funktionen für die KI umsetzen, empfohlene Reihenfolge:
 5. Heldendenkmal (758), Duell (761), Kamelwechsel (766)
 6. „Pirat werden“ (722) bleibt vermutlich bewusst nur für Menschen.
 7. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
+
 
 Optional:
 - `CvEventManager.py` Z. 2282 (Handler 776): auch den Ausgangstyp prüfen (nur Elefanten, nicht derselbe Typ).
@@ -512,8 +514,19 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 Erledigt (10/2026): PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cpp (Anzeige/Hilfetexte, OOS-sauber).
 
 ## Patch 7.19.1e–g (Claude Code)
-- Abwehrschuss (nur PAE-Kampf, aus bei `GAMEOPTION_NO_PAE_COMBAT`): Vor einem Nahkampfangriff einer Landeinheit schiesst der Fernkaempfer des verteidigenden Stapels mit dem groessten Schaden einmal pro Runde (`iAirRange` > 0, auch Katapulte; Rammen haben keinen Fernangriff). Nie toedlich (Grenze `iAirCombatLimit`, mind. 1 Trefferpunkt bleibt). Auswahl und Schaden zentral in `CvUnit::getDefensiveRangedStriker`, Bedingungen in `CvPlot::getAvailableDefensiveRangedUnit`.
+- Abwehrschuss (eigene Spieloption `GAMEOPTION_NO_DEFENSIVE_STRIKE` ab 7.19.1h, mit PAE- und BTS-Kampf): Vor einem Nahkampfangriff einer Landeinheit schiesst
 - Ablauf: `CvUnit::attack` -> `doDefensiveRangedStrike` -> bei sichtbarem Kampf Pause ueber den Kampf-Timer (8 Takte), Schuss-Animation in Takt 6 (4 Takte, in `updateCombat`), danach Nahkampf. Schuetze wird waehrend der Pause angezeigt (`CvPlot::setPAEShowUnit`, reine Anzeige). Zahlen fest im Code.
 - Kampfchance (`getCombatOdds` mit `iAttackerExtraDamage`), Kampfvorschau und KI (`CvUnitAI::AI_attackOdds`) rechnen den Abwehrschuss mit ein.
 - KI mit PAE-Kampfrunden (`AI_attackOdds`): ab 80 % Kampfchance immer Angriff; einzige starke Einheit im Stapel verteidigt lieber; ueberlebt sie die Kampfrunden sicher und steht im Stapel, greift sie immer an.
 - Brachland: unbewirtschaftete Modernisierung im Stadtradius verfaellt (1:20 pro Runde, erst nach 10 Runden), Bedingungen in `CvPlot::isFallowDecayPossible`, Hinweis in der Feld-Info.
+
+### Spieler-Feedback 7.19 (offen, Stand 22.10.2026)
+- **Zweiter Siedler optional machen** (`CvEventManager.onUnitBuilt`, Z. 4566–4583):
+  Spieler meldet, dass das Tempo am Anfang aus dem Gleichgewicht ist und es für Gelegenheitsspieler zu schwer wird. Er wünscht sich eine Spieloption.
+  Aktuell bekommt die KI den Zusatzsiedler bei `iHandicap > 5` ODER auf Large/Huge ODER zu 50 % per Zufall (alle Schwierigkeitsgrade, siehe Review E, Punkt 4.1). Der Mensch bekommt ihn nur auf Large/Huge.
+  Möglichkeiten:
+  1. Spieloption `GAMEOPTION_NO_SECOND_SETTLER` (DLL, Spielstände inkompatibel außer mit `CvInitCore::read`)
+  2. Ohne DLL: KI-Zufall und Kartengrößen-Bonus erst ab Prinz/König (Empfehlung)
+  3. Beides
+  Zu entscheiden: Option 1, 2 oder 3? Bekommt der Mensch auf Large/Huge den Siedler weiterhin immer?
+- Danach weiter mit Statthalter (757).

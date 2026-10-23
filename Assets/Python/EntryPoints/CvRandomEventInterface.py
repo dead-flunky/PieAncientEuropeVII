@@ -167,6 +167,25 @@ def getTemples():
 		]
 		return Temples
 
+
+######## PESTILENCE (Termiten, Heuschrecken) ###########
+
+# PAE 7.19.1: Ressource geht erst ab Klassik verloren
+def getHelpPestilence1(argsList):
+		kTriggeredData = argsList[1]
+		szHelp = ""
+		if gc.getPlayer(kTriggeredData.ePlayer).getCurrentEra() >= gc.getInfoTypeForString("ERA_CLASSICAL"):
+			iBonus = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY).getBonusType(-1)
+			if iBonus != -1:
+				szHelp = localText.getText("TXT_KEY_EVENT_BONUS_REMOVE", (gc.getBonusInfo(iBonus).getTextKey(), ))
+		return szHelp
+
+def applyPestilence1(argsList):
+		kTriggeredData = argsList[1]
+		if gc.getPlayer(kTriggeredData.ePlayer).getCurrentEra() >= gc.getInfoTypeForString("ERA_CLASSICAL"):
+			gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY).setBonusType(-1)
+
+
 ######## MARATHON ###########
 
 def canTriggerMarathon(argsList):

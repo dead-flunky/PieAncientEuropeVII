@@ -1753,6 +1753,7 @@ def doMobiliseFortifiedArmy(pCity):
 																		pUnit.setHasPromotion(iPromoFort2, False)
 																		pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX, iY, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 
+
 # Handelsposten errichten (soll kein Gold kosten ab PAE 6.5.2)
 # Grund: Strassen kosten Geld, Einheit kostet Geld (indirekt beim Bau, pro Runde)
 def doBuildHandelsposten(pUnit):
@@ -1773,7 +1774,74 @@ def doBuildHandelsposten(pUnit):
 		pPlot.setOwner(iPlayer)
 		# pPlayer.changeGold(-iPrice)
 		# pUnit.doCommand(CommandTypes.COMMAND_DELETE, -1, -1)
-		pUnit.kill(True, -1)  # RAMK_CTD
+		pUnit.kill(True, -1)
+
+# PAE 7.19.1: KI-Handelsposten (wie Aktion 736): naechste herrenlose Ressource im Umkreis von 8 Feldern, die der Spieler noch nicht hat
+# pUnit: Weg muss frei sein. Ohne Einheit (Stadt, AI_chooseProduction): gleiche Landmasse
+def getHandelspostenPlot_AI(iPlayer, pPlot, pUnit):
+		pPlayer = gc.getPlayer(iPlayer)
+		iTeam = pPlayer.getTeam()
+		if not gc.getTeam(iTeam).isHasTech(gc.getInfoTypeForString("TECH_WARENHANDEL")):
+				return None
+		iX = pPlot.getX()
+		iY = pPlot.getY()
+		iArea = pPlot.getArea()
+		pTarget = None
+		iBest = 999
+		for i in range(-8, 9):
+				for j in range(-8, 9):
+						pLoopPlot = plotXY(iX, iY, i, j)
+						if pLoopPlot is None or pLoopPlot.isNone() or pLoopPlot.getOwner() != -1:
+								continue
+						if pLoopPlot.isWater() or pLoopPlot.getArea() != iArea:
+								continue
+						iBonus = pLoopPlot.getBonusType(iTeam)
+						if iBonus == -1 or pPlayer.getNumAvailableBonuses(iBonus) > 0:
+								continue
+						iDist = plotDistance(iX, iY, pLoopPlot.getX(), pLoopPlot.getY())
+						if iDist < iBest:
+								if pUnit is None or iDist == 0 or pUnit.generatePath(pLoopPlot, 0, False, None):
+										iBest = iDist
+										pTarget = pLoopPlot
+		return pTarget
+
+# PAE 7.19.1: KI errichtet Handelsposten (wie Aktion 736) auf herrenlosen Ressourcen, die sie noch nicht hat
+# bSearch: auch im Umkreis suchen und hinziehen (nur Einheiten ohne Handelsroute)
+# True: Zug verbraucht (kill oder Mission)
+def doHandelsposten_AI(pUnit, bSearch):
+		if pUnit.getDomainType() != DomainTypes.DOMAIN_LAND:
+				return False
+		iTeam = pUnit.getTeam()
+		if not gc.getTeam(iTeam).isHasTech(gc.getInfoTypeForString("TECH_WARENHANDEL")):
+				return False
+		pPlayer = gc.getPlayer(pUnit.getOwner())
+		iX = pUnit.getX()
+		iY = pUnit.getY()
+		iRange = 0
+		if bSearch:
+				iRange = 8
+		pTarget = None
+		iBest = 999
+		for i in range(-iRange, iRange+1):
+				for j in range(-iRange, iRange+1):
+						pLoopPlot = plotXY(iX, iY, i, j)
+						if pLoopPlot is None or pLoopPlot.isNone() or pLoopPlot.isWater() or pLoopPlot.isCity() or pLoopPlot.getOwner() != -1:
+								continue
+						iBonus = pLoopPlot.getBonusType(iTeam)
+						if iBonus == -1 or pPlayer.getNumAvailableBonuses(iBonus) > 0:
+								continue
+						iDist = plotDistance(iX, iY, pLoopPlot.getX(), pLoopPlot.getY())
+						if iDist < iBest and (iDist == 0 or pUnit.generatePath(pLoopPlot, 0, False, None)):
+								iBest = iDist
+								pTarget = pLoopPlot
+		if pTarget is None:
+				return False
+		if iBest == 0:
+				doBuildHandelsposten(pUnit)
+		else:
+				pUnit.getGroup().pushMoveToMission(pTarget.getX(), pTarget.getY())
+		return True
+
 
 # isHills: PROMOTION_GUERILLA1
 # FEATURE_FOREST, FEATURE_DICHTERWALD: PROMOTION_WOODSMAN1
@@ -4435,9 +4503,9 @@ def doSettleStatthalter(pUnit, pCity):
 		# pPlayer = gc.getPlayer(pUnit.getOwner())
 		iBuilding = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
 		iBuildingClass = gc.getBuildingInfo(iBuilding).getBuildingClassType()
-		# Statthalter Happiness holen
-		iHappy = pCity.getBuildingHappyChange(iBuildingClass)
 		# Statthaltersitz Werte resetten
+		#iHappy = pCity.getBuildingHappyChange(iBuildingClass) # Statthalter Happiness holen
+		iHappy = 0 # PAE 7.19.1: neuer Statthalter -> alle Werte neu, auch die Tribut-Stimmung
 		pCity.setNumRealBuilding(iBuilding, 1)
 		pCity.setBuildingCommerceChange(iBuildingClass, CommerceTypes.COMMERCE_RESEARCH, 0)
 		pCity.setBuildingCommerceChange(iBuildingClass, CommerceTypes.COMMERCE_CULTURE, 0)
@@ -4480,27 +4548,53 @@ def doSettleStatthalter(pUnit, pCity):
 
 
 def doStatthalterTurn_AI(pUnit):
+		# PAE 7.19.2: KI siedelt Statthalter an (wie Aktion 757)
+		# Ziel: 1. Provinzpalast ohne Statthalter, 2. Stadt, die einen Provinzpalast bauen darf. Jeweils moeglichst weit weg von der Hauptstadt
+		# Bewaffnete Statthalter bleiben im Krieg und im Stapel bei der Armee
+		# True: Zug verbraucht (Mission oder kill), False: normale KI
+		if pUnit.getGroup().getNumUnits() > 1:
+				return False
+		pPlayer = gc.getPlayer(pUnit.getOwner())
+		if pUnit.canFight() and gc.getTeam(pPlayer.getTeam()).getAtWarCount(True) > 0:
+				return False
+		pCapital = pPlayer.getCapitalCity()
+		if pCapital.isNone():
+				return False
+		iBuilding = gc.getInfoTypeForString("BUILDING_PROVINZPALAST")
+		iBuildingClass = gc.getBuildingInfo(iBuilding).getBuildingClassType()
+		pTarget = None
+		iBest = -1
+		(loopCity, pIter) = pPlayer.firstCity(False)
+		while loopCity:
+				if not loopCity.isNone() and not loopCity.isCapital():
+						iValue = -1
+						if loopCity.getNumRealBuilding(iBuilding) > 0:
+								# noch kein Statthalter: alle Werte 0 (Happy nicht, das aendert auch der Tribut)
+								bFree = loopCity.getBuildingHealthChange(iBuildingClass) == 0
+								for iYield in (YieldTypes.YIELD_PRODUCTION, YieldTypes.YIELD_COMMERCE):
+										if loopCity.getBuildingYieldChange(iBuildingClass, iYield) != 0:
+												bFree = False
+								for iCommerce in (CommerceTypes.COMMERCE_RESEARCH, CommerceTypes.COMMERCE_CULTURE, CommerceTypes.COMMERCE_GOLD, CommerceTypes.COMMERCE_ESPIONAGE):
+										if loopCity.getBuildingCommerceChange(iBuildingClass, iCommerce) != 0:
+												bFree = False
+								if bFree:
+										iValue = 1000
+						elif loopCity.canConstruct(iBuilding, False, False, True):
+								iValue = 0
+						if iValue != -1:
+								iValue += plotDistance(loopCity.getX(), loopCity.getY(), pCapital.getX(), pCapital.getY())
+								if iValue > iBest and (pUnit.atPlot(loopCity.plot()) or pUnit.generatePath(loopCity.plot(), 0, False, None)):
+										iBest = iValue
+										pTarget = loopCity
+				(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
-		return
-
-		#pPlayer = gc.getPlayer(pUnit.getOwner())
-		#iBuilding = gc.getInfoTypeForString("BUILDING_STATTHALTER")
-		#iCityStatus = gc.getInfoTypeForString("BUILDING_STADT")
-
-		#(loopCity, pIter) = pPlayer.firstCity(False)
-		# while loopCity:
-		#    if loopCity is not None and not loopCity.isNone():
-		#        if loopCity.isHasBuilding(iCityStatus):
-		#            if not loopCity.isHasBuilding(iBuilding):
-		#                iDist = gc.getMap().calculatePathDistance(loopCity.plot(), pUnit.plot())
-		#                if iDist == -1:
-		#                    doSettleStatthalter(pUnit,loopCity)
-		#                else:
-		#                    pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, loopCity.getX(), loopCity.getY(), 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-		#                break
-		#    (loopCity, pIter) = pPlayer.nextCity(pIter, False)
-		#pUnit.getGroup().pushMission(MissionTypes.MISSION_SKIP, 0, 0, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
-		# doGoToNextUnit(pUnit)
+		if pTarget is None:
+				return False
+		if pUnit.atPlot(pTarget.plot()):
+				doSettleStatthalter(pUnit, pTarget)
+		else:
+				pUnit.getGroup().pushMoveToMission(pTarget.getX(), pTarget.getY())
+		return True
 # ------------------------------------------------------
 
 # Heldendenkmal / Siegesdenkmal ------------------------

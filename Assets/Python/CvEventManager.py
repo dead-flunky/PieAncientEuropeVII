@@ -3968,6 +3968,17 @@ class CvEventManager:
 							# ***TEST***
 							#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Palast erbaut (Zeile 2206)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
+					# PAE 7.19.1: Provinzpalast neu gebaut -> alte Statthalter-Werte loeschen
+					# (bleiben in der Stadt gespeichert, wenn der Palast entfernt, verkauft, zerstoert oder die Stadt erobert wurde)
+					elif iBuildingType == gc.getInfoTypeForString("BUILDING_PROVINZPALAST"):
+							iBuildingClass = gc.getBuildingInfo(iBuildingType).getBuildingClassType()
+							for iCommerce in (CommerceTypes.COMMERCE_RESEARCH, CommerceTypes.COMMERCE_CULTURE, CommerceTypes.COMMERCE_GOLD, CommerceTypes.COMMERCE_ESPIONAGE):
+									pCity.setBuildingCommerceChange(iBuildingClass, iCommerce, 0)
+							pCity.setBuildingYieldChange(iBuildingClass, YieldTypes.YIELD_PRODUCTION, 0)
+							pCity.setBuildingYieldChange(iBuildingClass, YieldTypes.YIELD_COMMERCE, 0)
+							pCity.setBuildingHappyChange(iBuildingClass, 0)
+							pCity.setBuildingHealthChange(iBuildingClass, 0)
+
 					# Kanalisation -> Suempfe werden rund um der Stadt entfernt (Sumpf/Swamps)
 					# Oder Deich, Damm
 					elif iBuildingType == gc.getInfoTypeForString("BUILDING_SANITATION"):
@@ -4513,12 +4524,12 @@ class CvEventManager:
 				'Unit Completed'
 				## Platy WorldBuilder ##
 				if CyGame().GetWorldBuilderMode() and not CvPlatyBuilderScreen.bPython:
-						return
+					return
 				## Platy WorldBuilder ##
 				# unit = argsList[0]
 				# player = PyPlayer(unit.getOwner())
 				if not self.__LOG_UNITBUILD:
-						return
+					return
 
 		# Global
 		def onUnitBuilt(self, argsList):
@@ -4538,49 +4549,45 @@ class CvEventManager:
 
 					# ++++ AI - Unit Built/Created
 					if not pPlayer.isHuman():
-							# PAE V: Pirate feature - disabled cause of possible OOS when too many active AI pirates
-							# if unit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA"):
-							# PAE_Unit.convertToPirate(city, unit):
+						# PAE V: Pirate feature - disabled cause of possible OOS when too many active AI pirates
+						# if unit.getDomainType() == gc.getInfoTypeForString("DOMAIN_SEA"):
+						# PAE_Unit.convertToPirate(city, unit):
 
-							# Stadtverteidiger
-							iNum = 0
-							if iUnitType in L.LBuildArchers or iUnitType in L.LBuildCatapults:
-									pPlot = city.plot()
-									iRange = pPlot.getNumUnits()
-									for i in range(iRange):
-											pLoopUnit = pPlot.getUnit(i)
-											if pLoopUnit and not pLoopUnit.isNone():
-													if pLoopUnit.getUnitType() == iUnitType and pLoopUnit.getOwner() == iPlayer:
-															iNum += 1
-									# UnitAIType 10 = UNITAI_CITY_DEFENSE
-									if (iUnitType in L.LBuildArchers and iNum < 3 or
-													iUnitType in L.LBuildCatapults and iNum < 2):
-											unit.setUnitAIType(10)
-							# Set offensive Formations
-							else:
-									PAE_Unit.doAIUnitFormations(unit, True, False, False)
+						# Stadtverteidiger
+						iNum = 0
+						if iUnitType in L.LBuildArchers or iUnitType in L.LBuildCatapults:
+							pPlot = city.plot()
+							iRange = pPlot.getNumUnits()
+							for i in range(iRange):
+								pLoopUnit = pPlot.getUnit(i)
+								if pLoopUnit and not pLoopUnit.isNone():
+									if pLoopUnit.getUnitType() == iUnitType and pLoopUnit.getOwner() == iPlayer:
+										iNum += 1
+							# UnitAIType 10 = UNITAI_CITY_DEFENSE
+							if (iUnitType in L.LBuildArchers and iNum < 3 or iUnitType in L.LBuildCatapults and iNum < 2):
+								unit.setUnitAIType(10)
+						# Set offensive Formations
+						else:
+							PAE_Unit.doAIUnitFormations(unit, True, False, False)
 
-							# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
-							iHandicap = gc.getGame().getHandicapType()
-							# 50% or fixed 2nd Settler for AI (fix: Immortal, Deity: PAE V, Emperor: PAE VII)
-							if iUnitType == gc.getInfoTypeForString("UNIT_SETTLER"):
-								if iHandicap > 5 or gc.getMap().getWorldSize() >= gc.getInfoTypeForString("WORLDSIZE_LARGE") or CvUtil.myRandom(2, "onUnitBuilt_AIGetsSecondSettler") == 1:
-									CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
+						# Handicap: 0 (Settler) - 8 (Deity) ; 5 = King
+						iHandicap = gc.getGame().getHandicapType()
 
-							# Experienced units on higher handicap level (PAE V Patch 3)
-							if iHandicap > 4:
-									if unit.isMilitaryHappiness() or unit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL"):
-											unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
-											if iHandicap > 5 and CvUtil.myRandom(3, "AIUnitPromoBonusHandicap6") == 1:
-													unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT2"), True)
-													if iHandicap > 6 and CvUtil.myRandom(2, "AIUnitPromoBonusHandicap7") == 1:
-															unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT3"), True)
-															if iHandicap > 7 and CvUtil.myRandom(2, "AIUnitPromoBonusHandicap8") == 1:
-																	unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT4"), True)
-					# PAE: Auf grossen Karten (Large, Huge) bekommt auch der Mensch zu jedem Siedler einen zweiten
-					else:
-							if iUnitType == gc.getInfoTypeForString("UNIT_SETTLER") and gc.getMap().getWorldSize() >= gc.getInfoTypeForString("WORLDSIZE_LARGE"):
-									CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
+						# 50% 2nd Settler for AI only as handicap bonus (Emperor, Immortal, Deity) - PAE 7.19.1
+						if iHandicap > 5 and iUnitType == L.UNIT_SETTLER:
+							if CvUtil.myRandom(2, "onUnitBuilt_AIGetsSecondSettler") == 1
+								CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
+
+						# Experienced units on higher handicap level (PAE V Patch 3)
+						if iHandicap > 4:
+							if unit.isMilitaryHappiness() or unit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL"):
+								unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT1"), True)
+								if iHandicap > 5 and CvUtil.myRandom(3, "AIUnitPromoBonusHandicap6") == 1:
+									unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT2"), True)
+									if iHandicap > 6 and CvUtil.myRandom(2, "AIUnitPromoBonusHandicap7") == 1:
+										unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT3"), True)
+										if iHandicap > 7 and CvUtil.myRandom(2, "AIUnitPromoBonusHandicap8") == 1:
+											unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_COMBAT4"), True)
 
 					# Log Message (BTS)
 					CvAdvisorUtils.unitBuiltFeats(city, unit)
@@ -4588,53 +4595,53 @@ class CvEventManager:
 					# ++++ Versorger / Supply Unit
 					# if unit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_HEALER"):
 					if unit.getUnitType() == gc.getInfoTypeForString("UNIT_SUPPLY_WAGON"):
-							PAE_Unit.initSupply(unit)
+						PAE_Unit.initSupply(unit)
 
 					# ++++ Statthalter / Governor
 					if unit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_STATTHALTER"):
-							PAE_Unit.initStatthalter(unit)
+						PAE_Unit.initStatthalter(unit)
 
 					# ++++ Auswanderer (Emigrants), die die Stadtbevoelkerung senken
 					if unit.getUnitType() == gc.getInfoTypeForString("UNIT_EMIGRANT"):
-							PAE_City.onEmigrantBuilt(city, unit)
+						PAE_City.onEmigrantBuilt(city, unit)
 
 					# ++++ Bronze-Feature / Wald roden / Waldrodung / Abholzung / Desertifizierung / betrifft nicht die Barbarenstaedte
 					if not gc.getGame().isOption(GameOptionTypes.GAMEOPTION_NO_DEFORESTATION):
-							if not pPlayer.isBarbarian() and not pPlayer.isMinorCiv():
-									PAE_City.doDesertification(city, unit)
+						if not pPlayer.isBarbarian() and not pPlayer.isMinorCiv():
+							PAE_City.doDesertification(city, unit)
 
 					# PAE V: Mercenary promotion
 					if iPlayer != city.getOriginalOwner():
-							if city.getPopulation() < 9:
-									if city.plot().calculateCulturePercent(iPlayer) < 75:
-											if unit.isMilitaryHappiness() or unit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL"):
-													unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_MERCENARY"), True)
+						if city.getPopulation() < 9:
+							if city.plot().calculateCulturePercent(iPlayer) < 75:
+								if unit.isMilitaryHappiness() or unit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL"):
+									unit.setHasPromotion(gc.getInfoTypeForString("PROMOTION_MERCENARY"), True)
 
 					# Ranked Units / Dienstgrade
 					if pPlayer.getCivilizationType() in L.LRankUnitBuilt:
-							PAE_Unit.doRankPromo(unit)
+						PAE_Unit.doRankPromo(unit)
 
 					# PAE Unit Auto Promotions
 					if gc.getUnitInfo(iUnitType).getCombat() > 0:
-							# Nicht für Schiffe (PAE 6.4)
-							if unit.getDomainType() != DomainTypes.DOMAIN_SEA:
-									#  if unit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL"):
-									#      if iUnitType != gc.getInfoTypeForString("UNIT_WORKBOAT"):
-									#          PAE_Unit.doCityUnitPromotions4Ships(city, unit)
-									# else:
-									PAE_Unit.doCityUnitPromotions(city, unit)
-									if unit.getUnitCombatType() in L.DManufakturen:
-											iBuilding = L.DManufakturen[unit.getUnitCombatType()]
-											if city.isHasBuilding(iBuilding):
-													NewUnit = CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
-													PAE_Unit.copyPromotions(unit, NewUnit)
-													# geht leider nicht:
-													#NewUnit.getGroup().pushMission(MissionTypes.MISSION_MULTI_SELECT, unit.getGroupID(), unit.getGroupID(), -1, True, False, MissionAITypes.NO_MISSIONAI, NewUnit.plot(), NewUnit)
+						# Nicht für Schiffe (PAE 6.4)
+						if unit.getDomainType() != DomainTypes.DOMAIN_SEA:
+							#  if unit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL"):
+							#      if iUnitType != gc.getInfoTypeForString("UNIT_WORKBOAT"):
+							#          PAE_Unit.doCityUnitPromotions4Ships(city, unit)
+							# else:
+							PAE_Unit.doCityUnitPromotions(city, unit)
+							if unit.getUnitCombatType() in L.DManufakturen:
+								iBuilding = L.DManufakturen[unit.getUnitCombatType()]
+								if city.isHasBuilding(iBuilding):
+									NewUnit = CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
+									PAE_Unit.copyPromotions(unit, NewUnit)
+									# geht leider nicht:
+									#NewUnit.getGroup().pushMission(MissionTypes.MISSION_MULTI_SELECT, unit.getGroupID(), unit.getGroupID(), -1, True, False, MissionAITypes.NO_MISSIONAI, NewUnit.plot(), NewUnit)
 
 					# PAE unit costs some food from storage
 					# AI disabled: PAE VI Patch 6.9
 					if pPlayer.isHuman():
-							PAE_Unit.doDecreaseFoodOnUnitBuilt(city, unit)
+						PAE_Unit.doDecreaseFoodOnUnitBuilt(city, unit)
 
 					# PAE 6.14: Religion: Einheiten verweigern Kriegsdienst - Religions PHASE 2
 					PAE_Christen.doRefuseUnitBuilt(city, unit)

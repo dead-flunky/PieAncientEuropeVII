@@ -3236,7 +3236,7 @@
 			<ImprovementType>NONE</ImprovementType>
 			<iImprovementChange>-1</iImprovementChange>
 			<BonusType>NONE</BonusType>
-			<iBonusChange>-1</iBonusChange>
+			<iBonusChange>0</iBonusChange>
 			<RouteType>NONE</RouteType>
 			<iRouteChange>0</iRouteChange>
 			<BonusRevealed>NONE</BonusRevealed>
@@ -3252,10 +3252,10 @@
 			<AdditionalEvents/>
 			<EventTimes/>
 			<ClearEvents/>
-			<PythonCallback/>
+			<PythonCallback>applyPestilence1</PythonCallback>
 			<PythonExpireCheck/>
 			<PythonCanDo/>
-			<PythonHelp/>
+			<PythonHelp>getHelpPestilence1</PythonHelp>
 			<Button>,Art/Interface/Buttons/Process/Blank.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,5</Button>
 			<iAIValue>1000</iAIValue>
 		</EventInfo>

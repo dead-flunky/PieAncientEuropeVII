@@ -868,8 +868,8 @@ class CvGameUtils:
 		def cannotTrain(self, argsList):
 				pCity = argsList[0]
 				eUnit = argsList[1]
-				# bContinue = argsList[2]
-				# bTestVisible = argsList[3]
+				bContinue = argsList[2]
+				bTestVisible = argsList[3]
 				# bIgnoreCost = argsList[4]
 				# bIgnoreUpgrades = argsList[5]
 
@@ -913,12 +913,26 @@ class CvGameUtils:
 						if iAnz >= 10:
 								return True
 
-
-				# Stadtstaaten sollen keine Siedler bauen dürfen / City States
+				# Siedler / Settlers
 				if eUnit == L.UNIT_SETTLER:
 						iPlayer = pCity.getOwner()
 						pPlayer = gc.getPlayer(iPlayer)
+
+						# PAE Stadtstaaten / City states (TECH, kein Siedlerbau erlaubt)
 						if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_CITY_STATE")):
+								return True
+
+						# PAE 7.19.2: Siedler-Limit (statt iMaxPlayerInstances): 1, auf Large/Huge 2
+						iMax = 1
+						if gc.getMap().getWorldSize() >= gc.getInfoTypeForString("WORLDSIZE_LARGE"):
+								iMax = 2
+						iUnitClass = gc.getUnitInfo(eUnit).getUnitClassType()
+						iAnz = pPlayer.getUnitClassCount(iUnitClass)
+						if not bTestVisible:
+								iAnz += pPlayer.getUnitClassMaking(iUnitClass)
+								if bContinue:
+										iAnz -= 1
+						if iAnz >= iMax:
 								return True
 
 				return False
@@ -1513,6 +1527,29 @@ class CvGameUtils:
 								pCity.pushOrder(OrderTypes.ORDER_CREATE, iProject, -1, False, False, True, False)
 								return True
 
+				# PAE 7.19.1: Haendler fuer einen Handelsposten (736) bauen, wenn eine neue Ressource in der Naehe herrenlos ist
+				# und kein Haendler ohne Handelsroute unterwegs ist oder gebaut wird
+				if PAE_Unit.getHandelspostenPlot_AI(iOwner, pCity.plot(), None) is not None:
+						iUnit = eCiv.getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_TRADE_MERCHANT"))
+						if iUnit != -1 and pCity.canTrain(iUnit, 0, 0):
+								bUnit = False
+								(loopUnit, pIter) = pPlayer.firstUnit(False)
+								while loopUnit:
+										if loopUnit.getUnitType() in L.LTradeUnits and loopUnit.getDomainType() == DomainTypes.DOMAIN_LAND and not int(CvUtil.getScriptData(loopUnit, ["autA", "t"], 0)):
+												bUnit = True
+												break
+										(loopUnit, pIter) = pPlayer.nextUnit(pIter, False)
+								if not bUnit:
+										(loopCity, pIter) = pPlayer.firstCity(False)
+										while loopCity:
+												if loopCity.getProductionUnit() in L.LTradeUnits:
+														bUnit = True
+														break
+												(loopCity, pIter) = pPlayer.nextCity(pIter, False)
+								if not bUnit:
+										pCity.pushOrder(OrderTypes.ORDER_TRAIN, iUnit, -1, False, False, True, False)
+										return True
+
 				# Einheitenproduktion -----------
 				# Aber erst ab Pop 5
 				if pCity.getPopulation() > 4:
@@ -1579,7 +1616,7 @@ class CvGameUtils:
 														while loopCity:
 																if not loopCity.isNone() and loopCity.getOwner() == iOwner:  # only valid cities
 																		if loopCity.isProductionUnit():
-																				if loopCity.getUnitProduction(iUnit):
+																				if loopCity.getProductionUnit() == iUnit:
 																						bUnit = True
 																						break
 																(loopCity, pIter) = pPlayer.nextCity(pIter, False)
@@ -1852,6 +1889,20 @@ class CvGameUtils:
 										pOwner.changeGold(25)
 										pUnit.kill(True, -1)
 										return True
+								else:
+										# PAE 7.19.1: Haendler ohne Route errichten zuerst einen Handelsposten (736) auf einer neuen Ressource in der Naehe
+										if pUnit.getDomainType() == DomainTypes.DOMAIN_LAND:
+												pTarget = PAE_Unit.getHandelspostenPlot_AI(iOwner, pPlot, pUnit)
+												if pTarget is not None:
+														if pUnit.atPlot(pTarget):
+																PAE_Unit.doBuildHandelsposten(pUnit)
+														else:
+																pUnit.getGroup().pushMoveToMission(pTarget.getX(), pTarget.getY())
+														return True
+										if not PAE_Trade.doAssignTradeRoute_AI(pUnit):
+												pOwner.changeGold(25)
+												pUnit.kill(True, -1)
+												return True
 
 								bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0))
 								if bTradeRouteActive:
@@ -1867,8 +1918,11 @@ class CvGameUtils:
 														CvUtil.removeScriptData(pUnit, "autS")
 										return True
 								elif not PAE_Trade.doAssignTradeRoute_AI(pUnit):
+										# PAE 7.19.1: ohne Handelsroute lieber einen Handelsposten errichten als verkaufen
+										if PAE_Unit.doHandelsposten_AI(pUnit, True):
+												return True
 										pOwner.changeGold(25)
-										pUnit.kill(True, -1)  # RAMK_CTD
+										pUnit.kill(True, -1)
 										return True
 
 								if pUnit.getDamage() > 0:
@@ -1884,7 +1938,7 @@ class CvGameUtils:
 										pUnit.getGroup().pushMoveToMission(pCity.getX(), pCity.getY())
 										if pUnit.getX() == pCity.getX() and pUnit.getY() == pCity.getY():
 												pCity.changeFood(PAE_Unit.getUnitSupplyFood())
-												pUnit.kill(True, -1)  # RAMK_CTD
+												pUnit.kill(True, -1)
 										return True
 
 						iCivType = pUnit.getCivilizationType()
@@ -2558,11 +2612,10 @@ class CvGameUtils:
 																		PAE_Unit.doBurnDownForest(pUnit)
 																		#return True
 
-
-						# Governor / Statthalter
-						# if pUnit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_STATTHALTER"):
-						#    PAE_Unit.doStatthalterTurn_AI(pUnit)
-						#    return True
+						# Governor / Statthalter (PAE 7.19.1)
+						if pUnit.getUnitClassType() == gc.getInfoTypeForString("UNITCLASS_STATTHALTER"):
+								if PAE_Unit.doStatthalterTurn_AI(pUnit):
+										return True
 
 				return False
 

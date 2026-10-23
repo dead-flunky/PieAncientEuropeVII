@@ -2832,6 +2832,8 @@ Battle on land:
 
 30) Combat experience for siege units: Units can automatically receive higher levels for barrage fire and accuracy after victorious battles
 
+31) Defensive Strike (from CIV III): Before a melee attack, a ranged unit of the defending stack shoots once per turn at the attacker (never deadly, can be switched off as a game option). See below.
+
 
 Battle on water:
 
@@ -2896,12 +2898,12 @@ After every battle, there is a chance that a plague appears on the battlefield (
 
 [H2]Defensive volley of ranged units[\H2]
 
-Only with the PAE combat system (combat rounds).
+Can be switched off with the game option "No defensive strike of ranged units". Works with both combat systems (PAE combat rounds and BTS).
 [ICON_BULLET] Before a land unit attacks a plot in melee, a unit with ranged attack of the defending stack (archers, slingers, javelin throwers, horse archers, catapults) shoots once at the attacker.
 [ICON_BULLET] Each ranged unit can do this once per turn. If there are several in the stack, the next attack is met by the next one.
 [ICON_BULLET] The damage is calculated like a normal ranged attack: the stronger the ranged unit compared to the attacker, the higher the damage. The volley never kills the attacker; most ranged units can inflict up to 50% damage, catapults more.
 [ICON_BULLET] After that the attacker fights the best defender of the stack as usual, but already weakened.
-[ICON_BULLET] The combat preview shows if an enemy ranged unit can shoot before the battle. The displayed combat odds already include this volley.</English>
+[ICON_BULLET] The combat preview shows if an enemy ranged unit can shoot before the battle. The displayed combat odds already include this strike.</English>
 		<French>
 [H1]Combat[\H1]
 Les combats entre unit&#233;s dans PAE s'accompagnent d'effets tr&#232;s vari&#233;s :
@@ -2968,6 +2970,8 @@ Combat sur terre :
 
 30) Exp&#233;rience de combat pour les unit&#233;s de si&#232;ge : Apr&#232;s une victoire, les unit&#233;s peuvent automatiquement am&#233;liorer leurs comp&#233;tences de tir de barrage et de pr&#233;cision.
 
+31) Tir de d&#233;fense (de CIV III) : Avant une attaque au corps &#224; corps, une unit&#233; &#224; distance de la pile en d&#233;fense tire une fois par tour sur l'attaquant (jamais mortel, d&#233;sactivable en option de jeu). Voir ci-dessous.
+
 
 Combat sur mer:
 
@@ -3031,7 +3035,7 @@ Apr&#232;s chaque bataille, il y a un risque d'apparition d'une &#233;pid&#233;m
 
 [H2]Tir de d&#233;fense des unit&#233;s &#224; distance[\H2]
 
-Uniquement avec le syst&#232;me de combat PAE (rounds de combat).
+Peut &#234;tre d&#233;sactiv&#233; avec l'option de jeu "Pas de tir de d&#233;fense des unit&#233;s &#224; distance". Fonctionne avec les deux syst&#232;mes de combat (rounds de combat PAE et BTS).
 [ICON_BULLET] Avant qu'une unit&#233; terrestre n'attaque une case au corps &#224; corps, une unit&#233; avec attaque &#224; distance de la pile en d&#233;fense (archers, frondeurs, lanceurs de javelots, archers mont&#233;s, catapultes) tire une fois sur l'attaquant.
 [ICON_BULLET] Chaque unit&#233; &#224; distance peut le faire une fois par tour. S'il y en a plusieurs dans la pile, l'attaque suivante est accueillie par la suivante.
 [ICON_BULLET] Les d&#233;g&#226;ts sont calcul&#233;s comme pour une attaque &#224; distance normale : plus l'unit&#233; &#224; distance est forte par rapport &#224; l'attaquant, plus les d&#233;g&#226;ts sont &#233;lev&#233;s. Le tir ne tue jamais l'attaquant ; la plupart des unit&#233;s &#224; distance peuvent infliger jusqu'&#224; 50% de d&#233;g&#226;ts, les catapultes davantage.
@@ -3104,6 +3108,8 @@ Kampf zu Land:
 
 30) Kampferfahrung f&#252;r Belagerungseinheiten: k&#246;nnen bei siegreichen K&#228;mpfen automatisch eine h&#246;here Stufe f&#252;r Sperrfeuer und Genauigkeit erhalten
 
+31) Abwehrschuss (aus CIV III): Vor einem Nahkampfangriff schie&#223;t ein Fernk&#228;mpfer des verteidigenden Stapels einmal pro Runde auf den Angreifer (nie t&#246;dlich, als Spieloption abschaltbar). Siehe unten
+
 
 Kampf zu Wasser:
 
@@ -3168,7 +3174,7 @@ Nach jedem Kampf besteht die Chance, dass auf dem Schlachtfeld (Plot des Angreif
 
 [H2]Abwehrschuss von Fernk&#228;mpfern[\H2]
 
-Nur mit dem PAE-Kampfsystem (Kampfrunden).
+Abschaltbar &#252;ber die Spieloption "Kein Abwehrschuss von Fernk&#228;mpfern". Funktioniert mit beiden Kampfsystemen (PAE-Kampfrunden und BTS).
 [ICON_BULLET] Bevor eine Landeinheit ein Feld im Nahkampf angreift, schie&#223;t eine Einheit mit Fernangriff des verteidigenden Stapels (Bogensch&#252;tzen, Schleuderer, Speerwerfer, berittene Bogensch&#252;tzen, Katapulte) einmal auf den Angreifer.
 [ICON_BULLET] Jeder Fernk&#228;mpfer kann das einmal pro Runde. Stehen mehrere im Stapel, empf&#228;ngt der n&#228;chste den n&#228;chsten Angriff.
 [ICON_BULLET] Der Schaden wird wie bei einem normalen Fernangriff berechnet: Je st&#228;rker der Fernk&#228;mpfer im Vergleich zum Angreifer, desto h&#246;her der Schaden. Der Abwehrschuss t&#246;tet den Angreifer nie; die meisten Fernk&#228;mpfer k&#246;nnen bis zu 50% Schaden anrichten, Katapulte mehr.
@@ -3242,6 +3248,8 @@ Unit&#224;-Classifica esperienza[\LINK]
 
 30) Esperienza di combattimento per unit&#224; d'assedio: le unit&#224; possono ricevere automaticamente livelli pi&#249; alti di fuoco di sbarramento e precisione dopo battaglie vittoriose
 
+31) Tiro difensivo (da CIV III): Prima di un attacco in mischia, un'unit&#224; a distanza della pila in difesa tira una volta per turno sull'attaccante (mai mortale, disattivabile come opzione di gioco). Vedi sotto.
+
 
 Combattimento in mare:
 
@@ -3304,7 +3312,7 @@ Dopo ogni battaglia, c'&#232; la probabilit&#224; che una malattia appaia sul ca
 
 [H2]Tiro difensivo delle unit&#224; a distanza[\H2]
 
-Solo con il sistema di combattimento PAE (round di combattimento).
+Pu&#242; essere disattivato con l'opzione di gioco "Nessun tiro difensivo delle unit&#224; a distanza". Funziona con entrambi i sistemi di combattimento (round di combattimento PAE e BTS).
 [ICON_BULLET] Prima che un'unit&#224; terrestre attacchi una casella in mischia, un'unit&#224; con attacco a distanza della pila in difesa (arcieri, frombolieri, lanciatori di giavellotto, arcieri a cavallo, catapulte) tira una volta sull'attaccante.
 [ICON_BULLET] Ogni unit&#224; a distanza pu&#242; farlo una volta per turno. Se nella pila ce ne sono diverse, l'attacco successivo viene accolto dalla successiva.
 [ICON_BULLET] Il danno viene calcolato come per un normale attacco a distanza: pi&#249; l'unit&#224; a distanza &#232; forte rispetto all'attaccante, maggiore &#232; il danno. Il tiro non uccide mai l'attaccante; la maggior parte delle unit&#224; a distanza pu&#242; infliggere fino al 50% di danno, le catapulte di pi&#249;.
@@ -3377,6 +3385,8 @@ Batallas terrestres:
 
 30) Experiencia de combate para unidades de asedio: Las unidades pueden recibir autom&#225;ticamente niveles m&#225;s altos de fuego de barrera y precisi&#243;n tras victorias en batallas.
 
+31) Disparo defensivo (de CIV III): Antes de un ataque cuerpo a cuerpo, una unidad a distancia de la pila defensora dispara una vez por turno contra el atacante (nunca mortal, se puede desactivar como opci&#243;n de juego). Ver abajo.
+
 
 Batalla en el agua:
 
@@ -3440,7 +3450,7 @@ Despu&#233;s de cada combate, hay una posibilidad de que una peste aparezca en e
 
 [H2]Disparo defensivo de las unidades a distancia[\H2]
 
-Solo con el sistema de combate PAE (rondas de combate).
+Se puede desactivar con la opci&#243;n de juego "Sin disparo defensivo de las unidades a distancia". Funciona con ambos sistemas de combate (rondas de combate PAE y BTS).
 [ICON_BULLET] Antes de que una unidad terrestre ataque una casilla cuerpo a cuerpo, una unidad con ataque a distancia de la pila defensora (arqueros, honderos, lanzadores de jabalina, arqueros a caballo, catapultas) dispara una vez contra el atacante.
 [ICON_BULLET] Cada unidad a distancia puede hacerlo una vez por turno. Si hay varias en la pila, el siguiente ataque lo recibe la siguiente.
 [ICON_BULLET] El da&#241;o se calcula como en un ataque a distancia normal: cuanto m&#225;s fuerte sea la unidad a distancia en comparaci&#243;n con el atacante, mayor ser&#225; el da&#241;o. El disparo nunca mata al atacante; la mayor&#237;a de las unidades a distancia pueden causar hasta un 50% de da&#241;o, las catapultas m&#225;s.
