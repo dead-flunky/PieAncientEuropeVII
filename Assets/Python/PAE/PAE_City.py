@@ -4229,7 +4229,7 @@ def doFreeTechMissionary(iTechType, iPlayer):
 						lCities = []
 						(loopCity, pIter) = pPlayer.firstCity(False)
 						while loopCity:
-								if not loopCity.isNone() and loopCity.getOwner() == iPlayer:  # only valid cities
+								if not loopCity.isNone() and loopCity.getOwner() == i: # only valid cities
 										lCities.append(loopCity)
 								(loopCity, pIter) = pPlayer.nextCity(pIter, False)
 
@@ -4243,9 +4243,6 @@ def doFreeTechMissionary(iTechType, iPlayer):
 
 								# Matriarchist
 								if iTechType == gc.getInfoTypeForString("TECH_FRUCHTBARKEIT"):
-										# PAE 6.15: eine zweite Einheit erstellen
-										NewUnit2 = pPlayer.initUnit(iUnit, iRandCity.getX(), iRandCity.getY(), UnitAITypes.UNITAI_MISSIONARY, DirectionTypes.DIRECTION_SOUTH)
-
 										# Verschiedene Gottesanbeter
 										lCivs = {
 												gc.getInfoTypeForString("CIVILIZATION_CELT"): "TXT_KEY_UNIT_MATRIACHAT_CELTS",
@@ -4275,24 +4272,16 @@ def doFreeTechMissionary(iTechType, iPlayer):
 												text = CyTranslator().getText(lCivs[pPlayer.getCivilizationType()], ("",))
 												text = text + " " + CyTranslator().getText("TXT_KEY_UNIT_KULT_FOLLOWER", ("",))
 												NewUnit.setName(text)
-												NewUnit2.setName(text)
 										except KeyError:
 												pass
-										
-
-								# ***TEST***
-								#CyInterface().addMessage(gc.getGame().getActivePlayer(), True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TEST",("Matriachist bekommen (Zeile 2848)",1)), None, 2, None, ColorTypes(10), 0, 0, False, False)
 
 								# Kybele/Cybele
 								elif iTechType == gc.getInfoTypeForString("TECH_SENSE"):
-										# PAE 6.15: eine zweite Einheit erstellen
-										NewUnit2 = pPlayer.initUnit(iUnit, iRandCity.getX(), iRandCity.getY(), UnitAITypes.UNITAI_MISSIONARY, DirectionTypes.DIRECTION_SOUTH)
+										# PAE 7.19.1: kein zweiter Kultist mehr, die erste Ansiedlung gelingt immer (CvUnit::spreadCorporation)
+										pass
 
 								# Heroenkultist
 								elif iTechType == gc.getInfoTypeForString("TECH_GLADIATOR"):
-										# PAE 6.15: eine zweite Einheit erstellen
-										NewUnit2 = pPlayer.initUnit(iUnit, iRandCity.getX(), iRandCity.getY(), UnitAITypes.UNITAI_MISSIONARY, DirectionTypes.DIRECTION_SOUTH)
-
 										lCivs = {
 												gc.getInfoTypeForString("CIVILIZATION_CELT"): "TXT_KEY_UNIT_HEROEN_CELTS",
 												gc.getInfoTypeForString("CIVILIZATION_GERMANEN"): "TXT_KEY_UNIT_HEROEN_GERMAN",
@@ -4316,7 +4305,6 @@ def doFreeTechMissionary(iTechType, iPlayer):
 												text = CyTranslator().getText(lCivs[pPlayer.getCivilizationType()], ("",))
 												text = text + " " + CyTranslator().getText("TXT_KEY_UNIT_KULT_FOLLOWER", ("",))
 												NewUnit.setName(text)
-												NewUnit2.setName(text)
 										except KeyError:
 												pass
 

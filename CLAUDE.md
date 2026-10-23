@@ -41,14 +41,26 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 
 
 ## Offen
-1. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
+1. DLL-Check (BTS-Teile ohne PAE-Markierung, Stichprobe 24.10.2026):
+   - Rundenzeit: `CvPlayerAI::AI_updateFoundValues` läuft jede Runde für jeden Spieler über alle aufgedeckten Felder → seltener (alle N Runden, nur mit Siedlern, Barbaren seltener). `AI_getPlotDanger` ohne Cache (BBAI-Danger-Cache übernehmen). Python-Aufrufe ohne Schalter, die immer False/0 liefern: `doGrowth`, `doCulture`, `doPlotCulture`, `doProduction`, `doReligion`, `doGreatPeople` (pro Stadt), `doGold`, `doResearch`, `doCombat`, `getExtraCost` (bei jeder Kostenberechnung) → entfernen oder per GlobalDefine schaltbar. `AI_unitUpdate` auch für Tiere/Treibgut → in der DLL vorfiltern. Messen mit `PAE_TIME_CHECK`.
+   - Geprüft, unauffällig: `GET_PLAYER(Feld->getOwner())` (abgesichert), `getActivePlayer` in Spiellogik (nur Anzeige), kein Sync-Zufall in Anzeige-Dateien.
+   - Offen: Abgleich mit Unofficial Patch 1.61 (nur teilweise drin), ggf. BBAI/K-Mod-Teile übernehmen.
+
 
 Optional:
-- P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
+- Rundenzeit (Stichprobe 24.10.2026, nach Hebel):
+  1. `PAE_Cultivation.doCultivation_AI`: Preisberechnung sucht pro Stadt und Gut die ganze Karte ab (nationaler Preis) → eigene Güter einmal pro Aufruf sammeln bzw. `getNumAvailableBonuses`.
+  2. Auswanderer-KI (`AI_unitUpdate`, Gemeinde bauen): ganze Karte + Wegstrecke für jedes Dorf → nur Stadtradien, nach Luftlinie sortieren, Weg nur für den besten Kandidaten.
+  3. P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
+  4. KI-Fernangriff aus `onEndPlayerTurn` nach C++ (`CvPlayerAI::AI_doTurnUnitsPre`).
+  5. `AI_unitUpdate`: restliche `getInfoTypeForString` auf `L.`-Konstanten umstellen (zuerst die Zweige für Militäreinheiten).
+  6. `AI_chooseProduction` „Sonstige spezielle Einheiten“: Schleifen über alle Einheiten/Städte pro Kandidat → einmal zählen.
+  7. Zähler für Callbacks (`AI_unitUpdate`, `cannotTrain`, `cannotConstruct`, `AI_chooseProduction`), da `bPAETimeCheck` sie nicht erfasst.
+- Fallen: restliche `isHasBuilding` vor `setNumRealBuilding(…, 0)` auf `getNumRealBuilding` umstellen (Eroberung, Versklaven, Olympionike, Trait-Gebäude, Reliquie/Martyrion). Neue Handler prüfen ihre Kernbedingung selbst noch einmal (nicht nur der Knopf).
+- Ideen: KI-Piraten-Anzahl nach Kartengröße, Piraten jagen fremde Handelsschiffe; Feuerkatapult-Ziel in `AI_conquerCity` eher niederbrennen.
 - Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
 - Beobachten/feinjustieren: KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
 - Beobachten: Feuerkatapult-Schwelle (kleiner Raze-Wert ab 50, `CvGameUtils.AI_unitUpdate`), Terraforming-KI ab 3 Feldern.
-
 
 ## Patch 7.18.3.10–14 (Claude Code)
 
@@ -139,7 +151,7 @@ Jeder Sklave außerhalb einer passenden Stadt scannt alle Kartenfelder – bei j
 | Kamelwechsel | 766 | gering |
 | Terraforming | 774 | mittel (Wüste/Tundra) |
 | Feuerkatapult umrüsten | 775 | mittel im Belagerungskrieg |
-| Pirat werden | 722 | vermutlich bewusst nur HI |
+| Pirat werden | 722 | ✅ KI ab 7.19.1p (max. 2 Piraten, unbeobachtet) |
 | Karte zeichnen | 728 | KI über Kartenhandel abgedeckt |
 
 ### Nicht geprüft
@@ -513,3 +525,4 @@ CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
 Erledigt (7.19.1i–j): Statthalter (757), Handelsposten (736, KI baut auch Händler dafür), Feuerkatapult (775, eigener kleiner Raze-Wert, Torsion 3), changeUnit nur Katapulte, Zweiter Siedler (Limit über cannotTrain, KI ab Kaiser 50 %).
 Erledigt (7.19.1k–l): Terraforming (774, `PAE_Unit.doTerraforming` für Mensch und KI, ohne Schwemmland/Oase, KI nur in Wüsten-/Tundrastadt ab 3 Feldern), Handler 776 prüft Ausgangs- und Zieltyp, Heldendenkmal (758, nur echte Gebäude per `getNumRealBuilding`, sonst Verdopplung freier Denkmäler; keine KI), Duell (761, nur mit Sklave auf dem Feld; keine KI), Pferde-/Kamelwechsel (766, `setMoves(0)` statt `finishMoves`, danach `setMadeAttack(True)`: einmal pro Runde, kein Angriff mehr; keine KI).
 Erledigt (7.19.1l–n): onModNetMessage-Prüfung 665–776 (Sender, Popup-Callbacks, Handler, aufgerufene Funktionen). OOS: Statthalter Gebäude verkaufen (770, Verkauf lief nur beim aktiven Spieler), Usurpator-Check (`doUsurpatorCheck`, andere Rechner liefen in den KI-Zweig). Fehler: Kompass (767, Kosten = X-Koordinate), Pirat versklaven (726, `iData5` statt `iData4`; Dorf ohne Besitzer -> Python-Fehler nur auf fremden Rechnern), Söldner anheuern (708, Typ-Buttons verrutscht bei fehlenden Typen), `doUsurpatorGeneral` (`pCity` undefiniert, Index-Schleife über wegspringende Einheiten), Inquisition (665/704, Buttons verrutscht bei Missionars-Religion; in Vasallenstädten jetzt Besitzer der Einheit), Gebäude verkaufen nur echte Gebäude (`getNumRealBuilding`). Kleinigkeiten: Trojanisches Pferd nur eine Stadt (stärkste Verteidigung), Dezimierung-Meldung nennt verlorene Moral, Stehlen (739) kostet Spionage nur bei Erfolg, Folter-Chancen wie im Text (50/25/10 %), Töne nicht auf allen Rechnern, `is not None` bei DLL-Städten durch `isNone()` ersetzt. 771 (Lager/Turm) ist toter Code, alle Buttons auskommentiert.
+Erledigt (7.19.1p): KI-Piraten (722): KI wandelt bis zu 2 Kriegsgaleeren unbeobachtet in Piraten um (`CvGameUtils.AI_unitUpdate`, `TECH_PIRACY`), DLL `CvUnit::canMoveInto` verhindert, dass KI-Piraten für Menschen sichtbar in eigene Städte/Stapel fahren (und umgekehrt eigene Schiffe zum Piraten). Piraten-Plündern nutzt `getPillageVillage` (vorher DLL-Schleife bei besetztem Dorf).

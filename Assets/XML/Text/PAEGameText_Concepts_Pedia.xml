@@ -7074,6 +7074,12 @@ The profit or cost of a yield amounts to a maximum of 20 bonus goods per yield p
 [H2]Spreading a Cult[\H2]
 When a Cultist spreads a Cult to a new city, it removes a certain amount of Gold from the player's treasury. You may block foreign Cults from entering your cities by adopting special Civics.
 
+[ICON_BULLET]The first time a Cult is spread to a city of your own empire, it always succeeds (100%). After that you can train Cultists of this Cult yourself.
+[ICON_BULLET]Every further spread has a chance of success. The more Cults a city already has, the lower the chance (base value of a Cultist: 40%, halved in foreign cities):
+Cults already in the city: 0 / 1 / 2 / 3 / 4 / 5
+Own city: 100% / 93% / 86% / 80% / 73% / 66%
+Foreign city: 100% / 91% / 82% / 73% / 64% / 55%
+
 [H2]Cult buildings[\H2]
 Some cults or cultures unlock certain buildings:
 [ICON_BULLET]Cult of Isis: [LINK=BUILDING_CORP1]Temple of Isis[\LINK]
@@ -7104,6 +7110,12 @@ Le profit ou le co&#251;t d'une r&#233;colte s'&#233;l&#232;ve &#224; un maximum
 [H2]R&#233;pandre un culte[\H2]
 Une fois un culte fond&#233;, la ville peut produire les cultistes correspondants. Ces derniers peuvent r&#233;pandre le culte dans les villes ayant les pr&#233;requis n&#233;cessaires, &#224; savoir l'acc&#232;s &#224; une ressource li&#233;e au culte et parfois une religion particuli&#232;re. Implanter un culte dans une nouvelle ville co&#251;te de l'argent, imm&#233;diatement et en prix d'entretien, mais peut apporter un gain d'influence culturelle &#224; la ville fondatrice du culte.
 Certains choix de doctrines entravent l'&#233;tablissement de cultes &#233;trangers dans vos villes.
+
+[ICON_BULLET]La premi&#232;re implantation d'un culte dans une ville de votre propre empire r&#233;ussit toujours (100%). Ensuite, vous pouvez former vous-m&#234;me des cultistes de ce culte.
+[ICON_BULLET]Chaque implantation suivante a une chance de r&#233;ussite. Plus une ville compte d&#233;j&#224; de cultes, plus la chance est faible (valeur de base d'un cultiste : 40%, divis&#233;e par deux dans les villes &#233;trang&#232;res) :
+Cultes d&#233;j&#224; pr&#233;sents dans la ville : 0 / 1 / 2 / 3 / 4 / 5
+Ville propre : 100% / 93% / 86% / 80% / 73% / 66%
+Ville &#233;trang&#232;re : 100% / 91% / 82% / 73% / 64% / 55%
 
 [H2]B&#226;timents sp&#233;cifiques[\H2]
 Les cultes et cultures peuvent donner acc&#232;s &#224; des b&#226;timents sp&#233;cifiques :
@@ -7138,6 +7150,11 @@ Der Gewinn bzw. die Kosten einen Ertrages belaufen sich bei maximal 20 Bonusg&#2
 [ICON_BULLET]Nach der Ansiedelung eines Kults in einer Stadt k&#246;nnen dort Kult-Anh&#228;nger ausgebildet werden. Diese sorgen daf&#252;r, dass der Kult auch au&#223;erhalb der Stadt, in der sich ihr Zentrum befindet, sesshaft wird. Durch die Ausbildung eines Kult-Anh&#228;ngers und dessen Entsendung in eine Stadt mit den geeigneten Ressourcen k&#246;nnen Sie den Einfluss Ihrer Kulte erh&#246;hen und den Einfluss (in Form von Kultur) des Kultzentrums steigern.
 [ICON_BULLET]Sobald der Anh&#228;nger den Kult in einer anderen Stadt ansiedelt, wird ein bestimmter Goldbetrag aus Ihrer Schatzkammer entfernt.
 [ICON_BULLET]Mit bestimmten Staatsformen k&#246;nnen Sie fremde Kulte daran hindern, sich in Ihren St&#228;dten niederzulassen.
+[ICON_BULLET]Die erste Ansiedelung eines Kults in einer Stadt des eigenen Reiches gelingt immer (100%). Danach k&#246;nnen Sie selbst Kult-Anh&#228;nger dieses Kults ausbilden.
+[ICON_BULLET]Jede weitere Ansiedelung hat eine Erfolgschance. Je mehr Kulte eine Stadt schon hat, desto geringer ist sie (Grundwert eines Kult-Anh&#228;ngers: 40%, in fremden St&#228;dten halbiert):
+Kulte bereits in der Stadt: 0 / 1 / 2 / 3 / 4 / 5
+Eigene Stadt: 100% / 93% / 86% / 80% / 73% / 66%
+Fremde Stadt: 100% / 91% / 82% / 73% / 64% / 55%
 
 [H2]Kultgeb&#228;ude[\H2]
 Manche Kulte schalten bestimmte Geb&#228;ude frei:
@@ -7146,7 +7163,7 @@ Manche Kulte schalten bestimmte Geb&#228;ude frei:
 [ICON_BULLET]Heroenkult: [LINK=BUILDING_CORP5]Mausoleum[\LINK]
 [ICON_BULLET]Kosmogonie: [LINK=BUILDING_CORP6]Museion[\LINK]
 [ICON_BULLET]Hellenismus: [LINK=BUILDING_CORP7]Serapeion[\LINK] und die Wunder [LINK=BUILDING_ACADEMY_3]Die Stoa des Zenon[\LINK], [LINK=BUILDING_ACADEMY_4]Der Kepos des Epikur[\LINK], [LINK=BUILDING_ACADEMY_2]Der Peripatos des Aristoteles[\LINK] und [LINK=BUILDING_GREAT_SERAPEION]Das Gro&#223;e Serapeion von Alexandria[\LINK]
-[ICON_BULLET]Dionysos-Kult: [LINK=BUILDING_THEATRE]Theater[\LINK] and [LINK=BUILDING_GREEK_ODEON]Odeon[\LINK]
+[ICON_BULLET]Dionysos-Kult: [LINK=BUILDING_THEATRE]Theater[\LINK] und [LINK=BUILDING_GREEK_ODEON]Odeon[\LINK]
 		</German>
 		<Italian>
 [H1] Cults [\H1]
@@ -7172,6 +7189,11 @@ Il profitto o il costo di un raccolto ammonta al massimo a 20 beni bonus per rac
 [ICON_BULLET] Dopo l'insediamento di un culto in una citt&#224; seguaci del culto pu&#242; essere addestrato l&#236; . Questi assicurano che il culto di fuori della citt&#224; in cui si trova il suo centro , &#232; risolta . A causa della formazione di un rimorchio culto e la sua implementazione in una citt&#224; con le giuste risorse , &#232; possibile aumentare l'impatto dei vostri culti e di aumentare l'impatto ( in termini di cultura ), del centro di culto .
 [ICON_BULLET] Una volta che il rimorchio si deposita il culto in una citt&#224; diversa , una certa quantit&#224; di oro viene rimosso dal tesoro .
 [ICON_BULLET] Con alcune forme di governo , &#232; possibile evitare culti stranieri in mente di stabilirsi nelle vostre citt&#224; .
+[ICON_BULLET]Il primo insediamento di un culto in una citt&#224; del proprio impero riesce sempre (100%). In seguito potrete addestrare voi stessi i seguaci di questo culto.
+[ICON_BULLET]Ogni ulteriore insediamento ha una probabilit&#224; di successo. Pi&#249; culti ha gi&#224; una citt&#224;, pi&#249; bassa &#232; la probabilit&#224; (valore base di un seguace: 40%, dimezzato nelle citt&#224; straniere):
+Culti gi&#224; presenti nella citt&#224;: 0 / 1 / 2 / 3 / 4 / 5
+Citt&#224; propria: 100% / 93% / 86% / 80% / 73% / 66%
+Citt&#224; straniera: 100% / 91% / 82% / 73% / 64% / 55%
 
 [H2] edifici di culto [\H2]
 Alcuni culti girare alcuni edifici libero :
@@ -7204,6 +7226,12 @@ El beneficio o coste de un rendimiento asciende a un m&#225;ximo de 20 bienes de
 
 [H2]Difundir un culto[\H2]
 Cuando un seguidor difunde un culto a una nueva ciudad, quita una cierta cantidad de oro del tesoro del jugador. Puedes bloquear cultos extranjeros de que entren en tus ciudades adoptando ciertos principios.
+
+[ICON_BULLET]El primer asentamiento de un culto en una ciudad de tu propio imperio siempre tiene &#233;xito (100%). Despu&#233;s puedes entrenar t&#250; mismo seguidores de este culto.
+[ICON_BULLET]Cada asentamiento posterior tiene una probabilidad de &#233;xito. Cuantos m&#225;s cultos tenga ya una ciudad, menor es la probabilidad (valor base de un seguidor: 40%, la mitad en ciudades extranjeras):
+Cultos ya presentes en la ciudad: 0 / 1 / 2 / 3 / 4 / 5
+Ciudad propia: 100% / 93% / 86% / 80% / 73% / 66%
+Ciudad extranjera: 100% / 91% / 82% / 73% / 64% / 55%
 
 [H2]Edificios de los cultos[\H2]
 Algunos cultos o culturas desbloquean ciertos edificios:

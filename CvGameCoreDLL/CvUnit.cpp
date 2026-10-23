@@ -6390,6 +6390,12 @@ bool CvUnit::spreadCorporation(CorporationTypes eCorporation)
 
 		iSpreadProb += (((GC.getNumCorporationInfos() - pCity->getCorporationCount()) * (100 - iSpreadProb)) / GC.getNumCorporationInfos());
 
+		// PAE 7.19.1: erste Ansiedlung eines Kults im Reich eines Spielers gelingt immer (sonst kann er nie Kultisten bauen)
+		if (pCity->getTeam() == getTeam() && GET_PLAYER(pCity->getOwnerINLINE()).countCorporations(eCorporation) == 0)
+		{
+			iSpreadProb = 100;
+		}
+
 		if (GC.getGameINLINE().getSorenRandNum(100, "Unit Spread Corporation") < iSpreadProb)
 		{
 			pCity->setHasCorporation(eCorporation, true, true, false);
