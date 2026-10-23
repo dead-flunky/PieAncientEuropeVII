@@ -2648,17 +2648,16 @@ class CvMainInterface:
 															screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_siege_fire_y.dds", 0, WidgetTypes.WIDGET_GENERAL, 775, 1, False)
 															screen.show("BottomButtonContainer")
 															iCount += 1
-														else:
+														elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_TORSION3")):
 															screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_siege_fire_n.dds", 0, WidgetTypes.WIDGET_GENERAL, 775, 1, True)
 															screen.show("BottomButtonContainer")
 															iCount += 1
 														# Kadaver/Cadaver (Mittelalter/Middle Ages)
-														#if pTeam.isHasTech(gc.getInfoTypeForString("TECH_TORSION3")):
-														#	if iUnitType == gc.getInfoTypeForString("UNIT_COW_CATAPULT"):
+														#elif iUnitType == gc.getInfoTypeForString("UNIT_COW_CATAPULT"):
 														#		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_siege_cow_y.dds", 0, WidgetTypes.WIDGET_GENERAL, 775, 2, False)
 														#		screen.show("BottomButtonContainer")
 														#		iCount += 1
-														#	else:
+														#elif pTeam.isHasTech(gc.getInfoTypeForString("TECH_TORSION3")):
 														#		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_siege_cow_n.dds", 0, WidgetTypes.WIDGET_GENERAL, 775, 2, True)
 														#		screen.show("BottomButtonContainer")
 														#		iCount += 1

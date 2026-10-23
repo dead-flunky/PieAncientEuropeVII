@@ -2265,7 +2265,8 @@ class CvEventManager:
 						pUnit = pPlayer.getUnit(iData5)
 						pPlot = pUnit.plot()
 						if iData2 == 1:
-								PAE_Unit.changeUnit(pUnit, gc.getInfoTypeForString("UNIT_FIRE_CATAPULT"), False)
+								if gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_TORSION3")):
+										PAE_Unit.changeUnit(pUnit, gc.getInfoTypeForString("UNIT_FIRE_CATAPULT"), False)
 						#elif iData2 == 2:
 						#		PAE_Unit.changeUnit(pUnit, gc.getInfoTypeForString("UNIT_COW_CATAPULT"), True)
 						else:
@@ -4575,7 +4576,7 @@ class CvEventManager:
 
 						# 50% 2nd Settler for AI only as handicap bonus (Emperor, Immortal, Deity) - PAE 7.19.1
 						if iHandicap > 5 and iUnitType == L.UNIT_SETTLER:
-							if CvUtil.myRandom(2, "onUnitBuilt_AIGetsSecondSettler") == 1
+							if CvUtil.myRandom(2, "onUnitBuilt_AIGetsSecondSettler") == 1:
 								CvUtil.spawnUnit(iUnitType, city.plot(), pPlayer)
 
 						# Experienced units on higher handicap level (PAE V Patch 3)

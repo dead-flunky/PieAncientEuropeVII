@@ -1889,6 +1889,20 @@ class CvGameUtils:
 										pOwner.changeGold(25)
 										pUnit.kill(True, -1)
 										return True
+
+								bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0))
+								if bTradeRouteActive:
+										PAE_Trade.doAutomateMerchant(pUnit)
+										if not pUnit.isDead():
+												# PAE: Keine Bewegung/Mission ausgeloest -> Zuege verbrauchen, sonst ruft die DLL die Einheit bis zum Schleifenlimit erneut auf
+												if pUnit.canMove() and pUnit.getGroup().getLengthMissionQueue() == 0:
+														# PAE: Runden ohne Bewegung zaehlen, ab 3 loescht doAutomateMerchant die Route
+														if int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0)):
+																CvUtil.addScriptData(pUnit, "autS", CvUtil.getScriptData(pUnit, ["autS"], 0) + 1)
+														pUnit.finishMoves()
+												elif CvUtil.getScriptData(pUnit, ["autS"], 0):
+														CvUtil.removeScriptData(pUnit, "autS")
+										return True
 								else:
 										# PAE 7.19.1: Haendler ohne Route errichten zuerst einen Handelsposten (736) auf einer neuen Ressource in der Naehe
 										if pUnit.getDomainType() == DomainTypes.DOMAIN_LAND:
@@ -1904,26 +1918,6 @@ class CvGameUtils:
 												pUnit.kill(True, -1)
 												return True
 
-								bTradeRouteActive = int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0))
-								if bTradeRouteActive:
-										PAE_Trade.doAutomateMerchant(pUnit)
-										if not pUnit.isDead():
-												# PAE: Keine Bewegung/Mission ausgeloest -> Zuege verbrauchen, sonst ruft die DLL die Einheit bis zum Schleifenlimit erneut auf
-												if pUnit.canMove() and pUnit.getGroup().getLengthMissionQueue() == 0:
-														# PAE: Runden ohne Bewegung zaehlen, ab 3 loescht doAutomateMerchant die Route
-														if int(CvUtil.getScriptData(pUnit, ["autA", "t"], 0)):
-																CvUtil.addScriptData(pUnit, "autS", CvUtil.getScriptData(pUnit, ["autS"], 0) + 1)
-														pUnit.finishMoves()
-												elif CvUtil.getScriptData(pUnit, ["autS"], 0):
-														CvUtil.removeScriptData(pUnit, "autS")
-										return True
-								elif not PAE_Trade.doAssignTradeRoute_AI(pUnit):
-										# PAE 7.19.1: ohne Handelsroute lieber einen Handelsposten errichten als verkaufen
-										if PAE_Unit.doHandelsposten_AI(pUnit, True):
-												return True
-										pOwner.changeGold(25)
-										pUnit.kill(True, -1)
-										return True
 
 								if pUnit.getDamage() > 0:
 										pUnit.getGroup().pushMission(MissionTypes.MISSION_HEAL, 0, 0, 0, True, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
@@ -2440,6 +2434,69 @@ class CvGameUtils:
 											PAE_Unit.onModNetMessage(argsList)
 											return True
 
+						# PAE 7.19.1: Katapulte umruesten (wie Aktion 775), alle Katapulte der Gruppe
+						# Im Krieg Feuerkatapult (TECH_TORSION3). Steinkatapult neben einer feindlichen Stadt, die die KI behalten will
+						if pTeam.getAtWarCount(True) > 0:
+								pGroup = pUnit.getGroup()
+								lCatapults = []
+								pAnchor = None
+								for i in range(pGroup.getNumUnits()):
+										loopUnit = pGroup.getUnitAt(i)
+										if loopUnit.getUnitType() in L.LBuildCatapults and not loopUnit.hasMoved():
+												lCatapults.append(loopUnit)
+										elif pAnchor is None:
+												pAnchor = loopUnit
+								if lCatapults:
+										iNewUnit = -1
+										if pTeam.isHasTech(gc.getInfoTypeForString("TECH_TORSION3")):
+												iNewUnit = gc.getInfoTypeForString("UNIT_FIRE_CATAPULT")
+												bNoRaze = gc.getGame().isOption(gc.getInfoTypeForString("GAMEOPTION_NO_CITY_RAZING"))
+												iCulturePercent = gc.getDefineINT("RAZING_CULTURAL_PERCENT_THRESHOLD")
+												for i in range(-1, 2):
+														for j in range(-1, 2):
+																loopPlot = plotXY(pUnit.getX(), pUnit.getY(), i, j)
+																if loopPlot.isNone() or not loopPlot.isCity() or not pTeam.isAtWar(loopPlot.getTeam()):
+																		continue
+																loopCity = loopPlot.getPlotCity()
+																# Kleiner Raze-Wert: Kaff, schlechte Lage, weit weg vom eigenen Regierungssitz -> anzuenden
+																iRaze = 0
+																if not loopCity.isHolyCity() and loopCity.getNumWorldWonders() == 0:
+																		iPop = loopCity.getPopulation()
+																		if iPop < 4:
+																				iRaze += (4 - iPop) * 20
+																		iBonus = 0
+																		for k in range(gc.getNUM_CITY_PLOTS()):
+																				pCityPlot = loopCity.getCityIndexPlot(k)
+																				if pCityPlot is not None and not pCityPlot.isNone() and pCityPlot.getBonusType(pOwner.getTeam()) != -1:
+																						iBonus += 1
+																		if iBonus < 2:
+																				iRaze += 20
+																		iGovDist = 999
+																		(pGovCity, pIter) = pOwner.firstCity(False)
+																		while pGovCity:
+																				if pGovCity.isGovernmentCenter():
+																						iGovDist = min(iGovDist, plotDistance(loopCity.getX(), loopCity.getY(), pGovCity.getX(), pGovCity.getY()))
+																				(pGovCity, pIter) = pOwner.nextCity(pIter, False)
+																		if iGovDist != 999 and iGovDist > 12:
+																				iRaze += (iGovDist - 12) * 5
+																# Stadt wird behalten -> nicht anzuenden
+																if bNoRaze or loopCity.calculateTeamCulturePercent(pOwner.getTeam()) >= iCulturePercent or iRaze < 50:
+																		iNewUnit = -1
+										if iNewUnit == -1:
+												iNewUnit = gc.getCivilizationInfo(pOwner.getCivilizationType()).getCivilizationUnits(gc.getInfoTypeForString("UNITCLASS_CATAPULT"))
+										bHeadChanged = False
+										for loopUnit in lCatapults:
+												if iNewUnit != -1 and loopUnit.getUnitType() != iNewUnit:
+														if loopUnit.getID() == pUnit.getID():
+																bHeadChanged = True
+														pNewUnit = PAE_Unit.doUpgradeVeteran(loopUnit, iNewUnit, False)
+														if pNewUnit is not None:
+																if pAnchor is None:
+																		pAnchor = pNewUnit
+																else:
+																		pNewUnit.joinGroup(pAnchor.getGroup())
+										if bHeadChanged:
+												return True
 
 						# Promotions ------------------
 

@@ -853,10 +853,14 @@ def doUpgradeVeteran(pUnit, iNewUnit, bSetImmobile):
 def changeUnit(pUnit, iNewUnit, bSetImmobile):
 		if pUnit.isNone() or iNewUnit == -1:
 				return
+		lUnits = []
 		unitGroup = pUnit.getGroup()
-		iNumUnits = unitGroup.getNumUnits()
-		for i in range(iNumUnits):
+		# PAE 7.19.1: nur die Katapulte der Gruppe umruesten 
+		for i in range(unitGroup.getNumUnits()):
 				loopUnit = unitGroup.getUnitAt(i)
+				if loopUnit.getUnitType() in L.LBuildCatapults and loopUnit.getUnitType() != iNewUnit:
+						lUnits.append(loopUnit)
+		for loopUnit in lUnits:
 				doUpgradeVeteran(loopUnit, iNewUnit, bSetImmobile)
 
 def canUpgradeUnit(pUnit):
@@ -1792,6 +1796,9 @@ def getHandelspostenPlot_AI(iPlayer, pPlot, pUnit):
 				for j in range(-8, 9):
 						pLoopPlot = plotXY(iX, iY, i, j)
 						if pLoopPlot is None or pLoopPlot.isNone() or pLoopPlot.getOwner() != -1:
+								continue
+						# nur Felder, die die KI schon aufgedeckt hat (getBonusType(iTeam) blendet nur Ressourcen ohne Tech aus)
+						if not pLoopPlot.isRevealed(iTeam, False):
 								continue
 						if pLoopPlot.isWater() or pLoopPlot.getArea() != iArea:
 								continue
