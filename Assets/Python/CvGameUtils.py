@@ -2441,20 +2441,29 @@ class CvGameUtils:
 												return True
 
 						# Pirate pillages villages
+						# PAE 7.19.2: gleiche Suche wie 726 (Dorf ohne Einheiten)
 						elif iUnitType in L.DCaptureFromPirate:
-							iX = pUnit.getX()
-							iY = pUnit.getY()
-							# N, O, S, W only
-							directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
-							for (dx, dy) in directions:
-								loopPlot = CyMap().plot(iX + dx, iY + dy)
-								if loopPlot.isNone(): continue
-								if loopPlot.isCoastalLand() and loopPlot.getOwner() != iOwner:
-									if loopPlot.getImprovementType() in L.DCottages:
-										if CvUtil.myRandom(10, "do_ai_pirate_pillage_village") < 4:
-											argsList = (726, 1, 0, iOwner, pUnit.getID())
-											PAE_Unit.onModNetMessage(argsList)
-											return True
+							if PAE_Unit.getPillageVillage(pUnit, False) is not None:
+								if CvUtil.myRandom(10, "do_ai_pirate_pillage_village") < 4:
+									argsList = (726, 1, 0, iOwner, pUnit.getID())
+									PAE_Unit.onModNetMessage(argsList)
+									return True
+
+						# PAE 7.19.1: KI hat 1-2 Piraten in der Flotte (wie Aktion 722), Umwandlung nur unbeobachtet von Menschen
+						elif iUnitType in L.DCaptureByPirate:
+							if pTeam.isHasTech(gc.getInfoTypeForString("TECH_PIRACY")) and not pPlot.isCity() and pUnit.getGroup().getNumUnits() == 1 and not pUnit.hasCargo():
+								iPirates = 0
+								for iPirate in L.DCaptureFromPirate:
+									iPirates += pOwner.getUnitClassCount(gc.getUnitInfo(iPirate).getUnitClassType())
+								if iPirates < 2 and CvUtil.myRandom(10, "ai_go2pirate") == 1:
+									bSeen = False
+									for iTeam in range(gc.getMAX_CIV_TEAMS()):
+										if gc.getTeam(iTeam).isHuman() and pPlot.isVisible(iTeam, False):
+											bSeen = True
+											break
+									if not bSeen:
+										PAE_Unit.convert(pUnit, L.DCaptureByPirate[iUnitType], pOwner)
+										return True
 
 						# PAE 7.19.1: Katapulte umruesten (wie Aktion 775), alle Katapulte der Gruppe
 						# Im Krieg Feuerkatapult (TECH_TORSION3). Steinkatapult neben einer feindlichen Stadt, die die KI behalten will

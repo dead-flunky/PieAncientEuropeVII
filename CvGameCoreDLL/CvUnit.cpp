@@ -2726,6 +2726,37 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 		return false;
 	}
 
+	// PAE 7.19.1: KI-Piraten (versteckte Nationalitaet) verraten sich nicht. Fuer Menschen sichtbar
+	// kein Pirat in eigene Stadt oder zu eigenen Einheiten und keine eigenen Schiffe zum eigenen Piraten
+	if (!isHuman() && !isBarbarian())
+	{
+		bool bPirate = m_pUnitInfo->isHiddenNationality();
+		if (bPirate || (getDomainType() == DOMAIN_SEA && pPlot->isWater()))
+		{
+			bool bReveal = (bPirate && pPlot->isCity() && pPlot->getOwnerINLINE() == getOwnerINLINE());
+			CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode();
+			while (!bReveal && pUnitNode != NULL)
+			{
+				CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+				pUnitNode = pPlot->nextUnitNode(pUnitNode);
+				if (pLoopUnit->getOwnerINLINE() == getOwnerINLINE() && pLoopUnit->getUnitInfo().isHiddenNationality() != bPirate)
+				{
+					bReveal = true;
+				}
+			}
+			if (bReveal)
+			{
+				for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
+				{
+					if (GET_TEAM((TeamTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHuman() && pPlot->isVisible((TeamTypes)iI, false))
+					{
+						return false;
+					}
+				}
+			}
+		}
+	}
+
 	if (pPlot->isImpassable())
 	{
 		if (!canMoveImpassable())

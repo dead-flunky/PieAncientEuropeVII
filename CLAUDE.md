@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1o) => wird als öffentlicher Patch dann zu 7.19.1
+# PAE – Übergabe an Claude Code (Stand 7.19.1p) => wird als öffentlicher Patch dann zu 7.19.1
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -41,8 +41,7 @@ Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
 
 
 ## Offen
-1. „Pirat werden“ (722): bleibt vermutlich bewusst nur für Menschen (bestätigen).
-2. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
+1. DLL-Check: Stellen ohne PAE-Markierung durchsehen.
 
 Optional:
 - P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.

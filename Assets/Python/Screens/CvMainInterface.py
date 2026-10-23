@@ -3238,7 +3238,7 @@ class CvMainInterface:
 														if pUnit.getUnitCombatType() == gc.getInfoTypeForString("UNITCOMBAT_NAVAL"):
 																if pTeam.isHasTech(gc.getInfoTypeForString("TECH_PIRACY")):
 
-																		# PAE VI: mit TECH moeglich = generell gesperrte Tech
+																		# PAE VI: mit TECH_PIRACY moeglich
 																		# if pUnit.getCivilizationType() in L.LCivPirates:
 																		if pUnit.getUnitType() in L.DCaptureFromPirate or pUnit.getUnitType() in L.DCaptureByPirate:
 																				if pUnit.hasCargo():
