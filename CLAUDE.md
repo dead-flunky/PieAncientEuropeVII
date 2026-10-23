@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1j) => wird öffentlich zu 7.19.1
+# PAE – Übergabe an Claude Code (Stand 7.19.1k) => wird als öffentlicher Patch dann zu 7.19.1
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -516,17 +516,6 @@ Erledigt (10/2026): PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cp
 - Kampfchance (`getCombatOdds` mit `iAttackerExtraDamage`), Kampfvorschau und KI (`CvUnitAI::AI_attackOdds`) rechnen den Abwehrschuss mit ein.
 - KI mit PAE-Kampfrunden (`AI_attackOdds`): ab 80 % Kampfchance immer Angriff; einzige starke Einheit im Stapel verteidigt lieber; ueberlebt sie die Kampfrunden sicher und steht im Stapel, greift sie immer an.
 - Brachland: unbewirtschaftete Modernisierung im Stadtradius verfaellt (1:20 pro Runde, erst nach 10 Runden), Bedingungen in `CvPlot::isFallowDecayPossible`, Hinweis in der Feld-Info.
-
-### Spieler-Feedback 7.19 (offen, Stand 22.10.2026)
-- **Zweiter Siedler optional machen** (`CvEventManager.onUnitBuilt`, Z. 4566–4583):
-  Spieler meldet, dass das Tempo am Anfang aus dem Gleichgewicht ist und es für Gelegenheitsspieler zu schwer wird. Er wünscht sich eine Spieloption.
-  Aktuell bekommt die KI den Zusatzsiedler bei `iHandicap > 5` ODER auf Large/Huge ODER zu 50 % per Zufall (alle Schwierigkeitsgrade, siehe Review E, Punkt 4.1). Der Mensch bekommt ihn nur auf Large/Huge.
-  Möglichkeiten:
-  1. Spieloption `GAMEOPTION_NO_SECOND_SETTLER` (DLL, Spielstände inkompatibel außer mit `CvInitCore::read`)
-  2. Ohne DLL: KI-Zufall und Kartengrößen-Bonus erst ab Prinz/König (Empfehlung)
-  3. Beides
-  Zu entscheiden: Option 1, 2 oder 3? Bekommt der Mensch auf Large/Huge den Siedler weiterhin immer?
-- Danach weiter mit Statthalter (757).
 
 ## Erledigt
 Performance-Audit bei einem Test im Szenario: WegDerGoten (Huge Map): (anfangs 1min 25s -> 1min 05s -> aktuell 42s (ab 2. Runde sogar nur 32s)), KI-Review K1–K3, OOS-Audit O1–O3, O5–O11 (O4 bewusst nicht), Elefanten-System Aktion 776 (Details in PAE_KI_Review_7.18.3.2.md), Plataiai-Popup-Texte (7.18.3.7), Sonderzeichen in Text-XMLs bereinigt (7.18.3.8/9), L1–L3 (7.18.3.10), Sichtfehler Turm/Fort (7.18.3.11), Bugfix-Paket 7.18.3.12–14 (siehe Abschnitt „Patch 7.18.3.10–14“).

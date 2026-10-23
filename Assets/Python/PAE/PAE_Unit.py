@@ -1757,6 +1757,28 @@ def doMobiliseFortifiedArmy(pCity):
 																		pUnit.setHasPromotion(iPromoFort2, False)
 																		pUnit.getGroup().pushMission(MissionTypes.MISSION_MOVE_TO, iX, iY, 0, False, False, MissionAITypes.NO_MISSIONAI, pUnit.plot(), pUnit)
 
+# PAE 7.19.1: Terraforming durch den Grossen Propheten (Aktion 774 und KI): Wueste -> Ebene, Tundra -> Grasland
+# True: Feld umgewandelt, Einheit getoetet
+def doTerraforming(pUnit):
+		pPlot = pUnit.plot()
+		iTerrain = pPlot.getTerrainType()
+		if iTerrain == gc.getInfoTypeForString("TERRAIN_DESERT"):
+				iNewTerrain = gc.getInfoTypeForString("TERRAIN_PLAINS")
+		elif iTerrain == gc.getInfoTypeForString("TERRAIN_TUNDRA"):
+				iNewTerrain = gc.getInfoTypeForString("TERRAIN_GRASS")
+		else:
+				return False
+		# Schwemmland und Oase gibt es nur in der Wueste
+		if pPlot.getFeatureType() in (gc.getInfoTypeForString("FEATURE_FLOOD_PLAINS"), gc.getInfoTypeForString("FEATURE_OASIS")):
+				return False
+		pPlot.setTerrainType(iNewTerrain, 1, 1)
+		iPlayer = pUnit.getOwner()
+		if gc.getPlayer(iPlayer).isHuman():
+				CyInterface().addMessage(iPlayer, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TERRAFORMING", ()),
+				"AS2D_WELOVEKING", 2, gc.getTerrainInfo(iNewTerrain).getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
+		pUnit.kill(True, -1)
+		return True
+
 
 # Handelsposten errichten (soll kein Gold kosten ab PAE 6.5.2)
 # Grund: Strassen kosten Geld, Einheit kostet Geld (indirekt beim Bau, pro Runde)

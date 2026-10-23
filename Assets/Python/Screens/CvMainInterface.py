@@ -3322,7 +3322,8 @@ class CvMainInterface:
 																		screen.appendMultiListButton("BottomButtonContainer", "Art/Interface/Buttons/Actions/button_action_terraforming.dds",
 																												0, WidgetTypes.WIDGET_GENERAL, 774, -1, False)
 																		screen.show("BottomButtonContainer")
-																		if pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_DESERT") or pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_TUNDRA"):
+																		if (pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_DESERT") or pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_TUNDRA")) and \
+																				pPlot.getFeatureType() not in (gc.getInfoTypeForString("FEATURE_FLOOD_PLAINS"), gc.getInfoTypeForString("FEATURE_OASIS")):
 																				screen.enableMultiListPulse("BottomButtonContainer", True, 0, iCount)
 																		else:
 																				screen.disableMultiListButton("BottomButtonContainer", 0, iCount, "Art/Interface/Buttons/Actions/button_action_terraforming.dds")

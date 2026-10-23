@@ -2242,22 +2242,9 @@ class CvEventManager:
 						PAE_Unit.onModNetMessage(argsList)
 				# terraforming button (Great prophet)
 				elif iData1 == 774:
-						pPlayer = gc.getPlayer(iData4)
-						pUnit = pPlayer.getUnit(iData5)
-						pPlot = pUnit.plot()
-						if pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_DESERT"):
-							iNewTerrain = gc.getInfoTypeForString("TERRAIN_PLAINS")
-						elif pPlot.getTerrainType() == gc.getInfoTypeForString("TERRAIN_TUNDRA"):
-							iNewTerrain = gc.getInfoTypeForString("TERRAIN_GRASS")
-
-						pPlot.setTerrainType(iNewTerrain,1,1)
-
-						if pPlayer.isHuman():
-								CyInterface().addMessage(iData4, True, 10, CyTranslator().getText("TXT_KEY_MESSAGE_TERRAFORMING", ()),
-								"AS2D_WELOVEKING", 2, gc.getTerrainInfo(iNewTerrain).getButton(), ColorTypes(10), pPlot.getX(), pPlot.getY(), True, True)
-
-						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
-						pUnit = None
+						pUnit = gc.getPlayer(iData4).getUnit(iData5)
+						if pUnit is not None and not pUnit.isNone():
+								PAE_Unit.doTerraforming(pUnit)
 
 				# Katapulte/Catapults
 				elif iData1 == 775:
@@ -2280,8 +2267,11 @@ class CvEventManager:
 				elif iData1 == 776:
 						pPlayer = gc.getPlayer(iData4)
 						pUnit = pPlayer.getUnit(iData5)
+						lElephantClasses = (gc.getInfoTypeForString("UNITCLASS_WORK_ELEPHANT"), gc.getInfoTypeForString("UNITCLASS_WAR_ELEPHANT"))
 						if pUnit is not None and not pUnit.isNone() and pUnit.canMove() and gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_ELEFANTENZUCHT")):
-								if gc.getUnitInfo(iData2).getUnitClassType() in (gc.getInfoTypeForString("UNITCLASS_WORK_ELEPHANT"), gc.getInfoTypeForString("UNITCLASS_WAR_ELEPHANT")):
+								# Ziel: Arbeits- oder Kriegselefant. Ausgang: wilder, Arbeits- oder Kriegselefant, nicht derselbe Typ
+								if gc.getUnitInfo(iData2).getUnitClassType() in lElephantClasses and pUnit.getUnitType() != iData2 and \
+										(pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_ELEFANT") or pUnit.getUnitClassType() in lElephantClasses):
 										bOK = True
 										# wilder Elefant: nur in eigener Stadt, kostet 50 Gold
 										if pUnit.getUnitType() == gc.getInfoTypeForString("UNIT_ELEFANT"):

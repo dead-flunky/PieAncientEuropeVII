@@ -1849,6 +1849,28 @@ class CvGameUtils:
 																		pUnit.kill(True, -1)
 																		return True
 
+								# PAE 7.19.1: Terraforming (774) nur in einer Wuesten-/Tundrastadt (mind. 3 Felder), bearbeitete Felder zuerst
+								iDesert = gc.getInfoTypeForString("TERRAIN_DESERT")
+								iTundra = gc.getInfoTypeForString("TERRAIN_TUNDRA")
+								if not pPlot.isCity() and pPlot.getOwner() == iOwner and pPlot.getTerrainType() in (iDesert, iTundra) and pPlot.getFeatureType() == -1 and pPlot.getBonusType(-1) == -1:
+										if PAE_Unit.doTerraforming(pUnit):
+												return True
+								elif pPlot.isCity() and pPlot.getOwner() == iOwner:
+										pCity = pPlot.getPlotCity()
+										iAnz = 0
+										pTarget = None
+										for i in range(gc.getNUM_CITY_PLOTS()):
+												pLoopPlot = pCity.getCityIndexPlot(i)
+												if pLoopPlot is None or pLoopPlot.isNone() or pLoopPlot.isCity() or pLoopPlot.getOwner() != iOwner:
+														continue
+												if pLoopPlot.getTerrainType() in (iDesert, iTundra) and pLoopPlot.getFeatureType() == -1 and pLoopPlot.getBonusType(-1) == -1:
+														iAnz += 1
+														if pTarget is None or pLoopPlot.isBeingWorked() and not pTarget.isBeingWorked():
+																pTarget = pLoopPlot
+										if iAnz >= 3 and pUnit.generatePath(pTarget, 0, False, None):
+												pUnit.getGroup().pushMoveToMission(pTarget.getX(), pTarget.getY())
+												return True
+
 						# Trade and cultivation (Boggy). First, try cultivation. If unsuccessfull, try trade.
 						# if pUnit.getUnitAIType() ==
 						# gc.getInfoTypeForString("UNITAI_MERCHANT") and iUnitType != gc.getInfoTypeForString("UNIT_MERCHANT"):
