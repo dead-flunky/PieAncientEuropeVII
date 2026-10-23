@@ -1,4 +1,4 @@
-# PAE – Übergabe an Claude Code (Stand 7.19.1l) => wird als öffentlicher Patch dann zu 7.19.1
+# PAE – Übergabe an Claude Code (Stand 7.19.1m) => wird als öffentlicher Patch dann zu 7.19.1
 
 Repo: github.com/dead-flunky/PieAncientEuropeVII
 Ziel: Bestes Spielerlebnis, verbesserte KI, optimierte Codes.
@@ -47,7 +47,7 @@ Optional:
 - P1: Latifundium-/Dorfsuche pro Sklave über die ganze Karte → Kandidaten einmal pro Spieler und Runde cachen.
 - Beobachten/feinjustieren: KI-Lagerbonus `iValue += 150` (`CvCityAI::AI_bestPlotBuild`), Armee-Richtwert vor Forschung (`CvCityAI::AI_chooseProduction`, PAE-Block Research), Mindestverteidiger über `iBarbarianDefenders` (`AI_minDefenders`).
 - Beobachten/feinjustieren: KI-Stadtangriff ab 80 % Stapelstaerke (`CvUnitAI::AI_stackAttackCity`, Untergrenze `iPowerThreshold`, BTS 110). Bei hohen Verlusten auf 90 erhoehen.
-- Beobachten: Feuerkatapult-Schwelle (kleiner Raze-Wert ab 50, `CvGameUtils.AI_unitUpdate`), Terraforming-KI ab 3 Feldern, Pferde-/Kamelwechsel (766) ohne Rundenlimit.
+- Beobachten: Feuerkatapult-Schwelle (kleiner Raze-Wert ab 50, `CvGameUtils.AI_unitUpdate`), Terraforming-KI ab 3 Feldern.
 
 
 ## Patch 7.18.3.10–14 (Claude Code)
@@ -511,4 +511,4 @@ Performance-Audit bei einem Test im Szenario: WegDerGoten (Huge Map): (anfangs 1
 CtD Straßenbau, Handelsschiff-Schleife, Taubenschlag (7.18.3.15–17)
 7.18.3.19–7.19b: getCulture(-1)-Fix (Handelsposten, checkLateEra), getCities-Nachbesserungen (PAE_City Revolte, PAE_Vassal), Weg der Goten durchgesehen (onChangeWar war durch __LOG_WARPEACE blockiert, ScriptData-Abfragen, 15.2-Logik, 27.2 jede Runde), Event-OOS (Hurrikan/Zyklon/Monsun/Stadtbrand jetzt Wahl Trümmer oder Wiederaufbau für Gold, ohne Zufall), fehlende Event-Funktionen ersetzt (Ketzerei 2, Thorgal-Hilfe, Plünderer 3) bzw. durch XML gelöst, Bordell 1:4, tote Funktionen entfernt.
 Erledigt (7.19.1i–j): Statthalter (757), Handelsposten (736, KI baut auch Händler dafür), Feuerkatapult (775, eigener kleiner Raze-Wert, Torsion 3), changeUnit nur Katapulte, Zweiter Siedler (Limit über cannotTrain, KI ab Kaiser 50 %).
-Erledigt (7.19.1k–l): Terraforming (774, `PAE_Unit.doTerraforming` für Mensch und KI, ohne Schwemmland/Oase, KI nur in Wüsten-/Tundrastadt ab 3 Feldern), Handler 776 prüft Ausgangs- und Zieltyp, Heldendenkmal (758, nur echte Gebäude per `getNumRealBuilding`, sonst Verdopplung freier Denkmäler; keine KI), Duell (761, nur mit Sklave auf dem Feld; keine KI), Pferde-/Kamelwechsel (766, `setMoves(0)` statt `finishMoves`; keine KI, beliebig oft nutzbar, im Spiel beobachten).
+Erledigt (7.19.1k–l): Terraforming (774, `PAE_Unit.doTerraforming` für Mensch und KI, ohne Schwemmland/Oase, KI nur in Wüsten-/Tundrastadt ab 3 Feldern), Handler 776 prüft Ausgangs- und Zieltyp, Heldendenkmal (758, nur echte Gebäude per `getNumRealBuilding`, sonst Verdopplung freier Denkmäler; keine KI), Duell (761, nur mit Sklave auf dem Feld; keine KI), Pferde-/Kamelwechsel (766, `setMoves(0)` statt `finishMoves`, danach `setMadeAttack(True)`: einmal pro Runde, kein Angriff mehr; keine KI).

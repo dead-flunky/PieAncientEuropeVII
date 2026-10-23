@@ -842,13 +842,15 @@ class CvEventManager:
 								pUnit = None
 
 				# Trojanisches Pferd
-				# TODO: select which city in range should be affected
 				elif iData1 == 697:
 						pPlayer = gc.getPlayer(iData4)
 						pUnit = pPlayer.getUnit(iData5)
 						iX = iData2
 						iY = iData3
 						iRange = 1
+						# PAE 7.19.1: nur eine Stadt (staerkste Verteidigung), die Einheit wird dabei verbraucht
+						pTarget = None
+						iBestDamage = 0
 						for x in range(-iRange, iRange+1):
 								for y in range(-iRange, iRange+1):
 										loopPlot = plotXY(iX, iY, x, y)
@@ -858,8 +860,11 @@ class CvEventManager:
 														if pCity.getOwner() != pUnit.getOwner():
 																if gc.getTeam(pPlayer.getTeam()).isAtWar(gc.getPlayer(pCity.getOwner()).getTeam()):
 																		iDamage = pCity.getDefenseModifier(0)
-																		if iDamage > 0:
-																				PAE_Unit.doTrojanHorse(pCity, pUnit)
+																		if iDamage > iBestDamage:
+																				iBestDamage = iDamage
+																				pTarget = pCity
+						if pTarget is not None:
+								PAE_Unit.doTrojanHorse(pTarget, pUnit)
 
 				# 698 reine INFO für RangPromoUp (Grüne-Pfeil-Beförderung)
 				# Ausführung für RangPromoUp in 751
@@ -939,7 +944,7 @@ class CvEventManager:
 						pPlayer = gc.getPlayer(iData2)
 						pCity = pPlayer.getCity(iData3)  # <= gibt None!! checken !
 						if iData5 == 1:
-								if pCity is not None:
+								if not pCity.isNone():
 										# --- Getting goldkarren / treasure / Beutegold and slaves / Sklaven ------
 										iPop = pCity.getPopulation()
 										if iPop > 2:
@@ -958,7 +963,7 @@ class CvEventManager:
 										PAE_Sklaven.doEnslaveCity(pCity)
 
 						elif iData5 == 2:
-								if pCity is not None:
+								if not pCity.isNone():
 										# --- Getting goldkarren / treasure / Beutegold ------
 										iBeute = int(pCity.getPopulation() / 2) + 1
 										# if iBeute > 0: das ist >=1
@@ -1862,10 +1867,12 @@ class CvEventManager:
 														gc.getInfoTypeForString("PROMOTION_COMBAT3")
 												]
 
-												# Promo herausfinden
+												# Promo herausfinden (fuer die Meldung merken, iPromo wird unten beim Rang ueberschrieben)
+												iLostPromo = lBadPromo[0]
 												for iPromo in lBadPromo:
 														if pUnit.isHasPromotion(iPromo):
 																pUnit.setHasPromotion(iPromo, False)
+																iLostPromo = iPromo
 																break
 
 												# Rang verlieren
@@ -1874,7 +1881,7 @@ class CvEventManager:
 																pUnit.setHasPromotion(iPromo, False)
 																break
 
-												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_POS", (gc.getPromotionInfo(iPromo).getDescription(),)), None,
+												CyInterface().addMessage(iData4, True, 8, CyTranslator().getText("TXT_KEY_ACTION_DECIMATIO_POS", (gc.getPromotionInfo(iLostPromo).getDescription(),)), None,
 														InterfaceMessageTypes.MESSAGE_TYPE_INFO, "Art/Interface/Buttons/Actions/button_action_dezimierung.dds", ColorTypes(8), pUnit.getX(), pUnit.getY(), True, True)
 												pUnit.finishMoves()
 												PAE_Unit.doGoToNextUnit(pUnit)
@@ -1928,13 +1935,12 @@ class CvEventManager:
 								# Kaufen vom Plot
 								elif iData3 == 2:
 										PAE_Cultivation.doPopupChooseBonus4Cultivation(pUnit)
-								# Collect (0 und 4)
+								# Collect (0 und 4), Stehlen (3)
 								else:
-										PAE_Cultivation.doCollectBonus4Cultivation(pUnit)
-								# Stehlen
-								if iData3 == 3:
-										pPlot = pUnit.plot()
-										gc.getTeam(pPlayer.getTeam()).changeEspionagePointsAgainstTeam(gc.getPlayer(pPlot.getOwner()).getTeam(), -50)
+										iPlotOwner = pUnit.plot().getOwner()
+										# Stehlen kostet Spionagepunkte, aber nur wenn das Aufladen geklappt hat
+										if PAE_Cultivation.doCollectBonus4Cultivation(pUnit) and iData3 == 3 and iPlotOwner != -1:
+												gc.getTeam(pPlayer.getTeam()).changeEspionagePointsAgainstTeam(gc.getPlayer(iPlotOwner).getTeam(), -50)
 						# im Popup ausgewaehlt, iData2 = BonusType
 						else:
 								PAE_Cultivation.doBuyBonus4Cultivation(pUnit, iData2)
@@ -2057,7 +2063,6 @@ class CvEventManager:
 								pPlot.setImprovementType(gc.getInfoTypeForString("IMPROVEMENT_TOWN"))
 						else:
 								pPlot.changeUpgradeProgress(10)
-						CyAudioGame().Play2DSound("AS2D_UNIT_BUILD_SETTLER")
 						pUnit.doCommand(CommandTypes.COMMAND_DELETE, 1, 1)
 						pUnit = None
 

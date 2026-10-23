@@ -968,7 +968,8 @@ def doUpgradeRang(iPlayer, iUnit):
 								bInfoBonus = True
 
 				# Perser
-				elif iNewUnit == gc.getInfoTypeForString("UNIT_PERSIA_AZADAN"):
+				#elif iNewUnit == gc.getInfoTypeForString("UNIT_PERSIA_AZADAN"):
+				elif iUnitType in (gc.getInfoTypeForString("UNIT_APFELTRAEGER"), gc.getInfoTypeForString("UNIT_UNSTERBLICH_2")):
 						if pPlayer.hasBonus(gc.getInfoTypeForString("BONUS_HORSE")):
 								if not gc.getTeam(pPlayer.getTeam()).isHasTech(gc.getInfoTypeForString("TECH_THE_WHEEL3")):
 										iInfoTech = gc.getInfoTypeForString("TECH_THE_WHEEL3")
@@ -5187,7 +5188,8 @@ def onModNetMessage(argsList):
 						pUnit.setHasPromotion(iPromo, False)
 				#pUnit.setLevel(0)
 				pPlayer.changeGold(-iCost)
-				CyAudioGame().Play2DSound("AS2D_COINS")
+				if iData4 == gc.getGame().getActivePlayer():
+					CyAudioGame().Play2DSound("AS2D_COINS")
 				pUnit.finishMoves()
 				doGoToNextUnit(pUnit)
 			# PopUp

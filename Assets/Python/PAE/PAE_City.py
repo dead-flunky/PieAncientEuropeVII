@@ -860,7 +860,8 @@ def InquisitionPossible(pCity, pUnit):
 		return False
 
 def doInquisitorPersecution(pCity, pUnit):
-		pPlayer = gc.getPlayer(pCity.getOwner())
+		# Besitzer der Einheit entscheidet (auch in Vasallenstaedten, wie InquisitionPossible)
+		pPlayer = gc.getPlayer(pUnit.getOwner())
 		iPlayer = pPlayer.getID()
 
 		iNumReligions = gc.getNumReligionInfos()
@@ -886,7 +887,11 @@ def doInquisitorPersecution(pCity, pUnit):
 
 def doInquisitorPersecution2(iPlayer, iCity, iButton, iReligion, iUnit):
 		pPlayer = gc.getPlayer(iPlayer)
-		pCity = pPlayer.getCity(iCity)
+		# Popup (iReligion -1): Stadt ueber den Standort der Einheit, sie kann auch einem Vasallen gehoeren
+		if iReligion == -1:
+				pCity = pPlayer.getUnit(iUnit).plot().getPlotCity()
+		else:
+				pCity = pPlayer.getCity(iCity)
 		szButton = gc.getUnitInfo(pPlayer.getUnit(iUnit).getUnitType()).getButton()
 		iStateReligion = pPlayer.getStateReligion()
 		iNumReligions = gc.getNumReligionInfos()

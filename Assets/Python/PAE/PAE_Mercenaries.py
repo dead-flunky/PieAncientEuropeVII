@@ -455,7 +455,7 @@ def onModNetMessage(argsList):
 										popupInfo.addPopup(iPlayer)
 				else:
 						pPlayer.changeGold(-iGold)
-						if iChance < CvUtil.myRandom(20, "doFailedMercenaryTortureMessage2"):
+						if iChance <= CvUtil.myRandom(20, "doFailedMercenaryTortureMessage2"):
 								doFailedMercenaryTortureMessage(iPlayer)
 						else:
 								if iPlayer != iMercenaryCiv:
