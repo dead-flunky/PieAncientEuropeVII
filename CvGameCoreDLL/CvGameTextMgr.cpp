@@ -1908,7 +1908,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 
 			// PAE: Abwehrschuss eines Fernkaempfers vor dem Nahkampf (Schaden am Angreifer in Trefferpunkten, wie CvUnit::doDefensiveRangedStrike)
 			int iPreDamage = 0;
-			CvUnit* pPreStriker = pAttacker->getDefensiveRangedStriker(pPlot, pDefender->getTeam(), iPreDamage); // NULL: kein Schuss (keiner da | Option NO_PAE_COMBAT | kein Schaden mehr moeglich)
+			CvUnit* pPreStriker = pAttacker->getDefensiveRangedStriker(pPlot, pDefender, iPreDamage); // NULL: kein Schuss (keiner da | nur der Verteidiger selbst | Option NO_DEFENSIVE_STRIKE | kein Schaden mehr moeglich)
 			int iAttackerHP = std::max(1, pAttacker->currHitPoints() - iPreDamage);
 			if (pAttacker->getDomainType() != DOMAIN_AIR)
 			{

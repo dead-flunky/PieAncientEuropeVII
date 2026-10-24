@@ -512,9 +512,10 @@ Die Callbacks `cannotConstruct`, `cannotTrain` und `AI_unitUpdate` erfasst `bPAE
 Erledigt (10/2026): PAE-Stellen aller wichtigen cpp-Dateien und CvGameTextMgr.cpp (Anzeige/Hilfetexte, OOS-sauber).
 
 ## Patch 7.19.1e–g (Claude Code)
-- Abwehrschuss (eigene Spieloption `GAMEOPTION_NO_DEFENSIVE_STRIKE` ab 7.19.1h, mit PAE- und BTS-Kampf): Vor einem Nahkampfangriff einer Landeinheit schiesst
+- Abwehrschuss (eigene Spieloption `GAMEOPTION_NO_DEFENSIVE_STRIKE` ab 7.19.1h, mit PAE- und BTS-Kampf): Vor einem Nahkampfangriff einer Landeinheit schiesst ein Fernkaempfer (`airRange() > 0`) des Verteidigers einmal pro Runde auf den Angreifer (nie toedlich, Grenze `iAirCombatLimit`).
 - Ablauf: `CvUnit::attack` -> `doDefensiveRangedStrike` -> bei sichtbarem Kampf Pause ueber den Kampf-Timer (8 Takte), Schuss-Animation in Takt 6 (4 Takte, in `updateCombat`), danach Nahkampf. Schuetze wird waehrend der Pause angezeigt (`CvPlot::setPAEShowUnit`, reine Anzeige). Zahlen fest im Code.
 - Kampfchance (`getCombatOdds` mit `iAttackerExtraDamage`), Kampfvorschau und KI (`CvUnitAI::AI_attackOdds`) rechnen den Abwehrschuss mit ein.
+- Schuetze (7.19.1p, `CvUnit::getDefensiveRangedStriker(pPlot, pDefender, iDamage)`): nie der Verteidiger selbst (vorher schoss z. B. ein Jaeger allein auf dem Feld vor seinem eigenen Kampf). Wer in dieser Runde schon geschossen oder selbst verteidigt hat, schiesst nicht mehr (`m_bHasUsedDefensiveRangedStrike`, gesetzt in `doDefensiveRangedStrike` und `updateCombat` beim Verteidiger, Reset in `CvUnit::doTurn`). `attackForDamage` (BTS, Python) setzt den Merker nicht.
 - KI mit PAE-Kampfrunden (`AI_attackOdds`): ab 80 % Kampfchance immer Angriff; einzige starke Einheit im Stapel verteidigt lieber; ueberlebt sie die Kampfrunden sicher und steht im Stapel, greift sie immer an.
 - Brachland: unbewirtschaftete Modernisierung im Stadtradius verfaellt (1:20 pro Runde, erst nach 10 Runden), Bedingungen in `CvPlot::isFallowDecayPossible`, Hinweis in der Feld-Info.
 

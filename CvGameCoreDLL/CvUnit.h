@@ -775,7 +775,7 @@ public:
 	bool hasUsedDefensiveRangedStrike() const;				// PAE defend with ranged strike
 	void setUsedDefensiveRangedStrike(bool bNewValue);		// PAE defend with ranged strike
 	bool doDefensiveRangedStrike(bool bQuick = false);		// PAE defend with ranged strike (true: Schuss abgegeben)
-	CvUnit* getDefensiveRangedStriker(const CvPlot* pPlot, TeamTypes eDefendingTeam, int& iDamage) const; // PAE: Schuetze und Schaden des Abwehrschusses (Kampf, Vorschau, KI)
+	CvUnit* getDefensiveRangedStriker(const CvPlot* pPlot, const CvUnit* pDefender, int& iDamage) const; // PAE: Abwehrschusses (Kampf, Vorschau, KI)
 	static int getCombatClass(UnitCombatTypes eCombat);												// PAE battle rounds matrix
 	static int getCombatRounds(CvUnit* pAttacker, CvUnit* pDefender, const CvPlot* pPlot);	// PAE battle rounds matrix
 

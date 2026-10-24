@@ -763,7 +763,7 @@ int CvUnitAI::AI_attackOdds(const CvPlot* pPlot, bool bPotentialEnemy) const
 
 	// PAE: Abwehrschuss eines Fernkaempfers vor dem Nahkampf mitrechnen (siehe CvUnit::doDefensiveRangedStrike)
 	int iPreDamage = 0;
-	getDefensiveRangedStriker(pPlot, pDefender->getTeam(), iPreDamage);
+	getDefensiveRangedStriker(pPlot, pDefender, iPreDamage);
 	int iOurHP = std::max(1, currHitPoints() - iPreDamage);
 
 	iOurStrength = ((getDomainType() == DOMAIN_AIR) ? airCurrCombatStr(NULL) : ((maxCombatStr(NULL, NULL) * iOurHP) / maxHitPoints()));

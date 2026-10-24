@@ -1149,7 +1149,7 @@ bool CvUnit::doDefensiveRangedStrike(bool bQuick)
 	}
 
 	int iDamage = 0;
-	CvUnit* pRanged = getDefensiveRangedStriker(pPlot, pBestDefender->getTeam(), iDamage); // gleiche Rechnung wie Vorschau und KI
+	CvUnit* pRanged = getDefensiveRangedStriker(pPlot, pBestDefender, iDamage); // gleiche Rechnung wie Vorschau und KI
 	if (pRanged == NULL)
 	{
 		return false;
@@ -1208,14 +1208,16 @@ bool CvUnit::doDefensiveRangedStrike(bool bQuick)
 
 // PAE defend with ranged strike: Fernkaempfer des Teams eDefendingTeam auf pPlot, der vor dem Nahkampf auf diese Einheit schiessen wuerde,
 // und sein Schaden in Trefferpunkten (Grenze: iAirCombatLimit des Schuetzen, nie toedlich). Kein Zufall, daher auch fuer Vorschau und KI.
-CvUnit* CvUnit::getDefensiveRangedStriker(const CvPlot* pPlot, TeamTypes eDefendingTeam, int& iDamage) const
+CvUnit* CvUnit::getDefensiveRangedStriker(const CvPlot* pPlot, const CvUnit* pDefender, int& iDamage) const
 {
 	iDamage = 0;
 
-	if (pPlot == NULL || eDefendingTeam == NO_TEAM || getDomainType() != DOMAIN_LAND)
+	if (pPlot == NULL || pDefender == NULL || getDomainType() != DOMAIN_LAND)
 	{
 		return NULL;
 	}
+
+	TeamTypes eDefendingTeam = pDefender->getTeam();
 
 	// den Fernkaempfer mit dem groessten Schaden gegen diese Einheit waehlen
 	// (z. B. Katapult vor Bogenschuetze); Bedingungen wie getAvailableDefensiveRangedUnit
@@ -1228,7 +1230,8 @@ CvUnit* CvUnit::getDefensiveRangedStriker(const CvPlot* pPlot, TeamTypes eDefend
 	for (CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode(); pUnitNode != NULL; pUnitNode = pPlot->nextUnitNode(pUnitNode))
 	{
 		CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-		if (pLoopUnit != NULL && pLoopUnit->getTeam() == eDefendingTeam &&
+		// PAE: nur Fernkaempfer, die nicht selbst den Nahkampf fuehren (z. B. Jaeger allein auf dem Feld schiesst nicht)
+		if (pLoopUnit != NULL && pLoopUnit != pDefender && pLoopUnit->getTeam() == eDefendingTeam &&
 			pLoopUnit->airRange() > 0 && pLoopUnit->canDefend() && !pLoopUnit->isCargo() &&
 			!pLoopUnit->hasUsedDefensiveRangedStrike())
 		{
@@ -1702,6 +1705,7 @@ void CvUnit::updateCombat(bool bQuick)
 
 			setCombatUnit(pDefender, true);
 			pDefender->setCombatUnit(this, false);
+			pDefender->setUsedDefensiveRangedStrike(true); // PAE: wer selbst verteidigt hat, gibt diese Runde keinen Abwehrschuss mehr ab
 
 			pDefender->getGroup()->clearMissionQueue();
 
